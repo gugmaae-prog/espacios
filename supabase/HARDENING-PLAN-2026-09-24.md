@@ -2,7 +2,7 @@
 
 > **Live status update:** P0 access-control hardening was applied to production on 24 September 2026. Broad anonymous/public policies on sensitive tables were removed, sensitive service-only tables were revoked from `anon`/`authenticated`, the two SECURITY DEFINER RPCs were restricted to `service_role`, mutable function search paths were pinned, the duplicate `messages` index was removed, and `contacts-v2-api` / `google-sync-v2` were redeployed as JWT-verified service-role-only v3 functions.
 >
-> After the change, Supabase Security Advisor was reduced to three residual findings: `vector` installed in `public`, leaked-password protection disabled, and one repair table with RLS/no policy. The repair-table finding was then resolved with migration `20260924171459_lock_repair_table_20260924`.
+> After the change, Supabase Security Advisor was reduced to three residual findings. The repair-table finding was resolved with migration `20260924171459_lock_repair_table_20260924`, and the relocatable `vector` extension was moved from `public` to `extensions`. The database Security Advisor now reports only one remaining Auth-service warning: leaked-password protection is disabled.
 
 ## P0 — access control
 
