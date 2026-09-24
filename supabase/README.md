@@ -25,9 +25,19 @@ Not stored here:
 
 - `psr-ai-api` → owned by `gugmaae-prog/psr-homes` and mirrored there
 
-## Critical rule
+## Current runtime security state
 
-These files are a source mirror, **not an instruction to redeploy automatically**. Two functions (`contacts-v2-api`, `google-sync-v2`) currently have `verify_jwt=false` and use the Supabase service-role key internally. They must be hardened before GitHub-driven deployment is enabled.
+The Git mirror matches the live hardened functions:
+
+- `contacts-v2-api` — version 3, `verify_jwt=true`, service-role authorization required
+- `google-sync-v2` — version 3, `verify_jwt=true`, service-role authorization required
+- `sync-worker` — JWT verification enabled
+- `smtp-send-v1` — JWT verification enabled
+- `psr-ai-api` — PSR-owned and mirrored in `gugmaae-prog/psr-homes`
+
+Database Security Advisor now reports only one remaining Auth-service setting: leaked-password protection is disabled. Database-level access-control warnings have been resolved.
+
+These files remain source authority rather than an instruction to enable automatic production deployment without review.
 
 ## Secrets
 
