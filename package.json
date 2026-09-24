@@ -1,0 +1,23 @@
+{
+  "name": "espacios-map-navigable-v2",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Navigation, reliability, responsiveness, and accessibility upgrade for the Espacios UAE Intelligence Map.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check src/worker.js && node --check src/assets/app-v2.js && node --check src/assets/premium.js && node --check scripts/extract-assets.mjs && node --check scripts/embed-assets.mjs",
+    "test": "node tests/smoke.mjs",
+    "verify": "npm run check && npm test",
+    "browser:acceptance": "node scripts/browser-acceptance.mjs",
+    "assets:extract": "node scripts/extract-assets.mjs",
+    "assets:embed": "node scripts/embed-assets.mjs",
+    "cf:dev": "wrangler dev",
+    "cf:dry-run": "wrangler deploy --dry-run --outdir .wrangler/dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "4.135.0"
+  }
+}

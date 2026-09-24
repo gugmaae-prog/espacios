@@ -1,0 +1,142 @@
+{
+  "createdAt": "2026-09-19T22:18:01.139997Z",
+  "candidate": "espacios-map-camera-zoom-3d-v4",
+  "navigationVersion": "20260920-v4",
+  "sourceBaseline": {
+    "worker": "psr-portfolio-map-v2",
+    "deploymentId": "8881790d-9236-4172-957c-80a149f22556",
+    "versionId": "3f4539f4-ca2e-4bf7-b086-a09e83b5ff42",
+    "versionNumber": 104,
+    "snapshot": "Cloudflare deployment preflight"
+  },
+  "release": {
+    "worker": "psr-portfolio-map-v2",
+    "versionId": "add18bcb-d4ce-4a4a-8f56-44458e9d87df",
+    "versionNumber": 105,
+    "deploymentId": "fe9e03c4-cd7c-4ffb-a958-2b23938b759a",
+    "percentage": 100,
+    "deployedAt": "2026-09-19T22:18:01.139997Z",
+    "scriptSha256": "c25d178ff5e0c91078ff67318f542d739021c65a1cdc50b54b49bd52e4356ffb"
+  },
+  "releaseSafety": {
+    "manifestWorkerName": "psr-portfolio-map-v2-navigation-candidate",
+    "productionRoutesDeclared": false,
+    "versionUploadedSeparately": true,
+    "strictBindingInheritance": true,
+    "bindingsReverifiedAfterDeployment": true,
+    "rollbackVersionId": "3f4539f4-ca2e-4bf7-b086-a09e83b5ff42"
+  },
+  "features": [
+    "camera-only wheel, trackpad-pinch, touch-pinch, and keyboard zoom",
+    "fixed-size top bar, layer rail, and information cards during map zoom",
+    "3D enabled by default with automatic 54-degree city-scale pitch",
+    "lazy real-building extrusion tiles and project footprint resolution",
+    "fixed self-triggering MutationObserver browser freeze",
+    "map focus mode and dependable desktop/mobile navigation",
+    "accessible map region, skip link, live status, and search semantics",
+    "deferred spatial, context, and full-emirate layers",
+    "lazy search indexing and throttled hover work",
+    "same-origin R2-first MapLibre assets with edge cache",
+    "on-demand cached Places and Transport hydration",
+    "OpenFreeMap-compatible Noto label stack",
+    "removed temporary admin upload route and embedded credential"
+  ],
+  "validation": {
+    "assetsEmbedded": true,
+    "syntaxChecksPassed": true,
+    "smokeSuitePassed": true,
+    "localWorkerHttpPassed": true,
+    "wranglerVersion": "4.135.0",
+    "dryRunPassed": true,
+    "dryRunUploadKiB": 211.3,
+    "dryRunGzipKiB": 125.39,
+    "localResponsiveBrowserMatrixPassed": true,
+    "liveResponsiveBrowserMatrixPassed": true,
+    "desktopTrackpadPinchIsolationPassed": true,
+    "mobileTwoFingerPinchIsolationPassed": true,
+    "uiGeometryStableDuringZoom": true,
+    "automatic3dPitchPassed": true,
+    "renderedBuildingExtrusions": 375,
+    "browserExceptions": 0,
+    "browserLogErrors": 0,
+    "browserNetworkFailures": 0,
+    "browserHttpErrors": 0,
+    "syntheticPerformanceCaptured": true,
+    "formalCoreWebVitalsTraceCaptured": false,
+    "removedAdminGetStatus": 404,
+    "removedAdminPostStatus": 404
+  },
+  "browserAcceptance": {
+    "viewports": [
+      "1440x900 desktop",
+      "390x844 mobile"
+    ],
+    "initialLayers": 85,
+    "initialSources": 19,
+    "initial3dEnabled": true,
+    "initialBuildingTilesLoaded": false,
+    "initialContextLoaded": false,
+    "initialUniversalSpatialLoaded": false,
+    "desktopActions": [
+      "pointer pan",
+      "wheel zoom",
+      "trackpad-pinch camera zoom",
+      "automatic 3D pitch",
+      "building extrusion render",
+      "keyboard pan",
+      "focus mode",
+      "help",
+      "search",
+      "Places hydration"
+    ],
+    "mobileActions": [
+      "one-finger touch pan",
+      "two-finger camera pinch",
+      "fixed interface geometry"
+    ],
+    "threeD": {
+      "entryZoom": 9.7,
+      "automaticPitchDegrees": 54,
+      "verificationZoom": 15.25,
+      "renderedExtrusions": 375,
+      "layerType": "fill-extrusion"
+    },
+    "liveSynthetic": {
+      "desktopFcpMs": 1264,
+      "desktopCls": 0.034769455697016456,
+      "mobileFcpMs": 784,
+      "mobileCls": 0
+    }
+  },
+  "dataSnapshot": {
+    "coreProjects": 1337,
+    "runtimeProjects": 1364,
+    "communities": 215,
+    "plans": 72,
+    "places": 10841,
+    "amenitiesPayloadBytes": 4489615
+  },
+  "remainingFollowUps": [
+    "split or spatially query the deferred amenities registry",
+    "replace response-time legacy substitutions with source-level code",
+    "track production performance with sustained RUM or formal trace samples"
+  ],
+  "sha256": {
+    "src/worker.js": "c25d178ff5e0c91078ff67318f542d739021c65a1cdc50b54b49bd52e4356ffb",
+    "src/assets/index.html": "f52dabd139c999f0ca5a2372792abf3119a436bcc99dedefbc92c501878eb58b",
+    "src/assets/app-v2.css": "088936a2c25358d1602a4c088075105ca302dd76be6560c2f16c23ca9492ebbb",
+    "src/assets/app-v2.js": "823faa5a7c3bf25b88d0b35ecfefe6d6e22f7cb96e82909bff28574ba9a1d1d9",
+    "src/assets/verification.json": "07d1beefc19601195241194082f5bf7d7c6ba0e6f05bf8f89bd20ebbe8d633b6",
+    "src/assets/premium.css": "087edf812ace9ce6e57cbb7d86ee560d9204c008cffca05bc5a58ab0944e10a7",
+    "src/assets/premium.js": "61a2dd3d0441ea89eb02cdb203a85aa86de718ca7379e2b22af816d0b3ef5d20",
+    "tests/smoke.mjs": "7b4696ac00a73dcf5da6da04e757a5e360e3a5a42f36acdc4aa6b189797b6a22",
+    "scripts/browser-acceptance.mjs": "9c05665a3bd8d7b302d643e87707a17a8f297dcbc3a889c3242bc9dd50bd0c79",
+    "scripts/debug-startup.mjs": "3976b130774ed5fdaad643fddb0f4e5ac4910a0602f5cadb437501f3831f1147",
+    "README.md": "acdaa7eb1a96a0f5d8b9c5a971de8077bff8083f28585e9589ecb6782c89524c",
+    "VERIFICATION.md": "23f46a94a2fa77e12a63482f8b88bab5c2119a6a158b4618ea93936665a40cc5",
+    "docs/architecture.md": "9528fdc7f6bc028cbc49deb766d78747a3ba015eea7291822df4b1022e895b57",
+    "package.json": "ff97ffebe598db351a340a52bb5a7d0a1a11f3d6b4712ad2b4b96a7ccb205bff",
+    "package-lock.json": "1208a2f4138e08cd8a26d266e733aa62a51313eb4bf100e36f2252de954c822d",
+    "wrangler.jsonc": "890d753bf881cdab83ae589b974e0113a6a45b5cb143dcbb3a1f564f0f842727"
+  }
+}

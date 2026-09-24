@@ -1,0 +1,79 @@
+{
+  "verifiedAt": "2026-09-19T16:23:20Z",
+  "verificationScope": "Read-only Cloudflare API inspection plus public HTTP and browser checks",
+  "publicUrl": "https://espacios.me/map",
+  "zone": "espacios.me",
+  "worker": {
+    "scriptName": "psr-portfolio-map-v2",
+    "modifiedOn": "2026-09-19T13:36:19.299757Z",
+    "deploymentId": "16535839-9b73-42c5-94a6-72e678dd5c64",
+    "versionId": "5f4ddca6-c96f-4ad2-8839-8fd9f4f77768",
+    "downloadEtag": "22d1dc949bd1f738afd899d9938f04de4072e8168fecb857b1dca4597b947c38",
+    "compatibilityDate": "2026-08-20",
+    "compatibilityFlags": ["nodejs_compat"],
+    "usageModel": "standard"
+  },
+  "routes": [
+    {
+      "id": "ab6af7e5cc2345f0a3b34a3f11476c31",
+      "pattern": "espacios.me/map*"
+    },
+    {
+      "id": "9747bbe5c20f4992ad048c6d7dbf603b",
+      "pattern": "psr.espacios.me/map*"
+    }
+  ],
+  "bindings": [
+    {
+      "name": "AI",
+      "type": "workers_ai"
+    },
+    {
+      "name": "DB",
+      "type": "d1",
+      "databaseName": "cba-property-db",
+      "databaseId": "a5165cff-70a5-4685-af87-5ffdcf08652a"
+    },
+    {
+      "name": "MARKET_R2",
+      "type": "r2",
+      "bucketName": "psr-market-intelligence"
+    },
+    {
+      "name": "PSR_PROPERTY",
+      "type": "service",
+      "service": "psr-property",
+      "environment": "production"
+    }
+  ],
+  "responseMarkers": {
+    "mapUi": "premium-20260919-v1",
+    "mapVersion": "2026-09-17-edgeassets-live-v1",
+    "navigationFix": "20260919-v1",
+    "navigationPatchCount": 4,
+    "javascriptCacheKey": "20260919-navfix-1"
+  },
+  "observedUiCounts": {
+    "projects": 1364,
+    "communities": 215,
+    "plans": 72,
+    "exactPins": 985,
+    "areaLevelPins": 350,
+    "unpinned": 29,
+    "portfolioRecords": 1651,
+    "availabilityMatches": 35,
+    "onSale": 18,
+    "soldOut": 17
+  },
+  "sha256": {
+    "src/worker.js": "dab7e52c7073411dff3fa0b1acc68c2241eacce8469c4aa25add56d06e71a7f3",
+    "src/assets/index.html": "309251c10ac9cf86a571c88a08b22c0ab9fd58bb26271923849f8ae73c664ef7",
+    "src/assets/app-v2.css": "0e3bfdfd777d6e0d86769d647ed41ed886ab56c1e75360c94b68ddfa0c41ab20",
+    "src/assets/app-v2.js": "75fc1da73f9baae7d5f33d390b492331838891396275783b0ebdcd411a51c839",
+    "src/assets/verification.json": "07d1beefc19601195241194082f5bf7d7c6ba0e6f05bf8f89bd20ebbe8d633b6",
+    "src/assets/premium.css": "ab777fcfc7ee8ae5eabfc4a17920bd21b131859cb0160a06e80c9d48753b2fee",
+    "src/assets/premium.js": "40116ff57d73eda8e8e42d561022e211ab22d8ded46946b84a71fbd6a03a8deb"
+  },
+  "deploymentPerformed": false,
+  "secretsIncluded": false
+}

@@ -1,0 +1,1098 @@
+{
+  "asOf": "2026-09-22",
+  "count": 17,
+  "initiatives": [
+    {
+      "id": "initiative:dubai:dubai-airport",
+      "kind": "initiative",
+      "name": "Al Maktoum passenger terminal",
+      "emirate": "Dubai",
+      "category": "Aviation",
+      "status": "Under construction",
+      "timing": "Announced Apr 2024 with a ten-year first-phase delivery horizon",
+      "summary": "AED128bn terminal programme intended to consolidate and expand Dubai's long-run aviation capacity.",
+      "marketImpact": "Strengthens Dubai South's logistics, employment, hospitality and residential relevance, but ultimate-capacity figures should not be treated as current throughput.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.2048,
+        "lng": 55.2958
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/dubai-al-maktoum-passenger-terminal-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/dubai-al-maktoum-passenger-terminal-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-dubai-dubai-airport.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Anchors Dubai South aviation/logistics platform; long-run access depends on terminal phasing and connecting road/rail (incl. Blue Line / passenger rail).",
+      "demandNote": "Employment, hospitality and residential relevance around Dubai South grows with first-phase delivery horizon.",
+      "supplyRiskNote": "Ultimate-capacity figures must not be treated as current throughput; ten-year first-phase horizon.",
+      "researchNotes": "Paired with DEC expansion as Dubai South dual catalyst.",
+      "catalystScore": {
+        "delivery": 70,
+        "accessibility": 82,
+        "demand": 88,
+        "supplyRisk": 48,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Emaar South",
+          "projectCount": 21
+        },
+        {
+          "name": "Dubai South",
+          "projectCount": 19
+        },
+        {
+          "name": "Expo City Dubai",
+          "projectCount": 9
+        },
+        {
+          "name": "Expo Valley",
+          "projectCount": 6
+        },
+        {
+          "name": "Dubai South Residential District",
+          "projectCount": 5
+        },
+        {
+          "name": "Dubai",
+          "projectCount": 4
+        },
+        {
+          "name": "Expo Valley, Expo City Dubai",
+          "projectCount": 2
+        },
+        {
+          "name": "Emaar South, Dubai",
+          "projectCount": 1
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 67,
+        "byCommunity": {
+          "Emaar South": 21,
+          "Dubai South": 19,
+          "Expo City Dubai": 9,
+          "Expo Valley": 6,
+          "Dubai South Residential District": 5,
+          "Dubai": 4,
+          "Expo Valley, Expo City Dubai": 2,
+          "Emaar South, Dubai": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:dubai:dubai-blue-line",
+      "kind": "initiative",
+      "name": "Dubai Metro Blue Line",
+      "emirate": "Dubai",
+      "category": "Urban mobility",
+      "status": "Under construction",
+      "timing": "Target opening 9 Sep 2029",
+      "summary": "New metro corridor linking major residential, education and employment districts.",
+      "marketImpact": "Station access and opening sequence matter more than broad proximity claims.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.222641146976034,
+        "lng": 55.29856136658343
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/dubai-dubai-metro-blue-line-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/dubai-dubai-metro-blue-line-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-dubai-dubai-blue-line.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "New metro corridor linking major residential, education and employment districts; station access and opening sequence (target 9 Sep 2029) matter more than broad proximity.",
+      "demandNote": "Near-term transit catalyst with construction underway — higher certainty than announced-only lines.",
+      "supplyRiskNote": "Watch station-area launch cadence; corridor-level claims overstate impact versus station catchments.",
+      "researchNotes": "Priority catalyst: under construction; opening target 9 Sep 2029.",
+      "catalystScore": {
+        "delivery": 85,
+        "accessibility": 90,
+        "demand": 84,
+        "supplyRisk": 40,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Dubai Hills Estate",
+        "Arabian Ranches",
+        "Dubai Silicon Oasis",
+        "Dubai Land Residence Complex (DLRC)",
+        "Dubai Land Residence Complex",
+        "Liwan",
+        "Warsan First",
+        "Academic City",
+        "Nad Al Sheba Gardens",
+        "Dubai Sports City",
+        "Al Warsan First",
+        "Nad Al Sheba"
+      ],
+      "linkedProjectCounts": {
+        "total": 93,
+        "byCommunity": {
+          "Dubai Hills Estate": 54,
+          "Arabian Ranches": 13,
+          "Dubai Silicon Oasis": 13,
+          "Dubai Land Residence Complex (DLRC)": 3,
+          "Dubai Land Residence Complex": 2,
+          "Liwan": 2,
+          "Warsan First": 1,
+          "Academic City": 1,
+          "Nad Al Sheba Gardens": 1,
+          "Dubai Sports City": 1,
+          "Al Warsan First": 1,
+          "Nad Al Sheba": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:dubai:dubai-gold-line",
+      "kind": "initiative",
+      "name": "Dubai Metro Gold Line",
+      "emirate": "Dubai",
+      "category": "Urban mobility",
+      "status": "Procurement",
+      "timing": "Tender 2026 / award target 2027 / opening target 9 Sep 2032",
+      "summary": "Dubai's first fully underground metro line: official RTA length 42 km with 18 stations (Al Ghubaiba to Jumeirah Golf Estates), AED34bn programme. Tender issuance scheduled 2026, contract award 2027, inauguration target 9 Sep 2032.",
+      "marketImpact": "Creates a long-range accessibility signal across established and emerging districts, but it is not yet an operating or construction-stage line.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.229545536047024,
+        "lng": 55.26724212904317
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/dubai-dubai-metro-gold-line-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/dubai-dubai-metro-gold-line-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-dubai-dubai-gold-line.png",
+      "deliveryCertainty": "procurement",
+      "accessibilityNote": "Connects Red Line (Business Bay, Jumeirah Golf Estates) and Green Line (Al Ghubaiba); Etihad Rail links at Meydan and Jumeirah Golf Estates. Serves ~15 strategic districts and an estimated 1.5m residents by 2040.",
+      "demandNote": "Long-range accessibility signal across established and emerging districts; station catchments matter more than generic corridor proximity.",
+      "supplyRiskNote": "Not yet construction-stage; property narrative risk if timelines slip from 2026 tender / 2027 award / 2032 opening path.",
+      "researchNotes": "Fixed stale summary that still said 34.2 km. Official RTA press release (22 Apr 2026) confirms 42 km / 18 stations / AED34bn / open 9 Sep 2032.",
+      "officialSourceUrl": "https://www.rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/mohammed-bin-rashid-approves-dubai-metro-gold-line-involving-an-investment-of-aed-34-billion",
+      "catalystScore": {
+        "delivery": 55,
+        "accessibility": 88,
+        "demand": 78,
+        "supplyRisk": 42,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Business Bay",
+        "Jumeirah Village Circle (JVC)",
+        "Palm Jumeirah",
+        "MBR City",
+        "Jumeirah Golf Estates",
+        "Madinat Jumeirah",
+        "Meydan Horizon",
+        "Mina Rashid",
+        "Jumeirah Village Triangle (JVT)",
+        "Meydan",
+        "Central Park",
+        "District 11 Meydan"
+      ],
+      "linkedProjectCounts": {
+        "total": 201,
+        "byCommunity": {
+          "Business Bay": 48,
+          "Jumeirah Village Circle (JVC)": 32,
+          "Palm Jumeirah": 22,
+          "MBR City": 14,
+          "Jumeirah Golf Estates": 9,
+          "Madinat Jumeirah": 9,
+          "Meydan Horizon": 7,
+          "Mina Rashid": 7,
+          "Jumeirah Village Triangle (JVT)": 7,
+          "Meydan": 6,
+          "Central Park": 6,
+          "District 11 Meydan": 5,
+          "Jumeirah Lake Towers (JLT)": 5,
+          "City Walk": 5,
+          "Jumeirah Islands": 3,
+          "Jumeirah Garden City": 3,
+          "Jumeirah 1": 2,
+          "Jumeirah": 2,
+          "Jumeirah Garden City, Dubai": 1,
+          "Nad Al Sheba Gardens": 1,
+          "Jumeirah Canal": 1,
+          "Jumeirah Beach Residence (JBR)": 1,
+          "DIFC": 1,
+          "City Walk (Central Park)": 1,
+          "District 11 Meydan South": 1,
+          "La Mer": 1,
+          "Nad Al Sheba": 1
+        }
+      }
+    },
+    {
+      "id": "initiative:dubai:dubai-exhibition-centre",
+      "kind": "initiative",
+      "name": "Dubai Exhibition Centre expansion",
+      "emirate": "Dubai",
+      "category": "Business events",
+      "status": "Phased / mixed",
+      "timing": "Phase 1 operating 2025–2026 / Phase 2 target ~2028 / final ~2031",
+      "summary": "AED10bn multi-phase DEC expansion at Expo City. Phase 1 completed/operating 2025–2026 (~140,000 sqm indoor events capacity; hosted Gulfood and World Health Expo). Phase 2 targets ~2028 (~160,000 sqm); final phase ~2031 (~180,000 sqm, 26 halls).",
+      "marketImpact": "Strengthens the events economy around Dubai South and Expo City, with demand effects tied to phased operating capacity.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.179860264046308,
+        "lng": 55.249189595779804
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/dubai-dubai-exhibition-centre-expansion-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/dubai-dubai-exhibition-centre-expansion-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-dubai-dubai-exhibition-centre.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Anchored at Expo City / Dubai South; Phase 2 adds Eastern Access Road, extended concourse and multi-storey parking (~7,000 spaces initially).",
+      "demandNote": "Strengthens the events economy around Dubai South and Expo City; demand effects track phased operating capacity rather than the full 2031 masterplan.",
+      "supplyRiskNote": "Hospitality and residential spillover depends on event calendar utilisation; later phases (2028/2031) remain delivery targets.",
+      "researchNotes": "Updated to note Phase 1 completed/operating early 2026 (WAM 9 Sep 2026); Phase 2 ~2028 and final ~2031 retained from DWTC masterplan.",
+      "officialSourceUrl": "https://www.dubaiexhibitioncentre.com/en/media-hub/mohammed-bin-rashid-approves-aed10-billion-expansion-plan-for-the-dubai-exhibition-centre-at-expo-city-dubai",
+      "catalystScore": {
+        "delivery": 80,
+        "accessibility": 74,
+        "demand": 82,
+        "supplyRisk": 38,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Emaar South",
+          "projectCount": 21
+        },
+        {
+          "name": "Dubai South",
+          "projectCount": 19
+        },
+        {
+          "name": "Expo City Dubai",
+          "projectCount": 9
+        },
+        {
+          "name": "Expo Valley",
+          "projectCount": 6
+        },
+        {
+          "name": "Dubai South Residential District",
+          "projectCount": 5
+        },
+        {
+          "name": "Dubai",
+          "projectCount": 4
+        },
+        {
+          "name": "Expo Valley, Expo City Dubai",
+          "projectCount": 2
+        },
+        {
+          "name": "Emaar South, Dubai",
+          "projectCount": 1
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 67,
+        "byCommunity": {
+          "Emaar South": 21,
+          "Dubai South": 19,
+          "Expo City Dubai": 9,
+          "Expo Valley": 6,
+          "Dubai South Residential District": 5,
+          "Dubai": 4,
+          "Expo Valley, Expo City Dubai": 2,
+          "Emaar South, Dubai": 1
+        }
+      }
+    },
+    {
+      "id": "initiative:abu-dhabi:guggenheim-ad",
+      "kind": "initiative",
+      "name": "Guggenheim Abu Dhabi",
+      "emirate": "Abu Dhabi",
+      "category": "Culture",
+      "status": "Under construction",
+      "timing": "Announced opening 11 Dec 2026",
+      "summary": "Frank Gehry-designed museum in Saadiyat Cultural District.",
+      "marketImpact": "Extends Abu Dhabi's cultural-institution cluster and global destination profile.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 24.539514,
+        "lng": 54.398958
+      },
+      "coordinateBasis": "Guggenheim Abu Dhabi named open-place coordinate in Saadiyat Cultural District",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/guggenheim-abu-dhabi.webp",
+      "href": "https://psr.espacios.me/insights/guggenheim-abu-dhabi-opening-saadiyat-property-lens",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-abu-dhabi-guggenheim-ad.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Saadiyat Cultural District museum with named open-place coordinate; announced opening 11 Dec 2026.",
+      "demandNote": "Extends cultural-institution cluster and global destination profile for Saadiyat.",
+      "supplyRiskNote": "Opening date is announced — still verify operational readiness closer to Nov 2026.",
+      "researchNotes": "Yas/Saadiyat cultural cluster priority.",
+      "catalystScore": {
+        "delivery": 88,
+        "accessibility": 72,
+        "demand": 85,
+        "supplyRisk": 30,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Saadiyat Island (Abu Dhabi Emirate)",
+        "Saadiyat Island, Abu Dhabi",
+        "Saadiyat Grove (Abu Dhabi Emirate)"
+      ],
+      "linkedProjectCounts": {
+        "total": 4,
+        "byCommunity": {
+          "Saadiyat Island (Abu Dhabi Emirate)": 2,
+          "Saadiyat Island, Abu Dhabi": 1,
+          "Saadiyat Grove (Abu Dhabi Emirate)": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:abu-dhabi:disney-ad",
+      "kind": "initiative",
+      "name": "Disney theme park resort, Yas Island",
+      "emirate": "Abu Dhabi",
+      "category": "Tourism",
+      "status": "Announced",
+      "timing": "Opening date not announced",
+      "summary": "Miral is expected to finance, build and operate the planned resort, with Disney Imagineering leading creative design.",
+      "marketImpact": "A major long-range family-tourism signal; commercial and delivery milestones must be tracked rather than assumed.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 24.49689075,
+        "lng": 54.610040999999995
+      },
+      "coordinateBasis": "Yas Island community centroid — exact waterfront plot has not been publicly confirmed",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/abu-dhabi-disney-theme-park-resort-yas-island-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/abu-dhabi-disney-theme-park-resort-yas-island-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-abu-dhabi-disney-ad.png",
+      "deliveryCertainty": "announced",
+      "accessibilityNote": "Yas Island planned resort; exact waterfront plot not publicly confirmed (community centroid basis).",
+      "demandNote": "Major long-range family-tourism signal; commercial milestones must be tracked.",
+      "supplyRiskNote": "Opening date not announced — highest timeline uncertainty in Yas/Saadiyat cultural set.",
+      "researchNotes": "Keep alongside Harry Potter / Sphere / Guggenheim as cultural-tourism cluster.",
+      "catalystScore": {
+        "delivery": 28,
+        "accessibility": 70,
+        "demand": 92,
+        "supplyRisk": 50,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Yas Island (Abu Dhabi Emirate)",
+        "Yas Island, Abu Dhabi",
+        "Yas Point, Yas Island",
+        "Al Furjan",
+        "Expo Valley"
+      ],
+      "linkedProjectCounts": {
+        "total": 9,
+        "byCommunity": {
+          "Yas Island (Abu Dhabi Emirate)": 4,
+          "Yas Island, Abu Dhabi": 2,
+          "Yas Point, Yas Island": 1,
+          "Al Furjan": 1,
+          "Expo Valley": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:abu-dhabi:harry-potter-ad",
+      "kind": "initiative",
+      "name": "Harry Potter themed land",
+      "emirate": "Abu Dhabi",
+      "category": "Tourism",
+      "status": "Under construction",
+      "timing": "Construction completion target 2029",
+      "summary": "Three Harry Potter–themed lands (Diagon Alley, Hogwarts, Forbidden Forest) at Warner Bros. World Abu Dhabi spanning ~63,000 m²; construction completion targeted for 2029. Part of a broader park expansion also adding DC attractions.",
+      "marketImpact": "Deepens Yas Island's multi-day entertainment offer but remains a future attraction.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 24.490922,
+        "lng": 54.599236
+      },
+      "coordinateBasis": "Warner Bros. World Yas Island open-place coordinate; themed land is planned within the park",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/harry-potter-yas-island.jpg",
+      "href": "https://psr.espacios.me/insights/harry-potter-land-yas-island-confirmed-facts",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-abu-dhabi-harry-potter-ad.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "On-site expansion within Warner Bros. World, Yas Island — benefits existing park visitation and multi-day Yas stays rather than a new greenfield plot.",
+      "demandNote": "Deepens Yas Island's multi-day entertainment offer; first Harry Potter lands in the Middle East and only fully indoor Harry Potter complex globally.",
+      "supplyRiskNote": "Delivery is construction-completion (2029), not a confirmed public opening day; treat 2029 as a works target pending operator opening window.",
+      "researchNotes": "Replaced 'Opening date not announced' with Miral (7 Sep 2026) confirmation: ~63,000 sqm, three lands, construction targeted for completion in 2029.",
+      "officialSourceUrl": "https://www.mediaoffice.abudhabi/en/tourism/miral-announces-construction-of-3-new-harry-potter-themed-lands-at-warner-bros-world-abu-dhabi/",
+      "catalystScore": {
+        "delivery": 72,
+        "accessibility": 70,
+        "demand": 86,
+        "supplyRisk": 35,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Yas Island (Abu Dhabi Emirate)",
+        "Yas Island, Abu Dhabi",
+        "Yas Point, Yas Island",
+        "Al Furjan",
+        "Expo Valley"
+      ],
+      "linkedProjectCounts": {
+        "total": 9,
+        "byCommunity": {
+          "Yas Island (Abu Dhabi Emirate)": 4,
+          "Yas Island, Abu Dhabi": 2,
+          "Yas Point, Yas Island": 1,
+          "Al Furjan": 1,
+          "Expo Valley": 1
+        }
+      }
+    },
+    {
+      "id": "initiative:abu-dhabi:sphere-ad",
+      "kind": "initiative",
+      "name": "Sphere Abu Dhabi",
+      "emirate": "Abu Dhabi",
+      "category": "Entertainment",
+      "status": "Announced",
+      "timing": "Target completion by end-2029",
+      "summary": "Up-to-20,000-capacity venue announced for Yas Island.",
+      "marketImpact": "Adds a new events and entertainment demand engine to Yas Island's visitor economy.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 24.49689075,
+        "lng": 54.610040999999995
+      },
+      "coordinateBasis": "Yas Island community centroid — exact venue plot has not been publicly confirmed",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/abu-dhabi-sphere-abu-dhabi-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/abu-dhabi-sphere-abu-dhabi-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-abu-dhabi-sphere-ad.png",
+      "deliveryCertainty": "announced",
+      "accessibilityNote": "Up-to-20,000-capacity venue announced for Yas Island; exact plot not publicly confirmed.",
+      "demandNote": "Events/entertainment demand engine complementary to theme-park visitation.",
+      "supplyRiskNote": "Target completion end-2029 is announced, not construction-verified in this enrichment pass.",
+      "researchNotes": "Yas entertainment cluster companion.",
+      "catalystScore": {
+        "delivery": 40,
+        "accessibility": 68,
+        "demand": 80,
+        "supplyRisk": 48,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Yas Island (Abu Dhabi Emirate)",
+        "Yas Island, Abu Dhabi",
+        "Yas Point, Yas Island",
+        "Al Furjan",
+        "Expo Valley"
+      ],
+      "linkedProjectCounts": {
+        "total": 9,
+        "byCommunity": {
+          "Yas Island (Abu Dhabi Emirate)": 4,
+          "Yas Island, Abu Dhabi": 2,
+          "Yas Point, Yas Island": 1,
+          "Al Furjan": 1,
+          "Expo Valley": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:sharjah:sharjah-airport-expansion",
+      "kind": "initiative",
+      "name": "Sharjah International Airport expansion",
+      "emirate": "Sharjah",
+      "category": "Aviation",
+      "status": "Under construction",
+      "timing": "Target capacity milestone mid-2027",
+      "summary": "Comprehensive expansion intended to raise annual passenger capacity.",
+      "marketImpact": "Supports tourism, trade and employment while changing access around the airport corridor.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.3463,
+        "lng": 55.4459
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/sharjah-sharjah-international-airport-expansion-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/sharjah-sharjah-international-airport-expansion-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-sharjah-sharjah-airport-expansion.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Raises passenger capacity; changes access around the airport corridor (target mid-2027 capacity milestone).",
+      "demandNote": "Supports tourism, trade and employment spillover into Sharjah residential corridors.",
+      "supplyRiskNote": "Corridor access improvements can unlock launches — watch oversupply near airport fringe.",
+      "researchNotes": "Clustered with Midline drainage + Hamriyah water as Sharjah infrastructure triad.",
+      "catalystScore": {
+        "delivery": 76,
+        "accessibility": 80,
+        "demand": 72,
+        "supplyRisk": 44,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Aljada",
+          "projectCount": 14
+        },
+        {
+          "name": "Aljada (Sharjah Emirate)",
+          "projectCount": 14
+        },
+        {
+          "name": "Maryam Island",
+          "projectCount": 11
+        },
+        {
+          "name": "Maryam Island (Sharjah Emirate)",
+          "projectCount": 11
+        },
+        {
+          "name": "Al Khan",
+          "projectCount": 1
+        },
+        {
+          "name": "Tilal City",
+          "projectCount": 0
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 51,
+        "byCommunity": {
+          "Aljada": 14,
+          "Aljada (Sharjah Emirate)": 14,
+          "Maryam Island": 11,
+          "Maryam Island (Sharjah Emirate)": 11,
+          "Al Khan": 1,
+          "Tilal City": 0
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:sharjah:hamriyah-iwp",
+      "kind": "initiative",
+      "name": "Hamriyah Independent Water Project",
+      "emirate": "Sharjah",
+      "category": "Water security",
+      "status": "Under construction",
+      "timing": "Initial capacity target Q2 2027 / full capacity target Q2 2028",
+      "summary": "Sharjah's first independent water project is planned to reach 272,000 cubic metres per day before scaling to 410,000.",
+      "marketImpact": "Adds desalination and storage capacity for urban and industrial growth; the two disclosed capacity milestones remain delivery targets.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.386272044399455,
+        "lng": 55.411776641707796
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/sharjah-hamriyah-independent-water-project-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/sharjah-hamriyah-independent-water-project-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-sharjah-hamriyah-iwp.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Utility-scale desalination/storage for urban and industrial growth (initial Q2 2027 / full Q2 2028).",
+      "demandNote": "Enables growth capacity more than it creates destination demand.",
+      "supplyRiskNote": "Two disclosed capacity milestones remain delivery targets.",
+      "researchNotes": "Sharjah's first independent water project.",
+      "catalystScore": {
+        "delivery": 73,
+        "accessibility": 50,
+        "demand": 58,
+        "supplyRisk": 42,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Aljada",
+          "projectCount": 14
+        },
+        {
+          "name": "Aljada (Sharjah Emirate)",
+          "projectCount": 14
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 28,
+        "byCommunity": {
+          "Aljada": 14,
+          "Aljada (Sharjah Emirate)": 14
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:sharjah:sharjah-midline-drainage",
+      "kind": "initiative",
+      "name": "Midline rainwater and groundwater drainage project",
+      "emirate": "Sharjah",
+      "category": "Climate resilience",
+      "status": "Under construction",
+      "timing": "Phase 1 target end-2026 / overall target H1 2027",
+      "summary": "An AED500m drainage system designed to protect roughly 4,000 hectares and maintain continuity across major roads and districts.",
+      "marketImpact": "Addresses a practical resilience constraint on dense urban districts; progress and dates are time-stamped targets, not guarantees.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.33198183660912,
+        "lng": 55.39116802735922
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/sharjah-midline-rainwater-and-groundwater-drainage-project-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/sharjah-midline-rainwater-and-groundwater-drainage-project-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-sharjah-sharjah-midline-drainage.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "AED500m drainage protecting ~4,000 ha and major road continuity — resilience underpinning dense districts.",
+      "demandNote": "Indirect demand support via flood-risk reduction rather than a visitor magnet.",
+      "supplyRiskNote": "Phase 1 end-2026 / overall H1 2027 are targets; incomplete works leave residual climate risk.",
+      "researchNotes": "Practical resilience constraint on Sharjah urban districts.",
+      "catalystScore": {
+        "delivery": 74,
+        "accessibility": 60,
+        "demand": 55,
+        "supplyRisk": 40,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Aljada",
+          "projectCount": 14
+        },
+        {
+          "name": "Aljada (Sharjah Emirate)",
+          "projectCount": 14
+        },
+        {
+          "name": "Maryam Island",
+          "projectCount": 11
+        },
+        {
+          "name": "Maryam Island (Sharjah Emirate)",
+          "projectCount": 11
+        },
+        {
+          "name": "Al Khan",
+          "projectCount": 1
+        },
+        {
+          "name": "Al Mamzar",
+          "projectCount": 1
+        },
+        {
+          "name": "Al Mamzar, Sharjah",
+          "projectCount": 1
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 53,
+        "byCommunity": {
+          "Aljada": 14,
+          "Aljada (Sharjah Emirate)": 14,
+          "Maryam Island": 11,
+          "Maryam Island (Sharjah Emirate)": 11,
+          "Al Khan": 1,
+          "Al Mamzar": 1,
+          "Al Mamzar, Sharjah": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:ras-al-khaimah:wynn-rak",
+      "kind": "initiative",
+      "name": "Wynn Al Marjan Island",
+      "emirate": "Ras Al Khaimah",
+      "category": "Tourism",
+      "status": "Under construction",
+      "timing": "Official opening window Spring 2027",
+      "summary": "Large integrated resort under construction on Al Marjan Island.",
+      "marketImpact": "A global-visibility catalyst whose effect on nearby assets still depends on project quality, operations and market depth.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.8007,
+        "lng": 56.0012
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/wynn-al-marjan-island.jpg",
+      "href": "https://psr.espacios.me/insights/wynn-al-marjan-island-2027-resort-property-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-ras-al-khaimah-wynn-rak.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Integrated resort under construction on Al Marjan Island; local island access + Emirates Road regional access matter.",
+      "demandNote": "Global-visibility hospitality catalyst for Al Marjan; effect depends on operations quality and market depth.",
+      "supplyRiskNote": "Dense branded-residence pipeline on the same island — monitor absorption vs Wynn opening window (Spring 2027).",
+      "researchNotes": "Paired with Al Marjan pipeline for island-level supply/demand read.",
+      "catalystScore": {
+        "delivery": 82,
+        "accessibility": 68,
+        "demand": 90,
+        "supplyRisk": 62,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [],
+      "linkedProjectCounts": {
+        "total": 0,
+        "byCommunity": {}
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:ras-al-khaimah:al-marjan-pipeline",
+      "kind": "initiative",
+      "name": "Al Marjan Island development pipeline",
+      "emirate": "Ras Al Khaimah",
+      "category": "Waterfront destination",
+      "status": "Phased / mixed",
+      "timing": "Operating destination / no single completion date",
+      "summary": "Operating island destination with a continuing hospitality and mixed-use pipeline.",
+      "marketImpact": "Requires plot-by-plot and operator-by-operator analysis rather than one island-wide completion claim.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.8410771178735,
+        "lng": 55.98331957528434
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/ras-al-khaimah-al-marjan-island-development-pipeline-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/ras-al-khaimah-al-marjan-island-development-pipeline-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-ras-al-khaimah-al-marjan-pipeline.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Operating island destination with continuing hospitality/mixed-use releases — plot-level, not island-wide completion.",
+      "demandNote": "Requires operator-by-operator analysis; Wynn is the headline demand engine.",
+      "supplyRiskNote": "High concurrent launch density elevates supply-risk relative to other northern emirates nodes.",
+      "researchNotes": "linkedProjectCounts derived from Al Marjan area-name matches in live map-data.",
+      "catalystScore": {
+        "delivery": 75,
+        "accessibility": 66,
+        "demand": 84,
+        "supplyRisk": 70,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [],
+      "linkedProjectCounts": {
+        "total": 0,
+        "byCommunity": {}
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:umm-al-quwain:siniya-island",
+      "kind": "initiative",
+      "name": "Sobha Siniya Island",
+      "emirate": "Umm Al Quwain",
+      "category": "Nature-led mixed use",
+      "status": "Under construction",
+      "timing": "Phased; overall completion estimated for 2032",
+      "summary": "Government/developer joint-venture island project with component handovers distinct from the overall masterplan timeline.",
+      "marketImpact": "Tests whether new waterfront supply can coexist with the natural-island identity and patient local demand.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.6057,
+        "lng": 55.5552
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/umm-al-quwain-sobha-siniya-island-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/umm-al-quwain-sobha-siniya-island-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-umm-al-quwain-siniya-island.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Island JV with component handovers distinct from overall ~2032 masterplan; Emirates Road upgrade is key access catalyst.",
+      "demandNote": "Tests waterfront supply vs natural-island identity and patient local demand.",
+      "supplyRiskNote": "Phased handovers — avoid treating overall 2032 as a single completion event.",
+      "researchNotes": "Area-name link to Sobha Siniya Island catalogue projects.",
+      "catalystScore": {
+        "delivery": 68,
+        "accessibility": 64,
+        "demand": 70,
+        "supplyRisk": 58,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Sobha Siniya Island (Umm Al Quwain)"
+      ],
+      "linkedProjectCounts": {
+        "total": 9,
+        "byCommunity": {
+          "Sobha Siniya Island (Umm Al Quwain)": 9
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:umm-al-quwain:uaq-emirates-road",
+      "kind": "initiative",
+      "name": "Emirates Road Al Badee–UAQ upgrade",
+      "emirate": "Umm Al Quwain",
+      "category": "Regional mobility",
+      "status": "Under construction",
+      "timing": "Two-year programme launched Sep 2025",
+      "summary": "A 25-kilometre federal road upgrade widening the corridor from three to five lanes in each direction.",
+      "marketImpact": "Improves regional access and freight movement, while the approximate 2027 finish depends on the stated two-year delivery programme.",
+      "timeline": "future",
+      "coordinates": {
+        "lat": 25.5647,
+        "lng": 55.5222
+      },
+      "coordinateBasis": "Emirate-level strategy marker — not a surveyed project-site coordinate",
+      "source": {},
+      "image": "https://psr.espacios.me/insights/initiatives/umm-al-quwain-emirates-road-al-badee-uaq-upgrade-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/umm-al-quwain-emirates-road-al-badee-uaq-upgrade-market-briefing",
+      "icon": "landmarks/future.png",
+      "figureIcon": "icons/figures/initiative-umm-al-quwain-uaq-emirates-road.png",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "25 km federal upgrade Al Badee–UAQ, 3→5 lanes each direction; two-year programme from Sep 2025 improves regional access for UAQ/Siniya and northern corridor.",
+      "demandNote": "Access improvement catalyst for Sobha Siniya and northern emirates travel times.",
+      "supplyRiskNote": "~2027 finish depends on stated two-year programme; road alone does not create absorption.",
+      "researchNotes": "Paired with Sobha Siniya Island.",
+      "catalystScore": {
+        "delivery": 77,
+        "accessibility": 84,
+        "demand": 68,
+        "supplyRisk": 45,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        "Sobha Siniya Island (Umm Al Quwain)",
+        "Umm Al Quwain",
+        "Al Zorah (Al Zorah City)",
+        "Downtown Umm Al Quwain"
+      ],
+      "linkedProjectCounts": {
+        "total": 19,
+        "byCommunity": {
+          "Sobha Siniya Island (Umm Al Quwain)": 9,
+          "Umm Al Quwain": 5,
+          "Al Zorah (Al Zorah City)": 4,
+          "Downtown Umm Al Quwain": 1
+        }
+      },
+      "officialSourceUrl": null
+    },
+    {
+      "id": "initiative:uae:uae-passenger-rail",
+      "kind": "initiative",
+      "name": "Staged UAE passenger-rail network",
+      "emirate": "United Arab Emirates",
+      "category": "National mobility",
+      "status": "Phased / mixed",
+      "timing": "30 Jun 2026–30 Mar 2027 staged rollout",
+      "summary": "Introductory Abu Dhabi–Fujairah service is operating while further stations and services are scheduled in stages.",
+      "marketImpact": "Changes the practical relationship between employment centres, airports, ports and residential catchments.",
+      "timeline": "future",
+      "coordinates": null,
+      "coordinateBasis": "National strategy — no single project-site coordinate",
+      "source": {
+        "label": "UAE passenger rail network and rollout",
+        "organisation": "Etihad Rail",
+        "url": "https://corporate.etihadrail.ae/en/newsroom/press/khaled-bin-mohamed-bin-zayed-inaugurates-mbz-city-passenger-train-station-and-witnesses-unveiling-of-uae-passenger-rail-network"
+      },
+      "image": "https://psr.espacios.me/insights/etihad-rail-passenger-network.png",
+      "href": "https://psr.espacios.me/insights/etihad-rail-passenger-network-uae-property-impact-2026",
+      "deliveryCertainty": "construction",
+      "accessibilityNote": "Introductory Abu Dhabi–Fujairah service operating; further stations staged 30 Jun 2026–30 Mar 2027 change practical catchments between employment centres, airports and ports.",
+      "demandNote": "National mobility backbone — effects are corridor- and station-specific, not emirate-wide.",
+      "supplyRiskNote": "Staged rollout means early stations capture demand first; later stops should not be priced as live.",
+      "researchNotes": "Keep separate from Abu Dhabi–Dubai HSR announcement.",
+      "officialSourceUrl": "https://corporate.etihadrail.ae/en/newsroom/press/khaled-bin-mohamed-bin-zayed-inaugurates-mbz-city-passenger-train-station-and-witnesses-unveiling-of-uae-passenger-rail-network",
+      "catalystScore": {
+        "delivery": 78,
+        "accessibility": 86,
+        "demand": 80,
+        "supplyRisk": 36,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Emaar South",
+          "projectCount": 21
+        },
+        {
+          "name": "Dubai South",
+          "projectCount": 19
+        },
+        {
+          "name": "Expo City Dubai",
+          "projectCount": 9
+        },
+        {
+          "name": "Dubai South Residential District",
+          "projectCount": 5
+        },
+        {
+          "name": "Dubai",
+          "projectCount": 4
+        },
+        {
+          "name": "Expo Valley, Expo City Dubai",
+          "projectCount": 2
+        },
+        {
+          "name": "Zayed City",
+          "projectCount": 2
+        },
+        {
+          "name": "Emaar South, Dubai",
+          "projectCount": 1
+        },
+        {
+          "name": "Masdar City",
+          "projectCount": 1
+        },
+        {
+          "name": "Masdar City, Abu Dhabi",
+          "projectCount": 1
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 65,
+        "byCommunity": {
+          "Emaar South": 21,
+          "Dubai South": 19,
+          "Expo City Dubai": 9,
+          "Dubai South Residential District": 5,
+          "Dubai": 4,
+          "Expo Valley, Expo City Dubai": 2,
+          "Zayed City": 2,
+          "Emaar South, Dubai": 1,
+          "Masdar City": 1,
+          "Masdar City, Abu Dhabi": 1
+        }
+      }
+    },
+    {
+      "id": "initiative:uae:abu-dhabi-dubai-high-speed-rail",
+      "kind": "initiative",
+      "name": "Abu Dhabi–Dubai high-speed train",
+      "emirate": "United Arab Emirates",
+      "category": "Intercity mobility",
+      "status": "Announced",
+      "timing": "Opening date not announced",
+      "summary": "Design approval and tendering were announced for a planned 30-minute intercity connection.",
+      "marketImpact": "A long-range productivity and commuting signal; it must remain separate from the operating passenger-rail rollout.",
+      "timeline": "future",
+      "coordinates": null,
+      "coordinateBasis": "National strategy — no single project-site coordinate",
+      "source": {
+        "label": "High-speed train linking Abu Dhabi and Dubai",
+        "organisation": "Etihad Rail",
+        "url": "https://corporate.etihadrail.ae/en/newsroom/press/with-the-blessing-of-the-uae-president-khaled-bin-mohamed-bin-zayed-and-hamdan-bin-mohammed-bin-rashid-witness-announcement-of-high-speed-train-project-linking-abu-dhabi-and-dubai"
+      },
+      "image": "https://psr.espacios.me/insights/initiatives/uae-abu-dhabi-dubai-high-speed-train-market-briefing-v1.webp",
+      "href": "https://psr.espacios.me/insights/uae-abu-dhabi-dubai-high-speed-train-market-briefing",
+      "deliveryCertainty": "announced",
+      "accessibilityNote": "Planned ~30-minute intercity link; design approval and tendering announced — not an operating service.",
+      "demandNote": "Long-range commuting/productivity signal between Abu Dhabi and Dubai cores.",
+      "supplyRiskNote": "Must remain separate from the operating passenger-rail rollout; opening date not announced.",
+      "researchNotes": "Priority companion to Gold Line / passenger-rail cluster.",
+      "officialSourceUrl": "https://corporate.etihadrail.ae/en/newsroom/press/with-the-blessing-of-the-uae-president-khaled-bin-mohamed-bin-zayed-and-hamdan-bin-mohammed-bin-rashid-witness-announcement-of-high-speed-train-project-linking-abu-dhabi-and-dubai",
+      "catalystScore": {
+        "delivery": 35,
+        "accessibility": 92,
+        "demand": 75,
+        "supplyRisk": 55,
+        "asOf": "2026-09-22"
+      },
+      "linkedCommunities": [
+        {
+          "name": "Business Bay",
+          "projectCount": 48
+        },
+        {
+          "name": "Downtown Dubai",
+          "projectCount": 31
+        },
+        {
+          "name": "Dubai Marina",
+          "projectCount": 15
+        },
+        {
+          "name": "Yas Island",
+          "projectCount": 6
+        },
+        {
+          "name": "Jumeirah Lake Towers (JLT)",
+          "projectCount": 5
+        },
+        {
+          "name": "Dubai",
+          "projectCount": 4
+        },
+        {
+          "name": "Saadiyat Island",
+          "projectCount": 4
+        },
+        {
+          "name": "Yas Island (Abu Dhabi Emirate)",
+          "projectCount": 4
+        },
+        {
+          "name": "Jumeirah",
+          "projectCount": 2
+        },
+        {
+          "name": "Saadiyat Island (Abu Dhabi Emirate)",
+          "projectCount": 2
+        },
+        {
+          "name": "Yas Island, Abu Dhabi",
+          "projectCount": 2
+        },
+        {
+          "name": "Marina",
+          "projectCount": 1
+        },
+        {
+          "name": "Saadiyat Island, Abu Dhabi",
+          "projectCount": 1
+        },
+        {
+          "name": "Yas Point, Yas Island",
+          "projectCount": 1
+        }
+      ],
+      "linkedProjectCounts": {
+        "total": 126,
+        "byCommunity": {
+          "Business Bay": 48,
+          "Downtown Dubai": 31,
+          "Dubai Marina": 15,
+          "Yas Island": 6,
+          "Jumeirah Lake Towers (JLT)": 5,
+          "Dubai": 4,
+          "Saadiyat Island": 4,
+          "Yas Island (Abu Dhabi Emirate)": 4,
+          "Jumeirah": 2,
+          "Saadiyat Island (Abu Dhabi Emirate)": 2,
+          "Yas Island, Abu Dhabi": 2,
+          "Marina": 1,
+          "Saadiyat Island, Abu Dhabi": 1,
+          "Yas Point, Yas Island": 1
+        }
+      }
+    }
+  ]
+}

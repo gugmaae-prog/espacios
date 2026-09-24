@@ -1,0 +1,1109 @@
+{
+  "generatedAt": "2026-09-21T22:07:43.136848+00:00",
+  "model": "espacios-hotspot-v0",
+  "disclaimer": "Indicative emerging-hotspot signal from pipeline, catalysts, and ROI coverage. Not investment advice.",
+  "counts": {
+    "scored": 47,
+    "emerging_hotspot": 8,
+    "watchlist": 16,
+    "monitor": 23
+  },
+  "hotspots": [
+    {
+      "area": "Emaar South",
+      "communityName": "Emaar South",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.865612938095232,
+        "lng": 55.14695052380952
+      },
+      "hotspotScore": 77.9,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "Aviation / Dubai South"
+      ],
+      "metrics": {
+        "futureProjects": 15,
+        "presentProjects": 7,
+        "totalProjects": 22,
+        "futureShare": 0.68,
+        "developers": 2,
+        "centroidFallbacks": 1,
+        "grossRoiPct": 7.24,
+        "catalystScore": 25,
+        "pipelineScore": 36.1,
+        "roiScore": 18,
+        "confidence": 0.98
+      }
+    },
+    {
+      "area": "Dubai Islands",
+      "communityName": "Dubai Islands",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.295674010315537,
+        "lng": 55.29827107194027
+      },
+      "hotspotScore": 77.4,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "Metro Gold Line",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 46,
+        "presentProjects": 6,
+        "totalProjects": 52,
+        "futureShare": 0.88,
+        "developers": 30,
+        "centroidFallbacks": 3,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 40,
+        "roiScore": 14,
+        "confidence": 0.98
+      }
+    },
+    {
+      "area": "Dubai Maritime City",
+      "communityName": "Dubai Maritime City",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.271399293480368,
+        "lng": 55.2665099163314
+      },
+      "hotspotScore": 75.8,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "Metro Gold Line",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 13,
+        "presentProjects": 2,
+        "totalProjects": 15,
+        "futureShare": 0.87,
+        "developers": 7,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 36.8,
+        "roiScore": 14,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Al Marjan Island (Ras Al Khaimah Emirate)",
+      "communityName": "Ras Al Khaimah Emirate",
+      "emirate": "Ras Al Khaimah",
+      "coordinates": {
+        "lat": 25.703585475488804,
+        "lng": 55.80844302382215
+      },
+      "hotspotScore": 74.9,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "RAK infra",
+        "Wynn / Al Marjan"
+      ],
+      "metrics": {
+        "futureProjects": 44,
+        "presentProjects": 10,
+        "totalProjects": 54,
+        "futureShare": 0.81,
+        "developers": 39,
+        "centroidFallbacks": 8,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 40,
+        "roiScore": 14,
+        "confidence": 0.95
+      }
+    },
+    {
+      "area": "Dubai Creek Harbour",
+      "communityName": "Dubai Creek Harbour",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.204790299999992,
+        "lng": 55.34832249130436
+      },
+      "hotspotScore": 73.1,
+      "band": "watchlist",
+      "drivers": [
+        "Metro Blue Line",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 18,
+        "presentProjects": 29,
+        "totalProjects": 47,
+        "futureShare": 0.38,
+        "developers": 2,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 34.7,
+        "roiScore": 14,
+        "confidence": 0.99
+      }
+    },
+    {
+      "area": "Dubai South",
+      "communityName": "Dubai South",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.893846939643087,
+        "lng": 55.14598080309704
+      },
+      "hotspotScore": 72.0,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "Aviation / Dubai South",
+        "Expo / DEC",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 13,
+        "presentProjects": 6,
+        "totalProjects": 19,
+        "futureShare": 0.68,
+        "developers": 10,
+        "centroidFallbacks": 3,
+        "grossRoiPct": 7.24,
+        "catalystScore": 25,
+        "pipelineScore": 33.2,
+        "roiScore": 18,
+        "confidence": 0.94
+      }
+    },
+    {
+      "area": "Dubai Hills Estate",
+      "communityName": "Dubai Hills Estate",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.11196128791942,
+        "lng": 55.256330710428095
+      },
+      "hotspotScore": 62.9,
+      "band": "watchlist",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 22,
+        "presentProjects": 32,
+        "totalProjects": 54,
+        "futureShare": 0.41,
+        "developers": 5,
+        "centroidFallbacks": 5,
+        "grossRoiPct": 6.3,
+        "catalystScore": 13.0,
+        "pipelineScore": 40,
+        "roiScore": 12,
+        "confidence": 0.97
+      }
+    },
+    {
+      "area": "Town Square Dubai",
+      "communityName": "Town Square Dubai",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.005786213336826,
+        "lng": 55.290737652317766
+      },
+      "hotspotScore": 60.5,
+      "band": "watchlist",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 15,
+        "presentProjects": 25,
+        "totalProjects": 40,
+        "futureShare": 0.38,
+        "developers": 1,
+        "centroidFallbacks": 1,
+        "grossRoiPct": 7.45,
+        "catalystScore": 13.0,
+        "pipelineScore": 30.0,
+        "roiScore": 18,
+        "confidence": 0.99
+      }
+    },
+    {
+      "area": "Dubailand",
+      "communityName": "Dubailand",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.076168863314887,
+        "lng": 55.34562437660087
+      },
+      "hotspotScore": 58.0,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 16,
+        "presentProjects": 4,
+        "totalProjects": 20,
+        "futureShare": 0.8,
+        "developers": 11,
+        "centroidFallbacks": 1,
+        "grossRoiPct": 5.23,
+        "catalystScore": 13.0,
+        "pipelineScore": 40,
+        "roiScore": 6,
+        "confidence": 0.98
+      }
+    },
+    {
+      "area": "Umm Al Quwain",
+      "communityName": "Umm Al Quwain",
+      "emirate": "Umm Al Quwain",
+      "coordinates": {
+        "lat": 25.565597213568292,
+        "lng": 55.562480499946176
+      },
+      "hotspotScore": 55.0,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "Siniya Island",
+        "UAQ logistics"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 1,
+        "totalProjects": 5,
+        "futureShare": 0.8,
+        "developers": 3,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 22.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Dubai South Residential District",
+      "communityName": "Dubai South Residential District",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.9433122899068,
+        "lng": 55.21819833221114
+      },
+      "hotspotScore": 55.0,
+      "band": "emerging_hotspot",
+      "drivers": [
+        "Aviation / Dubai South",
+        "Expo / DEC",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 1,
+        "totalProjects": 5,
+        "futureShare": 0.8,
+        "developers": 5,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 22.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Dubai Marina",
+      "communityName": "Dubai Marina",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.087911780000002,
+        "lng": 55.14707437333333
+      },
+      "hotspotScore": 53.7,
+      "band": "watchlist",
+      "drivers": [
+        "Metro Gold Line",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 8,
+        "presentProjects": 7,
+        "totalProjects": 15,
+        "futureShare": 0.53,
+        "developers": 9,
+        "centroidFallbacks": 0,
+        "grossRoiPct": 5.88,
+        "catalystScore": 25,
+        "pipelineScore": 22.7,
+        "roiScore": 6,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Sobha Siniya Island (Umm Al Quwain)",
+      "communityName": "Sobha Siniya Island (Umm Al Quwain)",
+      "emirate": "Umm Al Quwain",
+      "coordinates": {
+        "lat": 25.604732270193026,
+        "lng": 55.62699724998361
+      },
+      "hotspotScore": 51.6,
+      "band": "watchlist",
+      "drivers": [
+        "Siniya Island",
+        "UAQ logistics"
+      ],
+      "metrics": {
+        "futureProjects": 5,
+        "presentProjects": 4,
+        "totalProjects": 9,
+        "futureShare": 0.56,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 18.6,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Expo City Dubai",
+      "communityName": "Expo City Dubai",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.987523844444443,
+        "lng": 55.1687972
+      },
+      "hotspotScore": 51.6,
+      "band": "watchlist",
+      "drivers": [
+        "Aviation / Dubai South",
+        "Expo / DEC",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 5,
+        "presentProjects": 4,
+        "totalProjects": 9,
+        "futureShare": 0.56,
+        "developers": 5,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 18.6,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Mina (Ras Al Khaimah Emirate)",
+      "communityName": "Ras Al Khaimah Emirate",
+      "emirate": "Ras Al Khaimah",
+      "coordinates": {
+        "lat": 25.703585475488804,
+        "lng": 55.80844302382215
+      },
+      "hotspotScore": 50.5,
+      "band": "watchlist",
+      "drivers": [
+        "RAK infra"
+      ],
+      "metrics": {
+        "futureProjects": 5,
+        "presentProjects": 5,
+        "totalProjects": 10,
+        "futureShare": 0.5,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 17.5,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Business Bay",
+      "communityName": "Business Bay",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.1812064598101,
+        "lng": 55.27176505797012
+      },
+      "hotspotScore": 49.7,
+      "band": "watchlist",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 22,
+        "presentProjects": 26,
+        "totalProjects": 48,
+        "futureShare": 0.46,
+        "developers": 21,
+        "centroidFallbacks": 6,
+        "grossRoiPct": 6.29,
+        "catalystScore": 0,
+        "pipelineScore": 40,
+        "roiScore": 12,
+        "confidence": 0.96
+      }
+    },
+    {
+      "area": "Ras Al Khaimah Emirate",
+      "communityName": "Ras Al Khaimah Emirate",
+      "emirate": "Ras Al Khaimah",
+      "coordinates": {
+        "lat": 25.703585475488804,
+        "lng": 55.80844302382215
+      },
+      "hotspotScore": 49.5,
+      "band": "watchlist",
+      "drivers": [
+        "RAK infra"
+      ],
+      "metrics": {
+        "futureProjects": 3,
+        "presentProjects": 0,
+        "totalProjects": 3,
+        "futureShare": 1.0,
+        "developers": 2,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 24.5,
+        "roiScore": 0,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "The Valley",
+      "communityName": "The Valley",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.01047514238902,
+        "lng": 55.4477433502848
+      },
+      "hotspotScore": 49.0,
+      "band": "watchlist",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 10,
+        "presentProjects": 0,
+        "totalProjects": 10,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 35.0,
+        "roiScore": 14,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Damac Islands",
+      "communityName": "Damac Islands",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.02757704,
+        "lng": 55.308916090000004
+      },
+      "hotspotScore": 48.9,
+      "band": "watchlist",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 11,
+        "presentProjects": 0,
+        "totalProjects": 11,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 36.5,
+        "roiScore": 14,
+        "confidence": 0.97
+      }
+    },
+    {
+      "area": "Rashid Yachts & Marina",
+      "communityName": "Rashid Yachts & Marina",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.2602530607258,
+        "lng": 55.280346792048086
+      },
+      "hotspotScore": 47.4,
+      "band": "watchlist",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 11,
+        "presentProjects": 1,
+        "totalProjects": 12,
+        "futureShare": 0.92,
+        "developers": 1,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 34.8,
+        "roiScore": 14,
+        "confidence": 0.97
+      }
+    },
+    {
+      "area": "Sheikh Zayed Road",
+      "communityName": "Sheikh Zayed Road",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.138869771630084,
+        "lng": 55.216321886842515
+      },
+      "hotspotScore": 43.8,
+      "band": "watchlist",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 8,
+        "presentProjects": 1,
+        "totalProjects": 9,
+        "futureShare": 0.89,
+        "developers": 7,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 29.8,
+        "roiScore": 14,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Palm Jebel Ali",
+      "communityName": "Palm Jebel Ali",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.002127333333334,
+        "lng": 54.983565999999996
+      },
+      "hotspotScore": 43.0,
+      "band": "watchlist",
+      "drivers": [
+        "Metro Gold Line"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 1,
+        "totalProjects": 5,
+        "futureShare": 0.8,
+        "developers": 1,
+        "centroidFallbacks": 2,
+        "grossRoiPct": null,
+        "catalystScore": 20.0,
+        "pipelineScore": 22.0,
+        "roiScore": 8,
+        "confidence": 0.86
+      }
+    },
+    {
+      "area": "Downtown Dubai",
+      "communityName": "Downtown Dubai",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.194523224397603,
+        "lng": 55.27523533889971
+      },
+      "hotspotScore": 42.1,
+      "band": "watchlist",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 11,
+        "presentProjects": 20,
+        "totalProjects": 31,
+        "futureShare": 0.35,
+        "developers": 13,
+        "centroidFallbacks": 1,
+        "grossRoiPct": 5.46,
+        "catalystScore": 13.0,
+        "pipelineScore": 23.6,
+        "roiScore": 6,
+        "confidence": 0.99
+      }
+    },
+    {
+      "area": "Dubai Production City",
+      "communityName": "Dubai Production City",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.034132874999997,
+        "lng": 55.191660524999996
+      },
+      "hotspotScore": 40.0,
+      "band": "watchlist",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 1,
+        "totalProjects": 5,
+        "futureShare": 0.8,
+        "developers": 4,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 13.0,
+        "pipelineScore": 22.0,
+        "roiScore": 8,
+        "confidence": 0.93
+      }
+    },
+    {
+      "area": "Expo Valley",
+      "communityName": "Expo Valley",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.9607007,
+        "lng": 55.15501013333334
+      },
+      "hotspotScore": 39.5,
+      "band": "monitor",
+      "drivers": [
+        "Aviation / Dubai South",
+        "Expo / DEC"
+      ],
+      "metrics": {
+        "futureProjects": 3,
+        "presentProjects": 3,
+        "totalProjects": 6,
+        "futureShare": 0.5,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 14.5,
+        "roiScore": 0,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Dubai Motor City",
+      "communityName": "Dubai Motor City",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.06249168,
+        "lng": 55.27014231999999
+      },
+      "hotspotScore": 37.5,
+      "band": "monitor",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 3,
+        "presentProjects": 0,
+        "totalProjects": 3,
+        "futureShare": 1.0,
+        "developers": 3,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 13.0,
+        "pipelineScore": 24.5,
+        "roiScore": 0,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Sobha Hartland II",
+      "communityName": "Sobha Hartland II",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.1727326,
+        "lng": 55.32880290000001
+      },
+      "hotspotScore": 37.3,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 8,
+        "presentProjects": 3,
+        "totalProjects": 11,
+        "futureShare": 0.73,
+        "developers": 1,
+        "centroidFallbacks": 1,
+        "grossRoiPct": 6.41,
+        "catalystScore": 0,
+        "pipelineScore": 26.5,
+        "roiScore": 12,
+        "confidence": 0.97
+      }
+    },
+    {
+      "area": "DIFC",
+      "communityName": "DIFC",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.196915678207215,
+        "lng": 55.26021671363191
+      },
+      "hotspotScore": 37.0,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 6,
+        "presentProjects": 0,
+        "totalProjects": 6,
+        "futureShare": 1.0,
+        "developers": 4,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 29.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "The Oasis",
+      "communityName": "The Oasis",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.998971,
+        "lng": 55.218723000000004
+      },
+      "hotspotScore": 37.0,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 6,
+        "presentProjects": 0,
+        "totalProjects": 6,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 29.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Meydan Horizon",
+      "communityName": "Meydan Horizon",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.18205319451653,
+        "lng": 55.32842168159365
+      },
+      "hotspotScore": 36.6,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 7,
+        "presentProjects": 0,
+        "totalProjects": 7,
+        "futureShare": 1.0,
+        "developers": 6,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 30.5,
+        "roiScore": 8,
+        "confidence": 0.95
+      }
+    },
+    {
+      "area": "Al Reem Island (Abu Dhabi Emirate)",
+      "communityName": "Al Reem Island",
+      "emirate": "Abu Dhabi",
+      "coordinates": {
+        "lat": 24.499274333333332,
+        "lng": 54.408648666666664
+      },
+      "hotspotScore": 36.5,
+      "band": "monitor",
+      "drivers": [
+        "Abu Dhabi culture/tourism",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 2,
+        "presentProjects": 1,
+        "totalProjects": 3,
+        "futureShare": 0.67,
+        "developers": 3,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 25,
+        "pipelineScore": 16.3,
+        "roiScore": 0,
+        "confidence": 0.88
+      }
+    },
+    {
+      "area": "Jumeirah Golf Estates",
+      "communityName": "Jumeirah Golf Estates",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.02177189069284,
+        "lng": 55.19393768545053
+      },
+      "hotspotScore": 35.1,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 7,
+        "presentProjects": 2,
+        "totalProjects": 9,
+        "futureShare": 0.78,
+        "developers": 5,
+        "centroidFallbacks": 2,
+        "grossRoiPct": 6.04,
+        "catalystScore": 0,
+        "pipelineScore": 26.1,
+        "roiScore": 12,
+        "confidence": 0.92
+      }
+    },
+    {
+      "area": "Dubai Silicon Oasis",
+      "communityName": "Dubai Silicon Oasis",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.118245692307692,
+        "lng": 55.38312776923077
+      },
+      "hotspotScore": 35.0,
+      "band": "monitor",
+      "drivers": [
+        "Metro Blue Line",
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 0,
+        "presentProjects": 13,
+        "totalProjects": 13,
+        "futureShare": 0.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": 8.23,
+        "catalystScore": 25,
+        "pipelineScore": 0.0,
+        "roiScore": 18,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Meydan",
+      "communityName": "Meydan",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.144369442697354,
+        "lng": 55.31345351759933
+      },
+      "hotspotScore": 34.8,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 6,
+        "presentProjects": 0,
+        "totalProjects": 6,
+        "futureShare": 1.0,
+        "developers": 5,
+        "centroidFallbacks": 1,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 29.0,
+        "roiScore": 8,
+        "confidence": 0.94
+      }
+    },
+    {
+      "area": "Hudayriyat Island",
+      "communityName": "Hudayriyat Island",
+      "emirate": "Abu Dhabi",
+      "coordinates": {
+        "lat": 24.41684842,
+        "lng": 54.366312619999995
+      },
+      "hotspotScore": 34.0,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 0,
+        "totalProjects": 4,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 26.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Sobha Sanctuary",
+      "communityName": "Sobha Sanctuary",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.990944425,
+        "lng": 55.421603825000005
+      },
+      "hotspotScore": 34.0,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 0,
+        "totalProjects": 4,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 26.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Sobha Central",
+      "communityName": "Sobha Central",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.06118058254549,
+        "lng": 55.132888707217816
+      },
+      "hotspotScore": 34.0,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 0,
+        "totalProjects": 4,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 26.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Grand Polo Club & Resort",
+      "communityName": "Grand Polo Club & Resort",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 24.96880375,
+        "lng": 55.2129245
+      },
+      "hotspotScore": 34.0,
+      "band": "monitor",
+      "drivers": [
+        "Supply pipeline"
+      ],
+      "metrics": {
+        "futureProjects": 4,
+        "presentProjects": 0,
+        "totalProjects": 4,
+        "futureShare": 1.0,
+        "developers": 1,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 0,
+        "pipelineScore": 26.0,
+        "roiScore": 8,
+        "confidence": 1.0
+      }
+    },
+    {
+      "area": "Dubai Land Residence Complex (DLRC)",
+      "communityName": "Dubai Land Residence Complex (DLRC)",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.0930083,
+        "lng": 55.3847446
+      },
+      "hotspotScore": 33.4,
+      "band": "monitor",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 3,
+        "presentProjects": 0,
+        "totalProjects": 3,
+        "futureShare": 1.0,
+        "developers": 3,
+        "centroidFallbacks": 2,
+        "grossRoiPct": 5.23,
+        "catalystScore": 13.0,
+        "pipelineScore": 24.5,
+        "roiScore": 6,
+        "confidence": 0.77
+      }
+    },
+    {
+      "area": "Dubai Design District",
+      "communityName": "Dubai Design District",
+      "emirate": "Dubai",
+      "coordinates": {
+        "lat": 25.18854482747171,
+        "lng": 55.29900706984278
+      },
+      "hotspotScore": 32.5,
+      "band": "monitor",
+      "drivers": [
+        "National rail"
+      ],
+      "metrics": {
+        "futureProjects": 3,
+        "presentProjects": 1,
+        "totalProjects": 4,
+        "futureShare": 0.75,
+        "developers": 2,
+        "centroidFallbacks": 0,
+        "grossRoiPct": null,
+        "catalystScore": 13.0,
+        "pipelineScore": 19.5,
+        "roiScore": 0,
+        "confidence": 1.0
+      }
+    }
+  ]
+}

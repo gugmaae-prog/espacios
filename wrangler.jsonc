@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+
+  // Deliberately different from the live Worker name. This prevents an
+  // accidental `wrangler deploy` from replacing production.
+  "name": "psr-portfolio-map-v2-navigation-candidate",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-08-20",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // These remote bindings reproduce the live data plane during local
+  // development. Some Worker routes can mutate production data; read the
+  // safety section in README.md before running `npm run cf:dev`.
+  "ai": {
+    "binding": "AI",
+    "remote": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cba-property-db",
+      "database_id": "a5165cff-70a5-4685-af87-5ffdcf08652a",
+      "remote": true
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MARKET_R2",
+      "bucket_name": "psr-market-intelligence",
+      "remote": true
+    }
+  ],
+  "services": [
+    {
+      "binding": "PSR_PROPERTY",
+      "service": "psr-property",
+      "environment": "production",
+      "remote": true
+    }
+  ]
+
+  // Production routes are intentionally not declared here. Their verified
+  // IDs and patterns are recorded in PRODUCTION_SNAPSHOT.json.
+}

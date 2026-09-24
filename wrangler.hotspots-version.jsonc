@@ -1,0 +1,27 @@
+{
+  "name": "psr-portfolio-map-v2",
+  "main": "src/worker.hotspots-from-live.js",
+  "compatibility_date": "2026-08-20",
+  "compatibility_flags": ["nodejs_compat"],
+  "ai": { "binding": "AI" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cba-property-db",
+      "database_id": "a5165cff-70a5-4685-af87-5ffdcf08652a"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MARKET_R2",
+      "bucket_name": "psr-market-intelligence"
+    }
+  ],
+  "services": [
+    {
+      "binding": "PSR_PROPERTY",
+      "service": "psr-property",
+      "environment": "production"
+    }
+  ]
+}

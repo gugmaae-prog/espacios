@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0d1320" />
+  <script id="espacios-theme-bootstrap">(function(){var t='dark';try{var s=localStorage.getItem('espacios_theme_v1');if(s==='light'||s==='dark')t=s}catch(e){}document.documentElement.dataset.espaciosTheme=t;document.documentElement.style.colorScheme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#edf3fb':'#0d1320')})()</script>
+  <link rel="icon" href="https://espacios.me/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <title>Espacios · UAE Real Estate Intelligence</title>
+  <link rel="modulepreload" href="/map/vendor/maplibre-gl.mjs?v=6.8.0" fetchpriority="high" />
+  <link rel="modulepreload" href="/map/vendor/maplibre-gl-shared.mjs?v=6.8.0" />
+  <link rel="modulepreload" href="/map/app-v2.js?v=20260922-auditfix-v13" fetchpriority="high" />
+  <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin />
+  <link rel="dns-prefetch" href="//tiles.openfreemap.org" />
+  <link rel="stylesheet" href="/map/vendor/maplibre-gl.css?v=6.8.0" />
+  <link rel="stylesheet" href="/map/app-v2.css?v=20260922-auditfix-v13" />
+<link rel="preload" href="/map/map-core.json" as="fetch" crossorigin="anonymous" fetchpriority="high">
+<script>window.__AE_BOOT={started:performance.now(),mapData:fetch("/map/map-core.json",{cache:"force-cache"}),emirates:fetch("/map/spatial/emirates-lite.geojson",{cache:"force-cache"})};</script>
+</head>
+<body class="ae-midnight-ui">
+  <main id="app">
+    <div id="map" aria-label="Interactive 3D UAE real estate intelligence map"></div>
+
+    <header class="topbar glass">
+      <a class="brand espacios-map-brand" href="https://espacios.me/" aria-label="Espacios home">
+        <img class="espacios-map-logo" src="https://espacios.me/logos/assets/brand/espacios-logo-white-hd.png?v=20260921" alt="Espacios" width="2032" height="640" decoding="async" fetchpriority="high" />
+        <small>UAE Real Estate Intelligence</small>
+      </a>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+        <input id="search" type="search" autocomplete="off" placeholder="Search UAE projects, communities, developers, buildings, RERA…" role="combobox" aria-autocomplete="list" aria-controls="search-results" aria-expanded="false" spellcheck="false" />
+        <button id="clear-search" type="button" aria-label="Clear search">×</button>
+        <div id="search-results" class="search-results hidden" role="listbox" aria-label="Search results"></div>
+      </div>
+      <div class="sync-pill" id="sync-pill"><i></i><span>Loading UAE intelligence</span></div>
+    </header>
+
+    <aside class="layer-rail glass" aria-label="Map layers">
+      <button class="rail-btn active" data-panel="timeline" title="Explore"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><rect x="14" y="14" width="6" height="6" rx="1.2"/></svg><span>Explore</span></button>
+      <button class="rail-btn" data-panel="places" title="Places"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.3 6-11a6 6 0 1 0-12 0c0 5.7 6 11 6 11Z"/><circle cx="12" cy="10" r="2.1"/></svg><span>Places</span></button>
+      <button class="rail-btn" data-panel="transport" title="Transport"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3.5" width="12" height="14" rx="3"/><path d="M8.5 7.5h7M8.5 12h7M8 18.5l-1.5 2M16 18.5l1.5 2"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg><span>Transit</span></button>
+      <button class="rail-btn" data-panel="analyze" title="Heat maps & analytics"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M10 20V6M15 20v-9M20 20V3"/></svg><span>Analyze</span></button>
+      <button class="rail-btn" data-panel="valuation" title="Market valuation"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v5c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 11v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg><span>Value</span></button>
+      <button class="rail-btn" data-panel="ai" title="Ask Espacios AI"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.2 4.2L17 9l-3.8 1.8L12 15l-1.2-4.2L7 9l3.8-1.8L12 3ZM18.5 14l.7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3ZM5.5 14l.6 2 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6.6-2Z"/></svg><span>AI</span></button>
+      <button class="rail-btn active" id="toggle-3d" title="3D buildings on at city scale" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 4v10l-7 4-7-4V7l7-4Z"/><path d="m5 7 7 4 7-4M12 11v10"/></svg><span>3D</span></button>
+      <button class="rail-btn" id="reset-view" title="Reset UAE view"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg><span>UAE</span></button>
+    </aside>
+
+    <section id="timeline-panel" class="floating-panel glass">
+      <div class="panel-title-row"><div><span class="eyebrow">PORTFOLIO</span><h1>Everything, in context.</h1></div><button class="panel-close" type="button">×</button></div>
+      <div id="ae-explorer-overview" class="ae-explorer-overview">
+  <div class="ae-explorer-head"><span class="eyebrow">UAE SPATIAL INTELLIGENCE</span><h2>UAE Communities</h2><p>Districts, communities, master developments, projects and buildings across all seven emirates.</p></div>
+  <div class="ae-registry-strip"><div><strong id="ae-official-district-count">956</strong><span>official district names</span></div><div><strong id="ae-catalogue-community-count">—</strong><span>catalogue communities</span></div></div>
+  <div class="ae-scope-tabs" id="ae-scope-tabs"><button class="active" data-ae-scope="uae">UAE</button><button data-ae-scope="Dubai">Dubai</button><button data-ae-scope="Abu Dhabi">Abu Dhabi</button><button data-ae-scope="Sharjah">Sharjah</button><button data-ae-scope="more">+4</button></div>
+  <div id="ae-emirate-list" class="ae-emirate-list"><div class="ae-explorer-loading">Loading mapped entities…</div></div>
+</div>
+<div class="ae-existing-controls-label"><span>Portfolio & filters</span></div>
+<div class="segmented" id="timeline-filter">
+        <button class="active" data-timeline="all">All</button>
+        <button data-timeline="past">Past</button>
+        <button data-timeline="present">Present</button>
+        <button data-timeline="future">Future</button>
+      </div>
+      <div class="kind-grid" id="kind-filter">
+        <button class="kind active" data-kind="project"><strong id="project-count">—</strong><span>Projects</span></button>
+        <button class="kind active" data-kind="community"><strong id="community-count">—</strong><span>Communities</span></button>
+        <button class="kind active" data-kind="initiative"><strong id="initiative-count">—</strong><span>Future plans</span></button>
+      </div>
+
+      <div class="location-quality">
+        <div class="location-quality-head">
+          <div><strong>Location accuracy</strong><span id="quality-summary">Checking project coordinates…</span></div>
+          <span class="quality-shield" title="Location confidence is derived from the verified coordinate basis">QA</span>
+        </div>
+        <div class="quality-filter" id="location-quality-filter">
+          <button class="active" data-location-quality="all"><span>All</span><b id="quality-all-count">—</b></button>
+          <button data-location-quality="exact"><span>Exact</span><b id="quality-exact-count">—</b></button>
+          <button data-location-quality="area"><span>Area-level</span><b id="quality-area-count">—</b></button>
+        </div>
+
+        <p>Overview pins are only navigation aids. At building scale, exact projects resolve to the real building footprint.</p>
+      </div>
+
+      <div class="availability-block">
+        <div class="availability-head"><div><strong>Availability</strong><span id="availability-summary">Syncing verified project availability…</span></div><span class="availability-date">09 SEP 2026</span></div>
+        <div class="availability-filter" id="availability-filter">
+          <button class="active" data-availability="all"><span>All</span><b id="availability-all-count">—</b></button>
+          <button data-availability="on-sale"><span>On sale</span><b id="availability-on-sale-count">—</b></button>
+          <button data-availability="sold-out"><span>Sold out</span><b id="availability-sold-out-count">—</b></button>
+          <button data-availability="unverified"><span>Unverified</span><b id="availability-unverified-count">—</b></button>
+        </div>
+        <p>Project-level sales status from the master workbook. This is not a live unit-count feed.</p>
+      </div>
+
+      <div class="row-toggle">
+        <div><strong>High ROI</strong><span>Projected gross community ROI</span></div>
+        <select id="roi-mode" aria-label="ROI heatmap">
+          <option value="off">Off</option>
+          <option value="apartment">Apartments</option>
+          <option value="villa">Villas</option>
+        </select>
+      </div>
+      <div class="focus-row" aria-label="Quick map focus">
+        <button data-focus="dubai">Dubai</button><button data-focus="abudhabi">Abu Dhabi</button><button data-focus="yas">Yas</button><button data-focus="hudayriyat">Hudayriyat</button><button data-focus="palmjebelali">Palm Jebel Ali</button>
+      </div>
+      <div class="data-note" id="data-note">Map records are loading.</div>
+    </section>
+
+    <section id="places-panel" class="floating-panel glass hidden">
+      <div class="panel-title-row"><div><span class="eyebrow">PLACES</span><h2>What surrounds the project?</h2></div><button class="panel-close" type="button">×</button></div>
+      <p class="panel-intro" data-context-status>Nearby places load only when you open this panel.</p>
+      <div class="place-actions"><button data-place="all">All places</button><button data-place="off" class="active">Off</button></div>
+      <div id="place-categories" class="category-list"></div>
+    </section>
+
+    <section id="transport-panel" class="floating-panel glass hidden">
+      <div class="panel-title-row"><div><span class="eyebrow">NETWORK</span><h2>Movement & infrastructure</h2></div><button class="panel-close" type="button">×</button></div>
+      <p class="panel-intro" data-context-status>Transport data loads only when you open this panel.</p>
+      <div class="transport-list">
+        <label><input type="checkbox" value="road" /> <span>Major roads</span></label>
+        <label><input type="checkbox" value="metro" /> <span>Metro & tram</span></label>
+        <label><input type="checkbox" value="rail" /> <span>Etihad Rail</span></label>
+        <label><input type="checkbox" value="marine" /> <span>Marine routes</span></label>
+      </div>
+    </section>
+
+
+    <section id="analyze-panel" class="floating-panel glass hidden">
+      <div class="panel-title-row"><div><span class="eyebrow">ANALYZE</span><h2>Market intelligence</h2></div><button class="panel-close" type="button">×</button></div>
+      <div id="analysis-tabs" class="analysis-tabs"><button class="active" data-analysis-tab="heat">Heat</button><button data-analysis-tab="history">History</button><button data-analysis-tab="forecast">Forecast</button></div>
+      <div id="analysis-heat-view" class="analysis-view">
+      <div class="analysis-control">
+        <label for="analysis-metric">Metric</label>
+        <select id="analysis-metric">
+          <option value="off">Off — neutral map</option>
+          <optgroup label="Market">
+            <option value="price">Starting price intensity</option>
+            <option value="price-psf">Project ask AED / sqft</option>
+            <option value="roi-apartment">Apartment ROI</option>
+            <option value="roi-villa">Villa ROI</option>
+            <option value="on-sale">On-sale concentration</option>
+            <option value="sold-out">Sold-out concentration</option>
+          </optgroup>
+          <optgroup label="Development">
+            <option value="projects">Project density</option>
+            <option value="active">Active projects</option>
+            <option value="future">Future pipeline</option>
+            <option value="developers">Developer diversity</option>
+          </optgroup>
+          <optgroup label="Data quality">
+            <option value="location-confidence">Exact-location coverage</option>
+            <option value="valuation-readiness">Valuation evidence readiness</option>
+          </optgroup>
+        </select>
+      </div>
+      <div id="analysis-legend" class="analysis-legend hidden"></div>
+      <div class="analysis-note" id="analysis-note">Heat maps are opt-in. Gold is reserved for your current selection.</div>
+      </div>
+      <div id="analysis-history-view" class="analysis-view hidden">
+        <div class="market-scope-card"><span>Scope</span><strong id="market-scope-label">Select an emirate, community or project</strong><small id="market-coverage-label">Official history loads on demand.</small></div>
+        <div class="analysis-control"><label for="market-history-metric">Historical metric</label><select id="market-history-metric"><option value="transaction_value_aed">Transaction value</option><option value="transaction_count">Transaction count</option><option value="sales_value_aed">Sales / trading value</option><option value="sales_count">Sales / trading count</option><option value="offplan_sales_count">Off-plan / initial sales count</option><option value="offplan_registration_count">Off-plan registrations</option><option value="offplan_share_sales_value_pct">Off-plan share of sales value</option><option value="community_sales_value_aed">Community sales value</option><option value="community_sales_count">Community sales count</option></select></div>
+        <div id="market-history-chart" class="market-history-chart"><div class="market-empty">Choose a supported scope to view stored official history.</div></div>
+        <div id="market-history-source" class="market-source-note"></div>
+      </div>
+      <div id="analysis-forecast-view" class="analysis-view hidden">
+        <div class="market-scope-card"><span>Forecast scope</span><strong id="forecast-scope-label">Select an emirate, community or project</strong><small>Forecasts never replace observed history.</small></div>
+        <div class="analysis-control"><label for="forecast-horizon">Horizon</label><select id="forecast-horizon"><option value="12">12 months</option><option value="24">24 months</option><option value="36">36 months</option></select></div>
+        <div id="market-forecast-card" class="market-forecast-card"><div class="market-empty">Forecast appears only when enough historical observations exist.</div></div>
+        <div id="pipeline-forecast" class="pipeline-forecast"></div>
+      </div>
+      <div class="spatial-coverage">
+        <div><strong>Spatial geometry</strong><span id="spatial-status">Loads only when needed</span></div>
+        <p>Dubai polygons: curated DLD-area + OpenStreetMap reconciliation. Official UAE FGIC layers are preferred when their public query returns geometry.</p>
+      </div>
+    </section>
+
+
+
+    <section id="valuation-panel" class="floating-panel glass hidden">
+      <div class="panel-title-row"><div><span class="eyebrow">VALUE</span><h2>Institutional valuation</h2></div><button class="panel-close" type="button">×</button></div>
+      <p class="panel-intro">Separate market value, AVM, investment value, future catalysts, forecast and confidence. No single opaque score.</p>
+      <div class="valuation-tabs" id="valuation-tabs">
+        <button class="active" data-valuation-tab="selected">Selected</button>
+        <button data-valuation-tab="samples">Samples</button>
+        <button data-valuation-tab="models">Models</button>
+      </div>
+      <div id="valuation-selected" class="valuation-view"></div>
+      <div id="valuation-samples" class="valuation-view hidden">
+        <div class="valuation-sample-head"><strong>Illustrative cases</strong><span>Never used as live property data</span></div>
+        <div id="valuation-sample-list" class="valuation-sample-list"></div>
+        <div id="valuation-sample-detail" class="valuation-sample-detail"></div>
+      </div>
+      <div id="valuation-models" class="valuation-view hidden">
+        <div class="valuation-method-list">
+          <article><b>Market approach</b><span>Verified closed transactions and weighted comparable evidence.</span></article>
+          <article><b>Income approach</b><span>Rent, vacancy, costs, NOI, cap rate and DCF where appropriate.</span></article>
+          <article><b>Cost / residual</b><span>Replacement cost for special assets; residual method for development land.</span></article>
+          <article><b>Hedonic AVM</b><span>Constant-quality modelling using property, building, time and location characteristics.</span></article>
+          <article><b>Spatial residual</b><span>Micro-location premiums and penalties that broad models miss.</span></article>
+          <article><b>Repeat sales</b><span>Same-property transactions through time as an independent market-movement check.</span></article>
+          <article><b>Stratified + fixed basket</b><span>Transparent historical cross-checks that reduce changing-sales-mix distortion.</span></article>
+          <article><b>Future catalyst</b><span>Separate exposure, priced-in share and remaining risk-adjusted opportunity.</span></article>
+        </div>
+        <div class="valuation-principle">Historical backtests must use only information available at that historical date. Every estimate is versioned and source-traceable.</div>
+      </div>
+    </section>
+
+    <section id="ai-panel" class="floating-panel glass hidden">
+      <div class="panel-title-row"><div><span class="eyebrow">ESPACIOS AI</span><h2>Ask the map</h2></div><button class="panel-close" type="button">×</button></div>
+      <p class="panel-intro">Ask about the selected project, community, routes, heat-map metrics, or your current comparison.</p>
+      <div class="ai-context" id="ai-context">No selection yet — AI will use the visible map and comparison context.</div>
+      <textarea id="ai-question" rows="4" placeholder="Which selected project offers the best value per sqft and connectivity?"></textarea>
+      <button id="ai-ask" class="primary-action" type="button">Ask Espacios AI</button>
+      <div id="ai-answer" class="ai-answer"><span>AI answers are grounded in the map data supplied to the model. Missing figures remain unknown.</span></div>
+    </section>
+
+    <aside id="detail" class="detail glass hidden" aria-live="polite">
+      <button id="detail-close" class="detail-close" type="button" aria-label="Close details">×</button>
+      <div id="detail-body"></div>
+    </aside>
+
+    <a id="hover-card" class="hover-card glass hidden" href="#" target="_self" rel="noopener">
+      <div class="hover-media"><img id="hover-image" alt="" referrerpolicy="no-referrer" /><div id="hover-fallback" class="hover-fallback"></div></div>
+      <div class="hover-copy"><span id="hover-kicker"></span><strong id="hover-title"></strong><small id="hover-sub"></small><div id="hover-meta"></div></div>
+    </a>
+
+
+    <div id="compare-tray" class="compare-tray glass hidden">
+      <div class="compare-tray-copy"><strong>Compare</strong><span id="compare-count">0 selected</span></div>
+      <div id="compare-chips" class="compare-chips"></div>
+      <button id="compare-open" type="button">Compare metrics</button>
+      <button id="compare-clear" type="button" class="secondary">Clear</button>
+    </div>
+    <aside id="compare-panel" class="compare-panel glass hidden" aria-live="polite">
+      <div class="compare-head"><div><span class="eyebrow">COMPARE</span><h2>Selected projects</h2></div><button id="compare-close" type="button">×</button></div>
+      <div class="compare-inventory"><input id="compare-inventory-search" type="search" placeholder="Add a project or published unit…" autocomplete="off"><div id="compare-inventory-results" class="compare-inventory-results hidden"></div><span id="unit-inventory-status">Unit inventory loads when Compare opens.</span></div>
+      <div id="compare-metrics" class="compare-metrics"></div>
+      <div id="compare-table" class="compare-table-wrap"></div>
+    </aside>
+
+    <div class="map-bottom glass">
+      <span id="visible-status">Loading…</span>
+      <span class="sep"></span>
+      <span><i class="dot exact"></i> exact project pin</span>
+      <span><i class="dot fallback"></i> area-level / needs site verification</span>
+      <span class="sep"></span>
+      <span id="footprint-status">Building footprints resolve at close zoom</span><span class="sep"></span><span id="zoom-label">Zoom 6.5</span>
+    </div>
+
+    <div id="toast" class="toast glass" role="status"></div>
+  </main>
+  <script type="module" src="/map/app-v2.js?v=20260922-auditfix-v13"></script>
+</body>
+</html>
