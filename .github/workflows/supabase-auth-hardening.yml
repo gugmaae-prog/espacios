@@ -1,0 +1,27 @@
+name: Apply Supabase Auth Hardening
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type HARDEN-AUTH to enable HIBP and switch Auth DB allocation to 17 percent'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  harden:
+    if: ${{ inputs.confirmation == 'HARDEN-AUTH' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Apply Supabase Auth settings
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: node scripts/harden-supabase-auth.mjs
