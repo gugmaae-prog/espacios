@@ -1,4 +1,3 @@
--- Applied to production on 2026-09-24.
 -- Preserve intentional public reads while removing public writes.
 drop policy if exists "public_all_patches" on public.aether_patches;
 create policy "public_read_patches"
