@@ -1,4 +1,3 @@
--- Applied to production on 2026-09-24.
 revoke all on table public.aether_reminder_repair_20260908 from anon, authenticated;
 grant select, insert, update, delete on table public.aether_reminder_repair_20260908 to service_role;
 

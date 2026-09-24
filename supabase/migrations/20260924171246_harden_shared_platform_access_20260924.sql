@@ -1,6 +1,5 @@
--- Applied to production on 2026-09-24.
--- Removes unrestricted anonymous/public access, restricts SECURITY DEFINER RPCs,
--- pins function search paths, and removes a confirmed duplicate index.
+-- Remove legacy unrestricted anonymous/public policies while preserving
+-- user-owned policies and explicit service-role access.
 
 drop policy if exists "anon_all_aether_memories" on public.aether_memories;
 drop policy if exists "anon_can_insert_aether_memories" on public.aether_memories;
@@ -14,11 +13,14 @@ revoke all on table public.agent_memories from anon, authenticated;
 grant select, insert, update, delete on table public.agent_memories to service_role;
 
 drop policy if exists "anon_all_ai_journal" on public.ai_journal;
+
 drop policy if exists "anon_read_ai_habits" on public.ai_habits;
 drop policy if exists "anon_read_ai_interests" on public.ai_interests;
 drop policy if exists "anon_read_ai_patterns" on public.ai_patterns;
 drop policy if exists "anon_read_ai_user_prefs" on public.ai_user_prefs;
+
 drop policy if exists "public_all_contacts_v2" on public.contacts_v2;
+
 drop policy if exists "anon_all_gmail_accounts" on public.gmail_accounts_v2;
 drop policy if exists "anon_all_gmail_messages" on public.gmail_messages_v2;
 drop policy if exists "anon_all_google_connections" on public.google_connections_v2;
@@ -69,11 +71,14 @@ drop policy if exists "anon_all_tasks" on public.tasks;
 revoke all on table public.tasks from anon, authenticated;
 grant select, insert, update, delete on table public.tasks to service_role;
 
+-- Restrict SECURITY DEFINER functions to server-side callers.
 revoke execute on function public.enforce_email_campaign_group_match() from public, anon, authenticated;
 grant execute on function public.enforce_email_campaign_group_match() to service_role;
+
 revoke execute on function public.rls_auto_enable() from public, anon, authenticated;
 grant execute on function public.rls_auto_enable() to service_role;
 
+-- Pin function search paths flagged by Security Advisor.
 alter function public.set_updated_at_agent_memories() set search_path = public, extensions, pg_temp;
 alter function public.search_memories_filtered(vector, integer, text, text) set search_path = public, extensions, pg_temp;
 alter function public.search_memories(vector, integer) set search_path = public, extensions, pg_temp;
@@ -85,4 +90,5 @@ alter function public.enforce_email_campaign_group_match() set search_path = pub
 alter function public.touch_updated_at() set search_path = public, extensions, pg_temp;
 alter function public.rls_auto_enable() set search_path = public, extensions, pg_temp;
 
+-- Remove a confirmed duplicate index.
 drop index if exists public.idx_messages_session;
