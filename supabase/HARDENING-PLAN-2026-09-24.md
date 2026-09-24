@@ -4,70 +4,63 @@
 >
 > After the change, Supabase Security Advisor was reduced to three residual findings. The repair-table finding was resolved with migration `20260924171459_lock_repair_table_20260924`, and the relocatable `vector` extension was moved from `public` to `extensions`. The database Security Advisor now reports only one remaining Auth-service warning: leaked-password protection is disabled.
 
-## P0 — access control
+## Completed remediation
 
-Review and replace unrestricted `anon` / `public` policies before doing performance cleanup.
+### Access control — resolved
 
-High-priority unrestricted surfaces found in the live project include:
+Production migrations removed the unrestricted anonymous/public policies on sensitive Aether, Gmail, contact, message, SMTP, task and operational tables. Server-only surfaces now rely on explicit `service_role` access, while genuine user-owned policies remain scoped by `auth.uid()`.
 
-- `aether_memories`
-- `ai_journal`
-- `contacts_v2`
-- `gmail_accounts_v2`
-- `gmail_messages_v2`
-- `google_connections_v2`
-- `sent_emails`
-- `smtp_accounts`
-- `tasks`
-- selected memory/history/message tables
+### Edge Functions — resolved
 
-Do not drop these policies blindly. First identify actual callers and whether they authenticate through Supabase directly, Cloudflare, or another backend.
+- `contacts-v2-api` → version 3, JWT verification enabled, explicit service-role authorization
+- `google-sync-v2` → version 3, JWT verification enabled, explicit service-role authorization
 
-## P0 — Edge Functions
+Neither function showed recent invocation traffic before the hardening deploy.
 
-`contacts-v2-api` and `google-sync-v2` currently run with `verify_jwt=false`, wildcard CORS, and instantiate a service-role Supabase client. Harden by adding one of:
+### SECURITY DEFINER — resolved
 
-1. Supabase JWT verification plus authorization checks; or
-2. a server-to-server signed secret/header check with origin-independent validation; or
-3. move the functionality behind a private Cloudflare service boundary.
+Execute access for `public.enforce_email_campaign_group_match()` and `public.rls_auto_enable()` was revoked from `public`, `anon` and `authenticated`, and retained for `service_role`.
 
-Until hardened, do not enable automatic redeployment from Git.
+### Function search paths — resolved
 
-## P0 — SECURITY DEFINER
+All functions previously reported by Security Advisor for mutable `search_path` were pinned to a controlled search path.
 
-Review execution grants for:
+### Extension placement — resolved
 
-- `public.enforce_email_campaign_group_match()`
-- `public.rls_auto_enable()`
+`vector` 0.8.0 was relocatable in this project and was moved from `public` to `extensions`.
 
-Both were flagged as executable by `anon` and `authenticated` while running as SECURITY DEFINER.
+### RLS performance — resolved
 
-## P1 — Auth
+The 31 per-row auth initialization-plan warnings were removed by using stable `(select auth.uid())` / `(select auth.role())` expressions and consolidating redundant policies.
 
-- enable leaked-password protection
-- review Auth database connection allocation (absolute 10 → percentage-based if appropriate)
+### Foreign-key indexes — resolved
 
-## P1 — function safety
+All 12 foreign keys reported without covering indexes received explicit indexes.
 
-Nine functions were flagged for mutable `search_path`. Pin a safe schema search path on application functions.
+### Multiple permissive policies — resolved
 
-## P1 — RLS performance
+Redundant SELECT/ALL combinations were consolidated; Performance Advisor no longer reports the previous multiple-permissive-policy warnings.
 
-31 policies repeatedly evaluate auth functions per row. Prefer `(select auth.uid())` and equivalent stable expressions where applicable.
+### Duplicate index — resolved
 
-## P1 — indexing
+The duplicate `idx_messages_session` index was removed; `messages_session_created_idx` remains.
 
-Review 12 unindexed foreign keys and add indexes where the relationship participates in deletes, joins, filters, or ownership checks.
+### WhatsApp compatibility drift — resolved
 
-## P2 — index hygiene
+The legacy Cloudflare caller was identified as a service-role poll every three minutes. Existing WhatsApp data already lived in `public.messages` as `whatsapp_inbound` / `whatsapp_outbound` rows.
 
-`public.messages` has duplicate indexes: `idx_messages_session` and `messages_session_created_idx`. Verify definitions and drop one in a controlled migration.
+Migration `20260924174042_restore_whatsapp_messages_compat_view_20260924` restored `public.whatsapp_messages` as a read-only, security-invoker compatibility view rather than duplicating data. Subsequent live requests changed from HTTP 404 to HTTP 200 with 500-row pages.
 
-Do not remove the ~90 currently-unused indexes solely because the advisor reports them unused; use workload evidence first.
+## Remaining platform settings
 
-## P2 — application drift
+### Auth
 
-Recent traffic shows repeated requests to `/rest/v1/whatsapp_messages` returning 404. Trace the caller and either remove the stale request or restore the intended API through a reviewed migration.
+- **Leaked-password protection:** still disabled. This is the only remaining Supabase Security Advisor warning and must be enabled through the Supabase Auth configuration surface; it is not a database migration.
+- **Auth database connection allocation:** Performance Advisor reports the current absolute limit of 10 as informational. Consider percentage-based allocation before scaling compute.
+
+### Index usage
+
+Performance Advisor currently reports unused indexes as informational. Newly created foreign-key indexes will naturally appear unused until relevant workload exercises them. Do **not** mass-delete unused indexes without workload/query-plan evidence.
 
 ## Tenant separation
 
