@@ -1,4 +1,3 @@
--- Applied to production on 2026-09-24.
 -- Cover foreign keys flagged by Performance Advisor.
 create index if not exists ai_habit_logs_user_id_idx on public.ai_habit_logs(user_id);
 create index if not exists card_comments_card_id_idx on public.card_comments(card_id);
