@@ -1,0 +1,54 @@
+name: Repository guardrails
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-repo-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Block common committed secret files
+        shell: bash
+        run: |
+          set -euo pipefail
+          bad="$(
+            git ls-files \
+              | grep -E '(^|/)(\.env($|\.(local|production|development|staging|test)(\..*)?$)|.*\.pem$|.*\.key$|credentials?\.(json|ya?ml)$|secrets?\.(json|ya?ml)$)' \
+              | grep -v -E '(^|/)\.env\.example$' \
+              || true
+          )"
+          if [ -n "$bad" ]; then
+            echo "Forbidden secret-like tracked files:"
+            echo "$bad"
+            exit 1
+          fi
+
+      - name: Scan tracked text for obvious secret values
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git grep -I -n -E -- '-----BEGIN (RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----' -- .; then
+            echo "Private key material is tracked."
+            exit 1
+          fi
+          matches="$(
+            git grep -I -n -E -- '(SUPABASE_(SERVICE_ROLE|SECRET)_KEY|CLOUDFLARE_API_TOKEN|CF_API_TOKEN|LEADRAT_(API_KEY|SECRET_KEY)|AWS_SECRET_ACCESS_KEY|OPENAI_API_KEY)[[:space:]]*=[[:space:]]*[^[:space:]#]+' -- . \
+              ':!*.example' ':!**/*.md' \
+              | grep -v -E '=[[:space:]]*["'"'"']?\$\(|=[[:space:]]*["'"'"']?\$\{|=[[:space:]]*["'"'"']?\$[A-Za-z_]' \
+              || true
+          )"
+          if [ -n "$matches" ]; then
+            echo "Credential-shaped non-empty assignments found:"
+            echo "$matches"
+            exit 1
+          fi
+
+      - name: Confirm security policy exists
+        run: test -f SECURITY.md
