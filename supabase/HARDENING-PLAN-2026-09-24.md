@@ -72,3 +72,39 @@ Long-term:
 - Espacios/Aether stays under Espacios governance
 - PSR tables/functions move under PSR governance/project when feasible
 - Haus & Grace remains independently governed (currently Cloudflare D1-based)
+
+## Storage audit
+
+Current Storage buckets:
+
+- `aether-media` — **public**, 98 objects, ~13.3 MB
+- `the-void` — **public**, 1 object
+
+Public buckets are not automatically a defect, but they must contain only intentionally public assets. Do not place private memory, CRM exports, documents, inbox content, or user-uploaded confidential files in these buckets.
+
+## Capacity / relation-size signals
+
+Largest observed relations by total relation size:
+
+- `public.messages` — ~39.8 MB
+- `public.aether_memories` — ~32.9 MB; ~119,020 live rows
+- `public.agent_memories` — ~21.6 MB
+- `public.ai_journal` — ~15.1 MB
+- `public.embeddings` — ~5.7 MB
+- `public.gmail_messages_v2` — ~2.2 MB
+
+Large physical size with zero estimated live rows on some relations suggests historical churn/dead tuples or stale statistics may exist. Review vacuum/analyze behavior before making assumptions from row estimates alone.
+
+## Scheduled database jobs
+
+`pg_cron` is installed, but `cron.job` currently contains **no scheduled jobs**.
+
+## Auth footprint
+
+Current Auth user count: **6**.
+
+- 6 email-confirmed
+- 6 have signed in at least once
+- 0 anonymous users
+
+Leaked-password protection is still disabled per Security Advisor and should be enabled.
