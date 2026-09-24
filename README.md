@@ -1,4 +1,14 @@
-# Espacios UAE Intelligence Map — site-aligned Liquid Glass UI + dependable 3D navigation v10
+# Espacios Platform Source Authority
+
+> **Repository status — 24 September 2026**
+>
+> This is a **public source repository**. Never commit credentials, customer/lead data, private CRM exports, OAuth tokens, Supabase service-role keys, Cloudflare API tokens, or other secrets.
+>
+> **Current scope:** the repository is authoritative for the Espacios UAE Intelligence Map and its supporting source. It is **not yet a complete source mirror of every production surface on `espacios.me`**. Cloudflare production should not be switched to GitHub-driven automatic deployment for the entire domain until the remaining live application source is reconciled.
+>
+> **Tenant boundary:** Espacios remains separate from Haus & Grace and PSR Homes. Shared public catalogue/intelligence data may be reused deliberately, but private leads, CRM records, staff data, messages, agent memory, and credentials must not cross tenant boundaries.
+>
+> See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
 This package is the verified source for the site-aligned navigation, performance, 3D, and media release active at `https://espacios.me/map`. Cloudflare Worker version `112` was deployed at 100% on 21 September 2026 UTC after live dark/light visual, search, 3D, fixed-interface, mobile, catalogue-media, and asset acceptance.
 
