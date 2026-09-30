@@ -21,7 +21,7 @@
 
 The complete September 30 live Worker is preserved under `src/baseline/`. The current generated `src/worker.js` adds dated, conditional 1-, 3-, 5- and 10-year price and net-return scenarios, with separate apartment/villa and capital-weighted mixed controls. It retains observed history and existing research projections. Scenarios are not validated forecasts or guaranteed investment returns.
 
-Read [Smart Estimates methodology and storage](docs/SMART-ESTIMATES.md), [source reconciliation](docs/source-reconciliation-2026-09-30.md), and [the release checklist](docs/smart-estimates-release-checklist.md). Production identifiers in the system snapshot describe only the last recorded verified release; update them after promotion.
+Read [Smart Estimates methodology and storage](docs/SMART-ESTIMATES.md), [source reconciliation](docs/source-reconciliation-2026-09-30.md), and [the verified release receipt](docs/smart-estimates-release-2026-09-30.md). Production is Worker `df27a1de-e51f-4477-9fec-78e1b871229c`, promoted at 08:38 UTC on September 30; the system snapshot records its identifiers and checks.
 
 `npm run build:smart` is the current build entrypoint. The legacy `assets:embed`/`assets:extract` commands do not understand later appended releases and must not replace the reconciled Worker. The default Wrangler manifest remains a candidate; production uses the explicit `wrangler.production.jsonc` with existing bindings and the closed Data Room.
 

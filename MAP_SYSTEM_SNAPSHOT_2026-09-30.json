@@ -1,5 +1,5 @@
 {
-  "verifiedAt": "2026-09-30T07:17:04Z",
+  "verifiedAt": "2026-09-30T08:41:00Z",
   "canonicalUrl": "https://espacios.me/map",
   "systemUrl": "https://espacios.me/map/system",
   "systemApi": "https://espacios.me/map/api/system",
@@ -15,9 +15,9 @@
   },
   "mapWorker": {
     "scriptName": "psr-portfolio-map-v2",
-    "versionId": "7d080ba3-0e36-4d2f-bb8b-134e9c720f83",
-    "deploymentId": "09be2751-a039-4b34-9f21-a90d53ab4c77",
-    "releaseTag": "20260930-system-map-v1",
+    "versionId": "df27a1de-e51f-4477-9fec-78e1b871229c",
+    "deploymentId": "04060558-04ed-4c9e-9e7e-0dcce12219a3",
+    "releaseTag": "20260930-smart-estimates-v1",
     "compatibilityDate": "2026-08-20",
     "compatibilityFlags": [
       "nodejs_compat"
@@ -62,7 +62,21 @@
     "visibility": "public",
     "wranglerWorkerName": "psr-portfolio-map-v2-navigation-candidate",
     "productionRoutesDeclaredInWrangler": false,
-    "productionSourceFullyReconciled": false
+    "productionSourceFullyReconciled": true,
+    "productionConfig": "wrangler.production.jsonc",
+    "sourceCommit": "3d111b90451145e2cd7eb0704fd47f4ce7bc2b3a",
+    "pullRequest": "https://github.com/gugmaae-prog/espacios/pull/16",
+    "scope": "Map Worker only; not every espacios.me application"
+  },
+  "smartEstimates": {
+    "classification": "conditional_scenario",
+    "horizonYears": [1, 3, 5, 10],
+    "snapshotKey": "research/published/2026-09-30/smart-estimates-v1/scenarios.json",
+    "snapshotSha256": "f77472b65fad63bb6dd59323ed93823fb623a193d58c8cd014c2e3f868a3c4b4",
+    "scenarioSets": 153,
+    "retainedQuarterlyPoints": 4978,
+    "retainedAskingRows": 228,
+    "liveVerificationReceipt": "data/release-verification-20260930-after.json"
   },
   "observedDataPopulations": {
     "mapCoreProjects": 1645,
