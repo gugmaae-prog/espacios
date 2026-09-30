@@ -145,9 +145,9 @@ export function calculateROI(input) {
   const price = number(input.price, 'price', Number.MIN_VALUE), annualRent = number(input.annualRent, 'annualRent', 0);
   const buyCostsPct = number(input.buyCostsPct, 'buyCostsPct', 0, 100), sellCostsPct = number(input.sellCostsPct, 'sellCostsPct', 0, 100);
   const operatingCostsPct = number(input.operatingCostsPct, 'operatingCostsPct', 0, 100), vacancyPct = number(input.vacancyPct, 'vacancyPct', 0, 100), rentGrowthPct = number(input.rentGrowthPct, 'rentGrowthPct', -100, 100);
-  const horizonYears = integer(input.horizonYears, 'horizonYears', 1, 10), incomeStartYear = integer(input.incomeStartYear, 'incomeStartYear', 1, 31);
+  const horizonYears = integer(input.horizonYears, 'horizonYears', 1, 30), incomeStartYear = integer(input.incomeStartYear, 'incomeStartYear', 1, 31);
   if (!Array.isArray(input.capitalPath)) throw new TypeError('An explicit capitalPath is required.');
-  const path = input.capitalPath.map(p => ({year: integer(p?.year, 'capital year', 1, 10), ratio: number(p?.ratio, 'capital ratio', 0)})).sort((a, b) => a.year - b.year);
+  const path = input.capitalPath.map(p => ({year: integer(p?.year, 'capital year', 1, 30), ratio: number(p?.ratio, 'capital ratio', 0)})).sort((a, b) => a.year - b.year);
   if (new Set(path.map(p => p.year)).size !== path.length) throw new TypeError('Duplicate capital year.');
   for (let y = 1; y <= horizonYears; y++) if (!path.some(p => p.year === y)) throw new TypeError('Capital path must contain each holding-period year.');
   const normalizedCapital = input.normalizedCapital === undefined ? null : number(input.normalizedCapital, 'normalizedCapital', Number.MIN_VALUE);
