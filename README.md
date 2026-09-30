@@ -1,5 +1,12 @@
 # Espacios Platform Source Authority
 
+> **Live map topology — 30 September 2026**
+>
+> The canonical route is now `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`.
+> The live map exposes a public-safe system view at `/map/system` and `/map/api/system`.
+> The Data Room exists at `/map/data-room` but is currently **restricted** by `DATA_ROOM_PUBLIC=false`.
+> See [docs/architecture.md](docs/architecture.md) and [MAP_SYSTEM_SNAPSHOT_2026-09-30.json](MAP_SYSTEM_SNAPSHOT_2026-09-30.json) for the current production identifiers and connection map.
+>
 > **Repository status — 24 September 2026**
 >
 > This is a **public source repository**. Never commit credentials, customer/lead data, private CRM exports, OAuth tokens, Supabase service-role keys, Cloudflare API tokens, or other secrets.
