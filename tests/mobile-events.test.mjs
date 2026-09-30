@@ -42,7 +42,7 @@ function target() {
 }
 
 function harness(mode = 'projects') {
-  const container = target(), canvas = target(), nodes = new Map(), microtasks = [];
+  const container = target(), canvas = target(), nodes = new Map(), microtasks = [], queries = [];
   const calls = {project: [], benchmark: [], scenario: [], unified: [], chosen: [], native: [], render: 0, nativeRender: 0, stop: 0, legacyClick: 0};
   const feature = {type: 'Feature', properties: {id: 'exact-project'}, geometry: {type: 'Point', coordinates: [10, 20]}};
   const node = selector => {
@@ -69,7 +69,15 @@ function harness(mode = 'projects') {
       getLayer: id => (mode === 'benchmark' && id === 'ms-fill') || (mode === 'scenario' && id === 'se-fill') || (mode === 'unified' && id === 'um-fill'),
       project: ([x, y]) => ({x, y}),
       unproject: ({x, y}) => ({lng: x, lat: y}),
-      queryRenderedFeatures: point => point.x === 10 && point.y === 20 ? [{properties: {name: 'Exact area'}}] : [],
+      queryRenderedFeatures(point, options) {
+        // Native capture supplies plain {x,y}, NOT MapLibre's Point instance.
+        // MapLibre 6.8 treats a plain object as the options overload and queries
+        // the whole viewport. Enforce the actual screen-coordinate array API.
+        assert.ok(Array.isArray(point), 'Rendered-feature query must use [x, y], not a plain event.point object');
+        assert.equal(point.length, 2); assert.ok(point.every(Number.isFinite));
+        queries.push({point: Array.from(point), layers: Array.from(options.layers)});
+        return point[0] === 10 && point[1] === 20 ? [{properties: {name: 'Exact area'}}] : [];
+      },
       stop: () => {calls.stop++;}
     },
     state: {analysisMetric: mode, recordById: new Map([['exact-project', {id: 'exact-project', name: 'Exact project'}]])},
@@ -107,7 +115,20 @@ function harness(mode = 'projects') {
     if (!event.stopped) calls.legacyClick++;
     return event;
   };
-  return {api: sandbox.__MOBILE_EVENTS_TEST__, sandbox, canvas, container, calls, click, flush, microtasks, node};
+  return {api: sandbox.__MOBILE_EVENTS_TEST__, sandbox, canvas, container, calls, click, flush, microtasks, node, queries};
+}
+
+for (const [mode, layer] of [['benchmark', 'ms-fill'], ['scenario', 'se-fill'], ['unified', 'um-fill']]) {
+  test(`${mode}: native screen point is converted to a bounded MapLibre array query`, () => {
+    const h = harness(mode);
+    h.click(); h.flush();
+    assert.deepEqual(h.queries, [{point: [10, 20], layers: [layer]}]);
+    const selected = [...h.calls.benchmark, ...h.calls.scenario, ...h.calls.unified];
+    assert.deepEqual(selected, ['Exact area']);
+    h.click({clientX: 350, clientY: 400}); h.flush();
+    assert.deepEqual(h.queries.at(-1), {point: [250, 350], layers: [layer]});
+    assert.deepEqual([...h.calls.benchmark, ...h.calls.scenario, ...h.calls.unified], ['Exact area'], 'An empty location must not select the first feature elsewhere in the viewport');
+  });
 }
 
 for (const mode of ['projects', 'benchmark', 'registered', 'scenario']) {

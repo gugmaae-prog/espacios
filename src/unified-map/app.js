@@ -1,6 +1,6 @@
 /* One timeline for native evidence and explicitly conditional future outcomes. */
 (() => {
- window.__ESPACIOS_UNIFIED_RELEASE__='20260930-unified-map-v1';
+ window.__ESPACIOS_UNIFIED_RELEASE__='20260930-unified-map-v2';
  const Q=s=>document.querySelector(s),root=document.documentElement;
  const U={installed:false,metric:'projects',options:[],selected:'',horizon:10,path:'reference',data:null,loading:false,key:'',request:0,renderToken:0,refreshTimer:0,busy:false,contextKey:'',preferFuture:false,result:null,hidden:new Map()};
  const finite=n=>typeof n==='number'&&Number.isFinite(n),num=(n,d=0)=>finite(n)?n.toLocaleString('en',{maximumFractionDigits:d}):'—';
@@ -150,7 +150,7 @@
   document.addEventListener('click',event=>{const button=event.target.closest?.('[data-ms-period],[data-pp-date]');if(!button||U.metric==='projects')return;const period=button.dataset.msPeriod||button.dataset.ppDate,option=U.options.find(o=>o.kind==='native'&&o.period===period);if(option){event.preventDefault();event.stopImmediatePropagation();choose(option.id);}},true);
   Q('#se-assumptions').addEventListener('input',()=>{if(future()){prepare();render();window.EspaciosMobileUI.sync();}});
   document.addEventListener('espacios:search-selection',event=>{if(U.metric==='projects')return;const d=event.detail;if(d.kind==='community'){msState.area=d.area||d.name;if(d.emirate)msState.emirate=d.emirate;if(msState.emirate!=='Dubai')msState.basis='asking';U.busy=true;msOpen(U.metric,false);U.busy=false;msState.area=d.area||d.name;}refreshSoon();});
-  window.EspaciosUnifiedMap=Object.freeze({setMetric,choose,render,sync,timeline:()=>U.metric==='projects'?null:{periods:U.options.map(o=>o.id),labels:Object.fromEntries(U.options.map(o=>[o.id,o.period+(o.kind==='scenario'?' · Estimate':o.evidenceClass==='released_projection'?' · Projection':'')])),selected:U.selected,loading:U.loading,key:U.key,metric:U.metric},pick(event){if(!future())return false;if(event.originalEvent?.detail>1)return true;const hit=map.getLayer('um-fill')&&map.queryRenderedFeatures(event.point,{layers:['um-fill']})[0];if(hit)queueMicrotask(()=>{msState.area=hit.properties.name;prepare();details();refreshSoon();});return true;}});
+  window.EspaciosUnifiedMap=Object.freeze({setMetric,choose,render,sync,timeline:()=>U.metric==='projects'?null:{periods:U.options.map(o=>o.id),labels:Object.fromEntries(U.options.map(o=>[o.id,o.period+(o.kind==='scenario'?' · Estimate':o.evidenceClass==='released_projection'?' · Projection':'')])),selected:U.selected,loading:U.loading,key:U.key,metric:U.metric},pick(event){if(!future())return false;if(event.originalEvent?.detail>1)return true;const hit=map.getLayer('um-fill')&&map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['um-fill']})[0];if(hit)queueMicrotask(()=>{msState.area=hit.properties.name;prepare();details();refreshSoon();});return true;}});
   refreshSoon();window.EspaciosMobileUI.sync();return true;
  }
  const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
