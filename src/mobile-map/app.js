@@ -143,9 +143,9 @@
       });
       return true;
     }else if(window.EspaciosEstimateUI?.context().map&&map.getLayer('se-fill')){
-      const hit=map.queryRenderedFeatures(event.point,{layers:['se-fill']})[0];if(hit){select(()=>{window.EspaciosEstimateUI.selectArea(hit.properties.name);activate(Q('#se-panel'));});return true;}
+      const hit=map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['se-fill']})[0];if(hit){select(()=>{window.EspaciosEstimateUI.selectArea(hit.properties.name);activate(Q('#se-panel'));});return true;}
     }else if(msActive()&&map.getLayer('ms-fill')){
-      const hit=map.queryRenderedFeatures(event.point,{layers:['ms-fill']})[0];if(hit){select(()=>{msState.area=hit.properties.name;msState.open=true;msSync();activate(Q('#ms-inspect'));});return true;}
+      const hit=map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['ms-fill']})[0];if(hit){select(()=>{msState.area=hit.properties.name;msState.open=true;msSync();activate(Q('#ms-inspect'));});return true;}
     }else if(ppActive()&&!tlState.loading&&!bhState.loadingRaster&&sgState.data){
       const location=map.unproject(event.point),rows=tlState.frame.filter(r=>(r.geometryIds||[]).some(id=>{const geometry=sgState.data.features.find(f=>String(f.id)===String(id));return geometry&&SG.contains([location.lng,location.lat],geometry.geometry);}));
       const names=[...new Set(rows.map(r=>r.name))];if(names.length===1){select(()=>{msState.area=names[0];msState.open=true;msSync();activate(Q('#ms-inspect'));});return true;}
@@ -182,7 +182,7 @@
     const resize=new ResizeObserver(scheduleGeometry);[dock,Q('#app > header'),Q('.layer-rail')].filter(Boolean).forEach(el=>resize.observe(el));map.on('moveend',scheduleGeometry);
     addEventListener('resize',responsive);visualViewport?.addEventListener('resize',scheduleGeometry);mobile.addEventListener('change',()=>{finish(null,true);if(mobile.matches)installSheets();else map.setPadding({top:0,bottom:0,left:0,right:0});responsive();schedule();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20260930-unified-map-v1',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20260930-unified-map-v2',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();

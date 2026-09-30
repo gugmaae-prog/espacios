@@ -1,6 +1,6 @@
 # Unified map timeline and controls — 30 September 2026
 
-Release token: `20260930-unified-map-v1`.
+Release token: `20260930-unified-map-v2`.
 
 Status: **verified local candidate; production receipt pending**. Source changes
 and search camera acceptance have passed local checks. Production is not changed
@@ -94,10 +94,10 @@ measured Core Web Vitals or latency improvement claim.
 
 ## Verification status
 
-`npm run verify` passes smoke/API checks and **127 unit/integration tests**.
+`npm run verify` passes smoke/API checks and **130 unit/integration tests**.
 The strict production-config version-upload dry run passes, with unchanged
 bindings. The generated Worker SHA-256 is
-`50fb3c671fcb9920017bd488e7319226739d283f298f1a1d45c9f6c1bb47a2c7`.
+`f811504ebd095ea5941ccd2aa0c4010093a3eaf51bd1071a6cdc6ce8128471d5`.
 
 Current test coverage includes native-period preservation, same-label evidence
 classes, unchanged retained scenario rows, 10/20/30-year extension policy, negative
@@ -115,6 +115,14 @@ history; a touch drag selected the 2036 ROI endpoint and released cleanly. A
 retains date and slider. Reduced-motion transitions are zero-duration. A real
 touch on Palm Jumeirah's rendered 2036Q2 polygon opens Price estimate evidence
 for that same area, period and apartment basket.
+
+Final settled live selection verification identified an API-overload bug in the
+first candidate: MapLibre interprets a plain `{x,y}` as query options, selecting
+from the entire viewport. Native hit-tests now pass `[x,y]` for unified forecasts,
+benchmarks and the retained Smart layer. Three regressions assert exact coordinates
+and empty-space behavior. Local v2 touch QA confirms Palm Jumeirah remains selected
+after the delayed touch click; an ocean tap leaves its panel closed and selection
+unchanged. The v1 instantaneous post-touch check was insufficient and is superseded.
 
 Palm Jumeirah search fits its exact boundary at zoom 11.846; Yas Island fits its
 exact boundary at zoom 11.486. Yas Riva's normal-motion search settles on its own
