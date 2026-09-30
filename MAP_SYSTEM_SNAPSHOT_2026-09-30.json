@@ -1,0 +1,79 @@
+{
+  "verifiedAt": "2026-09-30T07:17:04Z",
+  "canonicalUrl": "https://espacios.me/map",
+  "systemUrl": "https://espacios.me/map/system",
+  "systemApi": "https://espacios.me/map/api/system",
+  "route": {
+    "pattern": "espacios.me/map*",
+    "worker": "espacios-map-shell",
+    "serviceBinding": "MAP",
+    "target": "psr-portfolio-map-v2"
+  },
+  "shell": {
+    "versionId": "64c324d5-e107-43e6-b897-90f2f0f6d565",
+    "deploymentId": "79c246e1-6284-409b-8972-3fead00a1223"
+  },
+  "mapWorker": {
+    "scriptName": "psr-portfolio-map-v2",
+    "versionId": "7d080ba3-0e36-4d2f-bb8b-134e9c720f83",
+    "deploymentId": "09be2751-a039-4b34-9f21-a90d53ab4c77",
+    "releaseTag": "20260930-system-map-v1",
+    "compatibilityDate": "2026-08-20",
+    "compatibilityFlags": [
+      "nodejs_compat"
+    ],
+    "usageModel": "standard"
+  },
+  "bindings": [
+    {
+      "name": "AI",
+      "type": "workers_ai"
+    },
+    {
+      "name": "DB",
+      "type": "d1"
+    },
+    {
+      "name": "MARKET_R2",
+      "type": "r2"
+    },
+    {
+      "name": "PSR_PROPERTY",
+      "type": "service",
+      "target": "psr-property:production"
+    },
+    {
+      "name": "DATA_ROOM_PUBLIC",
+      "type": "plain_text",
+      "value": "false"
+    }
+  ],
+  "dataRoom": {
+    "route": "/map/data-room",
+    "access": "restricted",
+    "gate": "DATA_ROOM_PUBLIC",
+    "publicWhen": "binding value is exactly true",
+    "mode": "read-only GET/HEAD",
+    "restrictedBehavior": "unavailable + no-store + noindex"
+  },
+  "github": {
+    "repository": "gugmaae-prog/espacios",
+    "branch": "main",
+    "visibility": "public",
+    "wranglerWorkerName": "psr-portfolio-map-v2-navigation-candidate",
+    "productionRoutesDeclaredInWrangler": false,
+    "productionSourceFullyReconciled": false
+  },
+  "observedDataPopulations": {
+    "mapCoreProjects": 1645,
+    "uaeHeatmapProjects": 1690,
+    "livePsrAggregationProjects": 1093,
+    "communities": 215,
+    "initiatives": 72,
+    "note": "Different record populations/grains; not a reconciled unique-development count."
+  },
+  "security": {
+    "secretsIncluded": false,
+    "privateTenantDataExposedBySystemPage": false
+  }
+}
