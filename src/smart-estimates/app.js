@@ -109,5 +109,11 @@
   const previousSync=ppSync;ppSync=function(){previousSync(...arguments);const button=Q('#pp-projection');if(button&&ppActive()){button.disabled=!!tlState.loading;button.title='Load monthly research projections for the selected source area and property basket.';}};
   Q('#pp-projection').onclick=()=>{tlStop();ppOpen('projection',arState.segment+'|'+bhState.registration);};ppSync();
  }
+ // Narrow UI bridge: only exact areas in the displayed, comparable cohort can be picked.
+ window.EspaciosEstimateUI=Object.freeze({
+  close,
+  context:()=>({open:S.open,map:S.open&&S.map,area:S.area}),
+  selectArea(name){if(!S.open||!S.map||!mapCohort().some(p=>p.row.geography===name))return false;S.area=name;render(true);return true;}
+ });
  const timer=setInterval(()=>{if(install())clearInterval(timer);},300);
 })();

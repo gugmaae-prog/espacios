@@ -9,7 +9,7 @@
   },
   "scripts": {
     "check": "node --check src/worker.js && node --check src/assets/app-v2.js && node --check src/assets/premium.js && node --check scripts/extract-assets.mjs && node --check scripts/embed-assets.mjs",
-    "test": "node tests/smoke.mjs && node tests/smart-api.mjs && node --test src/smart-estimates/core.test.mjs tests/smart-integration.test.mjs",
+    "test": "node tests/smoke.mjs && node tests/smart-api.mjs && node --test src/smart-estimates/core.test.mjs tests/smart-integration.test.mjs tests/mobile-map.test.mjs tests/mobile-build.test.mjs tests/mobile-events.test.mjs",
     "verify": "npm run build:smart && npm run check && npm test",
     "build:smart": "node scripts/build-smart.mjs",
     "browser:acceptance": "node scripts/browser-acceptance.mjs",
