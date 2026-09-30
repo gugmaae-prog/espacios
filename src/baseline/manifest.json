@@ -1,0 +1,12 @@
+{
+  "script": "psr-portfolio-map-v2",
+  "versionId": "7d080ba3-0e36-4d2f-bb8b-134e9c720f83",
+  "deploymentId": "09be2751-a039-4b34-9f21-a90d53ab4c77",
+  "deployedAt": "2026-09-30T07:17:04.354499Z",
+  "acquiredAt": "2026-09-30T07:52:43.344Z",
+  "sourceModule": "worker-20260930.js",
+  "bytes": 843642,
+  "sha256": "b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06",
+  "accessState": { "DATA_ROOM_PUBLIC": "false" },
+  "note": "Immutable acquired live-source baseline; no runtime credentials or raw private research exports are added. Reacquisition must match this checksum."
+}

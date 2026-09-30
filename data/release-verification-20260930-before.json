@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-30T08:17:03.441Z",
+  "origin": "https://espacios.me",
+  "scope": "Public curated API fingerprints; no raw payloads stored. Prediction/history checks cover catalogue metadata and first page, not every partition.",
+  "checks": [
+    {
+      "endpoint": "/map/api/research",
+      "kind": "data",
+      "status": 200,
+      "counts": {
+        "projects": 1691,
+        "developers": 428,
+        "developerNamesNeedingReview": 3,
+        "rawDeveloperLabels": 344,
+        "communities": 215,
+        "initiatives": 72,
+        "liveProjects": 1093,
+        "pricedProjects": 1066,
+        "benchmarks": 41,
+        "matchedProjects": 1054,
+        "projectPsfVerified": 0,
+        "originalCatalogueRecords": 1385,
+        "adrecAuthorityRecords": 314,
+        "adrecAdditionalRecords": 306,
+        "snapshotProjects": 1337,
+        "snapshotLiveUnion": 1358,
+        "masterAdditional": 27,
+        "projectsReturned": 1691,
+        "communitiesReturned": 215,
+        "developersReturned": 428,
+        "benchmarksReturned": 41,
+        "officialRegistriesReturned": 1
+      },
+      "payloadSha256": "c35e6809c06a02dd755dde608070698f18daed52cc21bfb9e9dbefd3615fc22b",
+      "preservedSha256": "9d2a9a118213e1f78a007a32290548175aa95811170735bec7e70cca729e1ed4",
+      "cacheControl": "public, max-age=60, s-maxage=300",
+      "robots": null
+    },
+    {
+      "endpoint": "/map/api/market-segments",
+      "kind": "data",
+      "status": 200,
+      "counts": {
+        "total": 228,
+        "rowsReturned": 228,
+        "sourcesReturned": 15,
+        "availablePeriodsReturned": 7,
+        "availableEmiratesReturned": 5
+      },
+      "payloadSha256": "672a01eb414beb5b8ace98d4451e0cebda374d39aa28db0162205688a87a51f2",
+      "preservedSha256": "6b3a531cd43fff7e86dc9c879904b8cc6e2cc401658e6b6da9cf1a72c551e08f",
+      "cacheControl": "public, max-age=300",
+      "robots": null
+    },
+    {
+      "endpoint": "/map/api/prediction-catalogue?status=all&limit=1",
+      "kind": "data",
+      "status": 200,
+      "counts": {
+        "indexedSeries": 4882,
+        "dubaiHistoricalCells": 109315,
+        "dubaiMeasuresPerCell": 5,
+        "officialSeries": 699,
+        "officialPoints": 12673,
+        "contextObservations": 415,
+        "modelRuns": 2223,
+        "experimentalProjections": 185,
+        "projectValuations": 0,
+        "total": 2223,
+        "reconciliationIssuesReturned": 4,
+        "runsReturned": 1,
+        "status.insufficient_evidence": 1945,
+        "status.experimental_projection": 185,
+        "status.validation_failed": 93
+      },
+      "payloadSha256": "90ad414007e613a080793e7c1bc6ccab7f35cc33f05af0f1d00b4809f31f5ba8",
+      "preservedSha256": "f9a762292fc9622e7c921c333c14591b9948e2f46c309578ca825ec69a8db15e",
+      "cacheControl": "public, max-age=60, s-maxage=300",
+      "robots": null
+    },
+    {
+      "endpoint": "/map/api/history-library?limit=1",
+      "kind": "data",
+      "status": 200,
+      "counts": {
+        "indexedSeries": 4882,
+        "dubaiHistoricalCells": 109315,
+        "dubaiMeasuresPerCell": 5,
+        "officialSeries": 699,
+        "officialPoints": 12673,
+        "contextObservations": 415,
+        "modelRuns": 2223,
+        "experimentalProjections": 185,
+        "projectValuations": 0,
+        "total": 4882,
+        "reconciliationIssuesReturned": 4,
+        "seriesReturned": 1,
+        "status.insufficient_evidence": 1945,
+        "status.experimental_projection": 185,
+        "status.validation_failed": 93
+      },
+      "payloadSha256": "42881cb4319d9d0e81d9e9f075d9304739cf907689c2314edd1a64f70ce9f009",
+      "preservedSha256": "0ec92bcc56658d0425876aac24f2c0687f06eb6c1f7ea181d28e70642446c261",
+      "cacheControl": "public, max-age=60, s-maxage=300",
+      "robots": null
+    },
+    {
+      "endpoint": "/map/api/uae-heatmap",
+      "kind": "data",
+      "status": 200,
+      "counts": {
+        "projects": 1690,
+        "geocodedProjects": 1519,
+        "unmappedProjects": 171,
+        "communities": 215,
+        "initiatives": 72,
+        "emirates": 7,
+        "unmappedProjectRecordsReturned": 171,
+        "featuresReturned": 1519
+      },
+      "payloadSha256": "67eb5d3727785029c542e8c211ac5bac7bfbe26d210ba118f0296c8a09c8d426",
+      "preservedSha256": "da5bbd91bb8a0c839b57fd8266e0b165801ea60d65af7ff6ce628ab013a351b2",
+      "cacheControl": "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800",
+      "robots": null
+    },
+    {
+      "endpoint": "/map/api/system",
+      "kind": "system",
+      "status": 200,
+      "counts": {
+        "topologyReturned": 6
+      },
+      "payloadSha256": "a3bcd7d59600c52782b0b78a6c41d178ab94f05d8807851830eb1be712ea197b",
+      "preservedSha256": "0ea4ccb79a5468f48bd7c9712639db961d5749e5e9ee9384e7d342661114d5ca",
+      "cacheControl": "no-store",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "endpoint": "/map/data-room",
+      "kind": "access",
+      "status": 404,
+      "counts": {},
+      "payloadSha256": "0511461b0cb7ef0dac10b46df1743613d269fe82789af4bbbbdbd04d36f40924",
+      "preservedSha256": null,
+      "cacheControl": "no-store",
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "comparison": null
+}
