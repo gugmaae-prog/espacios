@@ -1,50 +1,205 @@
-# Espacios map navigation and 3D v4 architecture
+# Espacios Map — live architecture
 
-This source is deployed as Cloudflare Worker version `105` for `psr-portfolio-map-v2`.
+**Verified:** 30 September 2026  
+**Canonical URL:** https://espacios.me/map  
+**Live system view:** https://espacios.me/map/system  
+**Live system JSON:** https://espacios.me/map/api/system
 
-## Request flow
+This document describes the **current Cloudflare production topology**. It supersedes older version IDs and direct-route diagrams in earlier handovers. It does not mean every live production patch has already been reconciled back into `src/worker.js`.
 
-1. Cloudflare routes `espacios.me/map*` and `psr.espacios.me/map*` to `psr-portfolio-map-v2`.
-2. The Worker serves embedded HTML, CSS, JavaScript, and verification data.
-3. `/map` injects the premium/navigation overlays and stamps v4 response markers.
-4. `/map/app-v2.js` applies three preserved legacy hot-path substitutions before serving the embedded module.
-5. The browser imports MapLibre from `/map/vendor/*`; the Worker checks edge cache, then R2, then controlled upstream fallbacks.
-6. The initial UAE view installs 85 layers and 19 sources. Spatial interaction layers hydrate at city scale, full emirate geometry at zoom 10.5, and Places/Transport only when selected. 3D mode starts enabled, but its vector tiles remain deferred until zoom 9.7; crossing that threshold automatically pitches the camera and reveals building extrusions.
-7. Large context responses use browser caching plus Cloudflare cache controls; D1, R2, the `psr-property` service, Workers AI, and public geospatial sources remain behind the Worker.
+## 1. Request path
 
-## Interaction ownership
+```text
+Browser
+  |
+  v
+Cloudflare route: espacios.me/map*
+  |
+  v
+Worker: espacios-map-shell
+  |  - canonical SEO/title/meta
+  |  - small /map/api/v1 façade
+  |  - MAP service binding
+  v
+Worker: psr-portfolio-map-v2
+  |-- embedded map HTML/CSS/JavaScript
+  |-- catalogue / research / history / prediction APIs
+  |-- Data Room route and access gate
+  |-- D1 binding: DB
+  |-- R2 binding: MARKET_R2
+  |-- service binding: PSR_PROPERTY -> psr-property production
+  `-- Workers AI binding: AI
+```
 
-- MapLibre owns pointer, touch, ordinary wheel, double-click, and box-zoom behavior.
-- The application captures Chromium's `ctrl+wheel` trackpad-pinch gesture at the map workspace boundary, prevents browser viewport scaling, and applies the delta to the map camera. Map and canvas touch-action isolation gives mobile pinch the same ownership.
-- The top bar, layer rail, and cards remain fixed-position DOM surfaces outside the isolated map rendering boundary.
-- The focusable `#map` region owns keyboard pan, zoom, reset, focus exit, and help shortcuts. MapLibre's parallel keyboard handler is disabled to prevent doubled movement.
-- Search builds its index only on first use and owns result keyboard navigation.
-- Map focus mode changes interface visibility and map padding without discarding map state.
-- Resize and panel observers are guarded so callbacks do not mutate their own observed state repeatedly.
+The secondary route `psr.espacios.me/map*` currently points directly to `psr-portfolio-map-v2`. The canonical product remains `espacios.me/map`.
 
-## Binding topology
+## 2. Production identity
 
-| Binding | Live resource | Responsibility |
+| Layer | Live state |
+| --- | --- |
+| Route owner | `espacios-map-shell` |
+| Shell version | `64c324d5-e107-43e6-b897-90f2f0f6d565` |
+| Shell deployment | `79c246e1-6284-409b-8972-3fead00a1223` |
+| Map Worker | `psr-portfolio-map-v2` |
+| Map version | `7d080ba3-0e36-4d2f-bb8b-134e9c720f83` |
+| Map deployment | `09be2751-a039-4b34-9f21-a90d53ab4c77` |
+| Release marker | `20260930-system-map-v1` |
+| Compatibility date | `2026-08-20` |
+| Compatibility flag | `nodejs_compat` |
+| Usage model | `standard` |
+
+## 3. Bindings and responsibilities
+
+| Binding | Type | Responsibility |
 | --- | --- | --- |
-| `DB` | D1 `cba-property-db` | Market, inventory, and valuation queries |
-| `MARKET_R2` | R2 `psr-market-intelligence` | Snapshots, media, geometry, and vendor assets |
-| `PSR_PROPERTY` | Service `psr-property` production | Full project/property data |
 | `AI` | Workers AI | Map AI endpoint |
+| `DB` | D1 | Market observations, history/prediction indexes, spatial/identity registry, valuation-related tables |
+| `MARKET_R2` | R2 | Current snapshots, research releases, media/cache, geography, historical partitions and model artefacts |
+| `PSR_PROPERTY` | Service | Internal project/property feed from `psr-property` production |
+| `DATA_ROOM_PUBLIC` | Plain text gate | Controls whether the read-only Data Room can be served |
 
-The release inherited these bindings strictly from version `104`; compatibility date `2026-08-20`, `nodejs_compat`, and the standard usage model were preserved.
+The route shell has one binding:
 
-## Editable and embedded assets
+| Binding | Type | Target |
+| --- | --- | --- |
+| `MAP` | Service | `psr-portfolio-map-v2` production |
 
-The Worker stores four gzip/base64 assets and two premium overlays. Human-editable copies live under `src/assets/`.
+## 4. Data Room access
 
-- `npm run assets:extract` regenerates editable files from `src/worker.js`.
-- `npm run assets:embed` rebuilds the bundle from editable files.
-- `npm run verify` checks syntax and self-contained response paths.
-- `npm run browser:acceptance` validates desktop/mobile navigation and records screenshots plus synthetic timing evidence.
+The Data Room already exists at:
 
-## Remaining debt
+```text
+/map/data-room
+```
 
-- The single-file Worker still combines application code, data access, proxies, caching, and asset delivery.
-- Three legacy navigation substitutions still run when serving `app-v2.js`; they should eventually be folded into the editable asset and removed from response generation.
-- The amenities registry is about 4.49 MB. It is deferred and cached, but should ultimately be split by viewport or category.
-- Long-term performance decisions should use field RUM or a formal trace series rather than one synthetic run.
+Current access state:
+
+```text
+DATA_ROOM_PUBLIC=false
+status: RESTRICTED
+```
+
+While restricted, the Worker returns the Data Room as unavailable with:
+
+- no-store caching
+- noindex/nofollow
+- no public read access
+
+When the binding is explicitly set to `true`, the room is still **read-only** and accepts only GET/HEAD. Its assets are served with restrictive security headers and remain noindex/nofollow.
+
+The map now exposes the access state at:
+
+- `/map/system`
+- `/map/api/system`
+
+Opening the Data Room publicly is a separate access decision; do not silently change the binding.
+
+## 5. Public-safe system surfaces
+
+| Surface | Purpose |
+| --- | --- |
+| `/map/system` | Human-readable topology, source authority and Data Room state |
+| `/map/api/system` | Machine-readable topology and access state |
+| `/map/map-core.json` | Fast map catalogue |
+| `/map/map-data.json` | Deeper catalogue snapshot |
+| `/map/api/research` | Research catalogue/context |
+| `/map/api/history-catalogue` | Historical library metadata |
+| `/map/api/prediction-catalogue` | Experimental prediction catalogue |
+| `/map/api/data-coverage` | Data coverage / availability |
+| `/map/api/intelligence` | Intelligence sidecar |
+
+Direct D1 SQL, raw R2 access, secrets and private tenant data are **not** exposed by the system page.
+
+## 6. Data plane
+
+### R2 — `psr-market-intelligence`
+
+Important families include:
+
+- `snapshots/current/*`
+- `research/published/2026-09-23/dubai-derived-history-v1/*`
+- `research/published/2026-09-27/history-predictions-v1/*`
+- `research/published/2026-09-27/uae-project-coverage-v3-adrec.json`
+- release/rollback artefacts under `releases/*`
+
+### D1 — `DB`
+
+Current map/intelligence table families include:
+
+- `ae_*` spatial/index/identity tables
+- `espacios_history_*`
+- `espacios_prediction_runs`
+- `espacios_authority_project_snapshots`
+- `psr_market_data_sources`
+- `psr_market_observations`
+- valuation/comparable/fact-history tables
+
+The D1 database is shared with other application workloads, so map changes must stay scoped to map/intelligence tables.
+
+### PSR property service
+
+`PSR_PROPERTY` is a service binding, not a public HTTP hop. It supplies current project/property data used in catalogue reconciliation.
+
+## 7. Catalogue populations
+
+Different surfaces intentionally describe different record populations. Do not force them to one number without reconciling record grain.
+
+Recent observed examples:
+
+- map-core records: 1,645
+- UAE heatmap/reconciled coverage: 1,690
+- live PSR aggregation: 1,093
+- communities: 215
+- initiatives: 72
+
+Authority/project-phase records and marketing catalogue records are not automatically one unique-development population.
+
+## 8. GitHub source authority
+
+Repository:
+
+```text
+gugmaae-prog/espacios
+branch: main
+visibility: public
+```
+
+`wrangler.jsonc` deliberately uses the non-production Worker name:
+
+```text
+psr-portfolio-map-v2-navigation-candidate
+```
+
+and declares no production route. This is a safety boundary.
+
+Production has received later additive Cloudflare releases after the last full GitHub source sync, including:
+
+- historical/prediction enrichment
+- UAE coverage additions
+- Data Room
+- collapsible workspace/card repairs
+- live System/Data Room topology surface
+
+Therefore **do not deploy `main` blindly over production**. First reconcile the live Worker back into editable source/assets, run the embed step and acceptance suite, then publish a candidate version.
+
+## 9. Current map UX ownership
+
+- MapLibre owns the map camera and spatial interaction.
+- The DOM shell owns fixed search, rail, panels and cards.
+- Main workspace panels launch collapsed/peek so the map remains visible.
+- Nested intelligence cards are collapsible and repaired after dynamic rerenders.
+- `System` is now exposed from the map and opens the live topology surface.
+
+## 10. Release / rollback discipline
+
+Before any production change:
+
+1. capture the active shell and map deployments;
+2. preserve bindings and compatibility settings;
+3. back up the current Worker/research artefacts;
+4. upload a candidate version;
+5. verify desktop/mobile and critical APIs;
+6. promote the candidate to 100%;
+7. record the final version/deployment in the system snapshot.
+
+A Worker code rollback does not automatically roll back mutable R2/D1 state.
