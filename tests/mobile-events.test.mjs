@@ -5,6 +5,14 @@ import vm from 'node:vm';
 import * as MMCore from '../src/mobile-map/core.mjs';
 
 const source = await fs.readFile(new URL('../src/mobile-map/app.js', import.meta.url), 'utf8');
+const unifiedSource = await fs.readFile(new URL('../src/unified-map/app.js', import.meta.url), 'utf8');
+// Extract the real unified semantic picker, not a behaviorally looser stub.
+const unifiedPickStart = unifiedSource.indexOf('pick(event){');
+assert.ok(unifiedPickStart >= 0, 'Unified controller exposes its semantic picker');
+let unifiedPickEnd = unifiedPickStart + 'pick(event)'.length, braces = 0;
+do {const char = unifiedSource[unifiedPickEnd++];if(char === '{')braces++;else if(char === '}')braces--;} while(braces > 0 && unifiedPickEnd < unifiedSource.length);
+const unifiedPick = unifiedSource.slice(unifiedPickStart, unifiedPickEnd);
+assert.ok(unifiedPick.endsWith('}'), 'Complete production unified callback is extracted');
 // Exercise production callbacks inside their real closure, without installing
 // the unrelated layout DOM. Fail rather than silently replacing missing hooks.
 const pointerRegistration = source.split('\n').find(line => line.includes("const canvas=map.getCanvas();canvas.addEventListener('pointerdown'"));
@@ -12,7 +20,7 @@ const captureRegistration = source.split('\n').find(line => line.includes("map.g
 assert.ok(pointerRegistration, 'Actual canvas pointer listeners exist');
 assert.ok(captureRegistration, 'Actual native capture listener exists');
 const instrumented = source.replace('  const timer=setInterval(',
-  `${pointerRegistration}\n${captureRegistration}\n  globalThis.__MOBILE_EVENTS_TEST__={pick,M};\n  const timer=setInterval(`);
+  `${pointerRegistration}\n${captureRegistration}\n  globalThis.__MOBILE_EVENTS_TEST__={pick,M,choose,periodsNow,selectedNow,domain,applyPointer,finish,installPointer,renderMap};\n  const timer=setInterval(`);
 assert.notEqual(instrumented, source, 'Test-only closure access injection point exists');
 
 function target() {
@@ -35,19 +43,21 @@ function target() {
 
 function harness(mode = 'projects') {
   const container = target(), canvas = target(), nodes = new Map(), microtasks = [];
-  const calls = {project: [], benchmark: [], scenario: [], stop: 0, legacyClick: 0};
+  const calls = {project: [], benchmark: [], scenario: [], unified: [], chosen: [], native: [], render: 0, nativeRender: 0, stop: 0, legacyClick: 0};
   const feature = {type: 'Feature', properties: {id: 'exact-project'}, geometry: {type: 'Point', coordinates: [10, 20]}};
   const node = selector => {
-    if (!nodes.has(selector)) nodes.set(selector, {hidden: false, dataset: {}});
+    if (!nodes.has(selector)) nodes.set(selector, {...target(), hidden: false, dataset: {}, classList:{add(){},remove(){},contains(){return false;}},style:{setProperty(){}},getBoundingClientRect:()=>({left:100,top:50,width:300,height:44}),focus(){},hasPointerCapture:()=>false,setPointerCapture(){}});
     return nodes.get(selector);
   };
   canvas.getBoundingClientRect = () => ({left: 100, top: 50, width: 390, height: 844});
   const sandbox = {
     MMCore,
-    document: {documentElement: {dataset: {}}, querySelector: node},
+    document: {...target(), documentElement: {dataset: {}}, querySelector: node},
     matchMedia: () => ({matches: false}),
     setInterval: () => 1,
     requestAnimationFrame: () => 1,
+    cancelAnimationFrame() {}, clearTimeout() {}, addEventListener() {},
+    performance: {now:()=>200}, suState: {pointer:null},
     queueMicrotask: callback => microtasks.push(callback),
     window: {EspaciosEstimateUI: {
       context: () => ({map: mode === 'scenario'}),
@@ -56,7 +66,7 @@ function harness(mode = 'projects') {
     map: {
       getCanvas: () => canvas,
       getCanvasContainer: () => container,
-      getLayer: id => (mode === 'benchmark' && id === 'ms-fill') || (mode === 'scenario' && id === 'se-fill'),
+      getLayer: id => (mode === 'benchmark' && id === 'ms-fill') || (mode === 'scenario' && id === 'se-fill') || (mode === 'unified' && id === 'um-fill'),
       project: ([x, y]) => ({x, y}),
       unproject: ({x, y}) => ({lng: x, lat: y}),
       queryRenderedFeatures: point => point.x === 10 && point.y === 20 ? [{properties: {name: 'Exact area'}}] : [],
@@ -78,7 +88,15 @@ function harness(mode = 'projects') {
     psrSetSelectedPoint() {},
     recordTitle: record => record.name
   };
+  sandbox.cxCatalogue=()=>false;sandbox.tlChooseDate=period=>calls.native.push(period);
+  sandbox.tlUpdate=()=>calls.nativeRender++;sandbox.tlStop=()=>{};
+  if(mode==='unified'){
+    sandbox.future=()=>true;sandbox.prepare=()=>{};sandbox.details=()=>calls.unified.push(sandbox.msState.area);sandbox.refreshSoon=()=>{};
+    const timeline={periods:['["2019-01","registered_sale"]','["2027Q2","conditional_scenario"]','["2036Q2","conditional_scenario"]'],selected:'["2019-01","registered_sale"]',key:'same-reviewed-domain',metric:'price',loading:false};
+    sandbox.window.EspaciosUnifiedMap={timeline:()=>timeline,choose(period){calls.chosen.push(period);timeline.selected=period;},render:()=>calls.render++};
+  }
   vm.createContext(sandbox);
+  if(mode==='unified')sandbox.window.EspaciosUnifiedMap.pick=vm.runInContext('(function '+unifiedPick+')',sandbox);
   new vm.Script(instrumented).runInContext(sandbox);
   const flush = () => {while (microtasks.length) microtasks.shift()();};
   const click = (extra = {}) => {
@@ -89,7 +107,7 @@ function harness(mode = 'projects') {
     if (!event.stopped) calls.legacyClick++;
     return event;
   };
-  return {api: sandbox.__MOBILE_EVENTS_TEST__, sandbox, canvas, container, calls, click, flush, microtasks};
+  return {api: sandbox.__MOBILE_EVENTS_TEST__, sandbox, canvas, container, calls, click, flush, microtasks, node};
 }
 
 for (const mode of ['projects', 'benchmark', 'registered', 'scenario']) {
@@ -155,4 +173,54 @@ test('pointer hover without a pressed button does not become a drag', () => {
   h.canvas.emit('pointerdown', {clientX: 100, clientY: 70});
   h.canvas.emit('pointermove', {clientX: 300, clientY: 70, buttons: 0});
   assert.equal(h.api.M.mapDragged, false);
+});
+
+test('unified conditional map owns the first matching tap once, before all native history handlers',()=>{
+  const h=harness('unified'),event=h.click();assert.equal(event.stopped,true);assert.equal(event.prevented,true);
+  assert.equal(h.microtasks.length,1);h.flush();assert.deepEqual(h.calls.unified,['Exact area']);
+  assert.deepEqual(h.calls.project,[]);assert.deepEqual(h.calls.benchmark,[]);assert.deepEqual(h.calls.scenario,[]);assert.equal(h.calls.legacyClick,0);
+});
+
+test('unified future double-click retains semantic ownership without duplicate selection or intercepting dblclick zoom',()=>{
+  const h=harness('unified');h.click();h.flush();const event=h.click({detail:2});h.flush();
+  assert.equal(event.stopped,true);assert.equal(h.microtasks.length,0);assert.deepEqual(h.calls.unified,['Exact area']);
+  assert.equal(h.container.listeners.has('dblclick'),false);
+});
+
+test('unmapped future location cannot silently open an underlying current-history value',()=>{
+  const h=harness('unified'),event=h.click({clientX:350,clientY:400});h.flush();
+  assert.equal(event.stopped,true,'Future map owns its whole semantic view, including unknown locations');
+  assert.deepEqual(h.calls.unified,[]);assert.deepEqual(h.calls.benchmark,[]);assert.equal(h.calls.legacyClick,0);
+});
+
+test('unified adapter keeps native and conditional option identities instead of passing scenario ids to legacy history',()=>{
+  const h=harness('unified'),periods=h.api.periodsNow();
+  h.api.choose(periods[2]);assert.deepEqual(h.calls.chosen,[periods[2]]);assert.deepEqual(h.calls.native,[]);
+  assert.equal(h.api.selectedNow(),periods[2]);h.api.choose('invented-period');assert.equal(h.calls.chosen.length,1);
+  h.api.renderMap();assert.equal(h.calls.render,1);assert.equal(h.calls.nativeRender,0);
+});
+
+test('real timeline pointer callbacks drag the unified range to its final conditional year and release cleanly',()=>{
+  const h=harness('unified');h.api.installPointer();const track=h.node('#dr-track'),slider=h.node('#tl-slider');
+  const event=(clientX)=>({target:slider,button:0,pointerId:7,clientX,preventDefault(){this.prevented=true;},stopImmediatePropagation(){this.stopped=true;}});
+  track.emit('pointerdown',event(112));assert.equal(h.api.M.pointer,7);
+  track.emit('pointermove',event(388));h.api.applyPointer();
+  assert.equal(h.api.selectedNow(),h.api.periodsNow().at(-1));assert.deepEqual(h.calls.native,[]);
+  track.emit('pointerup',event(388));assert.equal(h.api.M.pointer,null);assert.equal(h.sandbox.suState.pointer,null);
+  assert.ok(h.calls.render>=1);assert.equal(h.calls.nativeRender,0);
+});
+
+test('a unified context change cancels an active drag before applying a stale option',()=>{
+  const h=harness('unified');h.api.installPointer();const slider=h.node('#tl-slider');
+  h.node('#dr-track').emit('pointerdown',{target:slider,button:0,pointerId:8,clientX:112,preventDefault(){},stopImmediatePropagation(){}});
+  h.sandbox.window.EspaciosUnifiedMap.timeline().key='new-property-basket';h.api.M.fraction=1;h.api.applyPointer();
+  assert.equal(h.api.M.pointer,null);assert.equal(h.calls.chosen.length,0);assert.deepEqual(h.calls.native,[]);
+});
+
+test('keyboard and native range-input alternatives reach both unified endpoints',()=>{
+  const h=harness('unified');h.api.installPointer();const track=h.node('#dr-track'),slider=h.node('#tl-slider');
+  const event=key=>({target:slider,key,preventDefault(){this.prevented=true;},stopImmediatePropagation(){this.stopped=true;}});
+  const end=event('End');track.emit('keydown',end);assert.equal(h.api.selectedNow(),h.api.periodsNow().at(-1));assert.equal(end.stopped,true);
+  track.emit('keydown',event('Home'));assert.equal(h.api.selectedNow(),h.api.periodsNow()[0]);
+  slider.value='1';track.emit('input',{target:slider,stopImmediatePropagation(){}});assert.equal(h.api.selectedNow(),h.api.periodsNow()[1]);assert.deepEqual(h.calls.native,[]);
 });

@@ -20,6 +20,9 @@ source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(app)+';\nAE_UAE_RELEASE_CSS
 const mobileCore=await read('src/mobile-map/core.mjs');
 const mobileApp='\nconst MMCore=(()=>{\n'+mobileCore.replace(/^export /gm,'')+'\nreturn {clamp,fractionAt,periodAt,pickProjects,viewportPadding};})();\n'+await read('src/mobile-map/app.js');
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(mobileApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/mobile-map/style.css'))+';\n';
+const unifiedCore=await read('src/unified-map/core.mjs');
+const unifiedApp='\nconst UMCore=(()=>{\n'+unifiedCore.replace(/^export /gm,'')+'\nreturn {periodEnd,sortNativePeriods,extendPriceScenario,timelineOptions,profitability};})();\n'+await read('src/mobile-map/search-focus.js')+'\n'+await read('src/unified-map/app.js');
+source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(unifiedApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/unified-map/style.css'))+';\n';
 source+='\nvar SE_SOURCE_REVIEW='+JSON.stringify(JSON.parse(await read('data/source-review-20260930.json')))+';\n'+await read('src/smart-estimates/worker-extension.js')+'\nexport {worker_default as default};\n';
 source=source.replace('\nexport {worker_default as default};\n','\n'+await read('src/mobile-map/worker-extension.js')+'\nexport {worker_default as default};\n');
 await fs.writeFile(new URL('src/worker.js',root),source);

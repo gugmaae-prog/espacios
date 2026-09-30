@@ -1,0 +1,454 @@
+/* One map, one timeline. Loaded after the acquired and mobile-map styles.
+   The explicit scope intentionally outranks legacy !important rules without
+   changing the original map or controls when this enhancement is unavailable. */
+html[data-unified-map="1"] {
+  --um-cell: color-mix(in srgb, var(--su-muted) 6%, var(--su-panel));
+  --um-selected: color-mix(in srgb, var(--mm-accent) 14%, var(--su-panel));
+  --um-selected-line: color-mix(in srgb, var(--mm-accent) 45%, var(--su-line));
+}
+
+/* Secondary paths remain in the DOM for compatibility, not on the canvas. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app :is(#tg-bar, #pp-toolbar),
+html[data-unified-map="1"] #se-panel .se-tabs:is([aria-label="Estimate metric"], [aria-label="Estimate horizon"]),
+html[data-unified-map="1"] #timeline-panel > .panel-title-row {
+  display: none !important;
+}
+html[data-unified-map="1"] #se-panel :is(#se-filters, #se-map, .se-stale),
+html[data-unified-map="1"] #se-panel label:has(> #se-area),
+html[data-unified-map="1"][data-unified-future="1"] :is(#sg-tooltip, #tl-tooltip, #ms-legend) { display: none !important; }
+html[data-unified-map="1"] #mm-advanced .tl-grid { display: none !important; }
+html[data-unified-map="1"] #ms-toolbar :is(.ms-segments, .ms-periods) { display: none !important; }
+/* The modal is mounted directly under body, not under #app. */
+html[data-unified-map="1"] body #su-settings#su-settings :is(#tg-bar, #pp-toolbar, .dr-secondary),
+html[data-unified-map="1"] body #su-settings#su-settings #ms-toolbar :is(.ms-segments, .ms-periods),
+html[data-unified-map="1"] body #su-settings#su-settings #mm-advanced .tl-grid { display: none !important; }
+
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  gap: 5px !important;
+  padding: 10px 14px !important;
+  background: var(--su-panel) !important;
+  color: var(--su-ink) !important;
+  border: 1px solid var(--su-line) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 5px 22px #00000014 !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property) {
+  display: grid !important;
+  grid-column: 1 / -1 !important;
+  grid-row: auto !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto !important;
+  align-items: center;
+  gap: 3px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-metrics { order: 0 !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-property {
+  order: 1 !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  border-radius: 12px !important;
+  background: var(--um-cell) !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property) button {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  width: 100% !important;
+  padding: 7px 8px !important;
+  margin: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: var(--su-muted) !important;
+  font: 500 12px/1.25 Inter, system-ui, sans-serif !important;
+  letter-spacing: 0 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property) button[aria-pressed="true"] {
+  background: var(--um-selected) !important;
+  border-color: var(--um-selected-line) !important;
+  color: var(--su-ink) !important;
+  font-weight: 650 !important;
+  box-shadow: inset 0 -2px 0 var(--mm-accent) !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-points {
+  width: auto !important;
+  margin-left: 5px !important;
+  padding-inline: 10px !important;
+  border-color: var(--su-line) !important;
+  color: var(--su-ink) !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-metrics:not(:has(#mm-points:not([hidden]))) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+/* The date, evidence class and its two paired control groups share a row. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock .tl-head {
+  display: grid !important;
+  grid-column: 1 / -1 !important;
+  grid-row: auto !important;
+  grid-template-columns: minmax(0, 1fr) 88px 88px !important;
+  align-items: center !important;
+  gap: 5px !important;
+  order: 2 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #su-date {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  order: 0 !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  white-space: normal !important;
+}
+html[data-unified-map="1"] #su-date-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-date {
+  flex: 0 1 150px !important;
+  width: 150px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  padding: 7px 24px 7px 10px !important;
+  margin: 0 !important;
+  border: 1px solid var(--su-line) !important;
+  border-radius: 10px !important;
+  background: var(--um-cell) !important;
+  color: var(--su-ink) !important;
+  font: 600 14px/1.3 Inter, system-ui, sans-serif !important;
+  font-variant-numeric: tabular-nums !important;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+html[data-unified-map="1"] #um-evidence {
+  display: inline-block;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 27ch;
+  padding: 4px 7px;
+  border: 1px solid var(--su-line);
+  border-radius: 6px;
+  color: var(--su-muted);
+  background: transparent;
+  font: 500 10px/1.35 Inter, system-ui, sans-serif;
+  overflow-wrap: anywhere;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(.mm-transport, #um-actions) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  grid-row: 1 !important;
+  min-width: 88px !important;
+  width: 88px !important;
+  min-height: 44px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock .mm-transport { grid-column: 2 !important; order: 1 !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-actions { grid-column: 3 !important; order: 2 !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(.mm-transport, #um-actions) button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: var(--su-ink) !important;
+  font-size: 17px !important;
+  line-height: 1 !important;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* No decorative tick stubs or animation in the date drag surface. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock .dr-player {
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  grid-row: auto !important;
+  order: 3 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #dr-track {
+  display: block !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #tl-slider {
+  top: 0 !important;
+  height: 44px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  transition: none !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #dr-dates {
+  top: 39px !important;
+  width: 100% !important;
+  font-size: 10px !important;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3 !important;
+  color: var(--su-muted) !important;
+}
+html[data-unified-map="1"] #um-readout {
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: auto;
+  order: 4;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding-top: 4px;
+  border-top: 1px solid var(--su-line);
+  color: var(--su-ink);
+  font: 500 12px/1.4 Inter, system-ui, sans-serif;
+}
+html[data-unified-map="1"] #um-readout > :not(button) { min-width: 0; flex: 1 1 auto; overflow-wrap: anywhere; }
+html[data-unified-map="1"] #um-readout :is(small, .um-basis, .um-note) { display: block; color: var(--su-muted); font-size: 10px; font-weight: 400; }
+html[data-unified-map="1"] #um-readout :is(strong, b) { font-weight: 650; font-variant-numeric: tabular-nums; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-details {
+  flex: 0 0 auto !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  padding: 8px 10px !important;
+  border: 1px solid var(--su-line) !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: var(--su-ink) !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock:has(#um-readout) #mm-status { display: none !important; }
+
+/* Collapsing never hides the usable date, evidence class or time track. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized { padding-block: 6px !important; gap: 2px !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized :is(#mm-metrics, #um-property) { display: none !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized .tl-head > :is(#su-date, .mm-transport, #um-actions) { display: flex !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized #dr-track { height: 50px !important; min-height: 50px !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized #dr-dates { top: 37px !important; }
+
+/* Settings and source access share the same control language as the map. */
+html[data-unified-map="1"] #su-settings { box-sizing: border-box; color: var(--su-ink); background: var(--su-panel); border-color: var(--su-line); }
+html[data-unified-map="1"] #su-settings :is(button, select, input:not([type="checkbox"]):not([type="radio"]), summary) { min-height: 44px !important; box-sizing: border-box; }
+html[data-unified-map="1"] #su-settings :is(label, .tl-grid > *, .se-grid > *) { min-width: 0; }
+html[data-unified-map="1"] #su-settings :is(select, input) { max-width: 100% !important; }
+html[data-unified-map="1"] #um-horizon { width: 100%; min-width: 0; min-height: 44px; }
+html[data-unified-map="1"] #su-settings .tl-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 11px;
+  border: 1px solid var(--su-line);
+  border-radius: 10px;
+  color: var(--su-ink);
+  background: transparent;
+  font: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html[data-unified-map="1"] #ae-system-access {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 10px !important;
+  border: 1px solid var(--su-line) !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: var(--su-ink) !important;
+  font: 500 11px/1.2 Inter, system-ui, sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+html[data-unified-map="1"] #app .ae-search-map-tools { min-width: 0; flex: 0 0 auto; }
+html[data-unified-map="1"] #um-map-key {
+  position: fixed;
+  top: auto;
+  right: 16px;
+  bottom: calc(100dvh - var(--mm-dock-top, calc(100dvh - 190px)) + 8px);
+  z-index: 110;
+  width: auto;
+  max-width: min(290px, calc(100vw - 24px));
+  margin: 0;
+  padding: 8px 11px;
+  border: 1px solid var(--su-line);
+  border-radius: 10px;
+  background: var(--su-panel);
+  color: var(--su-ink);
+  box-shadow: 0 2px 10px #0000000a;
+  font: 500 10px/1.4 Inter, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+html[data-unified-map="1"] #um-map-key small { color: var(--su-muted); font-weight: 400; }
+html[data-unified-map="1"] #um-map-key[hidden] { display: none !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app .topbar .search-wrap { min-width: 0 !important; background: var(--um-cell) !important; box-shadow: none !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app .topbar #search { min-width: 0 !important; color: var(--su-ink) !important; background: transparent !important; }
+html[data-unified-map="1"] #search::placeholder { color: var(--su-muted) !important; opacity: 1 !important; }
+html[data-unified-map="1"] :is(#mm-metrics, #um-property, #um-actions, .mm-transport, #um-readout, #su-settings) :is(button, select, a, input, summary):focus-visible,
+html[data-unified-map="1"] #ae-system-access:focus-visible { outline: 2px solid var(--mm-accent) !important; outline-offset: 3px !important; }
+
+@media (min-width: 850px) and (min-height: 561px) {
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; column-gap: 16px !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-metrics { grid-column: 1 !important; grid-row: 1 !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-property { grid-column: 2 !important; grid-row: 1 !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock .tl-head { grid-column: 1 !important; grid-row: 2 !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock .dr-player { grid-column: 2 !important; grid-row: 2 !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-readout { grid-column: 1 / -1 !important; grid-row: 3 !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized :is(.tl-head, .dr-player) { grid-row: 1 !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized #um-readout { grid-row: 2 !important; }
+}
+
+@media (max-width: 1099px) {
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #su-date { display: block !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-date { width: 100% !important; max-width: none !important; padding: 14px 20px 0 8px !important; }
+  html[data-unified-map="1"] #um-evidence {
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    right: 14px;
+    max-width: none;
+    padding: 0;
+    border: 0;
+    font-size: 9px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 760px), (max-width: 1024px) and (max-height: 560px) and (pointer: coarse) {
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock { padding: 8px 10px !important; gap: 3px !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock .tl-head { gap: 3px !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #su-date { display: block !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-date { width: 100% !important; max-width: none !important; font-size: 16px !important; padding: 14px 20px 0 8px !important; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property) button { padding-inline: 5px !important; font-size: 11px !important; }
+  html[data-unified-map="1"] #um-readout { gap: 7px; font-size: 11px; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-details { padding-inline: 8px !important; }
+  html[data-unified-map="1"] #su-settings { width: calc(100vw - 20px); padding: 16px; }
+  html[data-unified-map="1"] #su-settings .tl-grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-unified-map="1"] #su-settings :is(select, input) { font-size: 16px !important; }
+  html[data-unified-map="1"] #su-settings .su-dialog-head { top: -16px; }
+  html[data-unified-map="1"] #se-panel .se-grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-unified-map="1"] #ae-system-access { padding-inline: 7px !important; font-size: 10px !important; border-color: transparent !important; }
+  html[data-unified-map="1"] #um-map-key { right: 12px; max-width: min(260px, calc(100vw - 24px)); }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app .topbar .search-wrap { padding-left: 0 !important; }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  html[data-unified-map="1"] :is(#mm-metrics, #um-property, #um-actions, .mm-transport, #um-readout) button,
+  html[data-unified-map="1"] #ae-system-access { transition: background-color 120ms ease, border-color 120ms ease; }
+  html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property, #um-actions, .mm-transport, #um-readout) button:hover:not(:disabled),
+  html[data-unified-map="1"] #ae-system-access:hover { background: var(--um-selected) !important; color: var(--su-ink) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-unified-map="1"] :is(#tl-dock, #su-settings, #um-readout, #ae-system-access),
+  html[data-unified-map="1"] #tl-dock * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Keep native hidden semantics stronger than the legacy collapsed cascade. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock [hidden],
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property, #mm-points, #um-readout, #um-details, #mm-date, #um-evidence)[hidden],
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized .tl-head > [hidden]:not(#tl-title):not(#tl-minimize):not(#ae-map-view) { display: none !important; }
+
+/* The legacy minimized selector contains three :not(#id) terms. Repeated
+   root IDs intentionally exceed its specificity; these are superseded controls,
+   not evidence content. The unified date/settings controls remain available. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #tl-dock#tl-dock :is(#mm-play, #tl-title, #tl-settings) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #timeline-panel#timeline-panel > .panel-title-row {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+/* The controller owns this flag. Explicit Explore navigation restores the
+   existing panel without allowing its legacy observer to open it on startup. */
+html[data-unified-map="1"][data-um-explore="0"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #timeline-panel#timeline-panel {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+/* Both the unified three-label range and the preserved density labels use
+   their actual text widths, not stale absolute offsets from the old rail. */
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #tl-dock #dr-dates {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 4px !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #tl-dock #dr-dates > span {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  flex: 0 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #tl-dock #dr-dates > span:first-child { text-align: left !important; }
+html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app#app #tl-dock #dr-dates > span:last-child { text-align: right !important; }

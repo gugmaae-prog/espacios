@@ -3,6 +3,9 @@ import fs from "node:fs";
 const workerUrl = new URL(process.env.ESPACIOS_TEST_WORKER_MODULE || "../src/worker.js", import.meta.url);
 const { default: worker } = await import(workerUrl.href);
 const workerSource = fs.readFileSync(workerUrl, "utf8");
+const frontendExtension = fs.readFileSync(new URL('../src/mobile-map/worker-extension.js', import.meta.url), 'utf8');
+const frontendRelease = /var MM_RELEASE\s*=\s*['"]([^'"]+)['"]/.exec(frontendExtension)?.[1];
+assert.ok(frontendRelease, 'Frontend wrapper declares its release');
 assert.doesNotMatch(workerSource, /aei_[A-Za-z0-9_]+/);
 assert.doesNotMatch(workerSource, /aeTempInventoryUpload/);
 assert.match(workerSource, /You are Espacios UAE Real Estate Intelligence AI/);
@@ -26,6 +29,8 @@ assert.equal(indexResponse.status, 200);
 assert.equal(indexResponse.headers.get("x-psr-map-ui"), "espacios-research-v1");
 const navigationRelease = indexResponse.headers.get("x-ae-navigation");
 assert.ok(navigationRelease, "The map identifies its navigation release");
+assert.equal(navigationRelease, frontendRelease);
+assert.equal(indexResponse.headers.get('x-espacios-mobile'), frontendRelease);
 assert.equal(indexResponse.headers.get("x-espacios-system"), "20260930-system-map-v1");
 assert.equal(
   indexResponse.headers.get("x-psr-map-version"),
@@ -52,6 +57,8 @@ assert.ok(Number.isFinite(Number(jsResponse.headers.get("x-psr-map-navfix-count"
 const javascript = await jsResponse.text();
 assert.ok(javascript.length > 200_000);
 assert.ok(javascript.includes(navigationRelease));
+assert.match(javascript, /window\.EspaciosUnifiedMap=Object\.freeze/);
+assert.match(javascript, /window\.EspaciosSearchFocus = Object\.freeze/);
 assert.match(javascript, /__ESPACIOS_PAINT_MAP__/);
 assert.match(javascript, /from '\/map\/vendor\/maplibre-gl\.mjs\?v=6\.8\.0'/);
 assert.match(javascript, /map\.keyboard\?\.disable/);
@@ -87,6 +94,7 @@ assert.match(javascript, /seamless-v12: community polygon layers hydrate on load
 const cssResponse = await request("/map/app-v2.css");
 assert.equal(cssResponse.status, 200);
 const css = await cssResponse.text();
+assert.equal(cssResponse.headers.get('x-espacios-mobile'), frontendRelease);
 assert.ok(css.length > 100_000);
 assert.match(css, /AE camera-only zoom guard v4/);
 assert.match(css, /#map\{contain:layout paint style;overscroll-behavior:none;touch-action:none!important\}/);
