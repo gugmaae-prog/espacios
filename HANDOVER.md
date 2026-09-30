@@ -1,5 +1,11 @@
 # Espacios UAE Intelligence Map — Full-Stack Handover
 
+> **Production topology notice — 30 September 2026**
+>
+> The production identifiers below are historical. Current routing is `espacios.me/map* -> espacios-map-shell -> psr-portfolio-map-v2`.
+> Current live identifiers, bindings, Data Room access state, and source-authority notes are maintained in [docs/architecture.md](docs/architecture.md) and [MAP_SYSTEM_SNAPSHOT_2026-09-30.json](MAP_SYSTEM_SNAPSHOT_2026-09-30.json).
+> The Data Room is currently restricted with `DATA_ROOM_PUBLIC=false`.
+>
 Last verified: 22 September 2026, Asia/Dubai  
 Canonical production URL: <https://espacios.me/map>  
 Local project root: `/Users/keifferjapeth/Documents/Codex/2026-09-19/cloudflare-plugin-dev-6aad368491c481918f56ee1ec8955165-created-by/outputs/espacios-map-navigable-v2`
