@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import worker from "../src/worker.js";
-
-const workerSource = fs.readFileSync(new URL("../src/worker.js", import.meta.url), "utf8");
+const workerUrl = new URL(process.env.ESPACIOS_TEST_WORKER_MODULE || "../src/worker.js", import.meta.url);
+const { default: worker } = await import(workerUrl.href);
+const workerSource = fs.readFileSync(workerUrl, "utf8");
 assert.doesNotMatch(workerSource, /aei_[A-Za-z0-9_]+/);
 assert.doesNotMatch(workerSource, /aeTempInventoryUpload/);
 assert.match(workerSource, /You are Espacios UAE Real Estate Intelligence AI/);
@@ -15,7 +15,7 @@ const context = {
 
 async function request(pathname) {
   return worker.fetch(
-    new Request(`https://local.espacios.test${pathname}`),
+    new Request(`https://espacios.me${pathname}`),
     {},
     context
   );
@@ -23,15 +23,17 @@ async function request(pathname) {
 
 const indexResponse = await request("/map");
 assert.equal(indexResponse.status, 200);
-assert.equal(indexResponse.headers.get("x-psr-map-ui"), "espacios-auditfix-v13");
-assert.equal(indexResponse.headers.get("x-ae-navigation"), "20260922-auditfix-v13");
+assert.equal(indexResponse.headers.get("x-psr-map-ui"), "espacios-research-v1");
+const navigationRelease = indexResponse.headers.get("x-ae-navigation");
+assert.ok(navigationRelease, "The map identifies its navigation release");
+assert.equal(indexResponse.headers.get("x-espacios-system"), "20260930-system-map-v1");
 assert.equal(
   indexResponse.headers.get("x-psr-map-version"),
   "2026-09-17-edgeassets-live-v1"
 );
 const indexHtml = await indexResponse.text();
-assert.match(indexHtml, /app-v2\.js\?v=20260922-auditfix-v13/);
-assert.match(indexHtml, /app-v2\.css\?v=20260922-auditfix-v13/);
+assert.ok(indexHtml.includes(`app-v2.js?v=${navigationRelease}`));
+assert.ok(indexHtml.includes(`app-v2.css?v=${navigationRelease}`));
 assert.match(indexHtml, /\/map\/vendor\/maplibre-gl\.mjs\?v=6\.8\.0/);
 assert.match(indexHtml, /\/map\/vendor\/maplibre-gl\.css\?v=6\.8\.0/);
 assert.doesNotMatch(indexHtml, /unpkg\.com\/maplibre-gl/);
@@ -45,11 +47,11 @@ assert.doesNotMatch(indexHtml, /p\('ae-bg','background-color','#07121c'\)/);
 
 const jsResponse = await request("/map/app-v2.js");
 assert.equal(jsResponse.status, 200);
-assert.equal(jsResponse.headers.get("x-psr-map-navfix"), "20260922-auditfix-v13");
+assert.equal(jsResponse.headers.get("x-psr-map-navfix"), navigationRelease);
 assert.ok(Number.isFinite(Number(jsResponse.headers.get("x-psr-map-navfix-count"))));
 const javascript = await jsResponse.text();
 assert.ok(javascript.length > 200_000);
-assert.match(javascript, /20260922-auditfix-v13/);
+assert.ok(javascript.includes(navigationRelease));
 assert.match(javascript, /__ESPACIOS_PAINT_MAP__/);
 assert.match(javascript, /from '\/map\/vendor\/maplibre-gl\.mjs\?v=6\.8\.0'/);
 assert.match(javascript, /map\.keyboard\?\.disable/);
@@ -94,7 +96,7 @@ assert.match(indexHtml, /min-width:44px!important;min-height:44px!important/);
 
 const vendorBody = new TextEncoder().encode("export const mapVersion = '6.8.0';");
 const vendorResponse = await worker.fetch(
-  new Request("https://local.espacios.test/map/vendor/maplibre-gl.mjs?v=6.8.0"),
+  new Request("https://espacios.me/map/vendor/maplibre-gl.mjs?v=6.8.0"),
   {
     MARKET_R2: {
       async get(key) {
@@ -127,7 +129,7 @@ const adminGetResponse = await request("/map/admin/azizi-upload-20260910");
 assert.equal(adminGetResponse.status, 404);
 const adminUnauthenticatedResponse = await worker.fetch(
   new Request(
-    "https://local.espacios.test/map/admin/azizi-upload-20260910?key=availability/azizi/2026-09-10/test.json",
+    "https://espacios.me/map/admin/azizi-upload-20260910?key=availability/azizi/2026-09-10/test.json",
     { method: "POST", body: "{}" }
   ),
   { MARKET_R2: {} },
@@ -135,4 +137,23 @@ const adminUnauthenticatedResponse = await worker.fetch(
 );
 assert.equal(adminUnauthenticatedResponse.status, 404);
 
-console.log("Smoke checks passed: auditfix-v13 theme race, Espacios AI branding, exact boundary joins, footprint dedupe, mobile sheet, vendor cache, removed admin route.");
+assert.doesNotMatch(indexHtml, /id="ae-event-invite"/);
+assert.match(indexHtml, /ae-system-access/);
+assert.match(javascript, /function aeCollapseRepairV3\(/);
+for (const hook of ["function CXCore()", "function UECore()", "function msForecastCard()"])
+  assert.ok(javascript.includes(hook), `Preserve ${hook}`);
+for (const pathname of ["/map/data-room", "/map/data-room/app.js", "/map/data-room/style.css", "/map/data-room/core.mjs"]) {
+  const response = await request(pathname);
+  assert.equal(response.status, 404, `${pathname} fails closed`);
+  assert.match(response.headers.get("cache-control") || "", /no-store/);
+  assert.match(response.headers.get("x-robots-tag") || "", /noindex/);
+}
+for (const pathname of ["/map/system", "/map/api/system"]) {
+  const response = await request(pathname);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.match(response.headers.get("cache-control") || "", /no-store/);
+  const disallowed = await worker.fetch(new Request(`https://espacios.me${pathname}`, { method: "POST" }), {}, context);
+  assert.equal(disallowed.status, 405);
+}
+console.log("Smoke checks passed: preserved map interaction, theme, branding, history/projections, collapse repair, System routes, closed Data Room, vendor cache and removed admin route.");

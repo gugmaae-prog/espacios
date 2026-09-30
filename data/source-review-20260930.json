@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "owner": "Espacios",
+  "generatedAt": "2026-09-30T07:55:21.173Z",
+  "purpose": "Metadata-only discovery register for Data Room provenance. No source numeric observation payloads are embedded.",
+  "publicationScope": "source_metadata_only",
+  "sourceCount": 5,
+  "entries": [
+    {
+      "publisher": "Abu Dhabi Real Estate Centre",
+      "sourcePage": "https://adrec.gov.ae/en/market-data",
+      "discoveredOn": "2026-09-30",
+      "rightsStatus": "rights_pending",
+      "licence": null,
+      "numericDataPublished": false,
+      "productionIngestionApproved": false,
+      "forecastTrainingApproved": false,
+      "sourceStatus": "discovered_not_released",
+      "rightsReason": "No explicit bulk redistribution or model-training terms verified.",
+      "rightsReviewUrls": [
+        "https://adrec.gov.ae/en/terms_and_conditions",
+        "https://adrec.gov.ae/en/apisubscription"
+      ],
+      "id": "adrec-monthly-sale-index-20260930",
+      "title": "Abu Dhabi monthly sale price indices",
+      "description": "Official municipality/zone/property-type index histories, not neighborhood price levels.",
+      "endpoint": "https://adrec.gov.ae/api/feature/MarketData/ResiSalePriceIndexByArea",
+      "capturedAt": "2026-09-30T07:46:32.884Z",
+      "sourceResponseSha256": "2a74eb44382fcc8e3569aad3d431f4453709ff8e06edba4f982e80fd4e5bb3ee",
+      "observedRecordCount": 560,
+      "uniqueSeriesCount": 7,
+      "firstPeriod": "2020-01-31",
+      "lastPeriod": "2026-08-31",
+      "unit": "index points",
+      "frequency": "monthly",
+      "scope": "Abu Dhabi City municipality and investment/non-investment zones",
+      "qualityStatus": "unique_keys_validated_methodology_pending",
+      "qualityNotes": [
+        "560 unique source keys; no null, nonfinite or negative index values.",
+        "Source types combine apartments/duplexes and villas/townhouses.",
+        "Exact API index methodology and revision policy pending."
+      ]
+    },
+    {
+      "publisher": "Abu Dhabi Real Estate Centre",
+      "sourcePage": "https://adrec.gov.ae/en/market-data",
+      "discoveredOn": "2026-09-30",
+      "rightsStatus": "rights_pending",
+      "licence": null,
+      "numericDataPublished": false,
+      "productionIngestionApproved": false,
+      "forecastTrainingApproved": false,
+      "sourceStatus": "discovered_not_released",
+      "rightsReason": "No explicit bulk redistribution or model-training terms verified.",
+      "rightsReviewUrls": [
+        "https://adrec.gov.ae/en/terms_and_conditions",
+        "https://adrec.gov.ae/en/apisubscription"
+      ],
+      "id": "adrec-monthly-annual-rents-20260930",
+      "title": "Abu Dhabi annual-rent rolling-average history",
+      "description": "Monthly reported annual-rent averages by municipality, district, property type and layout.",
+      "endpoint": "https://adrec.gov.ae/api/feature/MarketData/ResiRentPricesByPeriod",
+      "capturedAt": "2026-09-30T07:53:39.992Z",
+      "sourceResponseSha256": "7d0e4b143a419b359bd72aa5023f98a9361f138bcd2e1110cc6e3041aac20df7",
+      "observedRecordCount": 24131,
+      "uniqueSeriesCount": 710,
+      "districtCount": 90,
+      "municipalityCount": 3,
+      "complete36PeriodSeriesCount": 629,
+      "firstPeriod": "2023-09-30",
+      "lastPeriod": "2026-08-31",
+      "unit": "AED/year",
+      "frequency": "monthly_reporting_points",
+      "scope": "Abu Dhabi City, Al Ain City and Al Dhafra Region",
+      "qualityStatus": "unique_keys_validated_rolling_window_pending",
+      "qualityNotes": [
+        "Complete raw response retained in a private local research snapshot.",
+        "24131 unique keys; no null, nonfinite, negative or zero values.",
+        "629 of710 series have all36 observed reporting periods; missing periods were not invented.",
+        "Rolling-window definition, underlying sample counts and dispersion are not exposed."
+      ]
+    },
+    {
+      "publisher": "Abu Dhabi Real Estate Centre",
+      "sourcePage": "https://adrec.gov.ae/en/market-data",
+      "discoveredOn": "2026-09-30",
+      "rightsStatus": "rights_pending",
+      "licence": null,
+      "numericDataPublished": false,
+      "productionIngestionApproved": false,
+      "forecastTrainingApproved": false,
+      "sourceStatus": "discovered_not_released",
+      "rightsReason": "No explicit bulk redistribution or model-training terms verified.",
+      "rightsReviewUrls": [
+        "https://adrec.gov.ae/en/terms_and_conditions",
+        "https://adrec.gov.ae/en/apisubscription"
+      ],
+      "id": "adrec-monthly-rent-index-20260930",
+      "title": "Abu Dhabi rent price indices",
+      "description": "Source discovered but quarantined due conflicting duplicate series keys.",
+      "endpoint": "https://adrec.gov.ae/api/feature/MarketData/ResiRentPriceIndexByArea",
+      "observedRecordCount": 1440,
+      "uniqueNominalKeyCount": 720,
+      "conflictingNominalKeyCount": 711,
+      "firstPeriod": "2020-01-31",
+      "lastPeriod": "2026-08-31",
+      "unit": "index points",
+      "frequency": "monthly",
+      "qualityStatus": "blocked_conflicting_duplicate_keys",
+      "qualityNotes": [
+        "Every nominal key occurs twice, without a distinguishing source column.",
+        "Do not select the first value, average duplicates or infer lease-status labels."
+      ]
+    },
+    {
+      "publisher": "Abu Dhabi Real Estate Centre",
+      "sourcePage": "https://adrec.gov.ae/en/market-data",
+      "discoveredOn": "2026-09-30",
+      "rightsStatus": "rights_pending",
+      "licence": null,
+      "numericDataPublished": false,
+      "productionIngestionApproved": false,
+      "forecastTrainingApproved": false,
+      "sourceStatus": "discovered_unavailable",
+      "rightsReason": "No explicit bulk redistribution or model-training terms verified.",
+      "rightsReviewUrls": [
+        "https://adrec.gov.ae/en/terms_and_conditions",
+        "https://adrec.gov.ae/en/apisubscription"
+      ],
+      "id": "adrec-sale-and-rent-levels-20260930",
+      "title": "Abu Dhabi sale and rent levels by product and area",
+      "description": "Endpoint linked from the official dashboard but failed during retrieval.",
+      "endpoint": "https://adrec.gov.ae/api/feature/MarketData/ResiRentSalePricesByArea",
+      "observedRecordCount": null,
+      "qualityStatus": "upstream_http_500",
+      "qualityNotes": [
+        "Two attempts returned HTTP500. No numeric observations acquired; null count is not zero source coverage."
+      ]
+    },
+    {
+      "id": "rak-authority-annual-activity-2024-2025",
+      "publisher": "Ras Al Khaimah Municipality, Lands and Properties Sector",
+      "title": "RAK registered transaction activity 2024–2025",
+      "sourcePage": "https://mun.rak.ae/home/rak-municipality/organizational-structure/lands-properties-sector/",
+      "discoveredOn": "2026-09-30",
+      "description": "Official annual transaction counts and aggregate values, not price appreciation or investment return.",
+      "sourceStatus": "discovered_not_released",
+      "rightsStatus": "rights_pending_explicit_site_restriction",
+      "licence": null,
+      "numericDataPublished": false,
+      "productionIngestionApproved": false,
+      "forecastTrainingApproved": false,
+      "reviewedCandidateRecordCount": 24,
+      "firstPeriod": "2024-01-01",
+      "lastPeriod": "2025-12-31",
+      "frequency": "annual",
+      "units": [
+        "AED",
+        "transactions"
+      ],
+      "qualityStatus": "candidate_rows_transcribed_not_published",
+      "rightsReviewUrls": [
+        "https://mun.rak.ae/home/open-data/website/copyrights/",
+        "https://mun.rak.ae/terms-conditions/",
+        "https://mun.rak.ae/home/open-data/"
+      ],
+      "rightsReason": "Copyright page reserves rights in website information/files and prohibits unauthorized use/reproduction. Terms incorporate this notice. Open Data page does not supply a contrary licence. The parsed four-page report contains no copyright or licence text.",
+      "practicalReleaseDecision": "Source title/link and coverage metadata can be cited. Keep the 24 numeric candidates out of production until permission, an applicable open-data grant or qualified legal review establishes the intended reuse basis; attribution alone is not a licence.",
+      "qualityNotes": [
+        "No pricing, yield or return inference from aggregate value/count.",
+        "No fuzzy join from authority-region labels to marketing communities."
+      ]
+    }
+  ]
+}

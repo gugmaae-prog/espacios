@@ -17,7 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-This package is the verified source for the site-aligned navigation, performance, 3D, and media release active at `https://espacios.me/map`. Cloudflare Worker version `112` was deployed at 100% on 21 September 2026 UTC after live dark/light visual, search, 3D, fixed-interface, mobile, catalogue-media, and asset acceptance.
+## Smart Estimates source — 30 September 2026
+
+The complete September 30 live Worker is preserved under `src/baseline/`. The current generated `src/worker.js` adds dated, conditional 1-, 3-, 5- and 10-year price and net-return scenarios, with separate apartment/villa and capital-weighted mixed controls. It retains observed history and existing research projections. Scenarios are not validated forecasts or guaranteed investment returns.
+
+Read [Smart Estimates methodology and storage](docs/SMART-ESTIMATES.md), [source reconciliation](docs/source-reconciliation-2026-09-30.md), and [the release checklist](docs/smart-estimates-release-checklist.md). Production identifiers in the system snapshot describe only the last recorded verified release; update them after promotion.
+
+`npm run build:smart` is the current build entrypoint. The legacy `assets:embed`/`assets:extract` commands do not understand later appended releases and must not replace the reconciled Worker. The default Wrangler manifest remains a candidate; production uses the explicit `wrangler.production.jsonc` with existing bindings and the closed Data Room.
+
+## Archived September 21 release evidence
+
+The following navigation/performance record describes the September 21 release, not fresh measurements of the current build. Cloudflare Worker version `112` was deployed then after desktop/mobile acceptance.
 
 ## What changed
 
@@ -80,19 +90,17 @@ Use Node.js 22 or newer:
 
 ```sh
 npm ci
-npm run assets:embed
 npm run verify
-npm run cf:dry-run
+npx wrangler deploy --config wrangler.production.jsonc --dry-run --outdir .wrangler/dry-run
 ```
 
 For browser acceptance:
 
 ```sh
-npx wrangler@4.135.0 dev --local --ip 127.0.0.1 --port 8792
-npm run browser:acceptance
+node scripts/preview-smart.mjs
 ```
 
-Set `AE_MAP_URL=https://espacios.me/map` to run the same matrix against production.
+Open `http://localhost:8798/map` in Chrome for current desktop/mobile acceptance. This preview uses the local additive snapshot and proxies existing read-only public map resources. No production mutations are made. The older browser-acceptance script remains historical test tooling; use the supported browser-control workflow for current interactive checks.
 
 ## Deployment safety
 

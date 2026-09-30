@@ -9,8 +9,9 @@
   },
   "scripts": {
     "check": "node --check src/worker.js && node --check src/assets/app-v2.js && node --check src/assets/premium.js && node --check scripts/extract-assets.mjs && node --check scripts/embed-assets.mjs",
-    "test": "node tests/smoke.mjs",
-    "verify": "npm run check && npm test",
+    "test": "node tests/smoke.mjs && node tests/smart-api.mjs && node --test src/smart-estimates/core.test.mjs tests/smart-integration.test.mjs",
+    "verify": "npm run build:smart && npm run check && npm test",
+    "build:smart": "node scripts/build-smart.mjs",
     "browser:acceptance": "node scripts/browser-acceptance.mjs",
     "assets:extract": "node scripts/extract-assets.mjs",
     "assets:embed": "node scripts/embed-assets.mjs",
@@ -18,6 +19,6 @@
     "cf:dry-run": "wrangler deploy --dry-run --outdir .wrangler/dry-run"
   },
   "devDependencies": {
-    "wrangler": "4.135.0"
+    "wrangler": "4.144.0"
   }
 }
