@@ -2,9 +2,9 @@
 
 Release token: `20260930-unified-map-v2`.
 
-Status: **verified local candidate; production receipt pending**. Source changes
-and search camera acceptance have passed local checks. Production is not changed
-until the explicit release and canonical verification below are completed.
+Status: **published and verified on production**. The final v2 release includes
+the exact-point hit-test correction found during settled live touch verification.
+See the production receipt below for the deployed identity and test boundaries.
 
 ## Scope
 
@@ -138,10 +138,8 @@ date change and yields 44.4% cumulative ten-year net return under the displayed
 assumptions. Returning to 2026H1 displays the native 4.48% gross-yield benchmark,
 not profit. Townhouses remain separate, without borrowing villa evidence.
 
-Still open at the time of this draft:
-
-- Production candidate upload, binding parity inspection and explicit promotion.
-- Canonical production route, logo, asset-parity and before/after retention checks.
+Production candidate upload, binding parity inspection, explicit promotion,
+canonical route/logo/asset checks and before/after retention checks are complete.
 
 Static CSS whitespace/structure checks passed during the scoped styling work.
 No physical iOS/Android-device test or fresh quantitative performance claim is made.
@@ -152,8 +150,8 @@ canonical post-deployment check, not evidence that the production logo failed.
 
 The pre-release receipt is `.wrangler/unified-release-before.json`, captured at
 `2026-09-30T15:26:12.432Z` from `https://espacios.me`. It contains hashes/counts and
-HTTP/access observations, not raw source records. This is a **before** snapshot;
-after-release parity has not yet been established for this candidate.
+HTTP/access observations, not raw source records. Final v2 after-release parity is
+recorded in `.wrangler/unified-release-v2-after.json`; all seven checks are unchanged.
 
 | Population or access check | Baseline |
 | --- | --- |
@@ -227,24 +225,45 @@ application regression or automatically acceptable. Independently verify canonic
 HTML, JavaScript/CSS parity, release marker, source snapshot hash, unchanged shell
 and the restricted Data Room response.
 
-## Production receipt — pending
+## Production receipt
 
-**No production deployment is recorded for this candidate in this draft.** The
-release owner will replace the pending fields only after obtaining evidence.
+Published following the user's explicit approval to deploy after verification.
 
-- Final implementation commit / PR / merge: pending.
-- Final verification command, timestamp and executed test count: pending.
-- Search camera fit-bounds acceptance: pending.
-- Final browser viewport/theme/interaction matrix and evidence paths: pending.
-- Production-config dry-run and candidate binding review: pending.
-- Candidate Worker version: pending.
-- Promoted version, deployment ID and traffic percentage: pending.
-- Canonical `/map` status and `x-espacios-mobile: 20260930-unified-map-v1`: pending.
-- Canonical JavaScript/CSS hashes versus the frozen local candidate: pending.
-- Official logo, source snapshot hash and restricted Data Room checks: pending.
-- Before/after retention receipt comparison: pending.
-- Shell/version/route/binding parity: pending.
-- Browser overrides reset and final rollback readiness: pending.
+- Main implementation: `ae0acde8f319c61a6a8e0ffc67f64d1c3ea2b0c1`, PR #18,
+  merged as `c356292482323374a318dca2f99525e76a420ff4` at 15:58:56 UTC.
+- Settled live touch verification then found the plain-object hit-test overload
+  issue described above. Correction: `b2c856706c67037e5455b7f4bc4fc76938a4ed30`,
+  PR #19, merged as `1caf7e43f0ccb65e3e0b09964d4dc96324187e68` at 16:10:28 UTC.
+- Final `npm run verify`: smoke/API checks and 130 tests pass. Strict production
+  version-upload dry run and GitHub verify/public-repo-safety checks pass.
+  CodeRabbit explicitly skipped review; it is not counted as a substantive review.
+- Final Worker version: `4c3c890c-a7b3-4059-8e92-4e018485d109` (v190), 100%.
+- Deployment: `c8f11053-5581-45b0-bf85-eba9b812a523`, 16:10:43 UTC.
+- Canonical `/map`, JavaScript and CSS return HTTP 200 with
+  `x-espacios-mobile: 20260930-unified-map-v2`.
+- Live JavaScript SHA-256 exactly matches the tested local build:
+  `18400ec9b1316c11d53152b75f7f676f57409265d6497a527ad4b9a00e7920ca`.
+- CSS SHA-256 matches:
+  `59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70`.
+  All seven inline style blocks also match. Whole HTML is not byte-compared because
+  Cloudflare can append per-request challenge metadata.
+- All seven preservation checks have unchanged fingerprints, counts and access
+  statuses. The published Smart Estimates SHA-256 remains the value above.
+- Official Espacios PNG loads at its 2,032-pixel source width on production.
+  Settings/Collapse remain 44×44 with equal vertical alignment; no overflow.
+- Final canonical Chrome touch test, checked after event settlement: the rendered
+  Palm Jumeirah apartment polygon opens Palm Jumeirah at 2036Q2, 3,197 AED/sqft.
+  An empty-water tap keeps the area unchanged and the inspector closed. The earlier
+  v1 instantaneous touch observation is explicitly superseded, not release proof.
+- Live source period, future scrubbing and exact search camera were checked;
+  detailed mobile/desktop/theme coverage is listed above. No physical-device or
+  new latency/Core Web Vitals claim is made.
+- Shell remains version `64c324d5-e107-43e6-b897-90f2f0f6d565`, deployment
+  `79c246e1-6284-409b-8972-3fead00a1223`. Routes, AI/DB/R2/service bindings,
+  compatibility flags and closed Data Room access are unchanged.
+- Browser viewport, touch, reduced-motion and cache overrides were reset.
+  Rollback to the verified pre-upgrade mobile version remains available as above.
+- Final live screenshot: `.wrangler/unified-map-live-20260930.png`.
 
 Keep `.wrangler/` receipts and browser evidence local according to the existing
 repository safety rules; do not publish private browser/session material with the
