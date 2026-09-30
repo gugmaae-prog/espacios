@@ -50,7 +50,7 @@ post-deployment check, not a claim based on localhost.
 
 Before release, all seven read-only release-receipt checks matched the previous
 release. Research catalogue: 1,691 projects / 215 communities; benchmarks: 228;
-history observations: 4,882; model runs: 2,223. Heatmap population is a separate
+indexed historical series: 4,882; model runs: 2,223. Heatmap population is a separate
 1,690-project set, with 1,519 mapped and 171 awaiting coordinates. These populations
 must not be silently forced to match.
 
@@ -69,4 +69,32 @@ acceptance. Append actual version, deployment and canonical verification below.
 
 ## Production receipt
 
-Pending promotion and independent canonical verification.
+Published after user approval and verification. PR #17 merged at 14:46:50 UTC.
+
+- Implementation commit: `3228913d3b8f733ce60eb23a52c9914e8bc4613e`.
+- Merge commit: `891c95023b16455086fcd5433f73dd1b100d0761`.
+- Production version: `0dbf52e2-30b6-4906-ac6e-dd5460eb712f`, 100% traffic.
+- Deployment: `115e1f9e-d6f0-448d-8ebe-76f9bb409c12`.
+- Canonical `/map`: HTTP 200; `x-espacios-mobile` and HTML asset version
+  `20260930-mobile-map-v1`.
+- Live JavaScript SHA-256 equals the tested local candidate:
+  `724f64b2068d56ccbb56a96ed0834217318cff4b0e2367f48124b7e3166dc9e9`.
+- Live CSS SHA-256 equals the tested local candidate:
+  `59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70`.
+  All seven inline style blocks also match.
+- All seven before/after retention checks have unchanged fingerprints, counts
+  and HTTP/access statuses. Smart Estimates hash above is unchanged.
+- Shell version remains `64c324d5-e107-43e6-b897-90f2f0f6d565`;
+  its deployment, route ownership, bindings and compatibility settings are unchanged.
+- Canonical Chrome mobile acceptance: real touch drag selects 2036 and releases
+  cleanly; All dates restores the chooser; Bada Al Jubail 2 retains exact ID;
+  2032-pixel source logo loads successfully; horizontal overflow is zero.
+- GitHub verify and public-repo-safety checks pass. CodeRabbit explicitly skipped
+  automated review; it is not counted as a substantive code review.
+- The version-preview hostname returns the existing deliberate 404 because it
+  is outside the acquired hostname allowlist. That restriction was not weakened.
+
+Local detailed before/after receipts and a live 390×844 JPEG are under `.wrangler/`:
+`mobile-release-before.json`, `mobile-release-after.json`, and
+`mobile-map-live-20260930.jpg`. Browser emulation/cache overrides were reset after QA.
+No physical-iOS/Android-device test or quantitative Core Web Vitals claim is made.
