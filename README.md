@@ -17,6 +17,10 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## Record history and dated events — 3 October 2026 candidate
+
+The additive historical intelligence implementation retains all 1,860 catalogue records, exposes sourced lifecycle/events and period gaps, and provides explicit annual scenario slots through 2080. It keeps area benchmarks, subject transactions and user assumptions separate. Read [the implementation and methodology](docs/HISTORICAL-INTELLIGENCE.md) and [the source register](docs/HISTORICAL_DATA_SOURCES.md). `npm run history:build` reproduces the reviewed snapshot; `npm run history:publish:plan` prepares immutable R2/D1 publication without changing production. A source build or research completion queue is not evidence of complete historical prices or a live release.
+
 ## Smart Estimates source — 30 September 2026
 
 The complete September 30 live Worker is preserved under `src/baseline/`. The current generated `src/worker.js` adds dated, conditional 1-, 3-, 5- and 10-year price and net-return scenarios, with separate apartment/villa and capital-weighted mixed controls. It retains observed history and existing research projections. Scenarios are not validated forecasts or guaranteed investment returns.

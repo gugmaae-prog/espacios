@@ -1,0 +1,1037 @@
+{
+  "sources": [
+    {
+      "id": "event-source:abu-dhabi-attack-2022",
+      "url": "https://www.mofa.gov.ae/en/MediaHub/News/2022/1/18/18-01-2022-UAE",
+      "publisher": "UAE Ministry of Foreign Affairs",
+      "publishedAt": "2022-01-18",
+      "firstAvailableAt": "2022-01-18",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:regional-disruption-2026",
+      "url": "https://media.dubaiairports.ae/dxb-sustains-global-connectivity-through-regional-disruption-readies-for-return-of-strong-demand-as-uae-airspace-restrictions-ease",
+      "publisher": "Dubai Airports",
+      "publishedAt": "2026-05-04T07:08:00+04:00",
+      "firstAvailableAt": "2026-05-04T07:08:00+04:00",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "timestamp",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:mofa-regional-security-2026",
+      "url": "https://www.mofa.gov.ae/en/MediaHub/News/2026/5/15/UAE-BRICS-Foreign-Ministers-Meeting",
+      "publisher": "UAE Ministry of Foreign Affairs",
+      "publishedAt": "2026-05-15",
+      "firstAvailableAt": "2026-05-15",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:uae-rain-2024",
+      "url": "https://www.wam.ae/en/article/13vbuq9-uae-witnesses-largest-rainfall-over-past-years",
+      "publisher": "WAM",
+      "publishedAt": "2024-04-17T00:44:00+04:00",
+      "firstAvailableAt": "2024-04-17T00:44:00+04:00",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "timestamp",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:tasreef-approved-2024",
+      "url": "https://mediaoffice.ae/en/news/2024/june/24-06/mohammed-bin-rashid-approves-aed30-billion-tasreef-project",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2024-06-24",
+      "firstAvailableAt": "2024-06-24",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:smart-rental-index-2025",
+      "url": "https://www.mediaoffice.ae/en/news/2025/january/02-01/smart-rental",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2025-01-02",
+      "firstAvailableAt": "2025-01-02",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:expo-date-revision-2020",
+      "url": "https://comm.bie-paris.org/site/en/news-announcements/world-expo/bie-general-assembly-officially-approves-expo-2020-dubai-date-change",
+      "publisher": "Bureau International des Expositions",
+      "publishedAt": "2020-05-29",
+      "firstAvailableAt": "2020-05-29",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:expo-opened-2021",
+      "url": "https://mediaoffice.ae/en/news/2021/september/30-09/mohammed-bin-rashid-and-mohamed-bin-zayed-attend-opening-ceremony-of-expo-2020-dubai",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2021-09-30",
+      "firstAvailableAt": "2021-09-30",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:foreign-ownership-2021",
+      "url": "https://mediaoffice.ae/en/news/2021/june/03-06/dubai-economy-clarifies-full-ownership-procedures-for-foreign-investors",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2021-06-03",
+      "firstAvailableAt": "2021-06-03",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:metro-gold-approved-2026",
+      "url": "https://prod.mediaoffice.ae/en/news/2026/april/22-04/mohammed-bin-rashid-approves-dubai-metro-gold-line",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2026-04-22",
+      "firstAvailableAt": "2026-04-22",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:etihad-passenger-open-2026",
+      "url": "https://corporate.etihadrail.ae/en/newsroom/press/the-uaes-first-national-passenger-rail-service-begins-as-etihad-rail-welcomes-first-paying-passengers",
+      "publisher": "Etihad Rail",
+      "publishedAt": "2026-06-30",
+      "firstAvailableAt": "2026-06-30",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:guggenheim-target-revision-2026",
+      "url": "https://www.mediaoffice.abudhabi/en/arts-culture/department-of-culture-and-tourism-abu-dhabi-announces-opening-of-guggenheim-abu-dhabi-on-11-december-2026/",
+      "publisher": "Abu Dhabi Media Office",
+      "publishedAt": "2026-07-28",
+      "firstAvailableAt": "2026-07-28",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:wynn-target-revision-2026",
+      "url": "https://investors.wynnresorts.com/news-releases/news-release-details/wynn-resorts-limited-reports-second-quarter-2026-results",
+      "publisher": "Wynn Resorts",
+      "publishedAt": "2026-08-04",
+      "firstAvailableAt": "2026-08-04",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:dwc-target-revision-2026",
+      "url": "https://www.wam.ae/en/article/c0qknce-maktoum-international-airport-development-project",
+      "publisher": "WAM",
+      "publishedAt": "2026-06-15",
+      "firstAvailableAt": "2026-06-15",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:pja-masterplan-2023",
+      "url": "https://www.mediaoffice.ae/en/news/2023/may/31-05/mohammed-bin-rashid-approves-new-futuristic-masterplan-for-palm-jebel-ali",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2023-05-31",
+      "firstAvailableAt": "2023-05-31",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:pja-launch-2023",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2023/09/18/nakheel-launches-first-villas-on-new-futuristic-palm-jebel-ali",
+      "publisher": "Nakheel",
+      "publishedAt": "2023-09-18",
+      "firstAvailableAt": "2023-09-18",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:guggenheim-target-2021",
+      "url": "https://dct.gov.ae/en/media.centre/news/guggenheim.abu.dhabi.set.for.completion.by.2025..aspx",
+      "publisher": "Department of Culture and Tourism Abu Dhabi",
+      "publishedAt": "2021-09-29",
+      "firstAvailableAt": "2021-09-29",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "primary_public_announcement",
+      "licence": "rights_pending: source metadata and attributed facts only; no underlying media redistribution",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:wynn-target-2022",
+      "url": "https://investors.wynnresorts.com/news-releases/news-release-details/marjan-develop-multibillion-dollar-integrated-resort-ras-al",
+      "publisher": "Wynn Resorts investor relations",
+      "publishedAt": "2022-01-25",
+      "firstAvailableAt": "2022-01-25",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "primary_public_announcement",
+      "licence": "rights_pending: source metadata and attributed facts only; no underlying media redistribution",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:pja-handover-update-202606",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/16/dubai-s-palm-jebel-ali-villas-head-for-first-handovers-this-year",
+      "publisher": "Nakheel, republished Gulf News interview",
+      "publishedAt": "2026-06-16",
+      "firstAvailableAt": "2026-06-16",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "primary_public_announcement",
+      "licence": "rights_pending: source metadata and attributed facts only; no underlying media redistribution",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:pja-frond-f-202608",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/nakheel-unveils-limited-collection-of-44-beachfront-villas-on-palm-jebel-ali-s-frond-f",
+      "publisher": "Nakheel",
+      "publishedAt": "2026-08-20",
+      "firstAvailableAt": "2026-08-20",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "primary_public_announcement",
+      "licence": "rights_pending: source metadata and attributed facts only; no underlying media redistribution",
+      "captureStatus": "verified public reference in current session"
+    }
+  ],
+  "events": [
+    {
+      "id": "abu-dhabi-attack-2022",
+      "title": "Abu Dhabi attack",
+      "category": "security",
+      "eventDate": {
+        "start": "2022-01-17",
+        "precision": "day"
+      },
+      "publishedAt": "2022-01-18",
+      "firstAvailableAt": "2022-01-18",
+      "sourceIds": [
+        "event-source:abu-dhabi-attack-2022"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Official condemnation documents the attack; direct damage locations and project exposure require separate verified mapping.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:abu-dhabi-attack-2022"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "regional-disruption-2026",
+      "title": "Regional aviation disruption began",
+      "category": "security_aviation",
+      "eventDate": {
+        "start": "2026-02-28",
+        "precision": "day"
+      },
+      "publishedAt": "2026-05-04T07:08:00+04:00",
+      "firstAvailableAt": "2026-05-04T07:08:00+04:00",
+      "sourceIds": [
+        "event-source:regional-disruption-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Retrospective operational report dates disruption beginning 28 February, intensifying through March. Tourism, relocation and accessibility channels are context, not a measured property decline.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:regional-disruption-2026"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "mofa-regional-security-2026",
+      "title": "UAE regional-security statement at BRICS",
+      "category": "security",
+      "eventDate": {
+        "start": "2026-05-15",
+        "precision": "day"
+      },
+      "publishedAt": "2026-05-15",
+      "firstAvailableAt": "2026-05-15",
+      "sourceIds": [
+        "event-source:mofa-regional-security-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "reported_context",
+      "claims": [
+        {
+          "text": "Official security statement. Source publication is an information milestone; individual attack dates and property effects must not be inferred from it.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:mofa-regional-security-2026"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "uae-rain-2024",
+      "title": "Extreme rainfall across UAE",
+      "category": "climate_flood",
+      "eventDate": {
+        "start": "2024-04-16",
+        "precision": "day"
+      },
+      "publishedAt": "2024-04-17T00:44:00+04:00",
+      "firstAvailableAt": "2024-04-17T00:44:00+04:00",
+      "sourceIds": [
+        "event-source:uae-rain-2024"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Rainfall event verified. No neighbourhood flood depth, insured loss or property damage is inferred without location-specific evidence.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:uae-rain-2024"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "tasreef-approved-2024",
+      "title": "Tasreef drainage programme approved",
+      "category": "climate_adaptation",
+      "eventDate": {
+        "start": "2024-06-24",
+        "precision": "day"
+      },
+      "publishedAt": "2024-06-24",
+      "firstAvailableAt": "2024-06-24",
+      "sourceIds": [
+        "event-source:tasreef-approved-2024"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "approved_planned",
+      "claims": [
+        {
+          "text": "Phased drainage programme target through 2033; approval and planned capacity are distinct from commissioned protection for any property.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:tasreef-approved-2024"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "smart-rental-index-2025",
+      "title": "Dubai Smart Rental Index launched",
+      "category": "rental_regulation",
+      "eventDate": {
+        "start": "2025-01-02",
+        "precision": "day"
+      },
+      "publishedAt": "2025-01-02",
+      "firstAvailableAt": "2025-01-02",
+      "sourceIds": [
+        "event-source:smart-rental-index-2025"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Index launch changes rental-information context. Rent-index values are not signed lease contracts or a project rental-history series.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:smart-rental-index-2025"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "expo-date-revision-2020",
+      "title": "Expo 2020 dates revised",
+      "category": "tourism_revision",
+      "eventDate": {
+        "start": "2021-10-01",
+        "precision": "day",
+        "end": "2022-03-31"
+      },
+      "publishedAt": "2020-05-29",
+      "firstAvailableAt": "2020-05-29",
+      "sourceIds": [
+        "event-source:expo-date-revision-2020"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai South",
+          "Expo City"
+        ]
+      },
+      "status": "revised_planned",
+      "claims": [
+        {
+          "text": "Date change confirmed in May 2020; replacement schedule 1 October 2021 to 31 March 2022. Earlier 2020 expectation must remain superseded.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:expo-date-revision-2020"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "expo-opened-2021",
+      "title": "Expo 2020 Dubai operating period",
+      "category": "tourism",
+      "eventDate": {
+        "start": "2021-10-01",
+        "precision": "day",
+        "end": "2022-03-31"
+      },
+      "publishedAt": "2021-09-30",
+      "firstAvailableAt": "2021-09-30",
+      "sourceIds": [
+        "event-source:expo-opened-2021"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai South",
+          "Expo City"
+        ]
+      },
+      "status": "operational",
+      "claims": [
+        {
+          "text": "Opening ceremony occurred 30 September; public operating period began 1 October 2021 and ended 31 March 2022. No guaranteed property uplift.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:expo-opened-2021"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "foreign-ownership-2021",
+      "title": "Full foreign business ownership procedures",
+      "category": "business_regulation",
+      "eventDate": {
+        "start": "2021-06-01",
+        "precision": "day"
+      },
+      "publishedAt": "2021-06-03",
+      "firstAvailableAt": "2021-06-03",
+      "sourceIds": [
+        "event-source:foreign-ownership-2021"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Business ownership effective date differs from report date. Business relocation and employment may support demand; this is not a real-estate freehold ownership law.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:foreign-ownership-2021"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "metro-gold-approved-2026",
+      "title": "Dubai Metro Gold Line approved",
+      "category": "transport",
+      "eventDate": {
+        "start": "2026-04-22",
+        "precision": "day"
+      },
+      "publishedAt": "2026-04-22",
+      "firstAvailableAt": "2026-04-22",
+      "sourceIds": [
+        "event-source:metro-gold-approved-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "approved_planned",
+      "claims": [
+        {
+          "text": "Target opening 9 September 2032; route/station catchments remain unverified for catalogue subjects, no automatic appreciation coefficient.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:metro-gold-approved-2026"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "etihad-passenger-open-2026",
+      "title": "Etihad Rail scheduled passenger service begins",
+      "category": "transport",
+      "eventDate": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "publishedAt": "2026-06-30",
+      "firstAvailableAt": "2026-06-30",
+      "sourceIds": [
+        "event-source:etihad-passenger-open-2026",
+        "rail-live",
+        "rail-phasing"
+      ],
+      "geography": {
+        "emirates": [
+          "Fujairah",
+          "Abu Dhabi"
+        ],
+        "areas": []
+      },
+      "status": "operational",
+      "claims": [
+        {
+          "text": "Initial Fujairah to Mohammed Bin Zayed City Abu Dhabi service verified; do not claim all planned stations or communities already served.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:etihad-passenger-open-2026"
+          ]
+        },
+        {
+          "text": "Inter-emirate passenger access can broaden employment and residential options near usable stations.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "rail-live",
+            "rail-phasing"
+          ]
+        },
+        {
+          "text": "Abu Dhabi–Fujairah began June 2026. Dubai/Al Dhaid scheduled September 2026; Sharjah March 2027 June operation verified by operator; later scheduled openings need separate confirmation. No Palm Jebel Ali station or door-to-door catchment inferred.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "rail-live",
+            "rail-phasing"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "milestoneType": "operational_opening",
+      "aliases": [
+        "catalyst-passenger-rail"
+      ],
+      "plannedNetworkGeography": {
+        "emirates": [
+          "Dubai",
+          "Sharjah"
+        ],
+        "exposureStatus": "planned_unverified_opening; not included in operational geographic exposure"
+      },
+      "plannedMilestones": [
+        {
+          "kind": "station_opening",
+          "date": {
+            "start": "2026-09",
+            "precision": "month"
+          },
+          "label": "Dubai and Al Dhaid scheduled station availability",
+          "status": "planned_actual_opening_research_pending",
+          "sourceIds": [
+            "rail-phasing"
+          ]
+        },
+        {
+          "kind": "station_opening",
+          "date": {
+            "start": "2027-03",
+            "precision": "month"
+          },
+          "label": "Sharjah scheduled station availability",
+          "status": "planned",
+          "sourceIds": [
+            "rail-phasing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guggenheim-target-revision-2026",
+      "title": "Guggenheim Abu Dhabi opening target revised",
+      "category": "cultural_tourism",
+      "eventDate": {
+        "start": "2026-12-11",
+        "precision": "day"
+      },
+      "publishedAt": "2026-07-28",
+      "firstAvailableAt": "2026-07-28",
+      "sourceIds": [
+        "event-source:guggenheim-target-revision-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi"
+        ],
+        "areas": [
+          "Saadiyat Island"
+        ]
+      },
+      "status": "planned",
+      "claims": [
+        {
+          "text": "Latest published target 11 December 2026; earlier 2025 target superseded. Opening is not yet a completed event as of 3 October.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:guggenheim-target-revision-2026"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "supersedes": [
+        "guggenheim-target-2021"
+      ],
+      "milestoneType": "target_opening",
+      "previousTargets": [
+        {
+          "date": {
+            "start": "2025",
+            "precision": "year"
+          },
+          "status": "superseded",
+          "sourceIds": [
+            "event-source:guggenheim-target-2021"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wynn-target-revision-2026",
+      "title": "Wynn Al Marjan Island opening target revised",
+      "category": "hospitality_tourism",
+      "eventDate": {
+        "start": "2027-09",
+        "precision": "month"
+      },
+      "publishedAt": "2026-08-04",
+      "firstAvailableAt": "2026-08-04",
+      "sourceIds": [
+        "event-source:wynn-target-revision-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Ras Al Khaimah"
+        ],
+        "areas": [
+          "Al Marjan Island"
+        ]
+      },
+      "status": "planned",
+      "claims": [
+        {
+          "text": "Updated September 2027 target retained as a revision of earlier launch expectations; no modelled local price uplift inferred.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:wynn-target-revision-2026"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "milestoneType": "target_opening",
+      "supersededTargets": [
+        {
+          "year": 2026,
+          "status": "superseded",
+          "publishedAt": null,
+          "sourceVerification": "historical announcement source review pending"
+        }
+      ],
+      "supersedes": [
+        "wynn-target-2022"
+      ],
+      "previousTargets": [
+        {
+          "date": {
+            "start": "2026",
+            "precision": "year"
+          },
+          "status": "superseded",
+          "sourceIds": [
+            "event-source:wynn-target-2022"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dwc-target-revision-2026",
+      "title": "Al Maktoum airport development timetable update",
+      "category": "airport_transport",
+      "eventDate": {
+        "start": "2032",
+        "precision": "year"
+      },
+      "publishedAt": "2026-06-15",
+      "firstAvailableAt": "2026-06-15",
+      "sourceIds": [
+        "event-source:dwc-target-revision-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai South",
+          "Palm Jebel Ali",
+          "Jebel Ali"
+        ]
+      },
+      "status": "planned",
+      "claims": [
+        {
+          "text": "Reported development timetable is a target; published schedule is not evidence of completed capacity or exact property travel times.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:dwc-target-revision-2026"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "pja-masterplan-2023",
+      "title": "Palm Jebel Ali masterplan approved",
+      "category": "masterplan",
+      "eventDate": {
+        "start": "2023-05-31",
+        "precision": "day"
+      },
+      "publishedAt": "2023-05-31",
+      "firstAvailableAt": "2023-05-31",
+      "sourceIds": [
+        "event-source:pja-masterplan-2023"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "approved_planned",
+      "claims": [
+        {
+          "text": "Masterplan approval verifies development context, not individual villa completion or appreciation.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:pja-masterplan-2023"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "pja-launch-2023",
+      "title": "Palm Jebel Ali villa relaunch",
+      "category": "project_relaunch",
+      "eventDate": {
+        "start": "2023-09-18",
+        "precision": "day"
+      },
+      "publishedAt": "2023-09-18",
+      "firstAvailableAt": "2023-09-18",
+      "sourceIds": [
+        "event-source:pja-launch-2023"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "reported_launch",
+      "claims": [
+        {
+          "text": "Relaunch context; individual phase launch and first-sale dates must be registry reconciled. New villa pricing must not be backfilled with off-plan apartment medians.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:pja-launch-2023"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "guggenheim-target-2021",
+      "title": "Guggenheim Abu Dhabi former completion target",
+      "category": "arts_culture",
+      "eventDate": {
+        "start": "2025",
+        "precision": "year"
+      },
+      "publishedAt": "2021-09-29",
+      "firstAvailableAt": "2021-09-29",
+      "sourceIds": [
+        "event-source:guggenheim-target-2021"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi"
+        ],
+        "areas": [
+          "Saadiyat"
+        ]
+      },
+      "status": "superseded_target",
+      "claims": [
+        {
+          "text": "The 2021 announcement targeted completion in 2025. Retained as superseded planning evidence; no actual 2025 completion inferred.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:guggenheim-target-2021"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "supersededBy": "guggenheim-target-revision-2026"
+    },
+    {
+      "id": "wynn-target-2022",
+      "title": "Wynn Al Marjan Island former opening target",
+      "category": "resort_development",
+      "eventDate": {
+        "start": "2026",
+        "precision": "year"
+      },
+      "publishedAt": "2022-01-25",
+      "firstAvailableAt": "2022-01-25",
+      "sourceIds": [
+        "event-source:wynn-target-2022"
+      ],
+      "geography": {
+        "emirates": [
+          "Ras Al Khaimah"
+        ],
+        "areas": [
+          "Al Marjan"
+        ]
+      },
+      "status": "superseded_target",
+      "claims": [
+        {
+          "text": "The January 2022 announcement initially targeted opening in 2026. Retained as superseded planning evidence; no operating resort in 2026 inferred.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:wynn-target-2022"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "supersededBy": "wynn-target-revision-2026"
+    },
+    {
+      "id": "pja-handover-update-202606",
+      "title": "Palm Jebel Ali phased handover target update",
+      "category": "target_handover",
+      "eventDate": {
+        "start": "2026",
+        "precision": "year"
+      },
+      "publishedAt": "2026-06-16",
+      "firstAvailableAt": "2026-06-16",
+      "sourceIds": [
+        "event-source:pja-handover-update-202606"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "reported_target",
+      "claims": [
+        {
+          "text": "Reported first handovers later in 2026 remain a development target. Nakheel republishes a Gulf News interview, so this does not count as independent corroboration.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:pja-handover-update-202606"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "syndicationGroup": "pja-gulfnews-interview-20260616"
+    },
+    {
+      "id": "pja-frond-f-202608",
+      "title": "Palm Jebel Ali Frond F collection and phased handover targets",
+      "category": "project_launch",
+      "eventDate": {
+        "start": "2026-08-20",
+        "precision": "day"
+      },
+      "publishedAt": "2026-08-20",
+      "firstAvailableAt": "2026-08-20",
+      "sourceIds": [
+        "event-source:pja-frond-f-202608"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "reported_launch",
+      "claims": [
+        {
+          "text": "Nakheel announced 44 Frond F villas and a phased handover timetable from late 2026 through 2027. This announcement establishes launch context and reported targets, not completed villas or measured appreciation.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:pja-frond-f-202608"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "plannedMilestones": [
+        {
+          "kind": "target_handover",
+          "date": {
+            "start": "2026",
+            "end": "2027",
+            "precision": "range"
+          },
+          "label": "First villas late 2026; phase dependent through 2027",
+          "status": "planned"
+        }
+      ]
+    }
+  ]
+}
