@@ -3,25 +3,14 @@ var MAP_CONTROL_RELEASE='20261003-supabase-control-v1';
 var MAP_CONTROL_PREVIOUS_FETCH=worker_default.fetch;
 
 async function mapControlRead(env){
-  const base=String(env.SUPABASE_URL||'').replace(/\/$/,'');
-  const key=String(env.SUPABASE_PUBLISHABLE_KEY||'');
-  if(!base||!key)return {connected:false,error:'Supabase control bindings unavailable'};
-  const headers={apikey:key,accept:'application/json'};
-  const [configResponse,releaseResponse]=await Promise.all([
-    fetch(base+'/rest/v1/espacios_map_runtime_config?id=eq.production&select=*',{headers}),
-    fetch(base+'/rest/v1/espacios_map_release_registry?environment=eq.production&select=*&order=created_at.desc&limit=1',{headers})
-  ]);
-  if(!configResponse.ok||!releaseResponse.ok){
-    return {connected:false,error:'Supabase control plane unavailable',status:{config:configResponse.status,release:releaseResponse.status}};
-  }
-  const config=(await configResponse.json())[0]||null;
-  const release=(await releaseResponse.json())[0]||null;
+  const endpoint=String(env.SUPABASE_CONTROL_URL||'');
+  if(!endpoint)return {connected:false,error:'Supabase control endpoint binding unavailable'};
+  const response=await fetch(endpoint,{headers:{accept:'application/json'}});
+  if(!response.ok)return {connected:false,error:'Supabase control plane unavailable',status:response.status};
+  const payload=await response.json();
   return {
-    connected:true,
+    ...payload,
     release:MAP_CONTROL_RELEASE,
-    projectRef:'ypkfganbwdvcjrcxygta',
-    config,
-    latestRelease:release,
     authority:{
       runtime:'Cloudflare Workers',
       source:'GitHub gugmaae-prog/espacios',
