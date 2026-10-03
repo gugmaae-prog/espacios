@@ -54,7 +54,7 @@ The new `/map/api/value-drivers` endpoint supports GET, HEAD and ETag conditiona
 
 ## Verification and release
 
-Run `npm run verify` and the explicit production-config dry run. CI now checks both candidate and production manifests. The previously malformed production JSONC newline escapes are repaired. Frontend cache tokens and preload Link headers use `20261003-value-drivers-v1`; the generated Worker includes the current source modules.
+Run `npm run verify` and the explicit production-config dry run. Existing CI checks the candidate manifest; the production manifest is checked explicitly before release. The previously malformed production JSONC newline escapes are repaired. Frontend cache tokens and preload Link headers use `20261003-value-drivers-v1`; the generated Worker includes the current source modules.
 
 Browser acceptance covers government filtering, correct catalogue area search, editable flat/downside sensitivity, Palm Jebel Ali camera focus and mobile geometry. The drawer has a dedicated class to avoid the legacy floating-panel manager closing it, while the current mobile owner handles mutually exclusive panels. The header’s containing block is removed so the mobile search and category row occupy separate measured positions.
 
