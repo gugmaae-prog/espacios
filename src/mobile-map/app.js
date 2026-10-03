@@ -3,7 +3,7 @@
   const Q = s => document.querySelector(s), root = document.documentElement;
   const mobile = matchMedia('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)');
   const M = {installed:false, pointer:null, frame:0, syncFrame:0, geometryFrame:0, fraction:0, domain:'', optionKey:'', active:null, picks:[], visible:new Map(), lastRender:0};
-  const panels = () => [...document.querySelectorAll('.floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel')];
+  const panels = () => [...document.querySelectorAll('.floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel, #hi-panel')];
   const visible = el => !el.hidden && !el.classList.contains('hidden');
   const unified = () => window.EspaciosUnifiedMap?.timeline();
   const periodsNow = () => unified()?.periods||tlState.periods;

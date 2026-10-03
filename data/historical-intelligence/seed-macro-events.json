@@ -1,0 +1,873 @@
+{
+  "sources": [
+    {
+      "id": "event-source:gfc-2008",
+      "url": "https://www.imf.org/en/publications/cr/issues/2016/12/31/united-arab-emirates-2009-article-iv-consultation-staff-report-public-information-notice-and-23628",
+      "publisher": "IMF",
+      "publishedAt": "2010-02-19",
+      "firstAvailableAt": "2010-02-19",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:regional-inflows-2013",
+      "url": "https://www.imf.org/en/publications/cr/issues/2016/12/31/united-arab-emirates-2013-article-iv-consultation-40836",
+      "publisher": "IMF",
+      "publishedAt": "2013-07-30",
+      "firstAvailableAt": "2013-07-30",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:dubai-fee-2013",
+      "url": "https://www.imf.org/en/news/articles/2015/09/28/04/52/mcs052714a",
+      "publisher": "IMF",
+      "publishedAt": "2014-05-27",
+      "firstAvailableAt": "2014-05-27",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:oil-collapse-2014",
+      "url": "https://www.eia.gov/finance/review/annual/",
+      "publisher": "EIA",
+      "publishedAt": "2015-04-28",
+      "firstAvailableAt": "2015-04-28",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:property-cooling-2015",
+      "url": "https://www.imf.org/external/pubs/ft/scr/2015/cr15219.pdf",
+      "publisher": "IMF",
+      "publishedAt": "2015-08-04",
+      "firstAvailableAt": "2015-08-04",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:covid-pandemic",
+      "url": "https://www.who.int/docs/default-source/coronaviruse/situation-REPORTS/20200311-SITREP-51-COVID-19.PDF",
+      "publisher": "WHO",
+      "publishedAt": "2020-03-11",
+      "firstAvailableAt": "2020-03-11",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:dubai-restrictions",
+      "url": "https://mediaoffice.ae/en/news/2020/apirl/04-04/dubai-to-conduct-round-the-clock-sterilisation",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2020-04-04",
+      "firstAvailableAt": "2020-04-04",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:dubai-tourism-reopen",
+      "url": "https://www.mediaoffice.ae/en/news/2020/july/04-07/dubai-tourism-shares-industry-outlook-with-stakeholders-ahead-of-7-july",
+      "publisher": "Dubai Media Office",
+      "publishedAt": "2020-07-04",
+      "firstAvailableAt": "2020-07-04",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:dubai-remote-work",
+      "url": "https://www.dmi.gov.ae/content/corporate/en-ae/programs/41/VirtualWorking.html",
+      "publisher": "Dubai Media Incorporated",
+      "publishedAt": "2020-10-15",
+      "firstAvailableAt": "2020-10-15",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:ukraine-invasion",
+      "url": "https://ukraine.un.org/en/173250-statement-secretary-general-%E2%80%93-ukraine",
+      "publisher": "United Nations",
+      "publishedAt": "2022-02-24",
+      "firstAvailableAt": "2022-02-24",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:fatf-added",
+      "url": "https://www.fatf-gafi.org/en/publications/Fatfgeneral/Outcomes-fatf-plenary-march-2022.html",
+      "publisher": "FATF",
+      "publishedAt": "2022-03-04",
+      "firstAvailableAt": "2022-03-04",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:fed-tightening",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a1.htm",
+      "publisher": "Federal Reserve",
+      "publishedAt": "2022-03-16",
+      "firstAvailableAt": "2022-03-16",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:uae-residency-2022",
+      "url": "https://www.protocol.dubai.ae/en/media-listing/news-events/uae-cabinet-approves-executive-regulations-of-federal-decree-law-on-entry-and-residence-of-foreigners/",
+      "publisher": "Dubai Protocol Department",
+      "publishedAt": "2022-04-18",
+      "firstAvailableAt": "2022-04-18",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:russia-mobilisation",
+      "url": "https://special.kremlin.ru/catalog/countries/UA/events/69390",
+      "publisher": "Kremlin",
+      "publishedAt": "2022-09-21",
+      "firstAvailableAt": "2022-09-21",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:russia-buyers-q3",
+      "url": "https://www.marketscreener.com/news/latest/Russians-are-Dubai-s-top-non-resident-property-buyers-in-Q3-report-42036621/",
+      "publisher": "Reuters / Betterhomes",
+      "publishedAt": "2022-10-19",
+      "firstAvailableAt": "2022-10-19",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "syndicated_report",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:safe-haven-2023",
+      "url": "https://www.imf.org/en/news/articles/2023/10/13/pr23351-uae-imf-staff-concludes-visit",
+      "publisher": "IMF",
+      "publishedAt": "2023-10-16",
+      "firstAvailableAt": "2023-10-16",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:fatf-removed",
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/Increased-monitoring-february-2024.html",
+      "publisher": "FATF",
+      "publishedAt": "2024-02-23",
+      "firstAvailableAt": "2024-02-23",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    },
+    {
+      "id": "event-source:fed-easing",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20240918a.htm",
+      "publisher": "Federal Reserve",
+      "publishedAt": "2024-09-18",
+      "firstAvailableAt": "2024-09-18",
+      "retrievedAt": "2026-10-03",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no raw article redistribution licence inferred",
+      "captureStatus": "verified_public_source_reference"
+    }
+  ],
+  "events": [
+    {
+      "id": "gfc-2008",
+      "title": "Global financial crisis and UAE property correction",
+      "category": "credit_liquidity",
+      "eventDate": {
+        "start": "2008-07",
+        "precision": "month"
+      },
+      "announcedAt": null,
+      "publishedAt": "2010-02-19",
+      "firstAvailableAt": "2010-02-19",
+      "sourceIds": [
+        "event-source:gfc-2008"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai",
+          "Abu Dhabi"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "IMF retrospectively documents the property correction and contraction; individual project effects are not established.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:gfc-2008"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "regional-inflows-2013",
+      "title": "Regional capital and expatriate inflows during uneven recovery",
+      "category": "migration_capital",
+      "eventDate": {
+        "start": "2012",
+        "precision": "year"
+      },
+      "announcedAt": null,
+      "publishedAt": "2013-07-30",
+      "firstAvailableAt": "2013-07-30",
+      "sourceIds": [
+        "event-source:regional-inflows-2013"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai",
+          "Abu Dhabi"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "IMF describes regional expatriate demand and capital inflows; higher-quality Dubai housing recovered faster than other segments.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:regional-inflows-2013"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-fee-2013",
+      "title": "Dubai registration fee and mortgage-rule changes",
+      "category": "regulation",
+      "eventDate": {
+        "start": "2013-10",
+        "precision": "month"
+      },
+      "announcedAt": null,
+      "publishedAt": "2014-05-27",
+      "firstAvailableAt": "2014-05-27",
+      "sourceIds": [
+        "event-source:dubai-fee-2013"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Registration fee increased from 2 to 4 percent in October 2013. Exact legal effective day needs authority reconciliation.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:dubai-fee-2013"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "oil-collapse-2014",
+      "title": "Oil-price decline and stronger US dollar",
+      "category": "oil_fx",
+      "eventDate": {
+        "start": "2014-06-19",
+        "precision": "day"
+      },
+      "announcedAt": null,
+      "publishedAt": "2015-04-28",
+      "firstAvailableAt": "2015-04-28",
+      "sourceIds": [
+        "event-source:oil-collapse-2014"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Oil and currency shocks can affect regional wealth, fiscal spending, jobs and foreign affordability. No automatic property uplift or decline coefficient.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:oil-collapse-2014"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "property-cooling-2015",
+      "title": "Property cooling with supply, oil, currency and financing changes",
+      "category": "supply_macro",
+      "eventDate": {
+        "start": "2014-07",
+        "precision": "month"
+      },
+      "announcedAt": null,
+      "publishedAt": "2015-08-04",
+      "firstAvailableAt": "2015-08-04",
+      "sourceIds": [
+        "event-source:property-cooling-2015"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai",
+          "Abu Dhabi"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "IMF jointly discusses increased supply, reduced demand, oil prices, dollar appreciation, fees and mortgage rules.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:property-cooling-2015"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "covid-pandemic",
+      "title": "COVID-19 characterised as a pandemic",
+      "category": "pandemic",
+      "eventDate": {
+        "start": "2020-03-11",
+        "precision": "day"
+      },
+      "announcedAt": "2020-03-11",
+      "publishedAt": "2020-03-11",
+      "firstAvailableAt": "2020-03-11",
+      "sourceIds": [
+        "event-source:covid-pandemic"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Global pandemic event; UAE restrictions and reopening are separate dated milestones.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:covid-pandemic"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-restrictions",
+      "title": "Dubai movement and round-the-clock sterilisation restrictions",
+      "category": "pandemic_restrictions",
+      "eventDate": {
+        "start": "2020-04-04",
+        "precision": "day"
+      },
+      "announcedAt": "2020-04-04",
+      "publishedAt": "2020-04-04",
+      "firstAvailableAt": "2020-04-04",
+      "sourceIds": [
+        "event-source:dubai-restrictions"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Stay-home restrictions and transport suspension can affect viewings, tourism, leasing and construction; the local causal effect requires transaction testing.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:dubai-restrictions"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-tourism-reopen",
+      "title": "Dubai reopening to international tourists",
+      "category": "reopening",
+      "eventDate": {
+        "start": "2020-07-07",
+        "precision": "day"
+      },
+      "announcedAt": null,
+      "publishedAt": "2020-07-04",
+      "firstAvailableAt": "2020-07-04",
+      "sourceIds": [
+        "event-source:dubai-tourism-reopen"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Tourism reopening can restore visitor demand and hospitality activity; announcement preceded effective reopening.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:dubai-tourism-reopen"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-remote-work",
+      "title": "Dubai virtual-working programme announcement",
+      "category": "residency",
+      "eventDate": {
+        "start": "2020-10-15",
+        "precision": "day"
+      },
+      "announcedAt": "2020-10-15",
+      "publishedAt": "2020-10-15",
+      "firstAvailableAt": "2020-10-15",
+      "sourceIds": [
+        "event-source:dubai-remote-work"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Remote-work residence can support longer stays and rental demand; actual uptake and local price effects need separate evidence.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:dubai-remote-work"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "ukraine-invasion",
+      "title": "Russia full-scale invasion of Ukraine",
+      "category": "geopolitical",
+      "eventDate": {
+        "start": "2022-02-24",
+        "precision": "day"
+      },
+      "announcedAt": "2022-02-24",
+      "publishedAt": "2022-02-24",
+      "firstAvailableAt": "2022-02-24",
+      "sourceIds": [
+        "event-source:ukraine-invasion"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Potential migration, capital, oil, inflation and banking channels; distinct from the September mobilisation.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:ukraine-invasion"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "fatf-added",
+      "title": "UAE added to FATF increased monitoring",
+      "category": "compliance",
+      "eventDate": {
+        "start": "2022-03-04",
+        "precision": "day"
+      },
+      "announcedAt": "2022-03-04",
+      "publishedAt": "2022-03-04",
+      "firstAvailableAt": "2022-03-04",
+      "sourceIds": [
+        "event-source:fatf-added"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Compliance and cross-border financial friction mechanism; no validated property-price effect.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:fatf-added"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "fed-tightening",
+      "title": "US monetary tightening begins",
+      "category": "interest_rates",
+      "eventDate": {
+        "start": "2022-03-17",
+        "precision": "day"
+      },
+      "announcedAt": null,
+      "publishedAt": "2022-03-16",
+      "firstAvailableAt": "2022-03-16",
+      "sourceIds": [
+        "event-source:fed-tightening"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Financing-regime context. UAE mortgage calculations require actual CBUAE Base Rate and EIBOR rather than substituting the Fed rate.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:fed-tightening"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "uae-residency-2022",
+      "title": "UAE entry and residence regulations approved",
+      "category": "residency",
+      "eventDate": {
+        "start": "2022-04-18",
+        "precision": "day"
+      },
+      "announcedAt": "2022-04-18",
+      "publishedAt": "2022-04-18",
+      "firstAvailableAt": "2022-04-18",
+      "sourceIds": [
+        "event-source:uae-residency-2022"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Approval announcement; separate commencement date remains to be legally reconciled.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:uae-residency-2022"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "russia-mobilisation",
+      "title": "Russia partial mobilisation announced",
+      "category": "geopolitical_migration",
+      "eventDate": {
+        "start": "2022-09-21",
+        "precision": "day"
+      },
+      "announcedAt": "2022-09-21",
+      "publishedAt": "2022-09-21",
+      "firstAvailableAt": "2022-09-21",
+      "sourceIds": [
+        "event-source:russia-mobilisation"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Mobilisation is dated; the number and motives of Dubai buyers specifically fleeing mobilisation are not established.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:russia-mobilisation"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "russia-buyers-q3",
+      "title": "Russian non-resident buyers in Betterhomes Q3 sample",
+      "category": "migration_capital",
+      "eventDate": {
+        "start": "2022-Q3",
+        "precision": "quarter"
+      },
+      "announcedAt": null,
+      "publishedAt": "2022-10-19",
+      "firstAvailableAt": "2022-10-19",
+      "sourceIds": [
+        "event-source:russia-buyers-q3"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Brokerage sample only. Q3 changed methodology to non-resident buyers; H1 and Q3 rankings are not comparable. Mobilisation began near quarter-end.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:russia-buyers-q3"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "safe-haven-2023",
+      "title": "IMF reports safe-haven capital and labour inflows",
+      "category": "migration_capital",
+      "eventDate": {
+        "start": "2023",
+        "precision": "year"
+      },
+      "announcedAt": null,
+      "publishedAt": "2023-10-16",
+      "firstAvailableAt": "2023-10-16",
+      "sourceIds": [
+        "event-source:safe-haven-2023"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "IMF links capital and labour inflows to elevated high-end prices, without a Russia-specific causal coefficient.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:safe-haven-2023"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "fatf-removed",
+      "title": "UAE removed from FATF increased monitoring",
+      "category": "compliance",
+      "eventDate": {
+        "start": "2024-02-23",
+        "precision": "day"
+      },
+      "announcedAt": "2024-02-23",
+      "publishedAt": "2024-02-23",
+      "firstAvailableAt": "2024-02-23",
+      "sourceIds": [
+        "event-source:fatf-removed"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "FATF removal is distinct from EU list changes and does not demonstrate a property-price multiplier.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:fatf-removed"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "fed-easing",
+      "title": "US monetary easing begins",
+      "category": "interest_rates",
+      "eventDate": {
+        "start": "2024-09-19",
+        "precision": "day"
+      },
+      "announcedAt": null,
+      "publishedAt": "2024-09-18",
+      "firstAvailableAt": "2024-09-18",
+      "sourceIds": [
+        "event-source:fed-easing"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "verified_event_context",
+      "claims": [
+        {
+          "text": "Potential financing-cost channel. UAE rate history and loan terms must be observed independently.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "event-source:fed-easing"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    }
+  ]
+}

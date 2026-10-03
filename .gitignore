@@ -28,3 +28,7 @@ secrets.yml
 .supabase/
 supabase/.temp/
 supabase/.branches/
+
+# Optional Python research tooling.
+__pycache__/
+*.pyc
