@@ -203,3 +203,28 @@ Before any production change:
 7. record the final version/deployment in the system snapshot.
 
 A Worker code rollback does not automatically roll back mutable R2/D1 state.
+
+## 30 September architecture update — superseded by 3 October wiring
+
+Current production wiring is now:
+
+```text
+GitHub gugmaae-prog/espacios (source authority)
+        |
+        v
+Cloudflare espacios-map-shell -> psr-portfolio-map-v2
+        |                         |-- D1 / R2 / PSR_PROPERTY market evidence
+        |                         |-- /map/api/system
+        |                         `-- /map/api/control-plane
+        |                                      |
+        |                                      v
+        |                         Supabase Edge Function: espacios-map-control
+        |                                      |
+        |                                      v
+        |                         espacios_map_runtime_config
+        |                         espacios_map_release_registry
+        v
+https://espacios.me/map
+```
+
+Supabase is a control/audit plane only. It does not replace the D1/R2 market evidence plane. The Data Room remains restricted with `DATA_ROOM_PUBLIC=false`. The production Worker release is `20261003-minimal-map-supabase-v2`, Cloudflare version `68e26acc-5fd6-4c2f-8a50-08d11e03156d`, deployment `d5dea762-e3d6-4420-8608-3ac72ea625fb`.
