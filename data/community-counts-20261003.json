@@ -1,0 +1,4210 @@
+{
+  "version": "20261003-community-counts-v1",
+  "asOf": "2026-10-03",
+  "sourceUrl": "https://espacios.me/map/map-core.json",
+  "sourceSha256": "80f9be07e92ca5e7dc6b9b6f69076aa3ea16657f5b5f33021c4d8d891f5ca370",
+  "classification": "catalogue_record_counts",
+  "propertyRecords": 1645,
+  "activeRecords": 1380,
+  "archivedRecords": 265,
+  "communityRecords": 215,
+  "communitiesWithIndexedProjects": 195,
+  "rawAreaLabels": 351,
+  "areaEmiratePairs": 353,
+  "limitation": "Counts are catalogue records, not unique homes or future housing units. Community indexed counts are source metadata and can differ from current exact-area counts. Compound and alias area labels are retained separately and do not represent unique communities.",
+  "areas": [
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Al Marjan Island (Ras Al Khaimah Emirate)",
+      "records": 54,
+      "active": 54,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Hills Estate",
+      "records": 54,
+      "active": 54,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Islands",
+      "records": 51,
+      "active": 51,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Business Bay",
+      "records": 48,
+      "active": 48,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Creek Harbour",
+      "records": 46,
+      "active": 46,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Town Square Dubai",
+      "records": 40,
+      "active": 40,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Village Circle (JVC)",
+      "records": 32,
+      "active": 32,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Downtown Dubai",
+      "records": 31,
+      "active": 31,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "DAMAC Hills",
+      "records": 28,
+      "active": 28,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Palm Jumeirah",
+      "records": 22,
+      "active": 22,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Furjan",
+      "records": 21,
+      "active": 21,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Village Circle (JVC)",
+      "records": 21,
+      "active": 0,
+      "archived": 21
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Emaar South",
+      "records": 21,
+      "active": 21,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubailand",
+      "records": 20,
+      "active": 20,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai South",
+      "records": 19,
+      "active": 19,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SH36",
+      "records": 19,
+      "active": 19,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Hidayriyyat Island",
+      "records": 18,
+      "active": 18,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Business Bay",
+      "records": 18,
+      "active": 0,
+      "archived": 18
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YS2",
+      "records": 18,
+      "active": 18,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Marina",
+      "records": 16,
+      "active": 15,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Maritime City",
+      "records": 15,
+      "active": 15,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Palm Jumeirah",
+      "records": 15,
+      "active": 0,
+      "archived": 15
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDN1",
+      "records": 15,
+      "active": 15,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Aljada (Sharjah Emirate)",
+      "records": 14,
+      "active": 14,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Emaar Beachfront",
+      "records": 14,
+      "active": 14,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "MBR City",
+      "records": 14,
+      "active": 14,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Sobha Hartland",
+      "records": 14,
+      "active": 14,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Arabian Ranches",
+      "records": 13,
+      "active": 13,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Silicon Oasis",
+      "records": 13,
+      "active": 13,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "DAMAC Hills 2",
+      "records": 12,
+      "active": 12,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Rashid Yachts & Marina",
+      "records": 12,
+      "active": 12,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDN2",
+      "records": 12,
+      "active": 12,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDN8",
+      "records": 12,
+      "active": 12,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Tilal Al Ghaf",
+      "records": 12,
+      "active": 12,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YN7",
+      "records": 12,
+      "active": 12,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Damac Islands",
+      "records": 11,
+      "active": 11,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Furjan",
+      "records": 11,
+      "active": 0,
+      "archived": 11
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Maryam Island (Sharjah Emirate)",
+      "records": 11,
+      "active": 11,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "MZ12",
+      "records": 11,
+      "active": 11,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Sobha Hartland II",
+      "records": 11,
+      "active": 11,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Jarf",
+      "records": 10,
+      "active": 10,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "JS",
+      "records": 10,
+      "active": 10,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Mina (Ras Al Khaimah Emirate)",
+      "records": 10,
+      "active": 10,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "The Valley",
+      "records": 10,
+      "active": 10,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubailand",
+      "records": 9,
+      "active": 0,
+      "archived": 9
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, MBR City",
+      "records": 9,
+      "active": 0,
+      "archived": 9
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Expo City Dubai",
+      "records": 9,
+      "active": 9,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Golf Estates",
+      "records": 9,
+      "active": 9,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Madinat Jumeirah",
+      "records": 9,
+      "active": 9,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SE45_05",
+      "records": 9,
+      "active": 9,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Sheikh Zayed Road",
+      "records": 9,
+      "active": 9,
+      "archived": 0
+    },
+    {
+      "emirate": "Umm Al Quwain",
+      "area": "Sobha Siniya Island (Umm Al Quwain)",
+      "records": 9,
+      "active": 9,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Arjan",
+      "records": 8,
+      "active": 8,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Downtown Dubai",
+      "records": 8,
+      "active": 0,
+      "archived": 8
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Marina",
+      "records": 8,
+      "active": 0,
+      "archived": 8
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Meydan",
+      "records": 8,
+      "active": 0,
+      "archived": 8
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDW4",
+      "records": 8,
+      "active": 8,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Jaddaf",
+      "records": 7,
+      "active": 7,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Central Park",
+      "records": 7,
+      "active": 7,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Arjan",
+      "records": 7,
+      "active": 0,
+      "archived": 7
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Village Triangle (JVT)",
+      "records": 7,
+      "active": 7,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Meydan Horizon",
+      "records": 7,
+      "active": 7,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Mina Rashid",
+      "records": 7,
+      "active": 7,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Ramhan Island",
+      "records": 7,
+      "active": 7,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "DIFC",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "EB2_06",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Emaar The Valley",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Expo Valley",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Ghantout",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Masaar (Sharjah Emirate)",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Meydan",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW3",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDE3",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SHIBAK 1",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SHIBAK 3",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "The Oasis",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Umm Al Quwain",
+      "area": "Umm Al Quwain",
+      "records": 6,
+      "active": 5,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Wasl Gate",
+      "records": 6,
+      "active": 6,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Abu Dhabi",
+      "records": 5,
+      "active": 4,
+      "archived": 1
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Al Zahia (Sharjah Emirate)",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "City Walk",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "District 11 Meydan",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Production City",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai South Residential District",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Barari Community",
+      "records": 5,
+      "active": 0,
+      "archived": 5
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "E48",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Lake Towers (JLT)",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Majan",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Palm Jebel Ali",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW15",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDN7",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SE45_01",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Zabeel",
+      "records": 5,
+      "active": 5,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "AIN AL FAYDA2",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Al Mamsha (Sharjah Emirate)",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Ajman",
+      "area": "Al Zorah (Al Zorah City)",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai",
+      "records": 4,
+      "active": 0,
+      "archived": 4
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Canal",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Design District",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Harbour",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Maritime City",
+      "records": 4,
+      "active": 0,
+      "archived": 4
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Golf Estates",
+      "records": 4,
+      "active": 0,
+      "archived": 4
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Grand Polo Club & Resort",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Hudayriyat Island, Abu Dhabi",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Motor City",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW2",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SE45_02",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Sobha Central",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Sobha Sanctuary",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Yas Island (Abu Dhabi Emirate)",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YN2",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YS3_06",
+      "records": 4,
+      "active": 4,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": ",",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Ajmal Makan City (Sharjah Emirate)",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Reem Island (Abu Dhabi Emirate)",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Samhah East Old",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "DAMAC Lagoons",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Land Residence Complex (DLRC)",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Motor City",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai,",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Habtoor City",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Burj Khalifa District",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Islands",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Silicon Oasis",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Lake Towers (JLT)",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Villanova",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Fahid Island",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Ghaf Woods",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "JBR, Dubai",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jebel Ali Village",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Garden City",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Islands",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Ras Al Khaimah Emirate",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW6",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SH35",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Umm Al Quwain",
+      "area": "Sobha Siniya Island",
+      "records": 3,
+      "active": 0,
+      "archived": 3
+    },
+    {
+      "emirate": "Dubai",
+      "area": "The Heights Country Club & Wellness",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Tilal Binghatti",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YN5",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YS1",
+      "records": 3,
+      "active": 3,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": ",",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "AIN AL FAYDA",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ajman",
+      "area": "Ajman, Al Zorah City",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Barari",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Al Belaida (Sharjah Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Al Hamra Village",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Al Hamra Village (Ras Al Khaimah Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Sufouh",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Ba Al Ghaiylam",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "City of Arabia, Dubai",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "District One",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Downtown Jebel Ali",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Islands, Dubai",
+      "records": 2,
+      "active": 1,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Land Residence Complex",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Science Park",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Water Canal",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Barari",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Barsha Heights",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Creek Harbour",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Hills Estate",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Investment Park-2",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Science Park",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Sports City",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Water Canal",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Village Triangle (JVT)",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Mirdif",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Mudon Community",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Nad Al Sheba",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Safa Park",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Sheikh Zayed Road",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "E40",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Hayat Island (Ras Al Khaimah Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jebel Ali",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah 1",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Kasser Al Amwaj",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "La Mer",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Liwan",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "ME2",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Nourai Island",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "RAK Central (Ras Al Khaimah Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Ras Al Khaimah, Al Hamra Village",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Ras Al-Khaimah, Al Marjan Island",
+      "records": 2,
+      "active": 0,
+      "archived": 2
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBE1",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBE2",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW4",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Rise by Athlon",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Saadiyat Island (Abu Dhabi Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Safa Park",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDN3",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SDN4",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Sharjah",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Sustainable City (Sharjah Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SW17",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "The Valley 2",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "W17_03",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "W50_01",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Wasl 1",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Waterfront City (Sharjah Emirate)",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Yas Island, Abu Dhabi",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YN6",
+      "records": 2,
+      "active": 2,
+      "archived": 0
+    },
+    {
+      "emirate": "Ajman",
+      "area": ",",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Abu Dhabi,",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Abu Dhabi, Al Maryah Island",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Abu Dhabi, Saadiyat Island",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Abu Dhabi, Zayed City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Academic City",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ajman",
+      "area": "Ajman, Al Zorah",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Habtoor City",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Jaddaf, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Al Khan",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Al Mairid, Ras Al Khaimah",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Al Mamzar, Sharjah",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Al Marjan Island, Ras Al Khaimah",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Raha Beach, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Ras Al Akhdar",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Reef",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Al Reem Island, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Sufouh, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Warsan First",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Al Yalayis 1, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ajman",
+      "area": "Al Zorah City, Ajman",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Arabian Hills Estate",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "City Walk (Central Park)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "DAMAC Lagoons, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "District 11 Meydan South",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Umm Al Quwain",
+      "area": "Downtown Umm Al Quwain",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Creek Harbour, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Healthcare City",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai International City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai International Financial Centre",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Internet City",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Investment Park 2",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Investments Park",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Maritime City, Dubai",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Science Park, Dubai",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai South, Dubai",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Sports City",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai Studio City",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Barsha",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Barsha South",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Jaddaf",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Qudra Road",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Sufouh",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Al Wasl",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Bluewaters Island",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Bluewaters Residences",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, DIFC",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, District One",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Downtown Jebel Ali",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Design District",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Harbour",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Industrial Park",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Investments Park",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Motor City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai Production City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Dubai South",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Emaar Beachfront",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Emirates Hills",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Expo City Dubai",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Ghaf Woods",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jebel Ali Village",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeira Bay Island",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Garden City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Islands",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Village Circle",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Jumeirah Village Triangle",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, JVC",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, La Mer",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Marina",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Maritime City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Motor City",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Mudon",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Palm Jebel Ali",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Palm Jumeirah Island",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Pearl Jumeirah",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Port De La Mer",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, The World Islands",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Tilal Al Ghaf",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Villanova Community",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Wasl Gate",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai, Za’abeel",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Dubai,Dubai Investment Park 2",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "E12",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Eden Hills",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Emaar South, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Emirates Hills",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Emirates Living",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Fay Hills",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Fujairah",
+      "area": "Fujairah shoreline",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Garden City (Sharjah Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Hudayriyat Island (Abu Dhabi Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Island B, Dubai Islands",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeira Bay",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Beach Residence (JBR)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Canal",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Jumeirah Garden City, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "JVT",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Khorfakkan Beach, East Coast, Sharjah",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Luluat Al Raha Island, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Madinat Badr",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Marasi Bay",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Marina Royal Compound",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Masdar City, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Maysan, Al Reem Island, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "ME8",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Muweilah (Sharjah Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "MZW21",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Nad Al Sheba",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Nad Al Sheba Gardens",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Raha Island (Ras Al Khaimah Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Raha Island, Mina Al Arab, Ras Al Khaimah",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "RAK Central, Ras Al Khaimah",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Ramhan Island, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Ras Al Khaimah, Hayat Island Mina",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Ras Al Khaimah, Mina Al Arab",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Ras Al Khaimah",
+      "area": "Ras Al-Khaimah, Mina",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Ajman",
+      "area": "Rashidiya 1 (Ajman Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Rawdat Al Reef",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RB15",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW5",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "RBW7",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Reem Island, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Riverside",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Saadiyat Grove (Abu Dhabi Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Saadiyat Island, Abu Dhabi",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SE45",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SE47",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Seih Al Sedeirah 2",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Seih Al Sedeirah 7",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Seih Al Sedeirah 8",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Seih Al Sedeirah 9",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Seih Sedeirah, Abu Dhabi",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Sharjah Emirate",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Sharjah, Hayyan",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "SW1",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "The Acres",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "The World Islands",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Sharjah",
+      "area": "Um Fanain, Sharjah",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Umm Al Quwain",
+      "area": "Umm Al Quwain, Sobha Siniya Island",
+      "records": 1,
+      "active": 0,
+      "archived": 1
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Uptown Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "W32",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "W51",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "W59_01",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Wadi Al Safa",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Warsan First",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Dubai",
+      "area": "Wasl 1, Al Kifaf, Dubai",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Yas Point, Yas Island",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YN4",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YS3_01",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "YS3_03",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    },
+    {
+      "emirate": "Abu Dhabi",
+      "area": "Zayed City (Abu Dhabi Emirate)",
+      "records": 1,
+      "active": 1,
+      "archived": 0
+    }
+  ],
+  "communities": [
+    {
+      "id": "community:Ras Al Khaimah:al-marjan-island",
+      "name": "Al Marjan Island",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 55,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:dubai-hills-estate",
+      "name": "Dubai Hills Estate",
+      "emirate": "Dubai",
+      "indexedProjects": 56,
+      "exactAreaRecords": 54,
+      "activeExactAreaRecords": 54
+    },
+    {
+      "id": "community:Dubai:dubai-islands",
+      "name": "Dubai Islands",
+      "emirate": "Dubai",
+      "indexedProjects": 56,
+      "exactAreaRecords": 51,
+      "activeExactAreaRecords": 51
+    },
+    {
+      "id": "community:Dubai:business-bay",
+      "name": "Business Bay",
+      "emirate": "Dubai",
+      "indexedProjects": 66,
+      "exactAreaRecords": 48,
+      "activeExactAreaRecords": 48
+    },
+    {
+      "id": "community:Dubai:dubai-creek-harbour",
+      "name": "Dubai Creek Harbour",
+      "emirate": "Dubai",
+      "indexedProjects": 49,
+      "exactAreaRecords": 46,
+      "activeExactAreaRecords": 46
+    },
+    {
+      "id": "community:Dubai:town-square-dubai",
+      "name": "Town Square Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 40,
+      "exactAreaRecords": 40,
+      "activeExactAreaRecords": 40
+    },
+    {
+      "id": "community:Dubai:jumeirah-village-circle-jvc",
+      "name": "Jumeirah Village Circle (JVC)",
+      "emirate": "Dubai",
+      "indexedProjects": 53,
+      "exactAreaRecords": 32,
+      "activeExactAreaRecords": 32
+    },
+    {
+      "id": "community:Dubai:downtown-dubai",
+      "name": "Downtown Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 39,
+      "exactAreaRecords": 31,
+      "activeExactAreaRecords": 31
+    },
+    {
+      "id": "community:Dubai:damac-hills",
+      "name": "DAMAC Hills",
+      "emirate": "Dubai",
+      "indexedProjects": 28,
+      "exactAreaRecords": 28,
+      "activeExactAreaRecords": 28
+    },
+    {
+      "id": "community:Dubai:emaar-south",
+      "name": "Emaar South",
+      "emirate": "Dubai",
+      "indexedProjects": 22,
+      "exactAreaRecords": 21,
+      "activeExactAreaRecords": 21
+    },
+    {
+      "id": "community:Dubai:palm-jumeirah",
+      "name": "Palm Jumeirah",
+      "emirate": "Dubai",
+      "indexedProjects": 37,
+      "exactAreaRecords": 22,
+      "activeExactAreaRecords": 22
+    },
+    {
+      "id": "community:Dubai:al-furjan",
+      "name": "Al Furjan",
+      "emirate": "Dubai",
+      "indexedProjects": 32,
+      "exactAreaRecords": 21,
+      "activeExactAreaRecords": 21
+    },
+    {
+      "id": "community:Dubai:dubailand",
+      "name": "Dubailand",
+      "emirate": "Dubai",
+      "indexedProjects": 29,
+      "exactAreaRecords": 20,
+      "activeExactAreaRecords": 20
+    },
+    {
+      "id": "community:Dubai:dubai-south",
+      "name": "Dubai South",
+      "emirate": "Dubai",
+      "indexedProjects": 20,
+      "exactAreaRecords": 19,
+      "activeExactAreaRecords": 19
+    },
+    {
+      "id": "community:Dubai:dubai-marina",
+      "name": "Dubai Marina",
+      "emirate": "Dubai",
+      "indexedProjects": 24,
+      "exactAreaRecords": 16,
+      "activeExactAreaRecords": 15
+    },
+    {
+      "id": "community:Dubai:dubai-maritime-city",
+      "name": "Dubai Maritime City",
+      "emirate": "Dubai",
+      "indexedProjects": 20,
+      "exactAreaRecords": 15,
+      "activeExactAreaRecords": 15
+    },
+    {
+      "id": "community:Sharjah:aljada",
+      "name": "Aljada",
+      "emirate": "Sharjah",
+      "indexedProjects": 14,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:emaar-beachfront",
+      "name": "Emaar Beachfront",
+      "emirate": "Dubai",
+      "indexedProjects": 15,
+      "exactAreaRecords": 14,
+      "activeExactAreaRecords": 14
+    },
+    {
+      "id": "community:Dubai:mbr-city",
+      "name": "MBR City",
+      "emirate": "Dubai",
+      "indexedProjects": 23,
+      "exactAreaRecords": 14,
+      "activeExactAreaRecords": 14
+    },
+    {
+      "id": "community:Dubai:sobha-hartland",
+      "name": "Sobha Hartland",
+      "emirate": "Dubai",
+      "indexedProjects": 14,
+      "exactAreaRecords": 14,
+      "activeExactAreaRecords": 14
+    },
+    {
+      "id": "community:Dubai:arabian-ranches",
+      "name": "Arabian Ranches",
+      "emirate": "Dubai",
+      "indexedProjects": 13,
+      "exactAreaRecords": 13,
+      "activeExactAreaRecords": 13
+    },
+    {
+      "id": "community:Dubai:dubai-silicon-oasis",
+      "name": "Dubai Silicon Oasis",
+      "emirate": "Dubai",
+      "indexedProjects": 16,
+      "exactAreaRecords": 13,
+      "activeExactAreaRecords": 13
+    },
+    {
+      "id": "community:Dubai:damac-hills-2",
+      "name": "DAMAC Hills 2",
+      "emirate": "Dubai",
+      "indexedProjects": 12,
+      "exactAreaRecords": 12,
+      "activeExactAreaRecords": 12
+    },
+    {
+      "id": "community:Dubai:rashid-yachts-and-marina",
+      "name": "Rashid Yachts & Marina",
+      "emirate": "Dubai",
+      "indexedProjects": 12,
+      "exactAreaRecords": 12,
+      "activeExactAreaRecords": 12
+    },
+    {
+      "id": "community:Dubai:tilal-al-ghaf",
+      "name": "Tilal Al Ghaf",
+      "emirate": "Dubai",
+      "indexedProjects": 13,
+      "exactAreaRecords": 12,
+      "activeExactAreaRecords": 12
+    },
+    {
+      "id": "community:Dubai:damac-islands",
+      "name": "Damac Islands",
+      "emirate": "Dubai",
+      "indexedProjects": 11,
+      "exactAreaRecords": 11,
+      "activeExactAreaRecords": 11
+    },
+    {
+      "id": "community:Sharjah:maryam-island",
+      "name": "Maryam Island",
+      "emirate": "Sharjah",
+      "indexedProjects": 11,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:sobha-hartland-ii",
+      "name": "Sobha Hartland II",
+      "emirate": "Dubai",
+      "indexedProjects": 11,
+      "exactAreaRecords": 11,
+      "activeExactAreaRecords": 11
+    },
+    {
+      "id": "community:Ras Al Khaimah:mina",
+      "name": "Mina",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 10,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:the-valley",
+      "name": "The Valley",
+      "emirate": "Dubai",
+      "indexedProjects": 10,
+      "exactAreaRecords": 10,
+      "activeExactAreaRecords": 10
+    },
+    {
+      "id": "community:Dubai:expo-city-dubai",
+      "name": "Expo City Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 10,
+      "exactAreaRecords": 9,
+      "activeExactAreaRecords": 9
+    },
+    {
+      "id": "community:Dubai:jumeirah-golf-estates",
+      "name": "Jumeirah Golf Estates",
+      "emirate": "Dubai",
+      "indexedProjects": 13,
+      "exactAreaRecords": 9,
+      "activeExactAreaRecords": 9
+    },
+    {
+      "id": "community:Dubai:madinat-jumeirah",
+      "name": "Madinat Jumeirah",
+      "emirate": "Dubai",
+      "indexedProjects": 9,
+      "exactAreaRecords": 9,
+      "activeExactAreaRecords": 9
+    },
+    {
+      "id": "community:Dubai:sheikh-zayed-road",
+      "name": "Sheikh Zayed Road",
+      "emirate": "Dubai",
+      "indexedProjects": 11,
+      "exactAreaRecords": 9,
+      "activeExactAreaRecords": 9
+    },
+    {
+      "id": "community:Umm Al Quwain:sobha-siniya-island-umm-al-quwain",
+      "name": "Sobha Siniya Island (Umm Al Quwain)",
+      "emirate": "Umm Al Quwain",
+      "indexedProjects": 9,
+      "exactAreaRecords": 9,
+      "activeExactAreaRecords": 9
+    },
+    {
+      "id": "community:Dubai:al-jaddaf",
+      "name": "Al Jaddaf",
+      "emirate": "Dubai",
+      "indexedProjects": 9,
+      "exactAreaRecords": 7,
+      "activeExactAreaRecords": 7
+    },
+    {
+      "id": "community:Dubai:arjan",
+      "name": "Arjan",
+      "emirate": "Dubai",
+      "indexedProjects": 15,
+      "exactAreaRecords": 8,
+      "activeExactAreaRecords": 8
+    },
+    {
+      "id": "community:Dubai:central-park",
+      "name": "Central Park",
+      "emirate": "Dubai",
+      "indexedProjects": 7,
+      "exactAreaRecords": 7,
+      "activeExactAreaRecords": 7
+    },
+    {
+      "id": "community:Dubai:dubai-motor-city",
+      "name": "Dubai Motor City",
+      "emirate": "Dubai",
+      "indexedProjects": 9,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:jumeirah-village-triangle-jvt",
+      "name": "Jumeirah Village Triangle (JVT)",
+      "emirate": "Dubai",
+      "indexedProjects": 9,
+      "exactAreaRecords": 7,
+      "activeExactAreaRecords": 7
+    },
+    {
+      "id": "community:Dubai:meydan-horizon",
+      "name": "Meydan Horizon",
+      "emirate": "Dubai",
+      "indexedProjects": 7,
+      "exactAreaRecords": 7,
+      "activeExactAreaRecords": 7
+    },
+    {
+      "id": "community:Dubai:mina-rashid",
+      "name": "Mina Rashid",
+      "emirate": "Dubai",
+      "indexedProjects": 7,
+      "exactAreaRecords": 7,
+      "activeExactAreaRecords": 7
+    },
+    {
+      "id": "community:Dubai:difc",
+      "name": "DIFC",
+      "emirate": "Dubai",
+      "indexedProjects": 7,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 6
+    },
+    {
+      "id": "community:Dubai:emaar-the-valley",
+      "name": "Emaar The Valley",
+      "emirate": "Dubai",
+      "indexedProjects": 6,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 6
+    },
+    {
+      "id": "community:Dubai:expo-valley",
+      "name": "Expo Valley",
+      "emirate": "Dubai",
+      "indexedProjects": 6,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 6
+    },
+    {
+      "id": "community:Sharjah:masaar",
+      "name": "Masaar",
+      "emirate": "Sharjah",
+      "indexedProjects": 6,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:meydan",
+      "name": "Meydan",
+      "emirate": "Dubai",
+      "indexedProjects": 14,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 6
+    },
+    {
+      "id": "community:Dubai:the-oasis",
+      "name": "The Oasis",
+      "emirate": "Dubai",
+      "indexedProjects": 6,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 6
+    },
+    {
+      "id": "community:Dubai:wasl-gate",
+      "name": "Wasl Gate",
+      "emirate": "Dubai",
+      "indexedProjects": 7,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 6
+    },
+    {
+      "id": "community:Abu Dhabi:yas-island",
+      "name": "Yas Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 6,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:al-reem-island",
+      "name": "Al Reem Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 5,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Sharjah:al-zahia",
+      "name": "Al Zahia",
+      "emirate": "Sharjah",
+      "indexedProjects": 5,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:city-walk",
+      "name": "City Walk",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Dubai:district-11-meydan",
+      "name": "District 11 Meydan",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Dubai:dubai-production-city",
+      "name": "Dubai Production City",
+      "emirate": "Dubai",
+      "indexedProjects": 6,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Abu Dhabi:hudayriyat-island",
+      "name": "Hudayriyat Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 5,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jumeirah-lake-towers-jlt",
+      "name": "Jumeirah Lake Towers (JLT)",
+      "emirate": "Dubai",
+      "indexedProjects": 8,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Dubai:majan",
+      "name": "Majan",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Dubai:palm-jebel-ali",
+      "name": "Palm Jebel Ali",
+      "emirate": "Dubai",
+      "indexedProjects": 6,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Umm Al Quwain:umm-al-quwain",
+      "name": "Umm Al Quwain",
+      "emirate": "Umm Al Quwain",
+      "indexedProjects": 6,
+      "exactAreaRecords": 6,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Dubai:zabeel",
+      "name": "Zabeel",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:Abu Dhabi:abu-dhabi",
+      "name": "Abu Dhabi",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 5,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Ras Al Khaimah:al-hamra-village",
+      "name": "Al Hamra Village",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 6,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Sharjah:al-mamsha",
+      "name": "Al Mamsha",
+      "emirate": "Sharjah",
+      "indexedProjects": 4,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ajman:al-zorah-al-zorah-city",
+      "name": "Al Zorah (Al Zorah City)",
+      "emirate": "Ajman",
+      "indexedProjects": 4,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Dubai:damac-lagoons",
+      "name": "DAMAC Lagoons",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:dubai-canal",
+      "name": "Dubai Canal",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Dubai:dubai-design-district",
+      "name": "Dubai Design District",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Dubai:dubai-harbour",
+      "name": "Dubai Harbour",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Dubai:grand-polo-club-and-resort",
+      "name": "Grand Polo Club & Resort",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Dubai:jumeirah-garden-city",
+      "name": "Jumeirah Garden City",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:sobha-central",
+      "name": "Sobha Central",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Dubai:sobha-sanctuary",
+      "name": "Sobha Sanctuary",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 4
+    },
+    {
+      "id": "community:Sharjah:ajmal-makan-city",
+      "name": "Ajmal Makan City",
+      "emirate": "Sharjah",
+      "indexedProjects": 3,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-sufouh",
+      "name": "Al Sufouh",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:dubai-land-residence-complex-dlrc",
+      "name": "Dubai Land Residence Complex (DLRC)",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:ghaf-woods",
+      "name": "Ghaf Woods",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:jebel-ali-village",
+      "name": "Jebel Ali Village",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:jumeirah-islands",
+      "name": "Jumeirah Islands",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Ras Al Khaimah:ras-al-khaimah-emirate",
+      "name": "Ras Al Khaimah Emirate",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 3,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Abu Dhabi:saadiyat-island",
+      "name": "Saadiyat Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 4,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Sharjah:sharjah",
+      "name": "Sharjah",
+      "emirate": "Sharjah",
+      "indexedProjects": 3,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:the-heights-country-club-and-wellness",
+      "name": "The Heights Country Club & Wellness",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:tilal-binghatti",
+      "name": "Tilal Binghatti",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Dubai:al-barari",
+      "name": "Al Barari",
+      "emirate": "Dubai",
+      "indexedProjects": 9,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Sharjah:al-belaida",
+      "name": "Al Belaida",
+      "emirate": "Sharjah",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-warsan-first",
+      "name": "Al Warsan First",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:city-of-arabia",
+      "name": "City of Arabia",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:district-one",
+      "name": "District One",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:downtown-jebel-ali",
+      "name": "Downtown Jebel Ali",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:dubai-land-residence-complex",
+      "name": "Dubai Land Residence Complex",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:dubai-science-park",
+      "name": "Dubai Science Park",
+      "emirate": "Dubai",
+      "indexedProjects": 5,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:dubai-water-canal",
+      "name": "Dubai Water Canal",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Ras Al Khaimah:hayat-island",
+      "name": "Hayat Island",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jebel-ali",
+      "name": "Jebel Ali",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:jumeirah",
+      "name": "Jumeirah",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:jumeirah-1",
+      "name": "Jumeirah 1",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:la-mer",
+      "name": "La Mer",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:liwan",
+      "name": "Liwan",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Ras Al Khaimah:rak-central",
+      "name": "RAK Central",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 3,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:rise-by-athlon",
+      "name": "Rise by Athlon",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:safa-park",
+      "name": "Safa Park",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Sharjah:sustainable-city",
+      "name": "Sustainable City",
+      "emirate": "Sharjah",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:the-valley-2",
+      "name": "The Valley 2",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Dubai:wasl-1",
+      "name": "Wasl 1",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 2
+    },
+    {
+      "id": "community:Sharjah:waterfront-city",
+      "name": "Waterfront City",
+      "emirate": "Sharjah",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:academic-city",
+      "name": "Academic City",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:al-habtoor-city",
+      "name": "Al Habtoor City",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Sharjah:al-khan",
+      "name": "Al Khan",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Ras Al Khaimah:al-mairid",
+      "name": "Al Mairid",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Sharjah:al-mamzar",
+      "name": "Al Mamzar",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:al-raha-beach",
+      "name": "Al Raha Beach",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-yalayis-1",
+      "name": "Al Yalayis 1",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:arabian-hills-estate",
+      "name": "Arabian Hills Estate",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:city-walk-central-park",
+      "name": "City Walk (Central Park)",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:district-11-meydan-south",
+      "name": "District 11 Meydan South",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Umm Al Quwain:downtown-umm-al-quwain",
+      "name": "Downtown Umm Al Quwain",
+      "emirate": "Umm Al Quwain",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-healthcare-city",
+      "name": "Dubai Healthcare City",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-international-financial-centre",
+      "name": "Dubai International Financial Centre",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-internet-city",
+      "name": "Dubai Internet City",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-investment-park-2",
+      "name": "Dubai Investment Park 2",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-investments-park",
+      "name": "Dubai Investments Park",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-sports-city",
+      "name": "Dubai Sports City",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:dubai-studio-city",
+      "name": "Dubai Studio City",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:eden-hills",
+      "name": "Eden Hills",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:emirates-hills",
+      "name": "Emirates Hills",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:emirates-living",
+      "name": "Emirates Living",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Abu Dhabi:fay-hills",
+      "name": "Fay Hills",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Fujairah:fujairah-shoreline",
+      "name": "Fujairah shoreline",
+      "emirate": "Fujairah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Sharjah:garden-city",
+      "name": "Garden City",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jumeira-bay",
+      "name": "Jumeira Bay",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:jumeirah-beach-residence-jbr",
+      "name": "Jumeirah Beach Residence (JBR)",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:jumeirah-canal",
+      "name": "Jumeirah Canal",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:jvt",
+      "name": "JVT",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Sharjah:khorfakkan-beach-east-coast",
+      "name": "Khorfakkan Beach, East Coast",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:luluat-al-raha-island",
+      "name": "Luluat Al Raha Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:madinat-badr",
+      "name": "Madinat Badr",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:marasi-bay",
+      "name": "Marasi Bay",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Abu Dhabi:masdar-city",
+      "name": "Masdar City",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:maysan-al-reem-island",
+      "name": "Maysan, Al Reem Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Sharjah:muweilah",
+      "name": "Muweilah",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:nad-al-sheba",
+      "name": "Nad Al Sheba",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:nad-al-sheba-gardens",
+      "name": "Nad Al Sheba Gardens",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Ras Al Khaimah:raha-island",
+      "name": "Raha Island",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ras Al Khaimah:raha-island-mina-al-arab",
+      "name": "Raha Island, Mina Al Arab",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:ramhan-island",
+      "name": "Ramhan Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 7,
+      "activeExactAreaRecords": 7
+    },
+    {
+      "id": "community:Ajman:rashidiya-1",
+      "name": "Rashidiya 1",
+      "emirate": "Ajman",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:riverside",
+      "name": "Riverside",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Abu Dhabi:saadiyat-grove",
+      "name": "Saadiyat Grove",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:the-acres",
+      "name": "The Acres",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:the-world-islands",
+      "name": "The World Islands",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Sharjah:um-fanain",
+      "name": "Um Fanain",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:uptown-dubai",
+      "name": "Uptown Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:wadi-al-safa",
+      "name": "Wadi Al Safa",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Dubai:wasl-1-al-kifaf",
+      "name": "Wasl 1, Al Kifaf",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:yas-point-yas-island",
+      "name": "Yas Point, Yas Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 1
+    },
+    {
+      "id": "community:Abu Dhabi:zayed-city",
+      "name": "Zayed City",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-barsha",
+      "name": "Al Barsha",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-barsha-south",
+      "name": "Al Barsha South",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ras Al Khaimah:al-hamra-waterfront",
+      "name": "Al Hamra Waterfront",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ajman:al-helio",
+      "name": "Al Helio",
+      "emirate": "Ajman",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:al-maryah-island",
+      "name": "Al Maryah Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-qudra-road",
+      "name": "Al Qudra Road",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:al-wasl",
+      "name": "Al Wasl",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ajman:al-zorah",
+      "name": "Al Zorah",
+      "emirate": "Ajman",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ajman:al-zorah-city",
+      "name": "Al Zorah City",
+      "emirate": "Ajman",
+      "indexedProjects": 3,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:aljurf",
+      "name": "AlJurf",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:arabian-ranches-iii",
+      "name": "Arabian Ranches III",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:barsha-heights",
+      "name": "Barsha Heights",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:bloom-gardens",
+      "name": "Bloom Gardens",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:bloom-living",
+      "name": "Bloom Living",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:bluewaters-island",
+      "name": "Bluewaters Island",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:bluewaters-residences",
+      "name": "Bluewaters Residences",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:burj-khalifa-district",
+      "name": "Burj Khalifa District",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:discovery-gardens",
+      "name": "Discovery Gardens",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:dubai",
+      "name": "Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 4,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:dubai-festival-city",
+      "name": "Dubai Festival City",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:dubai-industrial-park",
+      "name": "Dubai Industrial Park",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:dubai-international-city",
+      "name": "Dubai International City",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ajman:emirates-city",
+      "name": "Emirates City",
+      "emirate": "Ajman",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:fahid-island",
+      "name": "Fahid Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 0,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 3
+    },
+    {
+      "id": "community:Ras Al Khaimah:falcon-island",
+      "name": "Falcon Island",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Fujairah:fujairah-beach",
+      "name": "Fujairah Beach",
+      "emirate": "Fujairah",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ras Al Khaimah:hayat-island-mina",
+      "name": "Hayat Island Mina",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Sharjah:hayyan",
+      "name": "Hayyan",
+      "emirate": "Sharjah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:island-b-dubai-islands",
+      "name": "Island B, Dubai Islands",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jbr",
+      "name": "JBR",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:jubail-island",
+      "name": "Jubail Island",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jumeira-bay-island",
+      "name": "Jumeira Bay Island",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jumeirah-park",
+      "name": "Jumeirah Park",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jumeirah-village-circle",
+      "name": "Jumeirah Village Circle",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jumeirah-village-triangle",
+      "name": "Jumeirah Village Triangle",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:jvc",
+      "name": "JVC",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:marina",
+      "name": "Marina",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:maritime-city",
+      "name": "Maritime City",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ras Al Khaimah:mina-al-arab",
+      "name": "Mina Al Arab",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:mirdif",
+      "name": "Mirdif",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:mudon",
+      "name": "Mudon",
+      "emirate": "Dubai",
+      "indexedProjects": 3,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:palm-jumeirah-island",
+      "name": "Palm Jumeirah Island",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:pearl-jumeirah",
+      "name": "Pearl Jumeirah",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:port-de-la-mer",
+      "name": "Port De La Mer",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ras Al Khaimah:ras-al-khaimah-al-marjan-island",
+      "name": "Ras Al-Khaimah, Al Marjan Island",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 2,
+      "exactAreaRecords": 2,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Ras Al Khaimah:ras-al-khaimah-mina",
+      "name": "Ras Al-Khaimah, Mina",
+      "emirate": "Ras Al Khaimah",
+      "indexedProjects": 1,
+      "exactAreaRecords": 1,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Abu Dhabi:seih-sedeirah",
+      "name": "Seih Sedeirah",
+      "emirate": "Abu Dhabi",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:serena",
+      "name": "Serena",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Umm Al Quwain:sobha-siniya-island",
+      "name": "Sobha Siniya Island",
+      "emirate": "Umm Al Quwain",
+      "indexedProjects": 4,
+      "exactAreaRecords": 3,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:the-greens-and-views",
+      "name": "The Greens & Views",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:the-sustainable-city-dubai",
+      "name": "The Sustainable City Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:the-villa",
+      "name": "The Villa",
+      "emirate": "Dubai",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Sharjah:tilal-city",
+      "name": "Tilal City",
+      "emirate": "Sharjah",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Umm Al Quwain:umm-al-quwain-marina",
+      "name": "Umm Al Quwain Marina (Mistral)",
+      "emirate": "Umm Al Quwain",
+      "indexedProjects": 0,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:villanova",
+      "name": "Villanova",
+      "emirate": "Dubai",
+      "indexedProjects": 4,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:Dubai:za-abeel",
+      "name": "Za’abeel",
+      "emirate": "Dubai",
+      "indexedProjects": 1,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    },
+    {
+      "id": "community:dubai-south-residential-district",
+      "name": "Dubai South Residential District",
+      "emirate": "Dubai",
+      "indexedProjects": 6,
+      "exactAreaRecords": 5,
+      "activeExactAreaRecords": 5
+    },
+    {
+      "id": "community:expo-valley-expo-city-dubai",
+      "name": "Expo Valley, Expo City Dubai",
+      "emirate": "Dubai",
+      "indexedProjects": 2,
+      "exactAreaRecords": 0,
+      "activeExactAreaRecords": 0
+    }
+  ]
+}
