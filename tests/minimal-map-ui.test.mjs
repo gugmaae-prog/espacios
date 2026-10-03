@@ -10,7 +10,7 @@ test('minimal composition exposes the approved controls without changing evidenc
   for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Transaction Volume','Forecast'])assert.ok(app.includes(label),label);
   assert.match(app,/transaction_value_aed/);
   assert.match(app,/EspaciosUnifiedMap\?\.setMetric/);
-  assert.match(app,/DATA_ROOM_PUBLIC|SUPABASE|service_role|MARKET_R2|env\.DB/g,()=>false);
+  assert.doesNotMatch(app,/DATA_ROOM_PUBLIC|SUPABASE|service_role|MARKET_R2|env\.DB/);
 });
 
 test('timeline is unframed, full width and contains no play control',()=>{
