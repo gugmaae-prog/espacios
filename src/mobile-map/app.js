@@ -111,9 +111,14 @@
       bar.querySelector('.mm-sheet-toggle').onclick=()=>{panel.dataset.mmSheet=panel.dataset.mmSheet==='peek'?'open':'peek';updateBar(panel);scheduleGeometry();};
       bar.querySelector('.mm-sheet-close').onclick=()=>{closePanel(panel);Q('#map').focus({preventScroll:true});scheduleGeometry();};
       panel.dataset.mmSheet='open';M.visible.set(panel,visible(panel));
-      new MutationObserver(()=>{if(!mobile.matches)return;const now=visible(panel),was=M.visible.get(panel);M.visible.set(panel,now);if(now&&!was)activate(panel);if(now)updateBar(panel);scheduleGeometry();}).observe(panel,{attributes:true,attributeFilter:['class','hidden']});
+      new MutationObserver(()=>{if(!mobile.matches)return;const now=visible(panel),was=M.visible.get(panel);M.visible.set(panel,now);
+        // Legacy market refreshes can restore the inspector after a request has
+        // finished. Only an explicit activation may replace an open history
+        // drawer; Details, map selection and search still call activate().
+        if(now&&!was){if(panel.id==='ms-inspect'&&M.active?.id==='hi-panel'&&visible(M.active))closePanel(panel);else activate(panel);}
+        if(visible(panel))updateBar(panel);scheduleGeometry();}).observe(panel,{attributes:true,attributeFilter:['class','hidden']});
     }
-    if(mobile.matches){const open=panels().filter(visible);const chosen=open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,true);}
+    if(mobile.matches){const open=panels().filter(visible);const chosen=open.includes(M.active)?M.active:open.find(p=>p.contains(document.activeElement))||open.find(p=>p.id==='hi-panel')||open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,chosen===M.active?chosen.dataset.mmSheet==='peek':chosen.id!=='hi-panel');}
   }
   function scheduleGeometry(){if(!M.geometryFrame)M.geometryFrame=requestAnimationFrame(measure);}
   function responsive(){const short=mobile.matches&&innerHeight<=560;if(short&&!M.short)aeUaeSetMinimized(true);M.short=short;scheduleGeometry();}

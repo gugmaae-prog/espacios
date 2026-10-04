@@ -20,7 +20,7 @@ test('full reviewed inventory and exact identities survive normalization',async(
 test('immutable inputs and every publishable object match their content address',async()=>{
  for(const input of Object.values(inputs)){const bytes=await read(input.path);assert.equal(sha(bytes),input.compressedSha256,input.path);assert.equal(sha(gunzipSync(bytes)),input.sha256,input.path);}
  const pointers=[...publication.objects,publication.d1Index].filter(Boolean),keys=new Set();
- for(const object of pointers){assert.match(object.key,/^research\/published\/2026-10-03\/historical-intelligence\/objects\/[a-f0-9]{64}\./);assert.equal(keys.has(object.key),false,'Manifest objects must be unique');keys.add(object.key);const bytes=await read(object.path);assert.equal(bytes.length,object.bytes);assert.equal(sha(bytes),object.sha256);assert.ok(object.key.includes(object.sha256));}
+ for(const object of pointers){assert.match(object.key,/^research\/published\/\d{4}-\d{2}-\d{2}\/historical-intelligence\/objects\/[a-f0-9]{64}\./);assert.equal(keys.has(object.key),false,'Manifest objects must be unique');keys.add(object.key);const bytes=await read(object.path);assert.equal(bytes.length,object.bytes);assert.equal(sha(bytes),object.sha256);assert.ok(object.key.includes(object.sha256));}
  assert.equal(publication.counts.records,1860);assert.equal(publication.counts.projects,1645);assert.equal(publication.counts.communities,215);
 });
 test('archival root retains present evidence and complete record-to-series relationships',async()=>{
@@ -35,11 +35,11 @@ test('archival root retains present evidence and complete record-to-series relat
 });
 test('context, research candidates and incomplete subject coverage remain separate',()=>{
  assert.equal(data.manifest.identityCandidateProjects,263);
- for(const record of data.records){for(const s of record.historySeries){assert.notEqual(s.scope,'subject');assert.equal(s.identityVerified,false);assert.ok(s.partition);assert.ok(s.pointCount>=s.points.length);assert.ok(s.columns.includes('value'));}
-  for(const milestone of record.lifecycle){assert.notEqual(milestone.kind,'occupancy');assert.notEqual(milestone.kind,'completion');assert.equal(milestone.status,'reported');}
-  assert.equal(record.currentSnapshot.freshness,'unverified_source_date');
+ for(const record of data.records){for(const s of record.historySeries){if(s.scope==='subject'){assert.equal(s.identityVerified,true);assert.ok(s.identitySourceIds?.length);assert.ok(s.linkBasis);}else assert.equal(s.identityVerified,false);assert.ok(s.partition);assert.ok(s.pointCount>=s.points.length);assert.ok(s.columns.includes('value'));}
+  for(const milestone of record.lifecycle){assert.ok(milestone.sourceIds.length);if(['occupancy','completion'].includes(milestone.kind))assert.ok(milestone.date.start<=data.asOf);if(milestone.status==='verified')assert.ok(milestone.identityBasis);}
+  if(record.currentSnapshot.scope==='source_observed_asking_quote'){assert.ok(record.currentSnapshot.firstAvailableAt);assert.ok(record.currentSnapshot.observationId);assert.ok(record.priorCurrentSnapshots.length);}else assert.equal(record.currentSnapshot.freshness,'unverified_source_date');
  }
- assert.equal(data.manifest.directSubjectSaleHistoryRecords,0);assert.equal(data.manifest.directSubjectRentHistoryRecords,0);assert.equal(data.manifest.approved2080ForecastRecords,0);
+ assert.equal(data.manifest.directSubjectSaleHistoryRecords,data.records.filter(r=>r.historySeries.some(s=>s.scope==='subject'&&s.identityVerified&&s.metric==='price')).length);assert.equal(data.manifest.directSubjectRentHistoryRecords,data.records.filter(r=>r.historySeries.some(s=>s.scope==='subject'&&s.identityVerified&&s.metric==='rent')).length);assert.equal(data.manifest.approved2080ForecastRecords,0);
  assert.equal(data.manifest.historyWindow.start,null,'A common subject inception is not imposed');
 });
 test('each retained record has exactly54 annual slots for every metric and scenario',()=>{

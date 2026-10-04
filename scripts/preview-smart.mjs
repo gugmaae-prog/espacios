@@ -22,10 +22,10 @@ http.createServer(async(req,res)=>{
   const url=new URL(req.url,'https://espacios.me'),path=url.pathname.replace(/\/+$/,'')||'/';let response;
   if(paths.has(path))response=await worker.fetch(new Request(url,{method:req.method,headers:req.headers}),environment,{waitUntil:p=>p.catch(()=>{})});
   else{
-   if(!cache.has(url.href))cache.set(url.href,fetch(url,{redirect:'error'}).then(async r=>({bytes:Buffer.from(await r.arrayBuffer()),status:r.status,headers:Object.fromEntries(r.headers)})));
+   if(!cache.has(url.href))cache.set(url.href,fetch(url,{redirect:'error'}).then(async r=>({bytes:Buffer.from(await r.arrayBuffer()),status:r.status,headers:Object.fromEntries(r.headers)})).catch(error=>{cache.delete(url.href);throw error;}));
    const c=await cache.get(url.href);response=new Response(c.bytes,{status:c.status,headers:c.headers});
   }
   const headers=Object.fromEntries(response.headers);delete headers['content-encoding'];delete headers['content-length'];headers['cache-control']='no-store';
   res.writeHead(response.status,headers);res.end(req.method==='HEAD'?undefined:Buffer.from(await response.arrayBuffer()));
- }catch(error){console.error(error.message);res.writeHead(502);res.end('Local preview resource unavailable');}
+ }catch(error){console.error(req.url,error.message);res.writeHead(502);res.end('Local preview resource unavailable');}
 }).listen(8798,'127.0.0.1',()=>console.log('Read-only preview http://localhost:8798/map; '+objects.size+' local immutable historical objects'));

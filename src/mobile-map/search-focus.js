@@ -244,5 +244,5 @@ const EspaciosSearchFocusCore = (() => {
     const button = event.target.closest?.('[data-search-pos]');if (!button) return;
     event.preventDefault();aeActivateSearchPosition(Number(button.dataset.searchPos));
   });
-  window.EspaciosSearchFocus = Object.freeze({focusRecord, focusArea: area => focusRecord({kind: 'community', ...area}), measurePadding});
+  window.EspaciosSearchFocus = Object.freeze({focusRecord, focusArea: area => focusRecord({kind: 'community', ...area}), measurePadding, cancel: cancelFocus});
 })();

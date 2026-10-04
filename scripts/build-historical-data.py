@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Reproducible, lossless context-history snapshot. No network or remote writes."""
 import argparse, csv, gzip, hashlib, io, json, pathlib, re, calendar, collections, datetime
+from historical_enrichment import load_enrichment, apply_enrichment
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261003-history-v1'
-ASOF = '2026-10-03'
+VERSION = '20261005-scrape-v2'
+ASOF = '2026-10-05'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -91,13 +92,20 @@ def build():
  data,inputs=load_inputs();inv=data['inventory'];profiles={x['Record ID']:x for x in data['profiles']}
  capture_asof=inv.get('asOf') or SOURCE_CAPTURE_DATE
  if ASOF<capture_asof:raise ValueError('Snapshot as-of cannot precede the retained source collection; this is not a point-in-time replay')
- original_public_rows=len(data['history']);early_path=BASE/'early-history-manifest.json';early=None
+ original_public_rows=len(data['history']);enrichment=load_enrichment(BASE);new_history_rows=[]
+ if enrichment:
+  for item in enrichment.get('historyInputs',[]):new_history_rows.extend(item['rows'])
+ early_path=BASE/'early-history-manifest.json';early=None
  if early_path.exists():
   early=read_json(early_path);meta=early['input'];blob=(ROOT/meta['path']).read_bytes();raw=gzip.decompress(blob)
   if sha(blob)!=meta['compressedSha256'] or sha(raw)!=meta['sha256']:raise ValueError('Supplement checksum mismatch')
   supplement=rows(raw)
   if any((period_date(x['Period']) or '9999')>='2019-01-01' for x in supplement):raise ValueError('Early supplement overlaps modern history')
   data['history'].extend(supplement)
+ data['history'].extend(new_history_rows)
+ reviewed_links=collections.defaultdict(list)
+ if enrichment:
+  for link in enrichment.get('seriesLinks',[]):reviewed_links[link['seriesId']].append(link)
  grouped=collections.defaultdict(list)
  for row in data['history']:grouped[row['Series ID']].append(row)
  sources={};url_ids={};source_aliases={}
@@ -134,12 +142,22 @@ def build():
    sources[ident]['verificationHistory']=[entry]
    sources[ident]['retrievedAt']=entry['retrievedAt']
    sources[ident]['captureStatus']=entry['captureStatus']
+ if enrichment:
+  for item in enrichment.get('sources',[]):source(item)
  # A shared source ID may have several endpoint captures. All retain independent hashes.
  series={};partition_groups=collections.defaultdict(list)
  for ident,items in sorted(grouped.items()):
   first=items[0];sid=source({'id':first['Source ID'] or 'history-'+sha(first['Source URL'].encode())[:16],'url':first['Source URL'],'publisher':'Dubai Real Estate Data' if first['Source ID']=='dred-sale-snapshot-20260919' else sources.get(first['Source ID'],{}).get('publisher','Source publisher not established'),'publishedAt':first['Published date'] or sources.get(first['Source ID'],{}).get('publishedAt'),'classification':first['Class'],'licence':'CC BY 4.0; publisher declaration verified' if first['Source ID']=='dred-sale-snapshot-20260919' else sources.get(first['Source ID'],{}).get('licence','rights_pending: retained existing aggregate context; no new third-party numeric redistribution')})
   metric='rent' if 'rent' in first['Metric'].lower() else 'volume' if any(t in first['Metric'].lower() for t in ['count','units','projects']) else 'price'
   scope='asking_benchmark' if first['Class']=='advertised benchmark' else 'area_context'
+  links=reviewed_links.get(ident,[])
+  subject_links=[x for x in links if x.get('scope')=='subject']
+  if subject_links and (len(subject_links)!=1 or not subject_links[0].get('identityVerified') or not subject_links[0].get('identitySourceIds') or not subject_links[0].get('identityBasis')):raise ValueError('Unproven or duplicate subject series identity')
+  if subject_links:scope='subject'
+  elif links:
+   scopes={x['scope'] for x in links}
+   if len(scopes)!=1:raise ValueError('One source series cannot carry incompatible scopes')
+   scope=next(iter(scopes))
   frequency={'quarter':'quarterly','half-year':'half-year','native annual / half-year':'native_mixed'}.get(first['Frequency'],first['Frequency'])
   points=[]
   for i,row in enumerate(items):
@@ -149,7 +167,13 @@ def build():
   points.sort(key=lambda p:(period_date(p[0]) or '',p[6]))
   dates=[(period_date(p[0]),period_date(p[0],True),p[0]) for p in points if period_date(p[0])]
   coverage={'start':min(dates)[2] if dates else None,'end':max(dates,key=lambda x:x[1])[2] if dates else None,'startDate':min(dates)[0] if dates else None,'endDate':max(x[1] for x in dates) if dates else None,'observedPeriodCount':len({p[0] for p in points}),'rowCount':len(points),'nativeFrequency':first['Frequency'],'completeness':'not_claimed'}
-  item={'id':ident,'sourceSeriesId':ident,'metric':metric,'sourceMetric':first['Metric'],'frequency':frequency,'unit':first['Unit'],'scope':scope,'identityVerified':False,'sourceId':sid,'geography':first['Geography'],'emirate':first['Emirate'],'segment':first['Segment'],'registration':first['Registration'],'sourceAreaId':int(first['Source area ID']) if str(first.get('Source area ID') or '').isdigit() else None,'observationKind':'aggregate','classification':first['Class'],'columns':COLUMNS,'points':points,'pointCount':len(points),'periodCoverage':coverage,'nativeEndpoint':first['Endpoint'] or None,'qualityStatus':'context_only; source-native quality flags retained','availability':'partition_available'}
+  item={'id':ident,'sourceSeriesId':ident,'metric':metric,'sourceMetric':first['Metric'],'frequency':frequency,'unit':first['Unit'],'scope':scope,'identityVerified':bool(subject_links),'sourceId':sid,'geography':first['Geography'],'emirate':first['Emirate'],'segment':first['Segment'],'registration':first['Registration'],'sourceAreaId':int(first['Source area ID']) if str(first.get('Source area ID') or '').isdigit() else None,'observationKind':'aggregate','classification':first['Class'],'columns':COLUMNS,'points':points,'pointCount':len(points),'periodCoverage':coverage,'nativeEndpoint':first['Endpoint'] or None,'qualityStatus':'context_only; source-native quality flags retained','availability':'partition_available'}
+  if links:
+   proof=links[0]
+   if any(x.get('identitySourceIds',[])!=proof.get('identitySourceIds',[]) or x.get('identityBasis')!=proof.get('identityBasis') for x in links):raise ValueError('Conflicting canonical source-cohort proofs')
+   item['identitySourceIds']=[source_aliases.get(x,x) for x in proof.get('identitySourceIds',[])];item['identityBasis']=proof['identityBasis'];item['linkBasis']=proof['identityBasis']
+   if subject_links:item['subjectRecordId']=proof['recordId']
+   if any(x not in sources for x in item['identitySourceIds']):raise ValueError('Orphan identity proof source')
   if early and ident in early['seriesLinks']:item['usage']='Residential';item['retrospectivePublisherFlags']=True;item['forecastTrainingAllowed']=False
   series[ident]=item;partition_groups[(first['Class'],first['Emirate'],first['Frequency'],first['Segment'],first['Registration'])].append(item)
  objects=[]
@@ -163,6 +187,14 @@ def build():
   archive=dict(early['rawArchive']);archive_bytes=(ROOT/archive['path']).read_bytes()
   if sha(archive_bytes)!=archive['sha256'] or len(archive_bytes)!=archive['bytes']:raise ValueError('Licensed parquet archive does not verify')
   objects.append(archive)
+ if enrichment:
+  for archive in enrichment.get('licensedArchives',[]):
+   if archive.get('licence')!='CC BY 4.0':raise ValueError('Raw archive redistribution permission absent')
+   archive_bytes=(BASE/archive['path']).read_bytes()
+   if sha(archive_bytes)!=archive['sha256']:raise ValueError('Archive checksum mismatch')
+   objects.append(immutable(archive_bytes,'.csv.gz','licensed_published_csv'))
+  for item in enrichment.get('historyInputs',[]):
+   blob=(BASE/item['path']).read_bytes();objects.append(immutable(blob if item.get('compression')=='gzip' else gzip.compress(blob,mtime=0),'.csv.gz','public_primary_derived_history'))
  objects.append(gzip_object({'projectCandidates':data['projectCandidates'],'communityCandidates':data['communityCandidates'],'classification':'identity_candidates_quarantined','identityVerified':False,'counts':{'projects':len({x['Record ID'] for x in data['projectCandidates']}),'communities':len({x['Community ID'] for x in data['communityCandidates']})}},'quarantined_identity_candidates'))
  candidate_p=collections.Counter(x['Record ID'] for x in data['projectCandidates']);candidate_c=collections.Counter(x['Community ID'] for x in data['communityCandidates'])
  records=[];known_ids={x['id'] for k in ['projects','communities'] for x in inv[k]}
@@ -198,6 +230,11 @@ def build():
    gaps=['verified_launch_date','actual_completion_date','direct_registered_sale_history','direct_signed_rent_history','dated_current_valuation','service_charges','validated_price_forecast','validated_rent_forecast','validated_net_return_forecast','long_term_scenario_assumptions']
    rec={'id':item['id'],'type':typ,'name':m['name'],'emirate':m['emirate'],'communityId':community if community in known_ids and typ=='project' else None,'lifecycle':lifecycle,'observations':[],'historySeries':context,'historyStartPeriod':None,'coverageWindowBasis':'unknown_subject_start; earliest shared context is not subject history','researchStatus':{'status':'research_pending','identityCandidateCount':candidate_p[item['id']] if typ=='project' else candidate_c[item['id']],'identityCandidates':'quarantined' if (candidate_p[item['id']] if typ=='project' else candidate_c[item['id']]) else 'none_found_in_captured_source','gaps':gaps,'unresolvedSeriesIds':missingrefs,'sourceScope':'shared area context only; no verified individual subject histories','launchDateStatus':'research_pending','completionDateStatus':'research_pending'},'scenarioInputs':None,'scenarioCoverage':{'firstYear':2027,'lastYear':2080,'annualSlotsPerMetric':54,'approvedAnnualPoints':0,'price':None,'rent':None,'netROI':None,'status':'unavailable_required_inputs_and_validation'},'currentSnapshot':{'askingPriceAED':quote if quote and quote>0 else None,'scope':'reported_asking_quote','publishedAt':None,'firstAvailableAt':None,'retrievedAt':capture_asof,'sourceId':sid,'freshness':'unverified_source_date','reportedHandover':f.get('Reported handover') or m.get('handover'),'authorityIssues':f.get('Authority issues') or None},'coverageSummary':{'directSalePeriods':0,'directRentPeriods':0,'saleContextRows':int(profile['Monthly sale-context rows'])+int(profile['Quarterly sale-context rows']),'askingContextRows':int(profile['Asking benchmark rows']),'originalAuditAsOf':capture_asof,'referenceReconciliationPending':len(missingrefs)}}
    records.append(rec)
+ enrichment_summary=apply_enrichment(enrichment,records,series,sources,source,source_aliases,ASOF)
+ communities_by_id={r['id']:r for r in records if r['type']=='community'}
+ for rec in records:
+  community=communities_by_id.get(rec.get('communityId'))
+  if rec['type']=='project' and community and any(s['scope']=='community_context' for s in community['historySeries']):rec['sharedCommunityHistoryId']=community['id']
  events=[]
  for event in seeds:
   event=dict(event);event.setdefault('classification','event_evidence');event['priceUpliftPct']=None
@@ -231,14 +268,22 @@ def build():
    ident=sha(encoded([event['id'],rec['id'],scope]))[:24];exposures.append({'id':ident,'eventId':event['id'],'recordId':rec['id'],'scope':scope,'basis':basis,'sourceIds':event['sourceIds'],'verified':verified,'priceUpliftPct':None})
  assert len(records)==1860 and len({x['id'] for x in records})==1860
  assert sum(x['type']=='project' for x in records)==1645 and sum(x['type']=='community' for x in records)==215
- public_rows=len(data['history']);original_collected_rows=data['expansion']['completeCollectedHistoricalRows'];supplement_rows=public_rows-original_public_rows;collected_rows=original_collected_rows+supplement_rows
+ public_rows=len(data['history']);original_collected_rows=data['expansion']['completeCollectedHistoricalRows'];supplement_rows=public_rows-original_public_rows-len(new_history_rows);collected_rows=original_collected_rows+supplement_rows+len(new_history_rows)
  assert original_public_rows+inputs['history'].get('excludedRightsPendingRows',0)==original_collected_rows==122268
  assert public_rows+inputs['history'].get('excludedRightsPendingRows',0)==collected_rows
- record_counts={e:{'projects':sum(x['type']=='project' and x['emirate']==e for x in records),'communities':sum(x['type']=='community' and x['emirate']==e for x in records),'historicalContextRows':sum(x['Emirate']==e for x in data['history']),'subjectHistoryRecords':0} for e in EMIRATES}
+ record_counts={e:{'projects':sum(x['type']=='project' and x['emirate']==e for x in records),'communities':sum(x['type']=='community' and x['emirate']==e for x in records),'historicalContextRows':sum(x['Emirate']==e for x in data['history']),'subjectHistoryRecords':sum(x['emirate']==e and any(s['scope']=='subject' and s.get('identityVerified') for s in x['historySeries']) for x in records)} for e in EMIRATES}
  dates=[period_date(x['Period']) for x in data['history'] if period_date(x['Period'])]
- manifest={'version':VERSION,'asOf':ASOF,'recordCount':1860,'projectCount':1645,'communityCount':215,'historyWindow':{'start':None,'end':ASOF[:7],'basis':'Unknown subject inception; no common invented history start'},'collectionEnvelope':{'start':min(dates),'end':ASOF[:7],'basis':'Collected source observation envelope, not any subject lifecycle'},'historicalObservationRows':public_rows,'collectedHistoricalObservationRows':collected_rows,'rightsPendingObservationRows':inputs['history'].get('excludedRightsPendingRows',0),'historicalSeriesCount':len(series),'recordIdsSHA256':sha(encoded(sorted(known_ids))),'directSubjectSaleHistoryRecords':0,'directSubjectRentHistoryRecords':0,'approved2080ForecastRecords':0,'requiredAnnualMetricSlots':301320,'sevenEmirateCoverage':record_counts,'identityCandidateProjects':len(candidate_p),'identityCandidateCommunities':len(candidate_c),'inputProvenance':inputs,'rawSourcePartitions':data['partitions'],'rawTransactionSource':dld,'partitionBinding':'MARKET_R2','objects':objects,'rightsPendingSourceMetadata':read_json(ROOT/'data/source-review-20260930.json'),'historicalRowsWarning':'Overlapping native aggregates; not independent transactions and not additive with underlying raw transaction rows','completionDefinition':'Every record evaluated; observed financial coverage remains incomplete','publicationPolicy':'No production writes. Candidate-only append-only snapshots; source rights metadata retained.'}
+ manifest={'version':VERSION,'asOf':ASOF,'recordCount':1860,'projectCount':1645,'communityCount':215,'historyWindow':{'start':None,'end':ASOF[:7],'basis':'Unknown subject inception; no common invented history start'},'collectionEnvelope':{'start':min(dates),'end':ASOF[:7],'basis':'Collected source observation envelope, not any subject lifecycle'},'historicalObservationRows':public_rows,'collectedHistoricalObservationRows':collected_rows,'rightsPendingObservationRows':inputs['history'].get('excludedRightsPendingRows',0),'historicalSeriesCount':len(series),'recordIdsSHA256':sha(encoded(sorted(known_ids))),'directSubjectSaleHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') and s['metric']=='price' for s in r['historySeries']) for r in records),'directSubjectRentHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') and s['metric']=='rent' for s in r['historySeries']) for r in records),'approved2080ForecastRecords':0,'requiredAnnualMetricSlots':301320,'sevenEmirateCoverage':record_counts,'identityCandidateProjects':len(candidate_p),'identityCandidateCommunities':len(candidate_c),'inputProvenance':inputs,'rawSourcePartitions':data['partitions'],'rawTransactionSource':dld,'partitionBinding':'MARKET_R2','objects':objects,'rightsPendingSourceMetadata':read_json(ROOT/'data/source-review-20260930.json'),'historicalRowsWarning':'Overlapping native aggregates; not independent transactions and not additive with underlying raw transaction rows','completionDefinition':'Every record evaluated; observed financial coverage remains incomplete','publicationPolicy':'No production writes. Candidate-only append-only snapshots; source rights metadata retained.'}
+ if enrichment:
+  manifest['sourceEnrichment']={**enrichment_summary,'path':str((BASE/'scrape-enrichment.json').relative_to(ROOT)),'sha256':sha((BASE/'scrape-enrichment.json').read_bytes()),'additionalHistoricalRows':len(new_history_rows)}
  if capture_path.exists():manifest['eventSourceVerification']={'path':str(capture_path.relative_to(ROOT)),'sha256':sha(capture_path.read_bytes()),'attempted':len(captures['captures']),'verified':sum(x['captureStatus']=='verified_metadata' for x in captures['captures']),'bodyRedistributed':False}
- manifest['collectionEnvelope']['end']=max(period_date(x['Period'],True) for x in data['history'] if period_date(x['Period'],True))
+ native_ends=[]
+ for row in data['history']:
+  native=json.loads(row['Native row JSON']) if row.get('Native row JSON') else {}
+  end=(native.get('lastObservedDate') if isinstance(native,dict) else None) or period_date(row['Period'],True)
+  if end:native_ends.append(min(end,ASOF))
+ manifest['collectionEnvelope']['end']=max(native_ends)
+ manifest['collectionEnvelope']['endBasis']='Latest native observation date where available; incomplete period boundaries do not extend into future dates'
  manifest['collectionEnvelope']['snapshotAsOf']=ASOF
  if alias_path.exists():manifest['seriesIdReconciliation']={'path':str(alias_path.relative_to(ROOT)),'sha256':sha(alias_path.read_bytes()),'matchedSeries':len(aliases['aliases']),'matchedNativeRows':sum(x['matchedRows'] for x in aliases['aliases']),'classification':'exact_area_context_tuple_match'}
  if rates_path.exists():manifest['uaePolicyRateEvidence']={'path':str(rates_path.relative_to(ROOT)),'sha256':sha(rates_path.read_bytes()),'version':rates['version'],'coverage':rates['coverage'],'observations':len(rates['observations']),'classification':rates['classification'],'limits':rates['limitations']}
@@ -261,10 +306,10 @@ def build():
  for e in exposures:sql.append(f'INSERT OR IGNORE INTO hi_exposures(snapshot_version,exposure_id,event_id,record_id,scope,verified,exposure_json) VALUES({lit(VERSION)},{lit(e["id"])},{lit(e["eventId"])},{lit(e["recordId"])},{lit(e["scope"])},{int(e["verified"])},{lit(encoded(e).decode())});')
  for s in series.values():sql.append(f'INSERT OR IGNORE INTO hi_series(snapshot_version,series_id,source_id,series_json) VALUES({lit(VERSION)},{lit(s["id"])},{lit(s["sourceId"])},{lit(encoded({k:v for k,v in s.items() if k!="points"}).decode())});')
  for r in records:
-  for s in r['historySeries']:sql.append(f'INSERT OR IGNORE INTO hi_record_series(snapshot_version,record_id,series_id,scope,identity_verified) VALUES({lit(VERSION)},{lit(r["id"])},{lit(s["id"])},{lit(s["scope"])},0);')
+  for s in r['historySeries']:sql.append(f'INSERT OR IGNORE INTO hi_record_series(snapshot_version,record_id,series_id,scope,identity_verified) VALUES({lit(VERSION)},{lit(r["id"])},{lit(s["id"])},{lit(s["scope"])},{int(s.get("identityVerified",False))});')
  indexsql=immutable(gzip.compress(('\n'.join(sql)+'\n').encode(),mtime=0),'.sql.gz','d1_append_only_index')
  publication=read_json(BASE/'publication-manifest.json');publication['d1Index']=indexsql;dump_json(BASE/'publication-manifest.json',publication)
- print(json.dumps({'version':VERSION,**publication['counts'],'partitions':len(partition_groups),'embeddedBytes':(ROOT/'data/historical-intelligence-20261003.json').stat().st_size,'sourceCandidateProjects':len(candidate_p),'sourceCandidateCommunities':len(candidate_c),'unresolvedLegacySeriesIds':len({s for r in records for s in r['researchStatus']['unresolvedSeriesIds']}),'approvedSubjectHistories':0,'approved2080Forecasts':0,'objectsBytes':sum(x['bytes'] for x in publication['objects'])}))
+ print(json.dumps({'version':VERSION,**publication['counts'],'partitions':len(partition_groups),'embeddedBytes':(ROOT/'data/historical-intelligence-20261003.json').stat().st_size,'sourceCandidateProjects':len(candidate_p),'sourceCandidateCommunities':len(candidate_c),'unresolvedLegacySeriesIds':len({s for r in records for s in r['researchStatus']['unresolvedSeriesIds']}),'approvedSubjectHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') for s in r['historySeries']) for r in records),'approvedSubjectHistoryRecordMetricPairs':manifest['directSubjectSaleHistoryRecords']+manifest['directSubjectRentHistoryRecords'],'approved2080Forecasts':0,'objectsBytes':sum(x['bytes'] for x in publication['objects'])}))
 
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--import-workspace',type=pathlib.Path);parser.add_argument('--version',default=VERSION);parser.add_argument('--as-of',default=ASOF);args=parser.parse_args()

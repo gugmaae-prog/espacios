@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {parseEvidenceDate,isAvailableAsOf,eligibleFeaturesAsOf,expandRecordObservations,deduplicateObservations,monthlyCoverage,filterTrainingFold,eventStudy,annualScenarios,recordExposures,recordHistory} from './core.mjs';
+import {parseEvidenceDate,isAvailableAsOf,eligibleFeaturesAsOf,expandRecordObservations,deduplicateObservations,monthlyCoverage,filterTrainingFold,eventStudy,annualScenarios,recordExposures,recordHistory,resolveRecordCommunityHistory,validateObservation,relevantSources} from './core.mjs';
 const sources=[{id:'sales',url:'https://example.com/sales',publishedAt:'2000-01-01'},{id:'news',url:'https://example.com/news',publishedAt:'2021-01-10'}],asOf='2026-10-03';
 const record={id:'project:a',type:'project',name:'Phase A',emirate:'Dubai',lifecycle:[],observations:[],historySeries:[]};
 const observation=(period,value=100,extra={})=>({id:'a:'+period,recordId:record.id,metric:'price',frequency:'monthly',period,value,unit:'AED/sqft',sampleCount:25,sourceId:'sales',scope:'subject',identityVerified:true,publishedAt:period,firstAvailableAt:period,...extra});
@@ -122,4 +122,55 @@ test('missing annual growth propagates null and absent costs prevent net returns
 test('compact macro rules create context exposures without double counting explicit links',()=>{
  const data={exposures:[exposure],exposureRules:[{eventId:event.id,scope:'national',appliesTo:'project'},{eventId:'other',scope:'emirate',emirates:['Dubai'],appliesTo:'project'},{eventId:'wrong',scope:'emirate',emirates:['Abu Dhabi'],appliesTo:'project'}]};
  const out=recordExposures(data,record);assert.equal(out.length,2);assert.equal(out[1].derivedFromRule,true);assert.equal(out[1].existenceAtEvent,'research_pending');assert.equal(out[1].priceUpliftPct,null);
+});
+
+ test('current asking evidence without older history remains outside complete-month accountability',()=>{
+  const record={id:'project:current-only',observations:[{id:'ask',period:'2026-10-05',frequency:'daily',metric:'price',value:1000000,unit:'AED',scope:'asking_benchmark',identityVerified:false,sourceId:'page',observationKind:'asking_quote'}]};
+  const result=monthlyCoverage(record,{asOf:'2026-10-05',sources:[{id:'page',retrievedAt:'2026-10-05',firstAvailableAt:'2026-10-05'}]});
+  assert.equal(result.window.start,'2026-09');assert.equal(result.window.end,'2026-09');assert.match(result.window.basis,/current\/incomplete/);assert.equal(result.metrics.price.statusCounts.observed,0);assert.equal(result.metrics.price.nonMonthlyObservationCount,1);
+ });
+
+ test('shared community histories retain context scope and require the exact recorded community relation',()=>{
+  const context={id:'native-master',scope:'community_context',identityVerified:false,points:[]};
+  const community={id:'community:c',type:'community',emirate:'Dubai',historySeries:[context,{id:'bad-subject',scope:'subject',identityVerified:true,points:[]}]};
+  const p={...record,communityId:community.id,sharedCommunityHistoryId:community.id,historySeries:[]};
+  const data={records:[community,p]};const resolved=resolveRecordCommunityHistory(data,p);
+  assert.equal(resolved.historySeries.length,1);assert.equal(resolved.historySeries[0].scope,'community_context');assert.equal(resolved.historySeries[0].identityVerified,false);assert.equal(p.historySeries.length,0);
+  assert.equal(resolveRecordCommunityHistory(data,{...p,sharedCommunityHistoryId:'community:other'}).historySeries.length,0);
+  assert.equal(resolveRecordCommunityHistory({...data,records:[{...community,emirate:'Abu Dhabi'}]},p).historySeries.length,0);
+ });
+
+test('subject histories fail closed for the wrong owner, missing owner and missing identity proof',()=>{
+ const descriptor={id:'owned',scope:'subject',identityVerified:true,subjectRecordId:record.id,identitySourceIds:['sales'],sourceId:'sales',metric:'price',frequency:'monthly',unit:'AED/sqft',columns:['period','value','sampleCount'],points:[['2026-08',100,25]]};
+ const validate=series=>validateObservation(expandRecordObservations({...record,historySeries:[series]})[0],record,{asOf,sources});
+ assert.equal(validate(descriptor).displayEligible,true);
+ for(const bad of [{...descriptor,subjectRecordId:'project:other'},{...descriptor,subjectRecordId:null},{...descriptor,identitySourceIds:['absent']}]){const result=validate(bad);assert.equal(result.displayEligible,false);assert.equal(result.coverageStatus,'conflict');}
+ const wrong=expandRecordObservations({...record,historySeries:[{...descriptor,subjectRecordId:'project:other'}]});
+ assert.equal(filterTrainingFold(wrong,{asOf,sources}).retained.length,0);
+ const promotion={...descriptor,scope:'community_context',identityVerified:false,points:[{period:'2026-08',value:100,sampleCount:25,scope:'subject',identityVerified:true}]};
+ assert.ok(validate(promotion).issues.includes('series_identity_override'));
+});
+
+test('proof sources and inherited community attribution survive the presentation view',()=>{
+ const context={id:'native',sourceId:'sales',identitySourceIds:['proof'],scope:'community_context',identityVerified:false,metric:'price',unit:'AED/sqft',frequency:'monthly',columns:['period','value','sampleCount'],points:[['2026-08',100,25]]};
+ const community={id:'community:c',type:'community',emirate:'Dubai',historySeries:[context]},p={...record,communityId:community.id,sharedCommunityHistoryId:community.id};
+ const resolved=resolveRecordCommunityHistory({records:[community]},p),point=expandRecordObservations(resolved)[0];
+ assert.equal(point.contextCommunityId,community.id);assert.match(point.linkBasis,/existence.*unverified/);
+ assert.equal(validateObservation(point,p,{asOf,sources}).direct,false);
+ assert.deepEqual(relevantSources({sources:[...sources,{id:'proof',url:'https://example.com/proof'}]},resolved).map(s=>s.id),['sales','proof']);
+});
+
+test('community studies remain descriptive context and published aggregate references obey sample gates',()=>{
+ const r={...record,observations:eventRows('community_context')},out=eventStudy(r,event,{asOf,sources,scope:'community_context',exposures:[exposure]});
+ assert.equal(out.status,'descriptive_association');assert.equal(out.classification,'descriptive_context_association');assert.equal(out.subjectEvidence,false);assert.equal(out.causalAttribution,false);
+ const ref=observation('2026-08',100,{scope:'published_reference',identityVerified:false,sampleCount:1});
+ const sparse=validateObservation(ref,record,{asOf,sources});assert.equal(sparse.valid,true);assert.equal(sparse.sparse,true);assert.equal(sparse.displayEligible,false);
+ assert.equal(validateObservation({...ref,observationKind:'asking_quote',sampleCount:null},record,{asOf,sources}).displayEligible,true);
+});
+
+test('bucketed monthly and native coverage agrees with source rows across mixed scopes and frequencies',()=>{
+ const observations=[];for(let i=0;i<72;i++){const p=`${2020+Math.floor(i/12)}-${String(i%12+1).padStart(2,'0')}`;observations.push(observation(p,100+i,{id:'direct:'+i}),observation(p,80+i,{id:'context:'+i,scope:'community_context',identityVerified:false,sampleCount:i%3?25:1}));}
+ const r={...record,observations,historySeries:[{id:'quarters',metric:'price',frequency:'quarterly',scope:'area_context',identityVerified:false,unit:'AED/sqft',sourceId:'sales',columns:['period','value','sampleCount'],points:[['2020Q1',90,25],['2020Q2',95,1]]}]},coverage=monthlyCoverage(r,{asOf,sources});
+ assert.equal(coverage.summary.directObservedMonths,72);assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2020-01').rawCount,2);assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2020-01').eligibleCount,1);assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2020-01').contextCount,1);
+ assert.equal(coverage.metrics.price.nativePeriods.quarterly[1].sparseContextCount,1);assert.deepEqual(recordHistory({version:'test',asOf,sources,events:[],exposures:[]},r).coverage,coverage);
 });

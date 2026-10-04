@@ -71,6 +71,26 @@ test('checksum-verified gzip archive expands compact series relations and hydrat
  const promoted=structuredClone(archive);promoted.series[0].scope='subject';promoted.series[0].identityVerified=true;assert.equal((await read(promoted)).manifest.archiveLoaded,undefined);
  const missingSupport=structuredClone(archive);missingSupport.sources=missingSupport.sources.filter(s=>s.id!=='news');assert.equal((await read(missingSupport)).manifest.archiveLoaded,undefined);
  const futureCutoff=structuredClone(archive);futureCutoff.asOf='2027-10-03';assert.equal((await read(futureCutoff)).manifest.archiveLoaded,undefined);
+ for(const [field,value] of [['unit','USD'],['metric','rent'],['segment','Commercial | Land'],['registration','Off-Plan'],['geography','Different Area'],['subjectRecordId','project:other'],['columns',['value','period']]]){
+  const changed=structuredClone(archive);changed.series[0][field]=value;assert.equal((await read(changed)).manifest.archiveLoaded,undefined,'Archive must not change '+field);
+ }
+ const changedAvailability=structuredClone(archive);changedAvailability.sources[0].firstAvailableAt='2022-01-01';assert.equal((await read(changedAvailability)).manifest.archiveLoaded,undefined);
+ const changedSharedRelation=structuredClone(archive);changedSharedRelation.records[0].sharedCommunityHistoryId='community:a';assert.equal((await read(changedSharedRelation)).manifest.archiveLoaded,undefined);
+});
+
+test('native subject hydration requires the matching owner and preserves shared community attribution',async()=>{
+ const pin=value=>{const bytes=gzipSync(JSON.stringify(value)),sha=createHash('sha256').update(bytes).digest('hex');return{bytes,spec:{key:'research/published/'+sha+'.json.gz',sha256:sha,compression:'gzip'}};};
+ const base={id:'owned',sourceSeriesId:'native-owned',sourceId:'sales',scope:'subject',identityVerified:true,subjectRecordId:'project:a',identitySourceIds:['sales','news'],metric:'price',frequency:'monthly',unit:'AED/sqft',segment:'Residential | Unit',registration:'Existing Properties',geography:'Community A',columns:['period','value','sampleCount','firstAvailableAt'],pointCount:1,points:[['2026-08',100,25,'2026-09-01']]};
+ const read=async(native,pointer=base,shared=false)=>{
+  const partition=pin({version:data.version,asOf:data.asOf,series:[native]}),snapshot=structuredClone(data),descriptor={...pointer,points:[],partition:partition.spec};
+  if(shared){snapshot.records[0].sharedCommunityHistoryId='community:a';snapshot.records[1].historySeries=[descriptor];}else snapshot.records[0].historySeries=[descriptor];
+  const response=await fixture(snapshot).fetch(req('/map/api/record-history?recordId=project%3Aa'),{MARKET_R2:{get:async()=>({arrayBuffer:async()=>partition.bytes})}},{});assert.equal(response.status,200);return response.json();
+ };
+ const owned=await read(base);assert.equal(owned.historySeries[0].partitionLoaded,true);assert.equal(owned.validatedObservations.find(o=>o.metric==='price').displayEligible,true);assert.equal(owned.coverage.summary.directObservedMonths,1);
+ const wrong=await read({...base,subjectRecordId:'project:other'});assert.equal(wrong.historySeries[0].availability,'partition_identity_conflict');assert.equal(wrong.coverage.summary.directObservedMonths,0);
+ const changedUnit=await read({...base,unit:'USD'});assert.equal(changedUnit.historySeries[0].availability,'partition_identity_conflict');
+ const context={...base,id:'master-context',scope:'community_context',identityVerified:false,subjectRecordId:null,linkBasis:'Official master label match'};
+ const inherited=await read(context,context,true);assert.equal(inherited.historySeries[0].partitionLoaded,true);assert.equal(inherited.historySeries[0].contextCommunityId,'community:a');assert.match(inherited.historySeries[0].linkBasis,/existence.*unverified/);assert.equal(inherited.validatedObservations.find(o=>o.metric==='price').contextCommunityId,'community:a');assert.equal(inherited.coverage.summary.directObservedMonths,0);
 });
 test('lazy bundled data loads only on new GET routes and R2 snapshot failure falls back explicitly',async()=>{
  let loads=0;const worker=fixture({version:data.version,asOf:data.asOf},async()=>{loads++;return structuredClone(data);});

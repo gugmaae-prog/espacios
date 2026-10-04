@@ -1,4 +1,40 @@
-# Historical intelligence snapshot, 3 October 2026
+# Historical intelligence scrape, 5 October 2026 candidate
+
+All 1,645 projects and 215 communities remain in the catalogue. This is the reviewable `20261005-scrape-v2` source snapshot; production has not been changed. A record, fetched page, observed quote and complete price history are separate coverage measures.
+
+| Current collection | Count | Evidence boundary |
+| --- | ---: | --- |
+| Official DLD transactions | 1,796,826 unique transaction IDs | Native last transaction 2 October 2026; originals private |
+| Official Ejari lines | 10,560,550 / 8,812,322 distinct contracts | Lines are not independent leases; invalid/future/repeated single-property contracts excluded from aggregates |
+| New primary derived history | 107,885 rows / 4,056 series | Project IDs, cadastral areas and exact native master-project labels; overlapping frequencies and subtypes |
+| Total releasable historical aggregates | 248,476 rows / 9,184 series | Includes the earlier collection; never sum with raw transactions or across shared record links |
+| Direct registered project sale histories | 51 | Verified exact registered identity, Unit/Villa cohorts; any retained history does not establish complete history |
+| Direct registered project rental histories | 11 | Physical/virtual, usage, native subtype and New/Renew cohorts kept separate |
+| Known-page collection | 2,028 URLs / 1,711 HTML captures | 1,553 records have page captures; 312 URLs robots-blocked |
+| Additional first-party community retrievals | 155 attempted URLs | 181 reviewed lifecycle, advertised and descriptive facts across 81 communities |
+| New accepted facts, all passes | 2,593 | 1,228 lifecycle, 1,285 financial, 80 register facts; original catalogue evidence also retained |
+| Canonical source entries | 2,497 | Source references, not independent verified price feeds |
+| Approved numeric forecasts to 2080 | 0 | Exactly 54 conditional annual slots remain for every record; missing inputs stay null |
+
+The source packet is `data/historical-intelligence/scrape-enrichment.json`. Reproduce using `npm run history:build`; its two compressed derived CSV inputs have compressed and uncompressed checksums. Private original registers and website bodies are excluded from the repository. `python3 scripts/merge-historical-enrichment.py --packet … --output …` merges reviewed packets, preserves source collection passes, and rejects contradictory identities. Source metadata and cited facts do not confer permission to republish article bodies.
+
+Primary datasets: [transactions](https://data.dubai/en/l/470061), [Ejari](https://data.dubai/en/l/468586), [projects](https://data.dubai/en/l/467654), [areas](https://data.dubai/en/l/465592), [buildings](https://data.dubai/en/l/459613), [developers](https://data.dubai/en/l/462802), [service charges](https://data.dubai/en/l/466633), [residential sale index](https://data.dubai/en/l/468732). The public Data Dubai download index returned ordinary permitted gzip downloads. Dubai Open Data Licence permits attributed derivatives; originals remain private. All 19 gzip originals were independently rehashed. Supporting register vintages differ: the project register is July 2026 with a June load, while transactions/rent/buildings are October snapshots.
+
+52 official project-number identities passed project, developer and geographic review. One has only underlying Land history, leaving 51 with residential-unit/built-property subject price evidence. 128 Land/Building aggregate series stay `published_reference`; they never establish the price of a later apartment or villa. 49 unique native master-project names provide community sale context (45 rental context); eight cadastral-area community links overlap that set. Known catalogue community membership can expose exact native-master context on a project, with `identityVerified:false` and historical project existence explicitly unverified.
+
+Mollak supplies 641 fee components for six exact projects, not whole-property annual costs. 24 Parking components have an unverified denominator and no per-sqft value; negative Adjustment credits remain. Rent dates are native contract-start dates, not invented registration dates. 5,467 repeated single-property contract IDs, 11,887 future-start rows and source date anomalies are quarantined in originals.
+
+Most captured advertised prices come from Espacios tenant pages. They are labelled `catalogue_advertised_asking_quote` and do not independently corroborate the catalogue. All quotes survive; the preferred quote is chosen deterministically by source authority, capture time and stable observation ID. Capture dates establish when an advertisement was observed, not when a market valuation was valid. Historical developer launch quotes remain separate from today's selected advertisement.
+
+Palm Jebel Ali has 2,102 official area sales: 1,685 Commercial Land, 415 Residential Unit and two Commercial Building rows; no native Villa or rental rows were found. Source-native cohorts and frond contexts remain separate. First-party villa launch, construction progress and phased 2026–2027 handover targets add lifecycle evidence, not actual completion, registered villa prices or measured appreciation.
+
+Current retrieval availability is retained separately from event dates and source snapshot/load timestamps. These latest-vintage registers cannot support point-in-time historical backtests. The five newly downloaded CertifiedPoor CC BY 4.0 CSVs contain 2,088 native rows; their exact-name candidates remain unverified without official project IDs. Two publisher manifest row counts differ from the actual CSVs and are disclosed. These archives overlap other sources and are not additive transactions.
+
+Complete applicable historical coverage remains unestablished. Unknown inception, occupancy, identity, financial periods and source-access gaps remain visible per record. Future prices through 2080 cannot be scraped as observed facts.
+
+---
+
+# Retained 3 October 2026 collection baseline
 
 The snapshot evaluates every catalogue record: **1,645 projects and 215 communities**. Index coverage is 100%; individual financial-history completeness is not. It preserves context, uncertainty and source dates without creating property values, completion dates or appreciation coefficients.
 

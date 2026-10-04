@@ -3,14 +3,14 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
-import {monthlyCoverage, expandRecordObservations, validateObservation, recordExposures, parseEvidenceDate} from '../src/historical-intelligence/core.mjs';
+import {monthlyCoverage, expandRecordObservations, validateObservation, recordExposures, parseEvidenceDate,resolveRecordCommunityHistory} from '../src/historical-intelligence/core.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const args=process.argv.slice(2), option=name=>args.includes(name)?args[args.indexOf(name)+1]:null;
 const output=option('--output');
 if(!output)throw new Error('Provide --output /absolute/path/coverage.csv');
 const bytes=await fs.readFile(path.join(root,'data/historical-intelligence-20261003.json'));
-const data=JSON.parse(bytes), partitions=new Map();
+const data=JSON.parse(bytes), partitions=new Map(),sourceIndex=new Map(data.sources.map(s=>[s.id,s]));
 const digest=x=>createHash('sha256').update(x).digest('hex');
 for(const record of data.records)for(const series of record.historySeries||[]){
   if(partitions.has(series.partition.key))continue;
@@ -19,22 +19,24 @@ for(const record of data.records)for(const series of record.historySeries||[]){
   partitions.set(series.partition.key,JSON.parse(gunzipSync(object)));
 }
 const rows=[];
-for(const sourceRecord of data.records){
+for(const savedRecord of data.records){
+  const sourceRecord=resolveRecordCommunityHistory(data,savedRecord);
   const record={...sourceRecord,historySeries:sourceRecord.historySeries.map(pointer=>{
     const series=partitions.get(pointer.partition.key).series.find(s=>s.id===pointer.id);
     if(!series||series.points.length!==pointer.pointCount)throw new Error('Record series count mismatch');
-    return {...pointer,...series,partitionLoaded:true,availability:'verified_immutable_partition'};
+    return {...pointer,...series,...(pointer.contextCommunityId?{contextCommunityId:pointer.contextCommunityId,linkBasis:pointer.linkBasis}:{}),partitionLoaded:true,availability:'verified_immutable_partition'};
   })};
   const coverage=monthlyCoverage(record,{asOf:data.asOf,sources:data.sources,manifest:data.manifest});
-  const observations=expandRecordObservations(record).map(o=>validateObservation(o,record,{asOf:data.asOf,sources:data.sources}));
+  const observations=expandRecordObservations(record).map(o=>validateObservation(o,record,{asOf:data.asOf,sources:data.sources,sourceIndex}));
   const contexts=observations.filter(o=>o.valid&&!o.direct&&o.metric!=='volume');
   const sorted=contexts.slice().sort((a,b)=>parseEvidenceDate(a.period).start.localeCompare(parseEvidenceDate(b.period).start));
   rows.push({record_id:record.id,type:record.type,name:record.name,emirate:record.emirate,
-    subject_inception_verified:false,subject_history_start:null,earliest_retained_context_period:sorted[0]?.period||null,
+    subject_inception_verified:record.lifecycle.some(m=>m.kind==='launch'&&m.status==='verified'),subject_history_start:record.lifecycle.find(m=>m.kind==='launch'&&m.status==='verified')?.date?.start??null,earliest_retained_context_period:sorted[0]?.period||null,
     latest_retained_context_period:sorted.at(-1)?.period||null,
     accountability_window_start:coverage.window.start,accountability_window_end:coverage.window.end,
-    accountability_window_basis:coverage.window.basis,native_context_series:record.historySeries.length,
-    native_context_rows:record.historySeries.reduce((n,s)=>n+s.points.length,0),
+    accountability_window_basis:coverage.window.basis,native_context_series:record.historySeries.filter(s=>s.scope!=='subject').length,
+    subject_history_series:record.historySeries.filter(s=>s.scope==='subject').length,
+    native_context_rows:record.historySeries.filter(s=>s.scope!=='subject').reduce((n,s)=>n+s.points.length,0),
     eligible_context_financial_observations:contexts.filter(o=>o.displayEligible).length,
     sparse_context_financial_observations:contexts.filter(o=>o.sparse).length,
     approved_subject_price_observations:observations.filter(o=>o.direct&&o.valid&&o.metric==='price').length,
@@ -43,7 +45,11 @@ for(const sourceRecord of data.records){
     subject_rent_observed_months:coverage.metrics.rent.statusCounts.observed,
     price_applicability_known:coverage.metrics.price.subjectApplicabilityKnown,
     rent_applicability_known:coverage.metrics.rent.subjectApplicabilityKnown,
-    reported_handover_targets:record.lifecycle.length,
+    reported_handover_targets:record.lifecycle.filter(m=>m.kind==='target_handover').length,
+    sourced_lifecycle_milestones:record.lifecycle.filter(m=>m.identityBasis).length,
+    sourced_financial_facts:record.observations.length,
+    primary_register_facts:record.registerEvidence?.length??0,
+    source_collection_status:record.researchStatus.sourceCollection?.status??'not_collected',
     verified_completion:record.lifecycle.some(m=>m.kind==='completion'&&m.status==='verified'),
     verified_occupancy:record.lifecycle.some(m=>m.kind==='occupancy'&&m.status==='verified'),
     reported_asking_price_aed:record.currentSnapshot.askingPriceAED,
@@ -62,7 +68,10 @@ const summary={version:data.version,asOf:data.asOf,snapshotSHA256:digest(bytes),
   projects:rows.filter(r=>r.type==='project').length,communities:rows.filter(r=>r.type==='community').length,
   contextLinkedRecords:rows.filter(r=>r.native_context_series>0).length,
   earliestContext:rows.map(r=>r.earliest_retained_context_period).filter(Boolean).sort()[0],
-  approvedSubjectHistoryRecords:0,approved2080ForecastRecords:0,
+  approvedSubjectHistoryRecords:rows.filter(r=>r.approved_subject_price_observations>0||r.approved_subject_rent_observations>0).length,approved2080ForecastRecords:0,
+  subjectSaleHistoryRecords:data.manifest.directSubjectSaleHistoryRecords,subjectRentHistoryRecords:data.manifest.directSubjectRentHistoryRecords,
+  sourcedLifecycleRecords:data.records.filter(r=>r.lifecycle.some(m=>m.identityBasis)).length,
+  freshlySourcedFinancialRecords:data.records.filter(r=>r.observations.length>0).length,
   scope:'Per-record accountability and shared context; row totals across records are not unique source observations. Unknown inception prevents certification of complete historical period coverage.',
   evidenceCounts:data.manifest.historicalObservationRows,sourceCount:data.sources.length,eventCount:data.events.length};
 await fs.writeFile(output.replace(/\.csv$/i,'.json'),JSON.stringify(summary,null,2)+'\n');

@@ -4,6 +4,8 @@
 export const HISTORICAL_VERSION = 'espacios-historical-intelligence-v1';
 export const TARGET_YEARS = Object.freeze(Array.from({length:54}, (_,i)=>2027+i));
 const DAY=86400000, METRICS=['price','rent','volume'], CASES=['downside','base','upside'];
+const EVIDENCE_DATE_CACHE=new Map();
+function rememberDate(key,value){if(EVIDENCE_DATE_CACHE.size>=8192)EVIDENCE_DATE_CACHE.delete(EVIDENCE_DATE_CACHE.keys().next().value);EVIDENCE_DATE_CACHE.set(key,value);return{...value};}
 const finite=x=>typeof x==='number'&&Number.isFinite(x);
 const clone=x=>JSON.parse(JSON.stringify(x));
 const own=(o,k)=>Object.prototype.hasOwnProperty.call(o||{},k);
@@ -17,15 +19,16 @@ function monthEnd(y,m){return day(y,m,new Date(Date.UTC(y,m,0)).getUTCDate());}
 function oneDate(value){
  if(typeof value!=='string'||!value.trim())throw new TypeError('A dated evidence value is required.');
  const s=value.trim();let m;
+ if(EVIDENCE_DATE_CACHE.has(s))return{...EVIDENCE_DATE_CACHE.get(s)};
  if((m=/^(\d{4})-(\d{2})-(\d{2})(T.*)?$/.exec(s))){
   const date=day(+m[1],+m[2],+m[3]);
-  if(m[4]){if(!/^T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/.test(m[4])||!Number.isFinite(Date.parse(s)))throw new TypeError('Timestamp requires an explicit timezone.');return{start:date,end:date,precision:'instant',instant:Date.parse(s)};}
-  return{start:date,end:date,precision:'day'};
+  if(m[4]){if(!/^T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/.test(m[4])||!Number.isFinite(Date.parse(s)))throw new TypeError('Timestamp requires an explicit timezone.');return rememberDate(s,{start:date,end:date,precision:'instant',instant:Date.parse(s)});}
+  return rememberDate(s,{start:date,end:date,precision:'day'});
  }
- if((m=/^(\d{4})-(0[1-9]|1[0-2])$/.exec(s)))return{start:day(+m[1],+m[2],1),end:monthEnd(+m[1],+m[2]),precision:'month'};
- if((m=/^(\d{4})-?Q([1-4])$/.exec(s)))return{start:day(+m[1],(+m[2]-1)*3+1,1),end:monthEnd(+m[1],+m[2]*3),precision:'quarter'};
- if((m=/^(\d{4})-?H([12])$/.exec(s)))return{start:day(+m[1],m[2]==='1'?1:7,1),end:monthEnd(+m[1],m[2]==='1'?6:12),precision:'half_year'};
- if((m=/^(\d{4})(?:-?FY)?$/.exec(s)))return{start:day(+m[1],1,1),end:day(+m[1],12,31),precision:'year'};
+ if((m=/^(\d{4})-(0[1-9]|1[0-2])$/.exec(s)))return rememberDate(s,{start:day(+m[1],+m[2],1),end:monthEnd(+m[1],+m[2]),precision:'month'});
+ if((m=/^(\d{4})-?Q([1-4])$/.exec(s)))return rememberDate(s,{start:day(+m[1],(+m[2]-1)*3+1,1),end:monthEnd(+m[1],+m[2]*3),precision:'quarter'});
+ if((m=/^(\d{4})-?H([12])$/.exec(s)))return rememberDate(s,{start:day(+m[1],m[2]==='1'?1:7,1),end:monthEnd(+m[1],m[2]==='1'?6:12),precision:'half_year'});
+ if((m=/^(\d{4})(?:-?FY)?$/.exec(s)))return rememberDate(s,{start:day(+m[1],1,1),end:day(+m[1],12,31),precision:'year'});
  throw new TypeError('Use a native month, quarter, half year, year, ISO day or timestamp.');
 }
 /** Date precision is retained; a month/year never becomes a guessed exact day. */
@@ -94,7 +97,7 @@ export function expandRecordObservations(record){
  for(const series of record.historySeries||[]){
   for(const native of series.points||[]){
    const p=pointObject(native,series);
-   const expanded={...clone(p),id:p.id||`${series.id}:${p.period}`,recordId:p.recordId||record.id,metric:metric(p.metric||series.metric),frequency:inferFrequency(p.period,p.frequency||series.frequency),unit:p.unit||series.unit,sourceId:p.sourceId||series.sourceId,scope:p.scope||series.scope,identityVerified:p.identityVerified??series.identityVerified??false,seriesId:series.id,geography:series.geography,segment:series.segment,registration:series.registration,observationKind:p.observationKind||series.observationKind||'aggregate',publishedAt:p.publishedAt||series.publishedAt,firstAvailableAt:p.firstAvailableAt||series.firstAvailableAt,native:clone(native)};
+   const expanded={...clone(p),id:p.id||`${series.id}:${p.period}`,recordId:p.recordId||record.id,metric:metric(p.metric||series.metric),frequency:inferFrequency(p.period,p.frequency||series.frequency),unit:p.unit||series.unit,sourceId:p.sourceId||series.sourceId,scope:p.scope||series.scope,identityVerified:p.identityVerified??series.identityVerified??false,seriesId:series.id,fromHistorySeries:true,seriesScope:series.scope,seriesIdentityVerified:series.identityVerified??false,subjectRecordId:series.subjectRecordId||null,identitySourceIds:clone(series.identitySourceIds||[]),contextCommunityId:series.contextCommunityId||null,linkBasis:series.linkBasis||null,geography:series.geography,segment:series.segment,registration:series.registration,observationKind:p.observationKind||series.observationKind||'aggregate',publishedAt:p.publishedAt||series.publishedAt,firstAvailableAt:p.firstAvailableAt||series.firstAvailableAt,native:clone(native)};
    out.push(expanded);
    if(expanded.metric==='price'&&['subject','area_context','community_context'].includes(expanded.scope)&&Number.isInteger(p.sampleCount)&&p.sampleCount>=0)out.push({...expanded,id:expanded.id+':eligible-count',metric:'volume',value:p.sampleCount,unit:'eligible sales count',observationKind:'source_count',derivedFromNativeCount:true,medianQualityStatus:p.qualityStatus,qualityStatus:/^withheld median: sparse\/invalid$/.test(p.qualityStatus||'')?'Native eligible count retained; median sample gate does not apply.':p.qualityStatus});
   }
@@ -117,14 +120,18 @@ export function deduplicateObservations(observations){
  }
  return{retained,duplicates,conflicts,rawCount:(observations||[]).length};
 }
-export function validateObservation(observation,record,{asOf,sources=[],minimumSample=20}={}){
+export function validateObservation(observation,record,{asOf,sources=[],minimumSample=20,sourceIndex=null}={}){
  const o=clone(observation),issues=[],m=metric(o.metric),scope=o.scope==='project'?'subject':o.scope;
  if(!m)issues.push('unsupported_metric');
  if(o.recordId&&o.recordId!==record.id)issues.push('record_identity_mismatch');
  if(o.emirate&&record.emirate&&o.emirate!==record.emirate)issues.push('emirate_identity_mismatch');
  if(!['subject','area_context','asking_benchmark','community_context','published_reference'].includes(scope))issues.push('unknown_evidence_scope');
  if(scope==='subject'&&o.identityVerified!==true)issues.push('unverified_subject_identity');
- const source=sources.find(s=>s.id===o.sourceId);
+ if(o.fromHistorySeries&&(o.scope!==o.seriesScope||o.identityVerified!==o.seriesIdentityVerified))issues.push('series_identity_override');
+ if(scope==='subject'&&o.subjectRecordId&&o.subjectRecordId!==record.id)issues.push('subject_series_owner_mismatch');
+ if(scope==='subject'&&o.fromHistorySeries&&!o.subjectRecordId)issues.push('unverified_subject_series_owner');
+ const byId=sourceIndex||new Map(sources.map(s=>[s.id,s])),source=byId.get(o.sourceId);
+ if(scope==='subject'&&o.fromHistorySeries&&(!Array.isArray(o.identitySourceIds)||!o.identitySourceIds.length||o.identitySourceIds.some(id=>!byId.has(id))))issues.push('missing_subject_identity_proof');
  if(!source)issues.push('missing_source');
  if(!o.unit||typeof o.unit!=='string')issues.push('missing_unit');
  let date=null;try{date=parseEvidenceDate(o.period);}catch{issues.push('invalid_native_period');}
@@ -137,7 +144,7 @@ export function validateObservation(observation,record,{asOf,sources=[],minimumS
  if(!goodValue)issues.push('missing_or_invalid_value');
  if(o.sampleCount!==null&&o.sampleCount!==undefined&&(!Number.isInteger(o.sampleCount)||o.sampleCount<0))issues.push('invalid_sample_count');
  const aggregate=o.observationKind!=='transaction'&&o.observationKind!=='asking_quote';
- const sparse=aggregate&&['subject','area_context','community_context'].includes(scope)&&m!=='volume'&&(!Number.isInteger(o.sampleCount)||o.sampleCount<minimumSample);
+ const sparse=aggregate&&['subject','area_context','community_context','published_reference'].includes(scope)&&m!=='volume'&&(!Number.isInteger(o.sampleCount)||o.sampleCount<minimumSample);
  const direct=scope==='subject',valid=issues.length===0;
  return{...o,metric:m,scope,date,issues,valid,direct,displayEligible:valid&&!sparse,sparse,availability:isAvailableAsOf(o,asOf,source)?'known_as_of':'unknown_or_later',coverageStatus:!valid?'conflict':sparse?'sparse':direct?'observed':'context_only'};
 }
@@ -153,25 +160,33 @@ function applicableStart(record,m){
  try{return{date:parseEvidenceDate(milestones.sort((a,b)=>firstInstant(a.date)-firstInstant(b.date))[0].date),basis:m==='rent'?'verified_occupancy':'verified_launch'};}catch{return null;}
 }
 function nativeCoverage(points,frequency,asOf){
- const names={monthly:'month',quarterly:'quarter',half_year:'half_year',annual:'year'},rows=points.filter(o=>o.date&&(o.frequency===frequency||(frequency==='annual'&&['yearly','year','FY'].includes(o.frequency))));
- const periods=[...new Set(rows.map(o=>o.period))].sort((a,b)=>firstInstant(a)-firstInstant(b));
+ const names={monthly:'month',quarterly:'quarter',half_year:'half_year',annual:'year'},buckets=new Map(),starts=new Map();
+ for(const o of points)if(o.date&&(o.frequency===frequency||(frequency==='annual'&&['yearly','year','FY'].includes(o.frequency)))){
+  if(!buckets.has(o.period)){buckets.set(o.period,[]);starts.set(o.period,firstInstant(o.period));}buckets.get(o.period).push(o);
+ }
+ const periods=[...buckets.keys()].sort((a,b)=>starts.get(a)-starts.get(b));
  return periods.map(period=>{
-  const matches=rows.filter(o=>o.period===period),direct=matches.filter(o=>o.direct),eligible=direct.filter(o=>o.displayEligible),context=matches.filter(o=>!o.direct&&o.valid),sparse=direct.filter(o=>o.valid&&o.sparse),bad=direct.filter(o=>!o.valid);
+  const matches=buckets.get(period),direct=matches.filter(o=>o.direct),eligible=direct.filter(o=>o.displayEligible),context=matches.filter(o=>!o.direct&&o.valid),sparse=direct.filter(o=>o.valid&&o.sparse),bad=direct.filter(o=>!o.valid);
   const status=eligible.length?'observed':sparse.length?'sparse':bad.length?'conflict':context.length?'context_only':'conflict';
   return{period,frequency,datePrecision:names[frequency],status,rawCount:matches.length,eligibleCount:eligible.length,contextCount:context.length,eligibleContextCount:context.filter(o=>o.displayEligible).length,sparseContextCount:context.filter(o=>o.sparse).length,sparseCount:sparse.length,completeAtCutoff:lastInstant(period)<=lastInstant(asOf),units:[...new Set(matches.map(o=>o.unit).filter(Boolean))]};
  });
 }
-export function monthlyCoverage(record,{asOf,sources=[],manifest={},minimumSample=20}={}){
- const raw=expandRecordObservations(record),dedup=deduplicateObservations(raw),validated=dedup.retained.map(o=>validateObservation(o,record,{asOf,sources,minimumSample}));
+function observationEvidence(record,{asOf,sources=[],minimumSample=20}={}){
+ const raw=expandRecordObservations(record),dedup=deduplicateObservations(raw),sourceIndex=new Map(sources.map(s=>[s.id,s]));
+ return{raw,dedup,validated:dedup.retained.map(o=>validateObservation(o,record,{asOf,sources,minimumSample,sourceIndex}))};
+}
+export function monthlyCoverage(record,options={}){return coverageFromEvidence(record,options,observationEvidence(record,options));}
+function coverageFromEvidence(record,{asOf,sources=[],manifest={},minimumSample=20}={}, {raw,dedup,validated}){
  const earliest=raw.flatMap(o=>{try{return[monthIndex(o.period)];}catch{return[];}}),declaredStarts=(record.historySeries||[]).flatMap(s=>{const p=s.periodCoverage?.start||s.periodCoverage?.first||s.periodCoverage?.firstPeriod;try{return p?[monthIndex(p)]:[];}catch{return[];}});
  const explicit=record.historyStartPeriod||record.coverageWindow?.start,global=manifest.historyWindow?.start;
- const knownStarts=[...earliest,...declaredStarts],start=explicit?monthIndex(explicit):global?monthIndex(global):knownStarts.length?Math.min(...knownStarts):lastCompleteMonth(asOf);
- const end=lastCompleteMonth(asOf),metrics={};
+ const knownStarts=[...earliest,...declaredStarts],candidateStart=explicit?monthIndex(explicit):global?monthIndex(global):knownStarts.length?Math.min(...knownStarts):lastCompleteMonth(asOf);
+ const end=lastCompleteMonth(asOf),currentOnly=!explicit&&!global&&candidateStart>end,start=currentOnly?end:candidateStart,metrics={};
  if(start>end||end-start>2400)throw new RangeError('Historical coverage window must contain at most 200 years and no future start.');
  for(const m of METRICS){
-  const applicability=applicableStart(record,m),points=validated.filter(o=>o.metric===m),periods=[];
+  const applicability=applicableStart(record,m),points=validated.filter(o=>o.metric===m),periods=[],monthly=new Map();
+  for(const o of points)if(o.frequency==='monthly'){if(!monthly.has(o.period))monthly.set(o.period,[]);monthly.get(o.period).push(o);}
   for(let i=start;i<=end;i++){
-   const period=monthText(i),matching=points.filter(o=>o.frequency==='monthly'&&o.period===period),direct=matching.filter(o=>o.direct),context=matching.filter(o=>!o.direct&&o.valid),eligible=direct.filter(o=>o.displayEligible),sparse=direct.filter(o=>o.valid&&o.sparse),bad=direct.filter(o=>!o.valid);
+   const period=monthText(i),matching=monthly.get(period)||[],direct=matching.filter(o=>o.direct),context=matching.filter(o=>!o.direct&&o.valid),eligible=direct.filter(o=>o.displayEligible),sparse=direct.filter(o=>o.valid&&o.sparse),bad=direct.filter(o=>!o.valid);
    let status='missing',reason='No verified subject observation in this native month.';
    if(applicability&&Date.parse(monthEnd(+period.slice(0,4),+period.slice(5,7))+'T23:59:59.999Z')<firstInstant(applicability.date)){status='not_applicable';reason=`Before ${applicability.basis}; underlying land/area context remains separate.`;}
    else if(eligible.length){status='observed';reason='Verified subject evidence in the native month.';}
@@ -187,7 +202,7 @@ export function monthlyCoverage(record,{asOf,sources=[],manifest={},minimumSampl
  }
  const union=status=>Array.from({length:end-start+1},(_,i)=>METRICS.some(m=>metrics[m].periods[i].status===status)).filter(Boolean).length;
  const history=record.historySeries||[],collection={storedSeries:history.length,declaredNativePointCount:history.reduce((n,s)=>n+(s.pointCount??s.points?.length??0),0),loadedNativePointCount:history.reduce((n,s)=>n+(s.points?.length||0),0),completeLoadedSeries:history.filter(s=>s.partitionLoaded||(!s.partition&&s.points?.length===(s.pointCount??s.points?.length))).length,partialOrUnavailableSeries:history.filter(s=>s.partition&&!s.partitionLoaded).length,availabilityStates:[...new Set(history.map(s=>s.availability||'not_declared'))],note:'Full source collection and points currently loaded by this API are distinct.'};
- return{window:{start:monthText(start),end:monthText(end),basis:explicit?'record_declared_window':global?'source_collection_window_not_subject_launch':'earliest_retained_observation_or_last_complete_month'},metrics,collection,summary:{totalMonths:end-start+1,directObservedMonths:union('observed'),contextMonths:union('context_only'),sparseMonths:union('sparse'),missingMonths:union('missing'),unknownMonths:union('unknown'),conflictMonths:union('conflict'),inaccessibleMonths:union('inaccessible'),notApplicableMonths:union('not_applicable'),rawObservationCount:raw.length,duplicateRows:dedup.duplicates.length,conflictingRows:dedup.conflicts.length,storedSeriesCount:history.length},scope:'Period accountability is distinct from complete financial observation coverage.',originalHistoryPreserved:true};
+ return{window:{start:monthText(start),end:monthText(end),basis:explicit?'record_declared_window':global?'source_collection_window_not_subject_launch':currentOnly?'last_complete_month; earliest retained observations are in a current/incomplete month':'earliest_retained_observation_or_last_complete_month'},metrics,collection,summary:{totalMonths:end-start+1,directObservedMonths:union('observed'),contextMonths:union('context_only'),sparseMonths:union('sparse'),missingMonths:union('missing'),unknownMonths:union('unknown'),conflictMonths:union('conflict'),inaccessibleMonths:union('inaccessible'),notApplicableMonths:union('not_applicable'),rawObservationCount:raw.length,duplicateRows:dedup.duplicates.length,conflictingRows:dedup.conflicts.length,storedSeriesCount:history.length},scope:'Period accountability is distinct from complete financial observation coverage.',originalHistoryPreserved:true};
 }
 function quantile(values,p){const a=values.slice().sort((a,b)=>a-b),i=(a.length-1)*p;return a[Math.floor(i)]+(a[Math.ceil(i)]-a[Math.floor(i)])*(i%1);}
 /** Bands are fitted solely on training-fold values; publisher full-year flags are not reused. */
@@ -196,7 +211,8 @@ export function filterTrainingFold(observations,{asOf,sources=[],lowerQuantile=.
  const eligible=[],withheld=[],byId=new Map(sources.map(s=>[s.id,s]));
  for(const raw of observations||[]){
   const o=clone(raw);let complete=false;try{complete=lastInstant(o.period)<=lastInstant(asOf);}catch{}
-  if(!complete||!isAvailableAsOf(o,asOf,byId.get(o.sourceId))||!finite(o.value)||o.value<=0||o.identityVerified!==true||o.scope!=='subject'||o.duplicateConflict||(Number.isInteger(o.qualityFlags)&&(o.qualityFlags&~4)!==0))withheld.push({observation:o,reason:'Origin availability, period, identity or non-outlier quality gate failed.'});
+  const ownerMismatch=o.subjectRecordId&&o.subjectRecordId!==o.recordId,unprovenSeries=o.fromHistorySeries&&(!o.subjectRecordId||!Array.isArray(o.identitySourceIds)||!o.identitySourceIds.length||o.identitySourceIds.some(id=>!byId.has(id))||o.scope!==o.seriesScope||o.identityVerified!==o.seriesIdentityVerified);
+  if(!complete||!isAvailableAsOf(o,asOf,byId.get(o.sourceId))||!finite(o.value)||o.value<=0||o.identityVerified!==true||o.scope!=='subject'||ownerMismatch||unprovenSeries||o.duplicateConflict||(Number.isInteger(o.qualityFlags)&&(o.qualityFlags&~4)!==0))withheld.push({observation:o,reason:'Origin availability, period, identity or non-outlier quality gate failed.'});
   else eligible.push(o);
  }
  const dedup=deduplicateObservations(eligible),groups=new Map();
@@ -212,13 +228,13 @@ function nativeText(i,frequency){return frequency==='annual'?String(i):frequency
 function emptyStudy(reason,extra={}){return{classification:'descriptive_association',causalAttribution:false,status:'insufficient_evidence',observedChangePct:null,reason,...extra};}
 /** Twelve months either side, no resampling, no automatic causal attribution. */
 export function eventStudy(record,event,{metric:selected='price',frequency='monthly',scope='subject',seriesId=null,asOf,sources=[],minimumSample=20,exposures=[]}={}){
- if(!METRICS.includes(selected)||!['monthly','quarterly','half_year','annual'].includes(frequency)||!['subject','area_context','asking_benchmark'].includes(scope))throw new TypeError('Unsupported study metric, native frequency or evidence scope.');
+ if(!METRICS.includes(selected)||!['monthly','quarterly','half_year','annual'].includes(frequency)||!['subject','area_context','community_context','published_reference','asking_benchmark'].includes(scope))throw new TypeError('Unsupported study metric, native frequency or evidence scope.');
  let when;try{when=parseEvidenceDate(event.eventDate||event.effectiveFrom||event.date);}catch{return emptyStudy('Event occurrence date is missing or invalid.',{metric:selected,frequency});}
  const windowCount=frequency==='annual'?1:frequency==='half_year'?2:frequency==='quarterly'?4:12,anchor=nativeIndex(when.start,frequency),eventPeriod=nativeText(anchor,frequency),base={metric:selected,frequency,scope,seriesId,subjectEvidence:scope==='subject',eventPeriod,eventDate:when,windowMonths:12,attributionGate:'A news timeline and before/after change alone do not establish causation.'};
  if((frequency==='monthly'&&!['day','instant','month'].includes(when.precision))||(frequency==='quarterly'&&!['day','instant','month','quarter'].includes(when.precision)))return emptyStudy('Event date precision is too coarse for the selected native event window.',base);
  const source=sources.find(s=>s.id===event.sourceIds?.[0]);
  if(!isAvailableAsOf(event,asOf,source)||eligibleFeaturesAsOf([event],{asOf,sources}).eligible.length!==1)return emptyStudy('Event publication/availability or supporting source availability is unknown or after the study cutoff.',base);
- const raw=deduplicateObservations(expandRecordObservations(record)).retained,rows=raw.map(o=>validateObservation(o,record,{asOf,sources,minimumSample})).filter(o=>o.metric===selected&&o.frequency===frequency&&o.displayEligible&&o.scope===scope&&(!seriesId||o.seriesId===seriesId)&&isAvailableAsOf(o,asOf,sources.find(s=>s.id===o.sourceId)));
+ const sourceIndex=new Map(sources.map(s=>[s.id,s])),raw=deduplicateObservations(expandRecordObservations(record)).retained,rows=raw.map(o=>validateObservation(o,record,{asOf,sources,minimumSample,sourceIndex})).filter(o=>o.metric===selected&&o.frequency===frequency&&o.displayEligible&&o.scope===scope&&(!seriesId||o.seriesId===seriesId)&&isAvailableAsOf(o,asOf,sourceIndex.get(o.sourceId)));
  const signatures=[...new Set(rows.map(o=>[o.unit,o.sourceId,o.seriesId||'',o.segment||'',o.registration||''].join('|')))];
  if(signatures.length>1)return emptyStudy('Multiple incompatible subject baskets are present; select a single comparable series before estimating an association.',base);
  function window(start,end){const expected=Array.from({length:end-start+1},(_,i)=>nativeText(start+i,frequency)),points=expected.map(period=>{const matching=rows.filter(o=>nativeIndex(o.period,frequency)===nativeIndex(period,frequency));return{period,sourcePeriod:matching.length===1?matching[0].period:null,value:matching.length===1?matching[0].value:null,sampleCount:matching.length===1?matching[0].sampleCount:null,status:matching.length===1?'observed':matching.length>1?'conflict':'missing'};});return{from:expected[0],to:expected.at(-1),expectedPeriods:expected.length,observedPeriods:points.filter(p=>p.status==='observed').length,points};}
@@ -332,14 +348,24 @@ export function relevantSources(data,record,events=[],exposures=[]){
  function visit(value){
   if(!value||typeof value!=='object')return;
   if(Array.isArray(value)){for(const v of value)visit(v);return;}
-  if(value.sourceId)ids.add(value.sourceId);for(const id of value.sourceIds||[])ids.add(id);
+  if(value.sourceId)ids.add(value.sourceId);for(const id of [...(value.sourceIds||[]),...(value.identitySourceIds||[])])ids.add(id);
   for(const [key,v] of Object.entries(value))if(!['native','points'].includes(key)&&v&&typeof v==='object')visit(v);
  }
  visit(record);visit(events);visit(exposures);
  return(data.sources||[]).filter(s=>ids.has(s.id)).map(s=>clone(s));
 }
+/** Share native community context without duplicating it or promoting subject prices. */
+export function resolveRecordCommunityHistory(data,record){
+ if(record.type!=='project'||!record.sharedCommunityHistoryId||record.sharedCommunityHistoryId!==record.communityId)return record;
+ const community=(data.records||[]).find(r=>r.id===record.sharedCommunityHistoryId&&r.type==='community'&&r.emirate===record.emirate);
+ if(!community)return record;
+ const original=record.historySeries||[],ids=new Set(original.map(s=>s.id));
+ const context=(community.historySeries||[]).filter(s=>s.scope==='community_context'&&s.identityVerified===false&&!ids.has(s.id)).map(s=>({...s,contextCommunityId:community.id,linkBasis:'Catalogue community membership; native official master-project context. Project existence at earlier dates is unverified.'}));
+ return{...record,historySeries:[...original,...context]};
+}
 export function recordHistory(data,record,{userAssumptions=null}={}){
+ record=resolveRecordCommunityHistory(data,record);
  const exposures=recordExposures(data,record),eventIds=new Set(exposures.map(x=>x.eventId)),events=(data.events||[]).filter(e=>eventIds.has(e.id));
- const validatedObservations=deduplicateObservations(expandRecordObservations(record)).retained.map(o=>validateObservation(o,record,{asOf:data.asOf,sources:data.sources||[]}));
- return{version:data.version,asOf:data.asOf,record:clone(record),observations:clone(record.observations||[]),validatedObservations,historySeries:clone(record.historySeries||[]),coverage:monthlyCoverage(record,{asOf:data.asOf,sources:data.sources||[],manifest:data.manifest||{}}),scenarios:annualScenarios(record,{asOf:data.asOf,sources:data.sources||[],userAssumptions}),events:clone(events),exposures:clone(exposures),sources:relevantSources(data,record,events,exposures),manifest:clone(data.manifest||{})};
+ const options={asOf:data.asOf,sources:data.sources||[],manifest:data.manifest||{}},evidence=observationEvidence(record,options);
+ return{version:data.version,asOf:data.asOf,record:clone(record),observations:clone(record.observations||[]),validatedObservations:evidence.validated,historySeries:clone(record.historySeries||[]),coverage:coverageFromEvidence(record,options,evidence),scenarios:annualScenarios(record,{asOf:data.asOf,sources:data.sources||[],userAssumptions}),events:clone(events),exposures:clone(exposures),sources:relevantSources(data,record,events,exposures),manifest:clone(data.manifest||{})};
 }

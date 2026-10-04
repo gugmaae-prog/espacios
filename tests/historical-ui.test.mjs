@@ -79,3 +79,13 @@ test('dense event markers cluster without overlapping 44px targets and retain ev
  for(let index=1;index<groups.length;index++)assert.ok(groups[index].position-groups[index-1].position>=48);
  assert.equal(new Set(groups.flatMap(group=>group.rows.map(row=>row.event.id))).size,27);
 });
+
+test('verified planned handovers retain stage, milestone and geographic scope in lifecycle cards',()=>{
+ const row={kind:'target_handover',label:'Phase handover',date:{start:'2027Q2',precision:'quarter'},scope:'community_context',eventStatus:'planned',status:'verified',sourceIds:['developer']};
+ const html=UI.lifecycleHTML({lifecycle:[row],sources:[{id:'developer',url:'https://example.com/project',publisher:'Developer'}]});
+ for(const label of ['Milestone: target handover','Stage: planned','Scope: community context','Verified source','2027Q2','quarter precision'])assert.ok(html.includes(label),label);
+ assert.ok(html.includes('https://example.com/project'));
+ assert.ok(UI.lifecycleLabels({kind:'target_handover',status:'verified'}).includes('Stage: planned'));
+ assert.ok(UI.lifecycleLabels({kind:'completion',status:'reported',eventStatus:'actual',scope:'subject'}).includes('Stage: actual'));
+ assert.ok(UI.lifecycleLabels({kind:'completion',status:'verified'}).includes('Stage: not established'));
+});

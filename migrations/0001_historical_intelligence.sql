@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS hi_series (
 );
 CREATE TABLE IF NOT EXISTS hi_record_series (
  snapshot_version TEXT NOT NULL, record_id TEXT NOT NULL, series_id TEXT NOT NULL,
- scope TEXT NOT NULL CHECK(scope IN ('subject','area_context','asking_benchmark')), identity_verified INTEGER NOT NULL CHECK(identity_verified IN (0,1)),
+ scope TEXT NOT NULL CHECK(scope IN ('subject','area_context','asking_benchmark','community_context','published_reference')), identity_verified INTEGER NOT NULL CHECK(identity_verified IN (0,1)),
  PRIMARY KEY(snapshot_version,record_id,series_id),
  FOREIGN KEY(snapshot_version,record_id) REFERENCES hi_records(snapshot_version,record_id),
  FOREIGN KEY(snapshot_version,series_id) REFERENCES hi_series(snapshot_version,series_id)

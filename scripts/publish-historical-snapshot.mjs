@@ -30,6 +30,57 @@ export function validateCandidateTarget(config,target) {
  return true;
 }
 async function existingBytes(r2,key){const obj=await r2.get(key);return obj?Buffer.from(await obj.arrayBuffer()):null;}
+const INSERT_COLUMNS={
+ hi_snapshots:['snapshot_version','as_of','record_count','manifest_json','root_sha256'],
+ hi_records:['snapshot_version','record_id','record_type','name','emirate','record_json'],
+ hi_sources:['snapshot_version','source_id','url','source_json'],
+ hi_events:['snapshot_version','event_id','event_json'],
+ hi_exposures:['snapshot_version','exposure_id','event_id','record_id','scope','verified','exposure_json'],
+ hi_series:['snapshot_version','series_id','source_id','series_json'],
+ hi_record_series:['snapshot_version','record_id','series_id','scope','identity_verified']
+};
+const INSERT_KEYS={
+ hi_snapshots:['snapshot_version'],hi_records:['snapshot_version','record_id'],
+ hi_sources:['snapshot_version','source_id'],hi_events:['snapshot_version','event_id'],
+ hi_exposures:['snapshot_version','exposure_id'],hi_series:['snapshot_version','series_id'],
+ hi_record_series:['snapshot_version','record_id','series_id']
+};
+/** Accept only the builder's append-only single-row INSERT grammar.
+ * Values are decoded as data and bound, so large JSON never becomes SQL text.
+ */
+export function parseGeneratedInsert(statement){
+ const prefix=/^INSERT OR IGNORE INTO (hi_[a-z_]+)\(([^()]*)\) VALUES\(/.exec(statement);
+ if(!prefix||!INSERT_COLUMNS[prefix[1]])throw new Error('Unsupported generated INSERT syntax/table');
+ const table=prefix[1],columns=prefix[2].split(',').map(x=>x.trim()),expected=INSERT_COLUMNS[table];
+ if(columns.length!==expected.length||columns.some((x,i)=>x!==expected[i]))throw new Error('Unsupported generated INSERT columns');
+ let cursor=prefix[0].length;const values=[];
+ const whitespace=()=>{while(/\s/.test(statement[cursor]||'')&&cursor<statement.length)cursor++;};
+ while(true){
+  whitespace();let value;
+  if(statement[cursor]==="'"){
+   cursor++;let start=cursor;const chunks=[];let closed=false;
+   while(cursor<statement.length){
+    if(statement[cursor]!=="'"){cursor++;continue;}
+    chunks.push(statement.slice(start,cursor));
+    if(statement[cursor+1]==="'"){chunks.push("'");cursor+=2;start=cursor;continue;}
+    cursor++;closed=true;break;
+   }
+   if(!closed)throw new Error('Unterminated generated INSERT string');
+   value=chunks.join('');
+  }else{
+   const integer=/^-?(?:0|[1-9]\d*)/.exec(statement.slice(cursor));
+   if(!integer)throw new Error('Unsupported generated INSERT value; strings/integers only');
+   value=Number(integer[0]);cursor+=integer[0].length;
+   if(!Number.isSafeInteger(value))throw new Error('Generated INSERT integer exceeds safe range');
+  }
+  values.push(value);whitespace();
+  if(statement[cursor]===','){cursor++;continue;}
+  if(statement[cursor]!==')')throw new Error('Unsupported generated INSERT value separator');
+  cursor++;break;
+ }
+ if(statement.slice(cursor)!==';'||values.length!==columns.length)throw new Error('Unsupported generated INSERT suffix/arity');
+ return{table,columns,values,sql:`INSERT OR IGNORE INTO ${table}(${columns.join(',')}) VALUES(${values.map(()=>'?').join(',')});`};
+}
 export async function publishImmutableSnapshot({r2,d1,target,config,manifest,readObject}) {
  validateCandidateTarget(config,target);
  if(!r2?.get||!r2?.put||!d1?.prepare||!d1?.batch)throw new Error('Adapter must expose candidate R2 and D1 Worker APIs');
@@ -50,10 +101,21 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
  const sql=gunzipSync(sqlBytes).toString('utf8');
  // The immutable snapshot header is claimed separately. A later publisher may
  // have claimed this version after our initial read but before indexing starts.
- const statements=sql.split('\n').filter(line=>line.startsWith('INSERT '));
- const headers=statements.filter(line=>/^INSERT (?:OR IGNORE )?INTO hi_snapshots\b/i.test(line));
+ const statements=sql.split(/\r?\n/).map(line=>line.trim()).filter(line=>line&&line!=='PRAGMA foreign_keys = ON;').map(parseGeneratedInsert);
+ if(statements.some(statement=>statement.values[0]!==manifest.version))throw new Error('Generated INSERT snapshot version differs from manifest');
+ const headers=statements.filter(statement=>statement.table==='hi_snapshots');
  if(headers.length!==1)throw new Error('D1 index must contain exactly one immutable snapshot header');
+ if(headers[0].values[4]!==manifest.rootIndex.sha256)throw new Error('Generated snapshot header root differs from manifest');
+ const expectedRows=Object.fromEntries(Object.keys(INSERT_COLUMNS).map(table=>[table,new Map()]));
+ for(const statement of statements){
+  const key=JSON.stringify(INSERT_KEYS[statement.table].map(column=>statement.values[statement.columns.indexOf(column)]));
+  const encoded=JSON.stringify(statement.values),previous=expectedRows[statement.table].get(key);
+  if(previous!==undefined&&previous!==encoded)throw new Error('Conflicting duplicate generated index key in '+statement.table);
+  expectedRows[statement.table].set(key,encoded);
+ }
+ if(headers[0].values[2]!==expectedRows.hi_records.size)throw new Error('Generated snapshot record_count differs from unique record keys');
  const indexes=statements.filter(line=>line!==headers[0]);
+ const prepare=statement=>d1.prepare(statement.sql).bind(...statement.values);
  let written=0,reused=0;
  for(const {object,bytes,exists} of loaded){
   if(exists){reused++;continue;}
@@ -63,15 +125,24 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
   if(result)written++;else reused++;
  }
  // Each SQL statement occupies one physical line; JSON newlines are escaped by the builder.
- await d1.prepare(headers[0]).run();
+ await prepare(headers[0]).run();
  const claimed=await d1.prepare('SELECT root_sha256, publication_state FROM hi_snapshots WHERE snapshot_version = ?').bind(manifest.version).first();
  if(!claimed||claimed.root_sha256!==manifest.rootIndex.sha256)throw new Error('Snapshot version collision during claim: no record indexes were written');
  if(!['staged','complete'].includes(claimed.publication_state))throw new Error('Claimed snapshot publication state is invalid');
- for(let i=0;i<indexes.length;i+=50)await d1.batch(indexes.slice(i,i+50).map(s=>d1.prepare(s)));
+ for(let i=0;i<indexes.length;i+=50)await d1.batch(indexes.slice(i,i+50).map(prepare));
+ // OR IGNORE can suppress CHECK failures as well as harmless repeated keys.
+ // Every version-scoped table must contain the complete unique-key index
+ // before the staged snapshot can be marked complete.
+ const indexedTableCounts={};
+ for(const [table,rows] of Object.entries(expectedRows)){
+  const result=await d1.prepare(`SELECT count(*) AS count FROM ${table} WHERE snapshot_version = ?`).bind(manifest.version).first();
+  if(!Number.isSafeInteger(result?.count)||result.count!==rows.size)throw new Error(`Snapshot index count mismatch for ${table}: expected ${rows.size}, found ${result?.count??'unknown'}; publication completion refused`);
+  indexedTableCounts[table]=result.count;
+ }
  const completion=await d1.prepare("UPDATE hi_snapshots SET publication_state = 'complete' WHERE snapshot_version = ? AND root_sha256 = ?").bind(manifest.version,manifest.rootIndex.sha256).run();
  const completed=await d1.prepare('SELECT root_sha256, publication_state FROM hi_snapshots WHERE snapshot_version = ?').bind(manifest.version).first();
  if(!completed||completed.root_sha256!==manifest.rootIndex.sha256||completed.publication_state!=='complete'||(Number.isFinite(completion?.meta?.changes)&&completion.meta.changes!==1))throw new Error('Snapshot completion did not verify its immutable root and complete state');
- return {version:manifest.version,written,reused,indexStatements:statements.length,publicationState:'complete',rollbackPolicy:'Failure leaves verified immutable orphan objects or staged indexes; never activates a mutable latest pointer and never deletes evidence'};
+ return {version:manifest.version,written,reused,indexStatements:statements.length,indexedTableCounts,indexCountsVerified:true,publicationState:'complete',rollbackPolicy:'Failure leaves verified immutable orphan objects or staged indexes; never activates a mutable latest pointer and never deletes evidence'};
 }
 async function main(){
  const args=process.argv.slice(2);const option=name=>{const i=args.indexOf(name);return i<0?null:args[i+1];};

@@ -67,17 +67,20 @@ async function capture(cdp,name){
 }
 
 async function runCase(port,{name,width,height,mobile}){
- const cdp=await newPage(port),exceptions=[];
+ const cdp=await newPage(port),exceptions=[],networkFailures=[];
  cdp.on('Runtime.exceptionThrown',p=>exceptions.push(p.exceptionDetails?.exception?.description||p.exceptionDetails?.text));
- await cdp.call('Page.enable');await cdp.call('Runtime.enable');
+ cdp.on('Network.responseReceived',p=>{if(p.response.status>=400)networkFailures.push({url:p.response.url,status:p.response.status});});
+ await cdp.call('Page.enable');await cdp.call('Runtime.enable');await cdp.call('Network.enable');
  await cdp.call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile});
  if(mobile)await cdp.call('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
  await cdp.call('Page.navigate',{url:BASE});
- await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});
+ try{await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});}catch(error){console.log(JSON.stringify({name,exceptions,networkFailures}));await capture(cdp,name+'-initialization-failure');throw error;}
  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali'); true");
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Financial coverage')",{label:name+' PJA coverage'});
  const index=await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),options:document.querySelector('#hi-record-select').options.length,sources:[...document.querySelectorAll('#hi-body a')].every(a=>a.href.startsWith('https://')),chart:document.querySelector('.hi-chart figcaption')?.textContent})");
  assert.equal(index.state.recordCount,1860);assert.equal(index.options,1861);assert.equal(index.sources,true);
+ const lifecycle=await evaluate(cdp,"(()=>{const card=[...document.querySelectorAll('#hi-body details')].find(d=>d.querySelector('summary')?.textContent.includes('lifecycle'));return card?.textContent||''})()");
+ assert.match(lifecycle,/Milestone:/);assert.match(lifecycle,/Stage:/);assert.match(lifecycle,/Scope:/);assert.match(lifecycle,/Verified source|Reported source|Evidence:/);
  await evaluate(cdp,"document.querySelector('#hi-tab-events').click();true");
  await waitFor(cdp,"document.querySelector('#hi-body [data-hi-event]')",{label:name+' event cards'});
  const events=await evaluate(cdp,"({cards:document.querySelectorAll('#hi-body [data-hi-event]').length,text:document.querySelector('#hi-body').textContent})");
@@ -100,6 +103,16 @@ async function runCase(port,{name,width,height,mobile}){
  assert.equal(rents[0][2],'0');assert.equal(rents[1][2],'0');assert.equal(rents[2][2],'60,000');
  await evaluate(cdp,"document.querySelector('#hi-overlay-toggle').click();true");
  await waitFor(cdp,"document.querySelector('#hi-overlay-toggle').getAttribute('aria-pressed')==='true'",{label:name+' map overlay active'});
+ if(mobile){
+  // Reproduce a late legacy inspector render while the user owns History.
+  // It must not be confused with the explicit Details action immediately below.
+  await evaluate(cdp,"document.querySelector('#ms-inspect').hidden=false;new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
+  assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' background inspector refresh preserves history');
+  await evaluate(cdp,"document.querySelector('#um-details').click();true");
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' explicit Details owns mobile sheet'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reclaims explicitly selected sheet'});
+ }
  try {await waitFor(cdp,`(()=>{const p=document.querySelector('#hi-panel').getBoundingClientRect(),b=document.querySelector('#hi-body').getBoundingClientRect(),d=document.querySelector('#tl-dock').getBoundingClientRect();return Math.min(b.bottom,p.bottom-12)-Math.max(b.top,p.top)>=119&&(window.EspaciosHistoricalUI.getState().layout==='expanded'||p.bottom<=d.top+1)})()`,{label:name+' visible history body and stable dock geometry'});} catch(error) {
   console.log(JSON.stringify(await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),panel:document.querySelector('#hi-panel').getBoundingClientRect().toJSON(),body:document.querySelector('#hi-body').getBoundingClientRect().toJSON(),dock:document.querySelector('#tl-dock').getBoundingClientRect().toJSON()})")));
   await capture(cdp,name+'-layout-failure');throw error;
@@ -124,6 +137,11 @@ async function runCase(port,{name,width,height,mobile}){
  await evaluate(cdp,"window.EspaciosHistoricalUI.select('project:arancia-yards-beyond-city-of-arabia-dubai');true");
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='project:arancia-yards-beyond-city-of-arabia-dubai'&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' project switch'});
  assert.notEqual((await evaluate(cdp,'window.EspaciosHistoricalUI.getState()')).scenarioClassification,'user_assumption_scenario',name+' assumptions must reset when changing subject');
+ await evaluate(cdp,"window.EspaciosHistoricalUI.select('project:damac-heights-apartments-dubai-marina');document.querySelector('#hi-tab-history').click();true");
+ await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='project:damac-heights-apartments-dubai-marina'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Service-charge components')",{label:name+' sourced fee evidence'});
+ const sourcedFacts=await evaluate(cdp,"(()=>{const section=[...document.querySelectorAll('#hi-body details')].find(d=>d.querySelector('summary')?.textContent.includes('New sourced facts'));section.open=true;return {text:section.textContent,sourceLinks:[...section.querySelectorAll('a')].map(a=>a.href)}})()");
+ assert.match(sourcedFacts.text,/Parking|Adjustment/);assert.doesNotMatch(sourcedFacts.text,/\[object Object\]/);assert.ok(sourcedFacts.sourceLinks.every(url=>url.startsWith('https://')));
+ await capture(cdp,name+'-sourced-facts');
  assert.equal(exceptions.length,0,name+' browser exceptions: '+exceptions.join('; '));
  cdp.close();return {name,index,events:{cards:events.cards},study,empty:{max:empty.max,rows:empty.rows},computed:{rows:computed.rows,text:computed.text},rents,geometry,exceptions};
 }
