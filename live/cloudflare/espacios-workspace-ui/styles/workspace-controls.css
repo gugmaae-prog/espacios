@@ -1,0 +1,559 @@
+/* Workspace control repairs, October 5, 2026.
+ * Append after the owning Workspace stylesheet. Every rule is scoped to the
+ * modern Workspace root; public marketing and the Map are not styled here.
+ */
+
+/* A search field has one surface. Its icon and editable text share the fill. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search
+) {
+  min-width: 0;
+  min-height: 44px !important;
+  border: 1px solid var(--eg-theme-line) !important;
+  background: var(--eg-theme-control) !important;
+  color: var(--eg-theme-text) !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label
+) {
+  gap: 10px;
+  padding-inline: 14px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search
+) > :is(.workspace-icon, svg, span:first-child) {
+  flex-shrink: 0;
+  color: var(--eg-theme-accent) !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar,
+  .crm-toolbar,
+  .research-search,
+  .workspace-search
+) input:not([type="checkbox"]):not([type="radio"]) {
+  min-width: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--eg-theme-text) !important;
+  box-shadow: none !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar,
+  .crm-toolbar,
+  .research-search,
+  .workspace-search
+) input:not([type="checkbox"]):not([type="radio"]):is(:focus, :focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search,
+  .aether-compose
+):focus-within {
+  border-color: var(--eg-theme-accent) !important;
+  outline: 2px solid var(--eg-theme-accent) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+
+/* This is a grid, not an input. Keep the textarea and action as its surfaces. */
+html body .workspace-app.ecosystem-glass-v3 .plan-generator-input {
+  border: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Readable editable controls; checkbox/radio/range/file UI keeps its geometry. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="color"]):not([type="file"]),
+  textarea,
+  select,
+  .rich-text-editor[contenteditable="true"]
+) {
+  min-height: 44px !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea
+)::placeholder {
+  color: var(--eg-theme-muted) !important;
+  opacity: 1 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select,
+  .rich-text-editor[contenteditable="true"]
+):focus-visible {
+  outline: 2px solid var(--eg-theme-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Composite editor focus belongs to the containing surface. */
+html body .workspace-app.ecosystem-glass-v3 .aether-compose textarea:is(:focus, :focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Do not mark a pristine required field as an error before interaction. */
+html body .workspace-app.ecosystem-glass-v3 :is(input, textarea, select):is(
+  [aria-invalid="true"],
+  :user-invalid
+):not([type="checkbox"]):not([type="radio"]) {
+  border-color: #b4233f !important;
+  outline: 2px solid #b4233f !important;
+  outline-offset: 2px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search
+):has(input:is([aria-invalid="true"], :user-invalid)) {
+  border-color: #b4233f !important;
+  outline: 2px solid #b4233f !important;
+  outline-offset: 2px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar,
+  .crm-toolbar,
+  .research-search,
+  .workspace-search
+) input:not([type="checkbox"]):not([type="radio"]):is([aria-invalid="true"], :user-invalid) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-espacios-theme="dark"] body .workspace-app.ecosystem-glass-v3 :is(input, textarea, select):is(
+  [aria-invalid="true"],
+  :user-invalid
+):not([type="checkbox"]):not([type="radio"]),
+html[data-espacios-theme="dark"] body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search
+):has(input:is([aria-invalid="true"], :user-invalid)) {
+  border-color: #ff9baa !important;
+  outline-color: #ff9baa !important;
+}
+
+/* Text actions and tabs retain their existing colors and hierarchy. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .workspace-primary-button,
+  .workspace-secondary-button,
+  .surface-tabs button,
+  .research-filters button,
+  .panel-heading > button,
+  .panel-heading > div button,
+  .crm-toolbar button,
+  .crm-add,
+  .research-search button,
+  .rich-text-toolbar button,
+  .planning-command-actions button,
+  .artifact-viewer-actions button,
+  .data-table-open,
+  .market-result-actions a,
+  .market-result-actions button,
+  .market-watchlist-row [role="cell"]:last-child a,
+  .market-watchlist-row [role="cell"]:last-child button,
+  .market-empty button,
+  .market-validation-actions > a,
+  .market-validation-actions > button,
+  .course-card-footer a,
+  .teacher-card a,
+  .account-inline-action
+) {
+  min-height: 44px !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .surface-tabs button,
+  .research-filters button,
+  .rich-text-toolbar button
+) {
+  flex-shrink: 0;
+  padding-inline: 14px;
+}
+
+/* Selected tabs use the same contrasting theme pair as primary controls. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .surface-tabs button,
+  .research-filters button,
+  .panel-heading > div button
+):is(.is-active, [aria-selected="true"]) {
+  border-color: var(--eg-theme-accent) !important;
+  background: var(--eg-theme-accent) !important;
+  background-image: none !important;
+  color: var(--eg-theme-on-accent) !important;
+  box-shadow: none !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .surface-tabs button,
+  .research-filters button,
+  .panel-heading > div button
+):is(.is-active, [aria-selected="true"]) .workspace-icon {
+  color: inherit !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .surface-tabs button,
+  .research-filters button,
+  .panel-heading > div button
+):is(.is-active, [aria-selected="true"]):focus-visible {
+  outline: 2px solid var(--eg-theme-on-accent) !important;
+  outline-offset: -4px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .surface-tabs button,
+  .research-filters button,
+  .panel-heading > button,
+  .panel-heading > div button,
+  .rich-text-toolbar button,
+  .planning-command-actions button,
+  .artifact-viewer-actions button
+):focus-visible {
+  outline: 2px solid var(--eg-theme-accent) !important;
+  outline-offset: -2px !important;
+}
+
+/* Icon actions also have the same usable hit area without enlarging glyphs. */
+html body .workspace-app.ecosystem-glass-v3 .aether-compose .aether-tool-button {
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .aether-attachment-chip {
+  grid-template-columns: 34px minmax(0, 1fr) 44px;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .aether-attachment-chip button {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .theme-radio {
+  width: 96px !important;
+  min-width: 96px !important;
+  min-height: 50px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .theme-radio label {
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .surface-data-note,
+  .plan-generator-copy small,
+  .market-search label > span,
+  .market-validation-editor > label > span,
+  .market-unit-economics label > span,
+  .market-unit-economics > div > span
+) {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+/* Contextual states explain the next action without occupying an empty board. */
+html body .workspace-app.ecosystem-glass-v3 .surface-context-empty {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  justify-items: start;
+  gap: 12px;
+  min-width: 0;
+  min-height: 0 !important;
+  text-align: start;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .workspace-panel.surface-context-empty {
+  padding: 24px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .surface-context-empty :is(h2, h3) {
+  margin: 0 !important;
+  color: var(--eg-theme-text) !important;
+  font-size: 18px !important;
+  font-weight: 650;
+  line-height: 1.35 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .surface-context-empty h3 {
+  font-size: 16px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .surface-context-empty p {
+  max-width: 62ch;
+  margin: 0 !important;
+  color: var(--eg-theme-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .surface-context-empty .workspace-primary-button {
+  margin-top: 4px;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+/* Actual process counts replace the former fixed decorative chart. */
+html body .workspace-app.ecosystem-glass-v3 .ops-status-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  width: 100%;
+  margin: 14px 0 0;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .ops-status-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--eg-theme-line);
+}
+
+html body .workspace-app.ecosystem-glass-v3 .ops-status-summary > div:last-child {
+  border-bottom: 0;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .ops-status-summary dt {
+  min-width: 0;
+  color: var(--eg-theme-text) !important;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .ops-status-summary dd {
+  flex: 0 0 auto;
+  min-width: 2ch;
+  margin: 0;
+  color: var(--eg-theme-accent) !important;
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
+/* Body copy is readable independently of the compact control-label scale. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .workspace-content p,
+  .workspace-heading-copy > span,
+  .workspace-heading > div > span,
+  .workspace-notice,
+  .planning-command-copy > span,
+  .research-studio-intro > div > span,
+  .market-search-copy > span,
+  .market-starting-point > div > span,
+  .account-profile-copy > span,
+  .account-session-copy,
+  .artifact-viewer > header span,
+  .artifact-document li,
+  .aether-message,
+  .aether-starter
+) {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* Keep labels, dates and status detail distinct from body text, but legible. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .workspace-heading p,
+  .planning-command-copy p,
+  .research-studio-intro p,
+  .workspace-composer p,
+  .plan-generator-copy p,
+  .plan-generator-copy small,
+  .compact-action-form p,
+  .market-search-copy p,
+  .market-watchlist > header p,
+  .market-starting-point p,
+  .market-validation-editor > header p,
+  .plan-workspace-header p,
+  .plan-section-label,
+  .plan-section-heading p,
+  .artifact-viewer > header p,
+  .artifact-share-strip p,
+  .surface-data-note,
+  .panel-heading-meta,
+  .workspace-crumbs,
+  .workspace-status,
+  .course-card > span,
+  .course-card small,
+  .content-card-grid small,
+  .content-card-grid span,
+  .crm-column > header span,
+  .crm-deal > span,
+  .mini-list span,
+  .calendar-grid small,
+  .calendar-grid span,
+  .account-profile-copy p,
+  .account-role-badge,
+  .account-session-status,
+  .account-link-grid small,
+  .connected-tools > summary small,
+  .connected-tool-row small,
+  .mail-connection-actions small,
+  .market-watchlist > header > span,
+  .market-watchlist-row [role="cell"]:first-child > span:last-child,
+  .market-watchlist-row [role="cell"]:nth-child(2) > span,
+  .market-unit-economics > div small,
+  .research-progress small,
+  .research-scope-rail span,
+  .rich-plan-composer > div:first-child small,
+  .plan-workspace-header > div:first-child > span,
+  .plan-progress-summary > small,
+  .plan-workspace-actions > span,
+  .plan-section-heading > span,
+  .plan-task-list label small,
+  .plan-comments article span,
+  .artifact-share-strip div > a,
+  .artifact-viewer-actions > span,
+  .artifact-publish-error,
+  .aether-context-status,
+  .aether-compose-hint,
+  .aether-attachment-chip small,
+  .aether-artifact-cards small,
+  .aether-work-pulse small,
+  .aether-work-pulse i
+) {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .market-search label > span,
+  .market-validation-editor > label > span,
+  .market-validation-editor fieldset label > span,
+  .market-unit-economics label > span,
+  .market-unit-economics > div > span,
+  .plan-task-list label > span,
+  .plan-task-list label b,
+  .sidebar-customizer label b
+) {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .data-table-row span,
+  .data-table-row span b,
+  .data-table-head span,
+  .market-watchlist-head,
+  .market-watchlist-row [role="cell"],
+  .market-watchlist-row [role="cell"]:first-child b,
+  .artifact-table-wrap th,
+  .artifact-table-wrap td,
+  .mini-list b,
+  .connected-tools > summary b,
+  .connected-tool-row b,
+  .mail-connection-actions b,
+  .account-link-grid b,
+  .quick-action-grid b,
+  .aether-work-pulse b,
+  .artifact-share-strip b,
+  .plan-comments article b
+) {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .workspace-nav a b,
+  .workspace-more b,
+  .workspace-more-menu a,
+  .workspace-more-menu a b,
+  .workspace-sidebar-footer > a b,
+  .workspace-user b,
+  .workspace-sidebar-tools > *
+) {
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .workspace-more-menu a small,
+  .workspace-user small,
+  .sidebar-customizer label small
+) {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .mobile-quick-actions a > span:last-child {
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .calendar-grid button,
+  .plan-workspace-actions button,
+  .plan-workspace-actions a,
+  .artifact-viewer-actions a,
+  .artifact-share-strip > button,
+  .artifact-share-strip > a,
+  .connected-tool-aether,
+  .aether-message.is-ai > button
+) {
+  min-height: 44px !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .content-card-grid article.is-openable i {
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 900px) {
+  /* Prevent form-focus zoom and retain readable text on touch screens. */
+  html body .workspace-app.ecosystem-glass-v3 :is(
+    input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="color"]):not([type="file"]),
+    textarea,
+    select,
+    .rich-text-editor[contenteditable="true"]
+  ) {
+    font-size: 16px !important;
+  }
+}

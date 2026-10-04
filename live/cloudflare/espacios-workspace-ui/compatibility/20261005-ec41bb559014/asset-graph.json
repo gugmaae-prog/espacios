@@ -1,0 +1,115 @@
+{
+  "revision": "20261005-ec41bb559014",
+  "prefix": "/__espacios/workspace-ui/20261005-ec41bb559014/",
+  "assets": [
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/ProposalForm-t8zVCD5b.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 18038,
+      "sha256": "3fe52509a82e436b585fe617dca909609571e8886834a6cf014e5d8601edf28a"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/ThemeControl-BPc6yYwU.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 1759,
+      "sha256": "9cc7d37e466f497c4f80fe62f991de09598790de5e9168cd96545bf68162af8d"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/PricingExperience-Cf7hx0xy.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 6353,
+      "sha256": "e41953838f91f2fd80e22424b6ffa8e2527e2baf1dba3c83818272a894e29a8f"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/LoginExperience-DqyAOR1F.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 5149,
+      "sha256": "4444ae32378b6d97c7531c8963ce078b6395f254c4eb45a11460d872a846aa70"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/SiteHeader-DUmjXq4h.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 1828,
+      "sha256": "5365401a42d7b232798de31102d05b6686ac38f8041ba19e5b2d5d28d1d374b3"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/AdminConsole-CjsTlUJj.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 11874,
+      "sha256": "72966ad989c5585e42549592c776b9793081ed4890af8d8cfe171f520a872d63"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/layout-segment-context-B-X8fVaf.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 345,
+      "sha256": "41fcc92f116e25cb713cb60e17bf2e3d99bf1d4e3f8d3a7bbe86c5f9609f0376"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/workspace-client-CGDFqu1O.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 5210,
+      "sha256": "c27963ccd2f1a4a485f3e91fdb10a7e36cd49d72c76d5a65e407b3bbd8129c80"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/link-D3XaM6C4.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 9795,
+      "sha256": "c525bdbcb903e8a85a6a87fc5f67734a889eb0d0246b70f8c4fca581ffed9d77"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/FloatingAssistant-BcrSg4qR.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 4194,
+      "sha256": "62000464b3fc6e22de6514f4cc6837660adfda1d7c8cf21fb34e645c3b9865f8"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/ScrollExperience-BeWBi2Qa.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 5688,
+      "sha256": "2035d0a555be72c3a0bf5a00ea6f4232211e31379bc3c0089626eda9bbc49fbd"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/index-C5rSNAIW.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 85584,
+      "sha256": "2c8d74bd5e61bdf5e51aeddda10e32e96261648553ad3b410226d4018ce07f2e"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/WorkspaceApp-E-tE3LmW.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 161856,
+      "sha256": "4c7662ea274c5c7b0eb2801eecb8b77816e9795e97732e367aa850b56a121f34"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/Icon-DVcSq3_c.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 1094,
+      "sha256": "3b13d33b3b9733b72230d353cfe563994f9ba749a5f093458f14221d375b136e"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/router-C1Ep-kvF.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 9172,
+      "sha256": "c36c3ce99ff3bb805e946d1ecb122a2e32118fdb9b375806e8eb8418538c31a2"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/EspaciosLogo-ClghS4jE.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 429,
+      "sha256": "7d12b73132359725f77d50eb7c82e62d173c68bc997fc2233e6fb6b69c6274ee"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/route-contract-B_0TQhCy.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 4226,
+      "sha256": "6782e96f8c5d58ee5f93764509f6c9ac2890b067f7e80de242cfa78aa8cf2759"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-ec41bb559014/workspace.css",
+      "type": "text/css; charset=utf-8",
+      "bytes": 492010,
+      "sha256": "a88e0184dda813add8dbc9df20f6979d9ff9d20c00f758d813bbc12bf55e41d0"
+    }
+  ],
+  "reason": "Retain immutable URLs for tabs opened during the earlier repair deployment."
+}

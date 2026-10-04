@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-05 (Asia/Dubai)",
+  "assetRevision": "20261005-5f1449968dad",
+  "workerVersions": {
+    "espacios-marketing-site": "beeca8dc-354a-4fd1-b4a0-0c233d56963f",
+    "espacios-auth-central": "9ca7f017-bd3a-4d6e-bae2-d8c1cc60f3c1"
+  },
+  "authPatchedModuleSha256": "b0811d96698cd1c2fcabcc9d9dd4c65f49548a060bf0d2c7d9f89381a3d8c5a1",
+  "assetsCssSha256": "7eafdc77310e9bd2a0e35389ed66107c3bcb74667025681042e41ef29285eb02",
+  "bindingsChanged": false,
+  "mapChanged": false,
+  "retainedRevision": "20261005-ec41bb559014",
+  "servedPublicAssets": 36,
+  "additiveCssSha256": "10ce1b31013a912ebee2244533e06a4f21c1600168102a211e2925fab289b2da"
+}

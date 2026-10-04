@@ -1,0 +1,15 @@
+--- a/index.js
++++ b/index.js
+@@ -1,3 +1,4 @@
+-globalThis.__VINEXT_LAZY_CHUNKS__ = ["assets/EspaciosLogo-ClghS4jE.js","assets/Icon-DVcSq3_c.js","assets/ThemeControl-BPc6yYwU.js","assets/route-contract-B_0TQhCy.js","assets/workspace-client-CGDFqu1O.js","assets/AdminConsole-CjsTlUJj.js","assets/FloatingAssistant-BcrSg4qR.js","assets/PricingExperience-Cf7hx0xy.js","assets/ProposalForm-t8zVCD5b.js","assets/ScrollExperience-BeWBi2Qa.js","assets/SiteHeader-DUmjXq4h.js","assets/WorkspaceApp-E-tE3LmW.js","assets/LoginExperience-DqyAOR1F.js","assets/layout-segment-context-B-X8fVaf.js","assets/link-D3XaM6C4.js","assets/router-C1Ep-kvF.js"];
++import { workspaceUiAsset } from "./workspace-ui-assets.js";
++globalThis.__VINEXT_LAZY_CHUNKS__ = ["__espacios/workspace-ui/20261005-5f1449968dad/EspaciosLogo-ClghS4jE.js","__espacios/workspace-ui/20261005-5f1449968dad/Icon-DVcSq3_c.js","__espacios/workspace-ui/20261005-5f1449968dad/ThemeControl-BPc6yYwU.js","__espacios/workspace-ui/20261005-5f1449968dad/route-contract-B_0TQhCy.js","__espacios/workspace-ui/20261005-5f1449968dad/workspace-client-CGDFqu1O.js","__espacios/workspace-ui/20261005-5f1449968dad/AdminConsole-CjsTlUJj.js","__espacios/workspace-ui/20261005-5f1449968dad/FloatingAssistant-BcrSg4qR.js","__espacios/workspace-ui/20261005-5f1449968dad/PricingExperience-Cf7hx0xy.js","__espacios/workspace-ui/20261005-5f1449968dad/ProposalForm-t8zVCD5b.js","__espacios/workspace-ui/20261005-5f1449968dad/ScrollExperience-BeWBi2Qa.js","__espacios/workspace-ui/20261005-5f1449968dad/SiteHeader-DUmjXq4h.js","__espacios/workspace-ui/20261005-5f1449968dad/WorkspaceApp-E-tE3LmW.js","__espacios/workspace-ui/20261005-5f1449968dad/LoginExperience-DqyAOR1F.js","__espacios/workspace-ui/20261005-5f1449968dad/layout-segment-context-B-X8fVaf.js","__espacios/workspace-ui/20261005-5f1449968dad/link-D3XaM6C4.js","__espacios/workspace-ui/20261005-5f1449968dad/router-C1Ep-kvF.js"];
+ import { env } from "cloudflare:workers";
+ import * as __viteRscAsyncHooks from "node:async_hooks";
+@@ -59775,4 +59776,6 @@
+ //#region \0virtual:cloudflare/worker-entry
+ var worker_entry_default = { async fetch(request, env, ctx) {
++		const workspaceAsset = workspaceUiAsset(request);
++		if (workspaceAsset) return workspaceAsset;
+ 	if (new URL(request.url).pathname === "/_vinext/image") return handleImageOptimization(request, {
+ 		fetchAsset: (path) => env.ASSETS.fetch(new Request(new URL(path, request.url))),
