@@ -1,0 +1,18 @@
+{
+  "reviewedAt": "2026-10-05T19:25:38.186490+00:00",
+  "status": "private_not_integrated_or_published",
+  "approvedIdentities": 3,
+  "retainedRows": 220,
+  "subjectRows": 200,
+  "referenceRows": 20,
+  "series": 38,
+  "newFacts": 12,
+  "sourceCount": 10,
+  "numericValuesIdentical": true,
+  "newSubjectSaleRecords": 3,
+  "newSubjectRentRecords": 1,
+  "futureStartRentContractsExcluded": 0,
+  "completeHistoryClaimed": false,
+  "actualOccupancyOrIncomeClaimed": false,
+  "unacquiredSource": "IRTH brochure returned403; not used"
+}

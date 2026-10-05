@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "approvedIdentities": 3,
+  "newSubjectSaleRecords": 3,
+  "newSubjectRentRecords": 3,
+  "aggregatePoints": 2613,
+  "series": 120,
+  "scopeCounts": {
+    "subject": 2609,
+    "sparseRetained": 2179,
+    "partialRetained": 22,
+    "published_reference": 4
+  },
+  "earliestNativeObservation": "2009-10-13",
+  "rawRowsRedistributed": false,
+  "completeLifetimeHistoryClaimed": false,
+  "status": "reviewed_private_not_integrated_or_published",
+  "reviewedAt": "2026-10-05T19:40:12.299526+00:00",
+  "newFacts": 15,
+  "sourceCount": 11,
+  "disputedRowsRetained": 6,
+  "usableAggregateRows": 2607,
+  "numericValuesIdentical": true,
+  "futureStartRentContractsExcluded": 6,
+  "crossAreaRowsExcluded": 1
+}

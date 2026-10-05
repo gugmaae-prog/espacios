@@ -1,0 +1,17 @@
+{
+  "reviewedAt": "2026-10-05T19:09:49.044733+00:00",
+  "status": "private_not_integrated_or_published",
+  "approvedIdentities": 1,
+  "retainedRows": 30,
+  "subjectRows": 26,
+  "referenceRows": 4,
+  "series": 8,
+  "newFacts": 5,
+  "sourceCount": 7,
+  "numericValuesIdentical": true,
+  "subjectSaleRecords": 1,
+  "subjectRentRecords": 0,
+  "wrongNativeCandidateRejected": "3367",
+  "approvedNativeNumber": "3724",
+  "completeHistoryClaimed": false
+}

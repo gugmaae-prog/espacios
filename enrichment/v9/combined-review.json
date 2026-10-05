@@ -1,0 +1,31 @@
+{
+  "status": "reviewed_private_not_integrated_or_published",
+  "baseline": "20261005-enrichment-v8",
+  "newApprovedIdentities": 17,
+  "aggregateRows": 9672,
+  "series": 518,
+  "scopeCounts": {
+    "published_reference": 64,
+    "subject": 9608
+  },
+  "disputedRowsRetained": 6,
+  "usableRows": 9666,
+  "facts": 100,
+  "sourcesIncludingReused": 33,
+  "recordsWithNewFactsOrHistories": 30,
+  "newSaleRecords": 17,
+  "newRentRecords": 12,
+  "files": {
+    "pass13-public-primary-history.csv.gz": 1042,
+    "pass14-public-primary-history.csv.gz": 30,
+    "pass15-public-primary-history.csv.gz": 1849,
+    "pass17-public-primary-history.csv.gz": 3514,
+    "pass18-public-primary-history.csv.gz": 220,
+    "pass19-public-primary-history.csv.gz": 404,
+    "pass20-public-primary-history.csv.gz": 2613
+  },
+  "allChecksumsVerified": true,
+  "noBaselineSeriesDuplicates": true,
+  "allFactsAndSourcesLinked": true,
+  "completeHistoryClaimed": false
+}

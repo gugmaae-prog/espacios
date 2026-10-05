@@ -1,0 +1,15 @@
+# Historical enrichment v9
+
+Candidate snapshot `20261005-enrichment-v9` preserves all 1,645 projects, 215 communities and every v8 observation, source, event and exposure. It adds 9,672 native aggregates across 17 reviewed native project identities and 100 sourced facts across 30 records. Public observations total 316,608; 216 separate rights-pending observations remain withheld.
+
+The new native links cover Royal Bay, Q Gardens Lofts, Beach Walk Grand 2, The Vogue, LIV Marina, Marina Arcade, The Paragon, MAG 330, MAG 5 Boulevard, The Pinnacle, Rove Home Marasi Drive, Mercer House, W Residences Dubai The Palm, Sobha Seahaven Tower A, Mr C Residences Jumeirah, DAMAC Towers by Paramount in Business Bay and The Habitat. The catalogue display names are preserved. Exact native project number, legal developer, cadastral area and primary identity evidence govern the links; no similar-name phase or tower fan-out is allowed.
+
+Of the new observations, 9,608 have subject scope and 64 retain whole-land/building reference scope. Six Habitat aggregates from 2013 conflict with the filed construction chronology. Their original values remain retained, labelled disputed, and excluded from usable price coverage and model anchors. The earlier 77 disputed Luma Park Views rental aggregates remain excluded as well. Contracts do not establish occupancy or realised rental income. Future-start contracts are excluded at the collection cutoff; incomplete periods and sparse samples stay labelled.
+
+Lifecycle evidence preserves conflicting, revised and planned dates. Beach Walk Grand 2 is linked to native project 3724, not the rejected Grand 1 candidate 3367. Sobha Seahaven evidence applies only to Tower A. Paramount's one differently located native area row is excluded, and its earlier native transactions do not establish the later marketing brand's existence. Mr C's 2023 portfolio launch label remains disputed against its developer's dated 2021 presales report. MAG 330, MAG 5 Boulevard, Q Gardens Lofts and Pinnacle retain chronology qualifications rather than inferred completion dates.
+
+Twelve 2016 ADIB/MPM community benchmarks remain published area averages with unknown sample weighting. They are separate from DLD registered sales and do not add direct transaction coverage. The source packet includes period, segment, units, page references, retrieval/availability dates and reuse restrictions; original reports and individual source rows remain private.
+
+There are 3,644 present, 2,153 partial, 27,683 missing and 9,300 unestablished requirements among 42,780 checklist items. The unresolved share is 91.4820%. This is a research-requirement denominator, not a missing-price-period estimate. No complete lifetime price/rent history or validated 2080 forecast is claimed. Conditional scenario slots remain annual from 2027 through 2080.
+
+Reviewed inputs and numerical receipts are in `enrichment/v9/`. `coverage-preservation-v9.json` verifies preservation against v8. Publication requires source, native-value, API, browser and deployment acceptance; this candidate document is not a release receipt.
