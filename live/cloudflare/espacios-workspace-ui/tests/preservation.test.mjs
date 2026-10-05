@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {workspaceUiAsset} from '../dist/workspace-ui-assets.js';
 import {applyUiSpans} from '../scripts/apply-auth-ui.mjs';
+import {seamlessControlsMarkup} from '../integration/seamless-controls.js';
 const root=new URL('../',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
 const graph=JSON.parse(await read('integration/asset-graph.json'));
@@ -47,10 +48,15 @@ test('asset outlet preserves HTTP cache and method behavior without owning app r
 });
 
 test('previous immutable asset URLs remain available to already-open tabs',async()=>{
-  const previous=JSON.parse(await read('compatibility/20261005-ec41bb559014/asset-graph.json'));
-  assert.equal(previous.assets.length,18);
-  assert.deepEqual(new Set(graph.retainedRevisionPaths),new Set(previous.assets.map(x=>x.path)));
-  for(const asset of previous.assets){
+  const revisions=[...new Set(graph.retainedRevisionPaths.map(path=>path.split('/')[3]))];
+  const retained=[];
+  for(const revision of revisions){
+    const previous=JSON.parse(await read('compatibility/'+revision+'/asset-graph.json'));
+    assert.equal(previous.assets.length,18);
+    retained.push(...previous.assets);
+  }
+  assert.deepEqual(new Set(graph.retainedRevisionPaths),new Set(retained.map(x=>x.path)));
+  for(const asset of retained){
     const response=workspaceUiAsset(new Request('https://espacios.me'+asset.path));
     assert.equal(response.status,200,asset.path);
     assert.equal(hash(await response.text()),asset.sha256,asset.path);
@@ -73,4 +79,23 @@ test('auth preservation contains only disjoint UI spans and fails closed on alte
   }
   assert.deepEqual(patch.scope,['/plug','/expenses','shared legacy theme preference migration']);
   assert.throws(()=>applyUiSpans(Buffer.from('changed owning module'),patch),/differs from the reviewed base/);
+});
+
+test('legacy shared focus markup matches readable policy and excludes Map paths',async()=>{
+  const css=await read('styles/public-seamless.css');
+  const init=await read('styles/input-modality.js');
+  const expected='<style id="esp-seamless-controls">'+css+'</style><script id="esp-input-modality">'+init+'</script>';
+  assert.equal(seamlessControlsMarkup('/expenses'),expected);
+  for(const path of ['/map','/map/example','/legacy/map','/legacy/map/example'])assert.equal(seamlessControlsMarkup(path),'');
+});
+
+test('direct modern bootstrap and global CSS preserve the shared hydration-safe controls policy',async()=>{
+  const init=await read('styles/input-modality.js');
+  const bootstrap=await read('assets/'+basename(graph.bootstrap));
+  assert.ok(bootstrap.startsWith(init),'direct Workspace routes must initialize without the public shell');
+  assert.ok(init.includes('__ESPACIOS_INPUT_MODALITY_SYNC__'),'shell and bootstrap initialization must deduplicate');
+  assert.ok(init.includes('MutationObserver'),'hydration removing the DOM attribute must be repaired');
+  const css=await read('assets/'+basename(graph.css));
+  assert.ok(css.includes(await read('styles/workspace-controls.css')));
+  assert.ok(css.endsWith(await read('styles/public-seamless.css')),'floating and header controls outside the workspace must receive the shared policy');
 });

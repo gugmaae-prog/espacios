@@ -3,9 +3,17 @@ import {createHash} from 'node:crypto';
 import {basename} from 'node:path';
 const root=new URL('../',import.meta.url);
 const graph=JSON.parse(await readFile(new URL('integration/asset-graph.json',root),'utf8'));
-const previous=JSON.parse(await readFile(new URL('compatibility/20261005-ec41bb559014/asset-graph.json',root),'utf8'));
+const css=await readFile(new URL('assets/'+basename(graph.css),root),'utf8');
+const controls=await readFile(new URL('styles/workspace-controls.css',root),'utf8');
+const publicControls=await readFile(new URL('styles/public-seamless.css',root),'utf8');
+if(!css.includes(controls)||!css.endsWith(publicControls))throw Error('Current CSS must preserve the complete base plus both reviewed control policies');
 const assets={};
-const collections=[{graph,directory:'assets/'},{graph:previous,directory:'compatibility/20261005-ec41bb559014/assets/'}];
+const collections=[{graph,directory:'assets/'}];
+const retainedRevisions=[...new Set((graph.retainedRevisionPaths||[]).map(path=>path.split('/')[3]))];
+for(const revision of retainedRevisions){
+  const previous=JSON.parse(await readFile(new URL('compatibility/'+revision+'/asset-graph.json',root),'utf8'));
+  collections.push({graph:previous,directory:'compatibility/'+revision+'/assets/'});
+}
 for(const collection of collections)for(const item of collection.graph.assets){
   const body=await readFile(new URL(collection.directory+basename(item.path),root),'utf8');
   const sha=createHash('sha256').update(body).digest('hex');

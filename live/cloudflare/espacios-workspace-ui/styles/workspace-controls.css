@@ -3,16 +3,36 @@
  * modern Workspace root; public marketing and the Map are not styled here.
  */
 
+html body .workspace-app.ecosystem-glass-v3 {
+  --workspace-focus-ring: #596779;
+  --workspace-control-border: rgba(82, 95, 118, 0.25);
+}
+
+html[data-espacios-theme="dark"] body .workspace-app.ecosystem-glass-v3 {
+  --workspace-focus-ring: #c4cbd7;
+  --workspace-control-border: rgba(200, 210, 224, 0.23);
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select
+) {
+  border-color: var(--workspace-control-border) !important;
+}
+
 /* A search field has one surface. Its icon and editable text share the fill. */
 html body .workspace-app.ecosystem-glass-v3 :is(
   .learning-toolbar label,
   .crm-toolbar label,
   .research-search,
-  .workspace-search
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
 ) {
   min-width: 0;
   min-height: 44px !important;
-  border: 1px solid var(--eg-theme-line) !important;
+  border: 1px solid var(--workspace-control-border) !important;
   background: var(--eg-theme-control) !important;
   color: var(--eg-theme-text) !important;
 }
@@ -39,14 +59,17 @@ html body .workspace-app.ecosystem-glass-v3 :is(
   .learning-toolbar,
   .crm-toolbar,
   .research-search,
-  .workspace-search
-) input:not([type="checkbox"]):not([type="radio"]) {
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+) :is(input:not([type="checkbox"]):not([type="radio"]), textarea) {
   min-width: 0;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
   background-image: none !important;
   color: var(--eg-theme-text) !important;
+  outline: 0 !important;
   box-shadow: none !important;
 }
 
@@ -54,8 +77,10 @@ html body .workspace-app.ecosystem-glass-v3 :is(
   .learning-toolbar,
   .crm-toolbar,
   .research-search,
-  .workspace-search
-) input:not([type="checkbox"]):not([type="radio"]):is(:focus, :focus-visible) {
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+) :is(input:not([type="checkbox"]):not([type="radio"]), textarea):is(:focus, :focus-visible) {
   outline: 0 !important;
   box-shadow: none !important;
 }
@@ -65,11 +90,25 @@ html body .workspace-app.ecosystem-glass-v3 :is(
   .crm-toolbar label,
   .research-search,
   .workspace-search,
-  .aether-compose
+  .aether-compose,
+  .rich-text-editor
 ):focus-within {
-  border-color: var(--eg-theme-accent) !important;
-  outline: 2px solid var(--eg-theme-accent) !important;
-  outline-offset: 2px !important;
+  border-color: var(--workspace-control-border) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Text-entry composites own one keyboard cue; their inner fields have none. */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+):has(:is(input, textarea):focus-visible) {
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: -2px !important;
   box-shadow: none !important;
 }
 
@@ -107,14 +146,8 @@ html body .workspace-app.ecosystem-glass-v3 :is(
   select,
   .rich-text-editor[contenteditable="true"]
 ):focus-visible {
-  outline: 2px solid var(--eg-theme-accent) !important;
-  outline-offset: 2px !important;
-}
-
-/* Composite editor focus belongs to the containing surface. */
-html body .workspace-app.ecosystem-glass-v3 .aether-compose textarea:is(:focus, :focus-visible) {
-  outline: 0 !important;
-  box-shadow: none !important;
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: -2px !important;
 }
 
 /* Do not mark a pristine required field as an error before interaction. */
@@ -124,26 +157,30 @@ html body .workspace-app.ecosystem-glass-v3 :is(input, textarea, select):is(
 ):not([type="checkbox"]):not([type="radio"]) {
   border-color: #b4233f !important;
   outline: 2px solid #b4233f !important;
-  outline-offset: 2px !important;
+  outline-offset: -2px !important;
 }
 
 html body .workspace-app.ecosystem-glass-v3 :is(
   .learning-toolbar label,
   .crm-toolbar label,
   .research-search,
-  .workspace-search
-):has(input:is([aria-invalid="true"], :user-invalid)) {
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+):has(:is(input, textarea):is([aria-invalid="true"], :user-invalid)) {
   border-color: #b4233f !important;
   outline: 2px solid #b4233f !important;
-  outline-offset: 2px !important;
+  outline-offset: -2px !important;
 }
 
 html body .workspace-app.ecosystem-glass-v3 :is(
   .learning-toolbar,
   .crm-toolbar,
   .research-search,
-  .workspace-search
-) input:not([type="checkbox"]):not([type="radio"]):is([aria-invalid="true"], :user-invalid) {
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+) :is(input:not([type="checkbox"]):not([type="radio"]), textarea):is([aria-invalid="true"], :user-invalid) {
   outline: 0 !important;
   box-shadow: none !important;
 }
@@ -156,8 +193,10 @@ html[data-espacios-theme="dark"] body .workspace-app.ecosystem-glass-v3 :is(
   .learning-toolbar label,
   .crm-toolbar label,
   .research-search,
-  .workspace-search
-):has(input:is([aria-invalid="true"], :user-invalid)) {
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+):has(:is(input, textarea):is([aria-invalid="true"], :user-invalid)) {
   border-color: #ff9baa !important;
   outline-color: #ff9baa !important;
 }
@@ -228,8 +267,8 @@ html body .workspace-app.ecosystem-glass-v3 :is(
   .research-filters button,
   .panel-heading > div button
 ):is(.is-active, [aria-selected="true"]):focus-visible {
-  outline: 2px solid var(--eg-theme-on-accent) !important;
-  outline-offset: -4px !important;
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: 2px !important;
 }
 
 html body .workspace-app.ecosystem-glass-v3 :is(
@@ -241,8 +280,8 @@ html body .workspace-app.ecosystem-glass-v3 :is(
   .planning-command-actions button,
   .artifact-viewer-actions button
 ):focus-visible {
-  outline: 2px solid var(--eg-theme-accent) !important;
-  outline-offset: -2px !important;
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: 2px !important;
 }
 
 /* Icon actions also have the same usable hit area without enlarging glyphs. */
@@ -544,6 +583,100 @@ html body .workspace-app.ecosystem-glass-v3 :is(
 html body .workspace-app.ecosystem-glass-v3 .content-card-grid article.is-openable i {
   font-size: 13px !important;
   line-height: 1.35 !important;
+}
+
+/* Focus styling belongs to the interactive surface, never a nested rectangle.
+ * The shared shell tracks actual pointer/keyboard modality because text fields
+ * can match native :focus-visible even after a pointer click.
+ */
+html body .workspace-app.ecosystem-glass-v3 :is(
+  input,
+  textarea,
+  select,
+  button,
+  a,
+  summary,
+  [role="button"],
+  [contenteditable="true"]
+):is(:focus, :focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 input:not([type="hidden"]):focus-visible {
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: -2px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  button,
+  a,
+  summary,
+  [role="button"],
+  .workspace-primary-button,
+  .workspace-secondary-button
+):focus-visible {
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 :is(
+  .calendar-grid button,
+  .quick-action-grid a,
+  .aether-work-pulse a
+):is(:hover, :focus, :focus-visible) {
+  border-color: var(--workspace-control-border) !important;
+}
+
+/* Custom radios and checkboxes put their cue on the visible label surface. */
+html body .workspace-app.ecosystem-glass-v3 .theme-radio label:has(input:focus-visible),
+html body .workspace-app.ecosystem-glass-v3 .market-validation-editor fieldset label:has(input:focus-visible) {
+  outline: 2px solid var(--workspace-focus-ring) !important;
+  outline-offset: -2px !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .theme-radio input[type="radio"]:is(:focus, :focus-visible),
+html body .workspace-app.ecosystem-glass-v3 .market-validation-editor fieldset input[type="checkbox"]:is(:focus, :focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .market-validation-editor fieldset input:focus-visible + i {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .workspace-app.ecosystem-glass-v3 .market-validation-editor fieldset input:checked:focus-visible + i {
+  box-shadow: inset 0 0 0 4px #fff !important;
+}
+
+html[data-espacios-input-modality="pointer"] body .workspace-app.ecosystem-glass-v3 :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  input,
+  textarea,
+  select,
+  button,
+  a,
+  summary,
+  [role="button"],
+  [contenteditable="true"]
+):is(:focus, :focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-espacios-input-modality="pointer"] body .workspace-app.ecosystem-glass-v3 :is(
+  .learning-toolbar label,
+  .crm-toolbar label,
+  .research-search,
+  .workspace-search,
+  .aether-compose,
+  .rich-text-editor
+):focus-within,
+html[data-espacios-input-modality="pointer"] body .workspace-app.ecosystem-glass-v3 .theme-radio label:has(input:focus-visible),
+html[data-espacios-input-modality="pointer"] body .workspace-app.ecosystem-glass-v3 .market-validation-editor fieldset label:has(input:focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
 }
 
 @media (max-width: 900px) {

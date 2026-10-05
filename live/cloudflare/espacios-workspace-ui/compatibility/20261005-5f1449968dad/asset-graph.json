@@ -1,0 +1,115 @@
+{
+  "revision": "20261005-5f1449968dad",
+  "prefix": "/__espacios/workspace-ui/20261005-5f1449968dad/",
+  "assets": [
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/ProposalForm-t8zVCD5b.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 18038,
+      "sha256": "d2f588b54133479eb9acbc8931a2613f45c05c950b7f0838a1f1f2c66790a3ce"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/ThemeControl-BPc6yYwU.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 1759,
+      "sha256": "9cc7d37e466f497c4f80fe62f991de09598790de5e9168cd96545bf68162af8d"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/PricingExperience-Cf7hx0xy.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 6353,
+      "sha256": "b2f6d92876c00259c710f4a0faeff438b3966e124896f2f24ed42b51959000c3"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/LoginExperience-DqyAOR1F.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 5149,
+      "sha256": "bce3176a6ab5cc1f98fc4f7ebe03f630aa2feacb64c252dc578dcb1a17c2fad1"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/SiteHeader-DUmjXq4h.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 1828,
+      "sha256": "13ece0554a2fe0253fc6f64951e2554b10f09645e05224e62736a9a4999e22be"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/AdminConsole-CjsTlUJj.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 11874,
+      "sha256": "36c5c0eb506518f0103d2edf130178aca84e58ab68e754b77cb78da8f48aae76"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/layout-segment-context-B-X8fVaf.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 345,
+      "sha256": "66ebfe6a0745a854c76181369ca415fc7f30bcb21d3b077de158ff57104c3f63"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/workspace-client-CGDFqu1O.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 5210,
+      "sha256": "c27963ccd2f1a4a485f3e91fdb10a7e36cd49d72c76d5a65e407b3bbd8129c80"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/link-D3XaM6C4.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 9795,
+      "sha256": "871dfd1559e0f8f489027a123006966d1f71cecbf1c914b4e4ee95e052494497"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/FloatingAssistant-BcrSg4qR.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 4194,
+      "sha256": "ff32e05257fe829049fbcb1d279d357b4422dc93a0ef5ec626b6d41e08eb22a8"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/ScrollExperience-BeWBi2Qa.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 5688,
+      "sha256": "db1fb901ebee641a427fa32f14c4755bddedfeadd41c2ba2855ab3e282a9814f"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/index-C5rSNAIW.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 85584,
+      "sha256": "ba35585b1d87745f419187ae7abacc5a0fa40cd1e6db85d95e212820d203d130"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/WorkspaceApp-E-tE3LmW.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 161856,
+      "sha256": "64d9d8677d8fa6e4a0569eb60bb970eba738d2c109c1b5dd6fc1e86916f088bb"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/Icon-DVcSq3_c.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 1094,
+      "sha256": "3b13d33b3b9733b72230d353cfe563994f9ba749a5f093458f14221d375b136e"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/router-C1Ep-kvF.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 9172,
+      "sha256": "21b9b255410ba1392db595eef35492cedf0fa3c3e8a859bcd2066c045392b981"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/EspaciosLogo-ClghS4jE.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 429,
+      "sha256": "7d12b73132359725f77d50eb7c82e62d173c68bc997fc2233e6fb6b69c6274ee"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/route-contract-B_0TQhCy.js",
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 4226,
+      "sha256": "6782e96f8c5d58ee5f93764509f6c9ac2890b067f7e80de242cfa78aa8cf2759"
+    },
+    {
+      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/workspace.css",
+      "type": "text/css; charset=utf-8",
+      "bytes": 492986,
+      "sha256": "7eafdc77310e9bd2a0e35389ed66107c3bcb74667025681042e41ef29285eb02"
+    }
+  ],
+  "reason": "Retain immutable URLs for tabs opened before the seamless-control revision."
+}

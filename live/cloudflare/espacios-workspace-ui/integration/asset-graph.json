@@ -1,117 +1,117 @@
 {
-  "revision": "20261005-5f1449968dad",
-  "prefix": "/__espacios/workspace-ui/20261005-5f1449968dad/",
-  "bootstrap": "/__espacios/workspace-ui/20261005-5f1449968dad/index-C5rSNAIW.js",
-  "workspace": "/__espacios/workspace-ui/20261005-5f1449968dad/WorkspaceApp-E-tE3LmW.js",
-  "css": "/__espacios/workspace-ui/20261005-5f1449968dad/workspace.css",
+  "revision": "20261005-1a281d470446",
+  "prefix": "/__espacios/workspace-ui/20261005-1a281d470446/",
+  "bootstrap": "/__espacios/workspace-ui/20261005-1a281d470446/index-C5rSNAIW.js",
+  "workspace": "/__espacios/workspace-ui/20261005-1a281d470446/WorkspaceApp-E-tE3LmW.js",
+  "css": "/__espacios/workspace-ui/20261005-1a281d470446/workspace.css",
   "assets": [
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/ProposalForm-t8zVCD5b.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/ProposalForm-t8zVCD5b.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 18038,
-      "sha256": "d2f588b54133479eb9acbc8931a2613f45c05c950b7f0838a1f1f2c66790a3ce"
+      "sha256": "f7f18700342582ba10694c5e3a75022f9a9dd9310ef442401c481d1461937e33"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/ThemeControl-BPc6yYwU.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/ThemeControl-BPc6yYwU.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 1759,
       "sha256": "9cc7d37e466f497c4f80fe62f991de09598790de5e9168cd96545bf68162af8d"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/PricingExperience-Cf7hx0xy.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/PricingExperience-Cf7hx0xy.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 6353,
-      "sha256": "b2f6d92876c00259c710f4a0faeff438b3966e124896f2f24ed42b51959000c3"
+      "sha256": "2a84d4cbe354cc8e3b13c75319a28b0926ea75a7d49e04615853d34eb8529d0e"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/LoginExperience-DqyAOR1F.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/LoginExperience-DqyAOR1F.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 5149,
-      "sha256": "bce3176a6ab5cc1f98fc4f7ebe03f630aa2feacb64c252dc578dcb1a17c2fad1"
+      "sha256": "564342a8d1c041dd14a720aadbd550e38f909d827a92b62a23a9365f5d860422"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/SiteHeader-DUmjXq4h.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/SiteHeader-DUmjXq4h.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 1828,
-      "sha256": "13ece0554a2fe0253fc6f64951e2554b10f09645e05224e62736a9a4999e22be"
+      "sha256": "c849b77e7f2397d18b87f65ab3e87d6fda93ce822c271e08c3f8bf11d39c5409"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/AdminConsole-CjsTlUJj.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/AdminConsole-CjsTlUJj.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 11874,
-      "sha256": "36c5c0eb506518f0103d2edf130178aca84e58ab68e754b77cb78da8f48aae76"
+      "sha256": "119c3f9461da985c15f1e24bdfaa69063e87df9275f84451e377f4950205a7d3"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/layout-segment-context-B-X8fVaf.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/layout-segment-context-B-X8fVaf.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 345,
-      "sha256": "66ebfe6a0745a854c76181369ca415fc7f30bcb21d3b077de158ff57104c3f63"
+      "sha256": "fcb9673237936cfc892f91147e6be21fa9d214d28d92cbbfbbd4daa82306800e"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/workspace-client-CGDFqu1O.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/workspace-client-CGDFqu1O.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 5210,
       "sha256": "c27963ccd2f1a4a485f3e91fdb10a7e36cd49d72c76d5a65e407b3bbd8129c80"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/link-D3XaM6C4.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/link-D3XaM6C4.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 9795,
-      "sha256": "871dfd1559e0f8f489027a123006966d1f71cecbf1c914b4e4ee95e052494497"
+      "sha256": "7d402e34d467d0befab9064903f37e7bb53e1ce2eb4e45ef5f2e4892795c3732"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/FloatingAssistant-BcrSg4qR.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/FloatingAssistant-BcrSg4qR.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 4194,
-      "sha256": "ff32e05257fe829049fbcb1d279d357b4422dc93a0ef5ec626b6d41e08eb22a8"
+      "sha256": "1468f641284a956cad5d8ae63a3c95a475855c083af9b47dfa36596f9956fad0"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/ScrollExperience-BeWBi2Qa.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/ScrollExperience-BeWBi2Qa.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 5688,
-      "sha256": "db1fb901ebee641a427fa32f14c4755bddedfeadd41c2ba2855ab3e282a9814f"
+      "sha256": "0482b73925aaa20ca71a4e8416ebe7d985e8d8be1bd8dfef346c1894879f9549"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/index-C5rSNAIW.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/index-C5rSNAIW.js",
       "type": "application/javascript; charset=utf-8",
-      "bytes": 85584,
-      "sha256": "ba35585b1d87745f419187ae7abacc5a0fa40cd1e6db85d95e212820d203d130"
+      "bytes": 86597,
+      "sha256": "47129650f7017a390ad9367cf34a398452dbd107950a6f3426f24290bcf1750f"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/WorkspaceApp-E-tE3LmW.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/WorkspaceApp-E-tE3LmW.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 161856,
-      "sha256": "64d9d8677d8fa6e4a0569eb60bb970eba738d2c109c1b5dd6fc1e86916f088bb"
+      "sha256": "e5ba61df346f57866cafd337bc1670340ed8634597b8b6376ddead5bdd6dda99"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/Icon-DVcSq3_c.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/Icon-DVcSq3_c.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 1094,
       "sha256": "3b13d33b3b9733b72230d353cfe563994f9ba749a5f093458f14221d375b136e"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/router-C1Ep-kvF.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/router-C1Ep-kvF.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 9172,
-      "sha256": "21b9b255410ba1392db595eef35492cedf0fa3c3e8a859bcd2066c045392b981"
+      "sha256": "a0307f4849bd01c64bf3556a56500e62b84c36315a2efece3c57720e00e2e031"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/EspaciosLogo-ClghS4jE.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/EspaciosLogo-ClghS4jE.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 429,
       "sha256": "7d12b73132359725f77d50eb7c82e62d173c68bc997fc2233e6fb6b69c6274ee"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/route-contract-B_0TQhCy.js",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/route-contract-B_0TQhCy.js",
       "type": "application/javascript; charset=utf-8",
       "bytes": 4226,
       "sha256": "6782e96f8c5d58ee5f93764509f6c9ac2890b067f7e80de242cfa78aa8cf2759"
     },
     {
-      "path": "/__espacios/workspace-ui/20261005-5f1449968dad/workspace.css",
+      "path": "/__espacios/workspace-ui/20261005-1a281d470446/workspace.css",
       "type": "text/css; charset=utf-8",
-      "bytes": 492986,
-      "sha256": "7eafdc77310e9bd2a0e35389ed66107c3bcb74667025681042e41ef29285eb02"
+      "bytes": 501320,
+      "sha256": "969beca4d56be7ee3b130d832fd3d8f9a881f6cf20fbc72bf2e708525d5afbc2"
     }
   ],
   "sharedOriginalModules": [
@@ -138,6 +138,60 @@
     "/__espacios/workspace-ui/20261005-ec41bb559014/router-C1Ep-kvF.js",
     "/__espacios/workspace-ui/20261005-ec41bb559014/EspaciosLogo-ClghS4jE.js",
     "/__espacios/workspace-ui/20261005-ec41bb559014/route-contract-B_0TQhCy.js",
-    "/__espacios/workspace-ui/20261005-ec41bb559014/workspace.css"
+    "/__espacios/workspace-ui/20261005-ec41bb559014/workspace.css",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/ProposalForm-t8zVCD5b.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/ThemeControl-BPc6yYwU.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/PricingExperience-Cf7hx0xy.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/LoginExperience-DqyAOR1F.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/SiteHeader-DUmjXq4h.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/AdminConsole-CjsTlUJj.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/layout-segment-context-B-X8fVaf.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/workspace-client-CGDFqu1O.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/link-D3XaM6C4.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/FloatingAssistant-BcrSg4qR.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/ScrollExperience-BeWBi2Qa.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/index-C5rSNAIW.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/WorkspaceApp-E-tE3LmW.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/Icon-DVcSq3_c.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/router-C1Ep-kvF.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/EspaciosLogo-ClghS4jE.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/route-contract-B_0TQhCy.js",
+    "/__espacios/workspace-ui/20261005-5f1449968dad/workspace.css",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/ProposalForm-t8zVCD5b.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/ThemeControl-BPc6yYwU.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/PricingExperience-Cf7hx0xy.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/LoginExperience-DqyAOR1F.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/SiteHeader-DUmjXq4h.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/AdminConsole-CjsTlUJj.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/layout-segment-context-B-X8fVaf.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/workspace-client-CGDFqu1O.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/link-D3XaM6C4.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/FloatingAssistant-BcrSg4qR.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/ScrollExperience-BeWBi2Qa.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/index-C5rSNAIW.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/WorkspaceApp-E-tE3LmW.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/Icon-DVcSq3_c.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/router-C1Ep-kvF.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/EspaciosLogo-ClghS4jE.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/route-contract-B_0TQhCy.js",
+    "/__espacios/workspace-ui/20261005-1a9b83d7c359/workspace.css",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/ProposalForm-t8zVCD5b.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/ThemeControl-BPc6yYwU.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/PricingExperience-Cf7hx0xy.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/LoginExperience-DqyAOR1F.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/SiteHeader-DUmjXq4h.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/AdminConsole-CjsTlUJj.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/layout-segment-context-B-X8fVaf.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/workspace-client-CGDFqu1O.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/link-D3XaM6C4.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/FloatingAssistant-BcrSg4qR.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/ScrollExperience-BeWBi2Qa.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/index-C5rSNAIW.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/WorkspaceApp-E-tE3LmW.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/Icon-DVcSq3_c.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/router-C1Ep-kvF.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/EspaciosLogo-ClghS4jE.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/route-contract-B_0TQhCy.js",
+    "/__espacios/workspace-ui/20261005-ff9cf061a411/workspace.css"
   ]
 }

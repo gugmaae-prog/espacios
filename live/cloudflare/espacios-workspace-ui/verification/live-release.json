@@ -1,15 +1,30 @@
 {
   "date": "2026-10-05 (Asia/Dubai)",
-  "assetRevision": "20261005-5f1449968dad",
+  "assetRevision": "20261005-1a281d470446",
   "workerVersions": {
-    "espacios-marketing-site": "beeca8dc-354a-4fd1-b4a0-0c233d56963f",
+    "espacios-marketing-site": "07499f98-244d-419f-864f-7809b8bea112",
+    "espacios-public-shell": "100f0ffc-2569-45cf-90dd-0cdc659d1afe",
     "espacios-auth-central": "9ca7f017-bd3a-4d6e-bae2-d8c1cc60f3c1"
   },
+  "deploymentIds": {
+    "espacios-marketing-site": "beefa112-de86-4b54-8e9c-6faa9f142052",
+    "espacios-public-shell": "64d179ef-f7f9-4330-b15b-eca51b1dec38"
+  },
+  "authChangedInSeamlessPass": false,
   "authPatchedModuleSha256": "b0811d96698cd1c2fcabcc9d9dd4c65f49548a060bf0d2c7d9f89381a3d8c5a1",
-  "assetsCssSha256": "7eafdc77310e9bd2a0e35389ed66107c3bcb74667025681042e41ef29285eb02",
+  "assetsCssSha256": "969beca4d56be7ee3b130d832fd3d8f9a881f6cf20fbc72bf2e708525d5afbc2",
+  "additiveCssSha256": "1cd1ad3e8352f8c3ea6da03f23c8713510b302763de2e7845b3bca62cb5e0779",
+  "publicCssSha256": "38c5ccf2819b916aef10de05aacfbd3977fb1474f9b224154ad177f8fd35f7b3",
+  "modalitySha256": "8ffc2d0ee9bfabf6483702572d97b35109cbcca3b099fb19a6882042284a04ff",
+  "publicShellModuleSha256": "e4ffe69f19f41b2c37fb482009e935068da0791019e982bdd16695c30729317b",
+  "publicShellModuleBytes": 35423,
+  "retainedRevisions": [
+    "20261005-1a9b83d7c359",
+    "20261005-5f1449968dad",
+    "20261005-ec41bb559014",
+    "20261005-ff9cf061a411"
+  ],
+  "servedPublicAssets": 90,
   "bindingsChanged": false,
-  "mapChanged": false,
-  "retainedRevision": "20261005-ec41bb559014",
-  "servedPublicAssets": 36,
-  "additiveCssSha256": "10ce1b31013a912ebee2244533e06a4f21c1600168102a211e2925fab289b2da"
+  "mapChanged": false
 }
