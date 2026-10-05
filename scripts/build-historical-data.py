@@ -2,10 +2,13 @@
 """Reproducible, lossless context-history snapshot. No network or remote writes."""
 import argparse, csv, gzip, hashlib, io, json, pathlib, re, calendar, collections, datetime
 from historical_enrichment import load_enrichment, apply_enrichment
+from historical_sources import register_source
+from historical_gap_ledger import refresh_research_coverage
+from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261005-scrape-v2'
+VERSION = '20261005-enrichment-v3'
 ASOF = '2026-10-05'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
@@ -110,18 +113,7 @@ def build():
  for row in data['history']:grouped[row['Series ID']].append(row)
  sources={};url_ids={};source_aliases={}
  def source(item):
-  item=dict(item);url=canonical_url(item.get('url')); ident=item.get('id') or 'url-'+sha(url.encode())[:16]
-  requested_id=ident
-  if url in url_ids:ident=url_ids[url]
-  source_aliases[requested_id]=ident
-  item['id']=ident;item['url']=url;item.setdefault('publishedAt',item.get('published') or None)
-  item.setdefault('firstAvailableAt',item['publishedAt']);item.setdefault('retrievedAt',item.get('retrieved') or item.get('capturedAt') or capture_asof)
-  item.setdefault('datePrecision','day' if item.get('publishedAt') else 'unknown');item.setdefault('licence','rights_pending: citation and source metadata only; redistribution not inferred')
-  item.setdefault('classification','source_metadata');item.setdefault('publicationDateStatus','known' if item['publishedAt'] else 'research_pending')
-  old=sources.get(ident,{})
-  sources[ident]={**old,**{k:v for k,v in item.items() if v is not None or k not in old}}
-  if url:url_ids[url]=ident
-  return ident
+  return register_source(item,sources,url_ids,source_aliases,canonical_url,capture_asof)
  for entry in data['sources']['sources']:source(entry)
  for entry in data['sources']['retrievals']:
   source({'id':'capture-'+sha(entry['url'].encode())[:16],**entry,'classification':'retained_api_capture','licence':'retained first-party API snapshot; underlying source licences retained separately'})
@@ -266,6 +258,14 @@ def build():
     scope='community';verified=False;basis='Candidate marketed-area label link; geographic extent and at-event existence need validation'
    else:scope='emirate' if len(geo['emirates'])==1 else 'national';verified=rec['type']=='community';basis='Emirate-wide macro context; no subject price effect asserted; project existence at event date research pending' if rec['type']=='project' else 'Community emirate membership; contextual exposure only, no measured local causal price effect'
    ident=sha(encoded([event['id'],rec['id'],scope]))[:24];exposures.append({'id':ident,'eventId':event['id'],'recordId':rec['id'],'scope':scope,'basis':basis,'sourceIds':event['sourceIds'],'verified':verified,'priceUpliftPct':None})
+ local_events,local_exposures=local_event_context(records,sources,ASOF)
+ events.extend(local_events);exposures.extend(local_exposures)
+ exposure_by_record=collections.defaultdict(list)
+ for link in exposures:exposure_by_record[link['recordId']].append(link)
+ for rec in records:
+  community=communities_by_id.get(rec.get('sharedCommunityHistoryId'))
+  event_links=exposure_by_record[rec['id']]+[rule for rule in exposure_rules if rec['type']==rule['appliesTo'] and rec['emirate'] in rule['emirates']]
+  refresh_research_coverage(rec,series,sources,ASOF,community['historySeries'] if community else None,event_links)
  assert len(records)==1860 and len({x['id'] for x in records})==1860
  assert sum(x['type']=='project' for x in records)==1645 and sum(x['type']=='community' for x in records)==215
  public_rows=len(data['history']);original_collected_rows=data['expansion']['completeCollectedHistoricalRows'];supplement_rows=public_rows-original_public_rows-len(new_history_rows);collected_rows=original_collected_rows+supplement_rows+len(new_history_rows)

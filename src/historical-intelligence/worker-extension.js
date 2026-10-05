@@ -109,7 +109,10 @@ worker_default.fetch=async function(request,env,ctx){
    return hiJSON(request,{version:data.version,asOf:data.asOf,recordId:recordId||null,events,exposures:exposures.filter(x=>visible.has(x.eventId)),exposureRules:record?[]:data.exposureRules||[],sources:record?HI_CORE.relevantSources(data,record,events,exposures):data.sources||[],manifest:data.manifest||{},classification:'event_evidence_not_causal_price_effects'});
   }
   if(path==='/map/api/record-history'){
-   if(!record)return hiJSON(request,{version:data.version,asOf:data.asOf,records:data.records.map(({id,type,name,emirate,communityId,researchStatus})=>({id,type,name,emirate,communityId:communityId||null,researchStatus})),manifest:data.manifest||{}});
+   if(!record)return hiJSON(request,{version:data.version,asOf:data.asOf,records:data.records.map(({id,type,name,emirate,communityId,researchStatus})=>{
+    const {itemCoverage,...compactResearch}=researchStatus||{};
+    return{id,type,name,emirate,communityId:communityId||null,researchStatus:u.searchParams.get('includeItemCoverage')==='1'?researchStatus:{...compactResearch,itemCoverageAvailable:!!itemCoverage}};
+   }),manifest:data.manifest||{}});
    const text=u.searchParams.get('assumptions');if(text&&text.length>8000)throw new TypeError('Full annual schedules exceed the compact GET limit; use the local scenario calculator.');
    let userAssumptions=null;if(text){try{userAssumptions=JSON.parse(text);}catch{throw new TypeError('Scenario assumptions must be valid JSON.');}HI_CORE.validateScenarioAssumptions(userAssumptions);}
    const hydrated=await hiHydrateRecord(record,data,env);

@@ -1,3 +1,30 @@
+# Latest additive candidate, 5 October 2026
+
+The `20261005-enrichment-v3` candidate preserves the prior collection and adds reviewed sources, official native cohorts and a 23-item evidence ledger for every record. All 1,645 projects and 215 communities remain. Earlier counts below describe retained collection vintages, not this latest total.
+
+| Candidate evidence | Count | Meaning |
+| --- | ---: | --- |
+| Releasable native aggregate points | 298,028 / 11,872 series | Overlapping frequencies and cohorts; not unique transactions |
+| Additional points since scrape-v2 | 49,552 | Earlier 248,476 points and 5,542 record links are preserved |
+| Source entries | 2,765 | Earlier 2,497 entries survive unchanged; capture revisions share canonical identity |
+| Accepted enrichment facts | 3,639 | 1,786 lifecycle, 1,388 financial, 465 register facts |
+| Exact official project identities | 191 | Native register + independently supported developer/name/geography proofs |
+| Project sale / rent histories | 183 / 64 | Any retained subject history; complete lifetime coverage remains unestablished |
+| Native fee components | 2,751 across 28 projects | Separate budget/usage/denominator; no automatic annual cost or ROI |
+| Events / explicit exposures | 90 / 5,651 | Source context only; price uplift coefficients remain null |
+| Item accountability | 42,780 rows | 23 items for each of the 1,860 records |
+| Approved numeric forecasts | 0 | Annual 2027–2080 scenario slots remain conditional; missing inputs stay null |
+
+The additional researched sources include project releases and archives, dated community infrastructure/amenity reports, exact native DLD project cohorts and Mollak components. The final bounded archive queue accounts for all eight entries: seven reviewed official releases and one inaccessible valuation PDF that redirected to unrelated HTML. Sparse financial observations, older quotes, phase identity, revised schedules and access refusals remain retained.
+
+VIDA Residence Downtown project 1404 contributes 1,474 native aggregate points, with earliest eligible sale evidence dated 26 March 2014 and rent evidence dated 17 August 2019. Its specific issuer name/location proof preserves the singular/plural alias and excludes the distinct Marina, Dubai Mall and Dubai Hills products. The new proof was retrieved in 2026 and cannot be used as a previously available input at an earlier backtest origin.
+
+There remain 928 unresolved Dubai project identities, 526 non-Dubai projects to which the DLD register does not apply, and 85 unresolved Dubai community label mappings in the official-register audit. Earlier 263 project/59 community candidates remain quarantined. Full lifetime missing-period percentages cannot be computed from unknown inception and identity.
+
+See [enrichment methodology](HISTORICAL_ENRICHMENT_V3.md) for source revisions, preservation checks, point-in-time availability, the selected-record ledger, planned events and scenario boundaries. Standard builds consume committed normalized inputs and make no network requests. This candidate has not been merged, deployed or written to remote storage.
+
+---
+
 # Historical intelligence scrape, 5 October 2026 candidate
 
 All 1,645 projects and 215 communities remain in the catalogue. This is the reviewable `20261005-scrape-v2` source snapshot; production has not been changed. A record, fetched page, observed quote and complete price history are separate coverage measures.

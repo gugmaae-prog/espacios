@@ -151,6 +151,23 @@ test('subject histories fail closed for the wrong owner, missing owner and missi
  assert.ok(validate(promotion).issues.includes('series_identity_override'));
 });
 
+test('financial observations are unavailable to a forecasting origin before their identity proof exists',()=>{
+ const proofs=[...sources,{id:'identity',url:'https://example.com/identity',firstAvailableAt:'2025-06-01'}];
+ const value=observation('2020-01',100,{identitySourceIds:['identity']});
+ assert.equal(validateObservation(value,record,{asOf:'2024-12-31',sources:proofs}).availability,'unknown_or_later');
+ assert.equal(filterTrainingFold([value],{asOf:'2024-12-31',sources:proofs}).retained.length,0);
+ assert.equal(filterTrainingFold([value],{asOf:'2025-06-01',sources:proofs}).retained.length,1);
+});
+
+test('earlier verified subject milestones extend accountability without supplying earlier prices',()=>{
+ const milestone={id:'origin',kind:'launch',status:'verified',scope:'subject',primaryEvidence:true,sourceIds:['sales'],date:{start:'2010Q2',precision:'quarter'}};
+ const out=monthlyCoverage({...record,lifecycle:[milestone],observations:[observation('2020-01')]},{asOf,sources});
+ assert.equal(out.window.start,'2010-04');assert.equal(out.metrics.price.periods[0].status,'missing');
+ assert.equal(out.metrics.price.statusCounts.observed,1);
+ const context=monthlyCoverage({...record,lifecycle:[{...milestone,scope:'published_reference'}],observations:[observation('2020-01')]},{asOf,sources});
+ assert.equal(context.window.start,'2020-01');assert.equal(context.metrics.price.subjectApplicabilityKnown,false);
+});
+
 test('proof sources and inherited community attribution survive the presentation view',()=>{
  const context={id:'native',sourceId:'sales',identitySourceIds:['proof'],scope:'community_context',identityVerified:false,metric:'price',unit:'AED/sqft',frequency:'monthly',columns:['period','value','sampleCount'],points:[['2026-08',100,25]]};
  const community={id:'community:c',type:'community',emirate:'Dubai',historySeries:[context]},p={...record,communityId:community.id,sharedCommunityHistoryId:community.id};
@@ -173,4 +190,39 @@ test('bucketed monthly and native coverage agrees with source rows across mixed 
  const r={...record,observations,historySeries:[{id:'quarters',metric:'price',frequency:'quarterly',scope:'area_context',identityVerified:false,unit:'AED/sqft',sourceId:'sales',columns:['period','value','sampleCount'],points:[['2020Q1',90,25],['2020Q2',95,1]]}]},coverage=monthlyCoverage(r,{asOf,sources});
  assert.equal(coverage.summary.directObservedMonths,72);assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2020-01').rawCount,2);assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2020-01').eligibleCount,1);assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2020-01').contextCount,1);
  assert.equal(coverage.metrics.price.nativePeriods.quarterly[1].sparseContextCount,1);assert.deepEqual(recordHistory({version:'test',asOf,sources,events:[],exposures:[]},r).coverage,coverage);
+});
+
+test('an observation cannot override a later or unknown source vintage in backtests',()=>{
+ const late=[{id:'sales',firstAvailableAt:'2026-10-05',publishedAt:null}];
+ const point=observation('2020-01',100,{firstAvailableAt:'2020-02-01'});
+ assert.equal(validateObservation(point,record,{asOf:'2024-12-31',sources:late}).availability,'unknown_or_later');
+ assert.equal(filterTrainingFold([point],{asOf:'2024-12-31',sources:late}).retained.length,0);
+ assert.equal(filterTrainingFold([point],{asOf:'2026-10-05',sources:late}).retained.length,1);
+ assert.equal(filterTrainingFold([point],{asOf,sources:[{id:'sales'}]}).retained.length,0);
+});
+
+test('planned occupancy and by-date occupancy bounds cannot establish earlier rental inapplicability',()=>{
+ const base={kind:'occupancy',date:{start:'2022-01-01',precision:'day'},status:'verified',scope:'subject',primaryEvidence:true,sourceIds:['sales']};
+ for(const milestone of [{...base,eventStatus:'planned'},{...base,date:{...base.date,qualifier:'by_date'}}]){
+  const out=monthlyCoverage({...record,historyStartPeriod:'2020-01',lifecycle:[milestone]},{asOf,sources});
+  assert.equal(out.metrics.rent.subjectApplicabilityKnown,false);assert.equal(out.metrics.rent.statusCounts.not_applicable,0);
+ }
+});
+
+test('retained verified financial evidence before a public launch keeps applicability unresolved',()=>{
+ const launch={kind:'launch',date:{start:'2022-01-01',precision:'day'},status:'verified',scope:'subject',primaryEvidence:true,eventStatus:'actual',sourceIds:['sales']};
+ const out=monthlyCoverage({...record,lifecycle:[launch],observations:[observation('2020-01')]},{asOf,sources});
+ assert.equal(out.window.start,'2020-01');assert.equal(out.metrics.price.subjectApplicabilityKnown,false);
+ assert.equal(out.metrics.price.periods[0].status,'observed');assert.equal(out.metrics.price.statusCounts.not_applicable,0);
+});
+
+test('microsecond source capture timestamps retain text and are available at the current cutoff',()=>{
+ const instant='2026-10-05T09:59:36.848680+00:00';
+ assert.equal(parseEvidenceDate(instant).instant,Date.parse('2026-10-05T09:59:36.848Z'));
+ assert.equal(isAvailableAsOf({firstAvailableAt:instant},'2026-10-05'),true);
+ assert.equal(isAvailableAsOf({firstAvailableAt:instant},'2026-10-04'),false);
+ const current=[{id:'sales',firstAvailableAt:instant}];
+ assert.equal(validateObservation(observation('2020-01'),record,{asOf:'2026-10-05',sources:current}).availability,'known_as_of');
+ assert.equal(current[0].firstAvailableAt,instant);
+ assert.throws(()=>parseEvidenceDate('2026-10-05T09:59:36.848680'),/timezone/);
 });

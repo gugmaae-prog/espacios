@@ -79,6 +79,12 @@ async function runCase(port,{name,width,height,mobile}){
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Financial coverage')",{label:name+' PJA coverage'});
  const index=await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),options:document.querySelector('#hi-record-select').options.length,sources:[...document.querySelectorAll('#hi-body a')].every(a=>a.href.startsWith('https://')),chart:document.querySelector('.hi-chart figcaption')?.textContent})");
  assert.equal(index.state.recordCount,1860);assert.equal(index.options,1861);assert.equal(index.sources,true);
+ const itemCoverage=await evaluate(cdp,"(()=>{const ledger=document.querySelector('#hi-item-coverage');ledger.open=true;return {summary:ledger.querySelector('summary').textContent,items:ledger.querySelectorAll('article').length,text:ledger.textContent,sources:[...ledger.querySelectorAll('a')].map(a=>a.href)}})()");
+ assert.equal(itemCoverage.items,23,name+' complete item ledger');assert.match(itemCoverage.summary,/23 items/);
+ assert.match(itemCoverage.text,/Complete lifetime price and rent histories/);assert.match(itemCoverage.text,/complete registered sale history/i);assert.match(itemCoverage.text,/unestablished/i);
+ assert.ok(itemCoverage.sources.every(url=>url.startsWith('https://')),name+' ledger source links');
+ await capture(cdp,name+'-coverage-items');
+ await evaluate(cdp,"document.querySelector('#hi-item-coverage').open=false;true");
  const lifecycle=await evaluate(cdp,"(()=>{const card=[...document.querySelectorAll('#hi-body details')].find(d=>d.querySelector('summary')?.textContent.includes('lifecycle'));return card?.textContent||''})()");
  assert.match(lifecycle,/Milestone:/);assert.match(lifecycle,/Stage:/);assert.match(lifecycle,/Scope:/);assert.match(lifecycle,/Verified source|Reported source|Evidence:/);
  await evaluate(cdp,"document.querySelector('#hi-tab-events').click();true");
@@ -153,7 +159,7 @@ async function runCase(port,{name,width,height,mobile}){
  assert.match(sourcedFacts.text,/Parking|Adjustment/);assert.doesNotMatch(sourcedFacts.text,/\[object Object\]/);assert.ok(sourcedFacts.sourceLinks.every(url=>url.startsWith('https://')));
  await capture(cdp,name+'-sourced-facts');
  assert.equal(exceptions.length,0,name+' browser exceptions: '+exceptions.join('; '));
- cdp.close();return {name,index,events:{cards:events.cards},study,empty:{max:empty.max,rows:empty.rows},computed:{rows:computed.rows,text:computed.text},rents,geometry,exceptions};
+ cdp.close();return {name,index,itemCoverage:{items:itemCoverage.items,summary:itemCoverage.summary,sourceLinks:itemCoverage.sources.length},events:{cards:events.cards},study,empty:{max:empty.max,rows:empty.rows},computed:{rows:computed.rows,text:computed.text},rents,geometry,exceptions};
 }
 const session=await launchChrome();try{
  const results=[];for(const options of [{name:'desktop',width:1440,height:1000,mobile:false},{name:'mobile',width:390,height:844,mobile:true}]){console.log('Checking '+options.name);results.push(await runCase(session.port,options));}

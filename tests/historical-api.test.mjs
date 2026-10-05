@@ -100,3 +100,16 @@ test('lazy bundled data loads only on new GET routes and R2 snapshot failure fal
  const fallback=structuredClone(data);fallback.manifest.r2={binding:'MARKET_R2',key:'research/published/missing.json',sha256:'0'.repeat(64)};
  const missing=await fixture(fallback).fetch(req('/map/api/record-history'),none,{});assert.equal(missing.status,200);assert.equal((await missing.json()).records.length,2);
 });
+
+test('inventory loads per-item evidence on request while each selected record retains the complete ledger',async()=>{
+ const snapshot=structuredClone(data),items={registered_sale_history:{status:'missing',reason:'No approved native subject observations'}};
+ snapshot.records[0].researchStatus.itemCoverage=items;
+ const worker=fixture(snapshot),inventory=await(await worker.fetch(req('/map/api/record-history'),none,{})).json();
+ assert.equal(inventory.records[0].researchStatus.itemCoverageAvailable,true);
+ assert.equal(inventory.records[0].researchStatus.itemCoverage,undefined);
+ assert.equal(inventory.records[0].researchStatus.subjectHistory,'not_verified');
+ const full=await(await worker.fetch(req('/map/api/record-history?includeItemCoverage=1'),none,{})).json();
+ assert.deepEqual(full.records[0].researchStatus.itemCoverage,items);
+ const selected=await(await worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),none,{})).json();
+ assert.deepEqual(selected.record.researchStatus.itemCoverage,items);
+});
