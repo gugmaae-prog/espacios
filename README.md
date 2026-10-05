@@ -7,7 +7,7 @@
 > The Data Room exists at `/map/data-room` but is currently **restricted** by `DATA_ROOM_PUBLIC=false`.
 > See [docs/architecture.md](docs/architecture.md) and [MAP_SYSTEM_SNAPSHOT_2026-09-30.json](MAP_SYSTEM_SNAPSHOT_2026-09-30.json) for the current production identifiers and connection map.
 >
-> **Repository status — 24 September 2026**
+> **Repository/source authority**
 >
 > This is a **public source repository**. Never commit credentials, customer/lead data, private CRM exports, OAuth tokens, Supabase service-role keys, Cloudflare API tokens, or other secrets.
 >
@@ -17,7 +17,25 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Record history and dated events — 5 October 2026 candidate
+## Current published history release — 6 October 2026 (Dubai)
+
+The reviewed V9 snapshot is now deployed to the canonical map. GitHub PR [#34](https://github.com/gugmaae-prog/espacios/pull/34) merged at `2026-10-05T23:40:47Z` and the production Worker `psr-portfolio-map-v2` is serving version `45c1fc27-420d-4b9c-b276-d1b8c97cd466` at 100% traffic through deployment `5248c438-7a04-4e31-9f2c-4d232a8b3dfc`. The live route is [https://espacios.me/map](https://espacios.me/map). The V9 source commit is `c646055028b9b40acb68adbe9f29c0458aadecb4`; the merge commit is `40659db7c5a7ed86e0f20d38e36295e864177eba`.
+
+The release preserves all 1,860 catalogue records: 1,645 projects and 215 communities. It publishes 316,608 public aggregate observations (316,824 collected rows including 216 rights-pending rows), 2,846 sources, 3,946 sourced facts, 92 dated events, 5,682 event exposures, and 13,158 history series. V9 added 9,672 reviewed aggregate points, 518 series, 100 facts, and 17 exact native project identities while preserving the prior snapshot and its disputed evidence. Preview validation passed the full record ledger (1,860 records and 42,780 requirement items), exact new-cohort checks, asset checks, geography checks, and desktop/mobile history acceptance; the post-deployment live checks remain the authoritative release evidence.
+
+The coverage ledger currently reports 3,644 present, 2,153 partial, 27,683 missing, and 9,300 unestablished requirements. That leaves 91.48% of the research checklist unresolved. This is a requirements-coverage measure, not a claim that exactly 91.48% of historical prices are missing. There are no certified complete lifetime histories and no validated 2080 forecasts yet. Conditional annual scenario slots are retained through 2080, but they are scenario outputs rather than observed future data.
+
+The saved next research packet is deliberately outside production. It contains 1,270 additional aggregates, 238 series, 136 facts, 50 sources, and 33 reviewed records from later passes, including Avenue Park Towers, Regent Residences Dubai Sankari Place, Woodland Crest, Derby Heights, Trussardi Residences, Elemental 22, and other exact identity reviews. It must go through the current-snapshot quote guard, integration, preservation checks, CI, preview acceptance, and a separate deployment before it can become a release.
+
+The next best actions are:
+
+1. Finish the post-deployment canonical checks and save their receipts alongside the release evidence: live history acceptance, new-cohort comparison, item ledger, assets, map geography, browser desktop/mobile, and before/after fingerprints.
+2. Add and test the `currentSnapshotEligible` guard so bedroom-specific asking quotes remain visible as evidence without replacing a project's headline starting price.
+3. Integrate the saved packet additively, preserving land/building references, sparse subject observations, disputed schedules, source revisions, and all existing records. Do not turn community context into project transactions.
+4. Continue the identity-gated source queue, prioritising projects with primary developer or government evidence and communities with direct rental or sale records. Record missing, sparse, disputed, inaccessible, and pre-applicability periods explicitly.
+5. Build and evaluate the dated event studies and the conditional 2027–2080 scenarios with delivery delays, supply, migration, rates, vacancy, costs, and downside paths. A long-horizon scenario is not a validated forecast until it has a documented method and evaluation boundary.
+
+The release intentionally does not claim 100% real-data completeness. Unsupported historical periods remain visible as gaps until an attributable source is found; estimates and scenarios stay outside observed-history coverage.
 
 The additive historical intelligence implementation retains all 1,860 catalogue records, exposes sourced lifecycle/events and period gaps, and provides explicit annual scenario slots through 2080. It keeps area benchmarks, subject transactions and user assumptions separate. Read [the implementation and methodology](docs/HISTORICAL-INTELLIGENCE.md) and [the source register](docs/HISTORICAL_DATA_SOURCES.md). `npm run history:build` reproduces the reviewed snapshot; `npm run history:publish:plan` prepares immutable R2/D1 publication without changing production. A source build or research completion queue is not evidence of complete historical prices or a live release.
 
