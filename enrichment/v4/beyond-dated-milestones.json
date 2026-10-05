@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "id": "primary4-e18a6544256eee193a4c",
+      "url": "https://beyonddevelopments.ae/featured-article/yards/",
+      "publisher": "BEYOND Developments",
+      "title": "The Yards and Arancia launch announcement",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "publishedAt": "2026-06-08",
+      "retrievedAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; claimed publication date is stored separately and is not assumed historical availability.",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodiesRedistributed": false,
+      "rawBodyCaptured": false,
+      "licence": "Attributed factual dates and source links only; no licence to reproduce publisher text or imagery asserted. Website terms restrict material reproduction and commercial use; no bulk crawling or body storage performed.",
+      "termsURL": "https://beyonddevelopments.ae/terms/",
+      "robotsURL": "https://beyonddevelopments.ae/robots.txt"
+    },
+    {
+      "id": "primary4-3e6a4a267c2535cf53b7",
+      "url": "https://beyonddevelopments.ae/Projects/arancia/",
+      "publisher": "BEYOND Developments",
+      "title": "Arancia project completion target",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "retrievedAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; claimed publication date is stored separately and is not assumed historical availability.",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodiesRedistributed": false,
+      "rawBodyCaptured": false,
+      "licence": "Attributed factual dates and source links only; no licence to reproduce publisher text or imagery asserted. Website terms restrict material reproduction and commercial use; no bulk crawling or body storage performed.",
+      "termsURL": "https://beyonddevelopments.ae/terms/",
+      "robotsURL": "https://beyonddevelopments.ae/robots.txt"
+    },
+    {
+      "id": "primary4-4f8f5f6bb457e1d47e04",
+      "url": "https://beyonddevelopments.ae/featured-article/kanyon/",
+      "publisher": "BEYOND Developments",
+      "title": "Kanyon launch announcement",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "publishedAt": "2025-11-25",
+      "retrievedAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; claimed publication date is stored separately and is not assumed historical availability.",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodiesRedistributed": false,
+      "rawBodyCaptured": false,
+      "licence": "Attributed factual dates and source links only; no licence to reproduce publisher text or imagery asserted. Website terms restrict material reproduction and commercial use; no bulk crawling or body storage performed.",
+      "termsURL": "https://beyonddevelopments.ae/terms/",
+      "robotsURL": "https://beyonddevelopments.ae/robots.txt"
+    },
+    {
+      "id": "primary4-0e868d3f25f4562066c2",
+      "url": "https://beyonddevelopments.ae/featured-article/soulever/",
+      "publisher": "BEYOND Developments",
+      "title": "Soulever launch announcement",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "publishedAt": "2025-10-02",
+      "retrievedAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; claimed publication date is stored separately and is not assumed historical availability.",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodiesRedistributed": false,
+      "rawBodyCaptured": false,
+      "licence": "Attributed factual dates and source links only; no licence to reproduce publisher text or imagery asserted. Website terms restrict material reproduction and commercial use; no bulk crawling or body storage performed.",
+      "termsURL": "https://beyonddevelopments.ae/terms/",
+      "robotsURL": "https://beyonddevelopments.ae/robots.txt"
+    },
+    {
+      "id": "primary4-22cbe6deab312f9cf42f",
+      "url": "https://beyonddevelopments.ae/featured-article/passo/",
+      "publisher": "BEYOND Developments",
+      "title": "Passo launch announcement",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "publishedAt": "2025-07-31",
+      "retrievedAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; claimed publication date is stored separately and is not assumed historical availability.",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodiesRedistributed": false,
+      "rawBodyCaptured": false,
+      "licence": "Attributed factual dates and source links only; no licence to reproduce publisher text or imagery asserted. Website terms restrict material reproduction and commercial use; no bulk crawling or body storage performed.",
+      "termsURL": "https://beyonddevelopments.ae/terms/",
+      "robotsURL": "https://beyonddevelopments.ae/robots.txt"
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact4-0f0c2370a5dd5867fa9d87a3",
+      "recordId": "project:arancia-yards-beyond-city-of-arabia-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-e18a6544256eee193a4c",
+      "identitySourceIds": [
+        "primary4-e18a6544256eee193a4c"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2026-06-08",
+      "milestone": "launch",
+      "date": {
+        "start": "2026-06-08",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "actual",
+      "label": "Developer-announced project launch",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-449839ae8ad6cce0be10fef7",
+      "recordId": "project:arancia-yards-beyond-city-of-arabia-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-3e6a4a267c2535cf53b7",
+      "identitySourceIds": [
+        "primary4-3e6a4a267c2535cf53b7"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": null,
+      "milestone": "target_completion",
+      "date": {
+        "start": "2029-Q4",
+        "precision": "quarter"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "planned",
+      "label": "Developer-planned completion; actual delivery and occupancy unestablished",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-cb7446a788cba9e7bdefe9d6",
+      "recordId": "project:kanyon-beyond-dubai-maritime-city",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-4f8f5f6bb457e1d47e04",
+      "identitySourceIds": [
+        "primary4-4f8f5f6bb457e1d47e04"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-11-25",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-11-25",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "actual",
+      "label": "Developer-announced project launch",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-390e62d085197c3793e1d680",
+      "recordId": "project:kanyon-beyond-dubai-maritime-city",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-4f8f5f6bb457e1d47e04",
+      "identitySourceIds": [
+        "primary4-4f8f5f6bb457e1d47e04"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-11-25",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2029-Q2",
+        "precision": "quarter"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "planned",
+      "label": "Developer-planned completion; actual delivery and occupancy unestablished",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-5aa4c1811f3e3bf6d5bb77c3",
+      "recordId": "project:soulever-beyond-dubai-maritime-city",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-0e868d3f25f4562066c2",
+      "identitySourceIds": [
+        "primary4-0e868d3f25f4562066c2"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-10-02",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-10-02",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "actual",
+      "label": "Developer-announced project launch",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-7fa16c6c03e0aa3861b93588",
+      "recordId": "project:soulever-beyond-dubai-maritime-city",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-0e868d3f25f4562066c2",
+      "identitySourceIds": [
+        "primary4-0e868d3f25f4562066c2"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-10-02",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2029-Q1",
+        "precision": "quarter"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "planned",
+      "label": "Developer-planned completion; actual delivery and occupancy unestablished",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-a21e62ee3a4ecdd2deb22407",
+      "recordId": "project:passo-beyond-palm-jumeirah-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-22cbe6deab312f9cf42f",
+      "identitySourceIds": [
+        "primary4-22cbe6deab312f9cf42f"
+      ],
+      "identityBasis": "Primary developer names this exact marketed project and its catalogue location; Arancia is first cluster only, Kanyon and Soulever are Dubai Maritime City, Passo is Palm Jumeirah.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-07-31",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-07-31",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "eventStatus": "actual",
+      "label": "Developer-announced project launch",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-2634d1566cd1c5f59b036131",
+      "recordId": "project:bella-by-passo-palm-jumeirah-beyond",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-22cbe6deab312f9cf42f",
+      "identitySourceIds": [
+        "primary4-22cbe6deab312f9cf42f"
+      ],
+      "identityBasis": "Primary developer explicitly names Avita and Bella as the two Passo towers at Palm Jumeirah; linked only as a named phase announcement.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-07-31",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2025-07-31",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "phase",
+      "eventStatus": "actual",
+      "label": "Named tower announced within Passo; individual tower launch unestablished",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    },
+    {
+      "id": "fact4-b5fdbf5d6d382bc31799c5b4",
+      "recordId": "project:avita-by-passo-palm-jumeirah-beyond",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceId": "primary4-22cbe6deab312f9cf42f",
+      "identitySourceIds": [
+        "primary4-22cbe6deab312f9cf42f"
+      ],
+      "identityBasis": "Primary developer explicitly names Avita and Bella as the two Passo towers at Palm Jumeirah; linked only as a named phase announcement.",
+      "firstAvailableAt": "2026-10-05T13:58:25.049159+00:00",
+      "publishedAt": "2025-07-31",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2025-07-31",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "primaryEvidence": true,
+      "scope": "phase",
+      "eventStatus": "actual",
+      "label": "Named tower announced within Passo; individual tower launch unestablished",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Date-only factual extraction. No first transaction, current valuation, price uplift or registered project-number match inferred."
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [
+    {
+      "recordId": "project:arancia-yards-beyond-city-of-arabia-dubai",
+      "asOf": "2026-10-05",
+      "status": "primary_lifecycle_dates_reviewed_financial_gaps_remain",
+      "sourceIds": [
+        "primary4-e18a6544256eee193a4c",
+        "primary4-3e6a4a267c2535cf53b7"
+      ],
+      "acceptedFactCount": 2,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:kanyon-beyond-dubai-maritime-city",
+      "asOf": "2026-10-05",
+      "status": "primary_lifecycle_dates_reviewed_financial_gaps_remain",
+      "sourceIds": [
+        "primary4-4f8f5f6bb457e1d47e04"
+      ],
+      "acceptedFactCount": 2,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:soulever-beyond-dubai-maritime-city",
+      "asOf": "2026-10-05",
+      "status": "primary_lifecycle_dates_reviewed_financial_gaps_remain",
+      "sourceIds": [
+        "primary4-0e868d3f25f4562066c2"
+      ],
+      "acceptedFactCount": 2,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:passo-beyond-palm-jumeirah-dubai",
+      "asOf": "2026-10-05",
+      "status": "primary_lifecycle_dates_reviewed_financial_gaps_remain",
+      "sourceIds": [
+        "primary4-22cbe6deab312f9cf42f"
+      ],
+      "acceptedFactCount": 1,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:bella-by-passo-palm-jumeirah-beyond",
+      "asOf": "2026-10-05",
+      "status": "primary_lifecycle_dates_reviewed_financial_gaps_remain",
+      "sourceIds": [
+        "primary4-22cbe6deab312f9cf42f"
+      ],
+      "acceptedFactCount": 1,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:avita-by-passo-palm-jumeirah-beyond",
+      "asOf": "2026-10-05",
+      "status": "primary_lifecycle_dates_reviewed_financial_gaps_remain",
+      "sourceIds": [
+        "primary4-22cbe6deab312f9cf42f"
+      ],
+      "acceptedFactCount": 1,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    }
+  ],
+  "collection": {
+    "method": "Bounded manual review of five primary pages; extracted factual dates only, no source body or imagery stored or redistributed.",
+    "pageCount": 5,
+    "primaryRawBodiesSaved": 0
+  },
+  "methodology": "Exact marketed identity and location reviewed; announcement dates are distinct from first sale and construction. Planned completion is not actual delivery or occupancy. Named tower announcements do not establish individual sales launch dates. No financial observation or registered identity is inferred."
+}

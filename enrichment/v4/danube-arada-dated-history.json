@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "id": "primary4-caeaa607e87541bccb59",
+      "url": "https://danubeproperties.com/high-demand-propels-danube-properties-to-launch-dh900-million-elitz-2-project-in-jumeirah-village-circle/",
+      "title": "Elitz 2 launch announcement and advertised studio price",
+      "publisher": "Danube Properties",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "publishedAt": "2023-06-24",
+      "retrievedAt": "2026-10-05T14:02:57.089791+00:00",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "firstAvailableAtBasis": "First verified review; publication date does not establish earlier verified availability",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual dates and numbers only; no full source text or imagery reproduced."
+    },
+    {
+      "id": "primary4-d8fda878367b9ef12767",
+      "url": "https://www.arada.com/en/latest-news/arada-marks-expansion-into-dubai-with-the-launch-of-jouri-hills-a-luxury-villa-collection-at-jumeirah-golf-estates/",
+      "title": "Jouri Hills launch and original planned construction/delivery",
+      "publisher": "Arada",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "publishedAt": "2022-11-21",
+      "retrievedAt": "2026-10-05T14:02:57.089791+00:00",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "firstAvailableAtBasis": "First verified review; publication date does not establish earlier verified availability",
+      "captureStatus": "web_read_factual_dates_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual dates and numbers only; no full source text or imagery reproduced."
+    },
+    {
+      "id": "primary4-b94e818194d7252b5f7b",
+      "url": "https://danubeproperties.com/portfolio/elitz-2/",
+      "title": "Danube Elitz 2 primary project identity",
+      "publisher": "Danube Properties",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:00:31.774129+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary4-9de7d3e979baae35a064",
+      "url": "https://danubeproperties.com/portfolio/elitz-3/",
+      "title": "Danube Elitz 3 primary project identity",
+      "publisher": "Danube Properties",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:00:31.774129+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact4-7b4fa113f9829be592906c4f",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "status": "accepted",
+      "sourceId": "primary4-caeaa607e87541bccb59",
+      "identitySourceIds": [
+        "primary4-caeaa607e87541bccb59"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "publishedAt": "2023-06-24",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2023-06-24",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "eventStatus": "actual",
+      "label": "Developer launch evidence",
+      "evidenceClass": "primary_developer_milestone",
+      "note": ""
+    },
+    {
+      "id": "fact4-b9e416bb634a02e4a637dee8",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "status": "accepted",
+      "sourceId": "primary4-caeaa607e87541bccb59",
+      "identitySourceIds": [
+        "primary4-caeaa607e87541bccb59"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "publishedAt": "2023-06-24",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2026-Q3",
+        "precision": "quarter"
+      },
+      "verification": "verified",
+      "eventStatus": "planned",
+      "label": "Developer planned schedule; actual completion and occupancy not inferred",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Original launch-period target retained alongside later conflicting targets."
+    },
+    {
+      "id": "fact4-03e7a9a8f6ba75adadaf9946",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "status": "accepted",
+      "sourceId": "primary4-caeaa607e87541bccb59",
+      "identitySourceIds": [
+        "primary4-caeaa607e87541bccb59"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "publishedAt": "2023-06-24",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "financial",
+      "identityVerified": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "period": "2023-06-24",
+        "frequency": "daily",
+        "value": 650000,
+        "unit": "AED",
+        "currency": "AED",
+        "metric": "price",
+        "observationKind": "asking_quote",
+        "segment": "studio apartment",
+        "quoteQualifier": "starting_from",
+        "sourceQuoteBasis": "Developer advertised studio entry price on the release date; no actual sale, valuation, area denominator or guarantee of appreciation."
+      }
+    },
+    {
+      "id": "fact4-281723122e0245249978c62f",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "status": "accepted",
+      "sourceId": "primary4-d8fda878367b9ef12767",
+      "identitySourceIds": [
+        "primary4-d8fda878367b9ef12767"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "publishedAt": "2022-11-21",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2022-11-21",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "eventStatus": "actual",
+      "label": "Developer launch evidence",
+      "evidenceClass": "primary_developer_milestone",
+      "note": ""
+    },
+    {
+      "id": "fact4-4ae8a3264d47df59f6e7ce27",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "status": "accepted",
+      "sourceId": "primary4-d8fda878367b9ef12767",
+      "identitySourceIds": [
+        "primary4-d8fda878367b9ef12767"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "publishedAt": "2022-11-21",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2023",
+        "precision": "year"
+      },
+      "verification": "verified",
+      "eventStatus": "planned",
+      "label": "Developer planned schedule; actual completion and occupancy not inferred",
+      "evidenceClass": "primary_developer_milestone",
+      "note": ""
+    },
+    {
+      "id": "fact4-4f0d737c5b1de927d71be479",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "status": "accepted",
+      "sourceId": "primary4-d8fda878367b9ef12767",
+      "identitySourceIds": [
+        "primary4-d8fda878367b9ef12767"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:02:57.089791+00:00",
+      "publishedAt": "2022-11-21",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-06",
+        "precision": "month"
+      },
+      "verification": "verified",
+      "eventStatus": "planned",
+      "label": "Developer planned schedule; actual completion and occupancy not inferred",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Initial first-home handover target; does not assert delivery of all homes."
+    },
+    {
+      "id": "fact4-72e5aad31733d5ecf5ef7326",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "status": "accepted",
+      "sourceId": "primary4-b94e818194d7252b5f7b",
+      "identitySourceIds": [
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2027-12",
+        "precision": "month"
+      },
+      "verification": "reported",
+      "eventStatus": "planned",
+      "label": "Developer planned schedule; actual completion and occupancy not inferred",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Disputed within the same current page: summary says December 2027 while FAQ still says Q3 2026. Schedule revision date unverified; neither target is actual completion."
+    },
+    {
+      "id": "fact4-80ce4cea90b8ece2750f8c6e",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "status": "accepted",
+      "sourceId": "primary4-b94e818194d7252b5f7b",
+      "identitySourceIds": [
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2026-Q3",
+        "precision": "quarter"
+      },
+      "verification": "reported",
+      "eventStatus": "planned",
+      "label": "Developer planned schedule; actual completion and occupancy not inferred",
+      "evidenceClass": "primary_developer_milestone",
+      "note": "Disputed within the same current page: FAQ says Q3 2026 while summary says December 2027. No winning schedule or revision date inferred."
+    },
+    {
+      "id": "fact4-31c5b7b2861256bcae95c4ef",
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "status": "accepted",
+      "sourceId": "primary4-9de7d3e979baae35a064",
+      "identitySourceIds": [
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "identityBasis": "Primary developer explicitly identifies the exact named project, its phase and marketed community. No unit or neighbouring phase is substituted.",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2027-04",
+        "precision": "month"
+      },
+      "verification": "verified",
+      "eventStatus": "planned",
+      "label": "Developer planned schedule; actual completion and occupancy not inferred",
+      "evidenceClass": "primary_developer_milestone",
+      "note": ""
+    }
+  ],
+  "recordResearch": [
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "asOf": "2026-10-05",
+      "status": "primary_dated_history_reviewed",
+      "sourceIds": [
+        "primary4-caeaa607e87541bccb59",
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "acceptedFactCount": 5
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "asOf": "2026-10-05",
+      "status": "primary_dated_history_reviewed",
+      "sourceIds": [
+        "primary4-d8fda878367b9ef12767"
+      ],
+      "acceptedFactCount": 3
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "asOf": "2026-10-05",
+      "status": "primary_dated_history_reviewed",
+      "sourceIds": [
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "acceptedFactCount": 1
+    }
+  ],
+  "collection": {
+    "method": "Reviewed concise dated facts from primary developer releases; raw copyrighted bodies not reproduced."
+  }
+}
