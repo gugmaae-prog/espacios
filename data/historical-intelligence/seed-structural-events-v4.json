@@ -31,8 +31,8 @@
       "id": "event-source:expo-award-2013",
       "url": "https://plwww.bie-paris.org/site/en/news-announcements/world-expo/the-uae-has-been-elected-as-the-host-country-of-the-world-expo-2020",
       "publisher": "Bureau International des Expositions",
-      "publishedAt": "2013-11-25",
-      "firstAvailableAt": "2013-11-25",
+      "publishedAt": "2013-11-27",
+      "firstAvailableAt": "2013-11-27",
       "retrievedAt": "2026-10-05",
       "datePrecision": "day",
       "classification": "official_publication",
@@ -251,8 +251,8 @@
         "start": "2013-11-27",
         "precision": "day"
       },
-      "publishedAt": "2013-11-25",
-      "firstAvailableAt": "2013-11-25",
+      "publishedAt": "2013-11-27",
+      "firstAvailableAt": "2013-11-27",
       "sourceIds": [
         "event-source:expo-award-2013"
       ],
