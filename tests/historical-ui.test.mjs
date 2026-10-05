@@ -99,6 +99,15 @@ test('per-item evidence disclosure distinguishes presence from complete history 
  assert.ok(html.includes('https://example.org/verified'));
 });
 
+test('unresolved retained provenance IDs remain explicit non-link labels beside their registered upstream source',()=>{
+ const html=UI.itemCoverageHTML({record:{researchStatus:{itemCoverage:{handover_targets:{status:'present',reason:'Reported target; actual completion is not established',sourceIds:['catalogue-core','unresolved<&>','upstream']}}}},sources:[{id:'upstream',publisher:'Upstream source',url:'https://example.org/project'}]});
+ assert.match(html,/Unresolved retained source reference: catalogue-core/);
+ assert.ok(html.includes('Unresolved retained source reference: unresolved&lt;&amp;&gt;'));
+ assert.match(html,/No source URL is verified for this reference/);
+ assert.ok(html.includes('https://example.org/project'));assert.equal((html.match(/<a /g)||[]).length,1);
+ assert.ok(!html.includes('href="catalogue-core"'));assert.ok(!html.includes('unresolved<&>'));
+});
+
 test('selected cohort paging retains every native point and exact owner without replacing unrelated evidence',async()=>{
  const series={id:'owned',sourceId:'register',scope:'subject',identityVerified:true,subjectRecordId:'project:one',identitySourceIds:['registry','register'],metric:'price',frequency:'monthly',unit:'AED/sqft',pointCount:5,points:[],partition:{key:'immutable'}};
  const other={id:'context',scope:'community_context',identityVerified:false,pointCount:3,points:[],partition:{key:'other'}};

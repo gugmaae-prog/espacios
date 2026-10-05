@@ -135,7 +135,9 @@
   function sourceList(data=H.history) { return list(data?.sources); }
   function sourceLinks(ids, data=H.history) {
     const sources = sourceList(data);
-    return list(ids).map(id => typeof id === 'object' ? id : sources.find(source => source.id === id)).filter(Boolean).map(source => {
+    return list(ids).map(id => {
+      const source=typeof id==='object'?id:sources.find(source=>source.id===id);
+      if(!source)return '<div class="hi-source"><span>Unresolved retained source reference: '+esc(id)+'</span><small>No source URL is verified for this reference.</small></div>';
       const url = safeURL(source.url), label = source.publisher ?? source.title ?? source.id ?? 'Source';
       const published = source.publishedAt ?? source.published ?? '', available = source.firstAvailableAt ?? '';
       return '<div class="hi-source">' + (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(label) + '</a>' : esc(label)) + (published ? '<small>Published ' + esc(published) + (source.datePrecision?' · '+esc(source.datePrecision)+' precision':'') + '</small>' : '<small>Publication date not supplied</small>') + (available ? '<small>First available ' + esc(available) + '</small>' : '') + '</div>';
