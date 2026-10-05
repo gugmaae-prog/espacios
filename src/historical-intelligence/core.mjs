@@ -371,9 +371,41 @@ export function resolveRecordCommunityHistory(data,record){
  const context=(community.historySeries||[]).filter(s=>s.scope==='community_context'&&s.identityVerified===false&&!ids.has(s.id)).map(s=>({...s,contextCommunityId:community.id,linkBasis:'Catalogue community membership; native official master-project context. Project existence at earlier dates is unverified.'}));
  return{...record,historySeries:[...original,...context]};
 }
+const RECONSTRUCTION_SCOPE_TIERS=Object.freeze({subject:1,asking_benchmark:2,community_context:3,area_context:4,published_reference:5});
+function reconstructionMetric(value){
+ const metric=String(value??'').toLowerCase();
+ if(['price','rent','volume'].includes(metric))return metric;
+ if(/sale.*count|transaction.*count|volume/.test(metric))return 'volume';
+ if(/rent/.test(metric)&&!/yield/.test(metric))return 'rent';
+ if(/price|median_sale|sale_statistics|ask.*psf/.test(metric))return 'price';
+ return null;
+}
+function reconstructionSeriesHasPoints(series){
+ if(Array.isArray(series?.points)&&series.points.length)return true;
+ for(const key of ['pointCount','storedPointCount'])if(Number.isFinite(series?.[key])&&series[key]>0)return true;
+ return false;
+}
+/** 100% record accountability without promoting contextual cohorts into subject price history. */
+export function reconstructionCoverage(record,{events=[],exposures=[]}={}){
+ const series=Array.isArray(record?.historySeries)?record.historySeries:[],observations=Array.isArray(record?.observations)?record.observations:[];
+ function metricCoverage(metric){
+  const candidates=series.filter(row=>reconstructionMetric(row.metric)===metric&&reconstructionSeriesHasPoints(row)).map(row=>({...row,reconstructionTier:RECONSTRUCTION_SCOPE_TIERS[row.scope]??5})).sort((a,b)=>a.reconstructionTier-b.reconstructionTier);
+  const best=candidates[0]||null,subjectExact=best?.scope==='subject'&&best?.identityVerified===true;
+  if(subjectExact)return{tier:1,label:'Verified subject history',mode:'observed_subject',numericHistoryAvailable:true,subjectObserved:true,contextOnly:false,normalizedIndexEligible:true,absoluteValueInferenceAllowed:true,sourceSeriesIds:candidates.filter(x=>x.reconstructionTier===1).map(x=>x.id).filter(Boolean).slice(0,12),reason:'Exact subject-linked native evidence is retained. Gaps remain gaps.'};
+  if(best){
+   const tier=best.reconstructionTier;
+   return{tier,label:tier===2?'Dated subject benchmark':tier===3?'Master-community context':tier===4?'Area / property-type context':'Published / broad-market context',mode:tier===2?'subject_benchmark_not_registered_sale':'numeric_context_only',numericHistoryAvailable:true,subjectObserved:false,contextOnly:tier>=3,normalizedIndexEligible:true,absoluteValueInferenceAllowed:false,sourceSeriesIds:candidates.filter(x=>x.reconstructionTier===tier).map(x=>x.id).filter(Boolean).slice(0,12),reason:tier===2?'A dated subject benchmark exists but is not promoted to a completed registered transaction.':'Numeric history is context for the selected record, not its own verified sale/rent history.'};
+  }
+  const datedSubject=observations.filter(row=>reconstructionMetric(row.metric)===metric);
+  if(datedSubject.length)return{tier:2,label:'Dated subject facts only',mode:'dated_subject_fact_only',numericHistoryAvailable:false,subjectObserved:false,contextOnly:false,normalizedIndexEligible:false,absoluteValueInferenceAllowed:false,sourceSeriesIds:[],reason:'Dated subject facts exist, but no continuous eligible historical cohort is retained.'};
+  return{tier:6,label:'Lifecycle / event context only',mode:'event_lifecycle_only',numericHistoryAvailable:false,subjectObserved:false,contextOnly:true,normalizedIndexEligible:false,absoluteValueInferenceAllowed:false,sourceSeriesIds:[],reason:'No eligible numeric historical cohort is retained. Lifecycle, sources and dated events remain visible; no AED history is fabricated.'};
+ }
+ return{classification:'record_accountability_not_observed_history',recordCovered:true,policy:'Use the highest verified evidence tier. Never convert tiers 2–6 into an observed subject sale/rent series. A normalized context index may be displayed only with its source cohort and evidence tier.',eventContextCount:events.length,verifiedExposureCount:exposures.filter(x=>x.verified===true||x.scope&&x.scope!=='unverified').length,metrics:{price:metricCoverage('price'),rent:metricCoverage('rent'),volume:metricCoverage('volume')}};
+}
+
 export function recordHistory(data,record,{userAssumptions=null}={}){
  record=resolveRecordCommunityHistory(data,record);
  const exposures=recordExposures(data,record),eventIds=new Set(exposures.map(x=>x.eventId)),events=(data.events||[]).filter(e=>eventIds.has(e.id));
  const options={asOf:data.asOf,sources:data.sources||[],manifest:data.manifest||{}},evidence=observationEvidence(record,options);
- return{version:data.version,asOf:data.asOf,record:clone(record),observations:clone(record.observations||[]),validatedObservations:evidence.validated,historySeries:clone(record.historySeries||[]),coverage:coverageFromEvidence(record,options,evidence),scenarios:annualScenarios(record,{asOf:data.asOf,sources:data.sources||[],userAssumptions}),events:clone(events),exposures:clone(exposures),sources:relevantSources(data,record,events,exposures),manifest:clone(data.manifest||{})};
+ return{version:data.version,asOf:data.asOf,record:clone(record),observations:clone(record.observations||[]),validatedObservations:evidence.validated,historySeries:clone(record.historySeries||[]),coverage:coverageFromEvidence(record,options,evidence),reconstruction:reconstructionCoverage(record,{events,exposures}),scenarios:annualScenarios(record,{asOf:data.asOf,sources:data.sources||[],userAssumptions}),events:clone(events),exposures:clone(exposures),sources:relevantSources(data,record,events,exposures),manifest:clone(data.manifest||{})};
 }
