@@ -1,0 +1,488 @@
+{
+  "accepted": [
+    {
+      "recordId": "project:danube-petalz-apartments-for-sale-in-al-warsan-first-dubai",
+      "name": "Danube Petalz",
+      "catalogueDeveloper": "Danube",
+      "catalogueArea": "Al Warsan First",
+      "catalogueCommunityId": "community:Dubai:al-warsan-first",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2495"
+      ],
+      "projectNumber": "2495",
+      "sourceProjectId": "449686347",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "343",
+      "sourceAreaName": "Al Warsan First",
+      "registeredName": "\u0628\u064a\u062a\u0644\u0632 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628",
+      "officialEnglishAliases": [
+        "Petalz By Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-c8b31e83208b1068026b"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2023-03-01",
+        "project_end_date": "2025-12-31",
+        "completion_date": "2025-12-31",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "95.31000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "350",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:sparklz-danube-al-furjan-dubai",
+      "name": "SPARKLZ",
+      "catalogueDeveloper": "Danube Properties",
+      "catalogueArea": "Al Furjan",
+      "catalogueCommunityId": "community:Dubai:al-furjan",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "3611"
+      ],
+      "projectNumber": "3611",
+      "sourceProjectId": "733361792",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "445",
+      "sourceAreaName": "Jabal Ali First",
+      "registeredName": "\u0633\u0628\u0627\u0631\u0643\u0644\u0632 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+      "officialEnglishAliases": [
+        "SPARKLZ by Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-4c99cfbe415873699d47"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2025-06-01",
+        "project_end_date": "2028-05-31",
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "NOT_STARTED",
+        "percent_completed": "0.00000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "358",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:breez-by-danube-dubai-maritime-city",
+      "name": "Breez",
+      "catalogueDeveloper": "Danube Properties",
+      "catalogueArea": "Dubai Maritime City",
+      "catalogueCommunityId": "community:Dubai:dubai-maritime-city",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "4081"
+      ],
+      "projectNumber": "4081",
+      "sourceProjectId": "812840958",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "333",
+      "sourceAreaName": "Madinat Dubai Almelaheyah",
+      "registeredName": "\u0628\u0631\u064a\u0632 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628",
+      "officialEnglishAliases": [
+        "Breez by Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-61da84d37951b6b57118"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2026-01-01",
+        "project_end_date": "2029-06-30",
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "NOT_STARTED",
+        "percent_completed": "0.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "1200",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:danube-opalz-apartments-for-sale-in-arjan-dubai-science-park-al-barsha-south",
+      "name": "Danube Opalz",
+      "catalogueDeveloper": "danube",
+      "catalogueArea": "Dubai, Arjan",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2465"
+      ],
+      "projectNumber": "2465",
+      "sourceProjectId": "441574539",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "414",
+      "sourceAreaName": "Al Barshaa South Second",
+      "registeredName": "\u0623\u0648\u0628\u0627\u0644\u0632 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628",
+      "officialEnglishAliases": [
+        "Opalz By Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-f9770eb4ca5dd8a5575a"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2023-01-01",
+        "project_end_date": "2025-04-24",
+        "completion_date": "2025-04-24",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "575",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:oro24-elano-apartments-in-arjan-dubai-for-sale",
+      "name": "ORO24 Elano",
+      "catalogueDeveloper": "oro24",
+      "catalogueArea": "Dubai, Arjan",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2620"
+      ],
+      "projectNumber": "2620",
+      "sourceProjectId": "493951836",
+      "developerId": "374690241",
+      "developerNumber": "1369",
+      "registeredDeveloperName": "ORO24 REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "409",
+      "sourceAreaName": "Al Barshaa South Third",
+      "registeredName": "\u0625\u064a\u0644\u0627\u0646\u0648 \u0645\u0646 \u0623\u0648\u0631\u064824",
+      "officialEnglishAliases": [
+        "ELANO BY ORO24"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-fdbd5f120ae254c8a09e"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2023-04-01",
+        "project_end_date": "2025-10-01",
+        "completion_date": "2025-10-01",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "22.19000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "339",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:oro24-kyoto-apartments-in-arjan-dubai-for-sale",
+      "name": "ORO24 Kyoto",
+      "catalogueDeveloper": "oro24",
+      "catalogueArea": "Dubai, Arjan",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2702"
+      ],
+      "projectNumber": "2702",
+      "sourceProjectId": "513380639",
+      "developerId": "374690241",
+      "developerNumber": "1369",
+      "registeredDeveloperName": "ORO24 REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "409",
+      "sourceAreaName": "Al Barshaa South Third",
+      "registeredName": "\u0643\u064a\u0648\u062a\u0648 \u0645\u0646 \u0623\u0648\u0631\u064824",
+      "officialEnglishAliases": [
+        "KYOTO BY ORO24"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-b1823df9405ebfba50f6"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2023-06-20",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "5.40000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "708",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:oro24-levanto-jvc-apartments-in-jumeirah-village-circle-dubai-for-sale",
+      "name": "ORO24 Levanto",
+      "catalogueDeveloper": "oro24",
+      "catalogueArea": "Dubai, Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2517"
+      ],
+      "projectNumber": "2517",
+      "sourceProjectId": "458917431",
+      "developerId": "374690241",
+      "developerNumber": "1369",
+      "registeredDeveloperName": "ORO24 REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0644\u064a\u0641\u0627\u0646\u062a\u0648 \u0645\u0646 \u0623\u0648\u0631\u064824",
+      "officialEnglishAliases": [
+        "LEVANTO BY ORO24"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-48daebaf69226530cd76"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2022-12-08",
+        "project_end_date": "2025-12-08",
+        "completion_date": "2025-12-08",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "29.15000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "579",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:prescott-elevate-apartments-for-sale-in-arjan-dubai",
+      "name": "Prescott Elevate",
+      "catalogueDeveloper": "prescott",
+      "catalogueArea": "Dubai, Arjan",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2566"
+      ],
+      "projectNumber": "2566",
+      "sourceProjectId": "477214125",
+      "developerId": "108736083",
+      "developerNumber": "1207",
+      "registeredDeveloperName": "PRESCOTT REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "409",
+      "sourceAreaName": "Al Barshaa South Third",
+      "registeredName": "\u0625\u0644\u064a\u0641\u064a\u062a \u0645\u0646 \u0628\u0631\u064a\u0633\u0643\u0648\u062a",
+      "officialEnglishAliases": [
+        "ELEVATE by Prescott"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-6cf32397c137d1107f5e"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2023-03-01",
+        "project_end_date": "2025-03-31",
+        "completion_date": "2025-03-31",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "87.12000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "223",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:prescott-prime-residency-3-apartments-for-sale-in-al-furjan-dubai",
+      "name": "Prescott Prime Residency 3",
+      "catalogueDeveloper": "prescott",
+      "catalogueArea": "Dubai, Al Furjan",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2276"
+      ],
+      "projectNumber": "2276",
+      "sourceProjectId": "369745110",
+      "developerId": "108736083",
+      "developerNumber": "1207",
+      "registeredDeveloperName": "PRESCOTT REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "445",
+      "sourceAreaName": "Jabal Ali First",
+      "registeredName": "\u0628\u0631\u064a\u0645 \u0631\u064a\u0632\u064a\u062f\u0646\u0633\u064a 3",
+      "officialEnglishAliases": [
+        "Prime Residency 3"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-c36bc4ed384e7da44e06"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2021-06-01",
+        "project_end_date": "2024-12-06",
+        "completion_date": "2024-12-06",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "292",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:prescott-serene-gardens-apartments-for-sale-in-dubai-al-furjan",
+      "name": "Prescott Serene Gardens",
+      "catalogueDeveloper": "prescott",
+      "catalogueArea": "Dubai, Al Furjan",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2740"
+      ],
+      "projectNumber": "2740",
+      "sourceProjectId": "527077397",
+      "developerId": "108736083",
+      "developerNumber": "1207",
+      "registeredDeveloperName": "PRESCOTT REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "445",
+      "sourceAreaName": "Jabal Ali First",
+      "registeredName": "\u0633\u064a\u0631\u064a\u0646 \u062c\u0627\u0631\u062f\u0646\u0632 \u0645\u0646 \u0628\u0631\u064a\u0633\u0643\u0648\u062a",
+      "officialEnglishAliases": [
+        "Serene Gardens by Prescott"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary6-34807bd48ac435216664"
+      ],
+      "identityBasis": "Primary developer project name and marketing location reconcile with the exact native English alias, numbered project and legal developer. ORO24 publishes matching RERA numbers 2620, 2702 and 2517 explicitly. Prescott Serene Gardens I overview and 184-unit count identify phase I; its copied phase-II location paragraph is excluded. Native cadastral areas remain separate from marketing communities; no community boundary equality, occupancy or realised rent inferred. Opalz catalogue Arjan and Serene Gardens catalogue Al Furjan require separate sourced geographic review. Only brand prefix/suffix and case variants are reconciled; no fuzzy name fan-out.",
+      "registryFacts": {
+        "project_start_date": "2023-09-15",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "11.86000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "184",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    }
+  ],
+  "counts": {
+    "accepted": 10
+  },
+  "methodology": "Human-reviewed bounded exact primary name, phase, developer and geography reconciliation; additive to frozen 198 identities."
+}
