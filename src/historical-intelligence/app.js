@@ -1,4 +1,4 @@
-/* Sourced history, event context and explicit user scenarios. 20261005-history-enrichment-v3 */
+/* Sourced history, event context and explicit user scenarios. 20261005-history-enrichment-v4 */
 (() => {
   'use strict';
   const Q = selector => document.querySelector(selector);
