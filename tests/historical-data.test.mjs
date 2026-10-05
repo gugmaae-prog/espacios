@@ -39,13 +39,13 @@ test('context, research candidates and incomplete subject coverage remain separa
   for(const milestone of record.lifecycle){assert.ok(milestone.sourceIds.length);if(['occupancy','completion'].includes(milestone.kind))assert.ok(milestone.date.start<=data.asOf);if(milestone.status==='verified')assert.ok(milestone.identityBasis);}
   if(record.currentSnapshot.scope==='source_observed_asking_quote'){assert.ok(record.currentSnapshot.firstAvailableAt);assert.ok(record.currentSnapshot.observationId);assert.ok(record.priorCurrentSnapshots.length);}else assert.equal(record.currentSnapshot.freshness,'unverified_source_date');
  }
- assert.equal(data.manifest.directSubjectSaleHistoryRecords,data.records.filter(r=>r.historySeries.some(s=>s.scope==='subject'&&s.identityVerified&&s.metric==='price')).length);assert.equal(data.manifest.directSubjectRentHistoryRecords,data.records.filter(r=>r.historySeries.some(s=>s.scope==='subject'&&s.identityVerified&&s.metric==='rent')).length);assert.equal(data.manifest.approved2080ForecastRecords,0);
+ assert.equal(data.manifest.directSubjectSaleHistoryRecords,data.records.filter(r=>r.researchStatus.itemCoverage.registered_sale_history.status==='present').length);assert.equal(data.manifest.directSubjectRentHistoryRecords,data.records.filter(r=>r.researchStatus.itemCoverage.signed_rent_history.status==='present').length);assert.equal(data.manifest.approved2080ForecastRecords,0);
  assert.equal(data.manifest.historyWindow.start,null,'A common subject inception is not imposed');
  for(const record of data.records){
   const subject=record.historySeries.filter(s=>s.scope==='subject'&&s.identityVerified);
   if(subject.length)assert.match(record.researchStatus.sourceScope,/Verified registered subject/);
   for(const [metric,field] of [['price','directSalePeriods'],['rent','directRentPeriods']]){
-   if(subject.some(s=>s.metric===metric))assert.ok(record.coverageSummary[field]>0,'Static coverage must reflect newly verified '+metric+' history');
+   if(record.researchStatus.itemCoverage[metric==='price'?'registered_sale_history':'signed_rent_history'].status==='present')assert.ok(record.coverageSummary[field]>0,'Static coverage must reflect accepted '+metric+' observations, excluding disputed rows');
    else assert.equal(record.coverageSummary[field],0);
   }
   assert.match(record.coverageSummary.directPeriodCountBasis,/native period/);

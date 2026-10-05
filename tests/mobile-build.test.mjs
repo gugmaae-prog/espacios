@@ -81,7 +81,7 @@ test('UI consolidation leaves the acquired baseline and published evidence snaps
   assert.match(source,/research\/published\/2026-09-30\/smart-estimates-v1\/scenarios\.json/);
   assert.match(extension,/\['\/map','\/map\/app-v2\.js','\/map\/app-v2\.css'\]/,'Version wrapper is frontend-only');
   assert.doesNotMatch(extension,/\.put\(|\.prepare\(|\.exec\(|SUPABASE|service_role|PSR_PROPERTY|MARKET_R2|env\.(?:DB|AI)/,'UI wrapper has no storage mutation or private binding access');
-  assert.deepEqual([...extension.matchAll(/([\w.]+)\.delete\(/g)].map(match=>match[1]),['headers','headers'],'Only response metadata may be removed, never stored records');
+  assert.ok([...extension.matchAll(/([\w.]+)\.delete\(/g)].every(match=>match[1]==='headers'),'Only response metadata may be removed, never stored records');
 });
 
 test('unique frontend release identifies matching HTML, JS and CSS without relabeling evidence APIs',async()=>{

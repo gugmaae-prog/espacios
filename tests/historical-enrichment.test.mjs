@@ -1,6 +1,41 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
+test('sourced community corrections preserve rejected observations and refuse unproven reassignment',()=>{
+ const code=String.raw`
+import sys,copy
+sys.path.insert(0,'scripts')
+from historical_enrichment import apply_enrichment
+p={'id':'p','type':'project','emirate':'Dubai','communityId':'wrong','lifecycle':[],'observations':[],'historySeries':[{'id':'old','scope':'area_context','sourceId':'s','points':[['2020',100,30]]}],'researchStatus':{'gaps':[]},'coverageSummary':{},'currentSnapshot':{}}
+c={'id':'right','type':'community','emirate':'Dubai','lifecycle':[],'observations':[],'historySeries':[],'researchStatus':{'gaps':[]},'coverageSummary':{}}
+s={'id':'s','url':'https://example.org/primary','retrievedAt':'2026-10-05'}
+f={'id':'fix','recordId':'p','kind':'community_association','fromCommunityId':'wrong','toCommunityId':'right','rejectedSeriesIds':['old'],'sourceId':'s','identitySourceIds':['s'],'identityBasis':'Exact native and primary location','primaryEvidence':True,'verification':'verified','status':'accepted','label':'Correct community','reason':'Primary location contradicts old link'}
+def apply(f,p,c):apply_enrichment({'asOf':'2026-10-05','facts':[f]},[p,c],{'old':p['historySeries'][0]},{'s':s},lambda x:None,{},'2026-10-05')
+before=copy.deepcopy(p);apply(f,p,c)
+assert p['communityId']=='right' and p['communityAssociationRevisions'][0]['fromCommunityId']=='wrong'
+assert p['historySeries'][0]['points']==before['historySeries'][0]['points']
+assert p['historySeries'][0]['recordLinkReview']['status']=='rejected'
+assert p['researchStatus']['itemCoverage']['shared_financial_context']['status']=='missing'
+for delta in [{'primaryEvidence':False},{'fromCommunityId':'unrelated'},{'identitySourceIds':['absent']},{'rejectedSeriesIds':['missing']}]:
+ try:apply({**f,**delta},copy.deepcopy(before),copy.deepcopy(c));raise AssertionError('Unsafe association accepted')
+ except ValueError:pass
+ `;
+ const out=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(out.status,0,out.stderr||out.stdout);
+});
+test('disputed rents remain evidence without clearing coverage or earliest-history gaps',()=>{
+ const code=String.raw`
+import sys
+sys.path.insert(0,'scripts')
+from historical_gap_ledger import refresh_research_coverage
+s={'id':'rent','metric':'rent','scope':'subject','identityVerified':True,'sourceId':'source','points':[['2025-06',10000,50,'conflict: occupancy chronology']]}
+r={'id':'p','type':'project','historySeries':[s],'researchStatus':{'gaps':['direct_signed_rent_history']}}
+refresh_research_coverage(r,{'rent':s},{'source':{}},'2026-10-05')
+x=r['researchStatus'];assert x['itemCoverage']['signed_rent_history']['status']=='partial';assert x['itemCoverage']['signed_rent_history']['disputedNativePointCount']==1
+assert x['earliestHistoryEvidence'] is None and 'direct_signed_rent_history' in x['gaps']
+assert s['points'][0][1]==10000
+ `;
+ const out=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(out.status,0,out.stderr||out.stdout);
+});
 const script=String.raw`
 import sys
 sys.path.insert(0,'scripts')

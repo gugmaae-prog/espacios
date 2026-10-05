@@ -88,6 +88,16 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
     previous=dict(record['currentSnapshot']);record.setdefault('priorCurrentSnapshots',[]).append(previous)
     record['currentSnapshot'].update({'askingPriceAED':value,'scope':'source_observed_asking_quote','sourceId':sourceids[0],'publishedAt':common['publishedAt'],'firstAvailableAt':available,'retrievedAt':common['retrievedAt'],'freshness':'advertisement captured on retrieval; current market validity unverified; publication date '+('known' if common['publishedAt'] else 'unknown'),'observationId':ident,'sourceRank':incoming_rank,'selectionReason':'Preferred by primary evidence, external source, tenant mirror, then capture time and stable observation ID; all other quotes retained','quoteQualifier':obs.get('quoteQualifier'),'sourceQuoteBasis':obs.get('sourceQuoteBasis'),'sourceEvidenceClass':sources[sourceids[0]].get('classification'),'independentUpstreamEvidence':not mirrored})
    counters['financialFacts']+=1
+  elif kind=='community_association':
+   previous=fact.get('fromCommunityId');target=known.get(fact.get('toCommunityId'))
+   if record.get('communityId')!=previous or not target or target.get('type')!='community' or target.get('emirate')!=record.get('emirate'):raise ValueError('Community correction does not match exact existing association and emirate')
+   if not fact.get('primaryEvidence') or fact.get('verification')!='verified' or not proofids:raise ValueError('Community correction requires reviewed primary identity evidence')
+   affected=fact.get('rejectedSeriesIds',[]);linked={s['id']:s for s in record['historySeries']}
+   if len(affected)!=len(set(affected)) or any(x not in linked or linked[x].get('scope')=='subject' for x in affected):raise ValueError('Community correction cannot reject absent or subject series')
+   revision={**common,'fromCommunityId':previous,'toCommunityId':target['id'],'fromSharedCommunityHistoryId':record.get('sharedCommunityHistoryId',previous),'verification':'verified','primaryEvidence':True,'label':fact['label'],'reason':fact['reason'],'rejectedSeriesIds':affected}
+   record.setdefault('communityAssociationRevisions',[]).append(revision);record['communityId']=target['id']
+   for ident in affected:linked[ident]['recordLinkReview']={'status':'rejected','reason':fact['reason'],'sourceIds':sourceids,'revisionId':revision['id'],'firstAvailableAt':available}
+   counters['communityAssociationCorrections']+=1
   elif kind=='register':
    record.setdefault('registerEvidence',[]).append({**common,'fields':fact['fields'],'classification':fact.get('evidenceClass','published_register_snapshot'),'registeredProjectId':fact.get('registeredProjectId'),'scope':fact.get('scope','published_reference'),'identityVerified':fact.get('identityVerified',False)})
    counters['registerFacts']+=1
@@ -108,7 +118,7 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   summary=record['coverageSummary']
   for metric,field in [('price','directSalePeriods'),('rent','directRentPeriods')]:
    if field in summary:summary['originalAudit'+field[0].upper()+field[1:]]=summary[field]
-   summary[field]=len({str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0})
+   summary[field]=len({str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I)})
   summary['directPeriodCountBasis']='Distinct retained native period labels across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or independent transactions'
   if launch:status['launchDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='verified_launch_date']
   if complete:status['completionDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='actual_completion_date']

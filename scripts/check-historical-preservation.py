@@ -26,8 +26,14 @@ def check(before, after, root, publication=None):
         new = new_records.get(rid, {})
         for key in ['type', 'name', 'emirate', 'communityId', 'sharedCommunityHistoryId']:
             if key in old:
-                require(old[key] == new.get(key), rid + ': changed ' + key)
-        for key in ['lifecycle', 'observations', 'registerEvidence', 'priorCurrentSnapshots']:
+                corrected = key in ['communityId','sharedCommunityHistoryId'] and any(
+                    r.get('verification')=='verified' and r.get('primaryEvidence') is True and r.get('sourceIds') and r.get('identitySourceIds')
+                    and all(s in {x['id'] for x in after['sources']} for s in r['sourceIds']+r['identitySourceIds'])
+                    and r.get('fromCommunityId' if key=='communityId' else 'fromSharedCommunityHistoryId')==old[key]
+                    and r.get('toCommunityId')==new.get(key) and new_records.get(new.get(key),{}).get('type')=='community'
+                    and new_records[new[key]].get('emirate')==old.get('emirate') for r in new.get('communityAssociationRevisions',[]))
+                require(old[key] == new.get(key) or corrected, rid + ': changed ' + key + ' without verified retained correction')
+        for key in ['lifecycle', 'observations', 'registerEvidence', 'priorCurrentSnapshots','communityAssociationRevisions']:
             for row in old.get(key, []):
                 require(any(retained(row, x) for x in new.get(key, [])), rid + ': lost ' + key + ':' + str(row.get('id', 'snapshot')))
         require(any(retained(old['currentSnapshot'], x) for x in [new.get('currentSnapshot', {})] + new.get('priorCurrentSnapshots', [])), rid + ': previous current quote not retained')

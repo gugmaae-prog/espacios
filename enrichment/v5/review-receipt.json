@@ -1,0 +1,14 @@
+{
+  "reviewedAt": "2026-10-05T14:43:55.829195+00:00",
+  "candidateRows": 2182,
+  "retainedRows": 2182,
+  "disputedRows": 77,
+  "acceptedNonDisputedRows": 2105,
+  "sources": 10,
+  "facts": 20,
+  "rowsDeleted": 0,
+  "realisedIncomeClaimed": false,
+  "allTemporalConflictsResolved": false,
+  "rejectedLegacyTowerSeries": 9,
+  "canonicalCommunityId": "community:Dubai:jumeirah-village-circle"
+}

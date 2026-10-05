@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "rows": 2182,
+  "newDisputedLabels": 77,
+  "allDatesValuesUnitsSamplesSourceIDsPreserved": true,
+  "originalCandidateSHA256": "97421388da639ecbeb598b678daeec2bc0423d3f48a02e108d8669d608eb0083",
+  "noRawIndividualRecordsRedistributed": true
+}
