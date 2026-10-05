@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-10-05T16:49:48.567427+00:00",
+  "status": "prepared_private_not_integrated_or_published",
+  "approvedIdentities": 2,
+  "retainedRows": 1298,
+  "subjectRows": 1290,
+  "referenceRows": 8,
+  "newFacts": 10,
+  "sourceCount": 9,
+  "numericValuesIdentical": true,
+  "onlyCSVChange": "canonical source ID for shared issuer PDF; identity availability preserved",
+  "futureStartRentContractsExcluded": 2,
+  "realisedIncomeClaimed": false,
+  "completeHistoryClaimed": false
+}
