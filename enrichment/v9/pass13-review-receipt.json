@@ -1,0 +1,19 @@
+{
+  "reviewedAt": "2026-10-05T19:05:37.386405+00:00",
+  "status": "prepared_private_not_integrated_or_published",
+  "approvedIdentities": 2,
+  "retainedRows": 1042,
+  "subjectRows": 1034,
+  "referenceRows": 8,
+  "series": 66,
+  "newFacts": 9,
+  "sourceCount": 9,
+  "numericValuesIdentical": true,
+  "allAggregatesSparse": true,
+  "newSubjectSaleRecords": 2,
+  "newSubjectRentRecords": 1,
+  "futureStartRentContractsExcluded": 0,
+  "completeHistoryClaimed": false,
+  "unresolvedRegistryConflict": "Q Gardens completion_date versus active status and progress",
+  "sourceBodyRedistributed": false
+}

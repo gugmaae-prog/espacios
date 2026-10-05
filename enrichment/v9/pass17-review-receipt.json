@@ -1,0 +1,18 @@
+{
+  "reviewedAt": "2026-10-05T19:19:04.183615+00:00",
+  "status": "private_not_integrated_or_published",
+  "approvedIdentities": 5,
+  "retainedRows": 3514,
+  "subjectRows": 3494,
+  "referenceRows": 20,
+  "series": 176,
+  "newFacts": 28,
+  "sourceCount": 12,
+  "numericValuesIdentical": true,
+  "newSubjectSaleRecords": 5,
+  "newSubjectRentRecords": 5,
+  "futureStartRentContractsExcluded": 10,
+  "completeHistoryClaimed": false,
+  "actualOccupancyOrIncomeClaimed": false,
+  "registryAndContractTimingDifferencesRetained": true
+}

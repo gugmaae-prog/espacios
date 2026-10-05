@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "approvedIdentities": 2,
+  "newSubjectSaleRecords": 2,
+  "newSubjectRentRecords": 1,
+  "aggregatePoints": 404,
+  "series": 52,
+  "scopeCounts": {
+    "subject": 396,
+    "sparseRetained": 392,
+    "partialRetained": 0,
+    "published_reference": 8
+  },
+  "earliestNativeObservation": "2012-06-06",
+  "rawRowsRedistributed": false,
+  "completeLifetimeHistoryClaimed": false,
+  "reviewedAt": "2026-10-05T19:34:01.458183+00:00",
+  "status": "private_not_integrated_or_published",
+  "newFacts": 9,
+  "sourceCount": 10,
+  "numericValuesIdentical": true,
+  "futureStartRentContractsExcluded": 0,
+  "actualOccupancyOrIncomeClaimed": false
+}
