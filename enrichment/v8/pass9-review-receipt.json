@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-10-05T16:41:26.961138+00:00",
+  "status": "prepared_private_not_integrated_or_published",
+  "approvedIdentities": 5,
+  "retainedRows": 340,
+  "subjectRows": 320,
+  "referenceRows": 20,
+  "newFacts": 19,
+  "sourceCount": 11,
+  "communityAssociations": 0,
+  "numericCSVIdentical": true,
+  "earlier200PointsPreserved": true,
+  "realisedIncomeClaimed": false,
+  "completeHistoryClaimed": false
+}

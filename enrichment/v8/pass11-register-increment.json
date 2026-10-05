@@ -1,0 +1,1522 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:23.658483+00:00",
+      "id": "dld-official-areas-20261002",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:23.658483+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 5682,
+          "fileName": "lkp_areas_2026-10-02_06-34-03_0001.csv.gz",
+          "sha256": "aa02d51887c78580dcbcca47bbb1e4b1547d9ba16794f1dc8c3b23fe5561ebeb"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-02",
+      "title": "DLD areas, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/465592"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:44.659195+00:00",
+      "id": "dld-official-buildings-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:44.659195+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 18849454,
+          "fileName": "buildings_2026-10-03_18-33-06_0001.csv.gz",
+          "sha256": "413c5c0916c088b9075e05c131b1759aeeaa03c1bfa5f12f691d3af28a85a5a4"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD buildings, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/459613"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:47.193986+00:00",
+      "id": "dld-official-developers-20261001",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:47.193986+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 160670,
+          "fileName": "developers_2026-10-01_23-34-28_0001.csv.gz",
+          "sha256": "eef868a72c9453ef09c4ae664c555112d3e17e193b5fe1710eda84f9e80da6bd"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-01",
+      "title": "DLD developers, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/462802"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "id": "dld-official-projects-20260706",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:21.855572+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 463273,
+          "fileName": "projects_2026-07-06_16-25-21_0001.csv.gz",
+          "sha256": "ca2a41843175d7a623eb712ad424e6ead9e4071766a0b13f506802f22e64b02d"
+        }
+      ],
+      "sourceSnapshotDate": "2026-07-06",
+      "title": "DLD projects, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/467654"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:46:23.713250+00:00",
+      "id": "dld-official-rents-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:46:23.713250+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 56982799,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0001.csv.gz",
+          "sha256": "0ad4252a666f73c51caa3997bb9df3e1673c528575f3f13d8cb27622c17ed7e8"
+        },
+        {
+          "bytes": 57003837,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0002.csv.gz",
+          "sha256": "9c03091ce0a971625f9ccbe2e1fd99c6f658438c0703de960853ac648403e732"
+        },
+        {
+          "bytes": 56981110,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0003.csv.gz",
+          "sha256": "80b7b861a08b47371714a0b96ded07672b4da6a249b10201b707d6051f79d191"
+        },
+        {
+          "bytes": 56982376,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0004.csv.gz",
+          "sha256": "90405562f6d62fcd7d0c308eb0de3e1ce064e065db528c6feffa8b8df24648ff"
+        },
+        {
+          "bytes": 56984481,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0005.csv.gz",
+          "sha256": "062886b4682ba8c6c5d57b748ba736b4c942aec18df330497cef7ebe4677c694"
+        },
+        {
+          "bytes": 56981941,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0006.csv.gz",
+          "sha256": "c307ca70bdf506fac0390a0605b38144d92ceeadb004dcff3ea021d84b96c7e5"
+        },
+        {
+          "bytes": 56950138,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0007.csv.gz",
+          "sha256": "99ec1d72e066bd64b24df94485fc44bec09ba3e54fc27930385953ff101f5172"
+        },
+        {
+          "bytes": 56959755,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0008.csv.gz",
+          "sha256": "d381aa6033782259f35877b59e3dbc45db85c23bcbbcd41b44739c912de455af"
+        },
+        {
+          "bytes": 57002049,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0009.csv.gz",
+          "sha256": "7c07074c6825d0b986d1fe37fab82a0ab86e6c9dea8cdbdc8a6fb3adceff0222"
+        },
+        {
+          "bytes": 56972533,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0010.csv.gz",
+          "sha256": "2bcedaceecabc8c1adcb0bdbbc084e7a6e588eb6dc40a74b13a43dac9a3c65d7"
+        },
+        {
+          "bytes": 56986718,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0011.csv.gz",
+          "sha256": "b8b3235f522123d19c92a46850c0b9b4f3dd6fb57c6f5bebf2b37ce7b4b21954"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD rent-contracts, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/468586"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:43:33.993477+00:00",
+      "id": "dld-official-transactions-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:43:33.993477+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 81012860,
+          "fileName": "transactions_2026-10-03_18-36-42_0001.csv.gz",
+          "sha256": "f57ccc6cbe4b7eaa011c470833e09be8cab2e80fb369c7c90477fbbe8bd3c953"
+        },
+        {
+          "bytes": 81046646,
+          "fileName": "transactions_2026-10-03_18-36-42_0002.csv.gz",
+          "sha256": "6ed67ae06ec5d8f0a0fad2b1a8ef36b21fc7c4f0470c30810fb7bb71aca67db1"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD transactions, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/470061"
+    },
+    {
+      "id": "primary10-b6907277c55b31272900",
+      "url": "https://assets.ctfassets.net/zoq5l15g49wj/7GcCcjaghoHSO3YtNJQeVI/0df035589b305c6337709f1f30f2da62/damacrealestatedevelopmentlimitedfinancialstatementspresentationh12023.pdf",
+      "title": "DAMAC 6M2023 results presentation",
+      "publisher": "DAMAC",
+      "classification": "issuer_investor_presentation",
+      "primaryEvidence": true,
+      "publishedAt": "2023-08",
+      "firstAvailableAt": "2026-10-05T16:44:01.487386+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T16:44:01.487386+00:00",
+      "captureStatus": "issuer_pdf_text_and_relevant_page_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual lifecycle and identity only; original PDF and illustrations are not redistributed.",
+      "publishedAtPrecision": "month"
+    },
+    {
+      "id": "primary10-b908eee3e90b392cb565",
+      "url": "https://assets.ctfassets.net/zoq5l15g49wj/58ZxV3Ut8N5jkpjQE3KLsj/144ae69dc1b275161e1051e54b12a2fc/damacpropertiesdubaicopjscresultpresentation2018.pdf",
+      "title": "DAMAC FY2018 results presentation",
+      "publisher": "DAMAC",
+      "classification": "issuer_investor_presentation",
+      "primaryEvidence": true,
+      "publishedAt": "2019-03",
+      "firstAvailableAt": "2026-10-05T16:44:01.487386+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T16:44:01.487386+00:00",
+      "captureStatus": "issuer_pdf_text_and_relevant_page_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual lifecycle and identity only; original PDF and illustrations are not redistributed.",
+      "publishedAtPrecision": "month"
+    },
+    {
+      "id": "primary11-e9e9df298aee76cdfdd3",
+      "url": "https://assets.ctfassets.net/zoq5l15g49wj/6XTUtcltz642Ch3NFchGxn/8b44e586bf162217d1375792da374bcd/damac-properties-dubai-co-pjsc-result-presentation-2019_0.pdf",
+      "title": "DAMAC FY2019 results presentation",
+      "publisher": "DAMAC",
+      "classification": "issuer_investor_presentation",
+      "primaryEvidence": true,
+      "publishedAt": "2020-03",
+      "publishedAtPrecision": "month",
+      "firstAvailableAt": "2026-10-05T16:49:48.567427+00:00",
+      "retrievedAt": "2026-10-05T16:49:48.567427+00:00",
+      "firstAvailableAtBasis": "First reviewed here; no historical availability inferred from retrospective retrieval",
+      "captureStatus": "issuer_pdf_text_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual schedule only; no original PDF, tables or illustrations redistributed."
+    }
+  ],
+  "facts": [
+    {
+      "id": "dld-register-2459",
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "fields": {
+        "projectNumber": "2459",
+        "projectId": "440141589",
+        "developerId": "408744820",
+        "developerNumber": "1414",
+        "registeredDeveloperName": "DAMAC BUSINESS REAL ESTATE CO. L.L.C",
+        "registeredName": "\u0643\u0641\u0627\u0644\u064a \u0643\u0648\u062a\u0648\u0631",
+        "officialEnglishAliases": [
+          "CAVALLI COUTURE"
+        ],
+        "areaId": "364",
+        "areaName": "Al Wasl",
+        "project_start_date": "2023-03-30",
+        "project_end_date": "2025-05-31",
+        "completion_date": "2025-05-31",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "10.89000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "95",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "440141589",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00"
+    },
+    {
+      "id": "dld-register-2459-project_start_date",
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2023-03-30",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2459-project_end_date",
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-05-31",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2459-completion_date",
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-05-31",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-1680",
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "fields": {
+        "projectNumber": "1680",
+        "projectId": "25242746",
+        "developerId": "24406880",
+        "developerNumber": "1095",
+        "registeredDeveloperName": "DAMAC WORLD REAL ESTATE L.L.C",
+        "registeredName": "\u0628\u0631\u062c \u0645\u064a\u0631\u0627\u0646\u0648",
+        "officialEnglishAliases": [
+          "MERANO TOWER"
+        ],
+        "areaId": "526",
+        "areaName": "Business Bay",
+        "project_start_date": "2015-10-01",
+        "project_end_date": "2020-02-27",
+        "completion_date": "2020-02-27",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "581",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "25242746",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00"
+    },
+    {
+      "id": "dld-register-1680-project_start_date",
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2015-10-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-1680-project_end_date",
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2020-02-27",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-1680-completion_date",
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2020-02-27",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "firstAvailableAt": "2026-10-05T16:46:42.721670+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "fact11-df5aed3d56d4b95619d76b21",
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "label": "Issuer historical Merano completion schedule: 2019",
+      "note": "Investor presentation slide 10 records the then-scheduled year. Retain revised 2019 and 2020 schedules separately from filed February 2020 completion. Revenue-recognition percentages combine sales and completion, so are not construction progress or appreciation.",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "status": "accepted",
+      "sourceId": "primary10-b908eee3e90b392cb565",
+      "sourceIds": [
+        "primary10-b908eee3e90b392cb565"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "firstAvailableAt": "2026-10-05T16:49:48.567427+00:00",
+      "primaryEvidence": true,
+      "scope": "subject"
+    },
+    {
+      "id": "fact11-25d2940157a4bf13dc01c485",
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2020",
+        "precision": "year"
+      },
+      "label": "Issuer historical Merano completion schedule: 2020",
+      "note": "Investor presentation slide 10 records the then-scheduled year. Retain revised 2019 and 2020 schedules separately from filed February 2020 completion. Revenue-recognition percentages combine sales and completion, so are not construction progress or appreciation.",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "status": "accepted",
+      "sourceId": "primary11-e9e9df298aee76cdfdd3",
+      "sourceIds": [
+        "primary11-e9e9df298aee76cdfdd3"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "firstAvailableAt": "2026-10-05T16:49:48.567427+00:00",
+      "primaryEvidence": true,
+      "scope": "subject"
+    }
+  ],
+  "seriesLinks": [
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-e2a88499b452976385a1",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-5f401102bfbb34f9f73a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-48a6ca25f9225c2baf1d",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-562a1485add555c95481",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-c23d0d3458e0c1517a60",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-633f69747acc48dde8eb",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-7c138c53fcbfad7edd49",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-7c90b87d8fc4828c2fa4",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-8534a7e92422c28920fe",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-afdf84775ccefe4d2923",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-abf6f548cb667c86908b",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-0829d42b0ca80229973b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-c127be250249e6a784f1",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-b4014ed4b552cfd5f13a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-145326930b3008d0cdcd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-01fa4ebfe028adaab92e",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "seriesId": "dld-primary-058d018c5d0b99c9dd8b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-ea2d62c39dc89936f0b4",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-3b0c3e310b4d36397a2b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-6f65523ecc197c613114",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9246be75e035a46c7cb3",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9101ddb6e35202d0cacf",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-4e5019d8fed48c7c4132",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-e202496b56a2244f9bea",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-6466a683c847f253789c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-e7d4f33bd5c88bcbb740",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-8e43788f454c338c4630",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-4431527d1054b29392a2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-13c6888c6e6a4e5b0326",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-695b26e421234264c3d8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-a94b616b741040633b95",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-3477cef7fa88d0606fad",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-b653261636c4f6a82fc4",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-720278c6481c78b60ddd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-5a90a5571f628b92303a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-6e03aa79e94651a670d6",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9dc8e0f03b5b198b7d7d",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-fc9d676c3c4a33c75d20",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9c2a0d9fa0f5a3898952",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-e6da91001b4651914434",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9285664e1e1b264ce8a2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9c41c2080ace37a34282",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-eded0d495b13d79ca2c8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-7ed3e7f515829bcc1665",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-47e13722c682b7694473",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-6eeb65757f837ba6f34a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-b544c076417e14eac9fe",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-bf73a737d71d0f6376bb",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-7cdf2029126000ca889c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-168ba82c93c6c538ec7a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-269ab611d5dc7dd3df54",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-f06e814c58267aac718a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-f1b3459610a2c6894354",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-6a4aaefc6e2f93327c7f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-b256a9624690103aa796",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "seriesId": "dld-primary-9c9c16b1d118fb1e20ab",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact native project number, legal developer and register master location reconciled against the issuer August 2023 portfolio map, physically reviewed on PDF page 8 (slide 5). Legend 13 is Merano Tower at the Business Bay canal; legend 53 is Cavalli Couture at Dubai Water Canal by Safa Park, distinct from Cavalli Tower and DAMAC Bay. Native Business Bay / Al Wasl area labels and master communities remain authoritative; the illustrative map is not a cadastral boundary or surveyed coordinate. Text extraction misnumbered later legend entries and is not used for marker identity. No same-brand fan-out.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ]
+    }
+  ],
+  "historyInputs": [
+    {
+      "path": "pass11-public-primary-history.csv.gz",
+      "compression": "gzip",
+      "sha256": "ad9de0bb9b9cbd4c1c39ad3ee009ddb2a76db95932104bcb9dbee6bc6a1979d9",
+      "uncompressedSHA256": "59953e089efa4ed152e21760739ef5151bfd843d1202400a31dd47ae52516d31"
+    }
+  ],
+  "collection": {
+    "approvedRegistryProjects": 2,
+    "linkedCadastralContextCommunities": 0,
+    "linkedExactNativeMasterContextCommunities": 0,
+    "projectRecordsWithEligibleSaleRows": 2,
+    "projectRecordsWithEligibleRentRows": 1,
+    "communityRecordsWithEligibleSaleRows": 0,
+    "communityRecordsWithEligibleRentRows": 0,
+    "publicAggregateRows": 1298,
+    "publicPriceAggregateRows": 396,
+    "publicRentAggregateRows": 902,
+    "publicSeriesCount": 56,
+    "overlappingAggregatesNotAdditive": true,
+    "registeredLandBuildingReferenceSeries": 8,
+    "baselineRegisteredIdentitiesPreserved": 221,
+    "identityReviewCounts": {
+      "accepted": 2
+    }
+  },
+  "methodology": "Official public DLD latest-vintage snapshots. Projects require registered number + unique unchanged English name + stable developer identity + compatible official geography, independently reviewed. Community links are administrative area context only. No fuzzy joins, interpolation, future prices, event uplift, or historical point-in-time availability claimed. Raw rows stay private. Usage/type/registration and native subtypes remain explicitly separate; Ejari business property types (including Virtual Unit) are separate; sparse medians retained with n20 display gate. Entire duplicated single-property rental contracts are quarantined; invalid/future start or extreme end dates independently quarantined. Aggregate series overlap and are not additive. New specific first-party project proofs supplement unchanged exact native names/IDs; both raw-source and later identity-review availability are retained. Registered Land/Building asset histories remain published_reference and cannot anchor marketed Unit/Villa prices. Earlier packets are unchanged. All 1298 numeric observations retained: 1290 subject and 8 separate Land/Building references. Shared issuer PDF URLs reuse the same canonical source IDs as pass10; later identity review availability remains unchanged. Merano contracts begin April 2020 after filed February 2020 completion; two future-start contracts excluded. No Cavalli Couture rent contracts found in this snapshot. Contract evidence is not realised income or occupancy.",
+  "additionalDatasets": [
+    {
+      "datasetId": 470061,
+      "sourceId": "dld-official-transactions-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 468586,
+      "sourceId": "dld-official-rents-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 467654,
+      "sourceId": "dld-official-projects-20260706",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 462802,
+      "sourceId": "dld-official-developers-20261001",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 459613,
+      "sourceId": "dld-official-buildings-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 465592,
+      "sourceId": "dld-official-areas-20261002",
+      "rawOriginalPrivate": true
+    }
+  ],
+  "preservation": {
+    "mode": "additive_only",
+    "baselineSnapshotVersion": "20261005-enrichment-v7",
+    "baselineSnapshotSha256": "6c923ea9f9a72d33886eff13aa4080cd3af01e0512abb9e472ffdb02d251dd4b",
+    "priorPacketPaths": [
+      "../baseline-enrichment.json"
+    ],
+    "rawOriginalsRedistributed": false,
+    "incrementDisjointFromFrozenV1": true
+  },
+  "recordResearch": [
+    {
+      "recordId": "project:damac-cavalli-couture-apartments-for-sale-in-dubai-water-canal",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_review_completed_historical_gaps_explicit",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "reason": "Native exact number and legal developer reconciled with visually checked issuer map. Illustrative map is not surveyed coordinates or a cadastral boundary."
+    },
+    {
+      "recordId": "project:damac-merano-tower-business-bay-dubai",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_review_completed_historical_gaps_explicit",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "reason": "Native exact number and legal developer reconciled with visually checked issuer map. Illustrative map is not surveyed coordinates or a cadastral boundary."
+    }
+  ]
+}

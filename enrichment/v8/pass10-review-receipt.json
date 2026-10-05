@@ -1,0 +1,14 @@
+{
+  "reviewedAt": "2026-10-05T16:48:23.058873+00:00",
+  "status": "prepared_private_not_integrated_or_published",
+  "approvedIdentities": 3,
+  "retainedRows": 1523,
+  "subjectRows": 1507,
+  "referenceRows": 16,
+  "newFacts": 13,
+  "sourceCount": 8,
+  "numericCSVIdentical": true,
+  "futureStartRentContractsExcluded": 2,
+  "realisedIncomeClaimed": false,
+  "completeHistoryClaimed": false
+}

@@ -1,0 +1,84 @@
+{
+  "reviewedAt": "2026-10-05T16:51:58.550689+00:00",
+  "status": "private_reviewed_not_published",
+  "pass9": {
+    "reviewedAt": "2026-10-05T16:41:26.961138+00:00",
+    "status": "prepared_private_not_integrated_or_published",
+    "approvedIdentities": 5,
+    "retainedRows": 340,
+    "subjectRows": 320,
+    "referenceRows": 20,
+    "newFacts": 19,
+    "sourceCount": 11,
+    "communityAssociations": 0,
+    "numericCSVIdentical": true,
+    "earlier200PointsPreserved": true,
+    "realisedIncomeClaimed": false,
+    "completeHistoryClaimed": false
+  },
+  "pass10": {
+    "reviewedAt": "2026-10-05T16:48:23.058873+00:00",
+    "status": "prepared_private_not_integrated_or_published",
+    "approvedIdentities": 3,
+    "retainedRows": 1523,
+    "subjectRows": 1507,
+    "referenceRows": 16,
+    "newFacts": 13,
+    "sourceCount": 8,
+    "numericCSVIdentical": true,
+    "futureStartRentContractsExcluded": 2,
+    "realisedIncomeClaimed": false,
+    "completeHistoryClaimed": false
+  },
+  "pass11": {
+    "reviewedAt": "2026-10-05T16:49:48.567427+00:00",
+    "status": "prepared_private_not_integrated_or_published",
+    "approvedIdentities": 2,
+    "retainedRows": 1298,
+    "subjectRows": 1290,
+    "referenceRows": 8,
+    "newFacts": 10,
+    "sourceCount": 9,
+    "numericValuesIdentical": true,
+    "onlyCSVChange": "canonical source ID for shared issuer PDF; identity availability preserved",
+    "futureStartRentContractsExcluded": 2,
+    "realisedIncomeClaimed": false,
+    "completeHistoryClaimed": false
+  },
+  "combined": {
+    "approvedNewIdentities": 10,
+    "aggregateObservations": 3161,
+    "subjectObservations": 3117,
+    "referenceObservations": 44,
+    "series": 196,
+    "newFacts": 42,
+    "sourcesIncludingReused": 15,
+    "newSubjectSaleProjects": 10,
+    "newSubjectRentProjects": 2,
+    "duplicateSeries": 0,
+    "conflictingSourceDefinitions": 0
+  },
+  "remainingUniqueNumberCandidates": [
+    "444 DAMAC The Vogue",
+    "1721 Azizi Royal Bay",
+    "2392 AYS Q Gardens Lofts",
+    "3367 Beach Walk Grand phase conflict"
+  ],
+  "blockedSourceAttempts": [
+    {
+      "url": "https://www.westates.com/wp-content/uploads/2024/03/Royal-Bay-Brochure.pdf",
+      "status": "web tool internal error; ordinary HTTPS fetch DNS failure; no source content acquired"
+    },
+    {
+      "url": "https://direct.euronext.com/api/PublicAnnouncements/RISDocument/ANN144622.pdf?id=a7fd235b-4723-4108-85d0-914403b5304e",
+      "status": "web tool internal error; no content acquired"
+    }
+  ],
+  "importantLimits": [
+    "Avanti earliest building reference in 2008 is separate from first observed dwelling off-plan sale in 2014.",
+    "Wynwood earliest land reference in 2014 is not an apartment value.",
+    "Four future-start rental contracts excluded across Avanti and Merano.",
+    "Shared DAMAC investor PDF deduplicated between pass10 and pass11.",
+    "2027\u20132080 conditional scenario inputs remain incomplete."
+  ]
+}

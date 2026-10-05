@@ -1,0 +1,152 @@
+{
+  "accepted": [
+    {
+      "recordId": "project:damac-coral-reef-apartments-in-dubai-maritime-city-for-sale",
+      "name": "DAMAC Coral Reef",
+      "catalogueDeveloper": "DAMAC",
+      "catalogueArea": "Dubai Maritime City",
+      "catalogueCommunityId": "community:Dubai:dubai-maritime-city",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2729"
+      ],
+      "projectNumber": "2729",
+      "sourceProjectId": "524133927",
+      "developerId": "466389392",
+      "developerNumber": "1528",
+      "registeredDeveloperName": "DAMAC P S L INVESTMENT L.L.C",
+      "sourceAreaId": "333",
+      "sourceAreaName": "Madinat Dubai Almelaheyah",
+      "registeredName": "\u0643\u0648\u0631\u0627\u0644 \u0631\u064a\u0641",
+      "officialEnglishAliases": [
+        "CORAL REEF"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityBasis": "Exact project name, legal developer and native master area independently reconciled with issuer investor presentation. FY2018 presentation page 3 names Avanti Tower in Business Bay among deliveries in 2018. August 2023 presentation pages 6 and 7 expressly identifies Harbour Lights and Coral Reef in Dubai Maritime City, distinct from DAMAC Bay in Dubai Harbour. Native legal development entities and project numbers remain separate; no brand-wide fan-out. Investor schedules do not establish sale prices or realised rental income.",
+      "registryFacts": {
+        "project_start_date": "2023-10-18",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "12.52000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "280",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:damac-avanti-tower-apartments-for-sale-in-dubai-business-bay",
+      "name": "DAMAC Avanti Tower",
+      "catalogueDeveloper": "DAMAC",
+      "catalogueArea": "Business Bay",
+      "catalogueCommunityId": "community:Dubai:business-bay",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "1506"
+      ],
+      "projectNumber": "1506",
+      "sourceProjectId": "12511983",
+      "developerId": "907",
+      "developerNumber": "907",
+      "registeredDeveloperName": "DAMAC STAR PROPERTIES (L L C)",
+      "sourceAreaId": "526",
+      "sourceAreaName": "Business Bay",
+      "registeredName": "\u0623\u0641\u0627\u0646\u062a\u064a \u062a\u0627\u0648\u0631",
+      "officialEnglishAliases": [
+        "AVANTI TOWER"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b908eee3e90b392cb565"
+      ],
+      "identityBasis": "Exact project name, legal developer and native master area independently reconciled with issuer investor presentation. FY2018 presentation page 3 names Avanti Tower in Business Bay among deliveries in 2018. August 2023 presentation pages 6 and 7 expressly identifies Harbour Lights and Coral Reef in Dubai Maritime City, distinct from DAMAC Bay in Dubai Harbour. Native legal development entities and project numbers remain separate; no brand-wide fan-out. Investor schedules do not establish sale prices or realised rental income.",
+      "registryFacts": {
+        "project_start_date": "2014-08-01",
+        "project_end_date": "2018-12-16",
+        "completion_date": "2018-12-16",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "161",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:damac-harbour-lights-de-grisogono-apartments-for-sale-in-dubai-maritime-city",
+      "name": "DAMAC Harbour Lights",
+      "catalogueDeveloper": "DAMAC",
+      "catalogueArea": "Dubai Maritime City",
+      "catalogueCommunityId": "community:Dubai:dubai-maritime-city",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2516"
+      ],
+      "projectNumber": "2516",
+      "sourceProjectId": "458787161",
+      "developerId": "438188574",
+      "developerNumber": "1475",
+      "registeredDeveloperName": "DAMAC J W F INVESTMENT L.L.C",
+      "sourceAreaId": "333",
+      "sourceAreaName": "Madinat Dubai Almelaheyah",
+      "registeredName": "\u0647\u0627\u0631\u0628\u0648\u0631 \u0644\u0627\u064a\u062a\u0633",
+      "officialEnglishAliases": [
+        "HARBOUR LIGHTS"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary10-b6907277c55b31272900"
+      ],
+      "identityBasis": "Exact project name, legal developer and native master area independently reconciled with issuer investor presentation. FY2018 presentation page 3 names Avanti Tower in Business Bay among deliveries in 2018. August 2023 presentation pages 6 and 7 expressly identifies Harbour Lights and Coral Reef in Dubai Maritime City, distinct from DAMAC Bay in Dubai Harbour. Native legal development entities and project numbers remain separate; no brand-wide fan-out. Investor schedules do not establish sale prices or realised rental income.",
+      "registryFacts": {
+        "project_start_date": "2023-02-16",
+        "project_end_date": "2027-05-21",
+        "completion_date": "2027-05-21",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "25.51000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "297",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    }
+  ],
+  "counts": {
+    "accepted": 3
+  },
+  "methodology": "Human-reviewed bounded exact primary name, phase, developer and geography reconciliation; additive to frozen 221 identities."
+}
