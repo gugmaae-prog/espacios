@@ -1,0 +1,1385 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:23.658483+00:00",
+      "id": "dld-official-areas-20261002",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:23.658483+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 5682,
+          "fileName": "lkp_areas_2026-10-02_06-34-03_0001.csv.gz",
+          "sha256": "aa02d51887c78580dcbcca47bbb1e4b1547d9ba16794f1dc8c3b23fe5561ebeb"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-02",
+      "title": "DLD areas, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/465592"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:44.659195+00:00",
+      "id": "dld-official-buildings-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:44.659195+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 18849454,
+          "fileName": "buildings_2026-10-03_18-33-06_0001.csv.gz",
+          "sha256": "413c5c0916c088b9075e05c131b1759aeeaa03c1bfa5f12f691d3af28a85a5a4"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD buildings, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/459613"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:47.193986+00:00",
+      "id": "dld-official-developers-20261001",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:47.193986+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 160670,
+          "fileName": "developers_2026-10-01_23-34-28_0001.csv.gz",
+          "sha256": "eef868a72c9453ef09c4ae664c555112d3e17e193b5fe1710eda84f9e80da6bd"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-01",
+      "title": "DLD developers, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/462802"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "id": "dld-official-projects-20260706",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:21.855572+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 463273,
+          "fileName": "projects_2026-07-06_16-25-21_0001.csv.gz",
+          "sha256": "ca2a41843175d7a623eb712ad424e6ead9e4071766a0b13f506802f22e64b02d"
+        }
+      ],
+      "sourceSnapshotDate": "2026-07-06",
+      "title": "DLD projects, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/467654"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:43:33.993477+00:00",
+      "id": "dld-official-transactions-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:43:33.993477+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 81012860,
+          "fileName": "transactions_2026-10-03_18-36-42_0001.csv.gz",
+          "sha256": "f57ccc6cbe4b7eaa011c470833e09be8cab2e80fb369c7c90477fbbe8bd3c953"
+        },
+        {
+          "bytes": 81046646,
+          "fileName": "transactions_2026-10-03_18-36-42_0002.csv.gz",
+          "sha256": "6ed67ae06ec5d8f0a0fad2b1a8ef36b21fc7c4f0470c30810fb7bb71aca67db1"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD transactions, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/470061"
+    },
+    {
+      "id": "primary4-9de7d3e979baae35a064",
+      "url": "https://danubeproperties.com/portfolio/elitz-3/",
+      "title": "Danube Elitz 3 primary project identity",
+      "publisher": "Danube Properties",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:00:31.774129+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary4-b94e818194d7252b5f7b",
+      "url": "https://danubeproperties.com/portfolio/elitz-2/",
+      "title": "Danube Elitz 2 primary project identity",
+      "publisher": "Danube Properties",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:00:31.774129+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary4-cc0191e9566250329cb4",
+      "url": "https://danubeproperties.com/portfolio/elitz/",
+      "title": "Danube Elitz primary project identity",
+      "publisher": "Danube Properties",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:00:31.774129+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary4-ccef2e386763d34065bd",
+      "url": "https://www.arada.com/en/jouri-hills/",
+      "title": "Arada Jouri Hills primary project identity",
+      "publisher": "Arada",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:00:31.774129+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    }
+  ],
+  "facts": [
+    {
+      "id": "dld-register-2722",
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "fields": {
+        "projectNumber": "2722",
+        "projectId": "521174735",
+        "developerId": "12777430",
+        "developerNumber": "1009",
+        "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+        "registeredName": "\u0625\u0644\u064a\u062a\u06323 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+        "officialEnglishAliases": [
+          "Elitz 3 By Danube"
+        ],
+        "areaId": "441",
+        "areaName": "Al Barsha South Fourth",
+        "project_start_date": "2023-12-01",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "17.30000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "692",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "521174735",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00"
+    },
+    {
+      "id": "dld-register-2722-project_start_date",
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2023-12-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2506",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "fields": {
+        "projectNumber": "2506",
+        "projectId": "452772434",
+        "developerId": "404647195",
+        "developerNumber": "1409",
+        "registeredDeveloperName": "ARADA DEVELOPMENTS L.L.C S.O.C",
+        "registeredName": "\u062c\u0648\u0631\u064a \u0647\u064a\u0644\u0632",
+        "officialEnglishAliases": [
+          "Jouri Hills"
+        ],
+        "areaId": "485",
+        "areaName": "Me'Aisem First",
+        "project_start_date": "2023-08-01",
+        "project_end_date": "2026-06-30",
+        "completion_date": "2025-06-30",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "19.94000",
+        "no_of_buildings": "0",
+        "no_of_lands": "294",
+        "no_of_units": "0",
+        "no_of_villas": "154",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "452772434",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00"
+    },
+    {
+      "id": "dld-register-2506-project_start_date",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2023-08-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2506-project_end_date",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2506-completion_date",
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-06-30",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2693",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "fields": {
+        "projectNumber": "2693",
+        "projectId": "510870785",
+        "developerId": "12777430",
+        "developerNumber": "1009",
+        "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+        "registeredName": "\u0625\u0644\u064a\u062a\u0632 2 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+        "officialEnglishAliases": [
+          "Elitz 2 By Danube"
+        ],
+        "areaId": "441",
+        "areaName": "Al Barsha South Fourth",
+        "project_start_date": "2023-11-01",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "8.70000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "801",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "510870785",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00"
+    },
+    {
+      "id": "dld-register-2693-project_start_date",
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2023-11-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2533",
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "fields": {
+        "projectNumber": "2533",
+        "projectId": "464434176",
+        "developerId": "12777430",
+        "developerNumber": "1009",
+        "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+        "registeredName": "\u0625\u0644\u064a\u062a\u0632 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+        "officialEnglishAliases": [
+          "Elitz By Danube"
+        ],
+        "areaId": "441",
+        "areaName": "Al Barsha South Fourth",
+        "project_start_date": "2023-05-01",
+        "project_end_date": "2025-12-31",
+        "completion_date": "2025-12-31",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "33.03000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "592",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "464434176",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00"
+    },
+    {
+      "id": "dld-register-2533-project_start_date",
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2023-05-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2533-project_end_date",
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-12-31",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2533-completion_date",
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-12-31",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "firstAvailableAt": "2026-10-05T14:00:31.774129+00:00",
+      "scope": "subject"
+    }
+  ],
+  "seriesLinks": [
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-c1e43bf3ff191670a009",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-d9d4045a1d44a1dd6e7e",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-10e8bf55493e91eea064",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-8dc7821a75ce2728658d",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-be4422d9427a41910f21",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-c28832f9b3aeb966a587",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-efc1fae7742fab3d5512",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-8ac32ee86d1bf012b555",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-13d86f51ba86c9b61db1",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-3bd55d176cff5d536512",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-8c66d9a76ac3864eccc2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-e41e03b460d7e04323ca",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-df5676a0249f0e7a56e8",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-fe8b14d59d90dcbe88f3",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-fa82f815af709ee7f8b1",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-4f06acc3f52a3fbd347b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-670ab9abe1e1743053d1",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-839203c658fcf77540be",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-d9f4f33ecccb00c714be",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-015a041c10836388ae9a",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-56a3112f2d61b5caa458",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-246f7a7df992f232d322",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-057fdaa67e2e87b2f0d3",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-a2a7477d9149870ef5ad",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-e3100db6eac404cebe0a",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-64b4e4653d35ec543401",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-7651a85f6efb9f178806",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-c21a754d2773c687a14f",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-c0628ff94b3089a965bd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-eddaf8c5f7deb9f44571",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-55f265964ee5ba344b73",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-3c9bb53ea7c4f3ac521f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-685aa952c8fe4a661792",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-2044b10c2b2bac3cfad3",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "seriesId": "dld-primary-d627f4b70a09581a9719",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-37fb4dfb246b6ef9098c",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-5bd4950c2986e9292d17",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-e802e44bd1bac43f4c12",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-9857b48d51bdec0cc5a1",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-9df29e76083cecd682f7",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-063b0a2bf189b341cc7c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-c2d4ad4e106f8b4b4873",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-89953731fde711dce960",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "seriesId": "dld-primary-b093c838e102f25077e9",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ]
+    }
+  ],
+  "historyInputs": [
+    {
+      "path": "pass4-public-primary-history.csv.gz",
+      "compression": "gzip",
+      "sha256": "3a325a8182260347ea168378cca3c9f6db79b153784963852b458c1f322cd6ae",
+      "uncompressedSHA256": "1eecafbe6cb9140fb76a429b01b3ac933b039fe75484fc5c991c2df706982914"
+    }
+  ],
+  "collection": {
+    "approvedRegistryProjects": 4,
+    "linkedCadastralContextCommunities": 0,
+    "linkedExactNativeMasterContextCommunities": 0,
+    "projectRecordsWithEligibleSaleRows": 4,
+    "projectRecordsWithEligibleRentRows": 0,
+    "communityRecordsWithEligibleSaleRows": 0,
+    "communityRecordsWithEligibleRentRows": 0,
+    "publicAggregateRows": 522,
+    "publicPriceAggregateRows": 522,
+    "publicRentAggregateRows": 0,
+    "publicSeriesCount": 44,
+    "overlappingAggregatesNotAdditive": true,
+    "registeredLandBuildingReferenceSeries": 20,
+    "baselineRegisteredIdentitiesPreserved": 191,
+    "identityReviewCounts": {
+      "accepted": 4
+    }
+  },
+  "methodology": "Official public DLD latest-vintage snapshots. Projects require registered number + unique unchanged English name + stable developer identity + compatible official geography, independently reviewed. Community links are administrative area context only. No fuzzy joins, interpolation, future prices, event uplift, or historical point-in-time availability claimed. Raw rows stay private. Usage/type/registration and native subtypes remain explicitly separate; Ejari business property types (including Virtual Unit) are separate; sparse medians retained with n20 display gate. Entire duplicated single-property rental contracts are quarantined; invalid/future start or extreme end dates independently quarantined. Aggregate series overlap and are not additive. New specific first-party project proofs supplement unchanged exact native names/IDs; both raw-source and later identity-review availability are retained. Registered Land/Building asset histories remain published_reference and cannot anchor marketed Unit/Villa prices. Earlier packets are unchanged.",
+  "additionalDatasets": [
+    {
+      "datasetId": 470061,
+      "sourceId": "dld-official-transactions-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 468586,
+      "sourceId": "dld-official-rents-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 467654,
+      "sourceId": "dld-official-projects-20260706",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 462802,
+      "sourceId": "dld-official-developers-20261001",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 459613,
+      "sourceId": "dld-official-buildings-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 465592,
+      "sourceId": "dld-official-areas-20261002",
+      "rawOriginalPrivate": true
+    }
+  ],
+  "preservation": {
+    "mode": "additive_only",
+    "baselineSnapshotVersion": "20261005-enrichment-v3",
+    "baselineSnapshotSha256": "e36078abdfcf1d3de289d81cca4a382adcff9f5a4f615e74673eaf8d3f63b5bb",
+    "priorPacketPaths": [
+      "../baseline-enrichment.json"
+    ],
+    "rawOriginalsRedistributed": false,
+    "incrementDisjointFromFrozenV1": true
+  }
+}

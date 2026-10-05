@@ -1,0 +1,200 @@
+{
+  "accepted": [
+    {
+      "recordId": "project:danube-elitz-3-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "name": "Danube Elitz 3",
+      "catalogueDeveloper": "Danube",
+      "catalogueArea": "Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": "community:Dubai:jumeirah-village-circle",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2722"
+      ],
+      "projectNumber": "2722",
+      "sourceProjectId": "521174735",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0625\u0644\u064a\u062a\u06323 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+      "officialEnglishAliases": [
+        "Elitz 3 By Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-9de7d3e979baae35a064"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2023-12-01",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "17.30000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "692",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:arada-jouri-hills-townhouses-and-villas-jumeirah-golf-estates-dubai-for-sale",
+      "name": "Arada Jouri Hills",
+      "catalogueDeveloper": "Arada",
+      "catalogueArea": "Jumeirah Golf Estates",
+      "catalogueCommunityId": "community:Dubai:jumeirah-golf-estates",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2506"
+      ],
+      "projectNumber": "2506",
+      "sourceProjectId": "452772434",
+      "developerId": "404647195",
+      "developerNumber": "1409",
+      "registeredDeveloperName": "ARADA DEVELOPMENTS L.L.C S.O.C",
+      "sourceAreaId": "485",
+      "sourceAreaName": "Me'Aisem First",
+      "registeredName": "\u062c\u0648\u0631\u064a \u0647\u064a\u0644\u0632",
+      "officialEnglishAliases": [
+        "Jouri Hills"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-ccef2e386763d34065bd"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2023-08-01",
+        "project_end_date": "2026-06-30",
+        "completion_date": "2025-06-30",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "19.94000",
+        "no_of_buildings": "0",
+        "no_of_lands": "294",
+        "no_of_units": "0",
+        "no_of_villas": "154",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:danube-elitz-2-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "name": "Danube Elitz 2",
+      "catalogueDeveloper": "Danube",
+      "catalogueArea": "Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": "community:Dubai:jumeirah-village-circle",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2693"
+      ],
+      "projectNumber": "2693",
+      "sourceProjectId": "510870785",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0625\u0644\u064a\u062a\u0632 2 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+      "officialEnglishAliases": [
+        "Elitz 2 By Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-b94e818194d7252b5f7b"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2023-11-01",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "8.70000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "801",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:danube-elitz-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "name": "Danube Elitz",
+      "catalogueDeveloper": "Danube",
+      "catalogueArea": "Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": "community:Dubai:jumeirah-village-circle",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2533"
+      ],
+      "projectNumber": "2533",
+      "sourceProjectId": "464434176",
+      "developerId": "12777430",
+      "developerNumber": "1009",
+      "registeredDeveloperName": "DANUBE PROPERTIES DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0625\u0644\u064a\u062a\u0632 \u0645\u0646 \u062f\u0627\u0646\u0648\u0628 ",
+      "officialEnglishAliases": [
+        "Elitz By Danube"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary4-cc0191e9566250329cb4"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Elitz, Elitz 2 and Elitz 3 remain separate native project numbers. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2023-05-01",
+        "project_end_date": "2025-12-31",
+        "completion_date": "2025-12-31",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "33.03000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "592",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    }
+  ],
+  "counts": {
+    "accepted": 4
+  },
+  "methodology": "Human-reviewed bounded exact primary name, phase, developer and geography reconciliation; additive to frozen 191 identities."
+}
