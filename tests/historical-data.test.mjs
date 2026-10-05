@@ -65,3 +65,36 @@ test('source references and dated event revisions have no orphan links or mechan
  for(const exposure of data.exposures){assert.ok(eventIds.has(exposure.eventId));assert.ok(data.records.some(r=>r.id===exposure.recordId));assert.equal(exposure.priceUpliftPct,null);}
  for(const term of ['mobilisation','rainfall','guggenheim','gold','wynn'])assert.ok(data.events.some(e=>(e.id+' '+e.title).toLowerCase().includes(term)),'Required event family: '+term);
 });
+
+test('bounded runtime shards preserve every canonical record and native tuple without inflating the archival root',async()=>{
+ const runtime=JSON.parse(await read('data/historical-intelligence/runtime-index.json'));
+ assert.equal(runtime.manifest.runtime.canonicalSnapshotSHA256,sha(await read('data/historical-intelligence-20261003.json')));
+ assert.equal(runtime.manifest.runtime.canonicalArchiveSHA256,publication.rootIndex.sha256);
+ assert.equal(runtime.records.length,1860);assert.deepEqual(runtime.records.map(r=>r.id),data.records.map(r=>r.id));
+ assert.deepEqual(runtime.sources,data.sources);assert.deepEqual(runtime.events,data.events);assert.deepEqual(runtime.exposures,data.exposures);
+ assert.ok(Buffer.byteLength(JSON.stringify(runtime))<9*1024*1024,'Runtime must retain a bounded inventory rather than full evidence');
+ const records=new Map(),native=new Map(),objects=new Map(publication.objects.map(o=>[o.key,o]));
+ const canonicalNative=new Map();
+ for(const obj of publication.objects.filter(o=>o.kind==='history_partition'))for(const series of JSON.parse(gunzipSync(await read(obj.path))).series)canonicalNative.set(series.id,sha(JSON.stringify(series)));
+ for(const obj of publication.objects.filter(o=>o.kind==='runtime_record_shard')){
+  const decoded=gunzipSync(await read(obj.path));assert.ok(decoded.length<=2*1024*1024);const shard=JSON.parse(decoded);
+  assert.equal(shard.version,data.version);assert.equal(shard.asOf,data.asOf);assert.ok(shard.records.length<=16);
+  for(const r of shard.records){assert.equal(records.has(r.id),false);records.set(r.id,r);}
+ }
+ for(const thin of runtime.records){
+  const original=data.records.find(r=>r.id===thin.id),record=records.get(thin.id);assert.ok(record);
+  assert.ok(objects.has(thin.recordPartition.key));assert.equal(thin.researchStatus.itemCoverage,undefined);assert.equal(thin.researchStatus.itemCoverageAvailable,true);
+  const {historySeries:oldSeries,...oldMetadata}=original,{historySeries:newSeries,...newMetadata}=record;assert.deepEqual(newMetadata,oldMetadata);
+  assert.equal(newSeries.length,oldSeries.length);
+  for(let i=0;i<newSeries.length;i++){
+   const {partition:oldPartition,points:oldTail,...oldFields}=oldSeries[i],{partition,archivePartition,points,...newFields}=newSeries[i];
+   assert.deepEqual(newFields,oldFields);assert.deepEqual(archivePartition,oldPartition);assert.deepEqual(points,[]);
+   if(!native.has(partition.key)){const obj=objects.get(partition.key);assert.ok(obj);const decoded=gunzipSync(await read(obj.path));assert.ok(decoded.length<1024*1024);native.set(partition.key,JSON.parse(decoded));}
+   const series=native.get(partition.key).series.find(s=>s.id===newSeries[i].id);assert.ok(series);assert.equal(series.points.length,newSeries[i].pointCount);assert.equal(sha(JSON.stringify(series)),canonicalNative.get(series.id),'Runtime changed a native tuple or identity field');
+   // Runtime partitions change packaging only: original native cohorts, owners
+   // and independently retained identity proofs remain exactly the same.
+   assert.equal(series.subjectRecordId,newSeries[i].subjectRecordId);assert.deepEqual(series.identitySourceIds,newSeries[i].identitySourceIds);
+  }
+ }
+ assert.equal(records.size,1860);
+});

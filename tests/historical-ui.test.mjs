@@ -98,3 +98,25 @@ test('per-item evidence disclosure distinguishes presence from complete history 
  assert.ok(html.includes('Sparse &lt;evidence&gt;'));assert.ok(!html.includes('Sparse <evidence>'));
  assert.ok(html.includes('https://example.org/verified'));
 });
+
+test('selected cohort paging retains every native point and exact owner without replacing unrelated evidence',async()=>{
+ const series={id:'owned',sourceId:'register',scope:'subject',identityVerified:true,subjectRecordId:'project:one',identitySourceIds:['registry','register'],metric:'price',frequency:'monthly',unit:'AED/sqft',pointCount:5,points:[],partition:{key:'immutable'}};
+ const other={id:'context',scope:'community_context',identityVerified:false,pointCount:3,points:[],partition:{key:'other'}};
+ const history={version:'test',asOf:'2026-10-05',record:{id:'project:one',researchStatus:{itemCoverage:{complete_registered_sale_history:{status:'unestablished'}}}},historySeries:[series,other],validatedObservations:[{seriesId:'context',period:'2025',value:0}],sources:[{id:'registry'}],historyPagination:{totalSeries:2,totalPoints:8,loadedSeries:0,loadedPoints:0,complete:false}};
+ const before=JSON.stringify(history),cursors=[],native=[['2025-01',10],['2025-02',11],['2025-03',12],['2025-04',13],['2025-05',14]];
+ const loaded=await UI.loadCompleteSeriesPages(history,'owned',async cursor=>{cursors.push(cursor);const points=native.slice(cursor,cursor+2);return{version:'test',asOf:'2026-10-05',record:{id:'project:one'},historySeries:[{...series,points,partitionLoaded:true,pointsPartial:cursor+2<5,nativePointOffset:cursor}],validatedObservations:points.map(point=>({seriesId:'owned',period:point[0],value:point[1],displayEligible:true})),sources:[{id:'register'}],historyPagination:{nextPointCursor:cursor+2<5?cursor+2:null}};});
+ assert.deepEqual(cursors,[0,2,4]);assert.deepEqual(plain(loaded.series.points),native);assert.equal(loaded.series.partitionLoaded,true);assert.equal(loaded.series.pointsPartial,false);assert.equal(loaded.validatedObservations.length,5);
+ const merged=UI.mergeLoadedSeries(history,loaded);assert.equal(merged.historySeries[0].subjectRecordId,'project:one');assert.equal(merged.historySeries[1].scope,'community_context');assert.equal(merged.historyPagination.loadedPoints,5);assert.equal(merged.historyPagination.complete,false);assert.equal(merged.record.researchStatus.itemCoverage.complete_registered_sale_history.status,'unestablished');assert.equal(merged.validatedObservations.length,6);assert.equal(JSON.stringify(history),before);
+ const text=UI.historyRetrievalHTML(merged,loaded.series);assert.match(text,/Retrieved 5 of 8 stored native points/);assert.match(text,/Retrieval completeness and complete lifetime financial coverage are separate/);assert.match(text,/Selected source cohort: 5 of 5/);
+});
+
+test('native paging rejects foreign identities, skipped points and a repeated cursor instead of manufacturing completeness',async()=>{
+ const series={id:'exact',sourceId:'official',scope:'subject',identityVerified:true,subjectRecordId:'project:one',metric:'price',frequency:'monthly',unit:'AED/sqft',pointCount:3,identitySourceIds:['proof'],points:[],partition:{key:'immutable'}};
+ const history={version:'test',asOf:'2026-10-05',record:{id:'project:one'},historySeries:[series],sources:[]};
+ const page={version:'test',asOf:'2026-10-05',record:{id:'project:one'},historySeries:[{...series,points:[['2025-01',1]],nativePointOffset:0,partitionLoaded:true}],historyPagination:{nextPointCursor:1}};
+ await assert.rejects(()=>UI.loadCompleteSeriesPages(history,'exact',async()=>({...page,record:{id:'project:other'}})),/another record/);
+ await assert.rejects(()=>UI.loadCompleteSeriesPages(history,'exact',async()=>({...page,historySeries:[{...page.historySeries[0],subjectRecordId:'project:other'}]})),/cohort identity/);
+ await assert.rejects(()=>UI.loadCompleteSeriesPages(history,'exact',async()=>({...page,historyPagination:{nextPointCursor:0}})),/cursor/);
+ await assert.rejects(()=>UI.loadCompleteSeriesPages(history,'exact',async()=>({...page,historyPagination:{nextPointCursor:2}})),/cursor/);
+ await assert.rejects(()=>UI.loadCompleteSeriesPages(history,'exact',async()=>({...page,historyPagination:{nextPointCursor:null}})),/remains incomplete/);
+});

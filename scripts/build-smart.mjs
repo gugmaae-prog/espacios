@@ -33,8 +33,11 @@ if(!historicalExports.length)throw Error('Historical intelligence module exposes
 source+='\nvar HI_CORE=(()=>{\n'+historicalCore.replace(/^export /gm,'')+'\nreturn {'+historicalExports.join(',')+'};})();\n';
 const historicalApp='\nwindow.EspaciosHistoricalCore=(()=>{\n'+historicalCore.replace(/^export /gm,'')+'\nreturn {annualScenarios,validateScenarioAssumptions};})();\n'+await read('src/historical-intelligence/app.js');
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(historicalApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/historical-intelligence/style.css'))+';\n';
-const historicalData=await read('data/historical-intelligence-20261003.json');
+const historicalData=await read('data/historical-intelligence/runtime-index.json');
 const historicalIndex=JSON.parse(historicalData);
+if(historicalIndex.manifest?.runtime?.classification!=='bounded_manifest_backed_runtime')throw Error('Bounded runtime index required; build historical data before bundling the Worker');
+const canonicalHistorical=JSON.parse(await read('data/historical-intelligence-20261003.json'));
+if(historicalIndex.version!==canonicalHistorical.version||historicalIndex.asOf!==canonicalHistorical.asOf||historicalIndex.manifest.runtime.canonicalSnapshotSHA256!==createHash('sha256').update(await read('data/historical-intelligence-20261003.json')).digest('hex'))throw Error('Runtime index differs from canonical evidence snapshot');
 source+='\nvar HI_DATA='+JSON.stringify({version:historicalIndex.version,asOf:historicalIndex.asOf})+';\nvar HI_PACKED='+JSON.stringify(gzipSync(historicalData,{level:9}).toString('base64'))+';\nvar HI_DATA_READY;\nasync function HI_GET_DATA(){if(!HI_DATA_READY)HI_DATA_READY=(async()=>{const b=atob(HI_PACKED),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);HI_DATA=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream("gzip"))).json();return HI_DATA;})();return HI_DATA_READY;}\n';
 source+='\nvar HI_ETAG='+JSON.stringify('"'+createHash('sha256').update(historicalData).digest('hex')+'"')+';\n';
 const valueData=JSON.parse(await read('data/value-drivers-20261003.json'));

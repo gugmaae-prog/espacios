@@ -9,7 +9,7 @@ const wrapper=await fs.readFile(new URL('../src/historical-intelligence/worker-e
 const event={id:'pandemic',title:'Dated public event',category:'market_shock',eventDate:{start:'2020-03-11',precision:'day'},publishedAt:'2020-03-11',firstAvailableAt:'2020-03-11',sourceIds:['news'],priceUpliftPct:null};
 const data={version:'test-history-v1',asOf:'2026-10-03',records:[{id:'project:a',type:'project',name:'A',emirate:'Dubai',communityId:'community:a',lifecycle:[],observations:[],historySeries:[],researchStatus:{subjectHistory:'not_verified'}},{id:'community:a',type:'community',name:'A Community',emirate:'Dubai',lifecycle:[],observations:[],historySeries:[]}],events:[event],sources:[{id:'news',url:'https://example.com/news',publishedAt:'2020-03-11'},{id:'sales',url:'https://example.com/sales',publishedAt:'2026-09-01'},{id:'unused',url:'https://example.com/unused',publishedAt:'2026-01-01'}],exposures:[{eventId:event.id,recordId:'community:a',scope:'community',verified:false}],exposureRules:[{eventId:event.id,scope:'national',appliesTo:'project',emirates:['Dubai'],sourceIds:['news'],verified:false}],manifest:{recordCount:2}};
 function fixture(snapshot=data,loader=null){
- const worker={fetch:async()=>new Response('existing-route',{status:202})},context={worker_default:worker,HI_DATA:structuredClone(snapshot),HI_CORE:core,crypto:webcrypto,Response,Request,URL,TextEncoder,TextDecoder,DecompressionStream,TypeError,RangeError,Map,Set,Date,JSON,Uint8Array};
+ const worker={fetch:async()=>new Response('existing-route',{status:202})},context={worker_default:worker,HI_DATA:structuredClone(snapshot),HI_CORE:core,crypto:webcrypto,Response,Request,URL,TextEncoder,TextDecoder,DecompressionStream,TypeError,RangeError,Map,Set,Date,JSON,Uint8Array,ReadableStream};
  if(loader)context.HI_GET_DATA=async()=>{context.HI_DATA=await loader();};
  vm.runInNewContext(wrapper,context);return worker;
 }
@@ -112,4 +112,50 @@ test('inventory loads per-item evidence on request while each selected record re
  assert.deepEqual(full.records[0].researchStatus.itemCoverage,items);
  const selected=await(await worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),none,{})).json();
  assert.deepEqual(selected.record.researchStatus.itemCoverage,items);
+});
+
+function boundedFixture({series=[],shardPatch=null,shardVersion=data.version}={}){
+ const pin=value=>{const bytes=gzipSync(JSON.stringify(value)),sha=createHash('sha256').update(bytes).digest('hex');return{bytes,spec:{key:'research/published/2026-10-05/historical-intelligence/objects/'+sha+'.json.gz',sha256:sha,bytes:bytes.length,compression:'gzip',decodedBytes:Buffer.byteLength(JSON.stringify(value))}};};
+ const snapshot=structuredClone(data),objects=new Map(),native=pin({version:data.version,asOf:data.asOf,series});objects.set(native.spec.key,native.bytes);
+ const record={...snapshot.records[0],historySeries:series.map(s=>({...s,points:[],pointCount:s.points.length,partition:native.spec})),researchStatus:{subjectHistory:'not_verified',itemCoverage:{registered_sale_history:{status:'missing'}}}},community=snapshot.records[1];
+ const shard=pin({version:shardVersion,asOf:data.asOf,classification:'runtime_record_evidence_shard',records:shardPatch?shardPatch([record,community]):[record,community]});objects.set(shard.spec.key,shard.bytes);
+ snapshot.records=[record,community].map(({historySeries,lifecycle,observations,...r})=>({...r,researchStatus:{subjectHistory:'not_verified',itemCoverageAvailable:true},recordPartition:shard.spec}));
+ snapshot.manifest={recordCount:2,partitionBinding:'MARKET_R2',r2:{key:'research/published/full-archive-never-read.json.gz',sha256:'0'.repeat(64)},runtime:{classification:'bounded_manifest_backed_runtime',canonicalArchiveSHA256:'f'.repeat(64)}};
+ const calls=[],env={MARKET_R2:{get:async key=>{calls.push(key);return objects.has(key)?{arrayBuffer:async()=>objects.get(key)}:null;}}};
+ return{worker:fixture(snapshot),env,calls,snapshot,record,objects};
+}
+
+test('bounded runtime keeps inventory read-only and loads exact record evidence without inflating archival root',async()=>{
+ const native={id:'small',sourceId:'sales',scope:'area_context',identityVerified:false,metric:'price',frequency:'monthly',unit:'AED/sqft',columns:['period','value','sampleCount'],points:[['2025-01',100,25]]};
+ const f=boundedFixture({series:[native]});
+ const inventory=await(await f.worker.fetch(req('/map/api/record-history'),none,{})).json();assert.equal(inventory.records.length,2);assert.equal(inventory.records[0].researchStatus.itemCoverageAvailable,true);assert.equal(f.calls.length,0);
+ const response=await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),f.env,{}),etag=response.headers.get('etag'),selected=await response.json();assert.equal(selected.historySeries[0].points[0][1],100);assert.equal(selected.historyPagination.complete,true);assert.equal(selected.record.researchStatus.itemCoverage.registered_sale_history.status,'missing');
+ const head=await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa',{method:'HEAD'}),f.env,{});assert.equal(head.status,200);assert.equal(await head.text(),'');assert.equal(head.headers.get('etag'),etag);
+ assert.equal((await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa',{headers:{'if-none-match':etag}}),f.env,{})).status,304);
+ assert.ok(f.calls.every(key=>key!==f.snapshot.manifest.r2.key));
+});
+
+test('bounded runtime rejects missing shards, changed catalogue identities and wrong publication vintages',async()=>{
+ const missing=boundedFixture();assert.equal((await missing.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),{MARKET_R2:{get:async()=>null}},{})).status,503);
+ const revised=boundedFixture({shardVersion:'wrong-vintage'});assert.equal((await revised.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),revised.env,{})).status,503);
+ const changed=boundedFixture({shardPatch:records=>records.map((r,i)=>i? r:{...r,communityId:'community:other'})});assert.equal((await changed.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),changed.env,{})).status,503);
+ const fanout=boundedFixture({shardPatch:records=>records.map((r,i)=>i?r:{...r,historySeries:[{id:'bad-owner',scope:'subject',sourceId:'sales',identityVerified:true,subjectRecordId:'project:other',identitySourceIds:['sales']}]})});assert.equal((await fanout.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),fanout.env,{})).status,503);
+});
+
+test('bounded runtime exposes every descriptor and pages native history without implying full retrieval or dropping sparse points',async()=>{
+ const series=Array.from({length:10},(_,i)=>({id:'series:'+i,sourceId:'sales',scope:'area_context',identityVerified:false,metric:'price',frequency:'monthly',unit:'AED/sqft',columns:['period','value','sampleCount','sourceObservationId'],points:Array.from({length:i?1:2501},(_,j)=>['2025-01',100,1,'row:'+i+':'+j])}));
+ const f=boundedFixture({series});
+ const first=await(await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'),f.env,{})).json();assert.equal(first.historySeries.length,10);assert.equal(first.historyPagination.loadedPoints,2000);assert.equal(first.historyPagination.nextPointCursor,2000);assert.equal(first.coverage.retrievalLimited,true);assert.equal(first.historyPagination.complete,false);
+ const tail=await(await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa&seriesId=series%3A0&pointCursor=2000'),f.env,{})).json();assert.equal(tail.historySeries[0].points.length,501);assert.equal(tail.historySeries[0].nativePointOffset,2000);assert.equal(tail.historySeries[0].pointCount,2501);assert.equal(tail.historyPagination.nextPointCursor,null);assert.equal(tail.validatedObservations.find(o=>o.metric==='price').sparse,true);
+ const last=await(await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa&seriesCursor=8'),f.env,{})).json();assert.equal(last.historyPagination.loadedSeries,2);assert.equal(last.historyPagination.loadedPoints,2);assert.equal(last.historySeries[0].availability,'partition_not_requested');
+ for(const extra of ['&seriesId=unknown','&seriesCursor=11','&seriesCursor=-1','&seriesId=series%3A0&pointCursor=2502'])assert.equal((await f.worker.fetch(req('/map/api/record-history?recordId=project%3Aa'+extra),f.env,{})).status,400);
+});
+
+
+test('full runtime item inventory streams every ledger with stable HEAD and conditional ETag',async()=>{
+ const f=boundedFixture(),url='/map/api/record-history?includeItemCoverage=1';
+ const response=await f.worker.fetch(req(url),f.env,{}),etag=response.headers.get('etag'),body=await response.json();
+ assert.equal(body.records.length,2);assert.equal(body.records[0].researchStatus.itemCoverage.registered_sale_history.status,'missing');
+ const head=await f.worker.fetch(req(url,{method:'HEAD'}),none,{});assert.equal(head.status,200);assert.equal(await head.text(),'');assert.equal(head.headers.get('etag'),etag);
+ assert.equal((await f.worker.fetch(req(url,{headers:{'if-none-match':etag}}),none,{})).status,304);
 });

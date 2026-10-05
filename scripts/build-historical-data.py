@@ -64,6 +64,56 @@ def immutable(blob,suffix,kind):
  else: path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(blob)
  return {'key':f'research/published/{ASOF}/historical-intelligence/{rel}','path':str(path.relative_to(ROOT)),'sha256':digest,'bytes':len(blob),'kind':kind,'compression':'gzip' if suffix.endswith('.gz') else None}
 def gzip_object(value,kind):return immutable(gzip.compress(encoded(value),mtime=0),'.json.gz',kind)
+def build_runtime_index(snapshot,publication):
+ """Append bounded runtime objects without changing the canonical evidence snapshot."""
+ if snapshot['version']!=publication['version'] or snapshot['asOf']!=publication['asOf']:raise ValueError('Runtime source version differs from publication')
+ objects=[x for x in publication['objects'] if x['kind'] not in ['runtime_history_partition','runtime_record_shard','runtime_index']]
+ runtime_objects=[];pointers={};maximum_native=512*1024
+ def native_chunk(items):
+  if not items:return
+  value={'version':snapshot['version'],'asOf':snapshot['asOf'],'classification':'runtime_native_history_partition','series':items}
+  obj=gzip_object(value,'runtime_history_partition');obj['decodedBytes']=len(encoded(value));runtime_objects.append(obj)
+  for item in items:pointers[item['id']]={k:obj[k] for k in ['key','sha256','bytes','compression','decodedBytes']}
+ for obj in objects:
+  if obj['kind']!='history_partition':continue
+  original=gzip.decompress((ROOT/obj['path']).read_bytes());partition=json.loads(original)
+  if len(original)<=maximum_native:
+   for item in partition['series']:pointers[item['id']]={k:obj[k] for k in ['key','sha256','bytes','compression']};pointers[item['id']]['decodedBytes']=len(original)
+   continue
+  chunk=[];size=0
+  for item in partition['series']:
+   item_size=len(encoded(item))
+   if chunk and size+item_size>maximum_native:native_chunk(chunk);chunk=[];size=0
+   chunk.append(item);size+=item_size
+  native_chunk(chunk)
+ inventory=[];record_group=[];record_group_bytes=0
+ def record_chunk(items):
+  if not items:return
+  value={'version':snapshot['version'],'asOf':snapshot['asOf'],'classification':'runtime_record_evidence_shard','records':items}
+  obj=gzip_object(value,'runtime_record_shard');obj['decodedBytes']=len(encoded(value));runtime_objects.append(obj)
+  pointer={k:obj[k] for k in ['key','sha256','bytes','compression','decodedBytes']}
+  for item in items:
+   native=next(row for row in inventory if row['id']==item['id']);native['recordPartition']=pointer;native['runtimeRecordSHA256']=sha(encoded(item))
+ for original in snapshot['records']:
+  record={**original,'historySeries':[{**series,'points':[],'archivePartition':series.get('partition'),'partition':pointers[series['id']]} for series in original.get('historySeries',[])]}
+  research=original.get('researchStatus') or {}
+  compact={k:v for k,v in research.items() if v is None or isinstance(v,(str,int,float,bool)) or k=='gaps'}
+  compact['itemCoverageAvailable']=bool(research.get('itemCoverage'));compact['fullEvidenceAvailable']=True
+  inventory.append({k:original.get(k) for k in ['id','type','name','emirate','communityId','sharedCommunityHistoryId']})
+  inventory[-1]['researchStatus']=compact
+  inventory[-1]['canonicalRecordSHA256']=sha(encoded(original))
+  record_size=len(encoded(record))
+  if record_group and (len(record_group)>=16 or record_group_bytes+record_size>2*1024*1024):record_chunk(record_group);record_group=[];record_group_bytes=0
+  record_group.append(record);record_group_bytes+=record_size
+ record_chunk(record_group)
+ compact_manifest={k:v for k,v in snapshot['manifest'].items() if k not in ['objects','rawSourcePartitions','inputProvenance','rightsPendingSourceMetadata']}
+ compact_manifest['r2']={**{k:publication['rootIndex'][k] for k in ['key','sha256','bytes','compression']},'binding':'MARKET_R2','classification':'archival_only; not inflated by bounded runtime'}
+ compact_manifest['runtime']={'classification':'bounded_manifest_backed_runtime','recordCount':len(inventory),'recordShardCount':sum(x['kind']=='runtime_record_shard' for x in runtime_objects),'recordShardMaximumDecodedBytes':max(x['decodedBytes'] for x in runtime_objects if x['kind']=='runtime_record_shard'),'nativePartitionMaximumDecodedBytes':max([x.get('decodedBytes',0) for x in runtime_objects if x['kind']=='runtime_history_partition']+[maximum_native]),'canonicalSnapshotSHA256':sha((ROOT/'data/historical-intelligence-20261003.json').read_bytes()),'canonicalArchiveSHA256':publication['rootIndex']['sha256'],'historyRetrieval':'Selected record evidence plus native immutable partitions; full archive retained separately'}
+ runtime={**snapshot,'records':inventory,'manifest':compact_manifest}
+ dump_json(BASE/'runtime-index.json',runtime)
+ obj=gzip_object(runtime,'runtime_index');obj['decodedBytes']=len(encoded(runtime));runtime_objects.append(obj)
+ publication['runtimeIndex']=obj;publication['objects']=objects+runtime_objects;publication['runtime']=compact_manifest['runtime'];dump_json(BASE/'publication-manifest.json',publication)
+ return runtime
 def canonical_url(url):
  if isinstance(url,dict):url=url.get('url') or ''
  return str(url or '').split('#')[0].rstrip('/')
@@ -309,15 +359,19 @@ def build():
   for s in r['historySeries']:sql.append(f'INSERT OR IGNORE INTO hi_record_series(snapshot_version,record_id,series_id,scope,identity_verified) VALUES({lit(VERSION)},{lit(r["id"])},{lit(s["id"])},{lit(s["scope"])},{int(s.get("identityVerified",False))});')
  indexsql=immutable(gzip.compress(('\n'.join(sql)+'\n').encode(),mtime=0),'.sql.gz','d1_append_only_index')
  publication=read_json(BASE/'publication-manifest.json');publication['d1Index']=indexsql;dump_json(BASE/'publication-manifest.json',publication)
+ build_runtime_index(snapshot,publication)
  print(json.dumps({'version':VERSION,**publication['counts'],'partitions':len(partition_groups),'embeddedBytes':(ROOT/'data/historical-intelligence-20261003.json').stat().st_size,'sourceCandidateProjects':len(candidate_p),'sourceCandidateCommunities':len(candidate_c),'unresolvedLegacySeriesIds':len({s for r in records for s in r['researchStatus']['unresolvedSeriesIds']}),'approvedSubjectHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') for s in r['historySeries']) for r in records),'approvedSubjectHistoryRecordMetricPairs':manifest['directSubjectSaleHistoryRecords']+manifest['directSubjectRentHistoryRecords'],'approved2080Forecasts':0,'objectsBytes':sum(x['bytes'] for x in publication['objects'])}))
 
 if __name__=='__main__':
- parser=argparse.ArgumentParser();parser.add_argument('--import-workspace',type=pathlib.Path);parser.add_argument('--version',default=VERSION);parser.add_argument('--as-of',default=ASOF);args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--runtime-only',action='store_true');parser.add_argument('--import-workspace',type=pathlib.Path);parser.add_argument('--version',default=VERSION);parser.add_argument('--as-of',default=ASOF);args=parser.parse_args()
  if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,79}',args.version):parser.error('version must be 1–80 letters, digits, dots, underscores or hyphens; start with a letter or digit')
  try:
   parsed=datetime.date.fromisoformat(args.as_of)
   if parsed.isoformat()!=args.as_of:raise ValueError('Use YYYY-MM-DD')
  except ValueError:parser.error('as-of must be a valid date in YYYY-MM-DD format')
  VERSION=args.version;ASOF=args.as_of
+ if args.runtime_only:
+  runtime=build_runtime_index(read_json(ROOT/'data/historical-intelligence-20261003.json'),read_json(BASE/'publication-manifest.json'))
+  print(json.dumps(runtime['manifest']['runtime']));raise SystemExit(0)
  if args.import_workspace:import_inputs(args.import_workspace)
  build()

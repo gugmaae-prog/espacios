@@ -1,4 +1,6 @@
--- Candidate-only append-only indexes. Apply only to an isolated candidate D1.
+-- Append-only historical indexes. Candidate by default; an explicitly authorized
+-- production release may apply this initial schema after proving hi_* tables absent.
+-- Do not apply the candidate legacy-rebuild migration to production.
 PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS hi_snapshots (
  snapshot_version TEXT PRIMARY KEY, as_of TEXT NOT NULL, record_count INTEGER NOT NULL,

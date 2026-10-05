@@ -1,4 +1,4 @@
-/* Sourced history, event context and explicit user scenarios. 20261003-history-events-v1 */
+/* Sourced history, event context and explicit user scenarios. 20261005-history-enrichment-v3 */
 (() => {
   'use strict';
   const Q = selector => document.querySelector(selector);
@@ -93,8 +93,43 @@
     if(key(mapArea)!==key(subjectArea))return 'Map values use '+mapArea+'; event context uses '+subjectArea+'. These events are not matched to that map price series.';
     return 'Event context and map area share the label '+subjectArea+'. A shared label does not establish a causal price effect; the sourced study checks its own record and cohort.';
   }
-  window.EspaciosHistoricalUIHelpers = Object.freeze({safeURL,periodTime,pointValue,seriesRows,exactRecord,scenarioPoint,lineSegments,buildAnnualInputs,clusterEventMarkers,mapScopeWarning,lifecycleLabels,lifecycleHTML,itemCoverageHTML});
-  const H = {installed:false, records:[], indexPromise:null, recordId:null, pendingSelection:null, history:null, events:[], tab:'history', metric:'price', seriesId:null, selectedEvent:null, study:null, loading:false, error:'', sequence:0, studySequence:0, controller:null, scenarioMetric:'price', year:2080, assumptions:null, scenarioResult:null, scenarioPending:false, scenarioError:'', lastSelection:'', overlay:false, overlayKey:'', areaKey:'', annualForm:{}, scenarioDisplay:'nominal', pickerPinnedOpen:false};
+  async function loadCompleteSeriesPages(history,seriesId,fetchPage) {
+    const descriptor=list(history.historySeries).find(series=>series.id===seriesId);
+    if(!descriptor)throw Error('The selected cohort has no exact stored series identity.');
+    const points=[],validated=[],sources=new Map(sourceList(history).map(source=>[source.id,source]));
+    let cursor=0,complete;
+    do {
+      const page=await fetchPage(cursor);
+      if(page.record?.id!==history.record?.id||page.version!==history.version||page.asOf!==history.asOf)throw Error('A history page belongs to another record or research snapshot.');
+      const series=list(page.historySeries).find(row=>row.id===seriesId);
+      if(!series||!series.partitionLoaded)throw Error('The selected native financial cohort could not be retrieved.');
+      for(const field of ['sourceId','scope','identityVerified','subjectRecordId','unit','metric','frequency','segment','registration','geography','pointCount'])if(JSON.stringify(series[field]??null)!==JSON.stringify(descriptor[field]??null))throw Error('The selected history page changed its approved cohort identity.');
+      if(JSON.stringify(list(series.identitySourceIds).slice().sort())!==JSON.stringify(list(descriptor.identitySourceIds).slice().sort()))throw Error('The selected history page changed its identity evidence.');
+      if((series.nativePointOffset??0)!==cursor)throw Error('The selected history page did not retain its native point position.');
+      points.push(...list(series.points));validated.push(...list(page.validatedObservations).filter(row=>row.seriesId===seriesId));
+      for(const source of sourceList(page))sources.set(source.id,source);
+      complete=series;
+      const next=page.historyPagination?.nextPointCursor??null;
+      if(next===null)break;
+      if(!Number.isInteger(next)||next<=cursor||next!==points.length||next>=descriptor.pointCount)throw Error('The selected history page cursor is incomplete or inconsistent.');
+      cursor=next;
+    }while(points.length<descriptor.pointCount);
+    if(points.length!==descriptor.pointCount)throw Error('The selected financial timeline remains incomplete; no points were filled in.');
+    return{series:{...complete,points,pointsPartial:false,nativePointOffset:0,loadedPointCount:points.length,availability:'verified_immutable_partition',partitionLoaded:true},validatedObservations:validated,sources:[...sources.values()]};
+  }
+  function mergeLoadedSeries(history,loaded) {
+    const rows=list(history.historySeries).map(series=>series.id===loaded.series.id?loaded.series:series);
+    const historyPagination=history.historyPagination?{...history.historyPagination,loadedSeries:rows.filter(series=>list(series.points).length>0).length,loadedPoints:rows.reduce((sum,series)=>sum+list(series.points).length,0),complete:rows.every(series=>!series.partition||series.partitionLoaded&&!series.pointsPartial&&list(series.points).length===series.pointCount)}:null;
+    return{...history,historySeries:rows,record:{...history.record,historySeries:rows},validatedObservations:[...list(history.validatedObservations).filter(row=>row.seriesId!==loaded.series.id),...loaded.validatedObservations],sources:loaded.sources,...(historyPagination?{historyPagination}:{})};
+  }
+  function historyRetrievalHTML(data,selected) {
+    const page=data?.historyPagination;
+    if(!page)return '';
+    const native=list(data.historySeries).find(series=>series.id===selected?.id)??selected;
+    return '<p class="hi-note" id="hi-retrieval-note">Retrieved '+esc(fmt(page.loadedPoints))+' of '+esc(fmt(page.totalPoints))+' stored native points across '+esc(fmt(page.loadedSeries))+' of '+esc(fmt(page.totalSeries))+' cohorts. '+(page.complete?'All stored cohorts are loaded for this record. ':'Other stored cohorts remain available when selected. ')+(native?'Selected source cohort: '+esc(fmt(list(native.points).length))+' of '+esc(fmt(native.pointCount??list(native.points).length))+' native points loaded. ':'')+'Retrieval completeness and complete lifetime financial coverage are separate. Monthly accountability below describes the retrieved record page.</p>';
+  }
+  window.EspaciosHistoricalUIHelpers = Object.freeze({safeURL,periodTime,pointValue,seriesRows,exactRecord,scenarioPoint,lineSegments,buildAnnualInputs,clusterEventMarkers,mapScopeWarning,lifecycleLabels,lifecycleHTML,itemCoverageHTML,loadCompleteSeriesPages,mergeLoadedSeries,historyRetrievalHTML});
+  const H = {installed:false, records:[], indexPromise:null, recordId:null, pendingSelection:null, history:null, events:[], tab:'history', metric:'price', seriesId:null, selectedEvent:null, study:null, loading:false, seriesLoading:false, seriesError:'', seriesSequence:0, seriesController:null, error:'', sequence:0, studySequence:0, controller:null, scenarioMetric:'price', year:2080, assumptions:null, scenarioResult:null, scenarioPending:false, scenarioError:'', lastSelection:'', overlay:false, overlayKey:'', areaKey:'', annualForm:{}, scenarioDisplay:'nominal', pickerPinnedOpen:false};
   const metricLabel = metric => ({price:'Price',rent:'Rent',volume:'Transaction volume',netROI:'Net return'}[metric] ?? metric);
   const stageLabel = status => String(status ?? 'Status not supplied').replace(/_/g, ' ');
   function sourceList(data=H.history) { return list(data?.sources); }
@@ -263,7 +298,7 @@
     const selector = rows.length ? '<label>Financial series / cohort<select id="hi-series">' + rows.map(row => '<option value="' + esc(row.uiId) + '"' + (row.uiId === H.seriesId ? ' selected' : '') + '>' + esc(row.label ?? row.name ?? [row.metric,row.segment,row.saleType,row.scope,row.unit].filter(Boolean).join(' · ') ?? row.uiId) + '</option>').join('') + '</select></label>' : '';
     const nativeURL = /^\/map\/api\//.test(selected?.nativeApiURL??'')?selected.nativeApiURL:safeURL(selected?.nativeApiURL);
     const retained=selected?.points.length?'<details class="hi-section"><summary>Retained source rows · '+selected.points.length+'</summary><p class="hi-note">Raw values remain visible here even when sparse, conflicting or withheld from the chart. They are not an eligible market median or verified subject observation merely because a number is present.</p><div class="hi-period-table"><table><caption>Selected native cohort · '+esc(selected.unit??'unit not supplied')+'</caption><thead><tr><th>Period</th><th>Retained value</th><th>Eligibility</th></tr></thead><tbody>'+selected.points.map(point=>'<tr><th scope="row">'+esc(pointPeriod(point))+'</th><td>'+esc(fmt(pointValue(point)))+(point.sampleCount!==undefined?'<small>Sample '+esc(point.sampleCount??'unknown')+'</small>':'')+'</td><td>'+(point.displayEligible?'Chart eligible':point.sparse?'Sparse · withheld':'Withheld / unavailable')+(list(point.issues).length?'<small>'+esc(point.issues.join(', '))+'</small>':'')+'</td></tr>').join('')+'</tbody></table></div></details>':'';
-    return metricControls() + selector + '<p class="hi-note">' + esc(stageLabel(availability)) + (selected?.storedPointCount != null || selected?.pointCount != null ? ' · ' + esc(selected.storedPointCount??selected.pointCount) + ' stored points' : '') + (selected?.scope ? ' · ' + esc(selected.scope) : '') + (selected?.frequency ? ' · ' + esc(stageLabel(selected.frequency)) : '') + '</p>' + (nativeURL ? '<p><a href="' + esc(nativeURL) + '" target="_blank" rel="noopener noreferrer">Open native financial source</a></p>' : '') + historyChart(selected,eventList()) + retained + presentEvidenceHTML(data) + itemCoverageHTML(data) + coverageHTML(data) + lifecycleHTML(data) + '<details class="hi-section"><summary>Sources and news context · ' + sourceList(data).length + ' references</summary>' + sourceLinks(sourceList(data),data) + '</details>';
+    return metricControls() + selector + historyRetrievalHTML(data,selected) + '<p class="hi-note">' + esc(stageLabel(availability)) + (selected?.storedPointCount != null || selected?.pointCount != null ? ' · ' + esc(selected.storedPointCount??selected.pointCount) + ' stored points' : '') + (selected?.scope ? ' · ' + esc(selected.scope) : '') + (selected?.frequency ? ' · ' + esc(stageLabel(selected.frequency)) : '') + '</p>' + (nativeURL ? '<p><a href="' + esc(nativeURL) + '" target="_blank" rel="noopener noreferrer">Open native financial source</a></p>' : '') + historyChart(selected,eventList()) + retained + presentEvidenceHTML(data) + itemCoverageHTML(data) + coverageHTML(data) + lifecycleHTML(data) + '<details class="hi-section"><summary>Sources and news context · ' + sourceList(data).length + ' references</summary>' + sourceLinks(sourceList(data),data) + '</details>';
   }
   function eventCard(event,index) {
     return '<button type="button" class="hi-event-card' + (H.selectedEvent === event.id ? ' hi-selected' : '') + '" data-hi-event="' + esc(event.id) + '" aria-pressed="' + (H.selectedEvent === event.id) + '"><span class="hi-event-number">' + (index+1) + '</span><span><strong>' + esc(event.title ?? event.name ?? event.id) + '</strong><small>' + esc(dateText(eventDate(event))) + '</small><small>' + esc(stageLabel(event.status)) + ' · ' + esc(stageLabel(event.category)) + '</small></span></button>';
@@ -316,13 +351,13 @@
     dock.append(overlay);
     Q('#hi-overlay-toggle').onclick=async()=>{H.overlay=!H.overlay;renderOverlay(true);if(H.overlay&&!H.records.length){try{await loadIndex();const record=exactRecord(H.pendingSelection??currentSelection()??areaSelection(),H.records);if(record)await select(record.id);else open();}catch(error){Q('#hi-overlay-note').textContent=error.message;}}else if(H.overlay&&!H.recordId)open();};
     Q('#hi-overlay-choose').onclick=()=>open(H.recordId);
-    Q('#hi-overlay-metric').onchange=event=>{H.metric=event.target.value;H.seriesId=null;H.study=null;if(H.selectedEvent)selectEvent(H.selectedEvent);else render();};
+    Q('#hi-overlay-metric').onchange=event=>changeFinancialSelection(event.target.value);
     overlay.addEventListener('click',event=>{const button=event.target.closest('[data-hi-overlay-event]');if(button){open(H.recordId);selectEvent(button.dataset.hiOverlayEvent);}});
     renderOverlay(true);
   }
   function eventsHTML() {
     const events = eventList(), rows = seriesRows(H.history,H.metric), series = rows.find(row => row.uiId === H.seriesId) ?? rows[0];
-    return metricControls() + historyChart(series,events) + '<p class="hi-note">' + events.length + ' relevant event records. Reported event dates and publication dates are displayed separately.</p><div class="hi-events">' + events.map(eventCard).join('') + '</div>' + eventDetailHTML(eventById(H.selectedEvent));
+    return metricControls() + historyRetrievalHTML(H.history,series) + historyChart(series,events) + '<p class="hi-note">' + events.length + ' relevant event records. Reported event dates and publication dates are displayed separately.</p><div class="hi-events">' + events.map(eventCard).join('') + '</div>' + eventDetailHTML(eventById(H.selectedEvent));
   }
   function input(name,label,options={}) { return '<label>' + esc(label) + '<input type="number" name="' + esc(name) + '" step="' + (options.step ?? 'any') + '"' + (options.min !== undefined ? ' min="' + options.min + '"' : '') + (options.max !== undefined ? ' max="' + options.max + '"' : '') + ' value="' + esc(options.value ?? '') + '"></label>'; }
   function assumptionForm() {
@@ -353,17 +388,40 @@
     Q('#hi-record-name').textContent = record ? record.name + ' · ' + record.emirate : 'Choose a project or community';
     Q('#hi-date-label').textContent = H.history ? 'Research snapshot ' + (H.history.asOf ?? 'not dated') + ' · ' + (record?.type ?? '') : 'Sourced history and events';
     Q('#hi-tabs').querySelectorAll('button').forEach(button => { const selected=button.dataset.hiTab===H.tab; button.setAttribute('aria-selected',String(selected)); button.tabIndex=selected?0:-1; });
-    const body = Q('#hi-body'); body.setAttribute('aria-labelledby','hi-tab-' + H.tab); body.setAttribute('aria-busy',String(H.loading));
+    const body = Q('#hi-body'); body.setAttribute('aria-labelledby','hi-tab-' + H.tab); body.setAttribute('aria-busy',String(H.loading||H.seriesLoading));
     if (H.loading) { body.innerHTML='<p role="status">Loading this record’s financial coverage and dated events…</p>'; return; }
     if (H.error) { body.innerHTML='<p role="alert">' + esc(H.error) + '</p><button type="button" id="hi-retry">Retry research</button>'; return; }
     if (!H.history) { body.innerHTML='<p class="hi-empty">Choose any indexed project or community above. Financial observations, lifecycle evidence, events and long-term scenario availability will be shown separately.</p>'; return; }
-    body.innerHTML = H.tab === 'history' ? historyHTML(H.history) : H.tab === 'events' ? eventsHTML() : scenariosHTML();
-    window.__ESPACIOS_HISTORICAL_INTELLIGENCE__ = {release:'20261003-history-events-v1',recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,scenarioClassification:(H.scenarioResult??H.history).scenarios?.classification,validatedForecast:false};
+    body.innerHTML = (H.seriesLoading?'<p role="status">Loading all retained native points for the selected financial cohort…</p>':'')+(H.seriesError?'<p role="alert">'+esc(H.seriesError)+'</p><button type="button" id="hi-series-retry">Retry selected cohort</button>':'')+(H.tab === 'history' ? historyHTML(H.history) : H.tab === 'events' ? eventsHTML() : scenariosHTML());
+    window.__ESPACIOS_HISTORICAL_INTELLIGENCE__ = {release:'20261005-history-enrichment-v3',recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,scenarioClassification:(H.scenarioResult??H.history).scenarios?.classification,validatedForecast:false};
+  }
+  async function ensureSelectedSeries(uiId=H.seriesId) {
+    if(!H.history)return;
+    const rows=seriesRows(H.history,H.metric),selected=rows.find(row=>row.uiId===uiId)??rows[0];
+    H.seriesController?.abort();const requestSequence=++H.seriesSequence;
+    H.seriesLoading=false;H.seriesError='';H.seriesId=selected?.uiId??null;
+    const descriptor=list(H.history.historySeries).find(series=>series.id===selected?.id);
+    if(!selected||!descriptor?.partition||descriptor.partitionLoaded&&!descriptor.pointsPartial&&list(descriptor.points).length===descriptor.pointCount){render();return;}
+    const recordId=H.recordId,recordSequence=H.sequence,history=H.history,controller=new AbortController();H.seriesController=controller;H.seriesLoading=true;render();
+    try{
+      const loaded=await loadCompleteSeriesPages(history,selected.id,cursor=>getJSON('/map/api/record-history?recordId='+encodeURIComponent(recordId)+'&seriesId='+encodeURIComponent(selected.id)+'&pointCursor='+cursor,AbortSignal.any([controller.signal,AbortSignal.timeout(15000)])));
+      if(requestSequence!==H.seriesSequence||recordSequence!==H.sequence||recordId!==H.recordId)return;
+      H.history=mergeLoadedSeries(H.history,loaded);
+      const completedRows=seriesRows(H.history,H.metric);
+      H.seriesId=(completedRows.find(row=>row.uiId===selected.uiId)??completedRows.find(row=>row.id===selected.id&&row.frequency===selected.frequency)??completedRows.find(row=>row.id===selected.id))?.uiId??null;
+    }catch(error){if(requestSequence!==H.seriesSequence||recordSequence!==H.sequence||error.name==='AbortError')return;H.seriesError=error.message;}
+    finally{if(requestSequence===H.seriesSequence&&recordSequence===H.sequence){H.seriesLoading=false;render();}}
+  }
+  async function changeFinancialSelection(metric,uiId=null) {
+    H.metric=metric;H.seriesId=uiId;H.study=null;render();
+    await ensureSelectedSeries(uiId);
+    if(H.selectedEvent)selectEvent(H.selectedEvent);
   }
   async function select(recordId) {
     if (!H.records.length) await loadIndex();
     const record = H.records.find(row => row.id === recordId);
     if (!record) { H.error='This selection has no exact project or community record in the research index.'; render(); return; }
+    H.seriesController?.abort();++H.seriesSequence;H.seriesLoading=false;H.seriesError='';
     H.recordId=recordId; H.history=null; H.events=[]; H.selectedEvent=null; H.study=null; H.seriesId=null; H.scenarioResult=null; H.assumptions=null; H.annualForm={}; H.scenarioPending=false; H.scenarioError=''; H.loading=true; H.error='';
     H.pickerPinnedOpen=false;
     if(mobileLayout()||Q('#hi-panel').dataset.hiPicker==='compact')Q('#hi-record-picker').open=false;
@@ -377,7 +435,7 @@
       H.history=history.value;
       H.events=eventsResult.status==='fulfilled' ? list(Array.isArray(eventsResult.value) ? eventsResult.value : eventsResult.value.events) : list(H.history.events);
       if (eventsResult.status==='fulfilled' && Array.isArray(eventsResult.value.sources)) H.history.sources=[...sourceList(H.history),...eventsResult.value.sources.filter(source => !sourceList(H.history).some(s=>s.id===source.id))];
-      H.loading=false; render();
+      H.loading=false; render();await ensureSelectedSeries();
     } catch (error) { if (sequence !== H.sequence || error.name==='AbortError') return; H.loading=false; H.error=error.message; render(); }
   }
   async function selectEvent(id) {
@@ -468,7 +526,7 @@
     if(H.installed)return true;
     if(!Q('#minimal-kind-controls')||!Q('#app')||!window.EspaciosUnifiedMap)return false;
     const launch=document.createElement('button');launch.id='hi-launch';launch.type='button';launch.textContent='History & events';launch.setAttribute('aria-expanded','false');launch.setAttribute('aria-controls','hi-panel');launch.onclick=()=>open();Q('#minimal-kind-controls').append(launch);
-    const panel=document.createElement('aside');panel.id='hi-panel';panel.className='hi-drawer hidden';panel.dataset.release='20261003-history-events-v1';panel.setAttribute('aria-label','Historical intelligence');
+    const panel=document.createElement('aside');panel.id='hi-panel';panel.className='hi-drawer hidden';panel.dataset.release='20261005-history-enrichment-v3';panel.setAttribute('aria-label','Historical intelligence');
     const header='<header><div><h2>History & events</h2><p id="hi-date-label">Sourced history and events</p><small id="hi-mobile-hint" hidden>Close this drawer to use the map timeline.</small></div><button type="button" id="hi-close" aria-label="Close historical intelligence and return to map timeline">×</button></header>';
     const picker='<div class="hi-selection"><h3 id="hi-record-name">Choose a project or community</h3><details id="hi-record-picker"'+(mobileLayout()?'':' open')+'><summary>Change record</summary><label>Find any project / community<input id="hi-record-search" type="search" placeholder="Search name, emirate or record ID" autocomplete="off"></label><label class="hi-select-label">Record<select id="hi-record-select"><option>Loading record index…</option></select></label><p id="hi-record-count" role="status"></p></details></div>';
     panel.innerHTML=header+picker+'<div id="hi-tabs" role="tablist" aria-label="Historical intelligence view">' + [['history','History'],['events','Events'],['scenarios','Through 2080']].map(([tab,label])=>'<button type="button" id="hi-tab-'+tab+'" data-hi-tab="'+tab+'" role="tab" aria-controls="hi-body" aria-selected="'+(tab===H.tab)+'" tabindex="'+(tab===H.tab?0:-1)+'">'+label+'</button>').join('') + '</div><div id="hi-body" role="tabpanel" aria-labelledby="hi-tab-history"></div>';
@@ -476,13 +534,14 @@
     panel.addEventListener('click',event=>{
       const target=event.target.closest('button,[data-hi-event]');if(!target)return;
       if(target.dataset.hiTab){const form=Q('#hi-scenario-form');if(form){try{H.assumptions=readAssumptions(form);}catch{}}H.tab=target.dataset.hiTab;render();}
-      else if(target.dataset.hiMetric){H.metric=target.dataset.hiMetric;H.seriesId=null;H.study=null;if(H.selectedEvent)selectEvent(H.selectedEvent);else render();}
+      else if(target.dataset.hiMetric)changeFinancialSelection(target.dataset.hiMetric);
       else if(target.dataset.hiEvent)selectEvent(target.dataset.hiEvent);
       else if(target.id==='hi-retry')H.recordId?select(H.recordId):open();
+      else if(target.id==='hi-series-retry')ensureSelectedSeries();
       else if(target.id==='hi-scenario-reset'){H.scenarioResult=null;H.assumptions=null;H.annualForm={};H.scenarioError='';render();}
     });
     panel.addEventListener('change',event=>{
-      if(event.target.id==='hi-series'){H.seriesId=event.target.value;if(H.selectedEvent)selectEvent(H.selectedEvent);else render();}
+      if(event.target.id==='hi-series')changeFinancialSelection(H.metric,event.target.value);
       else if(['hi-scenario-metric','hi-scenario-display'].includes(event.target.id)){const form=Q('#hi-scenario-form');if(form){try{H.assumptions=readAssumptions(form);}catch{}}if(event.target.id==='hi-scenario-metric')H.scenarioMetric=event.target.value;else H.scenarioDisplay=event.target.value;render();}
     });
     panel.addEventListener('input',event=>{if(event.target.id==='hi-year'){H.year=+event.target.value;Q('#hi-year-label').textContent=H.year;const data=H.scenarioResult??H.history,p=scenarioPoint(data,H.scenarioMetric,'base',H.year);Q('#hi-scenario-value').innerHTML=scenarioValueHTML(p,data.scenarios?.metrics?.[H.scenarioMetric]?.unit);}});
@@ -496,7 +555,7 @@
     installOverlay();
     installGeometryObservers();
     setInterval(()=>{const selection=currentSelection(),signature=selection?JSON.stringify([selection.id,selection.kind,selection.name,selection.emirate]):'',selectionChanged=signature!==H.lastSelection;if(selectionChanged){H.lastSelection=signature;if(selection)followSelection(selection);}const area=areaSelection(),areaKey=area?key(area.name+'|'+area.emirate):'';if(areaKey!==H.areaKey){H.areaKey=areaKey;if(area&&H.overlay&&!selectionChanged)followSelection(area);}launch.setAttribute('aria-expanded',String(!panel.classList.contains('hidden')));renderOverlay();panelGeometry();},500);
-    const publicAPI=Object.freeze({open,close,select,getState:()=>({recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,overlay:H.overlay,loading:H.loading,layout:panel.dataset.hiLayout,scenarioClassification:(H.scenarioResult??H.history)?.scenarios?.classification,validatedForecast:false}),classification:'sourced_history_and_conditional_scenarios'});
+    const publicAPI=Object.freeze({open,close,select,getState:()=>({recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,seriesId:H.seriesId,overlay:H.overlay,loading:H.loading||H.seriesLoading,seriesLoading:H.seriesLoading,seriesError:H.seriesError,historyPagination:H.history?.historyPagination,layout:panel.dataset.hiLayout,scenarioClassification:(H.scenarioResult??H.history)?.scenarios?.classification,validatedForecast:false}),classification:'sourced_history_and_conditional_scenarios'});
     window.EspaciosHistoricalIntelligence=publicAPI;window.EspaciosHistoricalUI=publicAPI;render();return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
