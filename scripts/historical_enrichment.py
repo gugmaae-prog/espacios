@@ -98,6 +98,14 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   known[status['recordId']]['researchStatus']['sourceCollection']=safe
  for record in records:
   status=record['researchStatus'];launch=any(x['kind']=='launch' and x['status']=='verified' for x in record['lifecycle']);complete=any(x['kind']=='completion' and x['status']=='verified' for x in record['lifecycle'])
+  subjects=[s for s in record['historySeries'] if s.get('scope')=='subject' and s.get('identityVerified') is True]
+  status['originalAuditSourceScope']=status.get('sourceScope')
+  status['sourceScope']='Verified registered subject cohorts and separately scoped context; full financial history unestablished' if subjects else 'Shared/published context and advertised evidence only; no verified direct subject financial history'
+  summary=record['coverageSummary']
+  for metric,field in [('price','directSalePeriods'),('rent','directRentPeriods')]:
+   if field in summary:summary['originalAudit'+field[0].upper()+field[1:]]=summary[field]
+   summary[field]=len({str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0})
+  summary['directPeriodCountBasis']='Distinct retained native period labels across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or independent transactions'
   if launch:status['launchDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='verified_launch_date']
   if complete:status['completionDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='actual_completion_date']
   if launch or complete or record.get('registerEvidence') or record['observations']:status['status']='partially_sourced; complete financial coverage not established'

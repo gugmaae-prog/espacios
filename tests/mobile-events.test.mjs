@@ -259,14 +259,14 @@ function sheetHarness() {
     Object.defineProperty(element,'hidden',{get:()=>concealed,set(value){concealed=value;changed(element);}});
     panels.push(element);return element;
   }
-  const history=node('hi-panel',false), inspector=node('ms-inspect'), filters=node('filters');
+  const history=node('hi-panel',false), inspector=node('ms-inspect'), filters=node('filters-panel');
   const env = {window:{},document:{documentElement:{},activeElement:null,querySelector:selector=>panels.find(panel=>'#'+panel.id===selector)||null,
     querySelectorAll:selector=>selector.startsWith('.rail-btn')?[]:panels,
     createElement(){const children=new Map();return{querySelector(selector){if(!children.has(selector))children.set(selector,{getAttribute:()=>null,setAttribute(){}});return children.get(selector);}};},},
     matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,
     MutationObserver:class {constructor(callback){this.callback=callback;}observe(element){const list=observers.get(element)||[];list.push(this.callback);observers.set(element,list);}},
     msState:{open:false},msInfo(){inspector.hidden=!env.msState.open;}};
-  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets};\n  const timer=setInterval(');
+  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails};\n  const timer=setInterval(');
   vm.runInNewContext(exposed,env);
   function flush(){for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
   const api=env.__SHEETS_TEST__;api.installSheets();flush();
@@ -289,8 +289,15 @@ test('an explicit new panel request and explicit close retain mobile sheet owner
   assert.equal(h.history.classList.contains('hidden'),true);assert.equal(h.api.M.active,h.inspector);
 });
 
-test('other user panels still replace history and responsive sheet installation preserves the current owner',()=>{
+test('workspace restores preserve history while explicit rail navigation and responsive sheet setup retain ownership',()=>{
   const h=sheetHarness();h.inspector.hidden=false;h.api.installSheets();h.flush();
   assert.equal(h.api.M.active,h.history);assert.equal(h.history.classList.contains('hidden'),false);
-  h.filters.hidden=false;h.flush();assert.equal(h.api.M.active,h.filters);assert.equal(h.history.classList.contains('hidden'),true);
+  h.filters.hidden=false;h.flush();assert.equal(h.api.M.active,h.history);assert.equal(h.history.classList.contains('hidden'),false);assert.equal(h.filters.classList.contains('hidden'),true);
+  h.filters.classList.remove('hidden');h.api.activateLegacyDetails({target:{closest:selector=>selector==='.rail-btn[data-panel]'?{dataset:{panel:'filters'}}:null}});h.flush();
+  assert.equal(h.api.M.active,h.filters);assert.equal(h.history.classList.contains('hidden'),true);
+});
+
+test('legacy delegated area-details links are explicit requests rather than background refreshes',()=>{
+  const h=sheetHarness();h.env.msState.open=true;h.env.msInfo();h.api.activateLegacyDetails({target:{closest:selector=>selector==='[data-ms-details]'?{}:null}});h.flush();
+  assert.equal(h.history.classList.contains('hidden'),true);assert.equal(h.inspector.hidden,false);assert.equal(h.api.M.active,h.inspector);
 });

@@ -41,6 +41,15 @@ test('context, research candidates and incomplete subject coverage remain separa
  }
  assert.equal(data.manifest.directSubjectSaleHistoryRecords,data.records.filter(r=>r.historySeries.some(s=>s.scope==='subject'&&s.identityVerified&&s.metric==='price')).length);assert.equal(data.manifest.directSubjectRentHistoryRecords,data.records.filter(r=>r.historySeries.some(s=>s.scope==='subject'&&s.identityVerified&&s.metric==='rent')).length);assert.equal(data.manifest.approved2080ForecastRecords,0);
  assert.equal(data.manifest.historyWindow.start,null,'A common subject inception is not imposed');
+ for(const record of data.records){
+  const subject=record.historySeries.filter(s=>s.scope==='subject'&&s.identityVerified);
+  if(subject.length)assert.match(record.researchStatus.sourceScope,/Verified registered subject/);
+  for(const [metric,field] of [['price','directSalePeriods'],['rent','directRentPeriods']]){
+   if(subject.some(s=>s.metric===metric))assert.ok(record.coverageSummary[field]>0,'Static coverage must reflect newly verified '+metric+' history');
+   else assert.equal(record.coverageSummary[field],0);
+  }
+  assert.match(record.coverageSummary.directPeriodCountBasis,/native period/);
+ }
 });
 test('each retained record has exactly54 annual slots for every metric and scenario',()=>{
  assert.equal(TARGET_YEARS.length,54);assert.equal(TARGET_YEARS[0],2027);assert.equal(TARGET_YEARS.at(-1),2080);

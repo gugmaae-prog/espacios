@@ -108,10 +108,20 @@ async function runCase(port,{name,width,height,mobile}){
   // It must not be confused with the explicit Details action immediately below.
   await evaluate(cdp,"document.querySelector('#ms-inspect').hidden=false;new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
   assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' background inspector refresh preserves history');
+  await evaluate(cdp,"document.querySelector('#timeline-panel').classList.remove('hidden');new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
+  assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' delayed workspace restore preserves history');
+  await evaluate(cdp,"document.querySelector('.rail-btn[data-panel=\"timeline\"]').click();true");
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#timeline-panel').classList.contains('hidden')",{label:name+' explicit rail navigation owns mobile sheet'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after rail navigation'});
   await evaluate(cdp,"document.querySelector('#um-details').click();true");
   await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' explicit Details owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reclaims explicitly selected sheet'});
+  await evaluate(cdp,"(()=>{const button=document.createElement('button');button.setAttribute('data-ms-details','');document.querySelector('#app').append(button);button.click();button.remove();return true})()");
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' legacy explicit Details owns mobile sheet'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after legacy Details'});
  }
  try {await waitFor(cdp,`(()=>{const p=document.querySelector('#hi-panel').getBoundingClientRect(),b=document.querySelector('#hi-body').getBoundingClientRect(),d=document.querySelector('#tl-dock').getBoundingClientRect();return Math.min(b.bottom,p.bottom-12)-Math.max(b.top,p.top)>=119&&(window.EspaciosHistoricalUI.getState().layout==='expanded'||p.bottom<=d.top+1)})()`,{label:name+' visible history body and stable dock geometry'});} catch(error) {
   console.log(JSON.stringify(await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),panel:document.querySelector('#hi-panel').getBoundingClientRect().toJSON(),body:document.querySelector('#hi-body').getBoundingClientRect().toJSON(),dock:document.querySelector('#tl-dock').getBoundingClientRect().toJSON()})")));
