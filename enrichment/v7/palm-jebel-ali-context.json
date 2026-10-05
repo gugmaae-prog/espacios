@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "id": "primary7-4a0f95d872dd0e55da84",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/04/27/nakheel-awards-contracts-worth-over-aed-3.5-billion-to-build-544-villas-on-dubai-s-palm-jebel-ali",
+      "title": "Palm Jebel Ali Fronds A-F construction contract award",
+      "publisher": "Nakheel",
+      "publishedAt": "2026-04-27",
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "retrievedAt": "2026-10-05T15:56:27.952555+00:00",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "firstAvailableAtBasis": "First verified review in this pass; original availability unverified",
+      "licence": "Attributed factual summary only; no article bodies or images redistributed",
+      "rawBodiesRedistributed": false
+    },
+    {
+      "id": "primary7-0539e5b99260bb065298",
+      "url": "https://www.dubaiholding.com/en/media-hub/press-releases/dubai-retail-unveils-the-yard-palm-jebel-alis-first-retail-and-lifestyle-destination",
+      "title": "The Yard Palm Jebel Ali announcement",
+      "publisher": "Dubai Holding / Dubai Retail",
+      "publishedAt": "2026-09-10",
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "retrievedAt": "2026-10-05T15:56:27.952555+00:00",
+      "classification": "official_developer_announcement",
+      "primaryEvidence": true,
+      "firstAvailableAtBasis": "First verified review in this pass; original availability unverified",
+      "licence": "Attributed factual summary only; no article bodies or images redistributed",
+      "rawBodiesRedistributed": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "pja7-fronds-a-f-award",
+      "recordId": "community:Dubai:palm-jebel-ali",
+      "kind": "lifecycle",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2026-04-27",
+        "precision": "day"
+      },
+      "label": "Palm Jebel Ali: construction contracts for 544 villas",
+      "note": "Nakheel reports contracts exceeding AED 3.5 billion: 354 villas on Fronds A-D and 190 on E-F. Award value is construction expenditure, not property prices or realised appreciation.",
+      "status": "accepted",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "sourceId": "primary7-4a0f95d872dd0e55da84",
+      "sourceIds": [
+        "primary7-4a0f95d872dd0e55da84"
+      ],
+      "identitySourceIds": [
+        "primary7-4a0f95d872dd0e55da84"
+      ],
+      "identityBasis": "Primary announcement explicitly names Palm Jebel Ali and the specified fronds or planned retail destination. No assignment to an individual villa phase.",
+      "primaryEvidence": true,
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "scope": "published_reference"
+    },
+    {
+      "id": "pja7-fronds-a-f-target",
+      "recordId": "community:Dubai:palm-jebel-ali",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2028-Q4",
+        "precision": "quarter"
+      },
+      "label": "Fronds A-F contract scope: completion target Q4 2028",
+      "note": "Target applies to this 544-villa contract scope, not the whole island or initial K-P handovers. Delivery and supply can affect demand, but no price coefficient is inferred.",
+      "status": "accepted",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "sourceId": "primary7-4a0f95d872dd0e55da84",
+      "sourceIds": [
+        "primary7-4a0f95d872dd0e55da84"
+      ],
+      "identitySourceIds": [
+        "primary7-4a0f95d872dd0e55da84"
+      ],
+      "identityBasis": "Primary announcement explicitly names Palm Jebel Ali and the specified fronds or planned retail destination. No assignment to an individual villa phase.",
+      "primaryEvidence": true,
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "scope": "published_reference"
+    },
+    {
+      "id": "pja7-yard-announcement",
+      "recordId": "community:Dubai:palm-jebel-ali",
+      "kind": "lifecycle",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2026-09-10",
+        "precision": "day"
+      },
+      "label": "The Yard retail and lifestyle destination announced",
+      "note": "Planned destination: about 70,000 sqft gross leasable area and 26 retail, dining, wellness and healthcare concepts. Announced brands include Waitrose, American Hospital and Jumeirah International Nursery. Expected catchment is not measured resident population.",
+      "status": "accepted",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "sourceId": "primary7-0539e5b99260bb065298",
+      "sourceIds": [
+        "primary7-0539e5b99260bb065298"
+      ],
+      "identitySourceIds": [
+        "primary7-0539e5b99260bb065298"
+      ],
+      "identityBasis": "Primary announcement explicitly names Palm Jebel Ali and the specified fronds or planned retail destination. No assignment to an individual villa phase.",
+      "primaryEvidence": true,
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "scope": "published_reference"
+    },
+    {
+      "id": "pja7-yard-opening-target",
+      "recordId": "community:Dubai:palm-jebel-ali",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2027",
+        "precision": "year"
+      },
+      "label": "The Yard planned opening in 2027",
+      "note": "Planned year only; no actual opening, operating amenity or proven property-price increase claimed.",
+      "status": "accepted",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "sourceId": "primary7-0539e5b99260bb065298",
+      "sourceIds": [
+        "primary7-0539e5b99260bb065298"
+      ],
+      "identitySourceIds": [
+        "primary7-0539e5b99260bb065298"
+      ],
+      "identityBasis": "Primary announcement explicitly names Palm Jebel Ali and the specified fronds or planned retail destination. No assignment to an individual villa phase.",
+      "primaryEvidence": true,
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "scope": "published_reference"
+    }
+  ],
+  "seriesLinks": [],
+  "historyInputs": [],
+  "recordResearch": [
+    {
+      "recordId": "community:Dubai:palm-jebel-ali",
+      "status": "new_primary_development_context_reviewed",
+      "sourceIds": [
+        "primary7-4a0f95d872dd0e55da84",
+        "primary7-0539e5b99260bb065298"
+      ],
+      "reason": "Phase-specific supply and planned amenity evidence; financial observation and causal uplift gaps remain."
+    }
+  ],
+  "collection": {
+    "method": "bounded primary-source review",
+    "completeFinancialHistoryClaimed": false
+  },
+  "methodology": "Community development context only. Preserve earlier milestones, distinguish phase-specific targets, and never convert investment in construction or amenities into property prices."
+}

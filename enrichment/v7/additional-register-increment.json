@@ -1,0 +1,1936 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:23.658483+00:00",
+      "id": "dld-official-areas-20261002",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:23.658483+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 5682,
+          "fileName": "lkp_areas_2026-10-02_06-34-03_0001.csv.gz",
+          "sha256": "aa02d51887c78580dcbcca47bbb1e4b1547d9ba16794f1dc8c3b23fe5561ebeb"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-02",
+      "title": "DLD areas, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/465592"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:44.659195+00:00",
+      "id": "dld-official-buildings-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:44.659195+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 18849454,
+          "fileName": "buildings_2026-10-03_18-33-06_0001.csv.gz",
+          "sha256": "413c5c0916c088b9075e05c131b1759aeeaa03c1bfa5f12f691d3af28a85a5a4"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD buildings, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/459613"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:47.193986+00:00",
+      "id": "dld-official-developers-20261001",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:47.193986+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 160670,
+          "fileName": "developers_2026-10-01_23-34-28_0001.csv.gz",
+          "sha256": "eef868a72c9453ef09c4ae664c555112d3e17e193b5fe1710eda84f9e80da6bd"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-01",
+      "title": "DLD developers, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/462802"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "id": "dld-official-projects-20260706",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:21.855572+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 463273,
+          "fileName": "projects_2026-07-06_16-25-21_0001.csv.gz",
+          "sha256": "ca2a41843175d7a623eb712ad424e6ead9e4071766a0b13f506802f22e64b02d"
+        }
+      ],
+      "sourceSnapshotDate": "2026-07-06",
+      "title": "DLD projects, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/467654"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:46:23.713250+00:00",
+      "id": "dld-official-rents-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:46:23.713250+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 56982799,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0001.csv.gz",
+          "sha256": "0ad4252a666f73c51caa3997bb9df3e1673c528575f3f13d8cb27622c17ed7e8"
+        },
+        {
+          "bytes": 57003837,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0002.csv.gz",
+          "sha256": "9c03091ce0a971625f9ccbe2e1fd99c6f658438c0703de960853ac648403e732"
+        },
+        {
+          "bytes": 56981110,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0003.csv.gz",
+          "sha256": "80b7b861a08b47371714a0b96ded07672b4da6a249b10201b707d6051f79d191"
+        },
+        {
+          "bytes": 56982376,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0004.csv.gz",
+          "sha256": "90405562f6d62fcd7d0c308eb0de3e1ce064e065db528c6feffa8b8df24648ff"
+        },
+        {
+          "bytes": 56984481,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0005.csv.gz",
+          "sha256": "062886b4682ba8c6c5d57b748ba736b4c942aec18df330497cef7ebe4677c694"
+        },
+        {
+          "bytes": 56981941,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0006.csv.gz",
+          "sha256": "c307ca70bdf506fac0390a0605b38144d92ceeadb004dcff3ea021d84b96c7e5"
+        },
+        {
+          "bytes": 56950138,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0007.csv.gz",
+          "sha256": "99ec1d72e066bd64b24df94485fc44bec09ba3e54fc27930385953ff101f5172"
+        },
+        {
+          "bytes": 56959755,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0008.csv.gz",
+          "sha256": "d381aa6033782259f35877b59e3dbc45db85c23bcbbcd41b44739c912de455af"
+        },
+        {
+          "bytes": 57002049,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0009.csv.gz",
+          "sha256": "7c07074c6825d0b986d1fe37fab82a0ab86e6c9dea8cdbdc8a6fb3adceff0222"
+        },
+        {
+          "bytes": 56972533,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0010.csv.gz",
+          "sha256": "2bcedaceecabc8c1adcb0bdbbc084e7a6e588eb6dc40a74b13a43dac9a3c65d7"
+        },
+        {
+          "bytes": 56986718,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0011.csv.gz",
+          "sha256": "b8b3235f522123d19c92a46850c0b9b4f3dd6fb57c6f5bebf2b37ce7b4b21954"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD rent-contracts, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/468586"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:43:33.993477+00:00",
+      "id": "dld-official-transactions-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:43:33.993477+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 81012860,
+          "fileName": "transactions_2026-10-03_18-36-42_0001.csv.gz",
+          "sha256": "f57ccc6cbe4b7eaa011c470833e09be8cab2e80fb369c7c90477fbbe8bd3c953"
+        },
+        {
+          "bytes": 81046646,
+          "fileName": "transactions_2026-10-03_18-36-42_0002.csv.gz",
+          "sha256": "6ed67ae06ec5d8f0a0fad2b1a8ef36b21fc7c4f0470c30810fb7bb71aca67db1"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD transactions, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/470061"
+    },
+    {
+      "id": "primary8-29d9ed17d561ee78134d",
+      "url": "https://sobhaconstructions.com/project/sobha-tower",
+      "title": "The S Tower construction project in Al Sufouh",
+      "publisher": "Sobha Constructions",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "retrievedAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAtBasis": "First verified review here; earlier availability unverified",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Concise attributed facts only; no original page, image or complete document redistributed."
+    },
+    {
+      "id": "primary8-795b3b32f71776a114cd",
+      "url": "https://imtiaz.ae/properties",
+      "title": "Imtiaz Westwood primary project identity",
+      "publisher": "Imtiaz Developments",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T16:04:07.858733+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary8-b8729ad6e41840985e84",
+      "url": "https://imtiaz.ae/construction-history/sunset-bay-by-imtiaz",
+      "title": "Sunset Bay One primary project identity",
+      "publisher": "Imtiaz Developments",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T16:04:07.858733+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary8-ec945ff600abed10064d",
+      "url": "https://sobharealty.com/properties-in-dubai/the-s",
+      "title": "Sobha The S Tower primary project identity",
+      "publisher": "Sobha Realty",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T16:04:07.858733+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary8-ef93b4e234ee356b4d33",
+      "url": "https://imtiaz.ae/property/sunset-bay-by-imtiaz",
+      "title": "Sunset Bay project location and distinct linked construction history",
+      "publisher": "Imtiaz Developments",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "retrievedAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAtBasis": "First verified review here; earlier availability unverified",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Concise attributed facts only; no original page, image or complete document redistributed."
+    }
+  ],
+  "facts": [
+    {
+      "id": "dld-register-3460",
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "fields": {
+        "projectNumber": "3460",
+        "projectId": "696577409",
+        "developerId": "690522605",
+        "developerNumber": "2157",
+        "registeredDeveloperName": "IMTIAZ SUNSET REAL ESTATE DEVELOPMENT L.L.C",
+        "registeredName": "\u0635\u0646 \u0633\u062a \u0628\u0627\u064a \u0648\u0627\u0646 \u0645\u0646 \u0627\u0645\u062a\u064a\u0627\u0632",
+        "officialEnglishAliases": [
+          "Sunset Bay One By Imtiaz"
+        ],
+        "areaId": "432",
+        "areaName": "Palm Deira",
+        "project_start_date": "2024-12-25",
+        "project_end_date": "2026-12-25",
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "12.87000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "66",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "696577409",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00"
+    },
+    {
+      "id": "dld-register-3460-project_start_date",
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2024-12-25",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-3460-project_end_date",
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-12-25",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2431",
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "fields": {
+        "projectNumber": "2431",
+        "projectId": "427003345",
+        "developerId": "29075838",
+        "developerNumber": "1129",
+        "registeredDeveloperName": "IMTIAZ REAL ESTATE INVESTMENT & DEVELOPMENT L.L.C",
+        "registeredName": "\u0648\u064a\u0633\u062a\u0648\u0648\u062f \u0645\u0646 \u0627\u0645\u062a\u064a\u0627\u0632",
+        "officialEnglishAliases": [
+          "Westwood By Imtiaz"
+        ],
+        "areaId": "445",
+        "areaName": "Jabal Ali First",
+        "project_start_date": "2018-02-01",
+        "project_end_date": "2023-11-27",
+        "completion_date": "2023-11-27",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "188",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "427003345",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00"
+    },
+    {
+      "id": "dld-register-2431-project_start_date",
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2018-02-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2431-project_end_date",
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2023-11-27",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2431-completion_date",
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2023-11-27",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:07.858733+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2408",
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "fields": {
+        "projectNumber": "2408",
+        "projectId": "419816361",
+        "developerId": "10097270",
+        "developerNumber": "966",
+        "registeredDeveloperName": "SOBHA L.L.C",
+        "registeredName": "\u0630\u0627 \u0625\u0633 \u062a\u0627\u0648\u0631",
+        "officialEnglishAliases": [
+          "THE S TOWER"
+        ],
+        "areaId": "371",
+        "areaName": "Al Safouh Second",
+        "project_start_date": "2021-05-05",
+        "project_end_date": "2025-06-30",
+        "completion_date": "2025-06-30",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "95",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "419816361",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00"
+    },
+    {
+      "id": "dld-register-2408-project_start_date",
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2021-05-05",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2408-project_end_date",
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-06-30",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2408-completion_date",
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2025-06-30",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "firstAvailableAt": "2026-10-05T16:04:26.751610+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "fact8-71423ac57d1532fb99a36796",
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "status": "accepted",
+      "sourceId": "primary8-795b3b32f71776a114cd",
+      "sourceIds": [
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "firstAvailableAt": "2026-10-05T16:08:27.061462+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "community_association",
+      "fromCommunityId": "community:Dubai:jebel-ali-village",
+      "toCommunityId": "community:Dubai:al-furjan",
+      "rejectedSeriesIds": [],
+      "verification": "verified",
+      "label": "Westwood by Imtiaz \u2014 Al Furjan",
+      "reason": "Native exact-number register master is Al Furjan and first-party project index places the original Westwood in Al Furjan. The single project page instead says JVC; that conflicting page copy is not used for geography. Westwood Grande phases are different projects. Prior catalogue Jebel Ali Village association retained in the audit trail."
+    },
+    {
+      "id": "fact8-95423878c6472f13b04c9a70",
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "status": "accepted",
+      "sourceId": "primary8-ef93b4e234ee356b4d33",
+      "sourceIds": [
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "firstAvailableAt": "2026-10-05T16:08:27.061462+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-11",
+        "precision": "month"
+      },
+      "verification": "reported",
+      "eventStatus": "planned",
+      "label": "Developer advertises November 2026 handover",
+      "note": "Developer FAQ month target is within the Q4 2026 summary. Retain separately from the earlier filed December 2026 schedule. No actual completion or occupancy inferred."
+    },
+    {
+      "id": "fact8-b0ae98d96c1c8acfabe26c12",
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "status": "accepted",
+      "sourceId": "primary8-ef93b4e234ee356b4d33",
+      "sourceIds": [
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "firstAvailableAt": "2026-10-05T16:08:27.061462+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "register",
+      "evidenceClass": "developer_reported_construction_progress",
+      "fields": {
+        "reportedPercentCompleted": 95,
+        "observedAt": "2026-10-05",
+        "inspectionDate": null,
+        "sourceStatus": "current_developer_page",
+        "reason": "Reported progress on the developer page as retrieved. The underlying inspection date is not disclosed. This is not a government inspection or proof of completion."
+      }
+    }
+  ],
+  "seriesLinks": [
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-7f648ca28f56b69b87fa",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-3a75c4fc74709172ec5e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-63ad0f8e790c99ea9e23",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-9c65cf7597613cee8c07",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-b5d0d9ac97a69c866d36",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-184437659be10127327c",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-225fedaf704733904e98",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-1e138b32e1a6a8712346",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-4356ff3ab1106936bacc",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-7aa16ffc52530a6f8362",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-fba203fb5243575da86f",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-458c0d049a6e4b10bf04",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-eed403805bfcd03d48bb",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-77b17858a59b18a2dd19",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-075246c97310878f0742",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-2583a564ccbc6bfcd209",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-38a934ef13fa61d58ef4",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-8a1c2d6888b5e501c852",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-c3655b9e884513b6f401",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-2526d58abc7574f95d1c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-2594468ae8cce05ce9cf",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-2180732d5f968155b9da",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-a9439335a2cab3c3224c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-61e24af0236dafba93c2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-3c78716faec613e528d5",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "seriesId": "dld-primary-54c253b4a00ccb2bf347",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-183a5f43be7e023f64fe",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-82e1902542edf1f3c1fb",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-526194f9cb46f8b6ac71",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-5a1ca9ba2dc9c1ac46e5",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-75e86ceca95bef1afbdc",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-6639c95fec1ca228cf97",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-700586997eb18509e488",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-471ed27311245a55e012",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-4889c999e2c1f94b47c8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-c529262da35d38312260",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-84087354355544824222",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-ecc225aa49397e02fb1f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-6fc3b8a2c3e6f41b1e1e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-6063a933d3ceb2771492",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-a462adfe43e7e27a12a0",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-a6495fb73de918f6ddd0",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-039ef1ecef8b00bb0d91",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-3895aa516395f3f1979b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-0c46413200f7b55d1173",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-79031117bbf3709a52e8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-690b3336e0d663f70477",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-fdae8b1430e2a14f5d3e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-831bc08b808047bc6b7f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-a00d708782676e368bf6",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-44edb34e2180ff856cd0",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-8fe2d3306c72930efedb",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-6c7762d5bb05649ac663",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-df5ba7ddb339be861937",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-e217a62eecb44efd9d40",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-7ea2005afe0dc0430e2e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-04fb2d25e4912c9b3202",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-83e2c54863b368b676cb",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-207374b31b80aa2bd88e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "seriesId": "dld-primary-186608b48ded9a483a0f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-44f93a4f705e6b32dc35",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-ef080a84e6f3af973bd8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-71143c5c945c8a372d40",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-b02b5a7f00bca63c82aa",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-e69836d1d031ae7f6444",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-72034e57fb285ddbede3",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-2bff9761fecd9dc12699",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "seriesId": "dld-primary-42302cb47db1442eecd7",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered native alias, legal developer and geography reviewed. Sunset Bay One is expressly named in developer construction history; the linked Sunset Bay project page locates it on Dubai Islands, consistent with the Palm Deira register master. Westwood original is explicitly placed in Al Furjan by the developer project index, consistent with native master and cadastral Jabal Ali First; conflicting JVC text on the single project page is retained as a source issue, not used to move it to JVC or combine Westwood Grande. Sobha The S developer page identifies the S Tower on Sheikh Zayed Road and the affiliated construction page explicitly locates it in Al Sufouh, consistent with native Al Safouh Second. Exact identities only; no occupancy inference.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ]
+    }
+  ],
+  "historyInputs": [
+    {
+      "path": "pass8-public-primary-history.csv.gz",
+      "compression": "gzip",
+      "sha256": "b2c391d0dd67be70a2b4ded55860125ab6b4833d68e3482bf210ec1315abeac5",
+      "uncompressedSHA256": "b0c8d29038a1d76846a74c20b3ed5b548b08a871959b80f2cc6d74cdbc72f5c7"
+    }
+  ],
+  "collection": {
+    "approvedRegistryProjects": 3,
+    "linkedCadastralContextCommunities": 0,
+    "linkedExactNativeMasterContextCommunities": 0,
+    "projectRecordsWithEligibleSaleRows": 3,
+    "projectRecordsWithEligibleRentRows": 2,
+    "communityRecordsWithEligibleSaleRows": 0,
+    "communityRecordsWithEligibleRentRows": 0,
+    "publicAggregateRows": 590,
+    "publicPriceAggregateRows": 288,
+    "publicRentAggregateRows": 302,
+    "publicSeriesCount": 68,
+    "overlappingAggregatesNotAdditive": true,
+    "registeredLandBuildingReferenceSeries": 12,
+    "baselineRegisteredIdentitiesPreserved": 208,
+    "identityReviewCounts": {
+      "accepted": 3
+    },
+    "candidateAggregateRows": 590,
+    "numericalRowsAltered": 0,
+    "completeLifetimeHistoryClaimed": false
+  },
+  "methodology": "Official public DLD latest-vintage snapshots. Projects require registered number + unique unchanged English name + stable developer identity + compatible official geography, independently reviewed. Community links are administrative area context only. No fuzzy joins, interpolation, future prices, event uplift, or historical point-in-time availability claimed. Raw rows stay private. Usage/type/registration and native subtypes remain explicitly separate; Ejari business property types (including Virtual Unit) are separate; sparse medians retained with n20 display gate. Entire duplicated single-property rental contracts are quarantined; invalid/future start or extreme end dates independently quarantined. Aggregate series overlap and are not additive. New specific first-party project proofs supplement unchanged exact native names/IDs; both raw-source and later identity-review availability are retained. Registered Land/Building asset histories remain published_reference and cannot anchor marketed Unit/Villa prices. Earlier packets are unchanged. All 590 native aggregates retained without numerical alteration. Forty Land/Building reference observations remain separate from the 550 marketed subject observations. Westwood Flat contracts start 7 December 2023 after the filed 27 November completion. S Tower contracts start September 2025 after filed June completion; one future-start contract is excluded. Neither contract observation nor ready registration certifies occupancy or realised income. First available date of modern primary review prevents historical backtest leakage.",
+  "additionalDatasets": [
+    {
+      "datasetId": 470061,
+      "sourceId": "dld-official-transactions-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 468586,
+      "sourceId": "dld-official-rents-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 467654,
+      "sourceId": "dld-official-projects-20260706",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 462802,
+      "sourceId": "dld-official-developers-20261001",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 459613,
+      "sourceId": "dld-official-buildings-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 465592,
+      "sourceId": "dld-official-areas-20261002",
+      "rawOriginalPrivate": true
+    }
+  ],
+  "preservation": {
+    "mode": "additive_only",
+    "baselineSnapshotVersion": "20261005-enrichment-v6",
+    "baselineSnapshotSha256": "f51ea93cdf2c7043372c779ca7bb6bd70b3a366000a10a595852630ac6dc16a8",
+    "priorPacketPaths": [
+      "../baseline-enrichment.json"
+    ],
+    "rawOriginalsRedistributed": false,
+    "incrementDisjointFromFrozenV1": true
+  },
+  "recordResearch": [
+    {
+      "recordId": "project:apartments-in-sunset-bay-one-on-dubai-islands",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_review_completed_historical_gaps_explicit",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-b8729ad6e41840985e84",
+        "primary8-ef93b4e234ee356b4d33"
+      ],
+      "reason": "Exact first-party and native-number match reviewed. Sparse registered observations retained; no complete lifetime-history claim."
+    },
+    {
+      "recordId": "project:westwood-by-imtiaz-apartments-for-sale-in-jebel-ali-village-dubai",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_review_completed_historical_gaps_explicit",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-795b3b32f71776a114cd"
+      ],
+      "reason": "Exact first-party and native-number match reviewed. Sparse registered observations retained; no complete lifetime-history claim."
+    },
+    {
+      "recordId": "project:sobha-the-s-tower-signature-residences-in-al-sufouh-dubai",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_review_completed_historical_gaps_explicit",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary8-ec945ff600abed10064d",
+        "primary8-29d9ed17d561ee78134d"
+      ],
+      "reason": "Exact first-party and native-number match reviewed. Sparse registered observations retained; no complete lifetime-history claim."
+    }
+  ]
+}
