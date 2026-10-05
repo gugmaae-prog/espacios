@@ -245,3 +245,59 @@ test('keyboard and native range-input alternatives reach both unified endpoints'
   track.emit('keydown',event('Home'));assert.equal(h.api.selectedNow(),h.api.periodsNow()[0]);
   slider.value='1';track.emit('input',{target:slider,stopImmediatePropagation(){}});assert.equal(h.api.selectedNow(),h.api.periodsNow()[1]);assert.deepEqual(h.calls.native,[]);
 });
+
+function sheetHarness() {
+  const observers = new Map(), pending = new Set(), panels = [];
+  const changed = node => {for (const callback of observers.get(node) || []) pending.add(callback);};
+  function node(id, hidden = true) {
+    const classes = new Set(), attributes = new Map();let concealed = hidden, bar = null;
+    const element = {id, dataset:{},
+      classList:{contains:value=>classes.has(value),add(...values){values.forEach(value=>classes.add(value));changed(element);},remove(...values){values.forEach(value=>classes.delete(value));changed(element);}},
+      querySelector:selector=>selector === ':scope > .mm-sheet-bar' ? bar : bar?.querySelector(selector) || null,
+      prepend(value){bar=value;},hasAttribute:()=>false,getAttribute:name=>attributes.get(name),setAttribute:(name,value)=>attributes.set(name,value),
+      contains:child=>child===element,focus(){}};
+    Object.defineProperty(element,'hidden',{get:()=>concealed,set(value){concealed=value;changed(element);}});
+    panels.push(element);return element;
+  }
+  const history=node('hi-panel',false), inspector=node('ms-inspect'), filters=node('filters-panel');
+  const env = {window:{},document:{documentElement:{},activeElement:null,querySelector:selector=>panels.find(panel=>'#'+panel.id===selector)||null,
+    querySelectorAll:selector=>selector.startsWith('.rail-btn')?[]:panels,
+    createElement(){const children=new Map();return{querySelector(selector){if(!children.has(selector))children.set(selector,{getAttribute:()=>null,setAttribute(){}});return children.get(selector);}};},},
+    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,
+    MutationObserver:class {constructor(callback){this.callback=callback;}observe(element){const list=observers.get(element)||[];list.push(this.callback);observers.set(element,list);}},
+    msState:{open:false},msInfo(){inspector.hidden=!env.msState.open;}};
+  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails};\n  const timer=setInterval(');
+  vm.runInNewContext(exposed,env);
+  function flush(){for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
+  const api=env.__SHEETS_TEST__;api.installSheets();flush();
+  return{api,env,history,inspector,filters,flush};
+}
+
+test('a background market inspector refresh cannot close the active history drawer',()=>{
+  const h=sheetHarness();h.env.msState.open=true;h.env.msInfo();h.flush();
+  assert.equal(h.history.classList.contains('hidden'),false);
+  assert.equal(h.api.M.active,h.history);
+  assert.equal(h.inspector.hidden,true);
+  assert.equal(h.env.msState.open,false);
+});
+
+test('an explicit new panel request and explicit close retain mobile sheet ownership',()=>{
+  const h=sheetHarness();h.env.msState.open=true;h.env.msInfo();h.api.activate(h.inspector);h.flush();
+  assert.equal(h.history.classList.contains('hidden'),true);assert.equal(h.inspector.hidden,false);assert.equal(h.api.M.active,h.inspector);
+  h.history.classList.remove('hidden');h.api.activate(h.history);h.flush();
+  h.api.closePanel(h.history);h.env.msState.open=true;h.env.msInfo();h.flush();
+  assert.equal(h.history.classList.contains('hidden'),true);assert.equal(h.api.M.active,h.inspector);
+});
+
+test('workspace restores preserve history while explicit rail navigation and responsive sheet setup retain ownership',()=>{
+  const h=sheetHarness();h.inspector.hidden=false;h.api.installSheets();h.flush();
+  assert.equal(h.api.M.active,h.history);assert.equal(h.history.classList.contains('hidden'),false);
+  h.filters.hidden=false;h.flush();assert.equal(h.api.M.active,h.history);assert.equal(h.history.classList.contains('hidden'),false);assert.equal(h.filters.classList.contains('hidden'),true);
+  h.filters.classList.remove('hidden');h.api.activateLegacyDetails({target:{closest:selector=>selector==='.rail-btn[data-panel]'?{dataset:{panel:'filters'}}:null}});h.flush();
+  assert.equal(h.api.M.active,h.filters);assert.equal(h.history.classList.contains('hidden'),true);
+});
+
+test('legacy delegated area-details links are explicit requests rather than background refreshes',()=>{
+  const h=sheetHarness();h.env.msState.open=true;h.env.msInfo();h.api.activateLegacyDetails({target:{closest:selector=>selector==='[data-ms-details]'?{}:null}});h.flush();
+  assert.equal(h.history.classList.contains('hidden'),true);assert.equal(h.inspector.hidden,false);assert.equal(h.api.M.active,h.inspector);
+});

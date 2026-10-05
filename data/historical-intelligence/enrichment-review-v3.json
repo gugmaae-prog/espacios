@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-10-05T11:21:51.310656+00:00",
+  "version": "20261005-enrichment-v3",
+  "snapshotSHA256": "e36078abdfcf1d3de289d81cca4a382adcff9f5a4f615e74673eaf8d3f63b5bb",
+  "snapshotBytes": 66950200,
+  "rootIndexSHA256": "872849151f2f5022e2cc1b5df5f2af8d589fbabb1e78c7ac0f0112391a2cd402",
+  "recordsPreserved": 1860,
+  "projectRecords": 1645,
+  "communityRecords": 215,
+  "immutableObjectsSHA256AndBytesVerified": 817,
+  "archiveRecordsAndDescriptorsExact": true,
+  "series": 11872,
+  "historicalAggregateRows": 298028,
+  "frozenPacketChecks": [
+    {
+      "packet": "work/official-registers/pass3/official-enrichment.v1.json",
+      "series": 1058,
+      "pointsVerifiedExactly": 14084,
+      "registryAndLifecycleFacts": 236,
+      "acceptedPacketFacts": 236,
+      "directSaleRecords": 71,
+      "directRentRecords": 21
+    },
+    {
+      "packet": "work/official-registers/pass3/master-label-enrichment.v1.json",
+      "series": 406,
+      "pointsVerifiedExactly": 13211,
+      "registryAndLifecycleFacts": 0,
+      "acceptedPacketFacts": 0,
+      "directSaleRecords": 0,
+      "directRentRecords": 0
+    },
+    {
+      "packet": "work/official-registers/pass3/v2/frozen/official-enrichment.json",
+      "series": 1130,
+      "pointsVerifiedExactly": 20310,
+      "registryAndLifecycleFacts": 224,
+      "acceptedPacketFacts": 224,
+      "directSaleRecords": 60,
+      "directRentRecords": 31
+    },
+    {
+      "packet": "work/official-registers/pass3/v2/frozen/master-label-enrichment.json",
+      "series": 20,
+      "pointsVerifiedExactly": 473,
+      "registryAndLifecycleFacts": 0,
+      "acceptedPacketFacts": 0,
+      "directSaleRecords": 0,
+      "directRentRecords": 0
+    },
+    {
+      "packet": "work/official-registers/pass3/vida-1404/frozen/vida1404-enrichment.json",
+      "series": 74,
+      "pointsVerifiedExactly": 1474,
+      "registryAndLifecycleFacts": 5,
+      "acceptedPacketFacts": 5,
+      "directSaleRecords": 1,
+      "directRentRecords": 1
+    }
+  ],
+  "proofIDsResolved": true,
+  "ownersExact": true,
+  "landBuildingSubjectFinancialPromotions": 0,
+  "directHistoryRecords": {
+    "sale": 183,
+    "rent": 64
+  },
+  "directHistoryCountExplanation": {
+    "prior": {
+      "approvedIdentities": 52,
+      "sale": 51,
+      "rent": 11
+    },
+    "v1": {
+      "approvedIdentities": 73,
+      "sale": 71,
+      "rent": 21
+    },
+    "v2": {
+      "approvedIdentities": 65,
+      "sale": 60,
+      "rent": 31
+    },
+    "vida1404": {
+      "approvedIdentities": 1,
+      "sale": 1,
+      "rent": 1
+    }
+  },
+  "vida1404": {
+    "series": 74,
+    "nativePointsVerifiedExactly": 1474,
+    "feeComponentsVerifiedExactly": 159,
+    "approvedIdentityCount": 1,
+    "directSaleRecords": 1,
+    "directRentRecords": 1
+  },
+  "newFeeRecords": 22,
+  "newFeeComponentsExact": 2110,
+  "parkingUnknownBasisRetained": 39,
+  "negativeCreditComponentsRetained": 1,
+  "financialCompletenessClaimed": false,
+  "writesToRepositoryOrRemote": 0,
+  "actionableDiscrepancies": []
+}

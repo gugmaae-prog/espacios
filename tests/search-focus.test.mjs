@@ -101,6 +101,13 @@ test('a newer search cancels a pending older camera before either frame is rende
   assert.deepEqual(plain(cameras[0].args[0].center),[54.603,24.494]);
   assert.equal(h.state.selected.name,'Yas Island');
 });
+
+test('opening a newer drawer cancels deferred search activation before the next frame',()=>{
+  const h=runtime({entries:[{type:'record',id:'palm',record:community()}]});
+  vm.runInContext('aeActivateSearchPosition(0);window.EspaciosSearchFocus.cancel("history-drawer-opened")',h.ctx);h.flush();
+  assert.equal(cameraMoves(h).length,0);assert.equal(h.env.window.__ESPACIOS_SEARCH_FOCUS__.status,'cancelled');
+  assert.ok(h.env.window.__ESPACIOS_SEARCH_FOCUS__.events.includes('history-drawer-opened'));
+});
 test('search retains ROI and villa basket while synchronizing the exact selected market area', () => {
   const h=runtime({market:true,entries:[{type:'record',id:'palm',record:community()}]});
   vm.runInContext('aeActivateSearchPosition(0)',h.ctx);h.flush();

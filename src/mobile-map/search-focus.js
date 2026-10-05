@@ -98,7 +98,7 @@ const EspaciosSearchFocusCore = (() => {
   function measurePadding() {
     const container = map.getContainer().getBoundingClientRect(), width = container.width, height = container.height, rectangles = [];
     const mobile = matchMedia('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)').matches;
-    for (const element of document.querySelectorAll('.topbar, .layer-rail, #tl-dock, .floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel')) {
+    for (const element of document.querySelectorAll('.topbar, .layer-rail, #tl-dock, .floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel, #hi-panel')) {
       if (!shown(element)) continue;
       const r = element.getBoundingClientRect();
       const rect = {left: r.left - container.left, right: r.right - container.left, top: r.top - container.top, bottom: r.bottom - container.top, width: r.width, height: r.height};
@@ -244,5 +244,5 @@ const EspaciosSearchFocusCore = (() => {
     const button = event.target.closest?.('[data-search-pos]');if (!button) return;
     event.preventDefault();aeActivateSearchPosition(Number(button.dataset.searchPos));
   });
-  window.EspaciosSearchFocus = Object.freeze({focusRecord, focusArea: area => focusRecord({kind: 'community', ...area}), measurePadding});
+  window.EspaciosSearchFocus = Object.freeze({focusRecord, focusArea: area => focusRecord({kind: 'community', ...area}), measurePadding, cancel: cancelFocus});
 })();

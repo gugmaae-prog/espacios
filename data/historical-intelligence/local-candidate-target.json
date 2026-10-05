@@ -1,0 +1,6 @@
+{
+  "environment":"candidate",
+  "workerName":"espacios-history-local-candidate",
+  "r2":{"binding":"MARKET_R2","bucketName":"espacios-history-local-candidate"},
+  "d1":{"binding":"DB","databaseName":"espacios-history-local-candidate","databaseId":"00000000-0000-4000-8000-000000000001"}
+}

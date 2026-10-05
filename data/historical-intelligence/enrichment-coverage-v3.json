@@ -1,0 +1,345 @@
+{
+  "version": "20261005-enrichment-v3",
+  "asOf": "2026-10-05",
+  "snapshotSHA256": "e36078abdfcf1d3de289d81cca4a382adcff9f5a4f615e74673eaf8d3f63b5bb",
+  "records": 1860,
+  "projects": 1645,
+  "communities": 215,
+  "contextLinkedRecords": 769,
+  "earliestContext": "1975Q1",
+  "approvedSubjectHistoryRecords": 183,
+  "approved2080ForecastRecords": 0,
+  "subjectSaleHistoryRecords": 183,
+  "subjectRentHistoryRecords": 64,
+  "sourcedLifecycleRecords": 1133,
+  "freshlySourcedFinancialRecords": 1259,
+  "scope": "Per-record accountability and shared context; row totals across records are not unique source observations. Unknown inception prevents certification of complete historical period coverage.",
+  "evidenceCounts": 298028,
+  "sourceCount": 2765,
+  "eventCount": 90,
+  "auditedItemRows": 42780,
+  "itemCoverage": {
+    "actual_completion": {
+      "project": {
+        "present": 3,
+        "partial": 0,
+        "missing": 1642,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "advertised_prices": {
+      "project": {
+        "present": 1249,
+        "partial": 0,
+        "missing": 396,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 7,
+        "partial": 0,
+        "missing": 208,
+        "unestablished": 0
+      }
+    },
+    "announcement_registration": {
+      "project": {
+        "present": 0,
+        "partial": 191,
+        "missing": 1454,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 26,
+        "partial": 0,
+        "missing": 189,
+        "unestablished": 0
+      }
+    },
+    "annual_scenario_inputs": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 1645,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "complete_registered_sale_history": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 1645
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 215
+      }
+    },
+    "complete_signed_rent_history": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 1645
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 215
+      }
+    },
+    "construction": {
+      "project": {
+        "present": 1,
+        "partial": 0,
+        "missing": 1644,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 7,
+        "partial": 5,
+        "missing": 203,
+        "unestablished": 0
+      }
+    },
+    "construction_targets": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 1645,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 7,
+        "partial": 0,
+        "missing": 208,
+        "unestablished": 0
+      }
+    },
+    "dated_current_valuation": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 1645,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "dated_event_context": {
+      "project": {
+        "present": 0,
+        "partial": 1645,
+        "missing": 0,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 215,
+        "missing": 0,
+        "unestablished": 0
+      }
+    },
+    "dated_valuation": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 1645,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "delivery_reports": {
+      "project": {
+        "present": 9,
+        "partial": 0,
+        "missing": 1636,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 24,
+        "partial": 0,
+        "missing": 191,
+        "unestablished": 0
+      }
+    },
+    "handover_targets": {
+      "project": {
+        "present": 1002,
+        "partial": 0,
+        "missing": 643,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 28,
+        "partial": 0,
+        "missing": 187,
+        "unestablished": 0
+      }
+    },
+    "occupancy": {
+      "project": {
+        "present": 1,
+        "partial": 0,
+        "missing": 1644,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "original_launch": {
+      "project": {
+        "present": 22,
+        "partial": 2,
+        "missing": 1621,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 42,
+        "partial": 1,
+        "missing": 172,
+        "unestablished": 0
+      }
+    },
+    "phase_milestones": {
+      "project": {
+        "present": 5,
+        "partial": 0,
+        "missing": 1640,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 48,
+        "partial": 0,
+        "missing": 167,
+        "unestablished": 0
+      }
+    },
+    "registered_sale_history": {
+      "project": {
+        "present": 183,
+        "partial": 0,
+        "missing": 1462,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "service_charge_components": {
+      "project": {
+        "present": 0,
+        "partial": 28,
+        "missing": 1617,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "shared_financial_context": {
+      "project": {
+        "present": 686,
+        "partial": 0,
+        "missing": 959,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 83,
+        "partial": 0,
+        "missing": 132,
+        "unestablished": 0
+      }
+    },
+    "signed_rent_history": {
+      "project": {
+        "present": 64,
+        "partial": 0,
+        "missing": 1581,
+        "unestablished": 0
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 215,
+        "unestablished": 0
+      }
+    },
+    "validated_net_return_forecast": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 1645
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 215
+      }
+    },
+    "validated_price_forecast": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 1645
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 215
+      }
+    },
+    "validated_rent_forecast": {
+      "project": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 1645
+      },
+      "community": {
+        "present": 0,
+        "partial": 0,
+        "missing": 0,
+        "unestablished": 215
+      }
+    }
+  }
+}

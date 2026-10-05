@@ -1,0 +1,721 @@
+{
+  "sources": [
+    {
+      "id": "pja-masterplan",
+      "publisher": "Dubai Media Office",
+      "published": "2023-05-31",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2023/may/31-05/mohammed-bin-rashid-approves-new-futuristic-masterplan-for-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-infrastructure",
+      "publisher": "Dubai Media Office / Nakheel",
+      "published": "2025-06-16",
+      "retrieved": "2026-10-03",
+      "url": "https://prod.mediaoffice.ae/en/news/2025/june/16-06/nakheel-awards-over-aed750-million-in-contracts-for-palm-jebel-ai",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-villas",
+      "publisher": "Dubai Media Office / Nakheel",
+      "published": "2026-04-27",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2026/april/27-04/nakheel-awards-contracts",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dwc",
+      "publisher": "Dubai Media Office",
+      "published": "2024-04-28",
+      "retrieved": "2026-10-03",
+      "url": "https://mediaoffice.ae/en/news/2024/april/28-04/al-maktoum-international-airport",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dwc-phasing",
+      "publisher": "Dubai Media Office",
+      "published": "2024-10-24",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2024/october/24-10/emirates-group-and-dubai-airports",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dwc-2026-progress",
+      "publisher": "Dubai Media Office",
+      "published": "2026-06-15",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2026/june/15-06/hamdan-bin-mohammed-approves-al-maktoum-airport",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dwc-2026-ceo",
+      "publisher": "Dubai Media Office / Dubai Airports",
+      "published": "2026-09-11",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2026/september/11-09/dubai-airports-ceo-outlines-dxb-growth-and-future-of-dubai-aviation",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dec",
+      "publisher": "Dubai Media Office",
+      "published": "2024-09-23",
+      "retrieved": "2026-10-03",
+      "url": "https://prod.mediaoffice.ae/en/news/2024/september/23-09/dubai-exhibition-centre",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dec-progress",
+      "publisher": "Dubai Media Office / DWTC",
+      "published": "2025-11-12",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2025/november/12-11/dubai-world-trade-centre-confirms-readiness",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "dec-phase-one-complete",
+      "publisher": "Dubai Media Office / DWTC",
+      "published": "2026-04-07",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.ae/en/news/2026/april/07-04/dwtc-in-2025",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "blue-line",
+      "publisher": "RTA",
+      "published": "2026-05-03",
+      "retrieved": "2026-10-03",
+      "url": "https://www.rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/mohammed-bin-rashid-launches-tunnelling-works-for-dubai-metro-blue-line",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "difc",
+      "publisher": "Dubai Media Office",
+      "published": "2026-01-27",
+      "retrieved": "2026-10-03",
+      "url": "https://cd1.mediaoffice.ae/en/news/2026/january/27-01/mohammed-bin-rashid-launches-landmark-aed100-billion-expansion-of-difc",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "rail-live",
+      "publisher": "Etihad Rail",
+      "published": "2026-06-30",
+      "retrieved": "2026-10-03",
+      "url": "https://corporate.etihadrail.ae/en/newsroom/press/the-uaes-first-national-passenger-rail-service-begins-as-etihad-rail-welcomes-first-paying-passengers",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "rail-phasing",
+      "publisher": "Etihad Rail",
+      "published": "2026-08-03",
+      "retrieved": "2026-10-03",
+      "url": "https://corporate.etihadrail.ae/en/newsroom/press/etihad-rail-passes-70000-tickets-sold-as-passengers-begin-planning-their-lives-around-rail",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "zayed-museum",
+      "publisher": "Abu Dhabi Media Office",
+      "published": "2025-12-03",
+      "retrieved": "2026-10-03",
+      "url": "https://www.mediaoffice.abudhabi/en/arts-culture/zayed-national-museum-opens-to-the-public-in-saadiyat-cultural-district/",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "sharjah-airport",
+      "publisher": "WAM / Sharjah Airport Authority",
+      "published": "2025-07-16",
+      "retrieved": "2026-10-03",
+      "url": "https://www.wam.ae/en/article/bkpnmkb-91mn-passengers-travel-through-sharjah-airport",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "ajman-road",
+      "publisher": "WAM / Presidential Initiatives Committee",
+      "published": "2026-01-04",
+      "retrieved": "2026-10-03",
+      "url": "https://www.wam.ae/en/article/by24fyk-talla-road-development-project-opens-ajman",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "rak-water",
+      "publisher": "Ras Al Khaimah Government Media Office",
+      "published": "2026-01-30",
+      "retrieved": "2026-10-03",
+      "url": "https://www.rakmediaoffice.ae/en/media-center/press-releases/ras-al-khaimah-signs-agreement-to-develop-the-largest-wastewater-infrastructure-project-in-the-emirate-to-enable-sustainable-growth/",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "uaq-blue",
+      "publisher": "WAM / Government of Umm Al Quwain",
+      "published": "2023-12-09",
+      "retrieved": "2026-10-03",
+      "url": "https://www.wam.ae/en/article/aq1tz68-government-umm-qaiwain-announces-initiatives",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "fujairah-ports",
+      "publisher": "WAM / Fujairah Ports Authority / DP World",
+      "published": "2026-07-22",
+      "retrieved": "2026-10-03",
+      "url": "https://www.wam.ae/en/article/c1clp54-world-expand-uae-gateway-network-with-new-fujairah",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "kf-luxury",
+      "publisher": "Knight Frank",
+      "published": "2026-07-06",
+      "retrieved": "2026-10-03",
+      "url": "https://www.knightfrank.ae/newsroom/article/2026/7/dubai-us%24-10m-residential-sales-analysis-q2-2026",
+      "classification": "third_party_research",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "kf-forecast",
+      "publisher": "Knight Frank",
+      "published": "2026-02-02",
+      "retrieved": "2026-10-03",
+      "url": "https://www.knightfrank.ae/newsroom/article/2026/2/dubai-residential-market-review-q4-2025",
+      "classification": "third_party_forecast",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    }
+  ],
+  "events": [
+    {
+      "id": "catalyst-pja-utilities",
+      "title": "Palm Jebel Ali roads & utilities",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2025-06-16",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2025-06-16",
+      "firstAvailableAt": "2025-06-16",
+      "sourceIds": [
+        "pja-infrastructure"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "Contracts awarded",
+      "claims": [
+        {
+          "text": "Roads, power and telecom connections can make occupation and daily use feasible. Direct delivery catalyst for the island.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "pja-infrastructure"
+          ]
+        },
+        {
+          "text": "Q4 2026 target for this infrastructure package; completion not independently confirmed Target is not a completed asset. Construction disruption, phasing and utility readiness remain material.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "pja-infrastructure"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-pja-villas",
+      "title": "Palm Jebel Ali 544-villa delivery",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-04-27",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2026-04-27",
+      "firstAvailableAt": "2026-04-27",
+      "sourceIds": [
+        "pja-villas"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "Contracts awarded",
+      "claims": [
+        {
+          "text": "AED3.5bn+ awards give a concrete delivery milestone for 544 villas, reducing some execution uncertainty.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "pja-villas"
+          ]
+        },
+        {
+          "text": "Q4 2028 target for Fronds A–F contract; other phases have separate dates 544 villas are also added supply. Quality, actual handover and resale liquidity determine investment outcomes.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "pja-villas"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-dwc-expansion",
+      "title": "Al Maktoum airport expansion",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2024-04-28",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2024-04-28",
+      "firstAvailableAt": "2024-04-28",
+      "sourceIds": [
+        "dwc",
+        "dwc-phasing",
+        "dwc-2026-progress",
+        "dwc-2026-ceo"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai South",
+          "Emaar South"
+        ]
+      },
+      "status": "Under construction",
+      "claims": [
+        {
+          "text": "Employment and travel capacity can support southern Dubai housing and hospitality demand. AED128bn programme; ultimate 260m passengers is planned capacity.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "dwc",
+            "dwc-phasing",
+            "dwc-2026-progress",
+            "dwc-2026-ceo"
+          ]
+        },
+        {
+          "text": "June 2026 update targets first phase in 2032; September CEO update says early 2030s and second runway by end 2027. These supersede the older ten-year horizon. Regional spillover to Palm Jebel Ali is an inference. Phasing, commute routes, aircraft noise and new housing supply matter.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "dwc",
+            "dwc-phasing",
+            "dwc-2026-progress",
+            "dwc-2026-ceo"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-dec-expansion",
+      "title": "Dubai Exhibition Centre expansion",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2024-09-23",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2024-09-23",
+      "firstAvailableAt": "2024-09-23",
+      "sourceIds": [
+        "dec",
+        "dec-progress",
+        "dec-phase-one-complete"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Expo City Dubai",
+          "Expo Valley"
+        ]
+      },
+      "status": "Partly operational",
+      "claims": [
+        {
+          "text": "AED10bn expansion can support event activity, hospitality and employment in the southern growth corridor.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "dec",
+            "dec-progress",
+            "dec-phase-one-complete"
+          ]
+        },
+        {
+          "text": "Phase 1 completed: 140,000 sqm reported April 2026. Remaining masterplan stages target 2028 and 2031. Event-led demand can be seasonal. Later-phase targets and competing hotel/residential supply remain risks.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "dec",
+            "dec-progress",
+            "dec-phase-one-complete"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-metro-blue",
+      "title": "Dubai Metro Blue Line",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-05-03",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2026-05-03",
+      "firstAvailableAt": "2026-05-03",
+      "sourceIds": [
+        "blue-line"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai Creek Harbour",
+          "International City",
+          "Dubai Silicon Oasis"
+        ]
+      },
+      "status": "Under construction",
+      "claims": [
+        {
+          "text": "Station access can lower commuting friction in the served eastern Dubai districts.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "blue-line"
+          ]
+        },
+        {
+          "text": "Opening target 9 September 2029; 20% complete reported May 2026 Walking access and station entrances need verified geometry. This line is not a confirmed Palm Jebel Ali connection.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "blue-line"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-difc-zabeel",
+      "title": "DIFC Zabeel District",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-01-27",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2026-01-27",
+      "firstAvailableAt": "2026-01-27",
+      "sourceIds": [
+        "difc"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "DIFC",
+          "Zabeel"
+        ]
+      },
+      "status": "Launched",
+      "claims": [
+        {
+          "text": "Financial-sector expansion may support jobs and demand for nearby homes and offices. AED100bn figure is development value, not a house-price forecast.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "difc"
+          ]
+        },
+        {
+          "text": "Launched January 2026; phased delivery must be checked Large additional supply, delivery timing and affordability can offset employment demand.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "difc"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-saadiyat-museum",
+      "title": "Zayed National Museum / Saadiyat",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2025-12-03",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2025-12-03",
+      "firstAvailableAt": "2025-12-03",
+      "sourceIds": [
+        "zayed-museum"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi"
+        ],
+        "areas": [
+          "Saadiyat Island"
+        ]
+      },
+      "status": "Operational",
+      "claims": [
+        {
+          "text": "An operating cultural destination can strengthen tourism and the amenity appeal of Saadiyat.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "zayed-museum"
+          ]
+        },
+        {
+          "text": "Opened 3 December 2025 Existing amenity value may already be priced in. Visitor growth is not evidence of a residential uplift percentage.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "zayed-museum"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-shj-airport",
+      "title": "Sharjah Airport expansion",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2025-07-16",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2025-07-16",
+      "firstAvailableAt": "2025-07-16",
+      "sourceIds": [
+        "sharjah-airport"
+      ],
+      "geography": {
+        "emirates": [
+          "Sharjah"
+        ],
+        "areas": []
+      },
+      "status": "Expansion reported ongoing",
+      "claims": [
+        {
+          "text": "Additional airport capacity can support tourism, jobs and business access across Sharjah.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "sharjah-airport"
+          ]
+        },
+        {
+          "text": "25m annual capacity target by end 2027 in July 2025 report Capacity is not passenger throughput. Current completion progress needs a newer verification; local noise and supply effects vary.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "sharjah-airport"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-ajman-talla",
+      "title": "Ajman Al Talla Road & bridges",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-01-04",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2026-01-04",
+      "firstAvailableAt": "2026-01-04",
+      "sourceIds": [
+        "ajman-road"
+      ],
+      "geography": {
+        "emirates": [
+          "Ajman"
+        ],
+        "areas": [
+          "Al Hamidiyah",
+          "Al Raqaib"
+        ]
+      },
+      "status": "Operational",
+      "claims": [
+        {
+          "text": "Opened bridges and intersections improve access to named residential districts and public facilities.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "ajman-road"
+          ]
+        },
+        {
+          "text": "Inaugurated 4 January 2026 Travel-time improvements are authority estimates, not measured property appreciation; some benefits may already be priced in.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "ajman-road"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-rak-wastewater",
+      "title": "RAK wastewater treatment PPP",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-01-30",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2026-01-30",
+      "firstAvailableAt": "2026-01-30",
+      "sourceIds": [
+        "rak-water"
+      ],
+      "geography": {
+        "emirates": [
+          "Ras Al Khaimah"
+        ],
+        "areas": []
+      },
+      "status": "Agreement signed",
+      "claims": [
+        {
+          "text": "60,000 cubic metres/day planned treatment capacity supports infrastructure readiness for urban growth.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "rak-water"
+          ]
+        },
+        {
+          "text": "Agreement January 2026; completion date not verified Service area, commissioning and tariffs need verification. No parcel-level value uplift is estimated.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "rak-water"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-uaq-strategy",
+      "title": "UAQ Sustainable Blue Economy 2031",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2023-12-09",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2023-12-09",
+      "firstAvailableAt": "2023-12-09",
+      "sourceIds": [
+        "uaq-blue"
+      ],
+      "geography": {
+        "emirates": [
+          "Umm Al Quwain"
+        ],
+        "areas": []
+      },
+      "status": "Strategy / programme",
+      "claims": [
+        {
+          "text": "Tourism, environmental protection and investment guidelines may influence long-term coastal development quality.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "uaq-blue"
+          ]
+        },
+        {
+          "text": "2031 strategy horizon; not a single construction handover Policy is not a completed project. Conservation restrictions can constrain developable supply and permitted uses.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "uaq-blue"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "catalyst-fujairah-ports",
+      "title": "Fujairah Al Rugaylat & Dibba ports",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-07-22",
+        "precision": "day"
+      },
+      "eventDateBasis": "source publication/announcement; milestone effective date not inferred",
+      "publishedAt": "2026-07-22",
+      "firstAvailableAt": "2026-07-22",
+      "sourceIds": [
+        "fujairah-ports"
+      ],
+      "geography": {
+        "emirates": [
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "status": "Agreement signed",
+      "claims": [
+        {
+          "text": "Port development may support logistics investment and employment in Fujairah.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "fujairah-ports"
+          ]
+        },
+        {
+          "text": "50-year concession signed July 2026; build-out date not verified Demand spillover is analytical; industrial traffic, location and future housing supply can offset benefits.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "fujairah-ports"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    }
+  ]
+}

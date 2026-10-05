@@ -3,7 +3,7 @@
   const Q = s => document.querySelector(s), root = document.documentElement;
   const mobile = matchMedia('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)');
   const M = {installed:false, pointer:null, frame:0, syncFrame:0, geometryFrame:0, fraction:0, domain:'', optionKey:'', active:null, picks:[], visible:new Map(), lastRender:0};
-  const panels = () => [...document.querySelectorAll('.floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel')];
+  const panels = () => [...document.querySelectorAll('.floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel, #hi-panel')];
   const visible = el => !el.hidden && !el.classList.contains('hidden');
   const unified = () => window.EspaciosUnifiedMap?.timeline();
   const periodsNow = () => unified()?.periods||tlState.periods;
@@ -98,6 +98,12 @@
     panel.classList.remove('ae-collapsed');if(panel.hasAttribute('data-ae-sheet'))panel.dataset.aeSheet='half';
     M.active=panel;panel.dataset.mmSheet=peek?'peek':'open';M.visible.set(panel,true);updateBar(panel);scheduleGeometry();
   }
+  function activateLegacyDetails(event){
+    const rail=event.target.closest?.('.rail-btn[data-panel]');
+    if(rail){const panel=Q('#'+rail.dataset.panel+'-panel');if(panel&&visible(panel))activate(panel);}
+    else if(event.target.closest?.('[data-ms-details]'))activate(Q('#ms-inspect'));
+    else if(event.target.closest?.('#se-open,#ms-forecast')){const panel=Q('#se-panel');if(panel&&visible(panel))activate(panel);}
+  }
   function updateBar(panel){
     const button=panel.querySelector('.mm-sheet-toggle');if(!button)return;const open=panel.dataset.mmSheet!=='peek';
     if(button.getAttribute('aria-expanded')!==String(open)){button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Minimize details':'Expand details');button.textContent=open?'⌄':'⌃';}
@@ -111,9 +117,14 @@
       bar.querySelector('.mm-sheet-toggle').onclick=()=>{panel.dataset.mmSheet=panel.dataset.mmSheet==='peek'?'open':'peek';updateBar(panel);scheduleGeometry();};
       bar.querySelector('.mm-sheet-close').onclick=()=>{closePanel(panel);Q('#map').focus({preventScroll:true});scheduleGeometry();};
       panel.dataset.mmSheet='open';M.visible.set(panel,visible(panel));
-      new MutationObserver(()=>{if(!mobile.matches)return;const now=visible(panel),was=M.visible.get(panel);M.visible.set(panel,now);if(now&&!was)activate(panel);if(now)updateBar(panel);scheduleGeometry();}).observe(panel,{attributes:true,attributeFilter:['class','hidden']});
+      new MutationObserver(()=>{if(!mobile.matches)return;const now=visible(panel),was=M.visible.get(panel);M.visible.set(panel,now);
+        // Delayed legacy workspace restores and market refreshes are not new
+        // navigation requests. Keep the user-owned drawer until an explicit
+        // rail, Details, map selection or search activation replaces it.
+        if(now&&!was){if(M.active?.id==='hi-panel'&&panel!==M.active&&visible(M.active))closePanel(panel);else activate(panel);}
+        if(visible(panel))updateBar(panel);scheduleGeometry();}).observe(panel,{attributes:true,attributeFilter:['class','hidden']});
     }
-    if(mobile.matches){const open=panels().filter(visible);const chosen=open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,true);}
+    if(mobile.matches){const open=panels().filter(visible);const chosen=open.includes(M.active)?M.active:open.find(p=>p.contains(document.activeElement))||open.find(p=>p.id==='hi-panel')||open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,chosen===M.active?chosen.dataset.mmSheet==='peek':chosen.id!=='hi-panel');}
   }
   function scheduleGeometry(){if(!M.geometryFrame)M.geometryFrame=requestAnimationFrame(measure);}
   function responsive(){const short=mobile.matches&&innerHeight<=560;if(short&&!M.short)aeUaeSetMinimized(true);M.short=short;scheduleGeometry();}
@@ -182,6 +193,7 @@
     const resize=new ResizeObserver(scheduleGeometry);[dock,Q('#app > header'),Q('.layer-rail')].filter(Boolean).forEach(el=>resize.observe(el));map.on('moveend',scheduleGeometry);
     addEventListener('resize',responsive);visualViewport?.addEventListener('resize',scheduleGeometry);mobile.addEventListener('change',()=>{finish(null,true);if(mobile.matches)installSheets();else map.setPadding({top:0,bottom:0,left:0,right:0});responsive();schedule();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
+    document.addEventListener('click',activateLegacyDetails);
     window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20260930-unified-map-v2',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
