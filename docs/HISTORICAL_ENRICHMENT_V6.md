@@ -1,0 +1,15 @@
+# Historical evidence increment v6
+
+Adds 1,336 registered aggregates across 162 cohorts for Petalz, Opalz, Sparklz, Breez, Elano, Kyoto, Levanto, Elevate, Prime Residency 3 and Serene Gardens I. Exact project numbers, legal developers, native geography and primary project pages establish identity before linking. These overlapping aggregates are not unique transaction counts. All 1,860 records and 300,732 previously published observations remain retained.
+
+The increment comprises 970 sale and 366 registered contract aggregates, including 64 Land/Building reference observations that remain separate from apartment subject values. Sparse evidence remains stored; the existing sample rule governs display and modelling. Registered rental contracts do not establish occupancy or realised income.
+
+Seven source-backed community associations correct previously unassigned records: Opalz to Dubai Science Park; Elano, Kyoto and Elevate to Arjan; Levanto to Jumeirah Village Circle; Prime Residency 3 to Al Furjan; Serene Gardens I to Discovery Gardens. Prior association fields are retained. The Serene Gardens phase-I overview and native identity distinguish it from a copied phase-II paragraph. Map responses and history use these reviewed associations.
+
+Petalz's dated 31 October 2025 developer inspection reports completion and handovers in progress. Its later registry load still contains an older construction status, but a dataset load timestamp is not an inspection date. Earlier contract starts do not by themselves disprove staged handover. Elevate's completed header and ongoing footer conflict; ready-property sales and registered contracts remain observations while exact completion and occupancy remain unresolved. Both disagreements are explicit review facts. No contract is relabelled as received rent.
+
+Two current developer starting quotes are separate asking benchmarks: Sparklz AED 900,000 and Breez AED 1,250,000. Their Q2 2028 and year-2029 handover schedules are planned, not actual milestones. Current Opalz and Prime Residency 3 completion statements use reported by-date precision. Evidence first retrieved on 5 October 2026 is not assumed available at its described historical event date.
+
+The snapshot contains 302,068 public aggregates and 2,793 sources. Canonical reuse and preserved revisions yield 13 additional stored sources from the 19-source packet. Ten projects gain subject sale history, four gain signed-contract rent history. There are 199 projects with non-disputed subject sale evidence and 70 with non-disputed subject rent evidence. The previous 77 disputed Luma Park Views aggregates remain disputed. Another 216 collected observations remain rights-pending outside the public numeric snapshot.
+
+No complete lifetime history or validated forecast to 2080 is claimed. Annual slots retain explicit missing inputs. Versioned packet and review decisions are in `enrichment/v6/`; immutable native aggregates are in `data/historical-intelligence/pass6-public-primary-history.csv.gz`. Deployment and live verification are recorded separately.
