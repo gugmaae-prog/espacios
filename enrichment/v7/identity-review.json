@@ -1,0 +1,488 @@
+{
+  "accepted": [
+    {
+      "recordId": "project:bugatti-residences-binghatti-business-bay",
+      "name": "Binghatti Bugatti Residences",
+      "catalogueDeveloper": "Binghatti Properties",
+      "catalogueArea": "Business Bay",
+      "catalogueCommunityId": "community:Dubai:business-bay",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2547"
+      ],
+      "projectNumber": "2547",
+      "sourceProjectId": "471844625",
+      "developerId": "15782130",
+      "developerNumber": "1051",
+      "registeredDeveloperName": "Binghatti Developers FZE",
+      "sourceAreaId": "526",
+      "sourceAreaName": "Business Bay",
+      "registeredName": "\u0628\u0648\u063a\u0627\u062a\u064a \u0631\u064a\u0632\u064a\u062f\u0646\u0633\u0632 \u0645\u0646 \u0628\u0646 \u063a\u0627\u0637\u064a",
+      "officialEnglishAliases": [
+        "Bugatti Residences by Binghatti"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-e14f6efd194ca5d7e6f8"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2023-03-01",
+        "project_end_date": "2025-12-31",
+        "completion_date": "2025-12-31",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "20.04000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "190",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:karl-lagerfeld-villas-by-taraf-in-meydan-dubai",
+      "name": "Karl Lagerfeld Villas",
+      "catalogueDeveloper": "Taraf",
+      "catalogueArea": "Meydan",
+      "catalogueCommunityId": "community:Dubai:meydan",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2982"
+      ],
+      "projectNumber": "2982",
+      "sourceProjectId": "591387986",
+      "developerId": "476598954",
+      "developerNumber": "1549",
+      "registeredDeveloperName": "TARAF DEVELOPMENT L.L.C",
+      "sourceAreaId": "465",
+      "sourceAreaName": "Wadi Al Safa 3",
+      "registeredName": "\u0641\u0644\u0644 \u0643\u0627\u0631\u0644 \u0644\u0627\u063a\u0631\u0641\u064a\u0644\u062f \u0645\u0646 \u062a\u0631\u0641 ",
+      "officialEnglishAliases": [
+        "Karl Lagerfeld Villas By Taraf"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-ea8c949bb3ced45afa0d"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2024-09-01",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "0.81000",
+        "no_of_buildings": "0",
+        "no_of_lands": "0",
+        "no_of_units": "0",
+        "no_of_villas": "51",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:binghatti-trillionaire-residences-for-sale-in-business-bay-dubai",
+      "name": "Binghatti Trillionaire Residences",
+      "catalogueDeveloper": "Binghatti Properties",
+      "catalogueArea": "Business Bay",
+      "catalogueCommunityId": "community:Dubai:business-bay",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2643"
+      ],
+      "projectNumber": "2643",
+      "sourceProjectId": "499385381",
+      "developerId": "15782130",
+      "developerNumber": "1051",
+      "registeredDeveloperName": "Binghatti Developers FZE",
+      "sourceAreaId": "526",
+      "sourceAreaName": "Business Bay",
+      "registeredName": "\u062a\u0631\u0644\u064a\u0648\u0646\u064a\u0631 \u0631\u064a\u0632\u064a\u062f\u0646\u0633\u0632 \u0645\u0646 \u0628\u0646 \u063a\u0627\u0637\u064a",
+      "officialEnglishAliases": [
+        "Trillionaire Residences by Binghatti"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-2bd7f304125906ae0fb6"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2023-01-01",
+        "project_end_date": "2024-06-30",
+        "completion_date": "2024-06-30",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "369",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:ahs-casa-canal-penthouses-and-sky-villas-for-sale-in-dubai",
+      "name": "AHS Casa Canal",
+      "catalogueDeveloper": "AHS Properties",
+      "catalogueArea": "Dubai Canal",
+      "catalogueCommunityId": "community:Dubai:dubai-canal",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2679"
+      ],
+      "projectNumber": "2679",
+      "sourceProjectId": "508593138",
+      "developerId": "485622930",
+      "developerNumber": "1566",
+      "registeredDeveloperName": "AHS CANAL TWO REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "364",
+      "sourceAreaName": "Al Wasl",
+      "registeredName": "\u0643\u0627\u0632\u0627 \u0642\u0646\u0627\u0644",
+      "officialEnglishAliases": [
+        "CASA CANAL"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-f9c3b9c50371e0271d85"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2023-10-15",
+        "project_end_date": null,
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "12.12000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "68",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:ahs-one-crescent-palm-jumeirah-dubai-penthouses-and-sky-villas",
+      "name": "AHS One Crescent",
+      "catalogueDeveloper": "AHS Properties",
+      "catalogueArea": "Palm Jumeirah",
+      "catalogueCommunityId": "community:Dubai:palm-jumeirah",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2567"
+      ],
+      "projectNumber": "2567",
+      "sourceProjectId": "477433150",
+      "developerId": "443871204",
+      "developerNumber": "1492",
+      "registeredDeveloperName": "A H S PALM DEVELOPMENT L.L.C",
+      "sourceAreaId": "410",
+      "sourceAreaName": "Palm Jumeirah",
+      "registeredName": "\u0648\u0627\u0646 \u0643\u0631\u064a\u0633\u0646\u062a",
+      "officialEnglishAliases": [
+        "One Crescent"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-5742b334c511c66f6eea"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2023-05-15",
+        "project_end_date": "2026-03-01",
+        "completion_date": "2026-03-01",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "34.34000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "25",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:ahs-one-canal-dubai-penthouses-and-sky-villas-for-sale",
+      "name": "AHS One Canal",
+      "catalogueDeveloper": "AHS Properties",
+      "catalogueArea": "Dubai Canal",
+      "catalogueCommunityId": "community:Dubai:dubai-canal",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2501"
+      ],
+      "projectNumber": "2501",
+      "sourceProjectId": "451187178",
+      "developerId": "443869900",
+      "developerNumber": "1491",
+      "registeredDeveloperName": "A H S CANAL DEVELOPMENT L.L.C",
+      "sourceAreaId": "364",
+      "sourceAreaName": "Al Wasl",
+      "registeredName": "\u0648\u0627\u0646 \u0643\u0627\u0646\u0627\u0644",
+      "officialEnglishAliases": [
+        "ONE CANAL"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-1885119e83d901f8c0e7"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2022-12-23",
+        "project_end_date": "2025-05-30",
+        "completion_date": "2025-05-30",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "43.82000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "42",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:barari-heights-samana-majan-dubai",
+      "name": "Barari Heights",
+      "catalogueDeveloper": "SAMANA Developers",
+      "catalogueArea": "Majan",
+      "catalogueCommunityId": "community:Dubai:majan",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "3871"
+      ],
+      "projectNumber": "3871",
+      "sourceProjectId": "787491019",
+      "developerId": "164137069",
+      "developerNumber": "1229",
+      "registeredDeveloperName": "SAMANA INTERNATIONAL REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "465",
+      "sourceAreaName": "Wadi Al Safa 3",
+      "registeredName": "\u0633\u0627\u0645\u0627\u0646\u0627 \u0628\u0631\u0627\u0631\u064a \u0647\u0627\u064a\u062a\u0633",
+      "officialEnglishAliases": [
+        "Samana Barari Heights"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-e177322cb15aebc87092"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2025-07-01",
+        "project_end_date": "2028-10-31",
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "NOT_STARTED",
+        "percent_completed": "0.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "737",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:sierra-by-iman-motor-city-dubai",
+      "name": "Sierra",
+      "catalogueDeveloper": "Iman Developers",
+      "catalogueArea": "Motor City",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "3835"
+      ],
+      "projectNumber": "3835",
+      "sourceProjectId": "774095888",
+      "developerId": "52592417",
+      "developerNumber": "1178",
+      "registeredDeveloperName": "IMAN DEVELOPERS L.L.C",
+      "sourceAreaId": "444",
+      "sourceAreaName": "Al Hebiah First",
+      "registeredName": "                                                                                                                            \u0633\u064a\u0631\u0627 \u0628\u0627\u064a \u0627\u064a\u0645\u0627\u0646",
+      "officialEnglishAliases": [
+        "SIERRA BY IMAN"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-f656e3c32d5f4521468d"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2025-11-01",
+        "project_end_date": "2029-06-30",
+        "completion_date": null,
+        "cancellation_date": null,
+        "project_status": "PENDING",
+        "percent_completed": "0.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "598",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:imtiaz-westwood-grande-jvc-apartments-in-jumeirah-village-circle",
+      "name": "Imtiaz Westwood Grande",
+      "catalogueDeveloper": "imtiaz",
+      "catalogueArea": "Dubai, Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2520"
+      ],
+      "projectNumber": "2520",
+      "sourceProjectId": "459745811",
+      "developerId": "29075838",
+      "developerNumber": "1129",
+      "registeredDeveloperName": "IMTIAZ REAL ESTATE INVESTMENT & DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0648\u064a\u0633\u062a\u0648\u0648\u062f \u063a\u0631\u0627\u0646\u062f \u0645\u0646 \u0627\u0645\u062a\u064a\u0627\u0632",
+      "officialEnglishAliases": [
+        "Westwood Grande by Imtiaz"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-9015563eaeb5bbb1c2d4"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2022-11-01",
+        "project_end_date": "2024-10-31",
+        "completion_date": "2024-10-31",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "157",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:leos-hadley-heights-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "name": "Leos Hadley Heights",
+      "catalogueDeveloper": "leos",
+      "catalogueArea": "Dubai, Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2563"
+      ],
+      "projectNumber": "2563",
+      "sourceProjectId": "476173217",
+      "developerId": "445578283",
+      "developerNumber": "1494",
+      "registeredDeveloperName": "LEOS DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0647\u0627\u062f\u0644\u064a \u0647\u0627\u064a\u062a\u0633",
+      "officialEnglishAliases": [
+        "Hadley Heights"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary7-ab72e281cd33d84d6486"
+      ],
+      "identityBasis": "Exact numbered native English alias, legal project developer and native geography reconciled with a first-party page or factsheet. Westwood Grande is phase I, expressly distinguished from Grande II. Hadley Heights is the JVC phase, not Hadley Heights II in Sports City. Karl Lagerfeld primary Meydan/MBR district location reconciles with the native District 11 master and Wadi Al Safa 3 cadastral area; no boundary equality inferred. Sierra Motor City, SAMANA Barari Heights Majan and Bugatti Business Bay are stated by their developers. AHS One Canal and Casa Canal are distinct native project numbers, both beside Dubai Water Canal/Safa Park; One Crescent is separately on Palm Jumeirah. Trillionaire Residences is Business Bay. Only exact complete names and brand affixes reconciled; no fuzzy identity fan-out. No occupancy, completion or realised rent inferred from identity.",
+      "registryFacts": {
+        "project_start_date": "2023-05-01",
+        "project_end_date": "2025-11-30",
+        "completion_date": "2025-11-30",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "75.11000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "219",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    }
+  ],
+  "counts": {
+    "accepted": 10
+  },
+  "methodology": "Human-reviewed bounded exact primary name, phase, developer and geography reconciliation; additive to frozen 208 identities."
+}

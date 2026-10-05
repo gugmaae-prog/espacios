@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-05T16:11:43.005469+00:00",
+  "passed": true,
+  "state": "private_combined_packet_not_integrated_or_published",
+  "newProjectIdentities": 13,
+  "additionalAggregateObservations": 1707,
+  "newNativeSeries": 240,
+  "additionalFacts": 64,
+  "allPriorPacketFactsLinksInputsPreserved": true,
+  "allPriorPacketSourcesByteEquivalent": true,
+  "identityFanout": false,
+  "sourceBodiesRedistributed": false,
+  "sha256": "7c8850f59d51d767caae7e7e021db060fc6afccc38a21c90c7d0c03716c16e49"
+}

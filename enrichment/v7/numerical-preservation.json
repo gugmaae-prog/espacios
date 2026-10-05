@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "approvedIdentities": 10,
+  "newSubjectSaleRecords": 10,
+  "newSubjectRentRecords": 3,
+  "aggregatePoints": 1117,
+  "series": 172,
+  "scopeCounts": {
+    "published_reference": 68,
+    "sparseRetained": 985,
+    "partialRetained": 24,
+    "subject": 1049
+  },
+  "earliestNativeObservation": "2013-10-23",
+  "rawRowsRedistributed": false,
+  "completeLifetimeHistoryClaimed": false
+}

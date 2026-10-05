@@ -1,0 +1,119 @@
+{
+  "sources": [],
+  "events": [
+    {
+      "id": "pja-fronds-a-f-contracts-2026",
+      "title": "Palm Jebel Ali Fronds A\u2013F villa contracts",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-04-27",
+        "precision": "day"
+      },
+      "eventDateBasis": "Primary announcement date; target delivery retained separately",
+      "announcedAt": "2026-04-27",
+      "publishedAt": "2026-04-27",
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "retrievedAt": "2026-10-05T15:56:27.952555+00:00",
+      "sourceIds": [
+        "primary7-4a0f95d872dd0e55da84"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "contracts_awarded_delivery_planned",
+      "plannedDelivery": {
+        "start": "2028-Q4",
+        "precision": "quarter"
+      },
+      "actualDelivery": null,
+      "claims": [
+        {
+          "text": "Nakheel announced construction contracts for 544 villas on Fronds A\u2013F. Contract expenditure is not a property sale price.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "primary7-4a0f95d872dd0e55da84"
+          ]
+        },
+        {
+          "text": "Completion of this contract scope is targeted for Q4 2028. Other frond schedules remain separate.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "primary7-4a0f95d872dd0e55da84"
+          ]
+        },
+        {
+          "text": "Additional delivered homes can increase both local activity and competing supply. The direction and size of any price effect require transaction evidence.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "primary7-4a0f95d872dd0e55da84"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "exposureLimit": "Community context only; specific project/frond exposure and existence at event date require separate verification."
+    },
+    {
+      "id": "pja-the-yard-announcement-2026",
+      "title": "The Yard at Palm Jebel Ali announced",
+      "category": "government_catalyst",
+      "eventDate": {
+        "start": "2026-09-10",
+        "precision": "day"
+      },
+      "eventDateBasis": "Primary announcement date; target delivery retained separately",
+      "announcedAt": "2026-09-10",
+      "publishedAt": "2026-09-10",
+      "firstAvailableAt": "2026-10-05T15:56:27.952555+00:00",
+      "retrievedAt": "2026-10-05T15:56:27.952555+00:00",
+      "sourceIds": [
+        "primary7-0539e5b99260bb065298"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali"
+        ]
+      },
+      "status": "announced_opening_planned",
+      "plannedDelivery": {
+        "start": "2027",
+        "precision": "year"
+      },
+      "actualDelivery": null,
+      "claims": [
+        {
+          "text": "Dubai Retail announced The Yard, a planned retail, dining, healthcare and lifestyle destination at Palm Jebel Ali.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "primary7-0539e5b99260bb065298"
+          ]
+        },
+        {
+          "text": "Opening is planned in 2027. Announced tenants and projected catchment are not operating amenities or a measured resident count.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "primary7-0539e5b99260bb065298"
+          ]
+        },
+        {
+          "text": "Amenities may support everyday use and buyer interest if delivered. Accessibility, competition and existing price expectations still matter; no uplift coefficient is inferred.",
+          "classification": "documented_mechanism",
+          "sourceIds": [
+            "primary7-0539e5b99260bb065298"
+          ]
+        }
+      ],
+      "classification": "event_evidence",
+      "priceUpliftPct": null,
+      "exposureLimit": "Community context only; specific project/frond exposure and existence at event date require separate verification."
+    }
+  ]
+}
