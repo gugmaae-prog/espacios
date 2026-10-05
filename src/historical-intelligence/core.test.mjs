@@ -8,6 +8,19 @@ const event={id:'event:a',title:'Dated event',eventDate:{start:'2021-01-10',prec
 const exposure={eventId:event.id,recordId:record.id,scope:'emirate',verified:false};
 const rates={downside:-2,base:0,upside:3};
 const assumptions={priceAED:200000,annualRentAED:10000,occupancyYear:2028,annualPriceGrowthPct:rates,annualRentGrowthPct:rates,vacancyPct:5,annualOperatingCostsAED:1000,acquisitionCostsPct:4,disposalCostsPct:2};
+test('a rejected geographic link preserves native points but cannot supply usable context or volume',()=>{
+ const series={id:'old',metric:'price',unit:'AED/sqft',scope:'area_context',identityVerified:false,sourceId:'sales',frequency:'monthly',columns:['period','value','sampleCount'],points:[['2026-08',100,40]],recordLinkReview:{status:'rejected',reason:'Wrong community',sourceIds:['news']}};
+ const r={...record,historySeries:[series]};const out=recordHistory({version:'test',asOf,sources,events:[],exposures:[],manifest:{}},r);
+ assert.equal(out.historySeries[0].points[0][1],100);assert.equal(out.validatedObservations.length,2);
+ assert.ok(out.validatedObservations.every(p=>!p.displayEligible&&p.issues.includes('rejected_record_geography_link')));
+ assert.equal(out.coverage.summary.contextMonths,0);
+});
+test('disputed financial anchors cannot generate forecast prices, rents or net returns',()=>{
+ const anchor=(unit,value)=>({period:'2026-08',value,unit,scope:'subject',identityVerified:true,recordId:record.id,sourceId:'sales',firstAvailableAt:'2026-08',qualityStatus:'conflict: contract chronology'});
+ const r={...record,scenarioInputs:{priceAnchor:anchor('AED',200000),rentAnchor:anchor('AED/year',10000),assumptions}};
+ const out=annualScenarios(r,{asOf,sources});for(const metric of ['price','rent','netROI'])assert.ok(out.metrics[metric].paths.base.every(p=>p.value===null));
+ const manual=annualScenarios(r,{asOf,sources,userAssumptions:assumptions});assert.equal(manual.classification,'user_assumption_scenario');assert.equal(manual.validatedForecast,false);
+});
 test('precision preserves ranges and rejects bad calendar dates or false precision',()=>{
  assert.deepEqual(parseEvidenceDate('2024-02'),{start:'2024-02-01',end:'2024-02-29',precision:'month'});
  assert.deepEqual(parseEvidenceDate('2025Q4'),{start:'2025-10-01',end:'2025-12-31',precision:'quarter'});

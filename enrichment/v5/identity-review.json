@@ -1,0 +1,152 @@
+{
+  "accepted": [
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "name": "DAMAC Tower 108",
+      "catalogueDeveloper": "DAMAC",
+      "catalogueArea": "Business Bay",
+      "catalogueCommunityId": "community:Dubai:business-bay",
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "1499"
+      ],
+      "projectNumber": "1499",
+      "sourceProjectId": "12193740",
+      "developerId": "192",
+      "developerNumber": "192",
+      "registeredDeveloperName": "DAMAC DEVELOPMENT(L L C)",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u062a\u0627\u0648\u0631 108",
+      "officialEnglishAliases": [
+        "TOWER 108"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2014-06-01",
+        "project_end_date": "2019-03-24",
+        "completion_date": "2019-03-24",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "418",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "name": "TownX Luma Park Views",
+      "catalogueDeveloper": "townx",
+      "catalogueArea": "Dubai, Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2676"
+      ],
+      "projectNumber": "2676",
+      "sourceProjectId": "508039513",
+      "developerId": "139871001",
+      "developerNumber": "1213",
+      "registeredDeveloperName": "TOWNX REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0644\u0648\u0645\u0627 \u0628\u0627\u0631\u0643 \u0641\u064a\u0648\u0632",
+      "officialEnglishAliases": [
+        "Luma Park Views"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2023-07-01",
+        "project_end_date": "2026-06-30",
+        "completion_date": "2026-06-30",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "95.01000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "606",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "name": "TownX Luma22",
+      "catalogueDeveloper": "townx",
+      "catalogueArea": "Dubai, Jumeirah Village Circle (JVC)",
+      "catalogueCommunityId": null,
+      "emirate": "Dubai",
+      "status": "registry_supported_identity",
+      "issues": [],
+      "candidateProjectNumbers": [
+        "2518"
+      ],
+      "projectNumber": "2518",
+      "sourceProjectId": "458927970",
+      "developerId": "139871001",
+      "developerNumber": "1213",
+      "registeredDeveloperName": "TOWNX REAL ESTATE DEVELOPMENT L.L.C",
+      "sourceAreaId": "441",
+      "sourceAreaName": "Al Barsha South Fourth",
+      "registeredName": "\u0644\u0648\u0645\u062722",
+      "officialEnglishAliases": [
+        "Luma22"
+      ],
+      "aliasSource": [
+        "dld-official-buildings-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "registryFacts": {
+        "project_start_date": "2022-12-01",
+        "project_end_date": "2024-09-30",
+        "completion_date": "2024-09-30",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "407",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000"
+      }
+    }
+  ],
+  "counts": {
+    "accepted": 3
+  },
+  "methodology": "Human-reviewed bounded exact primary name, phase, developer and geography reconciliation; additive to frozen 195 identities."
+}

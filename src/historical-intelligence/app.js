@@ -1,4 +1,4 @@
-/* Sourced history, event context and explicit user scenarios. 20261005-history-enrichment-v3 */
+/* Sourced history, event context and explicit user scenarios. 20261005-history-enrichment-v5 */
 (() => {
   'use strict';
   const Q = selector => document.querySelector(selector);
@@ -284,14 +284,15 @@
     return '<details class="hi-section" id="hi-item-coverage"><summary>Evidence and remaining gaps · '+items.length+' items</summary><p class="hi-note">An item marked present has supporting evidence. Complete lifetime price and rent histories require every applicable period to be verified.</p>'+items.map(([name,item])=>'<article class="hi-card"><strong>'+esc(stageLabel(name))+'</strong><p>'+esc(stageLabel(item.status))+'</p><p class="hi-note">'+esc(item.reason)+(item.nativePointCount!=null?' · '+esc(item.nativePointCount)+' retained native points':'')+'</p>'+sourceLinks(item.sourceIds,data)+'</article>').join('')+'</details>';
   }
   function presentEvidenceHTML(data) {
-    const record=data?.record??data,observations=list(data?.observations??record.observations),registers=list(record.registerEvidence),research=record.researchStatus?.sourceCollection;
-    if(!observations.length&&!registers.length&&!research)return '';
+    const record=data?.record??data,observations=list(data?.observations??record.observations),registers=list(record.registerEvidence),revisions=list(record.communityAssociationRevisions),research=record.researchStatus?.sourceCollection;
+    if(!observations.length&&!registers.length&&!revisions.length&&!research)return '';
+    const revisionsHTML=revisions.map(row=>'<article class="hi-card"><strong>Reviewed community association</strong><p>'+esc(row.label)+'</p><p class="hi-note">'+esc(row.reason)+' Previous source observations remain retained; rejected links are withheld from usable context.</p>'+sourceLinks(row.sourceIds,data)+'</article>').join('');
     const financial=observations.map(row=>'<article class="hi-card"><strong>'+esc(fmt(row.value))+' '+esc(row.unit)+'</strong><p>'+esc(stageLabel(row.evidenceClass??row.scope))+' · '+esc(row.period)+'</p><p class="hi-note">'+esc(row.observationDateBasis??'Source-native observation date')+(row.observationKind==='asking_quote'?' · Advertised price; a completed sale is not established.':'')+'</p>'+sourceLinks(row.sourceIds??[row.sourceId],data)+'</article>').join('');
     const valueHTML=value=>value==null?'Unavailable':Array.isArray(value)?value.map(valueHTML).join('<br>'):typeof value==='object'?'<dl>'+Object.entries(value).map(([k,v])=>'<div><dt>'+esc(stageLabel(k))+'</dt><dd>'+valueHTML(v)+'</dd></div>').join('')+'</dl>':esc(value);
     const feeHTML=rows=>'<p class="hi-note">Source fee components; a whole-property annual cost is not established. Parking denominators may be unverified.</p><div class="hi-period-table"><table><caption>Service-charge components</caption><thead><tr><th>Year</th><th>Property group / use</th><th>Category</th><th>Native rate</th><th>Basis</th></tr></thead><tbody>'+rows.map(row=>'<tr><td>'+esc(row.budgetYear)+'</td><td>'+esc(row.propertyGroupName)+' / '+esc(row.usage)+'</td><td>'+esc(row.serviceCategoryName)+'</td><td>'+valueHTML(row.observedNativeRate)+'</td><td>'+esc(row.categoryRateBasis)+'</td></tr>').join('')+'</tbody></table></div>';
     const registersHTML=registers.map(row=>'<article class="hi-card"><strong>'+esc(stageLabel(row.classification))+'</strong><p class="hi-note">'+esc(row.identityBasis)+' · '+(row.identityVerified?'Verified identity':'Identity under review')+'</p><dl>'+Object.entries(row.fields??{}).filter(([k])=>k!=='feeComponents').map(([k,v])=>'<div><dt>'+esc(stageLabel(k))+'</dt><dd>'+valueHTML(v)+'</dd></div>').join('')+'</dl>'+(row.fields?.feeComponents?feeHTML(row.fields.feeComponents):'')+sourceLinks(row.sourceIds,data)+'</article>').join('');
     const status=research?'<p class="hi-note">Source collection: '+esc(stageLabel(research.status??'reviewed'))+(research.reason?' · '+esc(research.reason):'')+'. Fetching a source does not establish complete financial history.</p>':'';
-    return '<details class="hi-section"><summary>New sourced facts · '+(observations.length+registers.length)+'</summary>'+financial+registersHTML+status+'</details>';
+    return '<details class="hi-section"><summary>New sourced facts · '+(observations.length+registers.length+revisions.length)+'</summary>'+revisionsHTML+financial+registersHTML+status+'</details>';
   }
   function historyHTML(data) {
     const rows = seriesRows(data,H.metric), selected = rows.find(row => row.uiId === H.seriesId) ?? rows[0];
@@ -395,7 +396,7 @@
     if (H.error) { body.innerHTML='<p role="alert">' + esc(H.error) + '</p><button type="button" id="hi-retry">Retry research</button>'; return; }
     if (!H.history) { body.innerHTML='<p class="hi-empty">Choose any indexed project or community above. Financial observations, lifecycle evidence, events and long-term scenario availability will be shown separately.</p>'; return; }
     body.innerHTML = (H.seriesLoading?'<p role="status">Loading all retained native points for the selected financial cohort…</p>':'')+(H.seriesError?'<p role="alert">'+esc(H.seriesError)+'</p><button type="button" id="hi-series-retry">Retry selected cohort</button>':'')+(H.tab === 'history' ? historyHTML(H.history) : H.tab === 'events' ? eventsHTML() : scenariosHTML());
-    window.__ESPACIOS_HISTORICAL_INTELLIGENCE__ = {release:'20261005-history-enrichment-v3',recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,scenarioClassification:(H.scenarioResult??H.history).scenarios?.classification,validatedForecast:false};
+    window.__ESPACIOS_HISTORICAL_INTELLIGENCE__ = {release:'20261005-history-enrichment-v5',recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,scenarioClassification:(H.scenarioResult??H.history).scenarios?.classification,validatedForecast:false};
   }
   async function ensureSelectedSeries(uiId=H.seriesId) {
     if(!H.history)return;
@@ -528,7 +529,7 @@
     if(H.installed)return true;
     if(!Q('#minimal-kind-controls')||!Q('#app')||!window.EspaciosUnifiedMap)return false;
     const launch=document.createElement('button');launch.id='hi-launch';launch.type='button';launch.textContent='History & events';launch.setAttribute('aria-expanded','false');launch.setAttribute('aria-controls','hi-panel');launch.onclick=()=>open();Q('#minimal-kind-controls').append(launch);
-    const panel=document.createElement('aside');panel.id='hi-panel';panel.className='hi-drawer hidden';panel.dataset.release='20261005-history-enrichment-v3';panel.setAttribute('aria-label','Historical intelligence');
+    const panel=document.createElement('aside');panel.id='hi-panel';panel.className='hi-drawer hidden';panel.dataset.release='20261005-history-enrichment-v5';panel.setAttribute('aria-label','Historical intelligence');
     const header='<header><div><h2>History & events</h2><p id="hi-date-label">Sourced history and events</p><small id="hi-mobile-hint" hidden>Close this drawer to use the map timeline.</small></div><button type="button" id="hi-close" aria-label="Close historical intelligence and return to map timeline">×</button></header>';
     const picker='<div class="hi-selection"><h3 id="hi-record-name">Choose a project or community</h3><details id="hi-record-picker"'+(mobileLayout()?'':' open')+'><summary>Change record</summary><label>Find any project / community<input id="hi-record-search" type="search" placeholder="Search name, emirate or record ID" autocomplete="off"></label><label class="hi-select-label">Record<select id="hi-record-select"><option>Loading record index…</option></select></label><p id="hi-record-count" role="status"></p></details></div>';
     panel.innerHTML=header+picker+'<div id="hi-tabs" role="tablist" aria-label="Historical intelligence view">' + [['history','History'],['events','Events'],['scenarios','Through 2080']].map(([tab,label])=>'<button type="button" id="hi-tab-'+tab+'" data-hi-tab="'+tab+'" role="tab" aria-controls="hi-body" aria-selected="'+(tab===H.tab)+'" tabindex="'+(tab===H.tab?0:-1)+'">'+label+'</button>').join('') + '</div><div id="hi-body" role="tabpanel" aria-labelledby="hi-tab-history"></div>';

@@ -1,0 +1,2909 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-05",
+  "sources": [
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:23.658483+00:00",
+      "id": "dld-official-areas-20261002",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:23.658483+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 5682,
+          "fileName": "lkp_areas_2026-10-02_06-34-03_0001.csv.gz",
+          "sha256": "aa02d51887c78580dcbcca47bbb1e4b1547d9ba16794f1dc8c3b23fe5561ebeb"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-02",
+      "title": "DLD areas, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/465592"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:44.659195+00:00",
+      "id": "dld-official-buildings-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:44.659195+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 18849454,
+          "fileName": "buildings_2026-10-03_18-33-06_0001.csv.gz",
+          "sha256": "413c5c0916c088b9075e05c131b1759aeeaa03c1bfa5f12f691d3af28a85a5a4"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD buildings, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/459613"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:47.193986+00:00",
+      "id": "dld-official-developers-20261001",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:47.193986+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 160670,
+          "fileName": "developers_2026-10-01_23-34-28_0001.csv.gz",
+          "sha256": "eef868a72c9453ef09c4ae664c555112d3e17e193b5fe1710eda84f9e80da6bd"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-01",
+      "title": "DLD developers, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/462802"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "id": "dld-official-projects-20260706",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:44:21.855572+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 463273,
+          "fileName": "projects_2026-07-06_16-25-21_0001.csv.gz",
+          "sha256": "ca2a41843175d7a623eb712ad424e6ead9e4071766a0b13f506802f22e64b02d"
+        }
+      ],
+      "sourceSnapshotDate": "2026-07-06",
+      "title": "DLD projects, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/467654"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:46:23.713250+00:00",
+      "id": "dld-official-rents-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:46:23.713250+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 56982799,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0001.csv.gz",
+          "sha256": "0ad4252a666f73c51caa3997bb9df3e1673c528575f3f13d8cb27622c17ed7e8"
+        },
+        {
+          "bytes": 57003837,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0002.csv.gz",
+          "sha256": "9c03091ce0a971625f9ccbe2e1fd99c6f658438c0703de960853ac648403e732"
+        },
+        {
+          "bytes": 56981110,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0003.csv.gz",
+          "sha256": "80b7b861a08b47371714a0b96ded07672b4da6a249b10201b707d6051f79d191"
+        },
+        {
+          "bytes": 56982376,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0004.csv.gz",
+          "sha256": "90405562f6d62fcd7d0c308eb0de3e1ce064e065db528c6feffa8b8df24648ff"
+        },
+        {
+          "bytes": 56984481,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0005.csv.gz",
+          "sha256": "062886b4682ba8c6c5d57b748ba736b4c942aec18df330497cef7ebe4677c694"
+        },
+        {
+          "bytes": 56981941,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0006.csv.gz",
+          "sha256": "c307ca70bdf506fac0390a0605b38144d92ceeadb004dcff3ea021d84b96c7e5"
+        },
+        {
+          "bytes": 56950138,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0007.csv.gz",
+          "sha256": "99ec1d72e066bd64b24df94485fc44bec09ba3e54fc27930385953ff101f5172"
+        },
+        {
+          "bytes": 56959755,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0008.csv.gz",
+          "sha256": "d381aa6033782259f35877b59e3dbc45db85c23bcbbcd41b44739c912de455af"
+        },
+        {
+          "bytes": 57002049,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0009.csv.gz",
+          "sha256": "7c07074c6825d0b986d1fe37fab82a0ab86e6c9dea8cdbdc8a6fb3adceff0222"
+        },
+        {
+          "bytes": 56972533,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0010.csv.gz",
+          "sha256": "2bcedaceecabc8c1adcb0bdbbc084e7a6e588eb6dc40a74b13a43dac9a3c65d7"
+        },
+        {
+          "bytes": 56986718,
+          "fileName": "rent_contracts_2026-10-03_18-47-08_0011.csv.gz",
+          "sha256": "b8b3235f522123d19c92a46850c0b9b4f3dd6fb57c6f5bebf2b37ce7b4b21954"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD rent-contracts, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/468586"
+    },
+    {
+      "classification": "official_latest_vintage_open_data_snapshot",
+      "datePrecision": "unknown",
+      "firstAvailableAt": "2026-10-04T20:43:33.993477+00:00",
+      "id": "dld-official-transactions-20261003",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "licenceURL": "https://data.dubai/en/terms-conditions",
+      "note": "File-name and native load timestamps are snapshot metadata, not independently verified first public availability. Raw originals remain private; these aggregates adapt the source.",
+      "publicationDateStatus": "research_pending",
+      "publicationPrecision": "unknown",
+      "publishedAt": null,
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "retrievedAt": "2026-10-04T20:43:33.993477+00:00",
+      "snapshotFiles": [
+        {
+          "bytes": 81012860,
+          "fileName": "transactions_2026-10-03_18-36-42_0001.csv.gz",
+          "sha256": "f57ccc6cbe4b7eaa011c470833e09be8cab2e80fb369c7c90477fbbe8bd3c953"
+        },
+        {
+          "bytes": 81046646,
+          "fileName": "transactions_2026-10-03_18-36-42_0002.csv.gz",
+          "sha256": "6ed67ae06ec5d8f0a0fad2b1a8ef36b21fc7c4f0470c30810fb7bb71aca67db1"
+        }
+      ],
+      "sourceSnapshotDate": "2026-10-03",
+      "title": "DLD transactions, official Data Dubai open-data snapshot",
+      "url": "https://data.dubai/en/l/470061"
+    },
+    {
+      "id": "primary5-03429fdb5fe079bf667a",
+      "url": "https://townx.com/our-properties/luma22/",
+      "title": "TownX Luma22 primary project identity",
+      "publisher": "TownX Real Estate Development",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:17:00.244532+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary5-887234cd3adeebba46e2",
+      "url": "https://townx.com/our-properties/luma-park-views/",
+      "title": "TownX Luma Park Views primary project identity",
+      "publisher": "TownX Real Estate Development",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:17:00.244532+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary5-b8954cd6a5503ba02aa5",
+      "url": "https://www.dfsa.ae/application/files/7915/8253/8735/DB-13030842-v1-Project_Tezla_-_Final_Prospectus_with_F-Pages.PDF",
+      "title": "DAMAC Tower 108 primary project identity",
+      "publisher": "DAMAC issuer prospectus hosted by DFSA",
+      "classification": "official_developer_project",
+      "primaryEvidence": true,
+      "publishedAt": "2018-04-17",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAtBasis": "First verified review in this pass; original online availability unknown",
+      "retrievedAt": "2026-10-05T14:17:00.244532+00:00",
+      "captureStatus": "web_read_identity_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Attributed factual identity/location only; no publisher body or imagery reproduced and no bulk reuse licence asserted."
+    },
+    {
+      "id": "primary5-townx-construction-archive",
+      "url": "https://townx.com/construction-updates",
+      "title": "TownX dated construction update archive",
+      "publisher": "TownX Real Estate Development",
+      "classification": "official_developer_construction_archive",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "retrievedAt": "2026-10-05T14:43:55.829195+00:00",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "firstAvailableAtBasis": "First verified review of the archive; item publication months retained separately",
+      "captureStatus": "web_read_archive_labels_reviewed",
+      "rawBodyCaptured": false,
+      "rawBodiesRedistributed": false,
+      "licence": "Concise attributed factual dates only; no copyrighted page or imagery reproduced."
+    }
+  ],
+  "facts": [
+    {
+      "id": "dld-register-1499",
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "fields": {
+        "projectNumber": "1499",
+        "projectId": "12193740",
+        "developerId": "192",
+        "developerNumber": "192",
+        "registeredDeveloperName": "DAMAC DEVELOPMENT(L L C)",
+        "registeredName": "تاور 108",
+        "officialEnglishAliases": [
+          "TOWER 108"
+        ],
+        "areaId": "441",
+        "areaName": "Al Barsha South Fourth",
+        "project_start_date": "2014-06-01",
+        "project_end_date": "2019-03-24",
+        "completion_date": "2019-03-24",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "418",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "12193740",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00"
+    },
+    {
+      "id": "dld-register-1499-project_start_date",
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2014-06-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-1499-project_end_date",
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2019-03-24",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-1499-completion_date",
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2019-03-24",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2676",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "fields": {
+        "projectNumber": "2676",
+        "projectId": "508039513",
+        "developerId": "139871001",
+        "developerNumber": "1213",
+        "registeredDeveloperName": "TOWNX REAL ESTATE DEVELOPMENT L.L.C",
+        "registeredName": "لوما بارك فيوز",
+        "officialEnglishAliases": [
+          "Luma Park Views"
+        ],
+        "areaId": "441",
+        "areaName": "Al Barsha South Fourth",
+        "project_start_date": "2023-07-01",
+        "project_end_date": "2026-06-30",
+        "completion_date": "2026-06-30",
+        "cancellation_date": null,
+        "project_status": "ACTIVE",
+        "percent_completed": "95.01000",
+        "no_of_buildings": "1",
+        "no_of_lands": "0",
+        "no_of_units": "606",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "508039513",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00"
+    },
+    {
+      "id": "dld-register-2676-project_start_date",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2023-07-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2676-project_end_date",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2676-completion_date",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2518",
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "kind": "register",
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "fields": {
+        "projectNumber": "2518",
+        "projectId": "458927970",
+        "developerId": "139871001",
+        "developerNumber": "1213",
+        "registeredDeveloperName": "TOWNX REAL ESTATE DEVELOPMENT L.L.C",
+        "registeredName": "لوما22",
+        "officialEnglishAliases": [
+          "Luma22"
+        ],
+        "areaId": "441",
+        "areaName": "Al Barsha South Fourth",
+        "project_start_date": "2022-12-01",
+        "project_end_date": "2024-09-30",
+        "completion_date": "2024-09-30",
+        "cancellation_date": null,
+        "project_status": "FINISHED",
+        "percent_completed": "100.00000",
+        "no_of_buildings": "2",
+        "no_of_lands": "0",
+        "no_of_units": "407",
+        "no_of_villas": "0",
+        "load_timestamp": "2026-06-15 15:24:01.000",
+        "snapshotDate": "2026-07-06",
+        "expectedDatesOnly": true,
+        "occupancyVerified": false
+      },
+      "registeredProjectId": "458927970",
+      "scope": "subject",
+      "identityVerified": true,
+      "evidenceClass": "official_project_register_snapshot",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00"
+    },
+    {
+      "id": "dld-register-2518-project_start_date",
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "kind": "lifecycle",
+      "milestone": "filed_project_start",
+      "date": {
+        "start": "2022-12-01",
+        "precision": "day"
+      },
+      "label": "DLD filed project start date; launch not independently verified",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2518-project_end_date",
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2024-09-30",
+        "precision": "day"
+      },
+      "label": "DLD filed expected project end date; not actual handover",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "dld-register-2518-completion_date",
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2024-09-30",
+        "precision": "day"
+      },
+      "label": "DLD register completion-date field (reported expected date); not verified occupancy",
+      "verification": "reported",
+      "primaryEvidence": true,
+      "status": "accepted",
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "sourceId": "dld-official-projects-20260706",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "note": "Native registry metadata as at June 2026 load / July 2026 file snapshot; field does not establish actual construction completion, handover, or occupancy.",
+      "evidenceClass": "official_reported_target",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityReviewAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "firstAvailableAt": "2026-10-05T14:17:00.244532+00:00",
+      "scope": "subject"
+    },
+    {
+      "id": "fact5-17478b3e314a44a3cc2ed6c8",
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "status": "accepted",
+      "sourceId": "primary5-b8954cd6a5503ba02aa5",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "community_association",
+      "fromCommunityId": "community:Dubai:business-bay",
+      "toCommunityId": "community:Dubai:jumeirah-village-circle",
+      "verification": "verified",
+      "rejectedSeriesIds": [
+        "a6a543ff606634687a332d74",
+        "d552b950469f88fd1c95977f",
+        "6e96268cd4baaf15b9bb82f0",
+        "9e65134bb7275f8b4b926d1f",
+        "se-b31bccd02365b204",
+        "early-dred-8d6707e5c3855ac3f49fa2e2",
+        "early-dred-c2927c932aba69ade1b0960c",
+        "early-dred-56085f23aa157592e7db1a4d",
+        "early-dred-9b8c63fb7149ffca6e081b92"
+      ],
+      "label": "DAMAC Tower 108 — Jumeirah Village Circle",
+      "reason": "Primary issuer/developer location and exact native project/master-project evidence establish Jumeirah Village Circle. The canonical exact-name community record is used; the separate JVC alias catalogue record is retained without a second subject assignment."
+    },
+    {
+      "id": "fact5-bf52fb259d4256634385c648",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "status": "accepted",
+      "sourceId": "primary5-887234cd3adeebba46e2",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "community_association",
+      "fromCommunityId": null,
+      "toCommunityId": "community:Dubai:jumeirah-village-circle",
+      "verification": "verified",
+      "rejectedSeriesIds": [],
+      "label": "TownX Luma Park Views — Jumeirah Village Circle",
+      "reason": "Primary issuer/developer location and exact native project/master-project evidence establish Jumeirah Village Circle. The canonical exact-name community record is used; the separate JVC alias catalogue record is retained without a second subject assignment."
+    },
+    {
+      "id": "fact5-29b3309a134dd48f08731ed4",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "status": "accepted",
+      "sourceId": "primary5-887234cd3adeebba46e2",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "completion",
+      "date": {
+        "start": "2026-10-05",
+        "precision": "day",
+        "qualifier": "by_date"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "label": "Developer currently describes completed apartments; exact completion date unverified",
+      "note": "Current developer statement captured at the research cutoff. This is not the completion day, verified occupancy, or evidence of historical rental cashflow.",
+      "evidenceClass": "current_developer_completion_claim"
+    },
+    {
+      "id": "fact5-184e6d389e7d8bb0052d6bea",
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "status": "accepted",
+      "sourceId": "primary5-03429fdb5fe079bf667a",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "community_association",
+      "fromCommunityId": null,
+      "toCommunityId": "community:Dubai:jumeirah-village-circle",
+      "verification": "verified",
+      "rejectedSeriesIds": [],
+      "label": "TownX Luma22 — Jumeirah Village Circle",
+      "reason": "Primary issuer/developer location and exact native project/master-project evidence establish Jumeirah Village Circle. The canonical exact-name community record is used; the separate JVC alias catalogue record is retained without a second subject assignment."
+    },
+    {
+      "id": "fact5-b71b16a0d3022dfa31ffa9d7",
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "status": "accepted",
+      "sourceId": "primary5-03429fdb5fe079bf667a",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "completion",
+      "date": {
+        "start": "2026-10-05",
+        "precision": "day",
+        "qualifier": "by_date"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "label": "Developer currently describes completed apartments; exact completion date unverified",
+      "note": "Current developer statement captured at the research cutoff. This is not the completion day, verified occupancy, or evidence of historical rental cashflow.",
+      "evidenceClass": "current_developer_completion_claim"
+    },
+    {
+      "id": "fact5-cb9ef1daebd8f4139e22e73c",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "status": "accepted",
+      "sourceId": "primary5-townx-construction-archive",
+      "sourceIds": [
+        "primary5-townx-construction-archive"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-Q3",
+        "precision": "quarter"
+      },
+      "publishedAt": "2025-10",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "label": "Developer archive lists a Q3 2025 construction update",
+      "note": "Archive item publication labelled October 2025. Observation quarter preserved; no exact progress percentage or original construction start inferred."
+    },
+    {
+      "id": "fact5-f1111b42ba5479cd7626b8ed",
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "status": "accepted",
+      "sourceId": "dld-official-rents-20261003",
+      "sourceIds": [
+        "primary5-townx-construction-archive",
+        "dld-official-projects-20260706",
+        "dld-official-rents-20261003"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "register",
+      "identityVerified": true,
+      "registeredProjectId": "2676",
+      "evidenceClass": "rental_chronology_review",
+      "fields": {
+        "reviewStatus": "disputed",
+        "nativeProjectNumber": "2676",
+        "disputedAggregateObservations": 77,
+        "reason": "Native rental contract starts precede documented construction progress and the June 2026 active project-register status. Exact occupancy/registration chronology remains unreconciled; contracts do not establish realised income.",
+        "occupancyVerified": false,
+        "realisedIncomeVerified": false,
+        "recordsRetained": true
+      }
+    },
+    {
+      "id": "fact5-99be1499f2891f1b17a7dcc7",
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "status": "accepted",
+      "sourceId": "primary5-b8954cd6a5503ba02aa5",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "firstAvailableAt": "2026-10-05T14:43:55.829195+00:00",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "kind": "lifecycle",
+      "milestone": "development_confirmation",
+      "date": {
+        "start": "2018-04-17",
+        "precision": "day"
+      },
+      "publishedAt": "2018-04-17",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "label": "Issuer prospectus describes Tower 108 in JVC District 18",
+      "note": "Document date and project existence evidence only; no launch date, price, confirmed completion or occupancy inferred. The following schedule sentence has a project-name typo and is not used as an exact handover claim."
+    }
+  ],
+  "seriesLinks": [
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-3d708a57444df5cbe2d7",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-5f151053d07ac91fd5fd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-829c4ee4d754ae834d20",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a6d1f4fe8015ac283c89",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-bdd1cf1db83bb122f0d3",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-255494f4cb130a720936",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-e8b55f19aad7127940a2",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-f87901859be960aa0474",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-0a607393f371e905b022",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-9ede72bbe14994a7f2c9",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-f7404972eaadc3bac522",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-dec9cbc8238684856c6e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-0f263e646fd285e741a9",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-25ad699f9be9d4628cc2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-49665db067cee23e264c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-ec119218f09fd5a4692e",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-55c0e00b0eb5be25a0b9",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-857956c32666f1e12f4c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-c53e90b10ad0690707ab",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-634da349271a4c219f41",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-fbe81e63c3a5219d8dca",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-d47dfa0d831a26957cad",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-7a36293ef6e0af7bcf0d",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-bede46660b99bf4b3e28",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-3555ae51e2f109d2c026",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-72a7e554977a52d0a5a7",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-7b9557c0e4287f2f51b5",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a4c9f191c9eed100f20e",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-3da223eb6a7ecc1d9afd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-96cda05eb20727be89bf",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-08111887f38a25e7fe38",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-00bd9749c27a56370362",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-64cb8f9908747d262cbc",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-5ed0f2af8b367ec0ea73",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-f13d7225444f850a20d0",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-8f27ecc07998b80994bb",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-c79116f2ce7a53b12bd3",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-764d22aa13178211f471",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-e9f1986ece48a138bec5",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-f39652627701f6b71719",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-e4b43daf065c7fc3d637",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-b70a833b87a2c5fc59d7",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-b62f09a8f34b55c1074e",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-249e97b888e108682501",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-5e3ff2d3a5e4ea17d428",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-5ca8db7b433d30dca7bb",
+      "scope": "published_reference",
+      "identityVerified": false,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-32ecf8d7cd18d5538ec6",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-e3a0bbd5c3db855af8f5",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a8af83df7b8ca3d8d963",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-75ac9fc77fec694d790e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-b49bc6b5088f0b68fb18",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-e8603c8396743d6f9232",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-4a60efadf285cb7008ad",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-c633bdecb8bd473cba70",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-256508039ff6037626bf",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-7f4bbbee94c044d9cd0d",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-3786a5ae8b7729ea90ca",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6d7fafd5bb04a3c44e0f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-ccb8d3b52d53d1b4751b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a17de5ee57b9f30a556d",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-3ae3c0e1b835cbe9c0b1",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6ddaa8eb70f97553bf64",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-2c16ab305be78accb78c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-8e3ddd2970197dc68725",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-710caae681d2b95ca9f9",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-509a9a4c74e644e8fa74",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-34a44549c82ecf7110cd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-eec0ec8b0213c7c6b542",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-02d0f8d3afbdc6452e1a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-0d0e7c6a5c947b0a8da2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-1b83832c5940072dc91c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-06d8374cea4b12494411",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a07bac4b85a1341fbc28",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-fed3c9828e460f1fab48",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-bec420422848b5942ae8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-6a1fbdf8eb40e241e0e8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-77bc91308549a65c03e3",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-b1cc706b0a36df987c05",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-916c4d5057ef580dc887",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-e16099d54156d97d3f35",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-492cf265b828ac151aa9",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-775962c03b3da4694cac",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-1a2611c635ac3cc4f835",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-fc63e82639b2e1b2951a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-ded0e14978385095d4ab",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-103956e0b4014b9b41a8",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-faae265cd8bef8e14e7a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a2f09af7d1a781cb8c1b",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-bc1654cc2be083574829",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-08b265a1bf3f3d6f9560",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-189d342c315797446ee2",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6240840cc549be54d46c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-db42c9524f65e736642a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-0c49d023bf6ffa2c331f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-a92f8b9fee6eaca186e4",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-a6ad11e8edc9b565b1b4",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-13d708405d89679328ec",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-0a55a0b5a700294baa6f",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-235bbfd168b17b0b81e9",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-1e3a4ecbf0ce1a8df880",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-76ed8cf806e921e5f516",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-9ddecf709af96ab1a41c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-cd288435f5c56ef7df2d",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6a5c36e62abb684da0fc",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-53639683f16d1766a5b4",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-08c301f0a003cb341844",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-263a2f1f042527f8bed4",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-38573c970c6d42ee5e7a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-c72ee3225dd47a4b9303",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6028295c77b759f12dfd",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-bbe7c3f34ba378a1cc94",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-267c326810ae221dcb1e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-8cd9dee510bc6510f7b7",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-0289804989a9cc3c6c12",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-f131aff8d683c08749ea",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-fba67b277186440b72c0",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "seriesId": "dld-primary-e1db6c340cfd02d13843",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-05a3a14c00572298d99a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-a0bcac11b6ba90577465",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6e0c6fff67442ff3e1d0",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-7960102e7503b15aaf6c",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-5619bd70ae62580fa58a",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-0d61b190a4ad601633ab",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-6dd96ddfac006de4dd9e",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-c5b27a3e36b6d407c103",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "seriesId": "dld-primary-1e99d26a3eb832dacb14",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "Exact numbered project on its developer project page matches official native English alias, legal developer and native master-project location. Marketing brand prefix/suffix only is reconciled; Luma22, Luma Park Views and Tower 108 remain distinct. Tower 108 identity uses the issuer description on prospectus page 113 (PDF page 122), not a conflicting JVC/JVT preview-site FAQ. Native cadastral geography is not relabelled as community extent. No historical identity continuity or occupancy inferred.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ]
+    }
+  ],
+  "historyInputs": [
+    {
+      "path": "pass5-public-primary-history.csv.gz",
+      "compression": "gzip",
+      "sha256": "560ce97484c24fb82a77f41c9becfc9c0394873379c3a980847bee3932144e3f",
+      "uncompressedSHA256": "72adabe78e6a3f9084ce90a971f10a5baa75038e98e0be84ba946312e7c8d8b5"
+    }
+  ],
+  "collection": {
+    "approvedRegistryProjects": 3,
+    "linkedCadastralContextCommunities": 0,
+    "linkedExactNativeMasterContextCommunities": 0,
+    "projectRecordsWithEligibleSaleRows": 3,
+    "projectRecordsWithEligibleRentRows": 3,
+    "communityRecordsWithEligibleSaleRows": 0,
+    "communityRecordsWithEligibleRentRows": 0,
+    "publicAggregateRows": 2182,
+    "publicPriceAggregateRows": 672,
+    "publicRentAggregateRows": 1510,
+    "publicSeriesCount": 126,
+    "overlappingAggregatesNotAdditive": true,
+    "registeredLandBuildingReferenceSeries": 12,
+    "baselineRegisteredIdentitiesPreserved": 195,
+    "identityReviewCounts": {
+      "accepted": 3
+    },
+    "candidateAggregateRows": 2182,
+    "disputedAggregateRowsRetained": 77,
+    "usableSubjectRentRecordsAdded": 2,
+    "completeLifetimeHistoryClaimed": false
+  },
+  "methodology": "Official public DLD latest-vintage snapshots. Projects require registered number + unique unchanged English name + stable developer identity + compatible official geography, independently reviewed. Community links are administrative area context only. No fuzzy joins, interpolation, future prices, event uplift, or historical point-in-time availability claimed. Raw rows stay private. Usage/type/registration and native subtypes remain explicitly separate; Ejari business property types (including Virtual Unit) are separate; sparse medians retained with n20 display gate. Entire duplicated single-property rental contracts are quarantined; invalid/future start or extreme end dates independently quarantined. Aggregate series overlap and are not additive. New specific first-party project proofs supplement unchanged exact native names/IDs; both raw-source and later identity-review availability are retained. Registered Land/Building asset histories remain published_reference and cannot anchor marketed Unit/Villa prices. Earlier packets are unchanged. All 77 Luma Park Views rental aggregates remain retained but disputed and withheld from usable coverage and anchors. Community association revisions retain previous relationships and reject only explicitly identified legacy context links.",
+  "additionalDatasets": [
+    {
+      "datasetId": 470061,
+      "sourceId": "dld-official-transactions-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 468586,
+      "sourceId": "dld-official-rents-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 467654,
+      "sourceId": "dld-official-projects-20260706",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 462802,
+      "sourceId": "dld-official-developers-20261001",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 459613,
+      "sourceId": "dld-official-buildings-20261003",
+      "rawOriginalPrivate": true
+    },
+    {
+      "datasetId": 465592,
+      "sourceId": "dld-official-areas-20261002",
+      "rawOriginalPrivate": true
+    }
+  ],
+  "preservation": {
+    "mode": "additive_only",
+    "baselineSnapshotVersion": "20261005-enrichment-v4",
+    "baselineSnapshotSha256": "2f984da2779e0b81675b2d94eb52c20f533c4d2f6eca052c268b8de1113a9e1f",
+    "priorPacketPaths": [
+      "../baseline-enrichment.json"
+    ],
+    "rawOriginalsRedistributed": false,
+    "incrementDisjointFromFrozenV1": true
+  },
+  "recordResearch": [
+    {
+      "recordId": "project:damac-tower-108-jvc-apartments-in-dubai-jumeirah-village-circle",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_and_temporal_review_completed_with_explicit_gaps",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-b8954cd6a5503ba02aa5"
+      ],
+      "reason": "Registered contracts are source observations; they do not establish actual occupancy, received rental income or complete historical coverage."
+    },
+    {
+      "recordId": "project:townx-luma-park-views-apartments-for-sale-in-jvc-dubai",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_and_temporal_review_completed_with_explicit_gaps",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-887234cd3adeebba46e2",
+        "primary5-townx-construction-archive"
+      ],
+      "reason": "Native rental contract starts precede documented construction progress and the June 2026 active project-register status. Exact occupancy/registration chronology remains unreconciled; contracts do not establish realised income."
+    },
+    {
+      "recordId": "project:townx-luma22-jvc-apartments-for-sale-in-dubai-jumeirah-village-circle",
+      "asOf": "2026-10-05",
+      "status": "exact_identity_and_temporal_review_completed_with_explicit_gaps",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-buildings-20261003",
+        "primary5-03429fdb5fe079bf667a"
+      ],
+      "reason": "Registered contracts are source observations; they do not establish actual occupancy, received rental income or complete historical coverage."
+    }
+  ]
+}

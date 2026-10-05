@@ -14,6 +14,20 @@ function fixture(snapshot=data,loader=null){
  vm.runInNewContext(wrapper,context);return worker;
 }
 const req=(path,options)=>new Request('https://espacios.me'+path,options),none=new Proxy({},{get(){throw Error('No binding should be accessed');}});
+test('reviewed geography reaches map and project routes, retains original fields, and respects host and conditional requests',async()=>{
+ const payload={projects:[{id:'project:a',slug:'a',name:'A',emirate:'Dubai',area:'Wrong',coordinates:{lat:25,lng:55}},{id:'project:b',slug:'b',area:'Unchanged'}],communities:[{id:'old'}]},original=structuredClone(payload),corrections=[{recordId:'project:a',emirate:'Dubai',communityId:'community:right',area:'Right',sourceIds:['news']}];
+ const upstreamRequests=[],worker={fetch:async request=>{upstreamRequests.push(request);return new Response(JSON.stringify(payload),{headers:{'content-type':'application/json','etag':'"old"'}});}};
+ vm.runInNewContext(wrapper,{worker_default:worker,HI_DATA:data,HI_CORE:core,HI_MAP_CORRECTIONS:corrections,crypto:webcrypto,Response,Request,Headers,URL,TextEncoder,TextDecoder,DecompressionStream,TypeError,RangeError,Map,Set,Date,JSON,Uint8Array,ReadableStream});
+ for(const path of ['/map/map-core.json','/map/map-data.json','/map/api/projects-all','/map/api/projects-batch']){
+  const response=await worker.fetch(req(path,{headers:{'if-none-match':'"old"'}}),{},{}),body=await response.json();
+  assert.equal(response.status,200);assert.equal(body.projects.length,2);assert.equal(body.projects[0].area,'Right');assert.equal(body.projects[0].communityAssociationReview.priorArea,'Wrong');assert.deepEqual(body.projects[0].coordinates,original.projects[0].coordinates);assert.deepEqual(body.projects[1],original.projects[1]);assert.deepEqual(body.communities,original.communities);
+  assert.equal(upstreamRequests.at(-1).headers.has('if-none-match'),false);
+  const etag=response.headers.get('etag');assert.notEqual(etag,'"old"');assert.equal((await worker.fetch(req(path,{headers:{'if-none-match':etag}}),{},{})).status,304);
+  const head=await worker.fetch(req(path,{method:'HEAD'}),{},{});assert.equal(await head.text(),'');assert.equal(head.headers.get('etag'),etag);
+ }
+ const tenant=await(await worker.fetch(new Request('https://psrhomes.ae/map/map-core.json'),{},{})).json();assert.equal(tenant.projects[0].area,'Wrong');assert.deepEqual(payload,original);
+ const foreign=core.applyCommunityCorrections({projects:[{id:'project:a',emirate:'Ajman',area:'Original'}]},corrections);assert.equal(foreign.projects[0].area,'Original');
+});
 test('read-only APIs retain all records, exact IDs, compact rule events and prior route behavior',async()=>{
  const worker=fixture();const index=await worker.fetch(req('/map/api/record-history'),none,{});assert.equal(index.status,200);assert.equal((await index.json()).records.length,2);
  const events=await worker.fetch(req('/map/api/events?recordId=project%3Aa'),none,{}),payload=await events.json();assert.equal(payload.events.length,1);assert.equal(payload.exposures[0].derivedFromRule,true);assert.equal(payload.classification,'event_evidence_not_causal_price_effects');
