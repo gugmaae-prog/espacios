@@ -228,6 +228,22 @@ assert record['researchStatus']['itemCoverage']['original_launch']['status']=='m
  assert.equal(result.status,0,result.stderr||result.stdout);
 });
 
+test('published 2026-10-05 asking quotes remain headline-eligible on the next snapshot date',()=>{
+ const code=String.raw`
+import sys
+sys.path.insert(0,'scripts')
+from historical_enrichment import apply_enrichment
+source={'id':'s','url':'https://developer.example/project','retrievedAt':'2026-10-04T20:55:12Z','firstAvailableAt':'2026-10-04T20:55:12Z'}
+record={'id':'p','emirate':'Dubai','type':'project','name':'P','lifecycle':[],'observations':[],'historySeries':[],'researchStatus':{'gaps':[]},'currentSnapshot':{'askingPriceAED':100},'coverageSummary':{}}
+fact={'id':'kept','recordId':'p','kind':'financial','status':'accepted','identityBasis':'Exact named developer page','sourceId':'s','scope':'asking_benchmark','observation':{'value':799999,'metric':'price','unit':'AED','period':'2026-10-05','observationKind':'asking_quote','quoteQualifier':'advertised starting price'}}
+apply_enrichment({'asOf':'2026-10-06','facts':[fact]},[record],{}, {'s':source},lambda x:None,{},'2026-10-06')
+assert record['currentSnapshot']['askingPriceAED']==799999
+assert record['currentSnapshot']['observationId']=='kept'
+assert record['priorCurrentSnapshots'][0]['askingPriceAED']==100
+`;
+ const out=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(out.status,0,out.stderr||out.stdout);
+});
+
 test('bedroom and unit-specific asking quotes stay as evidence without replacing headline current snapshot',()=>{
  const code=String.raw`
 import sys

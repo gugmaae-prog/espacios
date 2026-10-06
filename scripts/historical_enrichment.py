@@ -18,6 +18,94 @@ def load_enrichment(base):
   item['rows']=list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
  return packet
 
+def canonical_source_url(url):
+ if isinstance(url,dict):url=url.get('url') or ''
+ return str(url or '').split('#')[0].rstrip('/')
+
+def load_history_rows(base,item):
+ if 'rows' in item:return item
+ target=base/item['path']
+ if target.resolve().parent!=base.resolve():raise ValueError('History input must be a direct public derived file')
+ raw=target.read_bytes()
+ if hashlib.sha256(raw).hexdigest()!=item['sha256']:raise ValueError('Enrichment CSV checksum mismatch')
+ if item.get('compression')=='gzip':
+  raw=gzip.decompress(raw)
+  if item.get('uncompressedSHA256') and hashlib.sha256(raw).hexdigest()!=item['uncompressedSHA256']:raise ValueError('Uncompressed history checksum mismatch')
+ loaded=dict(item);loaded['rows']=list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
+ return loaded
+
+def merge_reviewed_packets(enrichment,asof,packets=None):
+ """Add reviewed packets without replacing saved sources, facts, or series."""
+ root=pathlib.Path(__file__).resolve().parents[1]
+ base=root/'data/historical-intelligence'
+ if enrichment is None:
+  enrichment={'schemaVersion':1,'asOf':asof,'sources':[],'facts':[],'seriesLinks':[],'recordResearch':[],'historyInputs':[],'licensedArchives':[],'additionalDatasets':[],'sourceCandidates':[],'collection':{'passes':[]}}
+ if packets is None:
+  packets=[]
+  for relative in ['enrichment/v10/pass21-primary-source.json','enrichment/v11/pass22-arada-primary.json']:
+   path=root/relative
+   if not path.exists():raise ValueError('Required reviewed packet missing '+relative)
+   packet=json.loads(path.read_text());packet['_packetFile']=path.name;packets.append(packet)
+ source_by_id={row.get('id'):row for row in enrichment.get('sources',[])}
+ source_by_url={canonical_source_url(row.get('url')):row.get('id') for row in enrichment.get('sources',[]) if canonical_source_url(row.get('url'))}
+ fact_ids={row.get('id') for row in enrichment.get('facts',[])}
+ link_keys={(row.get('recordId'),row.get('seriesId')) for row in enrichment.get('seriesLinks',[])}
+ history_paths={row.get('path') for row in enrichment.get('historyInputs',[])}
+ research_by_id={row.get('recordId'):row for row in enrichment.get('recordResearch',[])}
+ for packet in packets:
+  if packet.get('schemaVersion')!=1 or str(packet.get('asOf',''))>asof:raise ValueError('Bad supplemental enrichment packet '+str(packet.get('_packetFile')))
+  packet_name=packet.get('_packetFile') or 'reviewed-packet'
+  local_alias={}
+  for row in packet.get('sources',[]):
+   row=dict(row);ident=row.get('id');url=canonical_source_url(row.get('url'))
+   if not ident or ident in source_by_id or ident in local_alias:raise ValueError('Supplemental source ID collision '+str(ident))
+   existing=source_by_url.get(url)
+   if existing:
+    local_alias[ident]=existing
+    continue
+   source_by_id[ident]=row;source_by_url[url]=ident;enrichment.setdefault('sources',[]).append(row)
+  def remap(identifier):
+   return local_alias.get(identifier,identifier)
+  for row in packet.get('facts',[]):
+   row=json.loads(json.dumps(row))
+   if row.get('id') in fact_ids:raise ValueError('Supplemental fact ID collision '+str(row.get('id')))
+   if row.get('sourceId'):row['sourceId']=remap(row['sourceId'])
+   for key in ['sourceIds','identitySourceIds']:
+    if row.get(key):row[key]=[remap(x) for x in row[key]]
+   fact_ids.add(row.get('id'));enrichment.setdefault('facts',[]).append(row)
+  for row in packet.get('seriesLinks',[]):
+   row=json.loads(json.dumps(row));key=(row.get('recordId'),row.get('seriesId'))
+   if key in link_keys:raise ValueError('Supplemental series link collision '+str(key))
+   if row.get('identitySourceIds'):row['identitySourceIds']=[remap(x) for x in row['identitySourceIds']]
+   link_keys.add(key);enrichment.setdefault('seriesLinks',[]).append(row)
+  for row in packet.get('historyInputs',[]):
+   if row.get('path') in history_paths:raise ValueError('Supplemental history input collision '+str(row.get('path')))
+   loaded=load_history_rows(base,row);history_paths.add(loaded.get('path'));enrichment.setdefault('historyInputs',[]).append(loaded)
+  for row in packet.get('recordResearch',[]):
+   row=json.loads(json.dumps(row));row['sourceIds']=[remap(x) for x in row.get('sourceIds',[])]
+   if row.get('captureSourceIds'):row['captureSourceIds']=[remap(x) for x in row['captureSourceIds']]
+   prior=research_by_id.get(row.get('recordId'))
+   if prior is None:
+    research_by_id[row.get('recordId')]=row;enrichment.setdefault('recordResearch',[]).append(row);continue
+   entry={k:v for k,v in row.items() if k!='recordId'};entry['packetFile']=packet_name
+   prior['collectionPasses']=list(prior.get('collectionPasses') or [])+[entry]
+   prior['sourceIds']=list(dict.fromkeys((prior.get('sourceIds') or [])+row.get('sourceIds',[])))
+   prior['acceptedFactCount']=(prior.get('acceptedFactCount') or 0)+(row.get('acceptedFactCount') or 0)
+  enrichment.setdefault('collection',{}).setdefault('passes',[]).extend(packet.get('collection',{}).get('passes',[]))
+  for key in ['additionalDatasets','sourceCandidates','licensedArchives']:
+   enrichment.setdefault(key,[]).extend(json.loads(json.dumps(packet.get(key,[]))))
+ return enrichment
+
+def captured_current_quote(obs, retrieved_at, asof):
+ # A headline quote is captured on the snapshot date or on its retrieval day.
+ # The published 2026-10-05 capture stays eligible after that date so a later
+ # snapshot keeps it until a newer eligible quote replaces it. Older launch
+ # advertisements remain observations only.
+ period=str(obs.get('period',''))[:10]
+ if len(period)!=10 or period>asof:return False
+ retrieved=str(retrieved_at or '')[:10]
+ return period in {asof, retrieved, '2026-10-05'}
+
 def current_snapshot_eligible(obs):
  # Unit/bedroom-specific advertisements remain evidence but cannot replace
  # the project's headline starting-price snapshot.
@@ -92,8 +180,7 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    incoming_rank=3 if fact.get('primaryEvidence') else 1 if mirrored else 2
    incoming_key=(incoming_rank,common['retrievedAt'],ident)
    current=record['currentSnapshot'];current_key=(current.get('sourceRank',0),current.get('retrievedAt',''),current.get('observationId',''))
-   captured_quote_period=str(obs.get('period','')) in [asof,str(common['retrievedAt'])[:10]]
-   if obs.get('observationKind')=='asking_quote' and current_snapshot_eligible(obs) and captured_quote_period and obs['unit']=='AED' and obs.get('metric')=='price' and incoming_key>current_key:
+   if obs.get('observationKind')=='asking_quote' and current_snapshot_eligible(obs) and captured_current_quote(obs, common['retrievedAt'], asof) and obs['unit']=='AED' and obs.get('metric')=='price' and incoming_key>current_key:
     previous=dict(record['currentSnapshot']);record.setdefault('priorCurrentSnapshots',[]).append(previous)
     record['currentSnapshot'].update({'askingPriceAED':value,'scope':'source_observed_asking_quote','sourceId':sourceids[0],'publishedAt':common['publishedAt'],'firstAvailableAt':available,'retrievedAt':common['retrievedAt'],'freshness':'advertisement captured on retrieval; current market validity unverified; publication date '+('known' if common['publishedAt'] else 'unknown'),'observationId':ident,'sourceRank':incoming_rank,'selectionReason':'Preferred by primary evidence, external source, tenant mirror, then capture time and stable observation ID; all other quotes retained','quoteQualifier':obs.get('quoteQualifier'),'sourceQuoteBasis':obs.get('sourceQuoteBasis'),'sourceEvidenceClass':sources[sourceids[0]].get('classification'),'independentUpstreamEvidence':not mirrored})
    counters['financialFacts']+=1
