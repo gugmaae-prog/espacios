@@ -8,8 +8,8 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261005-enrichment-v9'
-ASOF = '2026-10-05'
+VERSION = '20261006-enrichment-v10'
+ASOF = '2026-10-06'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -148,6 +148,21 @@ def build():
  capture_asof=inv.get('asOf') or SOURCE_CAPTURE_DATE
  if ASOF<capture_asof:raise ValueError('Snapshot as-of cannot precede the retained source collection; this is not a point-in-time replay')
  original_public_rows=len(data['history']);enrichment=load_enrichment(BASE);new_history_rows=[]
+ supplemental_path=ROOT/'enrichment/v10/pass21-primary-source.json'
+ if supplemental_path.exists():
+  supplemental=json.loads(supplemental_path.read_text())
+  if supplemental.get('schemaVersion')!=1 or supplemental.get('asOf','')>ASOF:raise ValueError('Bad supplemental enrichment packet')
+  if enrichment is None:enrichment={'schemaVersion':1,'asOf':ASOF,'sources':[],'facts':[],'seriesLinks':[],'recordResearch':[],'historyInputs':[],'licensedArchives':[],'additionalDatasets':[],'sourceCandidates':[],'collection':{'passes':[]}}
+  seen_sources={x.get('id') for x in enrichment.get('sources',[])};seen_facts={x.get('id') for x in enrichment.get('facts',[])}
+  for row in supplemental.get('sources',[]):
+   if row.get('id') in seen_sources:raise ValueError('Supplemental source ID collision '+str(row.get('id')))
+   enrichment.setdefault('sources',[]).append(row);seen_sources.add(row.get('id'))
+  for row in supplemental.get('facts',[]):
+   if row.get('id') in seen_facts:raise ValueError('Supplemental fact ID collision '+str(row.get('id')))
+   enrichment.setdefault('facts',[]).append(row);seen_facts.add(row.get('id'))
+  enrichment.setdefault('collection',{}).setdefault('passes',[]).extend(supplemental.get('collection',{}).get('passes',[]))
+  enrichment.setdefault('additionalDatasets',[]).extend(supplemental.get('additionalDatasets',[]))
+  enrichment.setdefault('sourceCandidates',[]).extend(supplemental.get('sourceCandidates',[]))
  if enrichment:
   for item in enrichment.get('historyInputs',[]):new_history_rows.extend(item['rows'])
  early_path=BASE/'early-history-manifest.json';early=None
