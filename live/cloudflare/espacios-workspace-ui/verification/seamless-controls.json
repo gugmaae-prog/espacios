@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-05 (Asia/Dubai)",
+  "legacyCases": 18,
+  "publicShellDriverAssertions": 23,
+  "authenticatedProductionWorkflowsCertified": false,
+  "mapChanged": false,
+  "scope": "Captured modern/public production components, synthetic records and local APIs; read-only public legacy verification.",
+  "focus-modern.json": {
+    "passed": true,
+    "assertions": 1070,
+    "samples": 168,
+    "hashes": {
+      "workspaceCss": "1cd1ad3e8352f8c3ea6da03f23c8713510b302763de2e7845b3bca62cb5e0779",
+      "publicCss": "38c5ccf2819b916aef10de05aacfbd3977fb1474f9b224154ad177f8fd35f7b3",
+      "modality": "adf12bcaf49a8984e52868271e8169b0487e21d560c7e39ecd51eb9657020dd7"
+    },
+    "modalitySha256": null,
+    "browserRequests": null,
+    "provenance": "Exact retained deployed SSR components and SVG markup with current full production CSS plus new owning Workspace controls and public shell style. Bootstrap/profile/records are synthetic local visual branches, not live private sessions. Document pointerdown/keydown listeners run the exact new modality script; focus is then sampled after actual pointer clicks and Tab events. No form submissions, messages or API writes."
+  },
+  "focus-public.json": {
+    "passed": true,
+    "assertions": 338,
+    "samples": 108,
+    "hashes": {
+      "workspaceCss": "1cd1ad3e8352f8c3ea6da03f23c8713510b302763de2e7845b3bca62cb5e0779",
+      "publicCss": "38c5ccf2819b916aef10de05aacfbd3977fb1474f9b224154ad177f8fd35f7b3",
+      "modality": "adf12bcaf49a8984e52868271e8169b0487e21d560c7e39ecd51eb9657020dd7"
+    },
+    "modalitySha256": null,
+    "browserRequests": null,
+    "provenance": "Exact retained deployed SSR components and SVG markup with current full production CSS plus new owning Workspace controls and public shell style. Bootstrap/profile/records are synthetic local visual branches, not live private sessions. Document pointerdown/keydown listeners run the exact new modality script; focus is then sampled after actual pointer clicks and Tab events. No form submissions, messages or API writes."
+  },
+  "focus-modern-modality-final.json": {
+    "passed": true,
+    "assertions": 358,
+    "samples": 56,
+    "hashes": {
+      "workspaceCss": "1cd1ad3e8352f8c3ea6da03f23c8713510b302763de2e7845b3bca62cb5e0779",
+      "publicCss": "38c5ccf2819b916aef10de05aacfbd3977fb1474f9b224154ad177f8fd35f7b3",
+      "modality": "8ffc2d0ee9bfabf6483702572d97b35109cbcca3b099fb19a6882042284a04ff"
+    },
+    "modalitySha256": null,
+    "browserRequests": null,
+    "provenance": "Exact retained deployed SSR components and SVG markup with current full production CSS plus new owning Workspace controls and public shell style. Bootstrap/profile/records are synthetic local visual branches, not live private sessions. Document pointerdown/keydown listeners run the exact new modality script; focus is then sampled after actual pointer clicks and Tab events. No form submissions, messages or API writes."
+  },
+  "focus-public-modality-final.json": {
+    "passed": true,
+    "assertions": 114,
+    "samples": 36,
+    "hashes": {
+      "workspaceCss": "1cd1ad3e8352f8c3ea6da03f23c8713510b302763de2e7845b3bca62cb5e0779",
+      "publicCss": "38c5ccf2819b916aef10de05aacfbd3977fb1474f9b224154ad177f8fd35f7b3",
+      "modality": "8ffc2d0ee9bfabf6483702572d97b35109cbcca3b099fb19a6882042284a04ff"
+    },
+    "modalitySha256": null,
+    "browserRequests": null,
+    "provenance": "Exact retained deployed SSR components and SVG markup with current full production CSS plus new owning Workspace controls and public shell style. Bootstrap/profile/records are synthetic local visual branches, not live private sessions. Document pointerdown/keydown listeners run the exact new modality script; focus is then sampled after actual pointer clicks and Tab events. No form submissions, messages or API writes."
+  },
+  "client-editing.json": {
+    "passed": true,
+    "assertions": 35,
+    "samples": null,
+    "hashes": null,
+    "modalitySha256": "8ffc2d0ee9bfabf6483702572d97b35109cbcca3b099fb19a6882042284a04ff",
+    "browserRequests": 0,
+    "provenance": {
+      "source": "/workspace/espacios-workspace-fixes/assets/WorkspaceApp-fixed.js",
+      "sha256": "93ba798aa2f2b20f6cbd9f09fb97cf969de1b1f481dbaba6616164aec200449c",
+      "functions": [
+        "Ci",
+        "ji",
+        "Ni",
+        "zi"
+      ],
+      "method": "Exact deployed client component bodies in real React 19.2.6. Only external Link/Icon helpers and unused artifact display adapters are local. Fetch throws; no Workspace bootstrap/session, no API writes. SVG focus screenshots use separately retained original SSR markup, not icon adapters."
+    }
+  },
+  "modality-hydration.json": {
+    "passed": true,
+    "assertions": 11,
+    "samples": null,
+    "hashes": null,
+    "modalitySha256": "8ffc2d0ee9bfabf6483702572d97b35109cbcca3b099fb19a6882042284a04ff",
+    "browserRequests": null,
+    "provenance": "Exact final shared script in fresh local Chromium; trusted native pointer/keyboard events, followed by local HTML attribute removals/replacements that emulate hydration. No network, private session, API or Map interaction."
+  }
+}
