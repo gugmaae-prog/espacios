@@ -78,7 +78,9 @@ jobs:
           cut -f1-4 /tmp/new.tsv | xargs -P 8 -n 4 bash -c '
             set -euo pipefail
             file="$1"; key="$2"; expected_sha="$3"; expected_bytes="$4"
-            test "$(sha256sum "$file" | awk "{print \\$1}")" = "$expected_sha"
+            actual_sha="$(sha256sum "$file")"
+            actual_sha="${actual_sha%% *}"
+            test "$actual_sha" = "$expected_sha"
             test "$(stat -c%s "$file")" = "$expected_bytes"
             case "$key" in *.gz) ct="application/gzip";; *.json) ct="application/json";; *) ct="application/octet-stream";; esac
             npx wrangler r2 object put "$PRODUCTION_BUCKET/$key" --remote --config wrangler.production.jsonc --file "$file" --content-type "$ct" --force >/dev/null
