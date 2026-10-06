@@ -1,4 +1,4 @@
-# Historical reconstruction and event context v4
+# Historical reconstruction and event context v10 integration
 
 As of 2026-10-05, the map catalogue contains **1,645 project records and 215 community records (1,860 total)**. This release defines 100% **record accountability**, not a false claim that every record has a complete observed sale/rent history.
 
@@ -27,7 +27,7 @@ Never relabel tiers 2–6 as an observed project sale or rent.
 
 Events are dated features and explanatory context, never automatic +/-% adjustments. Event windows may be compared descriptively only when compatible evidence exists before and after the event. The existing event-model validation did not establish that a news-event model beats simpler trend baselines, so no event coefficient is forced into forecasts.
 
-v4 adds/clarifies:
+v10 adds/clarifies:
 - 2006 Dubai foreign-ownership areas (including Palm Jebel Ali)
 - 2009 Dubai World liquidity shock
 - 2013 Expo host award and 2015 BIE registration
