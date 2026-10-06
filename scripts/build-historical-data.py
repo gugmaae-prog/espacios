@@ -8,7 +8,7 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261005-enrichment-v9'
+VERSION = '20261005-enrichment-v4'
 ASOF = '2026-10-05'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
@@ -32,8 +32,6 @@ def dump_json(path,value): path.parent.mkdir(parents=True,exist_ok=True); path.w
 def number(value):
  try: return float(value) if str(value).strip() else None
  except (ValueError,TypeError): return None
-def usable_subject(record,metric,series):
- return any(s.get('scope')=='subject' and s.get('identityVerified') and s.get('metric')==metric and any(not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I) for p in series[s['id']]['points']) for s in record['historySeries'])
 def rows(value): return list(csv.DictReader(io.StringIO(value.decode('utf-8-sig'))))
 def period_date(period,end=False):
  s=str(period or '')
@@ -325,10 +323,7 @@ def build():
  assert public_rows+inputs['history'].get('excludedRightsPendingRows',0)==collected_rows
  record_counts={e:{'projects':sum(x['type']=='project' and x['emirate']==e for x in records),'communities':sum(x['type']=='community' and x['emirate']==e for x in records),'historicalContextRows':sum(x['Emirate']==e for x in data['history']),'subjectHistoryRecords':sum(x['emirate']==e and any(s['scope']=='subject' and s.get('identityVerified') for s in x['historySeries']) for x in records)} for e in EMIRATES}
  dates=[period_date(x['Period']) for x in data['history'] if period_date(x['Period'])]
- manifest={'version':VERSION,'asOf':ASOF,'recordCount':1860,'projectCount':1645,'communityCount':215,'historyWindow':{'start':None,'end':ASOF[:7],'basis':'Unknown subject inception; no common invented history start'},'collectionEnvelope':{'start':min(dates),'end':ASOF[:7],'basis':'Collected source observation envelope, not any subject lifecycle'},'historicalObservationRows':public_rows,'collectedHistoricalObservationRows':collected_rows,'rightsPendingObservationRows':inputs['history'].get('excludedRightsPendingRows',0),'historicalSeriesCount':len(series),'recordIdsSHA256':sha(encoded(sorted(known_ids))),'directSubjectSaleHistoryRecords':sum(usable_subject(r,'price',series) for r in records),'directSubjectRentHistoryRecords':sum(usable_subject(r,'rent',series) for r in records),'approved2080ForecastRecords':0,'requiredAnnualMetricSlots':301320,'sevenEmirateCoverage':record_counts,'identityCandidateProjects':len(candidate_p),'identityCandidateCommunities':len(candidate_c),'inputProvenance':inputs,'rawSourcePartitions':data['partitions'],'rawTransactionSource':dld,'partitionBinding':'MARKET_R2','objects':objects,'rightsPendingSourceMetadata':read_json(ROOT/'data/source-review-20260930.json'),'historicalRowsWarning':'Overlapping native aggregates; not independent transactions and not additive with underlying raw transaction rows','completionDefinition':'Every record evaluated; observed financial coverage remains incomplete','publicationPolicy':'No production writes. Candidate-only append-only snapshots; source rights metadata retained.'}
- manifest['directSubjectHistoryCountBasis']='Records with at least one retained non-disputed native subject observation; sparse observations count as evidence, not reliable medians or complete lifetime histories'
- manifest['disputedFinancialObservationRows']=sum(bool(re.search(r'conflict|quarantin',str(row['Quality']),re.I)) for row in data['history'])
- manifest['rejectedGeographicContextLinks']=sum(x.get('recordLinkReview',{}).get('status')=='rejected' for r in records for x in r['historySeries'])
+ manifest={'version':VERSION,'asOf':ASOF,'recordCount':1860,'projectCount':1645,'communityCount':215,'historyWindow':{'start':None,'end':ASOF[:7],'basis':'Unknown subject inception; no common invented history start'},'collectionEnvelope':{'start':min(dates),'end':ASOF[:7],'basis':'Collected source observation envelope, not any subject lifecycle'},'historicalObservationRows':public_rows,'collectedHistoricalObservationRows':collected_rows,'rightsPendingObservationRows':inputs['history'].get('excludedRightsPendingRows',0),'historicalSeriesCount':len(series),'recordIdsSHA256':sha(encoded(sorted(known_ids))),'directSubjectSaleHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') and s['metric']=='price' for s in r['historySeries']) for r in records),'directSubjectRentHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') and s['metric']=='rent' for s in r['historySeries']) for r in records),'approved2080ForecastRecords':0,'requiredAnnualMetricSlots':301320,'sevenEmirateCoverage':record_counts,'identityCandidateProjects':len(candidate_p),'identityCandidateCommunities':len(candidate_c),'inputProvenance':inputs,'rawSourcePartitions':data['partitions'],'rawTransactionSource':dld,'partitionBinding':'MARKET_R2','objects':objects,'rightsPendingSourceMetadata':read_json(ROOT/'data/source-review-20260930.json'),'historicalRowsWarning':'Overlapping native aggregates; not independent transactions and not additive with underlying raw transaction rows','completionDefinition':'Every record evaluated; observed financial coverage remains incomplete','publicationPolicy':'No production writes. Candidate-only append-only snapshots; source rights metadata retained.'}
  if enrichment:
   manifest['sourceEnrichment']={**enrichment_summary,'path':str((BASE/'scrape-enrichment.json').relative_to(ROOT)),'sha256':sha((BASE/'scrape-enrichment.json').read_bytes()),'additionalHistoricalRows':len(new_history_rows)}
  if capture_path.exists():manifest['eventSourceVerification']={'path':str(capture_path.relative_to(ROOT)),'sha256':sha(capture_path.read_bytes()),'attempted':len(captures['captures']),'verified':sum(x['captureStatus']=='verified_metadata' for x in captures['captures']),'bodyRedistributed':False}
@@ -342,6 +337,9 @@ def build():
  manifest['collectionEnvelope']['snapshotAsOf']=ASOF
  if alias_path.exists():manifest['seriesIdReconciliation']={'path':str(alias_path.relative_to(ROOT)),'sha256':sha(alias_path.read_bytes()),'matchedSeries':len(aliases['aliases']),'matchedNativeRows':sum(x['matchedRows'] for x in aliases['aliases']),'classification':'exact_area_context_tuple_match'}
  if rates_path.exists():manifest['uaePolicyRateEvidence']={'path':str(rates_path.relative_to(ROOT)),'sha256':sha(rates_path.read_bytes()),'version':rates['version'],'coverage':rates['coverage'],'observations':len(rates['observations']),'classification':rates['classification'],'limits':rates['limitations']}
+ eibor_path=BASE/'cbuae-eibor-source-manifest.json'
+ if eibor_path.exists():
+  eibor=read_json(eibor_path);manifest['cbuaeEiborArchive']={'path':str(eibor_path.relative_to(ROOT)),'sha256':sha(eibor_path.read_bytes()),'version':eibor['version'],'coverage':eibor['coverage'],'currentFixing':eibor.get('currentFixing'),'classification':eibor['classification'],'numericIngestionStatus':'source_indexed; continuous native file parsing pending checksum capture'}
  manifest['originalCollectionRows']=original_collected_rows;manifest['originalReleasableObservationRows']=original_public_rows;manifest['supplementHistoricalObservationRows']=supplement_rows;manifest['extendedTotalObservationRows']=collected_rows
  if early:
   manifest['earlyHistoricalEnrichment']={'path':str(early_path.relative_to(ROOT)),'sha256':sha(early_path.read_bytes()),'counts':early['counts'],'coverage':early['coverage'],'methodology':early['methodology'],'source':early['source'],'rawArchive':early['rawArchive'],'linkedRecords':sum(any(s['id'].startswith('early-dred-') for s in r['historySeries']) for r in records),'classification':'retrospective_area_context; no subject identity promotion'}
