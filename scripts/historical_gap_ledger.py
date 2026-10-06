@@ -1,9 +1,17 @@
 """Per-item evidence accountability. Presence never certifies a full history."""
+import datetime
 import re
+
+# A week with fewer than this many counted transactions is sparse.
+# Sparse, partial and missing weeks are not labelled complete.
+SPARSE_WEEK_SAMPLE = 5
 
 
 def period_start(value):
-    text = str(value)
+    text = str(value).strip()
+    week = re.fullmatch(r'(\d{4})-W(\d{2})', text)
+    if week:
+        return datetime.date.fromisocalendar(int(week[1]), int(week[2]), 1).isoformat()
     text = re.sub(r'-?Q([1-4])', lambda m: '-' + str((int(m[1])-1)*3+1).zfill(2), text, flags=re.I)
     text = re.sub(r'H([12])$', lambda m: '-' + ('01' if m[1] == '1' else '07'), text, flags=re.I)
     text = re.sub(r'FY$', '', text, flags=re.I)
@@ -114,3 +122,55 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
             history.append({'date': {'start': p[0], 'precision': precision}, 'basis': 'earliest_retained_native_subject_observation', 'evidenceIds': [cohort['id']], 'sourceIds': [cohort['sourceId']]})
     status['earliestHistoryEvidence'] = min(history, key=lambda x: period_start(x['date']['start'])) if history else None
     status['earliestHistoryDefinition'] = 'Earliest retained verifiable record evidence; first-ever transaction, inception and continuous price coverage remain unestablished.'
+
+
+def weekly_week_requirement(week_start, week_end, observed_dates, metrics):
+    """Count one ISO week in the requirement ledger.
+
+    A weekly observation may be present for that week. Every calendar day from
+    Monday through Sunday that is absent from the retained daily dates stays
+    not independently observed. Partial weeks (fewer than 7 observed days),
+    sparse weeks and missing weeks are not labelled complete. Presence does
+    not certify a complete lifetime history. Quarterly and monthly grains are
+    not produced here.
+    """
+    start = datetime.date.fromisoformat(str(week_start))
+    end = datetime.date.fromisoformat(str(week_end))
+    if start.weekday() != 0 or end.weekday() != 6 or (end - start).days != 6:
+        raise ValueError('ISO week must run Monday through Sunday')
+    observed_dates = set(observed_dates)
+    span = [start + datetime.timedelta(days=i) for i in range(7)]
+    observed = [day.isoformat() for day in span if day.isoformat() in observed_dates]
+    absent = [day.isoformat() for day in span if day.isoformat() not in observed_dates]
+    count = metrics.get('transactionCount')
+    sparse_sample = count is not None and count < SPARSE_WEEK_SAMPLE
+    if not observed:
+        coverage = 'missing'
+    elif len(observed) < 7:
+        coverage = 'partial'
+    elif sparse_sample:
+        coverage = 'sparse'
+    else:
+        coverage = 'complete'
+    present = {}
+    missing = {}
+    for key, value in metrics.items():
+        if coverage == 'missing':
+            missing[key] = 'missing_week'
+        elif value is None:
+            missing[key] = 'metric_absent'
+        else:
+            present[key] = {
+                'weekCoverage': coverage,
+                'independentlyObservedDays': observed,
+            }
+    return {
+        'coverage': coverage,
+        'completeLifetimeHistory': False,
+        'observedDayCount': len(observed),
+        'observedDates': observed,
+        'notIndependentlyObservedDates': absent,
+        'sparseSample': sparse_sample and coverage != 'missing',
+        'present': present,
+        'missing': missing,
+    }
