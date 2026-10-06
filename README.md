@@ -25,15 +25,19 @@ The release preserves all 1,860 catalogue records: 1,645 projects and 215 commun
 
 The coverage ledger currently reports 3,644 present, 2,153 partial, 27,683 missing, and 9,300 unestablished requirements. That leaves 91.48% of the research checklist unresolved. This is a requirements-coverage measure, not a claim that exactly 91.48% of historical prices are missing. There are no certified complete lifetime histories and no validated 2080 forecasts yet. Conditional annual scenario slots are retained through 2080, but they are scenario outputs rather than observed future data.
 
-The saved next research packet is deliberately outside production. It contains 1,270 additional aggregates, 238 series, 136 facts, 50 sources, and 33 reviewed records from later passes, including Avenue Park Towers, Regent Residences Dubai Sankari Place, Woodland Crest, Derby Heights, Trussardi Residences, Elemental 22, and other exact identity reviews. It must go through the current-snapshot quote guard, integration, preservation checks, CI, preview acceptance, and a separate deployment before it can become a release.
+The `currentSnapshotEligible` guard is part of enrichment on current main. A bedroom, unit, or floorplan asking quote stays attached to its source and cannot replace the project headline starting price. The published 2026-10-05 asking-quote capture stays headline-eligible on a later snapshot date until a newer eligible quote replaces it. The Trussardi Residences AED 3.5 million 2-bedroom quote remains evidence only.
+
+Candidate snapshot `20261006-enrichment-v11` replays the two reviewed packets that are actually in the repository onto the current `20261005-enrichment-v10` builder: `enrichment/v10/pass21-primary-source.json` and `enrichment/v11/pass22-arada-primary.json`. Preservation against that rebuilt v10 baseline keeps 1,860 records, 316,608 native points, 13,158 series, and 105 events, and adds 11 sources and no series. The checklist moves 22 requirements from missing to present (3,666 present, 2,153 partial, 27,661 missing, 9,300 unestablished). When a canonical URL already exists, facts attach to that source and the stored capture is not rewritten. Source and fact ID collisions fail closed. This candidate does not deploy production.
+
+An earlier note described a separate saved packet of 1,270 aggregates, 238 series, 136 facts, 50 sources, and 33 records. That numeric packet is not in this repository, and this candidate does not infer it. Production remains the V9 Worker above until a separate deployment.
 
 The next best actions are:
 
-1. Finish the post-deployment canonical checks and save their receipts alongside the release evidence: live history acceptance, new-cohort comparison, item ledger, assets, map geography, browser desktop/mobile, and before/after fingerprints.
-2. Add and test the `currentSnapshotEligible` guard so bedroom-specific asking quotes remain visible as evidence without replacing a project's headline starting price.
-3. Integrate the saved packet additively, preserving land/building references, sparse subject observations, disputed schedules, source revisions, and all existing records. Do not turn community context into project transactions.
-4. Continue the identity-gated source queue, prioritising projects with primary developer or government evidence and communities with direct rental or sale records. Record missing, sparse, disputed, inaccessible, and pre-applicability periods explicitly.
-5. Build and evaluate the dated event studies and the conditional 2027–2080 scenarios with delivery delays, supply, migration, rates, vacancy, costs, and downside paths. A long-horizon scenario is not a validated forecast until it has a documented method and evaluation boundary.
+1. Finish the post-deployment canonical checks for the published V9 Worker and save their receipts alongside the release evidence: live history acceptance, new-cohort comparison, item ledger, assets, map geography, browser desktop/mobile, and before/after fingerprints.
+2. Run preview acceptance for `20261006-enrichment-v11` and keep production on V9 until that candidate is explicitly deployed.
+3. Continue the identity-gated source queue for records that still lack primary developer or government evidence. Record missing, sparse, disputed, inaccessible, and pre-applicability periods explicitly.
+4. If the 1,270-aggregate packet is recovered with its review receipts, integrate it through the same preservation path. Do not reconstruct those rows from memory.
+5. Evaluate dated event studies and conditional 2027–2080 scenarios only with a documented method, held-out outcomes, and an explicit acceptance boundary. A long-horizon scenario is not a validated forecast until that evaluation passes.
 
 The release intentionally does not claim 100% real-data completeness. Unsupported historical periods remain visible as gaps until an attributable source is found; estimates and scenarios stay outside observed-history coverage.
 

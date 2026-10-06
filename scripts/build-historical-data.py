@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Reproducible, lossless context-history snapshot. No network or remote writes."""
 import argparse, csv, gzip, hashlib, io, json, pathlib, re, calendar, collections, datetime
-from historical_enrichment import load_enrichment, apply_enrichment
+from historical_enrichment import load_enrichment, apply_enrichment, merge_reviewed_packets
 from historical_sources import register_source
 from historical_gap_ledger import refresh_research_coverage
 from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261005-enrichment-v10'
-ASOF = '2026-10-05'
+VERSION = '20261006-enrichment-v11'
+ASOF = '2026-10-06'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -147,7 +147,7 @@ def build():
  data,inputs=load_inputs();inv=data['inventory'];profiles={x['Record ID']:x for x in data['profiles']}
  capture_asof=inv.get('asOf') or SOURCE_CAPTURE_DATE
  if ASOF<capture_asof:raise ValueError('Snapshot as-of cannot precede the retained source collection; this is not a point-in-time replay')
- original_public_rows=len(data['history']);enrichment=load_enrichment(BASE);new_history_rows=[]
+ original_public_rows=len(data['history']);enrichment=merge_reviewed_packets(load_enrichment(BASE),ASOF);new_history_rows=[]
  if enrichment:
   for item in enrichment.get('historyInputs',[]):new_history_rows.extend(item['rows'])
  early_path=BASE/'early-history-manifest.json';early=None

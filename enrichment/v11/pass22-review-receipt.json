@@ -1,6 +1,6 @@
 {
   "releaseCandidate": "v11-arada-pass22",
-  "status": "reviewed_packet_not_integrated_or_published",
+  "status": "integrated_in_candidate_20261006-enrichment-v11_not_published",
   "asOf": "2026-10-06",
   "recordsReviewed": 3,
   "primarySources": 6,
@@ -25,6 +25,15 @@
   "netExpectedLedgerChangeIfIntegrated": {
     "missing": -11,
     "present": 11
+  },
+  "integratedResult": {
+    "snapshot": "20261006-enrichment-v11",
+    "baseline": "20261005-enrichment-v10",
+    "missingToPresent": 11,
+    "reusedCanonicalSources": [
+      "project-nondubai-pass3-b1c5c5cfa2d20e1f",
+      "project-nondubai-pass3-f874a8151f226b0f"
+    ]
   },
   "boundaries": [
     "Existing V9 completion/occupancy evidence is not replaced.",
