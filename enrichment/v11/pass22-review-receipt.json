@@ -1,0 +1,35 @@
+{
+  "releaseCandidate": "v11-arada-pass22",
+  "status": "reviewed_packet_not_integrated_or_published",
+  "asOf": "2026-10-06",
+  "recordsReviewed": 3,
+  "primarySources": 6,
+  "acceptedFacts": 11,
+  "expectedCoverageEffects": {
+    "original_launch": {
+      "missingToPresent": 3
+    },
+    "announcement_registration": {
+      "missingToPresent": 3
+    },
+    "construction": {
+      "missingToPresent": 2
+    },
+    "phase_milestones": {
+      "missingToPresent": 2
+    },
+    "delivery_reports": {
+      "missingToPresent": 1
+    }
+  },
+  "netExpectedLedgerChangeIfIntegrated": {
+    "missing": -11,
+    "present": 11
+  },
+  "boundaries": [
+    "Existing V9 completion/occupancy evidence is not replaced.",
+    "No sale or rent observation is created.",
+    "No construction or handover milestone implies a price uplift.",
+    "No validated forecast is created."
+  ]
+}
