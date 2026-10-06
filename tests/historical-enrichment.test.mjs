@@ -227,3 +227,29 @@ assert record['researchStatus']['itemCoverage']['original_launch']['status']=='m
 `],{encoding:'utf8'});
  assert.equal(result.status,0,result.stderr||result.stdout);
 });
+
+test('bedroom and unit-specific asking quotes stay as evidence without replacing headline current snapshot',()=>{
+ const code=String.raw`
+import sys
+sys.path.insert(0,'scripts')
+from historical_enrichment import apply_enrichment,current_snapshot_eligible
+source={'id':'s','url':'https://developer.example/project','retrievedAt':'2026-10-06T00:00:00Z','firstAvailableAt':'2026-10-06T00:00:00Z'}
+def rec():return {'id':'p','emirate':'Dubai','type':'project','name':'P','lifecycle':[],'observations':[],'historySeries':[],'researchStatus':{'gaps':[]},'currentSnapshot':{'askingPriceAED':900000},'coverageSummary':{}}
+def fact(id,value,**obs):return {'id':id,'recordId':'p','kind':'financial','status':'accepted','identityBasis':'Exact named developer page','sourceId':'s','scope':'asking_benchmark','observation':{'value':value,'metric':'price','unit':'AED','period':'2026-10-06','observationKind':'asking_quote',**obs}}
+for segmented in [
+ {'bedrooms':'1'},
+ {'unitType':'1BR'},
+ {'quoteQualifier':'From AED 1.2M for 2 bedroom residences'},
+ {'sourceQuoteBasis':'studio unit-specific price'},
+ {'currentSnapshotEligible':False}
+]:
+ p=rec();apply_enrichment({'asOf':'2026-10-06','facts':[fact('seg',1200000,**segmented)]},[p],{}, {'s':source},lambda x:None,{},'2026-10-06')
+ assert p['currentSnapshot']['askingPriceAED']==900000
+ assert p['observations'][0]['value']==1200000
+ assert current_snapshot_eligible(p['observations'][0]) is False
+p=rec();apply_enrichment({'asOf':'2026-10-06','facts':[fact('headline',1000000,quoteQualifier='Project starting from price')]},[p],{}, {'s':source},lambda x:None,{},'2026-10-06')
+assert p['currentSnapshot']['askingPriceAED']==1000000
+assert p['currentSnapshot']['observationId']=='headline'
+ `;
+ const out=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(out.status,0,out.stderr||out.stdout);
+});
