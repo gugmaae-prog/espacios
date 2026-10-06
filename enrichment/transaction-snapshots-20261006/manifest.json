@@ -1,0 +1,908 @@
+{
+  "retrievalDate": "2026-10-06",
+  "provenance": "user-supplied",
+  "requiredUploadBasenames": [
+    "Jebel_Ali_fc28.pdf",
+    "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_8642.pdf",
+    "Emaar_Beachfront__Dubai_Harbour_3ded.pdf",
+    "Town_Square__Al_Yelayiss_2_2f80.pdf",
+    "Sobha_Hartland__Al_Merkadh_829b.pdf",
+    "The_Oasis__All_Phases___Me_Aisem_Second_d0aa.pdf",
+    "Damac_Hills__Al_Hebiah_Third_ed43.pdf",
+    "Dubai_Hills_Estate_acbf.pdf",
+    "Dubai_Marina__Marsa_Dubai_5a24.pdf",
+    "Jumeirah_Village_Circle__JVC__b203.pdf",
+    "Business_Bay_4e00.pdf",
+    "Dubai_Creek_Harbour_638f.pdf",
+    "Dubai_South_bda4.pdf",
+    "Palm_Jebel_Ali_8316.pdf",
+    "Downtown_Dubai_e760.pdf",
+    "Tilal_Al_Ghaf__Al_Hebiah_Fourth_7989.pdf",
+    "Nad_Al_Sheba_a706.pdf",
+    "Downtown_Dubai_1287.pdf",
+    "Rashid_Yachts_And_Marina__Mina_Rashid_30d8.pdf",
+    "Dubai_Investment_Park_First_45ae.pdf",
+    "Dubai_Land_Residence_Complex__Wadi_Al_Safa_5_3fc2.pdf",
+    "Jebel_Ali_c6d6.pdf",
+    "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_0b18.pdf",
+    "Emaar_Beachfront__Dubai_Harbour_8662.pdf"
+  ],
+  "sourceCount": {
+    "files": 33,
+    "uniqueSha256": 21,
+    "areas": 20,
+    "printedRows": 5951
+  },
+  "files": [
+    {
+      "filename": "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_0b18.pdf",
+      "sha256": "c937d42007c294bcb10ac2bd5ee97a64bb747a5bce10e4594cefa3976e36d67e",
+      "userListed": true,
+      "bytes": 3673839
+    },
+    {
+      "filename": "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_5e9e.pdf",
+      "sha256": "c937d42007c294bcb10ac2bd5ee97a64bb747a5bce10e4594cefa3976e36d67e",
+      "userListed": false,
+      "bytes": 3673839
+    },
+    {
+      "filename": "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_8642.pdf",
+      "sha256": "c937d42007c294bcb10ac2bd5ee97a64bb747a5bce10e4594cefa3976e36d67e",
+      "userListed": true,
+      "bytes": 3673839
+    },
+    {
+      "filename": "Business_Bay_4e00.pdf",
+      "sha256": "85a207e4370b692a197087f5e3ae90f5b4aaf5926e7eba8c602e9749a6d8aa21",
+      "userListed": true,
+      "bytes": 4208261
+    },
+    {
+      "filename": "Damac_Hills__Al_Hebiah_Third_ed43.pdf",
+      "sha256": "25bec41745dc55eac3036a6ee043b75687439c41de7794205271e382be96fda2",
+      "userListed": true,
+      "bytes": 4173599
+    },
+    {
+      "filename": "Downtown_Dubai_1287.pdf",
+      "sha256": "3881bc011100218c2c7797960a3c2fad80983f8ddca9d790a13fefd2e05c7b07",
+      "userListed": true,
+      "bytes": 4255975
+    },
+    {
+      "filename": "Downtown_Dubai_2f6c.pdf",
+      "sha256": "3881bc011100218c2c7797960a3c2fad80983f8ddca9d790a13fefd2e05c7b07",
+      "userListed": false,
+      "bytes": 4255975
+    },
+    {
+      "filename": "Downtown_Dubai_e760.pdf",
+      "sha256": "0cdcbe94f780204e160331bb2beaa7a0d8d247d033a98ff78d6953f3ab14922a",
+      "userListed": true,
+      "bytes": 4255975
+    },
+    {
+      "filename": "Dubai_Creek_Harbour_638f.pdf",
+      "sha256": "a9a83cd09cc60b91465681e0d17b5e766c0909f7e93f4bf7051767beb563767a",
+      "userListed": true,
+      "bytes": 4139060
+    },
+    {
+      "filename": "Dubai_Hills_Estate_acbf.pdf",
+      "sha256": "3e77df5586eb262b9cc10dcc9f97f80629a15fac91bd20b3c92dbd5edeeabfd0",
+      "userListed": true,
+      "bytes": 4274400
+    },
+    {
+      "filename": "Dubai_Investment_Park_First_45ae.pdf",
+      "sha256": "f08d928ac0567ebb05a93b3e88a7c8c154b24fab544c8ceaa67075f392c8f759",
+      "userListed": true,
+      "bytes": 4118681
+    },
+    {
+      "filename": "Dubai_Investment_Park_First_9a52.pdf",
+      "sha256": "f08d928ac0567ebb05a93b3e88a7c8c154b24fab544c8ceaa67075f392c8f759",
+      "userListed": false,
+      "bytes": 4118681
+    },
+    {
+      "filename": "Dubai_Land_Residence_Complex__Wadi_Al_Safa_5_3fc2.pdf",
+      "sha256": "e964fcb0e8636b5cd8d56af0e8c5f5a9d20348fefd89907d1814f9013402f4d1",
+      "userListed": true,
+      "bytes": 4175671
+    },
+    {
+      "filename": "Dubai_Land_Residence_Complex__Wadi_Al_Safa_5_9f4a.pdf",
+      "sha256": "e964fcb0e8636b5cd8d56af0e8c5f5a9d20348fefd89907d1814f9013402f4d1",
+      "userListed": false,
+      "bytes": 4175671
+    },
+    {
+      "filename": "Dubai_Marina__Marsa_Dubai_5a24.pdf",
+      "sha256": "e0532b8caa54973bd8ed79c455e146f598f97432709fc139369bf7d7f2fd93d6",
+      "userListed": true,
+      "bytes": 4254907
+    },
+    {
+      "filename": "Dubai_South_bda4.pdf",
+      "sha256": "a8d1918308e55c81a3a37a4fae5b5ae84f2e5f99b26ca7f6584784889c4ef87f",
+      "userListed": true,
+      "bytes": 4116931
+    },
+    {
+      "filename": "Emaar_Beachfront__Dubai_Harbour_3ded.pdf",
+      "sha256": "41909a0c9c7de90fd54227f1304651690e21aad43e077ebc3896943f3f4c8ab9",
+      "userListed": true,
+      "bytes": 4269205
+    },
+    {
+      "filename": "Emaar_Beachfront__Dubai_Harbour_8662.pdf",
+      "sha256": "41909a0c9c7de90fd54227f1304651690e21aad43e077ebc3896943f3f4c8ab9",
+      "userListed": true,
+      "bytes": 4269205
+    },
+    {
+      "filename": "Emaar_Beachfront__Dubai_Harbour_9bd8.pdf",
+      "sha256": "41909a0c9c7de90fd54227f1304651690e21aad43e077ebc3896943f3f4c8ab9",
+      "userListed": false,
+      "bytes": 4269205
+    },
+    {
+      "filename": "Jebel_Ali_5509.pdf",
+      "sha256": "5345620bc6b5162dbcdf876f6846051eb2e4ffd3c2a8dec6ff7545bac3f8b108",
+      "userListed": false,
+      "bytes": 4098041
+    },
+    {
+      "filename": "Jebel_Ali_c6d6.pdf",
+      "sha256": "5345620bc6b5162dbcdf876f6846051eb2e4ffd3c2a8dec6ff7545bac3f8b108",
+      "userListed": true,
+      "bytes": 4098041
+    },
+    {
+      "filename": "Jebel_Ali_fc28.pdf",
+      "sha256": "5345620bc6b5162dbcdf876f6846051eb2e4ffd3c2a8dec6ff7545bac3f8b108",
+      "userListed": true,
+      "bytes": 4098041
+    },
+    {
+      "filename": "Jumeirah_Village_Circle__JVC__b203.pdf",
+      "sha256": "ec68a8a5c0fe19faf08d2c0173ff5467f2c1f5bd2d62e045dd0e3b321840ebf0",
+      "userListed": true,
+      "bytes": 4142317
+    },
+    {
+      "filename": "Nad_Al_Sheba_8475.pdf",
+      "sha256": "ed884137bb400e6fcbf2a7af212e18f7138eb5b573b33312cc9bd0293cbe699c",
+      "userListed": false,
+      "bytes": 1775454
+    },
+    {
+      "filename": "Nad_Al_Sheba_a706.pdf",
+      "sha256": "ed884137bb400e6fcbf2a7af212e18f7138eb5b573b33312cc9bd0293cbe699c",
+      "userListed": true,
+      "bytes": 1775454
+    },
+    {
+      "filename": "Palm_Jebel_Ali_8316.pdf",
+      "sha256": "a853bb6ec80d3a9e58bbc4aa6b971034c2feb752a8c4109d0060bd2ff284f205",
+      "userListed": true,
+      "bytes": 4112737
+    },
+    {
+      "filename": "Rashid_Yachts_And_Marina__Mina_Rashid_2231.pdf",
+      "sha256": "c4ed0bb765890a652c0809580f9ef5b37100db427d3fcfd3225b8e73a5ea248f",
+      "userListed": false,
+      "bytes": 4145236
+    },
+    {
+      "filename": "Rashid_Yachts_And_Marina__Mina_Rashid_30d8.pdf",
+      "sha256": "c4ed0bb765890a652c0809580f9ef5b37100db427d3fcfd3225b8e73a5ea248f",
+      "userListed": true,
+      "bytes": 4145236
+    },
+    {
+      "filename": "Sobha_Hartland__Al_Merkadh_829b.pdf",
+      "sha256": "847befa2cfd9ba0c416efeac9850608a7ab2d16d4e2d3d62da24798cc59b5b5d",
+      "userListed": true,
+      "bytes": 4277712
+    },
+    {
+      "filename": "The_Oasis__All_Phases___Me_Aisem_Second_d0aa.pdf",
+      "sha256": "2df0f12c1c5d9c5760d09bc97adc9491e9ea025b2c0d8f3401ea001812726532",
+      "userListed": true,
+      "bytes": 4097678
+    },
+    {
+      "filename": "Tilal_Al_Ghaf__Al_Hebiah_Fourth_7989.pdf",
+      "sha256": "5f6ce358b7ed02156cdcead7aa8802b5c4b21ef7477ee713ea989a9195a02201",
+      "userListed": true,
+      "bytes": 4276595
+    },
+    {
+      "filename": "Tilal_Al_Ghaf__Al_Hebiah_Fourth_7ab7.pdf",
+      "sha256": "5f6ce358b7ed02156cdcead7aa8802b5c4b21ef7477ee713ea989a9195a02201",
+      "userListed": false,
+      "bytes": 4276595
+    },
+    {
+      "filename": "Town_Square__Al_Yelayiss_2_2f80.pdf",
+      "sha256": "aff0399cfe2ceccf8a80112f3bdd82cd60412ded81f7b8a568f4252700ad17cd",
+      "userListed": true,
+      "bytes": 4263604
+    }
+  ],
+  "conflicts": [
+    {
+      "title": "Downtown Dubai",
+      "kind": "byte_difference_without_numeric_conflict",
+      "sha256": [
+        "3881bc011100218c2c7797960a3c2fad80983f8ddca9d790a13fefd2e05c7b07",
+        "0cdcbe94f780204e160331bb2beaa7a0d8d247d033a98ff78d6953f3ab14922a"
+      ],
+      "numericSha256": "7e8df094fb37f2222192a1847baa6c98fa8dd7ce7f730e503ad47750cbb5e60d",
+      "filenames": [
+        [
+          "Downtown_Dubai_1287.pdf",
+          "Downtown_Dubai_2f6c.pdf"
+        ],
+        [
+          "Downtown_Dubai_e760.pdf"
+        ]
+      ],
+      "creationDates": [
+        "Tue Oct  6 00:54:05 2026 UTC",
+        "Tue Oct  6 00:43:36 2026 UTC"
+      ],
+      "rowCounts": [
+        300,
+        300
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "arancia-yards-by-beyond-c937d420",
+      "areaId": "arancia-yards-by-beyond",
+      "title": "Arancia Yards By Beyond (All Buildings), City of Arabia",
+      "sha256": "c937d42007c294bcb10ac2bd5ee97a64bb747a5bce10e4594cefa3976e36d67e",
+      "numericSha256": "33f46b092900877b4d530ab4f7e335774b618e31a5c7837fe4ce8540088c083d",
+      "textSha256": "c089da7d9caf009683f32aafaf56338067906dc45a3f96dc0197d5740ffbae79",
+      "filenames": [
+        "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_0b18.pdf",
+        "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_5e9e.pdf",
+        "Arancia_Yards_By_Beyond__All_Buildings___City_of_Arabia_8642.pdf"
+      ],
+      "rowCount": 247,
+      "extract": "extracts/arancia-yards-by-beyond-c937d420.json",
+      "pdf": {
+        "pages": 21,
+        "creationDate": "Tue Oct  6 00:48:08 2026 UTC",
+        "modDate": "Tue Oct  6 00:48:08 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1730,
+        "medianPricePerSqftYoyPct": 0,
+        "medianPriceAed": 1305000,
+        "medianPriceYoyPct": 0,
+        "transactions": 247,
+        "transactionsYoyPct": null,
+        "rentalYieldPct": null,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "business-bay-85a207e4",
+      "areaId": "business-bay",
+      "title": "Business Bay",
+      "sha256": "85a207e4370b692a197087f5e3ae90f5b4aaf5926e7eba8c602e9749a6d8aa21",
+      "numericSha256": "ec289165e7e2f5c894127353a0e92718bdced2452c6f8fd17c9ac258a5fba890",
+      "textSha256": "76d1790ebf7e07df197d4d8cb13a5a1ae212b5f5be200306f0b52edde5dd2cd5",
+      "filenames": [
+        "Business_Bay_4e00.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/business-bay-85a207e4.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:44:48 2026 UTC",
+        "modDate": "Tue Oct  6 00:44:48 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2500,
+        "medianPricePerSqftYoyPct": 5,
+        "medianPriceAed": 2195000,
+        "medianPriceYoyPct": 37,
+        "transactions": 8216,
+        "transactionsYoyPct": -40,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "damac-hills-25bec417",
+      "areaId": "damac-hills",
+      "title": "Damac Hills, Al Hebiah Third",
+      "sha256": "25bec41745dc55eac3036a6ee043b75687439c41de7794205271e382be96fda2",
+      "numericSha256": "69031143e2642ce348f69b5c352629f098ec4fd68417b318ddcd3dc92148ce24",
+      "textSha256": "08cd1a9458d624b7d234925b118e62decaaeed1dab526f56c68046e6a50b8955",
+      "filenames": [
+        "Damac_Hills__Al_Hebiah_Third_ed43.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/damac-hills-25bec417.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:46:34 2026 UTC",
+        "modDate": "Tue Oct  6 00:46:34 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1730,
+        "medianPricePerSqftYoyPct": 20,
+        "medianPriceAed": 1308000,
+        "medianPriceYoyPct": -4,
+        "transactions": 1909,
+        "transactionsYoyPct": 16,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "downtown-dubai-3881bc01",
+      "areaId": "downtown-dubai",
+      "title": "Downtown Dubai",
+      "sha256": "3881bc011100218c2c7797960a3c2fad80983f8ddca9d790a13fefd2e05c7b07",
+      "numericSha256": "7e8df094fb37f2222192a1847baa6c98fa8dd7ce7f730e503ad47750cbb5e60d",
+      "textSha256": "dd1a56983ad04b01b9b2c6713f4cf7dea471a56390b6baba8c0bc7fbff3a84df",
+      "filenames": [
+        "Downtown_Dubai_1287.pdf",
+        "Downtown_Dubai_2f6c.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/downtown-dubai-3881bc01.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:54:05 2026 UTC",
+        "modDate": "Tue Oct  6 00:54:05 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 3080,
+        "medianPricePerSqftYoyPct": 9,
+        "medianPriceAed": 3000000,
+        "medianPriceYoyPct": -2,
+        "transactions": 2861,
+        "transactionsYoyPct": -27,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "downtown-dubai-0cdcbe94",
+      "areaId": "downtown-dubai",
+      "title": "Downtown Dubai",
+      "sha256": "0cdcbe94f780204e160331bb2beaa7a0d8d247d033a98ff78d6953f3ab14922a",
+      "numericSha256": "7e8df094fb37f2222192a1847baa6c98fa8dd7ce7f730e503ad47750cbb5e60d",
+      "textSha256": "dd1a56983ad04b01b9b2c6713f4cf7dea471a56390b6baba8c0bc7fbff3a84df",
+      "filenames": [
+        "Downtown_Dubai_e760.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/downtown-dubai-0cdcbe94.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:43:36 2026 UTC",
+        "modDate": "Tue Oct  6 00:43:36 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 3080,
+        "medianPricePerSqftYoyPct": 9,
+        "medianPriceAed": 3000000,
+        "medianPriceYoyPct": -2,
+        "transactions": 2861,
+        "transactionsYoyPct": -27,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "dubai-creek-harbour-a9a83cd0",
+      "areaId": "dubai-creek-harbour",
+      "title": "Dubai Creek Harbour",
+      "sha256": "a9a83cd09cc60b91465681e0d17b5e766c0909f7e93f4bf7051767beb563767a",
+      "numericSha256": "a35849aa8967ad203539344c197ac6c22638f77bbcab0fa1ce78dd62f3efb4f1",
+      "textSha256": "6fff57e8855cc18af3e5316799c22ebbffc934f75b6794651a27f17aa49e817e",
+      "filenames": [
+        "Dubai_Creek_Harbour_638f.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/dubai-creek-harbour-a9a83cd0.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:44:20 2026 UTC",
+        "modDate": "Tue Oct  6 00:44:20 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2560,
+        "medianPricePerSqftYoyPct": 6,
+        "medianPriceAed": 2660000,
+        "medianPriceYoyPct": 6,
+        "transactions": 3960,
+        "transactionsYoyPct": 10,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "dubai-hills-estate-3e77df55",
+      "areaId": "dubai-hills-estate",
+      "title": "Dubai Hills Estate",
+      "sha256": "3e77df5586eb262b9cc10dcc9f97f80629a15fac91bd20b3c92dbd5edeeabfd0",
+      "numericSha256": "8e3857cbca5414cebfc4dc6365c8e56208bdebd59b4fecc5ee1ff038c364803e",
+      "textSha256": "efb9af7658d53cfedbe7153dadbd18f90d3d9c4eec21dd057c222d94b80bebaa",
+      "filenames": [
+        "Dubai_Hills_Estate_acbf.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/dubai-hills-estate-3e77df55.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:45:53 2026 UTC",
+        "modDate": "Tue Oct  6 00:45:53 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2360,
+        "medianPricePerSqftYoyPct": 0,
+        "medianPriceAed": 2350000,
+        "medianPriceYoyPct": 6,
+        "transactions": 2022,
+        "transactionsYoyPct": -56,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "dubai-investment-park-first-f08d928a",
+      "areaId": "dubai-investment-park-first",
+      "title": "Dubai Investment Park First",
+      "sha256": "f08d928ac0567ebb05a93b3e88a7c8c154b24fab544c8ceaa67075f392c8f759",
+      "numericSha256": "250a17cce67916f9f483777cfc7428d8d598324d9d1dd4c60e5f4840d39d992d",
+      "textSha256": "1afe09b1023367b443ac1fdd06d55316017eda79243683da9142a5a32ee7f903",
+      "filenames": [
+        "Dubai_Investment_Park_First_45ae.pdf",
+        "Dubai_Investment_Park_First_9a52.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/dubai-investment-park-first-f08d928a.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:52:58 2026 UTC",
+        "modDate": "Tue Oct  6 00:52:58 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 890,
+        "medianPricePerSqftYoyPct": 1,
+        "medianPriceAed": 980000,
+        "medianPriceYoyPct": -18,
+        "transactions": 2141,
+        "transactionsYoyPct": 348,
+        "rentalYieldPct": 8,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "dubai-land-residence-complex-e964fcb0",
+      "areaId": "dubai-land-residence-complex",
+      "title": "Dubai Land Residence Complex, Wadi Al Safa 5",
+      "sha256": "e964fcb0e8636b5cd8d56af0e8c5f5a9d20348fefd89907d1814f9013402f4d1",
+      "numericSha256": "e1ab9e41d92537a0114da1d3d5c29993f91606563f4746f7843b66ceb5da4e90",
+      "textSha256": "ad99144081637184e96be9561e0026b48e6741d1a3947dc13c0da5bc321b34f9",
+      "filenames": [
+        "Dubai_Land_Residence_Complex__Wadi_Al_Safa_5_3fc2.pdf",
+        "Dubai_Land_Residence_Complex__Wadi_Al_Safa_5_9f4a.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/dubai-land-residence-complex-e964fcb0.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:52:24 2026 UTC",
+        "modDate": "Tue Oct  6 00:52:24 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1300,
+        "medianPricePerSqftYoyPct": 5,
+        "medianPriceAed": 800000,
+        "medianPriceYoyPct": 7,
+        "transactions": 2920,
+        "transactionsYoyPct": -51,
+        "rentalYieldPct": 8,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "dubai-marina-e0532b8c",
+      "areaId": "dubai-marina",
+      "title": "Dubai Marina, Marsa Dubai",
+      "sha256": "e0532b8caa54973bd8ed79c455e146f598f97432709fc139369bf7d7f2fd93d6",
+      "numericSha256": "5b17bc4dec1951076466693a1aa263d2d9aba2c300aeb188c0b6f13440829a08",
+      "textSha256": "c4e56119af7fe7ad53d7926bfe6ffb97244a5664d9f2bbd346db0e2045a790c1",
+      "filenames": [
+        "Dubai_Marina__Marsa_Dubai_5a24.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/dubai-marina-e0532b8c.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:46:10 2026 UTC",
+        "modDate": "Tue Oct  6 00:46:10 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2020,
+        "medianPricePerSqftYoyPct": -12,
+        "medianPriceAed": 2000000,
+        "medianPriceYoyPct": -2,
+        "transactions": 2350,
+        "transactionsYoyPct": -56,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "dubai-south-a8d19183",
+      "areaId": "dubai-south",
+      "title": "Dubai South",
+      "sha256": "a8d1918308e55c81a3a37a4fae5b5ae84f2e5f99b26ca7f6584784889c4ef87f",
+      "numericSha256": "98e357f47bca253b8b4212826c6b6ddbfa84869b58122d9b193a9c796bdcf988",
+      "textSha256": "ea35609a21520bbd9495a9efd671760cad9548aac788a99f4d17aef8d41a2999",
+      "filenames": [
+        "Dubai_South_bda4.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/dubai-south-a8d19183.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:44:05 2026 UTC",
+        "modDate": "Tue Oct  6 00:44:05 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1640,
+        "medianPricePerSqftYoyPct": 10,
+        "medianPriceAed": 1050000,
+        "medianPriceYoyPct": -35,
+        "transactions": 16260,
+        "transactionsYoyPct": 64,
+        "rentalYieldPct": 8,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "emaar-beachfront-41909a0c",
+      "areaId": "emaar-beachfront",
+      "title": "Emaar Beachfront, Dubai Harbour",
+      "sha256": "41909a0c9c7de90fd54227f1304651690e21aad43e077ebc3896943f3f4c8ab9",
+      "numericSha256": "98ee8bd2cd38f4ac5f7fe760a591a0c283209c83aa7fbea7d6a00a2e450c605b",
+      "textSha256": "185605764cf2e6f26df6c9c8da2afe09b196e6a9b3eb316666d821276b8af2ed",
+      "filenames": [
+        "Emaar_Beachfront__Dubai_Harbour_3ded.pdf",
+        "Emaar_Beachfront__Dubai_Harbour_8662.pdf",
+        "Emaar_Beachfront__Dubai_Harbour_9bd8.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/emaar-beachfront-41909a0c.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:47:46 2026 UTC",
+        "modDate": "Tue Oct  6 00:47:46 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 3560,
+        "medianPricePerSqftYoyPct": -13,
+        "medianPriceAed": 4062000,
+        "medianPriceYoyPct": -23,
+        "transactions": 406,
+        "transactionsYoyPct": -53,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "jebel-ali-5345620b",
+      "areaId": "jebel-ali",
+      "title": "Jebel Ali",
+      "sha256": "5345620bc6b5162dbcdf876f6846051eb2e4ffd3c2a8dec6ff7545bac3f8b108",
+      "numericSha256": "73d6b5deaaacbb7baa991705035f124551c6041f1871340c81e3dcb639b0fc69",
+      "textSha256": "88429cceff68b460bfa1e9b3a898bf1783bcf348b639636d2907c58cf5cc7bab",
+      "filenames": [
+        "Jebel_Ali_5509.pdf",
+        "Jebel_Ali_c6d6.pdf",
+        "Jebel_Ali_fc28.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/jebel-ali-5345620b.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:48:29 2026 UTC",
+        "modDate": "Tue Oct  6 00:48:29 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1770,
+        "medianPricePerSqftYoyPct": 73,
+        "medianPriceAed": 766000,
+        "medianPriceYoyPct": -98,
+        "transactions": 1316,
+        "transactionsYoyPct": 10867,
+        "rentalYieldPct": null,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "jumeirah-village-circle-ec68a8a5",
+      "areaId": "jumeirah-village-circle",
+      "title": "Jumeirah Village Circle (JVC)",
+      "sha256": "ec68a8a5c0fe19faf08d2c0173ff5467f2c1f5bd2d62e045dd0e3b321840ebf0",
+      "numericSha256": "7428b76e222cb311d31b133dee9f34fb202dafc1be1821685a54d985f5830d52",
+      "textSha256": "c8269e7ce408f4214855bda11f162e0df204a08bee50a677668bc9706c4b1676",
+      "filenames": [
+        "Jumeirah_Village_Circle__JVC__b203.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/jumeirah-village-circle-ec68a8a5.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:45:00 2026 UTC",
+        "modDate": "Tue Oct  6 00:45:00 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1490,
+        "medianPricePerSqftYoyPct": 4,
+        "medianPriceAed": 1040000,
+        "medianPriceYoyPct": 5,
+        "transactions": 12300,
+        "transactionsYoyPct": -35,
+        "rentalYieldPct": 8,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "nad-al-sheba-ed884137",
+      "areaId": "nad-al-sheba",
+      "title": "Nad Al Sheba",
+      "sha256": "ed884137bb400e6fcbf2a7af212e18f7138eb5b573b33312cc9bd0293cbe699c",
+      "numericSha256": "cbddb01f4ce0448b4c4033e743c5516c88f481996183ecc1493111344515d060",
+      "textSha256": "01758373c8681a130d9179916022c4592d6e8e58a8bcce2154d784e7e947004d",
+      "filenames": [
+        "Nad_Al_Sheba_8475.pdf",
+        "Nad_Al_Sheba_a706.pdf"
+      ],
+      "rowCount": 4,
+      "extract": "extracts/nad-al-sheba-ed884137.json",
+      "pdf": {
+        "pages": 2,
+        "creationDate": "Tue Oct  6 00:54:39 2026 UTC",
+        "modDate": "Tue Oct  6 00:54:39 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 3060,
+        "medianPricePerSqftYoyPct": 132,
+        "medianPriceAed": 4280000,
+        "medianPriceYoyPct": -99,
+        "transactions": 4,
+        "transactionsYoyPct": 300,
+        "rentalYieldPct": null,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "palm-jebel-ali-a853bb6e",
+      "areaId": "palm-jebel-ali",
+      "title": "Palm Jebel Ali",
+      "sha256": "a853bb6ec80d3a9e58bbc4aa6b971034c2feb752a8c4109d0060bd2ff284f205",
+      "numericSha256": "8eeff2e62aa340a6aca8fa832b7afb2308b97b2cb7220a5b9a905d96b91170d1",
+      "textSha256": "ba20f61efbdb705512d515b00a887ae6df049f784f72bc0c82e784b74506a622",
+      "filenames": [
+        "Palm_Jebel_Ali_8316.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/palm-jebel-ali-a853bb6e.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:43:51 2026 UTC",
+        "modDate": "Tue Oct  6 00:43:51 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 3460,
+        "medianPricePerSqftYoyPct": 32,
+        "medianPriceAed": 7885000,
+        "medianPriceYoyPct": -63,
+        "transactions": 723,
+        "transactionsYoyPct": 14,
+        "rentalYieldPct": null,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "rashid-yachts-and-marina-c4ed0bb7",
+      "areaId": "rashid-yachts-and-marina",
+      "title": "Rashid Yachts And Marina, Mina Rashid",
+      "sha256": "c4ed0bb765890a652c0809580f9ef5b37100db427d3fcfd3225b8e73a5ea248f",
+      "numericSha256": "70da38f61f07bd6ff87993ab7ad28ac746dd4d2eaf2f30c2c15709d8ba3b97e8",
+      "textSha256": "9416ff93392f601f666a9d667a4fb0392f3155d2d882c51bf241296b990d191d",
+      "filenames": [
+        "Rashid_Yachts_And_Marina__Mina_Rashid_2231.pdf",
+        "Rashid_Yachts_And_Marina__Mina_Rashid_30d8.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/rashid-yachts-and-marina-c4ed0bb7.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:53:32 2026 UTC",
+        "modDate": "Tue Oct  6 00:53:32 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2790,
+        "medianPricePerSqftYoyPct": 2,
+        "medianPriceAed": 2406000,
+        "medianPriceYoyPct": -10,
+        "transactions": 482,
+        "transactionsYoyPct": -62,
+        "rentalYieldPct": 5,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "sobha-hartland-847befa2",
+      "areaId": "sobha-hartland",
+      "title": "Sobha Hartland, Al Merkadh",
+      "sha256": "847befa2cfd9ba0c416efeac9850608a7ab2d16d4e2d3d62da24798cc59b5b5d",
+      "numericSha256": "548944dbfec5212639689825dc05ebbaea7e552339d2baad9ed56c6d29d18fff",
+      "textSha256": "e4b616ba1fa598113b5906d1dcac003ebbc61d770cda8ac3a349566091122a97",
+      "filenames": [
+        "Sobha_Hartland__Al_Merkadh_829b.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/sobha-hartland-847befa2.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:47:08 2026 UTC",
+        "modDate": "Tue Oct  6 00:47:08 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2010,
+        "medianPricePerSqftYoyPct": -1,
+        "medianPriceAed": 1720000,
+        "medianPriceYoyPct": 4,
+        "transactions": 1148,
+        "transactionsYoyPct": -6,
+        "rentalYieldPct": 7,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "the-oasis-2df0f12c",
+      "areaId": "the-oasis",
+      "title": "The Oasis (All Phases), Me'Aisem Second",
+      "sha256": "2df0f12c1c5d9c5760d09bc97adc9491e9ea025b2c0d8f3401ea001812726532",
+      "numericSha256": "a1ac4a117ff6f31fe0bc8c65e1463dffdadec278f8e4d363f9f78ee6c1631029",
+      "textSha256": "34582018d1aafbf658f6350069298855643865c7d6c30c6bd61f65bac1051836",
+      "filenames": [
+        "The_Oasis__All_Phases___Me_Aisem_Second_d0aa.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/the-oasis-2df0f12c.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:46:50 2026 UTC",
+        "modDate": "Tue Oct  6 00:46:50 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2070,
+        "medianPricePerSqftYoyPct": 5,
+        "medianPriceAed": 15832000,
+        "medianPriceYoyPct": 2,
+        "transactions": 656,
+        "transactionsYoyPct": -41,
+        "rentalYieldPct": null,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "tilal-al-ghaf-5f6ce358",
+      "areaId": "tilal-al-ghaf",
+      "title": "Tilal Al Ghaf, Al Hebiah Fourth",
+      "sha256": "5f6ce358b7ed02156cdcead7aa8802b5c4b21ef7477ee713ea989a9195a02201",
+      "numericSha256": "2eadc0636a498ad5c31b56c0370286f2b41e33234ea49d691468c870fc15d140",
+      "textSha256": "edbf11c4c755820590c4891ad72ce2002ec242526bbd1f3f15b9ec10f2d6f4d0",
+      "filenames": [
+        "Tilal_Al_Ghaf__Al_Hebiah_Fourth_7989.pdf",
+        "Tilal_Al_Ghaf__Al_Hebiah_Fourth_7ab7.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/tilal-al-ghaf-5f6ce358.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:54:52 2026 UTC",
+        "modDate": "Tue Oct  6 00:54:52 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 2000,
+        "medianPricePerSqftYoyPct": 5,
+        "medianPriceAed": 7575000,
+        "medianPriceYoyPct": -4,
+        "transactions": 383,
+        "transactionsYoyPct": -21,
+        "rentalYieldPct": 10,
+        "rentalYieldYoyPct": null
+      }
+    },
+    {
+      "sourceId": "town-square-aff0399c",
+      "areaId": "town-square",
+      "title": "Town Square, Al Yelayiss 2",
+      "sha256": "aff0399cfe2ceccf8a80112f3bdd82cd60412ded81f7b8a568f4252700ad17cd",
+      "numericSha256": "4e7517c1bf8ff35460e784ae796dca8245b4bd947d22f4ec441520f58b6111ea",
+      "textSha256": "de888950a668b0b84f564f317c58437dad2d47c5e37e18726beea5943c55360e",
+      "filenames": [
+        "Town_Square__Al_Yelayiss_2_2f80.pdf"
+      ],
+      "rowCount": 300,
+      "extract": "extracts/town-square-aff0399c.json",
+      "pdf": {
+        "pages": 25,
+        "creationDate": "Tue Oct  6 00:47:27 2026 UTC",
+        "modDate": "Tue Oct  6 00:47:27 2026 UTC",
+        "producer": "Skia/PDF m127",
+        "title": "PdfDevKit"
+      },
+      "summary": {
+        "medianPricePerSqftAed": 1500,
+        "medianPricePerSqftYoyPct": 11,
+        "medianPriceAed": 1433000,
+        "medianPriceYoyPct": 8,
+        "transactions": 2088,
+        "transactionsYoyPct": -22,
+        "rentalYieldPct": 8,
+        "rentalYieldYoyPct": null
+      }
+    }
+  ]
+}
