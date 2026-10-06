@@ -32,3 +32,11 @@ test('R2 requires matching bytes and conditional creation, preserving a concurre
  let response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers,body:'incorrect'}),{...env,MARKET_R2:storage});assert.equal(response.status,400);assert.equal(writes,0);
  response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers,body:bytes}),{...env,MARKET_R2:storage});assert.equal(response.status,200);assert.equal((await response.json()).created,false);assert.equal(writes,1);
 });
+
+
+test('ephemeral publisher adapter URL must be exact and date-scoped',async()=>{
+ const text=fs.readFileSync(new URL('../scripts/adapters/production-history-publisher.mjs',import.meta.url),'utf8');
+ assert.match(text,/ESPACIOS_PUBLISH_EXPECTED_URL/);
+ assert.match(text,/espacios-history-publisher-\[0-9\]/);
+ assert.doesNotMatch(text,/20261005\.thekeifferjapeth/);
+});
