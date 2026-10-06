@@ -48,6 +48,19 @@ test('raw sparse rows survive, context stays separate and quarterly evidence is 
  assert.equal(out.coverage.metrics.price.nativePeriods.quarterly[0].period,'2026Q2');
  assert.equal(out.coverage.summary.directObservedMonths,1);
 });
+test('a daily row stays daily and a weekly row is not resampled into a monthly price',()=>{
+ const week=parseEvidenceDate('2024-W01');
+ assert.equal(week.precision,'week');assert.equal(week.start,'2024-01-01');assert.equal(week.end,'2024-01-07');
+ const daily=expandRecordObservations({...record,historySeries:[{id:'d',metric:'price',unit:'AED/sqft',scope:'community_context',identityVerified:false,sourceId:'sales',frequency:'daily',columns:['period','value','sampleCount'],points:[['2024-01-01',100,2]]}]});
+ assert.ok(daily.filter(o=>o.metric==='price').every(o=>o.frequency==='daily'));
+ const weekly=expandRecordObservations({...record,historySeries:[{id:'w',metric:'price',unit:'AED/sqft',scope:'community_context',identityVerified:false,sourceId:'sales',frequency:'weekly',columns:['period','value','sampleCount'],points:[['2024-W01',100,7]]}]});
+ assert.ok(weekly.filter(o=>o.metric==='price').every(o=>o.frequency==='weekly'));
+ const coverage=monthlyCoverage({...record,historySeries:[{id:'w',metric:'price',unit:'AED/sqft',scope:'area_context',identityVerified:false,sourceId:'sales',frequency:'weekly',columns:['period','value','sampleCount'],points:[['2024-W01',100,25]]}]},{asOf,sources});
+ assert.equal(coverage.metrics.price.nativePeriods.weekly[0].frequency,'weekly');
+ assert.equal(coverage.metrics.price.nativePeriods.weekly[0].period,'2024-W01');
+ assert.equal(coverage.metrics.price.periods.find(p=>p.period==='2024-01').status,'missing');
+ assert.equal(coverage.metrics.price.nativePeriods.quarterly.length,0);
+});
 test('native mixed annual/half-year prices stay at their original frequencies',()=>{
  const r={...record,historySeries:[{id:'asking',metric:'price',frequency:'native_mixed',unit:'AED/sqft',sourceId:'sales',scope:'asking_benchmark',columns:['period','value','sampleCount'],points:[['2024FY',100,null],['2025H1',110,null]]}]};
  const expanded=expandRecordObservations(r);assert.deepEqual(expanded.map(o=>o.frequency),['annual','half_year']);

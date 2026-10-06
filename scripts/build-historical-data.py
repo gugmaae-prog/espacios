@@ -4,6 +4,7 @@ import argparse, csv, gzip, hashlib, io, json, pathlib, re, calendar, collection
 from historical_enrichment import load_enrichment, apply_enrichment
 from historical_sources import register_source
 from historical_gap_ledger import refresh_research_coverage
+from weekly_requirement_fill import native_frequency
 from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -45,6 +46,10 @@ def period_date(period,end=False):
  if m:
   y,q=int(m[1]),int(m[2]); mo=q*3 if end else (q-1)*3+1
   return f'{y:04d}-{mo:02d}-{calendar.monthrange(y,mo)[1] if end else 1:02d}'
+ m=re.fullmatch(r'(\d{4})-W(\d{2})',s)
+ if m:
+  start=datetime.date.fromisocalendar(int(m[1]),int(m[2]),1); finish=datetime.date.fromisocalendar(int(m[1]),int(m[2]),7)
+  return (finish if end else start).isoformat()
  m=re.fullmatch(r'(\d{4})(?:FY|H([12]))?',s,re.I)
  if m:
   y=int(m[1]); half=int(m[2]) if m[2] else None; mo=(half*6 if end else (half-1)*6+1) if half else (12 if end else 1)
@@ -202,7 +207,7 @@ def build():
    scopes={x['scope'] for x in links}
    if len(scopes)!=1:raise ValueError('One source series cannot carry incompatible scopes')
    scope=next(iter(scopes))
-  frequency={'quarter':'quarterly','half-year':'half-year','native annual / half-year':'native_mixed'}.get(first['Frequency'],first['Frequency'])
+  frequency=native_frequency(first['Frequency'])
   points=[]
   for i,row in enumerate(items):
    quality=row['Quality'];v=number(row['Value'])

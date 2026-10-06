@@ -28,8 +28,20 @@ function oneDate(value){
  if((m=/^(\d{4})-(0[1-9]|1[0-2])$/.exec(s)))return rememberDate(s,{start:day(+m[1],+m[2],1),end:monthEnd(+m[1],+m[2]),precision:'month'});
  if((m=/^(\d{4})-?Q([1-4])$/.exec(s)))return rememberDate(s,{start:day(+m[1],(+m[2]-1)*3+1,1),end:monthEnd(+m[1],+m[2]*3),precision:'quarter'});
  if((m=/^(\d{4})-?H([12])$/.exec(s)))return rememberDate(s,{start:day(+m[1],m[2]==='1'?1:7,1),end:monthEnd(+m[1],m[2]==='1'?6:12),precision:'half_year'});
+ if((m=/^(\d{4})-W(\d{2})$/.exec(s))){
+  const year=+m[1], week=+m[2];
+  if(week<1||week>53)throw new TypeError('Invalid ISO week.');
+  const jan4=Date.UTC(year,0,4);
+  const mondayOffset=(new Date(jan4).getUTCDay()+6)%7;
+  const startStamp=jan4-mondayOffset*DAY+(week-1)*7*DAY;
+  const thursday=startStamp+3*DAY;
+  if(new Date(thursday).getUTCFullYear()!==year)throw new TypeError('Invalid ISO week.');
+  const startText=new Date(startStamp).toISOString().slice(0,10);
+  const endText=new Date(startStamp+6*DAY).toISOString().slice(0,10);
+  return rememberDate(s,{start:startText,end:endText,precision:'week'});
+ }
  if((m=/^(\d{4})(?:-?FY)?$/.exec(s)))return rememberDate(s,{start:day(+m[1],1,1),end:day(+m[1],12,31),precision:'year'});
- throw new TypeError('Use a native month, quarter, half year, year, ISO day or timestamp.');
+ throw new TypeError('Use a native month, quarter, half year, year, ISO week, ISO day or timestamp.');
 }
 /** Date precision is retained; a month/year never becomes a guessed exact day. */
 export function parseEvidenceDate(value){
@@ -37,8 +49,8 @@ export function parseEvidenceDate(value){
  if(!value||typeof value!=='object')throw new TypeError('Date or date interval required.');
  const start=oneDate(value.start||value.date||value.value),finish=value.end?oneDate(value.end):start;
  const precision=value.precision||((value.end&&start.start!==finish.end)?'range':start.precision);
- if(!['instant','day','month','quarter','half_year','year','range'].includes(precision))throw new TypeError('Unsupported date precision.');
- const rank={instant:0,day:1,month:2,quarter:3,half_year:4,year:5};
+ if(!['instant','day','week','month','quarter','half_year','year','range'].includes(precision))throw new TypeError('Unsupported date precision.');
+ const rank={instant:0,day:1,week:2,month:3,quarter:4,half_year:5,year:6};
  if(precision!=='range'&&rank[precision]<rank[start.precision])throw new TypeError('Evidence cannot claim finer date precision than its source date.');
  let end=finish.end;
  if(!value.end&&precision!==start.precision&&precision!=='range'){
@@ -94,7 +106,9 @@ function pointObject(point,series){
 }
 function inferFrequency(period,fallback){
  if(fallback!=='native_mixed'&&fallback!=='mixed'&&fallback)return fallback;
- const s=String(period||'');return /^\d{4}-?Q[1-4]$/.test(s)?'quarterly':/^\d{4}-?H[12]$/.test(s)?'half_year':/^\d{4}(?:-?FY)?$/.test(s)?'annual':/^\d{4}-\d{2}$/.test(s)?'monthly':fallback||'daily';
+ const s=String(period||'');
+ if(/^\d{4}-W\d{2}$/.test(s))return 'weekly';
+ return /^\d{4}-?Q[1-4]$/.test(s)?'quarterly':/^\d{4}-?H[12]$/.test(s)?'half_year':/^\d{4}(?:-?FY)?$/.test(s)?'annual':/^\d{4}-\d{2}$/.test(s)?'monthly':fallback||'daily';
 }
 /** Expand a presentation view without editing any native tuple or source row. */
 export function expandRecordObservations(record){
@@ -176,7 +190,7 @@ function applicableStart(record,m){
  try{return{date:parseEvidenceDate(milestones.sort((a,b)=>firstInstant(a.date)-firstInstant(b.date))[0].date),basis:m==='rent'?'verified_occupancy':'verified_launch'};}catch{return null;}
 }
 function nativeCoverage(points,frequency,asOf){
- const names={monthly:'month',quarterly:'quarter',half_year:'half_year',annual:'year'},buckets=new Map(),starts=new Map();
+ const names={monthly:'month',quarterly:'quarter',half_year:'half_year',annual:'year',weekly:'week'},buckets=new Map(),starts=new Map();
  for(const o of points)if(o.date&&(o.frequency===frequency||(frequency==='annual'&&['yearly','year','FY'].includes(o.frequency)))){
   if(!buckets.has(o.period)){buckets.set(o.period,[]);starts.set(o.period,firstInstant(o.period));}buckets.get(o.period).push(o);
  }
@@ -217,7 +231,7 @@ function coverageFromEvidence(record,{asOf,sources=[],manifest={},minimumSample=
    periods.push({period,status,rawCount:matching.length,eligibleCount:eligible.length,contextCount:context.length,sparseCount:sparse.length,reason});
   }
   const statusCounts=Object.fromEntries(['observed','sparse','context_only','missing','not_applicable','conflict','unknown','inaccessible'].map(s=>[s,periods.filter(p=>p.status===s).length]));
-  metrics[m]={unit:[...new Set(points.map(o=>o.unit).filter(Boolean))],firstApplicablePeriod:applicability?.date.start.slice(0,7)||null,applicabilityBasis:applicability?.basis||'not_verified',subjectApplicabilityKnown:!!applicability,lastCompletePeriod:monthText(end),statusCounts,periods,nativePeriods:Object.fromEntries(['monthly','quarterly','half_year','annual'].map(f=>[f,nativeCoverage(points,f,asOf)])),nonMonthlyObservationCount:points.filter(o=>o.frequency!=='monthly').length,storedNativePoints:points.length,scope:'subject monthly coverage; quarterly and annual context is retained without monthly resampling'};
+  metrics[m]={unit:[...new Set(points.map(o=>o.unit).filter(Boolean))],firstApplicablePeriod:applicability?.date.start.slice(0,7)||null,applicabilityBasis:applicability?.basis||'not_verified',subjectApplicabilityKnown:!!applicability,lastCompletePeriod:monthText(end),statusCounts,periods,nativePeriods:Object.fromEntries(['monthly','quarterly','half_year','annual','weekly'].map(f=>[f,nativeCoverage(points,f,asOf)])),nonMonthlyObservationCount:points.filter(o=>o.frequency!=='monthly').length,storedNativePoints:points.length,scope:'subject monthly coverage; quarterly and annual context is retained without monthly resampling; weekly context is retained without daily relabelling'};
  }
  const union=status=>Array.from({length:end-start+1},(_,i)=>METRICS.some(m=>metrics[m].periods[i].status===status)).filter(Boolean).length;
  const history=record.historySeries||[],collection={storedSeries:history.length,declaredNativePointCount:history.reduce((n,s)=>n+(s.pointCount??s.points?.length??0),0),loadedNativePointCount:history.reduce((n,s)=>n+(s.points?.length||0),0),completeLoadedSeries:history.filter(s=>s.partitionLoaded||(!s.partition&&s.points?.length===(s.pointCount??s.points?.length))).length,partialOrUnavailableSeries:history.filter(s=>s.partition&&!s.partitionLoaded).length,availabilityStates:[...new Set(history.map(s=>s.availability||'not_declared'))],note:'Full source collection and points currently loaded by this API are distinct.'};

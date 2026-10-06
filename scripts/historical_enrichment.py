@@ -1,6 +1,7 @@
 """Merge reviewed, source-backed enrichment; raw scraped pages stay outside the repo."""
 import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip
 from historical_gap_ledger import refresh_research_coverage, period_start
+from weekly_requirement_fill import observation_frequency
 
 def load_enrichment(base):
  path=base/'scrape-enrichment.json'
@@ -81,14 +82,15 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    scope=fact.get('scope');obs=fact['observation'];value=obs.get('value')
    if scope not in ['subject','area_context','community_context','published_reference','asking_benchmark']:raise ValueError('Financial scope missing or invalid')
    period=str(obs.get('period','')); match=re.fullmatch(r'(\d{4})-?Q([1-4])',period,re.I)
-   start=f'{match[1]}-{(int(match[2])-1)*3+1:02d}-01' if match else period+'-01-01' if len(period)==4 else period+'-01' if len(period)==7 else period
+   frequency=observation_frequency(obs.get('frequency'), period)
+   start=period_start(period) if re.fullmatch(r'\d{4}-W\d{2}', period) else f'{match[1]}-{(int(match[2])-1)*3+1:02d}-01' if match else period+'-01-01' if len(period)==4 else period+'-01' if len(period)==7 else period
    if start[:10]>asof:raise ValueError('Financial observation after snapshot')
    if not isinstance(value,(int,float)) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
    if scope=='subject' and not (fact.get('identityVerified') is True and proofids):raise ValueError('Unproven subject financial fact')
    evidence_class=fact.get('evidenceClass')
    mirrored='tenant_mirror' in sources[sourceids[0]].get('classification','')
    if mirrored and evidence_class=='advertised_asking_price':evidence_class='catalogue_advertised_asking_quote'
-   record['observations'].append({**common,**obs,'recordId':record['id'],'emirate':record['emirate'],'scope':scope,'identityVerified':fact.get('identityVerified',False),'sourceId':sourceids[0],'status':'source_observed','evidenceClass':evidence_class,'primaryEvidence':fact.get('primaryEvidence',False),'sourceEvidenceClass':sources[sourceids[0]].get('classification'),'independentUpstreamEvidence':not mirrored,'frequency':obs.get('frequency','daily')})
+   record['observations'].append({**common,**obs,'recordId':record['id'],'emirate':record['emirate'],'scope':scope,'identityVerified':fact.get('identityVerified',False),'sourceId':sourceids[0],'status':'source_observed','evidenceClass':evidence_class,'primaryEvidence':fact.get('primaryEvidence',False),'sourceEvidenceClass':sources[sourceids[0]].get('classification'),'independentUpstreamEvidence':not mirrored,'frequency':frequency})
    incoming_rank=3 if fact.get('primaryEvidence') else 1 if mirrored else 2
    incoming_key=(incoming_rank,common['retrievedAt'],ident)
    current=record['currentSnapshot'];current_key=(current.get('sourceRank',0),current.get('retrievedAt',''),current.get('observationId',''))
