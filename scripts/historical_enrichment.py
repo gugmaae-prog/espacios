@@ -18,6 +18,15 @@ def load_enrichment(base):
   item['rows']=list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
  return packet
 
+def current_snapshot_eligible(obs):
+ # Unit/bedroom-specific advertisements remain evidence but cannot replace
+ # the project's headline starting-price snapshot.
+ if obs.get('currentSnapshotEligible') is False:return False
+ segmented_keys=['bedrooms','bedroom','unitType','unit_type','unitSubtype','unit_subtype','floorplan','floorPlan']
+ if any(str(obs.get(k,'')).strip() for k in segmented_keys):return False
+ qualifier=' '.join(str(obs.get(k,'') or '') for k in ['quoteQualifier','sourceQuoteBasis']).lower()
+ if re.search(r'\\b(?:studio|\\d+\\s*(?:bed|bedroom|br)|bedroom-specific|unit-specific|floorplan)\\b',qualifier):return False
+ return True
 def apply_enrichment(packet,records,series,sources,source,aliases,asof):
  if not packet:return {}
  if packet.get('asOf','')>asof:raise ValueError('Enrichment not yet available as of snapshot')
@@ -84,7 +93,7 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    incoming_key=(incoming_rank,common['retrievedAt'],ident)
    current=record['currentSnapshot'];current_key=(current.get('sourceRank',0),current.get('retrievedAt',''),current.get('observationId',''))
    captured_quote_period=str(obs.get('period','')) in [asof,str(common['retrievedAt'])[:10]]
-   if obs.get('observationKind')=='asking_quote' and captured_quote_period and obs['unit']=='AED' and obs.get('metric')=='price' and incoming_key>current_key:
+   if obs.get('observationKind')=='asking_quote' and current_snapshot_eligible(obs) and captured_quote_period and obs['unit']=='AED' and obs.get('metric')=='price' and incoming_key>current_key:
     previous=dict(record['currentSnapshot']);record.setdefault('priorCurrentSnapshots',[]).append(previous)
     record['currentSnapshot'].update({'askingPriceAED':value,'scope':'source_observed_asking_quote','sourceId':sourceids[0],'publishedAt':common['publishedAt'],'firstAvailableAt':available,'retrievedAt':common['retrievedAt'],'freshness':'advertisement captured on retrieval; current market validity unverified; publication date '+('known' if common['publishedAt'] else 'unknown'),'observationId':ident,'sourceRank':incoming_rank,'selectionReason':'Preferred by primary evidence, external source, tenant mirror, then capture time and stable observation ID; all other quotes retained','quoteQualifier':obs.get('quoteQualifier'),'sourceQuoteBasis':obs.get('sourceQuoteBasis'),'sourceEvidenceClass':sources[sourceids[0]].get('classification'),'independentUpstreamEvidence':not mirrored})
    counters['financialFacts']+=1
