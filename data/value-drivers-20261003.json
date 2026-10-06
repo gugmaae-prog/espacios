@@ -204,11 +204,11 @@
     },
     {
       "id": "guggenheim-2026-opening",
-      "publisher": "Solomon R. Guggenheim Museum / Department of Culture and Tourism – Abu Dhabi",
+      "publisher": "Department of Culture and Tourism – Abu Dhabi",
       "published": "2026-07-28",
       "retrieved": "2026-10-05",
-      "url": "https://www.guggenheim.org/press-release?start=20",
-      "classification": "official_institutional_publication",
+      "url": "https://www.mediaoffice.abudhabi/en/arts-culture/department-of-culture-and-tourism-abu-dhabi-announces-opening-of-guggenheim-abu-dhabi-on-11-december-2026/",
+      "classification": "official_publication",
       "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
     },
     {
@@ -223,7 +223,7 @@
     {
       "id": "wynn-2026-progress",
       "publisher": "Wynn Resorts",
-      "published": "2026-08-07",
+      "published": "2026-08-04",
       "retrieved": "2026-10-05",
       "url": "https://investors.wynnresorts.com/news-releases/news-release-details/wynn-resorts-limited-reports-second-quarter-2026-results",
       "classification": "company_regulatory_financial_release",
