@@ -5,7 +5,7 @@ import {validateProductionTarget} from '../publish-historical-snapshot.mjs';
 export async function connectProduction({target,config,manifest}){
  validateProductionTarget(config,target,manifest);
  const url=target.publisherURL,headers=process.env.ESPACIOS_PUBLISH_HEADER_FILE;
- if(url!=='https://espacios-history-publisher-20261005.thekeifferjapeth.workers.dev'||!headers)throw new Error('Explicit scoped release bridge and private header file required');
+ const expected=process.env.ESPACIOS_PUBLISH_EXPECTED_URL;\n if(!expected||url!==expected||!/^https:\\/\\/espacios-history-publisher-[0-9]{8}\\.thekeifferjapeth\\.workers\\.dev$/.test(url)||!headers)throw new Error('Explicit scoped release bridge and private header file required');
  const mode=(await fs.stat(headers)).mode;if((mode&0o077)!==0)throw new Error('Publisher header file must be private');
  async function request(method,route,body,extra=[]){
   const args=['--silent','--show-error','--max-time','120','--request',method,'--header','@'+headers,'--write-out','\n%{http_code}',...extra];

@@ -1,0 +1,63 @@
+name: Historical V10 candidate
+
+on:
+  pull_request:
+    paths:
+      - "scripts/build-historical-data.py"
+      - "scripts/historical_enrichment.py"
+      - "scripts/adapters/production-history-publisher.mjs"
+      - "enrichment/v10/**"
+      - "tests/historical-*.mjs"
+      - ".github/workflows/history-v10-candidate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - name: Build V10 historical snapshot
+        run: npm run history:build
+      - name: Verify full application
+        run: npm run verify
+      - name: Verify local immutable history storage
+        run: npm run history:verify:storage
+      - name: Generate publication dry-run
+        run: node scripts/publish-historical-snapshot.mjs > v10-publish-plan.json
+      - name: Summarize V10 requirement ledger
+        run: |
+          python3 - <<'PY' > v10-ledger.json
+          import json,collections
+          data=json.load(open('data/historical-intelligence-20261003.json'))
+          counts=collections.Counter()
+          for record in data['records']:
+            for item in record.get('researchStatus',{}).get('itemCoverage',{}).values():
+              counts[item.get('status','unknown')]+=1
+          out={'version':data['version'],'asOf':data['asOf'],'records':len(data['records']),'ledger':dict(sorted(counts.items())),'sources':len(data['sources']),'events':len(data['events']),'exposures':len(data['exposures']),'historySeries':data['manifest']['historicalSeriesCount'],'historicalObservationRows':data['manifest']['historicalObservationRows']}
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+          cat v10-ledger.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: espacios-history-v10-candidate
+          compression-level: 0
+          if-no-files-found: error
+          path: |
+            data/historical-intelligence-20261003.json
+            data/historical-intelligence/runtime-index.json
+            data/historical-intelligence/publication-manifest.json
+            data/historical-intelligence/objects/**
+            src/worker.js
+            v10-publish-plan.json
+            v10-ledger.json
