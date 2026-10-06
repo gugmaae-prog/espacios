@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-06",
+  "sources": [
+    {
+      "id": "v11-src-arada-kaya-launch",
+      "url": "https://www.arada.com/en/latest-news/arada-launches-kaya-a-nature-inspired-collection-of-upscale-homes-at-sharjahs-forest-community-masaar/",
+      "publisher": "Arada",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2021-10-11",
+      "firstAvailableAt": "2021-10-11",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v11-src-arada-robinia-launch",
+      "url": "https://www.arada.com/en/latest-news/arada-launches-robinia-the-third-residential-phase-of-sharjahs-forest-community-masaar/",
+      "publisher": "Arada",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2022-06-08",
+      "firstAvailableAt": "2022-06-08",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v11-src-arada-kaya-robinia-construction",
+      "url": "https://www.arada.com/en/latest-news/arada-awards-two-contracts-valued-at-aed939-million-to-build-986-homes-at-sharjahs-forest-community-masaar/",
+      "publisher": "Arada",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2022-12-19",
+      "firstAvailableAt": "2022-12-19",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v11-src-arada-kaya-robinia-handover",
+      "url": "https://www.arada.com/en/latest-news/arada-finishes-another-1000-homes-at-masaar-as-sharjahs-forested-community-reaches-50-completion-mark/",
+      "publisher": "Arada",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2024-09-19",
+      "firstAvailableAt": "2024-09-19",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v11-src-arada-vida-launch",
+      "url": "https://www.arada.com/en/latest-news/emaar-hospitality-and-arada-launch-vida-residences-aljada-a-vibrant-new-addition-to-sharjahs-largest-lifestyle-destination/",
+      "publisher": "Arada / Emaar Hospitality",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2020-11-24",
+      "firstAvailableAt": "2020-11-24",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v11-src-arada-vida-completion",
+      "url": "https://www.arada.com/en/latest-news/arada-hands-over-first-homes-at-vida-residences-aljada-as-construction-completes-at-sharjahs-newest-lifestyle-and-hospitality-destination/",
+      "publisher": "Arada",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2026-04-09",
+      "firstAvailableAt": "2026-04-09",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    }
+  ],
+  "facts": [
+    {
+      "status": "accepted",
+      "id": "v11-kaya-launch",
+      "recordId": "project:arada-masaar-kaya-villas-and-townhouses-for-sale-in-sharjah",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2021-10-11",
+        "precision": "day"
+      },
+      "label": "Arada launches Kaya, Masaar second residential phase",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Kaya as Masaar's second residential phase",
+      "identitySourceIds": [
+        "v11-src-arada-kaya-launch"
+      ],
+      "sourceId": "v11-src-arada-kaya-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-kaya-announcement",
+      "recordId": "project:arada-masaar-kaya-villas-and-townhouses-for-sale-in-sharjah",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2021-10-11",
+        "precision": "day"
+      },
+      "label": "Arada announces Kaya sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Kaya",
+      "identitySourceIds": [
+        "v11-src-arada-kaya-launch"
+      ],
+      "sourceId": "v11-src-arada-kaya-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-kaya-construction-start",
+      "recordId": "project:arada-masaar-kaya-villas-and-townhouses-for-sale-in-sharjah",
+      "kind": "lifecycle",
+      "milestone": "construction_start",
+      "date": {
+        "start": "2022-12-19",
+        "precision": "day"
+      },
+      "label": "Arada awards Kaya construction contract and states construction will begin immediately",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official contract release explicitly names Kaya",
+      "identitySourceIds": [
+        "v11-src-arada-kaya-robinia-construction"
+      ],
+      "sourceId": "v11-src-arada-kaya-robinia-construction",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_construction_contract"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-kaya-phase-handover",
+      "recordId": "project:arada-masaar-kaya-villas-and-townhouses-for-sale-in-sharjah",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2024-09-19",
+        "precision": "day"
+      },
+      "label": "Arada states Kaya homes have begun handover after completion",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official completion release explicitly identifies Kaya",
+      "identitySourceIds": [
+        "v11-src-arada-kaya-robinia-handover"
+      ],
+      "sourceId": "v11-src-arada-kaya-robinia-handover",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_handover"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-robinia-launch",
+      "recordId": "project:arada-masaar-robinia-villas-and-townhouses-in-sharjah-for-sale-uae",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2022-06-08",
+        "precision": "day"
+      },
+      "label": "Arada launches Robinia, Masaar third residential phase",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Robinia as Masaar's third residential phase",
+      "identitySourceIds": [
+        "v11-src-arada-robinia-launch"
+      ],
+      "sourceId": "v11-src-arada-robinia-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-robinia-announcement",
+      "recordId": "project:arada-masaar-robinia-villas-and-townhouses-in-sharjah-for-sale-uae",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2022-06-08",
+        "precision": "day"
+      },
+      "label": "Arada announces Robinia sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Robinia",
+      "identitySourceIds": [
+        "v11-src-arada-robinia-launch"
+      ],
+      "sourceId": "v11-src-arada-robinia-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-robinia-construction-start",
+      "recordId": "project:arada-masaar-robinia-villas-and-townhouses-in-sharjah-for-sale-uae",
+      "kind": "lifecycle",
+      "milestone": "construction_start",
+      "date": {
+        "start": "2022-12-19",
+        "precision": "day"
+      },
+      "label": "Arada awards Robinia construction contract and states construction will begin immediately",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official contract release explicitly names Robinia",
+      "identitySourceIds": [
+        "v11-src-arada-kaya-robinia-construction"
+      ],
+      "sourceId": "v11-src-arada-kaya-robinia-construction",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_construction_contract"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-robinia-phase-handover",
+      "recordId": "project:arada-masaar-robinia-villas-and-townhouses-in-sharjah-for-sale-uae",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2024-09-19",
+        "precision": "day"
+      },
+      "label": "Arada states Robinia homes have begun handover after completion",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official completion release explicitly identifies Robinia",
+      "identitySourceIds": [
+        "v11-src-arada-kaya-robinia-handover"
+      ],
+      "sourceId": "v11-src-arada-kaya-robinia-handover",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_handover"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-vida-launch",
+      "recordId": "project:arada-vida-residences-aljada-sharjah-for-sale-in-uae",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2020-11-24",
+        "precision": "day"
+      },
+      "label": "Arada and Emaar Hospitality launch first phase of Vida Residences Aljada sales",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Vida Residences Aljada",
+      "identitySourceIds": [
+        "v11-src-arada-vida-launch"
+      ],
+      "sourceId": "v11-src-arada-vida-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-vida-announcement",
+      "recordId": "project:arada-vida-residences-aljada-sharjah-for-sale-in-uae",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2020-11-24",
+        "precision": "day"
+      },
+      "label": "Arada and Emaar Hospitality announce Vida Residences Aljada",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Vida Residences Aljada",
+      "identitySourceIds": [
+        "v11-src-arada-vida-launch"
+      ],
+      "sourceId": "v11-src-arada-vida-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v11-vida-delivery",
+      "recordId": "project:arada-vida-residences-aljada-sharjah-for-sale-in-uae",
+      "kind": "lifecycle",
+      "milestone": "delivery",
+      "date": {
+        "start": "2026-04-09",
+        "precision": "day"
+      },
+      "label": "Arada welcomes first residents after completing Vida Aljada residential complex",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Arada official release explicitly names Vida Residences Aljada and first residents",
+      "identitySourceIds": [
+        "v11-src-arada-vida-completion"
+      ],
+      "sourceId": "v11-src-arada-vida-completion",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_delivery"
+    }
+  ],
+  "seriesLinks": [],
+  "historyInputs": [],
+  "licensedArchives": [],
+  "additionalDatasets": [],
+  "sourceCandidates": [],
+  "recordResearch": [
+    {
+      "recordId": "project:arada-masaar-kaya-villas-and-townhouses-for-sale-in-sharjah",
+      "status": "primary_source_reviewed_v11",
+      "sourceIds": [
+        "v11-src-arada-kaya-launch",
+        "v11-src-arada-kaya-robinia-construction",
+        "v11-src-arada-kaya-robinia-handover"
+      ],
+      "acceptedFactCount": 4,
+      "collectionPass": "v11-arada-pass22"
+    },
+    {
+      "recordId": "project:arada-masaar-robinia-villas-and-townhouses-in-sharjah-for-sale-uae",
+      "status": "primary_source_reviewed_v11",
+      "sourceIds": [
+        "v11-src-arada-robinia-launch",
+        "v11-src-arada-kaya-robinia-construction",
+        "v11-src-arada-kaya-robinia-handover"
+      ],
+      "acceptedFactCount": 4,
+      "collectionPass": "v11-arada-pass22"
+    },
+    {
+      "recordId": "project:arada-vida-residences-aljada-sharjah-for-sale-in-uae",
+      "status": "primary_source_reviewed_v11",
+      "sourceIds": [
+        "v11-src-arada-vida-launch",
+        "v11-src-arada-vida-completion"
+      ],
+      "acceptedFactCount": 3,
+      "collectionPass": "v11-arada-pass22"
+    }
+  ],
+  "collection": {
+    "passes": [
+      {
+        "id": "v11-arada-pass22",
+        "retrievedAt": "2026-10-06",
+        "recordsReviewed": 3,
+        "acceptedFacts": 11,
+        "primarySources": 6,
+        "policy": "Arada first-party releases only; project/phase identity preserved; completion and handover claims kept distinct from price history."
+      }
+    ]
+  },
+  "methodology": "First-party Arada evidence only. Launch, construction and delivery milestones are promoted only where the source explicitly identifies the catalogue subject. No sales/rent history, price effect or forecast is inferred from delivery or construction."
+}
