@@ -1,0 +1,124 @@
+name: Publish historical v10 fast
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-history-v10-fast.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: espacios-history-v10-production-fast
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      EXPECTED_VERSION: "20261005-enrichment-v10"
+      PRODUCTION_DB: "cba-property-db"
+      PRODUCTION_BUCKET: "psr-market-intelligence"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Require production credentials
+        run: |
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}"
+          test "$CLOUDFLARE_ACCOUNT_ID" = "b1b843ec85bc39a3a4d370ba4f84f17a"
+      - run: npm ci
+      - name: Build deterministic v10 release delta
+        run: |
+          set -euo pipefail
+          cp data/historical-intelligence/publication-manifest.json /tmp/v9.json
+          node -e "const m=require('./data/historical-intelligence/publication-manifest.json'); if(m.version!=='20261005-enrichment-v9') throw Error(m.version)"
+          npm run history:build
+          npm run build:smart
+          node --check src/worker.js
+          npx wrangler deploy --config wrangler.production.jsonc --dry-run --outdir .wrangler/production-dry-run
+          node - <<'NODE'
+          const fs=require('fs'),crypto=require('crypto'),zlib=require('zlib');
+          const old=JSON.parse(fs.readFileSync('/tmp/v9.json','utf8'));
+          const next=JSON.parse(fs.readFileSync('data/historical-intelligence/publication-manifest.json','utf8'));
+          if(next.version!==process.env.EXPECTED_VERSION)throw Error(next.version);
+          if(next.counts.records!==1860||next.counts.projects!==1645||next.counts.communities!==215||next.counts.events!==105)throw Error('Unexpected release counts');
+          const known=new Set(old.objects.map(x=>x.key)),delta=next.objects.filter(x=>!known.has(x.key));
+          for(const o of next.objects){const b=fs.readFileSync(o.path),h=crypto.createHash('sha256').update(b).digest('hex');if(h!==o.sha256||b.length!==o.bytes)throw Error('bad object '+o.path);}
+          const d1=fs.readFileSync(next.d1Index.path);if(crypto.createHash('sha256').update(d1).digest('hex')!==next.d1Index.sha256)throw Error('bad d1');
+          const sql=zlib.gunzipSync(d1).toString('utf8');fs.writeFileSync('/tmp/v10.sql',sql);
+          const tables=['hi_snapshots','hi_records','hi_sources','hi_events','hi_exposures','hi_series','hi_record_series'],expected={};
+          for(const t of tables)expected[t]=sql.split('INSERT OR IGNORE INTO '+t+'(').length-1;
+          fs.writeFileSync('/tmp/expected.json',JSON.stringify(expected));
+          fs.writeFileSync('/tmp/new.tsv',delta.map(x=>[x.path,x.key,x.sha256,x.bytes].join('\t')).join('\n')+(delta.length?'\n':''));
+          fs.appendFileSync(process.env.GITHUB_ENV,'ROOT_SHA='+next.rootIndex.sha256+'\nNEW_OBJECTS='+delta.length+'\n');
+          console.log(JSON.stringify({root:next.rootIndex.sha256,newObjects:delta.length,counts:next.counts,expected}));
+          NODE
+      - name: Preflight D1
+        run: |
+          set -euo pipefail
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --json --command="SELECT snapshot_version FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION';" >/tmp/pre.json
+          node - <<'NODE'
+          const fs=require('fs'),x=JSON.parse(fs.readFileSync('/tmp/pre.json'));const rows=(Array.isArray(x)?x:[x]).flatMap(v=>v.results||v.result?.results||[]);if(rows.length)throw Error('v10 already indexed');
+          NODE
+      - name: Upload v10 R2 delta in parallel
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PRODUCTION_BUCKET CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID
+          cut -f1-4 /tmp/new.tsv | xargs -P 8 -n 4 bash -c '
+            set -euo pipefail
+            file="$1"; key="$2"; expected_sha="$3"; expected_bytes="$4"
+            test "$(sha256sum "$file" | awk "{print \\$1}")" = "$expected_sha"
+            test "$(stat -c%s "$file")" = "$expected_bytes"
+            case "$key" in *.gz) ct="application/gzip";; *.json) ct="application/json";; *) ct="application/octet-stream";; esac
+            npx wrangler r2 object put "$PRODUCTION_BUCKET/$key" --remote --config wrangler.production.jsonc --file "$file" --content-type "$ct" --force >/dev/null
+          ' _
+          echo "Uploaded $NEW_OBJECTS content-addressed objects."
+      - name: Index and activate v10 D1 snapshot
+        run: |
+          set -euo pipefail
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --yes --file /tmp/v10.sql
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --json --command="SELECT (SELECT COUNT(*) FROM hi_records WHERE snapshot_version='$EXPECTED_VERSION') hi_records,(SELECT COUNT(*) FROM hi_sources WHERE snapshot_version='$EXPECTED_VERSION') hi_sources,(SELECT COUNT(*) FROM hi_events WHERE snapshot_version='$EXPECTED_VERSION') hi_events,(SELECT COUNT(*) FROM hi_exposures WHERE snapshot_version='$EXPECTED_VERSION') hi_exposures,(SELECT COUNT(*) FROM hi_series WHERE snapshot_version='$EXPECTED_VERSION') hi_series,(SELECT COUNT(*) FROM hi_record_series WHERE snapshot_version='$EXPECTED_VERSION') hi_record_series,(SELECT COUNT(*) FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION') hi_snapshots,(SELECT root_sha256 FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION') root_sha256,(SELECT publication_state FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION') publication_state;" >/tmp/counts.json
+          node - <<'NODE'
+          const fs=require('fs'),e=JSON.parse(fs.readFileSync('/tmp/expected.json')),x=JSON.parse(fs.readFileSync('/tmp/counts.json'));const rows=(Array.isArray(x)?x:[x]).flatMap(v=>v.results||v.result?.results||[]);if(rows.length!==1)throw Error('bad counts');const r=rows[0];for(const[k,v]of Object.entries(e))if(+r[k]!==+v)throw Error(k+' '+r[k]+' != '+v);if(r.root_sha256!==process.env.ROOT_SHA||r.publication_state!=='staged')throw Error('bad root/state');
+          NODE
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --yes --command="UPDATE hi_snapshots SET publication_state='complete' WHERE snapshot_version='$EXPECTED_VERSION' AND root_sha256='$ROOT_SHA' AND publication_state='staged';"
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --json --command="SELECT snapshot_version,root_sha256,publication_state,record_count FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION';" >/tmp/complete.json
+          node - <<'NODE'
+          const fs=require('fs'),x=JSON.parse(fs.readFileSync('/tmp/complete.json'));const rows=(Array.isArray(x)?x:[x]).flatMap(v=>v.results||v.result?.results||[]);if(rows.length!==1||rows[0].publication_state!=='complete'||rows[0].root_sha256!==process.env.ROOT_SHA||+rows[0].record_count!==1860)throw Error('activation failed');
+          NODE
+      - name: Deploy v10 Worker
+        run: npx wrangler deploy --config wrangler.production.jsonc --message "Publish historical intelligence v10"
+      - name: Live acceptance
+        run: |
+          set -euo pipefail
+          for i in 1 2 3 4 5; do
+            curl -fsS -H 'Cache-Control: no-cache' "https://espacios.me/map/api/record-history?recordId=community%3ADubai%3Apalm-jebel-ali&r=$GITHUB_SHA" >/tmp/h.json || true
+            curl -fsS -H 'Cache-Control: no-cache' "https://espacios.me/map/api/events?recordId=community%3ADubai%3Apalm-jebel-ali&r=$GITHUB_SHA" >/tmp/e.json || true
+            curl -fsS -H 'Cache-Control: no-cache' "https://espacios.me/map/api/value-drivers?r=$GITHUB_SHA" >/tmp/d.json || true
+            if node - <<'NODE'
+            const fs=require('fs');try{const h=JSON.parse(fs.readFileSync('/tmp/h.json')),e=JSON.parse(fs.readFileSync('/tmp/e.json')),d=JSON.parse(fs.readFileSync('/tmp/d.json'));if(h.version!==process.env.EXPECTED_VERSION||h.reconstruction?.recordCovered!==true)process.exit(2);if(!h.reconstruction?.metrics?.price?.tier)process.exit(3);const p=h.scenarios?.metrics?.price?.paths?.base;if(!Array.isArray(p)||p.length!==54||+p.at(-1).year!==2080)process.exit(4);const ids=new Set((e.events||[]).map(x=>x.id));for(const id of ['dubai-foreign-property-ownership-2006','uae-iran-missile-attacks-2026','pja-masterplan-2023'])if(!ids.has(id))process.exit(5);if(d.version!=='20261005-value-drivers-v2'||d.drivers?.length!==16)process.exit(6);for(const id of ['guggenheim-abu-dhabi','disney-yas','wynn-al-marjan'])if(!(d.drivers||[]).some(x=>x.id===id))process.exit(7);console.log(JSON.stringify({history:h.version,tier:h.reconstruction.metrics.price.tier,events:e.events.length,drivers:d.drivers.length}));}catch(e){console.error(e);process.exit(8)}
+            NODE
+            then break; fi
+            test "$i" != 5
+            sleep 10
+          done
+      - name: Preserve generated release branch
+        run: |
+          set -euo pipefail
+          git config user.name "gugmaae-prog"
+          git config user.email "gugmaae@gmail.com"
+          git checkout -b release/history-v10-generated-20261006-fast
+          git add data/historical-intelligence-20261003.json data/historical-intelligence/runtime-index.json data/historical-intelligence/publication-manifest.json data/historical-intelligence/objects src/worker.js
+          git commit -m "Publish generated historical intelligence v10 artifacts"
+          git push origin HEAD:refs/heads/release/history-v10-generated-20261006-fast
