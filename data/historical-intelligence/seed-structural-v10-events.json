@@ -1,0 +1,638 @@
+{
+  "version": "20261005-structural-events-v10",
+  "asOf": "2026-10-05",
+  "classification": "dated_structural_context_no_causal_uplift",
+  "sources": [
+    {
+      "id": "event-source:dubai-foreign-ownership-2006",
+      "url": "https://dlp.dubai.gov.ae/Legislation%20Reference/2006/Regulation%20No.%20%283%29%20of%202006.html",
+      "publisher": "Government of Dubai - Dubai Legislation Portal",
+      "publishedAt": "2006-06-07",
+      "firstAvailableAt": "2006-06-07",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_legislation",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:dubai-world-standstill-2009",
+      "url": "https://www.imf.org/en/news/articles/2015/09/28/04/53/socar120409a",
+      "publisher": "International Monetary Fund",
+      "publishedAt": "2009-12-04",
+      "firstAvailableAt": "2009-12-04",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_institutional_report",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:expo-award-2013",
+      "url": "https://plwww.bie-paris.org/site/en/news-announcements/world-expo/the-uae-has-been-elected-as-the-host-country-of-the-world-expo-2020",
+      "publisher": "Bureau International des Expositions",
+      "publishedAt": "2013-11-27",
+      "firstAvailableAt": "2013-11-27",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:expo-registration-2015",
+      "url": "https://relay.bie-paris.org/site/en/news-announcements/bie-activity/bie-visits-expo-2020-dubai",
+      "publisher": "Bureau International des Expositions",
+      "publishedAt": "2016-04-19",
+      "firstAvailableAt": "2016-04-19",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:golden-residency-2019",
+      "url": "https://icp.gov.ae/en/media-center/ica-issues-first-golden-residency-for-investors-in-abu-dhabi-and-recognizes-its-holder-monday-03-june-2019/",
+      "publisher": "Federal Authority for Identity, Citizenship, Customs & Port Security",
+      "publishedAt": "2019-06-03",
+      "firstAvailableAt": "2019-06-03",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:dubai-2040-2021",
+      "url": "https://www.mediaoffice.ae/en/news/2021/march/13-03/mohammed-bin-rashid",
+      "publisher": "Government of Dubai Media Office",
+      "publishedAt": "2021-03-13",
+      "firstAvailableAt": "2021-03-13",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:d33-2023",
+      "url": "https://www.mediaoffice.ae/en/news/2023/January/04-01/Mohammed-bin-Rashid-launches-Dubai-Economic-Agenda-D33",
+      "publisher": "Government of Dubai Media Office",
+      "publishedAt": "2023-01-04",
+      "firstAvailableAt": "2023-01-04",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:uae-corporate-tax-2023",
+      "url": "https://mof.gov.ae/en/news/the-ministry-of-finance-announces-the-introduction-of-a-corporate-tax-in-the-uae/",
+      "publisher": "UAE Ministry of Finance",
+      "publishedAt": "2022-08-26",
+      "firstAvailableAt": "2022-08-26",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:wynn-license-2024",
+      "url": "https://www.reuters.com/business/wynn-resorts-says-it-gets-uaes-first-gambling-license-2024-10-05/",
+      "publisher": "Reuters",
+      "publishedAt": "2024-10-05",
+      "firstAvailableAt": "2024-10-05",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "reputable_news_report",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:gcgra-wynn-current",
+      "url": "https://www.gcgra.gov.ae/en/licensing/our-licensees/",
+      "publisher": "General Commercial Gaming Regulatory Authority",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-05",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_registry_current_state",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified current public registry in current session"
+    },
+    {
+      "id": "event-source:disney-yas-2025",
+      "url": "https://miral.ae/news-item/the-walt-disney-company-and-miral-announce-plans-for-disney-theme-park-and-resort-on-yas-island-abu-dhabi/",
+      "publisher": "Miral",
+      "publishedAt": "2025-05-07",
+      "firstAvailableAt": "2025-05-07",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "developer_official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:uae-iran-missile-2026",
+      "url": "https://www.mofa.gov.ae/mediahub/news/2026/2/28/uae-iran",
+      "publisher": "UAE Ministry of Foreign Affairs",
+      "publishedAt": "2026-02-28",
+      "firstAvailableAt": "2026-02-28",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:dubai-population-2025",
+      "url": "https://www.mediaoffice.ae/en/news/2026/july/01-07/hamdan-bin-mohammed-chairs-executive-council-meeting",
+      "publisher": "Government of Dubai Media Office",
+      "publishedAt": "2026-07-01",
+      "firstAvailableAt": "2026-07-01",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    },
+    {
+      "id": "event-source:cbuae-rate-hike-2026",
+      "url": "https://centralbank.ae/en/news-and-publications/news-and-insights/?Search=CBUAE",
+      "publisher": "Central Bank of the UAE",
+      "publishedAt": "2026-09-16",
+      "firstAvailableAt": "2026-09-16",
+      "retrievedAt": "2026-10-05",
+      "datePrecision": "day",
+      "classification": "official_publication_index",
+      "licence": "Public citation and paraphrase only; no bulk raw article redistribution licence inferred",
+      "captureStatus": "verified public reference in current session"
+    }
+  ],
+  "events": [
+    {
+      "id": "dubai-foreign-property-ownership-2006",
+      "title": "Dubai designated foreign-ownership areas",
+      "category": "property_ownership_regulation",
+      "eventDate": {
+        "start": "2006-06-07",
+        "precision": "day"
+      },
+      "publishedAt": "2006-06-07",
+      "firstAvailableAt": "2006-06-07",
+      "sourceIds": [
+        "event-source:dubai-foreign-ownership-2006"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Palm Jebel Ali",
+          "Palm Jumeirah",
+          "Dubai Marina",
+          "Jebel Ali",
+          "Emirates Hills"
+        ]
+      },
+      "claims": [
+        {
+          "text": "Dubai Regulation No. 3 of 2006 designated named plots, including Palm Jebel Ali Plot 001, where non-UAE nationals may acquire freehold ownership or long leasehold/usufruct rights. This changes investability; it does not establish a price uplift.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:dubai-foreign-ownership-2006"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-world-standstill-2009",
+      "title": "Dubai World debt-standstill shock",
+      "category": "credit_liquidity",
+      "eventDate": {
+        "start": "2009-11-25",
+        "precision": "day"
+      },
+      "publishedAt": "2009-12-04",
+      "firstAvailableAt": "2009-12-04",
+      "sourceIds": [
+        "event-source:dubai-world-standstill-2009"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "The Dubai World debt-standstill announcement on 25 November 2009 was a renewed market shock after the mid-2008 property-bubble reversal. It is retained as liquidity and risk context, not as a project-specific loss estimate.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:dubai-world-standstill-2009"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "expo-2020-award-2013",
+      "title": "Dubai elected host of World Expo 2020",
+      "category": "tourism_infrastructure",
+      "eventDate": {
+        "start": "2013-11-27",
+        "precision": "day"
+      },
+      "publishedAt": "2013-11-27",
+      "firstAvailableAt": "2013-11-27",
+      "sourceIds": [
+        "event-source:expo-award-2013"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai South",
+          "Expo City Dubai",
+          "Expo Valley"
+        ]
+      },
+      "claims": [
+        {
+          "text": "BIE member states elected the UAE/Dubai to host World Expo 2020 on 27 November 2013. The award is a dated expectations and infrastructure catalyst; no automatic property premium is assigned.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:expo-award-2013"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "expo-2020-registration-2015",
+      "title": "Expo 2020 Dubai formally registered by BIE",
+      "category": "tourism_infrastructure",
+      "eventDate": {
+        "start": "2015-11",
+        "precision": "month"
+      },
+      "publishedAt": "2016-04-19",
+      "firstAvailableAt": "2016-04-19",
+      "sourceIds": [
+        "event-source:expo-registration-2015"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": [
+          "Dubai South",
+          "Expo City Dubai",
+          "Expo Valley"
+        ]
+      },
+      "claims": [
+        {
+          "text": "BIE formally registered Dubai as Expo 2020 host in November 2015, after which preparatory work on the Dubai South site could proceed. Month precision is retained because the cited retrospective source does not provide an exact registration day.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:expo-registration-2015"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "golden-residency-first-investor-2019",
+      "title": "Golden Residency investor programme operational milestone",
+      "category": "residency_policy",
+      "eventDate": {
+        "start": "2019-06-03",
+        "precision": "day"
+      },
+      "publishedAt": "2019-06-03",
+      "firstAvailableAt": "2019-06-03",
+      "sourceIds": [
+        "event-source:golden-residency-2019"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "The federal authority reported the first Golden Residency for an investor on 3 June 2019 under the permanent investor-residency programme. This is a migration/investor-access milestone, not proof of a property-price effect.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:golden-residency-2019"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-2040-launch-2021",
+      "title": "Dubai 2040 Urban Master Plan launched",
+      "category": "urban_strategy",
+      "eventDate": {
+        "start": "2021-03-13",
+        "precision": "day"
+      },
+      "publishedAt": "2021-03-13",
+      "firstAvailableAt": "2021-03-13",
+      "sourceIds": [
+        "event-source:dubai-2040-2021"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "Dubai launched the 2040 Urban Master Plan with long-run population, transit, green-space and urban-centre objectives. It is a structural planning context whose local effect depends on actual delivery and geography.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:dubai-2040-2021"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-d33-launch-2023",
+      "title": "Dubai Economic Agenda D33 launched",
+      "category": "economic_strategy",
+      "eventDate": {
+        "start": "2023-01-04",
+        "precision": "day"
+      },
+      "publishedAt": "2023-01-04",
+      "firstAvailableAt": "2023-01-04",
+      "sourceIds": [
+        "event-source:d33-2023"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "D33 set ten-year economic and trade targets, including a goal to double Dubai's economy. It is retained as demand/investment context, not a direct real-estate forecast.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:d33-2023"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "uae-corporate-tax-effective-2023",
+      "title": "UAE Corporate Tax regime becomes effective",
+      "category": "business_tax_policy",
+      "eventDate": {
+        "start": "2023-06-01",
+        "precision": "day"
+      },
+      "publishedAt": "2022-08-26",
+      "firstAvailableAt": "2022-08-26",
+      "sourceIds": [
+        "event-source:uae-corporate-tax-2023"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "The UAE federal corporate-tax regime applies to financial years beginning on or after 1 June 2023. The direction of any real-estate impact is ambiguous and must be measured rather than assumed.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:uae-corporate-tax-2023"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "wynn-al-marjan-gaming-license-2024",
+      "title": "Wynn Al Marjan receives UAE commercial gaming licence",
+      "category": "tourism_regulation",
+      "eventDate": {
+        "start": "2024-10-05",
+        "precision": "day"
+      },
+      "publishedAt": "2024-10-05",
+      "firstAvailableAt": "2024-10-05",
+      "sourceIds": [
+        "event-source:wynn-license-2024",
+        "event-source:gcgra-wynn-current"
+      ],
+      "geography": {
+        "emirates": [
+          "Ras Al Khaimah"
+        ],
+        "areas": [
+          "Al Marjan Island",
+          "Al Marjan"
+        ]
+      },
+      "claims": [
+        {
+          "text": "Reuters reported Wynn's receipt of the UAE's first commercial gaming operator licence on 5 October 2024; the current GCGRA registry lists Wynn Al Marjan as a land-based gaming-facility licensee. Tourism and investment effects remain empirical questions.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:wynn-license-2024",
+            "event-source:gcgra-wynn-current"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "disney-yas-announcement-2025",
+      "title": "Disney theme park and resort announced for Yas Island",
+      "category": "tourism_amenity",
+      "eventDate": {
+        "start": "2025-05-07",
+        "precision": "day"
+      },
+      "publishedAt": "2025-05-07",
+      "firstAvailableAt": "2025-05-07",
+      "sourceIds": [
+        "event-source:disney-yas-2025"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi"
+        ],
+        "areas": [
+          "Yas Island"
+        ]
+      },
+      "claims": [
+        {
+          "text": "Disney and Miral announced a waterfront Disney theme-park resort for Yas Island on 7 May 2025. Announcement, construction and opening must remain separate milestones; no residential uplift percentage is inferred.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:disney-yas-2025"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "dubai-population-end-2025",
+      "title": "Dubai population reaches 4.58 million at end-2025",
+      "category": "demographics",
+      "eventDate": {
+        "start": "2025-12-31",
+        "precision": "day"
+      },
+      "publishedAt": "2026-07-01",
+      "firstAvailableAt": "2026-07-01",
+      "sourceIds": [
+        "event-source:dubai-population-2025"
+      ],
+      "geography": {
+        "emirates": [
+          "Dubai"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "Dubai Media Office reported 4.58 million residents at end-2025, up 332,000 or 7.5% from 2024. This is demand-side context; it is not a constant property-price elasticity.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:dubai-population-2025"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "uae-iran-missile-attacks-2026",
+      "title": "Iranian missile attacks target the UAE",
+      "category": "security",
+      "eventDate": {
+        "start": "2026-02-28",
+        "precision": "day"
+      },
+      "publishedAt": "2026-02-28",
+      "firstAvailableAt": "2026-02-28",
+      "sourceIds": [
+        "event-source:uae-iran-missile-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "The UAE Ministry of Foreign Affairs reported and condemned Iranian missile attacks targeting the UAE on 28 February 2026. Security, aviation, tourism and sentiment channels are context only; location-specific property damage or price effects require separate evidence.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:uae-iran-missile-2026"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    },
+    {
+      "id": "cbuae-base-rate-hike-2026",
+      "title": "CBUAE raises Base Rate by 25 basis points",
+      "category": "interest_rates",
+      "eventDate": {
+        "start": "2026-09-16",
+        "precision": "day"
+      },
+      "publishedAt": "2026-09-16",
+      "firstAvailableAt": "2026-09-16",
+      "sourceIds": [
+        "event-source:cbuae-rate-hike-2026"
+      ],
+      "geography": {
+        "emirates": [
+          "Abu Dhabi",
+          "Dubai",
+          "Sharjah",
+          "Ajman",
+          "Umm Al Quwain",
+          "Ras Al Khaimah",
+          "Fujairah"
+        ],
+        "areas": []
+      },
+      "claims": [
+        {
+          "text": "CBUAE listed a 25-basis-point Base Rate increase on 16 September 2026. Mortgage repricing depends on each loan's benchmark, margin, fixed period and reset date; the policy move is not mechanically applied to property prices.",
+          "classification": "reported_context",
+          "sourceIds": [
+            "event-source:cbuae-rate-hike-2026"
+          ]
+        }
+      ],
+      "status": "verified_event_context",
+      "classification": "event_evidence",
+      "priceUpliftPct": null
+    }
+  ]
+}
