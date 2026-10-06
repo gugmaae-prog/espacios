@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-06",
+  "sources": [
+    {
+      "id": "v10-src-wasl-avenue-park",
+      "url": "https://www.wasl.ae/en/mediacentre/press-releases/wasl-sets-new-standard-urban-luxury-living-launch-avenue-park-towers",
+      "publisher": "Wasl",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2025-05-23",
+      "firstAvailableAt": "2025-05-23",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v10-src-amis-woodland-crest",
+      "url": "https://amisdevelopment.com/amis-development-launches-aed-100-million-woodland-crest-in-meydan-avenue-dubai/",
+      "publisher": "AMIS Development",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2025-04-11",
+      "firstAvailableAt": "2025-04-11",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v10-src-ihg-regent-sankari",
+      "url": "https://www.ihgplc.com/en/news-and-media/news-releases/2024/ihg-and-sankari-to-launch-the-worlds-1st-upper-luxury-standalone-regent-residences-in-dxb",
+      "publisher": "IHG Hotels & Resorts",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2024-09-10",
+      "firstAvailableAt": "2024-09-10",
+      "datePrecision": "day",
+      "classification": "primary_brand_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v10-src-mira-about",
+      "url": "https://miradevelopments.ae/about",
+      "publisher": "Mira Developments",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-06",
+      "datePrecision": "unknown",
+      "classification": "primary_developer_corporate_history",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v10-src-mira-trussardi",
+      "url": "https://miradevelopments.ae/projects/trussardi-residences",
+      "publisher": "Mira Developments",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-06",
+      "datePrecision": "unknown",
+      "classification": "primary_developer_project_page",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v10-src-amis-derby-youtube",
+      "url": "https://www.youtube.com/watch?v=mczKl8DrMOs",
+      "publisher": "AMIS Development",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": "2025-10-13",
+      "firstAvailableAt": "2025-10-13",
+      "datePrecision": "day",
+      "classification": "primary_developer_social",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    },
+    {
+      "id": "v10-src-elemental-official",
+      "url": "https://www.elementaldevelopments.ae/sales-elemental-developments",
+      "publisher": "Elemental Developments",
+      "retrievedAt": "2026-10-06",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-06",
+      "datePrecision": "unknown",
+      "classification": "primary_developer_project_page",
+      "primaryEvidence": true,
+      "licence": "rights_pending: citation and source metadata only; redistribution not inferred"
+    }
+  ],
+  "facts": [
+    {
+      "status": "accepted",
+      "id": "v10-avenue-launch",
+      "recordId": "project:apartments-and-duplexes-avenue-park-towers-wasl-1-dubai",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-02-09",
+        "precision": "day"
+      },
+      "label": "Wasl launches Avenue Park Towers within Wasl 1",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Wasl official release explicitly names Avenue Park Towers and Wasl 1",
+      "identitySourceIds": [
+        "v10-src-wasl-avenue-park"
+      ],
+      "sourceId": "v10-src-wasl-avenue-park",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-avenue-announcement",
+      "recordId": "project:apartments-and-duplexes-avenue-park-towers-wasl-1-dubai",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-02-09",
+        "precision": "day"
+      },
+      "label": "Wasl announces Avenue Park Towers launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Wasl official release explicitly names Avenue Park Towers",
+      "identitySourceIds": [
+        "v10-src-wasl-avenue-park"
+      ],
+      "sourceId": "v10-src-wasl-avenue-park",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-woodland-launch",
+      "recordId": "project:woodland-crest-amis-meydan-dubai",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-04-11",
+        "precision": "day"
+      },
+      "label": "AMIS launches Woodland Crest in Meydan Avenue",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "AMIS official release explicitly names Woodland Crest and Meydan Avenue",
+      "identitySourceIds": [
+        "v10-src-amis-woodland-crest"
+      ],
+      "sourceId": "v10-src-amis-woodland-crest",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-woodland-announcement",
+      "recordId": "project:woodland-crest-amis-meydan-dubai",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-04-11",
+        "precision": "day"
+      },
+      "label": "AMIS announces Woodland Crest",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "AMIS official release explicitly names Woodland Crest",
+      "identitySourceIds": [
+        "v10-src-amis-woodland-crest"
+      ],
+      "sourceId": "v10-src-amis-woodland-crest",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-woodland-target-handover",
+      "recordId": "project:woodland-crest-amis-meydan-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2027-Q2",
+        "precision": "quarter"
+      },
+      "label": "AMIS schedules Woodland Crest handover for Q2 2027",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "AMIS official release explicitly names Woodland Crest",
+      "identitySourceIds": [
+        "v10-src-amis-woodland-crest"
+      ],
+      "sourceId": "v10-src-amis-woodland-crest",
+      "scope": "subject",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_target"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-regent-launch",
+      "recordId": "project:regent-residences-dubai-sankari-place",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-09-10",
+        "precision": "day"
+      },
+      "label": "IHG and Sankari launch Regent Residences Dubai - Sankari Place",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "IHG official release explicitly names Regent Residences Dubai - Sankari Place",
+      "identitySourceIds": [
+        "v10-src-ihg-regent-sankari"
+      ],
+      "sourceId": "v10-src-ihg-regent-sankari",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_brand_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-regent-announcement",
+      "recordId": "project:regent-residences-dubai-sankari-place",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-09-10",
+        "precision": "day"
+      },
+      "label": "IHG announces first standalone Regent Residences in Dubai with Sankari",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "IHG official release explicitly names the project and developer",
+      "identitySourceIds": [
+        "v10-src-ihg-regent-sankari"
+      ],
+      "sourceId": "v10-src-ihg-regent-sankari",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_brand_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-regent-target-completion",
+      "recordId": "project:regent-residences-dubai-sankari-place",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2027",
+        "precision": "year"
+      },
+      "label": "IHG states expected completion at the end of 2027",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "IHG official release explicitly names Regent Residences Dubai - Sankari Place",
+      "identitySourceIds": [
+        "v10-src-ihg-regent-sankari"
+      ],
+      "sourceId": "v10-src-ihg-regent-sankari",
+      "scope": "subject",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_brand_target"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-trussardi-launch",
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-02",
+        "precision": "month"
+      },
+      "label": "Mira records Trussardi Residences among its first Dubai launches in February 2024",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Mira corporate history explicitly identifies Trussardi Residences as a February 2024 first launch",
+      "identitySourceIds": [
+        "v10-src-mira-about"
+      ],
+      "sourceId": "v10-src-mira-about",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_corporate_history"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-trussardi-announcement",
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-02",
+        "precision": "month"
+      },
+      "label": "Mira corporate history records Trussardi Residences launch in February 2024",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Mira corporate history explicitly identifies Trussardi Residences",
+      "identitySourceIds": [
+        "v10-src-mira-about"
+      ],
+      "sourceId": "v10-src-mira-about",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_corporate_history"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-trussardi-construction-apr-2026",
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-04",
+        "precision": "month"
+      },
+      "label": "Mira construction update: structure reached the eleventh floor and blockwork progressed",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Mira official Trussardi Residences project page",
+      "identitySourceIds": [
+        "v10-src-mira-trussardi"
+      ],
+      "sourceId": "v10-src-mira-trussardi",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_construction_update"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-trussardi-construction-jul-2026",
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-07",
+        "precision": "month"
+      },
+      "label": "Mira construction update: plastering, electrical points, facade enclosure and slab steelwork progressed",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Mira official Trussardi Residences project page",
+      "identitySourceIds": [
+        "v10-src-mira-trussardi"
+      ],
+      "sourceId": "v10-src-mira-trussardi",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_construction_update"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-trussardi-target-handover",
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-Q4",
+        "precision": "quarter"
+      },
+      "label": "Mira currently schedules Trussardi Residences handover for Q4 2026",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Mira official Trussardi Residences project page",
+      "identitySourceIds": [
+        "v10-src-mira-trussardi"
+      ],
+      "sourceId": "v10-src-mira-trussardi",
+      "scope": "subject",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_target"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-trussardi-2br-asking",
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "kind": "financial",
+      "primaryEvidence": true,
+      "identityBasis": "Mira official Trussardi Residences project page",
+      "identitySourceIds": [
+        "v10-src-mira-trussardi"
+      ],
+      "sourceId": "v10-src-mira-trussardi",
+      "scope": "asking_benchmark",
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "value": 3500000,
+        "metric": "price",
+        "unit": "AED",
+        "period": "2026-10-06",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "bedrooms": "2",
+        "quoteQualifier": "2 BR with pool",
+        "sourceQuoteBasis": "Developer page starting price for the displayed 2 BR with pool configuration",
+        "currentSnapshotEligible": false
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v10-derby-launch",
+      "recordId": "project:derby-heights-amis-meydan-dubai",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-10-13",
+        "precision": "day"
+      },
+      "label": "AMIS official channel states Derby Heights was just launched",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "AMIS Development official channel explicitly names Derby Heights by AMIS in District 11, Meydan",
+      "identitySourceIds": [
+        "v10-src-amis-derby-youtube"
+      ],
+      "sourceId": "v10-src-amis-derby-youtube",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_social_launch"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-derby-announcement",
+      "recordId": "project:derby-heights-amis-meydan-dubai",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-10-13",
+        "precision": "day"
+      },
+      "label": "AMIS announces Derby Heights launch through its official channel",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "AMIS Development official channel explicitly names Derby Heights by AMIS",
+      "identitySourceIds": [
+        "v10-src-amis-derby-youtube"
+      ],
+      "sourceId": "v10-src-amis-derby-youtube",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_social_announcement"
+    },
+    {
+      "status": "accepted",
+      "id": "v10-derby-target-handover",
+      "recordId": "project:derby-heights-amis-meydan-dubai",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2027-Q4",
+        "precision": "quarter"
+      },
+      "label": "AMIS official channel states Q4 2027 handover",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "AMIS Development official channel explicitly names Derby Heights by AMIS",
+      "identitySourceIds": [
+        "v10-src-amis-derby-youtube"
+      ],
+      "sourceId": "v10-src-amis-derby-youtube",
+      "scope": "subject",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_target"
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [
+    {
+      "recordId": "project:apartments-and-duplexes-avenue-park-towers-wasl-1-dubai",
+      "status": "primary_source_reviewed_v10",
+      "sourceIds": [
+        "v10-src-wasl-avenue-park"
+      ],
+      "acceptedFactCount": 2,
+      "collectionPass": "v10-primary-pass21"
+    },
+    {
+      "recordId": "project:woodland-crest-amis-meydan-dubai",
+      "status": "primary_source_reviewed_v10",
+      "sourceIds": [
+        "v10-src-amis-woodland-crest"
+      ],
+      "acceptedFactCount": 3,
+      "collectionPass": "v10-primary-pass21"
+    },
+    {
+      "recordId": "project:regent-residences-dubai-sankari-place",
+      "status": "primary_source_reviewed_v10",
+      "sourceIds": [
+        "v10-src-ihg-regent-sankari"
+      ],
+      "acceptedFactCount": 3,
+      "collectionPass": "v10-primary-pass21"
+    },
+    {
+      "recordId": "project:trussardi-residences-by-luxury-living-group-and-mira-developments",
+      "status": "primary_source_reviewed_v10",
+      "sourceIds": [
+        "v10-src-mira-about",
+        "v10-src-mira-trussardi"
+      ],
+      "acceptedFactCount": 6,
+      "collectionPass": "v10-primary-pass21"
+    },
+    {
+      "recordId": "project:derby-heights-amis-meydan-dubai",
+      "status": "primary_source_reviewed_v10",
+      "sourceIds": [
+        "v10-src-amis-derby-youtube"
+      ],
+      "acceptedFactCount": 3,
+      "collectionPass": "v10-primary-pass21"
+    },
+    {
+      "recordId": "project:apartments-elemental-22-jumeirah-garden-city-dubai",
+      "status": "primary_source_reviewed_no_dated_primary_fact",
+      "sourceIds": [
+        "v10-src-elemental-official"
+      ],
+      "acceptedFactCount": 0,
+      "collectionPass": "v10-primary-pass21",
+      "note": "Official developer page confirms exact project identity and Jumeirah Garden City location but did not provide a sufficiently precise dated launch/completion fact in the reviewed page; no coverage item is promoted from this source alone."
+    }
+  ],
+  "historyInputs": [],
+  "licensedArchives": [],
+  "additionalDatasets": [],
+  "sourceCandidates": [],
+  "collection": {
+    "passes": [
+      {
+        "id": "v10-primary-pass21",
+        "retrievedAt": "2026-10-06",
+        "recordsReviewed": 6,
+        "acceptedFacts": 17,
+        "primarySources": 7,
+        "policy": "Primary developer/brand sources first; source dates and project identity retained; no community context promoted to subject history."
+      }
+    ]
+  },
+  "methodology": "Primary developer/brand evidence only in this pass. Dated launch, announcement, construction and target milestones are retained at source precision. A bedroom-specific developer asking quote is evidence only and is explicitly ineligible to replace the project headline current snapshot. Elemental 22 official identity was reviewed but no dated primary fact was promoted."
+}
