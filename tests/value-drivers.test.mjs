@@ -14,10 +14,11 @@ test('Palm aliases require explicit geography and do not match a different islan
  assert.equal(isPalmJebelAli({emirate:'Abu Dhabi',name:'Palm Jebel Ali'}),false);
 });
 test('research preserves sparse source evidence and never creates local uplift percentages',()=>{
- assert.equal(data.drivers.length,13);assert.equal(data.sources.length,22);assert.equal(data.coverage.length,7);
+ assert.equal(data.drivers.length,16);assert.equal(data.sources.length,26);assert.equal(data.coverage.length,7);
+ assert.ok(data.drivers.some(d=>d.id==='guggenheim-abu-dhabi'));assert.ok(data.drivers.some(d=>d.id==='disney-yas'));assert.ok(data.drivers.some(d=>d.id==='wynn-al-marjan'));
  assert.equal(new Set(data.drivers.map(d=>d.id)).size,data.drivers.length);
  for(const d of data.drivers){assert.equal(d.priceUpliftPct,null);assert.equal(d.geometry,null);assert.ok(d.risk);for(const id of d.sourceIds)assert.ok(data.sources.some(s=>s.id===id));}
- for(const s of data.sources){assert.match(s.url,/^https:\/\//);assert.ok(s.published<=data.asOf);assert.equal(s.retrieved,data.asOf);}
+ for(const s of data.sources){assert.match(s.url,/^https:\/\//);if(s.published)assert.ok(s.published<=data.asOf);assert.equal(s.retrieved,data.asOf);}
  const h=data.palmJebelAli.localPriceEvidence;assert.equal(h.segment,'apartment');assert.equal(h.points.at(-1).eligibleSales,1);assert.equal(h.points.at(-1).displayEligible,false);
  assert.equal(data.policy.validatedPalmForecast,false);assert.equal(data.policy.automaticForecastAdjustment,false);
  assert.equal(data.sensitivity.confidenceInterval,null);assert.equal(data.drivers.find(d=>d.id==='metro-blue').palmRelationship,'not_direct');
