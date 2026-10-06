@@ -1,0 +1,118 @@
+{
+  "version": "20261005-cbuae-eibor-source-index-v1",
+  "asOf": "2026-10-05",
+  "classification": "official_financing_context_source_index",
+  "publisher": "Central Bank of the UAE",
+  "indexUrl": "https://centralbank.ae/en/forex-eibor/eibor-rates/",
+  "currentApiUrl": "https://centralbank.ae/umbraco/Surface/Eibor/GetEiborData",
+  "statement": "CBUAE identifies EIBOR as a UAE lending benchmark used for mortgages and publishes historical files from October 2009 onward.",
+  "coverage": {
+    "start": "2009-10-01",
+    "end": "2026-10-05",
+    "archiveFiles": 18,
+    "continuousDailyNumericIngestion": false,
+    "reason": "Official file URLs are indexed here. Numeric ingestion must checksum and parse the native XLS/XLSX files before values enter the immutable evidence snapshot."
+  },
+  "currentFixing": {
+    "date": "2026-10-05",
+    "overnightPct": 3.7063,
+    "oneWeekPct": 4.18866,
+    "oneMonthPct": 4.08608,
+    "threeMonthPct": 4.29833,
+    "sixMonthPct": 4.3901,
+    "oneYearPct": 5.04644,
+    "sourceUrl": "https://centralbank.ae/umbraco/Surface/Eibor/GetEiborData"
+  },
+  "files": [
+    {
+      "period": "2009-Q4",
+      "url": "https://centralbank.ae/media/y3ihldma/eibor_oct-dec_2009.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2010",
+      "url": "https://centralbank.ae/media/shihirbh/eibor_jan-dec_2010.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2011",
+      "url": "https://centralbank.ae/media/kyljeix4/eibor_jan-dec_2011.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2012",
+      "url": "https://centralbank.ae/media/021a0zhs/eibor_jan-dec_2012.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2013",
+      "url": "https://centralbank.ae/media/ymzjnp0t/eibor_jan-dec_2013.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2014",
+      "url": "https://centralbank.ae/media/2k0bg3mb/eibor_jan-dec_2014.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2015",
+      "url": "https://centralbank.ae/media/kpxjhh4a/eibor_jan-dec_2015.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2016",
+      "url": "https://centralbank.ae/media/ypthe4cs/eibor_jan-dec_2016.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2017",
+      "url": "https://centralbank.ae/media/sumnmrsa/eibor_jan-dec_2017.xls",
+      "format": "xls"
+    },
+    {
+      "period": "2018",
+      "url": "https://centralbank.ae/media/g5flo04e/eibor_jan-dec_2018.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2019",
+      "url": "https://centralbank.ae/media/tklbac23/eibor_jan-dec_2019.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2020",
+      "url": "https://centralbank.ae/media/jk0mnblc/eibor_jan-dec_2020.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2021",
+      "url": "https://centralbank.ae/media/ufpkt3l5/eibor_2021.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2022",
+      "url": "https://centralbank.ae/media/u3nhctrg/eibor_2022.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2023",
+      "url": "https://centralbank.ae/media/ahgblszp/eibor_2023.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2024",
+      "url": "https://centralbank.ae/media/jj1cpu0w/eibor_2024.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2025",
+      "url": "https://centralbank.ae/media/wk5phybn/eibor_2025.xlsx",
+      "format": "xlsx"
+    },
+    {
+      "period": "2026-YTD",
+      "url": "https://centralbank.ae/media/24tllbne/eibor_2026.xlsx",
+      "format": "xlsx"
+    }
+  ]
+}

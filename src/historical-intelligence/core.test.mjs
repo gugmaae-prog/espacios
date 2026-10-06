@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {parseEvidenceDate,isAvailableAsOf,eligibleFeaturesAsOf,expandRecordObservations,deduplicateObservations,monthlyCoverage,filterTrainingFold,eventStudy,annualScenarios,recordExposures,recordHistory,resolveRecordCommunityHistory,validateObservation,relevantSources} from './core.mjs';
+import {parseEvidenceDate,isAvailableAsOf,eligibleFeaturesAsOf,expandRecordObservations,deduplicateObservations,monthlyCoverage,filterTrainingFold,eventStudy,annualScenarios,recordExposures,recordHistory,reconstructionCoverage,resolveRecordCommunityHistory,validateObservation,relevantSources} from './core.mjs';
 const sources=[{id:'sales',url:'https://example.com/sales',publishedAt:'2000-01-01'},{id:'news',url:'https://example.com/news',publishedAt:'2021-01-10'}],asOf='2026-10-03';
 const record={id:'project:a',type:'project',name:'Phase A',emirate:'Dubai',lifecycle:[],observations:[],historySeries:[]};
 const observation=(period,value=100,extra={})=>({id:'a:'+period,recordId:record.id,metric:'price',frequency:'monthly',period,value,unit:'AED/sqft',sampleCount:25,sourceId:'sales',scope:'subject',identityVerified:true,publishedAt:period,firstAvailableAt:period,...extra});
@@ -238,4 +238,13 @@ test('microsecond source capture timestamps retain text and are available at the
  assert.equal(validateObservation(observation('2020-01'),record,{asOf:'2026-10-05',sources:current}).availability,'known_as_of');
  assert.equal(current[0].firstAvailableAt,instant);
  assert.throws(()=>parseEvidenceDate('2026-10-05T09:59:36.848680'),/timezone/);
+});
+
+
+test('reconstruction tiers never promote contextual history into subject observations',()=>{
+ const subject={...record,historySeries:[{id:'subject',metric:'price',frequency:'monthly',unit:'AED/sqft',sourceId:'sales',scope:'subject',identityVerified:true,pointCount:12}]};
+ assert.equal(reconstructionCoverage(subject).metrics.price.tier,1);assert.equal(reconstructionCoverage(subject).metrics.price.absoluteValueInferenceAllowed,true);
+ const community={...record,historySeries:[{id:'community',metric:'price',frequency:'monthly',unit:'AED/sqft',sourceId:'sales',scope:'community_context',identityVerified:false,pointCount:24}]};
+ const context=reconstructionCoverage(community);assert.equal(context.recordCovered,true);assert.equal(context.metrics.price.tier,3);assert.equal(context.metrics.price.subjectObserved,false);assert.equal(context.metrics.price.absoluteValueInferenceAllowed,false);
+ const empty=reconstructionCoverage(record,{events:[event],exposures:[exposure]});assert.equal(empty.metrics.price.tier,6);assert.equal(empty.metrics.price.numericHistoryAvailable,false);assert.equal(empty.eventContextCount,1);
 });

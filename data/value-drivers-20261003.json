@@ -1,6 +1,6 @@
 {
-  "version": "20261003-value-drivers-v1",
-  "asOf": "2026-10-03",
+  "version": "20261005-value-drivers-v2",
+  "asOf": "2026-10-05",
   "owner": "Espacios",
   "classification": "catalysts_and_conditional_outlook",
   "sources": [
@@ -200,6 +200,42 @@
       "retrieved": "2026-10-03",
       "url": "https://www.knightfrank.ae/newsroom/article/2026/2/dubai-residential-market-review-q4-2025",
       "classification": "third_party_forecast",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "guggenheim-2026-opening",
+      "publisher": "Department of Culture and Tourism – Abu Dhabi",
+      "published": "2026-07-28",
+      "retrieved": "2026-10-05",
+      "url": "https://www.mediaoffice.abudhabi/en/arts-culture/department-of-culture-and-tourism-abu-dhabi-announces-opening-of-guggenheim-abu-dhabi-on-11-december-2026/",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "disney-yas-2025",
+      "publisher": "Miral / The Walt Disney Company",
+      "published": "2025-05-07",
+      "retrieved": "2026-10-05",
+      "url": "https://miral.ae/news-item/the-walt-disney-company-and-miral-announce-plans-for-disney-theme-park-and-resort-on-yas-island-abu-dhabi/",
+      "classification": "developer_official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "wynn-2026-progress",
+      "publisher": "Wynn Resorts",
+      "published": "2026-08-04",
+      "retrieved": "2026-10-05",
+      "url": "https://investors.wynnresorts.com/news-releases/news-release-details/wynn-resorts-limited-reports-second-quarter-2026-results",
+      "classification": "company_regulatory_financial_release",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "wynn-gcgra-current",
+      "publisher": "General Commercial Gaming Regulatory Authority",
+      "published": null,
+      "retrieved": "2026-10-05",
+      "url": "https://www.gcgra.gov.ae/en/licensing/our-licensees/",
+      "classification": "official_registry_current_state",
       "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
     }
   ],
@@ -502,6 +538,77 @@
       "areas": [],
       "mechanism": "Port development may support logistics investment and employment in Fujairah.",
       "risk": "Demand spillover is analytical; industrial traffic, location and future housing supply can offset benefits.",
+      "palmRelationship": "none",
+      "classification": "catalyst_evidence",
+      "priceUpliftPct": null,
+      "geometry": null,
+      "geometryBasis": "No surveyed project geometry acquired. Area links are analytical context, not distance or catchment claims."
+    },
+    {
+      "id": "guggenheim-abu-dhabi",
+      "name": "Guggenheim Abu Dhabi",
+      "emirates": [
+        "Abu Dhabi"
+      ],
+      "ownership": "Government cultural infrastructure / institutional partnership",
+      "status": "Opening announced",
+      "timing": "Opening announced for 11 December 2026",
+      "sourceIds": [
+        "guggenheim-2026-opening"
+      ],
+      "areas": [
+        "Saadiyat Island"
+      ],
+      "mechanism": "A major operating cultural anchor can add destination depth, visitor activity and amenity value around Saadiyat Cultural District.",
+      "risk": "Opening and visitation do not establish a residential appreciation percentage. Amenity value can be anticipated and already priced in.",
+      "palmRelationship": "none",
+      "classification": "catalyst_evidence",
+      "priceUpliftPct": null,
+      "geometry": null,
+      "geometryBasis": "No surveyed project geometry acquired. Area links are analytical context, not distance or catchment claims."
+    },
+    {
+      "id": "disney-yas",
+      "name": "Disney theme park resort on Yas Island",
+      "emirates": [
+        "Abu Dhabi"
+      ],
+      "ownership": "Government-linked destination development / Disney partnership",
+      "status": "Announced",
+      "timing": "Agreement announced 7 May 2025; opening date not verified in the cited announcement",
+      "sourceIds": [
+        "disney-yas-2025"
+      ],
+      "areas": [
+        "Yas Island"
+      ],
+      "mechanism": "A globally branded destination can support tourism, hospitality employment and amenity demand on Yas Island if delivered.",
+      "risk": "Announcement-stage catalyst. Delivery timing, scale, transport capacity and additional supply must be tracked; no property uplift is assumed.",
+      "palmRelationship": "none",
+      "classification": "catalyst_evidence",
+      "priceUpliftPct": null,
+      "geometry": null,
+      "geometryBasis": "No surveyed project geometry acquired. Area links are analytical context, not distance or catchment claims."
+    },
+    {
+      "id": "wynn-al-marjan",
+      "name": "Wynn Al Marjan Island integrated resort",
+      "emirates": [
+        "Ras Al Khaimah"
+      ],
+      "ownership": "Private integrated resort with UAE federal gaming licence",
+      "status": "Under construction / licensed",
+      "timing": "Wynn reported a September 2027 opening expectation in Q2 2026 results; current GCGRA registry lists Wynn Al Marjan as a land-based gaming-facility licensee",
+      "sourceIds": [
+        "wynn-2026-progress",
+        "wynn-gcgra-current"
+      ],
+      "areas": [
+        "Al Marjan Island",
+        "Al Marjan"
+      ],
+      "mechanism": "The integrated resort, associated tourism infrastructure and regulated gaming offer can expand destination demand, hospitality employment and international visitation in the Al Marjan corridor.",
+      "risk": "The resort also induces new hotel/residential supply and infrastructure load. Opening timing and actual visitation must be measured; no surrounding-property appreciation percentage is assigned.",
       "palmRelationship": "none",
       "classification": "catalyst_evidence",
       "priceUpliftPct": null,
@@ -4852,7 +4959,7 @@
   "coverage": [
     {
       "emirate": "Abu Dhabi",
-      "reviewedCatalysts": 2,
+      "reviewedCatalysts": 4,
       "localValidatedPriceForecast": false,
       "limitation": "Research subset; existing initiative catalogue retained. Catalyst coverage does not imply price/rent/yield coverage."
     },
@@ -4882,7 +4989,7 @@
     },
     {
       "emirate": "Ras Al Khaimah",
-      "reviewedCatalysts": 1,
+      "reviewedCatalysts": 2,
       "localValidatedPriceForecast": false,
       "limitation": "Research subset; existing initiative catalogue retained. Catalyst coverage does not imply price/rent/yield coverage."
     },

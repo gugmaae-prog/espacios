@@ -7,7 +7,7 @@
  async function load(){
   if(V.data)return V.data;if(V.promise)return V.promise;
   V.promise=fetch('/map/api/value-drivers',{signal:AbortSignal.timeout(12000)}).then(r=>{if(!r.ok)throw Error('Research unavailable');return r.json();}).then(d=>{
-   if(d.version!=='20261003-value-drivers-v1'||!Array.isArray(d.drivers))throw Error('Research version mismatch');V.data=d;return d;
+   if(d.version!=='20261005-value-drivers-v2'||!Array.isArray(d.drivers))throw Error('Research version mismatch');V.data=d;return d;
   }).finally(()=>{V.promise=null;});return V.promise;
  }
  function close(){Q('#vd-panel').classList.add('hidden');Q('[data-value="government"]')?.setAttribute('aria-expanded','false');Q('#vd-launch')?.focus({preventScroll:true});}

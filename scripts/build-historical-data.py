@@ -8,7 +8,7 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261005-enrichment-v9'
+VERSION = '20261005-enrichment-v10'
 ASOF = '2026-10-05'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
@@ -342,6 +342,9 @@ def build():
  manifest['collectionEnvelope']['snapshotAsOf']=ASOF
  if alias_path.exists():manifest['seriesIdReconciliation']={'path':str(alias_path.relative_to(ROOT)),'sha256':sha(alias_path.read_bytes()),'matchedSeries':len(aliases['aliases']),'matchedNativeRows':sum(x['matchedRows'] for x in aliases['aliases']),'classification':'exact_area_context_tuple_match'}
  if rates_path.exists():manifest['uaePolicyRateEvidence']={'path':str(rates_path.relative_to(ROOT)),'sha256':sha(rates_path.read_bytes()),'version':rates['version'],'coverage':rates['coverage'],'observations':len(rates['observations']),'classification':rates['classification'],'limits':rates['limitations']}
+ eibor_path=BASE/'cbuae-eibor-source-manifest.json'
+ if eibor_path.exists():
+  eibor=read_json(eibor_path);manifest['cbuaeEiborArchive']={'path':str(eibor_path.relative_to(ROOT)),'sha256':sha(eibor_path.read_bytes()),'version':eibor['version'],'coverage':eibor['coverage'],'currentFixing':eibor.get('currentFixing'),'classification':eibor['classification'],'numericIngestionStatus':'source_indexed; continuous native file parsing pending checksum capture'}
  manifest['originalCollectionRows']=original_collected_rows;manifest['originalReleasableObservationRows']=original_public_rows;manifest['supplementHistoricalObservationRows']=supplement_rows;manifest['extendedTotalObservationRows']=collected_rows
  if early:
   manifest['earlyHistoricalEnrichment']={'path':str(early_path.relative_to(ROOT)),'sha256':sha(early_path.read_bytes()),'counts':early['counts'],'coverage':early['coverage'],'methodology':early['methodology'],'source':early['source'],'rawArchive':early['rawArchive'],'linkedRecords':sum(any(s['id'].startswith('early-dred-') for s in r['historySeries']) for r in records),'classification':'retrospective_area_context; no subject identity promotion'}
