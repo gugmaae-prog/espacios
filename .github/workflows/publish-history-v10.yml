@@ -1,0 +1,224 @@
+name: Publish historical v10
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-history-v10.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: espacios-history-v10-production
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      EXPECTED_VERSION: "20261005-enrichment-v10"
+      PRODUCTION_DB: "cba-property-db"
+      PRODUCTION_BUCKET: "psr-market-intelligence"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Require production credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}"
+          test -n "${CLOUDFLARE_ACCOUNT_ID:-}"
+          test "$CLOUDFLARE_ACCOUNT_ID" = "b1b843ec85bc39a3a4d370ba4f84f17a"
+
+      - run: npm ci
+
+      - name: Preserve live v9 manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp data/historical-intelligence/publication-manifest.json /tmp/v9-publication-manifest.json
+          node - <<'NODE'
+          const fs=require('fs');
+          const prior=JSON.parse(fs.readFileSync('/tmp/v9-publication-manifest.json','utf8'));
+          if(prior.version!=='20261005-enrichment-v9') throw new Error('Expected committed v9 manifest before v10 build; found '+prior.version);
+          NODE
+
+      - name: Build and verify immutable v10 candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run history:build
+          npm run verify
+          npx wrangler deploy --config wrangler.production.jsonc --dry-run --outdir .wrangler/production-dry-run
+          node - <<'NODE'
+          const fs=require('fs'),crypto=require('crypto'),zlib=require('zlib');
+          const old=JSON.parse(fs.readFileSync('/tmp/v9-publication-manifest.json','utf8'));
+          const next=JSON.parse(fs.readFileSync('data/historical-intelligence/publication-manifest.json','utf8'));
+          if(next.version!==process.env.EXPECTED_VERSION) throw new Error('Unexpected manifest version '+next.version);
+          if(next.counts.records!==1860||next.counts.projects!==1645||next.counts.communities!==215) throw new Error('Catalogue count changed');
+          const known=new Set(old.objects.map(x=>x.key));
+          const delta=next.objects.filter(x=>!known.has(x.key));
+          for(const object of next.objects){
+            const bytes=fs.readFileSync(object.path);
+            const digest=crypto.createHash('sha256').update(bytes).digest('hex');
+            if(digest!==object.sha256||bytes.length!==object.bytes) throw new Error('Object checksum mismatch '+object.path);
+          }
+          const d1=fs.readFileSync(next.d1Index.path);
+          if(crypto.createHash('sha256').update(d1).digest('hex')!==next.d1Index.sha256) throw new Error('D1 index checksum mismatch');
+          const sql=zlib.gunzipSync(d1).toString('utf8');
+          fs.writeFileSync('/tmp/v10-index.sql',sql);
+          const tables=['hi_snapshots','hi_records','hi_sources','hi_events','hi_exposures','hi_series','hi_record_series'];
+          const expected={};
+          for(const table of tables) expected[table]=sql.split('INSERT OR IGNORE INTO '+table+'(').length-1;
+          fs.writeFileSync('/tmp/v10-expected-counts.json',JSON.stringify(expected));
+          fs.writeFileSync('/tmp/v10-new-objects.tsv',delta.map(x=>[x.path,x.key,x.sha256,x.bytes].join('\t')).join('\n')+(delta.length?'\n':''));
+          fs.appendFileSync(process.env.GITHUB_ENV,'V10_ROOT_SHA='+next.rootIndex.sha256+'\n');
+          fs.appendFileSync(process.env.GITHUB_ENV,'V10_NEW_OBJECTS='+delta.length+'\n');
+          fs.appendFileSync(process.env.GITHUB_ENV,'V10_EVENT_COUNT='+next.counts.events+'\n');
+          console.log(JSON.stringify({version:next.version,rootSHA256:next.rootIndex.sha256,newObjects:delta.length,counts:next.counts,expectedD1:expected}));
+          NODE
+
+      - name: Preflight production D1
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --json --command="SELECT snapshot_version, root_sha256, publication_state FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION';" > /tmp/preflight.json
+          node - <<'NODE'
+          const fs=require('fs');const x=JSON.parse(fs.readFileSync('/tmp/preflight.json','utf8'));
+          const rows=(Array.isArray(x)?x:[x]).flatMap(v=>v.results||v.result?.results||[]);
+          if(rows.length) throw new Error('Immutable v10 snapshot already exists in production D1: '+JSON.stringify(rows));
+          NODE
+
+      - name: Publish new immutable R2 objects
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=0
+          while IFS=$'\t' read -r file key expected_sha expected_bytes; do
+            [ -z "${file:-}" ] && continue
+            test -f "$file"
+            actual_sha="$(sha256sum "$file" | awk '{print $1}')"
+            actual_bytes="$(stat -c%s "$file")"
+            test "$actual_sha" = "$expected_sha"
+            test "$actual_bytes" = "$expected_bytes"
+            rm -f /tmp/r2-existing
+            if npx wrangler r2 object get "$PRODUCTION_BUCKET/$key" --remote --config wrangler.production.jsonc --file /tmp/r2-existing >/tmp/r2-get.log 2>&1; then
+              remote_sha="$(sha256sum /tmp/r2-existing | awk '{print $1}')"
+              test "$remote_sha" = "$expected_sha"
+            else
+              case "$key" in
+                *.gz) content_type="application/gzip" ;;
+                *.json) content_type="application/json" ;;
+                *) content_type="application/octet-stream" ;;
+              esac
+              npx wrangler r2 object put "$PRODUCTION_BUCKET/$key" --remote --config wrangler.production.jsonc --file "$file" --content-type "$content_type" --force
+            fi
+            count=$((count+1))
+          done < /tmp/v10-new-objects.tsv
+          test "$count" = "$V10_NEW_OBJECTS"
+          echo "Published or verified $count new content-addressed R2 objects."
+
+      - name: Index v10 in production D1
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --yes --file /tmp/v10-index.sql
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --json --command="SELECT (SELECT COUNT(*) FROM hi_records WHERE snapshot_version='$EXPECTED_VERSION') AS hi_records,(SELECT COUNT(*) FROM hi_sources WHERE snapshot_version='$EXPECTED_VERSION') AS hi_sources,(SELECT COUNT(*) FROM hi_events WHERE snapshot_version='$EXPECTED_VERSION') AS hi_events,(SELECT COUNT(*) FROM hi_exposures WHERE snapshot_version='$EXPECTED_VERSION') AS hi_exposures,(SELECT COUNT(*) FROM hi_series WHERE snapshot_version='$EXPECTED_VERSION') AS hi_series,(SELECT COUNT(*) FROM hi_record_series WHERE snapshot_version='$EXPECTED_VERSION') AS hi_record_series,(SELECT COUNT(*) FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION') AS hi_snapshots,(SELECT root_sha256 FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION') AS root_sha256,(SELECT publication_state FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION') AS publication_state;" > /tmp/remote-counts.json
+          node - <<'NODE'
+          const fs=require('fs');
+          const expected=JSON.parse(fs.readFileSync('/tmp/v10-expected-counts.json','utf8'));
+          const raw=JSON.parse(fs.readFileSync('/tmp/remote-counts.json','utf8'));
+          const rows=(Array.isArray(raw)?raw:[raw]).flatMap(v=>v.results||v.result?.results||[]);
+          if(rows.length!==1) throw new Error('Unexpected D1 verification response '+JSON.stringify(raw));
+          const row=rows[0];
+          for(const [key,value] of Object.entries(expected)) if(Number(row[key])!==Number(value)) throw new Error(key+' expected '+value+' found '+row[key]);
+          if(row.root_sha256!==process.env.V10_ROOT_SHA) throw new Error('D1 root hash differs');
+          if(row.publication_state!=='staged') throw new Error('Expected staged snapshot before activation');
+          NODE
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --yes --command="UPDATE hi_snapshots SET publication_state='complete' WHERE snapshot_version='$EXPECTED_VERSION' AND root_sha256='$V10_ROOT_SHA' AND publication_state='staged';"
+          npx wrangler d1 execute "$PRODUCTION_DB" --remote --config wrangler.production.jsonc --json --command="SELECT snapshot_version,root_sha256,publication_state,record_count FROM hi_snapshots WHERE snapshot_version='$EXPECTED_VERSION';" > /tmp/complete.json
+          node - <<'NODE'
+          const fs=require('fs');const raw=JSON.parse(fs.readFileSync('/tmp/complete.json','utf8'));
+          const rows=(Array.isArray(raw)?raw:[raw]).flatMap(v=>v.results||v.result?.results||[]);
+          if(rows.length!==1||rows[0].publication_state!=='complete'||rows[0].root_sha256!==process.env.V10_ROOT_SHA||Number(rows[0].record_count)!==1860) throw new Error('v10 completion verification failed '+JSON.stringify(rows));
+          NODE
+
+      - name: Deploy production Worker
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx wrangler deploy --config wrangler.production.jsonc --message "Publish historical intelligence v10"
+
+      - name: Live acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in 1 2 3 4 5; do
+            curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "https://espacios.me/map/api/record-history?recordId=community%3ADubai%3Apalm-jebel-ali&release=$EXPECTED_VERSION" -o /tmp/history.json || true
+            curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "https://espacios.me/map/api/events?recordId=community%3ADubai%3Apalm-jebel-ali&release=$EXPECTED_VERSION" -o /tmp/events.json || true
+            curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "https://espacios.me/map/api/value-drivers?release=$EXPECTED_VERSION" -o /tmp/drivers.json || true
+            if node - <<'NODE'
+            const fs=require('fs');
+            try{
+              const h=JSON.parse(fs.readFileSync('/tmp/history.json','utf8')),e=JSON.parse(fs.readFileSync('/tmp/events.json','utf8')),d=JSON.parse(fs.readFileSync('/tmp/drivers.json','utf8'));
+              if(h.version!==process.env.EXPECTED_VERSION) process.exit(2);
+              if(h.record?.id!=='community:Dubai:palm-jebel-ali'||h.reconstruction?.recordCovered!==true) process.exit(3);
+              if(!h.reconstruction?.metrics?.price?.tier) process.exit(4);
+              const base=h.scenarios?.metrics?.price?.paths?.base;
+              if(!Array.isArray(base)||base.length!==54||Number(base.at(-1)?.year)!==2080) process.exit(5);
+              const ids=new Set((e.events||[]).map(x=>x.id));
+              for(const id of ['dubai-foreign-property-ownership-2006','uae-iran-missile-attacks-2026','pja-masterplan-2023']) if(!ids.has(id)) process.exit(6);
+              if(d.version!=='20261005-value-drivers-v2'||d.drivers?.length!==16) process.exit(7);
+              for(const id of ['guggenheim-abu-dhabi','disney-yas','wynn-al-marjan']) if(!(d.drivers||[]).some(x=>x.id===id)) process.exit(8);
+              console.log(JSON.stringify({historyVersion:h.version,priceTier:h.reconstruction.metrics.price.tier,eventCount:e.events.length,driverVersion:d.version,driverCount:d.drivers.length}));
+            }catch(error){console.error(error);process.exit(9);}
+            NODE
+            then
+              break
+            fi
+            if [ "$i" = 5 ]; then
+              echo "Live acceptance did not converge." >&2
+              exit 1
+            fi
+            sleep 12
+          done
+          curl -fsS --max-time 30 "https://espacios.me/map" -o /tmp/map.html
+          test -s /tmp/map.html
+
+      - name: Preserve generated v10 release on branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "gugmaae-prog"
+          git config user.email "gugmaae@gmail.com"
+          git checkout -b release/history-v10-generated-20261006
+          git add data/historical-intelligence-20261003.json \
+                  data/historical-intelligence/runtime-index.json \
+                  data/historical-intelligence/publication-manifest.json \
+                  data/historical-intelligence/objects \
+                  src/worker.js
+          if git diff --cached --quiet; then
+            echo "No generated release delta to preserve."
+          else
+            git commit -m "Publish generated historical intelligence v10 artifacts"
+            git push origin HEAD:refs/heads/release/history-v10-generated-20261006
+          fi
+
+      - name: Release receipt
+        shell: bash
+        run: |
+          echo "v10 root: $V10_ROOT_SHA"
+          echo "new R2 objects: $V10_NEW_OBJECTS"
+          echo "events: $V10_EVENT_COUNT"
+          echo "source commit: $GITHUB_SHA"
