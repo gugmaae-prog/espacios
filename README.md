@@ -37,6 +37,8 @@ The next best actions are:
 
 The release intentionally does not claim 100% real-data completeness. Unsupported historical periods remain visible as gaps until an attributable source is found; estimates and scenarios stay outside observed-history coverage.
 
+The 6 October 2026 DXB Interact area prints are a separate reviewed packet at `enrichment/area-reports-20261006/`. They keep every printed summary cell and sale row as area context. They are not loaded by `npm run history:build`, they do not change the V9 snapshot, and they are not a production deployment. See `enrichment/area-reports-20261006/ANALYSIS.md`.
+
 The additive historical intelligence implementation retains all 1,860 catalogue records, exposes sourced lifecycle/events and period gaps, and provides explicit annual scenario slots through 2080. It keeps area benchmarks, subject transactions and user assumptions separate. Read [the implementation and methodology](docs/HISTORICAL-INTELLIGENCE.md) and [the source register](docs/HISTORICAL_DATA_SOURCES.md). `npm run history:build` reproduces the reviewed snapshot; `npm run history:publish:plan` prepares immutable R2/D1 publication without changing production. A source build or research completion queue is not evidence of complete historical prices or a live release.
 
 ## Smart Estimates source — 30 September 2026
