@@ -1,0 +1,55 @@
+{
+  "releaseCandidate": "v10-primary-pass21",
+  "asOf": "2026-10-06",
+  "status": "reviewed_packet_not_integrated_or_published",
+  "recordsReviewed": 6,
+  "primarySources": 7,
+  "acceptedFacts": 17,
+  "expectedCoverageEffects": {
+    "original_launch": {
+      "missingToPresent": 4,
+      "records": [
+        "Avenue Park Towers",
+        "Woodland Crest",
+        "Regent residences Dubai. Sankari Place",
+        "Derby Heights"
+      ]
+    },
+    "announcement_registration": {
+      "missingToPresent": 5,
+      "records": [
+        "Avenue Park Towers",
+        "Woodland Crest",
+        "Regent residences Dubai. Sankari Place",
+        "Trussardi Residences",
+        "Derby Heights"
+      ]
+    },
+    "construction": {
+      "missingToPresent": 1,
+      "records": [
+        "Trussardi Residences"
+      ]
+    },
+    "handover_targets": {
+      "statusChanges": 0,
+      "note": "Primary targets add provenance but V9 already has target-handover evidence for these records."
+    },
+    "advertised_prices": {
+      "statusChanges": 0,
+      "note": "Trussardi segmented quote is retained but currentSnapshotEligible=false; V9 already has advertised-price evidence."
+    }
+  },
+  "netExpectedLedgerChangeIfIntegrated": {
+    "missing": -10,
+    "present": 10,
+    "partial": 0,
+    "unestablished": 0
+  },
+  "boundaries": [
+    "No subject sale or rent history is asserted by this packet.",
+    "No completion or occupancy event is inferred from a target date.",
+    "No bedroom-specific quote may replace a project headline starting price.",
+    "No 2027-2080 output is promoted to a validated forecast."
+  ]
+}
