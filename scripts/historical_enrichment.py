@@ -25,7 +25,7 @@ def current_snapshot_eligible(obs):
  segmented_keys=['bedrooms','bedroom','unitType','unit_type','unitSubtype','unit_subtype','floorplan','floorPlan']
  if any(str(obs.get(k,'')).strip() for k in segmented_keys):return False
  qualifier=' '.join(str(obs.get(k,'') or '') for k in ['quoteQualifier','sourceQuoteBasis']).lower()
- if re.search(r'\\b(?:studio|\\d+\\s*(?:bed|bedroom|br)|bedroom-specific|unit-specific|floorplan)\\b',qualifier):return False
+ if re.search(r'\b(?:studio|\d+\s*(?:bed|bedroom|br)|bedroom-specific|unit-specific|floorplan)\b',qualifier):return False
  return True
 def apply_enrichment(packet,records,series,sources,source,aliases,asof):
  if not packet:return {}
