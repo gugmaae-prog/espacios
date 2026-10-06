@@ -103,11 +103,21 @@ export function expandRecordObservations(record){
   for(const native of series.points||[]){
    const p=pointObject(native,series);
    const expanded={...clone(p),id:p.id||`${series.id}:${p.period}`,recordId:p.recordId||record.id,metric:metric(p.metric||series.metric),frequency:inferFrequency(p.period,p.frequency||series.frequency),unit:p.unit||series.unit,sourceId:p.sourceId||series.sourceId,scope:p.scope||series.scope,identityVerified:p.identityVerified??series.identityVerified??false,seriesId:series.id,fromHistorySeries:true,seriesScope:series.scope,seriesIdentityVerified:series.identityVerified??false,subjectRecordId:series.subjectRecordId||null,identitySourceIds:clone(series.identitySourceIds||[]),contextCommunityId:series.contextCommunityId||null,linkBasis:series.linkBasis||null,geography:series.geography,segment:series.segment,registration:series.registration,observationKind:p.observationKind||series.observationKind||'aggregate',publishedAt:p.publishedAt||series.publishedAt,firstAvailableAt:p.firstAvailableAt||series.firstAvailableAt,native:clone(native)};
+   if(series.recordLinkReview)expanded.recordLinkReview=clone(series.recordLinkReview);
    out.push(expanded);
    if(expanded.metric==='price'&&['subject','area_context','community_context'].includes(expanded.scope)&&Number.isInteger(p.sampleCount)&&p.sampleCount>=0)out.push({...expanded,id:expanded.id+':eligible-count',metric:'volume',value:p.sampleCount,unit:'eligible sales count',observationKind:'source_count',derivedFromNativeCount:true,medianQualityStatus:p.qualityStatus,qualityStatus:/^withheld median: sparse\/invalid$/.test(p.qualityStatus||'')?'Native eligible count retained; median sample gate does not apply.':p.qualityStatus});
   }
  }
  return out;
+}
+/** Apply only reviewed exact-record geographic revisions, preserving raw fields. */
+export function applyCommunityCorrections(payload,corrections){
+ if(!Array.isArray(payload?.projects))return payload;
+ return {...payload,projects:payload.projects.map(project=>{
+  const correction=corrections.find(c=>c.recordId===project.id||c.recordId==='project:'+project.slug);
+  if(!correction||project.emirate&&project.emirate!==correction.emirate)return project;
+  return {...project,area:correction.area,communityId:correction.communityId,communityAssociationReview:{...clone(correction),priorArea:project.area??null,priorCommunityId:project.communityId??null}};
+ })};
 }
 function observationKey(o){
  if(o.transactionId||o.sourceObservationId)return`${o.sourceId}|${o.transactionId||o.sourceObservationId}|${metric(o.metric)||o.metric}`;
@@ -142,6 +152,7 @@ export function validateObservation(observation,record,{asOf,sources=[],minimumS
  let date=null;try{date=parseEvidenceDate(o.period);}catch{issues.push('invalid_native_period');}
  if(date&&lastInstant(date)>lastInstant(asOf))issues.push('incomplete_or_future_period');
  if(o.duplicateConflict)issues.push('conflicting_source_revision');
+ if(o.recordLinkReview?.status==='rejected')issues.push('rejected_record_geography_link');
  const medianSampleOnly=/^withheld median: sparse\/invalid$/.test(o.qualityStatus||'')&&finite(o.value)&&o.value>0&&Number.isInteger(o.sampleCount)&&o.sampleCount>=0&&o.sampleCount<minimumSample;
  if(o.qualityStatus&&!medianSampleOnly&&/conflict|invalid|withheld|quarantin|unverified/.test(o.qualityStatus))issues.push('source_quality_review');
  if(o.status&&/conflict|invalid|quarantin/.test(o.status))issues.push('source_quality_review');
@@ -285,6 +296,7 @@ export function validateScenarioAssumptions(input={}){
  return clone(input);
 }
 function eligibleAnchor(anchor,record,sources,asOf){
+ if(anchor?.recordLinkReview?.status==='rejected'||/conflict|quarantin|unverified|invalid/i.test([anchor?.qualityStatus,anchor?.status].filter(Boolean).join(' ')))return false;
  if(!anchor||!finite(anchor.value)||anchor.value<=0||!anchor.unit||!anchor.period||anchor.scope!=='subject'||anchor.identityVerified!==true)return false;
  if(anchor.recordId&&anchor.recordId!==record.id)return false;
  const source=sources.find(s=>s.id===anchor.sourceId);if(!source)return false;
