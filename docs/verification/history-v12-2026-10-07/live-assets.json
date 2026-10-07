@@ -1,0 +1,37 @@
+{
+  "origin": "https://espacios.me",
+  "release": "20261007-history-v12-neutral-ui",
+  "checkedAt": "2026-10-07T08:23:19.429Z",
+  "readOnly": true,
+  "rows": [
+    {
+      "endpoint": "/map",
+      "status": 200,
+      "frontendRelease": "20261007-history-v12-neutral-ui",
+      "liveSHA256": "473ec25a4a7a8ef7a4f1e717035618e9931e7aa3f1c90dcd073ff52aaaa64e29",
+      "candidateSHA256": "6469c93c80fcbc6e73d261a3c1e55f9fdefa433b2ec31e8eefa1b589e96e70ec",
+      "exactEqual": false,
+      "versionedAssetLinks": true,
+      "htmlComparison": "Hashes retained; canonical shell/Cloudflare transformations may legitimately alter HTML."
+    },
+    {
+      "endpoint": "/map/app-v2.js?v=20261007-history-v12-neutral-ui",
+      "status": 200,
+      "frontendRelease": "20261007-history-v12-neutral-ui",
+      "liveSHA256": "49edaf64c8870b5a925f71e01599d1a9dcc5c94ff4a343db715aca080c72dc13",
+      "candidateSHA256": "49edaf64c8870b5a925f71e01599d1a9dcc5c94ff4a343db715aca080c72dc13",
+      "exactEqual": true,
+      "completeSelectedSeriesUI": true,
+      "unresolvedSourceLabel": true
+    },
+    {
+      "endpoint": "/map/app-v2.css?v=20261007-history-v12-neutral-ui",
+      "status": 200,
+      "frontendRelease": "20261007-history-v12-neutral-ui",
+      "liveSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "candidateSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "exactEqual": true
+    }
+  ],
+  "passed": true
+}

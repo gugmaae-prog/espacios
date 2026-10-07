@@ -1,0 +1,39 @@
+{
+  "connected": true,
+  "expectedFrontendRelease": "20261007-history-v12-neutral-ui",
+  "expectedWorkerVersion": "2e102855-5388-4793-b14c-8de2452183ad",
+  "latestRelease": {
+    "id": "348683c3-52d6-4aaa-83ce-3b4a1c677825",
+    "environment": "production",
+    "release_tag": "20261007-enrichment-v12",
+    "frontend_release": "20261007-history-v12-neutral-ui",
+    "github_sha": "55297fd1f436853491cea1a89e2606077adb9106",
+    "github_pr": 54,
+    "cloudflare_worker": "psr-portfolio-map-v2",
+    "cloudflare_worker_version": "2e102855-5388-4793-b14c-8de2452183ad",
+    "cloudflare_deployment_id": "674bcafe-37c8-4b43-89f6-0b9c21326339",
+    "data_room_public": false,
+    "source_sync_state": "reconciled",
+    "metadata": {
+      "facts": 4123,
+      "events": 105,
+      "records": 1860,
+      "sources": 2925,
+      "root_sha256": "a0add7a06d7f826d290fcb4bc83a10831faf38654b2e25a51692f52f8725338b",
+      "pull_requests": [
+        54
+      ],
+      "history_series": 13396,
+      "event_exposures": 7382,
+      "coverage_missing": 27578,
+      "coverage_partial": 2180,
+      "coverage_present": 3722,
+      "public_aggregates": 317878,
+      "research_complete": false,
+      "canonical_api_verified": true,
+      "coverage_unestablished": 9300,
+      "canonical_assets_verified": true
+    },
+    "created_at": "2026-10-07T08:25:23.27106+00:00"
+  }
+}

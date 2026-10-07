@@ -1,0 +1,38 @@
+{
+  "origin": "https://espacios.me/map",
+  "checkedAt": "2026-10-07T08:28:08.541481+00:00",
+  "method": "Interactive live browser verification after V12 deployment",
+  "checks": {
+    "lightAndDarkControls": true,
+    "desktopViewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390
+    },
+    "muheiraHistoricalAdvertisement": {
+      "amountAED": 1200000,
+      "date": "2025-05-22",
+      "class": "advertised asking price",
+      "firstAvailable": "2026-10-07"
+    },
+    "muheiraVerifiedLaunch": "2025-05-22",
+    "scenarioFirstYear": 2027,
+    "scenarioLastYear": 2080,
+    "annualSlots": 54,
+    "missingScenarioInputsRemainUnavailable": true,
+    "browserViewportRestored": true,
+    "originalLightThemeRestored": true
+  },
+  "screenshots": [
+    "live-neutral-controls.jpg",
+    "live-mobile.jpg",
+    "live-dark.jpg"
+  ],
+  "limits": [
+    "Targeted Map interactions; not an audit of every platform or private workflow."
+  ]
+}

@@ -102,3 +102,12 @@ input data, transformations and existing archive vintages. New generated objects
 are ignored to avoid duplicating the full compressed history on each snapshot.
 A fresh checkout must run `npm run history:build` before tests/publication; CI
 already does so. Clean-checkout reproduction must match the reviewed root hash.
+
+## Verified publication
+
+PR [#54](https://github.com/gugmaae-prog/espacios/pull/54) merged and was deployed
+at 08:22 UTC on 7 October 2026. All 1,661 immutable objects and 35,423 index
+statements verified, followed by canonical API, asset and targeted browser
+checks. See the [release receipt](verification/history-v12-2026-10-07/release.json)
+and [next primary-source review queue](history-next-primary-review.md). The
+temporary scoped publication Worker and its local credential files were removed.
