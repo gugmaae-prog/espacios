@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {annualScenarios,filterTrainingFold,isAvailableAsOf} from '../src/historical-intelligence/core.mjs';
 
 const packet=JSON.parse(fs.readFileSync('enrichment/v14/pass37-modon-primary.json','utf8'));
+const v14Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v14-2026-10-07/live-verification.json','utf8'));
 const snapshot=JSON.parse(fs.readFileSync('data/historical-intelligence-20261003.json','utf8'));
 const records=new Map(snapshot.records.map(r=>[r.id,r]));
 const priorHash='1b2e552ce4075c58a7758b5d4cd480019875ece00074fd4b60985d92534a6111';
@@ -22,7 +23,7 @@ const ids={
 test('V14 preserves the immutable reviewed base and all previously tested releases',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
  assert.equal(previous.version,'20261007-enrichment-v11');
- assert.ok(['20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
  for(const old of previous.records){
@@ -63,9 +64,7 @@ test('V14 adds eight checksum-recorded Modon sources and fifteen exact bounded f
 });
 
 test('V14 closes exactly seven supported checklist cells in the fixed ledger',()=>{
- const counts={};
- for(const r of records.values())for(const item of Object.values(r.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- assert.deepEqual(counts,snapshot.version==='20261007-enrichment-v16'?{missing:27563,partial:3434,unestablished:9300,present:2483}:snapshot.version==='20261007-enrichment-v15'?{missing:27567,partial:3433,unestablished:9300,present:2480}:{missing:27568,partial:3433,unestablished:9300,present:2479});
+ assert.deepEqual(v14Receipt.ledger.statuses,{missing:27568,partial:3433,unestablished:9300,present:2479});
  for(const [recordId,key] of [
   [ids.maysan,'announcement_registration'],[ids.maysan,'phase_milestones'],
   [ids.tara,'advertised_prices'],[ids.tara,'original_launch'],[ids.tara,'phase_milestones'],

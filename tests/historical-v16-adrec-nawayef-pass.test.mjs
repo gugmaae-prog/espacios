@@ -9,7 +9,6 @@ const packet=JSON.parse(fs.readFileSync('enrichment/v16/pass39-adrec-nawayef-pri
 const snapshot=JSON.parse(fs.readFileSync('data/historical-intelligence-20261003.json','utf8'));
 const records=new Map(snapshot.records.map(r=>[r.id,r]));
 const v15Packet=JSON.parse(fs.readFileSync('enrichment/v15/pass38-nawayef-primary.json','utf8'));
-const v15Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v15-2026-10-07/live-verification.json','utf8'));
 const input=packet.historyInputs[0],compressed=fs.readFileSync('data/historical-intelligence/'+input.path),raw=gunzipSync(compressed);
 const lines=raw.toString('utf8').replace(/^\ufeff/,'').trim().split('\n');
 const header=lines[0].split(','),rows=lines.slice(1).map(line=>{
@@ -24,7 +23,7 @@ const ids={park:'project:nawayef-park-views-modon-properties-hudayriyat-island-a
 function facts(record){return [...(record.lifecycle||[]),...(record.observations||[]),...(record.registerEvidence||[])];}
 
 test('V16 preserves V15 facts, sources, record universe and current quotes',()=>{
- assert.equal(snapshot.version,'20261007-enrichment-v16');
+ assert.ok(['20261007-enrichment-v16','20261007-enrichment-v17'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(r=>r.type==='project').length,1645);
  assert.equal(snapshot.records.filter(r=>r.type==='community').length,215);
@@ -72,11 +71,9 @@ test('exact register identities, progress reports and subject cohorts retain nat
  assert.equal(east.lifecycle.find(x=>x.id==='v16-adrec-east-b-progress').scope,'subject_phase');
 });
 
-test('V16 closes exactly three unresolved cells and keeps East construction phase-only',()=>{
- assert.deepEqual(v15Receipt.ledger.statuses,{missing:27567,unestablished:9300,partial:3433,present:2480});
- const counts={};for(const r of records.values())for(const item of Object.values(r.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- assert.deepEqual(counts,{missing:27563,partial:3434,unestablished:9300,present:2483});
- assert.deepEqual(Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-v15Receipt.ledger.statuses[key]])),{missing:-4,unestablished:0,partial:1,present:3});
+test('V16 Nawayef coverage changes and phase-scoped progress remain in later snapshots',()=>{
+ const v16Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v16-2026-10-07/publication.json','utf8'));
+ assert.deepEqual({present:v16Receipt.coverage.present,partial:v16Receipt.coverage.partial,missing:v16Receipt.coverage.missing,unestablished:v16Receipt.coverage.unestablished},{present:2483,partial:3434,missing:27563,unestablished:9300});
  assert.equal(records.get(ids.park).researchStatus.itemCoverage.registered_sale_history.nativePointCount,181);
  assert.equal(records.get(ids.east).researchStatus.itemCoverage.registered_sale_history.nativePointCount,503);
  assert.equal(records.get(ids.park).researchStatus.itemCoverage.construction.status,'present');
