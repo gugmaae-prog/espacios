@@ -1,0 +1,12 @@
+{
+  "worker": "espacios-history-publisher-20261005",
+  "deletedAt": "2026-10-07T09:46:24.348206+00:00",
+  "deleteCommandSucceeded": true,
+  "workersDevURL": "https://espacios-history-publisher-20261005.thekeifferjapeth.workers.dev",
+  "postDeleteHTTPStatus": 404,
+  "localCredentialFilesRemoved": [
+    "publisher-token",
+    "publisher-header"
+  ],
+  "productionWorkerUnaffected": "psr-portfolio-map-v2"
+}

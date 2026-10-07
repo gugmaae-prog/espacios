@@ -1,0 +1,34 @@
+{
+  "origin": "https://espacios.me/map",
+  "checkedAt": "2026-10-07T09:42:00Z",
+  "method": "Interactive live browser verification after the V13 seamless-palette deployment",
+  "release": "20261007-history-v13-seamless-ui",
+  "checks": {
+    "lightTheme": true,
+    "darkTheme": true,
+    "legacyGoldAliasesResolveToEspaciosAccent": true,
+    "visibleComputedGoldMatches": 0,
+    "activeControlShadow": false,
+    "activeControlsUseSoftSelectionSurface": true,
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390
+    },
+    "mobileHorizontalOverflow": false,
+    "scenarioFirstYear": 2027,
+    "scenarioLastYear": 2080,
+    "annualSlots": 54,
+    "browserViewportRestored": true,
+    "finalTheme": "light",
+    "finalFocusMode": false,
+    "finalHistoryPanelOpen": false
+  },
+  "screenshots": [
+    "live-light.png",
+    "live-mobile.png"
+  ],
+  "limits": [
+    "Targeted public Map interactions; private workflows and every panel state were outside this palette acceptance."
+  ]
+}
