@@ -17,6 +17,26 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V15 Nawayef current evidence candidate — 7 October 2026 (Dubai)
+
+`20261007-enrichment-v15` preserves all **1,645 projects and 215 communities**
+and adds three checksum-recorded Modon sources with six facts for Nawayef Park
+Views and Nawayef East. Five pages were reviewed; two exact dated releases already
+preserved in V12 were not duplicated. See the
+[V15 review](docs/history-v15-nawayef-review.md).
+
+One supported checklist cell closes: Nawayef East phase milestones. The fixed
+42,780-cell ledger now has **2,480 present, 3,433 partial, 27,567 missing and
+9,300 unestablished** items: **94.20% unresolved**. Current advertisements remain
+separate from transactions and valuations; handover dates remain planned targets;
+TBC has no numeric value; and the joint East/West construction contract remains
+combined rather than divided or labelled as physical start.
+
+No complete lifetime history or validated 2080 forecast is certified. Conditional
+annual slots remain exactly 2027–2080, with unsupported values null. Publication
+will follow only after the complete preservation, storage, test and production
+dry-run gates pass.
+
 ## Published V14 Modon evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v14` preserves all **1,645 projects and 215 communities**
