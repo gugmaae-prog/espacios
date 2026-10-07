@@ -108,6 +108,7 @@ test('explicit context study never promotes subject history and annual windows r
  const r={...record,observations:eventRows('area_context')};
  assert.equal(eventStudy(r,event,{asOf,sources,exposures:[exposure]}).status,'insufficient_evidence');
  const context=eventStudy(r,event,{asOf,sources,scope:'area_context',exposures:[exposure]});assert.equal(context.classification,'descriptive_context_association');assert.equal(context.subjectEvidence,false);
+ const community=eventStudy({...record,observations:eventRows('community_context')},event,{asOf,sources,scope:'community_context',exposures:[exposure]});assert.equal(community.classification,'descriptive_context_association');assert.equal(community.subjectEvidence,false);assert.equal(community.causalAttribution,false);
  const annual={...record,observations:[observation('2020',100,{frequency:'annual'}),observation('2022',120,{frequency:'annual'})]};
  const out=eventStudy(annual,event,{asOf,sources,frequency:'annual',exposures:[exposure]});assert.equal(out.preWindow.expectedPeriods,1);assert.equal(out.postWindow.expectedPeriods,1);assert.equal(out.causalAttribution,false);
 });

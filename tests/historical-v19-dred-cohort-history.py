@@ -104,7 +104,7 @@ def main():
     monthly_series = []
     for record in snapshot["records"]:
         for series in record.get("historySeries", []):
-            if series.get("sourceId") != SOURCE_ID:
+            if series.get("sourceId") != SOURCE_ID or not series.get("id", "").startswith("v19-dred-"):
                 continue
             if series.get("observationKind") == "transaction":
                 transaction_series.append(series)

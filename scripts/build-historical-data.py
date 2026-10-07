@@ -8,8 +8,9 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261007-enrichment-v19'
-ASOF = '2026-10-07'
+VERSION = '20261008-enrichment-v20'
+ASOF = '2026-10-08'
+ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json']
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -149,7 +150,7 @@ def build():
  data,inputs=load_inputs();inv=data['inventory'];profiles={x['Record ID']:x for x in data['profiles']}
  capture_asof=inv.get('asOf') or SOURCE_CAPTURE_DATE
  if ASOF<capture_asof:raise ValueError('Snapshot as-of cannot precede the retained source collection; this is not a point-in-time replay')
- original_public_rows=len(data['history']);enrichment=load_enrichment(BASE);new_history_rows=[]
+ original_public_rows=len(data['history']);enrichment=load_enrichment(BASE,ENRICHMENT_SIDECARS);new_history_rows=[]
  if enrichment:
   for item in enrichment.get('historyInputs',[]):new_history_rows.extend(item['rows'])
  early_path=BASE/'early-history-manifest.json';early=None
@@ -379,13 +380,13 @@ def build():
  print(json.dumps({'version':VERSION,**publication['counts'],'partitions':len(partition_groups),'embeddedBytes':(ROOT/'data/historical-intelligence-20261003.json').stat().st_size,'sourceCandidateProjects':len(candidate_p),'sourceCandidateCommunities':len(candidate_c),'unresolvedLegacySeriesIds':len({s for r in records for s in r['researchStatus']['unresolvedSeriesIds']}),'approvedSubjectHistoryRecords':sum(any(s['scope']=='subject' and s.get('identityVerified') for s in r['historySeries']) for r in records),'approvedSubjectHistoryRecordMetricPairs':manifest['directSubjectSaleHistoryRecords']+manifest['directSubjectRentHistoryRecords'],'approved2080Forecasts':0,'objectsBytes':sum(x['bytes'] for x in publication['objects'])}))
 
 if __name__=='__main__':
- parser=argparse.ArgumentParser();parser.add_argument('--runtime-only',action='store_true');parser.add_argument('--import-workspace',type=pathlib.Path);parser.add_argument('--version',default=VERSION);parser.add_argument('--as-of',default=ASOF);args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--runtime-only',action='store_true');parser.add_argument('--import-workspace',type=pathlib.Path);parser.add_argument('--version',default=VERSION);parser.add_argument('--as-of',default=ASOF);parser.add_argument('--enrichment-sidecar',action='append',default=None);args=parser.parse_args()
  if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,79}',args.version):parser.error('version must be 1–80 letters, digits, dots, underscores or hyphens; start with a letter or digit')
  try:
   parsed=datetime.date.fromisoformat(args.as_of)
   if parsed.isoformat()!=args.as_of:raise ValueError('Use YYYY-MM-DD')
  except ValueError:parser.error('as-of must be a valid date in YYYY-MM-DD format')
- VERSION=args.version;ASOF=args.as_of
+ VERSION=args.version;ASOF=args.as_of;ENRICHMENT_SIDECARS=args.enrichment_sidecar if args.enrichment_sidecar is not None else ENRICHMENT_SIDECARS
  if args.runtime_only:
   runtime=build_runtime_index(read_json(ROOT/'data/historical-intelligence-20261003.json'),read_json(BASE/'publication-manifest.json'))
   print(json.dumps(runtime['manifest']['runtime']));raise SystemExit(0)

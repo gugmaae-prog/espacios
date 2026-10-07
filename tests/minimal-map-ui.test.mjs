@@ -7,6 +7,7 @@ const app=await fs.readFile(new URL('../src/minimal-map/app.js',import.meta.url)
 const css=await fs.readFile(new URL('../src/minimal-map/style.css',import.meta.url),'utf8');
 const worker=await fs.readFile(new URL('../src/worker.js',import.meta.url),'utf8');
 const builder=await fs.readFile(new URL('../scripts/build-smart.mjs',import.meta.url),'utf8');
+const baseApp=await fs.readFile(new URL('../src/assets/app-v2.js',import.meta.url),'utf8');
 
 test('minimal composition exposes the approved controls without changing evidence ownership',()=>{
   for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Transaction Volume','Forecast'])assert.ok(app.includes(label),label);
@@ -18,12 +19,14 @@ test('minimal composition exposes the approved controls without changing evidenc
 });
 
 test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
-  assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 6%,var\(--su-panel\)\)/);
-  assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 18%,var\(--su-line\)\)/);
+  assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
+  assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 14%,var\(--su-line\)\)/);
   assert.match(css,/\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/#minimal-map-modes button\[aria-pressed="true"\][\s\S]*?background:var\(--minimal-selected\);border:1px solid var\(--minimal-selected-line\)/);
   assert.match(css,/#minimal-map-modes button\{[^}]*transition:background-color \.16s ease,border-color \.16s ease,color \.16s ease/);
   assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:var\(--minimal-surface\)!important[\s\S]*?color:var\(--su-ink\)!important/);
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:var\(--minimal-selected\)!important[\s\S]*?box-shadow:inset 0 -2px 0 var\(--minimal-accent\)!important/);
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
   assert.match(css,/--eg-theme-apricot:var\(--minimal-neutral\)/);
@@ -55,8 +58,9 @@ test('selection and watchlist colors use Espacios slate and teal, not legacy gol
   assert.doesNotMatch(app,/PSR_GOLD/);
   assert.ok(worker.includes("setPaintProperty('ae-emerging-hotspots','circle-color',expression)"));
   assert.match(builder,/paletteCopyReplacements/);
-  assert.match(builder,/muted teal outline marks selection/);
+  assert.match(builder,/Selected places are outlined for orientation, not as a price signal/);
   assert.match(builder,/do not represent expected property returns/);
+  assert.doesNotMatch(baseApp,/Gold (?:indicates|is this selected)|Gold remains selection-only/);
 });
 
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{

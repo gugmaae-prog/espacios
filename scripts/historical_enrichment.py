@@ -3,11 +3,26 @@ import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip
 from copy import deepcopy
 from historical_gap_ledger import refresh_research_coverage, period_start
 
-def load_enrichment(base):
+def load_enrichment(base, sidecars=()):
  path=base/'scrape-enrichment.json'
  if not path.exists():return None
  packet=json.loads(path.read_text())
  if packet.get('schemaVersion')!=1:raise ValueError('Unsupported enrichment schema')
+ for relative in sidecars:
+  target=(base/relative).resolve()
+  if target.parent!=base.resolve():raise ValueError('Enrichment sidecar must be a direct reviewed file under the history base')
+  sidecar_bytes=target.read_bytes();supplement=json.loads(sidecar_bytes)
+  if supplement.get('schemaVersion')!=1 or not supplement.get('passId') or not supplement.get('asOf'):
+   raise ValueError('Unsupported enrichment sidecar schema or missing pass identity')
+  if any(item.get('passId')==supplement['passId'] for item in packet.get('collection',{}).get('passes',[])):
+   raise ValueError('Duplicate enrichment pass identity')
+  for key in ['sources','facts','seriesLinks','historyInputs','licensedArchives','additionalDatasets','recordResearch','sourceCandidates']:
+   packet.setdefault(key,[]).extend(supplement.get(key,[]))
+  packet.setdefault('collection',{}).setdefault('passes',[]).append(supplement.get('collection',{}))
+  packet.setdefault('supplementalPasses',[]).append({'passId':supplement['passId'],'asOf':supplement['asOf'],'path':relative,'sha256':hashlib.sha256(sidecar_bytes).hexdigest(),'bytes':len(sidecar_bytes)})
+  packet['asOf']=max(packet['asOf'],supplement['asOf'])
+  if supplement.get('methodology'):
+   packet['methodology']=packet.get('methodology','').rstrip()+'\n\n'+supplement['methodology']
  for item in packet.get('historyInputs',[]):
   target=base/item['path']
   if target.resolve().parent!=base.resolve():raise ValueError('History input must be a direct public derived file')
@@ -170,4 +185,4 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   if launch or complete or record.get('registerEvidence') or record['observations']:status['status']='partially_sourced; complete financial coverage not established'
   record['coverageSummary']['newFinancialEvidencePoints']=len(record['observations']);record['coverageSummary']['lifecycleEvidencePoints']=len(record['lifecycle'])
   refresh_research_coverage(record,series,sources,asof)
- return {'asOf':packet['asOf'],'counts':dict(counters),'collection':packet.get('collection',{}),'methodology':packet.get('methodology'),'rawBodiesRedistributed':False,'additionalDatasets':packet.get('additionalDatasets',[]),'sourceCandidateRecords':len({x['recordId'] for x in packet.get('sourceCandidates',[]) if x.get('recordId')}),'incompleteFinancialCoverageRemainsExplicit':True}
+ return {'asOf':packet['asOf'],'counts':dict(counters),'collection':packet.get('collection',{}),'methodology':packet.get('methodology'),'supplementalPasses':packet.get('supplementalPasses',[]),'rawBodiesRedistributed':False,'additionalDatasets':packet.get('additionalDatasets',[]),'sourceCandidateRecords':len({x['recordId'] for x in packet.get('sourceCandidates',[]) if x.get('recordId')}),'incompleteFinancialCoverageRemainsExplicit':True}

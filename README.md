@@ -17,6 +17,24 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V20 DLD-derived community context — production, 8 October 2026 (Dubai)
+
+The production V20 snapshot preserves the fixed **1,645 projects and 215 communities**. It adds **13,586 monthly sale-price context points for 44 Dubai community records** from a pinned public DLD-derived distribution under CC BY 4.0. The source's free-text `master_project_name` is matched only to one unique catalogue community name. It is not a DLD community ID, verified boundary, or project identity. These links retain `community_context` scope and are not project prices.
+
+The source extract contains **561,282 eligible sales** from **2 June 2003 to 31 July 2026** by DLD registration date across 45 exact-name candidates. Existing V19 community series already retain **67,268 candidate record/transaction pairs**. One candidate, Palm Jumeirah, receives no duplicate V20 series because it has no new links and is already covered by its exact official-area series. The 44 new monthly cohorts summarize **539,872 source rows**; this includes **45,858 Business Bay rows already represented in a narrower area cohort**, so those counts must not be added together. Medians below 20 eligible sales are withheld: **8,912 of 13,586** points show sample counts without a median. The raw Parquet is not redistributed.
+
+This is a latest-vintage descriptive extract, not a point-in-time history. It does not establish a project's lifetime prices, rents, completion, occupancy, or a causal event effect. The evidence checklist remains at **39,684 of 42,780 requirements unresolved (92.76%)**; this requirement measure is not a percentage of missing prices. There are **zero approved 2080 forecasts**. Annual scenario slots remain conditional and unsupported values remain null. The production snapshot root is `98d686ca18d6e887cb9dff2eed58c6ac9dfe6a781901f4cc9731e6a3f158fa28`. The V20 data release remains intact under its original Worker version; the currently serving Worker also includes the palette follow-up below. See the [V20 production receipt](docs/verification/history-v20-2026-10-08/README.md).
+
+## Seamless Map palette refinement — 8 October 2026 (Dubai)
+
+The previous interface inherited gold as a selection/fallback accent, and its help text described that color as selection-only. It never represented price growth or investment value. The mobile Map control separately kept an opaque navy fill, which made the selected state much stronger than nearby Espacios controls.
+
+The current interface uses a low-contrast, theme-aware surface and slate border for selection, with a restrained teal underline. Fallback locations and hotspot/watchlist indicators use muted slate/teal. Updated copy says selection is for orientation and colors do not indicate value. Legacy CSS variable names remain only as compatibility aliases to the new palette.
+
+This visual-only follow-up preserves the V20 evidence snapshot and all 1,860 catalogue records. It was built from source commit `5d04164e7632789e93f21bf56be53ee379188b2b` and is served at 100% by Worker `psr-portfolio-map-v2`, version `129a681a-5172-4b25-90cc-44951560d72b`, deployment `4849e07c-e488-4133-8a41-0d69dfdf1fb2`. Production checks passed: `npm run verify` (165 tests), `npm run cf:dry-run`, and live `/map` returned HTTP 200 with the `20261008-map-palette-v21` frontend token. See the [release receipt](docs/verification/history-v20-2026-10-08/README.md).
+
+Next, validate official community identifiers and boundaries, widen the exact project identity review beyond 263 candidates, and source attributable record-level sale, rent, lifecycle and occupancy evidence. Keep sparse and unavailable periods visible. Add event studies only when local exposure, comparable controls, mix changes and concurrent supply can be tested; news and infrastructure milestones receive no mechanical price uplift. The detailed [V20 source and method note](docs/history-v20-dred-master-community-context.md) documents the joins, sample gates, overlap and reproducible build.
+
 ## V19 DLD-derived transaction histories and map palette — 7 October 2026
 
 `20261007-enrichment-v19` preserves the fixed **1,645 projects and 215
@@ -45,9 +63,10 @@ and property-type cohorts without mix adjustment. Of 6,803 monthly summaries,
 raw Parquet remains local. A 9.2 MB compressed, attributable filtered history
 input and its immutable source partitions preserve the selected rows.
 
-The map’s last inherited gold accents were fallback-evidence markers and a
-decorative emirate mark, not an appreciation signal. They now use the shared
-neutral slate/teal Espacios palette; fallback evidence remains visibly distinct.
+The older interface used gold for selection and fallback-evidence accents, not
+as an appreciation signal. The current palette removes those visible gold
+accents and uses a quiet, theme-aware slate/teal treatment; fallback evidence
+remains visibly distinct.
 
 **Production release (8 October 2026, Dubai time):** PR [#72](https://github.com/gugmaae-prog/espacios/pull/72)
 merged at `939ef659c01c254639304a9f3baf72f9e1bd1f36`. Cloudflare Worker
