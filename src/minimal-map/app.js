@@ -139,7 +139,7 @@
 
     const metric=document.createElement('div');metric.id='minimal-metrics';metric.setAttribute('role','group');metric.setAttribute('aria-label','Data point');
     const items=[
-      ['price','Price / sqft','gold'],
+      ['price','Price / sqft','accent'],
       ['roi','ROI','neutral'],
       ['volume','Transaction Volume','blue'],
       ['forecast','Forecast','green']

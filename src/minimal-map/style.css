@@ -105,7 +105,7 @@ html[data-minimal-map="1"] body #app #minimal-metrics button{
   box-shadow:0 2px 12px #0000000a;
 }
 html[data-minimal-map="1"] body #app #minimal-metrics button i{width:10px;height:10px;border-radius:50%;background:var(--minimal-neutral);}
-html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="gold"] i{background:var(--minimal-accent);}
+html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="accent"] i{background:var(--minimal-accent);}
 html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="blue"] i{background:var(--minimal-blue);}
 html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="green"] i{background:var(--minimal-green);}
 html[data-minimal-map="1"] body #app #minimal-metrics button[aria-pressed="true"]{
