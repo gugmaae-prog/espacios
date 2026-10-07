@@ -136,7 +136,12 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   if status.get('recordId') not in known:raise ValueError('Research status orphan record')
   safe={k:v for k,v in status.items() if k!='recordId'}
   safe['sourceIds']=list(dict.fromkeys(sid(x) for x in (safe.get('sourceIds',[])+safe.get('captureSourceIds',[]))))
-  known[status['recordId']]['researchStatus']['sourceCollection']=safe
+  research=known[status['recordId']]['researchStatus']
+  previous=research.get('sourceCollection')
+  if previous and previous!=safe:
+   history=research.setdefault('sourceCollectionHistory',[])
+   if previous not in history:history.append(previous)
+  research['sourceCollection']=safe
  for record in records:
   status=record['researchStatus'];status.setdefault('originalAuditGaps',list(status.get('gaps',[])))
   whole=lambda x,kind:x['kind']==kind and x['status']=='verified' and x.get('scope')=='subject' and x.get('primaryEvidence') is True and x.get('eventStatus')!='planned' and period_start(x['date']['start'])<=asof

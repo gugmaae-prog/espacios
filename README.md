@@ -27,6 +27,12 @@ No complete lifetime sale/rent history or validated 2080 forecast is certified. 
 
 V17 source changes merged in [PR #65](https://github.com/gugmaae-prog/espacios/pull/65) at `d742602ec98a2ed718fe2287d0d961d7a1a36b61`. Cloudflare Worker version `18f283b7-881a-4e0e-97a1-9c40faa13c41` is served by deployment `22e14b7f-2a18-4e63-9b97-a9b815e32988` at 100% traffic. Production record-history, event and control-plane APIs, immutable R2/D1 publication and the Supabase release registry reconcile to V17. The UI retains the prior verified, soft slate/teal selection treatment; no gold selection styling is visible.
 
+## V18 ADREC detail-page research — verified source packet
+
+The V18 candidate snapshot preserves all **1,645 projects and 215 communities** and adds **291 exact-ID ADREC project-detail register snapshots** plus **145 dated construction-progress observations** from latest inspection reports. Fourteen detail requests returned no usable project detail; one report date (`2028-07-28`) was after the `2026-10-07` snapshot cutoff and its report metrics were excluded. No sale, rent, valuation or transaction observations were added. See the [V18 source review](docs/history-v18-adrec-detail-review.md). Production publication status and receipts will be recorded separately.
+
+The evidence ledger remains at **3,090 present, 3,434 partial, 26,956 missing and 9,300 unestablished** requirements: **39,690 of 42,780 (92.78%) unresolved**. The aggregate history remains **318,562 observations, 13,401 series, 3,239 sources, 105 events and 7,382 event exposures**. Complete lifetime sale/rent histories and validated 2080 forecasts are still not established. Annual 2027–2080 scenarios keep unsupported values null. The map stays in the verified Espacios slate/teal palette without gold; the Data Room remains restricted.
+
 ## Published V16 ADREC Nawayef evidence and refined Espacios controls — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v16` preserves all **1,645 projects and 215 communities**
