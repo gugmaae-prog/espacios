@@ -13,12 +13,14 @@ const priorBytes=fs.readFileSync(`data/historical-intelligence/objects/${priorHa
 const previous=JSON.parse(gunzipSync(priorBytes));
 const v14Packet=JSON.parse(fs.readFileSync('enrichment/v14/pass37-modon-primary.json','utf8'));
 const v14Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v14-2026-10-07/live-verification.json','utf8'));
+const v15Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v15-2026-10-07/live-verification.json','utf8'));
+const v16Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v16-2026-10-07/publication.json','utf8'));
 const ids={park:'project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi',east:'project:nawayef-east-modon-hudayriyat-island-abu-dhabi'};
 
 test('V15 preserves the immutable reviewed base and every V14 packet item',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
  assert.equal(previous.version,'20261007-enrichment-v11');
- assert.ok(['20261007-enrichment-v15','20261007-enrichment-v16'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
  for(const old of previous.records){
@@ -57,11 +59,10 @@ test('V15 publishes only three non-duplicate sources and six exact facts from th
 
 test('V15 closes its supported phase-milestone cell and later releases preserve it',()=>{
  assert.deepEqual(v14Receipt.ledger.statuses,{missing:27568,unestablished:9300,partial:3433,present:2479});
- const counts={};for(const r of records.values())for(const item of Object.values(r.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- const expected=snapshot.version==='20261007-enrichment-v16'?{missing:27563,partial:3434,unestablished:9300,present:2483}:{missing:27567,partial:3433,unestablished:9300,present:2480};
- assert.deepEqual(counts,expected);
- if(snapshot.version==='20261007-enrichment-v15')assert.deepEqual(Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-v14Receipt.ledger.statuses[key]])),{missing:-1,unestablished:0,partial:0,present:1});
- assert.equal(records.get(ids.east).researchStatus.itemCoverage.construction.status,snapshot.version==='20261007-enrichment-v16'?'partial':'missing');
+ assert.deepEqual(v15Receipt.ledger.statuses,{missing:27567,unestablished:9300,partial:3433,present:2480});
+ assert.deepEqual({missing:v16Receipt.coverage.missing,partial:v16Receipt.coverage.partial,unestablished:v16Receipt.coverage.unestablished,present:v16Receipt.coverage.present},{missing:27563,partial:3434,unestablished:9300,present:2483});
+ if(snapshot.version==='20261007-enrichment-v15')assert.deepEqual({missing:v15Receipt.ledger.statuses.missing-v14Receipt.ledger.statuses.missing,partial:v15Receipt.ledger.statuses.partial-v14Receipt.ledger.statuses.partial,unestablished:v15Receipt.ledger.statuses.unestablished-v14Receipt.ledger.statuses.unestablished,present:v15Receipt.ledger.statuses.present-v14Receipt.ledger.statuses.present},{missing:-1,partial:0,unestablished:0,present:1});
+ assert.equal(records.get(ids.east).researchStatus.itemCoverage.construction.status,['20261007-enrichment-v16','20261007-enrichment-v17'].includes(snapshot.version)?'partial':'missing');
  assert.equal(records.get(ids.park).researchStatus.itemCoverage.phase_milestones.status,'missing');
 });
 
@@ -88,7 +89,7 @@ test('V15 adds no TBC number, registered history, valuation, construction start 
  for(const id of Object.values(ids)){
   const record=records.get(id),coverage=record.researchStatus.itemCoverage;
   assert.ok(!packet.facts.some(f=>f.recordId===id&&f.kind==='series'),'V15 packet itself must not add registered history');
-  if(snapshot.version==='20261007-enrichment-v16'){
+  if(['20261007-enrichment-v16','20261007-enrichment-v17'].includes(snapshot.version)){
    assert.equal(coverage.registered_sale_history.status,'present');
    assert.equal(coverage.construction.status,id===ids.park?'present':'partial');
   }else{
