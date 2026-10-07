@@ -83,6 +83,29 @@ html[data-minimal-map="1"] body #app #minimal-tools-toggle{
   border-radius:14px;background:color-mix(in srgb,var(--su-panel) 90%,transparent);color:var(--su-ink);
   -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
 }
+/* Focus-map controls originate in the legacy shell stylesheet. The live map
+   uses the shared theme-aware tokens, so replace its retired cyan state here. */
+html[data-minimal-map="1"] body #app .ae-search-map-tools button{
+  border-color:color-mix(in srgb,var(--su-line) 82%,transparent)!important;
+  background:color-mix(in srgb,var(--su-panel) 76%,transparent)!important;
+  color:var(--su-muted)!important;box-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app .ae-search-map-tools button:hover,
+html[data-minimal-map="1"] body #app .ae-search-map-tools button:focus-visible{
+  border-color:color-mix(in srgb,var(--minimal-accent) 32%,var(--su-line))!important;
+  background:color-mix(in srgb,var(--minimal-accent) 6%,var(--su-panel))!important;
+  color:var(--su-ink)!important;
+}
+html[data-minimal-map="1"] body #app .ae-map-focus-toggle.active{
+  border-color:color-mix(in srgb,var(--minimal-accent) 32%,var(--su-line))!important;
+  background:var(--minimal-selected)!important;color:var(--su-ink)!important;box-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app .map-bottom .dot.fallback{
+  background:#89959a!important;box-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app .ae-emirate-row:nth-child(3) .ae-emirate-mark{
+  background:linear-gradient(155deg,#263e46,#142b36 46%,#0a202c)!important;
+}
 @media (min-width:761px){
   html[data-minimal-map="1"] body #app .layer-rail{opacity:0;pointer-events:none;transform:translateX(-10px);transition:opacity .16s ease,transform .16s ease;}
   html[data-minimal-map="1"][data-minimal-tools="1"] body #app .layer-rail{opacity:1;pointer-events:auto;transform:none;}
