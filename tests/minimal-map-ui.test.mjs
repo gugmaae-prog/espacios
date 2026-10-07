@@ -11,6 +11,15 @@ test('minimal composition exposes the approved controls without changing evidenc
   assert.match(app,/transaction_value_aed/);
   assert.match(app,/EspaciosUnifiedMap\?\.setMetric/);
   assert.doesNotMatch(app,/DATA_ROOM_PUBLIC|SUPABASE|service_role|MARKET_R2|env\.DB/);
+  assert.match(app,/\['price','Price \/ sqft','accent'\]/);
+  assert.doesNotMatch(app,/\['price','Price \/ sqft','gold'\]/);
+});
+
+test('map focus action follows the shared neutral Espacios theme in both modes',async()=>{
+  const premium=await fs.readFile(new URL('../src/assets/premium.css',import.meta.url),'utf8');
+  assert.match(premium,/data-minimal-map="1"\] body #app \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
+  assert.match(premium,/data-minimal-map="1"\] body #app \.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
+  assert.doesNotMatch(premium,/--ae-premium-gold|201,164,93|#c9a45d/);
 });
 
 test('timeline is unframed, full width and contains no play control',()=>{

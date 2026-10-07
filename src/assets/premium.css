@@ -9,7 +9,6 @@
   --ae-premium-accent-2:#3cc7ec;
   --ae-premium-text:#f2f7f9;
   --ae-premium-muted:#94a9b5;
-  --ae-premium-gold:#c9a45d;
 }
 html,body,#app{background:#07121c!important}
 body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;color:var(--ae-premium-text)!important}
@@ -157,7 +156,7 @@ body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI"
   box-shadow:inset 0 1px 0 rgba(255,255,255,.06)!important
 }
 .ae-emirate-row:nth-child(2) .ae-emirate-mark{background:radial-gradient(circle at 25% 20%,rgba(126,232,255,.28),transparent 26%),linear-gradient(155deg,#1b4050,#152b3a 48%,#0a202e)!important}
-.ae-emirate-row:nth-child(3) .ae-emirate-mark{background:radial-gradient(circle at 62% 28%,rgba(201,164,93,.22),transparent 24%),linear-gradient(155deg,#263e46,#142b36 46%,#0a202c)!important}
+.ae-emirate-row:nth-child(3) .ae-emirate-mark{background:radial-gradient(circle at 62% 28%,rgba(126,179,177,.16),transparent 24%),linear-gradient(155deg,#263e46,#142b36 46%,#0a202c)!important}
 .ae-emirate-row:nth-child(4) .ae-emirate-mark{background:linear-gradient(155deg,#244659,#0e2f40 48%,#0a1f2b)!important}
 .ae-emirate-row:nth-child(5) .ae-emirate-mark{background:radial-gradient(circle at 30% 74%,rgba(82,174,196,.26),transparent 26%),linear-gradient(155deg,#2f4350,#162c36 46%,#0b202b)!important}
 .ae-emirate-row:nth-child(6) .ae-emirate-mark{background:linear-gradient(155deg,#24505c,#143641 52%,#0a232d)!important}
@@ -182,7 +181,7 @@ body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI"
   color:#a8bec9!important
 }
 .map-bottom .dot.exact{background:#66dff7!important;box-shadow:0 0 11px rgba(102,223,247,.5)!important}
-.map-bottom .dot.fallback{background:#c9a45d!important;box-shadow:0 0 9px rgba(201,164,93,.34)!important}
+.map-bottom .dot.fallback{background:#89959a!important;box-shadow:none!important}
 .map-bottom .sep{background:rgba(126,232,255,.11)!important}
 #visible-status,#footprint-status,#zoom-label{color:#aac3cf!important}
 
@@ -247,6 +246,27 @@ body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI"
 .ae-map-focus-toggle{min-width:66px;padding:0 10px;gap:6px;font-size:10px;font-weight:720;letter-spacing:.04em}
 .ae-map-focus-toggle svg{width:17px!important;height:17px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 .ae-map-focus-toggle.active{color:#07131d!important;background:#dff8ff!important;border-color:#83e8ff!important;box-shadow:0 4px 15px rgba(126,232,255,.18)}
+/* The production Espacios map uses shared, theme-aware tokens. Keep its
+   search actions aligned with the restrained map palette instead of the
+   retired high-contrast cyan premium treatment above. */
+html[data-minimal-map="1"] body #app .ae-search-map-tools button{
+  border-color:color-mix(in srgb,var(--su-line) 82%,transparent)!important;
+  background:color-mix(in srgb,var(--su-panel) 76%,transparent)!important;
+  color:var(--su-muted)!important;
+  box-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app .ae-search-map-tools button:hover,
+html[data-minimal-map="1"] body #app .ae-search-map-tools button:focus-visible{
+  border-color:color-mix(in srgb,var(--minimal-accent) 32%,var(--su-line))!important;
+  background:color-mix(in srgb,var(--minimal-accent) 6%,var(--su-panel))!important;
+  color:var(--su-ink)!important;
+}
+html[data-minimal-map="1"] body #app .ae-map-focus-toggle.active{
+  border-color:color-mix(in srgb,var(--minimal-accent) 32%,var(--su-line))!important;
+  background:var(--minimal-selected)!important;
+  color:var(--su-ink)!important;
+  box-shadow:none!important;
+}
 .ae-map-help-toggle{width:40px;min-width:40px;font-size:15px;font-weight:800}
 .ae-map-help{
   position:fixed;top:96px;right:16px;z-index:120;width:min(360px,calc(100vw - 32px));padding:18px;
