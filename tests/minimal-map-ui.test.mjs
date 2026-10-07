@@ -20,7 +20,7 @@ test('minimal composition exposes the approved controls without changing evidenc
 test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
   assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
   assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 10%,var\(--su-line\)\)/);
-  assert.match(css,/\.ae-map-focus-toggle\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent\) 7%,transparent\)!important/);
+  assert.match(css,/\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/#minimal-map-modes button\[aria-pressed="true"\][\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent\) 4%,transparent\)[\s\S]*?border-bottom:2px solid/);
   assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
@@ -62,6 +62,7 @@ test('selection palette safely updates only declared MapLibre paint properties i
       {id:'project-selection-line',paint:{'line-color':'#69d8ff'}},
       {id:'project-footprint-fill',paint:{'fill-color':['case',['==',['get','selected'],1],'#a97925','#fff']}},
       {id:'project-fallback-ring',paint:{'circle-stroke-color':'#ffc866','circle-color':'rgba(169,121,37,.12)'}},
+      {id:'project-points',paint:{'circle-color':['case',['==',['get','fallback'],1],'#ffc866',['match',['get','timeline'],'past','#74889a','future','#5aaeff','#34dfc4']]}},
       {id:'unrelated-layer',paint:{'line-color':'#69d8ff'}},
       {id:'ae-emerging-hotspots',paint:{'circle-color':['match',['get','band'],'emerging_hotspot','#e0b34a','watchlist','#c9a45d','#ffc866']}}
     ];
@@ -81,8 +82,10 @@ test('selection palette safely updates only declared MapLibre paint properties i
   assert.ok(JSON.stringify(light[1].paint['fill-color']).includes('#526b70'));
   assert.equal(light[2].paint['circle-stroke-color'],'#89959a');
   assert.equal(light[2].paint['circle-color'],'rgba(82,107,112,.08)');
-  assert.ok(JSON.stringify(light[4].paint['circle-color']).includes('#4f817c'));
-  assert.equal(light[3].paint['line-color'],'#69d8ff');
+  assert.ok(JSON.stringify(light[3].paint['circle-color']).includes('#89959a'));
+  assert.ok(!JSON.stringify(light[3].paint['circle-color']).includes('#ffc866'));
+  assert.ok(JSON.stringify(light[5].paint['circle-color']).includes('#4f817c'));
+  assert.equal(light[4].paint['line-color'],'#69d8ff');
 });
 
 test('timeline is unframed, full width and contains no play control',()=>{

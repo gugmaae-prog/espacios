@@ -21,7 +21,7 @@
   function syncSelectionPalette(){
     const map=window.__PSR_MAP__,layers=map?.getStyle?.()?.layers;if(!layers)return;const color=selectionColor();
     for(const layer of layers){
-      if(!/(selected|selection|project-footprint)/i.test(layer.id)&&!['psr-route-line','psr-projects','project-fallback-ring'].includes(layer.id))continue;
+      if(!/(selected|selection|project-footprint)/i.test(layer.id)&&!['psr-route-line','psr-projects','project-points','project-fallback-ring'].includes(layer.id))continue;
       for(const property of ['fill-color','fill-outline-color','line-color','fill-extrusion-color','circle-color','circle-stroke-color']){
         if(layer.paint?.[property]===undefined)continue;
         const current=map.getPaintProperty(layer.id,property);if(current===undefined)continue;
