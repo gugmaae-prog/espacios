@@ -17,7 +17,26 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Published history and map release — 7 October 2026 (Dubai)
+## Reviewed V12 evidence — 7 October 2026 (Dubai)
+
+`20261007-enrichment-v12` retains all **1,645 projects and 215 communities** and
+adds four verified Modon launch dates, three historical developer asking prices,
+a construction-contract award and the Hudayriyat community masterplan announcement.
+It closes **11 specific requirement gaps**. Sources total **2,925**, fact entries
+**4,123**, and the public historical aggregates remain **317,878**. Existing
+evidence and selected quotes are preserved. See the [review and next actions](docs/history-v12-modon-review.md).
+
+The ledger has **3,722 present, 2,180 partial, 27,578 missing and 9,300 unestablished**
+items: **91.30% of the checklist remains unresolved**. Asking prices do not count
+as registered transactions or current valuations. Conditional annual scenarios
+retain the exact 2080 endpoint; no complete lifetime history or validated 2080
+forecast is certified. Publication status will be recorded after immutable
+storage and canonical API verification.
+
+The map's neutral active controls and focus treatment were deployed in PRs #52–53
+and visually checked in light and dark mode. V12 preserves those styles.
+
+## Previous V11 history and map release — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v11` reconciles GitHub main with the saved reviewed evidence,
 with an evidence cutoff of **6 October 2026**. It retains **1,645 projects and 215

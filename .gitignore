@@ -32,3 +32,7 @@ supabase/.branches/
 # Optional Python research tooling.
 __pycache__/
 *.pyc
+
+# New immutable publication outputs are built from reviewed inputs and stored in R2.
+# Previously tracked archive vintages remain in Git for preservation checks.
+data/historical-intelligence/objects/

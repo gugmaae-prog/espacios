@@ -135,6 +135,12 @@ export function deduplicateObservations(observations){
  }
  return{retained,duplicates,conflicts,rawCount:(observations||[]).length};
 }
+function isAdvertisement(o){
+ return o?.scope==='asking_benchmark'||['asking_quote','developer_advertised_price','listing_price'].includes(o?.observationKind)||/asking|advertised/.test(o?.evidenceClass||'');
+}
+function isNonTransactionEvidence(o){
+ return isAdvertisement(o)||o?.observationKind==='valuation'||/valuation|scenario|forecast|projection/.test(o?.evidenceClass||'');
+}
 export function validateObservation(observation,record,{asOf,sources=[],minimumSample=20,sourceIndex=null}={}){
  const o=clone(observation),issues=[],m=metric(o.metric),scope=o.scope==='project'?'subject':o.scope;
  if(!m)issues.push('unsupported_metric');
@@ -159,9 +165,9 @@ export function validateObservation(observation,record,{asOf,sources=[],minimumS
  const goodValue=finite(o.value)&&(m==='volume'?Number.isInteger(o.value)&&o.value>=0:m==='rent'?o.value>=0:o.value>0);
  if(!goodValue)issues.push('missing_or_invalid_value');
  if(o.sampleCount!==null&&o.sampleCount!==undefined&&(!Number.isInteger(o.sampleCount)||o.sampleCount<0))issues.push('invalid_sample_count');
- const aggregate=o.observationKind!=='transaction'&&o.observationKind!=='asking_quote';
+ const aggregate=!['transaction','asking_quote','developer_advertised_price','valuation','listing_price'].includes(o.observationKind);
  const sparse=aggregate&&['subject','area_context','community_context','published_reference'].includes(scope)&&m!=='volume'&&(!Number.isInteger(o.sampleCount)||o.sampleCount<minimumSample);
- const direct=scope==='subject',valid=issues.length===0;
+ const direct=scope==='subject'&&!isNonTransactionEvidence(o),valid=issues.length===0;
  return{...o,metric:m,scope,date,issues,valid,direct,displayEligible:valid&&!sparse,sparse,availability:observationAvailableAsOf(o,asOf,byId)?'known_as_of':'unknown_or_later',coverageStatus:!valid?'conflict':sparse?'sparse':direct?'observed':'context_only'};
 }
 function monthIndex(p){const d=parseEvidenceDate(p);return +d.start.slice(0,4)*12+(+d.start.slice(5,7)-1);}
@@ -231,7 +237,7 @@ export function filterTrainingFold(observations,{asOf,sources=[],lowerQuantile=.
  for(const raw of observations||[]){
   const o=clone(raw);let complete=false;try{complete=lastInstant(o.period)<=lastInstant(asOf);}catch{}
   const ownerMismatch=o.subjectRecordId&&o.subjectRecordId!==o.recordId,unprovenSeries=o.fromHistorySeries&&(!o.subjectRecordId||!Array.isArray(o.identitySourceIds)||!o.identitySourceIds.length||o.identitySourceIds.some(id=>!byId.has(id))||o.scope!==o.seriesScope||o.identityVerified!==o.seriesIdentityVerified);
-  if(!complete||!observationAvailableAsOf(o,asOf,byId)||!finite(o.value)||o.value<=0||o.identityVerified!==true||o.scope!=='subject'||ownerMismatch||unprovenSeries||o.duplicateConflict||(Number.isInteger(o.qualityFlags)&&(o.qualityFlags&~4)!==0))withheld.push({observation:o,reason:'Origin availability, period, identity proof availability or non-outlier quality gate failed.'});
+  if(isNonTransactionEvidence(o)||!complete||!observationAvailableAsOf(o,asOf,byId)||!finite(o.value)||o.value<=0||o.identityVerified!==true||o.scope!=='subject'||ownerMismatch||unprovenSeries||o.duplicateConflict||(Number.isInteger(o.qualityFlags)&&(o.qualityFlags&~4)!==0))withheld.push({observation:o,reason:'Transaction evidence class, origin availability, period, identity proof availability or non-outlier quality gate failed.'});
   else eligible.push(o);
  }
  const dedup=deduplicateObservations(eligible),groups=new Map();
@@ -253,7 +259,7 @@ export function eventStudy(record,event,{metric:selected='price',frequency='mont
  if((frequency==='monthly'&&!['day','instant','month'].includes(when.precision))||(frequency==='quarterly'&&!['day','instant','month','quarter'].includes(when.precision)))return emptyStudy('Event date precision is too coarse for the selected native event window.',base);
  const source=sources.find(s=>s.id===event.sourceIds?.[0]);
  if(!isAvailableAsOf(event,asOf,source)||eligibleFeaturesAsOf([event],{asOf,sources}).eligible.length!==1)return emptyStudy('Event publication/availability or supporting source availability is unknown or after the study cutoff.',base);
- const sourceIndex=new Map(sources.map(s=>[s.id,s])),raw=deduplicateObservations(expandRecordObservations(record)).retained,rows=raw.map(o=>validateObservation(o,record,{asOf,sources,minimumSample,sourceIndex})).filter(o=>o.metric===selected&&o.frequency===frequency&&o.displayEligible&&o.scope===scope&&(!seriesId||o.seriesId===seriesId)&&o.availability==='known_as_of');
+ const sourceIndex=new Map(sources.map(s=>[s.id,s])),raw=deduplicateObservations(expandRecordObservations(record)).retained,rows=raw.map(o=>validateObservation(o,record,{asOf,sources,minimumSample,sourceIndex})).filter(o=>o.metric===selected&&o.frequency===frequency&&o.displayEligible&&o.scope===scope&&(scope!=='subject'||o.direct)&&(!seriesId||o.seriesId===seriesId)&&o.availability==='known_as_of');
  const signatures=[...new Set(rows.map(o=>[o.unit,o.sourceId,o.seriesId||'',o.segment||'',o.registration||''].join('|')))];
  if(signatures.length>1)return emptyStudy('Multiple incompatible subject baskets are present; select a single comparable series before estimating an association.',base);
  function window(start,end){const expected=Array.from({length:end-start+1},(_,i)=>nativeText(start+i,frequency)),points=expected.map(period=>{const matching=rows.filter(o=>nativeIndex(o.period,frequency)===nativeIndex(period,frequency));return{period,sourcePeriod:matching.length===1?matching[0].period:null,value:matching.length===1?matching[0].value:null,sampleCount:matching.length===1?matching[0].sampleCount:null,status:matching.length===1?'observed':matching.length>1?'conflict':'missing'};});return{from:expected[0],to:expected.at(-1),expectedPeriods:expected.length,observedPeriods:points.filter(p=>p.status==='observed').length,points};}
@@ -296,6 +302,7 @@ export function validateScenarioAssumptions(input={}){
  return clone(input);
 }
 function eligibleAnchor(anchor,record,sources,asOf){
+ if(isAdvertisement(anchor))return false;
  if(anchor?.recordLinkReview?.status==='rejected'||/conflict|quarantin|unverified|invalid/i.test([anchor?.qualityStatus,anchor?.status].filter(Boolean).join(' ')))return false;
  if(!anchor||!finite(anchor.value)||anchor.value<=0||!anchor.unit||!anchor.period||anchor.scope!=='subject'||anchor.identityVerified!==true)return false;
  if(anchor.recordId&&anchor.recordId!==record.id)return false;
