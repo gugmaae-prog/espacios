@@ -65,9 +65,10 @@ forecast is certified. All records keep 54 explicit annual scenario slots for
 
 ## Validation and reproduction
 
-`tests/historical-v13-modon-pass.test.mjs` verifies the immutable V12 root, full
-record/evidence preservation, the exact three closures, all 1,253 identity-status
-corrections and the new evidence-class boundaries. Runtime validation rejects
+`tests/historical-v13-modon-pass.test.mjs` verifies the tracked immutable V11 root,
+every retained V12 packet item, full record/evidence preservation, the exact three
+V13 closures, all 1,253 identity-status corrections and the new evidence-class
+boundaries. Runtime validation rejects
 developer-reported aggregate sales from transaction training and scenario anchors.
 
 Reproduce by merging the retained V12 enrichment with the V13 packet using

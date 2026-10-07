@@ -6,13 +6,14 @@ import {createHash} from 'node:crypto';
 import {annualScenarios,filterTrainingFold} from '../src/historical-intelligence/core.mjs';
 
 const packet=JSON.parse(fs.readFileSync('enrichment/v13/pass36-modon-primary.json','utf8'));
+const v12Packet=JSON.parse(fs.readFileSync('enrichment/v12/pass35-modon-primary.json','utf8'));
 const snapshot=JSON.parse(fs.readFileSync('data/historical-intelligence-20261003.json','utf8'));
 const records=new Map(snapshot.records.map(r=>[r.id,r]));
-const priorHash='a0add7a06d7f826d290fcb4bc83a10831faf38654b2e25a51692f52f8725338b';
+const priorHash='1b2e552ce4075c58a7758b5d4cd480019875ece00074fd4b60985d92534a6111';
 const priorBytes=fs.readFileSync(`data/historical-intelligence/objects/${priorHash}.json.gz`);
 const previous=JSON.parse(gunzipSync(priorBytes));
 
-test('V13 preserves all V12 records and evidence while revising only accountability fields',()=>{
+test('V13 preserves the immutable V11 base and every retained V12 packet item',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
  assert.equal(snapshot.version,'20261007-enrichment-v13');
  assert.equal(snapshot.records.length,1860);
@@ -28,6 +29,11 @@ test('V13 preserves all V12 records and evidence while revising only accountabil
  }
  const sources=new Map(snapshot.sources.map(s=>[s.id,s]));
  for(const s of previous.sources)assert.deepEqual(sources.get(s.id),s,s.id);
+ for(const s of v12Packet.sources)assert.ok(sources.has(s.id),s.id);
+ for(const f of v12Packet.facts){
+  const record=records.get(f.recordId);
+  assert.ok([...(record.lifecycle||[]),...(record.observations||[]),...(record.registerEvidence||[])].some(x=>x.id===f.id),f.id);
+ }
 });
 
 test('V13 adds five exact Modon sources and eighteen bounded facts without identity fan-out',()=>{
@@ -55,8 +61,8 @@ test('V13 closes only three supported requirements and demotes mirror-only quote
   const old=before.get(id).researchStatus.itemCoverage[key];
   if(item.status!==old.status)transitions.push([id,key,old.status,item.status]);
  }
- const closures=transitions.filter(([,key,from,to])=>from==='missing'&&to==='present');
- assert.deepEqual(closures.sort(),[
+ const v13Closures=transitions.filter(([id,key,from,to])=>packet.facts.some(f=>f.recordId===id)&&from==='missing'&&to==='present');
+ assert.deepEqual(v13Closures.sort(),[
   ['project:bashayer-final-phase-modon-hudayriyat-island-abu-dhabi','phase_milestones','missing','present'],
   ['project:hudayriyat-golf-estates-modon-abu-dhabi','announcement_registration','missing','present'],
   ['project:hudayriyat-golf-estates-modon-abu-dhabi','original_launch','missing','present']
@@ -64,7 +70,8 @@ test('V13 closes only three supported requirements and demotes mirror-only quote
  const corrections=transitions.filter(([,key,from,to])=>from==='present'&&to==='partial');
  assert.equal(corrections.length,1253);
  assert.ok(corrections.every(([,key])=>key==='advertised_prices'));
- assert.equal(transitions.length,1256);
+ assert.ok(corrections.every(([id])=>records.get(id).researchStatus.itemCoverage.advertised_prices.contextualQuoteCount>0));
+ assert.equal(transitions.length,1267);
 });
 
 test('segmented prices and aggregate sales remain outside transactions, current quotes and forecast anchors',()=>{
