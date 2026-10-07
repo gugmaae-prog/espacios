@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Reproducible, lossless context-history snapshot. No network or remote writes."""
 import argparse, csv, gzip, hashlib, io, json, pathlib, re, calendar, collections, datetime
-from historical_enrichment import load_enrichment, apply_enrichment
+from historical_enrichment import load_enrichment, apply_enrichment, retain_published_quotes
 from historical_sources import register_source
 from historical_gap_ledger import refresh_research_coverage
 from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261005-enrichment-v10'
-ASOF = '2026-10-05'
+VERSION = '20261007-enrichment-v11'
+ASOF = '2026-10-06'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -274,6 +274,12 @@ def build():
    gaps=['verified_launch_date','actual_completion_date','direct_registered_sale_history','direct_signed_rent_history','dated_current_valuation','service_charges','validated_price_forecast','validated_rent_forecast','validated_net_return_forecast','long_term_scenario_assumptions']
    rec={'id':item['id'],'type':typ,'name':m['name'],'emirate':m['emirate'],'communityId':community if community in known_ids and typ=='project' else None,'lifecycle':lifecycle,'observations':[],'historySeries':context,'historyStartPeriod':None,'coverageWindowBasis':'unknown_subject_start; earliest shared context is not subject history','researchStatus':{'status':'research_pending','identityCandidateCount':candidate_p[item['id']] if typ=='project' else candidate_c[item['id']],'identityCandidates':'quarantined' if (candidate_p[item['id']] if typ=='project' else candidate_c[item['id']]) else 'none_found_in_captured_source','gaps':gaps,'unresolvedSeriesIds':missingrefs,'sourceScope':'shared area context only; no verified individual subject histories','launchDateStatus':'research_pending','completionDateStatus':'research_pending'},'scenarioInputs':None,'scenarioCoverage':{'firstYear':2027,'lastYear':2080,'annualSlotsPerMetric':54,'approvedAnnualPoints':0,'price':None,'rent':None,'netROI':None,'status':'unavailable_required_inputs_and_validation'},'currentSnapshot':{'askingPriceAED':quote if quote and quote>0 else None,'scope':'reported_asking_quote','publishedAt':None,'firstAvailableAt':None,'retrievedAt':capture_asof,'sourceId':sid,'freshness':'unverified_source_date','reportedHandover':f.get('Reported handover') or m.get('handover'),'authorityIssues':f.get('Authority issues') or None},'coverageSummary':{'directSalePeriods':0,'directRentPeriods':0,'saleContextRows':int(profile['Monthly sale-context rows'])+int(profile['Quarterly sale-context rows']),'askingContextRows':int(profile['Asking benchmark rows']),'originalAuditAsOf':capture_asof,'referenceReconciliationPending':len(missingrefs)}}
    records.append(rec)
+ # The last verified production root is immutable; retain its quote vintages
+ # even when later review cutoffs make the original selection rule inapplicable.
+ retained_hash='6c5c0219d3293786dd9a3c2aebb9ab828cb6600ab2d33782d83a997215060138'
+ retained_bytes=(BASE/'objects'/f'{retained_hash}.json.gz').read_bytes()
+ if sha(retained_bytes)!=retained_hash:raise ValueError('Retained production quote snapshot checksum mismatch')
+ retain_published_quotes(records,json.loads(gzip.decompress(retained_bytes)),enrichment,ASOF)
  enrichment_summary=apply_enrichment(enrichment,records,series,sources,source,source_aliases,ASOF)
  communities_by_id={r['id']:r for r in records if r['type']=='community'}
  for rec in records:

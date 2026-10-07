@@ -1,5 +1,6 @@
 """Merge reviewed, source-backed enrichment; raw scraped pages stay outside the repo."""
 import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip
+from copy import deepcopy
 from historical_gap_ledger import refresh_research_coverage, period_start
 
 def load_enrichment(base):
@@ -21,12 +22,31 @@ def load_enrichment(base):
 def current_snapshot_eligible(obs):
  # Unit/bedroom-specific advertisements remain evidence but cannot replace
  # the project's headline starting-price snapshot.
+ if 'currentSnapshotEligible' in obs and not isinstance(obs['currentSnapshotEligible'],bool):raise ValueError('currentSnapshotEligible must be boolean')
  if obs.get('currentSnapshotEligible') is False:return False
  segmented_keys=['bedrooms','bedroom','unitType','unit_type','unitSubtype','unit_subtype','floorplan','floorPlan']
  if any(str(obs.get(k,'')).strip() for k in segmented_keys):return False
  qualifier=' '.join(str(obs.get(k,'') or '') for k in ['quoteQualifier','sourceQuoteBasis']).lower()
  if re.search(r'\b(?:studio|\d+\s*(?:bed|bedroom|br)|bedroom-specific|unit-specific|floorplan)\b',qualifier):return False
  return True
+def retain_published_quotes(records, retained, packet, asof):
+ # A new research cutoff must not erase previously published quote vintages.
+ if retained['asOf']>asof:raise ValueError('Retained quote snapshot is from the future')
+ old={r['id']:r for r in retained['records']}
+ if set(old)!={r['id'] for r in records}:raise ValueError('Retained quote catalogue differs')
+ facts={(f.get('id') or hashlib.sha256(json.dumps(f,sort_keys=True).encode()).hexdigest()[:24]):f for f in packet.get('facts',[]) if f.get('status')=='accepted'}
+ for record in records:
+  previous=old[record['id']]
+  vintages=deepcopy(previous.get('priorCurrentSnapshots',[]))
+  current=previous['currentSnapshot']
+  fact=facts.get(current.get('observationId'))
+  eligible=not current.get('observationId') or (fact and fact.get('recordId')==record['id'] and current_snapshot_eligible(fact.get('observation',{})))
+  if eligible:
+   if record['currentSnapshot']!=current and record['currentSnapshot'] not in vintages:vintages.append(deepcopy(record['currentSnapshot']))
+   record['currentSnapshot']=deepcopy(current)
+  elif current not in vintages:vintages.append(deepcopy(current))
+  if vintages:record['priorCurrentSnapshots']=vintages
+
 def apply_enrichment(packet,records,series,sources,source,aliases,asof):
  if not packet:return {}
  if packet.get('asOf','')>asof:raise ValueError('Enrichment not yet available as of snapshot')
