@@ -21,14 +21,17 @@ export default{async fetch(request,env){
  const url=new URL(request.url);
  try{
   if(url.pathname==='/health'&&request.method==='GET')return json({version:env.PUBLISH_VERSION,rootSHA256:env.PUBLISH_ROOT});
-  if(url.pathname==='/r2'){
+  if(url.pathname==='/r2'||url.pathname==='/r2-check'){
    const key=url.searchParams.get('key'),match=/^research\/published\/\d{4}-\d{2}-\d{2}\/historical-intelligence\/objects\/([a-f0-9]{64})\.(?:json(?:\.gz)?|csv\.gz|sql\.gz|parquet)$/.exec(key||'');
    if(!match)return json({error:'Content addressed key required'},400);
    if(request.method==='GET'){
     const object=await env.MARKET_R2.get(key);if(!object)return new Response(null,{status:404});
-    return new Response(object.body,{headers:{'Content-Type':'application/octet-stream','Cache-Control':'no-store'}});
+    if(object.size>32*1024*1024)return json({error:'Object too large'},413);
+    const bytes=await object.arrayBuffer();
+    if(url.pathname==='/r2-check')return json({bytes:bytes.byteLength,sha256:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('')});
+    return new Response(bytes,{headers:{'Content-Type':'application/octet-stream','Content-Length':String(bytes.byteLength),'Cache-Control':'no-store'}});
    }
-   if(request.method==='PUT'){
+   if(request.method==='PUT'&&url.pathname==='/r2'){
     if(request.headers.get('X-Snapshot-Version')!==env.PUBLISH_VERSION||request.headers.get('X-Content-SHA256')!==match[1])return json({error:'Snapshot/hash mismatch'},400);
     const bytes=await request.arrayBuffer();if(bytes.byteLength>32*1024*1024)return json({error:'Object too large'},413);
     const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');

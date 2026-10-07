@@ -28,9 +28,26 @@ test('missing token or expiry prevents all storage access',async()=>{
   assert.equal(response.status,401);
  }
 });
+test('release bridge reads complete bounded R2 bytes before serving verification downloads',async()=>{
+ const bytes=new Uint8Array(384*1024).fill(17),key='research/published/2026-10-06/historical-intelligence/objects/'+'a'.repeat(64)+'.csv.gz';
+ const response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{headers:{Authorization:'Bearer test-token'}}),{...env,MARKET_R2:{get:async()=>({size:bytes.byteLength,arrayBuffer:async()=>bytes.buffer})}});
+ assert.equal(response.status,200);assert.equal(response.headers.get('content-length'),String(bytes.byteLength));assert.deepEqual(new Uint8Array(await response.arrayBuffer()),bytes);
+ let read=false;const tooLarge=await bridge.fetch(new Request('https://bridge/r2?key='+key,{headers:{Authorization:'Bearer test-token'}}),{...env,MARKET_R2:{get:async()=>({size:33*1024*1024,arrayBuffer:async()=>{read=true;}})}});
+ assert.equal(tooLarge.status,413);assert.equal(read,false);
+});
 test('release bridge rejects destructive and unrelated SQL, foreign snapshot and incorrect root',()=>{
  for(const item of [{sql:'DELETE FROM hi_records WHERE snapshot_version = ?',params:['version']},{sql:'SELECT * FROM leads WHERE snapshot_version = ?',params:['version']},{sql:'SELECT count(*) AS count FROM hi_records WHERE snapshot_version = ?',params:['other']},{sql:"UPDATE hi_snapshots SET publication_state = 'complete' WHERE snapshot_version = ? AND root_sha256 = ?",params:['version','wrong']}])assert.throws(()=>validateStatement(item,env));
  assert.equal(validateStatement({sql:'SELECT count(*) AS count FROM hi_records WHERE snapshot_version = ?',params:['version']},env).params[0],'version');
+});
+test('remote verification hashes actual bytes instead of trusting metadata or the key',async()=>{
+ globalThis.crypto??=webcrypto;
+ const bytes=new Uint8Array(4*1024*1024).fill(29),sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');
+ const key='research/published/2026-10-06/historical-intelligence/objects/'+'a'.repeat(64)+'.csv.gz';
+ const request=()=>new Request('https://bridge/r2-check?key='+key,{headers:{Authorization:'Bearer test-token'}});
+ const response=await bridge.fetch(request(),{...env,MARKET_R2:{get:async()=>({size:bytes.byteLength,customMetadata:{sha256:'a'.repeat(64)},arrayBuffer:async()=>bytes.buffer})}});
+ assert.deepEqual(await response.json(),{bytes:bytes.byteLength,sha256:sha});
+ assert.equal((await bridge.fetch(request(),{...env,MARKET_R2:{get:async()=>null}})).status,404);
+ assert.equal((await bridge.fetch(request(),{...env,MARKET_R2:{get:async()=>({size:33*1024*1024})}})).status,413);
 });
 test('R2 requires matching bytes and conditional creation, preserving a concurrent object',async()=>{
  globalThis.crypto??=webcrypto;
