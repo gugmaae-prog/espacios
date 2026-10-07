@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-10-07T13:27:22Z",
+  "canonicalHost": "https://espacios.me",
+  "endpoints": {
+    "/map/api/record-history?recordId=project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi": {
+      "status": 200,
+      "version": "20261007-enrichment-v16",
+      "recordName": "Nawayef Park Views",
+      "events": 20,
+      "exposures": 20,
+      "scenarioClassification": "conditional_scenario",
+      "validatedForecast": false
+    },
+    "/map/api/events?recordId=project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi": {
+      "status": 200,
+      "version": "20261007-enrichment-v16",
+      "events": 20,
+      "exposures": 20,
+      "classification": "event_evidence_not_causal_price_effects"
+    },
+    "/map/api/control-plane": {
+      "status": 200,
+      "connected": true,
+      "releaseTag": "20261007-enrichment-v16",
+      "frontendRelease": "20261007-history-v16-adrec-nawayef",
+      "workerVersion": "099d305c-f3cf-4e8f-bf41-c49d6551a6d2",
+      "dataRoomPublic": false
+    }
+  },
+  "mapAssets": {
+    "status": 200,
+    "softSelectedStateRuleObserved": true,
+    "selectedAccentMix": "5% theme accent in panel surface",
+    "selectedLineMix": "20% theme accent in line token",
+    "goldVisibleInReviewedMapViews": false
+  }
+}

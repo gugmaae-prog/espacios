@@ -1,0 +1,54 @@
+{
+  "version": "20261007-enrichment-v16",
+  "verifiedAt": "2026-10-07T13:27:22Z",
+  "sourcePullRequest": 63,
+  "sourceHead": "b6c5494811580ce2aabdc4da6be8cf848138f383",
+  "mergedMainCommit": "e8da0fb1333b5d19b3e1704605c9f7db14999dc7",
+  "rootSha256": "f886d7d611d9d1e8450b942ade7e001b32ac4186efe889184964d98f5ce6609a",
+  "publication": {
+    "state": "complete",
+    "immutableObjects": 1668,
+    "written": 1314,
+    "reusedAfterChecksumVerification": 354,
+    "indexStatements": 35456,
+    "tableCounts": {
+      "hi_snapshots": 1,
+      "hi_records": 1860,
+      "hi_sources": 2948,
+      "hi_events": 105,
+      "hi_exposures": 7382,
+      "hi_series": 13401,
+      "hi_record_series": 9759
+    }
+  },
+  "catalogue": {
+    "projects": 1645,
+    "communities": 215,
+    "totalRecords": 1860,
+    "historicalAggregateObservations": 318562,
+    "series": 13401,
+    "sources": 2948,
+    "facts": 4171,
+    "events": 105,
+    "eventExposures": 7382
+  },
+  "coverage": {
+    "requirements": 42780,
+    "present": 2483,
+    "partial": 3434,
+    "missing": 27563,
+    "unestablished": 9300,
+    "unresolved": 40297,
+    "unresolvedPercent": 94.2,
+    "validatedAnnualScenariosThrough2080": 0,
+    "researchComplete": false
+  },
+  "evidenceLimits": {
+    "adrecRegisteredSaleRowOccurrences": 684,
+    "registeredSaleProjects": 3,
+    "rowsSharingExposedAttributesWithAnotherRow": 27,
+    "uniqueTransactionIdsExposed": false,
+    "completeLifetimePriceHistoryEstablished": false,
+    "rawApiBodiesRedistributed": false
+  }
+}

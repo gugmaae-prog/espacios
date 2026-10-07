@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-07T13:27:22Z",
+  "projectRef": "ypkfganbwdvcjrcxygta",
+  "releaseTag": "20261007-enrichment-v16",
+  "frontendRelease": "20261007-history-v16-adrec-nawayef",
+  "sourceCommit": "e8da0fb1333b5d19b3e1704605c9f7db14999dc7",
+  "pullRequest": 63,
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "099d305c-f3cf-4e8f-bf41-c49d6551a6d2",
+  "deploymentId": "fe09df7e-f78f-4fcb-a09f-81265e079635",
+  "sourceSyncState": "reconciled",
+  "dataRoomPublic": false,
+  "connectedLiveEndpoint": "/map/api/control-plane"
+}
