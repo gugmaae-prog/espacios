@@ -15,13 +15,13 @@ const acquiredBrowser=gunzipSync(Buffer.from(acquiredContext.GZ.js,'base64')).to
 const collapseMatches=acquiredBrowser.split(legacyCollapseSync).length-1;
 if(collapseMatches!==1)throw Error('Expected exactly one legacy collapse-repair sync renderer; found '+collapseMatches);
 const paletteCopyReplacements=[
-  ['Heat maps are opt-in. Gold is reserved for your current selection.','Heat maps are opt-in. A muted teal outline marks selection; heat colors show the selected measure.'],
-  ['Heat colors are analytical only. Gold remains selection-only.','Heat colors show the selected measure; a muted teal outline marks selection only.'],
+  ['Heat maps are opt-in. Gold is reserved for your current selection.','Heat maps are opt-in. Selected places are outlined for orientation, not as a price signal.'],
+  ['Heat colors are analytical only. Gold remains selection-only.','Heat colors are analytical only. Selection highlights identify the current place and do not indicate value.'],
   ['Indicative future-investment signal. Not investment advice. Gold remains selection-only.','Indicative signal only; colors distinguish activity bands and do not represent expected property returns.'],
-  ['Emirate boundary is loaded from the highest available polygon source. Gold indicates selection only.','Emirate boundary is loaded from the highest available polygon source. A muted teal outline marks the current selection.'],
-  ['Gold indicates the current selection only.','A muted teal outline marks the current selection.'],
-  ['Gold is this selected community boundary only. Market history and forecasts follow this community in Analyze.','A muted teal outline marks this community boundary. Market history and forecasts follow this community in Analyze.'],
-  ['Gold is reserved for this selected community only.','A muted teal outline marks this selected community only.']
+  ['Emirate boundary is loaded from the highest available polygon source. Gold indicates selection only.','Emirate boundary is loaded from the highest available polygon source. A subdued outline marks the current selection.'],
+  ['Gold indicates the current selection only.','A subdued outline marks the current selection.'],
+  ['Gold is this selected community boundary only. Market history and forecasts follow this community in Analyze.','The selected boundary is highlighted for orientation, not as a value signal. Market history and forecasts follow this community in Analyze.'],
+  ['Gold is reserved for this selected community only.','The selected boundary is highlighted for orientation, not as a value signal.']
 ];
 let paletteBrowser=acquiredBrowser;
 let paletteReplacementCount=0;
