@@ -1,0 +1,235 @@
+{
+  "asOf": "2026-10-06",
+  "status": "printed_rows_complete_unprinted_sales_remain_missing",
+  "pdfCheck": "packet check ok",
+  "filesOnDisk": 33,
+  "uniqueSha256": 21,
+  "areaCount": 20,
+  "printedSalesCountingRepeatedDowntownFile": 5951,
+  "printedSalesUniqueTitles": 5651,
+  "statedTransactionsUniqueTitles": 62392,
+  "salesNotOnThePrintedPages": 56741,
+  "completePages": [
+    "Arancia Yards By Beyond (All Buildings), City of Arabia",
+    "Nad Al Sheba"
+  ],
+  "areaDetails": [
+    {
+      "title": "Arancia Yards By Beyond (All Buildings), City of Arabia",
+      "sha256": "c937d42007c294bcb10ac2bd5ee97a64bb747a5bce10e4594cefa3976e36d67e",
+      "printedSales": 247,
+      "statedTransactions": 247,
+      "notPrintedOnPage": 0,
+      "pageIsComplete": true,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": null
+    },
+    {
+      "title": "Business Bay",
+      "sha256": "85a207e4370b692a197087f5e3ae90f5b4aaf5926e7eba8c602e9749a6d8aa21",
+      "printedSales": 300,
+      "statedTransactions": 8216,
+      "notPrintedOnPage": 7916,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Damac Hills, Al Hebiah Third",
+      "sha256": "25bec41745dc55eac3036a6ee043b75687439c41de7794205271e382be96fda2",
+      "printedSales": 300,
+      "statedTransactions": 1909,
+      "notPrintedOnPage": 1609,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Downtown Dubai",
+      "sha256": "3881bc011100218c2c7797960a3c2fad80983f8ddca9d790a13fefd2e05c7b07",
+      "printedSales": 300,
+      "statedTransactions": 2861,
+      "notPrintedOnPage": 2561,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Downtown Dubai",
+      "sha256": "0cdcbe94f780204e160331bb2beaa7a0d8d247d033a98ff78d6953f3ab14922a",
+      "printedSales": 300,
+      "statedTransactions": 2861,
+      "notPrintedOnPage": 2561,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": true,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Dubai Creek Harbour",
+      "sha256": "a9a83cd09cc60b91465681e0d17b5e766c0909f7e93f4bf7051767beb563767a",
+      "printedSales": 300,
+      "statedTransactions": 3960,
+      "notPrintedOnPage": 3660,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Dubai Hills Estate",
+      "sha256": "3e77df5586eb262b9cc10dcc9f97f80629a15fac91bd20b3c92dbd5edeeabfd0",
+      "printedSales": 300,
+      "statedTransactions": 2022,
+      "notPrintedOnPage": 1722,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Dubai Investment Park First",
+      "sha256": "f08d928ac0567ebb05a93b3e88a7c8c154b24fab544c8ceaa67075f392c8f759",
+      "printedSales": 300,
+      "statedTransactions": 2141,
+      "notPrintedOnPage": 1841,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 8
+    },
+    {
+      "title": "Dubai Land Residence Complex, Wadi Al Safa 5",
+      "sha256": "e964fcb0e8636b5cd8d56af0e8c5f5a9d20348fefd89907d1814f9013402f4d1",
+      "printedSales": 300,
+      "statedTransactions": 2920,
+      "notPrintedOnPage": 2620,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 8
+    },
+    {
+      "title": "Dubai Marina, Marsa Dubai",
+      "sha256": "e0532b8caa54973bd8ed79c455e146f598f97432709fc139369bf7d7f2fd93d6",
+      "printedSales": 300,
+      "statedTransactions": 2350,
+      "notPrintedOnPage": 2050,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Dubai South",
+      "sha256": "a8d1918308e55c81a3a37a4fae5b5ae84f2e5f99b26ca7f6584784889c4ef87f",
+      "printedSales": 300,
+      "statedTransactions": 16260,
+      "notPrintedOnPage": 15960,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 8
+    },
+    {
+      "title": "Emaar Beachfront, Dubai Harbour",
+      "sha256": "41909a0c9c7de90fd54227f1304651690e21aad43e077ebc3896943f3f4c8ab9",
+      "printedSales": 300,
+      "statedTransactions": 406,
+      "notPrintedOnPage": 106,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "Jebel Ali",
+      "sha256": "5345620bc6b5162dbcdf876f6846051eb2e4ffd3c2a8dec6ff7545bac3f8b108",
+      "printedSales": 300,
+      "statedTransactions": 1316,
+      "notPrintedOnPage": 1016,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": null
+    },
+    {
+      "title": "Jumeirah Village Circle (JVC)",
+      "sha256": "ec68a8a5c0fe19faf08d2c0173ff5467f2c1f5bd2d62e045dd0e3b321840ebf0",
+      "printedSales": 300,
+      "statedTransactions": 12300,
+      "notPrintedOnPage": 12000,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 8
+    },
+    {
+      "title": "Nad Al Sheba",
+      "sha256": "ed884137bb400e6fcbf2a7af212e18f7138eb5b573b33312cc9bd0293cbe699c",
+      "printedSales": 4,
+      "statedTransactions": 4,
+      "notPrintedOnPage": 0,
+      "pageIsComplete": true,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": null
+    },
+    {
+      "title": "Palm Jebel Ali",
+      "sha256": "a853bb6ec80d3a9e58bbc4aa6b971034c2feb752a8c4109d0060bd2ff284f205",
+      "printedSales": 300,
+      "statedTransactions": 723,
+      "notPrintedOnPage": 423,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": null
+    },
+    {
+      "title": "Rashid Yachts And Marina, Mina Rashid",
+      "sha256": "c4ed0bb765890a652c0809580f9ef5b37100db427d3fcfd3225b8e73a5ea248f",
+      "printedSales": 300,
+      "statedTransactions": 482,
+      "notPrintedOnPage": 182,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 5
+    },
+    {
+      "title": "Sobha Hartland, Al Merkadh",
+      "sha256": "847befa2cfd9ba0c416efeac9850608a7ab2d16d4e2d3d62da24798cc59b5b5d",
+      "printedSales": 300,
+      "statedTransactions": 1148,
+      "notPrintedOnPage": 848,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 7
+    },
+    {
+      "title": "The Oasis (All Phases), Me'Aisem Second",
+      "sha256": "2df0f12c1c5d9c5760d09bc97adc9491e9ea025b2c0d8f3401ea001812726532",
+      "printedSales": 300,
+      "statedTransactions": 656,
+      "notPrintedOnPage": 356,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": null
+    },
+    {
+      "title": "Tilal Al Ghaf, Al Hebiah Fourth",
+      "sha256": "5f6ce358b7ed02156cdcead7aa8802b5c4b21ef7477ee713ea989a9195a02201",
+      "printedSales": 300,
+      "statedTransactions": 383,
+      "notPrintedOnPage": 83,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 10
+    },
+    {
+      "title": "Town Square, Al Yelayiss 2",
+      "sha256": "aff0399cfe2ceccf8a80112f3bdd82cd60412ded81f7b8a568f4252700ad17cd",
+      "printedSales": 300,
+      "statedTransactions": 2088,
+      "notPrintedOnPage": 1788,
+      "pageIsComplete": false,
+      "duplicateTitleOfAnotherFile": false,
+      "rentalYieldPct": 8
+    }
+  ],
+  "limits": [
+    "Every supplied PDF byte-hash is in the packet and a re-parse matched every printed sale.",
+    "A summary transaction count higher than the printed rows means those sales are not in the file. They were not invented.",
+    "Downtown Dubai has two PDF byte hashes and identical sale rows. Those rows are not added together.",
+    "Weekly series describe the retained daily rows. They do not create the sales that were not printed.",
+    "These area sales do not close the catalogue lifetime sale, rent, valuation, or forecast checklist."
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "areas": {
+    "arancia-yards-by-beyond": {
+      "catalogue": {
+        "communityId": "community:Dubai:city-of-arabia",
+        "communityName": "City of Arabia",
+        "emirate": "Dubai",
+        "match": "exact_project_in_community",
+        "projectId": "project:arancia-yards-beyond-city-of-arabia-dubai",
+        "projectName": "Arancia Yards"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [],
+      "scope": "named_project_transactions",
+      "scopeNote": "The title names one project, all buildings, and the printed rows are that project's buildings. City of Arabia is the parent community, not a community-wide transaction set.",
+      "title": "Arancia Yards By Beyond (All Buildings), City of Arabia"
+    },
+    "business-bay": {
+      "catalogue": {
+        "communityId": "community:Dubai:business-bay",
+        "communityName": "Business Bay",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Business Bay"
+    },
+    "damac-hills": {
+      "catalogue": {
+        "communityId": "community:Dubai:damac-hills",
+        "communityName": "DAMAC Hills",
+        "emirate": "Dubai",
+        "match": "obvious_normalized",
+        "normalization": "Snapshot spells Damac Hills. Catalogue name is DAMAC Hills. Al Hebiah Third is the printed locality."
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:damac-hills-2",
+          "communityName": "DAMAC Hills 2",
+          "reason": "Separate catalogue community. The snapshot does not say Hills 2."
+        },
+        {
+          "communityId": "community:Dubai:tilal-al-ghaf",
+          "communityName": "Tilal Al Ghaf",
+          "reason": "Shares the Al Hebiah locality family (Fourth, not Third) and is a different snapshot."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Damac Hills, Al Hebiah Third"
+    },
+    "downtown-dubai": {
+      "catalogue": {
+        "communityId": "community:Dubai:downtown-dubai",
+        "communityName": "Downtown Dubai",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Downtown Dubai"
+    },
+    "dubai-creek-harbour": {
+      "catalogue": {
+        "communityId": "community:Dubai:dubai-creek-harbour",
+        "communityName": "Dubai Creek Harbour",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Dubai Creek Harbour"
+    },
+    "dubai-hills-estate": {
+      "catalogue": {
+        "communityId": "community:Dubai:dubai-hills-estate",
+        "communityName": "Dubai Hills Estate",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Dubai Hills Estate"
+    },
+    "dubai-investment-park-first": {
+      "catalogue": {
+        "communityId": null,
+        "communityName": null,
+        "emirate": "Dubai",
+        "match": "none",
+        "normalization": "No catalogue community is named Dubai Investment Park First. Dubai Investment Park 2 and Dubai Investments Park are different names and are not used."
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:dubai-investment-park-2",
+          "communityName": "Dubai Investment Park 2",
+          "reason": "Different park number."
+        },
+        {
+          "communityId": "community:Dubai:dubai-investments-park",
+          "communityName": "Dubai Investments Park",
+          "reason": "Different catalogue name. Not substituted for First."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Dubai Investment Park First"
+    },
+    "dubai-land-residence-complex": {
+      "catalogue": {
+        "communityId": "community:Dubai:dubai-land-residence-complex",
+        "communityName": "Dubai Land Residence Complex",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:dubai-land-residence-complex-dlrc",
+          "communityName": "Dubai Land Residence Complex (DLRC)",
+          "reason": "Second catalogue row. The snapshot title has no (DLRC) marker, so the series is not attached to both rows."
+        },
+        {
+          "communityId": "community:Dubai:wadi-al-safa",
+          "communityName": "Wadi Al Safa",
+          "reason": "Broader catalogue community. Wadi Al Safa 5 is the printed locality, not a licence to use the whole Wadi Al Safa series."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Dubai Land Residence Complex, Wadi Al Safa 5"
+    },
+    "dubai-marina": {
+      "catalogue": {
+        "communityId": "community:Dubai:dubai-marina",
+        "communityName": "Dubai Marina",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:marina",
+          "communityName": "Marina",
+          "reason": "Shorter catalogue name. The snapshot title is Dubai Marina. Marsa Dubai is the printed locality name, not a second series."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Dubai Marina, Marsa Dubai"
+    },
+    "dubai-south": {
+      "catalogue": {
+        "communityId": "community:Dubai:dubai-south",
+        "communityName": "Dubai South",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:emaar-south",
+          "communityName": "Emaar South",
+          "reason": "Separate catalogue community inside the wider south district."
+        },
+        {
+          "communityId": "community:dubai-south-residential-district",
+          "communityName": "Dubai South Residential District",
+          "reason": "Separate catalogue row. The snapshot title is Dubai South."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Dubai South"
+    },
+    "emaar-beachfront": {
+      "catalogue": {
+        "communityId": "community:Dubai:emaar-beachfront",
+        "communityName": "Emaar Beachfront",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:dubai-harbour",
+          "communityName": "Dubai Harbour",
+          "reason": "Printed locality and a separate catalogue community. The snapshot title leads with Emaar Beachfront, so the series is not reassigned to every Dubai Harbour project."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Emaar Beachfront, Dubai Harbour"
+    },
+    "jebel-ali": {
+      "catalogue": {
+        "communityId": "community:Dubai:jebel-ali",
+        "communityName": "Jebel Ali",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:downtown-jebel-ali",
+          "communityName": "Downtown Jebel Ali",
+          "reason": "Separate catalogue community. Some printed locations name Downtown Jebel Ali projects; the snapshot title is Jebel Ali, so the series stays the area print."
+        },
+        {
+          "communityId": "community:Dubai:jebel-ali-village",
+          "communityName": "Jebel Ali Village",
+          "reason": "Separate catalogue community. Not the snapshot title."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Jebel Ali"
+    },
+    "jumeirah-village-circle": {
+      "catalogue": {
+        "communityId": "community:Dubai:jumeirah-village-circle-jvc",
+        "communityName": "Jumeirah Village Circle (JVC)",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:jumeirah-village-circle",
+          "communityName": "Jumeirah Village Circle",
+          "reason": "Second catalogue row with the parenthetical omitted. The print matches the row that includes (JVC). Not a second transaction series."
+        },
+        {
+          "communityId": "community:Dubai:jvc",
+          "communityName": "JVC",
+          "reason": "Third catalogue row. Same place label, not a second series."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Jumeirah Village Circle (JVC)"
+    },
+    "nad-al-sheba": {
+      "catalogue": {
+        "communityId": "community:Dubai:nad-al-sheba",
+        "communityName": "Nad Al Sheba",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:nad-al-sheba-gardens",
+          "communityName": "Nad Al Sheba Gardens",
+          "reason": "Separate catalogue community. The snapshot title does not say Gardens."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": "The area card is Nad Al Sheba. The printed rows in this file all name Vision Iconic. That is the composition of a four-row extract, not a reason to relabel the card as a project-wide history for other Nad Al Sheba projects.",
+      "title": "Nad Al Sheba"
+    },
+    "palm-jebel-ali": {
+      "catalogue": {
+        "communityId": "community:Dubai:palm-jebel-ali",
+        "communityName": "Palm Jebel Ali",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:jebel-ali",
+          "communityName": "Jebel Ali",
+          "reason": "Different snapshot and a different catalogue community."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Palm Jebel Ali"
+    },
+    "rashid-yachts-and-marina": {
+      "catalogue": {
+        "communityId": "community:Dubai:rashid-yachts-and-marina",
+        "communityName": "Rashid Yachts & Marina",
+        "emirate": "Dubai",
+        "match": "obvious_normalized",
+        "normalization": "Snapshot spells And. Catalogue uses an ampersand."
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:mina-rashid",
+          "communityName": "Mina Rashid",
+          "reason": "Printed locality and a separate catalogue community. The series keeps the snapshot's leading name."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Rashid Yachts And Marina, Mina Rashid"
+    },
+    "sobha-hartland": {
+      "catalogue": {
+        "communityId": "community:Dubai:sobha-hartland",
+        "communityName": "Sobha Hartland",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:sobha-hartland-ii",
+          "communityName": "Sobha Hartland II",
+          "reason": "Separate catalogue community. The snapshot does not say Hartland II."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": "Al Merkadh is the printed locality. It is not a separate catalogue community in the community-count file.",
+      "title": "Sobha Hartland, Al Merkadh"
+    },
+    "the-oasis": {
+      "catalogue": {
+        "communityId": "community:Dubai:the-oasis",
+        "communityName": "The Oasis",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [],
+      "scope": "named_development_transactions",
+      "scopeNote": "The title names The Oasis, all phases, in Me'Aisem Second. Me'Aisem Second is not a catalogue community. Rows are Oasis clusters, so this is that development's printed sales, not a locality-wide set.",
+      "title": "The Oasis (All Phases), Me'Aisem Second"
+    },
+    "tilal-al-ghaf": {
+      "catalogue": {
+        "communityId": "community:Dubai:tilal-al-ghaf",
+        "communityName": "Tilal Al Ghaf",
+        "emirate": "Dubai",
+        "match": "exact"
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:damac-hills",
+          "communityName": "DAMAC Hills",
+          "reason": "Al Hebiah Third is a different snapshot. Not combined with Al Hebiah Fourth."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Tilal Al Ghaf, Al Hebiah Fourth"
+    },
+    "town-square": {
+      "catalogue": {
+        "communityId": "community:Dubai:town-square-dubai",
+        "communityName": "Town Square Dubai",
+        "emirate": "Dubai",
+        "match": "obvious_normalized",
+        "normalization": "Snapshot title is Town Square. Catalogue name adds Dubai. Al Yelayiss 2 is the printed locality; catalogue Al Yalayis 1 is a different community and is not used."
+      },
+      "compositionContains": [],
+      "notUsedAsThisSeries": [
+        {
+          "communityId": "community:Dubai:al-yalayis-1",
+          "communityName": "Al Yalayis 1",
+          "reason": "Different locality number and a different catalogue community."
+        }
+      ],
+      "scope": "area_community_transaction_context",
+      "scopeNote": null,
+      "title": "Town Square, Al Yelayiss 2"
+    }
+  },
+  "provenance": "Reused transaction-snapshot extract. Scope is copied from that extract and is not reassigned.",
+  "retrievalDate": "2026-10-06"
+}
