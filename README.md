@@ -17,6 +17,33 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V14 Modon phase and current-price candidate — 7 October 2026 (Dubai)
+
+`20261007-enrichment-v14` preserves all **1,645 projects and 215 communities**
+and adds eight checksum-recorded Modon sources with 15 reviewed facts for Tara
+Park, Maysan, Muheira and Nawayef Village. Seven supported checklist cells close:
+Tara Park gains its retrospective first-launch month, phase milestones and exact
+current segmented advertisements; Maysan gains announcement and phase evidence;
+and Nawayef Village gains phase and current advertised-price evidence. See the
+[V14 review](docs/history-v14-modon-review.md).
+
+The fixed 42,780-cell ledger now has **2,479 present, 3,433 partial, 27,568
+missing and 9,300 unestablished** items: **94.21% unresolved**. The candidate
+retains **317,878 public aggregate observations, 13,396 series, 2,938 sources,
+4,156 sourced facts, 105 events and 7,382 event exposures**. Developer-reported
+aggregate sales remain separate from registered transactions, current
+advertisements remain separate from valuations, and no contract award is labelled
+as physical construction start.
+
+No complete lifetime sale/rent history or validated 2080 forecast is certified.
+Conditional annual slots remain exactly 2027–2080, with unsupported values null.
+Publication and deployment will follow only after the complete preservation,
+storage, test and production dry-run gates pass.
+
+Next: direct registered sale/rent cohorts, service charges, physical construction
+progress, delivery, occupancy and dated valuations for exact records and native
+periods.
+
 ## Published V13 evidence and seamless map palette — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v13` preserves all **1,645 projects and 215 communities**
