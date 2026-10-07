@@ -96,6 +96,25 @@ export function parseGeneratedInsert(statement){
  if(statement.slice(cursor)!==';'||values.length!==columns.length)throw new Error('Unsupported generated INSERT suffix/arity');
  return{table,columns,values,sql:`INSERT OR IGNORE INTO ${table}(${columns.join(',')}) VALUES(${values.map(()=>'?').join(',')});`};
 }
+export async function publishIndexBatches({indexes,prepare,d1,concurrency=1,onProgress}){
+ if(!Number.isInteger(concurrency)||concurrency<1||concurrency>8)throw new Error('Index concurrency must be between 1 and 8');
+ let completed=0;
+ // Dependencies finish before their referring tables start. Only independent
+ // immutable rows in the same table are sent concurrently, in bounded batches.
+ for(const table of Object.keys(INSERT_COLUMNS).filter(t=>t!=='hi_snapshots')){
+  const rows=indexes.filter(s=>s.table===table),batches=[];
+  for(let i=0;i<rows.length;i+=50)batches.push(rows.slice(i,i+50));
+  for(let i=0;i<batches.length;i+=concurrency){
+   const wave=batches.slice(i,i+concurrency);
+   const results=await Promise.allSettled(wave.map(async batch=>{
+    await d1.batch(batch.map(prepare));completed+=batch.length;
+    onProgress?.({phase:'indexed_statements',completed,total:indexes.length});
+   }));
+   const failed=results.find(r=>r.status==='rejected');if(failed)throw failed.reason;
+  }
+ }
+ if(completed!==indexes.length)throw new Error('Unsupported index table');
+}
 export async function publishImmutableSnapshot({r2,d1,target,config,manifest,readObject,publicationMode='candidate',onProgress}) {
  if(publicationMode==='production')validateProductionTarget(config,target,manifest);
  else if(publicationMode==='candidate')validateCandidateTarget(config,target);
@@ -155,7 +174,7 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
  const claimed=await d1.prepare('SELECT root_sha256, publication_state FROM hi_snapshots WHERE snapshot_version = ?').bind(manifest.version).first();
  if(!claimed||claimed.root_sha256!==manifest.rootIndex.sha256)throw new Error('Snapshot version collision during claim: no record indexes were written');
  if(!['staged','complete'].includes(claimed.publication_state))throw new Error('Claimed snapshot publication state is invalid');
- for(let i=0;i<indexes.length;i+=50){await d1.batch(indexes.slice(i,i+50).map(prepare));onProgress?.({phase:'indexed_statements',completed:Math.min(i+50,indexes.length),total:indexes.length});}
+ await publishIndexBatches({indexes,prepare,d1,concurrency:publicationMode==='production'?8:1,onProgress});
  // OR IGNORE can suppress CHECK failures as well as harmless repeated keys.
  // Every version-scoped table must contain the complete unique-key index
  // before the staged snapshot can be marked complete.

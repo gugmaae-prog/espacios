@@ -36,6 +36,13 @@ and only then marks that snapshot complete. It never changes an existing root.
 The existing local D1 test round-trips headers and records larger than 100 KiB.
 See [Cloudflare's limits](https://developers.cloudflare.com/d1/platform/limits/).
 
+For remote readback, the bridge hashes the actual R2 bytes and returns SHA-256
+and byte length; it never relies on metadata or the content-addressed filename.
+Production indexing sends up to eight concurrent batches of 50 rows within a
+table, and finishes each parent table before dependent tables start. An error
+drains the current requests and stops before the next wave or completion.
+Interrupted publication can resume using the same immutable version and root.
+
 Release sequence: build history, run `npm run verify`, verify preservation against
 the saved production snapshot, run `npm run history:verify:storage`, and dry-run
 `wrangler.production.jsonc`. Create a private target manifest containing the exact
