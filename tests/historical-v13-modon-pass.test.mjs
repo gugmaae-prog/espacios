@@ -15,7 +15,7 @@ const previous=JSON.parse(gunzipSync(priorBytes));
 
 test('V13 preserves the immutable V11 base and every retained V12 packet item',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
- assert.ok(['20261007-enrichment-v13','20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v13','20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
  for(const old of previous.records){

@@ -4,7 +4,7 @@ import {webcrypto} from 'node:crypto';
 import bridge,{validateStatement} from '../scripts/production-history-publisher-worker.mjs';
 import {parseJSONC,validateProductionTarget} from '../scripts/publish-historical-snapshot.mjs';
 import fs from 'node:fs';
-import {retryReleaseTransport,sendReleaseRequest} from '../scripts/adapters/production-history-publisher.mjs';
+import {isApprovedPublisherURL,retryReleaseTransport,sendReleaseRequest} from '../scripts/adapters/production-history-publisher.mjs';
 test('pooled release transport resends identical bytes and cannot follow authorization redirects',async()=>{
  const body=Buffer.from([0,255,1,10]),seen=[];
  const send=async(url,options)=>{
@@ -34,6 +34,11 @@ test('production requires explicit exact snapshot, account, bindings and restric
  for(const changed of [{...target,authorization:null},{...target,accountId:'other'},{...target,rootSHA256:'b'.repeat(64)},{...target,r2:{...target.r2,bucketName:'other'}}])assert.throws(()=>validateProductionTarget(config,changed,manifest));
  assert.throws(()=>validateProductionTarget({...config,vars:{...config.vars,DATA_ROOM_PUBLIC:'true'}},target,manifest));
  assert.throws(()=>validateProductionTarget({...config,routes:['example/*']},target,manifest));
+});
+test('production publisher adapter accepts only the released bridge endpoints',()=>{
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://attacker.example'),false);
+ assert.equal(isApprovedPublisherURL('http://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),false);
 });
 test('missing token or expiry prevents all storage access',async()=>{
  for(const altered of [{...env,PUBLISH_TOKEN:undefined},{...env,PUBLISH_EXPIRES:'2000-01-01'}]){

@@ -1,6 +1,12 @@
 import fs from 'node:fs/promises';
 import {validateProductionTarget} from '../publish-historical-snapshot.mjs';
 
+const APPROVED_PUBLISHER_URLS=new Set([
+ 'https://espacios-history-publisher-20261005.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'
+]);
+export const isApprovedPublisherURL=url=>APPROVED_PUBLISHER_URLS.has(url);
+
 export async function retryReleaseTransport(send,wait=ms=>new Promise(r=>setTimeout(r,ms))){
  for(let attempt=0;attempt<3;attempt++){
   try{
@@ -22,7 +28,7 @@ export async function sendReleaseRequest(url,options,send=fetch){
 export async function connectProduction({target,config,manifest}){
  validateProductionTarget(config,target,manifest);
  const url=target.publisherURL,headers=process.env.ESPACIOS_PUBLISH_HEADER_FILE;
- if(url!=='https://espacios-history-publisher-20261005.thekeifferjapeth.workers.dev'||!headers)throw new Error('Explicit scoped release bridge and private header file required');
+ if(!isApprovedPublisherURL(url)||!headers)throw new Error('Explicit scoped release bridge and private header file required');
  const mode=(await fs.stat(headers)).mode;if((mode&0o077)!==0)throw new Error('Publisher header file must be private');
  const match=/^Authorization: (Bearer [^\s]+)$/.exec((await fs.readFile(headers,'utf8')).trim());
  if(!match)throw new Error('Private bridge authorization header has an invalid format');
