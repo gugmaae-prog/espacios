@@ -16,7 +16,11 @@ test('minimal composition exposes the approved controls without changing evidenc
 });
 
 test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
+  assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 5%,var\(--su-panel\)\)/);
+  assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 20%,var\(--su-line\)\)/);
   assert.match(css,/\.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
+  assert.match(css,/#minimal-map-modes button\[aria-pressed="true"\][\s\S]*?background:var\(--minimal-selected\)/);
+  assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
   assert.match(css,/--gold:var\(--minimal-accent\)/);

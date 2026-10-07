@@ -31,6 +31,7 @@ test('V12 preserves every V11 record, observation, milestone, source and selecte
 
 test('Modon pass closes only specific launch, announcement and advertised-price requirements',()=>{
  assert.equal(packet.facts.length,13);assert.equal(packet.sources.length,7);
+ assert.ok(!packet.facts.some(f=>['register','series'].includes(f.kind)),'V12 packet itself must not add authority register or sale history');
  const before=new Map(previous.records.map(r=>[r.id,r]));
  const expected=[
   ['project:apartments-muheira-maysan-abu-dhabi','original_launch'],
@@ -52,7 +53,14 @@ test('Modon pass closes only specific launch, announcement and advertised-price 
  for(const f of packet.facts.filter(f=>f.milestone==='launch')){
   const r=records.get(f.recordId);
   assert.equal(r.researchStatus.itemCoverage.original_launch.status,'present');
-  for(const key of ['construction','actual_completion','occupancy','registered_sale_history','signed_rent_history','dated_current_valuation'])assert.equal(r.researchStatus.itemCoverage[key].status,'missing');
+  for(const key of ['actual_completion','occupancy','signed_rent_history','dated_current_valuation'])assert.equal(r.researchStatus.itemCoverage[key].status,'missing');
+  if(snapshot.version==='20261007-enrichment-v16'&&['project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi','project:nawayef-east-modon-hudayriyat-island-abu-dhabi'].includes(f.recordId)){
+   assert.equal(r.researchStatus.itemCoverage.registered_sale_history.status,'present');
+   assert.equal(r.researchStatus.itemCoverage.construction.status,f.recordId==='project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi'?'present':'partial');
+  }else{
+   assert.equal(r.researchStatus.itemCoverage.registered_sale_history.status,'missing');
+   assert.equal(r.researchStatus.itemCoverage.construction.status,'missing');
+  }
  }
  assert.equal(records.get('community:Abu Dhabi:hudayriyat-island').researchStatus.itemCoverage.original_launch.status,'missing');
  assert.ok(packet.facts.every(f=>!f.recordId.startsWith('adrec:')),'No unreviewed registration/phase fan-out');
