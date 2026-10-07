@@ -1,0 +1,738 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-07",
+  "sources": [
+    {
+      "id": "v16-src-adrec-project-listing",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectListing?page=0&size=1000&direction=desc&sort=projectCreateDate&lang=en",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:16:47.507Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:16:47.507Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_project_register_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "9d7b5fd20186aa9b55e55547a147bd98b8c5eb7bc24e3c256fdfcac41bd9ce30",
+      "bytes": 342520,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "recordCount": 320
+    },
+    {
+      "id": "v16-src-adrec-project-594",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=594",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:13:48.224Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:13:48.224Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_project_register_detail_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "4bba3f77e67e02f91d33d74401eefb9ab3a7c11c2d98eea96a4a288822d823c5",
+      "bytes": 7301,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "registeredProjectId": 594
+    },
+    {
+      "id": "v16-src-adrec-sales-594",
+      "url": "https://adrec.gov.ae/api/feature/MarketData/RecentSales?fromDate=2019-01-01&toDate=2026-10-07&saleApplicationType=all&municipality=all&projectName=Nawayef+Park+Views&page=0&size=1000&language=en",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:13:48.224Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:13:48.224Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_registered_sales_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "cd71a3761f9e207000430fbdb5a1bb0a6686651846942573ebb2edd532d0b7dc",
+      "bytes": 83526,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "registeredProjectId": 594,
+      "returnedRows": 181,
+      "totalElements": 181,
+      "dateFrom": "2019-01-01",
+      "dateTo": "2026-10-07"
+    },
+    {
+      "id": "v16-src-adrec-project-595",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=595",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:13:48.224Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:13:48.224Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_project_register_detail_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "5d30ae24d089299cea500b007615287103d99eda25a05cb1a66fe07d216086bc",
+      "bytes": 8801,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "registeredProjectId": 595
+    },
+    {
+      "id": "v16-src-adrec-sales-595",
+      "url": "https://adrec.gov.ae/api/feature/MarketData/RecentSales?fromDate=2019-01-01&toDate=2026-10-07&saleApplicationType=all&municipality=all&projectName=Nawayef+East+A&page=0&size=1000&language=en",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:13:48.224Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:13:48.224Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_registered_sales_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "838364c781b3426341a69903d61fe9758bf15418c7b9370c0f5eb2cf80685afb",
+      "bytes": 8041,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "registeredProjectId": 595,
+      "returnedRows": 17,
+      "totalElements": 17,
+      "dateFrom": "2019-01-01",
+      "dateTo": "2026-10-07"
+    },
+    {
+      "id": "v16-src-adrec-project-597",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=597",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:13:48.224Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:13:48.224Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_project_register_detail_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "21b1ec05fe9a61adc8327a3162cc75a30015abf5246fc36b4b919f4bcf9385fc",
+      "bytes": 6846,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "registeredProjectId": 597
+    },
+    {
+      "id": "v16-src-adrec-sales-597",
+      "url": "https://adrec.gov.ae/api/feature/MarketData/RecentSales?fromDate=2019-01-01&toDate=2026-10-07&saleApplicationType=all&municipality=all&projectName=Nawayef+East+B&page=0&size=1000&language=en",
+      "publisher": "Abu Dhabi Real Estate Centre (ADREC)",
+      "retrievedAt": "2026-10-07T11:13:48.224Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T11:13:48.224Z",
+      "availabilityBasis": "First verified capture of this current public authority API response; historical row dates remain separate from point-in-time source availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "current_api_snapshot",
+      "classification": "primary_authority_public_registered_sales_api",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation, checksum metadata and reviewed public register rows; raw API envelope not redistributed and no dataset licence inferred",
+      "sha256": "35e1e2ea120034a0f869da9e6f099329768069a6e462013ed6d4dc7d6bd57156",
+      "bytes": 219454,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-adrec-v16-1",
+      "registeredProjectId": 597,
+      "returnedRows": 486,
+      "totalElements": 486,
+      "dateFrom": "2019-01-01",
+      "dateTo": "2026-10-07"
+    }
+  ],
+  "facts": [
+    {
+      "status": "accepted",
+      "id": "v16-adrec-park-register",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "register",
+      "sourceIds": [
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "ADREC directory ID 594 and project number 20240000383164 name Nawayef Park Views in Al Hidayriyyat Island; Modon evidence maps this exact registered project to Nawayef Park Views.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-park-current"
+      ],
+      "registeredProjectId": "ADREC:594",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "primary_authority_project_register_snapshot",
+      "fields": {
+        "authority": "ADREC",
+        "directoryId": 594,
+        "projectNumber": "20240000383164",
+        "nativeName": "Nawayef Park Views",
+        "registeredOn": "2025-03-20",
+        "developer": "HUDAYRIYAT DEVELOPMENT  - L.L.C - O.P.C",
+        "community": "Al Hidayriyyat Island",
+        "district": "Al Hidayriyyat",
+        "status": "Under Construction",
+        "offPlan": true,
+        "residentialUnits": 184,
+        "unitBreakdown": [
+          {
+            "Id": null,
+            "Type": "VILLA",
+            "Studio": null,
+            "OneBedroom": null,
+            "TwoBedroom": null,
+            "ThreeBedroom": null,
+            "FourBedroom": null,
+            "FiveBedroom": null,
+            "SixBedroom": null,
+            "SevenBedroom": null,
+            "EightBedroom": null,
+            "NineBedroom": null,
+            "TenBedroom": null,
+            "ElevenBedroom": null,
+            "TwelveBedroom": null,
+            "FifteenBedroom": null
+          },
+          {
+            "Id": null,
+            "Type": "APARTMENT",
+            "Studio": null,
+            "OneBedroom": 50,
+            "TwoBedroom": 100,
+            "ThreeBedroom": 30,
+            "FourBedroom": 4,
+            "FiveBedroom": null,
+            "SixBedroom": null,
+            "SevenBedroom": null,
+            "EightBedroom": null,
+            "NineBedroom": null,
+            "TenBedroom": null,
+            "ElevenBedroom": null,
+            "TwelveBedroom": null,
+            "FifteenBedroom": null
+          }
+        ],
+        "progressPercentage": 8.87,
+        "latestProgressReport": {
+          "ReportId": 32582,
+          "Date": "2026-05-07",
+          "InspectionDate": "2026-05-07",
+          "ValidityDate": "2026-08-07",
+          "CompletionPercentage": 8.87
+        },
+        "directorySoldSnapshot": {
+          "retrievedAt": "2026-10-07T11:16:47.507Z",
+          "soldCount": 177,
+          "totalCount": 206,
+          "soldPercentage": 85.92
+        }
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-park-registration",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2025-03-20",
+        "precision": "day"
+      },
+      "label": "ADREC public register lists Nawayef Park Views as registered on 2025-03-20",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact ADREC directory ID 594 and project number 20240000383164 identify the registered subject project.",
+      "identitySourceIds": [
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-park-current"
+      ],
+      "sourceIds": [
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing"
+      ],
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_authority_registered_on_date",
+      "note": "This is the date labelled Registered on by the current ADREC public directory; it is later than the retained developer launch and is not relabelled as first marketing or first sale."
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-park-progress",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-05-07",
+        "precision": "day"
+      },
+      "label": "ADREC report records 8.87% construction completion for Nawayef Park Views on 2026-05-07",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact ADREC directory ID 594 and project number 20240000383164 attach report 32582 to Nawayef Park Views.",
+      "identitySourceIds": [
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-park-current"
+      ],
+      "sourceId": "v16-src-adrec-project-594",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_authority_construction_progress_report",
+      "note": "Report 32582 is dated 2026-05-07 and lists validity through 2026-08-07. It establishes progress on the inspection date, not the original construction-start date, completion, delivery or occupancy."
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-east-a-register",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "register",
+      "sourceIds": [
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "ADREC directory ID 595 and project number 20240000407514 name NAWEYAF EAST A in Al Hidayriyyat Island; Modon evidence maps this exact registered project as a constituent Nawayef East phase.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ],
+      "registeredProjectId": "ADREC:595",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "evidenceClass": "primary_authority_project_register_snapshot",
+      "fields": {
+        "authority": "ADREC",
+        "directoryId": 595,
+        "projectNumber": "20240000407514",
+        "nativeName": "NAWEYAF EAST A",
+        "registeredOn": "2025-04-04",
+        "developer": "HUDAYRIYAT DEVELOPMENT  - L.L.C - O.P.C",
+        "community": "Al Hidayriyyat Island",
+        "district": "Al Hidayriyyat",
+        "status": "Under Construction",
+        "offPlan": true,
+        "residentialUnits": 40,
+        "unitBreakdown": [
+          {
+            "Id": null,
+            "Type": "VILLA",
+            "Studio": null,
+            "OneBedroom": null,
+            "TwoBedroom": null,
+            "ThreeBedroom": null,
+            "FourBedroom": null,
+            "FiveBedroom": null,
+            "SixBedroom": null,
+            "SevenBedroom": 19,
+            "EightBedroom": 21,
+            "NineBedroom": null,
+            "TenBedroom": null,
+            "ElevenBedroom": null,
+            "TwelveBedroom": null,
+            "FifteenBedroom": null
+          },
+          {
+            "Id": null,
+            "Type": "APARTMENT",
+            "Studio": null,
+            "OneBedroom": null,
+            "TwoBedroom": null,
+            "ThreeBedroom": null,
+            "FourBedroom": null,
+            "FiveBedroom": null,
+            "SixBedroom": null,
+            "SevenBedroom": null,
+            "EightBedroom": null,
+            "NineBedroom": null,
+            "TenBedroom": null,
+            "ElevenBedroom": null,
+            "TwelveBedroom": null,
+            "FifteenBedroom": null
+          }
+        ],
+        "progressPercentage": 23.73,
+        "latestProgressReport": {
+          "ReportId": 39280,
+          "Date": "2026-04-13",
+          "InspectionDate": "2026-04-13",
+          "ValidityDate": "2026-07-13",
+          "CompletionPercentage": 23.73
+        },
+        "directorySoldSnapshot": {
+          "retrievedAt": "2026-10-07T11:16:47.507Z",
+          "soldCount": 16,
+          "totalCount": 40,
+          "soldPercentage": 40.0
+        }
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-east-a-registration",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2025-04-04",
+        "precision": "day"
+      },
+      "label": "ADREC public register lists NAWEYAF EAST A as registered on 2025-04-04",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact ADREC directory ID 595 and project number 20240000407514 identify the registered subject phase within Nawayef East.",
+      "identitySourceIds": [
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ],
+      "sourceIds": [
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing"
+      ],
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_authority_registered_on_date",
+      "note": "This is the date labelled Registered on by the current ADREC public directory; it is later than the retained developer launch and is not relabelled as first marketing or first sale."
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-east-a-progress",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2026-04-13",
+        "precision": "day"
+      },
+      "label": "ADREC report records 23.73% construction completion for NAWEYAF EAST A on 2026-04-13",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact ADREC directory ID 595 and project number 20240000407514 attach report 39280 to the NAWEYAF EAST A phase within Nawayef East.",
+      "identitySourceIds": [
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ],
+      "sourceId": "v16-src-adrec-project-595",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_authority_construction_progress_report",
+      "note": "Report 39280 is dated 2026-04-13 and lists validity through 2026-07-13. It establishes progress on the inspection date, not the original construction-start date, completion, delivery or occupancy."
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-east-b-register",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "register",
+      "sourceIds": [
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "ADREC directory ID 597 and project number 20240000407520 name NAWEYAF EAST B in Al Hidayriyyat Island; Modon evidence maps this exact registered project as a constituent Nawayef East phase.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ],
+      "registeredProjectId": "ADREC:597",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "evidenceClass": "primary_authority_project_register_snapshot",
+      "fields": {
+        "authority": "ADREC",
+        "directoryId": 597,
+        "projectNumber": "20240000407520",
+        "nativeName": "NAWEYAF EAST B",
+        "registeredOn": "2025-04-10",
+        "developer": "HUDAYRIYAT DEVELOPMENT  - L.L.C - O.P.C",
+        "community": "Al Hidayriyyat Island",
+        "district": "Al Hidayriyyat",
+        "status": "Under Construction",
+        "offPlan": true,
+        "residentialUnits": 491,
+        "unitBreakdown": [
+          {
+            "Id": null,
+            "Type": "VILLA",
+            "Studio": null,
+            "OneBedroom": null,
+            "TwoBedroom": null,
+            "ThreeBedroom": 26,
+            "FourBedroom": 278,
+            "FiveBedroom": 167,
+            "SixBedroom": 11,
+            "SevenBedroom": 9,
+            "EightBedroom": null,
+            "NineBedroom": null,
+            "TenBedroom": null,
+            "ElevenBedroom": null,
+            "TwelveBedroom": null,
+            "FifteenBedroom": null
+          },
+          {
+            "Id": null,
+            "Type": "APARTMENT",
+            "Studio": null,
+            "OneBedroom": null,
+            "TwoBedroom": null,
+            "ThreeBedroom": null,
+            "FourBedroom": null,
+            "FiveBedroom": null,
+            "SixBedroom": null,
+            "SevenBedroom": null,
+            "EightBedroom": null,
+            "NineBedroom": null,
+            "TenBedroom": null,
+            "ElevenBedroom": null,
+            "TwelveBedroom": null,
+            "FifteenBedroom": null
+          }
+        ],
+        "progressPercentage": 23.53,
+        "latestProgressReport": {
+          "ReportId": 39283,
+          "Date": "2026-04-13",
+          "InspectionDate": "2026-04-13",
+          "ValidityDate": "2026-07-13",
+          "CompletionPercentage": 23.53
+        },
+        "directorySoldSnapshot": {
+          "retrievedAt": "2026-10-07T11:16:47.507Z",
+          "soldCount": 473,
+          "totalCount": 491,
+          "soldPercentage": 96.33
+        }
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-east-b-registration",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2025-04-10",
+        "precision": "day"
+      },
+      "label": "ADREC public register lists NAWEYAF EAST B as registered on 2025-04-10",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact ADREC directory ID 597 and project number 20240000407520 identify the registered subject phase within Nawayef East.",
+      "identitySourceIds": [
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ],
+      "sourceIds": [
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing"
+      ],
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_authority_registered_on_date",
+      "note": "This is the date labelled Registered on by the current ADREC public directory; it is later than the retained developer launch and is not relabelled as first marketing or first sale."
+    },
+    {
+      "status": "accepted",
+      "id": "v16-adrec-east-b-progress",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2026-04-13",
+        "precision": "day"
+      },
+      "label": "ADREC report records 23.53% construction completion for NAWEYAF EAST B on 2026-04-13",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact ADREC directory ID 597 and project number 20240000407520 attach report 39283 to the NAWEYAF EAST B phase within Nawayef East.",
+      "identitySourceIds": [
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ],
+      "sourceId": "v16-src-adrec-project-597",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_authority_construction_progress_report",
+      "note": "Report 39283 is dated 2026-04-13 and lists validity through 2026-07-13. It establishes progress on the inspection date, not the original construction-start date, completion, delivery or occupancy."
+    }
+  ],
+  "seriesLinks": [
+    {
+      "seriesId": "adrec-v16-594-primary-registered-sale-aed",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "ADREC RecentSales project_name Nawayef Park Views is joined to exact directory ID 594 and project number 20240000383164 for Nawayef Park Views.",
+      "identitySourceIds": [
+        "v16-src-adrec-sales-594",
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-park-current"
+      ]
+    },
+    {
+      "seriesId": "adrec-v16-594-secondary-registered-sale-aed",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "ADREC RecentSales project_name Nawayef Park Views is joined to exact directory ID 594 and project number 20240000383164 for Nawayef Park Views.",
+      "identitySourceIds": [
+        "v16-src-adrec-sales-594",
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-park-current"
+      ]
+    },
+    {
+      "seriesId": "adrec-v16-595-primary-registered-sale-aed",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "ADREC RecentSales project_name Nawayef East A is joined to exact directory ID 595 and project number 20240000407514 as a constituent Nawayef East phase.",
+      "identitySourceIds": [
+        "v16-src-adrec-sales-595",
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ]
+    },
+    {
+      "seriesId": "adrec-v16-597-primary-registered-sale-aed",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "ADREC RecentSales project_name Nawayef East B is joined to exact directory ID 597 and project number 20240000407520 as a constituent Nawayef East phase.",
+      "identitySourceIds": [
+        "v16-src-adrec-sales-597",
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ]
+    },
+    {
+      "seriesId": "adrec-v16-597-secondary-registered-sale-aed",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "scope": "subject",
+      "identityVerified": true,
+      "identityBasis": "ADREC RecentSales project_name Nawayef East B is joined to exact directory ID 597 and project number 20240000407520 as a constituent Nawayef East phase.",
+      "identitySourceIds": [
+        "v16-src-adrec-sales-597",
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-project-listing",
+        "v15-src-modon-east-current"
+      ]
+    }
+  ],
+  "recordResearch": [
+    {
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "status": "official_adrec_register_progress_and_registered_sales_added; signed_rent_delivery_occupancy_valuation_and_complete_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v16-src-adrec-project-594",
+        "v16-src-adrec-project-listing",
+        "v16-src-adrec-sales-594"
+      ],
+      "directRegisteredSaleObservationsAdded": 181,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "status": "official_adrec_register_progress_and_registered_sales_added; signed_rent_delivery_occupancy_valuation_and_complete_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v16-src-adrec-project-595",
+        "v16-src-adrec-project-listing",
+        "v16-src-adrec-sales-595",
+        "v16-src-adrec-project-597",
+        "v16-src-adrec-sales-597"
+      ],
+      "directRegisteredSaleObservationsAdded": 503,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    }
+  ],
+  "historyInputs": [
+    {
+      "path": "pass32-adrec-nawayef-registered-sales.csv.gz",
+      "compression": "gzip",
+      "sha256": "eb58609ea37a82821635b5bb4cdc121ecffa3e314962e04afe7fd73bcf1dc0ac",
+      "uncompressedSHA256": "3302e9a55028c6a2700655f8cb75c65fb2e702c25a94bc64f70f8f64f14e74aa",
+      "uncompressedBytes": 1359669,
+      "bytes": 59204,
+      "sourceDerivedSHA256": "b0035715b1ae07bd2662ca0ffbb489be261c30e3de2fd01a6bd4497a8ee7ba28",
+      "scope": "684 reviewed public ADREC registered-sale row occurrences; API envelopes remain outside the repository"
+    }
+  ],
+  "licensedArchives": [],
+  "additionalDatasets": [],
+  "sourceCandidates": [],
+  "collection": {
+    "method": "Bounded HTTPS capture of one ADREC public project listing, three exact project-detail responses and three project-filtered RecentSales responses; response bytes capped at ten megabytes and SHA-256 recorded",
+    "extractionVersion": "reviewed-adrec-v16-1",
+    "completedRealDataCoverage": false,
+    "recordsReviewed": 2,
+    "registeredSubprojectsVerified": 3,
+    "apiResponsesReviewed": 7,
+    "nativeRegisteredSaleRowsAdded": 684,
+    "historyRowsAdded": 684,
+    "seriesAdded": 5,
+    "rawApiEnvelopesRedistributed": false,
+    "publicContactAndEscrowFieldsExcluded": true,
+    "sourceSummaries": {
+      "park": {
+        "rows": 181,
+        "primaryRows": 177,
+        "secondaryRows": 4,
+        "earliest": "2025-06-25",
+        "latest": "2026-07-27",
+        "directorySoldCount": 177,
+        "directorySoldPercentage": 85.92,
+        "progressPercentage": 8.87,
+        "latestProgressReportDate": "2026-05-07"
+      },
+      "east-a": {
+        "rows": 17,
+        "primaryRows": 17,
+        "secondaryRows": 0,
+        "earliest": "2025-11-26",
+        "latest": "2026-10-05",
+        "directorySoldCount": 16,
+        "directorySoldPercentage": 40.0,
+        "progressPercentage": 23.73,
+        "latestProgressReportDate": "2026-04-13"
+      },
+      "east-b": {
+        "rows": 486,
+        "primaryRows": 473,
+        "secondaryRows": 13,
+        "earliest": "2025-05-20",
+        "latest": "2026-09-25",
+        "directorySoldCount": 473,
+        "directorySoldPercentage": 96.33,
+        "progressPercentage": 23.53,
+        "latestProgressReportDate": "2026-04-13"
+      }
+    }
+  },
+  "methodology": "Join exact ADREC directory IDs and project numbers to the retained Modon identities before subject linking. Preserve every official RecentSales row occurrence and attach an ordinal when the endpoint exposes identical attributes without a transaction ID. Keep current sold counts separate from transaction rows; do not infer unique units, construction start, completion, rent, valuation, continuous lifetime coverage or forecast values."
+}

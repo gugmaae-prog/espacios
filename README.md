@@ -17,6 +17,35 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V16 ADREC Nawayef candidate — 7 October 2026 (Dubai)
+
+`20261007-enrichment-v16` preserves all **1,645 projects and 215 communities**
+and adds seven checksum-recorded public ADREC API captures, nine bounded facts
+and **684 registered-sale row occurrences** for Nawayef Park Views and the
+verified East A/B phases within Nawayef East. It also adds exact register numbers,
+registration dates and dated construction-progress observations. See the
+[V16 review](docs/history-v16-adrec-nawayef-review.md).
+
+Three missing cells close and one construction cell becomes partial. The fixed
+42,780-cell ledger now has **2,483 present, 3,434 partial, 27,563 missing and
+9,300 unestablished** items: **94.20% unresolved**. The candidate contains
+**318,562 published historical observations, 13,401 series, 2,948 sources,
+4,171 sourced facts, 105 events and 7,382 event exposures**.
+
+ADREC exposes no transaction or unit ID in these sale results. All source row
+occurrences are preserved with reproducibility metadata, including 27 rows that
+share the same exposed attributes with another row. They are not represented as
+684 proven unique transactions. The endpoint request starts in 2019, but a
+current response does not prove complete lifetime history, so complete registered
+sale coverage remains unestablished. Signed rent, completion, occupancy and dated
+valuation remain missing.
+
+No validated 2080 forecast is certified. Conditional annual slots remain exactly
+2027–2080, with unsupported values null. The immutable candidate root is
+`f886d7d611d9d1e8450b942ade7e001b32ac4186efe889184964d98f5ce6609a`.
+Production identifiers and receipts will be added only after merged-source
+publication and independent live verification.
+
 ## Published V15 Nawayef evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v15` preserves all **1,645 projects and 215 communities**

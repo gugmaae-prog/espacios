@@ -18,7 +18,7 @@ const ids={park:'project:nawayef-park-views-modon-properties-hudayriyat-island-a
 test('V15 preserves the immutable reviewed base and every V14 packet item',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
  assert.equal(previous.version,'20261007-enrichment-v11');
- assert.equal(snapshot.version,'20261007-enrichment-v15');
+ assert.ok(['20261007-enrichment-v15','20261007-enrichment-v16'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
  for(const old of previous.records){
@@ -55,12 +55,13 @@ test('V15 publishes only three non-duplicate sources and six exact facts from th
  assert.ok(snapshot.sources.some(s=>s.id==='v12-src-modon-east-construction-contract'),'retained exact contract evidence remains present');
 });
 
-test('V15 closes exactly one supported phase-milestone cell',()=>{
+test('V15 closes its supported phase-milestone cell and later releases preserve it',()=>{
  assert.deepEqual(v14Receipt.ledger.statuses,{missing:27568,unestablished:9300,partial:3433,present:2479});
  const counts={};for(const r of records.values())for(const item of Object.values(r.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- assert.deepEqual(counts,{missing:27567,partial:3433,unestablished:9300,present:2480});
- assert.deepEqual(Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-v14Receipt.ledger.statuses[key]])),{missing:-1,unestablished:0,partial:0,present:1});
- assert.equal(records.get(ids.east).researchStatus.itemCoverage.construction.status,'missing');
+ const expected=snapshot.version==='20261007-enrichment-v16'?{missing:27563,partial:3434,unestablished:9300,present:2483}:{missing:27567,partial:3433,unestablished:9300,present:2480};
+ assert.deepEqual(counts,expected);
+ if(snapshot.version==='20261007-enrichment-v15')assert.deepEqual(Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-v14Receipt.ledger.statuses[key]])),{missing:-1,unestablished:0,partial:0,present:1});
+ assert.equal(records.get(ids.east).researchStatus.itemCoverage.construction.status,snapshot.version==='20261007-enrichment-v16'?'partial':'missing');
  assert.equal(records.get(ids.park).researchStatus.itemCoverage.phase_milestones.status,'missing');
 });
 
@@ -86,7 +87,14 @@ test('V15 adds no TBC number, registered history, valuation, construction start 
  assert.ok(!JSON.stringify(packet).includes('5000000000'));
  for(const id of Object.values(ids)){
   const record=records.get(id),coverage=record.researchStatus.itemCoverage;
-  assert.equal(coverage.registered_sale_history.status,'missing');assert.equal(coverage.signed_rent_history.status,'missing');assert.equal(coverage.dated_valuation.status,'missing');assert.equal(coverage.actual_completion.status,'missing');assert.equal(coverage.occupancy.status,'missing');assert.equal(coverage.construction.status,'missing');
+  assert.ok(!packet.facts.some(f=>f.recordId===id&&f.kind==='series'),'V15 packet itself must not add registered history');
+  if(snapshot.version==='20261007-enrichment-v16'){
+   assert.equal(coverage.registered_sale_history.status,'present');
+   assert.equal(coverage.construction.status,id===ids.park?'present':'partial');
+  }else{
+   assert.equal(coverage.registered_sale_history.status,'missing');assert.equal(coverage.construction.status,'missing');
+  }
+  assert.equal(coverage.signed_rent_history.status,'missing');assert.equal(coverage.dated_valuation.status,'missing');assert.equal(coverage.actual_completion.status,'missing');assert.equal(coverage.occupancy.status,'missing');
   const scenarios=annualScenarios(record,{asOf:snapshot.asOf,sources:snapshot.sources});assert.deepEqual(scenarios.targetYears,[...Array(54)].map((_,i)=>2027+i));assert.equal(scenarios.validatedForecast,false);assert.ok(Object.values(scenarios.metrics.price.paths).every(path=>path.every(point=>point.value===null)));
  }
 });

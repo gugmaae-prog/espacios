@@ -4,8 +4,8 @@ html[data-minimal-map="1"]{
   --minimal-blue:#526f8e;
   --minimal-green:#497b6b;
   --minimal-neutral:#697177;
-  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 10%,var(--su-panel));
-  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 30%,var(--su-line));
+  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 5%,var(--su-panel));
+  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 20%,var(--su-line));
   --minimal-surface:color-mix(in srgb,var(--su-panel) 88%,transparent);
   /* Legacy shells still reference these names. Keep them as aliases so a
      deferred panel cannot reintroduce the retired gold palette. */
@@ -103,7 +103,7 @@ html[data-minimal-map="1"] body #app .ae-search-map-tools button:focus-visible{
   color:var(--su-ink)!important;
 }
 html[data-minimal-map="1"] body #app .ae-map-focus-toggle.active{
-  border-color:color-mix(in srgb,var(--minimal-accent) 32%,var(--su-line))!important;
+  border-color:var(--minimal-selected-line)!important;
   background:var(--minimal-selected)!important;color:var(--su-ink)!important;box-shadow:none!important;
 }
 /* The inherited shell used opaque navy and gold for selected states. Use one
@@ -119,6 +119,13 @@ html[data-minimal-map="1"] body #app :is(
   .analysis-tabs button.active,
   .valuation-tabs button.active
 ){
+  border-color:var(--minimal-selected-line)!important;
+  background:var(--minimal-selected)!important;
+  color:var(--su-ink)!important;
+  box-shadow:none!important;
+}
+/* Retire the inherited gold active state on the 3D control as well. */
+html[data-minimal-map="1"] body #app :is(#toggle-3d.active,.ae-mobile-map-modes #toggle-3d.active){
   border-color:var(--minimal-selected-line)!important;
   background:var(--minimal-selected)!important;
   color:var(--su-ink)!important;
