@@ -1,0 +1,29 @@
+{
+  "origin": "https://espacios.me/map",
+  "checkedAt": "2026-10-07T10:32:12.324657Z",
+  "readOnly": true,
+  "rendered": true,
+  "title": "Espacios Map \u00b7 UAE Real Estate Intelligence",
+  "recordPickerCount": 1860,
+  "historyDrawer": {
+    "opened": true,
+    "tabs": [
+      "History",
+      "Events",
+      "Through 2080"
+    ],
+    "fitsMobileViewport": true
+  },
+  "palette": {
+    "visibleGold": false,
+    "surfaces": [
+      "white",
+      "slate"
+    ],
+    "accent": "teal",
+    "alignedWithEspacios": true
+  },
+  "mapControlsVisible": true,
+  "timelineVisible": true,
+  "passed": true
+}

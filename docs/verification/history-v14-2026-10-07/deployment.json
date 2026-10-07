@@ -1,0 +1,17 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "c17b07cc-7da0-4034-a7b9-f963eda8af06",
+  "deploymentId": "1177314c-1677-4780-9dc7-a02dbe7c4160",
+  "trafficPercent": 100,
+  "frontendRelease": "20261007-history-v14-modon",
+  "dataRelease": "20261007-enrichment-v14",
+  "githubCommit": "c79bf0fe245fa89d8fa15af7324a63016588c9cc",
+  "githubPullRequest": 59,
+  "bindingsPreserved": [
+    "DB",
+    "MARKET_R2",
+    "PSR_PROPERTY",
+    "AI"
+  ],
+  "dataRoomPublic": false
+}
