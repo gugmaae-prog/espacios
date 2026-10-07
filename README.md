@@ -17,7 +17,7 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Reviewed V12 evidence — 7 October 2026 (Dubai)
+## Published V12 evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v12` retains all **1,645 projects and 215 communities** and
 adds four verified Modon launch dates, three historical developer asking prices,
@@ -30,8 +30,21 @@ The ledger has **3,722 present, 2,180 partial, 27,578 missing and 9,300 unestabl
 items: **91.30% of the checklist remains unresolved**. Asking prices do not count
 as registered transactions or current valuations. Conditional annual scenarios
 retain the exact 2080 endpoint; no complete lifetime history or validated 2080
-forecast is certified. Publication status will be recorded after immutable
-storage and canonical API verification.
+forecast is certified.
+
+V12 was deployed at **08:22 UTC on 7 October 2026** from merged PR [#54](https://github.com/gugmaae-prog/espacios/pull/54),
+source `55297fd1f436853491cea1a89e2606077adb9106`. All **1,661 immutable files and
+35,423 index statements** verified. Worker `psr-portfolio-map-v2` serves version
+`2e102855-5388-4793-b14c-8de2452183ad` at **100% traffic**. Canonical checks passed
+all 1,860 records and 42,780 checklist cells, the five changed record histories,
+and the exact JavaScript/CSS bytes. Supabase release metadata matches. See the
+[release receipt](docs/verification/history-v12-2026-10-07/release.json),
+[live API checks](docs/verification/history-v12-2026-10-07/live-api.json) and
+[browser checks](docs/verification/history-v12-2026-10-07/browser.json).
+
+Next: continue exact-identity sale/rent and lifecycle research, including the
+[dated primary-source review queue](docs/history-next-primary-review.md). That
+queue is research work in progress and adds no completeness credit.
 
 The map's neutral active controls and focus treatment were deployed in PRs #52–53
 and visually checked in light and dark mode. V12 preserves those styles.
@@ -61,15 +74,15 @@ remain 2027–2080 and are separate from observed history.
 Validation: the V9 preservation check retains all 1,860 records, 316,608 existing
 native observations, 13,158 series, 9,516 record-series links, 2,846 sources and
 all prior events/exposures and quote vintages. Automated verification passes.
-All **1,661 immutable files and 35,416 index statements** are published and
-verified. The canonical map serves Cloudflare Worker version
+All **1,661 immutable files and 35,416 index statements** were published and
+verified for V11. At that release, the canonical map served Cloudflare Worker version
 `91a299ac-a1de-4664-9dc5-a8b59fb3b82b` at **100% traffic**, deployment
 `dafaca31-7ece-4c00-89b6-486122fbfa98`, published **7 October 2026, 06:52 UTC**.
-The deployed source is `fa24e538652566090a90c08ad9b84d9167662810` (PRs #47–50);
-frontend release is `20261007-history-v11-neutral-ui`. Live JavaScript/CSS match
+The source was `fa24e538652566090a90c08ad9b84d9167662810` (PRs #47–50);
+frontend release was `20261007-history-v11-neutral-ui`. Live JavaScript/CSS matched
 the tested bytes. Canonical API checks passed all 1,860 research records, 42,780
 checklist items, 105 events, and the exact 238-series/1,270-observation increment.
-Supabase release metadata matches this deployment. See the
+Supabase release metadata was verified against that deployment. See the
 [release receipt](docs/verification/history-2026-10-07/release.json),
 [API verification](docs/verification/history-2026-10-07/live-api.json), and
 [asset verification](docs/verification/history-2026-10-07/live-assets.json).

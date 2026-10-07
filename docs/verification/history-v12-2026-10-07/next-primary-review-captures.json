@@ -1,0 +1,58 @@
+{
+  "reviewStatus": "pending_identity_scope_period_and_quote_review",
+  "sources": [
+    {
+      "key": "golf-current",
+      "url": "https://www.modon.com/real-estate/hudayriyat-golf-estates",
+      "retrievedAt": "2026-10-07T08:13:34.294090+00:00",
+      "status": "captured_for_review",
+      "acceptedForPublication": false,
+      "coverageCredit": false,
+      "sha256": "eb5fb2881e454e2b5116535297b94d85bef66e727449d53cb24bd44ae68a32c4",
+      "bytes": 64539,
+      "rawBodyRedistributed": false
+    },
+    {
+      "key": "bashayer-current",
+      "url": "https://www.modon.com/real-estate/bashayer",
+      "retrievedAt": "2026-10-07T08:13:34.768765+00:00",
+      "status": "captured_for_review",
+      "acceptedForPublication": false,
+      "coverageCredit": false,
+      "sha256": "b2a6308e3e142cb6b4468c81a0f95b7a2e5f46063153d6c8a751c0b999355ecf",
+      "bytes": 62316,
+      "rawBodyRedistributed": false
+    },
+    {
+      "key": "tara-sellout",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2026/04/29/modon-announces-the-sell-out-of-tara-park-on-reem-island--generating-approximately-aed-2-billion-in-sales",
+      "retrievedAt": "2026-10-07T08:13:34.892758+00:00",
+      "status": "captured_for_review",
+      "acceptedForPublication": false,
+      "coverageCredit": false,
+      "sha256": "df841aade865280d3dd64e1b196f7af6af8bfd56b154113b51d3fc0fee31d5b5",
+      "bytes": 28374,
+      "rawBodyRedistributed": false
+    },
+    {
+      "key": "modon-h1-2026",
+      "url": "https://apigateway.adx.ae/adx/cdn/1.0/content/download/5225620",
+      "retrievedAt": "2026-10-07T08:13:35.348455+00:00",
+      "status": "fetch_failed",
+      "acceptedForPublication": false,
+      "coverageCredit": false,
+      "error": "curl: (56) The requested URL returned error: 403\n"
+    },
+    {
+      "key": "bashayer-final-sellout",
+      "url": "https://www.modon.com/media-centre/details/2026/07/17/modon-sells-out-final-phase-of-bashayer-on-hudayriyat-island-within-one-day-of-launch--generating-approximately-aed-1.25-billion-in-sales",
+      "retrievedAt": "2026-10-07T08:13:35.511324+00:00",
+      "status": "captured_for_review",
+      "acceptedForPublication": false,
+      "coverageCredit": false,
+      "sha256": "9f20e1ffff4a05f926e78ed72d3fa3fbdc7fe393de176e05eeb69eb881415f7e",
+      "bytes": 27562,
+      "rawBodyRedistributed": false
+    }
+  ]
+}
