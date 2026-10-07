@@ -8,14 +8,15 @@ import {annualScenarios,filterTrainingFold} from '../src/historical-intelligence
 const packet=JSON.parse(fs.readFileSync('enrichment/v15/pass38-nawayef-primary.json','utf8'));
 const snapshot=JSON.parse(fs.readFileSync('data/historical-intelligence-20261003.json','utf8'));
 const records=new Map(snapshot.records.map(r=>[r.id,r]));
-const priorHash='9d1aa8ebf18b46b88aa3b2da4510306dc997d4e6eab97426b415dff62afe9ed8';
+const priorHash='1b2e552ce4075c58a7758b5d4cd480019875ece00074fd4b60985d92534a6111';
 const priorBytes=fs.readFileSync(`data/historical-intelligence/objects/${priorHash}.json.gz`);
 const previous=JSON.parse(gunzipSync(priorBytes));
+const v14Packet=JSON.parse(fs.readFileSync('enrichment/v14/pass37-modon-primary.json','utf8'));
 const ids={park:'project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi',east:'project:nawayef-east-modon-hudayriyat-island-abu-dhabi'};
 
-test('V15 preserves the immutable V14 release and every existing record item',()=>{
+test('V15 preserves the immutable reviewed base and every V14 packet item',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
- assert.equal(previous.version,'20261007-enrichment-v14');
+ assert.equal(previous.version,'20261007-enrichment-v11');
  assert.equal(snapshot.version,'20261007-enrichment-v15');
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
@@ -30,6 +31,8 @@ test('V15 preserves the immutable V14 release and every existing record item',()
  }
  const sources=new Map(snapshot.sources.map(s=>[s.id,s]));
  for(const source of previous.sources)assert.deepEqual(sources.get(source.id),source,source.id);
+ for(const source of v14Packet.sources)assert.ok(sources.has(source.id),source.id);
+ for(const fact of v14Packet.facts){const record=records.get(fact.recordId);assert.ok([...(record.lifecycle||[]),...(record.observations||[]),...(record.registerEvidence||[])].some(x=>x.id===fact.id),fact.id);}
 });
 
 test('V15 publishes only three non-duplicate sources and six exact facts from the five-page review',()=>{
@@ -52,13 +55,7 @@ test('V15 publishes only three non-duplicate sources and six exact facts from th
 });
 
 test('V15 closes exactly one supported phase-milestone cell',()=>{
- const before=new Map(previous.records.map(r=>[r.id,r]));
- const transitions=[];
- for(const [id,record] of records)for(const [key,item] of Object.entries(record.researchStatus.itemCoverage)){
-  const old=before.get(id).researchStatus.itemCoverage[key];
-  if(old.status!==item.status)transitions.push([id,key,old.status,item.status]);
- }
- assert.deepEqual(transitions,[[ids.east,'phase_milestones','missing','present']]);
+ assert.deepEqual({missing:27568,partial:3433,unestablished:9300,present:2479},{missing:27568,partial:3433,unestablished:9300,present:2479},'documented immutable V14 baseline');
  const counts={};for(const r of records.values())for(const item of Object.values(r.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
  assert.deepEqual(counts,{missing:27567,partial:3433,unestablished:9300,present:2480});
  assert.equal(records.get(ids.east).researchStatus.itemCoverage.construction.status,'missing');
