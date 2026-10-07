@@ -12,6 +12,7 @@ const priorHash='1b2e552ce4075c58a7758b5d4cd480019875ece00074fd4b60985d92534a611
 const priorBytes=fs.readFileSync(`data/historical-intelligence/objects/${priorHash}.json.gz`);
 const previous=JSON.parse(gunzipSync(priorBytes));
 const v14Packet=JSON.parse(fs.readFileSync('enrichment/v14/pass37-modon-primary.json','utf8'));
+const v14Receipt=JSON.parse(fs.readFileSync('docs/verification/history-v14-2026-10-07/live-verification.json','utf8'));
 const ids={park:'project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi',east:'project:nawayef-east-modon-hudayriyat-island-abu-dhabi'};
 
 test('V15 preserves the immutable reviewed base and every V14 packet item',()=>{
@@ -55,9 +56,10 @@ test('V15 publishes only three non-duplicate sources and six exact facts from th
 });
 
 test('V15 closes exactly one supported phase-milestone cell',()=>{
- assert.deepEqual({missing:27568,partial:3433,unestablished:9300,present:2479},{missing:27568,partial:3433,unestablished:9300,present:2479},'documented immutable V14 baseline');
+ assert.deepEqual(v14Receipt.ledger.statuses,{missing:27568,unestablished:9300,partial:3433,present:2479});
  const counts={};for(const r of records.values())for(const item of Object.values(r.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
  assert.deepEqual(counts,{missing:27567,partial:3433,unestablished:9300,present:2480});
+ assert.deepEqual(Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-v14Receipt.ledger.statuses[key]])),{missing:-1,unestablished:0,partial:0,present:1});
  assert.equal(records.get(ids.east).researchStatus.itemCoverage.construction.status,'missing');
  assert.equal(records.get(ids.park).researchStatus.itemCoverage.phase_milestones.status,'missing');
 });
