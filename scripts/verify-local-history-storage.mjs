@@ -16,8 +16,9 @@ const manifest=JSON.parse(await read('data/historical-intelligence/publication-m
 const data=JSON.parse(await read('data/historical-intelligence-20261003.json'));
 const bindings=await connectCandidate({target,config,ephemeral:true});
 try {
-  const publication=await publishImmutableSnapshot({...bindings,target,config,manifest,readObject:o=>read(o.path)});
-  const repeated=await publishImmutableSnapshot({...bindings,target,config,manifest,readObject:o=>read(o.path)});
+  const progress=pass=>p=>{if(p.completed===p.total||p.completed%500===0)console.error(JSON.stringify({pass,...p}));};
+  const publication=await publishImmutableSnapshot({...bindings,target,config,manifest,readObject:o=>read(o.path),onProgress:progress('initial')});
+  const repeated=await publishImmutableSnapshot({...bindings,target,config,manifest,readObject:o=>read(o.path),onProgress:progress('repeat')});
   if(repeated.written!==0||repeated.reused!==manifest.objects.length)throw new Error('Repeated publication changed immutable objects');
   assert.equal(publication.indexCountsVerified,true,'Initial publication skipped fail-closed table count verification');
   assert.equal(repeated.indexCountsVerified,true,'Repeated publication skipped fail-closed table count verification');

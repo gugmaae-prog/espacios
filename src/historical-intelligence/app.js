@@ -175,28 +175,31 @@
     return window.matchMedia?.('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)').matches??false;
   }
   function panelGeometry() {
-    const panel=Q('#hi-panel');if(!panel)return;
+    const panel=Q('#hi-panel');if(!panel||panel.classList.contains('hidden'))return;
+    const data=(key,value)=>{if(panel.dataset[key]!==value)panel.dataset[key]=value;};
+    const style=(key,value)=>{if(panel.style.getPropertyValue(key)!==value)panel.style.setProperty(key,value);};
+    const hint=hidden=>{const el=Q('#hi-mobile-hint');if(el.hidden!==hidden)el.hidden=hidden;};
     if(!mobileLayout()){
-      const previous=panel.dataset.hiLayout,picker=Q('#hi-record-picker');panel.dataset.hiLayout='desktop';
-      if(previous!=='desktop'){picker.open=true;H.pickerPinnedOpen=false;panel.dataset.hiPicker='full';}
-      const dock=Q('#tl-dock')?.getBoundingClientRect();panel.style.setProperty('--hi-desktop-bottom',Math.max(166,dock?window.innerHeight-dock.top+10:166)+'px');Q('#hi-mobile-hint').hidden=true;
-      if(!panel.classList.contains('hidden')&&picker.open&&!H.pickerPinnedOpen){
+      const previous=panel.dataset.hiLayout,picker=Q('#hi-record-picker');data('hiLayout','desktop');
+      if(previous!=='desktop'){if(!picker.open)picker.open=true;H.pickerPinnedOpen=false;data('hiPicker','full');}
+      const dock=Q('#tl-dock')?.getBoundingClientRect();style('--hi-desktop-bottom',Math.max(166,dock?window.innerHeight-dock.top+10:166)+'px');hint(true);
+      if(H.recordId&&!panel.classList.contains('hidden')&&picker.open&&!H.pickerPinnedOpen){
         const frame=panel.getBoundingClientRect(),body=Q('#hi-body').getBoundingClientRect();
-        if(frame.bottom-16-body.top<120){panel.dataset.hiPicker='compact';picker.open=false;}
+        if(frame.bottom-16-body.top<120){data('hiPicker','compact');picker.open=false;}
       }
       return;
     }
     const search=Q('.topbar .search-wrap')?.getBoundingClientRect(),header=Q('header.topbar')?.getBoundingClientRect(),dock=Q('#tl-dock')?.getBoundingClientRect();
     const top=Math.max(search?.bottom??0,header?.bottom??0,88)+10,dockTop=dock?.top??window.innerHeight-210;
     let layout=dockTop-top-10<(Q('#hi-record-picker').open?500:330)?'expanded':'compact';
-    panel.dataset.hiLayout=layout;panel.style.setProperty('--hi-mobile-top',top+'px');panel.style.setProperty('--hi-mobile-bottom',Math.max(10,window.innerHeight-dockTop+10)+'px');
+    data('hiLayout',layout);style('--hi-mobile-top',top+'px');style('--hi-mobile-bottom',Math.max(10,window.innerHeight-dockTop+10)+'px');
     // Check the clipped intersection, not an overflowing child's nominal height.
     if(layout==='compact'&&!panel.classList.contains('hidden')){
       const frame=panel.getBoundingClientRect(),body=Q('#hi-body').getBoundingClientRect();
       const visible=Math.max(0,Math.min(body.bottom,frame.bottom-12)-Math.max(body.top,frame.top+12));
-      if(visible<120){layout='expanded';panel.dataset.hiLayout=layout;}
+      if(visible<120){layout='expanded';data('hiLayout',layout);}
     }
-    Q('#hi-mobile-hint').hidden=layout!=='expanded';
+    hint(layout!=='expanded');
   }
   function installGeometryObservers() {
     let pending=0;
