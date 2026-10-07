@@ -8,6 +8,23 @@ const event={id:'event:a',title:'Dated event',eventDate:{start:'2021-01-10',prec
 const exposure={eventId:event.id,recordId:record.id,scope:'emirate',verified:false};
 const rates={downside:-2,base:0,upside:3};
 const assumptions={priceAED:200000,annualRentAED:10000,occupancyYear:2028,annualPriceGrowthPct:rates,annualRentGrowthPct:rates,vacancyPct:5,annualOperatingCostsAED:1000,acquisitionCostsPct:4,disposalCostsPct:2};
+test('exact-identity advertisements and valuations stay outside registered history and transaction training',()=>{
+ for(const kind of ['asking_quote','developer_advertised_price','listing_price','valuation']){
+  const o=observation('2020-01',100,{observationKind:kind,sampleCount:null});
+  const checked=validateObservation(o,record,{asOf,sources});
+  assert.equal(checked.valid,true);assert.equal(checked.displayEligible,true);assert.equal(checked.direct,false);
+  assert.equal(monthlyCoverage({...record,observations:[o]},{asOf,sources}).summary.directObservedMonths,0);
+  assert.equal(filterTrainingFold([o],{asOf,sources}).retained.length,0);
+  const values=Array.from({length:36},(_,i)=>observation(`${2020+Math.floor(i/12)}-${String(i%12+1).padStart(2,'0')}`,100+i,{observationKind:kind,sampleCount:null}));
+  assert.equal(eventStudy({...record,observations:values},event,{asOf,sources,exposures:[exposure]}).status,'insufficient_evidence');
+ }
+ const disguised=observation('2020-01',100,{observationKind:'aggregate',evidenceClass:'advertised_asking_price'});
+ assert.equal(filterTrainingFold([disguised],{asOf,sources}).retained.length,0);
+ assert.equal(validateObservation(disguised,record,{asOf,sources}).direct,false);
+ const priceAnchor=observation('2026-08',200000,{observationKind:'developer_advertised_price',unit:'AED'});
+ const out=annualScenarios({...record,scenarioInputs:{priceAnchor,assumptions:{annualPriceGrowthPct:rates}}},{asOf,sources});
+ assert.ok(out.metrics.price.paths.base.every(p=>p.value===null));
+});
 test('a rejected geographic link preserves native points but cannot supply usable context or volume',()=>{
  const series={id:'old',metric:'price',unit:'AED/sqft',scope:'area_context',identityVerified:false,sourceId:'sales',frequency:'monthly',columns:['period','value','sampleCount'],points:[['2026-08',100,40]],recordLinkReview:{status:'rejected',reason:'Wrong community',sourceIds:['news']}};
  const r={...record,historySeries:[series]};const out=recordHistory({version:'test',asOf,sources,events:[],exposures:[],manifest:{}},r);

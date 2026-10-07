@@ -4,7 +4,20 @@ import {webcrypto} from 'node:crypto';
 import bridge,{validateStatement} from '../scripts/production-history-publisher-worker.mjs';
 import {parseJSONC,validateProductionTarget} from '../scripts/publish-historical-snapshot.mjs';
 import fs from 'node:fs';
-import {retryReleaseTransport} from '../scripts/adapters/production-history-publisher.mjs';
+import {retryReleaseTransport,sendReleaseRequest} from '../scripts/adapters/production-history-publisher.mjs';
+test('pooled release transport resends identical bytes and cannot follow authorization redirects',async()=>{
+ const body=Buffer.from([0,255,1,10]),seen=[];
+ const send=async(url,options)=>{
+  seen.push({url,...options});
+  if(seen.length===1)throw Error('connection reset');
+  return new Response(Buffer.from([255,0,10]),{status:200});
+ };
+ const result=await retryReleaseTransport(()=>sendReleaseRequest('https://example.com/r2',{method:'PUT',headers:{Authorization:'Bearer test-only'},body},send),async()=>{});
+ assert.deepEqual(result,Buffer.from([255,0,10,10,50,48,48]));
+ assert.equal(seen.length,2);
+ for(const request of seen){assert.equal(request.redirect,'error');assert.equal(request.signal.aborted,false);assert.deepEqual(request.body,body);}
+ await assert.rejects(sendReleaseRequest('https://example.com/redirect',{method:'GET'},async(_url,options)=>{assert.equal(options.redirect,'error');throw Error('redirect refused');}),/redirect refused/);
+});
 test('release transport retries transient failures but preserves the final bytes and rejects exhausted retries',async()=>{
  let calls=0;const waits=[],success=Buffer.from('verified bytes\n200');
  const result=await retryReleaseTransport(async()=>{calls++;if(calls===1)throw Error('connection reset');if(calls===2)return Buffer.from('busy\n503');return success;},async ms=>waits.push(ms));

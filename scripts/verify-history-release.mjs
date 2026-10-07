@@ -56,5 +56,16 @@ try{
   }));
  }
  receipt.increment={series:checked,nativePoints:points};receipt.passed=true;
+ const factRecords=[...new Set((packet.facts||[]).filter(f=>f.status==='accepted').map(f=>f.recordId))];
+ for(let i=0;i<factRecords.length;i+=4){
+  await Promise.all(factRecords.slice(i,i+4).map(async id=>{
+   const body=await get('/map/api/record-history?'+new URLSearchParams({recordId:id})),expected=records.get(id);
+   assert.ok(expected,id);
+   for(const key of ['lifecycle','observations','registerEvidence','currentSnapshot','priorCurrentSnapshots','researchStatus'])assert.deepEqual(body.record[key],expected[key],id+' '+key);
+   assert.equal(body.scenarios.targetYears.length,54,id+' annual slots');
+   assert.equal(body.scenarios.targetYears.at(-1),2080,id+' annual endpoint');
+  }));
+ }
+ receipt.increment.factRecords=factRecords.length;
 }catch(error){receipt.passed=false;receipt.error=error.stack||String(error);process.exitCode=1;}
 await fs.writeFile(output,JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));

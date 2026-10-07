@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-07",
+  "sources": [
+    {
+      "id": "v12-src-modon-muheira-launch",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2025/05/22/modon-unveils-muheira--the-first-modon-freehold-residential-towers-on-reem-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:37.179485+00:00",
+      "publishedAt": "2025-05-22",
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "1f50a031fa02c27728817e4bcf9237f15c866df179b4ce8cf835ce851d812338",
+      "bytes": 28327,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    },
+    {
+      "id": "v12-src-modon-park-views-launch",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2024/12/10/modon-launches-nawayef-park-views--the-first-apartments-release-on-hudayriyat-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:37.361796+00:00",
+      "publishedAt": "2024-12-10",
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "f3efe7365f08ee00e70a42130ad8af72c9ac12441d81ac4ca69f83ed03e05a16",
+      "bytes": 29285,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    },
+    {
+      "id": "v12-src-modon-village-launch",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2025/05/06/modon-launches-first-townhouses-on-hudayriyat-island-at-nawayef-village",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:37.602674+00:00",
+      "publishedAt": "2025-05-06",
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "471b415e96aafcb2f1e1e080b1040be2538439817dec3fa9fb19bd0e57a6b5d5",
+      "bytes": 29615,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    },
+    {
+      "id": "v12-src-modon-east-launch",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2024/11/07/modon-unveils-luxury-residences-on-the-east-hill-at-nawayef-on-hudayriyat-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:37.752729+00:00",
+      "publishedAt": "2024-11-07",
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "9929d885f445ee3e319185c12ee4a2ecc06e1ab1ed64817a4425d46773df31f2",
+      "bytes": 29688,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    },
+    {
+      "id": "v12-src-modon-hudayriyat-masterplan",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2023/06/13/in-line-with-directives-of-mohamed-bin-zayed-modon-properties-reveals-hudayriyat-island-masterplan",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:37.907000+00:00",
+      "publishedAt": "2023-06-13",
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "99e6cb390cabbb36c20812ad1eadf2b3a5ac25929cd019e5c5a9d097444d41d7",
+      "bytes": 31550,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    },
+    {
+      "id": "v12-src-modon-east-construction-contract",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2025/12/19/modon-awards-the-largest-residential-construction-contract-in-abu-dhabi-in-2025-for-nawayef-east-and-nawayef-west-on-hudayriyat-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:38.072571+00:00",
+      "publishedAt": "2025-12-19",
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": "day",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "a2876edd3573e9556182eb5347909da16d062964c2ca360899368ccc4d460484",
+      "bytes": 27602,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    },
+    {
+      "id": "v12-src-modon-newsroom-date-index",
+      "url": "https://www.modon.com/about-modon/media-centre",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T07:36:38.322745+00:00",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07",
+      "availabilityBasis": "Conservative first verified capture; stated historical publication is retained separately. No contemporaneous archived availability was verified.",
+      "datePrecision": null,
+      "classification": "primary_developer_newsroom_index",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "e574fa809270a9b5cddf638a2e7cc4f384cea5aa1ec94f409dd2098491a229c5",
+      "bytes": 71196,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v12-1"
+    }
+  ],
+  "facts": [
+    {
+      "status": "accepted",
+      "id": "v12-modon-muheira-launch",
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-05-22",
+        "precision": "day"
+      },
+      "label": "Modon announces the Muheira sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer explicitly names Muheira, two residential towers on Reem Island in Abu Dhabi. Linked only to the exact named catalogue project; the catalogue Maysan association is not independently confirmed by this source.",
+      "identitySourceIds": [
+        "v12-src-modon-muheira-launch"
+      ],
+      "sourceId": "v12-src-modon-muheira-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-muheira-announcement",
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-05-22",
+        "precision": "day"
+      },
+      "label": "Modon announces the Muheira sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer explicitly names Muheira, two residential towers on Reem Island in Abu Dhabi. Linked only to the exact named catalogue project; the catalogue Maysan association is not independently confirmed by this source.",
+      "identitySourceIds": [
+        "v12-src-modon-muheira-launch"
+      ],
+      "sourceId": "v12-src-modon-muheira-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-park-views-launch",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-12-10",
+        "precision": "day"
+      },
+      "label": "Modon announces the Nawayef Park Views sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact developer, project name and Hudayriyat Island location match the catalogue. The separate ADREC entry is not automatically merged or given duplicate financial observations.",
+      "identitySourceIds": [
+        "v12-src-modon-park-views-launch"
+      ],
+      "sourceId": "v12-src-modon-park-views-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-park-views-announcement",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-12-10",
+        "precision": "day"
+      },
+      "label": "Modon announces the Nawayef Park Views sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact developer, project name and Hudayriyat Island location match the catalogue. The separate ADREC entry is not automatically merged or given duplicate financial observations.",
+      "identitySourceIds": [
+        "v12-src-modon-park-views-launch"
+      ],
+      "sourceId": "v12-src-modon-park-views-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-village-launch",
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-05-06",
+        "precision": "day"
+      },
+      "label": "Modon announces the Nawayef Village sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact Modon project name and location on Hudayriyat Island; 378 townhouses/twin villas. Separate ADREC townhouse registration not treated as an identical whole-project financial population.",
+      "identitySourceIds": [
+        "v12-src-modon-village-launch"
+      ],
+      "sourceId": "v12-src-modon-village-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-village-announcement",
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-05-06",
+        "precision": "day"
+      },
+      "label": "Modon announces the Nawayef Village sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Exact Modon project name and location on Hudayriyat Island; 378 townhouses/twin villas. Separate ADREC townhouse registration not treated as an identical whole-project financial population.",
+      "identitySourceIds": [
+        "v12-src-modon-village-launch"
+      ],
+      "sourceId": "v12-src-modon-village-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-east-launch",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-11-07",
+        "precision": "day"
+      },
+      "label": "Modon announces the Nawayef East sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Official release names the east hill at Nawayef on Hudayriyat Island and links Modon Nawayef East. This is the initial named development release, not Nawayef West or later types.",
+      "identitySourceIds": [
+        "v12-src-modon-east-launch"
+      ],
+      "sourceId": "v12-src-modon-east-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_launch",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred. Initial release covered Homes and Heights types 5–8; remaining Heights and Mansions were planned later. Publication date is corroborated by the official newsroom index.",
+      "sourceIds": [
+        "v12-src-modon-east-launch",
+        "v12-src-modon-newsroom-date-index"
+      ]
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-east-announcement",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-11-07",
+        "precision": "day"
+      },
+      "label": "Modon announces the Nawayef East sales launch",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Official release names the east hill at Nawayef on Hudayriyat Island and links Modon Nawayef East. This is the initial named development release, not Nawayef West or later types.",
+      "identitySourceIds": [
+        "v12-src-modon-east-launch"
+      ],
+      "sourceId": "v12-src-modon-east-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement",
+      "note": "Developer announcement date; no construction start, completed sale, delivery or occupancy is inferred. Initial release covered Homes and Heights types 5–8; remaining Heights and Mansions were planned later. Publication date is corroborated by the official newsroom index.",
+      "sourceIds": [
+        "v12-src-modon-east-launch",
+        "v12-src-modon-newsroom-date-index"
+      ]
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-muheira-launch-asking-price",
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The developer explicitly names Muheira, two residential towers on Reem Island in Abu Dhabi. Linked only to the exact named catalogue project; the catalogue Maysan association is not independently confirmed by this source.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v12-src-modon-muheira-launch"
+      ],
+      "sourceId": "v12-src-modon-muheira-launch",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2025-05-22",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 1200000,
+        "observationKind": "developer_advertised_price",
+        "segment": "apartments",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "launch starting price across one- to three-bedroom apartments; specific unit not supplied",
+        "sampleCount": null,
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Price stated in a dated developer launch release; offer validity beyond this date unverified",
+        "note": "Historical advertisement only. Not a transaction, valuation, current offer, rent, appreciation rate or scenario anchor."
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-park-views-launch-asking-price",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "Exact developer, project name and Hudayriyat Island location match the catalogue. The separate ADREC entry is not automatically merged or given duplicate financial observations.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v12-src-modon-park-views-launch"
+      ],
+      "sourceId": "v12-src-modon-park-views-launch",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2024-12-10",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 2000000,
+        "observationKind": "developer_advertised_price",
+        "segment": "apartments",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "launch starting price across one- to four-bedroom apartments; specific unit not supplied",
+        "sampleCount": null,
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Price stated in a dated developer launch release; offer validity beyond this date unverified",
+        "note": "Historical advertisement only. Not a transaction, valuation, current offer, rent, appreciation rate or scenario anchor."
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-east-launch-asking-price",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "Official release names the east hill at Nawayef on Hudayriyat Island and links Modon Nawayef East. This is the initial named development release, not Nawayef West or later types.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v12-src-modon-east-launch"
+      ],
+      "sourceId": "v12-src-modon-east-launch",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2024-11-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 6600000,
+        "observationKind": "developer_advertised_price",
+        "segment": "villas",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "initial release starting price for Homes and Heights types 5–8; later Mansions and Heights types 1–4 excluded",
+        "sampleCount": null,
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Price stated in a dated developer launch release; offer validity beyond this date unverified",
+        "note": "Historical advertisement only. Not a transaction, valuation, current offer, rent, appreciation rate or scenario anchor."
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-east-construction-contract",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "construction_contract_award",
+      "date": {
+        "start": "2025-12-19",
+        "precision": "day"
+      },
+      "label": "Modon awards a joint main construction contract covering Nawayef East and West",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "Official release names the east hill at Nawayef on Hudayriyat Island and links Modon Nawayef East. This is the initial named development release, not Nawayef West or later types.",
+      "identitySourceIds": [
+        "v12-src-modon-east-construction-contract"
+      ],
+      "sourceId": "v12-src-modon-east-construction-contract",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_construction_contract_award",
+      "note": "The AED 5 billion and 735 villas refer to both developments combined. No allocation to East, actual site commencement, completion or property price is inferred."
+    },
+    {
+      "status": "accepted",
+      "id": "v12-modon-hudayriyat-masterplan",
+      "recordId": "community:Abu Dhabi:hudayriyat-island",
+      "kind": "lifecycle",
+      "milestone": "masterplan_announcement",
+      "date": {
+        "start": "2023-06-13",
+        "precision": "day"
+      },
+      "label": "Modon reveals the Hudayriyat Island masterplan",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer explicitly identifies the whole Hudayriyat Island masterplan in Abu Dhabi; linked to the corresponding community only.",
+      "identitySourceIds": [
+        "v12-src-modon-hudayriyat-masterplan"
+      ],
+      "sourceId": "v12-src-modon-hudayriyat-masterplan",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_masterplan_announcement",
+      "note": "Community masterplan announcement, not island inception or construction completion. Future amenity schedules in this 2023 source are historical plans; no opening, local price uplift or price is inferred.",
+      "sourceIds": [
+        "v12-src-modon-hudayriyat-masterplan",
+        "v12-src-modon-newsroom-date-index"
+      ]
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [
+    {
+      "recordId": "community:Abu Dhabi:hudayriyat-island",
+      "status": "primary_launch_and_milestone_review_complete; financial_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v12-src-modon-hudayriyat-masterplan",
+        "v12-src-modon-newsroom-date-index"
+      ],
+      "acceptedFactCount": 1,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "status": "primary_launch_and_milestone_review_complete; financial_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v12-src-modon-muheira-launch"
+      ],
+      "acceptedFactCount": 3,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "status": "primary_launch_and_milestone_review_complete; financial_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v12-src-modon-east-launch",
+        "v12-src-modon-newsroom-date-index",
+        "v12-src-modon-east-construction-contract"
+      ],
+      "acceptedFactCount": 4,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "status": "primary_launch_and_milestone_review_complete; financial_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v12-src-modon-park-views-launch"
+      ],
+      "acceptedFactCount": 3,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "status": "primary_launch_and_milestone_review_complete; financial_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v12-src-modon-village-launch"
+      ],
+      "acceptedFactCount": 2,
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    }
+  ],
+  "collection": {
+    "method": "Manual identity and fact review of seven bounded public Modon pages; current HTTP captures are hash recorded, bodies not redistributed",
+    "extractionVersion": "reviewed-modon-v12-1",
+    "completedRealDataCoverage": false,
+    "historicalPublicationNotContemporaneousArchive": true,
+    "recordsReviewed": 5
+  },
+  "methodology": "Add exact developer milestones and three historical starting-price advertisements. Retain date precision, evidence class and current-only verified source availability. No subject registered sales, rents, construction starts, completed properties or future outcomes are inferred."
+}
