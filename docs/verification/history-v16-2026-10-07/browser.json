@@ -1,0 +1,24 @@
+{
+  "verifiedAt": "2026-10-07T13:27:22Z",
+  "route": "https://espacios.me/map",
+  "mobileViewport": {
+    "width": 332,
+    "height": 760,
+    "documentWidth": 332,
+    "horizontalOverflow": false,
+    "selectedMapMode": "Map",
+    "themeTested": "light and dark"
+  },
+  "normalViewport": {
+    "width": 1280,
+    "height": 720,
+    "selectedMapMode": "Map",
+    "themeRestored": "dark"
+  },
+  "style": {
+    "lightSelectedFill": "color(srgb 0.94 0.952353 0.960784)",
+    "darkSelectedFill": "color(srgb 0.0723529 0.125882 0.159216)",
+    "usesThemeAwareSoftAccent": true,
+    "visibleGoldInReviewedViews": false
+  }
+}

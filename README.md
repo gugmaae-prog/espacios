@@ -17,7 +17,7 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V16 ADREC Nawayef candidate — 7 October 2026 (Dubai)
+## Published V16 ADREC Nawayef evidence and refined Espacios controls — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v16` preserves all **1,645 projects and 215 communities**
 and adds seven checksum-recorded public ADREC API captures, nine bounded facts
@@ -28,9 +28,11 @@ registration dates and dated construction-progress observations. See the
 
 Three missing cells close and one construction cell becomes partial. The fixed
 42,780-cell ledger now has **2,483 present, 3,434 partial, 27,563 missing and
-9,300 unestablished** items: **94.20% unresolved**. The candidate contains
-**318,562 published historical observations, 13,401 series, 2,948 sources,
-4,171 sourced facts, 105 events and 7,382 event exposures**.
+9,300 unestablished** items: **94.20% unresolved**. The published snapshot
+contains **318,562 historical aggregate observations, 13,401 series, 2,948
+sources, 4,171 sourced facts, 105 events and 7,382 event exposures**. Publication
+verified 1,668 immutable objects and 35,456 index statements, including exact
+per-table counts.
 
 ADREC exposes no transaction or unit ID in these sale results. All source row
 occurrences are preserved with reproducibility metadata, including 27 rows that
@@ -41,10 +43,19 @@ sale coverage remains unestablished. Signed rent, completion, occupancy and date
 valuation remain missing.
 
 No validated 2080 forecast is certified. Conditional annual slots remain exactly
-2027–2080, with unsupported values null. The immutable candidate root is
+2027–2080, with unsupported values null. The immutable published root is
 `f886d7d611d9d1e8450b942ade7e001b32ac4186efe889184964d98f5ce6609a`.
-Production identifiers and receipts will be added only after merged-source
-publication and independent live verification.
+
+V16 merged in [PR #63](https://github.com/gugmaae-prog/espacios/pull/63) at
+`e8da0fb1333b5d19b3e1704605c9f7db14999dc7`. Cloudflare Worker version
+`099d305c-f3cf-4e8f-bf41-c49d6551a6d2` is served by deployment
+`fe09df7e-f78f-4fcb-a09f-81265e079635` at 100% traffic. The record-history,
+events and control-plane APIs, live map assets, and Supabase release registry
+reconcile to V16. The Data Room remains restricted. The map's selected state now
+uses a quiet, theme-aware slate/teal tint instead of the inherited opaque navy
+and gold treatment; the 332px mobile layout has no horizontal page overflow.
+The temporary publisher and its local credential files were removed after
+verification. See the [V16 release receipts](docs/verification/history-v16-2026-10-07/).
 
 ## Published V15 Nawayef evidence — 7 October 2026 (Dubai)
 
@@ -74,10 +85,12 @@ JavaScript/CSS assets, the rendered slate/teal map and the Supabase control plan
 all reconcile to V15. The Data Room remains restricted and the scoped publisher
 was removed after verification. See the [V15 receipts](docs/verification/history-v15-2026-10-07/).
 
-Next: obtain exact registered sale and signed-rent cohorts for the two Nawayef
-records, then verify physical construction progress, delivery, occupancy, service
-charges and dated valuations. Keep every unsupported period explicit and keep
-conditional 2027–2080 paths outside observed-history coverage.
+Next: extend primary authority-register and transaction cohorts using exact
+project identifiers, then obtain signed-rent, physical construction, delivery,
+occupancy, service-charge and dated-valuation evidence across the remaining
+catalogue. Continue source-by-source from each record's earliest verifiable
+history. Keep every unsupported period explicit and keep conditional 2027–2080
+paths outside observed-history coverage.
 
 ## Published V14 Modon evidence — 7 October 2026 (Dubai)
 

@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-10-07T13:27:22Z",
+  "sourcePullRequest": 63,
+  "sourceHead": "b6c5494811580ce2aabdc4da6be8cf848138f383",
+  "mergedMainCommit": "e8da0fb1333b5d19b3e1704605c9f7db14999dc7",
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "099d305c-f3cf-4e8f-bf41-c49d6551a6d2",
+  "deploymentId": "fe09df7e-f78f-4fcb-a09f-81265e079635",
+  "deployedAt": "2026-10-07T13:19:30.530779Z",
+  "trafficPercentage": 100,
+  "dataRoomPublic": false,
+  "bindingsPreserved": [
+    "D1: cba-property-db",
+    "R2: psr-market-intelligence",
+    "Worker service: psr-property",
+    "AI"
+  ]
+}
