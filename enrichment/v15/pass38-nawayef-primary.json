@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-07",
+  "sources": [
+    {
+      "id": "v15-src-modon-park-current",
+      "url": "https://www.modon.com/real-estate/nawayef-parkviews",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T10:35:33.046Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T10:35:33.046Z",
+      "availabilityBasis": "Conservative first verified V15 capture; any historical publication date remains separate from point-in-time availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "research_pending",
+      "classification": "primary_developer_current_project_page",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "b0171620aa828a16c2ea33ab602c04b7b4d14feedbd52484e24f2773509aae2a",
+      "bytes": 54264,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v15-1"
+    },
+    {
+      "id": "v15-src-modon-east-current",
+      "url": "https://www.modon.com/real-estate/nawayef-east",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T10:35:34.506Z",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T10:35:34.506Z",
+      "availabilityBasis": "Conservative first verified V15 capture; any historical publication date remains separate from point-in-time availability.",
+      "datePrecision": null,
+      "publicationDateStatus": "research_pending",
+      "classification": "primary_developer_current_project_page",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "3d112de0853198bdbe09ade0985b4904ff3d782b4364c2fd1a736651808e3793",
+      "bytes": 55624,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v15-1"
+    },
+    {
+      "id": "v15-src-modon-east-launch",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2024/11/07/modon-unveils-luxury-residences-on-the-east-hill-at-nawayef-on-hudayriyat-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T10:35:34.852Z",
+      "publishedAt": "2024-11-07",
+      "firstAvailableAt": "2026-10-07T10:35:34.852Z",
+      "availabilityBasis": "Conservative first verified V15 capture; any historical publication date remains separate from point-in-time availability.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "9929d885f445ee3e319185c12ee4a2ecc06e1ab1ed64817a4425d46773df31f2",
+      "bytes": 29688,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v15-1"
+    }
+  ],
+  "facts": [
+    {
+      "status": "accepted",
+      "id": "v15-park-current-price",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Nawayef Park Views page names the project, Hudayriyat Island location, one-to-four-bedroom apartment population and AED 2 million one-bedroom starting price.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v15-src-modon-park-current"
+      ],
+      "sourceId": "v15-src-modon-park-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 2000000,
+        "observationKind": "developer_advertised_price",
+        "segment": "1-bedroom apartment within 1-to-4-bedroom project",
+        "quoteQualifier": "advertised_starting_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at V15 retrieval; original page publication date unknown",
+        "note": "Current exact-subject advertisement; not a transaction, valuation, completed sale or forecast anchor.",
+        "bedrooms": 1,
+        "unitType": "apartment"
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v15-park-current-handover-target",
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2028-Q1",
+        "precision": "quarter"
+      },
+      "label": "Current Modon page targets Nawayef Park Views handover for Q1 2028",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The exact current developer page names Nawayef Park Views and states its expected handover quarter.",
+      "identitySourceIds": [
+        "v15-src-modon-park-current"
+      ],
+      "sourceId": "v15-src-modon-park-current",
+      "scope": "subject",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_current_handover_target",
+      "note": "Planned target only; it does not establish completion, delivery or occupancy."
+    },
+    {
+      "status": "accepted",
+      "id": "v15-east-current-homes-price",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Nawayef East page identifies East Hill Homes and states the AED 6.6 million starting price.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v15-src-modon-east-current"
+      ],
+      "sourceId": "v15-src-modon-east-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 6600000,
+        "observationKind": "developer_advertised_price",
+        "segment": "East Hill Homes, 4-to-5-bedroom villas",
+        "quoteQualifier": "advertised_starting_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at V15 retrieval; original page publication date unknown",
+        "note": "Current exact-subject advertisement; not a transaction, valuation, completed sale or forecast anchor.",
+        "unitType": "villa"
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v15-east-current-heights-price",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Nawayef East page identifies East Hill Heights and states the AED 19.3 million starting price.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v15-src-modon-east-current"
+      ],
+      "sourceId": "v15-src-modon-east-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 19300000,
+        "observationKind": "developer_advertised_price",
+        "segment": "East Hill Heights, 5-to-7-bedroom villas",
+        "quoteQualifier": "advertised_starting_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at V15 retrieval; original page publication date unknown",
+        "note": "Current exact-subject advertisement; not a transaction, valuation, completed sale or forecast anchor.",
+        "unitType": "villa"
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v15-east-current-handover-target",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2028-12",
+        "precision": "month"
+      },
+      "label": "Current Modon page targets Nawayef East handover for December 2028",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The exact current developer page names Nawayef East and states its expected handover month.",
+      "identitySourceIds": [
+        "v15-src-modon-east-current"
+      ],
+      "sourceId": "v15-src-modon-east-current",
+      "scope": "subject",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_current_handover_target",
+      "note": "Planned target only; it does not establish completion, delivery or occupancy."
+    },
+    {
+      "status": "accepted",
+      "id": "v15-east-initial-release-phase-launch",
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "phase_launch",
+      "date": {
+        "start": "2024-11-07",
+        "precision": "day"
+      },
+      "label": "Nawayef East initial release launches Homes and Heights types 5–8",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The official developer release names the east hill at Nawayef on Hudayriyat Island and explicitly limits the initial sales release to Homes and Heights types 5–8, with other Heights and Mansions to follow.",
+      "identitySourceIds": [
+        "v15-src-modon-east-launch"
+      ],
+      "sourceId": "v15-src-modon-east-launch",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_phase_launch",
+      "note": "The initial release population is explicit. It does not establish the launch date of later Heights types, Mansions, construction, completion or registered sales."
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [
+    {
+      "recordId": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "status": "primary_current_price_and_target_recaptured; construction_delivery_occupancy_registered_sale_rent_valuation_and_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v15-src-modon-park-current"
+      ],
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "status": "primary_current_segmented_prices_target_and_initial_phase_review_complete; physical_construction_delivery_occupancy_registered_sale_rent_valuation_and_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v15-src-modon-east-current",
+        "v15-src-modon-east-launch"
+      ],
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    }
+  ],
+  "collection": {
+    "method": "Bounded exact-identity review of five public Modon pages over certificate-validated HTTPS with a two-megabyte response cap and SHA-256 capture; three sources contributed non-duplicate evidence and two redundant exact releases remained only in private scratch review",
+    "extractionVersion": "reviewed-modon-v15-1",
+    "completedRealDataCoverage": false,
+    "historicalPublicationNotContemporaneousArchive": true,
+    "recordsReviewed": 2,
+    "pagesReviewed": 5,
+    "sourcesAdded": 3,
+    "redundantAlreadyRetainedPages": 2,
+    "rawBodiesRedistributed": false
+  },
+  "methodology": "Add current exact-subject advertisements, current planned handover targets and an explicitly bounded initial release phase. Retain TBC as missing rather than numeric. Do not infer construction start from a contract, divide a combined East/West contract value, replace observed history with advertisements, or create forecast values."
+}
