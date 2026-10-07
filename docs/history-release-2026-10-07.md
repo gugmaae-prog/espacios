@@ -1,7 +1,14 @@
 # Reviewed history and neutral map controls
 
-Candidate: `20261007-enrichment-v11`, evidence cutoff `2026-10-06`.
+Published: `20261007-enrichment-v11`, evidence cutoff `2026-10-06`.
 Frontend: `20261007-history-v11-neutral-ui`.
+
+Deployed at 06:52 UTC on 7 October 2026 from source
+`fa24e538652566090a90c08ad9b84d9167662810`. Worker version
+`91a299ac-a1de-4664-9dc5-a8b59fb3b82b` receives 100% traffic in deployment
+`dafaca31-7ece-4c00-89b6-486122fbfa98`. The canonical API and exact frontend asset
+checks passed; Supabase's release registry was updated to the same version.
+See [the release receipt](verification/history-2026-10-07/release.json).
 
 This release reconciles main's V10 accountability and event chronology with the
 reviewed primary-source packets in `enrichment/v10/pass21-primary-source.json`,

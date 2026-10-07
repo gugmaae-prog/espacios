@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "errors": [],
+  "preservedRecords": 1860,
+  "preservedSources": 2846,
+  "preservedNativeSeries": 13158,
+  "preservedNativePoints": 316608,
+  "preservedRecordSeriesLinks": 9516,
+  "preservedEvents": 92,
+  "preservedExposureLinks": 5682,
+  "newSources": 72,
+  "newNativeSeries": 238,
+  "beforeVersion": "20261005-enrichment-v9",
+  "afterVersion": "20261007-enrichment-v11",
+  "beforeSHA256": "e2636d814c51d4e01b50003ff19bb9d75386311ee2c726dad1c373836930fc24",
+  "afterSHA256": "9054a1875d3e0056d444b7984e59ab6d57150337075c511f1ac7e2bb6a07014f"
+}

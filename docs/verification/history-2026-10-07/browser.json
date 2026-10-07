@@ -1,0 +1,42 @@
+{
+  "origin": "https://espacios.me/map",
+  "checkedAt": "2026-10-07T07:00:31.985234+00:00",
+  "method": "Interactive browser verification after deployment",
+  "checks": {
+    "lightAndDarkControls": true,
+    "matchingMapAndProjectsSelectionStyles": true,
+    "neutralZoomIcons": true,
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "firstDateBounds": [
+        12,
+        172
+      ],
+      "lastDateBounds": [
+        218,
+        378
+      ]
+    },
+    "desktopViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "palmJebelAliCommunityHistory": true,
+    "snapshotDate": "2026-10-06",
+    "scenarioFirstYear": 2027,
+    "scenarioLastYear": 2080,
+    "missingScenarioInputsRemainUnavailable": true,
+    "shortDesktopDrawerBottom": 700
+  },
+  "screenshots": [
+    "live-light.jpg",
+    "live-dark.jpg",
+    "live-mobile.jpg",
+    "live-history.jpg"
+  ],
+  "limits": [
+    "Targeted map release interactions; not an audit of every platform or private workflow."
+  ]
+}
