@@ -15,11 +15,12 @@ test('minimal composition exposes the approved controls without changing evidenc
   assert.doesNotMatch(app,/\['price','Price \/ sqft','gold'\]/);
 });
 
-test('map focus action follows the shared neutral Espacios theme in both modes',async()=>{
-  const premium=await fs.readFile(new URL('../src/assets/premium.css',import.meta.url),'utf8');
-  assert.match(premium,/data-minimal-map="1"\] body #app \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
-  assert.match(premium,/data-minimal-map="1"\] body #app \.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
-  assert.doesNotMatch(premium,/--ae-premium-gold|201,164,93|#c9a45d/);
+test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
+  assert.match(css,/\.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
+  assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
+  assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
+  assert.ok(worker.includes('background:var(--minimal-selected)!important'));
+  assert.match(worker,/\.map-bottom \.dot\.fallback\{\\n\s*background:#89959a!important;box-shadow:none!important/);
 });
 
 test('timeline is unframed, full width and contains no play control',()=>{
