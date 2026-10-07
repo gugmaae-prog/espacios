@@ -1,0 +1,26 @@
+{
+  "project": "ypkfganbwdvcjrcxygta",
+  "role": "control_and_audit_plane",
+  "evidencePlane": "Cloudflare D1/R2 and PSR_PROPERTY",
+  "releaseRegistry": {
+    "release_tag": "20261007-enrichment-v15",
+    "frontend_release": "20261007-history-v15-nawayef",
+    "github_sha": "dc0283da89f2ca6a4beb610d2b8c3ee7d3ef0fc2",
+    "github_pr": 61,
+    "worker_version": "8330d31b-0531-43dc-b31a-50d908304c7d",
+    "deployment_id": "152b1fb9-7b56-430c-bb2e-89b8283968fd",
+    "source_sync_state": "reconciled",
+    "data_room_public": false
+  },
+  "runtimeConfig": {
+    "id": "production",
+    "enabled": true,
+    "release_channel": "production",
+    "expected_frontend_release": "20261007-history-v15-nawayef",
+    "expected_worker_version": "8330d31b-0531-43dc-b31a-50d908304c7d",
+    "source_repo": "gugmaae-prog/espacios",
+    "source_branch": "main",
+    "data_room_public": false
+  },
+  "canonicalReadbackVerified": true
+}

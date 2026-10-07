@@ -1,0 +1,17 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "8330d31b-0531-43dc-b31a-50d908304c7d",
+  "deploymentId": "152b1fb9-7b56-430c-bb2e-89b8283968fd",
+  "trafficPercent": 100,
+  "frontendRelease": "20261007-history-v15-nawayef",
+  "dataRelease": "20261007-enrichment-v15",
+  "githubCommit": "dc0283da89f2ca6a4beb610d2b8c3ee7d3ef0fc2",
+  "githubPullRequest": 61,
+  "bindingsPreserved": [
+    "DB",
+    "MARKET_R2",
+    "PSR_PROPERTY",
+    "AI"
+  ],
+  "dataRoomPublic": false
+}

@@ -1,0 +1,91 @@
+{
+  "origin": "https://espacios.me",
+  "dataRelease": "20261007-enrichment-v15",
+  "frontendRelease": "20261007-history-v15-nawayef",
+  "checkedAt": "2026-10-07T11:06:08.659Z",
+  "readOnly": true,
+  "assets": [
+    {
+      "endpoint": "/map",
+      "status": 200,
+      "frontendRelease": "20261007-history-v15-nawayef",
+      "liveSHA256": "5d2e586988e46c35bfe35d1612707becd0047af181411a492786ff86b0cb2aac",
+      "candidateSHA256": "29edc6718409a29f2d654dcf4bf4449e1433911f1fc26e86ddaaa36aaa3465a9",
+      "exactEqual": false,
+      "comparisonNote": "Canonical HTML can receive edge or shell transformation; versioned JavaScript and CSS bytes match the reviewed Worker exactly."
+    },
+    {
+      "endpoint": "/map/app-v2.js?v=20261007-history-v15-nawayef",
+      "status": 200,
+      "frontendRelease": "20261007-history-v15-nawayef",
+      "liveSHA256": "e204de252856ab9592e0168eddb3d3baaf99bb9aadf37174c4adb15691816708",
+      "candidateSHA256": "e204de252856ab9592e0168eddb3d3baaf99bb9aadf37174c4adb15691816708",
+      "exactEqual": true
+    },
+    {
+      "endpoint": "/map/app-v2.css?v=20261007-history-v15-nawayef",
+      "status": 200,
+      "frontendRelease": "20261007-history-v15-nawayef",
+      "liveSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "candidateSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "exactEqual": true
+    }
+  ],
+  "records": [
+    {
+      "id": "project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi",
+      "facts": [
+        "v15-park-current-price",
+        "v15-park-current-handover-target"
+      ],
+      "annualStart": 2027,
+      "annualEnd": 2080,
+      "validatedForecast": false
+    },
+    {
+      "id": "project:nawayef-east-modon-hudayriyat-island-abu-dhabi",
+      "facts": [
+        "v15-east-current-homes-price",
+        "v15-east-current-heights-price",
+        "v15-east-current-handover-target",
+        "v15-east-initial-release-phase-launch"
+      ],
+      "annualStart": 2027,
+      "annualEnd": 2080,
+      "validatedForecast": false
+    }
+  ],
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 27567,
+      "unestablished": 9300,
+      "partial": 3433,
+      "present": 2480
+    },
+    "unresolved": 40300,
+    "unresolvedPercent": 94.2
+  },
+  "events": {
+    "events": 105,
+    "sources": 2941,
+    "exposures": 7382
+  },
+  "eventStudy": {
+    "eventId": "gfc-2008",
+    "status": 200
+  },
+  "dataRoom": {
+    "status": 404,
+    "restricted": true
+  },
+  "deployment": {
+    "id": "152b1fb9-7b56-430c-bb2e-89b8283968fd",
+    "versionId": "8330d31b-0531-43dc-b31a-50d908304c7d",
+    "traffic": 100,
+    "gitCommit": "dc0283da89f2ca6a4beb610d2b8c3ee7d3ef0fc2"
+  },
+  "rootSHA256": "5936489a8c1d4d31d84e937d7954807a1e9b3eb9476777aec0a85b66ffc7c283",
+  "passed": true
+}
