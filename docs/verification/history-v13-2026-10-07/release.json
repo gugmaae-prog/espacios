@@ -1,0 +1,37 @@
+{
+  "version": "20261007-enrichment-v13",
+  "frontendRelease": "20261007-history-v13-seamless-ui",
+  "origin": "https://espacios.me",
+  "sourceCommit": "ced50ae3cc3845669526843d8bc00d6b336c199f",
+  "evidenceMergeCommit": "d04809f15d096fe21f8e0232196b041dd1da1117",
+  "sourcePullRequests": [
+    56,
+    57
+  ],
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "951b9b7c-3c33-46b8-bc37-56a2ec67a5e3",
+  "deploymentId": "249c131b-bef3-4a41-b7a4-423678be0d7e",
+  "trafficPercent": 100,
+  "deployedAt": "2026-10-07T09:38:32.549082Z",
+  "verifiedAt": "2026-10-07T09:46:10.711361+00:00",
+  "rootSHA256": "e012f3df833a7416d7def131ba7cc42c8e84a177f8323cec2b51f4e6e6027cf9",
+  "workerSourceSHA256": "de154df2c61e49a6ba75874339dd8f3aedb29b80b9fa973a12e67e850c9a76ab",
+  "minimalMapCSSSHA256": "202d962dc774690144f09cab761c68ee78d443dba4981d37e7436bbd34377025",
+  "checks": {
+    "canonicalAPI": true,
+    "exactJavaScriptAndCSS": true,
+    "canonicalPalette": true,
+    "visibleGoldMatches": 0,
+    "mobileHorizontalOverflow": false,
+    "v12Preserved": true,
+    "mapTests": 146,
+    "historicalTests": 134,
+    "supabaseRegistryMatches": true,
+    "dataRoomPublic": false,
+    "ephemeralPublisherRemoved": true,
+    "targetedLiveBrowser": true
+  },
+  "researchComplete": false,
+  "unresolvedChecklistPercent": 94.22,
+  "futureOutcomeObservations": false
+}

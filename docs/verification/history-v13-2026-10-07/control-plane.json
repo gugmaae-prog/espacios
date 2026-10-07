@@ -1,0 +1,82 @@
+{
+  "origin": "https://espacios.me/map/api/system",
+  "checkedAt": "2026-10-07T09:46:24.348206+00:00",
+  "connected": true,
+  "projectRef": "ypkfganbwdvcjrcxygta",
+  "config": {
+    "id": "production",
+    "enabled": true,
+    "data_room_public": false,
+    "release_channel": "production",
+    "expected_frontend_release": "20261007-history-v13-seamless-ui",
+    "expected_worker_version": "951b9b7c-3c33-46b8-bc37-56a2ec67a5e3",
+    "source_repo": "gugmaae-prog/espacios",
+    "source_branch": "main",
+    "config": {
+      "notes": "Verified V13 production release with the Espacios slate and teal map palette; incomplete research remains explicit. Cloudflare D1/R2 and PSR_PROPERTY remain the evidence plane.",
+      "runtime": "cloudflare",
+      "github_main": "ced50ae3cc3845669526843d8bc00d6b336c199f",
+      "market_data": "cloudflare_d1_r2",
+      "control_plane": "supabase",
+      "published_facts": 4141,
+      "published_events": 105,
+      "published_records": 1860,
+      "published_sources": 2930,
+      "gold_visible_matches": 0,
+      "published_aggregates": 317878,
+      "mobile_overflow_verified": true,
+      "published_history_series": 13396,
+      "published_event_exposures": 7382,
+      "published_history_release": "20261007-enrichment-v13",
+      "canonical_palette_verified": true
+    },
+    "updated_at": "2026-10-07T09:44:07.264137+00:00"
+  },
+  "latestRelease": {
+    "id": "1aa59a1b-9184-4e0e-a3cb-6c2f529c1910",
+    "environment": "production",
+    "release_tag": "20261007-enrichment-v13",
+    "frontend_release": "20261007-history-v13-seamless-ui",
+    "github_sha": "ced50ae3cc3845669526843d8bc00d6b336c199f",
+    "github_pr": 57,
+    "cloudflare_worker": "psr-portfolio-map-v2",
+    "cloudflare_worker_version": "951b9b7c-3c33-46b8-bc37-56a2ec67a5e3",
+    "cloudflare_deployment_id": "249c131b-bef3-4a41-b7a4-423678be0d7e",
+    "data_room_public": false,
+    "source_sync_state": "reconciled",
+    "metadata": {
+      "facts": 4141,
+      "events": 105,
+      "records": 1860,
+      "sources": 2930,
+      "root_sha256": "e012f3df833a7416d7def131ba7cc42c8e84a177f8323cec2b51f4e6e6027cf9",
+      "pull_requests": [
+        56,
+        57
+      ],
+      "history_series": 13396,
+      "event_exposures": 7382,
+      "coverage_missing": 27575,
+      "coverage_partial": 3433,
+      "coverage_present": 2472,
+      "public_aggregates": 317878,
+      "research_complete": false,
+      "gold_visible_matches": 0,
+      "canonical_api_verified": true,
+      "coverage_unestablished": 9300,
+      "mobile_overflow_verified": true,
+      "canonical_assets_verified": true,
+      "canonical_palette_verified": true
+    },
+    "created_at": "2026-10-07T09:44:07.264137+00:00"
+  },
+  "expected": {
+    "release_tag": "20261007-enrichment-v13",
+    "frontend_release": "20261007-history-v13-seamless-ui",
+    "github_sha": "ced50ae3cc3845669526843d8bc00d6b336c199f",
+    "cloudflare_worker_version": "951b9b7c-3c33-46b8-bc37-56a2ec67a5e3",
+    "cloudflare_deployment_id": "249c131b-bef3-4a41-b7a4-423678be0d7e",
+    "data_room_public": false
+  },
+  "passed": true
+}

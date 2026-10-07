@@ -1,0 +1,20 @@
+{
+  "version": "20261007-enrichment-v13",
+  "objects": 1661,
+  "written": 1618,
+  "reused": 43,
+  "indexStatements": 35428,
+  "indexedTableCounts": {
+    "hi_snapshots": 1,
+    "hi_records": 1860,
+    "hi_sources": 2930,
+    "hi_events": 105,
+    "hi_exposures": 7382,
+    "hi_series": 13396,
+    "hi_record_series": 9754
+  },
+  "rootSHA256": "e012f3df833a7416d7def131ba7cc42c8e84a177f8323cec2b51f4e6e6027cf9",
+  "indexCountsVerified": true,
+  "publicationState": "complete",
+  "rollbackPolicy": "Failure leaves verified immutable orphan objects or staged indexes; never activates a mutable latest pointer and never deletes evidence"
+}

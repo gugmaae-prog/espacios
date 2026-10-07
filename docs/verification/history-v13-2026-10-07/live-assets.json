@@ -1,0 +1,58 @@
+{
+  "origin": "https://espacios.me",
+  "release": "20261007-history-v13-seamless-ui",
+  "checkedAt": "2026-10-07T09:39:10.998Z",
+  "readOnly": true,
+  "rows": [
+    {
+      "endpoint": "/map",
+      "status": 200,
+      "frontendRelease": "20261007-history-v13-seamless-ui",
+      "liveSHA256": "24bb270b0b76de8469af1ebcb79e82d667921176a542959264d9ad2f0bc719c7",
+      "candidateSHA256": "dad473ac36e33d56dbdca07c33df7ed1fedff80643b1ea3bfe2aada9f067cd3c",
+      "exactEqual": false,
+      "versionedAssetLinks": true,
+      "htmlComparison": "Hashes retained; canonical shell/Cloudflare transformations may legitimately alter HTML."
+    },
+    {
+      "endpoint": "/map/app-v2.js?v=20261007-history-v13-seamless-ui",
+      "status": 200,
+      "frontendRelease": "20261007-history-v13-seamless-ui",
+      "liveSHA256": "19a796f9fa5213224d5396a1b2c6fb0eb7ecd05a25c01741d08c1b0691590047",
+      "candidateSHA256": "19a796f9fa5213224d5396a1b2c6fb0eb7ecd05a25c01741d08c1b0691590047",
+      "exactEqual": true,
+      "completeSelectedSeriesUI": true,
+      "unresolvedSourceLabel": true
+    },
+    {
+      "endpoint": "/map/app-v2.css?v=20261007-history-v13-seamless-ui",
+      "status": 200,
+      "frontendRelease": "20261007-history-v13-seamless-ui",
+      "liveSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "candidateSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "exactEqual": true
+    }
+  ],
+  "passed": true,
+  "palette": {
+    "checkedAt": "2026-10-07T09:39:52.806Z",
+    "release": "20261007-history-v13-seamless-ui",
+    "status": 200,
+    "frontendRelease": "20261007-history-v13-seamless-ui",
+    "required": {
+      "--gold:var(--minimal-accent)": true,
+      "--psr-gold:var(--minimal-accent)": true,
+      "--ae-gold:var(--minimal-accent)": true,
+      ".quality-filter button.active": true,
+      ".availability-filter button.active": true,
+      ".route-card.active": true,
+      ".search-wrap:focus-within": true
+    },
+    "liveSHA256": "383fbfa3e997739ddcccdcc9f11088fd13d1dd2df4a6972e650d0322b5d4fff2",
+    "candidateSHA256": "dad473ac36e33d56dbdca07c33df7ed1fedff80643b1ea3bfe2aada9f067cd3c",
+    "dataVersionUnchanged": "20261007-enrichment-v13",
+    "passed": true
+  },
+  "generatedWorkerSHA256": "de154df2c61e49a6ba75874339dd8f3aedb29b80b9fa973a12e67e850c9a76ab",
+  "minimalMapCSSSHA256": "202d962dc774690144f09cab761c68ee78d443dba4981d37e7436bbd34377025"
+}

@@ -1,6 +1,6 @@
 # Modon evidence and identity-accountability review — 7 October 2026
 
-Snapshot candidate `20261007-enrichment-v13` preserves the fixed catalogue of
+Published snapshot `20261007-enrichment-v13` preserves the fixed catalogue of
 1,645 projects and 215 communities and adds five bounded public Modon sources.
 The reviewed packet is
 [`pass36-modon-primary.json`](../enrichment/v13/pass36-modon-primary.json).
@@ -74,9 +74,12 @@ developer-reported aggregate sales from transaction training and scenario anchor
 Reproduce by merging the retained V12 enrichment with the V13 packet using
 `scripts/merge-historical-enrichment.py`, then run `npm run history:build`,
 `npm run history:verify:storage`, `npm run verify` and the production Wrangler
-dry run. Publication must use the immutable R2/D1 publisher followed by canonical
-API, asset and browser verification. Until those receipts exist, this document
-describes a tested release candidate rather than a live release.
+dry run. The immutable R2/D1 publication, canonical API, exact assets, live
+browser and Supabase control plane have been verified. The final production
+Worker version is `951b9b7c-3c33-46b8-bc37-56a2ec67a5e3`, serving deployment
+`249c131b-bef3-4a41-b7a4-423678be0d7e` at 100% traffic. The temporary publisher
+was deleted after verification. See the
+[V13 release receipts](verification/history-v13-2026-10-07/release.json).
 
 ## Next evidence work
 

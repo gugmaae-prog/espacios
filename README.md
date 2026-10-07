@@ -17,7 +17,7 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V13 Modon evidence candidate — 7 October 2026 (Dubai)
+## Published V13 evidence and seamless map palette — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v13` preserves all **1,645 projects and 215 communities**
 and adds five checksum-recorded Modon sources with 18 reviewed facts for
@@ -35,12 +35,33 @@ therefore has **2,472 present, 3,433 partial, 27,575 missing and 9,300
 unestablished** items: **94.22% unresolved**. This percentage measures requirement
 accountability and is not a percentage of all historical prices.
 
-The candidate retains **317,878 public aggregate observations, 13,396 series,
+The release retains **317,878 public aggregate observations, 13,396 series,
 2,930 sources, 4,141 sourced facts, 105 events and 7,382 event exposures**. It
 still certifies no complete lifetime sale/rent history and no validated 2080
-forecast. Conditional annual slots remain exactly 2027–2080. Publication status
-will be replaced with immutable storage, deployment and live-verification
-receipts only after those checks succeed.
+forecast. Conditional annual slots remain exactly 2027–2080.
+
+V13 was published from merged PR [#56](https://github.com/gugmaae-prog/espacios/pull/56)
+and the seamless palette from merged PR [#57](https://github.com/gugmaae-prog/espacios/pull/57).
+The immutable publication verified **1,661 objects and 35,428 index statements**
+under root SHA-256 `e012f3df833a7416d7def131ba7cc42c8e84a177f8323cec2b51f4e6e6027cf9`.
+The canonical map now serves Worker version
+`951b9b7c-3c33-46b8-bc37-56a2ec67a5e3` through deployment
+`249c131b-bef3-4a41-b7a4-423678be0d7e` at 100% traffic. GitHub `main`,
+Cloudflare, the canonical API, exact JavaScript/CSS assets and the Supabase
+control-plane record all reconcile to frontend release
+`20261007-history-v13-seamless-ui` and data release
+`20261007-enrichment-v13`.
+
+Inherited `--gold`, `--psr-gold` and `--ae-gold` aliases now resolve to the
+Espacios slate/teal accent. Active map, project, filter, evidence and timeline
+controls use a soft theme-aware selection surface. Live light, dark and 390-pixel
+mobile checks found no visible gold match and no horizontal overflow. The
+temporary publication Worker and its local credentials were removed after the
+immutable data verified. See the [release receipt](docs/verification/history-v13-2026-10-07/release.json),
+[live API](docs/verification/history-v13-2026-10-07/live-api.json),
+[asset checks](docs/verification/history-v13-2026-10-07/live-assets.json),
+[browser checks](docs/verification/history-v13-2026-10-07/browser.json) and
+[control-plane check](docs/verification/history-v13-2026-10-07/control-plane.json).
 
 Next: verify exact registrations and first sales for the reviewed records, then
 continue direct sale/rent, construction, delivery, occupancy, cost and valuation
