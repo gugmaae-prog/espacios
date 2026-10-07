@@ -1,0 +1,35 @@
+{
+  "version": "20261007-enrichment-v11",
+  "frontendRelease": "20261007-history-v11-neutral-ui",
+  "origin": "https://espacios.me",
+  "sourceCommit": "fa24e538652566090a90c08ad9b84d9167662810",
+  "sourcePullRequests": [
+    47,
+    48,
+    49,
+    50
+  ],
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "91a299ac-a1de-4664-9dc5-a8b59fb3b82b",
+  "deploymentId": "dafaca31-7ece-4c00-89b6-486122fbfa98",
+  "trafficPercent": 100,
+  "deployedAt": "2026-10-07T06:52:47.687096Z",
+  "verifiedAt": "2026-10-07T06:59:15.942602+00:00",
+  "rootSHA256": "1b2e552ce4075c58a7758b5d4cd480019875ece00074fd4b60985d92534a6111",
+  "workerSourceSHA256": "8749e82f1e097b221c435ad57ab1d81426bf1d27328de4cb4c6a0a61e873a77e",
+  "checks": {
+    "canonicalAPI": true,
+    "exactJavaScriptAndCSS": true,
+    "v9Preserved": true,
+    "localStorageInitialAndRepeat": true,
+    "mapTests": 145,
+    "historicalTests": 124,
+    "supabaseRegistryMatches": true,
+    "dataRoomPublic": false,
+    "ephemeralPublisherRemoved": true,
+    "targetedLiveBrowser": true
+  },
+  "researchComplete": false,
+  "unresolvedChecklistPercent": 91.33,
+  "futureOutcomeObservations": false
+}

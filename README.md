@@ -17,14 +17,14 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Reviewed release candidate — 7 October 2026 (Dubai)
+## Published history and map release — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v11` reconciles GitHub main with the saved reviewed evidence,
 with an evidence cutoff of **6 October 2026**. It retains **1,645 projects and 215
 communities**, and contains **317,878 public aggregate observations, 13,396 series,
 2,918 sources, 4,110 sourced facts, 105 events and 7,382 event exposures**. The 216
 rights-pending observations remain excluded. Relative to published V9, the
-candidate adds 1,270 aggregate observations, 238 series and 164 facts. Aggregates
+release adds 1,270 aggregate observations, 238 series and 164 facts. Aggregates
 overlap; these counts are not counts of independent property transactions.
 
 The active Map and Projects buttons share a soft, theme-aware selection tint.
@@ -33,7 +33,7 @@ timeline and evidence panels. The mobile date selector stays inside the viewport
 at both endpoints. Earlier asking-price snapshots survive later research cutoffs;
 segmented quotes remain evidence without replacing a project's headline price.
 
-The candidate ledger has **3,711 present, 2,180 partial, 27,589 missing and 9,300
+The published ledger has **3,711 present, 2,180 partial, 27,589 missing and 9,300
 unestablished** items: **91.33% of 42,780 checklist items remain unresolved**. This
 is not a percentage of all historical prices. No complete lifetime histories or
 validated 2080 forecasts are certified. Annual conditional scenario endpoints
@@ -42,23 +42,37 @@ remain 2027–2080 and are separate from observed history.
 Validation: the V9 preservation check retains all 1,860 records, 316,608 existing
 native observations, 13,158 series, 9,516 record-series links, 2,846 sources and
 all prior events/exposures and quote vintages. Automated verification passes.
-Production publication and canonical verification must finish before this
-candidate is described as live; the last verified live deployment is listed below.
+All **1,661 immutable files and 35,416 index statements** are published and
+verified. The canonical map serves Cloudflare Worker version
+`91a299ac-a1de-4664-9dc5-a8b59fb3b82b` at **100% traffic**, deployment
+`dafaca31-7ece-4c00-89b6-486122fbfa98`, published **7 October 2026, 06:52 UTC**.
+The deployed source is `fa24e538652566090a90c08ad9b84d9167662810` (PRs #47–50);
+frontend release is `20261007-history-v11-neutral-ui`. Live JavaScript/CSS match
+the tested bytes. Canonical API checks passed all 1,860 research records, 42,780
+checklist items, 105 events, and the exact 238-series/1,270-observation increment.
+Supabase release metadata matches this deployment. See the
+[release receipt](docs/verification/history-2026-10-07/release.json),
+[API verification](docs/verification/history-2026-10-07/live-api.json), and
+[asset verification](docs/verification/history-2026-10-07/live-assets.json).
 
-Next actions: finish this release's canonical checks; review PR #46's printed
+Next actions: review PR #46's printed
 transaction extracts and explicit unprinted gaps; continue exact-identity sale,
 rent, lifecycle and cost research per record and period; specify unsupported
 annual assumptions without presenting them as real future observations. The old
 V10 literal-SQL import workflows are retired in favour of the tested parameterized
 publisher. See [release details and publication procedure](docs/history-release-2026-10-07.md).
 
+The ledger covers the requested fixed research cohort. New records in the growing
+live catalogue need their own identity and requirements review before being added
+to that cohort; they must not silently change its coverage denominator.
+
 ## Previous published history release — 6 October 2026 (Dubai)
 
-The reviewed V9 snapshot is now deployed to the canonical map. GitHub PR [#34](https://github.com/gugmaae-prog/espacios/pull/34) merged at `2026-10-05T23:40:47Z` and the production Worker `psr-portfolio-map-v2` is serving version `45c1fc27-420d-4b9c-b276-d1b8c97cd466` at 100% traffic through deployment `5248c438-7a04-4e31-9f2c-4d232a8b3dfc`. The live route is [https://espacios.me/map](https://espacios.me/map). The V9 source commit is `c646055028b9b40acb68adbe9f29c0458aadecb4`; the merge commit is `40659db7c5a7ed86e0f20d38e36295e864177eba`.
+The reviewed V9 snapshot was previously deployed to the canonical map. GitHub PR [#34](https://github.com/gugmaae-prog/espacios/pull/34) merged at `2026-10-05T23:40:47Z` and the production Worker `psr-portfolio-map-v2` served version `45c1fc27-420d-4b9c-b276-d1b8c97cd466` at 100% traffic through deployment `5248c438-7a04-4e31-9f2c-4d232a8b3dfc`. The live route is [https://espacios.me/map](https://espacios.me/map). The V9 source commit is `c646055028b9b40acb68adbe9f29c0458aadecb4`; the merge commit is `40659db7c5a7ed86e0f20d38e36295e864177eba`.
 
 The release preserves all 1,860 catalogue records: 1,645 projects and 215 communities. It publishes 316,608 public aggregate observations (316,824 collected rows including 216 rights-pending rows), 2,846 sources, 3,946 sourced facts, 92 dated events, 5,682 event exposures, and 13,158 history series. V9 added 9,672 reviewed aggregate points, 518 series, 100 facts, and 17 exact native project identities while preserving the prior snapshot and its disputed evidence. Preview validation passed the full record ledger (1,860 records and 42,780 requirement items), exact new-cohort checks, asset checks, geography checks, and desktop/mobile history acceptance; the post-deployment live checks remain the authoritative release evidence.
 
-The coverage ledger currently reports 3,644 present, 2,153 partial, 27,683 missing, and 9,300 unestablished requirements. That leaves 91.48% of the research checklist unresolved. This is a requirements-coverage measure, not a claim that exactly 91.48% of historical prices are missing. There are no certified complete lifetime histories and no validated 2080 forecasts yet. Conditional annual scenario slots are retained through 2080, but they are scenario outputs rather than observed future data.
+The V9 coverage ledger reported 3,644 present, 2,153 partial, 27,683 missing, and 9,300 unestablished requirements. That leaves 91.48% of the research checklist unresolved. This is a requirements-coverage measure, not a claim that exactly 91.48% of historical prices are missing. There are no certified complete lifetime histories and no validated 2080 forecasts yet. Conditional annual scenario slots are retained through 2080, but they are scenario outputs rather than observed future data.
 
 The release intentionally does not claim 100% real-data completeness. Unsupported historical periods remain visible as gaps until an attributable source is found; estimates and scenarios stay outside observed-history coverage.
 
