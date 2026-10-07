@@ -6,7 +6,10 @@ import {createHash} from 'node:crypto';
 import {filterTrainingFold,annualScenarios} from '../src/historical-intelligence/core.mjs';
 
 const packet=JSON.parse(fs.readFileSync('enrichment/v12/pass35-modon-primary.json','utf8'));
-const snapshot=JSON.parse(fs.readFileSync('data/historical-intelligence-20261003.json','utf8'));
+const snapshotHash='a0add7a06d7f826d290fcb4bc83a10831faf38654b2e25a51692f52f8725338b';
+const snapshotBytes=fs.readFileSync(`data/historical-intelligence/objects/${snapshotHash}.json.gz`);
+assert.equal(createHash('sha256').update(snapshotBytes).digest('hex'),snapshotHash);
+const snapshot=JSON.parse(gunzipSync(snapshotBytes));
 const records=new Map(snapshot.records.map(r=>[r.id,r]));
 const priorHash='1b2e552ce4075c58a7758b5d4cd480019875ece00074fd4b60985d92534a6111';
 const priorBytes=fs.readFileSync(`data/historical-intelligence/objects/${priorHash}.json.gz`);
@@ -23,7 +26,7 @@ test('V12 preserves every V11 record, observation, milestone, source and selecte
    for(const value of old[key]||[])assert.deepEqual(byId.get(value.id),value,old.id+' '+key);
   }
   assert.deepEqual(now.currentSnapshot,old.currentSnapshot,old.id+' current quote');
-  for(const id of old.historySeriesIds)assert.ok(now.historySeries.some(s=>s.id===id),old.id+' history link');
+  for(const id of old.historySeriesIds)assert.ok(now.historySeriesIds.includes(id),old.id+' history link');
  }
  const sources=new Map(snapshot.sources.map(s=>[s.id,s]));
  for(const s of previous.sources)assert.deepEqual(sources.get(s.id),s,s.id);

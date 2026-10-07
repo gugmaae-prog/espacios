@@ -186,12 +186,28 @@ test('developer advertised quote kinds are counted while planned launches retain
 import sys
 sys.path.insert(0,'scripts')
 from historical_gap_ledger import refresh_research_coverage
-record={'id':'p','lifecycle':[{'id':'planned','kind':'launch','date':{'start':'2020','precision':'year'},'status':'verified','primaryEvidence':True,'scope':'subject','eventStatus':'planned','sourceIds':['s']}],'observations':[{'id':'quote','observationKind':'developer_advertised_price','sourceId':'s','primaryEvidence':True}],'historySeries':[],'researchStatus':{'gaps':['verified_launch_date']}}
+record={'id':'p','lifecycle':[{'id':'planned','kind':'launch','date':{'start':'2020','precision':'year'},'status':'verified','primaryEvidence':True,'scope':'subject','eventStatus':'planned','sourceIds':['s']}],'observations':[{'id':'quote','observationKind':'developer_advertised_price','sourceId':'s','primaryEvidence':True,'scope':'subject','identityVerified':True}],'historySeries':[],'researchStatus':{'gaps':['verified_launch_date']}}
 refresh_research_coverage(record,{}, {'s':{'id':'s'}},'2026-10-05')
 assert record['researchStatus']['itemCoverage']['advertised_prices']['status']=='present'
 assert record['researchStatus']['itemCoverage']['advertised_prices']['primaryQuoteCount']==1
 assert 'verified_launch_date' in record['researchStatus']['gaps']
 assert record['researchStatus']['earliestHistoryEvidence'] is None
+ `;
+ const result=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(result.status,0,result.stderr||result.stdout);
+});
+
+test('contextual asking evidence remains visible without closing exact advertised-price coverage',()=>{
+ const code=String.raw`
+import sys
+sys.path.insert(0,'scripts')
+from historical_gap_ledger import refresh_research_coverage
+record={'id':'p','lifecycle':[],'observations':[{'id':'mirror','observationKind':'asking_quote','sourceId':'s','scope':'asking_benchmark','identityVerified':False}],'historySeries':[],'researchStatus':{'gaps':[]}}
+refresh_research_coverage(record,{}, {'s':{'id':'s','classification':'tenant_mirror_catalogue'}},'2026-10-07')
+item=record['researchStatus']['itemCoverage']['advertised_prices']
+assert item['status']=='partial'
+assert item['evidenceIds']==['mirror']
+assert item['contextualQuoteCount']==1
+assert item['primaryQuoteCount']==0
  `;
  const result=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(result.status,0,result.stderr||result.stdout);
 });

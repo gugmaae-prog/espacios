@@ -63,12 +63,20 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
         if disputed:items[name].update(disputedNativePointCount=len(disputed),acceptedNativePointCount=len(accepted))
         items['complete_' + name] = evidence_item('unestablished', [],
             'Inception/applicability and every applicable native period require independent verification. Unobserved prices remain missing.', completeLifetimeHistory=False)
-    asking = [x for x in observations if x.get('observationKind') in ['asking_quote', 'developer_advertised_price']]
+    all_asking = [x for x in observations if x.get('observationKind') in ['asking_quote', 'developer_advertised_price']]
+    # A record-level advertised-price requirement needs an exact verified subject
+    # identity. Retain broader/mirror quotes as useful evidence, but do not let an
+    # asking benchmark silently close the subject's coverage gap.
+    asking = [x for x in all_asking if x.get('scope') == 'subject' and x.get('identityVerified') is True]
+    contextual_asking = [x for x in all_asking if x not in asking]
     primary_asking = [x for x in asking if x.get('primaryEvidence') is True or sources.get(x.get('sourceId'), {}).get('primaryEvidence') is True
                       or sources.get(x.get('sourceId'), {}).get('classification', '').startswith('primary_')]
-    items['advertised_prices'] = evidence_item('present' if asking else 'missing', asking,
-        'Captured advertisements with native dates and qualifiers; market validity and completed-sale status are separate.',
-        primaryQuoteCount=len(primary_asking), catalogueMirrorQuoteCount=sum('tenant_mirror' in sources.get(x.get('sourceId'), {}).get('classification', '') for x in asking))
+    items['advertised_prices'] = evidence_item('present' if asking else 'partial' if contextual_asking else 'missing', asking or contextual_asking,
+        'Exact subject advertisements with native dates and qualifiers; market validity and completed-sale status remain separate.' if asking else
+        'Only contextual or not-yet-exactly-matched advertisements are retained; they do not close subject advertised-price coverage.' if contextual_asking else
+        'No retained advertised-price evidence.',
+        primaryQuoteCount=len(primary_asking), contextualQuoteCount=len(contextual_asking),
+        catalogueMirrorQuoteCount=sum('tenant_mirror' in sources.get(x.get('sourceId'), {}).get('classification', '') for x in all_asking))
     valuations = [x for x in observations if x.get('scope') == 'subject' and x.get('identityVerified') is True
                   and x.get('observationKind') == 'valuation' and x.get('period')]
     items['dated_valuation'] = evidence_item('present' if valuations else 'missing', valuations, 'Dated subject valuations retain their valid date; asking advertisements and market medians do not clear this item.')
