@@ -2,6 +2,7 @@
 html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app .topbar{contain:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
 html[data-minimal-map="1"] body #app #vd-panel{position:fixed!important;left:auto!important;right:28px!important;top:166px!important;bottom:150px!important;width:420px!important;max-width:calc(100vw - 56px)!important;height:auto!important;max-height:none!important;padding:16px!important;overflow:auto!important;border:1px solid var(--su-line);border-radius:16px;background:var(--su-panel);color:var(--su-ink);z-index:125;font:13px/1.55 Inter,system-ui,sans-serif;box-shadow:0 8px 30px #0002;transform:none!important;}
 #vd-panel.hidden{display:none!important;}
+html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app :is(#vd-panel,#hi-panel,#hi-event-overlay) label{color:var(--su-ink)!important;}
 #vd-panel>.mm-sheet-bar{display:none!important;}
 #vd-panel>header{display:flex;align-items:center;justify-content:space-between;gap:12px;}
 #vd-panel h2{font-size:16px;margin:0;}#vd-panel h3{font-size:15px;margin:8px 0;}#vd-panel h4{font-size:13px;margin:16px 0 6px;}
