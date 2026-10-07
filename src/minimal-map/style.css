@@ -104,9 +104,10 @@ html[data-minimal-map="1"] body #app .ae-search-map-tools button:focus-visible{
   background:color-mix(in srgb,var(--minimal-accent) 6%,var(--su-panel))!important;
   color:var(--su-ink)!important;
 }
-html[data-minimal-map="1"] body #app .ae-map-focus-toggle.active{
-  border-color:color-mix(in srgb,var(--minimal-accent) 12%,var(--su-line))!important;
-  background:color-mix(in srgb,var(--minimal-accent) 7%,transparent)!important;color:var(--su-ink)!important;box-shadow:none!important;
+/* Keep this active-state rule above the later legacy theme selector. */
+html[data-minimal-map="1"] body #app .ae-search-map-tools .ae-map-focus-toggle.active{
+  border-color:var(--minimal-selected-line)!important;
+  background:var(--minimal-selected)!important;color:var(--su-ink)!important;box-shadow:none!important;
 }
 /* The inherited shell used opaque navy and gold for selected states. Use one
    quiet Espacios selection treatment across every panel that can still open. */
