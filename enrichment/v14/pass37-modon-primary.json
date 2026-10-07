@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-07",
+  "sources": [
+    {
+      "id": "v14-src-modon-tara-current",
+      "url": "https://www.modon.com/real-estate/tara-park",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:51.138337+00:00",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T09:51:51.138337+00:00",
+      "availabilityBasis": "First verified capture of this current project page; no earlier archived version or original publication date was verified.",
+      "datePrecision": null,
+      "publicationDateStatus": "research_pending",
+      "classification": "primary_developer_current_project_page",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "a563c175e50ccf3f319becd022660ca8da8db93df7cb8d322f07a425d7f4915b",
+      "bytes": 63224,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1"
+    },
+    {
+      "id": "v14-src-modon-h1-2026",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2026/07/29/modon-delivers-record-first-half-results-with-aed-2.2-billion-in-net-profit-and-aed-65.4-billion-revenue-backlog",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:52.021893+00:00",
+      "publishedAt": "2026-07-29",
+      "firstAvailableAt": "2026-10-07T09:51:52.021893+00:00",
+      "availabilityBasis": "Conservative first verified capture; historical publication is retained separately and was unavailable to earlier backtests.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "d2d99fd65755cd29144b6306ad293def3dedc26ca1c4b58359cdf1e783a5d7ff",
+      "bytes": 44255,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1"
+    },
+    {
+      "id": "v14-src-modon-maysan-launch",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2024/10/21/modon-launches-phase-one-of-maysan--a-freehold-development-on-reem-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:52.267420+00:00",
+      "publishedAt": "2024-10-21",
+      "firstAvailableAt": "2026-10-07T09:51:52.267420+00:00",
+      "availabilityBasis": "Conservative reviewed recapture of the dated developer release; prior source metadata remains preserved.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "f3532b7962b48fd56981bec7d8cd196bb33f47f17beae4d5a9ca0d353a528e66",
+      "bytes": 29743,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1"
+    },
+    {
+      "id": "v14-src-modon-maysan-sellout",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2024/10/30/modon-sells-out-phase-one-of-maysan-within-a-few-hours",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:52.792363+00:00",
+      "publishedAt": "2024-10-30",
+      "firstAvailableAt": "2026-10-07T09:51:52.792363+00:00",
+      "availabilityBasis": "Publication day follows the dated URL and newsroom card; the article body names Abu Dhabi, UAE without repeating the day.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "ae9254c5fb977cbd724175c42674c9b24417d07259e5e3bd7c814a35a33d08b2",
+      "bytes": 28673,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1"
+    },
+    {
+      "id": "v14-src-modon-maysan-contract",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2025/12/12/modon-awards-aed-1-billion-main-construction-contract-for-maysan-project-on-reem-island",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:53.912802+00:00",
+      "publishedAt": "2025-12-11",
+      "firstAvailableAt": "2026-10-07T09:51:53.912802+00:00",
+      "availabilityBasis": "Article body is datelined 11 December 2025; the URL and newsroom card show 12 December 2025. Both dates remain documented.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "15f1b8ca8ec88d565642e66071173e1d8dcffc691c80178d8f7385d84f46a516",
+      "bytes": 27024,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1",
+      "dateCaveat": "Body dateline 11 December 2025; URL and newsroom card 12 December 2025."
+    },
+    {
+      "id": "v14-src-modon-muheira-sellout",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2025/05/23/muheira--the-first-modon-freehold-residential-towers-on-reem-island--sell-out-on-launch-day",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:54.530488+00:00",
+      "publishedAt": "2025-05-23",
+      "firstAvailableAt": "2026-10-07T09:51:54.530488+00:00",
+      "availabilityBasis": "Conservative first verified capture of the dated developer sell-out release.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "78ace0094eb937ce0d2075cce44caa0876401b160bbe6a43d9550f3345116769",
+      "bytes": 28851,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1"
+    },
+    {
+      "id": "v14-src-modon-village-current",
+      "url": "https://www.modon.com/real-estate/nawayef-village",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:54.924979+00:00",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-07T09:51:54.924979+00:00",
+      "availabilityBasis": "First verified capture of this current project page; no earlier archived version or original publication date was verified.",
+      "datePrecision": null,
+      "publicationDateStatus": "research_pending",
+      "classification": "primary_developer_current_project_page",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "b36aaff0777f06aed48f9f5b7ff3107acb644562481f2580f545ebc82f9e9f02",
+      "bytes": 51391,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1"
+    },
+    {
+      "id": "v14-src-modon-village-sellout",
+      "url": "https://www.modon.com/about-modon/media-centre/details/2025/05/08/modon-sells-out-nawayef-village-the-first-townhouses-on-hudayriyat-island-with-a-total-value-of-aed-2-billion--within-a-few-hours",
+      "publisher": "Modon",
+      "retrievedAt": "2026-10-07T09:51:55.197878+00:00",
+      "publishedAt": "2025-05-09",
+      "firstAvailableAt": "2026-10-07T09:51:55.197878+00:00",
+      "availabilityBasis": "Article body is datelined 9 May 2025; the URL and newsroom card show 8 May 2025. Both dates remain documented.",
+      "datePrecision": "day",
+      "publicationDateStatus": "known",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "licence": "rights_pending: factual extraction, citation and checksum metadata only; no raw page redistribution or dataset licence inferred",
+      "sha256": "7c38e72dd46f495d3aed5aee924e76c0e1498ed0e094713f46a60969a0b4c7bf",
+      "bytes": 29094,
+      "httpStatus": 200,
+      "rawBodyRedistributed": false,
+      "extractionVersion": "reviewed-modon-v14-1",
+      "dateCaveat": "Body dateline 9 May 2025; URL and newsroom card 8 May 2025."
+    }
+  ],
+  "facts": [
+    {
+      "status": "accepted",
+      "id": "v14-tara-first-phase-launch",
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2026-03",
+        "precision": "month"
+      },
+      "label": "Modon retrospectively reports Tara Park phase one launched in mid-March 2026",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer H1 results name Tara Park on Reem Island and report its two launch phases in mid-March and mid-April. The existing record is the same named Modon project; no phase is fanned out to a separate record.",
+      "identitySourceIds": [
+        "v14-src-modon-h1-2026"
+      ],
+      "sourceId": "v14-src-modon-h1-2026",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_retrospective_launch_report",
+      "note": "Month precision is retained; mid-March is not converted to an invented exact day. The July publication and October verified capture remain later than the occurrence."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-tara-phase-one-launch",
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "phase_launch",
+      "date": {
+        "start": "2026-03",
+        "precision": "month"
+      },
+      "label": "Tara Park phase one launch reported for mid-March 2026",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The exact developer results identify Tara Park and two phase launch windows.",
+      "identitySourceIds": [
+        "v14-src-modon-h1-2026"
+      ],
+      "sourceId": "v14-src-modon-h1-2026",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_phase_launch_report",
+      "note": "Phase milestone only; the source does not provide an exact day or phase-specific price population."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-tara-phase-two-launch",
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "phase_launch",
+      "date": {
+        "start": "2026-04",
+        "precision": "month"
+      },
+      "label": "Tara Park phase two launch reported for mid-April 2026",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The exact developer results identify Tara Park and two phase launch windows.",
+      "identitySourceIds": [
+        "v14-src-modon-h1-2026"
+      ],
+      "sourceId": "v14-src-modon-h1-2026",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_phase_launch_report",
+      "note": "Month precision is retained and does not imply an announcement, construction start, completion or registered transaction history."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-tara-price-1br",
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Tara Park page labels the bedroom segment, price, Q2 2030 handover and current two-tower configuration.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v14-src-modon-tara-current"
+      ],
+      "sourceId": "v14-src-modon-tara-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 1680000,
+        "observationKind": "developer_advertised_price",
+        "segment": "1-bedroom apartment",
+        "quoteQualifier": "advertised_average_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at retrieval; original publication date unknown",
+        "note": "Current segmented advertisement for the page configuration; not a transaction, valuation, project-wide minimum or forecast anchor.",
+        "bedrooms": 1,
+        "unitType": "apartment"
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v14-tara-price-2br",
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Tara Park page labels the bedroom segment, price, Q2 2030 handover and current two-tower configuration.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v14-src-modon-tara-current"
+      ],
+      "sourceId": "v14-src-modon-tara-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 2680000,
+        "observationKind": "developer_advertised_price",
+        "segment": "2-bedroom apartment",
+        "quoteQualifier": "advertised_average_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at retrieval; original publication date unknown",
+        "note": "Current segmented advertisement for the page configuration; not a transaction, valuation, project-wide minimum or forecast anchor.",
+        "bedrooms": 2,
+        "unitType": "apartment"
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v14-tara-price-3br",
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Tara Park page labels the bedroom segment, price, Q2 2030 handover and current two-tower configuration.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v14-src-modon-tara-current"
+      ],
+      "sourceId": "v14-src-modon-tara-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 3680000,
+        "observationKind": "developer_advertised_price",
+        "segment": "3-bedroom apartment",
+        "quoteQualifier": "advertised_average_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at retrieval; original publication date unknown",
+        "note": "Current segmented advertisement for the page configuration; not a transaction, valuation, project-wide minimum or forecast anchor.",
+        "bedrooms": 3,
+        "unitType": "apartment"
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v14-maysan-announcement",
+      "recordId": "community:Abu Dhabi:maysan-al-reem-island",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-10-21",
+        "precision": "day"
+      },
+      "label": "Modon announces and launches Maysan phase one on Reem Island",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer release explicitly names Maysan on Reem Island and its Mayar and Thoraya first-phase districts, matching the existing Maysan community record.",
+      "identitySourceIds": [
+        "v14-src-modon-maysan-launch"
+      ],
+      "sourceId": "v14-src-modon-maysan-launch",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_announcement",
+      "note": "Announcement evidence for the Maysan community; it does not establish later phases, completion, occupancy or unit transactions."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-maysan-phase-one-launch",
+      "recordId": "community:Abu Dhabi:maysan-al-reem-island",
+      "kind": "lifecycle",
+      "milestone": "phase_launch",
+      "date": {
+        "start": "2024-10-21",
+        "precision": "day"
+      },
+      "label": "Maysan phase one launches with Mayar and Thoraya",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The primary developer release identifies Maysan phase one and the two named districts.",
+      "identitySourceIds": [
+        "v14-src-modon-maysan-launch"
+      ],
+      "sourceId": "v14-src-modon-maysan-launch",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_phase_launch",
+      "note": "Phase scope is explicit; the retained whole-community launch evidence remains separate."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-maysan-phase-one-sellout",
+      "recordId": "community:Abu Dhabi:maysan-al-reem-island",
+      "kind": "lifecycle",
+      "milestone": "phase_sellout",
+      "date": {
+        "start": "2024-10-30",
+        "precision": "day"
+      },
+      "label": "Modon reports Maysan phase one sold out",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer release explicitly identifies Maysan phase one on Reem Island, comprising Mayar and Thoraya.",
+      "identitySourceIds": [
+        "v14-src-modon-maysan-sellout"
+      ],
+      "sourceId": "v14-src-modon-maysan-sellout",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_phase_sales_status",
+      "note": "The date follows the dated page URL and newsroom card because the body omits a day. Sell-out is not registered transaction history."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-maysan-phase-one-contract",
+      "recordId": "community:Abu Dhabi:maysan-al-reem-island",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_contract_award",
+      "date": {
+        "start": "2025-12-11",
+        "precision": "day"
+      },
+      "label": "Modon awards AED 1 billion main contract for Maysan phase-one districts",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer release explicitly names Maysan, Mayar and Thoraya on Reem Island.",
+      "identitySourceIds": [
+        "v14-src-modon-maysan-contract"
+      ],
+      "sourceId": "v14-src-modon-maysan-contract",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_construction_contract_award",
+      "note": "Contract award is a dated phase milestone; it is not labelled as physical construction start or progress. Body date is 11 December while URL/newsroom card show 12 December.",
+      "reportedContractValueAED": 1000000000
+    },
+    {
+      "status": "accepted",
+      "id": "v14-muheira-sales-status",
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "sales_status_report",
+      "date": {
+        "start": "2025-05-23",
+        "precision": "day"
+      },
+      "label": "Modon reports Muheira sold out on launch day",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer release links and names the exact Muheira two-tower project on Reem Island and reports 475 apartments.",
+      "identitySourceIds": [
+        "v14-src-modon-muheira-sellout"
+      ],
+      "sourceId": "v14-src-modon-muheira-sellout",
+      "scope": "subject",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_sales_status",
+      "note": "Developer-reported sell-out is not a set of registered transactions and does not establish construction, delivery or occupancy."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-muheira-sales-total",
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The developer release names Muheira and attributes the aggregate result to 475 apartments.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v14-src-modon-muheira-sellout"
+      ],
+      "sourceId": "v14-src-modon-muheira-sellout",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "sales_value",
+        "period": "2025-05-23",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 1000000000,
+        "observationKind": "developer_reported_aggregate_sales",
+        "segment": "475_apartments",
+        "quoteQualifier": "reported_approximate_total",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Developer release occurrence date with date caveat retained where applicable",
+        "note": "Approximate aggregate sales value; no unit price, transaction rows or appreciation coefficient is inferred."
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v14-village-current-price",
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The exact Modon Nawayef Village page identifies the project, product range and starting price.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v14-src-modon-village-current"
+      ],
+      "sourceId": "v14-src-modon-village-current",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "metric": "price",
+        "period": "2026-10-07",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 4100000,
+        "observationKind": "developer_advertised_price",
+        "segment": "3-to-5-bedroom townhouses and twin villas",
+        "quoteQualifier": "advertised_starting_price",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Observed on current developer page at retrieval; original publication date unknown",
+        "note": "Current project-level advertised starting price; not a registered transaction, valuation or scenario anchor."
+      }
+    },
+    {
+      "status": "accepted",
+      "id": "v14-village-launch-batch-sellout",
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "kind": "lifecycle",
+      "milestone": "phase_sellout",
+      "date": {
+        "start": "2025-05-09",
+        "precision": "day"
+      },
+      "label": "Modon reports the 378-unit Nawayef Village launch batch sold out",
+      "verification": "verified",
+      "primaryEvidence": true,
+      "identityBasis": "The developer release names Nawayef Village, 378 units and upcoming phases, supporting phase scope without creating separate records.",
+      "identitySourceIds": [
+        "v14-src-modon-village-sellout"
+      ],
+      "sourceId": "v14-src-modon-village-sellout",
+      "scope": "subject_phase",
+      "eventStatus": "actual",
+      "evidenceClass": "primary_developer_phase_sales_status",
+      "note": "Body dateline is 9 May; URL/newsroom card show 8 May. Sell-out is a developer-reported phase milestone, not registered transaction history."
+    },
+    {
+      "status": "accepted",
+      "id": "v14-village-sales-total",
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "kind": "financial",
+      "identityBasis": "The developer release names Nawayef Village and reports the aggregate result for 378 units.",
+      "identityVerified": true,
+      "identitySourceIds": [
+        "v14-src-modon-village-sellout"
+      ],
+      "sourceId": "v14-src-modon-village-sellout",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "evidenceClass": "developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "sales_value",
+        "period": "2025-05-09",
+        "frequency": "daily",
+        "unit": "AED",
+        "value": 2000000000,
+        "observationKind": "developer_reported_aggregate_sales",
+        "segment": "378_townhouses_and_twin_villas",
+        "quoteQualifier": "reported_approximate_total",
+        "currentSnapshotEligible": false,
+        "observationDateBasis": "Developer release occurrence date with date caveat retained where applicable",
+        "note": "Approximate aggregate sales value; it is not divided into an invented unit price and remains outside transaction training."
+      }
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [
+    {
+      "recordId": "project:tara-park-modon-reem-island-abu-dhabi",
+      "status": "primary_current_prices_and_retrospective_phase_launch_review_complete; registered_sale_rent_construction_and_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v14-src-modon-tara-current",
+        "v14-src-modon-h1-2026"
+      ],
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "community:Abu Dhabi:maysan-al-reem-island",
+      "status": "primary_announcement_phase_sellout_and_contract_review_complete; direct_financial_completion_and_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v14-src-modon-maysan-launch",
+        "v14-src-modon-maysan-sellout",
+        "v14-src-modon-maysan-contract"
+      ],
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "status": "primary_sellout_and_aggregate_sales_review_complete; registered_sale_rent_construction_and_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v14-src-modon-muheira-sellout"
+      ],
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    },
+    {
+      "recordId": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "status": "primary_current_price_and_launch_batch_sellout_review_complete; registered_sale_rent_construction_and_lifetime_coverage_unestablished",
+      "reviewedAt": "2026-10-07",
+      "sourceIds": [
+        "v14-src-modon-village-current",
+        "v14-src-modon-village-sellout"
+      ],
+      "directRegisteredSaleObservationsAdded": 0,
+      "directSignedRentObservationsAdded": 0,
+      "validatedForecastPointsAdded": 0
+    }
+  ],
+  "collection": {
+    "method": "Bounded exact-identity review of eight public Modon pages fetched over HTTPS with certificate validation, response-size limits and SHA-256 checksums",
+    "extractionVersion": "reviewed-modon-v14-1",
+    "completedRealDataCoverage": false,
+    "historicalPublicationNotContemporaneousArchive": true,
+    "recordsReviewed": 4,
+    "rawBodiesRedistributed": false
+  },
+  "methodology": "Add exact developer lifecycle, phase, current advertisement and aggregate sell-out evidence without converting aggregate totals into transactions or unit prices. Retain date caveats and retrieval availability. Contract award is not physical construction start. No registered sale/rent history, completion, occupancy, valuation, causal appreciation coefficient or future outcome is inferred."
+}
