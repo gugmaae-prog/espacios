@@ -39,6 +39,12 @@ export function validateProductionTarget(config,target,manifest) {
  return true;
 }
 async function existingBytes(r2,key){const obj=await r2.get(key);return obj?Buffer.from(await obj.arrayBuffer()):null;}
+async function existingDigest(r2,key){
+ // A remote adapter can hash the actual stored bytes in its authenticated
+ // Worker, avoiding large downloads. Never use key names or stored metadata.
+ if(r2.checksum)return r2.checksum(key);
+ const bytes=await existingBytes(r2,key);return bytes===null?null:{sha256:digest(bytes),bytes:bytes.length};
+}
 const INSERT_COLUMNS={
  hi_snapshots:['snapshot_version','as_of','record_count','manifest_json','root_sha256'],
  hi_records:['snapshot_version','record_id','record_type','name','emirate','record_json'],
@@ -103,9 +109,9 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
   if(!new RegExp('^research/published/\\d{4}-\\d{2}-\\d{2}/historical-intelligence/objects/'+object.sha256+'\\.(json(?:\\.gz)?|csv\\.gz|sql\\.gz|parquet)$').test(object.key))throw new Error('Object key must be content addressed');
   const bytes=Buffer.from(await readObject(object));
   if(bytes.length!==object.bytes||digest(bytes)!==object.sha256)throw new Error('Incoming object checksum mismatch: '+object.key);
-  const priorBytes=await existingBytes(r2,object.key);
-  if(priorBytes&&digest(priorBytes)!==object.sha256)throw new Error('Existing immutable object collision: '+object.key);
-  return {object,bytes,exists:!!priorBytes};
+  const priorDigest=await existingDigest(r2,object.key);
+  if(priorDigest&&(priorDigest.sha256!==object.sha256||priorDigest.bytes!==object.bytes))throw new Error('Existing immutable object collision: '+object.key);
+  return {object,bytes,exists:!!priorDigest};
  }
  const concurrency=publicationMode==='production'?8:1;
  for(let i=0;i<manifest.objects.length;i+=concurrency){
@@ -136,8 +142,8 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
  async function putObject({object,bytes,exists}){
   if(exists){reused++;return;}
   const result=await r2.put(object.key,bytes,{onlyIf:{etagDoesNotMatch:'*'},httpMetadata:{contentType:object.contentType||(object.compression==='gzip'?'application/gzip':'application/json')},customMetadata:{sha256:object.sha256,snapshotVersion:manifest.version}});
-  const verified=await existingBytes(r2,object.key);
-  if(!verified||digest(verified)!==object.sha256)throw new Error('Conditional immutable write did not verify: '+object.key);
+  const verified=await existingDigest(r2,object.key);
+  if(!verified||verified.sha256!==object.sha256||verified.bytes!==object.bytes)throw new Error('Conditional immutable write did not verify: '+object.key);
   if(result)written++;else reused++;
  }
  for(let i=0;i<loaded.length;i+=concurrency){

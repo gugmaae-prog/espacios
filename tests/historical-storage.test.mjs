@@ -60,6 +60,17 @@ test('immutable publication uses conditional create; second run reuses verified 
 test('snapshot version collision never modifies object store',async()=>{
  const s=setup();s.setPrior({root_sha256:'different'});await assert.rejects(publish(s),/Snapshot version collision/);assert.equal(s.puts.length,0);
 });
+test('remote byte checksums support reuse and refuse corrupt or missing readback before activation',async()=>{
+ const s=setup();s.r2.get=async()=>{throw Error('large download should not be used');};
+ s.r2.checksum=async key=>{const bytes=s.stored.get(key);return bytes?{sha256:digest(bytes),bytes:bytes.length}:null;};
+ assert.equal((await publish(s)).written,2);assert.equal((await publish(s)).reused,2);
+ for(const bad of [null,{sha256:s.a.sha256,bytes:999},{sha256:'incorrect',bytes:5}]){
+  const broken=setup();broken.r2.checksum=async key=>broken.stored.has(key)?bad:null;
+  await assert.rejects(publish(broken),/write did not verify/);assert.equal(broken.completed(),false);assert.equal(broken.indexBatches.length,0);
+ }
+ const collision=setup();collision.r2.checksum=async()=>({sha256:'wrong',bytes:5});
+ await assert.rejects(publish(collision),/Existing immutable object collision/);assert.equal(collision.puts.length,0);
+});
 test('index failure leaves immutable objects but never marks snapshot complete',async()=>{
  const s=setup();s.failBatch();await assert.rejects(publish(s),/D1 unavailable/);assert.equal(s.stored.size,2);assert.equal(s.completed(),false);
 });
