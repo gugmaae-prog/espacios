@@ -4,6 +4,41 @@
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
+  const selectionLight='#526b70',selectionDark='#a0bab9',legacySelection='#69d8ff';
+  const hotspotColors=['#4f817c','#718991','#9ba8ac'];
+  const selectionColor=()=>root.dataset.espaciosTheme==='dark'?selectionDark:selectionLight;
+  function recolorSelectionExpression(value,color){
+    if(!Array.isArray(value)){
+      if(typeof value!=='string')return value;
+      const normalized=value.toLowerCase();
+      if([legacySelection,selectionLight,selectionDark,'#a97925'].includes(normalized))return color;
+      if(normalized==='#ffc866')return '#89959a';
+      if(normalized==='rgba(169,121,37,.12)')return color===selectionDark?'rgba(160,186,185,.10)':'rgba(82,107,112,.08)';
+      return value;
+    }
+    let changed=false;const next=value.map(item=>{const result=recolorSelectionExpression(item,color);if(result!==item)changed=true;return result});return changed?next:value;
+  }
+  function syncSelectionPalette(){
+    const map=window.__PSR_MAP__,layers=map?.getStyle?.()?.layers;if(!layers)return;const color=selectionColor();
+    for(const layer of layers){
+      if(!/(selected|selection|project-footprint)/i.test(layer.id)&&!['psr-route-line','psr-projects','project-fallback-ring'].includes(layer.id))continue;
+      for(const property of ['fill-color','fill-outline-color','line-color','fill-extrusion-color','circle-color','circle-stroke-color']){
+        if(layer.paint?.[property]===undefined)continue;
+        const current=map.getPaintProperty(layer.id,property);if(current===undefined)continue;
+        const next=recolorSelectionExpression(current,color);if(next!==current)map.setPaintProperty(layer.id,property,next);
+      }
+    }
+    const hotspotLayer=map.getLayer('ae-emerging-hotspots');
+    if(hotspotLayer){
+      const expression=['match',['get','band'],'emerging_hotspot',hotspotColors[0],'watchlist',hotspotColors[1],hotspotColors[2]];
+      const current=map.getPaintProperty('ae-emerging-hotspots','circle-color');
+      if(JSON.stringify(current)!==JSON.stringify(expression))map.setPaintProperty('ae-emerging-hotspots','circle-color',expression);
+    }
+    const legend=Q('#analysis-legend .analysis-legend-row');
+    if(legend)legend.querySelectorAll('span').forEach((span,index)=>{if(hotspotColors[index])span.style.setProperty('color',hotspotColors[index],'important')});
+  }
+  let selectionPaletteFrame=0;
+  function scheduleSelectionPalette(){if(selectionPaletteFrame)return;selectionPaletteFrame=requestAnimationFrame(()=>{selectionPaletteFrame=0;syncSelectionPalette()})}
   const SAT_SOURCE='minimal-satellite';
   const SAT_LAYER='minimal-satellite-layer';
 
@@ -104,6 +139,11 @@
   function install(){
     if(UI.installed||!window.EspaciosUnifiedMap||!Q('#tl-dock')||!Q('#dr-track')||!Q('.search-wrap'))return false;
     UI.installed=true;root.dataset.minimalMap='1';
+    const map=window.__PSR_MAP__;
+    if(map){map.on('styledata',scheduleSelectionPalette);scheduleSelectionPalette();}
+    new MutationObserver(scheduleSelectionPalette).observe(root,{attributes:true,attributeFilter:['data-espacios-theme']});
+    const analysisLegend=Q('#analysis-legend');
+    if(analysisLegend)new MutationObserver(scheduleSelectionPalette).observe(analysisLegend,{childList:true,subtree:true});
 
     const modes=document.createElement('div');
     modes.id='minimal-map-modes';modes.setAttribute('role','group');modes.setAttribute('aria-label','Map display');

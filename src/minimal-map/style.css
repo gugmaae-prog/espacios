@@ -4,14 +4,14 @@ html[data-minimal-map="1"]{
   --minimal-blue:#526f8e;
   --minimal-green:#497b6b;
   --minimal-neutral:#697177;
-  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 5%,var(--su-panel));
-  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 20%,var(--su-line));
+  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 4%,var(--su-panel));
+  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 10%,var(--su-line));
   --minimal-surface:color-mix(in srgb,var(--su-panel) 88%,transparent);
-  /* Legacy shells still reference these names. Keep them as aliases so a
-     deferred panel cannot reintroduce the retired gold palette. */
+  /* Legacy shells use these aliases; keep selection accents on the Espacios palette. */
   --gold:var(--minimal-accent);
   --psr-gold:var(--minimal-accent);
   --ae-gold:var(--minimal-accent);
+  --ae-premium-gold:var(--minimal-accent);
   --ae-gold-soft:color-mix(in srgb,var(--minimal-accent) 10%,transparent);
 }
 html[data-minimal-map="1"][data-espacios-theme="dark"]{
@@ -73,15 +73,16 @@ html[data-minimal-map="1"] body #app #minimal-kind-controls button[aria-pressed=
 html[data-minimal-map="1"] body #app #minimal-map-modes{
   position:fixed;z-index:118;top:calc(var(--mm-header-bottom,66px) + 30px);right:76px;
   display:flex;align-items:center;gap:2px;padding:4px;
-  border:1px solid color-mix(in srgb,var(--su-line) 80%,transparent);border-radius:14px;
-  background:color-mix(in srgb,var(--su-panel) 88%,transparent);
+  border:1px solid color-mix(in srgb,var(--su-line) 64%,transparent);border-radius:14px;
+  background:color-mix(in srgb,var(--su-panel) 78%,transparent);
   -webkit-backdrop-filter:blur(18px) saturate(130%);backdrop-filter:blur(18px) saturate(130%);
 }
 html[data-minimal-map="1"] body #app #minimal-map-modes button{
-  min-width:60px;height:36px;padding:0 12px;border:0;border-radius:10px;background:transparent;backdrop-filter:none;
+  box-sizing:border-box;min-width:60px;height:36px;padding:0 12px;border:1px solid transparent;border-radius:10px;background:transparent;backdrop-filter:none;
 }
 html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-pressed="true"]{
-  background:var(--minimal-selected);border:1px solid color-mix(in srgb,var(--minimal-accent) 24%,var(--su-panel));
+  background:color-mix(in srgb,var(--minimal-accent) 4%,transparent);border:1px solid transparent;
+  border-bottom:2px solid color-mix(in srgb,var(--minimal-accent) 56%,var(--su-line));
   color:var(--su-ink);box-shadow:none;font-weight:600;
 }
 html[data-minimal-map="1"] body #app #minimal-tools-toggle{
@@ -104,8 +105,8 @@ html[data-minimal-map="1"] body #app .ae-search-map-tools button:focus-visible{
   color:var(--su-ink)!important;
 }
 html[data-minimal-map="1"] body #app .ae-map-focus-toggle.active{
-  border-color:color-mix(in srgb,var(--minimal-accent) 24%,var(--su-panel))!important;
-  background:var(--minimal-selected)!important;color:var(--su-ink)!important;box-shadow:none!important;
+  border-color:color-mix(in srgb,var(--minimal-accent) 12%,var(--su-line))!important;
+  background:color-mix(in srgb,var(--minimal-accent) 7%,transparent)!important;color:var(--su-ink)!important;box-shadow:none!important;
 }
 /* The inherited shell used opaque navy and gold for selected states. Use one
    quiet Espacios selection treatment across every panel that can still open. */

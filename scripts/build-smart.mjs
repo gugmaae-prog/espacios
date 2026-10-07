@@ -14,7 +14,25 @@ vm.runInContext(baseline.replace(/export \{\s*worker_default as default\s*\};/,'
 const acquiredBrowser=gunzipSync(Buffer.from(acquiredContext.GZ.js,'base64')).toString('utf8');
 const collapseMatches=acquiredBrowser.split(legacyCollapseSync).length-1;
 if(collapseMatches!==1)throw Error('Expected exactly one legacy collapse-repair sync renderer; found '+collapseMatches);
-const guardedBrowser=acquiredBrowser.replace(legacyCollapseSync,guardedCollapseSync);
+const paletteCopyReplacements=[
+  ['Heat maps are opt-in. Gold is reserved for your current selection.','Heat maps are opt-in. A muted teal outline marks selection; heat colors show the selected measure.'],
+  ['Heat colors are analytical only. Gold remains selection-only.','Heat colors show the selected measure; a muted teal outline marks selection only.'],
+  ['Indicative future-investment signal. Not investment advice. Gold remains selection-only.','Indicative signal only; colors distinguish activity bands and do not represent expected property returns.'],
+  ['Emirate boundary is loaded from the highest available polygon source. Gold indicates selection only.','Emirate boundary is loaded from the highest available polygon source. A muted teal outline marks the current selection.'],
+  ['Gold indicates the current selection only.','A muted teal outline marks the current selection.'],
+  ['Gold is this selected community boundary only. Market history and forecasts follow this community in Analyze.','A muted teal outline marks this community boundary. Market history and forecasts follow this community in Analyze.'],
+  ['Gold is reserved for this selected community only.','A muted teal outline marks this selected community only.']
+];
+let paletteBrowser=acquiredBrowser;
+let paletteReplacementCount=0;
+for(const [before,after] of paletteCopyReplacements){
+  const matches=paletteBrowser.split(before).length-1;
+  if(!matches)continue;
+  paletteBrowser=paletteBrowser.replaceAll(before,after);
+  paletteReplacementCount+=matches;
+}
+if(paletteReplacementCount!==6)throw Error(`Expected six legacy palette sentences; replaced ${paletteReplacementCount}`);
+const guardedBrowser=paletteBrowser.replace(legacyCollapseSync,guardedCollapseSync);
 source+='\n// Idempotent legacy collapse icons; evidence and all other embedded assets unchanged.\nGZ.js = '+JSON.stringify(gzipSync(guardedBrowser,{level:9}).toString('base64'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(app)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/smart-estimates/style.css'))+';\n';
 const mobileCore=await read('src/mobile-map/core.mjs');
