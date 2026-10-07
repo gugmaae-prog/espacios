@@ -103,7 +103,7 @@
       if(page.record?.id!==history.record?.id||page.version!==history.version||page.asOf!==history.asOf)throw Error('A history page belongs to another record or research snapshot.');
       const series=list(page.historySeries).find(row=>row.id===seriesId);
       if(!series||!series.partitionLoaded)throw Error('The selected native financial cohort could not be retrieved.');
-      for(const field of ['sourceId','scope','identityVerified','subjectRecordId','unit','metric','frequency','segment','registration','geography','pointCount'])if(JSON.stringify(series[field]??null)!==JSON.stringify(descriptor[field]??null))throw Error('The selected history page changed its approved cohort identity.');
+      for(const field of ['sourceId','scope','identityVerified','subjectRecordId','unit','metric','frequency','segment','label','registration','geography','pointCount','observationKind','transactionKind','procedureId','procedureName','observationDateBasis'])if(JSON.stringify(series[field]??null)!==JSON.stringify(descriptor[field]??null))throw Error('The selected history page changed its approved cohort identity.');
       if(JSON.stringify(list(series.identitySourceIds).slice().sort())!==JSON.stringify(list(descriptor.identitySourceIds).slice().sort()))throw Error('The selected history page changed its identity evidence.');
       if((series.nativePointOffset??0)!==cursor)throw Error('The selected history page did not retain its native point position.');
       points.push(...list(series.points));validated.push(...list(page.validatedObservations).filter(row=>row.seriesId===seriesId));

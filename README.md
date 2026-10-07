@@ -17,41 +17,54 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V19 DLD-derived registered-sale evidence — 7 October 2026
+## V19 DLD-derived transaction histories and map palette — 7 October 2026
 
 `20261007-enrichment-v19` preserves the fixed **1,645 projects and 215
-communities** and adds **13 subject-linked registered-sale observations** from
-**11 unique transaction IDs**: eight rows linked to six exact project identities
-and five Business Bay community rows. Two transaction IDs are intentionally
-linked at both verified project and community levels. All are residential,
-off-plan flat sales registered 3–5 October 2026, procedure 102, with zero
-quality flags. No fuzzy project match, phase fan-out, median, appreciation
-uplift or forecast was added. The DLD-derived file remains local and is not
-redistributed. See the [V19 source review](docs/history-v19-dred-sales-review.md).
+communities**. Alongside 13 previously retained, individually sourced sale
+observations, pass 43 adds **209,291 native transaction rows** and **6,803
+monthly cohort summaries**. It retains individual sale dates and transaction
+IDs, divides raw cohorts by year to keep history requests bounded, and withholds
+the monthly median for samples below 20 while preserving their rows and counts.
 
-The underlying public secondary distribution contains 1,372,277 rows through
-5 October 2026; it attributes the data to Dubai Land Department open data.
-Identity and sale-procedure filters are documented in the source review. This
-pass audited only **238 pre-verified exact project identity keys**; **158** had
-eligible residential unit/villa sales in that extract. It is not a coverage
-claim for the full 1,860-record catalogue. A DLD registration date is retained
-as the observation date, not treated as contract execution or transfer date.
+The pinned public secondary distribution contains 1,372,277 DLD-derived rows
+through 5 October 2026 and is published under CC BY 4.0. Exact previously
+verified project-name/area keys connect **74,586 transactions across 158 of 238
+reviewed project identity keys**. Exact official area mappings connect **134,718
+transactions across six communities**; eight communities have a mapped DLD area
+ID, but two have no eligible rows in this extract. Project/community links share
+11,096 transaction IDs. These are two geographic links to one sale, not two
+transactions. The input covers only verified cohorts and six of 215 communities;
+it does not establish catalogue-wide completeness. The source date is the DLD
+registration date, not contract execution, transfer, project inception or a
+first-ever sale. Source vintage first became available on 5 October 2026, so it
+cannot be treated as information available in earlier-period backtests.
 
-V19 brings the 42,780-cell evidence ledger to **3,091 present, 3,434 partial,
-26,955 missing and 9,300 unestablished**. **39,689 (92.78%) remain unresolved**;
-this is a requirements checklist measure, not a percentage of price history.
-The canonical snapshot contains **318,562 aggregate observations, 13,401
-series, 3,240 sources, 5,532 sourced facts, 105 events and 7,382 event
-exposures**. Complete lifetime sale/rent history and validated 2080 forecasts
-remain uncertified; unsupported 2027–2080 scenario slots stay null.
+Monthly medians are calculated within exact record, registration, procedure
+and property-type cohorts without mix adjustment. Of 6,803 monthly summaries,
+5,001 medians are withheld for sparse samples; 1,802 meet the 20-row gate. The
+raw Parquet remains local. A 9.2 MB compressed, attributable filtered history
+input and its immutable source partitions preserve the selected rows.
 
-The remaining research should prioritize: (1) exact-identity registered
-transactions outside the six project records and Business Bay, with historical
-coverage from each record's first verifiable date; (2) signed rent and dated
-valuations; (3) completed construction, first occupancy and service charges;
-and (4) record-specific event exposure and model validation. The current
-extract's other procedure types and six rows with unresolved procedure IDs are
-excluded from registered-sale coverage pending source verification.
+The map’s last inherited gold accents were fallback-evidence markers and a
+decorative emirate mark, not an appreciation signal. They now use the shared
+neutral slate/teal Espacios palette; fallback evidence remains visibly distinct.
+
+The 42,780-cell evidence ledger now has **3,096 present, 3,434 partial, 26,950
+missing and 9,300 unestablished**: **39,684 (92.76%) are unresolved**. This is a
+requirements checklist measure, not a percentage of price history. The rebuilt
+snapshot contains **534,656 stored history rows, 14,563 series, 3,240 sources,
+5,532 sourced facts, 105 events and 7,382 event exposures**. The 534,656 points
+include previously retained history, the 209,291 new transaction rows and the
+6,803 monthly summaries; transaction links across a project and its community
+remain distinct. Complete lifetime sale/rent history and validated 2080
+forecasts remain uncertified; unsupported 2027–2080 scenario slots stay null.
+
+Next research should reconcile exact project identities beyond the 238-key
+cohort and map official area IDs for the other 207 communities, then source
+signed rents, dated valuations, delivery/occupancy milestones, service charges
+and record-specific event exposure. Event associations remain descriptive until
+mix, supply, concurrent events and comparable controls are addressed. No
+infrastructure or news item receives a mechanical price uplift.
 
 ## Published V17 ADREC register evidence — 7 October 2026 (Dubai)
 

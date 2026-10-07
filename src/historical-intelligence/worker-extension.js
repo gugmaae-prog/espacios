@@ -3,7 +3,7 @@
 var HI_PREVIOUS_FETCH=worker_default.fetch;
 var HI_PARTITIONS=new Map(),HI_PARTITION_PENDING=new Map(),HI_RECORD_SHARDS=new Map(),HI_RECORD_PENDING=new Map();
 var HI_PARTITION_BYTES=0;
-var HI_SERIES_IDENTITY_FIELDS=['sourceSeriesId','metric','sourceMetric','frequency','unit','scope','identityVerified','sourceId','geography','emirate','segment','registration','sourceAreaId','subjectRecordId','columns','identitySourceIds','identityBasis','nativeEndpoint','periodCoverage'];
+var HI_SERIES_IDENTITY_FIELDS=['sourceSeriesId','metric','sourceMetric','frequency','unit','scope','identityVerified','sourceId','geography','emirate','segment','label','registration','sourceAreaId','subjectRecordId','columns','identitySourceIds','identityBasis','nativeEndpoint','periodCoverage','observationKind','transactionKind','procedureId','procedureName','observationDateBasis'];
 function hiStable(value){if(value===undefined||value===null)return null;if(Array.isArray(value))return value.map(hiStable);if(typeof value==='object')return Object.fromEntries(Object.keys(value).sort().map(key=>[key,hiStable(value[key])]));return value;}
 function hiSameFields(a,b,fields){return fields.every(key=>JSON.stringify(hiStable(a[key]))===JSON.stringify(hiStable(b[key])));}
 function hiSeriesMetadataMatches(a,b){

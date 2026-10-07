@@ -55,6 +55,9 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
         cohorts = [x for x in direct if x.get('metric') == metric]
         points = [p for s in cohorts for p in s.get('points', [])
                   if len(p) > 1 and isinstance(p[1], (int, float)) and not isinstance(p[1], bool) and p[1] > 0]
+        transaction_series = [s for s in cohorts if s.get('observationKind') == 'transaction' and s.get('transactionKind') == 'sale']
+        transaction_points = [p for s in transaction_series for p in s.get('points', [])
+                              if len(p) > 1 and isinstance(p[1], (int, float)) and not isinstance(p[1], bool) and p[1] > 0]
         transactions = [x for x in observations if x.get('scope') == 'subject' and x.get('identityVerified') is True
                         and x.get('metric') == metric and x.get('observationKind') == 'transaction'
                         and x.get('transactionKind') == 'sale' and x.get('status') == 'source_observed' and isinstance(x.get('value'), (int, float))
@@ -62,6 +65,9 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
         disputed = [p for p in points if disputed_point(p)]
         accepted = [p for p in points if not disputed_point(p)]
         evidence = cohorts + transactions
+        transaction_dates = {str(p[0]) for p in transaction_points if p and p[0]}
+        transaction_dates.update(str(x.get('period')) for x in transactions if x.get('period'))
+        transaction_count = len(transaction_points) + len(transactions)
         if disputed:
             reason = 'Disputed source observations are retained but excluded from usable subject coverage; dates do not establish occupancy or realised income.'
         elif transactions and not accepted:
@@ -72,8 +78,8 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
             reason = 'No verified registered sale or signed-rent evidence is retained for this subject.'
         items[name] = evidence_item('present' if accepted or transactions else 'partial' if disputed else 'missing', evidence,
             reason,
-            nativePointCount=len(points), nativeSeriesCount=len(cohorts), transactionObservationCount=len(transactions),
-            distinctTransactionDateCount=len({str(x.get('period')) for x in transactions}), completeLifetimeHistory=False)
+            nativePointCount=len(points), nativeSeriesCount=len(cohorts), transactionObservationCount=transaction_count,
+            distinctTransactionDateCount=len(transaction_dates), completeLifetimeHistory=False)
         if disputed:items[name].update(disputedNativePointCount=len(disputed),acceptedNativePointCount=len(accepted))
         items['complete_' + name] = evidence_item('unestablished', [],
             'Inception/applicability and every applicable native period require independent verification. Unobserved prices remain missing.', completeLifetimeHistory=False)

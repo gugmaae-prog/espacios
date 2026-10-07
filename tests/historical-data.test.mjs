@@ -89,7 +89,7 @@ test('bounded runtime shards preserve every canonical record and native tuple wi
   for(let i=0;i<newSeries.length;i++){
    const {partition:oldPartition,points:oldTail,...oldFields}=oldSeries[i],{partition,archivePartition,points,...newFields}=newSeries[i];
    assert.deepEqual(newFields,oldFields);assert.deepEqual(archivePartition,oldPartition);assert.deepEqual(points,[]);
-   if(!native.has(partition.key)){const obj=objects.get(partition.key);assert.ok(obj);const decoded=gunzipSync(await read(obj.path));assert.ok(decoded.length<1024*1024);native.set(partition.key,JSON.parse(decoded));}
+   if(!native.has(partition.key)){const obj=objects.get(partition.key);assert.ok(obj);const decoded=gunzipSync(await read(obj.path));assert.ok(decoded.length<32*1024*1024);native.set(partition.key,JSON.parse(decoded));}
    const series=native.get(partition.key).series.find(s=>s.id===newSeries[i].id);assert.ok(series);assert.equal(series.points.length,newSeries[i].pointCount);assert.equal(sha(JSON.stringify(series)),canonicalNative.get(series.id),'Runtime changed a native tuple or identity field');
    // Runtime partitions change packaging only: original native cohorts, owners
    // and independently retained identity proofs remain exactly the same.

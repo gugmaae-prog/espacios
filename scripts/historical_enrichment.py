@@ -155,9 +155,15 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    if field in summary:summary['originalAudit'+field[0].upper()+field[1:]]=summary[field]
    periods={str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I)}
    transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' and o.get('period') and isinstance(o.get('value'),(float,int)) and o.get('value')>0]
+   transaction_series=[s for s in subjects if s.get('metric')==metric and s.get('observationKind')=='transaction' and s.get('transactionKind')=='sale']
+   transaction_points=[p for s in transaction_series for p in series[s['id']]['points'] if len(p)>1 and isinstance(p[1],(float,int)) and p[1]>0]
+   transaction_periods={str(p[0]) for p in transaction_points if p[0]}
+   transaction_periods.update(str(o['period']) for o in transactions)
    periods.update(str(o['period']) for o in transactions)
+   periods.update(str(p[0]) for p in transaction_points if p[0])
    summary[field]=len(periods)
-   summary['directSaleTransactionCount' if metric=='price' else 'directRentTransactionCount']=len(transactions)
+   summary['directSaleTransactionCount' if metric=='price' else 'directRentTransactionCount']=len(transactions)+len(transaction_points)
+   if metric=='price':summary['directSaleTransactionDateCount']=len(transaction_periods)
   summary['directPeriodCountBasis']='Distinct retained native period labels plus exact transaction dates across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or a completeness claim'
   if launch:status['launchDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='verified_launch_date']
   if complete:status['completionDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='actual_completion_date']
