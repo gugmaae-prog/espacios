@@ -8,7 +8,7 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261007-enrichment-v18'
+VERSION = '20261007-enrichment-v19'
 ASOF = '2026-10-07'
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
@@ -33,7 +33,9 @@ def number(value):
  try: return float(value) if str(value).strip() else None
  except (ValueError,TypeError): return None
 def usable_subject(record,metric,series):
- return any(s.get('scope')=='subject' and s.get('identityVerified') and s.get('metric')==metric and any(not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I) for p in series[s['id']]['points']) for s in record['historySeries'])
+ series_observed=any(s.get('scope')=='subject' and s.get('identityVerified') and s.get('metric')==metric and any(not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I) for p in series[s['id']]['points']) for s in record['historySeries'])
+ transaction_observed=any(o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' for o in record.get('observations',[]))
+ return series_observed or transaction_observed
 def rows(value): return list(csv.DictReader(io.StringIO(value.decode('utf-8-sig'))))
 def period_date(period,end=False):
  s=str(period or '')

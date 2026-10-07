@@ -26,6 +26,10 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
+  assert.match(css,/--eg-theme-apricot:var\(--minimal-neutral\)/);
+  assert.match(css,/\.dot\.fallback\{\s*background:var\(--minimal-neutral\)!important;box-shadow:none!important/);
+  assert.match(css,/\.ae-emirate-row:nth-child\(3\) \.ae-emirate-mark\{\s*background:radial-gradient\(circle at 62% 28%,color-mix\(in srgb,var\(--minimal-accent\)/);
+  assert.doesNotMatch(css,/#c9a45d|#c77955/i);
   assert.match(css,/--gold:var\(--minimal-accent\)/);
   assert.match(css,/--psr-gold:var\(--minimal-accent\)/);
   assert.match(css,/--ae-gold:var\(--minimal-accent\)/);
@@ -36,6 +40,8 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.ok(worker.includes('background:var(--minimal-selected)!important'));
   assert.ok(worker.includes('background:var(--minimal-selected);border:1px solid var(--minimal-selected-line)'));
   assert.ok(worker.includes('--ae-premium-gold:var(--minimal-accent)'));
+  assert.ok(worker.lastIndexOf('--eg-theme-apricot:var(--minimal-neutral)')>worker.indexOf('--eg-theme-apricot:#c77955'));
+  assert.ok(worker.lastIndexOf('.ae-emirate-row:nth-child(3) .ae-emirate-mark')>worker.indexOf('#c9a45d'));
   assert.match(worker,/\.map-bottom \.dot\.fallback\{\\n\s*background:#89959a!important;box-shadow:none!important/);
 });
 

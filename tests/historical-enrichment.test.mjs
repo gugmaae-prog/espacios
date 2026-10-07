@@ -108,6 +108,19 @@ if mode=='gap_ledger':
  assert state['itemCoverage']['registered_sale_history']['completeLifetimeHistory'] is False
  assert 'direct_registered_sale_history' in state['originalAuditGaps']
  assert state['earliestHistoryEvidence']['date']['start']=='2014Q1'
+if mode=='transaction_ledger':
+ p=rec('p');p['researchStatus']['gaps']+=['direct_registered_sale_history']
+ p['observations']=[{'id':'tx','sourceIds':['s'],'sourceId':'s','scope':'subject','identityVerified':True,'metric':'price','value':1200,'unit':'AED/sqft','period':'2026-10-03','observationKind':'transaction','transactionKind':'sale','transactionId':'dld-1','status':'source_observed'}]
+ from historical_gap_ledger import refresh_research_coverage
+ refresh_research_coverage(p,{},src,'2026-10-05')
+ state=p['researchStatus'];assert state['itemCoverage']['registered_sale_history']['status']=='present'
+ assert state['itemCoverage']['registered_sale_history']['transactionObservationCount']==1
+ assert state['itemCoverage']['registered_sale_history']['completeLifetimeHistory'] is False
+ assert 'direct_registered_sale_history' not in state['gaps'] and 'complete_registered_sale_history' in state['gaps']
+ assert state['earliestHistoryEvidence']['date']['start']=='2026-10-03'
+ p['observations'][0]['transactionKind']='lease'
+ refresh_research_coverage(p,{},src,'2026-10-05')
+ assert p['researchStatus']['itemCoverage']['registered_sale_history']['status']=='missing'
 if mode=='whole_scope':
  fact.update(date={'start':'2020-01-01','precision':'day'},scope='published_reference');p=rec('p');apply({'facts':[fact]},[p]);assert 'actual_completion_date' in p['researchStatus']['gaps']
  fact.update(id='whole',scope='subject');q=rec('q');fact['recordId']='q';apply({'facts':[fact]},[q]);assert 'actual_completion_date' not in q['researchStatus']['gaps']
@@ -123,7 +136,7 @@ if mode=='source_revision':
  try:register_source({**revised,'sha256':'changed'},stored,urls,aliases,canonical,'2026-10-05');raise AssertionError('revision overwritten')
  except ValueError as e:assert 'cannot be overwritten' in str(e)
 `;
-for(const mode of ['future','target','phase','fanout','asking','unproven','future_available','orphan_proof','preferred_quote','gap_ledger','whole_scope','source_revision'])test('source enrichment preserves evidence boundaries: '+mode,()=>{
+for(const mode of ['future','target','phase','fanout','asking','unproven','future_available','orphan_proof','preferred_quote','gap_ledger','transaction_ledger','whole_scope','source_revision'])test('source enrichment preserves evidence boundaries: '+mode,()=>{
  const result=spawnSync('python3',['-c',script,mode],{encoding:'utf8'});assert.equal(result.status,0,result.stderr||result.stdout);
 });
 

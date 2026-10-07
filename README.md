@@ -17,6 +17,42 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V19 DLD-derived registered-sale evidence — 7 October 2026
+
+`20261007-enrichment-v19` preserves the fixed **1,645 projects and 215
+communities** and adds **13 subject-linked registered-sale observations** from
+**11 unique transaction IDs**: eight rows linked to six exact project identities
+and five Business Bay community rows. Two transaction IDs are intentionally
+linked at both verified project and community levels. All are residential,
+off-plan flat sales registered 3–5 October 2026, procedure 102, with zero
+quality flags. No fuzzy project match, phase fan-out, median, appreciation
+uplift or forecast was added. The DLD-derived file remains local and is not
+redistributed. See the [V19 source review](docs/history-v19-dred-sales-review.md).
+
+The underlying public secondary distribution contains 1,372,277 rows through
+5 October 2026; it attributes the data to Dubai Land Department open data.
+Identity and sale-procedure filters are documented in the source review. This
+pass audited only **238 pre-verified exact project identity keys**; **158** had
+eligible residential unit/villa sales in that extract. It is not a coverage
+claim for the full 1,860-record catalogue. A DLD registration date is retained
+as the observation date, not treated as contract execution or transfer date.
+
+V19 brings the 42,780-cell evidence ledger to **3,091 present, 3,434 partial,
+26,955 missing and 9,300 unestablished**. **39,689 (92.78%) remain unresolved**;
+this is a requirements checklist measure, not a percentage of price history.
+The canonical snapshot contains **318,562 aggregate observations, 13,401
+series, 3,240 sources, 5,532 sourced facts, 105 events and 7,382 event
+exposures**. Complete lifetime sale/rent history and validated 2080 forecasts
+remain uncertified; unsupported 2027–2080 scenario slots stay null.
+
+The remaining research should prioritize: (1) exact-identity registered
+transactions outside the six project records and Business Bay, with historical
+coverage from each record's first verifiable date; (2) signed rent and dated
+valuations; (3) completed construction, first occupancy and service charges;
+and (4) record-specific event exposure and model validation. The current
+extract's other procedure types and six rows with unresolved procedure IDs are
+excluded from registered-sale coverage pending source verification.
+
 ## Published V17 ADREC register evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v17` preserves the fixed **1,645-project and 215-community** catalogue and adds exact-ID ADREC register evidence for 305 existing projects: 305 registration-date milestones and 302 dated-as-captured construction-progress values. The capture also preserves 305 register snapshots. No projects or communities were added, and the pass adds no sale or rent observations. See the [V17 review](docs/history-v17-adrec-register-review.md).

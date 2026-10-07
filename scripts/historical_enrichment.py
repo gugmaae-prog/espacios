@@ -148,12 +148,17 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   launch=any(whole(x,'launch') for x in record['lifecycle']);complete=any(whole(x,'completion') for x in record['lifecycle'])
   subjects=[s for s in record['historySeries'] if s.get('scope')=='subject' and s.get('identityVerified') is True]
   status['originalAuditSourceScope']=status.get('sourceScope')
-  status['sourceScope']='Verified registered subject cohorts and separately scoped context; full financial history unestablished' if subjects else 'Shared/published context and advertised evidence only; no verified direct subject financial history'
+  direct_transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed']
+  status['sourceScope']='Verified registered subject cohorts or transactions and separately scoped context; full financial history unestablished' if subjects or direct_transactions else 'Shared/published context and advertised evidence only; no verified direct subject financial history'
   summary=record['coverageSummary']
   for metric,field in [('price','directSalePeriods'),('rent','directRentPeriods')]:
    if field in summary:summary['originalAudit'+field[0].upper()+field[1:]]=summary[field]
-   summary[field]=len({str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I)})
-  summary['directPeriodCountBasis']='Distinct retained native period labels across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or independent transactions'
+   periods={str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I)}
+   transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' and o.get('period') and isinstance(o.get('value'),(float,int)) and o.get('value')>0]
+   periods.update(str(o['period']) for o in transactions)
+   summary[field]=len(periods)
+   summary['directSaleTransactionCount' if metric=='price' else 'directRentTransactionCount']=len(transactions)
+  summary['directPeriodCountBasis']='Distinct retained native period labels plus exact transaction dates across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or a completeness claim'
   if launch:status['launchDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='verified_launch_date']
   if complete:status['completionDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='actual_completion_date']
   if launch or complete or record.get('registerEvidence') or record['observations']:status['status']='partially_sourced; complete financial coverage not established'

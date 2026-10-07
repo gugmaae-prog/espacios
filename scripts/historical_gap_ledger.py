@@ -55,11 +55,25 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
         cohorts = [x for x in direct if x.get('metric') == metric]
         points = [p for s in cohorts for p in s.get('points', [])
                   if len(p) > 1 and isinstance(p[1], (int, float)) and not isinstance(p[1], bool) and p[1] > 0]
+        transactions = [x for x in observations if x.get('scope') == 'subject' and x.get('identityVerified') is True
+                        and x.get('metric') == metric and x.get('observationKind') == 'transaction'
+                        and x.get('transactionKind') == 'sale' and x.get('status') == 'source_observed' and isinstance(x.get('value'), (int, float))
+                        and x.get('value') > 0 and x.get('transactionId') and x.get('sourceId')]
         disputed = [p for p in points if disputed_point(p)]
         accepted = [p for p in points if not disputed_point(p)]
-        items[name] = evidence_item('present' if accepted else 'partial' if disputed else 'missing', cohorts,
-            'Disputed source observations are retained but excluded from usable subject coverage; dates do not establish occupancy or realised income.' if disputed else 'Verified native subject cohorts retained; presence and sparse observations do not certify complete lifetime coverage.',
-            nativePointCount=len(points), nativeSeriesCount=len(cohorts), completeLifetimeHistory=False)
+        evidence = cohorts + transactions
+        if disputed:
+            reason = 'Disputed source observations are retained but excluded from usable subject coverage; dates do not establish occupancy or realised income.'
+        elif transactions and not accepted:
+            reason = 'Individual registered sale rows are retained with their native dates and units; sparse rows do not establish a comparable median or complete lifetime history.'
+        elif accepted:
+            reason = 'Verified native subject cohorts retained; presence and sparse observations do not certify complete lifetime coverage.'
+        else:
+            reason = 'No verified registered sale or signed-rent evidence is retained for this subject.'
+        items[name] = evidence_item('present' if accepted or transactions else 'partial' if disputed else 'missing', evidence,
+            reason,
+            nativePointCount=len(points), nativeSeriesCount=len(cohorts), transactionObservationCount=len(transactions),
+            distinctTransactionDateCount=len({str(x.get('period')) for x in transactions}), completeLifetimeHistory=False)
         if disputed:items[name].update(disputedNativePointCount=len(disputed),acceptedNativePointCount=len(accepted))
         items['complete_' + name] = evidence_item('unestablished', [],
             'Inception/applicability and every applicable native period require independent verification. Unobserved prices remain missing.', completeLifetimeHistory=False)
@@ -120,5 +134,8 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
             if disputed_point(p):continue
             precision = 'quarter' if re.search(r'Q[1-4]', str(p[0]), re.I) else 'year' if len(str(p[0])) == 4 else 'month' if len(str(p[0])) == 7 else 'day'
             history.append({'date': {'start': p[0], 'precision': precision}, 'basis': 'earliest_retained_native_subject_observation', 'evidenceIds': [cohort['id']], 'sourceIds': [cohort['sourceId']]})
+    for observation in observations:
+        if observation.get('scope') == 'subject' and observation.get('identityVerified') is True and observation.get('observationKind') == 'transaction' and observation.get('transactionKind') == 'sale' and observation.get('status') == 'source_observed' and observation.get('metric') in ['price', 'rent'] and observation.get('period'):
+            history.append({'date': {'start': observation['period'], 'precision': 'day'}, 'basis': 'earliest_retained_subject_transaction_observation', 'evidenceIds': [observation['id']], 'sourceIds': observation.get('sourceIds') or [observation['sourceId']]})
     status['earliestHistoryEvidence'] = min(history, key=lambda x: period_start(x['date']['start'])) if history else None
     status['earliestHistoryDefinition'] = 'Earliest retained verifiable record evidence; first-ever transaction, inception and continuous price coverage remain unestablished.'
