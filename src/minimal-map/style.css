@@ -4,8 +4,8 @@ html[data-minimal-map="1"]{
   --minimal-blue:#526f8e;
   --minimal-green:#497b6b;
   --minimal-neutral:#697177;
-  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 4%,var(--su-panel));
-  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 10%,var(--su-line));
+  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 6%,var(--su-panel));
+  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 18%,var(--su-line));
   --minimal-surface:color-mix(in srgb,var(--su-panel) 88%,transparent);
   /* Legacy shells use these aliases; keep selection accents on the Espacios palette. */
   --gold:var(--minimal-accent);
@@ -79,10 +79,10 @@ html[data-minimal-map="1"] body #app #minimal-map-modes{
 }
 html[data-minimal-map="1"] body #app #minimal-map-modes button{
   box-sizing:border-box;min-width:60px;height:36px;padding:0 12px;border:1px solid transparent;border-radius:10px;background:transparent;backdrop-filter:none;
+  transition:background-color .16s ease,border-color .16s ease,color .16s ease;
 }
 html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-pressed="true"]{
-  background:color-mix(in srgb,var(--minimal-accent) 4%,transparent);border:1px solid transparent;
-  border-bottom:2px solid color-mix(in srgb,var(--minimal-accent) 56%,var(--su-line));
+  background:var(--minimal-selected);border:1px solid var(--minimal-selected-line);
   color:var(--su-ink);box-shadow:none;font-weight:600;
 }
 html[data-minimal-map="1"] body #app #minimal-tools-toggle{
@@ -250,7 +250,9 @@ html[data-minimal-map="1"] body #app #minimal-property-settings #um-property but
   html[data-minimal-map="1"] body #app #tl-dock #mm-date{font-size:10px!important;}
 }
 @media (prefers-reduced-motion:reduce){
-  html[data-minimal-map="1"] body #app .layer-rail{transition:none!important;}
+  html[data-minimal-map="1"] body #app .layer-rail,
+  html[data-minimal-map="1"] body #app #minimal-map-modes button,
+  html[data-minimal-map="1"] body #app .ae-map-focus-toggle{transition:none!important;}
 }
 /* Match the shared Espacios surfaces, including acquired timeline overrides. */
 html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #tl-slider::-webkit-slider-runnable-track{
