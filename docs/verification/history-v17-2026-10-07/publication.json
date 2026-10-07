@@ -1,0 +1,68 @@
+{
+  "version": "20261007-enrichment-v17",
+  "verifiedAt": "2026-10-07T14:52:11.726Z",
+  "sourcePullRequest": 65,
+  "sourceHead": "5dc567a878052af995025b9cd9465f8c7d89bb6a",
+  "mergedMainCommit": "d742602ec98a2ed718fe2287d0d961d7a1a36b61",
+  "rootSha256": "a58ec645d1ab28ac59320e4fc87f48c418935cfb02bfda20e096b41fe268164c",
+  "publication": {
+    "state": "complete",
+    "immutableObjects": 1668,
+    "written": 0,
+    "reusedAfterChecksumVerification": 1668,
+    "indexStatements": 35456,
+    "tableCounts": {
+      "hi_snapshots": 1,
+      "hi_records": 1860,
+      "hi_sources": 2948,
+      "hi_events": 105,
+      "hi_exposures": 7382,
+      "hi_series": 13401,
+      "hi_record_series": 9759
+    }
+  },
+  "catalogue": {
+    "projects": 1645,
+    "communities": 215,
+    "totalRecords": 1860,
+    "historicalAggregateObservations": 318562,
+    "series": 13401,
+    "sources": 2948,
+    "events": 105,
+    "eventExposures": 7382
+  },
+  "increment": {
+    "authority": "Abu Dhabi Real Estate Centre project directory",
+    "captureRetrievedAt": "2026-10-07T11:16:47.507Z",
+    "directoryRowsReviewed": 320,
+    "exactCatalogueIdMatches": 308,
+    "acceptedProjectRecords": 305,
+    "unlinkedRows": 12,
+    "excludedAlreadyAllocatedAuthorityIds": [594, 595, 597],
+    "registerSnapshots": 305,
+    "registrationDateMilestones": 305,
+    "constructionProgressSnapshots": 302,
+    "progressFieldsAbsent": 3,
+    "saleOrRentObservationsAdded": 0,
+    "newCatalogueRecords": 0
+  },
+  "coverage": {
+    "requirements": 42780,
+    "present": 3090,
+    "partial": 3434,
+    "missing": 26956,
+    "unestablished": 9300,
+    "unresolved": 39690,
+    "unresolvedPercent": 92.78,
+    "validatedAnnualScenariosThrough2080": 0,
+    "researchComplete": false
+  },
+  "evidenceLimits": {
+    "registerDateIsNotFirstSaleOrConstructionStart": true,
+    "progressIsPointInTimeRegisterSnapshot": true,
+    "progressIsNotInspectionOrPhysicalCompletionEvidence": true,
+    "completeLifetimePriceHistoryEstablished": false,
+    "completeLifetimeRentHistoryEstablished": false,
+    "rawApiBodiesRedistributed": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "origin": "https://espacios.me",
+  "version": "20261007-enrichment-v17",
+  "checkedAt": "2026-10-07T14:52:11.726Z",
+  "readOnly": true,
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 26956,
+      "unestablished": 9300,
+      "partial": 3434,
+      "present": 3090
+    },
+    "annualEndpoint": 2080
+  },
+  "events": {
+    "events": 105,
+    "sources": 2948,
+    "exposures": 7382
+  },
+  "increment": {
+    "series": 0,
+    "nativePoints": 0,
+    "factRecords": 305
+  },
+  "passed": true,
+  "productionApiSmokeChecks": {
+    "checkedAt": "2026-10-07T14:56:12.617Z",
+    "controlPlane": {
+      "status": 200,
+      "connected": true,
+      "releaseTag": "20261007-enrichment-v17",
+      "workerVersion": "18f283b7-881a-4e0e-97a1-9c40faa13c41",
+      "expectedWorkerVersion": "18f283b7-881a-4e0e-97a1-9c40faa13c41",
+      "dataRoomPublic": false
+    },
+    "recordHistory": {
+      "status": 200,
+      "version": "20261007-enrichment-v17",
+      "recordId": "adrec:742",
+      "name": "Zaitouna Residence",
+      "registerEvidenceCount": 1,
+      "sourceCount": 27,
+      "annualEndpoint": 2080
+    },
+    "eventHistory": {
+      "status": 200,
+      "version": "20261007-enrichment-v17",
+      "events": 20,
+      "exposures": 20
+    }
+  }
+}

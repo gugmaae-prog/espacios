@@ -17,6 +17,16 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## Published V17 ADREC register evidence — 7 October 2026 (Dubai)
+
+`20261007-enrichment-v17` preserves the fixed **1,645-project and 215-community** catalogue and adds exact-ID ADREC register evidence for 305 existing projects: 305 registration-date milestones and 302 dated-as-captured construction-progress values. The capture also preserves 305 register snapshots. No projects or communities were added, and the pass adds no sale or rent observations. See the [V17 review](docs/history-v17-adrec-register-review.md).
+
+The 42,780-cell evidence ledger now has **3,090 present, 3,434 partial, 26,956 missing and 9,300 unestablished** requirements. **39,690 (92.78%) remain unresolved.** That is evidence-requirement coverage, not a percentage of historical price data. The snapshot still contains **318,562 aggregate historical observations, 13,401 series, 2,948 sources, 105 events and 7,382 event exposures**. A current ADREC progress value is a register snapshot, not an inspection report or proof of delivery; registration is not a first-sale or construction-start date.
+
+No complete lifetime sale/rent history or validated 2080 forecast is certified. Conditional annual scenario slots remain 2027–2080, with unsupported values null. The temporary publisher was removed after publication. The Data Room remains restricted. See the [V17 production receipts](docs/verification/history-v17-2026-10-07/).
+
+V17 source changes merged in [PR #65](https://github.com/gugmaae-prog/espacios/pull/65) at `d742602ec98a2ed718fe2287d0d961d7a1a36b61`. Cloudflare Worker version `18f283b7-881a-4e0e-97a1-9c40faa13c41` is served by deployment `22e14b7f-2a18-4e63-9b97-a9b815e32988` at 100% traffic. Production record-history, event and control-plane APIs, immutable R2/D1 publication and the Supabase release registry reconcile to V17. The UI retains the prior verified, soft slate/teal selection treatment; no gold selection styling is visible.
+
 ## Published V16 ADREC Nawayef evidence and refined Espacios controls — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v16` preserves all **1,645 projects and 215 communities**
