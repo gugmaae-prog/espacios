@@ -18,10 +18,11 @@ test('minimal composition exposes the approved controls without changing evidenc
 });
 
 test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
-  assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
-  assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 10%,var\(--su-line\)\)/);
+  assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 6%,var\(--su-panel\)\)/);
+  assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 18%,var\(--su-line\)\)/);
   assert.match(css,/\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
-  assert.match(css,/#minimal-map-modes button\[aria-pressed="true"\][\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent\) 4%,transparent\)[\s\S]*?border-bottom:2px solid/);
+  assert.match(css,/#minimal-map-modes button\[aria-pressed="true"\][\s\S]*?background:var\(--minimal-selected\);border:1px solid var\(--minimal-selected-line\)/);
+  assert.match(css,/#minimal-map-modes button\{[^}]*transition:background-color \.16s ease,border-color \.16s ease,color \.16s ease/);
   assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
@@ -33,7 +34,7 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.match(css,/\.route-card\.active/);
   assert.match(css,/\.search-wrap:focus-within/);
   assert.ok(worker.includes('background:var(--minimal-selected)!important'));
-  assert.ok(worker.includes('border-bottom:2px solid color-mix(in srgb,var(--minimal-accent) 56%,var(--su-line))'));
+  assert.ok(worker.includes('background:var(--minimal-selected);border:1px solid var(--minimal-selected-line)'));
   assert.ok(worker.includes('--ae-premium-gold:var(--minimal-accent)'));
   assert.match(worker,/\.map-bottom \.dot\.fallback\{\\n\s*background:#89959a!important;box-shadow:none!important/);
 });
