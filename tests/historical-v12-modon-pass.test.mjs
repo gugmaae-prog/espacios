@@ -32,15 +32,23 @@ test('V12 preserves every V11 record, observation, milestone, source and selecte
 test('Modon pass closes only specific launch, announcement and advertised-price requirements',()=>{
  assert.equal(packet.facts.length,13);assert.equal(packet.sources.length,7);
  const before=new Map(previous.records.map(r=>[r.id,r]));
- const transitions=[];
- for(const [id,r] of records){
-  for(const [key,item] of Object.entries(r.researchStatus.itemCoverage)){
-   const old=before.get(id).researchStatus.itemCoverage[key];
-   if(item.status!==old.status)transitions.push([id,key,old.status,item.status]);
-  }
+ const expected=[
+  ['project:apartments-muheira-maysan-abu-dhabi','original_launch'],
+  ['project:apartments-muheira-maysan-abu-dhabi','announcement_registration'],
+  ['project:apartments-muheira-maysan-abu-dhabi','advertised_prices'],
+  ['project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi','original_launch'],
+  ['project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi','announcement_registration'],
+  ['project:nawayef-village-modon-hudayriyat-island-abu-dhabi','original_launch'],
+  ['project:nawayef-village-modon-hudayriyat-island-abu-dhabi','announcement_registration'],
+  ['project:nawayef-east-modon-hudayriyat-island-abu-dhabi','original_launch'],
+  ['project:nawayef-east-modon-hudayriyat-island-abu-dhabi','announcement_registration'],
+  ['project:nawayef-east-modon-hudayriyat-island-abu-dhabi','advertised_prices'],
+  ['community:Abu Dhabi:hudayriyat-island','announcement_registration']
+ ];
+ for(const [id,key] of expected){
+  assert.equal(before.get(id).researchStatus.itemCoverage[key].status,'missing');
+  assert.equal(records.get(id).researchStatus.itemCoverage[key].status,'present');
  }
- assert.equal(transitions.length,11);
- assert.ok(transitions.every(([,key,from,to])=>['original_launch','announcement_registration','advertised_prices'].includes(key)&&from==='missing'&&to==='present'));
  for(const f of packet.facts.filter(f=>f.milestone==='launch')){
   const r=records.get(f.recordId);
   assert.equal(r.researchStatus.itemCoverage.original_launch.status,'present');

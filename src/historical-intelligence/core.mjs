@@ -139,7 +139,8 @@ function isAdvertisement(o){
  return o?.scope==='asking_benchmark'||['asking_quote','developer_advertised_price','listing_price'].includes(o?.observationKind)||/asking|advertised/.test(o?.evidenceClass||'');
 }
 function isNonTransactionEvidence(o){
- return isAdvertisement(o)||o?.observationKind==='valuation'||/valuation|scenario|forecast|projection/.test(o?.evidenceClass||'');
+ return isAdvertisement(o)||['valuation','developer_reported_aggregate_sales','reported_aggregate_sales'].includes(o?.observationKind)||
+  /valuation|scenario|forecast|projection|aggregate_sales/.test(o?.evidenceClass||'');
 }
 export function validateObservation(observation,record,{asOf,sources=[],minimumSample=20,sourceIndex=null}={}){
  const o=clone(observation),issues=[],m=metric(o.metric),scope=o.scope==='project'?'subject':o.scope;
@@ -302,7 +303,7 @@ export function validateScenarioAssumptions(input={}){
  return clone(input);
 }
 function eligibleAnchor(anchor,record,sources,asOf){
- if(isAdvertisement(anchor))return false;
+ if(isNonTransactionEvidence(anchor))return false;
  if(anchor?.recordLinkReview?.status==='rejected'||/conflict|quarantin|unverified|invalid/i.test([anchor?.qualityStatus,anchor?.status].filter(Boolean).join(' ')))return false;
  if(!anchor||!finite(anchor.value)||anchor.value<=0||!anchor.unit||!anchor.period||anchor.scope!=='subject'||anchor.identityVerified!==true)return false;
  if(anchor.recordId&&anchor.recordId!==record.id)return false;

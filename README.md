@@ -17,6 +17,35 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V13 Modon evidence candidate — 7 October 2026 (Dubai)
+
+`20261007-enrichment-v13` preserves all **1,645 projects and 215 communities**
+and adds five checksum-recorded Modon sources with 18 reviewed facts for
+Hudayriyat Golf Estates, Bashayer Final Phase and Tara Park. The additions are
+one verified launch, one announcement, three target references, two sales-status
+milestones, eight segmented developer advertisements and three developer-reported
+aggregate sales totals. Aggregate totals are neither registered transactions nor
+unit prices. See the [V13 review](docs/history-v13-modon-review.md).
+
+Three supported checklist cells close. A stricter identity rule also corrects
+**1,253 advertised-price cells from present to partial** because their retained
+quotes are catalogue mirrors or other contextual evidence, rather than exact
+verified subject advertisements. No evidence is deleted. The 42,780-cell ledger
+therefore has **2,472 present, 3,433 partial, 27,575 missing and 9,300
+unestablished** items: **94.22% unresolved**. This percentage measures requirement
+accountability and is not a percentage of all historical prices.
+
+The candidate retains **317,878 public aggregate observations, 13,396 series,
+2,930 sources, 4,141 sourced facts, 105 events and 7,382 event exposures**. It
+still certifies no complete lifetime sale/rent history and no validated 2080
+forecast. Conditional annual slots remain exactly 2027–2080. Publication status
+will be replaced with immutable storage, deployment and live-verification
+receipts only after those checks succeed.
+
+Next: verify exact registrations and first sales for the reviewed records, then
+continue direct sale/rent, construction, delivery, occupancy, cost and valuation
+evidence by record and applicable native period. Unsupported periods remain gaps.
+
 ## Published V12 evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v12` retains all **1,645 projects and 215 communities** and
