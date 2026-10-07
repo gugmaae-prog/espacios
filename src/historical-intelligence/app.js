@@ -175,28 +175,31 @@
     return window.matchMedia?.('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)').matches??false;
   }
   function panelGeometry() {
-    const panel=Q('#hi-panel');if(!panel)return;
+    const panel=Q('#hi-panel');if(!panel||panel.classList.contains('hidden'))return;
+    const data=(key,value)=>{if(panel.dataset[key]!==value)panel.dataset[key]=value;};
+    const style=(key,value)=>{if(panel.style.getPropertyValue(key)!==value)panel.style.setProperty(key,value);};
+    const hint=hidden=>{const el=Q('#hi-mobile-hint');if(el.hidden!==hidden)el.hidden=hidden;};
     if(!mobileLayout()){
-      const previous=panel.dataset.hiLayout,picker=Q('#hi-record-picker');panel.dataset.hiLayout='desktop';
-      if(previous!=='desktop'){picker.open=true;H.pickerPinnedOpen=false;panel.dataset.hiPicker='full';}
-      const dock=Q('#tl-dock')?.getBoundingClientRect();panel.style.setProperty('--hi-desktop-bottom',Math.max(166,dock?window.innerHeight-dock.top+10:166)+'px');Q('#hi-mobile-hint').hidden=true;
-      if(!panel.classList.contains('hidden')&&picker.open&&!H.pickerPinnedOpen){
+      const previous=panel.dataset.hiLayout,picker=Q('#hi-record-picker');data('hiLayout','desktop');
+      if(previous!=='desktop'){if(!picker.open)picker.open=true;H.pickerPinnedOpen=false;data('hiPicker','full');}
+      const dock=Q('#tl-dock')?.getBoundingClientRect();style('--hi-desktop-bottom',Math.max(166,dock?window.innerHeight-dock.top+10:166)+'px');hint(true);
+      if(H.recordId&&!panel.classList.contains('hidden')&&picker.open&&!H.pickerPinnedOpen){
         const frame=panel.getBoundingClientRect(),body=Q('#hi-body').getBoundingClientRect();
-        if(frame.bottom-16-body.top<120){panel.dataset.hiPicker='compact';picker.open=false;}
+        if(frame.bottom-16-body.top<120){data('hiPicker','compact');picker.open=false;}
       }
       return;
     }
     const search=Q('.topbar .search-wrap')?.getBoundingClientRect(),header=Q('header.topbar')?.getBoundingClientRect(),dock=Q('#tl-dock')?.getBoundingClientRect();
     const top=Math.max(search?.bottom??0,header?.bottom??0,88)+10,dockTop=dock?.top??window.innerHeight-210;
     let layout=dockTop-top-10<(Q('#hi-record-picker').open?500:330)?'expanded':'compact';
-    panel.dataset.hiLayout=layout;panel.style.setProperty('--hi-mobile-top',top+'px');panel.style.setProperty('--hi-mobile-bottom',Math.max(10,window.innerHeight-dockTop+10)+'px');
+    data('hiLayout',layout);style('--hi-mobile-top',top+'px');style('--hi-mobile-bottom',Math.max(10,window.innerHeight-dockTop+10)+'px');
     // Check the clipped intersection, not an overflowing child's nominal height.
     if(layout==='compact'&&!panel.classList.contains('hidden')){
       const frame=panel.getBoundingClientRect(),body=Q('#hi-body').getBoundingClientRect();
       const visible=Math.max(0,Math.min(body.bottom,frame.bottom-12)-Math.max(body.top,frame.top+12));
-      if(visible<120){layout='expanded';panel.dataset.hiLayout=layout;}
+      if(visible<120){layout='expanded';data('hiLayout',layout);}
     }
-    Q('#hi-mobile-hint').hidden=layout!=='expanded';
+    hint(layout!=='expanded');
   }
   function installGeometryObservers() {
     let pending=0;
@@ -402,7 +405,7 @@
     if (H.error) { body.innerHTML='<p role="alert">' + esc(H.error) + '</p><button type="button" id="hi-retry">Retry research</button>'; return; }
     if (!H.history) { body.innerHTML='<p class="hi-empty">Choose any indexed project or community above. Financial observations, lifecycle evidence, events and long-term scenario availability will be shown separately.</p>'; return; }
     body.innerHTML = (H.seriesLoading?'<p role="status">Loading all retained native points for the selected financial cohort…</p>':'')+(H.seriesError?'<p role="alert">'+esc(H.seriesError)+'</p><button type="button" id="hi-series-retry">Retry selected cohort</button>':'')+(H.tab === 'history' ? historyHTML(H.history) : H.tab === 'events' ? eventsHTML() : scenariosHTML());
-    window.__ESPACIOS_HISTORICAL_INTELLIGENCE__ = {release:'20261005-history-enrichment-v9',recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,scenarioClassification:(H.scenarioResult??H.history).scenarios?.classification,validatedForecast:false};
+    window.__ESPACIOS_HISTORICAL_INTELLIGENCE__ = {release:'20261007-history-v11-neutral-ui',recordId:H.recordId,recordCount:H.records.length,tab:H.tab,metric:H.metric,scenarioClassification:(H.scenarioResult??H.history).scenarios?.classification,validatedForecast:false};
   }
   async function ensureSelectedSeries(uiId=H.seriesId) {
     if(!H.history)return;
@@ -535,7 +538,7 @@
     if(H.installed)return true;
     if(!Q('#minimal-kind-controls')||!Q('#app')||!window.EspaciosUnifiedMap)return false;
     const launch=document.createElement('button');launch.id='hi-launch';launch.type='button';launch.textContent='History & events';launch.setAttribute('aria-expanded','false');launch.setAttribute('aria-controls','hi-panel');launch.onclick=()=>open();Q('#minimal-kind-controls').append(launch);
-    const panel=document.createElement('aside');panel.id='hi-panel';panel.className='hi-drawer hidden';panel.dataset.release='20261005-history-enrichment-v9';panel.setAttribute('aria-label','Historical intelligence');
+    const panel=document.createElement('aside');panel.id='hi-panel';panel.className='hi-drawer hidden';panel.dataset.release='20261007-history-v11-neutral-ui';panel.setAttribute('aria-label','Historical intelligence');
     const header='<header><div><h2>History & events</h2><p id="hi-date-label">Sourced history and events</p><small id="hi-mobile-hint" hidden>Close this drawer to use the map timeline.</small></div><button type="button" id="hi-close" aria-label="Close historical intelligence and return to map timeline">×</button></header>';
     const picker='<div class="hi-selection"><h3 id="hi-record-name">Choose a project or community</h3><details id="hi-record-picker"'+(mobileLayout()?'':' open')+'><summary>Change record</summary><label>Find any project / community<input id="hi-record-search" type="search" placeholder="Search name, emirate or record ID" autocomplete="off"></label><label class="hi-select-label">Record<select id="hi-record-select"><option>Loading record index…</option></select></label><p id="hi-record-count" role="status"></p></details></div>';
     panel.innerHTML=header+picker+'<div id="hi-tabs" role="tablist" aria-label="Historical intelligence view">' + [['history','History'],['events','Events'],['scenarios','Through 2080']].map(([tab,label])=>'<button type="button" id="hi-tab-'+tab+'" data-hi-tab="'+tab+'" role="tab" aria-controls="hi-body" aria-selected="'+(tab===H.tab)+'" tabindex="'+(tab===H.tab?0:-1)+'">'+label+'</button>').join('') + '</div><div id="hi-body" role="tabpanel" aria-labelledby="hi-tab-history"></div>';

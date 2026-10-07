@@ -1,6 +1,30 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
+test('a later cutoff preserves published quote vintages without promoting segmented or future quotes',()=>{
+ const code=String.raw`
+import sys,copy
+sys.path.insert(0,'scripts')
+from historical_enrichment import retain_published_quotes,current_snapshot_eligible
+original={'askingPriceAED':100,'retrievedAt':'2026-10-03'}
+selected={'askingPriceAED':120,'observationId':'q','retrievedAt':'2026-10-04'}
+old={'asOf':'2026-10-05','records':[{'id':'p','currentSnapshot':selected,'priorCurrentSnapshots':[original]}]}
+packet={'facts':[{'id':'q','recordId':'p','status':'accepted','observation':{'observationKind':'asking_quote'}}]}
+records=[{'id':'p','currentSnapshot':copy.deepcopy(original)}]
+retain_published_quotes(records,old,packet,'2026-10-06')
+assert records[0]['currentSnapshot']==selected and original in records[0]['priorCurrentSnapshots']
+packet['facts'][0]['observation']['currentSnapshotEligible']=False
+records=[{'id':'p','currentSnapshot':copy.deepcopy(original)}]
+retain_published_quotes(records,old,packet,'2026-10-06')
+assert records[0]['currentSnapshot']==original and selected in records[0]['priorCurrentSnapshots']
+try:retain_published_quotes(records,old,packet,'2026-10-04');raise AssertionError('future quote accepted')
+except ValueError:pass
+for value in ['false',0,1,None]:
+ try:current_snapshot_eligible({'currentSnapshotEligible':value});raise AssertionError('non-boolean accepted')
+ except ValueError:pass
+`;
+ const r=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);
+});
 test('sourced community corrections preserve rejected observations and refuse unproven reassignment',()=>{
  const code=String.raw`
 import sys,copy

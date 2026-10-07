@@ -4,6 +4,14 @@ import {webcrypto} from 'node:crypto';
 import bridge,{validateStatement} from '../scripts/production-history-publisher-worker.mjs';
 import {parseJSONC,validateProductionTarget} from '../scripts/publish-historical-snapshot.mjs';
 import fs from 'node:fs';
+import {retryReleaseTransport} from '../scripts/adapters/production-history-publisher.mjs';
+test('release transport retries transient failures but preserves the final bytes and rejects exhausted retries',async()=>{
+ let calls=0;const waits=[],success=Buffer.from('verified bytes\n200');
+ const result=await retryReleaseTransport(async()=>{calls++;if(calls===1)throw Error('connection reset');if(calls===2)return Buffer.from('busy\n503');return success;},async ms=>waits.push(ms));
+ assert.equal(result,success);assert.equal(calls,3);assert.deepEqual(waits,[1000,2000]);
+ calls=0;await assert.rejects(retryReleaseTransport(async()=>{calls++;throw Error('offline');},async()=>{}),/offline/);assert.equal(calls,3);
+ calls=0;const invalid=Buffer.from('invalid scope\n400');assert.equal(await retryReleaseTransport(async()=>{calls++;return invalid;},async()=>{}),invalid);assert.equal(calls,1);
+});
 const config=parseJSONC(fs.readFileSync(new URL('../wrangler.production.jsonc',import.meta.url),'utf8'));
 const manifest={version:'version',rootIndex:{sha256:'a'.repeat(64)}};
 const target={environment:'production',authorization:{kind:'explicit_user_request',scope:'publish_historical_snapshot_and_deploy_map'},workerName:config.name,accountId:config.account_id,r2:{binding:'MARKET_R2',bucketName:'psr-market-intelligence'},d1:{binding:'DB',databaseName:'cba-property-db',databaseId:'a5165cff-70a5-4685-af87-5ffdcf08652a'},snapshotVersion:manifest.version,rootSHA256:manifest.rootIndex.sha256};
