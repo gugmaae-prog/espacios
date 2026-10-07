@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-07T14:56:12.617Z",
+  "temporaryWorker": "espacios-history-publisher-20261005",
+  "deleteCommandSucceeded": true,
+  "publicEndpointStatusAfterDelete": 404,
+  "temporaryLocalWranglerConfigRemoved": true,
+  "temporaryCredentialDirectoryRemoved": true,
+  "customProductionRoutes": false
+}

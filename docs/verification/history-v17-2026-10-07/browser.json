@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-07T14:56:12.617Z",
+  "url": "https://espacios.me/map",
+  "uiRelease": "20261007-history-v16-adrec-nawayef",
+  "themesReviewed": [
+    "dark",
+    "light"
+  ],
+  "restoredTheme": "dark",
+  "mapModeSelected": true,
+  "selectedControlPalette": "soft, theme-aware slate with a restrained teal accent",
+  "goldSelectionStylingVisible": false,
+  "mobileOverflow": "covered by the V16 332px viewport check; no V17 map CSS change"
+}

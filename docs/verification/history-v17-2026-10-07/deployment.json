@@ -1,0 +1,15 @@
+{
+  "verifiedAt": "2026-10-07T14:52:11.726Z",
+  "environment": "production",
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "18f283b7-881a-4e0e-97a1-9c40faa13c41",
+  "deploymentId": "22e14b7f-2a18-4e63-9b97-a9b815e32988",
+  "trafficPercent": 100,
+  "historyRelease": "20261007-enrichment-v17",
+  "frontendRelease": "20261007-history-v16-adrec-nawayef",
+  "dataRoomPublic": false,
+  "productionRoutesChanged": false,
+  "sourcePullRequest": 65,
+  "sourceHead": "5dc567a878052af995025b9cd9465f8c7d89bb6a",
+  "mergedMainCommit": "d742602ec98a2ed718fe2287d0d961d7a1a36b61"
+}
