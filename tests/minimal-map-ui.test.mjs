@@ -7,6 +7,7 @@ const app=await fs.readFile(new URL('../src/minimal-map/app.js',import.meta.url)
 const css=await fs.readFile(new URL('../src/minimal-map/style.css',import.meta.url),'utf8');
 const worker=await fs.readFile(new URL('../src/worker.js',import.meta.url),'utf8');
 const builder=await fs.readFile(new URL('../scripts/build-smart.mjs',import.meta.url),'utf8');
+const baseApp=await fs.readFile(new URL('../src/assets/app-v2.js',import.meta.url),'utf8');
 
 test('minimal composition exposes the approved controls without changing evidence ownership',()=>{
   for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Transaction Volume','Forecast'])assert.ok(app.includes(label),label);
@@ -59,6 +60,7 @@ test('selection and watchlist colors use Espacios slate and teal, not legacy gol
   assert.match(builder,/paletteCopyReplacements/);
   assert.match(builder,/Selected places are outlined for orientation, not as a price signal/);
   assert.match(builder,/do not represent expected property returns/);
+  assert.doesNotMatch(baseApp,/Gold (?:indicates|is this selected)|Gold remains selection-only/);
 });
 
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{
