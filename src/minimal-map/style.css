@@ -4,9 +4,15 @@ html[data-minimal-map="1"]{
   --minimal-blue:#526f8e;
   --minimal-green:#497b6b;
   --minimal-neutral:#697177;
-  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 12%,var(--su-panel));
-  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 42%,var(--su-line));
+  --minimal-selected:color-mix(in srgb,var(--minimal-accent) 10%,var(--su-panel));
+  --minimal-selected-line:color-mix(in srgb,var(--minimal-accent) 30%,var(--su-line));
   --minimal-surface:color-mix(in srgb,var(--su-panel) 88%,transparent);
+  /* Legacy shells still reference these names. Keep them as aliases so a
+     deferred panel cannot reintroduce the retired gold palette. */
+  --gold:var(--minimal-accent);
+  --psr-gold:var(--minimal-accent);
+  --ae-gold:var(--minimal-accent);
+  --ae-gold-soft:color-mix(in srgb,var(--minimal-accent) 10%,transparent);
 }
 html[data-minimal-map="1"][data-espacios-theme="dark"]{
   --minimal-accent:#a0bab9;
@@ -99,6 +105,42 @@ html[data-minimal-map="1"] body #app .ae-search-map-tools button:focus-visible{
 html[data-minimal-map="1"] body #app .ae-map-focus-toggle.active{
   border-color:color-mix(in srgb,var(--minimal-accent) 32%,var(--su-line))!important;
   background:var(--minimal-selected)!important;color:var(--su-ink)!important;box-shadow:none!important;
+}
+/* The inherited shell used opaque navy and gold for selected states. Use one
+   quiet Espacios selection treatment across every panel that can still open. */
+html[data-minimal-map="1"] body #app :is(
+  .rail-btn.active,
+  .place-actions button.active,
+  .category-list button.active,
+  .quality-filter button.active,
+  .availability-filter button.active,
+  #ae-scope-tabs button.active,
+  .segmented button.active,
+  .analysis-tabs button.active,
+  .valuation-tabs button.active
+){
+  border-color:var(--minimal-selected-line)!important;
+  background:var(--minimal-selected)!important;
+  color:var(--su-ink)!important;
+  box-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app :is(.quality-filter,.availability-filter) button.active b{color:var(--su-ink)!important;}
+html[data-minimal-map="1"] body #app :is(.route-card.active,.valuation-sample-chip.active){
+  border-color:var(--minimal-selected-line)!important;
+  outline:0!important;
+  background:var(--minimal-selected)!important;
+}
+html[data-minimal-map="1"] body #app .search-wrap:focus-within{
+  border-color:var(--minimal-selected-line)!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--minimal-accent) 7%,transparent)!important;
+}
+html[data-minimal-map="1"] body #app .location-quality{
+  border-color:var(--minimal-selected-line)!important;
+  background:color-mix(in srgb,var(--su-panel) 94%,var(--minimal-accent))!important;
+}
+html[data-minimal-map="1"] body #app .quality-shield{
+  background:var(--minimal-selected)!important;
+  color:var(--minimal-accent)!important;
 }
 html[data-minimal-map="1"] body #app .map-bottom .dot.fallback{
   background:#89959a!important;box-shadow:none!important;

@@ -19,6 +19,13 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.match(css,/\.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
+  assert.match(css,/--gold:var\(--minimal-accent\)/);
+  assert.match(css,/--psr-gold:var\(--minimal-accent\)/);
+  assert.match(css,/--ae-gold:var\(--minimal-accent\)/);
+  assert.match(css,/\.quality-filter button\.active/);
+  assert.match(css,/\.availability-filter button\.active/);
+  assert.match(css,/\.route-card\.active/);
+  assert.match(css,/\.search-wrap:focus-within/);
   assert.ok(worker.includes('background:var(--minimal-selected)!important'));
   assert.match(worker,/\.map-bottom \.dot\.fallback\{\\n\s*background:#89959a!important;box-shadow:none!important/);
 });
