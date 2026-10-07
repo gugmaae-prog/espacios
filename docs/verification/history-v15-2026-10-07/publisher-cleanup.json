@@ -1,0 +1,12 @@
+{
+  "worker": "espacios-history-publisher-20261005",
+  "workersDevURL": "https://espacios-history-publisher-20261005.thekeifferjapeth.workers.dev",
+  "deleted": true,
+  "postDeleteStatus": 404,
+  "cloudflareWorkerLookup": "not_found",
+  "localSecretFilesRemoved": [
+    "publisher-token",
+    "publisher-header"
+  ],
+  "productionEvidencePreserved": true
+}

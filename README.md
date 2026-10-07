@@ -17,7 +17,7 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V15 Nawayef current evidence candidate — 7 October 2026 (Dubai)
+## Published V15 Nawayef evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v15` preserves all **1,645 projects and 215 communities**
 and adds three checksum-recorded Modon sources with six facts for Nawayef Park
@@ -33,9 +33,22 @@ TBC has no numeric value; and the joint East/West construction contract remains
 combined rather than divided or labelled as physical start.
 
 No complete lifetime history or validated 2080 forecast is certified. Conditional
-annual slots remain exactly 2027–2080, with unsupported values null. Publication
-will follow only after the complete preservation, storage, test and production
-dry-run gates pass.
+annual slots remain exactly 2027–2080, with unsupported values null.
+
+V15 was published from merged PR [#61](https://github.com/gugmaae-prog/espacios/pull/61)
+at source `dc0283da89f2ca6a4beb610d2b8c3ee7d3ef0fc2`. The immutable publication
+verified **1,661 objects and 35,439 index statements** under root SHA-256
+`5936489a8c1d4d31d84e937d7954807a1e9b3eb9476777aec0a85b66ffc7c283`.
+Worker version `8330d31b-0531-43dc-b31a-50d908304c7d` is served by deployment
+`152b1fb9-7b56-430c-bb2e-89b8283968fd` at 100% traffic. Canonical APIs, exact
+JavaScript/CSS assets, the rendered slate/teal map and the Supabase control plane
+all reconcile to V15. The Data Room remains restricted and the scoped publisher
+was removed after verification. See the [V15 receipts](docs/verification/history-v15-2026-10-07/).
+
+Next: obtain exact registered sale and signed-rent cohorts for the two Nawayef
+records, then verify physical construction progress, delivery, occupancy, service
+charges and dated valuations. Keep every unsupported period explicit and keep
+conditional 2027–2080 paths outside observed-history coverage.
 
 ## Published V14 Modon evidence — 7 October 2026 (Dubai)
 
