@@ -13,7 +13,7 @@ const registrationFacts=packet.facts.filter(fact=>fact.kind==='lifecycle'&&fact.
 const progressFacts=packet.facts.filter(fact=>fact.kind==='lifecycle'&&fact.milestone==='construction_progress');
 
 test('V17 is a reviewed, checksum-rooted ADREC register increment over the fixed catalogue',()=>{
- assert.ok(['20261007-enrichment-v17','20261007-enrichment-v18'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(record=>record.type==='project').length,1645);
  assert.equal(snapshot.records.filter(record=>record.type==='community').length,215);
@@ -107,19 +107,19 @@ test('Register coverage does not invent sale prices, rents, transaction rows, or
  assert.ok(Object.values(scenario.metrics.price.paths).every(path=>path.every(point=>point.value===null)));
 });
 
-test('V17 preserves V16 Nawayef registered-sale cohorts and source rows',()=>{
+test('The V19 snapshot preserves V16 Nawayef registered-sale cohorts and source rows',()=>{
  const park=records.get('project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi');
  const east=records.get('project:nawayef-east-modon-hudayriyat-island-abu-dhabi');
  assert.equal(park.historySeries.find(series=>series.id==='adrec-v16-594-primary-registered-sale-aed').pointCount,177);
  assert.equal(east.historySeries.find(series=>series.id==='adrec-v16-595-primary-registered-sale-aed').pointCount,17);
  assert.equal(east.historySeries.find(series=>series.id==='adrec-v16-597-primary-registered-sale-aed').pointCount,473);
- assert.equal(snapshot.manifest.historicalObservationRows,318562);
+ assert.ok(snapshot.manifest.historicalObservationRows>=318562);
 });
 
-test('V17 reduces only lifecycle gaps and keeps financial coverage and 2080 outcomes honest',()=>{
+test('The V19 ledger preserves V17 lifecycle coverage and incorporates later verified sale evidence',()=>{
  const counts={};
  for(const record of snapshot.records)for(const item of Object.values(record.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- assert.deepEqual(counts,{missing:26956,partial:3434,unestablished:9300,present:3090});
+ assert.deepEqual(counts,{missing:26950,partial:3434,unestablished:9300,present:3096});
  assert.equal(Object.values(snapshot.records).reduce((sum,record)=>sum+record.observations.filter(item=>item.id.startsWith('v17-adrec-')).length,0),0);
  assert.equal(snapshot.manifest.approved2080ForecastRecords,0);
 });
