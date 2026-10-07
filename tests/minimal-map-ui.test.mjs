@@ -27,6 +27,9 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:var\(--minimal-surface\)!important[\s\S]*?color:var\(--su-ink\)!important/);
   assert.match(css,/\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:var\(--minimal-selected\)!important[\s\S]*?box-shadow:inset 0 -2px 0 var\(--minimal-accent\)!important/);
+  assert.ok(worker.includes('.ae-mobile-map-modes .rail-btn{'));
+  assert.ok(worker.includes('background:var(--minimal-surface)!important'));
+  assert.ok(worker.includes('box-shadow:inset 0 -2px 0 var(--minimal-accent)!important'));
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
   assert.match(css,/--eg-theme-apricot:var\(--minimal-neutral\)/);
