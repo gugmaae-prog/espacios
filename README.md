@@ -17,6 +17,16 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V20 DLD-derived community context — 8 October 2026 (Dubai)
+
+The V20 candidate preserves the fixed **1,645 projects and 215 communities**. It adds **13,586 monthly sale-price context points for 44 Dubai community records** from a pinned public DLD-derived distribution under CC BY 4.0. The source's free-text `master_project_name` is matched only to one unique catalogue community name. It is not a DLD community ID, verified boundary, or project identity. These links retain `community_context` scope and are not project prices.
+
+The source extract contains **561,282 eligible sales** from **2 June 2003 to 31 July 2026** by DLD registration date across 45 exact-name candidates. Existing V19 community series already retain **67,268 candidate record/transaction pairs**. One candidate, Palm Jumeirah, receives no duplicate V20 series because it has no new links and is already covered by its exact official-area series. The 44 new monthly cohorts summarize **539,872 source rows**; this includes **45,858 Business Bay rows already represented in a narrower area cohort**, so those counts must not be added together. Medians below 20 eligible sales are withheld: **8,912 of 13,586** points show sample counts without a median. The raw Parquet is not redistributed.
+
+This is a latest-vintage descriptive extract, not a point-in-time history. It does not establish a project's lifetime prices, rents, completion, occupancy, or a causal event effect. The evidence checklist remains at **39,684 of 42,780 requirements unresolved (92.76%)**; this requirement measure is not a percentage of missing prices. There are **zero approved 2080 forecasts**. Annual scenario slots remain conditional and unsupported values remain null. Production status is recorded in the [V20 release receipt](docs/verification/history-v20-2026-10-08/README.md).
+
+Next, validate official community identifiers and boundaries, widen the exact project identity review beyond 263 candidates, and source attributable record-level sale, rent, lifecycle and occupancy evidence. Keep sparse and unavailable periods visible. Add event studies only when local exposure, comparable controls, mix changes and concurrent supply can be tested; news and infrastructure milestones receive no mechanical price uplift. The detailed [V20 source and method note](docs/history-v20-dred-master-community-context.md) documents the joins, sample gates, overlap and reproducible build.
+
 ## V19 DLD-derived transaction histories and map palette — 7 October 2026
 
 `20261007-enrichment-v19` preserves the fixed **1,645 projects and 215

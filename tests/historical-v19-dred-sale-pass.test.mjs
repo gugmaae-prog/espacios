@@ -13,7 +13,7 @@ const communityFacts=facts.filter(fact=>fact.recordId.startsWith('community:'));
 const source=sources.get('v19-dred-sales-20261005');
 
 test('V19 appends a pinned, CC BY source snapshot without changing the fixed catalogue',()=>{
- assert.equal(snapshot.version,'20261007-enrichment-v19');
+ assert.ok(['20261007-enrichment-v19','20261008-enrichment-v20'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(record=>record.type==='project').length,1645);
  assert.equal(snapshot.records.filter(record=>record.type==='community').length,215);
