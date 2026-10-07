@@ -49,6 +49,17 @@ The map’s last inherited gold accents were fallback-evidence markers and a
 decorative emirate mark, not an appreciation signal. They now use the shared
 neutral slate/teal Espacios palette; fallback evidence remains visibly distinct.
 
+**Production release (8 October 2026, Dubai time):** PR [#72](https://github.com/gugmaae-prog/espacios/pull/72)
+merged at `939ef659c01c254639304a9f3baf72f9e1bd1f36`. Cloudflare Worker
+`psr-portfolio-map-v2` version `81b60821-2f69-4582-a403-c45da4180a28` is at
+100% traffic in deployment `cde7d05a-3e36-4bec-af87-9b42cd5f8e72`. The V19
+snapshot is complete in D1 and its immutable R2 objects verify against root
+`5d2b451187dc838ce1e5198281dce16cdacb702e58fd42c52e296f5556d50fcf`;
+2,029 objects were written and 44 reused. Live project/community history,
+event and canonical map checks passed. The temporary publisher and private
+release token were removed. The Data Room remains restricted. See the
+[V19 production receipt](docs/verification/history-v19-2026-10-08/README.md).
+
 The 42,780-cell evidence ledger now has **3,096 present, 3,434 partial, 26,950
 missing and 9,300 unestablished**: **39,684 (92.76%) are unresolved**. This is a
 requirements checklist measure, not a percentage of price history. The rebuilt
