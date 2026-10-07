@@ -1,0 +1,94 @@
+{
+  "origin": "https://espacios.me",
+  "dataRelease": "20261007-enrichment-v14",
+  "frontendRelease": "20261007-history-v14-modon",
+  "checkedAt": "2026-10-07T10:28:22.510Z",
+  "readOnly": true,
+  "assets": [
+    {
+      "endpoint": "/map",
+      "status": 200,
+      "frontendRelease": "20261007-history-v14-modon",
+      "liveSHA256": "ccdc66c2d54cd59c8cef8287d73a87bfc7a5a893031cac0bfb962cf1af85db03",
+      "candidateSHA256": "1ccd8d0261ffb39080c1d459e3644c4c353aacfdba95a22929bfa85239a96ec9",
+      "exactEqual": false,
+      "comparisonNote": "Canonical HTML can receive edge or shell transformation; versioned JavaScript and CSS bytes match the reviewed Worker exactly."
+    },
+    {
+      "endpoint": "/map/app-v2.js?v=20261007-history-v14-modon",
+      "status": 200,
+      "frontendRelease": "20261007-history-v14-modon",
+      "liveSHA256": "daa1317fef596b9a42e1e9be7410776b6881698283113106081ab87f9a04da07",
+      "candidateSHA256": "daa1317fef596b9a42e1e9be7410776b6881698283113106081ab87f9a04da07",
+      "exactEqual": true
+    },
+    {
+      "endpoint": "/map/app-v2.css?v=20261007-history-v14-modon",
+      "status": 200,
+      "frontendRelease": "20261007-history-v14-modon",
+      "liveSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "candidateSHA256": "59f827700b01039dfc60c534e0675afa4cf7d310b3ea0e4e0d596212d1d3fa70",
+      "exactEqual": true
+    }
+  ],
+  "records": [
+    {
+      "id": "project:tara-park-modon-reem-island-abu-dhabi",
+      "facts": 6,
+      "annualStart": 2027,
+      "annualEnd": 2080,
+      "validatedForecast": false
+    },
+    {
+      "id": "community:Abu Dhabi:maysan-al-reem-island",
+      "facts": 4,
+      "annualStart": 2027,
+      "annualEnd": 2080,
+      "validatedForecast": false
+    },
+    {
+      "id": "project:apartments-muheira-maysan-abu-dhabi",
+      "facts": 2,
+      "annualStart": 2027,
+      "annualEnd": 2080,
+      "validatedForecast": false
+    },
+    {
+      "id": "project:nawayef-village-modon-hudayriyat-island-abu-dhabi",
+      "facts": 3,
+      "annualStart": 2027,
+      "annualEnd": 2080,
+      "validatedForecast": false
+    }
+  ],
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 27568,
+      "unestablished": 9300,
+      "partial": 3433,
+      "present": 2479
+    }
+  },
+  "events": {
+    "events": 105,
+    "sources": 2938,
+    "exposures": 7382
+  },
+  "eventStudy": {
+    "eventId": "gfc-2008",
+    "status": 200
+  },
+  "dataRoom": {
+    "status": 404,
+    "restricted": true
+  },
+  "deployment": {
+    "id": "1177314c-1677-4780-9dc7-a02dbe7c4160",
+    "versionId": "c17b07cc-7da0-4034-a7b9-f963eda8af06",
+    "traffic": 100,
+    "gitCommit": "c79bf0fe245fa89d8fa15af7324a63016588c9cc"
+  },
+  "passed": true
+}

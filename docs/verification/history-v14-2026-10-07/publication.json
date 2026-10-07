@@ -1,0 +1,23 @@
+{
+  "release": "20261007-enrichment-v14",
+  "rootSHA256": "9d1aa8ebf18b46b88aa3b2da4510306dc997d4e6eab97426b415dff62afe9ed8",
+  "publicationState": "complete",
+  "objects": {
+    "written": 1618,
+    "reused": 43,
+    "total": 1661
+  },
+  "indexStatements": 35436,
+  "indexedTableCounts": {
+    "hi_snapshots": 1,
+    "hi_records": 1860,
+    "hi_sources": 2938,
+    "hi_events": 105,
+    "hi_exposures": 7382,
+    "hi_series": 13396,
+    "hi_record_series": 9754
+  },
+  "appendOnly": true,
+  "checksumsVerified": true,
+  "priorSnapshotsPreserved": true
+}

@@ -17,7 +17,7 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V14 Modon phase and current-price candidate — 7 October 2026 (Dubai)
+## Published V14 Modon evidence — 7 October 2026 (Dubai)
 
 `20261007-enrichment-v14` preserves all **1,645 projects and 215 communities**
 and adds eight checksum-recorded Modon sources with 15 reviewed facts for Tara
@@ -28,7 +28,7 @@ and Nawayef Village gains phase and current advertised-price evidence. See the
 [V14 review](docs/history-v14-modon-review.md).
 
 The fixed 42,780-cell ledger now has **2,479 present, 3,433 partial, 27,568
-missing and 9,300 unestablished** items: **94.21% unresolved**. The candidate
+missing and 9,300 unestablished** items: **94.21% unresolved**. The published release
 retains **317,878 public aggregate observations, 13,396 series, 2,938 sources,
 4,156 sourced facts, 105 events and 7,382 event exposures**. Developer-reported
 aggregate sales remain separate from registered transactions, current
@@ -37,8 +37,16 @@ as physical construction start.
 
 No complete lifetime sale/rent history or validated 2080 forecast is certified.
 Conditional annual slots remain exactly 2027–2080, with unsupported values null.
-Publication and deployment will follow only after the complete preservation,
-storage, test and production dry-run gates pass.
+
+V14 was published from merged PR [#59](https://github.com/gugmaae-prog/espacios/pull/59)
+at source `c79bf0fe245fa89d8fa15af7324a63016588c9cc`. The immutable publication
+verified **1,661 objects and 35,436 index statements** under root SHA-256
+`9d1aa8ebf18b46b88aa3b2da4510306dc997d4e6eab97426b415dff62afe9ed8`.
+Worker version `c17b07cc-7da0-4034-a7b9-f963eda8af06` is served by deployment
+`1177314c-1677-4780-9dc7-a02dbe7c4160` at 100% traffic. Canonical APIs, exact
+JavaScript/CSS assets, the rendered mobile drawer and the Supabase control plane
+all reconcile to V14. The Data Room remains restricted and the scoped publisher
+was removed after verification. See the [V14 receipts](docs/verification/history-v14-2026-10-07/).
 
 Next: direct registered sale/rent cohorts, service charges, physical construction
 progress, delivery, occupancy and dated valuations for exact records and native

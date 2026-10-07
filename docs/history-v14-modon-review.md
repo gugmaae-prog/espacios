@@ -72,10 +72,12 @@ aggregate totals from transaction, valuation and forecast use. The V13 tests
 continue to pass against V14.
 
 Reproduce with `npm run history:build`, `npm run history:verify:storage`,
-`npm run verify` and the production Wrangler dry run. Publication requires the
-immutable R2/D1 publisher followed by canonical API, exact-asset, control-plane
-and live-browser verification. Until those receipts exist, this document
-accurately describes a tested candidate rather than a live release.
+`npm run verify` and the production Wrangler dry run. The immutable R2/D1 publication and canonical API, exact-asset, control-plane
+and live-browser checks passed. Production serves Worker version
+`c17b07cc-7da0-4034-a7b9-f963eda8af06` through deployment
+`1177314c-1677-4780-9dc7-a02dbe7c4160` at 100% traffic from merged PR #59.
+The Data Room remains restricted. Durable verification receipts are under
+[`docs/verification/history-v14-2026-10-07`](verification/history-v14-2026-10-07).
 
 ## Next evidence work
 
