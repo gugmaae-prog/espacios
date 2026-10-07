@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {gzipSync,gunzipSync} from 'node:zlib';
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs/promises';
-import {digest,publishImmutableSnapshot,validateCandidateTarget,parseJSONC,parseGeneratedInsert} from '../scripts/publish-historical-snapshot.mjs';
+import {digest,publishImmutableSnapshot,publishIndexBatches,validateCandidateTarget,parseJSONC,parseGeneratedInsert} from '../scripts/publish-historical-snapshot.mjs';
 import {connectCandidate} from '../scripts/adapters/local-history-candidate.mjs';
 
 const config={name:'espacios-history-candidate',r2_buckets:[{binding:'MARKET_R2',bucket_name:'history-candidate'}],d1_databases:[{binding:'DB',database_name:'history-candidate',database_id:'candidate-db-id'}]};
@@ -36,6 +36,15 @@ function setup(){
  return {a,b,manifest,r2,d1,puts,indexBatches,stored,incoming,readObject:x=>incoming.get(x.key),completed:()=>prior?.publication_state==='complete',staged:()=>prior?.publication_state==='staged',setPrior:x=>{prior=x;},claimRace:x=>{racePrior=x;},failBatch:()=>{failBatch=true;},failCompletion:()=>{failCompletion=true;},silentlyDrop:table=>{dropTable=table;},addIndexedRow:(table,values)=>indexRow({sql:'INSERT OR IGNORE INTO '+table,values})};
 }
 const publish=s=>publishImmutableSnapshot({...s,config,target});
+test('parallel indexing bounds requests, completes parents first, and drains failures before advancing',async()=>{
+ let active=0,peak=0,finishedRecords=0;const seen=[];
+ const indexes=[{table:'hi_record_series'},...Array.from({length:450},()=>({table:'hi_records'})),{table:'hi_series'},{table:'hi_sources'}];
+ const d1={async batch(rows){assert.ok(rows.length<=50);assert.ok(rows.every(r=>r.table===rows[0].table));active++;peak=Math.max(peak,active);const table=rows[0].table;seen.push(table);if(table!=='hi_records')assert.equal(finishedRecords,450);await new Promise(r=>setTimeout(r,1));if(table==='hi_records')finishedRecords+=rows.length;active--;}};
+ await publishIndexBatches({indexes,prepare:x=>x,d1,concurrency:8});assert.equal(peak,8);assert.deepEqual(seen.slice(-3),['hi_sources','hi_series','hi_record_series']);
+ active=0;seen.length=0;let calls=0;
+ await assert.rejects(publishIndexBatches({indexes,prepare:x=>x,concurrency:8,d1:{async batch(rows){seen.push(rows[0].table);const fail=calls++===0;active++;await new Promise(r=>setTimeout(r,fail?1:5));active--;if(fail)throw Error('index offline');}}}),/index offline/);
+ assert.equal(active,0);assert.equal(calls,8);assert.ok(seen.every(t=>t==='hi_records'));
+});
 function appendIndex(s,statement){
  const sql=gzipSync(gunzipSync(s.incoming.get('sql')).toString()+statement+'\n');
  s.incoming.set('sql',sql);s.manifest.d1Index={key:'sql',sha256:digest(sql),bytes:sql.length};
