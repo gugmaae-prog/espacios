@@ -27,7 +27,7 @@ test('Offline packet rebuild is deterministic and does not repeat public request
 });
 
 test('V18 detail capture is bounded to V17 exact IDs and preserves the fixed 1,860-record universe',()=>{
- assert.ok(['20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(record=>record.type==='project').length,1645);
  assert.equal(snapshot.records.filter(record=>record.type==='community').length,215);

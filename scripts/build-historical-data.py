@@ -8,9 +8,9 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261008-enrichment-v21'
+VERSION = '20261008-enrichment-v22'
 ASOF = '2026-10-08'
-ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json']
+ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json']
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -34,8 +34,8 @@ def number(value):
  try: return float(value) if str(value).strip() else None
  except (ValueError,TypeError): return None
 def usable_subject(record,metric,series):
- series_observed=any(s.get('scope')=='subject' and s.get('identityVerified') and s.get('metric')==metric and any(not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I) for p in series[s['id']]['points']) for s in record['historySeries'])
- transaction_observed=any(o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' for o in record.get('observations',[]))
+ series_observed=any(s.get('scope')=='subject' and s.get('identityVerified') and s.get('metric')==metric and any(len(p)>1 and isinstance(p[1],(int,float)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I) for p in series[s['id']]['points']) for s in record['historySeries'])
+ transaction_observed=any(o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' and isinstance(o.get('value'),(int,float)) and o['value']>0 for o in record.get('observations',[]))
  return series_observed or transaction_observed
 def rows(value): return list(csv.DictReader(io.StringIO(value.decode('utf-8-sig'))))
 def period_date(period,end=False):
