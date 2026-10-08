@@ -17,6 +17,12 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V21 113 Residences evidence pass — candidate snapshot, 8 October 2026
+
+The current V21 candidate build preserves all **1,645 projects and 215 communities** and adds **46 individually retained DLD-derived sale registrations** for 113 Residences, four separately labelled official developer starting-price quotes, one register snapshot, and planned construction/handover milestones. It resolves one exact-name/developer/area project candidate, leaving **262 project candidates** and **59 community candidates**. The fixed evidence ledger now marks **3,099 present, 3,433 partial, 26,948 missing and 9,300 unestablished** items: **39,681 of 42,780 (92.76%) unresolved**. This is a checklist measure, not a price-data gap percentage. The record's earliest evidence in this pass is 30 July 2026, not a claim of its first-ever sale. Complete lifetime sale/rent histories remain unestablished and there are **zero approved annual forecasts through 2080**. See the [V21 source review](docs/history-v21-113-residences-review.md).
+
+This candidate snapshot has been built and verified locally; production publication remains subject to the historical release checks. Continue by sourcing direct authority identifiers, wider exact-phase transaction history, signed rents, occupancy, actual construction/completion, costs, and current valuations while preserving all earlier observations. Do not use contextual history or news as a substitute for missing subject observations.
+
 ## V20 DLD-derived community context — production, 8 October 2026 (Dubai)
 
 The production V20 snapshot preserves the fixed **1,645 projects and 215 communities**. It adds **13,586 monthly sale-price context points for 44 Dubai community records** from a pinned public DLD-derived distribution under CC BY 4.0. The source's free-text `master_project_name` is matched only to one unique catalogue community name. It is not a DLD community ID, verified boundary, or project identity. These links retain `community_context` scope and are not project prices.
