@@ -8,7 +8,8 @@ const APPROVED_PUBLISHER_URLS=new Set([
  'https://espacios-history-publisher-20261008-v24.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261008-v25.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261008-v26.thekeifferjapeth.workers.dev',
- 'https://espacios-history-publisher-20261008-v27.thekeifferjapeth.workers.dev'
+ 'https://espacios-history-publisher-20261008-v27.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v28.thekeifferjapeth.workers.dev'
 ]);
 export const isApprovedPublisherURL=url=>APPROVED_PUBLISHER_URLS.has(url);
 

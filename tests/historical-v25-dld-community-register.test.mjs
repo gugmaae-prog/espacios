@@ -13,18 +13,18 @@ const publication = JSON.parse(readFileSync(new URL('publication-manifest.json',
 const runtime = JSON.parse(readFileSync(new URL('runtime-index.json', base), 'utf8'));
 
 test('V25 appends exact DLD project-register context without changing financial history', () => {
-  assert.ok(['20261008-enrichment-v25', '20261008-enrichment-v26','20261008-enrichment-v27'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v25', '20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28'].includes(snapshot.version));
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.records.filter(row => row.type === 'project').length, 1645);
   assert.equal(snapshot.records.filter(row => row.type === 'community').length, 215);
-  assert.equal(snapshot.sources.length, snapshot.version === '20261008-enrichment-v27' ? 3255 : 3254);
+  assert.equal(snapshot.sources.length, snapshot.version === '20261008-enrichment-v28' ? 3291 : snapshot.version === '20261008-enrichment-v27' ? 3255 : 3254);
   assert.ok(snapshot.sources.some(row => row.url === 'https://data.dubai/en/l/467654'));
-  assert.equal(snapshot.manifest.historicalObservationRows, 563675);
-  assert.equal(snapshot.manifest.historicalSeriesCount, 15063);
+  assert.equal(snapshot.manifest.historicalObservationRows, snapshot.version === '20261008-enrichment-v28' ? 563738 : 563675);
+  assert.equal(snapshot.manifest.historicalSeriesCount, snapshot.version === '20261008-enrichment-v28' ? 15126 : 15063);
   assert.equal(snapshot.manifest.approved2080ForecastRecords, 0);
-  assert.equal(publication.counts.historicalRows, 563675);
-  assert.equal(publication.counts.series, 15063);
-  assert.equal(publication.counts.sources, snapshot.version === '20261008-enrichment-v27' ? 3255 : 3254);
+  assert.equal(publication.counts.historicalRows, snapshot.version === '20261008-enrichment-v28' ? 563738 : 563675);
+  assert.equal(publication.counts.series, snapshot.version === '20261008-enrichment-v28' ? 15126 : 15063);
+  assert.equal(publication.counts.sources, snapshot.version === '20261008-enrichment-v28' ? 3291 : snapshot.version === '20261008-enrichment-v27' ? 3255 : 3254);
   assert.equal(sidecar.sources[0].sourceRecordCount, 3039);
   assert.equal(sidecar.sources[0].uniqueProjectIdCount, 3039);
   assert.equal(sidecar.facts.length, 43);
