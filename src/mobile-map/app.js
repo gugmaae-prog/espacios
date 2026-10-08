@@ -194,7 +194,7 @@
     addEventListener('resize',responsive);visualViewport?.addEventListener('resize',scheduleGeometry);mobile.addEventListener('change',()=>{finish(null,true);if(mobile.matches)installSheets();else map.setPadding({top:0,bottom:0,left:0,right:0});responsive();schedule();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
     document.addEventListener('click',activateLegacyDetails);
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261008-map-palette-v23',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261008-map-palette-v24',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();
