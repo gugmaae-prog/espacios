@@ -1,0 +1,16 @@
+{
+  "id": "ca2fd72f-12c1-4d88-91f0-1508ddf1fb5d",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish source-verified Nura developer correction; preserve V34 histories and subdued Espacios theme",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "13672ae7-9267-4b55-b1e1-0d2bbce1a20b",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T21:09:05.402766Z"
+}

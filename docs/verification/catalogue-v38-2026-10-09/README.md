@@ -12,11 +12,17 @@ This is a metadata revision, not a new financial observation or requirement comp
 
 ## Validation
 
-Build, syntax checks and the full suite passed before release. Seventeen focused API/correction tests verify original-value preservation, source checksums and availability, duplicates, same-name phases, upstream drift, tenant boundaries, GET/HEAD and conditional ETags. Full-suite final history/API group: 168 passing, zero failures. Styling remains unchanged; this release does not claim a new desktop/mobile visual audit.
+Build, syntax checks and the full suite passed before release. Seventeen focused API/correction tests verify original-value preservation, source checksums and availability, duplicates, same-name phases, upstream drift, tenant boundaries, GET/HEAD and conditional ETags. Full-suite final history/API group: 168 passing, zero failures. Styling remains unchanged. An independent desktop browser refresh verified the soft Map selection and the Nura search result showing RAK Properties; screenshots are retained as [Map](live-map.png) and [search](live-nura-search.png). Mobile layouts were not re-audited in this metadata-only release.
 
 ## Publication
 
-Candidate prepared under the existing deployment authorization; production identifiers and independent live receipts will be appended after deployment.
+V38 is live at 100% on `psr-portfolio-map-v2`, Worker version `13672ae7-9267-4b55-b1e1-0d2bbce1a20b`, deployment `ca2fd72f-12c1-4d88-91f0-1508ddf1fb5d`, activated 8 October 2026 at 21:09 UTC (9 October in Dubai). Frontend `20261009-map-catalogue-v38` serves V34 history. The existing canonical route `espacios.me/map* -> espacios-map-shell -> MAP -> psr-portfolio-map-v2` was independently read from Cloudflare; no routing changes were made.
+
+Live Map core and map-data show Nura as RAK Properties. All other 1,644 project records and 215 communities were compared with the pre-release core and are unchanged. The live-only all-project feed contains 1,098 records and the sampled batch 24; neither includes this archived Nura entry, so no completeness claim is made from them. All four feeds returned HTTP 200. HTML and linked V38 JS/CSS returned 200; the restricted Data Room returned 404. See [catalogue preservation](live-catalogue-verification.json), [HTTP checks](http-verification.json), and [deployment](deployment.json).
+
+Preview and canonical history APIs matched every one of 1,860 research ledgers, all 13 V34 changed record payloads, 3,333 sources, 105 events, 7,382 exposures and the 2080 endpoint. The version-preview Map HTML returns 404 because the retained shell only allows its configured public hostnames; canonical HTML, assets and browser rendering were verified after activation. See [preview API checks](preview-history-verification.json) and [canonical API checks](live-history-verification.json).
+
+Supabase readback agrees with V38, the Worker version, deployment and retained V34 root. See [control plane](control-plane-verification.json). Source commit `d506828afff88dcc33d0799f46f149d5d9006123` is pushed to open [PR #98](https://github.com/gugmaae-prog/espacios/pull/98); [clean GitHub CI](https://github.com/gugmaae-prog/espacios/actions/runs/37844496536) and guardrails passed. This publication does not imply PR merge.
 
 ## Next actions
 
