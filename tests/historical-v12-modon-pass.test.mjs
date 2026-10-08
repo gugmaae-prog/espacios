@@ -54,7 +54,7 @@ test('Modon pass closes only specific launch, announcement and advertised-price 
   const r=records.get(f.recordId);
   assert.equal(r.researchStatus.itemCoverage.original_launch.status,'present');
   for(const key of ['actual_completion','occupancy','signed_rent_history','dated_current_valuation'])assert.equal(r.researchStatus.itemCoverage[key].status,'missing');
-  if(['20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22'].includes(snapshot.version)&&['project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi','project:nawayef-east-modon-hudayriyat-island-abu-dhabi'].includes(f.recordId)){
+  if(['20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v23'].includes(snapshot.version)&&['project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi','project:nawayef-east-modon-hudayriyat-island-abu-dhabi'].includes(f.recordId)){
    assert.equal(r.researchStatus.itemCoverage.registered_sale_history.status,'present');
    assert.equal(r.researchStatus.itemCoverage.construction.status,f.recordId==='project:nawayef-park-views-modon-properties-hudayriyat-island-abu-dhabi'?'present':'partial');
   }else{
