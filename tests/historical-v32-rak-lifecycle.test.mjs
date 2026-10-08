@@ -10,16 +10,17 @@ const snapshot=read('data/historical-intelligence-20261003.json');
 const packet=read('data/historical-intelligence/rak-properties-lifecycle-pass32-20261008.json');
 const publication=read('data/historical-intelligence/publication-manifest.json');
 const before=unpack('data/historical-intelligence/objects/0f40ed398d7f0ec1d940a0076930f217dc04ca6dfd116b67fec7326fbebdec8b.json.gz');
-const after=unpack(publication.rootIndex.path);
+// Freeze this pass's preservation baseline; V33 separately checks every later addition.
+const after=unpack('data/historical-intelligence/objects/de0215ebbee2786d83b74ccc156a82c344d93070fcbb1ef012928a15918003ea.json.gz');
 const changed=new Set(packet.facts.map(f=>f.recordId));
 const records=new Map(snapshot.records.map(r=>[r.id,r]));
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 
 test('V32 preserves every V31 record, source, event, and native financial series',()=>{
- assert.equal(snapshot.version,'20261008-enrichment-v32');
+ assert.ok(['20261008-enrichment-v32','20261008-enrichment-v33'].includes(snapshot.version));
  assert.equal(publication.version,snapshot.version);
  assert.equal(records.size,1860);assert.equal(snapshot.records.filter(r=>r.type==='project').length,1645);
- assert.equal(publication.counts.sources,3306);assert.equal(publication.counts.series,16872);assert.equal(publication.counts.historicalRows,633891);
+ assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v33'?3320:3306);assert.equal(publication.counts.series,16872);assert.equal(publication.counts.historicalRows,633891);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);
  assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const priorRecords=new Map(before.records.map(r=>[r.id,r]));

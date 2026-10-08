@@ -1,0 +1,7 @@
+{
+  "firstAttemptTerminalExit": 143,
+  "lastPhase": "validated_objects",
+  "remoteDataWritesStarted": false,
+  "reason": "Launch announcement alone must not establish price inapplicability before its date; fixed runtime classification before activation.",
+  "candidateRootUnchanged": true
+}
