@@ -9,7 +9,7 @@ test('V27 retains six dated Nakheel Palm Jebel Ali frond progress snapshots with
   const pass = read('data/historical-intelligence/palm-jebel-ali-nakheel-progress-20261008.json');
   const record = snapshot.records.find((item) => item.id === 'community:Dubai:palm-jebel-ali');
 
-  assert.ok(['20261008-enrichment-v27', '20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v27', '20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37'].includes(snapshot.version));
   assert.equal(pass.facts.length, 6);
   assert.equal(pass.sources.length, 1);
   assert.equal(pass.sources[0].sourceSnapshotDate, '2026-03-10');

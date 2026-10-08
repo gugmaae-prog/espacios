@@ -1,0 +1,57 @@
+{
+  "excludedFromV37Coverage": true,
+  "candidates": [
+    {
+      "id": "annual-2023",
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/05/Annual-Report-2023_EN.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/05/Annual-Report-2023_EN.pdf",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T22:54:59.914Z",
+      "bytes": 12457981,
+      "sha256": "ce76182b0d1a598158641c83b1a48655abc9c323cb95e283155ea4b1ddbcb80d",
+      "contentType": "application/pdf",
+      "reviewPages": [
+        8,
+        9
+      ],
+      "nextAction": "Review native columns visually; page 9 says InterContinental operating since February 2022. Keep this report distinct from the 3 March announcement; no exact first day inferred.",
+      "status": "captured_pending_exact_fact_review",
+      "coverageCredit": 0
+    },
+    {
+      "id": "annual-2025",
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2026/02/RAKP-X-ADX-ANNUAL-REPORT-2025-EN.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2026/02/RAKP-X-ADX-ANNUAL-REPORT-2025-EN.pdf",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T22:55:03.549Z",
+      "bytes": 2687307,
+      "sha256": "0b93082b80b12a02ffa8568e3e2602a2f051c90744244fbd9e823a0939605b36",
+      "contentType": "application/pdf",
+      "reviewPages": [
+        7,
+        10
+      ],
+      "nextAction": "Review Bay and Gateway completion/handover reports against exact phase identities; generic catalogue phases remain unresolved.",
+      "status": "captured_pending_exact_fact_review",
+      "coverageCredit": 0
+    },
+    {
+      "id": "financial-2024",
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Consolidated-financial-statement-Eng-Dec-2024.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Consolidated-financial-statement-Eng-Dec-2024.pdf",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T22:54:59.220Z",
+      "bytes": 2125837,
+      "sha256": "d98c167086412b4bd26b2dab86da4811d3a5b4412ae2391653bf586158cb709c",
+      "contentType": "application/pdf",
+      "reviewPages": [
+        24,
+        47,
+        48
+      ],
+      "nextAction": "Review hotel operation date against investor timeline. Portfolio fair values and valuation-input ranges do not establish individual project valuations.",
+      "status": "captured_pending_exact_fact_review",
+      "coverageCredit": 0
+    }
+  ]
+}

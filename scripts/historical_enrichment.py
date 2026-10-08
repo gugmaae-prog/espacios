@@ -142,6 +142,23 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    start=f'{match[1]}-{(int(match[2])-1)*3+1:02d}-01' if match else period+'-01-01' if len(period)==4 else period+'-01' if len(period)==7 else period
    if start[:10]>asof:raise ValueError('Financial observation after snapshot')
    if not isinstance(value,(int,float)) or isinstance(value,bool) or not math.isfinite(value) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
+   if obs.get('observationKind')=='developer_reported_aggregate_sales' or 'developerSalesSnapshot' in obs:
+    report=obs.get('developerSalesSnapshot')
+    finite=lambda n:isinstance(n,(int,float)) and not isinstance(n,bool) and math.isfinite(n)
+    if not isinstance(report,dict):raise ValueError('Developer sales require the native table population')
+    if obs.get('observationKind')!='developer_reported_aggregate_sales' or obs.get('metric')!='volume' or report.get('asOf')!=period or report.get('unitsSold')!=value:
+     raise ValueError('Developer sales must remain dated volume observations')
+    if not all(isinstance(report.get(k),int) and not isinstance(report[k],bool) and report[k]>=0 for k in ['unitsLaunched','unitsSold']) or report['unitsSold']>report['unitsLaunched']:
+     raise ValueError('Invalid developer unit populations')
+    if not all(finite(report.get(k)) and report[k]>=0 for k in ['netSalesAEDMillion','revenueBacklogAEDMillion']) or report.get('currency')!='AED' or report.get('nativeMonetaryScale')!=1000000:
+     raise ValueError('Developer accounting money must retain its native AED million scale')
+    progress=report.get('reportedConstructionComplete');sold=report.get('reportedSoldPercent')
+    if not (finite(sold) and 0<=sold<=100) or not (progress=='NIL' or finite(progress) and 0<=progress<=100):
+     raise ValueError('Invalid developer reported percentages; NIL must stay literal')
+    if not all(report.get(k) for k in ['sourceProjectLabel','populationBasis','periodBasis']) or any(report.get(k) is not False for k in ['pricePerUnitDerived','registeredTransactionsEstablished']):
+     raise ValueError('Developer sales cannot establish unit prices or registered transactions')
+    if obs.get('currentSnapshotEligible') is not False or obs.get('includeInCurrentSnapshot') is not False:
+     raise ValueError('Developer cumulative accounting is not a current property valuation')
    if 'quotedPriceRange' in obs:
     quoted=obs['quotedPriceRange']
     numeric=lambda n:isinstance(n,(int,float)) and not isinstance(n,bool) and math.isfinite(n) and n>0
