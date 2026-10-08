@@ -62,10 +62,10 @@ assert '"transaction_id"' not in serialized
 assert '"transactionId"' not in serialized
 
 manifest = json.loads((BASE / "publication-manifest.json").read_text())
-assert manifest["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24"}
+assert manifest["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24", "20261008-enrichment-v25"}
 snapshot_path = Path(manifest["rootIndex"]["path"])
 snapshot = json.loads(gzip.decompress(snapshot_path.read_bytes()))
-assert snapshot["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24"}
+assert snapshot["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24", "20261008-enrichment-v25"}
 assert len(snapshot["records"]) == 1860
 assert sum(record["type"] == "project" for record in snapshot["records"]) == 1645
 assert sum(record["type"] == "community" for record in snapshot["records"]) == 215

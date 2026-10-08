@@ -13,7 +13,7 @@ const ids = [
 ];
 
 test('V24 adds dated Palm Jebel Ali quote references without changing direct-sale history', () => {
-  assert.equal(snapshot.version, '20261008-enrichment-v24');
+  assert.ok(['20261008-enrichment-v24','20261008-enrichment-v25'].includes(snapshot.version));
   assert.equal(snapshot.records.length, 1860);
   assert.ok(record);
   const observations = record.observations.filter(row => ids.includes(row.id));

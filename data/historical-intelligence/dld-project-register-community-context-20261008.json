@@ -1,0 +1,1554 @@
+{
+  "schemaVersion": 1,
+  "passId": "dld-project-register-community-context-20261008",
+  "asOf": "2026-10-08",
+  "sources": [
+    {
+      "id": "dld-official-projects-20260706-recapture-20261008",
+      "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "url": "https://data.dubai/en/l/467654",
+      "datasetId": 467654,
+      "fileName": "projects_2026-07-06_16-25-21_0001.csv",
+      "classification": "primary_authority_project_register_snapshot",
+      "licence": "Dubai Open Data Licence; attribution required, commercial derivatives allowed, original data resale prohibited",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "retrievedAt": "2026-10-08T08:37:40.687303Z",
+      "publishedAt": null,
+      "publicationDateStatus": "Exact publication timestamp not exposed; source filename timestamp retained separately.",
+      "datasetFileTimestamp": "2026-07-06 16:25:21",
+      "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+      "sourceRecordCount": 3039,
+      "uniqueProjectIdCount": 3039,
+      "bytes": 2473575,
+      "sha256": "ffee59d637b1383e62ea24dab5be77e957090abf3860ce26b00b873fbdda6078",
+      "extractionVersion": "reviewed-dld-community-register-context-v1",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "primaryEvidence": true,
+      "availabilityBasis": "The CSV file was downloaded directly from the public DLD project-register dataset page; first prior retrieval is retained from the existing source register."
+    }
+  ],
+  "facts": [
+    {
+      "id": "dld-project-register-community-67d3a39dc680e17f312b",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:al-barari",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Al Barari",
+        "registeredProjectRecordsInSource": 3,
+        "sourceProjectStatusCounts": {
+          "FINISHED": 2,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Wadi Al Safa 3"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-8fbc778a899b8721ab8d",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:al-furjan",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Al Furjan",
+        "registeredProjectRecordsInSource": 103,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 22,
+          "CONDITIONAL_ACTIVATING": 1,
+          "FINISHED": 54,
+          "NOT_STARTED": 19,
+          "PENDING": 7
+        },
+        "sourceAreaLabels": [
+          "Jabal Ali First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-7dc14413c03a1f354add",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:arjan",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Arjan",
+        "registeredProjectRecordsInSource": 77,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 32,
+          "FINISHED": 38,
+          "NOT_STARTED": 4,
+          "PENDING": 3
+        },
+        "sourceAreaLabels": [
+          "Al Barshaa South Third"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-c580708c68e1f87efe52",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:barsha-heights",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Barsha Heights",
+        "registeredProjectRecordsInSource": 15,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 1,
+          "FINISHED": 12,
+          "NOT_STARTED": 1,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Al Thanyah First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-7cda6745c1e0ea014e04",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:bluewaters-island",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Bluewaters Island",
+        "registeredProjectRecordsInSource": 1,
+        "sourceProjectStatusCounts": {
+          "FINISHED": 1
+        },
+        "sourceAreaLabels": [
+          "Marsa Dubai"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-14842d631872bd665b5b",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:business-bay",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Business Bay",
+        "registeredProjectRecordsInSource": 146,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 35,
+          "FINISHED": 99,
+          "NOT_STARTED": 9,
+          "PENDING": 3
+        },
+        "sourceAreaLabels": [
+          "Business Bay"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-9516578670b36dde4a9e",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:city-of-arabia",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "City Of Arabia",
+        "registeredProjectRecordsInSource": 12,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 1,
+          "CONDITIONAL_ACTIVATING": 1,
+          "FINISHED": 1,
+          "NOT_STARTED": 8,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Wadi Al Safa 4"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-6bdb024b810717cf78c6",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:city-walk",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "City Walk",
+        "registeredProjectRecordsInSource": 24,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 9,
+          "FINISHED": 12,
+          "NOT_STARTED": 3
+        },
+        "sourceAreaLabels": [
+          "Al Wasl"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-ea22e3f48b94513d6140",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:damac-hills",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "DAMAC HILLS",
+        "registeredProjectRecordsInSource": 51,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 7,
+          "FINISHED": 42,
+          "NOT_STARTED": 2
+        },
+        "sourceAreaLabels": [
+          "Al Hebiah Third"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-db5989013c06da810222",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:damac-hills-2",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "DAMAC HILLS 2",
+        "registeredProjectRecordsInSource": 46,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 12,
+          "FINISHED": 31,
+          "NOT_STARTED": 3
+        },
+        "sourceAreaLabels": [
+          "Madinat Hind 4"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-6f2a915a51b3b87bca70",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:damac-lagoons",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "DAMAC Lagoons",
+        "registeredProjectRecordsInSource": 11,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 10,
+          "FINISHED": 1
+        },
+        "sourceAreaLabels": [
+          "Al Hebiah Fifth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-ed40611db9a8010407bd",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:discovery-gardens",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Discovery Gardens",
+        "registeredProjectRecordsInSource": 9,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 7,
+          "CONDITIONAL_ACTIVATING": 1,
+          "NOT_STARTED": 1
+        },
+        "sourceAreaLabels": [
+          "Jabal Ali First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-3f232868f20a241d74cc",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:downtown-dubai",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "DownTown Dubai",
+        "registeredProjectRecordsInSource": 59,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 15,
+          "FINISHED": 40,
+          "PENDING": 4
+        },
+        "sourceAreaLabels": [
+          "Burj Khalifa"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-1347d788deadd5547164",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-creek-harbour",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Creek Harbour",
+        "registeredProjectRecordsInSource": 45,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 14,
+          "FINISHED": 28,
+          "NOT_STARTED": 3
+        },
+        "sourceAreaLabels": [
+          "Al Khairan First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-8ac5c6037fdf89f91c9d",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-harbour",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Harbour",
+        "registeredProjectRecordsInSource": 19,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 11,
+          "FINISHED": 6,
+          "NOT_STARTED": 2
+        },
+        "sourceAreaLabels": [
+          "Marsa Dubai"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-88c74e8595e28201c994",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-hills-estate",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Hills Estate",
+        "registeredProjectRecordsInSource": 50,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 26,
+          "FINISHED": 19,
+          "NOT_STARTED": 3,
+          "PENDING": 2
+        },
+        "sourceAreaLabels": [
+          "Hadaeq Sheikh Mohammed Bin Rashid"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-d4d8e85847a6879d208a",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-land-residence-complex",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Land Residence Complex",
+        "registeredProjectRecordsInSource": 94,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 28,
+          "FINISHED": 22,
+          "NOT_STARTED": 28,
+          "PENDING": 16
+        },
+        "sourceAreaLabels": [
+          "Wadi Al Safa 5"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-62506a75490726dbb46d",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-marina",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Marina",
+        "registeredProjectRecordsInSource": 68,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 12,
+          "FINISHED": 54,
+          "NOT_STARTED": 2
+        },
+        "sourceAreaLabels": [
+          "Marsa Dubai"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-35407f61b902252d3eef",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-maritime-city",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Maritime City",
+        "registeredProjectRecordsInSource": 25,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 14,
+          "FINISHED": 1,
+          "NOT_STARTED": 8,
+          "PENDING": 2
+        },
+        "sourceAreaLabels": [
+          "Madinat Dubai Almelaheyah"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-2cddc053e4f241629f5b",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-science-park",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Science Park",
+        "registeredProjectRecordsInSource": 16,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 6,
+          "CONDITIONAL_ACTIVATING": 1,
+          "FINISHED": 4,
+          "NOT_STARTED": 4,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Al Barshaa South Second"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-e95da22ac31c37bba8a9",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-sports-city",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Sports City",
+        "registeredProjectRecordsInSource": 88,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 18,
+          "FINISHED": 61,
+          "NOT_STARTED": 4,
+          "PENDING": 5
+        },
+        "sourceAreaLabels": [
+          "Al Hebiah Fourth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-f0a74496e860a5c05ca5",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-studio-city",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Studio City",
+        "registeredProjectRecordsInSource": 18,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 10,
+          "FINISHED": 7,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Al Hebiah Second"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-f455448bd43acccfed8e",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:dubai-water-canal",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai Water Canal",
+        "registeredProjectRecordsInSource": 18,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 9,
+          "FINISHED": 6,
+          "NOT_STARTED": 2,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Al Wasl",
+          "Jumeirah Second"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-d53eb43d874c22f9fd5d",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:emirates-hills",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Emirates Hills",
+        "registeredProjectRecordsInSource": 1,
+        "sourceProjectStatusCounts": {
+          "FINISHED": 1
+        },
+        "sourceAreaLabels": [
+          "Al Thanayah Fourth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-83e87f07f68494bbbe66",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeira-bay",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeira Bay",
+        "registeredProjectRecordsInSource": 5,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 1,
+          "FINISHED": 4
+        },
+        "sourceAreaLabels": [
+          "Island 2"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-c718b0489db4df4bc0f8",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeirah-garden-city",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeirah Garden City",
+        "registeredProjectRecordsInSource": 36,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 16,
+          "FINISHED": 1,
+          "NOT_STARTED": 10,
+          "PENDING": 9
+        },
+        "sourceAreaLabels": [
+          "Al Satwa"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-8817e922a674ad5d24f8",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeirah-golf-estates",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeirah Golf Estates",
+        "registeredProjectRecordsInSource": 27,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 3,
+          "FINISHED": 21,
+          "NOT_STARTED": 1,
+          "PENDING": 2
+        },
+        "sourceAreaLabels": [
+          "Me'Aisem First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-7e62a500af908c51378a",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeirah-islands",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeirah Islands",
+        "registeredProjectRecordsInSource": 17,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 8,
+          "CONDITIONAL_ACTIVATING": 1,
+          "FINISHED": 5,
+          "NOT_STARTED": 2,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Al Thanyah Fifth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-8114caf188131c5b435a",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeirah-park",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeirah Park",
+        "registeredProjectRecordsInSource": 8,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 1,
+          "FINISHED": 6,
+          "PENDING": 1
+        },
+        "sourceAreaLabels": [
+          "Al Thanyah Fifth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-d29f9d5287af041e53b2",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeirah-village-circle",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeirah Village Circle",
+        "registeredProjectRecordsInSource": 385,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 109,
+          "CONDITIONAL_ACTIVATING": 4,
+          "FINISHED": 218,
+          "NOT_STARTED": 34,
+          "PENDING": 20
+        },
+        "sourceAreaLabels": [
+          "Al Barsha South Fourth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-69217f93c8fabb2000e3",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:jumeirah-village-triangle",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Jumeirah Village Triangle",
+        "registeredProjectRecordsInSource": 60,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 23,
+          "FINISHED": 20,
+          "NOT_STARTED": 9,
+          "PENDING": 8
+        },
+        "sourceAreaLabels": [
+          "Al Barsha South Fifth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-4bcdde33755d288a7aee",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:la-mer",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "LA MER",
+        "registeredProjectRecordsInSource": 14,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 1,
+          "FINISHED": 8,
+          "NOT_STARTED": 3,
+          "PENDING": 2
+        },
+        "sourceAreaLabels": [
+          "Jumeirah First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-645efa33933dd51e072d",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:majan",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Majan",
+        "registeredProjectRecordsInSource": 46,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 18,
+          "FINISHED": 9,
+          "NOT_STARTED": 10,
+          "PENDING": 9
+        },
+        "sourceAreaLabels": [
+          "Wadi Al Safa 3"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-b9c91e0fadc26815bc1e",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:mina-rashid",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Mina Rashid",
+        "registeredProjectRecordsInSource": 20,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 9,
+          "FINISHED": 1,
+          "NOT_STARTED": 10
+        },
+        "sourceAreaLabels": [
+          "Madinat Dubai Almelaheyah"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-892e60cfe33172706980",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:mudon",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Mudon",
+        "registeredProjectRecordsInSource": 14,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 5,
+          "FINISHED": 9
+        },
+        "sourceAreaLabels": [
+          "Al Hebiah Sixth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-2754e4fe3e9ae4f055da",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:nad-al-sheba-gardens",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Nad Al Sheba Gardens",
+        "registeredProjectRecordsInSource": 14,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 9,
+          "FINISHED": 1,
+          "NOT_STARTED": 2,
+          "PENDING": 2
+        },
+        "sourceAreaLabels": [
+          "Nad Al Shiba First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-7b5405ddc3bab7a5abfb",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:palm-jumeirah",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Palm Jumeirah",
+        "registeredProjectRecordsInSource": 57,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 18,
+          "FINISHED": 34,
+          "NOT_STARTED": 2,
+          "PENDING": 3
+        },
+        "sourceAreaLabels": [
+          "Palm Jumeirah"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-225cbb1cce20b23dcbcb",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:sobha-hartland",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "SOBHA HARTLAND",
+        "registeredProjectRecordsInSource": 25,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 5,
+          "FINISHED": 20
+        },
+        "sourceAreaLabels": [
+          "Al Merkadh"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-47ff6f4fdc87e2882039",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:the-villa",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "The Villa",
+        "registeredProjectRecordsInSource": 2,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 1,
+          "FINISHED": 1
+        },
+        "sourceAreaLabels": [
+          "Wadi Al Safa 5"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-bbdf3350b6c32fbb15aa",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:tilal-al-ghaf",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "TILAL AL GHAF",
+        "registeredProjectRecordsInSource": 9,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 7,
+          "FINISHED": 2
+        },
+        "sourceAreaLabels": [
+          "Al Hebiah Fourth"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-2f1cd75861eb7267f6e4",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:wasl-1",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Wasl 1",
+        "registeredProjectRecordsInSource": 5,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 2,
+          "FINISHED": 2,
+          "NOT_STARTED": 1
+        },
+        "sourceAreaLabels": [
+          "Al Kifaf"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-5bfb4bbd46e2b99b1508",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:Dubai:wasl-gate",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Wasl Gate",
+        "registeredProjectRecordsInSource": 16,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 7,
+          "FINISHED": 3,
+          "NOT_STARTED": 6
+        },
+        "sourceAreaLabels": [
+          "Jabal Ali First"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    },
+    {
+      "id": "dld-project-register-community-4ad0c8e1fab9e88c1aa8",
+      "status": "accepted",
+      "kind": "register",
+      "recordId": "community:dubai-south-residential-district",
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "sourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706-recapture-20261008"
+      ],
+      "identityBasis": "Exact normalized DLD master_project_en label matches one unique Dubai community catalogue record. This links the named DLD master-project cohort only; it does not establish a legal boundary, complete community inventory, or a financial history.",
+      "firstAvailableAt": "2026-10-04T20:44:21.855572+00:00",
+      "publishedAt": null,
+      "scope": "community_context",
+      "identityVerified": true,
+      "evidenceClass": "official_dld_master_project_register_community_context",
+      "fields": {
+        "nativeMasterProjectLabel": "Dubai South Residential District",
+        "registeredProjectRecordsInSource": 70,
+        "sourceProjectStatusCounts": {
+          "ACTIVE": 14,
+          "FINISHED": 19,
+          "FRIEZED": 1,
+          "NOT_STARTED": 19,
+          "PENDING": 17
+        },
+        "sourceAreaLabels": [
+          "Madinat Al Mataar"
+        ],
+        "sourceLoadTimestamp": "2026-06-15 15:24:01.000",
+        "catalogueMatchMethod": "unique normalized exact-name match against DLD master_project_en",
+        "scopeLimit": "Counts cover DLD project rows with this exact master-project label in this dated source snapshot. They are not total dwellings, completed inventory, legal boundaries, or price observations."
+      }
+    }
+  ],
+  "seriesLinks": [],
+  "historyInputs": [],
+  "licensedArchives": [],
+  "additionalDatasets": [
+    {
+      "sourceId": "dld-official-projects-20260706-recapture-20261008",
+      "attribution": "Dubai Land Department via Dubai Data and Statistics Establishment",
+      "datasetId": 467654,
+      "sourceUrl": "https://data.dubai/en/l/467654",
+      "fileName": "projects_2026-07-06_16-25-21_0001.csv",
+      "sourceFileSha256": "ffee59d637b1383e62ea24dab5be77e957090abf3860ce26b00b873fbdda6078",
+      "sourceRows": 3039,
+      "uniqueProjectIds": 3039,
+      "exactMasterLabelCommunityMatches": 43,
+      "matchedProjectRows": 1829,
+      "scope": "Exact unique master-project label context only; no legal boundary or financial-price inference."
+    }
+  ],
+  "recordResearch": [],
+  "sourceCandidates": [],
+  "collection": {
+    "passId": "dld-project-register-community-context-20261008",
+    "sourceRecordCount": 3039,
+    "uniqueProjectIdCount": 3039,
+    "exactUniqueCommunityMatches": 43,
+    "matchedProjectRows": 1829,
+    "ambiguousOrUnmatchedRowsExcluded": 1210,
+    "derivedCommunityRegisterFacts": 43,
+    "newProjectOrCommunityRecords": 0,
+    "newPriceOrRentObservations": 0,
+    "completeCommunityInventoryClaimed": false,
+    "rawSourceRetainedInRepository": false,
+    "rawSourceRedistributed": false,
+    "facts": [
+      {
+        "kind": "register",
+        "count": 43,
+        "scope": "community_context"
+      }
+    ]
+  },
+  "methodology": "Download the public DLD Real Estate Projects CSV from the source URL, verify the pinned file name, SHA-256, 3,039 rows and unique project IDs, then normalize Unicode/case/punctuation in master_project_en and catalogue community names. Retain only labels that resolve to exactly one Dubai community. Aggregate source-native project_status counts per exact master-project label. Exclude all ambiguous and unmatched labels. The register is a dated project snapshot; counts are not community boundaries, complete inventory, prices, sales, rents, completion certificates or occupancy."
+}
