@@ -56,12 +56,13 @@ The V26 checklist contains 42,780 requirements: 3,163 present, 3,437 partial, 26
 ## Production publication and live checks
 
 - V26 manifest root: `8ef9fa8b190548c9252c94c9e3ae7206614b97388b0de58682dc8167d53db5c7`.
-- The production publisher created 2,131 immutable R2 objects and reused 48 matching objects. It indexed 39,085 statements; every D1 count matched the manifest before the snapshot state changed to `complete`: 1,860 records, 3,254 sources, 105 events, 7,382 exposures, 15,063 series and 11,421 record-series links.
+- The production publisher created 2,131 immutable R2 objects and reused 48 matching objects. It indexed 39,085 D1 rows plus one snapshot header; every table count matched the manifest before the snapshot state changed to `complete`: 1,860 records, 3,254 sources, 105 events, 7,382 exposures, 15,063 series and 11,421 record-series links.
 - Production Worker `psr-portfolio-map-v2`, version `84559aa7-bd39-4502-8aae-b110324c5455`, is serving **100% traffic** in deployment `c662764d-d187-4605-afa1-889f0efd0816`. The existing map route and `DATA_ROOM_PUBLIC=false` remain in place.
 - Live `https://espacios.me/map` returns HTTP 200 with the V29 palette asset token. All eight accepted project record-history APIs returned HTTP 200 and `20261008-enrichment-v26`; each exposed its expected DLD-derived fact and dated milestones.
 - `npm run verify` passed all 166 tests on the deployed source tree. The selected mobile Map control remains on the softer slate Espacios palette. Gold was inherited UI styling and never represented appreciation or property value.
 
-The release bridge was temporary, scoped to this version/root and expiring, and is removed after publication. Its private bearer token and target manifest are not committed.
+- Git source and this receipt are in [PR #98](https://github.com/gugmaae-prog/espacios/pull/98), commit `f4c9c7010f8b446c70dbd44a74ec9b7d174f836a`. Supabase points to V26 and records `pending_merge` until the source PR is merged.
+- The temporary release bridge was scoped to this root, expiring, and has been deleted; its health endpoint returns HTTP 404. Its private bearer token and target manifest were removed and never committed.
 
 ## Reproduction and verification
 
