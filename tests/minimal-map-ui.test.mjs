@@ -19,6 +19,7 @@ test('minimal composition exposes the approved controls without changing evidenc
 });
 
 test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
+  assert.match(css,/--minimal-accent:var\(--su-muted\)/);
   assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
   assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 14%,var\(--su-line\)\)/);
   assert.match(css,/\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
@@ -27,6 +28,9 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.match(css,/:is\(#toggle-3d\.active,.ae-mobile-map-modes #toggle-3d\.active\)[\s\S]*?background:var\(--minimal-selected\)!important/);
   assert.match(css,/\.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:var\(--minimal-surface\)!important[\s\S]*?color:var\(--su-ink\)!important/);
   assert.match(css,/\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:var\(--minimal-selected\)!important[\s\S]*?box-shadow:inset 0 -2px 0 var\(--minimal-accent\)!important/);
+  assert.match(css,/#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?background:color-mix\(in srgb,var\(--su-panel\) 94%,transparent\)!important[\s\S]*?color:var\(--su-ink\)!important/);
+  assert.match(css,/\.quality-shield\{\s*border-color:var\(--minimal-selected-line\)!important;[\s\S]*?color:var\(--minimal-accent\)!important/);
+  assert.match(css,/\.detail-badge\{\s*border-color:var\(--minimal-selected-line\)!important;[\s\S]*?color:var\(--su-ink\)!important/);
   assert.ok(worker.includes('.ae-mobile-map-modes .rail-btn{'));
   assert.ok(worker.includes('background:var(--minimal-surface)!important'));
   assert.ok(worker.includes('box-shadow:inset 0 -2px 0 var(--minimal-accent)!important'));
@@ -52,7 +56,7 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
 });
 
 test('selection and watchlist colors use Espacios slate and teal, not legacy gold',()=>{
-  assert.match(app,/selectionLight='#526b70',selectionDark='#a0bab9'/);
+  assert.match(app,/selectionLight='#5f6d85',selectionDark='#aab7bd'/);
   assert.match(app,/hotspotColors=\['#4f817c','#718991','#9ba8ac'\]/);
   assert.match(app,/ae-emerging-hotspots','circle-color',expression/);
   assert.match(app,/layer\.paint\?\.\[property\]===undefined\)continue/);
@@ -91,11 +95,12 @@ test('selection palette safely updates only declared MapLibre paint properties i
     return layers;
   };
   const light=run('light'),dark=run('dark');
-  assert.equal(light[0].paint['line-color'],'#526b70');
-  assert.equal(dark[0].paint['line-color'],'#a0bab9');
-  assert.ok(JSON.stringify(light[1].paint['fill-color']).includes('#526b70'));
+  assert.equal(light[0].paint['line-color'],'#5f6d85');
+  assert.equal(dark[0].paint['line-color'],'#aab7bd');
+  assert.ok(JSON.stringify(light[1].paint['fill-color']).includes('#5f6d85'));
+  assert.equal(dark[2].paint['circle-color'],'rgba(170,183,189,.10)');
   assert.equal(light[2].paint['circle-stroke-color'],'#89959a');
-  assert.equal(light[2].paint['circle-color'],'rgba(82,107,112,.08)');
+  assert.equal(light[2].paint['circle-color'],'rgba(95,109,133,.08)');
   assert.ok(JSON.stringify(light[3].paint['circle-color']).includes('#89959a'));
   assert.ok(!JSON.stringify(light[3].paint['circle-color']).includes('#ffc866'));
   assert.ok(JSON.stringify(light[5].paint['circle-color']).includes('#4f817c'));
@@ -110,7 +115,7 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261003-minimal-map-v1'));
+  assert.ok(worker.includes('20261008-map-palette-v23'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
-  assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('20261003-minimal-map-v1'));
+  assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });

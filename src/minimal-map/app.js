@@ -1,10 +1,10 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261003-minimal-map-v1';
+  const RELEASE='20261008-map-palette-v23';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
-  const selectionLight='#526b70',selectionDark='#a0bab9',legacySelection='#69d8ff';
+  const selectionLight='#5f6d85',selectionDark='#aab7bd',legacySelection='#69d8ff';
   const hotspotColors=['#4f817c','#718991','#9ba8ac'];
   const selectionColor=()=>root.dataset.espaciosTheme==='dark'?selectionDark:selectionLight;
   function recolorSelectionExpression(value,color){
@@ -13,7 +13,7 @@
       const normalized=value.toLowerCase();
       if([legacySelection,selectionLight,selectionDark,'#a97925'].includes(normalized))return color;
       if(normalized==='#ffc866')return '#89959a';
-      if(normalized==='rgba(169,121,37,.12)')return color===selectionDark?'rgba(160,186,185,.10)':'rgba(82,107,112,.08)';
+      if(normalized==='rgba(169,121,37,.12)')return color===selectionDark?'rgba(170,183,189,.10)':'rgba(95,109,133,.08)';
       return value;
     }
     let changed=false;const next=value.map(item=>{const result=recolorSelectionExpression(item,color);if(result!==item)changed=true;return result});return changed?next:value;
