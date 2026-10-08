@@ -49,11 +49,17 @@ The 42,780-item checklist contains 3,292 present, 3,437 partial, 26,751 missing 
 - `scripts/extract-rak-construction-panels.py` joins explicit month labels to unique panel IDs and validates percentage bounds. It rejects missing/duplicate panel mappings, missing overall values and malformed percentages instead of inventing observations.
 - `scripts/prepare-rak-profiles-pass34.py` performs the explicit 13-record identity map, preserves conflicts and creates the [reviewed packet](../../../data/historical-intelligence/rak-properties-profiles-pass34-20261008.json).
 - `scripts/append-rak-profiles-pass34.py` requires the preserved V33 snapshot and appends V34 without replacing prior evidence. Earlier transition tests remain frozen to their original roots.
-- Fourteen focused extraction and V32–V34 preservation tests passed. Full-suite and live publication results will be recorded below.
+- Fourteen focused extraction and V32–V34 preservation tests passed. Build, syntax checks and the full test suite passed. The retained-archive verifier checks all 2,542 current publication/index objects and the canonical checksum. Live publication results will be recorded below.
 
 ## Publication
 
-Local candidate only until independent publication and live checks are recorded. Current production remains V33/V37.
+V34 is live at 100% on Worker `psr-portfolio-map-v2`, version `3718b0d9-068f-43ca-b852-54a139408896`, deployment `e0631c8c-eca4-41a6-8398-35ddda6a06f2` (8 October 2026 at 20:54 UTC; 9 October in Dubai). The frontend remains `20261008-map-palette-v37`; no palette or layout changes were made.
+
+Immutable root: `d0fec5b56923a727846875e2daecdc6aa324d20377375319d347951a645668be`. Publication wrote 2,491 objects, reused 50 and verified 42,783 D1 statements and exact table counts. Preview and canonical API checks matched every one of 1,860 ledgers, all 13 changed records, 3,333 sources, 105 events, 7,382 exposures and the exact 2080 endpoint. See [publication](publication-result.json), [preview](preview-verification.json), [live verification](live-verification.json) and [deployment](deployment.json).
+
+Map HTML and its actual linked V37 JavaScript/CSS assets return HTTP 200. Data Room remains restricted with HTTP 404. Explicit Cloudflare readback confirms `espacios.me/map* -> espacios-map-shell -> MAP -> psr-portfolio-map-v2`. Supabase independently reads back V34/V37 and the same Worker/root/counts. The temporary publisher and local authentication files were removed. See [HTTP checks](http-verification.json), [route](route-verification.json), [control plane](control-plane-verification.json) and [cleanup](cleanup.json).
+
+Source commit `5740377889c0b562639a826438688019bb86404d` is pushed to open [PR #98](https://github.com/gugmaae-prog/espacios/pull/98), and passed [clean GitHub CI](https://github.com/gugmaae-prog/espacios/actions/runs/37841207343) and repository guardrails. Deployment does not imply PR merge. The next [phase-research receipt](phase-followup.json) records the unavailable municipal PDF and gated catalogue brochure without counting those attempts as evidence coverage.
 
 ## Next evidence actions
 

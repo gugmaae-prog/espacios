@@ -1,0 +1,17 @@
+{
+  "status": "research_only_not_coverage",
+  "countsAsVerifiedAddition": false,
+  "checkedAtDate": "2026-10-08",
+  "findings": [
+    {
+      "recordId": "project:gateway-residences-for-sale-mina-al-arab-ras-al-khaimah-uae-by-rak-properties",
+      "sourceURL": "https://psr.espacios.me/projects/gateway-residences-for-sale-mina-al-arab-ras-al-khaimah-uae-by-rak-properties",
+      "result": "Public catalogue remains generic; the linked brochure requires contact details. No form submitted and no access control bypassed. Original public primary brochures or existing lawful catalogue identity metadata remain next options."
+    },
+    {
+      "recordId": "project:south-bay-residences-by-rak-properties-on-hayat-island-mina-al-arab-ras-al-khaimah",
+      "sourceURL": "https://mun.rak.ae/Documents/Lands%20and%20Properties%20Sector/2025/List%20and%20Status%20of%20Projects%20may.pdf",
+      "result": "Search index suggests a Bay Residences 2 (South) entry, but both the browser fetch and independent direct HTTP request returned 404. No PDF bytes, row identity, geography or status accepted from the search snippet. Recover an official current or archived copy for visual table review before use."
+    }
+  ]
+}
