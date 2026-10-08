@@ -1,0 +1,16 @@
+{
+  "id": "9ee506ff-fd50-4d4d-ac1a-868278262265",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish V35 verified developer evidence; retain soft Espacios palette in V39",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "2166ff53-d490-40b7-9930-c51f3f6fda34",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T21:50:21.230401Z"
+}
