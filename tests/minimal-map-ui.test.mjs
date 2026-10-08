@@ -88,6 +88,13 @@ test('active map controls share the soft Espacios palette in light and dark them
   assert.match(css,/V28: the old shell can repaint the mobile Map mode[\s\S]*?#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 4%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?box-shadow:none!important/);
 });
 
+test('mobile map modes avoid the premium dark pill and keep a low-contrast selected state',()=>{
+  assert.match(css,/V29: keep the mobile map mode control visually attached/);
+  assert.match(css,/#minimal-map-modes,[\s\S]*?\.ae-mobile-map-modes[\s\S]*?button\[aria-pressed="true"\],[\s\S]*?\.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 78%,transparent\)!important/);
+  assert.match(css,/html body #app \.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,transparent\)!important[\s\S]*?box-shadow:0 1px 5px #172b3a0a!important/);
+  assert.doesNotMatch(css,/V29[\s\S]*?#0b1821|V29[\s\S]*?#c9a45d/i);
+});
+
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{
   const start=app.indexOf("  const selectionLight='");
   const end=app.indexOf('  let selectionPaletteFrame=',start);
