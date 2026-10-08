@@ -23,7 +23,7 @@ const ids={
 test('V14 preserves the immutable reviewed base and all previously tested releases',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
  assert.equal(previous.version,'20261007-enrichment-v11');
- assert.ok(['20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v23'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v23'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
  for(const old of previous.records){

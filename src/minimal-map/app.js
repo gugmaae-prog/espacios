@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261009-map-catalogue-v38';
+  const RELEASE='20261009-map-evidence-v39';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};

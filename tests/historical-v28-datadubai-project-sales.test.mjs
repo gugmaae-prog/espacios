@@ -11,7 +11,7 @@ const pass = json('data/historical-intelligence/datadubai-project-sales-20261008
 const readCsv = () => zlib.gunzipSync(fs.readFileSync('data/historical-intelligence/datadubai-project-sales-20261008.csv.gz')).toString('utf8');
 
 test('V28 adds only identity-checked DLD-derived project rolling-12-month sales summaries', () => {
-  assert.ok(['20261008-enrichment-v28', '20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v28', '20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35'].includes(snapshot.version));
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.records.filter((record) => record.type === 'project').length, 1645);
   assert.equal(snapshot.records.filter((record) => record.type === 'community').length, 215);
