@@ -82,6 +82,8 @@ test('active map controls share the soft Espacios palette in light and dark them
   assert.doesNotMatch(css,/(?:#(?:c7a24d|c4a04b|c89b3f|d9be78)|rgba\((?:199,162,77|200,155,63),)/i);
   assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
   assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 14%,var\(--su-line\)\)/);
+  assert.match(css,/Light mode also needs the unselected place cards on a pale surface/);
+  assert.match(css,/data-espacios-theme="light"[\s\S]*?\.category-list button:not\(\.active\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel\) 90%,transparent\)!important/);
   assert.match(css,/data-espacios-theme="dark"[\s\S]*?--minimal-blue:#a7bbcf/);
 });
 
@@ -130,7 +132,7 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v26'));
+  assert.ok(worker.includes('20261008-map-palette-v27'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });

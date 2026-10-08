@@ -165,6 +165,29 @@ html[data-minimal-map="1"] body #app :is(
   color:var(--su-ink)!important;
   box-shadow:none!important;
 }
+/* Light mode also needs the unselected place cards on a pale surface. The
+   inherited shell paints these controls navy even when the map is light. */
+html[data-minimal-map="1"][data-espacios-theme="light"] body #app :is(
+  .category-list button:not(.active),
+  .focus-row button:not(.active),
+  .transport-list button:not(.active),
+  .place-actions button:not(.active)
+){
+  border:1px solid var(--su-line)!important;
+  background:color-mix(in srgb,var(--su-panel) 90%,transparent)!important;
+  color:var(--su-ink)!important;
+  box-shadow:none!important;
+}
+html[data-minimal-map="1"][data-espacios-theme="light"] body #app :is(
+  .category-list button:not(.active),
+  .focus-row button:not(.active),
+  .transport-list button:not(.active),
+  .place-actions button:not(.active)
+):is(:hover,:focus-visible){
+  border-color:color-mix(in srgb,var(--minimal-accent) 28%,var(--su-line))!important;
+  background:color-mix(in srgb,var(--minimal-accent) 5%,var(--su-panel))!important;
+  color:var(--su-ink)!important;
+}
 /* Retire the inherited gold active state on the 3D control as well. */
 html[data-minimal-map="1"] body #app :is(#toggle-3d.active,.ae-mobile-map-modes #toggle-3d.active){
   border-color:var(--minimal-selected-line)!important;
