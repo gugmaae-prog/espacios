@@ -4,7 +4,8 @@ import {validateProductionTarget} from '../publish-historical-snapshot.mjs';
 const APPROVED_PUBLISHER_URLS=new Set([
  'https://espacios-history-publisher-20261005.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev',
- 'https://espacios-history-publisher-20261008-v22.thekeifferjapeth.workers.dev'
+ 'https://espacios-history-publisher-20261008-v22.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v24.thekeifferjapeth.workers.dev'
 ]);
 export const isApprovedPublisherURL=url=>APPROVED_PUBLISHER_URLS.has(url);
 

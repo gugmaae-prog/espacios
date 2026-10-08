@@ -8,9 +8,9 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261008-enrichment-v23'
+VERSION = '20261008-enrichment-v24'
 ASOF = '2026-10-08'
-ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json']
+ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json','palm-jebel-ali-historical-quotes-20261008.json']
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']

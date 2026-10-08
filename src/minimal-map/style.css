@@ -233,6 +233,17 @@ html[data-minimal-map="1"] body #app .detail-badge{
   background:var(--minimal-selected)!important;
   color:var(--su-ink)!important;
 }
+/* The acquired search layer still paints hover/selection with legacy gold.
+   Keep its focus cue in the same restrained slate family as the map controls. */
+html[data-minimal-map="1"] body #app .search-item:hover,
+html[data-minimal-map="1"] body #app .search-item.is-active{
+  border-color:var(--minimal-selected-line)!important;
+  background:var(--minimal-selected)!important;
+}
+html[data-minimal-map="1"] body #app .search-item.is-active{
+  box-shadow:inset 3px 0 0 var(--minimal-accent)!important;
+}
+html[data-minimal-map="1"] body #app .ae-search-glyph{color:var(--minimal-accent)!important;}
 html[data-minimal-map="1"] body #app .map-bottom .dot.fallback{
   background:#89959a!important;box-shadow:none!important;
 }
@@ -359,20 +370,29 @@ html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] 
   border:1px solid var(--minimal-selected-line)!important;background:var(--su-panel)!important;color:var(--su-ink)!important;
   padding:0 24px 0 10px!important;font:600 11px/1 Inter,system-ui,sans-serif!important;box-sizing:border-box!important;
 }
-/* V25: give every active map control the same soft Espacios selection state.
-   The inherited shell still defines navy/gold active fills; this final rule
-   keeps those legacy controls on the shared surface in both themes. */
+/* V26: keep selected map controls on the same quiet Espacios surface in both
+   themes. A pale fill and soft border indicate selection without a dark pill
+   or a gold underline from the older shell. */
 html[data-minimal-map="1"] body #app :is(
   .layer-rail .rail-btn.active,
   .layer-rail .rail-btn[aria-pressed="true"],
   .ae-mobile-map-modes .rail-btn.active,
   .ae-mobile-map-modes .rail-btn[aria-pressed="true"],
   #minimal-map-modes button[aria-pressed="true"],
-  .ae-search-map-tools .ae-map-focus-toggle.active
+  #minimal-kind-controls button[aria-pressed="true"],
+  #minimal-metrics button[aria-pressed="true"],
+  .ae-search-map-tools .ae-map-focus-toggle.active,
+  .rail-btn.active,
+  .rail-btn[aria-pressed="true"],
+  .segmented button.active,
+  .analysis-tabs button.active,
+  .valuation-tabs button.active,
+  .quality-filter button.active,
+  .availability-filter button.active
 ){
   border-color:var(--minimal-selected-line)!important;
   background:var(--minimal-selected)!important;
   color:var(--su-ink)!important;
-  box-shadow:inset 0 -2px 0 var(--minimal-accent)!important;
+  box-shadow:none!important;
   transition:background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease;
 }

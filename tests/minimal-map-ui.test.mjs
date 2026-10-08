@@ -75,8 +75,11 @@ test('selection and watchlist colors use Espacios slate and teal, not legacy gol
 });
 
 test('active map controls share the soft Espacios palette in light and dark themes',()=>{
-  assert.match(css,/V25: give every active map control the same soft Espacios selection state/);
-  assert.match(css,/\.layer-rail \.rail-btn\.active,[\s\S]*#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*background:var\(--minimal-selected\)!important;[\s\S]*color:var\(--su-ink\)!important;[\s\S]*box-shadow:inset 0 -2px 0 var\(--minimal-accent\)!important/);
+  assert.match(css,/V26: keep selected map controls on the same quiet Espacios surface/);
+  assert.match(css,/\.layer-rail \.rail-btn\.active,[\s\S]*#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*#minimal-kind-controls button\[aria-pressed="true"\],[\s\S]*\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*background:var\(--minimal-selected\)!important;[\s\S]*color:var\(--su-ink\)!important;[\s\S]*box-shadow:none!important/);
+  assert.match(css,/\.search-item:hover,[\s\S]*?\.search-item\.is-active\{[\s\S]*?border-color:var\(--minimal-selected-line\)!important;[\s\S]*?background:var\(--minimal-selected\)!important/);
+  assert.match(css,/\.search-item\.is-active\{\s*box-shadow:inset 3px 0 0 var\(--minimal-accent\)!important/);
+  assert.doesNotMatch(css,/(?:#(?:c7a24d|c4a04b|c89b3f|d9be78)|rgba\((?:199,162,77|200,155,63),)/i);
   assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
   assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 14%,var\(--su-line\)\)/);
   assert.match(css,/data-espacios-theme="dark"[\s\S]*?--minimal-blue:#a7bbcf/);
