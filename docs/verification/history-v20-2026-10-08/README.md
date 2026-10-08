@@ -104,8 +104,9 @@ projects and news remain contextual evidence, not automatic price uplift.
   the response as a retrieved page, not complete history.
 - Palm Jebel Ali events returned V20, 43 exposures and the non-causal
   classification above.
-- Supabase release-registry and runtime-config rows are reconciled in the
-  follow-up entry after the source PR is merged.
+- The later V21 source PR and production deployment reconciled the Supabase
+  release registry and runtime config; readback is recorded in the [V21
+  production receipt](../history-v21-2026-10-08/README.md).
 
 ## Remaining gaps and next actions
 

@@ -1,6 +1,6 @@
-# V21 113 Residences source review — 8 October 2026
+# V21 113 Residences production source review — 8 October 2026
 
-This candidate snapshot preserves all 1,645 projects and 215 communities, and applies a reviewed evidence pass to `113 Residences by IMAN Developers` in Al Sufouh. It resolves one quarantined name-match candidate from exact project name, developer, and area evidence. The DLD numeric project identifier was not available in the captured register page and remains unset.
+The production V21 snapshot preserves all 1,645 projects and 215 communities, and applies a reviewed evidence pass to `113 Residences by IMAN Developers` in Al Sufouh. It resolves one quarantined name-match candidate from exact project name, developer, and area evidence. The DLD numeric project identifier was not available in the captured register page and remains unset.
 
 ## Evidence added
 
@@ -21,4 +21,4 @@ No inferred historic values, area proxies, news-derived price adjustments, pre-l
 
 V21 retains **1,860 records**, **548,242 published historical rows** (548,458 including 216 rights-pending rows), **14,771 history series**, **3,244 sources**, **105 events**, and **7,382 event exposures**. The single identity-candidate review reduces candidate project records from 263 to **262**; the **59** community candidates remain. The fixed evidence ledger now has **3,099 present, 3,433 partial, 26,948 missing, and 9,300 unestablished** items: **39,681 of 42,780 (92.76%) unresolved**. This is checklist coverage, not a percentage of missing price observations. There are still **zero approved 2080 forecast records**.
 
-Next, obtain a legally accessible direct authority project identifier or corroborating registry evidence, reconcile the expected handover dates against an executed schedule or newer developer release, and source exact-phase historical registrations and signed rents across a wider time range. Inspect building-specific construction, occupancy, operating costs, and valuation evidence before preparing any 2080 scenario. Keep these additions labelled as a candidate snapshot until the normal production publication checks pass.
+Next, obtain a legally accessible direct authority project identifier or corroborating registry evidence, reconcile the expected handover dates against an executed schedule or newer developer release, and source exact-phase historical registrations and signed rents across a wider time range. Inspect building-specific construction, occupancy, operating costs, and valuation evidence before preparing any 2080 scenario. Keep future additions in candidate status until they pass the normal source and publication checks.
