@@ -1,0 +1,16 @@
+{
+  "id": "0c10d080-2ec0-450d-94d3-f7519d4d7807",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish V37 verified sales vintages and hotel reports with V41 Espacios palette",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "d9cf3e2c-19d6-47d2-a2f8-9dfd79dc6b23",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T23:34:25.419414Z"
+}

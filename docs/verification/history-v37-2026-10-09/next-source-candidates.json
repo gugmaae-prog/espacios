@@ -16,7 +16,15 @@
       ],
       "nextAction": "Review native columns visually; page 9 says InterContinental operating since February 2022. Keep this report distinct from the 3 March announcement; no exact first day inferred.",
       "status": "captured_pending_exact_fact_review",
-      "coverageCredit": 0
+      "coverageCredit": 0,
+      "visuallyReviewedPages": [
+        9
+      ],
+      "candidateNotes": [
+        "InterContinental is reported operating since February 2022; retain month precision and distinguish from the March announcement.",
+        "Cape construction is retrospectively placed at end 2023; Quattro selling starts Q1 2024. Compare prior sources before any addition.",
+        "Julphar Residence is explicitly in Reem Island, Abu Dhabi with 266 apartments. Exact catalogue identity and prior evidence still require reconciliation."
+      ]
     },
     {
       "id": "annual-2025",
@@ -33,7 +41,14 @@
       ],
       "nextAction": "Review Bay and Gateway completion/handover reports against exact phase identities; generic catalogue phases remain unresolved.",
       "status": "captured_pending_exact_fact_review",
-      "coverageCredit": 0
+      "coverageCredit": 0,
+      "visuallyReviewedPages": [
+        10
+      ],
+      "candidateNotes": [
+        "Bay Residences I and Gateway II are reported completed/handed over, with 324 and 146 units respectively. Generic project IDs must not receive automatic phase facts.",
+        "Cape/Bayviews/Quattro progress may duplicate existing FY2025 press-release evidence. Deduplicate or retain a publisher revision rather than count independent corroboration."
+      ]
     },
     {
       "id": "financial-2024",
@@ -51,7 +66,15 @@
       ],
       "nextAction": "Review hotel operation date against investor timeline. Portfolio fair values and valuation-input ranges do not establish individual project valuations.",
       "status": "captured_pending_exact_fact_review",
-      "coverageCredit": 0
+      "coverageCredit": 0,
+      "visuallyReviewedPages": [
+        24
+      ],
+      "candidateNotes": [
+        "Audited note identifies Anantara hotel subsidiary commercial operations from 2 January 2024. Same publisher as the investor report; do not count independent corroboration.",
+        "Statements authorised for issue on 5 February 2025. This is an authorisation date, not proof of first online availability.",
+        "Subsidiary incorporation on 13 June 2023 is not the hotel construction start or community inception."
+      ]
     }
   ]
 }

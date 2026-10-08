@@ -30,8 +30,18 @@ The bounded capture script is `scripts/capture-rak-financial-pass37.mjs`. The pr
 
 Ingestion rejects invalid populations, non-finite/negative accounting figures, unit/scale changes, absent population semantics, inferred unit prices, transaction relabelling and promotion into current valuations. Native zero backlog and literal NIL are accepted. Tests compare every native series and unaffected record, preserve superseded targets, prevent phase/hotel fan-out and check UI source labels.
 
-## Release status
+## Verified deployment
 
-Prepared locally; validation and authorised publication are in progress. The previously verified V36/V40 release remains the production baseline until deployment and live verification finish.
+Worker `d9cf3e2c-19d6-47d2-a2f8-9dfd79dc6b23` is active at 100% in deployment `0c10d080-2ec0-450d-94d3-f7519d4d7807`. Frontend `20261009-map-evidence-v41` uses history `20261008-enrichment-v37`, immutable root `be31d7f61e60b822c9fc005051f958613d2cd2db0c830b69fb1366e9a3dacf75`. Publication wrote 2,491 objects, reused 50, and verified 42,793 D1 index statements and exact table counts.
+
+Preview and canonical APIs match all 1,860 record ledgers and all eight updated records. Annual slots end exactly in 2080. Live HTML/assets, catalogue preservation, source labels, desktop/mobile cards, no horizontal overflow at 390px, Cloudflare route/service and Supabase release metadata are verified. The soft Espacios selected controls and Nura developer correction remain intact. The Data Room remains restricted. The temporary publisher and its authentication files were removed.
+
+Source commit `ab5c63cf198084b137ae469744243fa589be8765` passed [clean GitHub CI](https://github.com/gugmaae-prog/espacios/actions/runs/37858927656) and repository guardrails. Local build, syntax, 364 JavaScript tests, Python and smoke/API checks pass. All 2,542 archive objects including D1 verify by checksum. Source is pushed to open PR #98; deployment does not imply merge.
 
 Next actions: continue exact phase resolution and direct financial-history sourcing; locate subject-specific valuations and occupancy proof; specify annual conditional scenario assumptions through 2080. Neither corporate accounting nor news context closes those requirements. The research goal remains incomplete.
+
+## Next financial-evidence priorities
+
+The `financial-priorities.json` audit separates missing direct financial evidence by emirate. Dubai has 796 projects without qualifying registered-sale evidence and 1,029 without signed-rent evidence. Abu Dhabi has 345 and 347 respectively. All 89 Ras Al Khaimah projects still lack qualifying registered-sale and signed-rent histories; developer accounting does not close those gaps. Sharjah, Ajman, Umm Al Quwain and Fujairah also require emirate-appropriate direct sources.
+
+Prioritise remaining exact Dubai register/transaction identity matches and lawful Abu Dhabi sale/rental source access, then the other emirates. Keep single transactions when verified, with aggregate medians subject to sample rules. Announcement dates cannot exclude earlier land/trading history. Dated advertisements remain separate evidence when direct sales cannot yet be sourced.

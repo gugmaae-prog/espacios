@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-10-08T23:38:48.170Z",
+  "version": "20261009-map-evidence-v41",
+  "recordId": "project:nb-collection-by-rak-properties-on-hayat-island",
+  "desktop": {
+    "card": "Developer-reported project sales snapshot\n\nNB Collections · as of 2024-12-31\n\nUnits launched\n11\nUnits sold\n1\nNet sales · AED million\n24\nRevenue backlog · AED million\n24\nReported sold · %\n9\n\nDeveloper table project population; launched and sold cohorts, not a registered-transaction extract\n\nCumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024\n\nDeveloper totals are not registered transactions, individual prices or valuations. No average price is derived. First verified source availability: 2026-10-08T22:55:49.918Z.\n\nRAK Properties\nPublication date not supplied\nFirst available 2026-10-08T22:27:48.283Z",
+    "pageWidth": 1280,
+    "panels": [
+      {
+        "id": "hi-panel",
+        "scrollWidth": 438,
+        "width": 440
+      }
+    ],
+    "sourceLinks": [
+      "https://psr.espacios.me/projects/nb-collection-by-rak-properties-on-hayat-island",
+      "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Investor-PPT-2024-Digital_new.pdf",
+      "https://psr.espacios.me/projects/nb-collection-by-rak-properties-on-hayat-island",
+      "https://www.rakproperties.ae/news/rak-properties-launches-exclusive-beachfront-villas-on-hayat-island-ras-al-khaimah/",
+      "https://www.rakmediaoffice.ae/en/media-center/press-releases/ras-al-khaimah-signs-agreement-to-develop-the-largest-wastewater-infrastructure-project-in-the-emirate-to-enable-sustainable-growth",
+      "https://www.eia.gov/finance/review/annual",
+      "https://www.who.int/docs/default-source/coronaviruse/situation-REPORTS/20200311-SITREP-51-COVID-19.PDF",
+      "https://ukraine.un.org/en/173250-statement-secretary-general-%E2%80%93-ukraine",
+      "https://www.fatf-gafi.org/en/publications/Fatfgeneral/Outcomes-fatf-plenary-march-2022.html",
+      "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a1.htm",
+      "https://www.protocol.dubai.ae/en/media-listing/news-events/uae-cabinet-approves-executive-regulations-of-federal-decree-law-on-entry-and-residence-of-foreigners",
+      "https://www.imf.org/en/news/articles/2023/10/13/pr23351-uae-imf-staff-concludes-visit",
+      "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/Increased-monitoring-february-2024.html",
+      "https://www.federalreserve.gov/newsevents/pressreleases/monetary20240918a.htm",
+      "https://www.mofa.gov.ae/en/MediaHub/News/2026/5/15/UAE-BRICS-Foreign-Ministers-Meeting",
+      "https://www.wam.ae/en/article/13vbuq9-uae-witnesses-largest-rainfall-over-past-years",
+      "https://icp.gov.ae/en/media-center/ica-issues-first-golden-residency-for-investors-in-abu-dhabi-and-recognizes-its-holder-monday-03-june-2019",
+      "https://mof.gov.ae/en/news/the-ministry-of-finance-announces-the-introduction-of-a-corporate-tax-in-the-uae",
+      "https://www.mofa.gov.ae/mediahub/news/2026/2/28/uae-iran",
+      "https://centralbank.ae/en/news-and-publications/news-and-insights/?Search=CBUAE",
+      "https://psr.espacios.me/projects/nb-collection-by-rak-properties-on-hayat-island",
+      "https://psr.espacios.me/projects/nb-collection-by-rak-properties-on-hayat-island",
+      "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Investor-PPT-2024-Digital_new.pdf",
+      "https://www.rakproperties.ae/news/rak-properties-launches-exclusive-beachfront-villas-on-hayat-island-ras-al-khaimah/"
+    ],
+    "width": 1280
+  },
+  "mobile": {
+    "card": "Developer-reported project sales snapshot\n\nNB Collections · as of 2024-12-31\n\nUnits launched\n11\nUnits sold\n1\nNet sales · AED million\n24\nRevenue backlog · AED million\n24\nReported sold · %\n9\n\nDeveloper table project population; launched and sold cohorts, not a registered-transaction extract\n\nCumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024\n\nDeveloper totals are not registered transactions, individual prices or valuations. No average price is derived. First verified source availability: 2026-10-08T22:55:49.918Z.\n\nRAK Properties\nPublication date not supplied\nFirst available 2026-10-08T22:27:48.283Z",
+    "pageWidth": 390,
+    "panelScrollWidth": 364,
+    "panelWidth": 366,
+    "width": 390
+  },
+  "palette": {
+    "mapControls": [
+      {
+        "background": "color(srgb 0.972549 0.980392 0.988235 / 0.76)",
+        "text": "rgb(99, 115, 136)"
+      },
+      {
+        "background": "rgb(248, 250, 252)",
+        "text": "rgb(32, 48, 68)"
+      }
+    ],
+    "release": "https://espacios.me/map/app-v2.js?v=20261009-map-evidence-v41"
+  },
+  "viewportRestored": true,
+  "passed": true
+}
