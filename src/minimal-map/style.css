@@ -453,16 +453,18 @@ html body #app .ae-mobile-map-modes .rail-btn{
   -webkit-backdrop-filter:blur(12px) saturate(110%)!important;
   backdrop-filter:blur(12px) saturate(110%)!important;
 }
-/* V31: keep mobile mode selection inside the Espacios slate palette. The
+/* V32: keep mobile mode selection inside the Espacios slate palette. The
    earlier inherited shell could paint an opaque navy active pill; use a quiet
-   cool tint that stays visible in both themes without adding a gold accent. */
-html body #app :is(#minimal-map-modes,.ae-mobile-map-modes) :is(
-  button[aria-pressed="true"],
-  .rail-btn.active,
-  .rail-btn[aria-pressed="true"],
-  .rail-btn[aria-current="true"],
-  .rail-btn[aria-selected="true"]
-){
+   cool tint that stays visible in both themes without adding a gold accent.
+   Include the theme attribute and concrete control IDs so this rule wins over
+   the inherited active-state selector with the same intent. */
+html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-pressed="true"],
+html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-current="true"],
+html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-selected="true"],
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn.active,
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-pressed="true"],
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-current="true"],
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-selected="true"]{
   border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 18%,var(--su-line,#d8dee3))!important;
   background:color-mix(in srgb,var(--minimal-accent,#657d98) 6%,var(--su-panel,#f4f6f7))!important;
   color:var(--su-ink,#27323b)!important;

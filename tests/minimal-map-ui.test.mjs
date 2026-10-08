@@ -95,10 +95,10 @@ test('mobile map modes normalize selected signals to the theme surface',()=>{
   assert.doesNotMatch(css,/V30[\s\S]*?#0b1821|V30[\s\S]*?#c9a45d/i);
 });
 
-test('mobile map mode selection uses a low-contrast Espacios slate tint',()=>{
-  assert.match(css,/V31: keep mobile mode selection inside the Espacios slate palette/);
-  assert.match(css,/html body #app :is\(#minimal-map-modes,\.ae-mobile-map-modes\) :is\([\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 6%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?color:var\(--su-ink,#27323b\)!important;[\s\S]*?box-shadow:none!important/);
-  assert.doesNotMatch(css,/V31[\s\S]*?(?:#0b1821|#c9a45d|#c77955)/i);
+test('mobile map mode selection overrides inherited styles with a low-contrast Espacios slate tint',()=>{
+  assert.match(css,/V32: keep mobile mode selection inside the Espacios slate palette/);
+  assert.match(css,/html\[data-minimal-map="1"\] body #app #minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?html\[data-minimal-map="1"\] body #app \.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 6%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?color:var\(--su-ink,#27323b\)!important;[\s\S]*?box-shadow:none!important/);
+  assert.doesNotMatch(css,/V32[\s\S]*?(?:#0b1821|#c9a45d|#c77955)/i);
 });
 
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{
@@ -146,7 +146,7 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v31'));
+  assert.ok(worker.includes('20261008-map-palette-v32'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });
