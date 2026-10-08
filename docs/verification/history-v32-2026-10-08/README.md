@@ -36,7 +36,17 @@ The append step requires the materialized V31 snapshot and its content-addressed
 - `tests/historical-v32-rak-lifecycle.test.mjs`: preservation, identity, temporal and evidence-class acceptance.
 - Reviewed packet: `data/historical-intelligence/rak-properties-lifecycle-pass32-20261008.json`.
 
-Publication status and verification receipts are recorded below after release.
+## Production verification
+
+Published 2,491 immutable objects and reused 50 checksum-identical objects. All 42,756 D1 statements and exact table counts verified before activation. Worker `psr-portfolio-map-v2`, version `79e41530-2430-42e5-a5f0-6e10921a3dce`, serves 100% traffic in deployment `80bd958d-3b2b-42f2-8e21-bb7343dbf57e`.
+
+Live acceptance matched all 1,860 record ledgers (42,780 items), the five changed records, 3,306 sources, 105 events and 7,382 exposures. Each changed record retains 54 annual slots ending in 2080; these slots are not approved numeric forecasts. Existing native financial rows were exhaustively preserved in local regression checks; this release's live incremental test contains zero new financial series. Map HTML and V36 JavaScript/CSS returned HTTP 200; public Data Room remains HTTP 404. The Supabase registry and runtime expectations were reconciled and verified through the public control-plane endpoint.
+
+`npm run build:smart`, `npm run check` and the full `npm test` run passed. After correcting numeric types in the generated D1 index, all four V32 focused regression tests passed again. The initial index validation failure occurred before publication writes. Source commit: `c850f83b912928810ab6bc246c3eddd6fec72a6a`; source remains in open PR #98.
+
+Receipts: [publication](publication-result.json), [deployment](deployment.json), [live evidence](live-verification.json), [HTTP/assets](http-verification.json), [control plane](control-plane.json), and [tests](test-summary.json).
+
+The temporary V32 publisher Worker was deleted after successful verification, and its two private credential files were removed. See the [cleanup receipt](cleanup.json). Production evidence and earlier immutable vintages remain in place.
 
 ## New evidence by exact record
 
