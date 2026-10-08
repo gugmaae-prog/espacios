@@ -1,5 +1,5 @@
 /* Version only frontend responses. Original evidence endpoints and storage are unchanged. */
-var MM_RELEASE='20261008-map-palette-v26';
+var MM_RELEASE='20261008-map-palette-v27';
 var MM_PREVIOUS_FETCH=worker_default.fetch;
 worker_default.fetch=async function(request,env,ctx){
  const response=await MM_PREVIOUS_FETCH.call(this,request,env,ctx);
