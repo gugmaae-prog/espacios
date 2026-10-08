@@ -13,7 +13,7 @@ const registrationFacts=packet.facts.filter(fact=>fact.kind==='lifecycle'&&fact.
 const progressFacts=packet.facts.filter(fact=>fact.kind==='lifecycle'&&fact.milestone==='construction_progress');
 
 test('V17 is a reviewed, checksum-rooted ADREC register increment over the fixed catalogue',()=>{
- assert.ok(['20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(record=>record.type==='project').length,1645);
  assert.equal(snapshot.records.filter(record=>record.type==='community').length,215);
@@ -119,7 +119,9 @@ test('The V19 snapshot preserves V16 Nawayef registered-sale cohorts and source 
 test('The V19 ledger preserves V17 lifecycle coverage and incorporates later verified sale evidence',()=>{
  const counts={};
  for(const record of snapshot.records)for(const item of Object.values(record.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- assert.deepEqual(counts,{missing:26950,partial:3434,unestablished:9300,present:3096});
+ assert.deepEqual(counts,snapshot.version==='20261008-enrichment-v21'
+  ?{missing:26948,partial:3433,unestablished:9300,present:3099}
+  :{missing:26950,partial:3434,unestablished:9300,present:3096});
  assert.equal(Object.values(snapshot.records).reduce((sum,record)=>sum+record.observations.filter(item=>item.id.startsWith('v17-adrec-')).length,0),0);
  assert.equal(snapshot.manifest.approved2080ForecastRecords,0);
 });

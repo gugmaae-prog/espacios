@@ -237,6 +237,25 @@ with tempfile.TemporaryDirectory() as tmp:
  const result=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(result.status,0,result.stderr||result.stdout);
 });
 
+test('exact project identity review resolves only the explicitly reconciled quarantined candidate',()=>{
+ const code=String.raw`
+import sys,copy
+sys.path.insert(0,'scripts')
+from historical_enrichment import apply_enrichment
+sources={'project':{'id':'project','url':'https://example.org/register','retrievedAt':'2026-10-07T23:43:46Z'},'developer':{'id':'developer','url':'https://example.org/developer','retrievedAt':'2026-10-07T23:43:48Z'}}
+p={'id':'p','type':'project','emirate':'Dubai','lifecycle':[],'observations':[],'historySeries':[],'researchStatus':{'gaps':[],'identityCandidateCount':1,'identityCandidates':'quarantined'},'coverageSummary':{},'currentSnapshot':{}}
+review={'status':'verified_exact_name_developer_and_area','identityBasis':'Exact registered name, developer and area agree; project numeric ID remains unavailable.','identitySourceIds':['project','developer'],'registeredProjectId':None,'resolvedCandidateCount':1,'remainingCandidateCount':0}
+packet={'asOf':'2026-10-08','facts':[],'recordResearch':[{'recordId':'p','asOf':'2026-10-08','sourceIds':['project','developer'],'identityReview':review}]}
+apply_enrichment(packet,[p],{},sources,lambda x:None,{},'2026-10-08')
+state=p['researchStatus'];assert state['identityCandidateCount']==0;assert state['identityCandidates']=='resolved_by_verified_identity_review';assert state['identityCandidateReview']['registeredProjectId'] is None
+for bad in [{**review,'remainingCandidateCount':1},{**review,'resolvedCandidateCount':2},{**review,'identitySourceIds':[]},{**review,'status':'inferred_name_match'}]:
+ q=copy.deepcopy(p);q['researchStatus']={'gaps':[],'identityCandidateCount':1,'identityCandidates':'quarantined'}
+ try:apply_enrichment({'asOf':'2026-10-08','facts':[],'recordResearch':[{'recordId':'p','asOf':'2026-10-08','identityReview':bad}]},[q],{},sources,lambda x:None,{},'2026-10-08');raise AssertionError('unreconciled or unproven candidate review accepted')
+ except ValueError:pass
+`;
+ const result=spawnSync('python3',['-c',code],{encoding:'utf8'});assert.equal(result.status,0,result.stderr||result.stdout);
+});
+
 test('phase construction evidence is accounted for without certifying an original whole-record start',()=>{
  const code=String.raw`
 import sys

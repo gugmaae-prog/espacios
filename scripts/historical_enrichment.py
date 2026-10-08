@@ -152,6 +152,20 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   safe={k:v for k,v in status.items() if k!='recordId'}
   safe['sourceIds']=list(dict.fromkeys(sid(x) for x in (safe.get('sourceIds',[])+safe.get('captureSourceIds',[]))))
   research=known[status['recordId']]['researchStatus']
+  review=safe.get('identityReview')
+  if review:
+   if review.get('status')!='verified_exact_name_developer_and_area' or not review.get('identityBasis'):
+    raise ValueError('Identity candidate review requires verified exact-name, developer, and area evidence')
+   identity_sources=list(dict.fromkeys(sid(x) for x in review.get('identitySourceIds',[])))
+   resolved=review.get('resolvedCandidateCount');remaining=review.get('remainingCandidateCount')
+   current=research.get('identityCandidateCount',0)
+   if not identity_sources or not isinstance(resolved,int) or not isinstance(remaining,int) or resolved<1 or remaining<0 or resolved+remaining!=current:
+    raise ValueError('Identity candidate review does not reconcile with the quarantined candidate count')
+   prior=research.get('identityCandidateReview')
+   if prior and prior!=review:raise ValueError('Identity candidate review cannot overwrite an earlier review')
+   research['identityCandidateReview']={**review,'identitySourceIds':identity_sources,'reviewedAt':safe.get('asOf',packet.get('asOf'))}
+   research['identityCandidateCount']=remaining
+   research['identityCandidates']='quarantined' if remaining else 'resolved_by_verified_identity_review'
   previous=research.get('sourceCollection')
   if previous and previous!=safe:
    history=research.setdefault('sourceCollectionHistory',[])

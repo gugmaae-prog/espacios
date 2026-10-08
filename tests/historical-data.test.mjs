@@ -34,7 +34,8 @@ test('archival root retains present evidence and complete record-to-series relat
  }
 });
 test('context, research candidates and incomplete subject coverage remain separate',()=>{
- assert.equal(data.manifest.identityCandidateProjects,263);
+ assert.equal(data.manifest.identityCandidateProjects,262);
+ assert.equal(data.manifest.identityCandidateCommunities,59);
  for(const record of data.records){for(const s of record.historySeries){if(s.scope==='subject'){assert.equal(s.identityVerified,true);assert.ok(s.identitySourceIds?.length);assert.ok(s.linkBasis);}else assert.equal(s.identityVerified,false);assert.ok(s.partition);assert.ok(s.pointCount>=s.points.length);assert.ok(s.columns.includes('value'));}
   for(const milestone of record.lifecycle){assert.ok(milestone.sourceIds.length);if(['occupancy','completion'].includes(milestone.kind))assert.ok(milestone.date.start<=data.asOf);if(milestone.status==='verified')assert.ok(milestone.identityBasis);}
   if(record.currentSnapshot.scope==='source_observed_asking_quote'){assert.ok(record.currentSnapshot.firstAvailableAt);assert.ok(record.currentSnapshot.observationId);assert.ok(record.priorCurrentSnapshots.length);}else assert.equal(record.currentSnapshot.freshness,'unverified_source_date');

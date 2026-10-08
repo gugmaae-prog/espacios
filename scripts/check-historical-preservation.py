@@ -13,7 +13,7 @@ def retained(old, new):
     return old == new
 
 
-def check(before, after, root, publication=None):
+def check(before, after, root, publication=None, before_root=None):
     errors = []
     def require(condition, message):
         if not condition:
@@ -51,10 +51,10 @@ def check(before, after, root, publication=None):
             ident = identity(row)
             require(ident in new_by_id and retained(row, new_by_id[ident]), 'Lost or changed ' + key + ':' + str(ident))
 
-    def all_series(snapshot):
+    def all_series(snapshot, object_root):
         result = {}
         for obj in snapshot['manifest']['objects']:
-            target = root / obj['path']
+            target = object_root / obj['path']
             require(target.exists(), 'Missing immutable object ' + obj['path'])
             if not target.exists():
                 continue
@@ -65,7 +65,7 @@ def check(before, after, root, publication=None):
                     require(series['id'] not in result, 'Duplicate series partition ' + series['id'])
                     result[series['id']] = series
         return result
-    old_series, new_series = all_series(before), all_series(after)
+    old_series, new_series = all_series(before, before_root or root), all_series(after, root)
     point_count = 0
     for sid, old in old_series.items():
         new = new_series.get(sid)
@@ -84,7 +84,7 @@ def check(before, after, root, publication=None):
         point_count += len(old['points'])
     if publication:
         for obj in publication['objects']:
-            target = root / obj['path']
+            target = (before_root or root) / obj['path']
             require(target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() == obj['sha256'], 'Previous publication object missing/changed ' + obj['path'])
     return {'passed': not errors, 'errors': errors, 'preservedRecords': len(old_records), 'preservedSources': len(before['sources']), 'preservedNativeSeries': len(old_series), 'preservedNativePoints': point_count, 'preservedRecordSeriesLinks': sum(len(r.get('historySeries', [])) for r in before['records']), 'preservedEvents': len(before.get('events', [])), 'preservedExposureLinks': len(before.get('exposures', [])), 'newSources': len(after['sources']) - len(before['sources']), 'newNativeSeries': len(new_series) - len(old_series), 'beforeVersion': before['version'], 'afterVersion': after['version']}
 
@@ -92,11 +92,12 @@ def check(before, after, root, publication=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--before', type=pathlib.Path, required=True)
+    parser.add_argument('--before-root', type=pathlib.Path)
     parser.add_argument('--after', type=pathlib.Path, default=ROOT / 'data/historical-intelligence-20261003.json')
     parser.add_argument('--before-publication', type=pathlib.Path)
     parser.add_argument('--output', type=pathlib.Path, required=True)
     args = parser.parse_args()
-    result = check(json.loads(args.before.read_text()), json.loads(args.after.read_text()), ROOT, json.loads(args.before_publication.read_text()) if args.before_publication else None)
+    result = check(json.loads(args.before.read_text()), json.loads(args.after.read_text()), ROOT, json.loads(args.before_publication.read_text()) if args.before_publication else None, args.before_root)
     result['beforeSHA256'] = hashlib.sha256(args.before.read_bytes()).hexdigest()
     result['afterSHA256'] = hashlib.sha256(args.after.read_bytes()).hexdigest()
     args.output.parent.mkdir(parents=True, exist_ok=True)
