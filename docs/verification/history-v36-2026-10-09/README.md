@@ -18,12 +18,35 @@ All 1,645 projects and 215 communities, 633,891 history-series rows, 16,872 seri
 
 Of 42,780 checklist items, 3,298 are present, 3,439 partial, 26,743 missing and 9,300 unestablished. **39,482 (92.29%) remain unresolved.** Five items become present; this is not a price-data completeness percentage. No new registered sales, signed rents, occupancy proof, current valuations or approved forecasts are created. Annual scenarios end in 2080; full per-record assumptions and real lifetime histories remain incomplete.
 
+## Financial evidence by record type
+
+These counts mean some direct supporting evidence exists; they do not establish complete lifetime histories. Detailed item states are in `coverage-breakdown.json`.
+
+| Evidence item marked present | Projects (1,645) | Communities (215) |
+| --- | ---: | ---: |
+| Registered sale history | 323 | 48 |
+| Signed-rent history | 89 | 43 |
+| Dated current valuation | 0 | 0 |
+| Fully specified annual scenario inputs | 0 | 0 |
+
+The principal next financial requirements are identity-verified sales/rents for records still missing them, historical period gaps even where some evidence exists, dated present valuations, and disclosed annual assumptions. Historical advertisements and corporate project accounting do not substitute for those requirements.
+
 ## Reproduction and safeguards
 
 `capture-rak-annual-pass36.mjs` captures the bounded reviewed URLs; `prepare-rak-annual-pass36.py` pins source hashes, exact identities, pages and phase claims. `append-rak-annual-pass36.py` requires V35, preserves existing evidence and creates V36. Ingestion rejects non-finite/reversed ranges, missing populations or units, transaction-shaped ranges and range promotion to a single current price. UI cards escape source text and retain both price endpoints. Tests compare every native series and unaffected record against V35, retain phase/date reconciliations, reject future availability in training and check the new card.
 
 ## Next actions
 
-Continue exact phase identity resolution, dated direct sale/rent evidence, occupancy and current valuation sourcing, then explicit annual scenario assumptions through 2080. The research goal remains incomplete. Deployment and verification receipts will be appended after the authorised release passes its checks.
+Continue exact phase identity resolution, dated direct sale/rent evidence, occupancy and current valuation sourcing, then explicit annual scenario assumptions through 2080. The research goal remains incomplete. The authorised release and verification receipts are recorded below.
 
 Local validation: production build and syntax checks, 359 JavaScript tests, smoke/API and Python checks pass. All 2,542 immutable objects including the D1 index verify by checksum. Test concurrency is bounded at two workers to avoid competing archive decompressions exhausting local memory.
+
+Source commit `808ca331f2c43f9c851c9a09b035db276aef0f18` passed [clean GitHub CI](https://github.com/gugmaae-prog/espacios/actions/runs/37853759714) and repository guardrails. Source remains in open PR #98; publication does not imply merge.
+
+## Verified deployment
+
+Worker `ce235bd1-ed12-4e40-a336-1f3cb11fd11d` is active at 100% in deployment `99820b0f-111b-4492-b486-b13f37a29853`. Frontend: `20261009-map-evidence-v40`; history: `20261008-enrichment-v36`. Preview and canonical APIs match all 1,860 ledgers and both changed records, including ranges, source pages and reconciliation links; all annual scenario slots end at 2080. Catalogue identities and Nura's correction remain intact.
+
+The live advertised-range card was checked on desktop and at 390px without horizontal page overflow. The Map control retains the pale neutral selected surface and slate text. Cloudflare route/service mapping and Supabase runtime/release metadata are independently verified. The Data Room remains restricted. The temporary publisher and its authentication files were removed. See the accompanying JSON receipts and screenshots.
+
+The FY2024 report and IHG opening announcement captured during this release are next-batch candidates only. Their capture/review does not change V36 coverage. `next-source-candidates.json` records the next sourcing action. The research goal remains incomplete.
