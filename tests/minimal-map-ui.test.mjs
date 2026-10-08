@@ -146,7 +146,14 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v32'));
+  assert.ok(worker.includes('20261008-map-palette-v33'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
+});
+
+test('all mobile map selection variants use the shared Espacios slate surface',()=>{
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn:is\(\.active,\[aria-pressed="true"\]/);
+  assert.match(css,/\.layer-rail \.rail-btn:is\(\.active,\[aria-pressed="true"\]/);
+  assert.match(css,/background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,var\(--minimal-accent,#657d98\) 6%\)!important/);
+  assert.match(css,/text-shadow:none!important/);
 });

@@ -471,3 +471,17 @@ html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-selecte
   box-shadow:none!important;
   font-weight:600!important;
 }
+/* V33: the older horizontal Map/3D rail can render before the minimalist
+   controls and uses a separate active selector. Normalize every rendered
+   mobile Map selection to the same quiet Espacios slate surface, including
+   the layer-rail variant, regardless of which hydration path created it. */
+html body #app #minimal-map-modes button:is([aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+html body #app .ae-mobile-map-modes .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+html body #app .layer-rail .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"]){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 22%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 94%,var(--minimal-accent,#657d98) 6%)!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+  font-weight:600!important;
+  text-shadow:none!important;
+}
