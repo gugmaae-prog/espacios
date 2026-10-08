@@ -1,11 +1,11 @@
 # Espacios Platform Source Authority
 
-> **Live map topology — 30 September 2026**
+> **Live map topology — verified 8 October 2026**
 >
 > The canonical route is now `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`.
 > The live map exposes a public-safe system view at `/map/system` and `/map/api/system`.
 > The Data Room exists at `/map/data-room` but is currently **restricted** by `DATA_ROOM_PUBLIC=false`.
-> See [docs/architecture.md](docs/architecture.md) and [MAP_SYSTEM_SNAPSHOT_2026-09-30.json](MAP_SYSTEM_SNAPSHOT_2026-09-30.json) for the current production identifiers and connection map.
+> See [docs/architecture.md](docs/architecture.md) for the connection map. [MAP_SYSTEM_SNAPSHOT_2026-09-30.json](MAP_SYSTEM_SNAPSHOT_2026-09-30.json) is the historical 30 September baseline snapshot; current production identifiers are recorded below.
 >
 > **Repository/source authority**
 >
@@ -17,7 +17,15 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V23 verified community DLD history and V25 palette — production, 8 October 2026
+## Current production — V24 Palm Jebel Ali evidence and V27 palette, 8 October 2026
+
+PRs [#89](https://github.com/gugmaae-prog/espacios/pull/89) and [#90](https://github.com/gugmaae-prog/espacios/pull/90) preserve all **1,645 projects and 215 communities**, publish the V24 Palm Jebel Ali source references, and refine the Map's light-theme controls. Production Worker `psr-portfolio-map-v2` version `4305aa61-e0ee-40f8-ac5f-23d10e003f1b` serves **100% traffic** in deployment `9053e1d4-ab2f-4751-8145-5692f14977e9`; the frontend asset token is `20261008-map-palette-v27`. The verified route remains `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`. The Supabase registry reconciles V24 with V27; the Data Room remains restricted.
+
+V24 contains **563,675 published history rows**, **15,063 series**, **11,421 record-series links**, **3,253 sources**, **105 events**, and **7,382 event exposures**. Its published Palm Jebel Ali record exposes five broker-reported price references dated to May 2003 and March 2005; they are asking quotes, not registered sales, and do not prove phase-level appreciation. The [production receipt](docs/verification/history-v24-2026-10-08/README.md) records hashes, source limits, preservation checks, and live verification.
+
+The 42,780-item evidence checklist has 3,148 present, 3,437 partial, 26,895 missing, and 9,300 unestablished requirements: **39,632 (92.64%) remain unresolved**. This is a research-checklist measure, not price-data coverage. No approved annual forecasts exist through 2080; full-history research remains incomplete.
+
+## V23 verified community DLD history — previous production snapshot, 8 October 2026
 
 PR [#87](https://github.com/gugmaae-prog/espacios/pull/87) preserves all 1,645 project and 215 community records and adds **274 exact master-label DLD community series across 44 communities**. The new series contain **15,196 monthly/quarterly aggregate points** and **556,639 unique eligible registered sales**, with registrations through **6 October 2026**. Monthly and quarterly series overlap; they are alternate aggregation frequencies, not independent sales. **7,193 points** meet the minimum sample threshold for price statistics; **8,003 sparse points** retain dates and counts with price statistics withheld. The series were matched to the DLD `master_project_en` label and are not legal boundaries or wider geographic claims. The [V23 production receipt](docs/verification/history-v23-2026-10-08/README.md) documents source vintage, row counts and validation.
 
@@ -25,15 +33,15 @@ V23 contains **563,675 published history rows**, **15,063 series**, **11,421 rec
 
 Coverage remains incomplete. Registered-sale evidence is present for **277 projects and 48 communities**, partial for **1 project and 2 communities**, and missing for **1,367 projects and 165 communities**. Signed-rent evidence is present for 89 records and partial for 1. Complete lifetime sale and rent history remains unestablished for all 1,860 records; dated current valuation remains missing for all. Across 42,780 checklist requirements, 3,148 are present, 3,436 partial, 26,896 missing and 9,300 unestablished; **39,632 (92.64%) remain unresolved**. This is a research-checklist rate, not a percentage of missing prices. The 2027–2080 horizon has **zero validated forecast records**; no future outcome is presented as observed data.
 
-The refreshed Map uses the subdued Espacios V25 slate selection state in light and dark themes. Gold was inherited UI styling, never a price or appreciation signal. Worker `psr-portfolio-map-v2` version `379cffef-0769-4834-be08-c937fd3cb24c` serves 100% traffic; deployment `3b5ab3a6-cc74-4697-a3e7-854d4d6610f3`. The Data Room remains restricted. The next best research pass is direct, phase-verified history for unresolved project records—starting with Palm Jebel Ali—followed by signed rents, occupancy, actual completion dates and validated annual scenario inputs.
+At the V23 release, the Map used the subdued Espacios V25 slate selection state in light and dark themes. Gold was inherited UI styling, never a price or appreciation signal. Worker `psr-portfolio-map-v2` version `379cffef-0769-4834-be08-c937fd3cb24c` served 100% traffic in deployment `3b5ab3a6-cc74-4697-a3e7-854d4d6610f3`. The Data Room remained restricted. The next best research pass was direct, phase-verified history for unresolved project records—starting with Palm Jebel Ali—followed by signed rents, occupancy, actual completion dates and validated annual scenario inputs.
 
-## V24 Palm Jebel Ali launch-price references and V26 palette — release candidate, 8 October 2026
+## V24 Palm Jebel Ali launch-price references and V27 palette — production record, 8 October 2026
 
 V24 preserves the complete V23 catalogue and adds five dated, community-level published price references for Palm Jebel Ali from a contemporaneous [Gulf News report](https://gulfnews.com/business/property/realty-talk-an-in-depth-view-of-the-palm-projects-1.282042). The report says the original Palm Jebel Ali launch was in May 2003 and gives launch quotes of AED 2.86m for Garden Homes, AED 5.115m for Signature Villas and AED 2m/AED 3m for Waterhomes. It also reports Waterhomes resale quotes at AED 2.9m and above in March 2005. These are broker-reported asking references, not registered transactions or independently verified developer price lists. Waterhome type and exact unit identity are unspecified, so the figures do not establish a like-for-like appreciation rate or current-phase price.
 
 The community already has 415 area-matched DLD registered-sale rows across 57 distinct period labels; those rows establish the community area only and are not mapped to an individual villa phase. There are no new registered sales or DLD series in V24, no signed-rent history, and no approved annual forecasts through 2080. The V24 checklist moves Palm Jebel Ali's advertised-price evidence from missing to partial; the global ledger remains 39,632 of 42,780 requirements unresolved (92.64%), a research-checklist rate rather than a price-data coverage percentage. See the [V24 evidence receipt](docs/verification/history-v24-2026-10-08/README.md).
 
-The V26 Map refinement replaces the dark selected pill and the remaining legacy gold accents with a pale slate selection state aligned with the Espacios surface palette. Gold was only inherited interface styling; it never encoded appreciation or value. Production publication and live identifiers will be recorded in the V24 receipt after independent route, asset and history verification.
+The V27 Map refinement replaces the dark selected pill and inherited navy/gold light-theme category cards with pale slate surfaces and readable slate text. Gold was legacy interface styling; it never encoded appreciation or value. The live `/map` response serves V27 HTML, JS and CSS assets, and the mobile 332px view was checked after deployment.
 
 ## V22 verified DLD sales — previous production snapshot, 8 October 2026
 
@@ -41,7 +49,7 @@ PR [#85](https://github.com/gugmaae-prog/espacios/pull/85) adds 2,067 DLD-regist
 
 The additions comprise 164 monthly and 73 quarterly points; these frequencies overlap. 54 points meet the existing sample threshold and publish price statistics; 183 retain only counts and date spans. All 18 exact series were independently loaded through the live record-history API. None of this establishes a complete lifetime price or rent history. See the [V22 production receipt](docs/verification/history-v22-2026-10-08/README.md) for identities, provenance and limitations.
 
-The current Map uses the V25 Espacios selection palette. Gold came from inherited premium-shell styles, not property appreciation. Selected controls now use a theme-aware slate surface and quiet underline. Worker `psr-portfolio-map-v2` version `14de53a0-553e-4213-8819-d849ff15a381` serves 100% traffic; the Supabase release registry matches the V22 snapshot and V25 frontend. The Data Room remains restricted.
+At the V22 release, the Map used the V25 Espacios selection palette. Gold came from inherited premium-shell styles, not property appreciation. Selected controls used a theme-aware slate surface and quiet underline. Worker `psr-portfolio-map-v2` version `14de53a0-553e-4213-8819-d849ff15a381` served 100% traffic; the Supabase release registry matched the V22 snapshot and V25 frontend. The Data Room remained restricted.
 
 The refreshed evidence checklist marks 3,106 present, 3,433 partial, 26,941 missing and 9,300 unestablished requirements out of 42,780. 39,674 (92.74%) remain unresolved; this checklist rate is not a price-data completeness rate. No annual forecast through 2080 is approved. The research goal remains incomplete.
 
@@ -63,11 +71,11 @@ The source extract contains **561,282 eligible sales** from **2 June 2003 to 31 
 
 This is a latest-vintage descriptive extract, not a point-in-time history. It does not establish a project's lifetime prices, rents, completion, occupancy, or a causal event effect. The evidence checklist at the V20 cutoff showed **39,684 of 42,780 requirements unresolved (92.76%)**; this requirement measure is not a percentage of missing prices. There were **zero approved 2080 forecasts**. Annual scenario slots remain conditional and unsupported values remain null. The V20 production snapshot root is `98d686ca18d6e887cb9dff2eed58c6ac9dfe6a781901f4cc9731e6a3f158fa28`; V21 preserves it and adds the later evidence pass. See the [V20 production receipt](docs/verification/history-v20-2026-10-08/README.md) and [V21 production receipt](docs/verification/history-v21-2026-10-08/README.md).
 
-## Seamless Map palette refinement — 8 October 2026 (Dubai)
+## Earlier palette-only deployment — V24 frontend token with V21 history snapshot, 8 October 2026
 
-The gold came from legacy premium-shell selection and fallback styling; it never represented appreciation or investment value. PR #80 removes the high-contrast navy fill from the mobile Map controls, including before the controls finish loading. The selected state now uses the Espacios theme-aware panel, a soft slate border and a restrained underline. V24 also updates the immutable asset key so browsers fetch the new styles after refresh. Selection remains an orientation cue; map colors do not indicate value.
+The gold came from legacy premium-shell selection and fallback styling; it never represented appreciation or investment value. PR #80 removed the high-contrast navy fill from the mobile Map controls, including before the controls finish loading. The selected state used the Espacios theme-aware panel, a soft slate border and a restrained underline. That V24 frontend token updated the immutable asset key while preserving the V21 history snapshot; V27 is the current palette release. Selection remains an orientation cue; map colors do not indicate value.
 
-**Current production release (8 October 2026, Dubai time):** PRs [#80](https://github.com/gugmaae-prog/espacios/pull/80) and [#81](https://github.com/gugmaae-prog/espacios/pull/81) are merged at `5ffb8c973cf8cff14e81201a150c536446dad437`. Worker `psr-portfolio-map-v2` version `489b88f0-aa94-4ed6-8448-5bffa1e599c3` serves 100% of traffic in deployment `405b7e44-a309-47fe-94e9-13494048bfc3`. Live `/map` returns HTTP 200 with V24 asset tokens; `/map/api/system` confirms all 1,645 projects, 215 communities, the matching V24 control-plane release and a restricted Data Room. This visual-only release preserves the V21 evidence snapshot and all 1,860 records. See the [V24 production receipt](docs/verification/map-palette-v24-2026-10-08/README.md).
+**At that earlier deployment:** PRs [#80](https://github.com/gugmaae-prog/espacios/pull/80) and [#81](https://github.com/gugmaae-prog/espacios/pull/81) merged at `5ffb8c973cf8cff14e81201a150c536446dad437`. Worker `psr-portfolio-map-v2` version `489b88f0-aa94-4ed6-8448-5bffa1e599c3` served 100% of traffic in deployment `405b7e44-a309-47fe-94e9-13494048bfc3`. The live `/map` returned HTTP 200 with V24 asset tokens and `/map/api/system` confirmed the V21 snapshot and restricted Data Room. That visual-only release preserved the V21 evidence snapshot and all 1,860 records. See the [V24 palette receipt](docs/verification/map-palette-v24-2026-10-08/README.md).
 
 The preserved V21 ledger has 39,681 of 42,780 requirements unresolved (92.76%), and no approved annual forecasts through 2080. This is a checklist rate, not a percentage of missing prices. V24 adds no historical, present-price or forecast observations; unsupported history and scenario values remain explicit.
 
