@@ -432,16 +432,15 @@ html body #app :is(
   color:var(--su-ink,#27323b)!important;
   box-shadow:none!important;
 }
-/* V29: keep the mobile map mode control visually attached to the map instead
-   of presenting its active option as a separate dark pill. The shared panel
-   surface carries the control; a soft slate tint and border identify the
-   current mode without using the retired gold/cyan premium treatment. */
+/* V30: normalize every selected-state signal used by the mobile Map-mode
+   controls. Use the exact theme surface so a late legacy state cannot paint
+   a separate navy pill over the map. */
 html body #app :is(
   #minimal-map-modes,
   .ae-mobile-map-modes
-) :is(button[aria-pressed="true"],.rail-btn.active,#toggle-3d.active){
-  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 12%,var(--su-line,#d8dee3))!important;
-  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 78%,transparent)!important;
+) :is(button[aria-pressed="true"],.rail-btn.active,.rail-btn[aria-pressed="true"],.rail-btn[aria-current="true"],.rail-btn[aria-selected="true"],#toggle-3d.active){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 16%,var(--su-line,#d8dee3))!important;
+  background:var(--su-panel,#f4f6f7)!important;
   color:var(--su-ink,#27323b)!important;
   box-shadow:none!important;
   font-weight:600!important;
