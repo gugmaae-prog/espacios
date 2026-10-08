@@ -432,3 +432,25 @@ html body #app :is(
   color:var(--su-ink,#27323b)!important;
   box-shadow:none!important;
 }
+/* V29: keep the mobile map mode control visually attached to the map instead
+   of presenting its active option as a separate dark pill. The shared panel
+   surface carries the control; a soft slate tint and border identify the
+   current mode without using the retired gold/cyan premium treatment. */
+html body #app :is(
+  #minimal-map-modes,
+  .ae-mobile-map-modes
+) :is(button[aria-pressed="true"],.rail-btn.active,#toggle-3d.active){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 12%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 78%,transparent)!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+  font-weight:600!important;
+}
+html body #app .ae-mobile-map-modes .rail-btn{
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 94%,transparent)!important;
+  border-color:color-mix(in srgb,var(--su-line,#d8dee3) 86%,transparent)!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:0 1px 5px #172b3a0a!important;
+  -webkit-backdrop-filter:blur(12px) saturate(110%)!important;
+  backdrop-filter:blur(12px) saturate(110%)!important;
+}
