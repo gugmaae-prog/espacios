@@ -1,3 +1,13 @@
+# DLD Ejari rent recapture — 7 October 2026 vintage, retrieved 8 October
+
+The official public [Ejari rent-contract dataset](https://data.dubai/en/l/468586) was downloaded from the Dubai Open Data bulk-file route, not the permission-gated API. The accompanying [DLD buildings register](https://data.dubai/en/l/459613) provides current project IDs. The [Dubai Open Data licence](https://data.dubai/en/terms-conditions) permits attributed derivatives and prohibits resale of raw data; original CSV exports and contract identifiers remain local and are not in the repository, D1, R2, or public API.
+
+The 7 October 2026 snapshot contains 10,573,532 source rows. The aggregate pass required a single-property contract, valid contract start no later than the snapshot, positive annual amount and floor area, complete segment dimensions, and a unique exact project identity. It matched normalized current DLD building name plus exact area to one current DLD project ID, then required that ID to match one identity-verified Espacios project. Fuzzy names, ambiguous project IDs, community fan-out, and incomplete price segments were excluded. The reproducible accepted input is 71,477 contracts across 90 already represented project records; 64 records have 180 contracts starting after 3 October. Source observation dates run from 25 January 2015 to 7 October 2026. The source publication time is unknown; first verified availability in this capture is 8 October 2026 at 15:53:50 UTC.
+
+V30 refreshes 1,974 existing monthly and quarterly rent series with 35,198 aggregate period rows and adds 84 previously absent period cells. It adds no new series or catalogue records and changes no community history. Statistics remain separated by usage, business/property type, registration type and subtype; overlapping monthly and quarterly summaries are not additive. Medians and quartiles are withheld below 20 contracts. October 2026 is a partial month, and the latest source vintage is not admissible in earlier point-in-time backtests. No contract IDs, source rows, market uplift, complete lifetime history, or forecast values are distributed. See the [V30 release receipt](verification/history-v30-2026-10-08/README.md).
+
+---
+
 # Latest additive candidate, 5 October 2026
 
 The `20261005-enrichment-v3` candidate preserves the prior collection and adds reviewed sources, official native cohorts and a 23-item evidence ledger for every record. All 1,645 projects and 215 communities remain. Earlier counts below describe retained collection vintages, not this latest total.

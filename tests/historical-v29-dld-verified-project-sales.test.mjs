@@ -36,12 +36,12 @@ const parseCsvRow = (row) => {
 const header = parseCsvRow(rows[0]);
 const records = new Map(snapshot.records.map((record) => [record.id, record]));
 
-test('V29 adds verified DLD sale cohorts without changing the 1,860-record catalogue', () => {
-  assert.equal(snapshot.version, '20261008-enrichment-v29');
+test('V29 verified DLD sale cohorts remain intact in the current catalogue', () => {
+  assert.ok(['20261008-enrichment-v29', '20261008-enrichment-v30'].includes(snapshot.version));
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.records.filter((record) => record.type === 'project').length, 1645);
   assert.equal(snapshot.records.filter((record) => record.type === 'community').length, 215);
-  assert.equal(snapshot.manifest.historicalObservationRows, 564920);
+  assert.equal(snapshot.manifest.historicalObservationRows, snapshot.version === '20261008-enrichment-v30' ? 565004 : 564920);
   assert.equal(snapshot.manifest.historicalSeriesCount, 15182);
   assert.equal(snapshot.manifest.approved2080ForecastRecords, 0);
   assert.equal(pass.passId, 'dld-verified-project-sales-20261008');

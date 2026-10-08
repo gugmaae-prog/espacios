@@ -15,13 +15,13 @@ test('V26 keeps the DLD-derived September register separate and exact', () => {
   const pass = readJson('data/historical-intelligence/dld-derived-project-register-enrichment-20261008.json');
   const manifest = snapshot.manifest.dldDerivedProjectRegisterSeptember2026;
 
-  assert.ok(['20261008-enrichment-v26', '20261008-enrichment-v27', '20261008-enrichment-v28', '20261008-enrichment-v29'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v26', '20261008-enrichment-v27', '20261008-enrichment-v28', '20261008-enrichment-v29', '20261008-enrichment-v30'].includes(snapshot.version));
   assert.equal(publication.version, snapshot.version);
   assert.equal(runtime.version, snapshot.version);
   assert.deepEqual(publication.counts, {
-    collectedHistoricalRows: snapshot.version === '20261008-enrichment-v29' ? 565136 : 563954, communities: 215, events: 105, exposures: 7382,
-    historicalRows: snapshot.version === '20261008-enrichment-v29' ? 564920 : 563738, originalCollectionRows: 122268, projects: 1645, records: 1860,
-    rightsPendingRows: 216, series: snapshot.version === '20261008-enrichment-v29' ? 15182 : 15126, sources: snapshot.version === '20261008-enrichment-v29' ? 3292 : snapshot.version === '20261008-enrichment-v28' ? 3291 : snapshot.version === '20261008-enrichment-v27' ? 3255 : 3254, supplementHistoricalRows: 18539,
+    collectedHistoricalRows: snapshot.version === '20261008-enrichment-v30' ? 565220 : snapshot.version === '20261008-enrichment-v29' ? 565136 : 563954, communities: 215, events: 105, exposures: 7382,
+    historicalRows: snapshot.version === '20261008-enrichment-v30' ? 565004 : snapshot.version === '20261008-enrichment-v29' ? 564920 : 563738, originalCollectionRows: 122268, projects: 1645, records: 1860,
+    rightsPendingRows: 216, series: snapshot.version === '20261008-enrichment-v30' || snapshot.version === '20261008-enrichment-v29' ? 15182 : 15126, sources: snapshot.version === '20261008-enrichment-v30' ? 3294 : snapshot.version === '20261008-enrichment-v29' ? 3292 : snapshot.version === '20261008-enrichment-v28' ? 3291 : snapshot.version === '20261008-enrichment-v27' ? 3255 : 3254, supplementHistoricalRows: 18539,
   });
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.manifest.approved2080ForecastRecords, 0);
