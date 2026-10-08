@@ -21,4 +21,15 @@ historical observations, source evidence, event links or forecast data.
 - `npm run verify` passed, including all 166 repository tests.
 - `npm run cf:dry-run` passed for `wrangler.production.jsonc`; the existing D1,
   R2, service and AI bindings were retained.
-- The live map is still on V24 pending publication of this change.
+- [PR #83](https://github.com/gugmaae-prog/espacios/pull/83) merged as
+  `56838c40cf5427de29de9cd0f6881f7d0f7e8f10`.
+- Production Worker `psr-portfolio-map-v2` is deployed at 100% on version
+  `1eb192f5-078f-4c6f-8389-5a210cfc76bd`; deployment
+  `01941ee9-0ab1-4b11-ad5b-0c02887e9244`.
+- `https://espacios.me/map` returned HTTP 200 with V25 HTML, JavaScript and
+  CSS release keys. The selected-state rules are embedded in the V25 HTML
+  stylesheet. `/map/api/system` still reports the Data Room as restricted and
+  the existing map-shell/service-binding topology.
+- After a browser refresh, the map's recoverable loading card appeared once;
+  Retry restored the map and its timeline, and the V25 selected Map control
+  rendered on the shared Espacios surface.
