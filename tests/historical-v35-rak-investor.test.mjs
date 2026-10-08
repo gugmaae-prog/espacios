@@ -7,11 +7,11 @@ import {createHash} from 'node:crypto';
 import {validateObservation,filterTrainingFold,isAvailableAsOf} from '../src/historical-intelligence/core.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p)),unpack=p=>JSON.parse(gunzipSync(fs.readFileSync(p)));
 const snapshot=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json'),packet=read('data/historical-intelligence/rak-properties-investor-pass35-20261008.json');
-const before=unpack('data/historical-intelligence/objects/d0fec5b56923a727846875e2daecdc6aa324d20377375319d347951a645668be.json.gz'),after=unpack(publication.rootIndex.path),changed=new Set(packet.facts.map(f=>f.recordId)),records=new Map(snapshot.records.map(r=>[r.id,r]));
+const before=unpack('data/historical-intelligence/objects/d0fec5b56923a727846875e2daecdc6aa324d20377375319d347951a645668be.json.gz'),after=unpack('data/historical-intelligence/objects/9ddb117034ebb4012b4c1669fa75e7774967aef17e600d3e1d680388b780372d.json.gz'),changed=new Set(packet.facts.map(f=>f.recordId)),records=new Map(snapshot.records.map(r=>[r.id,r]));
 const hash=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 test('V35 adds exact developer reports while preserving every native financial series, prior observation and unaffected record',()=>{
- assert.equal(snapshot.version,'20261008-enrichment-v35');assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.equal(changed.size,8);assert.equal(packet.facts.length,20);
- assert.equal(publication.counts.sources,3334);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.ok(['20261008-enrichment-v35','20261008-enrichment-v36'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.equal(changed.size,8);assert.equal(packet.facts.length,20);
+ assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v36'?3340:3334);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const prior=new Map(before.records.map(r=>[r.id,r]));
  for(const r of after.records){const old=prior.get(r.id);assert.ok(old);

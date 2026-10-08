@@ -13,7 +13,7 @@ const records = new Map(snapshot.records.map((record) => [record.id, record]));
 const normalize = (value) => value.normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim().replace(/\s+/g, ' ');
 
 test('V31 preserves the catalogue, prior evidence, events and exposes only exact community rent matches', () => {
-  assert.ok(['20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36'].includes(snapshot.version));
   assert.equal(publication.version, snapshot.version);
   assert.equal(publication.counts.records, 1860);
   assert.equal(publication.counts.projects, 1645);

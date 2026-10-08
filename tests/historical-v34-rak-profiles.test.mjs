@@ -15,9 +15,9 @@ const records=new Map(snapshot.records.map(r=>[r.id,r]));
 const sources=new Map(snapshot.sources.map(s=>[s.id,s]));
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 test('V34 preserves all identities, every native financial series, prior observations and unaffected records',()=>{
- assert.ok(['20261008-enrichment-v34','20261008-enrichment-v35'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);
+ assert.ok(['20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);
  assert.equal(records.size,1860);assert.equal(snapshot.records.filter(r=>r.type==='project').length,1645);
- assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v35'?3334:3333);assert.equal(publication.counts.series,16872);assert.equal(publication.counts.historicalRows,633891);
+ assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v36'?3340:snapshot.version==='20261008-enrichment-v35'?3334:3333);assert.equal(publication.counts.series,16872);assert.equal(publication.counts.historicalRows,633891);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);
  assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const oldRecords=new Map(before.records.map(r=>[r.id,r]));

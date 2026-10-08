@@ -1,5 +1,5 @@
 """Merge reviewed, source-backed enrichment; raw scraped pages stay outside the repo."""
-import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip
+import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip, math
 from copy import deepcopy
 from historical_gap_ledger import refresh_research_coverage, period_start
 
@@ -131,7 +131,7 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    if verification=='verified' and not fact.get('primaryEvidence'):raise ValueError('Verified lifecycle requires primary evidence')
    lifecycle_row={**common,'kind':milestone,'date':date,'status':verification,'scope':fact.get('scope','published_reference'),'eventStatus':fact.get('eventStatus','planned' if milestone.startswith('target_') else 'reported'),'primaryEvidence':fact.get('primaryEvidence',False),'label':fact['label'],'note':fact.get('note'),'evidenceClass':fact.get('evidenceClass','source_reported_milestone')}
    if fact.get('registerSnapshotMilestone') or fact.get('preserveAdditionalLifecycleFields'):
-    for optional in ['dateBasis','progressPercent','identityVerified']:
+    for optional in ['dateBasis','progressPercent','identityVerified','sourcePage','phaseLabel','relatedMilestoneIds','dateReconciliation']:
      if optional in fact:lifecycle_row[optional]=fact[optional]
    record['lifecycle'].append(lifecycle_row)
    counters['lifecycleFacts']+=1
@@ -141,7 +141,16 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    period=str(obs.get('period','')); match=re.fullmatch(r'(\d{4})-?Q([1-4])',period,re.I)
    start=f'{match[1]}-{(int(match[2])-1)*3+1:02d}-01' if match else period+'-01-01' if len(period)==4 else period+'-01' if len(period)==7 else period
    if start[:10]>asof:raise ValueError('Financial observation after snapshot')
-   if not isinstance(value,(int,float)) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
+   if not isinstance(value,(int,float)) or isinstance(value,bool) or not math.isfinite(value) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
+   if 'quotedPriceRange' in obs:
+    quoted=obs['quotedPriceRange']
+    numeric=lambda n:isinstance(n,(int,float)) and not isinstance(n,bool) and math.isfinite(n) and n>0
+    if not isinstance(quoted,dict) or not all(numeric(quoted.get(k)) for k in ['low','high']) or quoted['high']<quoted['low']:
+     raise ValueError('Invalid advertised price range endpoints')
+    if obs.get('observationKind')!='asking_quote' or obs.get('metric')!='price' or quoted.get('unit')!=obs.get('unit') or value!=quoted['low'] or not quoted.get('basis') or not obs.get('segment'):
+     raise ValueError('Advertised price range requires a native cohort, basis, unit and matching lower endpoint')
+    if obs.get('currentSnapshotEligible') is not False or obs.get('includeInCurrentSnapshot') is not False:
+     raise ValueError('A cohort range cannot become a single current price')
    if scope=='subject' and not (fact.get('identityVerified') is True and proofids):raise ValueError('Unproven subject financial fact')
    evidence_class=fact.get('evidenceClass')
    mirrored='tenant_mirror' in sources[sourceids[0]].get('classification','')
