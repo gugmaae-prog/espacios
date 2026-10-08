@@ -25,7 +25,9 @@
       "rawBodyRetained": false,
       "rawBodyRedistributed": false,
       "primaryEvidence": true,
-      "availabilityBasis": "The CSV file was downloaded directly from the public DLD project-register dataset page; first prior retrieval is retained from the existing source register."
+      "availabilityBasis": "The CSV file was downloaded directly from the public DLD project-register dataset page; first prior retrieval is retained from the existing source register.",
+      "preserveRevision": true,
+      "revisionOfSourceId": "dld-official-projects-20260706"
     }
   ],
   "facts": [

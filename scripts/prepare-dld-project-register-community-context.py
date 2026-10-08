@@ -99,6 +99,8 @@ def build_packet(input_path, retrieved_at, output_path):
     # earlier provenance entry.
     source = {
         "id": SOURCE_ID,
+        "preserveRevision": True,
+        "revisionOfSourceId": "dld-official-projects-20260706",
         "publisher": "Dubai Land Department via Dubai Data and Statistics Establishment",
         "url": SOURCE_URL,
         "datasetId": 467654,
