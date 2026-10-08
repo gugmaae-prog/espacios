@@ -19,7 +19,10 @@ test('minimal composition exposes the approved controls without changing evidenc
 });
 
 test('bundled map focus and fallback colors use the shared neutral Espacios theme',()=>{
-  assert.match(css,/--minimal-accent:var\(--su-muted\)/);
+  assert.match(css,/--minimal-accent:var\(--minimal-blue\)/);
+  assert.match(css,/html body #app \.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 92%,transparent\)!important[\s\S]*?color:var\(--su-ink,#27323b\)!important/);
+  assert.match(css,/\.layer-rail \.rail-btn\.active,[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,var\(--su-ink,#27323b\) 6%\)!important[\s\S]*?box-shadow:inset 0 -2px 0 color-mix\(in srgb,var\(--minimal-accent,#657d98\) 35%,var\(--su-panel,#f4f6f7\)\)!important/);
+  assert.match(css,/html\{[\s\S]*?--ae-gold:var\(--minimal-accent\)/);
   assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
   assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 14%,var\(--su-line\)\)/);
   assert.match(css,/\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*?background:var\(--minimal-selected\)!important/);
@@ -34,6 +37,7 @@ test('bundled map focus and fallback colors use the shared neutral Espacios them
   assert.ok(worker.includes('.ae-mobile-map-modes .rail-btn{'));
   assert.ok(worker.includes('background:var(--minimal-surface)!important'));
   assert.ok(worker.includes('box-shadow:inset 0 -2px 0 var(--minimal-accent)!important'));
+  assert.ok(worker.includes('background:color-mix(in srgb,var(--su-panel,#f4f6f7) 92%,transparent)!important'));
   assert.match(css,/\.ae-search-map-tools button[\s\S]*?color:var\(--su-muted\)!important/);
   assert.match(css,/\.map-bottom \.dot\.fallback\{\s*background:#89959a!important;box-shadow:none!important/);
   assert.match(css,/--eg-theme-apricot:var\(--minimal-neutral\)/);
@@ -115,7 +119,7 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v23'));
+  assert.ok(worker.includes('20261008-map-palette-v24'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });
