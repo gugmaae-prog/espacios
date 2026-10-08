@@ -485,3 +485,25 @@ html body #app .layer-rail .rail-btn:is(.active,[aria-pressed="true"],[aria-curr
   font-weight:600!important;
   text-shadow:none!important;
 }
+/* V34: bring the Map-mode pill closer to the shared Espacios surface. A
+   tiny cool-slate tint, fine border and stronger label carry the active state;
+   the opaque navy fill and decorative accent bar belong to the legacy shell. */
+html[data-minimal-map="1"] body #app :is(
+  #minimal-map-modes button:is([aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+  .ae-mobile-map-modes .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+  .layer-rail .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"])
+){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 10%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 98%,var(--minimal-accent,#657d98) 2%)!important;
+  background-image:none!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+  filter:none!important;
+  font-weight:600!important;
+  text-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app :is(#minimal-map-modes,.ae-mobile-map-modes){
+  border-color:color-mix(in srgb,var(--su-line,#d8dee3) 92%,transparent)!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 94%,transparent)!important;
+  box-shadow:0 1px 5px #172b3a0a!important;
+}

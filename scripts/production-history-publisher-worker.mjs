@@ -48,5 +48,9 @@ export default{async fetch(request,env){
    if(body.mode==='batch')return json({result:await env.DB.batch(statements)});
   }
   return json({error:'Not found'},404);
- }catch(error){return json({error:error.message},400);}
+ }catch(error){
+  const message=String(error?.message||error);
+  const transient=/internal error|please try again|temporarily unavailable|timed? out|overloaded/i.test(message);
+  return json({error:message},transient?503:400);
+ }
 }};

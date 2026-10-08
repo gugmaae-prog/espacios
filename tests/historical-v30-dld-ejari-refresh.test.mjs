@@ -11,21 +11,21 @@ const records = new Map(snapshot.records.map((record) => [record.id, record]));
 const sourceId = 'dld-official-rents-recapture-20261008';
 const rentSource = sources.get(sourceId);
 
-test('V30 retains the complete catalogue and prior financial/event ledgers', () => {
-  assert.equal(snapshot.version, '20261008-enrichment-v30');
+test('V31 retains V30 project rent evidence and the complete catalogue/event ledgers', () => {
+  assert.equal(snapshot.version, '20261008-enrichment-v31');
   assert.equal(publication.version, snapshot.version);
   assert.deepEqual(publication.counts, {
-    collectedHistoricalRows: 565220, communities: 215, events: 105, exposures: 7382,
-    historicalRows: 565004, originalCollectionRows: 122268, projects: 1645, records: 1860,
-    rightsPendingRows: 216, series: 15182, sources: 3294, supplementHistoricalRows: 18539,
+    collectedHistoricalRows: 634107, communities: 215, events: 105, exposures: 7382,
+    historicalRows: 633891, originalCollectionRows: 122268, projects: 1645, records: 1860,
+    rightsPendingRows: 216, series: 16872, sources: 3295, supplementHistoricalRows: 18539,
   });
-  assert.equal(snapshot.manifest.historicalSeriesCount, 15182);
-  assert.equal(snapshot.records.reduce((count, record) => count + record.historySeries.length, 0), 11540);
+  assert.equal(snapshot.manifest.historicalSeriesCount, 16872);
+  assert.equal(snapshot.records.reduce((count, record) => count + record.historySeries.length, 0), 13230);
   assert.equal(snapshot.manifest.approved2080ForecastRecords, 0);
   const rentCoverage = snapshot.records.map((record) => record.researchStatus.itemCoverage.signed_rent_history.status);
-  assert.equal(rentCoverage.filter((status) => status === 'present').length, 89);
-  assert.equal(rentCoverage.filter((status) => status === 'partial').length, 1);
-  assert.equal(rentCoverage.filter((status) => status === 'missing').length, 1770);
+  assert.equal(rentCoverage.filter((status) => status === 'present').length, 132);
+  assert.equal(rentCoverage.filter((status) => status === 'partial').length, 3);
+  assert.equal(rentCoverage.filter((status) => status === 'missing').length, 1725);
   assert.equal(snapshot.records.filter((record) => record.type === 'project').length, 1645);
   assert.equal(snapshot.records.filter((record) => record.type === 'community').length, 215);
   assert.equal(snapshot.events.length, 105);

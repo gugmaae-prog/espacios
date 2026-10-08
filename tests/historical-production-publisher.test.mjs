@@ -42,6 +42,7 @@ test('production publisher adapter accepts only the released bridge endpoints',(
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v27.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v29.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v30.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v31.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://attacker.example'),false);
  assert.equal(isApprovedPublisherURL('http://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),false);
 });
@@ -79,4 +80,10 @@ test('R2 requires matching bytes and conditional creation, preserving a concurre
  const headers={Authorization:'Bearer test-token','X-Snapshot-Version':'version','X-Content-SHA256':sha};
  let response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers,body:'incorrect'}),{...env,MARKET_R2:storage});assert.equal(response.status,400);assert.equal(writes,0);
  response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers,body:bytes}),{...env,MARKET_R2:storage});assert.equal(response.status,200);assert.equal((await response.json()).created,false);assert.equal(writes,1);
+});
+test('release bridge marks transient Cloudflare R2 failures retryable',async()=>{
+ globalThis.crypto??=webcrypto;
+ const bytes=new TextEncoder().encode('retryable'),sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex'),key=`research/published/2026-10-08/historical-intelligence/objects/${sha}.json.gz`;
+ const response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers:{Authorization:'Bearer test-token','X-Snapshot-Version':'version','X-Content-SHA256':sha},body:bytes}),{...env,MARKET_R2:{put:async()=>{throw Error('put: We encountered an internal error. Please try again. (10001)')}}});
+ assert.equal(response.status,503);assert.match((await response.json()).error,/internal error/);
 });

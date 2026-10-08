@@ -86,6 +86,9 @@ test('active map controls share the soft Espacios palette in light and dark them
   assert.match(css,/data-espacios-theme="light"[\s\S]*?\.category-list button:not\(\.active\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel\) 90%,transparent\)!important/);
   assert.match(css,/data-espacios-theme="dark"[\s\S]*?--minimal-blue:#a7bbcf/);
   assert.match(css,/V28: the old shell can repaint the mobile Map mode[\s\S]*?#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 4%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?box-shadow:none!important/);
+  assert.match(css,/V34: bring the Map-mode pill closer to the shared Espacios surface/);
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn:is\(\.active,[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 98%,var\(--minimal-accent,#657d98\) 2%\)!important;[\s\S]*?background-image:none!important;[\s\S]*?box-shadow:none!important/);
+  assert.match(css,/html\[data-minimal-map="1"\] body #app :is\(#minimal-map-modes,\.ae-mobile-map-modes\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,transparent\)!important/);
 });
 
 test('mobile map modes normalize selected signals to the theme surface',()=>{
@@ -146,7 +149,7 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v33'));
+  assert.ok(worker.includes('20261008-map-palette-v34'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });
