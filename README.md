@@ -17,6 +17,16 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V22 verified DLD sales and V25 palette — production, 8 October 2026
+
+PR [#85](https://github.com/gugmaae-prog/espacios/pull/85) adds 2,067 DLD-registered sales for eight exact project matches. The V22 snapshot preserves the full 1,645-project and 215-community inventory, prior evidence and event links. It contains 548,479 published history rows, 14,789 series and 3,251 sources; its 216 rights-pending rows remain outside the published total. DLD registration dates are not contract or transfer dates, the source publication timestamp is unknown, and this vintage is not valid for backtests before its first retrieval on 8 October 2026.
+
+The additions comprise 164 monthly and 73 quarterly points; these frequencies overlap. 54 points meet the existing sample threshold and publish price statistics; 183 retain only counts and date spans. All 18 exact series were independently loaded through the live record-history API. None of this establishes a complete lifetime price or rent history. See the [V22 production receipt](docs/verification/history-v22-2026-10-08/README.md) for identities, provenance and limitations.
+
+The current Map uses the V25 Espacios selection palette. Gold came from inherited premium-shell styles, not property appreciation. Selected controls now use a theme-aware slate surface and quiet underline. Worker `psr-portfolio-map-v2` version `14de53a0-553e-4213-8819-d849ff15a381` serves 100% traffic; the Supabase release registry matches the V22 snapshot and V25 frontend. The Data Room remains restricted.
+
+The refreshed evidence checklist marks 3,106 present, 3,433 partial, 26,941 missing and 9,300 unestablished requirements out of 42,780. 39,674 (92.74%) remain unresolved; this checklist rate is not a price-data completeness rate. No annual forecast through 2080 is approved. The research goal remains incomplete.
+
 ## V21 113 Residences evidence pass — production, 8 October 2026
 
 The production V21 snapshot preserves all **1,645 projects and 215 communities** and adds **46 individually retained DLD-derived sale registrations** for 113 Residences, four separately labelled developer starting-price quotes, one project-register snapshot, and planned construction/handover milestones. It resolves one exact-name/developer/area project candidate, leaving **262 project candidates** and **59 community candidates**. Its earliest evidence in this pass is 30 July 2026; that is not a claim of the project's first-ever sale.
