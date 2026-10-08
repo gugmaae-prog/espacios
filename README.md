@@ -17,6 +17,10 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## V38 catalogue correction — release candidate, 9 October 2026
+
+Nura's malformed developer field is corrected from `nura` to `RAK Properties` with a checksum-pinned primary source and an original-value audit trail. Exact ID, name, emirate and expected-value checks prevent the revision from affecting another phase or overwriting newer upstream metadata. This metadata-only change retains the V34 evidence archive and the soft Espacios palette; it adds no financial observations or completeness credit. See the [V38 correction and release receipt](docs/verification/catalogue-v38-2026-10-09/README.md).
+
 ## Current production — V34 history and V37 map UI, 9 October 2026 (Dubai)
 
 V34 preserves all **1,645 projects, 215 communities, and 1,860 record identities**. It adds **102 month-labelled construction reports and 13 completion/schedule statements across 13 exact RAK Properties projects**, using 13 captured primary profile vintages. Progress months span March 2024–August 2026, with gaps retained. Original Mirasol and Mirasol II are kept separate; Anantara apartment and villa reports retain their portion-specific scope. Component percentages, zero values, declining reports and conflicting vintages remain visible. Developer-reported 100% construction does not establish legal completion, occupancy or rental income. This pass adds no sale, rent, valuation or forecast observations. See the [V34 source, identity and production receipt](docs/verification/history-v34-2026-10-08/README.md).
@@ -31,7 +35,7 @@ Gold came from inherited premium-shell styling; it never represented value or ap
 
 V33's 40 lifecycle facts and four historical advertisements remain preserved, as does its rule requiring explicit evidence before a launch date can exclude earlier price periods. See the [V33 receipt](docs/verification/history-v33-2026-10-08/README.md). V32's preceding 22 lifecycle facts and five segmented advertised prices remain preserved; see the [V32 receipt](docs/verification/history-v32-2026-10-08/README.md). V31's retained [DLD Ejari evidence](https://data.dubai/en/l/468586) includes 1,690 community-level series across 45 exact-match communities and 68,887 monthly/quarterly aggregate points. Its 1,447,212 eligible contracts and 37 native area IDs remain distinct from overlapping project cohorts. Observation dates span 30 December 2007–7 October 2026, with partial October coverage and sparse cells labelled. See the [V31 receipt](docs/verification/history-v31-2026-10-08/README.md) and [source terms](https://data.dubai/en/terms-conditions).
 
-**Next evidence actions:** resolve Gateway and South Bay phase identifiers using explicit primary records; correct Nura's documented malformed catalogue developer field through an audited revision; continue exact-subject sale/rent, dated current valuations and occupancy sourcing; specify and validate disclosed annual scenario assumptions through 2080. The municipal PDF candidate currently returns 404, and Gateway's catalogue brochure requires contact details; neither research attempt closes a gap. See the [V34 next actions](docs/verification/history-v34-2026-10-08/README.md#next-evidence-actions).
+**Next evidence actions:** resolve Gateway and South Bay phase identifiers using explicit primary records; continue exact-subject sale/rent, dated current valuations and occupancy sourcing; specify and validate disclosed annual scenario assumptions through 2080. The municipal PDF candidate currently returns 404, and Gateway's catalogue brochure requires contact details; neither research attempt closes a gap. See the [V34 next actions](docs/verification/history-v34-2026-10-08/README.md#next-evidence-actions).
 
 ## V23 verified community DLD history — previous production snapshot, 8 October 2026
 

@@ -119,6 +119,21 @@ export function applyCommunityCorrections(payload,corrections){
   return {...project,area:correction.area,communityId:correction.communityId,communityAssociationReview:{...clone(correction),priorArea:project.area??null,priorCommunityId:project.communityId??null}};
  })};
 }
+/** Exact subject and expected old value only; preserve audit fields and input. */
+export function applyCatalogueRevisions(payload,revisions){
+ if(!Array.isArray(payload?.projects))return payload;
+ const identities=new Map();
+ for(const p of payload.projects){const id=p.id||'project:'+p.slug;identities.set(id,(identities.get(id)||0)+1);}
+ return {...payload,projects:payload.projects.map(project=>{
+  const identity=project.id||'project:'+project.slug;
+  const matches=revisions.filter(r=>r.recordId===identity);
+  if(matches.length!==1||identities.get(identity)!==1)return project;
+  const r=matches[0];
+  // Never relabel a reused slug, another phase, or a newly corrected upstream value.
+  if(r.field!=='developer'||r.verification!=='verified'||r.primaryEvidence!==true||project.emirate!==r.emirate||project.name!==r.catalogueName||project.developer!==r.fromValue)return project;
+  return {...project,developer:r.toValue,catalogueMetadataReviews:[...(project.catalogueMetadataReviews||[]),{...clone(r),priorValue:project.developer}]};
+ })};
+}
 function observationKey(o){
  if(o.transactionId||o.sourceObservationId)return`${o.sourceId}|${o.transactionId||o.sourceObservationId}|${metric(o.metric)||o.metric}`;
  return [o.sourceId,o.seriesId||o.id||'',o.recordId,o.period,metric(o.metric)||o.metric,o.segment||'',o.registration||''].join('|');
