@@ -8,9 +8,9 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261008-enrichment-v25'
+VERSION = '20261008-enrichment-v26'
 ASOF = '2026-10-08'
-ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json','palm-jebel-ali-historical-quotes-20261008.json','dld-project-register-community-context-20261008.json']
+ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json','palm-jebel-ali-historical-quotes-20261008.json','dld-project-register-community-context-20261008.json','dld-derived-project-register-enrichment-20261008.json']
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -336,6 +336,26 @@ def build():
  dates=[period_date(x['Period']) for x in data['history'] if period_date(x['Period'])]
  manifest={'version':VERSION,'asOf':ASOF,'recordCount':1860,'projectCount':1645,'communityCount':215,'historyWindow':{'start':None,'end':ASOF[:7],'basis':'Unknown subject inception; no common invented history start'},'collectionEnvelope':{'start':min(dates),'end':ASOF[:7],'basis':'Collected source observation envelope, not any subject lifecycle'},'historicalObservationRows':public_rows,'collectedHistoricalObservationRows':collected_rows,'rightsPendingObservationRows':inputs['history'].get('excludedRightsPendingRows',0),'historicalSeriesCount':len(series),'recordIdsSHA256':sha(encoded(sorted(known_ids))),'directSubjectSaleHistoryRecords':sum(usable_subject(r,'price',series) for r in records),'directSubjectRentHistoryRecords':sum(usable_subject(r,'rent',series) for r in records),'approved2080ForecastRecords':0,'requiredAnnualMetricSlots':301320,'sevenEmirateCoverage':record_counts,'identityCandidateProjects':sum(1 for r in records if r['type']=='project' and r['researchStatus'].get('identityCandidateCount',0)>0),'identityCandidateCommunities':sum(1 for r in records if r['type']=='community' and r['researchStatus'].get('identityCandidateCount',0)>0),'inputProvenance':inputs,'rawSourcePartitions':data['partitions'],'rawTransactionSource':dld,'partitionBinding':'MARKET_R2','objects':objects,'rightsPendingSourceMetadata':read_json(ROOT/'data/source-review-20260930.json'),'historicalRowsWarning':'Overlapping native aggregates; not independent transactions and not additive with underlying raw transaction rows','completionDefinition':'Every record evaluated; observed financial coverage remains incomplete','publicationPolicy':'No production writes. Candidate-only append-only snapshots; source rights metadata retained.'}
  manifest['directSubjectHistoryCountBasis']='Records with at least one retained non-disputed native subject observation; sparse observations count as evidence, not reliable medians or complete lifetime histories'
+ project_register_path=BASE/'dld-derived-project-register-enrichment-20261008.json'
+ if project_register_path.exists():
+  project_register=read_json(project_register_path)
+  if project_register.get('passId')=='dld-derived-project-register-20260901':
+   source_meta=sources.get('cp-dubai-project-register-2026',{})
+   project_facts=project_register.get('facts',[]); project_milestones=[x.get('milestone',{}) for x in project_register.get('lifecycleMilestones',[])]
+   source_rows=373
+   exact_candidates=len(project_facts)+len(project_register.get('quarantines',[]))
+   manifest['dldDerivedProjectRegisterSeptember2026']={
+    'sourceId':'cp-dubai-project-register-2026','sourceSha256':source_meta.get('sha256'),'sourceRows':source_rows,
+    'sourceSnapshotDate':'2026-09-01','exactProjectRecordsAdded':len({x.get('recordId') for x in project_facts}),
+    'uniqueExactCatalogueNameRowsReviewed':exact_candidates,'exactTitleRowsQuarantined':len(project_register.get('quarantines',[])),
+    'progressSnapshotMilestonesAdded':sum(x.get('kind')=='construction_progress' for x in project_milestones),
+    'expectedStartMilestonesAdded':sum(x.get('kind')=='target_construction_start' for x in project_milestones),
+    'identityRule':'Unique exact catalogue project name + verified DLD registered project ID + exact developer and area agreement with existing official DLD register evidence.',
+    'conflictingSnapshotsPreserved':True,'financialObservationsAdded':0,'valuationObservationsAdded':0,
+    'actualCompletionsAdded':0,'occupancyClaimsAdded':0,'approved2080ForecastRecords':0,
+    'unmatchedRowsExcluded':source_rows-exact_candidates,'allExcludedRows':source_rows-len(project_facts),
+   }
+   manifest['completionDefinition']='Every record evaluated; observed financial coverage remains incomplete; DLD-derived register snapshots do not constitute complete price history or forecasts.'
  manifest['disputedFinancialObservationRows']=sum(bool(re.search(r'conflict|quarantin',str(row['Quality']),re.I)) for row in data['history'])
  manifest['rejectedGeographicContextLinks']=sum(x.get('recordLinkReview',{}).get('status')=='rejected' for r in records for x in r['historySeries'])
  if enrichment:

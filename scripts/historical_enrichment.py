@@ -16,6 +16,25 @@ def load_enrichment(base, sidecars=()):
    raise ValueError('Unsupported enrichment sidecar schema or missing pass identity')
   if any(item.get('passId')==supplement['passId'] for item in packet.get('collection',{}).get('passes',[])):
    raise ValueError('Duplicate enrichment pass identity')
+  # This reviewed pass keeps register snapshots and lifecycle milestones in
+  # separate collections so their evidence classes remain explicit. Normalize
+  # them into the canonical enrichment facts consumed by the reproducible build.
+  if supplement.get('passId')=='dld-derived-project-register-20260901':
+   for fact in supplement.get('facts',[]):
+    fact.setdefault('kind','register');fact.setdefault('status','accepted')
+   for item in supplement.get('lifecycleMilestones',[]):
+    milestone=item['milestone']
+    supplement.setdefault('facts',[]).append({
+     'id':milestone['id'],'kind':'lifecycle','status':'accepted','recordId':item['recordId'],
+     'sourceIds':milestone.get('sourceIds',[]),'firstAvailableAt':milestone.get('firstAvailableAt'),
+     'publishedAt':milestone.get('publishedAt'),'identityBasis':milestone['identityBasis'],
+     'identitySourceIds':milestone.get('identitySourceIds',[]),'identityVerified':milestone.get('identityVerified',False),'milestone':milestone['kind'],
+     'date':milestone['date'],'verification':milestone.get('status','reported'),
+     'scope':milestone.get('scope','subject'),'eventStatus':milestone.get('eventStatus','reported'),
+     'primaryEvidence':milestone.get('primaryEvidence',False),'label':milestone['label'],
+     'note':milestone.get('note'),'evidenceClass':milestone.get('evidenceClass'),
+     'dateBasis':milestone.get('dateBasis'),'progressPercent':milestone.get('progressPercent'),'registerSnapshotMilestone':True,
+    })
   for key in ['sources','facts','seriesLinks','historyInputs','licensedArchives','additionalDatasets','recordResearch','sourceCandidates']:
    packet.setdefault(key,[]).extend(supplement.get(key,[]))
   packet.setdefault('collection',{}).setdefault('passes',[]).append(supplement.get('collection',{}))
@@ -110,7 +129,11 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    if (milestone in ['completion','occupancy'] or fact.get('eventStatus')=='actual') and period_start(date['start'])>asof:raise ValueError('Future actual lifecycle event')
    verification=fact.get('verification','reported')
    if verification=='verified' and not fact.get('primaryEvidence'):raise ValueError('Verified lifecycle requires primary evidence')
-   record['lifecycle'].append({**common,'kind':milestone,'date':date,'status':verification,'scope':fact.get('scope','published_reference'),'eventStatus':fact.get('eventStatus','planned' if milestone.startswith('target_') else 'reported'),'primaryEvidence':fact.get('primaryEvidence',False),'label':fact['label'],'note':fact.get('note'),'evidenceClass':fact.get('evidenceClass','source_reported_milestone')})
+   lifecycle_row={**common,'kind':milestone,'date':date,'status':verification,'scope':fact.get('scope','published_reference'),'eventStatus':fact.get('eventStatus','planned' if milestone.startswith('target_') else 'reported'),'primaryEvidence':fact.get('primaryEvidence',False),'label':fact['label'],'note':fact.get('note'),'evidenceClass':fact.get('evidenceClass','source_reported_milestone')}
+   if fact.get('registerSnapshotMilestone'):
+    for optional in ['dateBasis','progressPercent','identityVerified']:
+     if optional in fact:lifecycle_row[optional]=fact[optional]
+   record['lifecycle'].append(lifecycle_row)
    counters['lifecycleFacts']+=1
   elif kind=='financial':
    scope=fact.get('scope');obs=fact['observation'];value=obs.get('value')
