@@ -55,6 +55,10 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
         cohorts = [x for x in direct if x.get('metric') == metric]
         points = [p for s in cohorts for p in s.get('points', [])
                   if len(p) > 1 and isinstance(p[1], (int, float)) and not isinstance(p[1], bool) and p[1] > 0]
+        sparse_points = [p for s in cohorts for p in s.get('points', [])
+                         if len(p) > 2 and isinstance(p[2], (int, float)) and not isinstance(p[2], bool)
+                         and p[2] > 0 and not (len(p) > 1 and isinstance(p[1], (int, float)) and p[1] > 0)
+                         and not disputed_point(p)]
         transaction_series = [s for s in cohorts if s.get('observationKind') == 'transaction' and s.get('transactionKind') == 'sale']
         transaction_points = [p for s in transaction_series for p in s.get('points', [])
                               if len(p) > 1 and isinstance(p[1], (int, float)) and not isinstance(p[1], bool) and p[1] > 0]
@@ -74,12 +78,15 @@ def refresh_research_coverage(record, series, sources, asof, shared_context=None
             reason = 'Individual registered sale rows are retained with their native dates and units; sparse rows do not establish a comparable median or complete lifetime history.'
         elif accepted:
             reason = 'Verified native subject cohorts retained; presence and sparse observations do not certify complete lifetime coverage.'
+        elif sparse_points:
+            reason = 'Source-native periods and positive row counts are retained, but no comparable price statistic is publishable for those sparse periods; price values and complete lifetime history remain unestablished.'
         else:
             reason = 'No verified registered sale or signed-rent evidence is retained for this subject.'
-        items[name] = evidence_item('present' if accepted or transactions else 'partial' if disputed else 'missing', evidence,
+        items[name] = evidence_item('present' if accepted or transactions else 'partial' if disputed or sparse_points else 'missing', evidence,
             reason,
             nativePointCount=len(points), nativeSeriesCount=len(cohorts), transactionObservationCount=transaction_count,
-            distinctTransactionDateCount=len(transaction_dates), completeLifetimeHistory=False)
+            distinctTransactionDateCount=len(transaction_dates), sparseNativePointCount=len(sparse_points),
+            sparseObservedPeriodCount=len({str(p[0]) for p in sparse_points if p and p[0]}), completeLifetimeHistory=False)
         if disputed:items[name].update(disputedNativePointCount=len(disputed),acceptedNativePointCount=len(accepted))
         items['complete_' + name] = evidence_item('unestablished', [],
             'Inception/applicability and every applicable native period require independent verification. Unobserved prices remain missing.', completeLifetimeHistory=False)
