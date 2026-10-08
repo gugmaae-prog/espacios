@@ -8,9 +8,9 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
-VERSION = '20261008-enrichment-v26'
+VERSION = '20261008-enrichment-v27'
 ASOF = '2026-10-08'
-ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json','palm-jebel-ali-historical-quotes-20261008.json','dld-project-register-community-context-20261008.json','dld-derived-project-register-enrichment-20261008.json']
+ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json','palm-jebel-ali-historical-quotes-20261008.json','dld-project-register-community-context-20261008.json','dld-derived-project-register-enrichment-20261008.json','palm-jebel-ali-nakheel-progress-20261008.json']
 SOURCE_CAPTURE_DATE = '2026-10-03'
 EMIRATES = ['Abu Dhabi','Dubai','Sharjah','Ajman','Umm Al Quwain','Ras Al Khaimah','Fujairah']
 COLUMNS = ['period','value','sampleCount','qualityStatus','publishedAt','firstAvailableAt','sourceObservationId','p25','p75','eligibleValueAED','grossYieldPct','blockedRows','rawSourceEmirate','observationBasis','nativeRow']
@@ -356,6 +356,19 @@ def build():
     'unmatchedRowsExcluded':source_rows-exact_candidates,'allExcludedRows':source_rows-len(project_facts),
    }
    manifest['completionDefinition']='Every record evaluated; observed financial coverage remains incomplete; DLD-derived register snapshots do not constitute complete price history or forecasts.'
+ pja_progress_path=BASE/'palm-jebel-ali-nakheel-progress-20261008.json'
+ if pja_progress_path.exists():
+  pja_progress=read_json(pja_progress_path)
+  progress_source=(pja_progress.get('sources') or [{}])[0]
+  progress_facts=[x for x in pja_progress.get('facts',[]) if x.get('status')=='accepted' and x.get('kind')=='lifecycle']
+  manifest['palmJebelAliNakheelProgressMarch2026']={
+   'sourceId':progress_source.get('id'),'sourceSha256':progress_source.get('sha256'),
+   'inspectionDate':progress_source.get('sourceSnapshotDate'),'frondSnapshotsAdded':len(progress_facts),
+   'fronds':sorted({x.get('label','').split(' ')[1] for x in progress_facts}),
+   'pagePublicationDateKnown':bool(progress_source.get('publishedAt')),
+   'overallProgressAdded':False,'financialObservationsAdded':0,'forecastRecordsAdded':0,
+   'interpretation':'Developer-reported Fronds K–P inspection snapshots; not whole-community completion or price evidence.'
+  }
  manifest['disputedFinancialObservationRows']=sum(bool(re.search(r'conflict|quarantin',str(row['Quality']),re.I)) for row in data['history'])
  manifest['rejectedGeographicContextLinks']=sum(x.get('recordLinkReview',{}).get('status')=='rejected' for r in records for x in r['historySeries'])
  if enrichment:

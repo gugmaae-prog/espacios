@@ -6,7 +6,7 @@ const snapshot = JSON.parse(readFileSync(new URL('../data/historical-intelligenc
 const record = snapshot.records.find((item) => item.id === 'project:113-residences-iman-developers-al-sufouh-dubai');
 
 test('V22 preserves the catalogue and exposes 113 Residences evidence with unresolved gaps', () => {
-  assert.ok(['20261008-enrichment-v22', '20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v23'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v22', '20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v23'].includes(snapshot.version));
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.manifest.projectCount, 1645);
   assert.equal(snapshot.manifest.communityCount, 215);

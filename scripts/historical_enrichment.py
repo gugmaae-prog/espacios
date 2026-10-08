@@ -130,7 +130,7 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    verification=fact.get('verification','reported')
    if verification=='verified' and not fact.get('primaryEvidence'):raise ValueError('Verified lifecycle requires primary evidence')
    lifecycle_row={**common,'kind':milestone,'date':date,'status':verification,'scope':fact.get('scope','published_reference'),'eventStatus':fact.get('eventStatus','planned' if milestone.startswith('target_') else 'reported'),'primaryEvidence':fact.get('primaryEvidence',False),'label':fact['label'],'note':fact.get('note'),'evidenceClass':fact.get('evidenceClass','source_reported_milestone')}
-   if fact.get('registerSnapshotMilestone'):
+   if fact.get('registerSnapshotMilestone') or fact.get('preserveAdditionalLifecycleFields'):
     for optional in ['dateBasis','progressPercent','identityVerified']:
      if optional in fact:lifecycle_row[optional]=fact[optional]
    record['lifecycle'].append(lifecycle_row)
