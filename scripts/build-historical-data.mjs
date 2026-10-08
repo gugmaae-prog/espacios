@@ -1,5 +1,5 @@
-import {spawnSync} from 'node:child_process';
-import {fileURLToPath} from 'node:url';
-const result = spawnSync(process.env.HI_PYTHON || 'python3', [fileURLToPath(new URL('./build-historical-data.py', import.meta.url)), ...process.argv.slice(2)], {stdio:'inherit'});
-if (result.error) throw result.error;
-process.exitCode = result.status ?? 1;
+// The legacy Python importer stops at V29. Running it by default erased newer
+// retained evidence in clean checkouts. Current builds restore and hash-check
+// the exact reviewed archive; individual ingestion scripts create new releases.
+if(process.argv.length>2)throw Error('history:build verifies the retained archive without importer options. Use the explicit ingestion script for a new evidence pass.');
+await import('./verify-historical-archive.mjs');

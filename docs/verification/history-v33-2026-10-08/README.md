@@ -66,6 +66,12 @@ The 42,780-item checklist contains 3,289 present, 3,436 partial, 26,755 missing 
 
 Candidate validated locally; production publication and independent live verification are pending.
 
+## Clean-checkout reproducibility repair
+
+GitHub CI exposed a legacy build entry point that regenerated V29 and omitted later releases. `npm run history:build` now materializes and verifies the exact retained archive without importing older data or making network requests. It checks the canonical checksum, version, record identities, all 2,542 publication/index objects and the immutable runtime index. A conflicting local canonical JSON fails explicitly instead of being silently replaced.
+
+The reviewed current publication objects and V30–V32 native regression fixtures are now tracked in Git: 5,541 previously omitted public archive objects, 199,117,816 bytes in total, with the largest individual file 9,152,620 bytes. The allowlist consists only of current publication-manifest paths and native partitions referenced by the frozen regression roots. Private capture text, original contract exports and publisher credentials remain excluded. This permits fresh checkouts to run the actual preservation tests without this workstation's ignored files. The historical Python importer remains available for explicit research workflows; it is no longer the default current-release build.
+
 ## Next evidence actions
 
 Correct the documented Nura developer field through the map catalogue's existing correction path. Resolve Gateway/Gateway II, Marbella Extension and generic Mirasol/Bay Residences phase names against explicit property identity. Continue exact-subject sale/rent and dated current-value sourcing; development progress alone cannot close financial gaps. Annual scenarios require disclosed inputs and validation, with every unsupported field retained as a gap through 2080.
