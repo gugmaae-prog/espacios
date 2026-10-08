@@ -64,7 +64,13 @@ The 42,780-item checklist contains 3,289 present, 3,436 partial, 26,755 missing 
 
 ## Publication
 
-Candidate validated locally; production publication and independent live verification are pending.
+V33 is live at 100% traffic on `psr-portfolio-map-v2`, Worker version `b38cc2aa-161b-485f-94e9-9f6b2fb03aad`, deployment `60b64918-ad1f-4b78-8870-8c2d4b4b1dd1` (8 October 2026, 20:18 UTC; 9 October in Dubai). Frontend token `20261008-map-palette-v37` invalidates cached coverage logic while retaining the V36 palette and layout.
+
+The immutable evidence root is `a58abd05d631031630296caf1e4f2586e9a7024276f49699bb3f0465e6247796`. Publication wrote 2,491 immutable objects, reused 50 and verified 42,770 D1 statements and exact table counts before activation. Independent live checks matched all 1,860 ledgers, 42,780 checklist items, all 11 changed records, source/event counts and the 2080 endpoint. Eight launch-history records correctly retain unknown price applicability and missing financial periods instead of excluding them.
+
+Map HTML, V37 JavaScript and CSS return HTTP 200; the Data Room remains restricted with HTTP 404. The route remains `espacios.me/map* -> espacios-map-shell -> MAP -> psr-portfolio-map-v2`. The Supabase release registry and runtime expectations independently read back as V33/V37 with the same Worker version, root and counts. The temporary publisher Worker and its local authentication files were removed. See [publication](publication-result.json), [deployment](deployment.json), [live evidence checks](live-verification.json), [coverage checks](live-coverage-rule.json), [HTTP checks](http-verification.json), [control-plane readback](control-plane-verification.json) and [cleanup](cleanup.json).
+
+Source commit `0c0584d83efd36597461affad90e4d28bd3b9d15` passed the [clean GitHub checkout CI](https://github.com/gugmaae-prog/espacios/actions/runs/37838186541), including archive restoration, full verification and Cloudflare dry run. Source is pushed in open [PR #98](https://github.com/gugmaae-prog/espacios/pull/98); deployment does not imply merge. V36's prior browser palette/layout checks remain the visual evidence; V37 changed the cache token and coverage logic, with 56 map tests passing, rather than a new visual styling pass.
 
 ## Clean-checkout reproducibility repair
 
