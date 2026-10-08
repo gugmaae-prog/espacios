@@ -17,7 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## V22 verified DLD sales and V25 palette — production, 8 October 2026
+## V23 verified community DLD history and V25 palette — production, 8 October 2026
+
+PR [#87](https://github.com/gugmaae-prog/espacios/pull/87) preserves all 1,645 project and 215 community records and adds **274 exact master-label DLD community series across 44 communities**. The new series contain **15,196 monthly/quarterly aggregate points** and **556,639 unique eligible registered sales**, with registrations through **6 October 2026**. Monthly and quarterly series overlap; they are alternate aggregation frequencies, not independent sales. **7,193 points** meet the minimum sample threshold for price statistics; **8,003 sparse points** retain dates and counts with price statistics withheld. The series were matched to the DLD `master_project_en` label and are not legal boundaries or wider geographic claims. The [V23 production receipt](docs/verification/history-v23-2026-10-08/README.md) documents source vintage, row counts and validation.
+
+V23 contains **563,675 published history rows**, **15,063 series**, **11,421 record-series links**, **3,252 sources**, **105 events** and **7,382 event-exposure links**. A further **216 rights-pending rows** remain excluded. Every one of the 274 new series was checked through the live record-history API: all 15,196 expected points loaded, with no missing series or identity mismatch. This is a latest-vintage source first retrieved on 8 October 2026; its publication timestamp is unknown, so it is not admissible in backtests before that retrieval date.
+
+Coverage remains incomplete. Registered-sale evidence is present for **277 projects and 48 communities**, partial for **1 project and 2 communities**, and missing for **1,367 projects and 165 communities**. Signed-rent evidence is present for 89 records and partial for 1. Complete lifetime sale and rent history remains unestablished for all 1,860 records; dated current valuation remains missing for all. Across 42,780 checklist requirements, 3,148 are present, 3,436 partial, 26,896 missing and 9,300 unestablished; **39,632 (92.64%) remain unresolved**. This is a research-checklist rate, not a percentage of missing prices. The 2027–2080 horizon has **zero validated forecast records**; no future outcome is presented as observed data.
+
+The refreshed Map uses the subdued Espacios V25 slate selection state in light and dark themes. Gold was inherited UI styling, never a price or appreciation signal. Worker `psr-portfolio-map-v2` version `379cffef-0769-4834-be08-c937fd3cb24c` serves 100% traffic; deployment `3b5ab3a6-cc74-4697-a3e7-854d4d6610f3`. The Data Room remains restricted. The next best research pass is direct, phase-verified history for unresolved project records—starting with Palm Jebel Ali—followed by signed rents, occupancy, actual completion dates and validated annual scenario inputs.
+
+## V22 verified DLD sales — previous production snapshot, 8 October 2026
 
 PR [#85](https://github.com/gugmaae-prog/espacios/pull/85) adds 2,067 DLD-registered sales for eight exact project matches. The V22 snapshot preserves the full 1,645-project and 215-community inventory, prior evidence and event links. It contains 548,479 published history rows, 14,789 series and 3,251 sources; its 216 rights-pending rows remain outside the published total. DLD registration dates are not contract or transfer dates, the source publication timestamp is unknown, and this vintage is not valid for backtests before its first retrieval on 8 October 2026.
 
