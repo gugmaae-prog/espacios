@@ -419,3 +419,16 @@ html[data-minimal-map="1"] body #app :is(
   box-shadow:none!important;
   transition:background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease;
 }
+/* V28: the old shell can repaint the mobile Map mode after hydration. Keep
+   both its legacy buttons and the current mode control on the shared surface
+   at every render stage, with a restrained tint instead of the navy/gold fill. */
+html body #app :is(
+  #minimal-map-modes button[aria-pressed="true"],
+  .ae-mobile-map-modes .rail-btn.active,
+  .ae-mobile-map-modes .rail-btn[aria-pressed="true"]
+){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 14%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--minimal-accent,#657d98) 4%,var(--su-panel,#f4f6f7))!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+}
