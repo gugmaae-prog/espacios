@@ -17,11 +17,11 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V24 Palm Jebel Ali evidence and V27 palette, 8 October 2026
+## Current production — V25 community-register context and V28 palette, 8 October 2026
 
-PRs [#89](https://github.com/gugmaae-prog/espacios/pull/89) and [#90](https://github.com/gugmaae-prog/espacios/pull/90) preserve all **1,645 projects and 215 communities**, publish the V24 Palm Jebel Ali source references, and refine the Map's light-theme controls. Production Worker `psr-portfolio-map-v2` version `4305aa61-e0ee-40f8-ac5f-23d10e003f1b` serves **100% traffic** in deployment `9053e1d4-ab2f-4751-8145-5692f14977e9`; the frontend asset token is `20261008-map-palette-v27`. The verified route remains `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`. The Supabase registry reconciles V24 with V27; the Data Room remains restricted.
+PR [#92](https://github.com/gugmaae-prog/espacios/pull/92) adds 43 exact-label DLD project-register context facts for communities while preserving all **1,645 projects and 215 communities**. PR [#93](https://github.com/gugmaae-prog/espacios/pull/93) makes the selected mobile Map control use the same quiet Espacios slate surface in legacy and current shells. Production Worker `psr-portfolio-map-v2` version `fd19c785-03f8-4a2e-b2c8-ed8feddfd0ae` serves **100% traffic** in deployment `de5b5f11-5396-4fa7-bcd9-305b5479f553`; the frontend asset token is `20261008-map-palette-v28`. The verified route remains `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`. The Supabase registry reconciles V25 with V28; the Data Room remains restricted.
 
-V24 contains **563,675 published history rows**, **15,063 series**, **11,421 record-series links**, **3,253 sources**, **105 events**, and **7,382 event exposures**. Its published Palm Jebel Ali record exposes five broker-reported price references dated to May 2003 and March 2005; they are asking quotes, not registered sales, and do not prove phase-level appreciation. The [production receipt](docs/verification/history-v24-2026-10-08/README.md) records hashes, source limits, preservation checks, and live verification.
+V25 contains **563,675 published history rows**, **15,063 series**, **11,421 record-series links**, **3,254 sources**, **105 events**, and **7,382 event exposures**. Its DLD additions are register counts/status context for matched communities, not property prices, completion proof, or forecasts. The [V25 production receipt](docs/verification/history-v25-2026-10-08/README.md) records identities, source limits, preservation checks, and live verification.
 
 The 42,780-item evidence checklist has 3,148 present, 3,437 partial, 26,895 missing, and 9,300 unestablished requirements: **39,632 (92.64%) remain unresolved**. This is a research-checklist measure, not price-data coverage. No approved annual forecasts exist through 2080; full-history research remains incomplete.
 
@@ -41,7 +41,7 @@ V24 preserves the complete V23 catalogue and adds five dated, community-level pu
 
 The community already has 415 area-matched DLD registered-sale rows across 57 distinct period labels; those rows establish the community area only and are not mapped to an individual villa phase. There are no new registered sales or DLD series in V24, no signed-rent history, and no approved annual forecasts through 2080. The V24 checklist moves Palm Jebel Ali's advertised-price evidence from missing to partial; the global ledger remains 39,632 of 42,780 requirements unresolved (92.64%), a research-checklist rate rather than a price-data coverage percentage. See the [V24 evidence receipt](docs/verification/history-v24-2026-10-08/README.md).
 
-The V27 Map refinement replaces the dark selected pill and inherited navy/gold light-theme category cards with pale slate surfaces and readable slate text. Gold was legacy interface styling; it never encoded appreciation or value. The live `/map` response serves V27 HTML, JS and CSS assets, and the mobile 332px view was checked after deployment.
+The V28 Map refinement prevents late legacy styles from repainting the selected Map mode with a high-contrast navy/gold state. Gold was inherited interface styling; it never encoded appreciation or value. The live `/map` response serves V28 HTML, JS, and the selected-state CSS rule. The [V28 palette receipt](docs/verification/map-palette-v28-2026-10-08/README.md) records the production deployment, computed live colors, and test results.
 
 ## V22 verified DLD sales — previous production snapshot, 8 October 2026
 
