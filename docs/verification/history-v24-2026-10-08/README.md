@@ -1,4 +1,4 @@
-# V24 Palm Jebel Ali historical references — release receipt, 8 October 2026
+# V24 Palm Jebel Ali historical references — production receipt, 8 October 2026
 
 ## Release identity
 
@@ -7,7 +7,11 @@
 - Canonical snapshot SHA-256: `a62f29a1c6e2ffb7c4c1d3c8be66a3baefb319a2262504dd68673521e42eb2aa`
 - Root index SHA-256: `9e4581704a848a309c5ca3c408f47a97f415bb92cc262486446841be61cdef6c`
 - D1 index SHA-256: `3090105c565bf91a8301d9861920657e94b65764b54dcbe9f6b313972f4c0df4`
-- Production publication and Worker identifiers: pending live release verification.
+- GitHub: [PR #89](https://github.com/gugmaae-prog/espacios/pull/89), merge `919218cf7821650610afa31d775d74318e7471a4`; [PR #90](https://github.com/gugmaae-prog/espacios/pull/90), merge `71f088169ca8765bb3181daeeefe0bc529edfac4`.
+- Production publication: complete; **2,179** immutable R2 objects verified (**2,131 written, 48 reused**) and **39,085** D1 index statements applied with every table count verified.
+- Map Worker: `psr-portfolio-map-v2`, version `4305aa61-e0ee-40f8-ac5f-23d10e003f1b`, deployment `9053e1d4-ab2f-4751-8145-5692f14977e9`, serving **100% traffic**.
+- Frontend: `20261008-map-palette-v27`; live HTML, JavaScript and CSS use the same cache key.
+- Route: `espacios.me/map*` → `espacios-map-shell` → `MAP` service binding → `psr-portfolio-map-v2`. The route and service binding were checked directly in Cloudflare.
 - Data Room: `DATA_ROOM_PUBLIC=false`
 
 ## What changed
@@ -43,6 +47,9 @@ The V23-to-V24 preservation audit passed with zero losses:
 - One new source and no new native series added.
 - The published snapshot contains 3,253 sources, 563,675 history rows, 15,063 series and 216 rights-pending rows excluded from publication.
 - Local immutable-storage verification wrote 2,179 objects on its first pass and reused all 2,179 on repeat. Its D1 index comprised 39,085 statements and verified all table counts: 1 snapshot, 1,860 records, 3,253 sources, 105 events, 7,382 exposures, 15,063 series and 11,421 record-series links.
+- Production publication completed with 2,131 R2 writes and 48 verified reuses. The active live `/map/api/record-history` response is V24 and exposes the five Palm Jebel Ali references; `/map/api/events` is V24 with 105 events and 7,382 exposure links.
+- The live Palm Jebel Ali history response reports 55 linked aggregate series and 855 total native points, but returns only the first eight series page and 41 points (`complete=false`). This does not mean all 415 area-matched DLD sales are individually returned by that response or that periods are continuous.
+- The V27 Map returned HTTP 200 with matching V27 asset tokens. The selected Map control uses a pale slate fill; nearby-place cards use light slate surfaces in light theme. The 332px mobile layout was checked. No gold value signal exists; gold was inherited interface styling.
 - `npm run verify` passed all 166 tests; the production Wrangler dry run retained the existing bindings and restricted Data Room.
 
 The canonical V24 snapshot SHA-256 is `a62f29a1c6e2ffb7c4c1d3c8be66a3baefb319a2262504dd68673521e42eb2aa`. The new source body was reviewed but not stored or redistributed. The sidecar retains source URL, visible date, source classification, retrieval time, source-body checksum and each quote's separate observation and availability dates.
