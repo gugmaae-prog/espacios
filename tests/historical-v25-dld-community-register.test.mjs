@@ -13,7 +13,7 @@ const publication = JSON.parse(readFileSync(new URL('publication-manifest.json',
 const runtime = JSON.parse(readFileSync(new URL('runtime-index.json', base), 'utf8'));
 
 test('V25 appends exact DLD project-register context without changing financial history', () => {
-  assert.equal(snapshot.version, '20261008-enrichment-v25');
+  assert.ok(['20261008-enrichment-v25', '20261008-enrichment-v26'].includes(snapshot.version));
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.records.filter(row => row.type === 'project').length, 1645);
   assert.equal(snapshot.records.filter(row => row.type === 'community').length, 215);
@@ -65,5 +65,5 @@ test('V25 record-history API hydrates the DLD register facts from the exact immu
   assert.equal(facts[0].scope, 'community_context');
   assert.equal(facts[0].identityVerified, true);
   assert.equal(facts[0].fields.registeredProjectRecordsInSource > 0, true);
-  assert.equal(body.version, '20261008-enrichment-v25');
+  assert.equal(body.version, snapshot.version);
 });

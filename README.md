@@ -17,13 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V25 community-register context and V29 palette, 8 October 2026
+## Current production — V26 project-register evidence and V29 palette, 8 October 2026
 
-PR [#92](https://github.com/gugmaae-prog/espacios/pull/92) adds 43 exact-label DLD project-register context facts for communities while preserving all **1,645 projects and 215 communities**. Palette refinements in [PR #95](https://github.com/gugmaae-prog/espacios/pull/95) and the V29 asset-token bump in [PR #96](https://github.com/gugmaae-prog/espacios/pull/96) align the selected mobile Map mode with the translucent control surface in both themes. Production Worker `psr-portfolio-map-v2` version `c992c2c4-d155-4dc2-bc20-28ffd1013c7f` serves **100% traffic** in deployment `f4e36b9a-02ab-4515-980a-7d349bd7f034`; the frontend asset token is `20261008-map-palette-v29`. The verified route remains `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`. The Supabase registry reconciles V25 with V29; the Data Room remains restricted. See the [V29 palette receipt](docs/verification/map-palette-v29-2026-10-08/README.md).
+V26 appends eight exact, DLD-ID/developer/area-verified project-register snapshots and 16 dated register milestones from a public DLD-derived source, preserving the fixed **1,645 projects and 215 communities** and every earlier history row. The additions are project status/progress and expected construction dates, not transaction prices, valuations, actual completion, or occupancy. Eight source rows were accepted; 47 exact-title candidates and 318 unmatched rows remain quarantined. See the [V26 production receipt](docs/verification/history-v26-2026-10-08/README.md).
 
-V25 contains **563,675 published history rows**, **15,063 series**, **11,421 record-series links**, **3,254 sources**, **105 events**, and **7,382 event exposures**. Its DLD additions are register counts/status context for matched communities, not property prices, completion proof, or forecasts. The [V25 production receipt](docs/verification/history-v25-2026-10-08/README.md) records identities, source limits, preservation checks, and live verification.
+The production snapshot contains **563,675 historical rows**, **15,063 series**, **11,421 record-series links**, **3,254 sources**, **105 events**, and **7,382 event exposures**. A new Worker version `84559aa7-bd39-4502-8aae-b110324c5455` serves **100% traffic** on `psr-portfolio-map-v2`. The live map returns HTTP 200 with the V29 palette token; all eight new project-history endpoints return V26. The route remains `espacios.me/map* -> espacios-map-shell -> MAP service binding -> psr-portfolio-map-v2`; the Data Room remains restricted.
 
-The 42,780-item evidence checklist has 3,148 present, 3,437 partial, 26,895 missing, and 9,300 unestablished requirements: **39,632 (92.64%) remain unresolved**. This is a research-checklist measure, not price-data coverage. No approved annual forecasts exist through 2080; full-history research remains incomplete.
+The 42,780-item research checklist now has **3,163 present, 3,437 partial, 26,880 missing, and 9,300 unestablished** requirements; **39,617 (92.61%) remain unresolved**. This is a checklist rate, not historical price coverage. No approved annual scenario data exists through 2080, and no complete lifetime sale/rent history is claimed.
+
+PR [#92](https://github.com/gugmaae-prog/espacios/pull/92) added the 43 exact-label DLD project-register community-context facts while preserving the catalogue. Palette refinements in [PR #95](https://github.com/gugmaae-prog/espacios/pull/95) and [PR #96](https://github.com/gugmaae-prog/espacios/pull/96) align mobile map selection with the translucent Espacios control surface in both themes. Gold was inherited UI styling, not a value signal; see the [V29 palette receipt](docs/verification/map-palette-v29-2026-10-08/README.md).
+
+V25 contains the preceding community-register context; its [production receipt](docs/verification/history-v25-2026-10-08/README.md) records identities, source limits and preservation checks.
 
 ## V23 verified community DLD history — previous production snapshot, 8 October 2026
 
