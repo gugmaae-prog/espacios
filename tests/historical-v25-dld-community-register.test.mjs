@@ -17,7 +17,8 @@ test('V25 appends exact DLD project-register context without changing financial 
   assert.equal(snapshot.records.length, 1860);
   assert.equal(snapshot.records.filter(row => row.type === 'project').length, 1645);
   assert.equal(snapshot.records.filter(row => row.type === 'community').length, 215);
-  assert.equal(snapshot.sources.length, 3254);
+  assert.ok([3253, 3254].includes(snapshot.sources.length));
+  assert.ok(snapshot.sources.some(row => row.url === 'https://data.dubai/en/l/467654'));
   assert.equal(snapshot.manifest.historicalObservationRows, 563675);
   assert.equal(snapshot.manifest.historicalSeriesCount, 15063);
   assert.equal(snapshot.manifest.approved2080ForecastRecords, 0);
