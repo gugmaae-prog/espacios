@@ -74,6 +74,14 @@ test('selection and watchlist colors use Espacios slate and teal, not legacy gol
   assert.doesNotMatch(baseApp,/Gold (?:indicates|is this selected)|Gold remains selection-only/);
 });
 
+test('active map controls share the soft Espacios palette in light and dark themes',()=>{
+  assert.match(css,/V25: give every active map control the same soft Espacios selection state/);
+  assert.match(css,/\.layer-rail \.rail-btn\.active,[\s\S]*#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*\.ae-search-map-tools \.ae-map-focus-toggle\.active[\s\S]*background:var\(--minimal-selected\)!important;[\s\S]*color:var\(--su-ink\)!important;[\s\S]*box-shadow:inset 0 -2px 0 var\(--minimal-accent\)!important/);
+  assert.match(css,/--minimal-selected:color-mix\(in srgb,var\(--minimal-accent\) 4%,var\(--su-panel\)\)/);
+  assert.match(css,/--minimal-selected-line:color-mix\(in srgb,var\(--minimal-accent\) 14%,var\(--su-line\)\)/);
+  assert.match(css,/data-espacios-theme="dark"[\s\S]*?--minimal-blue:#a7bbcf/);
+});
+
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{
   const start=app.indexOf("  const selectionLight='");
   const end=app.indexOf('  let selectionPaletteFrame=',start);
@@ -119,7 +127,7 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v24'));
+  assert.ok(worker.includes('20261008-map-palette-v25'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });

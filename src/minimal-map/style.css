@@ -359,3 +359,20 @@ html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] 
   border:1px solid var(--minimal-selected-line)!important;background:var(--su-panel)!important;color:var(--su-ink)!important;
   padding:0 24px 0 10px!important;font:600 11px/1 Inter,system-ui,sans-serif!important;box-sizing:border-box!important;
 }
+/* V25: give every active map control the same soft Espacios selection state.
+   The inherited shell still defines navy/gold active fills; this final rule
+   keeps those legacy controls on the shared surface in both themes. */
+html[data-minimal-map="1"] body #app :is(
+  .layer-rail .rail-btn.active,
+  .layer-rail .rail-btn[aria-pressed="true"],
+  .ae-mobile-map-modes .rail-btn.active,
+  .ae-mobile-map-modes .rail-btn[aria-pressed="true"],
+  #minimal-map-modes button[aria-pressed="true"],
+  .ae-search-map-tools .ae-map-focus-toggle.active
+){
+  border-color:var(--minimal-selected-line)!important;
+  background:var(--minimal-selected)!important;
+  color:var(--su-ink)!important;
+  box-shadow:inset 0 -2px 0 var(--minimal-accent)!important;
+  transition:background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease;
+}
