@@ -29,6 +29,8 @@ Source `4d3efc8f4a242769f437d357d41e20e18f947f60` passed [clean CI](https://gith
 
 **Next best actions:** resolve the 246 remaining project identity candidates, including Avida; reconcile Asora's inventory and construction conflicts; continue direct sale/rent, occupancy and dated valuation sourcing; specify and evaluate annual conditional assumptions through 2080. Preserve earlier schedules and source vintages. Unresolved evidence keeps the research goal incomplete.
 
+**Full queue review, 9 October:** the [246-project DLD review](docs/verification/dld-queue-review-2026-10-09/README.md) scans 1,798,873 source rows with a second duplicate-revision pass. It finds that 218 queued projects already have some sale evidence; 28 have none, and ten of those have 288 residential-flat candidate associations. Eight of their registration numbers are absent from the retained project register. These are research priorities, not accepted observations or completeness credit. Production and verified coverage remain unchanged.
+
 ## V42 Map and V38 history — preserved release record
 
 The live map adds **30 verified individual Asora Bay residential sale registrations**, dated 7 May 2025–5 August 2026, with primary DLD project, developer, area and exact-building identity checks. Dated developer labels are preserved; the hotel, villas, archived candidate and Avida are not assigned these observations. The softer Espacios controls use off-white surfaces, muted borders and slate text. Gold came from inherited interface styling and never encoded appreciation.
