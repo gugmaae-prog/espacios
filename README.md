@@ -31,6 +31,8 @@ Source `4d3efc8f4a242769f437d357d41e20e18f947f60` passed [clean CI](https://gith
 
 **Full queue review, 9 October:** the [246-project DLD review](docs/verification/dld-queue-review-2026-10-09/README.md) scans 1,798,873 source rows with a second duplicate-revision pass. It finds that 218 queued projects already have some sale evidence; 28 have none, and ten of those have 288 residential-flat candidate associations. Eight of their registration numbers are absent from the retained project register. These are research priorities, not accepted observations or completeness credit. Production and verified coverage remain unchanged.
 
+**Prepared next evidence pass:** the [V40 primary-source packet](docs/verification/primary-project-pass40-2026-10-09/README.md) contains three bedroom-specific Binghatti Wraith asking quotes and four Helvetia Marine development reports. Five preservation/chronology tests pass. This packet is reviewed but not yet deployed; live V39 counts above remain authoritative. No DLD candidate sale or valuation is promoted.
+
 ## V42 Map and V38 history — preserved release record
 
 The live map adds **30 verified individual Asora Bay residential sale registrations**, dated 7 May 2025–5 August 2026, with primary DLD project, developer, area and exact-building identity checks. Dated developer labels are preserved; the hotel, villas, archived candidate and Avida are not assigned these observations. The softer Espacios controls use off-white surfaces, muted borders and slate text. Gold came from inherited interface styling and never encoded appreciation.
