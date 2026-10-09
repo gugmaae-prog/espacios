@@ -12,12 +12,12 @@ const sourceId = 'dld-official-rents-recapture-20261008';
 const rentSource = sources.get(sourceId);
 
 test('V31 retains V30 project rent evidence and the complete catalogue/event ledgers', () => {
-  assert.ok(['20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39'].includes(snapshot.version));
   assert.equal(publication.version, snapshot.version);
   assert.deepEqual(publication.counts, {
     collectedHistoricalRows: 634107, communities: 215, events: 105, exposures: 7382,
     historicalRows: 633891, originalCollectionRows: 122268, projects: 1645, records: 1860,
-    rightsPendingRows: 216, series: 16872, sources: snapshot.version === '20261008-enrichment-v38' ? 3345 : snapshot.version === '20261008-enrichment-v37' ? 3343 : snapshot.version === '20261008-enrichment-v36' ? 3340 : snapshot.version === '20261008-enrichment-v35' ? 3334 : snapshot.version === '20261008-enrichment-v34' ? 3333 : snapshot.version === '20261008-enrichment-v33' ? 3320 : snapshot.version === '20261008-enrichment-v32' ? 3306 : 3295, supplementHistoricalRows: 18539,
+    rightsPendingRows: 216, series: 16872, sources: snapshot.version === '20261009-enrichment-v39' ? 3348 : snapshot.version === '20261008-enrichment-v38' ? 3345 : snapshot.version === '20261008-enrichment-v37' ? 3343 : snapshot.version === '20261008-enrichment-v36' ? 3340 : snapshot.version === '20261008-enrichment-v35' ? 3334 : snapshot.version === '20261008-enrichment-v34' ? 3333 : snapshot.version === '20261008-enrichment-v33' ? 3320 : snapshot.version === '20261008-enrichment-v32' ? 3306 : 3295, supplementHistoricalRows: 18539,
   });
   assert.equal(snapshot.manifest.historicalSeriesCount, 16872);
   assert.equal(snapshot.records.reduce((count, record) => count + record.historySeries.length, 0), 13230);

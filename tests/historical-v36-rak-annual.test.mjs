@@ -12,8 +12,8 @@ const before=unpack('data/historical-intelligence/objects/9ddb117034ebb4012b4c16
 const hash=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const mina='community:Ras Al Khaimah:mina-al-arab',flamingo='project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae';
 test('V36 preserves every record and native financial series; only two reviewed identities receive facts',()=>{
- assert.ok(['20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.deepEqual([...changed].sort(),[mina,flamingo].sort());
- assert.equal(packet.facts.length,29);assert.equal(packet.sources.length,6);assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v38'?3345:snapshot.version==='20261008-enrichment-v37'?3343:3340);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.ok(['20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.deepEqual([...changed].sort(),[mina,flamingo].sort());
+ assert.equal(packet.facts.length,29);assert.equal(packet.sources.length,6);assert.equal(publication.counts.sources,snapshot.version==='20261009-enrichment-v39'?3348:snapshot.version==='20261008-enrichment-v38'?3345:snapshot.version==='20261008-enrichment-v37'?3343:3340);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const oldRecords=new Map(before.records.map(r=>[r.id,r]));
  for(const r of after.records){const old=oldRecords.get(r.id);assert.ok(old);

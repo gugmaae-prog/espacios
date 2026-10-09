@@ -7,12 +7,12 @@ import {spawnSync} from 'node:child_process';
 import {validateObservation,filterTrainingFold} from '../src/historical-intelligence/core.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p)),unpack=p=>JSON.parse(gunzipSync(fs.readFileSync(p)));
 const snapshot=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json'),packet=read('data/historical-intelligence/dld-asora-pass38-20261008.json');
-const before=unpack('data/historical-intelligence/objects/be31d7f61e60b822c9fc005051f958613d2cd2db0c830b69fb1366e9a3dacf75.json.gz'),after=unpack(publication.rootIndex.path);
+const before=unpack('data/historical-intelligence/objects/be31d7f61e60b822c9fc005051f958613d2cd2db0c830b69fb1366e9a3dacf75.json.gz'),after=unpack('data/historical-intelligence/objects/01b716e001347142944eda86c5c649f4a2e05b47be05df70f8302db4450d09fd.json.gz');
 const rid='project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai',record=snapshot.records.find(r=>r.id===rid);
 test('V38 adds exactly 30 individual sales to one current project and preserves all earlier evidence',()=>{
- assert.equal(snapshot.version,'20261008-enrichment-v38');assert.equal(publication.version,snapshot.version);
+ assert.ok(['20261008-enrichment-v38','20261009-enrichment-v39'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);
  assert.equal(snapshot.records.length,1860);assert.equal(packet.facts.length,30);assert.equal(packet.sources.length,2);
- assert.equal(publication.counts.sources,3345);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.equal(publication.counts.sources,snapshot.version==='20261009-enrichment-v39'?3348:3345);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);
  assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const oldRecords=new Map(before.records.map(r=>[r.id,r]));

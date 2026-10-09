@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "passId": "asora-primary-lifecycle-pass39-20261009",
+  "priorVersion": "20261008-enrichment-v38",
+  "candidateVersion": "20261009-enrichment-v39",
+  "asOf": "2026-10-09",
+  "sources": [
+    {
+      "id": "asora39-jumeirah-announcement",
+      "url": "https://mediahub.jumeirah.com/jumeirah-drives-portfolio-expansion-with-three-new-developments-in-dubai/?lang=eng",
+      "finalUrl": "https://mediahub.jumeirah.com/jumeirah-drives-portfolio-expansion-with-three-new-developments-in-dubai/?lang=eng",
+      "status": 200,
+      "retrievedAt": "2026-10-09T00:25:45.887Z",
+      "bytes": 75718,
+      "sha256": "ca74565087180a86e8f36ebb4177b5c581d372c4a16731dc8490707e5e39ab3e",
+      "title": "Jumeirah announces Asora Bay hotel and residences",
+      "publisher": "Jumeirah",
+      "publishedAt": "2025-04-28",
+      "firstAvailableAt": "2026-10-09T00:25:45.887Z",
+      "classification": "primary_operator_developer_lifecycle_report",
+      "primaryEvidence": true,
+      "publicationDateBasis": "Date displayed on captured article; current body vintage first available at retrieval, not proven unchanged since publication",
+      "licence": "Minimal attributed factual extraction; raw webpage and media not redistributed",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "asora39-meraas-launch",
+      "url": "https://meraas.com/en/latest-post/news/dubais-meraas-debuts-ultra-luxury-waterfront-address-jumeirah-residences-asora-bay",
+      "finalUrl": "https://meraas.com/en/latest-post/news/dubais-meraas-debuts-ultra-luxury-waterfront-address-jumeirah-residences-asora-bay",
+      "status": 200,
+      "retrievedAt": "2026-10-09T00:25:45.347Z",
+      "bytes": 267767,
+      "sha256": "352879c9efffb8595a281c517045383375e7060f61ca80f37532f398a223a7f2",
+      "title": "Meraas article reports the launch of Jumeirah Residences Asora Bay",
+      "publisher": "Meraas",
+      "publishedAt": "2025-07-07",
+      "firstAvailableAt": "2026-10-09T00:25:45.347Z",
+      "classification": "primary_operator_developer_lifecycle_report",
+      "primaryEvidence": true,
+      "publicationDateBasis": "Date displayed on captured article; current body vintage first available at retrieval, not proven unchanged since publication",
+      "licence": "Minimal attributed factual extraction; raw webpage and media not redistributed",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "asora39-meraas-target",
+      "url": "https://meraas.com/en/latest-post/news/jumeirah-residences-asora-bay-meraas-pinnacle-luxury-coastal-living-dubai",
+      "finalUrl": "https://meraas.com/en/latest-post/news/jumeirah-residences-asora-bay-meraas-pinnacle-luxury-coastal-living-dubai",
+      "status": 200,
+      "retrievedAt": "2026-10-09T00:25:45.414Z",
+      "bytes": 268420,
+      "sha256": "5b747d30b09a5a546c2c027855916fc3a8edc4a3d4aa67a2ae03dabff4cf1a17",
+      "title": "Meraas reports an early-2029 residential handover target",
+      "publisher": "Meraas",
+      "publishedAt": "2025-06-30",
+      "firstAvailableAt": "2026-10-09T00:25:45.414Z",
+      "classification": "primary_operator_developer_lifecycle_report",
+      "primaryEvidence": true,
+      "publicationDateBasis": "Date displayed on captured article; current body vintage first available at retrieval, not proven unchanged since publication",
+      "licence": "Minimal attributed factual extraction; raw webpage and media not redistributed",
+      "rawBodyRedistributed": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "asora39-announcement",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "asora39-jumeirah-announcement"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": "2025-04-28",
+      "firstAvailableAt": "2026-10-09T00:25:45.887Z",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-04-28",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Jumeirah announces the Asora Bay development; residences already described as launched.",
+      "note": "Dated operator announcement, not the first-ever launch or first marketing date. The article describes 29 residences including six ocean villas; later Meraas articles describe 35 properties. Preserve the differing populations without inventing a reconciliation.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Explicit 28 April 2025 article dateline"
+    },
+    {
+      "id": "asora39-later-launch-report",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "asora39-meraas-launch"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": "2025-07-07",
+      "firstAvailableAt": "2026-10-09T00:25:45.347Z",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-07-07",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Meraas publishes a launch report for the residences.",
+      "note": "Article publication date, not established launch day. The earlier 28 April operator announcement already describes the residences as launched. Meraas states 35 residences; differing earlier inventory wording remains unresolved.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Displayed article date, not first-ever launch",
+      "relatedMilestoneIds": [
+        "asora39-announcement"
+      ]
+    },
+    {
+      "id": "asora39-residential-target",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "asora39-meraas-target"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": "2025-06-30",
+      "firstAvailableAt": "2026-10-09T00:25:45.414Z",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2029",
+        "precision": "year",
+        "rawLabel": "early 2029",
+        "qualifier": "early; intra-year bounds unspecified"
+      },
+      "scope": "subject",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Meraas targets residential handover in early 2029.",
+      "note": "The source says early 2029 without an exact day or quarter. Year precision retains that qualifier without converting it into Q1. Earlier Q1 2029 catalogue targets remain separate; no completion or occupancy is established.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Developer target reported in article dated 30 June 2025",
+      "relatedMilestoneIds": [
+        "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai:reported-handover",
+        "fact-56a1f000f5b5c647b8c67d9f"
+      ]
+    },
+    {
+      "id": "asora39-hotel-target",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "asora39-jumeirah-announcement"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": "2025-04-28",
+      "firstAvailableAt": "2026-10-09T00:25:45.887Z",
+      "milestone": "target_hotel_opening",
+      "date": {
+        "start": "2029",
+        "precision": "year"
+      },
+      "scope": "hotel_component",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Jumeirah targets the associated hotel opening in 2029.",
+      "note": "Hotel-only target. It does not establish residential handover, completed amenities, occupancy, rental income or appreciation.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Hotel opening schedule in 28 April 2025 operator announcement"
+    },
+    {
+      "id": "asora39-register-start",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "dld-official-projects-20260706"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T23:48:12.944Z",
+      "milestone": "register_declared_start",
+      "date": {
+        "start": "2025-05-01",
+        "precision": "day"
+      },
+      "scope": "parent_project",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Parent DLD register lists a declared project start of 1 May 2025.",
+      "note": "Declared register date, not confirmed construction commencement. Parent project includes hotel and residential building; the same register vintage has conflicting status labels and zero completion.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "project_start_date in parent register; loaded 2026-06-15"
+    },
+    {
+      "id": "asora39-register-end",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "dld-official-projects-20260706"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T23:48:12.944Z",
+      "milestone": "register_target_completion",
+      "date": {
+        "start": "2029-03-31",
+        "precision": "day"
+      },
+      "scope": "parent_project",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Parent DLD register lists a planned end date of 31 March 2029.",
+      "note": "Parent-project schedule, not confirmed completion or an independently verified residential handover. Retain beside the developer early-2029 target and earlier catalogue Q1 label.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "project_end_date in parent register; loaded 2026-06-15"
+    },
+    {
+      "id": "asora39-register-conflict",
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "sourceIds": [
+        "dld-official-projects-20260706"
+      ],
+      "identitySourceIds": [
+        "dld38-meraas-asora-page",
+        "dld-official-projects-20260706"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T23:48:12.944Z",
+      "milestone": "register_status_report",
+      "date": {
+        "start": "2026-06-15",
+        "precision": "day"
+      },
+      "scope": "parent_project",
+      "eventStatus": "reported",
+      "verification": "disputed",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "label": "Parent register reports zero completion with conflicting construction-status labels.",
+      "note": "English NOT_STARTED conflicts with Arabic تحت الانشاء (under construction). Native percent_completed is 0.00000. Load date is not an inspection date. The parent includes hotel and residential buildings; no dwelling-level progress or actual construction date is established. Generic no_of_units=30 also differs from the 29 residential units in the description; no unit count is inferred.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "load_timestamp 2026-06-15 15:24:01.000; timezone not supplied"
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "catalogueName": "Jumeirah Asora Bay",
+      "type": "project",
+      "emirate": "Dubai",
+      "basis": "Current Jumeirah Asora Bay / Meraas / La Mer catalogue record; primary operator and developer releases explicitly name the same residences and La Mer South. Exact DLD project 3445 / ID 691710228 is the parent hotel-and-residences registration. Parent register and hotel-only facts retain separate scope; no fan-out to the archived record, hotel rooms or Ocean Mansions."
+    }
+  ],
+  "recordResearch": [],
+  "collection": {
+    "asOf": "2026-10-09",
+    "acceptedLifecycleFacts": 7,
+    "newFinancialObservations": 0,
+    "newSources": 3,
+    "rawBodiesRedistributed": false
+  },
+  "conflicts": [
+    {
+      "field": "inventory",
+      "status": "unresolved",
+      "values": [
+        "Jumeirah: 29 residences including six ocean villas",
+        "Meraas: 35 residences/properties",
+        "DLD description: 29 residential-building units",
+        "DLD generic no_of_units: 30"
+      ],
+      "resolution": "No common reconciled unit total or individual-unit mapping inferred"
+    },
+    {
+      "field": "construction_status",
+      "status": "unresolved",
+      "values": [
+        "NOT_STARTED",
+        "تحت الانشاء",
+        "percent_completed 0.00000"
+      ],
+      "resolution": "Preserved parent-register report; actual residential start and progress unverified"
+    }
+  ],
+  "methodology": "Pinned primary source reports retain occurrence, publication and availability dates; report dates are not automatically launch dates. Uncertain early-2029 timing stays year precision with its raw qualifier. Parent/hotel facts do not establish residential prices or occupancy. Prior source vintages, observations and schedules remain unchanged.",
+  "excludedCandidates": [
+    {
+      "recordId": "project:jumeirah-asora-bay-la-mer-dubai",
+      "reason": "Archived candidate remains unverified; no lifecycle or financial fan-out"
+    }
+  ]
+}

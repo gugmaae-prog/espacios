@@ -37,15 +37,15 @@ try{
  assert.equal(events.events.length,snapshot.events.length);assert.equal(events.sources.length,snapshot.sources.length);assert.equal(events.exposures.length,snapshot.exposures.length);
  assert.equal(events.classification,'event_evidence_not_causal_price_effects');
  receipt.events={events:events.events.length,sources:events.sources.length,exposures:events.exposures.length};
- const wanted=new Set(packet.seriesLinks.map(s=>s.seriesId)),series=new Map();
+ const wanted=new Set((packet.seriesLinks||[]).map(s=>s.seriesId)),series=new Map();
  for(const o of manifest.objects.filter(o=>o.kind==='history_partition')){
   const p=JSON.parse(gunzipSync(await fs.readFile(new URL(o.path,root))));
   for(const s of p.series)if(wanted.has(s.id))series.set(s.id,s);
  }
  assert.equal(series.size,wanted.size);let points=0,checked=0;
  // Bound requests so canonical read verification does not overwhelm the Worker.
- for(let i=0;i<packet.seriesLinks.length;i+=4){
-  await Promise.all(packet.seriesLinks.slice(i,i+4).map(async link=>{
+ for(let i=0;i<(packet.seriesLinks||[]).length;i+=4){
+  await Promise.all((packet.seriesLinks||[]).slice(i,i+4).map(async link=>{
    const body=await get('/map/api/record-history?'+new URLSearchParams({recordId:link.recordId,seriesId:link.seriesId}));
    const actual=body.historySeries.find(s=>s.id===link.seriesId),expected=series.get(link.seriesId);
    assert.ok(actual,link.seriesId);assert.deepEqual(actual.columns,expected.columns);assert.deepEqual(actual.points,expected.points);

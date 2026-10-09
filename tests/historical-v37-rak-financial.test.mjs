@@ -12,8 +12,8 @@ const before=unpack('data/historical-intelligence/objects/3995529ceb9737e72ad485
 const hash=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const mina='community:Ras Al Khaimah:mina-al-arab',nb='project:nb-collection-by-rak-properties-on-hayat-island';
 test('V37 preserves every catalogue record, previous observation, source and native series',()=>{
- assert.ok(['20261008-enrichment-v37','20261008-enrichment-v38'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.equal(changed.size,8);assert.equal(packet.facts.length,17);assert.equal(packet.sources.length,3);
- assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v38'?3345:3343);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.ok(['20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.equal(changed.size,8);assert.equal(packet.facts.length,17);assert.equal(packet.sources.length,3);
+ assert.equal(publication.counts.sources,snapshot.version==='20261009-enrichment-v39'?3348:snapshot.version==='20261008-enrichment-v38'?3345:3343);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const prior=new Map(before.records.map(r=>[r.id,r]));
  for(const r of after.records){const old=prior.get(r.id);assert.ok(old);
