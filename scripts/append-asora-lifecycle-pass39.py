@@ -78,7 +78,7 @@ def main():
   if prior['kind']!='history_partition':continue
   blob=(ROOT/prior['path']).read_bytes();assert sha(blob)==prior['sha256']
   archive=json.loads(gzip.decompress(blob));assert archive['version']==PRIOR
-  archive['version']=VERSION
+  archive['version']=VERSION;archive['asOf']=snapshot['asOf']
   obj=immutable(gzip.compress(canonical(archive),mtime=0),'.json.gz','history_partition');new_history.append(obj)
   pointer={k:obj[k] for k in ['key','sha256','bytes','compression']}
   for series in archive['series']:

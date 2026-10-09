@@ -1,0 +1,11 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "25b61d3b-7a65-4a61-aabc-4172e9632f23",
+  "previewURL": "https://25b61d3b-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "historyVersion": "20261009-enrichment-v39",
+  "frontendRelease": "20261009-map-evidence-v43",
+  "sourceCommit": "recorded-after-envelope-correction-commit",
+  "activation": "pending",
+  "productionUnchanged": true,
+  "rootSHA256": "b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760"
+}

@@ -1,0 +1,599 @@
+{
+  "version": "20261009-enrichment-v39",
+  "asOf": "2026-10-09",
+  "basis": "Per-record checklist status, not complete lifetime financial coverage; earlier individual review dates preserved.",
+  "emirates": {
+    "Dubai": {
+      "projects": 1119,
+      "communities": 147,
+      "requirements": {
+        "actual_completion": {
+          "missing": 1258,
+          "partial": 8
+        },
+        "advertised_prices": {
+          "missing": 216,
+          "partial": 1048,
+          "present": 2
+        },
+        "announcement_registration": {
+          "missing": 967,
+          "partial": 270,
+          "present": 29
+        },
+        "annual_scenario_inputs": {
+          "missing": 1266
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 1266
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 1266
+        },
+        "construction": {
+          "missing": 1243,
+          "present": 22,
+          "partial": 1
+        },
+        "construction_targets": {
+          "missing": 1256,
+          "present": 10
+        },
+        "dated_current_valuation": {
+          "missing": 1266
+        },
+        "dated_event_context": {
+          "partial": 1266
+        },
+        "dated_valuation": {
+          "missing": 1266
+        },
+        "delivery_reports": {
+          "missing": 1244,
+          "present": 22
+        },
+        "handover_targets": {
+          "present": 857,
+          "missing": 409
+        },
+        "occupancy": {
+          "missing": 1266
+        },
+        "original_launch": {
+          "present": 55,
+          "missing": 1204,
+          "partial": 7
+        },
+        "phase_milestones": {
+          "missing": 1238,
+          "present": 28
+        },
+        "registered_sale_history": {
+          "missing": 892,
+          "present": 370,
+          "partial": 4
+        },
+        "service_charge_components": {
+          "missing": 1238,
+          "partial": 28
+        },
+        "shared_financial_context": {
+          "present": 713,
+          "missing": 553
+        },
+        "signed_rent_history": {
+          "missing": 1131,
+          "present": 132,
+          "partial": 3
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 1266
+        },
+        "validated_price_forecast": {
+          "unestablished": 1266
+        },
+        "validated_rent_forecast": {
+          "unestablished": 1266
+        }
+      }
+    },
+    "Abu Dhabi": {
+      "projects": 347,
+      "communities": 22,
+      "requirements": {
+        "actual_completion": {
+          "missing": 369
+        },
+        "advertised_prices": {
+          "present": 6,
+          "missing": 330,
+          "partial": 33
+        },
+        "announcement_registration": {
+          "present": 316,
+          "missing": 53
+        },
+        "annual_scenario_inputs": {
+          "missing": 369
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 369
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 369
+        },
+        "construction": {
+          "missing": 63,
+          "present": 304,
+          "partial": 2
+        },
+        "construction_targets": {
+          "missing": 367,
+          "present": 2
+        },
+        "dated_current_valuation": {
+          "missing": 369
+        },
+        "dated_event_context": {
+          "partial": 369
+        },
+        "dated_valuation": {
+          "missing": 369
+        },
+        "delivery_reports": {
+          "missing": 366,
+          "present": 3
+        },
+        "handover_targets": {
+          "present": 35,
+          "missing": 334
+        },
+        "occupancy": {
+          "missing": 369
+        },
+        "original_launch": {
+          "present": 10,
+          "missing": 359
+        },
+        "phase_milestones": {
+          "missing": 354,
+          "present": 15
+        },
+        "registered_sale_history": {
+          "missing": 367,
+          "present": 2
+        },
+        "service_charge_components": {
+          "missing": 369
+        },
+        "shared_financial_context": {
+          "missing": 347,
+          "present": 22
+        },
+        "signed_rent_history": {
+          "missing": 369
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 369
+        },
+        "validated_price_forecast": {
+          "unestablished": 369
+        },
+        "validated_rent_forecast": {
+          "unestablished": 369
+        }
+      }
+    },
+    "Fujairah": {
+      "projects": 1,
+      "communities": 2,
+      "requirements": {
+        "actual_completion": {
+          "missing": 3
+        },
+        "advertised_prices": {
+          "partial": 2,
+          "missing": 1
+        },
+        "announcement_registration": {
+          "missing": 3
+        },
+        "annual_scenario_inputs": {
+          "missing": 3
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 3
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 3
+        },
+        "construction": {
+          "missing": 3
+        },
+        "construction_targets": {
+          "missing": 3
+        },
+        "dated_current_valuation": {
+          "missing": 3
+        },
+        "dated_event_context": {
+          "partial": 3
+        },
+        "dated_valuation": {
+          "missing": 3
+        },
+        "delivery_reports": {
+          "missing": 3
+        },
+        "handover_targets": {
+          "present": 1,
+          "missing": 2
+        },
+        "occupancy": {
+          "missing": 3
+        },
+        "original_launch": {
+          "missing": 3
+        },
+        "phase_milestones": {
+          "missing": 3
+        },
+        "registered_sale_history": {
+          "missing": 3
+        },
+        "service_charge_components": {
+          "missing": 3
+        },
+        "shared_financial_context": {
+          "missing": 3
+        },
+        "signed_rent_history": {
+          "missing": 3
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 3
+        },
+        "validated_price_forecast": {
+          "unestablished": 3
+        },
+        "validated_rent_forecast": {
+          "unestablished": 3
+        }
+      }
+    },
+    "Sharjah": {
+      "projects": 59,
+      "communities": 18,
+      "requirements": {
+        "actual_completion": {
+          "missing": 74,
+          "present": 3
+        },
+        "advertised_prices": {
+          "missing": 22,
+          "partial": 55
+        },
+        "announcement_registration": {
+          "missing": 74,
+          "present": 3
+        },
+        "annual_scenario_inputs": {
+          "missing": 77
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 77
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 77
+        },
+        "construction": {
+          "missing": 73,
+          "present": 4
+        },
+        "construction_targets": {
+          "missing": 75,
+          "present": 2
+        },
+        "dated_current_valuation": {
+          "missing": 77
+        },
+        "dated_event_context": {
+          "partial": 77
+        },
+        "dated_valuation": {
+          "missing": 77
+        },
+        "delivery_reports": {
+          "missing": 71,
+          "present": 6
+        },
+        "handover_targets": {
+          "missing": 34,
+          "present": 43
+        },
+        "occupancy": {
+          "missing": 76,
+          "present": 1
+        },
+        "original_launch": {
+          "missing": 68,
+          "present": 8,
+          "partial": 1
+        },
+        "phase_milestones": {
+          "missing": 71,
+          "present": 6
+        },
+        "registered_sale_history": {
+          "missing": 77
+        },
+        "service_charge_components": {
+          "missing": 77
+        },
+        "shared_financial_context": {
+          "missing": 72,
+          "present": 5
+        },
+        "signed_rent_history": {
+          "missing": 77
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 77
+        },
+        "validated_price_forecast": {
+          "unestablished": 77
+        },
+        "validated_rent_forecast": {
+          "unestablished": 77
+        }
+      }
+    },
+    "Ras Al Khaimah": {
+      "projects": 89,
+      "communities": 15,
+      "requirements": {
+        "actual_completion": {
+          "missing": 103,
+          "partial": 1
+        },
+        "advertised_prices": {
+          "partial": 82,
+          "missing": 17,
+          "present": 5
+        },
+        "announcement_registration": {
+          "missing": 86,
+          "present": 18
+        },
+        "annual_scenario_inputs": {
+          "missing": 104
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 104
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 104
+        },
+        "construction": {
+          "missing": 89,
+          "present": 13,
+          "partial": 2
+        },
+        "construction_targets": {
+          "missing": 102,
+          "present": 2
+        },
+        "dated_current_valuation": {
+          "missing": 104
+        },
+        "dated_event_context": {
+          "partial": 104
+        },
+        "dated_valuation": {
+          "missing": 104
+        },
+        "delivery_reports": {
+          "missing": 98,
+          "present": 6
+        },
+        "handover_targets": {
+          "present": 83,
+          "missing": 21
+        },
+        "occupancy": {
+          "missing": 104
+        },
+        "original_launch": {
+          "missing": 92,
+          "present": 12
+        },
+        "phase_milestones": {
+          "missing": 91,
+          "present": 13
+        },
+        "registered_sale_history": {
+          "missing": 104
+        },
+        "service_charge_components": {
+          "missing": 104
+        },
+        "shared_financial_context": {
+          "present": 62,
+          "missing": 42
+        },
+        "signed_rent_history": {
+          "missing": 104
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 104
+        },
+        "validated_price_forecast": {
+          "unestablished": 104
+        },
+        "validated_rent_forecast": {
+          "unestablished": 104
+        }
+      }
+    },
+    "Ajman": {
+      "projects": 10,
+      "communities": 6,
+      "requirements": {
+        "actual_completion": {
+          "missing": 16
+        },
+        "advertised_prices": {
+          "partial": 10,
+          "missing": 6
+        },
+        "announcement_registration": {
+          "missing": 16
+        },
+        "annual_scenario_inputs": {
+          "missing": 16
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 16
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 16
+        },
+        "construction": {
+          "missing": 13,
+          "partial": 3
+        },
+        "construction_targets": {
+          "missing": 13,
+          "present": 3
+        },
+        "dated_current_valuation": {
+          "missing": 16
+        },
+        "dated_event_context": {
+          "partial": 16
+        },
+        "dated_valuation": {
+          "missing": 16
+        },
+        "delivery_reports": {
+          "missing": 15,
+          "present": 1
+        },
+        "handover_targets": {
+          "present": 9,
+          "missing": 7
+        },
+        "occupancy": {
+          "missing": 16
+        },
+        "original_launch": {
+          "missing": 16
+        },
+        "phase_milestones": {
+          "missing": 11,
+          "present": 5
+        },
+        "registered_sale_history": {
+          "missing": 16
+        },
+        "service_charge_components": {
+          "missing": 16
+        },
+        "shared_financial_context": {
+          "missing": 14,
+          "present": 2
+        },
+        "signed_rent_history": {
+          "missing": 16
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 16
+        },
+        "validated_price_forecast": {
+          "unestablished": 16
+        },
+        "validated_rent_forecast": {
+          "unestablished": 16
+        }
+      }
+    },
+    "Umm Al Quwain": {
+      "projects": 20,
+      "communities": 5,
+      "requirements": {
+        "actual_completion": {
+          "missing": 25
+        },
+        "advertised_prices": {
+          "partial": 19,
+          "missing": 6
+        },
+        "announcement_registration": {
+          "missing": 25
+        },
+        "annual_scenario_inputs": {
+          "missing": 25
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 25
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 25
+        },
+        "construction": {
+          "missing": 25
+        },
+        "construction_targets": {
+          "missing": 25
+        },
+        "dated_current_valuation": {
+          "missing": 25
+        },
+        "dated_event_context": {
+          "partial": 25
+        },
+        "dated_valuation": {
+          "missing": 25
+        },
+        "delivery_reports": {
+          "missing": 25
+        },
+        "handover_targets": {
+          "present": 23,
+          "missing": 2
+        },
+        "occupancy": {
+          "missing": 25
+        },
+        "original_launch": {
+          "missing": 18,
+          "present": 7
+        },
+        "phase_milestones": {
+          "missing": 25
+        },
+        "registered_sale_history": {
+          "missing": 25
+        },
+        "service_charge_components": {
+          "missing": 25
+        },
+        "shared_financial_context": {
+          "missing": 25
+        },
+        "signed_rent_history": {
+          "missing": 25
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 25
+        },
+        "validated_price_forecast": {
+          "unestablished": 25
+        },
+        "validated_rent_forecast": {
+          "unestablished": 25
+        }
+      }
+    }
+  }
+}

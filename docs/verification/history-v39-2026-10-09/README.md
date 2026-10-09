@@ -19,4 +19,6 @@ Some announcement evidence now exists, moving one requirement from missing to pr
 
 Reproduction: run scripts/prepare-asora-lifecycle-pass39.py against the pinned private captures and V38 snapshot, then scripts/append-asora-lifecycle-pass39.py. Raw webpages, media and transaction exports are not redistributed. Tests compare all prior records and native series, retain contradictory populations and schedules, and reject future availability and planned-to-actual completion relabelling.
 
+Release checks: 379 JavaScript tests, Python checks and all 2,542 immutable objects pass. An additional guard verifies that every native/runtime partition carries the research release cutoff. A pre-activation mismatch was corrected without changing any financial observation; the unactivated candidate and partial immutable uploads remain separate from production.
+
 Release status: local V39 candidate; production activation and independent verification pending. Production remains V38 / frontend V42 until those checks succeed. The research goal remains incomplete.

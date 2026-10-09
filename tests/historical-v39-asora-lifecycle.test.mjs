@@ -47,3 +47,9 @@ for fact,asof in [(p['facts'][0],'2026-10-08'),({**p['facts'][2],'milestone':'co
 `;
  const result=spawnSync('python3',['-c',py],{encoding:'utf8'});assert.equal(result.status,0,result.stderr||result.stdout);
 });
+
+test('every native/runtime partition envelope matches the release cutoff while observations retain native dates',()=>{
+ for(const object of publication.objects.filter(x=>['history_partition','runtime_history_partition'].includes(x.kind))){
+  const partition=unpack(object.path);assert.equal(partition.version,snapshot.version,object.path);assert.equal(partition.asOf,snapshot.asOf,object.path);
+ }
+});

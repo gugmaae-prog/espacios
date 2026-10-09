@@ -82,6 +82,7 @@ def build_runtime_index(snapshot,publication):
  for obj in objects:
   if obj['kind']!='history_partition':continue
   original=gzip.decompress((ROOT/obj['path']).read_bytes());partition=json.loads(original)
+  if partition.get('version')!=snapshot['version'] or partition.get('asOf',snapshot['asOf'])!=snapshot['asOf']:raise ValueError('Native partition envelope differs from runtime snapshot')
   if len(original)<=maximum_native:
    for item in partition['series']:pointers[item['id']]={k:obj[k] for k in ['key','sha256','bytes','compression']};pointers[item['id']]['decodedBytes']=len(original)
    continue

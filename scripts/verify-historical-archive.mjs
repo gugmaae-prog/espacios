@@ -21,6 +21,7 @@ for(const object of [...manifest.objects,manifest.d1Index]){
  if(!/^data\/historical-intelligence\/objects\/[a-f0-9]{64}\.(?:json(?:\.gz)?|csv\.gz|sql\.gz|parquet)$/.test(object.path))throw Error('Unexpected archive object path');
  const bytes=await fs.readFile(path.join(root,object.path));
  if(bytes.length!==object.bytes||digest(bytes)!==object.sha256)throw Error('Archive object checksum differs: '+object.path);
+ if(['history_partition','runtime_history_partition','runtime_record_shard','runtime_index'].includes(object.kind)){const value=JSON.parse(gunzipSync(bytes));if(value.version!==snapshot.version||value.asOf&&value.asOf!==snapshot.asOf)throw Error('Runtime archive envelope differs: '+object.path);}
  checked++;
 }
 const runtime=JSON.parse(await fs.readFile(path.join(root,'data/historical-intelligence/runtime-index.json'),'utf8'));
