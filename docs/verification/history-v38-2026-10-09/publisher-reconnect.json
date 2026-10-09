@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-09T00:52:22.484774+00:00",
+  "reason": "Fresh connection writes 50 exact pending series rows in 2.123 seconds; existing publisher remains much slower after bridge update. Reconnect the owned idempotent publisher and reverify immutable objects.",
+  "pid": 361,
+  "signal": "SIGTERM",
+  "productionChanged": false,
+  "immutableEvidenceDeleted": false
+}

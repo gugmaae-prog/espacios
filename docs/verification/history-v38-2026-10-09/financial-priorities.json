@@ -1,0 +1,268 @@
+{
+  "version": "20261008-enrichment-v38",
+  "asOf": "2026-10-08",
+  "basis": "Evidence-presence ledger by emirate. Missing is a requirement state, not an observed-price percentage.",
+  "emirates": {
+    "Abu Dhabi": {
+      "project": {
+        "records": 347,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 345,
+            "present": 2
+          },
+          "signed_rent_history": {
+            "missing": 347
+          },
+          "dated_current_valuation": {
+            "missing": 347
+          },
+          "annual_scenario_inputs": {
+            "missing": 347
+          }
+        }
+      },
+      "community": {
+        "records": 22,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 22
+          },
+          "signed_rent_history": {
+            "missing": 22
+          },
+          "dated_current_valuation": {
+            "missing": 22
+          },
+          "annual_scenario_inputs": {
+            "missing": 22
+          }
+        }
+      }
+    },
+    "Ajman": {
+      "project": {
+        "records": 10,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 10
+          },
+          "signed_rent_history": {
+            "missing": 10
+          },
+          "dated_current_valuation": {
+            "missing": 10
+          },
+          "annual_scenario_inputs": {
+            "missing": 10
+          }
+        }
+      },
+      "community": {
+        "records": 6,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 6
+          },
+          "signed_rent_history": {
+            "missing": 6
+          },
+          "dated_current_valuation": {
+            "missing": 6
+          },
+          "annual_scenario_inputs": {
+            "missing": 6
+          }
+        }
+      }
+    },
+    "Dubai": {
+      "project": {
+        "records": 1119,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 795,
+            "present": 322,
+            "partial": 2
+          },
+          "signed_rent_history": {
+            "missing": 1029,
+            "present": 89,
+            "partial": 1
+          },
+          "dated_current_valuation": {
+            "missing": 1119
+          },
+          "annual_scenario_inputs": {
+            "missing": 1119
+          }
+        }
+      },
+      "community": {
+        "records": 147,
+        "requirements": {
+          "registered_sale_history": {
+            "present": 48,
+            "missing": 97,
+            "partial": 2
+          },
+          "signed_rent_history": {
+            "present": 43,
+            "missing": 102,
+            "partial": 2
+          },
+          "dated_current_valuation": {
+            "missing": 147
+          },
+          "annual_scenario_inputs": {
+            "missing": 147
+          }
+        }
+      }
+    },
+    "Fujairah": {
+      "project": {
+        "records": 1,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 1
+          },
+          "signed_rent_history": {
+            "missing": 1
+          },
+          "dated_current_valuation": {
+            "missing": 1
+          },
+          "annual_scenario_inputs": {
+            "missing": 1
+          }
+        }
+      },
+      "community": {
+        "records": 2,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 2
+          },
+          "signed_rent_history": {
+            "missing": 2
+          },
+          "dated_current_valuation": {
+            "missing": 2
+          },
+          "annual_scenario_inputs": {
+            "missing": 2
+          }
+        }
+      }
+    },
+    "Ras Al Khaimah": {
+      "project": {
+        "records": 89,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 89
+          },
+          "signed_rent_history": {
+            "missing": 89
+          },
+          "dated_current_valuation": {
+            "missing": 89
+          },
+          "annual_scenario_inputs": {
+            "missing": 89
+          }
+        }
+      },
+      "community": {
+        "records": 15,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 15
+          },
+          "signed_rent_history": {
+            "missing": 15
+          },
+          "dated_current_valuation": {
+            "missing": 15
+          },
+          "annual_scenario_inputs": {
+            "missing": 15
+          }
+        }
+      }
+    },
+    "Sharjah": {
+      "project": {
+        "records": 59,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 59
+          },
+          "signed_rent_history": {
+            "missing": 59
+          },
+          "dated_current_valuation": {
+            "missing": 59
+          },
+          "annual_scenario_inputs": {
+            "missing": 59
+          }
+        }
+      },
+      "community": {
+        "records": 18,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 18
+          },
+          "signed_rent_history": {
+            "missing": 18
+          },
+          "dated_current_valuation": {
+            "missing": 18
+          },
+          "annual_scenario_inputs": {
+            "missing": 18
+          }
+        }
+      }
+    },
+    "Umm Al Quwain": {
+      "project": {
+        "records": 20,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 20
+          },
+          "signed_rent_history": {
+            "missing": 20
+          },
+          "dated_current_valuation": {
+            "missing": 20
+          },
+          "annual_scenario_inputs": {
+            "missing": 20
+          }
+        }
+      },
+      "community": {
+        "records": 5,
+        "requirements": {
+          "registered_sale_history": {
+            "missing": 5
+          },
+          "signed_rent_history": {
+            "missing": 5
+          },
+          "dated_current_valuation": {
+            "missing": 5
+          },
+          "annual_scenario_inputs": {
+            "missing": 5
+          }
+        }
+      }
+    }
+  }
+}

@@ -17,11 +17,19 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Prepared V38 evidence update
+## Current production — V42 Map and V38 history, 9 October 2026 (Dubai)
 
-Thirty exact-building Asora Bay sales are verified against primary DLD project, developer, area and transaction keys, with dated developer labels retained. One direct-sale evidence requirement closes; the candidate ledger still has **39,480 of 42,780 unresolved items (92.29%)**. This is not a lifetime-price completeness percentage. All existing records and evidence are preserved; Avida remains pending. See the [V38 evidence and release status](docs/verification/history-v38-2026-10-09/README.md). Publication is pending; the current live release is recorded below.
+The live map adds **30 verified individual Asora Bay residential sale registrations**, dated 7 May 2025–5 August 2026, with primary DLD project, developer, area and exact-building identity checks. Dated developer labels are preserved; the hotel, villas, archived candidate and Avida are not assigned these observations. The softer Espacios controls use off-white surfaces, muted borders and slate text. Gold came from inherited interface styling and never encoded appreciation.
 
-## Current production — V41 Map and V37 history, 9 October 2026 (Dubai)
+All **1,645 projects, 215 communities, 633,891 native history rows, 16,872 series and 13,230 links** remain. The 30 new individual observations are separately counted inline evidence, not extra native aggregate rows. There are **3,345 source vintages and 6,748 evidence facts**. Of 42,780 checklist requirements, **3,300 are present, 3,439 partial, 26,741 missing and 9,300 unestablished**. **39,480 (92.29%) remain unresolved**: this is a research-checklist rate, not a missing-price percentage. Some direct-sale evidence exists for 324 projects and 48 communities. Full lifetime histories, dated current valuations and fully specified annual scenarios through 2080 remain incomplete.
+
+Worker `9ddd509f-2f75-4dc9-a5cd-c25fd512fe70` serves 100% traffic in deployment `d75ce6a2-91aa-46a1-99bb-83d14964128a`. Frontend `20261009-map-evidence-v42` uses history `20261008-enrichment-v38`, immutable root `01b716e001347142944eda86c5c649f4a2e05b47be05df70f8302db4450d09fd`. Preview and canonical APIs match all 1,860 ledgers, the new observations and the exact 2080 endpoint. Desktop/mobile cards, no horizontal overflow at 390px, assets, unchanged catalogue, route/service binding and Supabase metadata are verified. The Data Room remains restricted; the temporary publisher and authentication files are removed.
+
+Source `5dcaf96801d4711f58053a374bf61aece0f25290` passed [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/37863928324). The publication batching improvement at `be6525ddba33e358bf3e17f411c9677de819e2d4` passed [CI](https://github.com/gugmaae-prog/espacios/actions/runs/37866542542), bringing the suite to 374 JavaScript tests. Source and receipts are pushed in [open PR #98](https://github.com/gugmaae-prog/espacios/pull/98); deployed does not mean merged. See the [V38 evidence and deployment receipts](docs/verification/history-v38-2026-10-09/README.md).
+
+**Next best actions:** resolve the remaining 246 project identity candidates, including Avida's primary developer bridge; reconcile the newly captured Asora lifecycle schedules and conflicting construction-status labels; continue direct sale/rent, occupancy and dated valuation sourcing; specify annual conditional assumptions through 2080. New October 9 source captures remain pending and receive no completeness credit in the October 8 snapshot. Existing evidence and superseded schedules stay preserved.
+
+## V41 Map and V37 history — preserved release record
 
 The live release adds **seven dated developer sales snapshots and ten lifecycle/source reports** across seven exact projects and Mina Al Arab. Native accounting totals, zero backlog, literal NIL, Porto Playa's 50% JV basis and differing launch populations remain explicit. NB Collection gains its verified announcement date. Hotel opening reports preserve date precision and earlier targets, without implying residential occupancy or price uplift. Existing financial history, the softer Espacios palette and Nura developer correction remain intact. See the [V37 source and release receipts](docs/verification/history-v37-2026-10-09/README.md).
 
@@ -35,7 +43,7 @@ Source commit `ab5c63cf198084b137ae469744243fa589be8765` passed [clean GitHub CI
 
 **Next best actions:** resolve the remaining exact Dubai transaction/register identities, source direct Abu Dhabi sale/rent evidence through lawful access, and continue emirate-specific history, dated valuation and occupancy research. Dubai still has 796 projects missing qualifying registered-sale evidence; Abu Dhabi has 345. The [financial-priority audit](docs/verification/history-v37-2026-10-09/financial-priorities.json) separates these gaps from contextual developer reports. Fully specified conditional annual assumptions through 2080 remain required. Research attempts and future outcomes never count as observed completeness.
 
-**Sourcing review, 9 October:** a new [reproducible DLD identity review](docs/verification/dld-identity-review-2026-10-09/README.md) scans the retained 1,798,873-row transaction capture and isolates 70 residential-sale candidates for Asora Bay and Avida. Three land/gift records remain separate. Marketing/legal developer roles and exact component scope still require review, so this adds **zero accepted observations or coverage credit**. Production remains V41/V37 with the counts above.
+**Sourcing review, 9 October:** a new [reproducible DLD identity review](docs/verification/dld-identity-review-2026-10-09/README.md) scans the retained 1,798,873-row transaction capture and isolates 70 residential-sale candidates for Asora Bay and Avida. Three land/gift records remain separate. Marketing/legal developer roles and exact component scope still require review, so this adds **zero accepted observations or coverage credit**. At that review production was V41/V37. The later V38 pass above accepts only the 30 Asora sales; Avida remains unresolved.
 
 ## V40 Map and V36 history — preserved release record
 
