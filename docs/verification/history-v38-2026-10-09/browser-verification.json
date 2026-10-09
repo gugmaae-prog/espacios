@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-09T01:08:09.153664+00:00",
+  "url": "https://espacios.me/map",
+  "frontend": "20261009-map-evidence-v42",
+  "desktop": {
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "registeredSaleCards": 30
+  },
+  "mobile": {
+    "viewport": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "historyPanelWidth": 366,
+    "registeredSaleCards": 30
+  },
+  "record": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+  "sourcedFacts": 31,
+  "saleSources": [
+    "https://data.dubai/en/l/470061"
+  ],
+  "selectedMap": {
+    "background": "rgb(248, 250, 252)",
+    "color": "rgb(32, 48, 68)"
+  },
+  "viewportReset": true,
+  "limitation": "Daily individual transactions appear as sourced fact cards. Monthly accountability describes native monthly cohorts, not these daily transactions."
+}

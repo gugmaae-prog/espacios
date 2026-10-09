@@ -27,7 +27,7 @@ test('Offline packet rebuild is deterministic and does not repeat public request
 });
 
 test('V18 detail capture is bounded to V17 exact IDs and preserves the fixed 1,860-record universe',()=>{
- assert.ok(['20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v23'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261008-enrichment-v23'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(record=>record.type==='project').length,1645);
  assert.equal(snapshot.records.filter(record=>record.type==='community').length,215);

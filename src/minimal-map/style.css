@@ -92,8 +92,17 @@ html[data-minimal-map="1"] body #app #minimal-tools-toggle svg{width:18px;height
 
 html[data-minimal-map="1"] body #app #minimal-kind-controls{
   position:fixed;z-index:117;
-  top:calc(var(--mm-header-bottom,66px) + 92px);left:28px;
+  top:calc(var(--mm-header-bottom,66px) + 92px);left:28px;right:28px;
   display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+}
+/* Desktop drawers follow the rendered controls rather than the legacy header.
+   Keep touch-phone and short-landscape bottom-sheet behavior unchanged. */
+@media (min-width:1025px), (min-width:761px) and (min-height:561px), (min-width:761px) and (pointer:fine){
+  html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app :is(#timeline-panel,#places-panel,#transport-panel,#analyze-panel,#valuation-panel,#ai-panel){
+    top:var(--minimal-panel-top,206px)!important;
+    max-height:max(80px,calc(var(--mm-dock-top,calc(100dvh - 180px)) - var(--minimal-panel-top,206px) - 12px))!important;
+    overflow-y:auto!important;
+  }
 }
 html[data-minimal-map="1"] body #app #minimal-kind-controls button,
 html[data-minimal-map="1"] body #app #minimal-map-modes button,
@@ -432,16 +441,15 @@ html body #app :is(
   color:var(--su-ink,#27323b)!important;
   box-shadow:none!important;
 }
-/* V29: keep the mobile map mode control visually attached to the map instead
-   of presenting its active option as a separate dark pill. The shared panel
-   surface carries the control; a soft slate tint and border identify the
-   current mode without using the retired gold/cyan premium treatment. */
+/* V30: normalize every selected-state signal used by the mobile Map-mode
+   controls. Use the exact theme surface so a late legacy state cannot paint
+   a separate navy pill over the map. */
 html body #app :is(
   #minimal-map-modes,
   .ae-mobile-map-modes
-) :is(button[aria-pressed="true"],.rail-btn.active,#toggle-3d.active){
-  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 12%,var(--su-line,#d8dee3))!important;
-  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 78%,transparent)!important;
+) :is(button[aria-pressed="true"],.rail-btn.active,.rail-btn[aria-pressed="true"],.rail-btn[aria-current="true"],.rail-btn[aria-selected="true"],#toggle-3d.active){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 16%,var(--su-line,#d8dee3))!important;
+  background:var(--su-panel,#f4f6f7)!important;
   color:var(--su-ink,#27323b)!important;
   box-shadow:none!important;
   font-weight:600!important;
@@ -453,4 +461,58 @@ html body #app .ae-mobile-map-modes .rail-btn{
   box-shadow:0 1px 5px #172b3a0a!important;
   -webkit-backdrop-filter:blur(12px) saturate(110%)!important;
   backdrop-filter:blur(12px) saturate(110%)!important;
+}
+/* V32: keep mobile mode selection inside the Espacios slate palette. The
+   earlier inherited shell could paint an opaque navy active pill; use a quiet
+   cool tint that stays visible in both themes without adding a gold accent.
+   Include the theme attribute and concrete control IDs so this rule wins over
+   the inherited active-state selector with the same intent. */
+html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-pressed="true"],
+html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-current="true"],
+html[data-minimal-map="1"] body #app #minimal-map-modes button[aria-selected="true"],
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn.active,
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-pressed="true"],
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-current="true"],
+html[data-minimal-map="1"] body #app .ae-mobile-map-modes .rail-btn[aria-selected="true"]{
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 18%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--minimal-accent,#657d98) 6%,var(--su-panel,#f4f6f7))!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+  font-weight:600!important;
+}
+/* V33: the older horizontal Map/3D rail can render before the minimalist
+   controls and uses a separate active selector. Normalize every rendered
+   mobile Map selection to the same quiet Espacios slate surface, including
+   the layer-rail variant, regardless of which hydration path created it. */
+html body #app #minimal-map-modes button:is([aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+html body #app .ae-mobile-map-modes .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+html body #app .layer-rail .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"]){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 22%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 94%,var(--minimal-accent,#657d98) 6%)!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+  font-weight:600!important;
+  text-shadow:none!important;
+}
+/* V34: bring the Map-mode pill closer to the shared Espacios surface. A
+   tiny cool-slate tint, fine border and stronger label carry the active state;
+   the opaque navy fill and decorative accent bar belong to the legacy shell. */
+html[data-minimal-map="1"] body #app :is(
+  #minimal-map-modes button:is([aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+  .ae-mobile-map-modes .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"]),
+  .layer-rail .rail-btn:is(.active,[aria-pressed="true"],[aria-current="true"],[aria-selected="true"])
+){
+  border-color:color-mix(in srgb,var(--minimal-accent,#657d98) 10%,var(--su-line,#d8dee3))!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 98%,var(--minimal-accent,#657d98) 2%)!important;
+  background-image:none!important;
+  color:var(--su-ink,#27323b)!important;
+  box-shadow:none!important;
+  filter:none!important;
+  font-weight:600!important;
+  text-shadow:none!important;
+}
+html[data-minimal-map="1"] body #app :is(#minimal-map-modes,.ae-mobile-map-modes){
+  border-color:color-mix(in srgb,var(--su-line,#d8dee3) 92%,transparent)!important;
+  background:color-mix(in srgb,var(--su-panel,#f4f6f7) 94%,transparent)!important;
+  box-shadow:0 1px 5px #172b3a0a!important;
 }

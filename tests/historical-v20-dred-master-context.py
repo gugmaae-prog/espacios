@@ -64,7 +64,7 @@ def test_community_rollups_keep_identity_scope_and_sparse_medians_explicit():
     check(sidecar['collection']['recordObservedDateEnvelope'] == {'start': '2003-06-02', 'end': '2026-07-31'}, 'Observed date envelope changed.')
 
     snapshot = json.loads((ROOT / 'data/historical-intelligence-20261003.json').read_text())
-    check(snapshot['version'] in {'20261008-enrichment-v22', '20261008-enrichment-v23', '20261008-enrichment-v24','20261008-enrichment-v25'} and snapshot['asOf'] == '2026-10-08', 'V22 or later snapshot identity/cutoff changed.')
+    check(snapshot['version'] in {'20261008-enrichment-v22', '20261008-enrichment-v23', '20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28', '20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39'} and snapshot['asOf'] == ('2026-10-09' if snapshot['version']=='20261009-enrichment-v39' else '2026-10-08'), 'V22 or later snapshot identity/cutoff changed.')
     supplemental = snapshot['manifest']['sourceEnrichment']['supplementalPasses']
     receipt = next(item for item in supplemental if item['passId'] == PASS_ID)
     sidecar_path = BASE / 'community-master-context-enrichment.json'

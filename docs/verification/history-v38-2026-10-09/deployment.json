@@ -1,0 +1,16 @@
+{
+  "id": "d75ce6a2-91aa-46a1-99bb-83d14964128a",
+  "worker": "psr-portfolio-map-v2",
+  "source": "wrangler",
+  "created_on": "2026-10-09T00:58:31.774448Z",
+  "versions": [
+    {
+      "version_id": "9ddd509f-2f75-4dc9-a5cd-c25fd512fe70",
+      "percentage": 100
+    }
+  ],
+  "sourceCommit": "5dcaf96801d4711f58053a374bf61aece0f25290",
+  "publicationHelperCommit": "be6525ddba33e358bf3e17f411c9677de819e2d4",
+  "historyVersion": "20261008-enrichment-v38",
+  "frontendRelease": "20261009-map-evidence-v42"
+}

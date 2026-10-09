@@ -119,6 +119,21 @@ export function applyCommunityCorrections(payload,corrections){
   return {...project,area:correction.area,communityId:correction.communityId,communityAssociationReview:{...clone(correction),priorArea:project.area??null,priorCommunityId:project.communityId??null}};
  })};
 }
+/** Exact subject and expected old value only; preserve audit fields and input. */
+export function applyCatalogueRevisions(payload,revisions){
+ if(!Array.isArray(payload?.projects))return payload;
+ const identities=new Map();
+ for(const p of payload.projects){const id=p.id||'project:'+p.slug;identities.set(id,(identities.get(id)||0)+1);}
+ return {...payload,projects:payload.projects.map(project=>{
+  const identity=project.id||'project:'+project.slug;
+  const matches=revisions.filter(r=>r.recordId===identity);
+  if(matches.length!==1||identities.get(identity)!==1)return project;
+  const r=matches[0];
+  // Never relabel a reused slug, another phase, or a newly corrected upstream value.
+  if(r.field!=='developer'||r.verification!=='verified'||r.primaryEvidence!==true||project.emirate!==r.emirate||project.name!==r.catalogueName||project.developer!==r.fromValue)return project;
+  return {...project,developer:r.toValue,catalogueMetadataReviews:[...(project.catalogueMetadataReviews||[]),{...clone(r),priorValue:project.developer}]};
+ })};
+}
 function observationKey(o){
  if(o.transactionId||o.sourceObservationId)return`${o.sourceId}|${o.transactionId||o.sourceObservationId}|${metric(o.metric)||o.metric}`;
  return [o.sourceId,o.seriesId||o.id||'',o.recordId,o.period,metric(o.metric)||o.metric,o.segment||'',o.registration||''].join('|');
@@ -178,7 +193,10 @@ function applicableStart(record,m){
  const explicit=record.metricApplicability?.[m];
  if(explicit?.verified===true&&explicit.start&&explicit.sourceIds?.length)return{date:parseEvidenceDate(explicit.start),basis:'verified_metric_applicability'};
  const kinds=m==='rent'?['occupancy']:['launch'];
- const milestones=(record.lifecycle||[]).filter(x=>kinds.includes(x.kind)&&x.status==='verified'&&x.eventStatus!=='planned'&&x.date?.qualifier!=='by_date'&&x.establishesApplicabilityStart!==false&&(!x.scope||x.scope==='subject')&&x.primaryEvidence!==false&&x.sourceIds?.length&&x.date);
+ // A public launch can postdate private marketing or off-plan sales. Only an
+ // explicitly established price-applicability boundary may exclude earlier
+ // periods; the earliest launch announcement alone is insufficient.
+ const milestones=(record.lifecycle||[]).filter(x=>kinds.includes(x.kind)&&x.status==='verified'&&x.eventStatus!=='planned'&&x.date?.qualifier!=='by_date'&&x.establishesApplicabilityStart!==false&&(m==='rent'||x.establishesApplicabilityStart===true)&&(!x.scope||x.scope==='subject')&&x.primaryEvidence!==false&&x.sourceIds?.length&&x.date);
  if(!milestones.length)return null;
  try{return{date:parseEvidenceDate(milestones.sort((a,b)=>firstInstant(a.date)-firstInstant(b.date))[0].date),basis:m==='rent'?'verified_occupancy':'verified_launch'};}catch{return null;}
 }
@@ -220,7 +238,7 @@ function coverageFromEvidence(record,{asOf,sources=[],manifest={},minimumSample=
    else if(bad.length){status='conflict';reason='Subject evidence needs identity, source or quality reconciliation.';}
    else if(context.length){status='context_only';reason='Area/published context exists; it is not subject transaction history.';}
    else if(record.historyAccess?.[m]?.status==='inaccessible'){status='inaccessible';reason=record.historyAccess[m].reason||'Applicable source access has not been obtained.';}
-   else if(!applicability&&i<(earliest.length?Math.min(...earliest):end+1)){status='unknown';reason='Subject launch/applicability and earlier observation availability are not verified.';}
+   else if(!applicability&&i<(knownStarts.length?Math.min(...knownStarts):end+1)){status='unknown';reason='Subject applicability and earlier observation availability are not verified.';}
    periods.push({period,status,rawCount:matching.length,eligibleCount:eligible.length,contextCount:context.length,sparseCount:sparse.length,reason});
   }
   const statusCounts=Object.fromEntries(['observed','sparse','context_only','missing','not_applicable','conflict','unknown','inaccessible'].map(s=>[s,periods.filter(p=>p.status===s).length]));

@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "passId": "primary-project-pass40-20261009",
+  "priorVersion": "20261009-enrichment-v39",
+  "priorSHA256": "c112efc54c153338e1a1543a882a16c31894d8d4c16bc00ca66adab38fd58d98",
+  "candidateVersion": "20261009-enrichment-v40",
+  "asOf": "2026-10-09",
+  "sources": [
+    {
+      "id": "primary40-wraith-quotes",
+      "url": "https://www.binghatti.com/en/projects/binghatti-wraith",
+      "finalUrl": "https://www.binghatti.com/en/projects/binghatti-wraith",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "retrievedAt": "2026-10-09T02:04:30.028Z",
+      "bytes": 180482,
+      "sha256": "08c2db823069c4f85a9e470ae7b627bc2b3758abf74b790d8da40c7546d5c875",
+      "rawBodyRedistributed": false,
+      "publisher": "Binghatti",
+      "title": "Binghatti Wraith available-unit advertisements",
+      "publishedAt": null,
+      "publicationDatePrecision": "unknown",
+      "firstAvailableAt": "2026-10-09T02:04:30.028Z",
+      "primaryEvidence": true,
+      "classification": "primary_developer_advertisement",
+      "publicationDateBasis": "No publication date established; advertisement observed at capture",
+      "licence": "Minimal attributed factual extraction; raw HTML and media are not redistributed",
+      "preserveRevision": true,
+      "revisionOfSourceId": "scrape-b6fca08535c84f80f04d7ea0"
+    },
+    {
+      "id": "primary40-helvetia-premiere",
+      "url": "https://dhg.ch/posts/dhg-properties-hosts--exclusive-broker-event-for-new-dubai-islands-project",
+      "finalUrl": "https://dhg.ch/posts/dhg-properties-hosts--exclusive-broker-event-for-new-dubai-islands-project",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-10-09T02:04:28.194Z",
+      "bytes": 2674212,
+      "sha256": "e2871095992db33f7b86693e66da929c66f7dd93e8a7dfd814e1c8da890ce527",
+      "rawBodyRedistributed": false,
+      "publisher": "DHG Properties",
+      "title": "DHG reports Helvetia Marine Premiere Week",
+      "publishedAt": "2025-12",
+      "publicationDatePrecision": "month",
+      "firstAvailableAt": "2026-10-09T02:04:28.194Z",
+      "primaryEvidence": true,
+      "classification": "primary_developer_lifecycle_report",
+      "publicationDateBasis": "Displayed month only; current captured article body first available at retrieval",
+      "licence": "Minimal attributed factual extraction; raw HTML and media are not redistributed"
+    },
+    {
+      "id": "primary40-helvetia-groundbreaking",
+      "url": "https://dhg.ch/posts/dhg-properties-breaks-ground-on-helvetia-marine-on-dubai-islands",
+      "finalUrl": "https://dhg.ch/posts/dhg-properties-breaks-ground-on-helvetia-marine-on-dubai-islands",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-10-09T02:04:29.615Z",
+      "bytes": 2668484,
+      "sha256": "df8317f93e2da976adf5128ed5625dd9e77600535faf1ee9e8fc2ca745cceacd",
+      "rawBodyRedistributed": false,
+      "publisher": "DHG Properties",
+      "title": "DHG reports Helvetia Marine construction commencement",
+      "publishedAt": "2026-06",
+      "publicationDatePrecision": "month",
+      "firstAvailableAt": "2026-10-09T02:04:29.615Z",
+      "primaryEvidence": true,
+      "classification": "primary_developer_lifecycle_report",
+      "publicationDateBasis": "Displayed month only; current captured article body first available at retrieval",
+      "licence": "Minimal attributed factual extraction; raw HTML and media are not redistributed"
+    }
+  ],
+  "facts": [
+    {
+      "id": "primary40-wraith-studio",
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "kind": "financial",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-wraith-quotes"
+      ],
+      "identitySourceIds": [
+        "primary40-wraith-quotes"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Binghatti Wraith / Al Jaddaf record, corroborated by the exact named project and bedroom cards on the Binghatti primary domain. This proves the marketed advertisement subject, not legal registration 4482, legal developer equivalence or any candidate transaction.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-09T02:04:30.028Z",
+      "scope": "subject",
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "period": "2026-10-09",
+        "observationDateBasis": "Primary advertisement observed at retrieval; original publication and launch date unknown",
+        "metric": "price",
+        "observationKind": "asking_quote",
+        "unit": "AED",
+        "value": 807999,
+        "segment": "Studio apartment",
+        "bedrooms": "Studio",
+        "quoteQualifier": "bedroom-specific advertised starting price",
+        "sourceQuoteBasis": "Named available-unit card on primary developer project page",
+        "advertisedStartingAreaSqft": 341,
+        "areaBasis": "Separate advertised starting area; not a verified same-unit transaction denominator",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "pricePerSqftDerived": false,
+        "note": "Starting price and starting area are separately advertised bounds. No exact-unit AED/sqft, registered sale, current valuation, yield or appreciation is inferred."
+      }
+    },
+    {
+      "id": "primary40-wraith-1-bedroom",
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "kind": "financial",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-wraith-quotes"
+      ],
+      "identitySourceIds": [
+        "primary40-wraith-quotes"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Binghatti Wraith / Al Jaddaf record, corroborated by the exact named project and bedroom cards on the Binghatti primary domain. This proves the marketed advertisement subject, not legal registration 4482, legal developer equivalence or any candidate transaction.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-09T02:04:30.028Z",
+      "scope": "subject",
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "period": "2026-10-09",
+        "observationDateBasis": "Primary advertisement observed at retrieval; original publication and launch date unknown",
+        "metric": "price",
+        "observationKind": "asking_quote",
+        "unit": "AED",
+        "value": 1299999,
+        "segment": "1 Bedroom apartment",
+        "bedrooms": "1 Bedroom",
+        "quoteQualifier": "bedroom-specific advertised starting price",
+        "sourceQuoteBasis": "Named available-unit card on primary developer project page",
+        "advertisedStartingAreaSqft": 662,
+        "areaBasis": "Separate advertised starting area; not a verified same-unit transaction denominator",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "pricePerSqftDerived": false,
+        "note": "Starting price and starting area are separately advertised bounds. No exact-unit AED/sqft, registered sale, current valuation, yield or appreciation is inferred."
+      }
+    },
+    {
+      "id": "primary40-wraith-2-bedroom",
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "kind": "financial",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-wraith-quotes"
+      ],
+      "identitySourceIds": [
+        "primary40-wraith-quotes"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Binghatti Wraith / Al Jaddaf record, corroborated by the exact named project and bedroom cards on the Binghatti primary domain. This proves the marketed advertisement subject, not legal registration 4482, legal developer equivalence or any candidate transaction.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-09T02:04:30.028Z",
+      "scope": "subject",
+      "evidenceClass": "advertised_asking_price",
+      "observation": {
+        "period": "2026-10-09",
+        "observationDateBasis": "Primary advertisement observed at retrieval; original publication and launch date unknown",
+        "metric": "price",
+        "observationKind": "asking_quote",
+        "unit": "AED",
+        "value": 2099999,
+        "segment": "2 Bedroom apartment",
+        "bedrooms": "2 Bedroom",
+        "quoteQualifier": "bedroom-specific advertised starting price",
+        "sourceQuoteBasis": "Named available-unit card on primary developer project page",
+        "advertisedStartingAreaSqft": 1112,
+        "areaBasis": "Separate advertised starting area; not a verified same-unit transaction denominator",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "pricePerSqftDerived": false,
+        "note": "Starting price and starting area are separately advertised bounds. No exact-unit AED/sqft, registered sale, current valuation, yield or appreciation is inferred."
+      }
+    },
+    {
+      "id": "primary40-marine-premiere",
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-helvetia-premiere"
+      ],
+      "identitySourceIds": [
+        "primary40-helvetia-premiere"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Helvetia Marine / DHG Properties / Dubai Islands record. Both primary DHG articles explicitly name this project; the construction report locates it on Island A. Helvetia Residences in JVC and Helvetia Verde in Meydan remain separate. No registration-number or individual sale mapping is inferred.",
+      "primaryEvidence": true,
+      "publishedAt": "2025-12",
+      "firstAvailableAt": "2026-10-09T02:04:28.194Z",
+      "scope": "subject",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-12-08",
+        "end": "2025-12-13",
+        "precision": "range"
+      },
+      "label": "DHG reports Helvetia Marine broker Premiere Week, 8–13 December 2025.",
+      "note": "Explicit event interval. The article also says this preceded the broader market launch; it does not establish the first-ever sale, first marketing date or original public launch.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "primary40-marine-construction-report",
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-helvetia-groundbreaking"
+      ],
+      "identitySourceIds": [
+        "primary40-helvetia-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Helvetia Marine / DHG Properties / Dubai Islands record. Both primary DHG articles explicitly name this project; the construction report locates it on Island A. Helvetia Residences in JVC and Helvetia Verde in Meydan remain separate. No registration-number or individual sale mapping is inferred.",
+      "primaryEvidence": true,
+      "publishedAt": "2026-06",
+      "firstAvailableAt": "2026-10-09T02:04:29.615Z",
+      "scope": "subject",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2026-06",
+        "precision": "month"
+      },
+      "label": "DHG reports that Helvetia Marine construction has commenced.",
+      "note": "June 2026 is the article month, not an independently verified day of groundbreaking or an inspection. The developer reports commencement; no progress percentage, completion or occupancy is inferred.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Displayed June 2026 report month; exact construction-start date unestablished"
+    },
+    {
+      "id": "primary40-marine-target",
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-helvetia-groundbreaking"
+      ],
+      "identitySourceIds": [
+        "primary40-helvetia-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Helvetia Marine / DHG Properties / Dubai Islands record. Both primary DHG articles explicitly name this project; the construction report locates it on Island A. Helvetia Residences in JVC and Helvetia Verde in Meydan remain separate. No registration-number or individual sale mapping is inferred.",
+      "primaryEvidence": true,
+      "publishedAt": "2026-06",
+      "firstAvailableAt": "2026-10-09T02:04:29.615Z",
+      "scope": "subject",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2028-Q1",
+        "precision": "quarter"
+      },
+      "label": "DHG anticipates Helvetia Marine handover in Q1 2028.",
+      "note": "Developer target preserved beside earlier schedules. It is not completed handover, occupancy or rental availability.",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "primary40-marine-soldout-report",
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "primary40-helvetia-groundbreaking"
+      ],
+      "identitySourceIds": [
+        "primary40-helvetia-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique catalogue Helvetia Marine / DHG Properties / Dubai Islands record. Both primary DHG articles explicitly name this project; the construction report locates it on Island A. Helvetia Residences in JVC and Helvetia Verde in Meydan remain separate. No registration-number or individual sale mapping is inferred.",
+      "primaryEvidence": true,
+      "publishedAt": "2026-06",
+      "firstAvailableAt": "2026-10-09T02:04:29.615Z",
+      "scope": "subject",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2026-06",
+        "precision": "month"
+      },
+      "label": "DHG reports Helvetia Marine sold out before groundbreaking.",
+      "note": "June article describes a 63-residence development and a sold-out status. This is a developer marketing report, not 63 verified DLD transactions, settled revenue, individual prices or current resale availability.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "catalogueName": "Binghatti Wraith",
+      "type": "project",
+      "emirate": "Dubai",
+      "communityId": "community:Dubai:al-jaddaf"
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "catalogueName": "Helvetia Marine",
+      "type": "project",
+      "emirate": "Dubai",
+      "communityId": "community:Dubai:dubai-islands"
+    }
+  ],
+  "recordResearch": [],
+  "collection": {
+    "asOf": "2026-10-09",
+    "acceptedLifecycleFacts": 4,
+    "advertisedBedroomQuotes": 3,
+    "newRegisteredTransactions": 0,
+    "newSources": 3,
+    "rawBodiesRedistributed": false
+  },
+  "methodology": "Primary marketed-subject identity supports separately labelled asking quotes and lifecycle reports. It does not resolve DLD legal-entity, phase or transaction candidate identity. Native event interval and publication month precision are retained; captured bodies are unavailable to earlier backtests. Bedroom quote bounds do not establish same-unit price per area or replace the project headline snapshot.",
+  "excludedCandidates": [
+    {
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "reason": "49 residential-flat sale candidates remain pending primary registration/component proof."
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "reason": "10 residential-flat sale candidates remain pending primary registration/component proof."
+    }
+  ]
+}

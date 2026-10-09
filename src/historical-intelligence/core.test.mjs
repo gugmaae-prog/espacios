@@ -247,6 +247,23 @@ test('retained verified financial evidence before a public launch keeps applicab
  assert.equal(out.metrics.price.periods[0].status,'observed');assert.equal(out.metrics.price.statusCounts.not_applicable,0);
 });
 
+test('a public launch without a proven first-sale boundary cannot exclude earlier price periods',()=>{
+ const launch={kind:'launch',date:{start:'2022-01-01',precision:'day'},status:'verified',scope:'subject',primaryEvidence:true,eventStatus:'reported',sourceIds:['sales']};
+ const r={...record,historyStartPeriod:'2020-01',lifecycle:[launch]};
+ const out=monthlyCoverage(r,{asOf,sources});
+ assert.equal(out.metrics.price.subjectApplicabilityKnown,false);
+ assert.equal(out.metrics.price.statusCounts.not_applicable,0);
+ assert.equal(out.metrics.price.periods.find(p=>p.period==='2020-01').status,'unknown');
+ assert.equal(out.metrics.price.periods.find(p=>p.period==='2022-01').status,'missing');
+ assert.equal(out.metrics.price.periods.find(p=>p.period==='2026-09').status,'missing');
+ const proven=monthlyCoverage({...r,lifecycle:[{...launch,establishesApplicabilityStart:true}]},{asOf,sources});
+ assert.equal(proven.metrics.price.subjectApplicabilityKnown,true);
+ assert.equal(proven.metrics.price.statusCounts.not_applicable,24);
+ const contradictory=monthlyCoverage({...r,lifecycle:[{...launch,establishesApplicabilityStart:true}],observations:[observation('2020-01')]},{asOf,sources});
+ assert.equal(contradictory.metrics.price.subjectApplicabilityKnown,false);
+ assert.equal(contradictory.metrics.price.periods[0].status,'observed');
+});
+
 test('microsecond source capture timestamps retain text and are available at the current cutoff',()=>{
  const instant='2026-10-05T09:59:36.848680+00:00';
  assert.equal(parseEvidenceDate(instant).instant,Date.parse('2026-10-05T09:59:36.848Z'));

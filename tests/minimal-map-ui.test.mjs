@@ -86,13 +86,22 @@ test('active map controls share the soft Espacios palette in light and dark them
   assert.match(css,/data-espacios-theme="light"[\s\S]*?\.category-list button:not\(\.active\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel\) 90%,transparent\)!important/);
   assert.match(css,/data-espacios-theme="dark"[\s\S]*?--minimal-blue:#a7bbcf/);
   assert.match(css,/V28: the old shell can repaint the mobile Map mode[\s\S]*?#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 4%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?box-shadow:none!important/);
+  assert.match(css,/V34: bring the Map-mode pill closer to the shared Espacios surface/);
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn:is\(\.active,[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 98%,var\(--minimal-accent,#657d98\) 2%\)!important;[\s\S]*?background-image:none!important;[\s\S]*?box-shadow:none!important/);
+  assert.match(css,/html\[data-minimal-map="1"\] body #app :is\(#minimal-map-modes,\.ae-mobile-map-modes\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,transparent\)!important/);
 });
 
-test('mobile map modes avoid the premium dark pill and keep a low-contrast selected state',()=>{
-  assert.match(css,/V29: keep the mobile map mode control visually attached/);
-  assert.match(css,/#minimal-map-modes,[\s\S]*?\.ae-mobile-map-modes[\s\S]*?button\[aria-pressed="true"\],[\s\S]*?\.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 78%,transparent\)!important/);
+test('mobile map modes normalize selected signals to the theme surface',()=>{
+  assert.match(css,/V30: normalize every selected-state signal/);
+  assert.match(css,/#minimal-map-modes,[\s\S]*?\.ae-mobile-map-modes[\s\S]*?button\[aria-pressed="true"\],[\s\S]*?\.rail-btn\.active[\s\S]*?\.rail-btn\[aria-current="true"\][\s\S]*?\.rail-btn\[aria-selected="true"\][\s\S]*?background:var\(--su-panel,#f4f6f7\)!important/);
   assert.match(css,/html body #app \.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,transparent\)!important[\s\S]*?box-shadow:0 1px 5px #172b3a0a!important/);
-  assert.doesNotMatch(css,/V29[\s\S]*?#0b1821|V29[\s\S]*?#c9a45d/i);
+  assert.doesNotMatch(css,/V30[\s\S]*?#0b1821|V30[\s\S]*?#c9a45d/i);
+});
+
+test('mobile map mode selection overrides inherited styles with a low-contrast Espacios slate tint',()=>{
+  assert.match(css,/V32: keep mobile mode selection inside the Espacios slate palette/);
+  assert.match(css,/html\[data-minimal-map="1"\] body #app #minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?html\[data-minimal-map="1"\] body #app \.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 6%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?color:var\(--su-ink,#27323b\)!important;[\s\S]*?box-shadow:none!important/);
+  assert.doesNotMatch(css,/V32[\s\S]*?(?:#0b1821|#c9a45d|#c77955)/i);
 });
 
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{
@@ -140,7 +149,14 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v29'));
+  assert.ok(worker.includes('20261009-map-evidence-v43'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
+});
+
+test('all mobile map selection variants use the shared Espacios slate surface',()=>{
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn:is\(\.active,\[aria-pressed="true"\]/);
+  assert.match(css,/\.layer-rail \.rail-btn:is\(\.active,\[aria-pressed="true"\]/);
+  assert.match(css,/background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,var\(--minimal-accent,#657d98\) 6%\)!important/);
+  assert.match(css,/text-shadow:none!important/);
 });

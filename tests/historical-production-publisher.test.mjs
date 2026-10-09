@@ -39,6 +39,10 @@ test('production publisher adapter accepts only the released bridge endpoints',(
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v22.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v24.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v27.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v29.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v30.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v31.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://attacker.example'),false);
  assert.equal(isApprovedPublisherURL('http://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),false);
 });
@@ -76,4 +80,56 @@ test('R2 requires matching bytes and conditional creation, preserving a concurre
  const headers={Authorization:'Bearer test-token','X-Snapshot-Version':'version','X-Content-SHA256':sha};
  let response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers,body:'incorrect'}),{...env,MARKET_R2:storage});assert.equal(response.status,400);assert.equal(writes,0);
  response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers,body:bytes}),{...env,MARKET_R2:storage});assert.equal(response.status,200);assert.equal((await response.json()).created,false);assert.equal(writes,1);
+});
+test('release bridge marks transient Cloudflare R2 failures retryable',async()=>{
+ globalThis.crypto??=webcrypto;
+ const bytes=new TextEncoder().encode('retryable'),sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex'),key=`research/published/2026-10-08/historical-intelligence/objects/${sha}.json.gz`;
+ const response=await bridge.fetch(new Request('https://bridge/r2?key='+key,{method:'PUT',headers:{Authorization:'Bearer test-token','X-Snapshot-Version':'version','X-Content-SHA256':sha},body:bytes}),{...env,MARKET_R2:{put:async()=>{throw Error('put: We encountered an internal error. Please try again. (10001)')}}});
+ assert.equal(response.status,503);assert.match((await response.json()).error,/internal error/);
+});
+
+test('bounded release batches compact only identical validated inserts below 100 parameters',async()=>{
+ const {compactValidatedBatch}=await import('../scripts/production-history-publisher-worker.mjs');
+ const sql='INSERT OR IGNORE INTO hi_sources(snapshot_version,source_id,url,source_json) VALUES(?,?,?,?);';
+ const rows=Array.from({length:50},(_,i)=>({sql,params:['version','source-'+i,'https://example.com/'+i,JSON.stringify({title:"Quoted ' text; مراس",i})]}));
+ const frozen=JSON.stringify(rows),packed=compactValidatedBatch(rows,env);
+ assert.equal(packed.length,2);assert.ok(packed.every(r=>r.params.length===100));assert.deepEqual(packed.flatMap(r=>r.params),rows.flatMap(r=>r.params));assert.equal(JSON.stringify(rows),frozen);
+ const read={sql:'SELECT count(*) AS count FROM hi_sources WHERE snapshot_version = ?',params:['version']};
+ const mixed=compactValidatedBatch([rows[0],read,rows[1]],env);assert.equal(mixed.length,3);assert.deepEqual(mixed[1],read);
+ assert.throws(()=>compactValidatedBatch([...rows,{...rows[0],params:['other',...rows[0].params.slice(1)]}],env),/scope/);
+ assert.throws(()=>compactValidatedBatch([{sql:'DELETE FROM hi_sources',params:['version']}],env),/not allowed/);
+});
+
+test('compacted inserts preserve SQLite duplicate, quotation, row-check and foreign-key behavior',async()=>{
+ const {compactValidatedBatch}=await import('../scripts/production-history-publisher-worker.mjs');
+ const {spawnSync}=await import('node:child_process');
+ const sql='INSERT OR IGNORE INTO hi_sources(snapshot_version,source_id,url,source_json) VALUES(?,?,?,?);';
+ const rows=Array.from({length:50},(_,i)=>({sql,params:['version','source-'+(i%43),i===41?'':'https://example.com/'+i,JSON.stringify({text:"Quotes ' ; ? and مراس",i})]}));
+ const py=String.raw`
+import sqlite3,json,sys
+p=json.load(sys.stdin)
+def run(rows):
+ db=sqlite3.connect(':memory:')
+ db.executescript("PRAGMA foreign_keys=ON; CREATE TABLE hi_snapshots(snapshot_version TEXT PRIMARY KEY); INSERT INTO hi_snapshots VALUES('version'); CREATE TABLE hi_sources(snapshot_version TEXT,source_id TEXT,url TEXT CHECK(length(url)>0),source_json TEXT,PRIMARY KEY(snapshot_version,source_id),FOREIGN KEY(snapshot_version) REFERENCES hi_snapshots(snapshot_version));")
+ with db:
+  for r in rows:db.execute(r['sql'],r['params'])
+ return db.execute('select * from hi_sources order by source_id').fetchall()
+a=run(p['original']);b=run(p['packed']);assert a==b and len(a)==42
+for rows in [p['original'],p['packed']]:
+ for r in rows:r['params']=[('missing-parent' if x=='version' else x) for x in r['params']]
+ try:run(rows)
+ except sqlite3.IntegrityError:pass
+ else:raise AssertionError('Foreign key bypassed')
+`;
+ const result=spawnSync('python3',['-c',py],{input:JSON.stringify({original:rows,packed:compactValidatedBatch(rows,env)}),encoding:'utf8'});assert.equal(result.status,0,result.stderr);
+});
+
+test('release bridge validates the whole batch before touching D1 and sends compacted queries',async()=>{
+ let prepared=0,batched=0;
+ const DB={prepare(sql){prepared++;return{bind(...params){return{sql,params};}}},async batch(rows){batched++;assert.equal(rows.length,2);assert.ok(rows.every(r=>r.params.length<=100));return rows.map(()=>({success:true}));}};
+ const sql='INSERT OR IGNORE INTO hi_sources(snapshot_version,source_id,url,source_json) VALUES(?,?,?,?);';
+ const rows=Array.from({length:50},(_,i)=>({sql,params:['version','s'+i,'https://example.com','{}']}));
+ const send=statements=>bridge.fetch(new Request('https://bridge/d1',{method:'POST',headers:{Authorization:'Bearer test-token','Content-Type':'application/json'},body:JSON.stringify({mode:'batch',statements})}),{...env,DB});
+ assert.equal((await send([...rows.slice(0,49),{sql,params:['wrong','s','url','{}']}])).status,400);assert.equal(prepared,0);assert.equal(batched,0);
+ assert.equal((await send(rows)).status,200);assert.equal(prepared,2);assert.equal(batched,1);
 });

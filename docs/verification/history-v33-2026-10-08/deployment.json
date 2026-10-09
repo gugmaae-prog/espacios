@@ -1,0 +1,16 @@
+{
+  "id": "60b64918-ad1f-4b78-8870-8c2d4b4b1dd1",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish V33 sourced RAK histories and explicit price applicability; preserve Espacios palette",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "b38cc2aa-161b-485f-94e9-9f6b2fb03aad",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T20:18:41.944377Z"
+}

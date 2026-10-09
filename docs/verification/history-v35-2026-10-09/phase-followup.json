@@ -1,0 +1,28 @@
+{
+  "status": "captured_for_next_identity_and_scope_review_not_ingested",
+  "source": {
+    "url": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2016-Annual-report.pdf",
+    "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2016-Annual-report.pdf",
+    "retrievedAt": "2026-10-08T21:40:47.421Z",
+    "sha256": "6c0dd924f35e33a61bb3d9ab0907c8cebaa066dab20df4a2950e2cffe833189e",
+    "bytes": 7981701,
+    "httpStatus": 200,
+    "visualPageReviewed": 27,
+    "publicationDateStatus": "Unestablished; report year and auditor signature do not establish document publication date"
+  },
+  "reportedPhaseHistory": {
+    "phaseOneHandover": "2015",
+    "phaseTwoHandover": "2016-10",
+    "pages": [
+      27,
+      29
+    ]
+  },
+  "relatedV35EvidenceIds": [
+    "rak35-flamingo-delivery",
+    "rak35-mina-flamingo-delivery"
+  ],
+  "scopeReview": "Earlier named phase handovers must be retained separately from the Q2 2024 report retrospective community-delivery year 2017. Do not overwrite either vintage or infer legal completion/occupancy. V35 delivery_reports means a sourced reported statement exists, not that the date is a resolved first-ever or whole-project completion.",
+  "rawBodyRedistributed": false,
+  "additionalCoverageCredit": 0
+}

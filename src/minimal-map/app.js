@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261008-map-palette-v29';
+  const RELEASE='20261009-map-evidence-v43';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
@@ -136,6 +136,24 @@
     if(button)button.click();
   }
 
+  // Measure the finished controls, including later-added research buttons.
+  // Panels must clear wrapped categories as well as the search and mode row.
+  function installPanelGeometry(){
+    let frame=0;
+    const measure=()=>{
+      frame=0;
+      const controls=[Q('.topbar'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes')];
+      const bottom=Math.max(0,...controls.filter(Boolean).map(el=>el.getBoundingClientRect().bottom));
+      const value=Math.ceil(bottom+12)+'px';
+      if(root.style.getPropertyValue('--minimal-panel-top')!==value)root.style.setProperty('--minimal-panel-top',value);
+    };
+    const schedule=()=>{if(!frame)frame=requestAnimationFrame(measure);};
+    const observer=new ResizeObserver(schedule);
+    for(const el of [Q('.topbar'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes')].filter(Boolean))observer.observe(el);
+    addEventListener('resize',schedule);
+    schedule();
+  }
+
   function install(){
     if(UI.installed||!window.EspaciosUnifiedMap||!Q('#tl-dock')||!Q('#dr-track')||!Q('.search-wrap'))return false;
     UI.installed=true;root.dataset.minimalMap='1';
@@ -206,6 +224,7 @@
     const readout=Q('#um-readout');if(readout)readout.hidden=true;
     const status=Q('#mm-status');if(status)status.hidden=true;
 
+    installPanelGeometry();
     setMode('map');setMetric('price');
     return true;
   }

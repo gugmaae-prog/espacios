@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-08T21:10:13.368Z",
+  "token": "20261009-map-catalogue-v38",
+  "checks": [
+    {
+      "path": "/map",
+      "status": 200,
+      "bytes": 260275
+    },
+    {
+      "path": "/map/app-v2.js?v=20261009-map-catalogue-v38",
+      "status": 200,
+      "bytes": 841498
+    },
+    {
+      "path": "/map/app-v2.css?v=20261009-map-catalogue-v38",
+      "status": 200,
+      "bytes": 113352
+    },
+    {
+      "path": "/map/api/projects-all?review=20261009-map-catalogue-v38",
+      "status": 200,
+      "bytes": 603797,
+      "records": 1098,
+      "matchedNura": []
+    },
+    {
+      "path": "/map/api/projects-batch?review=20261009-map-catalogue-v38&start=1&count=1",
+      "status": 200,
+      "bytes": 66350,
+      "records": 24,
+      "matchedNura": []
+    },
+    {
+      "path": "/map/map-data.json?review=20261009-map-catalogue-v38",
+      "status": 200,
+      "bytes": 1580538,
+      "records": 1645,
+      "matchedNura": [
+        {
+          "id": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+          "developer": "RAK Properties",
+          "reviewId": "nura-developer-20261009"
+        }
+      ]
+    },
+    {
+      "path": "/map/data-room",
+      "status": 404,
+      "bytes": 41
+    }
+  ],
+  "passed": true
+}

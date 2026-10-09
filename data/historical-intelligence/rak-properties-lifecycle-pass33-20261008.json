@@ -1,0 +1,1763 @@
+{
+  "schemaVersion": 1,
+  "passId": "rak-primary-lifecycle-pass33-20261008",
+  "asOf": "2026-10-08",
+  "priorVersion": "20261008-enrichment-v32",
+  "candidateVersion": "20261008-enrichment-v33",
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "catalogueName": "EDGE",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "sourceId": "rak33-edge-launch"
+    },
+    {
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "catalogueName": "SKAI",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "sourceId": "rak33-skai-launch"
+    },
+    {
+      "recordId": "project:mirasol-by-rak-properties-in-mina-al-arab",
+      "catalogueName": "Mirasol by RAK Properties in Mina, Ras Al Khaimah",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "The retained RAK Properties Mirasol record is distinct from the explicitly named Mirasol II record. The January release identifies the original 339-home, two-tower introduction; the September release explicitly identifies the later 280-home Phase II. Generic later Mirasol progress is not assigned to either phase.",
+      "sourceId": "rak33-mirasol-launch"
+    },
+    {
+      "recordId": "project:mirasol-2-north-harbour-mina-rak-uae",
+      "catalogueName": "Mirasol II",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact Mirasol II catalogue identity, RAK Properties and North Harbour agree with the explicitly named 280-home second-phase release; original Mirasol facts are not copied here.",
+      "sourceId": "rak33-mirasol2-launch"
+    },
+    {
+      "recordId": "project:enta-mina-hive-rak-properties-uae",
+      "catalogueName": "ENTA Mina",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact ENTA Mina name, RAK Properties and HIVE identity agree; release also identifies A.R.M Holding and the 119-residence product.",
+      "sourceId": "rak33-enta-launch"
+    },
+    {
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "catalogueName": "Anantara Mina Ras Al Khaimah Residences",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact Anantara Mina Residences name, RAK Properties, Hayat Island and apartment/villa product agree with the catalogue. The operating Anantara hotel is a separate asset; apartment and villa construction reports remain phase-scoped.",
+      "sourceId": "rak33-anantara-sales"
+    },
+    {
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "catalogueName": "Nura by RAK Properties",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Retained record title and slug explicitly name Nura by RAK Properties; the developer release identifies that unique Nura project on Raha Island. The archived map-core developer field contains the malformed value nura; no developer correction or geographic precision is inferred from that field.",
+      "sourceId": "rak33-nura-launch"
+    },
+    {
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "catalogueName": "SOLERA",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact SOLERA name, RAK Properties and Raha Island agree with the catalogue; release identifies a 451-home apartment project.",
+      "sourceId": "rak33-solera-launch"
+    },
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "Bayviews Residences Hayat Island",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact Bayviews/Bay Views developer and Hayat Island identity retained from V32; Bay Residences is a separate development.",
+      "sourceId": "rak32-bayviews-launch"
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "catalogueName": "Cape Hayat",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact Cape Hayat, RAK Properties and Hayat Island identity retained from V32.",
+      "sourceId": "rak32-cape-launch"
+    },
+    {
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "catalogueName": "Quattro Del Mar",
+      "emirate": "Ras Al Khaimah",
+      "type": "project",
+      "basis": "Exact Quattro Del Mar, RAK Properties and Hayat Island identity retained from V32.",
+      "sourceId": "rak32-quattro-launch"
+    }
+  ],
+  "sources": [
+    {
+      "id": "rak33-edge-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-unveils-edge-a-yacht-inspired-waterfront-residential-tower-on-raha-island-at-mina-al-arab/",
+      "title": "RAK Properties unveils ‘EDGE’, a yacht-inspired waterfront residential tower on Raha Island at Mina Al Arab",
+      "publishedAt": "2024-05-30",
+      "retrievedAt": "2026-10-08T19:42:15.909Z",
+      "sha256": "044792e9ff6c3069f132ebb4844946b1a0d7d68315b5bf1afe0fda9a777762ca",
+      "bytes": 48666,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:15.909Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-skai-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-skai-a-new-waterfront-destination-in-the-heart-of-minas-harbour-district/",
+      "title": "RAK Properties Launches SKAI – A New Waterfront Destination In The Heart Of Mina’s Harbour District",
+      "publishedAt": "2025-02-26",
+      "retrievedAt": "2026-10-08T19:42:17.545Z",
+      "sha256": "00b4f5de4158e55403836735c723f9d3017fa7db8ac20adf6bcf60b65d82c6b7",
+      "bytes": 48572,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:17.545Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-mirasol-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-unveils-mina-masterplan-aed-5-billion-development-pipeline-and-latest-community-mirasol/",
+      "title": "Rak Properties Unveils Mina Masterplan, Aed 5 Billion Development Pipeline, And Latest Community – Mirasol",
+      "publishedAt": "2025-01-22",
+      "retrievedAt": "2026-10-08T19:42:19.607Z",
+      "sha256": "1a32079ea563740db35f1317c9a0b6643326bf258a5665d5d23c389ed477c082",
+      "bytes": 54779,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:19.607Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-mirasol-sellout",
+      "url": "https://www.rakproperties.ae/news/rak-properties-sells-out-first-phase-of-mirasol/",
+      "title": "Rak Properties Sells Out First Phase Of Mirasol",
+      "publishedAt": "2025-01-29",
+      "retrievedAt": "2026-10-08T19:42:21.666Z",
+      "sha256": "82381093a39eee0c7008b2b343d0d9b7814ed52cbe0f24fe00c869d2aa0ecd37",
+      "bytes": 48992,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:21.666Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-mirasol2-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-mirasol-phase-ii-a-rapidly-growing-resort-inspired-haven-on-minas-vibrant-raha-island/",
+      "title": "RAK PROPERTIES LAUNCHES MIRASOL PHASE II – A RAPIDLY GROWING RESORT-INSPIRED HAVEN ON MINA’S VIBRANT RAHA ISLAND",
+      "publishedAt": "2025-09-25",
+      "retrievedAt": "2026-10-08T19:42:23.220Z",
+      "sha256": "8dd06ab230b88b8140f6e7d90752d8b016c5a0c2a6a4b481797671ff31615c20",
+      "bytes": 49813,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:23.220Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-enta-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-grows-residential-portfolio-offering-with-the-launch-of-enta/",
+      "title": "RAK Properties Grows Residential Portfolio Offering With The Launch of ENTA",
+      "publishedAt": "2025-05-23",
+      "retrievedAt": "2026-10-08T19:42:25.139Z",
+      "sha256": "b94bb4eb9fade1ee441f0c33407edf4e4301f04e68d0fb6fdb61d14f6b30e82a",
+      "bytes": 47899,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:25.139Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-anantara-announcement",
+      "url": "https://www.rakproperties.ae/news/rak-properties-and-minor-hotels-expand-partnership-announcing-anantara-branded-residences-in-mina-al-arab/",
+      "title": "RAK Properties and Minor Hotels expand partnership announcing Anantara Branded Residences in Mina Al Arab",
+      "publishedAt": "2024-10-01",
+      "retrievedAt": "2026-10-08T19:42:27.008Z",
+      "sha256": "1618d09599564adc61d18d1f9ecd5c3fbced5bec396242aa4e64971d5fcdd078",
+      "bytes": 48844,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:27.008Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-anantara-sales",
+      "url": "https://www.rakproperties.ae/news/rak-properties-opens-sales-for-anantara-mina-residences-branded-luxury-waterfront-homes-in-ras-al-khaimahs-mina/",
+      "title": "RAK Properties Opens Sales For Anantara Mina Residences – Branded Luxury Waterfront Homes In Ras Al Khaimah’s Mina",
+      "publishedAt": "2025-05-06",
+      "retrievedAt": "2026-10-08T19:42:28.955Z",
+      "sha256": "141261ced59d593e0360d01bf13529207f021c3b6ce46a801ffeaff2276461b3",
+      "bytes": 51435,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:28.955Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-fy2025",
+      "url": "https://www.rakproperties.ae/news/rak-properties-crowns-20th-anniversary-year-with-impressive-2025-results-driven-by-robust-sales-strategic-partnerships-and-accelerated-project-development/",
+      "title": "RAK Properties Crowns 20th Anniversary Year With Impressive 2025 Results, Driven By Robust Sales, Strategic Partnerships And Accelerated Project Development",
+      "publishedAt": "2026-02-06",
+      "retrievedAt": "2026-10-08T19:42:31.305Z",
+      "sha256": "a645c34136884f2aca350575c6f3e0dee9eed746bd734401ecf412d811ecce0e",
+      "bytes": 62022,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:31.305Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-q1-2026",
+      "url": "https://www.rakproperties.ae/news/rak-properties-enters-2026-with-resilience-and-continuity-with-q1-results-showing-developer-advancing-on-key-projects-across-planned-pipeline/",
+      "title": "RAK Properties Enters 2026 With Resilience And Continuity With Q1 Results Showing Developer Advancing on Key Projects Across Planned Pipeline",
+      "publishedAt": "2026-05-13",
+      "retrievedAt": "2026-10-08T19:42:33.140Z",
+      "sha256": "4fb1348e7bd68d02f1c330e905bfa491d52d08f284be88c7c5b513aa0a6b57ff",
+      "bytes": 56935,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:33.140Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-h1-2025",
+      "url": "https://www.rakproperties.ae/news/rak-properties-delivers-robust-h1-2025-performance-driving-continued-growth-through-successful-asset-launch-programme/",
+      "title": "RAK Properties Delivers Robust H1 2025 Performance, Driving Continued Growth Through Successful Asset Launch Programme",
+      "publishedAt": "2025-08-14",
+      "retrievedAt": "2026-10-08T19:42:34.652Z",
+      "sha256": "5a494adb04d11baed2b9e81549d0889e6406006e3e3af501e1d3b73dac460e8c",
+      "bytes": 57657,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:34.652Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-q3-2025",
+      "url": "https://www.rakproperties.ae/news/rak-properties-year-to-date-results-confirm-consistent-growth-underpinned-by-doubling-of-sales-value-new-asset-launches-and-significant-construction-progress/",
+      "title": "RAK Properties’ Year-To-Date Results Confirm Consistent Growth Underpinned By Doubling Of Sales Value, New Asset Launches And Significant Construction Progress",
+      "publishedAt": "2025-10-23",
+      "retrievedAt": "2026-10-08T19:42:36.737Z",
+      "sha256": "a732118312b55c763b93c72a385e3c1a577bbd5d50f8ce3538ee4122c4911749",
+      "bytes": 54757,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:36.737Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-solera-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-unveils-solera-the-pulse-of-minas-dynamic-new-downtown-district/",
+      "title": "RAK Properties Unveils Solera: The Pulse of Mina’s Dynamic New Downtown District",
+      "publishedAt": "2025-06-17",
+      "retrievedAt": "2026-10-08T19:42:38.757Z",
+      "sha256": "dd71c8834e21ea86874b1dcc94d81f5516073120f42f7f406edf95b5e67211dc",
+      "bytes": 48736,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:38.757Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak33-nura-launch",
+      "url": "https://www.rakproperties.ae/news/downtown-minas-cityscape-continues-to-evolve-with-the-launch-of-nura-rak-properties-newest-contemporary-luxury-development-on-raha-island/",
+      "title": "Downtown Mina’s Cityscape Continues To Evolve With The Launch Of Nura – RAK Properties’ Newest Contemporary Luxury Development On Raha Island",
+      "publishedAt": "2025-12-08",
+      "retrievedAt": "2026-10-08T19:42:40.810Z",
+      "sha256": "5a98d9ac37f5b35b63bac7c0c10c5fe01e18e7f73a32a9136acd6df6bb612b5c",
+      "bytes": 51337,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T19:42:40.810Z",
+      "availabilityBasis": "First verified capture of this release; historical online availability and historical bytes are not established.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed facts and citations only; no article, imagery or raw HTML redistribution",
+      "rawBodyRedistributed": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "rak33-edge-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-05-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-05-30",
+      "firstAvailableAt": "2026-10-08T19:42:15.909Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-edge-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2024-05-31",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-05-30",
+      "firstAvailableAt": "2026-10-08T19:42:15.909Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules public EDGE sales for 31 May 2024.",
+      "note": "Publication and scheduled sales-opening dates remain distinct.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-edge-target",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2027-Q2",
+        "precision": "quarter"
+      },
+      "sourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-05-30",
+      "firstAvailableAt": "2026-10-08T19:42:15.909Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer targets EDGE completion in Q2 2027.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-skai-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-02-26",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-02-26",
+      "firstAvailableAt": "2026-10-08T19:42:17.545Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-skai-expression-of-interest",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2025-02-26",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-02-26",
+      "firstAvailableAt": "2026-10-08T19:42:17.545Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer invites SKAI expressions of interest immediately.",
+      "note": "An invitation is not an observed sale.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated invitation publication"
+    },
+    {
+      "id": "rak33-skai-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2025-03-11",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-02-26",
+      "firstAvailableAt": "2026-10-08T19:42:17.545Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules SKAI sales from 11 March 2025.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-skai-main-contract",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "milestone": "announcement",
+      "date": {
+        "start": "2026-Q1",
+        "precision": "quarter"
+      },
+      "sourceIds": [
+        "rak33-q1-2026"
+      ],
+      "identitySourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-05-13",
+      "firstAvailableAt": "2026-10-08T19:42:33.140Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports awarding the SKAI main contract during Q1 2026.",
+      "note": "Contract award is not the construction-start day.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Explicit quarter in retrospective release"
+    },
+    {
+      "id": "rak33-mirasol-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:mirasol-by-rak-properties-in-mina-al-arab",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-01-22",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-mirasol-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-mirasol-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "The retained RAK Properties Mirasol record is distinct from the explicitly named Mirasol II record. The January release identifies the original 339-home, two-tower introduction; the September release explicitly identifies the later 280-home Phase II. Generic later Mirasol progress is not assigned to either phase.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-01-22",
+      "firstAvailableAt": "2026-10-08T19:42:19.607Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-mirasol-target",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:mirasol-by-rak-properties-in-mina-al-arab",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2028-01-01",
+        "precision": "range",
+        "end": "2028-06-30"
+      },
+      "sourceIds": [
+        "rak33-mirasol-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-mirasol-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "The retained RAK Properties Mirasol record is distinct from the explicitly named Mirasol II record. The January release identifies the original 339-home, two-tower introduction; the September release explicitly identifies the later 280-home Phase II. Generic later Mirasol progress is not assigned to either phase.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-01-22",
+      "firstAvailableAt": "2026-10-08T19:42:19.607Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules original Mirasol handover in H1 2028.",
+      "note": "Half-year interval retained; no quarter or exact handover day inferred.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-mirasol-phase-sales-report",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:mirasol-by-rak-properties-in-mina-al-arab",
+      "milestone": "phase_sales_status_report",
+      "date": {
+        "start": "2025-01-29",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-mirasol-sellout"
+      ],
+      "identitySourceIds": [
+        "rak33-mirasol-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "The retained RAK Properties Mirasol record is distinct from the explicitly named Mirasol II record. The January release identifies the original 339-home, two-tower introduction; the September release explicitly identifies the later 280-home Phase II. Generic later Mirasol progress is not assigned to either phase.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": "2025-01-29",
+      "firstAvailableAt": "2026-10-08T19:42:21.666Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports the first Mirasol sales phase sold out.",
+      "note": "Released inventory denominator, cancellations, registered sales and prices are not supplied. This marketing report is not transaction evidence.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Report publication; exact individual sale dates unknown"
+    },
+    {
+      "id": "rak33-mirasol2-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:mirasol-2-north-harbour-mina-rak-uae",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-09-25",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-mirasol2-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-mirasol2-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mirasol II catalogue identity, RAK Properties and North Harbour agree with the explicitly named 280-home second-phase release; original Mirasol facts are not copied here.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-09-25",
+      "firstAvailableAt": "2026-10-08T19:42:23.220Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-mirasol2-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:mirasol-2-north-harbour-mina-rak-uae",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2025-09-27",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-mirasol2-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-mirasol2-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mirasol II catalogue identity, RAK Properties and North Harbour agree with the explicitly named 280-home second-phase release; original Mirasol facts are not copied here.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-09-25",
+      "firstAvailableAt": "2026-10-08T19:42:23.220Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules Mirasol Phase II sales for 27 September 2025.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-enta-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:enta-mina-hive-rak-properties-uae",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-05-23",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-enta-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-enta-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact ENTA Mina name, RAK Properties and HIVE identity agree; release also identifies A.R.M Holding and the 119-residence product.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-05-23",
+      "firstAvailableAt": "2026-10-08T19:42:25.139Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-anantara-partnership",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-10-01",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-anantara-announcement"
+      ],
+      "identitySourceIds": [
+        "rak33-anantara-sales"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Anantara Mina Residences name, RAK Properties, Hayat Island and apartment/villa product agree with the catalogue. The operating Anantara hotel is a separate asset; apartment and villa construction reports remain phase-scoped.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-10-01",
+      "firstAvailableAt": "2026-10-08T19:42:28.955Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "RAK Properties announces expanded Minor Hotels partnership for Anantara residences.",
+      "note": "The 2024 report describes about 94 apartments and 20 villas; the 2025 sales release describes 84 and 19. Both source vintages remain; no unit-count overwrite.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-anantara-sales-announcement",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "milestone": "announcement",
+      "date": {
+        "start": "2025-05-06",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-anantara-sales"
+      ],
+      "identitySourceIds": [
+        "rak33-anantara-sales"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Anantara Mina Residences name, RAK Properties, Hayat Island and apartment/villa product agree with the catalogue. The operating Anantara hotel is a separate asset; apartment and villa construction reports remain phase-scoped.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-05-06",
+      "firstAvailableAt": "2026-10-08T19:42:28.955Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces Anantara Mina Residences sales are open.",
+      "note": "This is the sales-announcement publication date, not a first-ever transaction date. Another release reports April sales commencement.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-anantara-sales-report-april",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2025-04",
+        "precision": "month"
+      },
+      "sourceIds": [
+        "rak33-enta-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-anantara-sales"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Anantara Mina Residences name, RAK Properties, Hayat Island and apartment/villa product agree with the catalogue. The operating Anantara hotel is a separate asset; apartment and villa construction reports remain phase-scoped.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-05-23",
+      "firstAvailableAt": "2026-10-08T19:42:28.955Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "A later developer release reports Anantara Mina Residences sales commenced in April 2025.",
+      "note": "Retrospective month precision; retained alongside the 6 May sales announcement. Neither establishes registered transactions.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Retrospective April statement in 23 May ENTA release"
+    },
+    {
+      "id": "rak33-nura-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-12-08",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Retained record title and slug explicitly name Nura by RAK Properties; the developer release identifies that unique Nura project on Raha Island. The archived map-core developer field contains the malformed value nura; no developer correction or geographic precision is inferred from that field.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-12-08",
+      "firstAvailableAt": "2026-10-08T19:42:40.810Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-nura-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2025-12-11",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Retained record title and slug explicitly name Nura by RAK Properties; the developer release identifies that unique Nura project on Raha Island. The archived map-core developer field contains the malformed value nura; no developer correction or geographic precision is inferred from that field.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-12-08",
+      "firstAvailableAt": "2026-10-08T19:42:40.810Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules Nura sales for 11 December 2025.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-nura-target",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2029-Q1",
+        "precision": "quarter"
+      },
+      "sourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Retained record title and slug explicitly name Nura by RAK Properties; the developer release identifies that unique Nura project on Raha Island. The archived map-core developer field contains the malformed value nura; no developer correction or geographic precision is inferred from that field.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-12-08",
+      "firstAvailableAt": "2026-10-08T19:42:40.810Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer anticipates Nura completion and handover in Q1 2029.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-solera-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-06-17",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SOLERA name, RAK Properties and Raha Island agree with the catalogue; release identifies a 451-home apartment project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-06-17",
+      "firstAvailableAt": "2026-10-08T19:42:38.757Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer publishes the project launch announcement.",
+      "note": "Announcement establishes public development history, not a first registered transaction.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Dated primary launch announcement"
+    },
+    {
+      "id": "rak33-solera-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2025-06-21",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SOLERA name, RAK Properties and Raha Island agree with the catalogue; release identifies a 451-home apartment project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-06-17",
+      "firstAvailableAt": "2026-10-08T19:42:38.757Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules SOLERA sales for 21 June 2025.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-solera-construction-target",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2026-04",
+        "precision": "month"
+      },
+      "sourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SOLERA name, RAK Properties and Raha Island agree with the catalogue; release identifies a 451-home apartment project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-06-17",
+      "firstAvailableAt": "2026-10-08T19:42:38.757Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer anticipates SOLERA construction starting in early April 2026.",
+      "note": "A past scheduled date is not confirmation that construction began.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-solera-handover-target",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2028-04",
+        "precision": "month"
+      },
+      "sourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SOLERA name, RAK Properties and Raha Island agree with the catalogue; release identifies a 451-home apartment project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-06-17",
+      "firstAvailableAt": "2026-10-08T19:42:38.757Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer anticipates SOLERA completion and handover by end-April 2028.",
+      "note": "Month precision retained; no exact day inferred.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-edge-progress-report-202508",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-08-14",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-h1-2025"
+      ],
+      "identitySourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-08-14",
+      "firstAvailableAt": "2026-10-08T19:42:34.652Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports construction progressing.",
+      "note": "No quantitative percentage or inspection date supplied; corporate financial totals are not project prices.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in H1 results"
+    },
+    {
+      "id": "rak33-bayviews-progress-report-202508",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-08-14",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-h1-2025"
+      ],
+      "identitySourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Bayviews/Bay Views developer and Hayat Island identity retained from V32; Bay Residences is a separate development.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-08-14",
+      "firstAvailableAt": "2026-10-08T19:42:34.652Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports construction progressing.",
+      "note": "No quantitative percentage or inspection date supplied; corporate financial totals are not project prices.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in H1 results"
+    },
+    {
+      "id": "rak33-cape-progress-report-202508",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-08-14",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-h1-2025"
+      ],
+      "identitySourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Cape Hayat, RAK Properties and Hayat Island identity retained from V32.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-08-14",
+      "firstAvailableAt": "2026-10-08T19:42:34.652Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports construction progressing.",
+      "note": "No quantitative percentage or inspection date supplied; corporate financial totals are not project prices.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in H1 results"
+    },
+    {
+      "id": "rak33-quattro-progress-report-202508",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-08-14",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-h1-2025"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Quattro Del Mar, RAK Properties and Hayat Island identity retained from V32.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-08-14",
+      "firstAvailableAt": "2026-10-08T19:42:34.652Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports construction progressing.",
+      "note": "No quantitative percentage or inspection date supplied; corporate financial totals are not project prices.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in H1 results"
+    },
+    {
+      "id": "rak33-bayviews-progress-report-202510",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-10-23",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-q3-2025"
+      ],
+      "identitySourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Bayviews/Bay Views developer and Hayat Island identity retained from V32; Bay Residences is a separate development.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-10-23",
+      "firstAvailableAt": "2026-10-08T19:42:36.737Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports further construction milestones.",
+      "note": "Underlying milestone dates and percentage are unspecified.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in nine-month results"
+    },
+    {
+      "id": "rak33-cape-progress-report-202510",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-10-23",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-q3-2025"
+      ],
+      "identitySourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Cape Hayat, RAK Properties and Hayat Island identity retained from V32.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-10-23",
+      "firstAvailableAt": "2026-10-08T19:42:36.737Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports further construction milestones.",
+      "note": "Underlying milestone dates and percentage are unspecified.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in nine-month results"
+    },
+    {
+      "id": "rak33-quattro-progress-report-202510",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025-10-23",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-q3-2025"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Quattro Del Mar, RAK Properties and Hayat Island identity retained from V32.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-10-23",
+      "firstAvailableAt": "2026-10-08T19:42:36.737Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports further construction milestones.",
+      "note": "Underlying milestone dates and percentage are unspecified.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Publication-date report in nine-month results"
+    },
+    {
+      "id": "rak33-edge-progress-report-202602",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-02-06",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-fy2025"
+      ],
+      "identitySourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-02-06",
+      "firstAvailableAt": "2026-10-08T19:42:31.305Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer FY2025 release reports 6.5% construction progress.",
+      "note": "Annual reporting period is 2025; an exact inspection day is not given. This is a report-date observation, not an invented 31 December inspection.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 6.5,
+      "dateBasis": "FY2025 report publication; inspection date unknown"
+    },
+    {
+      "id": "rak33-bayviews-progress-report-202602",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-02-06",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-fy2025"
+      ],
+      "identitySourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Bayviews/Bay Views developer and Hayat Island identity retained from V32; Bay Residences is a separate development.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-02-06",
+      "firstAvailableAt": "2026-10-08T19:42:31.305Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer FY2025 release reports 92.7% construction progress.",
+      "note": "Annual reporting period is 2025; an exact inspection day is not given. This is a report-date observation, not an invented 31 December inspection.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 92.7,
+      "dateBasis": "FY2025 report publication; inspection date unknown"
+    },
+    {
+      "id": "rak33-cape-progress-report-202602",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-02-06",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-fy2025"
+      ],
+      "identitySourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Cape Hayat, RAK Properties and Hayat Island identity retained from V32.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-02-06",
+      "firstAvailableAt": "2026-10-08T19:42:31.305Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer FY2025 release reports 86.5% construction progress.",
+      "note": "Annual reporting period is 2025; an exact inspection day is not given. This is a report-date observation, not an invented 31 December inspection.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 86.5,
+      "dateBasis": "FY2025 report publication; inspection date unknown"
+    },
+    {
+      "id": "rak33-quattro-progress-report-202602",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-02-06",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak33-fy2025"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Quattro Del Mar, RAK Properties and Hayat Island identity retained from V32.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-02-06",
+      "firstAvailableAt": "2026-10-08T19:42:31.305Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer FY2025 release reports 25% construction progress.",
+      "note": "Annual reporting period is 2025; an exact inspection day is not given. This is a report-date observation, not an invented 31 December inspection.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 25,
+      "dateBasis": "FY2025 report publication; inspection date unknown"
+    },
+    {
+      "id": "rak33-bayviews-target-2026q2",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-Q2",
+        "precision": "quarter"
+      },
+      "sourceIds": [
+        "rak33-q1-2026"
+      ],
+      "identitySourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Bayviews/Bay Views developer and Hayat Island identity retained from V32; Bay Residences is a separate development.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-05-13",
+      "firstAvailableAt": "2026-10-08T19:42:33.140Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports Bay Views being prepared for Q2 2026 handover.",
+      "note": "A target does not override later certificate, completion or occupancy gaps.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak33-edge-progress-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact EDGE name, RAK Properties developer and Raha Island location match the retained catalogue; not another developer's Edge.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T19:42:15.909Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports 25.8% overall construction progress.",
+      "note": "Superstructure reported at 76%; component progress is not overall completion. No independent inspection or completion is established.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 25.8,
+      "dateBasis": "Explicit 30 June 2026 construction-section as-of date"
+    },
+    {
+      "id": "rak33-skai-progress-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T19:42:17.545Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports 8.3% overall construction progress.",
+      "note": "Substructure reported above 55%; component progress is not overall completion. No independent inspection or completion is established.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 8.3,
+      "dateBasis": "Explicit 30 June 2026 construction-section as-of date"
+    },
+    {
+      "id": "rak33-enta-mobilisation-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:enta-mina-hive-rak-properties-uae",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak33-enta-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact ENTA Mina name, RAK Properties and HIVE identity agree; release also identifies A.R.M Holding and the 119-residence product.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T19:42:25.139Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports main contract awarded and mobilisation underway for ENTA Mina.",
+      "note": "Enabling works reported complete; exact start day and whole-project completion are not established.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Explicit 30 June 2026 section as-of date"
+    },
+    {
+      "id": "rak33-anantara-villas-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak33-anantara-sales"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Anantara Mina Residences name, RAK Properties, Hayat Island and apartment/villa product agree with the catalogue. The operating Anantara hotel is a separate asset; apartment and villa construction reports remain phase-scoped.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T19:42:28.955Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports villa main contract awarded and mobilisation underway.",
+      "note": "Villa portion only; enabling works reported complete. No whole-record progress percentage.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Explicit 30 June 2026 section as-of date"
+    },
+    {
+      "id": "rak33-anantara-apartments-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak33-anantara-sales"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Anantara Mina Residences name, RAK Properties, Hayat Island and apartment/villa product agree with the catalogue. The operating Anantara hotel is a separate asset; apartment and villa construction reports remain phase-scoped.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T19:42:28.955Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports soil improvement and piling underway for the apartments.",
+      "note": "Apartment portion only; exact commencement day unknown. Not copied to the separate hotel or villas.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Explicit 30 June 2026 section as-of date"
+    },
+    {
+      "id": "rak33-skai-dated-advertisement",
+      "kind": "financial",
+      "status": "accepted",
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "sourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-skai-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SKAI name, RAK Properties developer and Raha Island location match; primary release describes the 272-home project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-02-26",
+      "firstAvailableAt": "2026-10-08T19:42:17.545Z",
+      "evidenceClass": "primary_developer_dated_advertised_price",
+      "observation": {
+        "period": "2025-02-26",
+        "metric": "price",
+        "unit": "AED",
+        "value": 762000,
+        "segment": "Unspecified launch residence",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "dated_developer_launch_release",
+        "observationDateBasis": "Dated launch advertisement; individual transaction and later validity unknown",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "currentMarketValidity": "not_established",
+        "historicalLaunchPriceEstablished": true,
+        "note": "Historical advertised starting price, not a registered sale, valuation, median, per-square-foot measure or current forecast anchor."
+      }
+    },
+    {
+      "id": "rak33-mirasol2-dated-advertisement",
+      "kind": "financial",
+      "status": "accepted",
+      "recordId": "project:mirasol-2-north-harbour-mina-rak-uae",
+      "sourceIds": [
+        "rak33-mirasol2-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-mirasol2-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mirasol II catalogue identity, RAK Properties and North Harbour agree with the explicitly named 280-home second-phase release; original Mirasol facts are not copied here.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-09-25",
+      "firstAvailableAt": "2026-10-08T19:42:23.220Z",
+      "evidenceClass": "primary_developer_dated_advertised_price",
+      "observation": {
+        "period": "2025-09-25",
+        "metric": "price",
+        "unit": "AED",
+        "value": 861000,
+        "segment": "Studio",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "dated_developer_launch_release",
+        "observationDateBasis": "Dated launch advertisement; individual transaction and later validity unknown",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "currentMarketValidity": "not_established",
+        "historicalLaunchPriceEstablished": true,
+        "note": "Historical advertised starting price, not a registered sale, valuation, median, per-square-foot measure or current forecast anchor."
+      }
+    },
+    {
+      "id": "rak33-nura-dated-advertisement",
+      "kind": "financial",
+      "status": "accepted",
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "sourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-nura-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Retained record title and slug explicitly name Nura by RAK Properties; the developer release identifies that unique Nura project on Raha Island. The archived map-core developer field contains the malformed value nura; no developer correction or geographic precision is inferred from that field.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-12-08",
+      "firstAvailableAt": "2026-10-08T19:42:40.810Z",
+      "evidenceClass": "primary_developer_dated_advertised_price",
+      "observation": {
+        "period": "2025-12-08",
+        "metric": "price",
+        "unit": "AED",
+        "value": 800000,
+        "segment": "Apartment; unit type unspecified",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "dated_developer_launch_release",
+        "observationDateBasis": "Dated launch advertisement; individual transaction and later validity unknown",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "currentMarketValidity": "not_established",
+        "historicalLaunchPriceEstablished": true,
+        "note": "Historical advertised starting price, not a registered sale, valuation, median, per-square-foot measure or current forecast anchor."
+      }
+    },
+    {
+      "id": "rak33-solera-dated-advertisement",
+      "kind": "financial",
+      "status": "accepted",
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "sourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identitySourceIds": [
+        "rak33-solera-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact SOLERA name, RAK Properties and Raha Island agree with the catalogue; release identifies a 451-home apartment project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2025-06-17",
+      "firstAvailableAt": "2026-10-08T19:42:38.757Z",
+      "evidenceClass": "primary_developer_dated_advertised_price",
+      "observation": {
+        "period": "2025-06-17",
+        "metric": "price",
+        "unit": "AED",
+        "value": 768000,
+        "segment": "Apartment; unit type unspecified",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "sourceQuoteBasis": "dated_developer_launch_release",
+        "observationDateBasis": "Dated launch advertisement; individual transaction and later validity unknown",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "currentMarketValidity": "not_established",
+        "historicalLaunchPriceEstablished": true,
+        "note": "Historical advertised starting price, not a registered sale, valuation, median, per-square-foot measure or current forecast anchor."
+      }
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [],
+  "historyInputs": [],
+  "reusedSourceIds": [
+    "rak32-h1-2026",
+    "rak32-bayviews-launch",
+    "rak32-cape-launch",
+    "rak32-quattro-launch"
+  ],
+  "conflicts": [
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "field": "launch_timing",
+      "sourceIds": [
+        "rak33-edge-launch",
+        "rak33-fy2025"
+      ],
+      "resolution": "2024 dated launch retained; FY2025 grouping of EDGE among 2025 launches cannot overwrite it or establish a new phase."
+    },
+    {
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "field": "announced_residence_counts",
+      "claims": [
+        {
+          "sourceId": "rak33-anantara-announcement",
+          "apartments": 94,
+          "villas": 20,
+          "qualifier": "about"
+        },
+        {
+          "sourceId": "rak33-anantara-sales",
+          "apartments": 84,
+          "villas": 19
+        }
+      ],
+      "resolution": "Announcement vintages retained; reason for the change is not established."
+    },
+    {
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "field": "sales_timing",
+      "sourceIds": [
+        "rak33-enta-launch",
+        "rak33-anantara-sales"
+      ],
+      "resolution": "Reported April commencement and 6 May announcement retained separately; no first registered sale inferred."
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "recordIds": [
+        "project:mirasol-by-rak-properties-in-mina-al-arab",
+        "project:mirasol-2-north-harbour-mina-rak-uae"
+      ],
+      "sourceId": "rak32-h1-2026",
+      "status": "phase_identity_review_pending",
+      "reason": "Generic Mirasol mobilisation has no phase discriminator. No progress fact assigned to either phase."
+    },
+    {
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "field": "catalogue_developer",
+      "status": "catalogue_field_review_pending",
+      "reason": "Archived map-core field contains nura while title and primary release name RAK Properties. This history pass does not rewrite the map catalogue field."
+    }
+  ],
+  "methodology": "Exact named developer/project/place/phase review. Native temporal precision retained; planned dates never promoted to actual events. Date of report is used where an inspection date is unavailable. New identities and historical financial advertisements use first verified 2026 availability, preventing retrospective look-ahead. Existing H1 2026 capture is reused, not counted as independent corroboration.",
+  "collection": {
+    "passId": "rak-primary-lifecycle-pass33-20261008",
+    "projectRecords": 11,
+    "communityRecords": 0,
+    "acceptedLifecycleFacts": 40,
+    "acceptedAdvertisedPriceFacts": 4,
+    "registeredSaleOrRentObservationsAdded": 0,
+    "fullLifetimeHistoriesCertified": 0,
+    "approved2080Forecasts": 0,
+    "rawBodiesRedistributed": false
+  }
+}
