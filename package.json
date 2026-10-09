@@ -25,7 +25,7 @@
     "history:publish:plan": "node scripts/publish-historical-snapshot.mjs",
     "browser:history": "node scripts/history-browser-acceptance.mjs",
     "history:verify:storage": "node scripts/verify-local-history-storage.mjs",
-    "test:identity-review": "python3 tests/dld-identity-review.py"
+    "test:identity-review": "python3 tests/dld-identity-review.py && python3 tests/dld-pending-queue-review.py"
   },
   "devDependencies": {
     "wrangler": "4.144.0"
