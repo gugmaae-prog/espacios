@@ -8,12 +8,12 @@ import {spawnSync} from 'node:child_process';
 import {validateObservation,filterTrainingFold,isAvailableAsOf} from '../src/historical-intelligence/core.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p)),unpack=p=>JSON.parse(gunzipSync(fs.readFileSync(p)));
 const snapshot=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json'),packet=read('data/historical-intelligence/rak-properties-financial-pass37-20261008.json');
-const before=unpack('data/historical-intelligence/objects/3995529ceb9737e72ad485deb445ad538446e0c26edbb009b67da4a643034b57.json.gz'),after=unpack(publication.rootIndex.path),changed=new Set(packet.facts.map(f=>f.recordId)),records=new Map(snapshot.records.map(r=>[r.id,r]));
+const before=unpack('data/historical-intelligence/objects/3995529ceb9737e72ad485deb445ad538446e0c26edbb009b67da4a643034b57.json.gz'),after=unpack('data/historical-intelligence/objects/be31d7f61e60b822c9fc005051f958613d2cd2db0c830b69fb1366e9a3dacf75.json.gz'),changed=new Set(packet.facts.map(f=>f.recordId)),records=new Map(snapshot.records.map(r=>[r.id,r]));
 const hash=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const mina='community:Ras Al Khaimah:mina-al-arab',nb='project:nb-collection-by-rak-properties-on-hayat-island';
 test('V37 preserves every catalogue record, previous observation, source and native series',()=>{
- assert.equal(snapshot.version,'20261008-enrichment-v37');assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.equal(changed.size,8);assert.equal(packet.facts.length,17);assert.equal(packet.sources.length,3);
- assert.equal(publication.counts.sources,3343);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.ok(['20261008-enrichment-v37','20261008-enrichment-v38'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);assert.equal(records.size,1860);assert.equal(changed.size,8);assert.equal(packet.facts.length,17);assert.equal(packet.sources.length,3);
+ assert.equal(publication.counts.sources,snapshot.version==='20261008-enrichment-v38'?3345:3343);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const prior=new Map(before.records.map(r=>[r.id,r]));
  for(const r of after.records){const old=prior.get(r.id);assert.ok(old);

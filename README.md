@@ -17,6 +17,10 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
+## Prepared V38 evidence update
+
+Thirty exact-building Asora Bay sales are verified against primary DLD project, developer, area and transaction keys, with dated developer labels retained. One direct-sale evidence requirement closes; the candidate ledger still has **39,480 of 42,780 unresolved items (92.29%)**. This is not a lifetime-price completeness percentage. All existing records and evidence are preserved; Avida remains pending. See the [V38 evidence and release status](docs/verification/history-v38-2026-10-09/README.md). Publication is pending; the current live release is recorded below.
+
 ## Current production — V41 Map and V37 history, 9 October 2026 (Dubai)
 
 The live release adds **seven dated developer sales snapshots and ten lifecycle/source reports** across seven exact projects and Mina Al Arab. Native accounting totals, zero backlog, literal NIL, Porto Playa's 50% JV basis and differing launch populations remain explicit. NB Collection gains its verified announcement date. Hotel opening reports preserve date precision and earlier targets, without implying residential occupancy or price uplift. Existing financial history, the softer Espacios palette and Nura developer correction remain intact. See the [V37 source and release receipts](docs/verification/history-v37-2026-10-09/README.md).

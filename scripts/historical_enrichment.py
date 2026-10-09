@@ -142,6 +142,23 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    start=f'{match[1]}-{(int(match[2])-1)*3+1:02d}-01' if match else period+'-01-01' if len(period)==4 else period+'-01' if len(period)==7 else period
    if start[:10]>asof:raise ValueError('Financial observation after snapshot')
    if not isinstance(value,(int,float)) or isinstance(value,bool) or not math.isfinite(value) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
+   if fact.get('evidenceClass')=='registered_sale_transaction_primary_dld':
+    if scope!='subject' or fact.get('primaryEvidence') is not True or fact.get('identityVerified') is not True or not proofids:
+     raise ValueError('DLD individual sale requires verified primary subject identity')
+    if isinstance(obs.get('sampleCount'),bool) or (obs.get('observationKind'),obs.get('transactionKind'),obs.get('metric'),obs.get('unit'),obs.get('sampleCount'))!=('transaction','sale','price','AED/sqft',1):
+     raise ValueError('DLD individual sale cannot be an aggregate, rent or asking quote')
+    if (obs.get('usage'),obs.get('propertyType'),obs.get('propertySubtype'))!=('Residential','Unit','Flat') or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',period):
+     raise ValueError('DLD individual sale requires an exact residential-flat registration day')
+    datetime.date.fromisoformat(period)
+    if not re.fullmatch(r'dld-sha256:[0-9a-f]{64}',str(obs.get('transactionId',''))) or obs.get('sourceObservationId')!=obs['transactionId']:
+     raise ValueError('DLD individual sale requires a stable normalized transaction key')
+    price,area=obs.get('priceAED'),obs.get('areaSqm')
+    if any(not isinstance(v,(int,float)) or isinstance(v,bool) or not math.isfinite(v) or v<=0 for v in [price,area]) or not math.isclose(value,price/area/10.763910416709722,rel_tol=1e-10):
+     raise ValueError('DLD individual sale price and area must reconcile')
+    if obs.get('currentSnapshotEligible') is not False or obs.get('includeInCurrentSnapshot') is not False:
+     raise ValueError('Historical DLD sale cannot become a current valuation')
+    if any(o.get('transactionId')==obs['transactionId'] or o.get('sourceObservationId')==obs['sourceObservationId'] for r in records for o in r.get('observations',[])):
+     raise ValueError('DLD individual transaction already belongs to a record')
    if obs.get('observationKind')=='developer_reported_aggregate_sales' or 'developerSalesSnapshot' in obs:
     report=obs.get('developerSalesSnapshot')
     finite=lambda n:isinstance(n,(int,float)) and not isinstance(n,bool) and math.isfinite(n)
