@@ -17,7 +17,19 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V42 Map and V38 history, 9 October 2026 (Dubai)
+## Current production — V43 Map and V39 history, 9 October 2026 (Dubai)
+
+The live map adds **seven sourced Asora Bay lifecycle reports and three primary article vintages**. The April 2025 operator announcement is retained separately from the July launch article. Early 2029 remains a year-precision residential handover target; hotel opening and parent-register schedules remain separately scoped. Conflicting inventory counts and English/Arabic construction labels remain unresolved. No new financial observations, occupancy, valuation or appreciation coefficient is inferred. All 30 previously verified Asora sale registrations are preserved.
+
+All **1,645 projects, 215 communities, 633,891 native history rows, 16,872 series and 13,230 links** remain, with **3,348 source vintages and 6,755 evidence facts**. Of 42,780 checklist requirements, **3,301 are present, 3,439 partial, 26,740 missing and 9,300 unestablished**: **39,479 (92.28%) remain unresolved**. This is research-checklist accounting, not lifetime financial completeness. No dated current valuations or approved long-horizon forecasts are established; complete histories and annual conditional assumptions through 2080 remain required.
+
+Worker `25b61d3b-7a65-4a61-aabc-4172e9632f23` serves 100% traffic in deployment `045a8f69-bded-4575-a972-574b004b7813`. Frontend `20261009-map-evidence-v43` uses history `20261009-enrichment-v39`, immutable root `b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760`. Preview and canonical APIs match all 1,860 ledgers, new reports, 74 preserved La Mer series/1,828 points and the exact 2080 endpoint. Desktop/mobile cards, no horizontal overflow at 390px, live assets, catalogue preservation, route/service binding and Supabase metadata are verified. The softer off-white Espacios controls, muted borders and slate text remain live. Gold came from inherited styling, not an appreciation signal.
+
+Source `4d3efc8f4a242769f437d357d41e20e18f947f60` passed [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/37870493952), including 379 JavaScript tests and the archive version/cutoff guard. All 2,542 local immutable objects verify. Publication wrote 2,491 objects, reused 50 and verified 42,798 D1 statements. A partition cutoff mismatch was corrected before activation without changing financial observations. Source and receipts are published in [open PR #98](https://github.com/gugmaae-prog/espacios/pull/98); deployment does not imply merge. The temporary publisher and authentication files are removed. See the [V39 evidence and release receipts](docs/verification/history-v39-2026-10-09/README.md).
+
+**Next best actions:** resolve the 246 remaining project identity candidates, including Avida; reconcile Asora's inventory and construction conflicts; continue direct sale/rent, occupancy and dated valuation sourcing; specify and evaluate annual conditional assumptions through 2080. Preserve earlier schedules and source vintages. Unresolved evidence keeps the research goal incomplete.
+
+## V42 Map and V38 history — preserved release record
 
 The live map adds **30 verified individual Asora Bay residential sale registrations**, dated 7 May 2025–5 August 2026, with primary DLD project, developer, area and exact-building identity checks. Dated developer labels are preserved; the hotel, villas, archived candidate and Avida are not assigned these observations. The softer Espacios controls use off-white surfaces, muted borders and slate text. Gold came from inherited interface styling and never encoded appreciation.
 
@@ -27,7 +39,7 @@ Worker `9ddd509f-2f75-4dc9-a5cd-c25fd512fe70` serves 100% traffic in deployment 
 
 Source `5dcaf96801d4711f58053a374bf61aece0f25290` passed [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/37863928324). The publication batching improvement at `be6525ddba33e358bf3e17f411c9677de819e2d4` passed [CI](https://github.com/gugmaae-prog/espacios/actions/runs/37866542542), bringing the suite to 374 JavaScript tests. Source and receipts are pushed in [open PR #98](https://github.com/gugmaae-prog/espacios/pull/98); deployed does not mean merged. See the [V38 evidence and deployment receipts](docs/verification/history-v38-2026-10-09/README.md).
 
-**Next best actions:** resolve the remaining 246 project identity candidates, including Avida's primary developer bridge; reconcile the newly captured Asora lifecycle schedules and conflicting construction-status labels; continue direct sale/rent, occupancy and dated valuation sourcing; specify annual conditional assumptions through 2080. New October 9 source captures remain pending and receive no completeness credit in the October 8 snapshot. Existing evidence and superseded schedules stay preserved.
+**Next best actions:** resolve the remaining 246 project identity candidates, including Avida's primary developer bridge; reconcile the newly captured Asora lifecycle schedules and conflicting construction-status labels; continue direct sale/rent, occupancy and dated valuation sourcing; specify annual conditional assumptions through 2080. At that release, October 9 source captures were pending outside the October 8 snapshot; the V39 release above subsequently reviewed seven lifecycle reports. Existing evidence and superseded schedules stay preserved.
 
 ## V41 Map and V37 history — preserved release record
 
