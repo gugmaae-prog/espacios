@@ -1,6 +1,6 @@
 # Cresswell Plaza: exact project identity and individual registered sales
 
-Status: prepared evidence packet against immutable V42. Production remains V46 / V42; these 24 sales have not yet been activated and earn no live coverage credit.
+Status: integrated into candidate V43 / frontend V47 against immutable V42. Production remains V46 / V42; these 24 sales have not yet been activated and earn no live coverage credit.
 
 ## Identity decision
 
