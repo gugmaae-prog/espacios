@@ -1,6 +1,6 @@
 # Reviewed individual sale packet — pass 42
 
-Status: source packet prepared and tested against the immutable V41 baseline; not yet integrated into the live snapshot. Production remains V45 / V41. This packet adds no live coverage credit until the full archive and release verification completes.
+Status: published and verified in V42 / frontend V46. All 119 observations are live; prior evidence is preserved. See the [release verification](../history-v42-2026-10-12/README.md).
 
 ## Accepted records
 
@@ -30,4 +30,4 @@ The pinned V41 archive root is `eea871f5edf732a1ec1c041d1e85ae4dd24d876b1cb4455f
 
 Five regression checks cover exact counts/IDs and financial arithmetic, source vintage/availability and private-field exclusion, append-only in-memory application, component/source proof and incomplete-history boundaries, and the Eira/Jumeirah name collision. Run `python3 tests/dld-sales-pass42.py`; the test does not need private raw files. Reproduction of extraction needs the previously retained lawful DLD CSV captures and new private primary captures: run `python3 scripts/prepare-primary-identity-pass42.py`, then `python3 scripts/prepare-dld-sales-pass42.py`.
 
-Next: integrate the reviewed packet into immutable V42, verify all original records/native histories and coverage changes, build/test the candidate, and publish under the existing authorization. Remaining priority cases are Belmont/Oakmont, Avida/Serene Marina, Cresswell/Merath and Raffles/Emerald Palace; their 113 candidate associations remain unresolved. Continue the wider historical, present-data and annual conditional scenario requirements through 2080.
+Published and verified in V42 / frontend V46; see the [release receipts](../history-v42-2026-10-12/README.md). Remaining priority cases are Belmont/Oakmont, Avida/Serene Marina, Cresswell/Merath and Raffles/Emerald Palace; their 113 candidate associations remain unresolved. Continue the wider historical, present-data and annual conditional scenario requirements through 2080.

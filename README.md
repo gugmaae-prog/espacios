@@ -17,7 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V45 Map and V41 history, 12 October 2026 (Dubai)
+## Current production — V46 Map and V42 history, 12 October 2026 (Dubai)
+
+The live release adds **119 verified individual residential sales: Divine Elements 49, Inaura 35, EIRA 30 and SOMA 5**. Exact project/component identities, six primary developer captures and full-vintage duplicate checks support the links. Individual sales remain sparse evidence, not monthly medians or current valuations. Older community context no longer establishes project applicability: Divine Elements correctly shows 203 earlier price months as unknown and seven sale months as sparse.
+
+All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13,230 links** remain. V42 holds **3,360 source vintages and 6,945 evidence facts**. Checklist: **3,310 present, 3,438 partial, 26,732 missing and 9,300 unestablished**. **39,470 of 42,780 requirements (92.26%) remain unresolved**. This is checklist accounting, not a percentage of missing lifetime prices. No new rent, dated current valuation or approved 2080 forecast is inferred.
+
+Worker `5dc7a9ab-8a87-4001-8020-23ee5c30351f` serves 100% in deployment `ccaa3c61-1dac-42e7-a1be-b4e478e1b745`. Source `a16e19dd23161470ff5ee9def21c83ff1eddfc92` passes [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/38183034801). Archive/index publication, preview/canonical APIs, exact preserved native history, desktop/mobile UI, catalogue, route and Supabase metadata are verified. The softer off-white/slate palette and matching dark controls remain live. See [V42 release receipts and screenshots](docs/verification/history-v42-2026-10-12/README.md) and [source packet](docs/verification/dld-sales-pass42-2026-10-12/README.md).
+
+**Next best actions:** resolve 113 remaining priority candidate associations across Belmont/Oakmont, Avida/Serene Marina, Cresswell/Merath and Raffles/Emerald Palace; source signed rents, occupancy, dated valuations and earlier histories; specify explicit annual conditional assumptions through 2080. The wider goal remains incomplete. PR #98 remains open and unmerged.
+
+## V45 Map and V41 history — preserved release record, 12 October 2026 (Dubai)
 
 The live release adds **64 verified individual residential sale registrations: 54 Binghatti Wraith and 10 Helvetia Marine**. Official project/developer identity proof and full-vintage duplicate checks support the exact links. Individual transactions now account for their calendar months as sparse evidence; they do not imply a comparable monthly median, current valuation or complete lifetime history. The softer off-white/slate Espacios controls remain live, with matching dark-theme styling.
 
@@ -26,8 +36,6 @@ All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13
 Worker `e01d432f-33da-4141-acc1-6079d930b1a0` serves 100% in deployment `9e38df3c-a147-4f5c-a940-ee239c6ce8ec`. Source `76f2e9dae622a1c1a6855217106b4b641e6a6fe5` passes [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/38181125643). Archive/index publication, preview/canonical APIs, exact retained native points, desktop/mobile UI, catalogue, route and Supabase metadata are verified. See [V41 release receipts and screenshots](docs/verification/history-v41-2026-10-12/README.md).
 
 **Next best actions:** resolve the remaining component/legal-developer identities from the eight-project authority review; verify the other candidate transactions individually; source signed rents, occupancy and dated valuations; expand early-history evidence and explicit annual conditional assumptions through 2080. Unresolved records and periods remain visible and keep the wider goal incomplete.
-
-**Prepared next evidence pass:** [119 further individually verified sales across Divine Elements, Inaura, EIRA and SOMA](docs/verification/dld-sales-pass42-2026-10-12/README.md) are sourced and tested against the immutable V41 baseline. Six primary developer captures support the exact authority/marketing identities. They are integrated into candidate V42 / frontend V46; archive publication and release verification are underway. The live counts above remain the verified baseline until activation.
 
 ## V44 Map and V40 history — preserved release record, 12 October 2026 (Dubai)
 
