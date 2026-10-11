@@ -17,7 +17,19 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V43 Map and V39 history, 9 October 2026 (Dubai)
+## Current production — V44 Map and V40 history, 12 October 2026 (Dubai)
+
+The live release adds **three bedroom-specific Binghatti Wraith advertised starting prices and four Helvetia Marine development reports**, with three primary source vintages. Asking prices remain separate from registered sales and current headline prices. Marine's broker event retains its 8–13 December 2025 interval; the June 2026 construction report is month-precision; Q1 2028 remains a planned handover. No first-ever launch, occupancy, registered sale, rent, valuation or uplift coefficient is inferred.
+
+All **1,645 projects, 215 communities, 633,891 native history rows, 16,872 series and 13,230 links** are preserved, now with **3,351 source vintages and 6,762 facts**. Of 42,780 checklist requirements, **3,304 are present, 3,438 partial, 26,738 missing and 9,300 unestablished**. **39,476 (92.28%) remain unresolved**. This is checklist coverage, not missing lifetime-price coverage. Fully sourced history, dated present valuations and fully specified annual conditional scenarios through 2080 remain incomplete.
+
+Worker `72786848-58e1-409e-9fa8-4164f9076132` serves **100%** in deployment `71d912ad-a491-452d-af64-6a9215ec723f`. Frontend `20261009-map-evidence-v44` uses history `20261009-enrichment-v40`, immutable root `498a797f39e12ce9d702ec6ed364f1f874c730e376cb98f2fdd096e75cc1cae9`. Source `e4fd852f45a4bee4ff34ba408b546ab117af3336` passes [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/38178496309). All 2,542 local archive objects verify; publication and exact D1 counts are complete. Preview and canonical APIs match every ledger and both changed records; 74 preserved native series / 1,828 points match exactly. The unchanged catalogue, live assets, route/service binding, desktop/mobile UI and Supabase registry are verified. The temporary publisher and its credentials are removed; Data Room access remains restricted.
+
+The selected Map control uses off-white, slate text and a quiet border, with equivalent dark-theme styling. Gold was inherited interface styling. Asking cards now name each bedroom segment. Verified widths: desktop 1,280px and mobile 390px, with no document overflow. Detailed [V40 receipts and screenshots](docs/verification/history-v40-2026-10-09/README.md) accompany [open PR #98](https://github.com/gugmaae-prog/espacios/pull/98); deployment does not imply merge.
+
+**Next best actions:** obtain authoritative identity bridges for the 246 DLD candidates, prioritizing the ten missing-sale projects with 288 candidate associations; source missing sale/rent, occupancy and dated valuations; reconcile conflicting schedules and inventory; specify and evaluate annual conditional assumptions through 2080. Research attempts and unsupported periods earn no completeness credit.
+
+## V43 Map and V39 history — preserved release record, 9 October 2026 (Dubai)
 
 The live map adds **seven sourced Asora Bay lifecycle reports and three primary article vintages**. The April 2025 operator announcement is retained separately from the July launch article. Early 2029 remains a year-precision residential handover target; hotel opening and parent-register schedules remain separately scoped. Conflicting inventory counts and English/Arabic construction labels remain unresolved. No new financial observations, occupancy, valuation or appreciation coefficient is inferred. All 30 previously verified Asora sale registrations are preserved.
 
@@ -31,7 +43,7 @@ Source `4d3efc8f4a242769f437d357d41e20e18f947f60` passed [clean CI](https://gith
 
 **Full queue review, 9 October:** the [246-project DLD review](docs/verification/dld-queue-review-2026-10-09/README.md) scans 1,798,873 source rows with a second duplicate-revision pass. It finds that 218 queued projects already have some sale evidence; 28 have none, and ten of those have 288 residential-flat candidate associations. Eight of their registration numbers are absent from the retained project register. These are research priorities, not accepted observations or completeness credit. Production and verified coverage remain unchanged.
 
-**Prepared next evidence pass:** the [V40 primary-source packet](docs/verification/primary-project-pass40-2026-10-09/README.md) contains three bedroom-specific Binghatti Wraith asking quotes and four Helvetia Marine development reports. Five preservation/chronology tests pass. This packet is now integrated into a [local V40 candidate](docs/verification/history-v40-2026-10-09/README.md); it is not yet deployed and live V39 counts above remain authoritative. No DLD candidate sale or valuation is promoted.
+**Subsequent evidence pass:** the [V40 primary-source packet](docs/verification/primary-project-pass40-2026-10-09/README.md) is now published; see the current production section above.
 
 ## V42 Map and V38 history — preserved release record
 

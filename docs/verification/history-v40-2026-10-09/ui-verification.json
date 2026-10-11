@@ -1,0 +1,25 @@
+{
+  "canonicalOrigin": "https://espacios.me/map",
+  "frontend": "20261009-map-evidence-v44",
+  "desktopWidth": 1280,
+  "desktopScrollWidth": 1280,
+  "mobileWidth": 390,
+  "mobileScrollWidth": 390,
+  "lightMapFill": "rgb(248, 250, 252)",
+  "lightMapText": "rgb(32, 48, 68)",
+  "darkMapFill": "rgb(11, 24, 33)",
+  "darkMapText": "rgb(237, 246, 243)",
+  "wraithSegmentLabelsVerified": true,
+  "wraithAskingQuotes": [
+    807999,
+    1299999,
+    2099999
+  ],
+  "newQuotesRemainOutsideHeadline": true,
+  "marineMilestonePrecisionVerifiedInLocalCandidate": true,
+  "marineCanonicalApiVerified": true,
+  "annualEndpoint": 2080,
+  "annualSlots": 54,
+  "missingAssumptionsRemainUnavailable": true,
+  "preactivationNote": "Local preview blocks the cross-origin brand image; canonical brand image loaded at native width 2032. Version-preview HTML is hostname-restricted; remote APIs and matching local compiled UI were verified before activation."
+}

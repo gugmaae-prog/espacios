@@ -1,6 +1,6 @@
 # Primary project evidence — reviewed V40 packet
 
-**Stage: prepared and tested; not activated in production.** V43 / V39 remains the live release. The packet adds seven facts from three pinned primary source captures across two exact marketed projects. All 1,645 projects and 215 communities, native series, prior observations, source vintages, current headline snapshots and scenario inputs remain unchanged in the preview except for the explicitly appended evidence and its relevant checklist items.
+**Stage: published and verified on 12 October 2026 (Dubai).** V44 / V40 is live; see the [release receipts](../history-v40-2026-10-09/README.md). The packet adds seven facts from three pinned primary source captures across two exact marketed projects. All 1,645 projects and 215 communities, native series, prior observations, source vintages, current headline snapshots and scenario inputs remain unchanged in the preview except for the explicitly appended evidence and its relevant checklist items.
 
 ## Evidence prepared
 
@@ -14,8 +14,8 @@ Primary project names and locations establish the marketed subjects. They do not
 
 Run `python3 scripts/prepare-primary-project-pass40.py` against the checksum-pinned captures, then `python3 tests/primary-project-pass40.py` against the V39 baseline. The five tests verify all-record preservation, separate advertisement semantics, precise event interval/report month, future-availability rejection and invalid-amount rejection. Existing events, source prefixes, financial rows, scenarios and current headline snapshots remain identical. New article bodies first become available at their 9 October retrieval times; their displayed earlier publication months cannot make them available to earlier backtests.
 
-The preview changes Wraith advertised-price coverage from partial to present, and Marine announcement and construction-report coverage from missing to present. It retains a separate original-launch gap and unverified actual construction-start day. A new handover target is added to an already-present requirement. Candidate totals would be 3,304 present, 3,438 partial, 26,738 missing and 9,300 unestablished. **These are staged totals only. Live coverage remains 3,301 present and 39,479 unresolved of 42,780 requirements.** Neither state is complete historical price coverage.
+The preview changes Wraith advertised-price coverage from partial to present, and Marine announcement and construction-report coverage from missing to present. It retains a separate original-launch gap and unverified actual construction-start day. A new handover target is added to an already-present requirement. Candidate totals would be 3,304 present, 3,438 partial, 26,738 missing and 9,300 unestablished. **Live coverage is 3,304 present and 39,476 unresolved of 42,780 requirements.** Neither state is complete historical price coverage.
 
-## Remaining release work
+## Release and remaining research
 
-Append the reviewed packet to an immutable V40 archive; retain every prior financial partition; build matching runtime/D1 manifests and frontend release; run archive, API and CI checks; publish under the existing deployment authorization; verify the canonical Worker route, all ledgers, desktop/mobile cards, source links, the full event interval and exact 2080 endpoint; reconcile Supabase and GitHub receipts. Do not credit the candidate before that release is verified. Fully specified annual conditional scenarios and the wider historical/present evidence goal remain incomplete.
+The immutable archive, runtime/D1 manifests, CI, publication, canonical APIs, preserved native cohorts, desktop/mobile UI, exact 2080 endpoint and Supabase reconciliation are complete for this incremental release. Fully specified annual conditional scenarios and the wider historical/present evidence goal remain incomplete. See the linked release receipt for exact versions and next actions.
