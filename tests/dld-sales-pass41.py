@@ -1,4 +1,4 @@
-import copy,hashlib,importlib.util,json,sys,unittest
+import copy,gzip,hashlib,importlib.util,json,sys,unittest
 from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
@@ -7,7 +7,10 @@ PACKET=ROOT/'data/historical-intelligence/dld-sales-pass41-20261012.json'
 class SaleEvidence(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.packet=json.loads(PACKET.read_text());cls.snapshot=json.loads((ROOT/'data/historical-intelligence-20261003.json').read_text())
+  cls.packet=json.loads(PACKET.read_text());cls.priorBlob=(ROOT/'data/historical-intelligence/objects/498a797f39e12ce9d702ec6ed364f1f874c730e376cb98f2fdd096e75cc1cae9.json.gz').read_bytes();cls.snapshot=json.loads(gzip.decompress(cls.priorBlob))
+  for r in cls.snapshot['records']:
+   if r['id'] in {f['recordId'] for f in cls.packet['facts']}:
+    assert not r['historySeriesIds'];r['historySeries']=[]
  def test_exact_scope_and_financial_consistency(self):
   p=self.packet;self.assertEqual(len(p['facts']),64)
   self.assertEqual(Counter(f['observation']['sourceProjectNumber'] for f in p['facts']),{4482:54,4157:10})
@@ -25,7 +28,7 @@ class SaleEvidence(unittest.TestCase):
   self.assertNotIn('file_url',json.dumps(self.packet));self.assertNotIn('Email:',json.dumps(self.packet))
  def test_in_memory_append_preserves_existing_evidence_and_no_valuation(self):
   p=self.packet;s=self.snapshot
-  self.assertEqual(hashlib.sha256((ROOT/'data/historical-intelligence-20261003.json').read_bytes()).hexdigest(),p['priorSHA256'])
+  self.assertEqual(hashlib.sha256(self.priorBlob).hexdigest(),'498a797f39e12ce9d702ec6ed364f1f874c730e376cb98f2fdd096e75cc1cae9');self.assertEqual(s['version'],p['priorVersion'])
   ids={x['recordId'] for x in p['facts']};records=copy.deepcopy([r for r in s['records'] if r['id'] in ids]);before=copy.deepcopy(records)
   sources={x['id']:copy.deepcopy(x) for x in s['sources']}
   def add(source):

@@ -228,18 +228,24 @@ function coverageFromEvidence(record,{asOf,sources=[],manifest={},minimumSample=
   let applicability=applicableStart(record,m);
   const points=validated.filter(o=>o.metric===m),periods=[],monthly=new Map();
   if(applicability&&points.some(o=>o.direct&&o.valid&&o.date&&firstInstant(o.date)<firstInstant(applicability.date)))applicability=null;
-  for(const o of points)if(o.frequency==='monthly'){if(!monthly.has(o.period))monthly.set(o.period,[]);monthly.get(o.period).push(o);}
+  for(const o of points){
+   // Exact individual registrations establish evidence in a month, not a
+   // comparable monthly aggregate or a complete transaction population.
+   const individual=o.observationKind==='transaction'&&o.date&&['day','instant'].includes(o.date.precision);
+   const bucket=o.frequency==='monthly'?o.period:individual?o.date.start.slice(0,7):null;
+   if(bucket){if(!monthly.has(bucket))monthly.set(bucket,[]);monthly.get(bucket).push(o);}
+  }
   for(let i=start;i<=end;i++){
-   const period=monthText(i),matching=monthly.get(period)||[],direct=matching.filter(o=>o.direct),context=matching.filter(o=>!o.direct&&o.valid),eligible=direct.filter(o=>o.displayEligible),sparse=direct.filter(o=>o.valid&&o.sparse),bad=direct.filter(o=>!o.valid);
+   const period=monthText(i),matching=monthly.get(period)||[],direct=matching.filter(o=>o.direct),context=matching.filter(o=>!o.direct&&o.valid),eligible=direct.filter(o=>o.displayEligible&&o.observationKind!=='transaction'),individual=direct.filter(o=>o.valid&&o.observationKind==='transaction'),sparse=direct.filter(o=>o.valid&&(o.sparse||o.observationKind==='transaction')),bad=direct.filter(o=>!o.valid);
    let status='missing',reason='No verified subject observation in this native month.';
    if(applicability&&Date.parse(monthEnd(+period.slice(0,4),+period.slice(5,7))+'T23:59:59.999Z')<firstInstant(applicability.date)){status='not_applicable';reason=`Before ${applicability.basis}; underlying land/area context remains separate.`;}
    else if(eligible.length){status='observed';reason='Verified subject evidence in the native month.';}
-   else if(sparse.length){status='sparse';reason='Subject rows retained; aggregate sample gate fails.';}
+   else if(sparse.length){status='sparse';reason=individual.length?'Verified individual transactions retained; no comparable monthly aggregate or complete population established.':'Subject rows retained; aggregate sample gate fails.';}
    else if(bad.length){status='conflict';reason='Subject evidence needs identity, source or quality reconciliation.';}
    else if(context.length){status='context_only';reason='Area/published context exists; it is not subject transaction history.';}
    else if(record.historyAccess?.[m]?.status==='inaccessible'){status='inaccessible';reason=record.historyAccess[m].reason||'Applicable source access has not been obtained.';}
    else if(!applicability&&i<(knownStarts.length?Math.min(...knownStarts):end+1)){status='unknown';reason='Subject applicability and earlier observation availability are not verified.';}
-   periods.push({period,status,rawCount:matching.length,eligibleCount:eligible.length,contextCount:context.length,sparseCount:sparse.length,reason});
+   periods.push({period,status,rawCount:matching.length,eligibleCount:eligible.length,contextCount:context.length,sparseCount:sparse.length,individualTransactionCount:individual.length,reason});
   }
   const statusCounts=Object.fromEntries(['observed','sparse','context_only','missing','not_applicable','conflict','unknown','inaccessible'].map(s=>[s,periods.filter(p=>p.status===s).length]));
   metrics[m]={unit:[...new Set(points.map(o=>o.unit).filter(Boolean))],firstApplicablePeriod:applicability?.date.start.slice(0,7)||null,applicabilityBasis:applicability?.basis||'not_verified',subjectApplicabilityKnown:!!applicability,lastCompletePeriod:monthText(end),statusCounts,periods,nativePeriods:Object.fromEntries(['monthly','quarterly','half_year','annual'].map(f=>[f,nativeCoverage(points,f,asOf)])),nonMonthlyObservationCount:points.filter(o=>o.frequency!=='monthly').length,storedNativePoints:points.length,scope:'subject monthly coverage; quarterly and annual context is retained without monthly resampling'};
@@ -424,12 +430,14 @@ function reconstructionSeriesHasPoints(series){
  return false;
 }
 /** 100% record accountability without promoting contextual cohorts into subject price history. */
-export function reconstructionCoverage(record,{events=[],exposures=[]}={}){
+export function reconstructionCoverage(record,{events=[],exposures=[],validatedObservations=[]}={}){
  const series=Array.isArray(record?.historySeries)?record.historySeries:[],observations=Array.isArray(record?.observations)?record.observations:[];
  function metricCoverage(metric){
   const candidates=series.filter(row=>reconstructionMetric(row.metric)===metric&&reconstructionSeriesHasPoints(row)).map(row=>({...row,reconstructionTier:RECONSTRUCTION_SCOPE_TIERS[row.scope]??5})).sort((a,b)=>a.reconstructionTier-b.reconstructionTier);
   const best=candidates[0]||null,subjectExact=best?.scope==='subject'&&best?.identityVerified===true;
   if(subjectExact)return{tier:1,label:'Verified subject history',mode:'observed_subject',numericHistoryAvailable:true,subjectObserved:true,contextOnly:false,normalizedIndexEligible:true,absoluteValueInferenceAllowed:true,sourceSeriesIds:candidates.filter(x=>x.reconstructionTier===1).map(x=>x.id).filter(Boolean).slice(0,12),reason:'Exact subject-linked native evidence is retained. Gaps remain gaps.'};
+  const individual=validatedObservations.filter(row=>row.metric===metric&&row.direct&&row.valid&&row.observationKind==='transaction');
+  if(individual.length)return{tier:1,label:'Verified individual transactions',mode:'individual_subject_transactions',numericHistoryAvailable:true,subjectObserved:true,contextOnly:false,normalizedIndexEligible:false,absoluteValueInferenceAllowed:false,continuousHistoryAvailable:false,individualTransactionCount:individual.length,sourceSeriesIds:[],reason:'Exact dated subject transactions are retained. They do not establish a comparable aggregate, continuous history or current valuation.'};
   if(best){
    const tier=best.reconstructionTier;
    return{tier,label:tier===2?'Dated subject benchmark':tier===3?'Master-community context':tier===4?'Area / property-type context':'Published / broad-market context',mode:tier===2?'subject_benchmark_not_registered_sale':'numeric_context_only',numericHistoryAvailable:true,subjectObserved:false,contextOnly:tier>=3,normalizedIndexEligible:true,absoluteValueInferenceAllowed:false,sourceSeriesIds:candidates.filter(x=>x.reconstructionTier===tier).map(x=>x.id).filter(Boolean).slice(0,12),reason:tier===2?'A dated subject benchmark exists but is not promoted to a completed registered transaction.':'Numeric history is context for the selected record, not its own verified sale/rent history.'};
@@ -445,5 +453,5 @@ export function recordHistory(data,record,{userAssumptions=null}={}){
  record=resolveRecordCommunityHistory(data,record);
  const exposures=recordExposures(data,record),eventIds=new Set(exposures.map(x=>x.eventId)),events=(data.events||[]).filter(e=>eventIds.has(e.id));
  const options={asOf:data.asOf,sources:data.sources||[],manifest:data.manifest||{}},evidence=observationEvidence(record,options);
- return{version:data.version,asOf:data.asOf,record:clone(record),observations:clone(record.observations||[]),validatedObservations:evidence.validated,historySeries:clone(record.historySeries||[]),coverage:coverageFromEvidence(record,options,evidence),reconstruction:reconstructionCoverage(record,{events,exposures}),scenarios:annualScenarios(record,{asOf:data.asOf,sources:data.sources||[],userAssumptions}),events:clone(events),exposures:clone(exposures),sources:relevantSources(data,record,events,exposures),manifest:clone(data.manifest||{})};
+ return{version:data.version,asOf:data.asOf,record:clone(record),observations:clone(record.observations||[]),validatedObservations:evidence.validated,historySeries:clone(record.historySeries||[]),coverage:coverageFromEvidence(record,options,evidence),reconstruction:reconstructionCoverage(record,{events,exposures,validatedObservations:evidence.validated}),scenarios:annualScenarios(record,{asOf:data.asOf,sources:data.sources||[],userAssumptions}),events:clone(events),exposures:clone(exposures),sources:relevantSources(data,record,events,exposures),manifest:clone(data.manifest||{})};
 }

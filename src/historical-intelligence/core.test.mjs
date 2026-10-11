@@ -283,3 +283,24 @@ test('reconstruction tiers never promote contextual history into subject observa
  const context=reconstructionCoverage(community);assert.equal(context.recordCovered,true);assert.equal(context.metrics.price.tier,3);assert.equal(context.metrics.price.subjectObserved,false);assert.equal(context.metrics.price.absoluteValueInferenceAllowed,false);
  const empty=reconstructionCoverage(record,{events:[event],exposures:[exposure]});assert.equal(empty.metrics.price.tier,6);assert.equal(empty.metrics.price.numericHistoryAvailable,false);assert.equal(empty.eventContextCount,1);
 });
+
+test('individual registrations account for their month without inventing an aggregate or continuity',()=>{
+ const sale=observation('2026-08-12',1600,{frequency:'daily',observationKind:'transaction',transactionId:'sale-1',sampleCount:1});
+ const other={...sale,id:'sale-2',transactionId:'sale-2',period:'2026-08-20',value:2400};
+ const subject={...record,observations:[sale,{...sale},other]};
+ const result=recordHistory({asOf,sources,events:[],exposures:[],manifest:{}},subject);
+ const august=result.coverage.metrics.price.periods.find(p=>p.period==='2026-08');
+ assert.equal(august.status,'sparse');assert.equal(august.individualTransactionCount,2);
+ assert.equal(august.eligibleCount,0);assert.equal(result.coverage.summary.duplicateRows,1);
+ assert.equal(result.validatedObservations.filter(o=>o.displayEligible).length,2);
+ assert.equal(result.reconstruction.metrics.price.mode,'individual_subject_transactions');
+ assert.equal(result.reconstruction.metrics.price.normalizedIndexEligible,false);
+ assert.equal(result.reconstruction.metrics.price.absoluteValueInferenceAllowed,false);
+ assert.equal(result.reconstruction.metrics.price.continuousHistoryAvailable,false);
+ assert.equal(result.coverage.metrics.price.periods.find(p=>p.period==='2026-09').status,'missing');
+ assert.equal(filterTrainingFold([{...sale,firstAvailableAt:'2026-10-12'}],{asOf,sources}).retained.length,0);
+ const invalid=monthlyCoverage({...record,observations:[{...sale,identityVerified:false}]},{asOf,sources});
+ assert.equal(invalid.metrics.price.periods[0].status,'conflict');
+ const conflicting=monthlyCoverage({...record,observations:[sale,{...sale,value:2000}]},{asOf,sources});
+ assert.equal(conflicting.metrics.price.periods[0].status,'conflict');
+});

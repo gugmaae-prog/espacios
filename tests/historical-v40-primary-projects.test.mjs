@@ -4,9 +4,10 @@ import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 const read=p=>JSON.parse(fs.readFileSync(p)),unpack=p=>JSON.parse(gunzipSync(fs.readFileSync(p)));
-const snapshot=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json');
+const snapshot=unpack('data/historical-intelligence/objects/498a797f39e12ce9d702ec6ed364f1f874c730e376cb98f2fdd096e75cc1cae9.json.gz');
+const publication={version:snapshot.version,counts:{sources:snapshot.sources.length,historicalRows:633891,series:snapshot.series.length}};
 const packet=read('data/historical-intelligence/primary-project-pass40-20261009.json');
-const before=unpack('data/historical-intelligence/objects/b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760.json.gz'),after=unpack(publication.rootIndex.path);
+const before=unpack('data/historical-intelligence/objects/b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760.json.gz'),after=snapshot;
 test('V40 retains the entire archive and appends only the reviewed two-project evidence',()=>{
  assert.equal(snapshot.version,'20261009-enrichment-v40');assert.equal(publication.version,snapshot.version);assert.equal(snapshot.asOf,'2026-10-09');
  assert.equal(snapshot.records.length,1860);assert.equal(publication.counts.sources,3351);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);

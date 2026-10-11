@@ -31,7 +31,7 @@ The selected Map control uses off-white, slate text and a quiet border, with equ
 
 **New authority review, 12 October:** the [DLD browser review](docs/verification/dld-authority-review-2026-10-12/README.md) captures primary records for all eight missing registration numbers and checks legal developers against the downloadable register. A new transaction vintage contains 296 candidate associations across the ten priority projects. Future-dated Cresswell inspection data and repeated map coordinates are quarantined. Exact component and transaction-ownership decisions remain required; this review does not change live coverage.
 
-**Prepared next sale pass:** [64 individually verified Wraith and Helvetia Marine sale registrations](docs/verification/dld-sales-pass41-2026-10-12/README.md) now have authority/developer identity proof, full-vintage duplicate checks and existing-ownership reconciliation. They remain a reviewed packet awaiting immutable integration and release; live V40 coverage above is unchanged.
+**Prepared next sale pass:** [64 individually verified Wraith and Helvetia Marine sale registrations](docs/verification/dld-sales-pass41-2026-10-12/README.md) now have authority/developer identity proof, full-vintage duplicate checks and existing-ownership reconciliation. They are integrated in candidate V41 / frontend V45 with all prior evidence preserved. Individual registrations now account for their calendar months as sparse evidence without inventing a comparable monthly aggregate. Archive publication and release validation are underway; live V40 coverage above remains the production baseline until activation.
 
 ## V43 Map and V39 history — preserved release record, 9 October 2026 (Dubai)
 
