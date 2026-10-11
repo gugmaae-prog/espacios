@@ -1,5 +1,6 @@
 """Review staged evidence without modifying the live V39 snapshot."""
 import hashlib
+import gzip
 import json
 import sys
 import unittest
@@ -41,10 +42,17 @@ def preview(snapshot, packet):
 class PrimaryProjectPass40Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        raw = (ROOT / 'data/historical-intelligence-20261003.json').read_bytes()
-        cls.snapshot = json.loads(raw)
+        # Freeze the reviewed baseline so later enrichment cannot weaken these
+        # preservation assertions or require private source captures in CI.
+        digest = 'b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760'
+        raw = (ROOT / f'data/historical-intelligence/objects/{digest}.json.gz').read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == digest
+        cls.snapshot = json.loads(gzip.decompress(raw))
+        descriptors = {s['id']: s for s in cls.snapshot['series']}
+        for record in cls.snapshot['records']:
+            record['historySeries'] = [descriptors[sid] for sid in record.get('historySeriesIds', [])]
         cls.packet = json.loads((ROOT / 'data/historical-intelligence/primary-project-pass40-20261009.json').read_text())
-        assert hashlib.sha256(raw).hexdigest() == cls.packet['priorSHA256']
+        assert cls.snapshot['version'] == cls.packet['priorVersion'] == '20261009-enrichment-v39'
         cls.after, cls.result = preview(cls.snapshot, cls.packet)
 
     def test_all_prior_records_series_sources_and_observations_are_preserved(self):

@@ -113,6 +113,11 @@ def build_runtime_index(snapshot,publication):
   record_group.append(record);record_group_bytes+=record_size
  record_chunk(record_group)
  compact_manifest={k:v for k,v in snapshot['manifest'].items() if k not in ['objects','rawSourcePartitions','inputProvenance','rightsPendingSourceMetadata']}
+ # Detailed collection audit metadata remains in the immutable archive. It is
+ # not needed to render the map; embedding it grows every release unnecessarily.
+ enrichment=compact_manifest.get('sourceEnrichment')
+ if isinstance(enrichment,dict) and isinstance(enrichment.get('collection'),dict):
+  compact_manifest['sourceEnrichment']={**enrichment,'collection':{'classification':'immutable_archive_reference','jsonPointer':'/manifest/sourceEnrichment/collection','sha256':sha(encoded(enrichment['collection'])),'archive':{k:publication['rootIndex'][k] for k in ['key','sha256','bytes','compression']}}}
  compact_manifest['r2']={**{k:publication['rootIndex'][k] for k in ['key','sha256','bytes','compression']},'binding':'MARKET_R2','classification':'archival_only; not inflated by bounded runtime'}
  compact_manifest['runtime']={'classification':'bounded_manifest_backed_runtime','recordCount':len(inventory),'recordShardCount':sum(x['kind']=='runtime_record_shard' for x in runtime_objects),'recordShardMaximumDecodedBytes':max(x['decodedBytes'] for x in runtime_objects if x['kind']=='runtime_record_shard'),'nativePartitionMaximumDecodedBytes':max([x.get('decodedBytes',0) for x in runtime_objects if x['kind']=='runtime_history_partition']+[maximum_native]),'canonicalSnapshotSHA256':sha((ROOT/'data/historical-intelligence-20261003.json').read_bytes()),'canonicalArchiveSHA256':publication['rootIndex']['sha256'],'historyRetrieval':'Selected record evidence plus native immutable partitions; full archive retained separately'}
  runtime={**snapshot,'records':inventory,'manifest':compact_manifest}
