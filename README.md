@@ -27,6 +27,8 @@ Worker `5dc7a9ab-8a87-4001-8020-23ee5c30351f` serves 100% in deployment `ccaa3c6
 
 **Next best actions:** resolve 113 remaining priority candidate associations across Belmont/Oakmont, Avida/Serene Marina, Cresswell/Merath and Raffles/Emerald Palace; source signed rents, occupancy, dated valuations and earlier histories; specify explicit annual conditional assumptions through 2080. The wider goal remains incomplete. PR #98 remains open and unmerged.
 
+**Prepared next evidence packet:** [24 reviewed Cresswell Plaza residential sales](docs/verification/dld-sales-pass43-2026-10-12/README.md), dated 23 April–8 October 2026, now have exact authority/portfolio identity proof and full-vintage duplicate checks. Merath's project-management and marketing roles remain separate from registered developer Essa Bokhowa. Future-dated inspection and conflicting area definitions remain excluded. The packet is not yet activated; live totals above are unchanged.
+
 ## V45 Map and V41 history — preserved release record, 12 October 2026 (Dubai)
 
 The live release adds **64 verified individual residential sale registrations: 54 Binghatti Wraith and 10 Helvetia Marine**. Official project/developer identity proof and full-vintage duplicate checks support the exact links. Individual transactions now account for their calendar months as sparse evidence; they do not imply a comparable monthly median, current valuation or complete lifetime history. The softer off-white/slate Espacios controls remain live, with matching dark-theme styling.
