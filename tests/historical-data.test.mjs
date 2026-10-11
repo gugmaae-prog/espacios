@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
+import {spawnSync} from 'node:child_process';
 import {annualScenarios,TARGET_YEARS} from '../src/historical-intelligence/core.mjs';
 const root=new URL('../',import.meta.url),read=p=>fs.readFile(new URL(p,root)),sha=x=>createHash('sha256').update(x).digest('hex');
 const data=JSON.parse(await read('data/historical-intelligence-20261003.json'));
@@ -81,8 +82,12 @@ test('bounded runtime shards preserve every canonical record and native tuple wi
   assert.equal(reference.archive.sha256,publication.rootIndex.sha256);
   const archived=JSON.parse(gunzipSync(await read(publication.rootIndex.path)));
   assert.deepEqual(archived.manifest.sourceEnrichment.collection,data.manifest.sourceEnrichment.collection);
-  const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(k=>[k,canonical(value[k])])):value;
-  assert.equal(reference.sha256,sha(JSON.stringify(canonical(archived.manifest.sourceEnrichment.collection))));
+  // The archive producer preserves JSON 1.0 values; JavaScript reserializes
+  // them as 1. Verify the stored producer encoding without losing that type.
+  assert.equal(sha(await read(publication.rootIndex.path)),reference.archive.sha256);
+  const digest=spawnSync('python3',['-c',"import gzip,json,hashlib,sys; x=json.loads(gzip.decompress(open(sys.argv[1],'rb').read()))['manifest']['sourceEnrichment']['collection']; print(hashlib.sha256(json.dumps(x,ensure_ascii=False,separators=(',',':'),sort_keys=True).encode()).hexdigest())",publication.rootIndex.path],{encoding:'utf8'});
+  assert.equal(digest.status,0,digest.stderr);
+  assert.equal(reference.sha256,digest.stdout.trim());
  }
 
  const records=new Map(),native=new Map(),objects=new Map(publication.objects.map(o=>[o.key,o]));

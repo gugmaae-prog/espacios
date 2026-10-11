@@ -119,7 +119,9 @@ test('The V19 snapshot preserves V16 Nawayef registered-sale cohorts and source 
 test('The V19 ledger preserves V17 lifecycle coverage and incorporates later verified sale evidence',()=>{
  const counts={};
  for(const record of snapshot.records)for(const item of Object.values(record.researchStatus.itemCoverage))counts[item.status]=(counts[item.status]||0)+1;
- assert.deepEqual(counts,snapshot.version==='20261009-enrichment-v39'
+ assert.deepEqual(counts,snapshot.version==='20261009-enrichment-v40'
+  ?{missing:26738,partial:3438,unestablished:9300,present:3304}
+  :snapshot.version==='20261009-enrichment-v39'
   ?{missing:26740,partial:3439,unestablished:9300,present:3301}
   :snapshot.version==='20261008-enrichment-v38'
   ?{missing:26741,partial:3439,unestablished:9300,present:3300}
