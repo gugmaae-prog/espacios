@@ -27,6 +27,8 @@ Worker `e01d432f-33da-4141-acc1-6079d930b1a0` serves 100% in deployment `9e38df3
 
 **Next best actions:** resolve the remaining component/legal-developer identities from the eight-project authority review; verify the other candidate transactions individually; source signed rents, occupancy and dated valuations; expand early-history evidence and explicit annual conditional assumptions through 2080. Unresolved records and periods remain visible and keep the wider goal incomplete.
 
+**Prepared next evidence pass:** [119 further individually verified sales across Divine Elements, Inaura, EIRA and SOMA](docs/verification/dld-sales-pass42-2026-10-12/README.md) are sourced and tested against the immutable V41 baseline. Six primary developer captures support the exact authority/marketing identities. They await immutable integration and release; the live counts above are unchanged.
+
 ## V44 Map and V40 history — preserved release record, 12 October 2026 (Dubai)
 
 The live release adds **three bedroom-specific Binghatti Wraith advertised starting prices and four Helvetia Marine development reports**, with three primary source vintages. Asking prices remain separate from registered sales and current headline prices. Marine's broker event retains its 8–13 December 2025 interval; the June 2026 construction report is month-precision; Q1 2028 remains a planned handover. No first-ever launch, occupancy, registered sale, rent, valuation or uplift coefficient is inferred.

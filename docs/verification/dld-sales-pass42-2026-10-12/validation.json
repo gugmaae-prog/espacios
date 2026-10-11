@@ -1,0 +1,11 @@
+{
+  "command": "npm run test:identity-review",
+  "exitCode": 0,
+  "newRegressionTests": 5,
+  "facts": 119,
+  "newSources": 7,
+  "sourceRowsScanned": 1800588,
+  "duplicateReconciliationRowsScanned": 1800588,
+  "liveCoverageChanged": false,
+  "baselineVersion": "20261012-enrichment-v41"
+}
