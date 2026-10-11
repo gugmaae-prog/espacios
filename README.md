@@ -31,6 +31,8 @@ The selected Map control uses off-white, slate text and a quiet border, with equ
 
 **New authority review, 12 October:** the [DLD browser review](docs/verification/dld-authority-review-2026-10-12/README.md) captures primary records for all eight missing registration numbers and checks legal developers against the downloadable register. A new transaction vintage contains 296 candidate associations across the ten priority projects. Future-dated Cresswell inspection data and repeated map coordinates are quarantined. Exact component and transaction-ownership decisions remain required; this review does not change live coverage.
 
+**Prepared next sale pass:** [64 individually verified Wraith and Helvetia Marine sale registrations](docs/verification/dld-sales-pass41-2026-10-12/README.md) now have authority/developer identity proof, full-vintage duplicate checks and existing-ownership reconciliation. They remain a reviewed packet awaiting immutable integration and release; live V40 coverage above is unchanged.
+
 ## V43 Map and V39 history — preserved release record, 9 October 2026 (Dubai)
 
 The live map adds **seven sourced Asora Bay lifecycle reports and three primary article vintages**. The April 2025 operator announcement is retained separately from the July launch article. Early 2029 remains a year-precision residential handover target; hotel opening and parent-register schedules remain separately scoped. Conflicting inventory counts and English/Arabic construction labels remain unresolved. No new financial observations, occupancy, valuation or appreciation coefficient is inferred. All 30 previously verified Asora sale registrations are preserved.
