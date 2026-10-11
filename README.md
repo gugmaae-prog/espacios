@@ -17,7 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V46 Map and V42 history, 12 October 2026 (Dubai)
+## Current production — V47 Map and V43 history, 12 October 2026 (Dubai)
+
+The live release adds **24 verified Cresswell Plaza residential sale registrations**, dated 23 April–8 October 2026. Exact authority/portfolio identity and full-vintage duplicate checks support the links. Merath's management/marketing role remains separate from registered developer Essa Bokhowa. Future-dated inspection and unreconciled source area figures are excluded. Individual transactions count as sparse evidence, not monthly medians or complete lifetime history.
+
+All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13,230 links** remain. V43 holds **3,362 source vintages and 6,969 evidence facts**. Checklist: **3,311 present, 3,438 partial, 26,731 missing and 9,300 unestablished**. **39,469 of 42,780 requirements (92.26%) remain unresolved**. This is checklist accounting, not missing lifetime-price percentage. No new rents, dated current valuations, occupancy or approved forecasts are inferred.
+
+Worker `2fd155e0-e352-4e80-93ad-267b4e3cf2b0` serves 100% in deployment `a8c2418e-61db-46b8-993c-3157d92bb06f`. Source `1928daf0f86dbc74dce7ecc2a37b590cb1df3096` passes [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/38184256703). Production archive/index publication, preview/canonical APIs, preserved native history, catalogue, desktop/mobile UI, route and Supabase metadata are verified. Softer off-white/slate controls remain live. See [release receipts](docs/verification/history-v43-2026-10-12/README.md) and [Cresswell source packet](docs/verification/dld-sales-pass43-2026-10-12/README.md). PR #98 remains open and unmerged.
+
+**Next best actions:** integrate the [40 verified Avida sales](docs/verification/dld-sales-pass44-2026-10-12/README.md), which are prepared and tested but not deployed; resolve Belmont/Oakmont's 42 candidate associations and the [Raffles component/inventory conflict](docs/verification/raffles-component-review-2026-10-12/README.md) affecting seven flat-sale candidates. Continue signed rents, occupancy, dated valuations, early histories and fully specified conditional annual assumptions through 2080. Research attempts and unresolved component links earn no completeness credit.
+
+## V46 Map and V42 history — preserved release record, 12 October 2026 (Dubai)
 
 The live release adds **119 verified individual residential sales: Divine Elements 49, Inaura 35, EIRA 30 and SOMA 5**. Exact project/component identities, six primary developer captures and full-vintage duplicate checks support the links. Individual sales remain sparse evidence, not monthly medians or current valuations. Older community context no longer establishes project applicability: Divine Elements correctly shows 203 earlier price months as unknown and seven sale months as sparse.
 
@@ -26,10 +36,6 @@ All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13
 Worker `5dc7a9ab-8a87-4001-8020-23ee5c30351f` serves 100% in deployment `ccaa3c61-1dac-42e7-a1be-b4e478e1b745`. Source `a16e19dd23161470ff5ee9def21c83ff1eddfc92` passes [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/38183034801). Archive/index publication, preview/canonical APIs, exact preserved native history, desktop/mobile UI, catalogue, route and Supabase metadata are verified. The softer off-white/slate palette and matching dark controls remain live. See [V42 release receipts and screenshots](docs/verification/history-v42-2026-10-12/README.md) and [source packet](docs/verification/dld-sales-pass42-2026-10-12/README.md).
 
 **Next best actions:** resolve 113 remaining priority candidate associations across Belmont/Oakmont, Avida/Serene Marina, Cresswell/Merath and Raffles/Emerald Palace; source signed rents, occupancy, dated valuations and earlier histories; specify explicit annual conditional assumptions through 2080. The wider goal remains incomplete. PR #98 remains open and unmerged.
-
-**Prepared next evidence packet:** [24 reviewed Cresswell Plaza residential sales](docs/verification/dld-sales-pass43-2026-10-12/README.md), dated 23 April–8 October 2026, now have exact authority/portfolio identity proof and full-vintage duplicate checks. Merath's project-management and marketing roles remain separate from registered developer Essa Bokhowa. Future-dated inspection and conflicting area definitions remain excluded. The packet is integrated into candidate V43 / frontend V47, but is not yet activated; live totals above are unchanged.
-
-**Further verified source packet:** [40 Avida Residences residential sales](docs/verification/dld-sales-pass44-2026-10-12/README.md), dated 30 October 2025–10 September 2026, are prepared and tested. Fresh DLD project/developer evidence corroborates the IQUNA association while retaining Serene Marina as the registered legal developer. This packet is not integrated or deployed and earns no live coverage credit.
 
 ## V45 Map and V41 history — preserved release record, 12 October 2026 (Dubai)
 

@@ -1,6 +1,6 @@
 # Cresswell Plaza: exact project identity and individual registered sales
 
-Status: integrated into candidate V43 / frontend V47 against immutable V42. Production remains V46 / V42; these 24 sales have not yet been activated and earn no live coverage credit.
+Status: published and verified in V43 / frontend V47. All 24 sales are live; prior evidence is preserved. See [release verification](../history-v43-2026-10-12/README.md).
 
 ## Identity decision
 
@@ -26,4 +26,4 @@ The prior archive is pinned to V42 root `472486d78f139da3a2e111fbaa110578698248c
 
 No new monthly medians, rents, current valuations, occupancy or forecast assumptions are supplied. Prior asking quotes, lifecycle schedules, native cohorts and scenario inputs remain unchanged. Complete lifetime history remains unresolved.
 
-Next: integrate the reviewed packet, verify archive preservation and period accounting, then publish only after release checks. The other 89 priority associations remain unresolved: Belmont/Oakmont 42, Avida/Serene Marina 40 and Raffles/Emerald Palace 7. Continue broader historical/present evidence and fully specified conditional annual scenarios through 2080.
+Next: integrate the separately prepared 40-sale Avida packet; resolve Belmont/Oakmont 42 and Raffles component mapping seven. Continue broader historical/present evidence and fully specified conditional annual scenarios through 2080.
