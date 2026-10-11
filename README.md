@@ -17,7 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V44 Map and V40 history, 12 October 2026 (Dubai)
+## Current production — V45 Map and V41 history, 12 October 2026 (Dubai)
+
+The live release adds **64 verified individual residential sale registrations: 54 Binghatti Wraith and 10 Helvetia Marine**. Official project/developer identity proof and full-vintage duplicate checks support the exact links. Individual transactions now account for their calendar months as sparse evidence; they do not imply a comparable monthly median, current valuation or complete lifetime history. The softer off-white/slate Espacios controls remain live, with matching dark-theme styling.
+
+All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13,230 links** are preserved. V41 holds **3,353 sources and 6,826 evidence facts**. Checklist: **3,306 present, 3,438 partial, 26,736 missing and 9,300 unestablished**. **39,474 of 42,780 requirements (92.27%) remain unresolved**; this is checklist accounting, not missing lifetime-price percentage. No dated current valuations or approved 2080 forecasts are established.
+
+Worker `e01d432f-33da-4141-acc1-6079d930b1a0` serves 100% in deployment `9e38df3c-a147-4f5c-a940-ee239c6ce8ec`. Source `76f2e9dae622a1c1a6855217106b4b641e6a6fe5` passes [clean CI](https://github.com/gugmaae-prog/espacios/actions/runs/38181125643). Archive/index publication, preview/canonical APIs, exact retained native points, desktop/mobile UI, catalogue, route and Supabase metadata are verified. See [V41 release receipts and screenshots](docs/verification/history-v41-2026-10-12/README.md).
+
+**Next best actions:** resolve the remaining component/legal-developer identities from the eight-project authority review; verify the other candidate transactions individually; source signed rents, occupancy and dated valuations; expand early-history evidence and explicit annual conditional assumptions through 2080. Unresolved records and periods remain visible and keep the wider goal incomplete.
+
+## V44 Map and V40 history — preserved release record, 12 October 2026 (Dubai)
 
 The live release adds **three bedroom-specific Binghatti Wraith advertised starting prices and four Helvetia Marine development reports**, with three primary source vintages. Asking prices remain separate from registered sales and current headline prices. Marine's broker event retains its 8–13 December 2025 interval; the June 2026 construction report is month-precision; Q1 2028 remains a planned handover. No first-ever launch, occupancy, registered sale, rent, valuation or uplift coefficient is inferred.
 
@@ -31,7 +41,7 @@ The selected Map control uses off-white, slate text and a quiet border, with equ
 
 **New authority review, 12 October:** the [DLD browser review](docs/verification/dld-authority-review-2026-10-12/README.md) captures primary records for all eight missing registration numbers and checks legal developers against the downloadable register. A new transaction vintage contains 296 candidate associations across the ten priority projects. Future-dated Cresswell inspection data and repeated map coordinates are quarantined. Exact component and transaction-ownership decisions remain required; this review does not change live coverage.
 
-**Prepared next sale pass:** [64 individually verified Wraith and Helvetia Marine sale registrations](docs/verification/dld-sales-pass41-2026-10-12/README.md) now have authority/developer identity proof, full-vintage duplicate checks and existing-ownership reconciliation. They are integrated in candidate V41 / frontend V45 with all prior evidence preserved. Individual registrations now account for their calendar months as sparse evidence without inventing a comparable monthly aggregate. Archive publication and release validation are underway; live V40 coverage above remains the production baseline until activation.
+**Prepared next sale pass:** [64 individually verified Wraith and Helvetia Marine sale registrations](docs/verification/dld-sales-pass41-2026-10-12/README.md) now have authority/developer identity proof, full-vintage duplicate checks and existing-ownership reconciliation. They are now integrated, published and verified in V41 / frontend V45; see the current release above.
 
 ## V43 Map and V39 history — preserved release record, 9 October 2026 (Dubai)
 

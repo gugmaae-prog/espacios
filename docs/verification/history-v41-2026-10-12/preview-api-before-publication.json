@@ -1,0 +1,8 @@
+{
+  "origin": "https://e01d432f-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "version": "20261012-enrichment-v41",
+  "checkedAt": "2026-10-11T22:38:25.524Z",
+  "readOnly": true,
+  "passed": false,
+  "error": "SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:5738:19)\n    at successSteps (node:internal/deps/undici/undici:5719:27)\n    at fullyReadBody (node:internal/deps/undici/undici:4609:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async consumeBody (node:internal/deps/undici/undici:5728:7)\n    at async get (file:///Users/keifferjapeth/.codex/workspaces/espacios-v40-release/scripts/verify-history-release.mjs:18:52)\n    at async file:///Users/keifferjapeth/.codex/workspaces/espacios-v40-release/scripts/verify-history-release.mjs:21:15"
+}

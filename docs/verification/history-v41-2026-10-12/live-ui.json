@@ -1,0 +1,33 @@
+{
+  "origin": "https://espacios.me",
+  "frontend": "20261012-map-evidence-v45",
+  "history": "20261012-enrichment-v41",
+  "wraith": {
+    "facts": 58,
+    "individualSales": 54,
+    "priceSparseMonths": 2,
+    "priceMissingMonths": 0,
+    "coverageWindow": "2026-08 through 2026-09"
+  },
+  "marine": {
+    "facts": 10,
+    "individualSales": 10,
+    "priceSparseMonths": 7,
+    "priceMissingMonths": 2,
+    "coverageWindow": "2026-01 through 2026-09"
+  },
+  "annualEndpoint": 2080,
+  "annualSlots": 54,
+  "unverifiedScenarioValues": "unavailable",
+  "mobileWidth": 390,
+  "mobileScrollWidth": 390,
+  "palette": {
+    "lightBackground": "rgb(248, 250, 252)",
+    "lightText": "rgb(32, 48, 68)",
+    "darkBackground": "rgb(11, 24, 33)",
+    "darkText": "rgb(237, 246, 243)"
+  },
+  "desktopWidth": 1280,
+  "desktopScrollWidth": 1280,
+  "logoLoaded": true
+}
