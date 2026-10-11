@@ -304,3 +304,19 @@ test('individual registrations account for their month without inventing an aggr
  const conflicting=monthlyCoverage({...record,observations:[sale,{...sale,value:2000}]},{asOf,sources});
  assert.equal(conflicting.metrics.price.periods[0].status,'conflict');
 });
+
+
+test('earlier community context does not establish subject price applicability',()=>{
+ const context=observation('2009-Q2',900,{frequency:'quarterly',scope:'community_context',identityVerified:false});
+ const sale=observation('2026-03-02',1400,{frequency:'daily',observationKind:'transaction',transactionId:'new-project-sale',sampleCount:1});
+ const result=monthlyCoverage({...record,observations:[context,sale]},{asOf,sources});
+ const price=result.metrics.price;
+ assert.equal(price.periods.find(p=>p.period==='2009-04').status,'unknown');
+ assert.equal(price.periods.find(p=>p.period==='2026-02').status,'unknown');
+ assert.equal(price.periods.find(p=>p.period==='2026-03').status,'sparse');
+ assert.equal(price.periods.find(p=>p.period==='2026-04').status,'missing');
+ assert.equal(price.nativePeriods.quarterly[0].status,'context_only');
+ assert.equal(price.subjectApplicabilityKnown,false);
+ const explicit=monthlyCoverage({...record,observations:[context,sale],metricApplicability:{price:{verified:true,start:'2026-01',sourceIds:['sales']}}},{asOf,sources});
+ assert.equal(explicit.metrics.price.periods.find(p=>p.period==='2009-04').status,'not_applicable');
+});

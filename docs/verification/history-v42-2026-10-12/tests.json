@@ -1,13 +1,11 @@
 {
-  "buildAndSyntax": "passed in initial npm run verify",
-  "initialFailure": "legacy Python version allowlist; corrected before final tests",
-  "finalCommand": "npm test",
+  "command": "npm run verify",
   "exitCode": 0,
   "suiteTestCounts": [
     "152",
     "1",
     "58",
-    "175"
+    "176"
   ],
   "suiteFailureCounts": [
     "0",
@@ -15,5 +13,7 @@
     "0",
     "0"
   ],
-  "identityReview": "passed"
+  "identityReview": "passed",
+  "subjectApplicabilityRegression": "passed",
+  "initialLegacyAllowlistFailureCorrected": true
 }

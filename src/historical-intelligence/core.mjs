@@ -227,6 +227,11 @@ function coverageFromEvidence(record,{asOf,sources=[],manifest={},minimumSample=
  for(const m of METRICS){
   let applicability=applicableStart(record,m);
   const points=validated.filter(o=>o.metric===m),periods=[],monthly=new Map();
+  // Context can extend the displayed window, but cannot establish when this
+  // property's financial history became applicable. Earlier periods remain
+  // unknown unless explicit applicability or exact subject evidence supports them.
+  const subjectStarts=validated.filter(o=>o.scope==='subject'&&o.identityVerified===true&&o.valid&&o.date).map(o=>monthIndex(o.date));
+  const knownSubjectStarts=[...subjectStarts,...lifecycleStarts];
   if(applicability&&points.some(o=>o.direct&&o.valid&&o.date&&firstInstant(o.date)<firstInstant(applicability.date)))applicability=null;
   for(const o of points){
    // Exact individual registrations establish evidence in a month, not a
@@ -244,7 +249,7 @@ function coverageFromEvidence(record,{asOf,sources=[],manifest={},minimumSample=
    else if(bad.length){status='conflict';reason='Subject evidence needs identity, source or quality reconciliation.';}
    else if(context.length){status='context_only';reason='Area/published context exists; it is not subject transaction history.';}
    else if(record.historyAccess?.[m]?.status==='inaccessible'){status='inaccessible';reason=record.historyAccess[m].reason||'Applicable source access has not been obtained.';}
-   else if(!applicability&&i<(knownStarts.length?Math.min(...knownStarts):end+1)){status='unknown';reason='Subject applicability and earlier observation availability are not verified.';}
+   else if(!applicability&&i<(knownSubjectStarts.length?Math.min(...knownSubjectStarts):end+1)){status='unknown';reason='Subject applicability and earlier observation availability are not verified.';}
    periods.push({period,status,rawCount:matching.length,eligibleCount:eligible.length,contextCount:context.length,sparseCount:sparse.length,individualTransactionCount:individual.length,reason});
   }
   const statusCounts=Object.fromEntries(['observed','sparse','context_only','missing','not_applicable','conflict','unknown','inaccessible'].map(s=>[s,periods.filter(p=>p.status===s).length]));
