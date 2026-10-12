@@ -4,9 +4,10 @@ import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 const read=p=>JSON.parse(fs.readFileSync(p)),unpack=p=>JSON.parse(gunzipSync(fs.readFileSync(p)));
-const snapshot=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json');
+const snapshot=unpack('data/historical-intelligence/objects/999760c4e7fade1d3f6f5398f19f0521a96dd403cbcc51ac1d2e242188061998.json.gz');
+const publication={version:snapshot.version,counts:{sources:snapshot.sources.length,historicalRows:snapshot.series.reduce((n,s)=>n+s.pointCount,0),series:snapshot.series.length}};
 const packet=read('data/historical-intelligence/dld-sales-pass43-20261012.json');
-const before=unpack('data/historical-intelligence/objects/472486d78f139da3a2e111fbaa110578698248c20e31359c96580b8200cce05a.json.gz'),after=unpack(publication.rootIndex.path);
+const before=unpack('data/historical-intelligence/objects/472486d78f139da3a2e111fbaa110578698248c20e31359c96580b8200cce05a.json.gz'),after=snapshot;
 test('V43 retains the entire archive and appends only the reviewed Cresswell Plaza evidence',()=>{
  assert.equal(snapshot.version,'20261012-enrichment-v43');assert.equal(publication.version,snapshot.version);assert.equal(snapshot.asOf,'2026-10-12');
  assert.equal(snapshot.records.length,1860);assert.equal(publication.counts.sources,3362);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);

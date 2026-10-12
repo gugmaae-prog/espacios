@@ -10,9 +10,9 @@ const snapshot=read('data/historical-intelligence-20261003.json'),publication=re
 const before=unpack('data/historical-intelligence/objects/be31d7f61e60b822c9fc005051f958613d2cd2db0c830b69fb1366e9a3dacf75.json.gz'),after=unpack('data/historical-intelligence/objects/01b716e001347142944eda86c5c649f4a2e05b47be05df70f8302db4450d09fd.json.gz');
 const rid='project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai',record=snapshot.records.find(r=>r.id===rid);
 test('V38 adds exactly 30 individual sales to one current project and preserves all earlier evidence',()=>{
- assert.ok(['20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);
+ assert.ok(['20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44'].includes(snapshot.version));assert.equal(publication.version,snapshot.version);
  assert.equal(snapshot.records.length,1860);assert.equal(packet.facts.length,30);assert.equal(packet.sources.length,2);
- assert.equal(publication.counts.sources,snapshot.version==='20261012-enrichment-v43'?3362:snapshot.version==='20261012-enrichment-v42'?3360:snapshot.version==='20261012-enrichment-v41'?3353:snapshot.version==='20261009-enrichment-v40'?3351:snapshot.version==='20261009-enrichment-v39'?3348:3345);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.equal(publication.counts.sources,snapshot.version==='20261012-enrichment-v44'?3365:snapshot.version==='20261012-enrichment-v43'?3362:snapshot.version==='20261012-enrichment-v42'?3360:snapshot.version==='20261012-enrichment-v41'?3353:snapshot.version==='20261009-enrichment-v40'?3351:snapshot.version==='20261009-enrichment-v39'?3348:3345);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);
  assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const oldRecords=new Map(before.records.map(r=>[r.id,r]));
@@ -32,10 +32,17 @@ test('stable developer keys retain both dated names; archive, hotel and Ocean Ma
  assert.match(proof.basis,/no legal rename date/);assert.equal(record.researchStatus.identityCandidateCount,0);
  assert.equal(record.researchStatus.itemCoverage.registered_sale_history.status,'present');
  assert.equal(record.researchStatus.itemCoverage.complete_registered_sale_history.status,'unestablished');
- assert.equal(snapshot.manifest.directSubjectSaleHistoryRecords,snapshot.version==='20261012-enrichment-v43'?379:snapshot.version==='20261012-enrichment-v42'?378:snapshot.version==='20261012-enrichment-v41'?374:372);assert.equal(snapshot.manifest.identityCandidateProjects,246);
+ assert.equal(snapshot.manifest.directSubjectSaleHistoryRecords,snapshot.version==='20261012-enrichment-v44'?380:snapshot.version==='20261012-enrichment-v43'?379:snapshot.version==='20261012-enrichment-v42'?378:snapshot.version==='20261012-enrichment-v41'?374:372);assert.equal(snapshot.manifest.identityCandidateProjects,246);
  assert.equal(snapshot.manifest.approved2080ForecastRecords,0);
  assert.deepEqual([...new Set(packet.facts.map(f=>f.recordId))],[rid]);
- for(const candidate of packet.excludedCandidates){assert.notEqual(candidate.recordId,rid);assert.equal(snapshot.records.find(r=>r.id===candidate.recordId).researchStatus.itemCoverage.registered_sale_history.status,'missing');}
+ for(const candidate of packet.excludedCandidates){
+  assert.notEqual(candidate.recordId,rid);
+  const excluded=snapshot.records.find(r=>r.id===candidate.recordId);
+  const separatelyVerifiedAvida=snapshot.version==='20261012-enrichment-v44' && candidate.recordId==='project:avida-residences-iquna-properties-dubai-islands';
+  assert.equal(excluded.researchStatus.itemCoverage.registered_sale_history.status,separatelyVerifiedAvida?'present':'missing');
+  const asoraIds=new Set(packet.facts.map(f=>f.observation?.transactionId).filter(Boolean));
+  assert.ok(excluded.observations.every(o=>!asoraIds.has(o.transactionId)),'Excluded candidates must never inherit Asora transactions');
+ }
 });
 test('sparse individual transactions remain visible with reconciled units and no pre-publication training access',()=>{
  const observations=record.observations.filter(o=>o.evidenceClass==='registered_sale_transaction_primary_dld');assert.equal(observations.length,30);
