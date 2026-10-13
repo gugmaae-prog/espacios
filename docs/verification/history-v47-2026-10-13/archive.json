@@ -1,0 +1,11 @@
+{
+  "status": "passed_locally_before_publication",
+  "command": "node scripts/verify-historical-archive.mjs",
+  "version": "20261013-enrichment-v47",
+  "immutableArchiveRootSHA256": "66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240",
+  "canonicalSnapshotSHA256": "f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f",
+  "recordsVerified": 1860,
+  "objectsVerified": 2542,
+  "remoteWrites": 0,
+  "note": "The archive verifier is read-only. Production publication is separately recorded in publication.json and canonical API readback."
+}

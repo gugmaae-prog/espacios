@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "route": "https://espacios.me/map",
+  "frontendRelease": "20261013-map-heatmap-coverage-v2",
+  "layouts": [
+    {
+      "name": "desktop",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "verified": [
+    "V2 runtime markers and immutable JS/CSS asset URLs",
+    "all-record density coverage and selected scope/period behavior",
+    "density Record history opens the current selected record rather than a hidden price inspector",
+    "native price Details and future assumptions retain their separate supported destinations",
+    "history, source labels, event panels, and conditional 2080 scenario endpoint",
+    "responsive geometry with no mobile horizontal overflow and no page exceptions"
+  ],
+  "canonicalRun": "passed",
+  "candidateOverrideRun": "passed"
+}

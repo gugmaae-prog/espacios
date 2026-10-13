@@ -1,5 +1,5 @@
 {
-  "status": "captured_and_verified_locally_not_published",
+  "status": "captured_verified_and_published_v47",
   "packet": "data/historical-intelligence/dld-lifecycle-pass47-20261013.json",
   "packetSHA256": "d3a6565f6ad988cf864968c256e97a4c4b38d4b4a5498c13ef3d61fdcc0924e6",
   "authorityPacket": "data/historical-intelligence/dld-authority-pass47-20261013.json",
@@ -15,5 +15,11 @@
     "normalizedPayloadSHA256": "e1474113fdc56c1e7f5484a144b73accc9c731134ce902cc64d435a6fc3b47e0",
     "rawCaptureRedistributed": false
   },
-  "temporalQualification": "The portal publication date is unknown. Retrieval and first-known availability are retained; they do not make retrospective lifecycle dates available to historical models before retrieval."
+  "temporalQualification": "The portal publication date is unknown. Retrieval and first-known availability are retained; they do not make retrospective lifecycle dates available to historical models before retrieval.",
+  "publication": {
+    "historyVersion": "20261013-enrichment-v47",
+    "immutableArchiveRootSHA256": "66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240",
+    "rawCaptureRedistributed": false,
+    "financialObservationsAdded": 0
+  }
 }

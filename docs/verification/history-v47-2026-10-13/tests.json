@@ -1,5 +1,5 @@
 {
-  "status": "local_candidate_not_published",
+  "status": "published_and_verified_v47",
   "completed": [
     {
       "command": "python3 tests/dld-authority-pass47.py",
@@ -24,17 +24,30 @@
       "command": "npm test",
       "passed": true,
       "scope": "full local regression suite"
+    },
+    {
+      "command": "node scripts/verify-v47-history-release.mjs --origin candidate",
+      "passed": true,
+      "scope": "candidate API, full ledger, selected identities, Data Room restriction"
+    },
+    {
+      "command": "node scripts/verify-v47-history-release.mjs --origin https://espacios.me",
+      "passed": true,
+      "scope": "canonical API, full ledger, selected identities, Data Room restriction"
+    },
+    {
+      "command": "node scripts/history-browser-acceptance.mjs",
+      "passed": true,
+      "scope": "canonical desktop and 390x844 mobile Map acceptance"
+    },
+    {
+      "command": "Supabase runtime/registry readback",
+      "passed": true,
+      "scope": "public-safe V47 control-plane metadata"
     }
   ],
   "pending": [
-    "Archive verification",
-    "GitHub CI",
-    "R2/D1 publication",
-    "Candidate API",
-    "Canonical API",
-    "Traffic activation",
-    "Desktop/mobile browser acceptance",
-    "Control-plane readback"
+    "GitHub source synchronization and its separate CI status"
   ],
   "notCertified": [
     "Complete historical financial coverage for every project and community",
