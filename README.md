@@ -17,7 +17,17 @@
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
 
-## Current production — V47 Map and V43 history, 12 October 2026 (Dubai)
+## Current production — V48 Map and V44 history, 13 October 2026 (Dubai)
+
+The live release adds **40 verified Avida Residences residential sale registrations**, dated 30 October 2025–10 September 2026, and three source vintages. Exact DLD identity, official developer evidence and full-vintage duplicate checks support these links. IQUNA's marketed brand and Serene Marina's legal developer remain distinct. Ten sale months are sparse and two months remain missing; no monthly median, current valuation, rent, occupancy or complete lifetime history is inferred.
+
+All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13,230 links** are preserved. V44 contains **3,365 sources and 7,009 evidence facts**. Checklist: **3,312 present, 3,438 partial, 26,730 missing and 9,300 unestablished**. **39,468/42,780 requirements (92.26%) remain unresolved**. This measures checklist requirements, not missing lifetime prices. Annual slots reach 2080; missing scenario assumptions remain visibly unavailable.
+
+Worker `7ecf54bb-7ec7-444f-ba91-865fe3e08c9e` serves 100% through deployment `ac648cfa-3db3-4240-b0d7-151259e63e07`. [Source CI](https://github.com/gugmaae-prog/espacios/actions/runs/38218183096), immutable archive/index publication, preview/canonical APIs, exact transaction IDs, native-history preservation, catalogue and desktop/mobile verification passed. Supabase metadata is reconciled. Softer off-white/slate controls remain live. [Release receipts](docs/verification/history-v44-2026-10-12/README.md). PR #98 remains open/unmerged.
+
+**Next best actions:** batch the next verified additions; resolve Belmont/Oakmont's 42 and Raffles' seven candidate sale associations using authoritative component proof; source missing signed rents, occupancy, dated valuations and early histories; specify conditional annual assumptions through 2080. There is no configured automatic daily source-refresh feed yet; day-dated transactions and daily ingestion are different. Source checks or unsuccessful research earn no completeness credit.
+
+## V47 Map and V43 history — preserved release record, 12 October 2026 (Dubai)
 
 The live release adds **24 verified Cresswell Plaza residential sale registrations**, dated 23 April–8 October 2026. Exact authority/portfolio identity and full-vintage duplicate checks support the links. Merath's management/marketing role remains separate from registered developer Essa Bokhowa. Future-dated inspection and unreconciled source area figures are excluded. Individual transactions count as sparse evidence, not monthly medians or complete lifetime history.
 

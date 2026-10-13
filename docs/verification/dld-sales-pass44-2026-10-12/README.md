@@ -1,6 +1,6 @@
 # Avida Residences: authority identity and 40 individual sales
 
-Status: integrated into the locally verified V44 candidate; production deployment remains pending. No live coverage credit is counted before activation.
+Status: published in V44 history / V48 Map on 13 October 2026; canonical transaction, coverage and preservation checks passed.
 
 ## Exact project and organizational roles
 
@@ -22,4 +22,4 @@ Four immutable private browser captures retain the fact sheet, developer details
 
 The pinned prior V43 archive root is `999760c4e7fade1d3f6f5398f19f0521a96dd403cbcc51ac1d2e242188061998`. Reproduce with `python3 scripts/prepare-dld-sales-pass44.py` using retained lawful inputs; run `python3 tests/dld-sales-pass44.py` without private files. Tests cover exact financial scope, arithmetic, source vintage, append preservation, legal/brand separation, authority dates, geometry exclusion and mismatched source keys/building identity.
 
-Next: Cresswell V43 is published and verified; publish and activate the verified V44 candidate next. Belmont/Oakmont's 42 and Raffles/Emerald Palace's seven priority candidate associations still lack sufficient component proof. All broader historical, present-data and annual scenario requirements remain in scope.
+Next: Avida V44 is published and verified. Belmont/Oakmont's 42 and Raffles/Emerald Palace's seven priority candidate associations still lack sufficient component proof. All broader historical, present-data and annual scenario requirements remain in scope.
