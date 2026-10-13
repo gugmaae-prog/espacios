@@ -6,6 +6,12 @@ import path from 'node:path';
 
 const CHROME=process.env.HI_CHROME_BIN||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const BASE=process.env.AE_MAP_URL||'http://127.0.0.1:8798/map';
+// A staged Worker version is reachable through the canonical Map shell only
+// when Cloudflare's documented version-override header accompanies the shell
+// request and its service-binding subrequests. This is opt-in and is useful
+// exclusively for a zero-traffic smoke test.
+const VERSION_OVERRIDE=process.env.AE_MAP_VERSION_OVERRIDE?.trim()||'';
+const EXTRA_HEADERS=VERSION_OVERRIDE?{'Cloudflare-Workers-Version-Overrides':VERSION_OVERRIDE}:{};
 const HEADLESS=process.env.AE_CHROME_HEADLESS!=='0';
 const OUT=path.resolve(process.env.HI_BROWSER_OUTPUT||'../../outputs/historical-acceptance');
 await mkdir(OUT,{recursive:true});
@@ -80,6 +86,7 @@ async function runCase(port,{name,width,height,mobile}){
  cdp.on('Runtime.exceptionThrown',p=>exceptions.push(p.exceptionDetails?.exception?.description||p.exceptionDetails?.text));
  cdp.on('Network.responseReceived',p=>{if(p.response.status>=400)networkFailures.push({url:p.response.url,status:p.response.status});});
  await cdp.call('Page.enable');await cdp.call('Runtime.enable');await cdp.call('Network.enable');
+ if(VERSION_OVERRIDE)await cdp.call('Network.setExtraHTTPHeaders',{headers:EXTRA_HEADERS});
  await cdp.call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile});
  if(mobile)await cdp.call('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
  await cdp.call('Page.navigate',{url:BASE});

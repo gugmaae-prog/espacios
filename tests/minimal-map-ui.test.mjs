@@ -157,6 +157,8 @@ test('build emits the minimalist release after unified map source',()=>{
 
 test('browser acceptance requires the heatmap coverage release in both runtime markers and immutable assets',()=>{
   assert.match(browserAcceptance,/const expectedRelease='20261013-map-heatmap-coverage-v1';/);
+  assert.match(browserAcceptance,/AE_MAP_VERSION_OVERRIDE/);
+  assert.match(browserAcceptance,/Cloudflare-Workers-Version-Overrides/);
   assert.match(browserAcceptance,/\{minimal:release\.minimal,mobile:release\.mobile\},\{minimal:expectedRelease,mobile:expectedRelease\}/);
   assert.match(browserAcceptance,/release\.script\?\.includes\(expectedRelease\)&&release\.style\?\.includes\(expectedRelease\)/);
   assert.doesNotMatch(browserAcceptance,/const expectedRelease='20261013-map-mobile-disclosures-v5';/);
