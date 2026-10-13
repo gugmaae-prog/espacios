@@ -1,6 +1,6 @@
 # Dated DLD lifecycle batch — 13 October 2026
 
-Status: prepared and tested; not integrated or deployed. No new live coverage credit.
+Status: published, activated at 100% and independently verified on 13 October 2026. The batch contributes exactly 31 lifecycle facts and no financial observations. See the [V45 release receipt](../history-v45-2026-10-13/README.md).
 
 Eight exact project identities already verified for individual sales now support 31 separately typed authority lifecycle reports from retained 11 October captures: eight registration dates, eight filed start dates, eight scheduled completion targets and seven dated inspection percentages. No fresh retrieval date or publication date is invented. The same sources are reused without creating duplicate source vintages.
 
@@ -19,4 +19,4 @@ Registration is not first marketing or sale. Filed start is not actual physical 
 
 Reproduce with `python3 scripts/prepare-dld-lifecycle-pass45.py` using retained lawful private captures; it checks all 24 capture hashes, dates and inspection percentages. Public packet tests run with `python3 tests/dld-lifecycle-pass45.py`. The input is pinned to the published V44 immutable root and exact earlier identity packets. Raw contact details, DOM captures and private transaction rows are not redistributed.
 
-Next: append this batch while preserving prior milestones, observations, period applicability and financial coverage; verify the revised checklist before publication.
+The revised ledger is 3,325 present, 3,430 partial, 26,725 missing and 9,300 unestablished requirements. It remains incomplete; this batch does not turn lifecycle evidence into price, rent, valuation, completion, occupancy or forecast coverage.
