@@ -84,6 +84,10 @@ async function runCase(port,{name,width,height,mobile}){
  if(mobile)await cdp.call('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
  await cdp.call('Page.navigate',{url:BASE});
  try{await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});}catch(error){console.log(JSON.stringify({name,exceptions,networkFailures}));await capture(cdp,name+'-initialization-failure');throw error;}
+ const release=await evaluate(cdp,"({minimal:window.__ESPACIOS_MINIMAL_MAP_RELEASE__,mobile:window.__ESPACIOS_MOBILE_MAP__?.release,script:document.querySelector('script[src*=\\\"app-v2.js\\\"]')?.src,style:document.querySelector('link[href*=\\\"app-v2.css\\\"]')?.href})");
+ const expectedRelease='20261013-map-mobile-disclosures-v5';
+ assert.deepEqual({minimal:release.minimal,mobile:release.mobile},{minimal:expectedRelease,mobile:expectedRelease},name+' delivered mobile release markers');
+ assert.ok(release.script?.includes(expectedRelease)&&release.style?.includes(expectedRelease),name+' delivered immutable v5 asset URLs');
  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali'); true");
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Financial coverage')",{label:name+' PJA coverage'});
  const index=await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),options:document.querySelector('#hi-record-select').options.length,sources:[...document.querySelectorAll('#hi-body a')].every(a=>a.href.startsWith('https://')),chart:document.querySelector('.hi-chart figcaption')?.textContent})");
