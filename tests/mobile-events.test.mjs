@@ -99,6 +99,7 @@ function harness(mode = 'projects') {
   sandbox.cxCatalogue=()=>false;sandbox.tlChooseDate=period=>calls.native.push(period);
   sandbox.tlUpdate=()=>calls.nativeRender++;sandbox.tlStop=()=>{};
   if(mode==='unified'){
+    sandbox.U={mapDisplay:true};
     sandbox.future=()=>true;sandbox.prepare=()=>{};sandbox.details=()=>calls.unified.push(sandbox.msState.area);sandbox.refreshSoon=()=>{};
     const timeline={periods:['["2019-01","registered_sale"]','["2027Q2","conditional_scenario"]','["2036Q2","conditional_scenario"]'],selected:'["2019-01","registered_sale"]',key:'same-reviewed-domain',metric:'price',loading:false};
     sandbox.window.EspaciosUnifiedMap={timeline:()=>timeline,choose(period){calls.chosen.push(period);timeline.selected=period;},render:()=>calls.render++};
@@ -404,4 +405,18 @@ test('late-added controls register for resize geometry once and affect camera cl
   const toggle=h.node('#minimal-tools-toggle',236);h.api.refreshGeometry();
   assert.equal(h.observed.length,initial+1);assert.equal(h.observed.at(-1),toggle);
   h.api.measure();assert.equal(h.paddings.at(-1).top,248);
+});
+
+
+test('hidden unified future heat does not query or intercept map taps and double-clicks', () => {
+  const h = harness('unified'); h.sandbox.U.mapDisplay = false;
+  const first = h.click(), second = h.click({detail: 2}); h.flush();
+  for (const event of [first, second]) {
+    assert.equal(event.stopped, undefined); assert.equal(event.prevented, undefined);
+  }
+  assert.deepEqual(h.queries, []); assert.deepEqual(h.calls.unified, []);
+  assert.equal(h.microtasks.length, 0); assert.equal(h.calls.legacyClick, 2);
+  h.sandbox.U.mapDisplay = true;
+  assert.equal(h.click().stopped, true, 'The same future selection owns taps when shown again');
+  h.flush(); assert.deepEqual(h.calls.unified, ['Exact area']);
 });

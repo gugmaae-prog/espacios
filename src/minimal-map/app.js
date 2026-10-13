@@ -1,9 +1,9 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261013-map-mobile-disclosures-v5';
+  const RELEASE='20261013-map-heatmap-coverage-v1';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
-  const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
+  const UI={installed:false,mode:'heatmap',metric:'projects',satelliteReady:false};
   const selectionLight='#5f6d85',selectionDark='#aab7bd',legacySelection='#69d8ff';
   const hotspotColors=['#4f817c','#718991','#9ba8ac'];
   const selectionColor=()=>root.dataset.espaciosTheme==='dark'?selectionDark:selectionLight;
@@ -45,7 +45,7 @@
   const active=(group,value)=>group.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.value===value)));
   const turn3d=on=>{const b=Q('#toggle-3d');if(!b)return;if(Boolean(state.is3d)!==Boolean(on))b.click();};
   const pointView=()=>{try{if(typeof aeUaeSetView==='function'&&aeUaeCoverageActive())aeUaeSetView('points');}catch{}};
-  const analysisOff=()=>{try{if(typeof psrSetAnalysis==='function')psrSetAnalysis('off');}catch{}};
+  const analyticalDisplay=show=>window.EspaciosUnifiedMap?.setMapDisplay(show);
 
   function satelliteBefore(){
     const layers=map.getStyle()?.layers||[];
@@ -76,19 +76,16 @@
     if(!['map','satellite','3d','heatmap'].includes(mode))return;
     UI.mode=mode;
     if(mode==='satellite'){
-      analysisOff();pointView();turn3d(false);satelliteVisible(true);
+      analyticalDisplay(false);pointView();turn3d(false);satelliteVisible(true);
     }else{
       satelliteVisible(false);
       if(mode==='3d'){
-        analysisOff();pointView();turn3d(true);
+        analyticalDisplay(false);pointView();turn3d(true);
       }else if(mode==='heatmap'){
         turn3d(false);
-        const metric=window.EspaciosUnifiedMap?.timeline?.()?.metric||'projects';
-        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'projects';
-        try{psrSetAnalysis(analysis);}catch{}
-        try{if(aeUaeCoverageActive())aeUaeSetView('heat');}catch{}
+        analyticalDisplay(true);
       }else{
-        analysisOff();pointView();turn3d(false);
+        analyticalDisplay(false);pointView();turn3d(false);
       }
     }
     syncModes();
@@ -98,12 +95,36 @@
     const group=Q('#minimal-metrics');if(!group)return;
     active(group,UI.metric);
   }
+  function syncMapContext(context=window.EspaciosUnifiedMap?.context?.()){
+    if(!context)return;
+    UI.metric=context.metric==='price'&&context.evidenceClass==='conditional_scenario'?'forecast':context.metric;
+    syncMetricButtons();
+    if(context.mapDisplay&&UI.mode!=='heatmap'){UI.mode='heatmap';syncModes();}
+    const scope=Q('#minimal-map-scope-text');
+    const type={apartment:'Apartments',villa:'Villas',townhouse:'Townhouses',both:'Apartments + villas'}[context.segment]||context.segment;
+    const density=context.metric==='projects',all=density&&context.coverage==='catalogue';
+    const label=density?'UAE · Project density · '+(all?'All dates':context.coverage==='annual'?'Handovers in '+context.period:'Handovers through '+context.period)
+      :[context.emirate,context.evidenceClass==='conditional_scenario'?'Conditional scenario':context.metric==='roi'?'Gross yield':context.basis==='sales'?'Registered sales':'Asking prices',type,context.basis==='sales'?context.registration:''].filter(Boolean).join(' · ');
+    if(scope){scope.textContent=label;scope.title=label+(density?' · Counts of mapped projects, not prices or investment returns.':' · Unshaded areas have no matching evidence for this selection.');}
+    const reset=Q('#minimal-all-projects');if(reset)reset.hidden=all;
+    window.EspaciosMobileUI?.refreshGeometry?.();
+  }
+  function showAllProjects(){
+    window.EspaciosUnifiedMap?.setMetric('projects');
+    const coverage=Q('#tg-coverage-select');
+    if(coverage){coverage.value='catalogue';coverage.dispatchEvent(new Event('change',{bubbles:true}));}
+    setMode('heatmap');syncMapContext();
+  }
   function setMetric(metric){
     UI.metric=metric;
-    if(metric==='price'||metric==='roi'){
+    if(metric==='projects'){
+      showAllProjects();
+    }else if(metric==='price'||metric==='roi'){
       window.EspaciosUnifiedMap?.setMetric(metric);
+      setMode('heatmap');
     }else if(metric==='forecast'){
       window.EspaciosUnifiedMap?.setMetric('price');
+      setMode('heatmap');
       setTimeout(()=>{
         const timeline=window.EspaciosUnifiedMap?.timeline?.();
         const next=timeline?.periods?.find(id=>/Estimate/i.test(timeline.labels?.[id]||''));
@@ -235,15 +256,20 @@
 
     const metric=document.createElement('div');metric.id='minimal-metrics';metric.setAttribute('role','group');metric.setAttribute('aria-label','Data point');
     const items=[
+      ['projects','Density','neutral'],
       ['price','Price / sqft','accent'],
       ['roi','ROI','neutral'],
       ['volume','Transaction Volume','blue'],
       ['forecast','Forecast','green']
     ];
     for(const [value,label,tone] of items){
-      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='price'));b.onclick=()=>setMetric(value);metric.append(b);
+      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value===UI.metric));b.onclick=()=>setMetric(value);metric.append(b);
     }
     Q('#tl-dock').prepend(metric);
+    const scope=document.createElement('div');scope.id='minimal-map-scope';
+    const scopeText=document.createElement('span');scopeText.id='minimal-map-scope-text';scope.append(scopeText);
+    const allProjects=document.createElement('button');allProjects.id='minimal-all-projects';allProjects.type='button';allProjects.textContent='All projects';allProjects.setAttribute('aria-label','Show all mapped projects as density');allProjects.onclick=showAllProjects;scope.append(allProjects);metric.after(scope);
+    document.addEventListener('espacios:map-context',event=>syncMapContext(event.detail));
 
     const property=Q('#um-property'),settings=Q('#su-settings');
     if(property&&settings&&!Q('#minimal-property-settings')){
@@ -264,7 +290,7 @@
 
     installMobileDisclosures();
     installPanelGeometry();
-    setMode('map');setMetric('price');
+    showAllProjects();
     return true;
   }
 
