@@ -25,7 +25,8 @@ const APPROVED_PUBLISHER_URLS=new Set([
  'https://espacios-history-publisher-20261012-v41.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261012-v42.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261012-v43.thekeifferjapeth.workers.dev',
- 'https://espacios-history-publisher-20261012-v44.thekeifferjapeth.workers.dev'
+ 'https://espacios-history-publisher-20261012-v44.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261013-v45.thekeifferjapeth.workers.dev'
 ]);
 export const isApprovedPublisherURL=url=>APPROVED_PUBLISHER_URLS.has(url);
 

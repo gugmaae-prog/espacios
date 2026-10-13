@@ -43,6 +43,7 @@ test('production publisher adapter accepts only the released bridge endpoints',(
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v29.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v30.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261008-v31.thekeifferjapeth.workers.dev'),true);
+ assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261013-v45.thekeifferjapeth.workers.dev'),true);
  assert.equal(isApprovedPublisherURL('https://attacker.example'),false);
  assert.equal(isApprovedPublisherURL('http://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),false);
 });
