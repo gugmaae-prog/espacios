@@ -150,13 +150,13 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261013-map-heatmap-coverage-v1'));
+  assert.ok(worker.includes('20261013-map-heatmap-coverage-v2'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
 });
 
 test('browser acceptance requires the heatmap coverage release in both runtime markers and immutable assets',()=>{
-  assert.match(browserAcceptance,/const expectedRelease='20261013-map-heatmap-coverage-v1';/);
+  assert.match(browserAcceptance,/const expectedRelease='20261013-map-heatmap-coverage-v2';/);
   assert.match(browserAcceptance,/AE_MAP_VERSION_OVERRIDE/);
   assert.match(browserAcceptance,/Cloudflare-Workers-Version-Overrides/);
   assert.match(browserAcceptance,/\{minimal:release\.minimal,mobile:release\.mobile\},\{minimal:expectedRelease,mobile:expectedRelease\}/);

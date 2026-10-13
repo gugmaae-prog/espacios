@@ -92,7 +92,7 @@ async function runCase(port,{name,width,height,mobile}){
  await cdp.call('Page.navigate',{url:BASE});
  try{await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});}catch(error){console.log(JSON.stringify({name,exceptions,networkFailures}));await capture(cdp,name+'-initialization-failure');throw error;}
  const release=await evaluate(cdp,"({minimal:window.__ESPACIOS_MINIMAL_MAP_RELEASE__,mobile:window.__ESPACIOS_MOBILE_MAP__?.release,script:document.querySelector('script[src*=\\\"app-v2.js\\\"]')?.src,style:document.querySelector('link[href*=\\\"app-v2.css\\\"]')?.href})");
- const expectedRelease='20261013-map-heatmap-coverage-v1';
+ const expectedRelease='20261013-map-heatmap-coverage-v2';
  assert.deepEqual({minimal:release.minimal,mobile:release.mobile},{minimal:expectedRelease,mobile:expectedRelease},name+' delivered heatmap release markers');
  assert.ok(release.script?.includes(expectedRelease)&&release.style?.includes(expectedRelease),name+' delivered immutable heatmap release asset URLs');
  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali'); true");
@@ -146,8 +146,27 @@ async function runCase(port,{name,width,height,mobile}){
   await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#places-panel').classList.contains('hidden')",{label:name+' explicit Map tools navigation owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after rail navigation'});
+  const densityEvidence=await evaluate(cdp,"(()=>({hidden:document.querySelector('#um-details').hidden,text:document.querySelector('#vd-evidence-details')?.textContent,disabled:document.querySelector('#vd-evidence-details')?.disabled}))()");
+  assert.equal(densityEvidence.hidden,true,name+' density does not expose an incompatible market Details control');
+  assert.equal(densityEvidence.text,'Record history',name+' density evidence names its supported destination');
+  assert.equal(densityEvidence.disabled,false,name+' selected density record history remains actionable');
+  await evaluate(cdp,"window.EspaciosHistoricalUI.close();true");
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')",{label:name+' close density history before reopening it from the evidence action'});
+  await evaluate(cdp,"document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:'project:arancia-yards-beyond-city-of-arabia-dubai',kind:'project',name:'Arancia Yards',emirate:'Dubai'}}));true");
+  if(await evaluate(cdp,"document.querySelector('#tl-dock').classList.contains('is-minimized')")){
+    await trustedClick(cdp,'#minimal-timeline-toggle');
+    await waitFor(cdp,"!document.querySelector('#tl-dock').classList.contains('is-minimized')",{label:name+' expand timeline before using visible density record history'});
+  }
+  await trustedClick(cdp,'#vd-evidence-details');
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&window.EspaciosHistoricalUI.getState().recordId==='project:arancia-yards-beyond-city-of-arabia-dubai'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#ms-inspect').hidden",{label:name+' density Record history resolves the newer selected record'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history returns to Palm Jebel Ali before native Details'});
+  await evaluate(cdp,"window.EspaciosUnifiedMap.setMetric('price');true");
+  await waitFor(cdp,"window.__ESPACIOS_UNIFIED_MAP__?.metric==='price'&&!window.__ESPACIOS_UNIFIED_MAP__.loading&&!document.querySelector('#um-details').hidden",{timeout:60000,label:name+' native price Details becomes available'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens before native Details'});
   await evaluate(cdp,"document.querySelector('#um-details').click();true");
-  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' explicit Details owns mobile sheet'});
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' explicit native Details owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reclaims explicitly selected sheet'});
   await evaluate(cdp,"(()=>{const button=document.createElement('button');button.setAttribute('data-ms-details','');document.querySelector('#app').append(button);button.click();button.remove();return true})()");

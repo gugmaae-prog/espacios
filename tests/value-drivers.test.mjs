@@ -1,7 +1,30 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import vm from 'node:vm';
 import {sensitivity,isPalmJebelAli,contextFeatures,visibleDrivers} from '../src/value-drivers/core.mjs';
 import worker from '../src/worker.js';
 const data=JSON.parse(await fs.readFile(new URL('../data/value-drivers-20261003.json',import.meta.url)));
+const valueDriverApp=await fs.readFile(new URL('../src/value-drivers/app.js',import.meta.url),'utf8');
+const valueDriverInstrumented=valueDriverApp.replace(' const timer=setInterval(',' globalThis.__VALUE_DRIVERS_UI_TEST__={evidence,evidenceDetails};\n const timer=setInterval(');
+assert.notEqual(valueDriverInstrumented,valueDriverApp,'Value Drivers exposes its real evidence-action closure to focused tests.');
+function evidenceActionHarness(metric='projects',history={recordId:'community:Dubai:palm-jebel-ali'},currentSelection='project:new-selection') {
+ const label={textContent:''},details={textContent:'',disabled:false,attributes:new Map(),setAttribute(name,value){this.attributes.set(name,String(value));}},um={clicks:0,click(){this.clicks++;}};
+ const nodes=new Map([['#vd-evidence-label',label],['#vd-evidence-details',details],['#um-details',um]]);
+ const calls=[];
+ const sandbox={VDCore:{},setInterval:()=>1,clearInterval(){},document:{querySelector:selector=>nodes.get(selector)||null},window:{__ESPACIOS_UNIFIED_MAP__:{metric,evidenceClass:metric==='projects'?'catalogue':'registered_sale',area:metric==='projects'?'':'Exact area'},EspaciosHistoricalUI:history===null?null:{getState:()=>history,open(...args){calls.push({args,resolved:args.length?args[0]:currentSelection});}}}};
+ vm.runInNewContext(valueDriverInstrumented,sandbox);
+ return {api:sandbox.__VALUE_DRIVERS_UI_TEST__,label,details,um,calls};
+}
+test('density evidence action resolves the current record rather than reopening a stale history record',()=>{
+ const h=evidenceActionHarness('projects',{recordId:'project:record-a'},'project:record-b');h.api.evidence();
+ assert.equal(h.label.textContent,'Project catalogue');assert.equal(h.details.textContent,'Record history');assert.equal(h.details.attributes.get('aria-label'),'Open selected project or community history');assert.equal(h.details.disabled,false);
+ h.api.evidenceDetails();assert.deepEqual(h.calls,[{args:[],resolved:'project:record-b'}]);assert.equal(h.um.clicks,0);
+ const unavailable=evidenceActionHarness('projects',null);unavailable.api.evidence();assert.equal(unavailable.details.disabled,true);unavailable.api.evidenceDetails();assert.equal(unavailable.um.clicks,0);
+});
+test('financial evidence action retains the native unified Details control',()=>{
+ const h=evidenceActionHarness('price');h.api.evidence();
+ assert.equal(h.label.textContent,'Registered-sale research · Exact area');assert.equal(h.details.textContent,'Details');assert.equal(h.details.attributes.get('aria-label'),'Open selected evidence details');assert.equal(h.details.disabled,false);
+ h.api.evidenceDetails();assert.equal(h.um.clicks,1);assert.deepEqual(h.calls,[]);
+});
+
 test('sensitivity permits losses and flat outcomes without claiming a forecast',()=>{
  assert.equal(sensitivity(0,10).index,100);assert.ok(sensitivity(-5,10).index<100);assert.ok(sensitivity(5,10).index>100);
  for(const [r,y]of [[NaN,5],[-100,5],[5,0],[5,31],['5',10],[101,10]])assert.equal(sensitivity(r,y),null);

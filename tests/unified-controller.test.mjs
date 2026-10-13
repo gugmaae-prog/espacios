@@ -15,7 +15,7 @@ const registrations = ['const oldTooltip=sgTooltip;', 'const oldExport=tlExport;
   assert.equal(matches.length, 1, `One production ${prefix} registration exists`);
   return matches[0];
 }).join('\n');
-const controller = controllerSource.replace(' const timer=setInterval', `${registrations}\n globalThis.__UNIFIED_TEST__={U,refresh,choose,render,prepare,readout,mapValue,cohort,current,future,setMetric,setType,hide,setMapDisplay,displayContext,sync};\n const timer=setInterval`);
+const controller = controllerSource.replace(' const timer=setInterval', `${registrations}\n globalThis.__UNIFIED_TEST__={U,refresh,choose,render,prepare,readout,mapValue,cohort,current,future,setMetric,setType,hide,setMapDisplay,displayContext,sync,details};\n const timer=setInterval`);
 const smart = smartSource.replace(' const timer=setInterval', ' globalThis.__SMART_TEST__={S,estimate,calculation,render};\n const timer=setInterval');
 assert.notEqual(controller, controllerSource, 'Controller closure instrumentation point exists');
 assert.notEqual(smart, smartSource, 'Smart closure instrumentation point exists');
@@ -35,7 +35,7 @@ function row(segment = 'apartment', period = '2026Q2', extra = {}) {
 }
 
 function harness(records = [row()]) {
-  const calls = {nativeRender: 0, nativeChoose: [], stop: 0, sync: 0, tooltip: 0, legacyExport: 0, downloads: [], sources: [], contexts: [], analyses: [], views: [], nativeEffect: null};
+  const calls = {nativeRender: 0, nativeChoose: [], stop: 0, sync: 0, tooltip: 0, legacyExport: 0, downloads: [], sources: [], contexts: [], analyses: [], views: [], activations: [], inspectorInfo: 0, nativeEffect: null};
   const timers = new Map(), nodes = new Map(), layers = new Map(), mapEvents = new Map(); let sequence = 0;
   const defaults = {capital: '1000000', yield: '8', 'yield-apartment': '8', 'yield-villa': '6', buy: '7', sell: '2', holding: '1', vacancy: '5', rentgrowth: '0', income: '1', weight: '50'};
   const node = selector => {
@@ -79,7 +79,7 @@ function harness(records = [row()]) {
     tlChooseDate: period => {calls.nativeChoose.push(period); sandbox.tlState.period = period;},
     sgTooltip: () => calls.tooltip++, tlExport: () => calls.legacyExport++,
     tgDownload: (name, value) => calls.downloads.push({name, value}),
-    msOpen() {}, msSetSegment(segment) {sandbox.msState.segment = segment;},
+    msOpen() {}, msInfo() {calls.inspectorInfo++;}, msSetSegment(segment) {sandbox.msState.segment = segment;},
     psrSetAnalysis(metric) {calls.analyses.push(metric); sandbox.state.analysisMetric = metric; if(metric === 'uae-project-coverage') sandbox.tlState.period = '2026';},
     aeUaeCoverageActive: () => sandbox.state.analysisMetric === 'uae-project-coverage',
     aeUaeSetView(view) {calls.views.push(view); sandbox.aeUaeState.view = view; for(const [id, on] of [['ae-uae-project-heat', view === 'heat'], ['ae-uae-project-points', view === 'points']]) if(layers.has(id)) sandbox.map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');},
@@ -88,12 +88,34 @@ function harness(records = [row()]) {
   vm.createContext(sandbox);
   new vm.Script(smart).runInContext(sandbox);
   Object.assign(sandbox.__SMART_TEST__.S, {data: snapshot, open: false});
-  sandbox.window.EspaciosMobileUI = {sync: () => calls.sync++, activate() {}};
+  sandbox.window.EspaciosMobileUI = {sync: () => calls.sync++, activate(panel) {calls.activations.push(panel);}};
   new vm.Script(controller).runInContext(sandbox);
   const api = sandbox.__UNIFIED_TEST__;
   Object.assign(api.U, {metric: 'price', data: snapshot});
   return {api, mapEvents, smart: sandbox.__SMART_TEST__, sandbox, calls, timers, node, layers, snapshot};
 }
+
+test('Details routes only compatible price evidence and leaves density inert', async () => {
+  const h = harness(); await h.api.refresh();
+  h.api.U.metric = 'projects'; h.sandbox.state.analysisMetric = 'uae-project-coverage';
+  h.api.details();
+  assert.equal(h.calls.inspectorInfo, 0);
+  assert.deepEqual(h.calls.activations, [], 'Density has no price or yield inspector.');
+
+  h.api.U.metric = 'price'; h.sandbox.state.analysisMetric = 'history:dubai-sale-psf';
+  await h.api.refresh();
+  assert.equal(h.api.future(), false);
+  h.api.details();
+  assert.equal(h.sandbox.msState.open, true);
+  assert.equal(h.calls.inspectorInfo, 1);
+  assert.equal(h.calls.activations.at(-1), h.node('#ms-inspect'));
+
+  h.api.choose(h.api.U.options.find(option => option.kind === 'scenario').id);
+  assert.equal(h.api.future(), true);
+  h.api.details();
+  assert.equal(h.node('#se-panel').hidden, false);
+  assert.equal(h.calls.activations.at(-1), h.node('#se-panel'));
+});
 
 test('native options exclude synthetic future gap months but preserve an explicit null source point', async () => {
   const h = harness(); await h.api.refresh();

@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261013-map-heatmap-coverage-v1';
+  const RELEASE='20261013-map-heatmap-coverage-v2';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'heatmap',metric:'projects',satelliteReady:false};

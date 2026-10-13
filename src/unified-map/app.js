@@ -149,7 +149,10 @@
   }
   window.__ESPACIOS_UNIFIED_MAP__={metric:U.metric,period:option?.period||tlState.period,evidenceClass:option?.evidenceClass||'catalogue',horizonYears:U.horizon,area:msState.area,segment:msState.segment,nativeCount:U.options.filter(o=>o.kind==='native').length,futureCount:U.options.filter(o=>o.kind==='scenario').length,loading:U.loading};
  }
- function details(){if(future()){prepare();window.EspaciosEstimateUI.details();window.EspaciosMobileUI.activate(Q('#se-panel'));}else{msState.open=true;msInfo();window.EspaciosMobileUI.activate(Q('#ms-inspect'));}}
+ // Density has no compatible price or yield inspector. The visible density action is
+ // routed by Value Drivers to the selected record's history instead; keep this
+ // internal control inert if a stale or synthetic click reaches it.
+ function details(){if(U.metric==='projects')return;if(future()){prepare();window.EspaciosEstimateUI.details();window.EspaciosMobileUI.activate(Q('#se-panel'));}else{msState.open=true;msInfo();window.EspaciosMobileUI.activate(Q('#ms-inspect'));}}
  function install(){if(!window.EspaciosMobileUI||!Q('#mm-date'))return false;
   U.installed=true;root.dataset.unifiedMap='1';U.metric=aeUaeCoverageActive()?'projects':msState.kind==='roi'?'roi':'price';
   const dock=Q('#tl-dock'),property=document.createElement('div');property.id='um-property';property.setAttribute('role','group');property.setAttribute('aria-label','Property type');

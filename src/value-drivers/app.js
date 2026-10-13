@@ -56,16 +56,22 @@
   const note=Q('#vd-marker-note');if(note)note.textContent=fc.features.length+' of '+rows.length+' catalysts have a named-community context marker. Pins are not surveyed project sites; all '+rows.length+' remain in this list.';
  }
  function evidence(){
-  const u=window.__ESPACIOS_UNIFIED_MAP__,el=Q('#vd-evidence-label');if(!u||!el)return;
-  const label=(u.evidenceClass==='conditional_scenario'?'Conditional scenario · assumptions':u.evidenceClass==='registered_sale'?'Registered-sale research':u.evidenceClass==='released_projection'?'Research projection':u.evidenceClass==='gross_yield_benchmark'?'Gross yield benchmark':u.evidenceClass==='advertised_price_benchmark'?'Asking-price benchmark':'Project catalogue')+(u.area?' · '+u.area:'');
+  const u=window.__ESPACIOS_UNIFIED_MAP__,el=Q('#vd-evidence-label'),details=Q('#vd-evidence-details');if(!u||!el)return;
+  const density=u.metric==='projects',label=(u.evidenceClass==='conditional_scenario'?'Conditional scenario · assumptions':u.evidenceClass==='registered_sale'?'Registered-sale research':u.evidenceClass==='released_projection'?'Research projection':u.evidenceClass==='gross_yield_benchmark'?'Gross yield benchmark':u.evidenceClass==='advertised_price_benchmark'?'Asking-price benchmark':'Project catalogue')+(u.area?' · '+u.area:'');
   if(el.textContent!==label)el.textContent=label;
+  if(details){const text=density?'Record history':'Details',aria=density?'Open selected project or community history':'Open selected evidence details';if(details.textContent!==text)details.textContent=text;details.setAttribute('aria-label',aria);details.disabled=density&&!window.EspaciosHistoricalUI?.open;}
+ }
+ function evidenceDetails(){
+  const u=window.__ESPACIOS_UNIFIED_MAP__;
+  if(u?.metric==='projects'){const history=window.EspaciosHistoricalUI;if(!history?.open)return;return history.open();}
+  Q('#um-details')?.click();
  }
  function install(){
   if(!Q('#minimal-kind-controls')||!window.EspaciosUnifiedMap)return false;
   const launch=document.createElement('button');launch.id='vd-launch';launch.type='button';launch.dataset.value='government';launch.textContent='Government projects';launch.setAttribute('aria-expanded','false');launch.onclick=()=>open('government');Q('#minimal-kind-controls').append(launch);
   const palm=document.createElement('button');palm.id='vd-palm-launch';palm.type='button';palm.textContent='Palm Jebel Ali outlook';palm.onclick=()=>open('palm');Q('#minimal-kind-controls').append(palm);
   const panel=document.createElement('aside');panel.id='vd-panel';panel.className='vd-drawer hidden';panel.setAttribute('aria-label','Government projects and property outlook');panel.innerHTML='<header><h2>Value drivers & outlook</h2><button type="button" id="vd-close" aria-label="Close value drivers">×</button></header><div id="vd-tabs" role="group" aria-label="Research view"><button type="button" data-tab="government">Government</button><button type="button" data-tab="palm">Palm Jebel Ali</button><button type="button" data-tab="areas">Areas & counts</button><button type="button" data-tab="outlook">Forecasts / scenarios</button></div><p id="vd-location-status" role="status"></p><div id="vd-body"></div>';Q('#app').append(panel);Q('#vd-close').onclick=close;Q('#vd-tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(!V.data)return;V.tab=b.dataset.tab;render();});
-  const evidenceRow=document.createElement('div');evidenceRow.id='vd-evidence';evidenceRow.innerHTML='<span id="vd-evidence-label"></span><button type="button" id="vd-evidence-details">Details</button>';Q('#minimal-metrics').after(evidenceRow);Q('#vd-evidence-details').onclick=()=>Q('#um-details')?.click();setInterval(evidence,500);evidence();
+  const evidenceRow=document.createElement('div');evidenceRow.id='vd-evidence';evidenceRow.innerHTML='<span id="vd-evidence-label"></span><button type="button" id="vd-evidence-details">Record history</button>';Q('#minimal-metrics').after(evidenceRow);Q('#vd-evidence-details').onclick=evidenceDetails;setInterval(evidence,500);evidence();
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.classList.contains('hidden'))close();});
   document.addEventListener('espacios:search-selection',e=>{if(VDCore.isPalmJebelAli(e.detail))palm.textContent='Palm Jebel Ali · view outlook';});
   map.on('style.load',renderMarkers);
