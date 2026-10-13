@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-08T22:25:27.267168+00:00",
+  "readOnly": true,
+  "route": {
+    "id": "ab6af7e5cc2345f0a3b34a3f11476c31",
+    "pattern": "espacios.me/map*",
+    "script": "espacios-map-shell"
+  },
+  "binding": {
+    "name": "MAP",
+    "type": "service",
+    "service": "psr-portfolio-map-v2",
+    "environment": "production"
+  },
+  "passed": true
+}

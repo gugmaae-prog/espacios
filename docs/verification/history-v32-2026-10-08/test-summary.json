@@ -1,0 +1,18 @@
+{
+  "command": "npm test",
+  "exitCode": 0,
+  "nodeTestGroups": [
+    152,
+    1,
+    19,
+    164
+  ],
+  "nodeFailureGroups": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "pythonHistoryChecks": "V19, V20, V22 and V23 passed",
+  "followup": "After D1 numeric serialization fix, all four V32 regression tests passed (focused-tests.txt)."
+}

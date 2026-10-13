@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-08T19:04:53.096Z",
+  "results": [
+    {
+      "path": "/map",
+      "status": 200,
+      "release": "20261008-map-palette-v36",
+      "containsV36": true
+    },
+    {
+      "path": "/map/app-v2.js",
+      "status": 200,
+      "release": "20261008-map-palette-v36",
+      "containsV36": true
+    },
+    {
+      "path": "/map/app-v2.css",
+      "status": 200,
+      "release": "20261008-map-palette-v36",
+      "containsV36": false
+    },
+    {
+      "path": "/map/api/record-history?limit=1",
+      "status": 200,
+      "release": null,
+      "version": "20261008-enrichment-v31",
+      "containsV36": false
+    },
+    {
+      "path": "/map/data-room",
+      "status": 404,
+      "release": null,
+      "containsV36": false
+    }
+  ]
+}

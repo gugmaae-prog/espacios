@@ -1,0 +1,18 @@
+{
+  "version": "20261009-enrichment-v40",
+  "written": 733,
+  "reused": 1808,
+  "indexStatements": 42801,
+  "indexedTableCounts": {
+    "hi_snapshots": 1,
+    "hi_records": 1860,
+    "hi_sources": 3351,
+    "hi_events": 105,
+    "hi_exposures": 7382,
+    "hi_series": 16872,
+    "hi_record_series": 13230
+  },
+  "indexCountsVerified": true,
+  "publicationState": "complete",
+  "rollbackPolicy": "Failure leaves verified immutable orphan objects or staged indexes; never activates a mutable latest pointer and never deletes evidence"
+}

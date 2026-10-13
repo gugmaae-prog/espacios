@@ -1,0 +1,139 @@
+{
+  "passId": "raffles-component-review-20261012",
+  "status": "component_identity_unresolved",
+  "authorityProject": {
+    "number": 1382,
+    "name": "Emerald Palace Kempinski Hotel",
+    "registeredDeveloper": "Sunrise Properties Limited",
+    "developerNumber": 969,
+    "developerRegisterId": 10472556,
+    "publicBusinessContactDomain": "epghotelsresorts.com",
+    "statusAtCapture": "Finished",
+    "registeredDate": "2013-10-22",
+    "sourceStartDate": "2013-09-25",
+    "sourceCompletionField": "2019-05-15",
+    "inspection": {
+      "date": "2019-05-15",
+      "percent": 100,
+      "kind": "dated_authority_inspection",
+      "occupancyInferred": false
+    },
+    "inventory": {
+      "total": 383,
+      "commercial": 373,
+      "residential": 10,
+      "residentialBedrooms": {
+        "2": 8,
+        "3": 2
+      }
+    }
+  },
+  "primaryMarketingInventory": {
+    "apartments": 27,
+    "penthouses": 3,
+    "villas": 3,
+    "sourceFile": "raffles-factsheet.pdf",
+    "sourcePage": 2,
+    "visualInspectionCompleted": true,
+    "publicationDate": null
+  },
+  "candidateRows": [
+    {
+      "transactionGroup": "Gifts",
+      "usage": "Hospitality",
+      "subtype": "Hotel Rooms",
+      "rows": 19
+    },
+    {
+      "transactionGroup": "Mortgages",
+      "usage": "Residential",
+      "subtype": "Flat",
+      "rows": 1
+    },
+    {
+      "transactionGroup": "Sales",
+      "usage": "Hospitality",
+      "subtype": "Hotel Rooms",
+      "rows": 94
+    },
+    {
+      "transactionGroup": "Sales",
+      "usage": "Residential",
+      "subtype": "Flat",
+      "rows": 7
+    }
+  ],
+  "catalogueRecordsConsidered": [
+    "project:raffles-residences-penthouses-the-palm-dubai-for-sale-on-palm-jumeirah",
+    "project:raffles-the-palm-dubai-villas-on-palm-jumeirah-for-sale"
+  ],
+  "decision": "Do not assign residential flats to villa-only record. The residences record is a possible owner, but authority residential inventory and marketed inventory are not yet reconciled. Shared building name and group contact domain do not establish exact unit/component continuity. Need unit-level mapping or dated inventory/redevelopment reconciliation. Exclude hotel-room sales from residential histories.",
+  "acceptedFinancialObservations": 0,
+  "coverageCredit": 0,
+  "geometryAccepted": false,
+  "rawRowsAndCapturesRedistributed": false,
+  "captureReceipts": [
+    {
+      "file": "raffles-factsheet.pdf",
+      "url": "https://www.rafflespalmresidences.com/hubfs/RAFFLES%20RESIDENCES%20FACT_SHEET%20_%20ENG.pdf?hsLang=en",
+      "status": 200,
+      "retrievedAt": "2026-10-11T23:36:14.478Z",
+      "sha256": "562b034ec8f503a8c701286b24c6aa4612dd709e81a894ac1aabae4af561eb58",
+      "bytes": 3062488
+    },
+    {
+      "file": "raffles-about.html",
+      "url": "https://www.rafflespalmresidences.com/about",
+      "status": 200,
+      "retrievedAt": "2026-10-11T23:36:14.692Z",
+      "sha256": "38e82e939ab7ab25183f9355ed79b6da55c99b5b316c8f432bf5e78f2dbc6ff2",
+      "bytes": 175164
+    }
+  ],
+  "authorityCaptures": [
+    {
+      "id": "raffles-fact-sheet",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:37:51.284Z",
+      "sha256": "75fb3e16c929815d95723a67430b02bd018891a5875795bcf0c53f487ddd8a56",
+      "bytes": 999
+    },
+    {
+      "id": "raffles-developer",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:38:06.469Z",
+      "sha256": "c9553ec226c8b812f0b3fa281bfdd33a198d6b595f433fe10c5d498a1157cfc2",
+      "bytes": 674
+    },
+    {
+      "id": "raffles-inspection",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:38:14.994Z",
+      "sha256": "9df2aa20e3420543f427b89c9d954a074c1226aa5217092f152175f161b52f13",
+      "bytes": 665
+    }
+  ],
+  "transactionSourceCaptures": [
+    {
+      "dataset": "transactions",
+      "fileName": "transactions_2026-10-10_17-51-06_0001.csv.gz",
+      "bytes": 81232123,
+      "sha256": "5654ad5cd9be1b2fc366b2bb7c1554ca1330775013b16a0d91121dbe593789ee",
+      "retrievedAt": "2026-10-11T22:12:25.476787+00:00",
+      "status": 200,
+      "sourceURL": "https://data.dubai/en/l/470061",
+      "downloadURLRedacted": true
+    },
+    {
+      "dataset": "transactions",
+      "fileName": "transactions_2026-10-10_17-51-06_0002.csv.gz",
+      "bytes": 81209160,
+      "sha256": "d931806a9fa11c1c5c0700e936d84bbfd97e190d7650e0ffe5c2eb795602a071",
+      "retrievedAt": "2026-10-11T22:12:29.032710+00:00",
+      "status": 200,
+      "sourceURL": "https://data.dubai/en/l/470061",
+      "downloadURLRedacted": true
+    }
+  ],
+  "transactionSourceRowsScanned": 1800588
+}

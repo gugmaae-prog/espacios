@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
+import {spawnSync} from 'node:child_process';
 import {annualScenarios,TARGET_YEARS} from '../src/historical-intelligence/core.mjs';
 const root=new URL('../',import.meta.url),read=p=>fs.readFile(new URL(p,root)),sha=x=>createHash('sha256').update(x).digest('hex');
 const data=JSON.parse(await read('data/historical-intelligence-20261003.json'));
@@ -34,7 +35,7 @@ test('archival root retains present evidence and complete record-to-series relat
  }
 });
 test('context, research candidates and incomplete subject coverage remain separate',()=>{
- assert.equal(data.manifest.identityCandidateProjects,258);
+ assert.equal(data.manifest.identityCandidateProjects,['20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46'].includes(data.version)?246:['20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46'].includes(data.version)?247:258);
  assert.equal(data.manifest.identityCandidateCommunities,59);
  for(const record of data.records){for(const s of record.historySeries){if(s.scope==='subject'){assert.equal(s.identityVerified,true);assert.ok(s.identitySourceIds?.length);assert.ok(s.linkBasis);}else assert.equal(s.identityVerified,false);assert.ok(s.partition);assert.ok(s.pointCount>=s.points.length);assert.ok(s.columns.includes('value'));}
   for(const milestone of record.lifecycle){assert.ok(milestone.sourceIds.length);if(['occupancy','completion'].includes(milestone.kind))assert.ok(milestone.date.start<=data.asOf);if(milestone.status==='verified')assert.ok(milestone.identityBasis);}
@@ -74,6 +75,21 @@ test('bounded runtime shards preserve every canonical record and native tuple wi
  assert.equal(runtime.records.length,1860);assert.deepEqual(runtime.records.map(r=>r.id),data.records.map(r=>r.id));
  assert.deepEqual(runtime.sources,data.sources);assert.deepEqual(runtime.events,data.events);assert.deepEqual(runtime.exposures,data.exposures);
  assert.ok(Buffer.byteLength(JSON.stringify(runtime))<9*1024*1024,'Runtime must retain a bounded inventory rather than full evidence');
+ if(['20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46'].includes(data.version)){
+  const reference=runtime.manifest.sourceEnrichment.collection;
+  assert.equal(reference.classification,'immutable_archive_reference');
+  assert.equal(reference.jsonPointer,'/manifest/sourceEnrichment/collection');
+  assert.equal(reference.archive.sha256,publication.rootIndex.sha256);
+  const archived=JSON.parse(gunzipSync(await read(publication.rootIndex.path)));
+  assert.deepEqual(archived.manifest.sourceEnrichment.collection,data.manifest.sourceEnrichment.collection);
+  // The archive producer preserves JSON 1.0 values; JavaScript reserializes
+  // them as 1. Verify the stored producer encoding without losing that type.
+  assert.equal(sha(await read(publication.rootIndex.path)),reference.archive.sha256);
+  const digest=spawnSync('python3',['-c',"import gzip,json,hashlib,sys; x=json.loads(gzip.decompress(open(sys.argv[1],'rb').read()))['manifest']['sourceEnrichment']['collection']; print(hashlib.sha256(json.dumps(x,ensure_ascii=False,separators=(',',':'),sort_keys=True).encode()).hexdigest())",publication.rootIndex.path],{encoding:'utf8'});
+  assert.equal(digest.status,0,digest.stderr);
+  assert.equal(reference.sha256,digest.stdout.trim());
+ }
+
  const records=new Map(),native=new Map(),objects=new Map(publication.objects.map(o=>[o.key,o]));
  const canonicalNative=new Map();
  for(const obj of publication.objects.filter(o=>o.kind==='history_partition'))for(const series of JSON.parse(gunzipSync(await read(obj.path))).series)canonicalNative.set(series.id,sha(JSON.stringify(series)));

@@ -1,0 +1,65 @@
+{
+  "origin": "https://espacios.me",
+  "checkedAt": "2026-10-11T23:14:11.218Z",
+  "rows": [
+    {
+      "recordId": "project:divine-elements-takmeel-dubai-south",
+      "individualTransactions": 49,
+      "sparseSaleMonths": [
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "earlierSubjectApplicabilityUnestablished": 203,
+      "aggregateMonths": 0,
+      "firstRegistration": "2026-03-02",
+      "lastRegistration": "2026-09-09"
+    },
+    {
+      "recordId": "project:inaura-hotels-residences-arada-downtown-dubai",
+      "individualTransactions": 35,
+      "sparseSaleMonths": [
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "earlierSubjectApplicabilityUnestablished": 230,
+      "aggregateMonths": 0,
+      "firstRegistration": "2026-03-30",
+      "lastRegistration": "2026-09-30"
+    },
+    {
+      "recordId": "project:eira-by-neoterra-dubai-production-city-uae",
+      "individualTransactions": 30,
+      "sparseSaleMonths": [
+        "2026-08",
+        "2026-09"
+      ],
+      "earlierSubjectApplicabilityUnestablished": 0,
+      "aggregateMonths": 0,
+      "firstRegistration": "2026-08-10",
+      "lastRegistration": "2026-10-02"
+    },
+    {
+      "recordId": "project:soma-residences-origami-dubai-islands-dubai",
+      "individualTransactions": 5,
+      "sparseSaleMonths": [
+        "2026-08",
+        "2026-09"
+      ],
+      "earlierSubjectApplicabilityUnestablished": 0,
+      "aggregateMonths": 0,
+      "firstRegistration": "2026-08-17",
+      "lastRegistration": "2026-10-08"
+    }
+  ],
+  "passed": true
+}
