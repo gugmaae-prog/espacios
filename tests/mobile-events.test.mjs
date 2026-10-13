@@ -247,7 +247,7 @@ test('keyboard and native range-input alternatives reach both unified endpoints'
 });
 
 function sheetHarness(options = {}) {
-  const observers = new Map(), pending = new Set(), panels = [];
+  const observers = new Map(), pending = new Set(), panels = [], microtasks=[];
   const changed = node => {for (const callback of observers.get(node) || []) pending.add(callback);};
   function node(id, hidden = true) {
     const classes = new Set(), attributes = new Map();let concealed = hidden, bar = null;
@@ -259,20 +259,20 @@ function sheetHarness(options = {}) {
     Object.defineProperty(element,'hidden',{get:()=>concealed,set(value){concealed=value;changed(element);}});
     panels.push(element);return element;
   }
-  const history=node('hi-panel',options.historyHidden??false), inspector=node('ms-inspect'), filters=node('filters-panel'), places=node('places-panel',options.placesHidden??true);
+  const history=node('hi-panel',options.historyHidden??false), inspector=node('ms-inspect'), filters=node('filters-panel'), places=node('places-panel',options.placesHidden??true),transport=node('transport-panel'),analyze=node('analyze-panel');
   const railAttributes=new Map(),railClasses=new Set(['active']);
   const rail={dataset:{panel:'places'},setAttribute:(name,value)=>railAttributes.set(name,value),getAttribute:name=>railAttributes.get(name),classList:{remove:value=>railClasses.delete(value),contains:value=>railClasses.has(value)}};
   const env = {window:{},document:{documentElement:{dataset:{}},activeElement:null,querySelector:selector=>panels.find(panel=>'#'+panel.id===selector)||null,
     querySelectorAll:selector=>selector.startsWith('.rail-btn')?[rail]:panels,
     createElement(){const children=new Map();return{querySelector(selector){if(!children.has(selector)){const attributes=new Map();children.set(selector,{getAttribute:name=>attributes.get(name),setAttribute:(name,value)=>attributes.set(name,value)});}return children.get(selector);}};},},
-    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,
+    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,queueMicrotask:callback=>microtasks.push(callback),
     MutationObserver:class {constructor(callback){this.callback=callback;}observe(element){const list=observers.get(element)||[];list.push(this.callback);observers.set(element,list);}},
     msState:{open:false},msInfo(){inspector.hidden=!env.msState.open;}};
-  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails};\n  const timer=setInterval(');
+  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails,captureNavigationIntent};\n  const timer=setInterval(');
   vm.runInNewContext(exposed,env);
-  function flush(){for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
+  function flush(){while(microtasks.length)microtasks.shift()();for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
   const api=env.__SHEETS_TEST__;api.installSheets();flush();
-  return{api,env,history,inspector,filters,places,rail,flush};
+  return{api,env,history,inspector,filters,places,transport,analyze,rail,flush};
 }
 
 test('a background market inspector refresh cannot close the active history drawer',()=>{
@@ -321,6 +321,40 @@ test('responsive setup preserves a deliberately opened or minimized card and nev
   h.api.installSheets();h.flush();assert.equal(h.places.dataset.mmSheet,'peek');
   toggle.onclick();assert.equal(h.places.dataset.mmSheet,'open');assert.equal(toggle.getAttribute('aria-expanded'),'true');
   h.api.closePanel(h.places);h.api.installSheets();h.flush();assert.equal(h.api.M.active,null);assert.equal(h.places.classList.contains('hidden'),true);
+});
+
+const navigationEvent=(selector,button,isTrusted=true)=>({isTrusted,target:{closest:query=>query===selector?button:null}});
+
+test('delayed synthetic saved-workspace clicks and direct restores cannot reopen a dismissed phone card',()=>{
+  const h=sheetHarness({historyHidden:true,placesHidden:false});
+  for(const syntheticClick of [true,false,true]){
+    h.places.classList.remove('hidden');
+    if(syntheticClick){const event=navigationEvent('.rail-btn[data-panel]',h.rail,false);h.api.captureNavigationIntent(event);h.api.activateLegacyDetails(event);}
+    h.flush();assert.equal(h.api.M.active,null);assert.equal(h.places.classList.contains('hidden'),true);
+  }
+});
+
+test('a trusted rail interaction opens its card, but its intent cannot authorize a later restore',()=>{
+  const h=sheetHarness({historyHidden:true,placesHidden:false}),event=navigationEvent('.rail-btn[data-panel]',h.rail);
+  h.api.captureNavigationIntent(event);h.places.classList.remove('hidden');h.api.activateLegacyDetails(event);h.flush();
+  assert.equal(h.api.M.active,h.places);assert.equal(h.places.dataset.mmSheet,'open');assert.equal(h.api.M.navigationIntent,null);
+  h.api.closePanel(h.places);h.places.classList.remove('hidden');h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',h.rail,false));h.flush();
+  assert.equal(h.places.classList.contains('hidden'),true);assert.equal(h.api.M.active,null);
+});
+
+for(const [name,selector,value] of [['places','#minimal-kind-controls button[data-value]','places'],['transport','#minimal-kind-controls button[data-value]','transport'],['analyze','#minimal-metrics button[data-value="volume"]','volume']]){
+  test(`${name}: a category or metric interaction authorizes its nested legacy rail click`,()=>{
+    const h=sheetHarness(),panel=h[name],trigger=navigationEvent(selector,{dataset:{value}});
+    h.api.captureNavigationIntent(trigger);panel.hidden=false;panel.classList.remove('hidden');
+    h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',{dataset:{panel:name}},false));h.flush();
+    assert.equal(h.api.M.active,panel);assert.equal(panel.classList.contains('hidden'),false);assert.equal(h.history.classList.contains('hidden'),true);
+    h.api.closePanel(panel);panel.classList.remove('hidden');h.flush();assert.equal(panel.classList.contains('hidden'),true);
+  });
+}
+
+test('a delayed passive workspace restore cannot replace or dismiss the selected history drawer',()=>{
+  const h=sheetHarness();h.places.hidden=false;h.places.classList.remove('hidden');h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',h.rail,false));h.flush();
+  assert.equal(h.api.M.active,h.history);assert.equal(h.history.classList.contains('hidden'),false);assert.equal(h.places.classList.contains('hidden'),true);
 });
 
 function geometryHarness(){

@@ -5,6 +5,7 @@
   const M = {installed:false, pointer:null, frame:0, syncFrame:0, geometryFrame:0, fraction:0, domain:'', optionKey:'', active:null, picks:[], visible:new Map(), lastRender:0};
   const panels = () => [...document.querySelectorAll('.floating-panel, #detail, #ms-inspect, #se-panel, #mm-picker, #vd-panel, #hi-panel')];
   const visible = el => !el.hidden && !el.classList.contains('hidden');
+  const navigationPanels=new Set(['timeline-panel','places-panel','transport-panel','analyze-panel','valuation-panel','ai-panel']);
   const unified = () => window.EspaciosUnifiedMap?.timeline();
   const periodsNow = () => unified()?.periods||tlState.periods;
   const selectedNow = () => unified()?.selected||tlState.period;
@@ -102,9 +103,19 @@
   }
   function activateLegacyDetails(event){
     const rail=event.target.closest?.('.rail-btn[data-panel]');
-    if(rail){const panel=Q('#'+rail.dataset.panel+'-panel');if(panel&&visible(panel))activate(panel);}
+    if(rail){const panel=Q('#'+rail.dataset.panel+'-panel');if(panel&&visible(panel)&&(!navigationPanels.has(panel.id)||event.isTrusted||M.navigationIntent?.panelId===panel.id))activate(panel);}
     else if(event.target.closest?.('[data-ms-details]'))activate(Q('#ms-inspect'));
     else if(event.target.closest?.('#se-open,#ms-forecast')){const panel=Q('#se-panel');if(panel&&visible(panel))activate(panel);}
+  }
+  function captureNavigationIntent(event){
+    if(!mobile.matches||!event.isTrusted)return;
+    const rail=event.target.closest?.('.rail-btn[data-panel]'),category=event.target.closest?.('#minimal-kind-controls button[data-value]'),metric=event.target.closest?.('#minimal-metrics button[data-value="volume"]');
+    const name=rail?.dataset.panel||(['places','transport'].includes(category?.dataset.value)?category.dataset.value:metric?'analyze':null);
+    if(!name)return;
+    const intent={panelId:name+'-panel'};M.navigationIntent=intent;
+    // A category click can synchronously dispatch its legacy rail click. Its
+    // authorization ends with this interaction, before any later saved restore.
+    queueMicrotask(()=>{if(M.navigationIntent===intent)M.navigationIntent=null;});
   }
   function updateBar(panel){
     const button=panel.querySelector('.mm-sheet-toggle');if(!button)return;const open=panel.dataset.mmSheet!=='peek';
@@ -117,7 +128,7 @@
     // cover the phone map. Do this once; rotation must retain the user's sheet.
     if(mobile.matches&&!M.phoneInitialized){
       M.phoneInitialized=true;
-      for(const panel of panels())if(['timeline-panel','places-panel','transport-panel','analyze-panel','valuation-panel','ai-panel'].includes(panel.id)&&visible(panel)&&!panel.contains(document.activeElement))closePanel(panel);
+      for(const panel of panels())if(navigationPanels.has(panel.id)&&visible(panel)&&!panel.contains(document.activeElement))closePanel(panel);
     }
     for(const panel of panels()){
       if(panel.querySelector(':scope > .mm-sheet-bar'))continue;
@@ -129,7 +140,7 @@
         // Delayed legacy workspace restores and market refreshes are not new
         // navigation requests. Keep the user-owned drawer until an explicit
         // rail, Details, map selection or search activation replaces it.
-        if(now&&!was){if(M.active?.id==='hi-panel'&&panel!==M.active&&visible(M.active))closePanel(panel);else activate(panel);}
+        if(now&&!was){if(navigationPanels.has(panel.id)&&M.active!==panel&&M.navigationIntent?.panelId!==panel.id)closePanel(panel);else if(M.active?.id==='hi-panel'&&panel!==M.active&&visible(M.active))closePanel(panel);else activate(panel);}
         if(visible(panel))updateBar(panel);scheduleGeometry();}).observe(panel,{attributes:true,attributeFilter:['class','hidden']});
     }
     if(mobile.matches){const open=panels().filter(visible);const chosen=open.includes(M.active)?M.active:open.find(p=>p.contains(document.activeElement))||open.find(p=>p.id==='hi-panel')||open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,chosen===M.active?chosen.dataset.mmSheet==='peek':chosen.id!=='hi-panel');}
@@ -209,6 +220,7 @@
     M.geometryObserver=new ResizeObserver(scheduleGeometry);M.geometryObserved=new WeakSet();refreshGeometry();new MutationObserver(refreshGeometry).observe(Q('#app'),{childList:true});map.on('moveend',scheduleGeometry);
     addEventListener('resize',responsive);visualViewport?.addEventListener('resize',scheduleGeometry);mobile.addEventListener('change',()=>{finish(null,true);if(mobile.matches)installSheets();else map.setPadding({top:0,bottom:0,left:0,right:0});responsive();schedule();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
+    document.addEventListener('click',captureNavigationIntent,true);
     document.addEventListener('click',activateLegacyDetails);
     window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261008-map-palette-v33',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
