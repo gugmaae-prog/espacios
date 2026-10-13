@@ -8,6 +8,7 @@ const css=await fs.readFile(new URL('../src/minimal-map/style.css',import.meta.u
 const worker=await fs.readFile(new URL('../src/worker.js',import.meta.url),'utf8');
 const builder=await fs.readFile(new URL('../scripts/build-smart.mjs',import.meta.url),'utf8');
 const baseApp=await fs.readFile(new URL('../src/assets/app-v2.js',import.meta.url),'utf8');
+const browserAcceptance=await fs.readFile(new URL('../scripts/history-browser-acceptance.mjs',import.meta.url),'utf8');
 
 test('minimal composition exposes the approved controls without changing evidence ownership',()=>{
   for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Transaction Volume','Forecast'])assert.ok(app.includes(label),label);
@@ -152,6 +153,13 @@ test('build emits the minimalist release after unified map source',()=>{
   assert.ok(worker.includes('20261013-map-heatmap-coverage-v1'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
+});
+
+test('browser acceptance requires the heatmap coverage release in both runtime markers and immutable assets',()=>{
+  assert.match(browserAcceptance,/const expectedRelease='20261013-map-heatmap-coverage-v1';/);
+  assert.match(browserAcceptance,/\{minimal:release\.minimal,mobile:release\.mobile\},\{minimal:expectedRelease,mobile:expectedRelease\}/);
+  assert.match(browserAcceptance,/release\.script\?\.includes\(expectedRelease\)&&release\.style\?\.includes\(expectedRelease\)/);
+  assert.doesNotMatch(browserAcceptance,/const expectedRelease='20261013-map-mobile-disclosures-v5';/);
 });
 
 test('opened phone map tools remain above the historical research drawer',()=>{
