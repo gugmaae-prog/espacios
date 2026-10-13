@@ -4,11 +4,12 @@ import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 const read=p=>JSON.parse(fs.readFileSync(p)),unpack=p=>JSON.parse(gunzipSync(fs.readFileSync(p)));
-const snapshot=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json');
+const latest=read('data/historical-intelligence-20261003.json'),publication=read('data/historical-intelligence/publication-manifest.json');
 const packet=read('data/historical-intelligence/dld-sales-pass44-20261012.json');
-const before=unpack('data/historical-intelligence/objects/999760c4e7fade1d3f6f5398f19f0521a96dd403cbcc51ac1d2e242188061998.json.gz'),after=unpack(publication.rootIndex.path);
+const before=unpack('data/historical-intelligence/objects/999760c4e7fade1d3f6f5398f19f0521a96dd403cbcc51ac1d2e242188061998.json.gz');
+const snapshot=unpack('data/historical-intelligence/objects/b87232342eabc47776b97277cc7cc8a63dc59846264eb406e816ff2c97bcab4d.json.gz'),after=snapshot;
 test('V44 retains the entire archive and appends only the reviewed Avida Residences evidence',()=>{
- assert.equal(snapshot.version,'20261012-enrichment-v44');assert.equal(publication.version,snapshot.version);assert.equal(snapshot.asOf,'2026-10-12');
+ assert.equal(snapshot.version,'20261012-enrichment-v44');assert.equal(latest.version,'20261013-enrichment-v45');assert.equal(snapshot.asOf,'2026-10-12');
  assert.equal(snapshot.records.length,1860);assert.equal(publication.counts.sources,3365);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const changed=new Set(packet.facts.map(f=>f.recordId)),previous=new Map(before.records.map(r=>[r.id,r]));assert.equal(changed.size,1);

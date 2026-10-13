@@ -16,6 +16,8 @@
 > **Tenant boundary:** Espacios remains separate from Haus & Grace and PSR Homes. Shared public catalogue/intelligence data may be reused deliberately, but private leads, CRM records, staff data, messages, agent memory, and credentials must not cross tenant boundaries.
 >
 > See [the platform audit](docs/platform-audit-2026-09-24.md) and [security policy](SECURITY.md).
+>
+> See the [data sourcing workflow](docs/DATA_SOURCING_WORKFLOW.md) for the source, identity, gap, scenario and release rules used by the intelligence map.
 
 ## Current production — V48 Map and V44 history, 13 October 2026 (Dubai)
 
@@ -25,7 +27,7 @@ All **1,645 projects, 215 communities, 633,891 native rows, 16,872 series and 13
 
 Worker `7ecf54bb-7ec7-444f-ba91-865fe3e08c9e` serves 100% through deployment `ac648cfa-3db3-4240-b0d7-151259e63e07`. [Source CI](https://github.com/gugmaae-prog/espacios/actions/runs/38218183096), immutable archive/index publication, preview/canonical APIs, exact transaction IDs, native-history preservation, catalogue and desktop/mobile verification passed. Supabase metadata is reconciled. Softer off-white/slate controls remain live. [Release receipts](docs/verification/history-v44-2026-10-12/README.md). PR #98 remains open/unmerged.
 
-**Next best actions:** integrate the [31 dated authority reports for eight projects](docs/verification/dld-lifecycle-pass45-2026-10-13/README.md), prepared and tested but not deployed; batch the next verified additions; resolve Belmont/Oakmont's 42 and Raffles' seven candidate sale associations using authoritative component proof; source missing signed rents, occupancy, dated valuations and early histories; specify conditional annual assumptions through 2080. There is no configured automatic daily source-refresh feed yet; day-dated transactions and daily ingestion are different. Source checks or unsuccessful research earn no completeness credit.
+**Next best actions:** publish the [31 dated authority reports for eight projects](docs/verification/dld-lifecycle-pass45-2026-10-13/README.md), now integrated and locally verified in V45 but not yet deployed; batch the next verified additions; resolve Belmont/Oakmont's 42 and Raffles' seven candidate sale associations using authoritative component proof; source missing signed rents, occupancy, dated valuations and early histories; specify conditional annual assumptions through 2080. There is no configured automatic daily source-refresh feed yet; day-dated transactions and daily ingestion are different. Source checks or unsuccessful research earn no completeness credit.
 
 ## V47 Map and V43 history — preserved release record, 12 October 2026 (Dubai)
 
