@@ -5,15 +5,13 @@ import {gunzipSync} from 'node:zlib';
 
 const read=(path)=>JSON.parse(fs.readFileSync(path));
 const unpack=(path)=>JSON.parse(gunzipSync(fs.readFileSync(path)));
-const snapshot=read('data/historical-intelligence-20261003.json');
-const publication=read('data/historical-intelligence/publication-manifest.json');
+const snapshot=unpack('data/historical-intelligence/objects/1c17824d39f4399e1fb1088bb52c2a0e761cb2e935286c617e25c883b4afa2c0.json.gz');
 const packet=read('data/historical-intelligence/dld-lifecycle-pass45-20261013.json');
 const before=unpack('data/historical-intelligence/objects/b87232342eabc47776b97277cc7cc8a63dc59846264eb406e816ff2c97bcab4d.json.gz');
 
 test('V45 appends only reviewed authority lifecycle facts to eight verified project identities',()=>{
   assert.equal(snapshot.version,'20261013-enrichment-v45');
   assert.equal(snapshot.asOf,'2026-10-13');
-  assert.equal(publication.version,snapshot.version);
   assert.equal(packet.publicationStatus,'prepared_not_integrated');
   assert.equal(packet.financialObservationsAdded,0);
   assert.equal(packet.sources.length,0);

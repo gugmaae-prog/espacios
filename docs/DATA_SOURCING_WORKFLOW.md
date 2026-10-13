@@ -18,13 +18,13 @@ The collection order is:
 4. Contemporaneous reputable reporting and method-disclosed market reports, used as secondary evidence or to locate an original source.
 5. Existing lawfully retained Espacios source snapshots, which are rechecked before reuse.
 
-For each usable vintage, the source record retains its URL, publisher, source class, licence or terms where available, retrieval time, first-known availability, publication time when known and a content checksum. Syndicated copies are linked to the originating material rather than counted as independent corroboration. Private captures, tokens, contact details and unlicensed raw exports are not published.
+For each usable vintage, the source record retains its URL, publisher, source class, licence or terms where available, retrieval time, first-known availability, publication time when known and a content checksum. Where retention is lawful, the original response or a bounded capture packet is preserved with its byte size, capture method and checksum; where it cannot be retained or redistributed, that boundary is recorded and the checksummed normalized extraction is the reproducible artefact. Syndicated copies are linked to the originating material rather than counted as independent corroboration. Private captures, tokens, contact details and unlicensed raw exports are not published.
 
 No scraping bypasses authentication, access controls, rate limits, robots restrictions or licence terms. A source that is inaccessible, paid, withdrawn or lacks a lawful reusable path is logged as unavailable; it is not backfilled with an estimate.
 
 ## 3. Resolve identity before admission
 
-Every candidate must resolve to exactly one catalogue record. Matching uses the strongest available combination of authority project/developer/area IDs, official name, phase/tower/component, geographic scope and developer evidence. The review rejects name-only fan-out, parent-to-component inference, generic map coordinates and legal/marketing developer substitution.
+Every candidate must resolve to exactly one catalogue record. Matching uses the strongest available combination of authority project/developer/area IDs, official name, phase/tower/component, geographic scope and developer evidence. For a project-status record, the authority project number and ID, developer number and area ID must agree with the retained register crosswalk before its name is accepted as a confirmation. The review rejects name-only fan-out, parent-to-component inference, generic map coordinates and legal/marketing developer substitution.
 
 Candidates with the same project name, disputed phase boundaries, conflicting inventory or unresolved developer roles remain in an identity-review queue. They receive no observation, coverage credit or price series until the link is proven.
 
@@ -41,7 +41,7 @@ Admitted evidence is kept in distinct classes:
 | Event/context | Policy, infrastructure, disruption, macroeconomic event | A local price uplift or causal effect by itself |
 | Scenario input | Disclosed rate, supply, migration, cost or other assumption | An observed historical fact or validated outcome |
 
-The fact stores its date precision, event/availability/retrieval dates, source ID, identity basis, evidence class, scope and whether it is planned, reported, confirmed or disputed. Superseded schedules are retained rather than overwritten.
+The fact stores its date precision, source ID, identity basis, evidence class, scope and whether it is planned, reported, confirmed or disputed. It keeps occurrence, announcement, effective, publication, first-known-availability and retrieval dates separately when applicable: a 2026 retrieval of a 2022 inspection is not evidence that the inspection was available to a 2022 investor or backtest. A current authority status or 100% progress field is a retrieval-time snapshot unless separately supported as actual completion, handover or occupancy. Superseded schedules are retained rather than overwritten.
 
 ## 5. Preserve the native history and mark gaps
 
@@ -65,10 +65,10 @@ Short-horizon backtesting measures short-horizon performance only. It does not v
 
 Each evidence batch runs identity, duplicate, date, arithmetic, source-availability, source-licence, preservation and schema checks. The release compares all unaffected records, financial observations and native history partitions against the previous immutable snapshot. It also verifies that planned milestones have not been relabelled as actual completion or occupancy.
 
-The verified snapshot is written to immutable R2 objects with checksums, indexed in D1, and first checked against preview APIs. Production promotion then requires canonical API checks, selected record-history checks, source-link/evidence-label checks and desktop/mobile map validation. Deployment metadata records the source revision and immutable root. Temporary publisher credentials are removed after release.
+The verified snapshot is written append-only to immutable R2 objects with checksums, indexed in D1, and first checked against preview APIs. Prior source revisions and roots remain addressable; a failed candidate is not relabelled as production. Production promotion then requires canonical API checks, selected record-history checks, source-link/evidence-label checks and desktop/mobile map validation. Deployment metadata records the source revision and immutable root. Temporary publisher credentials are removed after release.
 
 ## 9. Cadence and reporting
 
-Espacios does not currently run a daily automatic source feed. Sources are checked and ingested in reviewable batches because different authoritative publishers refresh at different intervals and every addition needs identity and provenance validation. A future daily job would report source-last-checked, source-published-at, latest-observation-at and review status separately; it would not claim daily data where the publisher does not supply it.
+Espacios does not currently run a daily automatic source feed. Sources are checked and ingested in reviewable batches because different authoritative publishers refresh at different intervals and every addition needs identity and provenance validation. A future daily job would report source-last-checked, source-published-at, latest-observation-at and review status separately; a daily check is neither a daily observation nor a daily publication. It would not claim daily data where the publisher does not supply it.
 
 The completeness report is requirement-level, not a claim that every record has a full lifetime price series. It reports the count and percentage of unresolved requirements alongside the financial, lifecycle, event and scenario coverage. Research attempts, contextual proxies, unpublished private records and future outcomes remain excluded from observed-data completeness.
