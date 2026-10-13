@@ -89,7 +89,9 @@
     else if(panel.id==='ms-inspect'){msState.open=false;msInfo();}
     else if(panel.id==='detail')Q('#detail-close')?.click();
     else if(panel.id==='mm-picker')panel.hidden=true;
-    else{panel.classList.add('hidden');document.querySelectorAll('.rail-btn[data-panel]').forEach(b=>{if(b.dataset.panel===panel.id)b.setAttribute('aria-expanded','false');});}
+    else panel.classList.add('hidden');
+    document.querySelectorAll('.rail-btn[data-panel]').forEach(button=>{if(button.dataset.panel+'-panel'===panel.id){button.setAttribute('aria-expanded','false');button.classList.remove('active');}});
+    if(panel.id==='timeline-panel')root.dataset.umExplore='0';
     M.visible.set(panel,false);if(M.active===panel)M.active=null;
   }
   function activate(panel,peek=false){
@@ -111,6 +113,12 @@
     if(label.textContent!==title)label.textContent=title;
   }
   function installSheets(){
+    // Initial workspace restores are passive navigation, not a request to
+    // cover the phone map. Do this once; rotation must retain the user's sheet.
+    if(mobile.matches&&!M.phoneInitialized){
+      M.phoneInitialized=true;
+      for(const panel of panels())if(['timeline-panel','places-panel','transport-panel','analyze-panel','valuation-panel','ai-panel'].includes(panel.id)&&visible(panel)&&!panel.contains(document.activeElement))closePanel(panel);
+    }
     for(const panel of panels()){
       if(panel.querySelector(':scope > .mm-sheet-bar'))continue;
       const bar=document.createElement('div');bar.className='mm-sheet-bar';bar.innerHTML='<button class="mm-sheet-toggle" type="button" aria-label="Minimize details">⌄</button><span class="mm-sheet-label"></span><button class="mm-sheet-close" type="button" aria-label="Close details">×</button>';panel.prepend(bar);
@@ -127,14 +135,22 @@
     if(mobile.matches){const open=panels().filter(visible);const chosen=open.includes(M.active)?M.active:open.find(p=>p.contains(document.activeElement))||open.find(p=>p.id==='hi-panel')||open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,chosen===M.active?chosen.dataset.mmSheet==='peek':chosen.id!=='hi-panel');}
   }
   function scheduleGeometry(){if(!M.geometryFrame)M.geometryFrame=requestAnimationFrame(measure);}
+  const geometryControls=()=>[Q('header.topbar')||Q('#app > header'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes'),Q('#minimal-tools-toggle')].filter(Boolean);
+  function controlsBottom(){
+    return Math.max(0,...geometryControls().map(el=>{const rect=el.getBoundingClientRect(),style=getComputedStyle(el);return rect.height>0&&style.display!=='none'&&style.visibility!=='hidden'?rect.bottom:0;}));
+  }
+  function refreshGeometry(){
+    if(M.geometryObserver)for(const el of [...geometryControls(),Q('#tl-dock'),Q('.layer-rail')].filter(Boolean))if(!M.geometryObserved.has(el)){M.geometryObserved.add(el);M.geometryObserver.observe(el);}
+    scheduleGeometry();
+  }
   function responsive(){const short=mobile.matches&&innerHeight<=560;if(short&&!M.short)aeUaeSetMinimized(true);M.short=short;scheduleGeometry();}
   function measure(){
     M.geometryFrame=0;if(!M.installed)return;
     const header=Q('header.topbar')||Q('#app > header'),dock=Q('#tl-dock'),nav=Q('.layer-rail');
-    const h=header?.getBoundingClientRect(),d=dock.getBoundingClientRect(),n=nav?.getBoundingClientRect();
-    const values={'--mm-header-bottom':(h?.bottom||100)+'px','--mm-dock-top':d.top+'px','--mm-dock-height':d.height+'px','--mm-nav-height':(n?.height||64)+'px','--mm-bottom':Math.max(0,innerHeight-d.top+8)+'px'};
+    const h=header?.getBoundingClientRect(),d=dock.getBoundingClientRect(),n=nav?.getBoundingClientRect(),controls=controlsBottom();
+    const values={'--mm-header-bottom':(h?.bottom||100)+'px','--mm-controls-bottom':controls+'px','--mm-dock-top':d.top+'px','--mm-dock-height':d.height+'px','--mm-nav-height':(n?.height||64)+'px','--mm-bottom':Math.max(0,innerHeight-d.top+8)+'px'};
     for(const [key,value]of Object.entries(values))if(root.style.getPropertyValue(key)!==value)root.style.setProperty(key,value);
-    if(mobile.matches&&!map.isMoving()&&M.pointer===null){const sheet=M.active&&visible(M.active)?M.active.getBoundingClientRect().top:undefined,padding=MMCore.viewportPadding(innerHeight,h?.bottom||100,d.top,sheet),signature=JSON.stringify(padding);if(M.padding!==signature){M.padding=signature;map.setPadding(padding);}}
+    if(mobile.matches&&!map.isMoving()&&M.pointer===null){const sheet=M.active&&visible(M.active)?M.active.getBoundingClientRect().top:undefined,padding=MMCore.viewportPadding(innerHeight,controls,d.top,sheet),signature=JSON.stringify(padding);if(M.padding!==signature){M.padding=signature;map.setPadding(padding);}}
   }
   function selectProject(hit){const record=state.recordById.get(hit.id);if(!record||!aeUaeCoverageActive()||!aeUaeTimelineData().features.some(f=>String(f.properties?.id??f.id)===hit.id))return;Q('#mm-picker').hidden=true;M.pickerKey=null;showDetail(record);psrSetSelectedPoint(record);activate(Q('#detail'));scheduleGeometry();}
   function pick(event){
@@ -188,13 +204,13 @@
     map.getCanvasContainer().addEventListener('click',e=>{if(e.target!==canvas)return;const rect=canvas.getBoundingClientRect();if(pick({point:{x:e.clientX-rect.left,y:e.clientY-rect.top},originalEvent:e})){e.preventDefault();e.stopImmediatePropagation();}},true);
     const oldSync=suSync;suSync=function(){const result=oldSync(...arguments);schedule();return result;};
     new MutationObserver(schedule).observe(Q('#tl-date'),{childList:true});
-    const oldPadding=psrApplyDockPadding;psrApplyDockPadding=function(){if(!mobile.matches)return oldPadding(...arguments);const h=(Q('#app > header')?.getBoundingClientRect().bottom||100),d=dock.getBoundingClientRect().top,s=M.active&&visible(M.active)?M.active.getBoundingClientRect().top:undefined;map.setPadding(MMCore.viewportPadding(innerHeight,h,d,s));};
+    const oldPadding=psrApplyDockPadding;psrApplyDockPadding=function(){if(!mobile.matches)return oldPadding(...arguments);const d=dock.getBoundingClientRect().top,s=M.active&&visible(M.active)?M.active.getBoundingClientRect().top:undefined;map.setPadding(MMCore.viewportPadding(innerHeight,controlsBottom(),d,s));};
     const oldDetail=showDetail;showDetail=function(){const r=oldDetail(...arguments);activate(Q('#detail'));return r;};
-    const resize=new ResizeObserver(scheduleGeometry);[dock,Q('#app > header'),Q('.layer-rail')].filter(Boolean).forEach(el=>resize.observe(el));map.on('moveend',scheduleGeometry);
+    M.geometryObserver=new ResizeObserver(scheduleGeometry);M.geometryObserved=new WeakSet();refreshGeometry();new MutationObserver(refreshGeometry).observe(Q('#app'),{childList:true});map.on('moveend',scheduleGeometry);
     addEventListener('resize',responsive);visualViewport?.addEventListener('resize',scheduleGeometry);mobile.addEventListener('change',()=>{finish(null,true);if(mobile.matches)installSheets();else map.setPadding({top:0,bottom:0,left:0,right:0});responsive();schedule();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
     document.addEventListener('click',activateLegacyDetails);
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261008-map-palette-v33',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261008-map-palette-v33',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();
