@@ -246,8 +246,8 @@ test('keyboard and native range-input alternatives reach both unified endpoints'
   slider.value='1';track.emit('input',{target:slider,stopImmediatePropagation(){}});assert.equal(h.api.selectedNow(),h.api.periodsNow()[1]);assert.deepEqual(h.calls.native,[]);
 });
 
-function sheetHarness() {
-  const observers = new Map(), pending = new Set(), panels = [];
+function sheetHarness(options = {}) {
+  const observers = new Map(), pending = new Set(), panels = [], microtasks=[];
   const changed = node => {for (const callback of observers.get(node) || []) pending.add(callback);};
   function node(id, hidden = true) {
     const classes = new Set(), attributes = new Map();let concealed = hidden, bar = null;
@@ -259,18 +259,20 @@ function sheetHarness() {
     Object.defineProperty(element,'hidden',{get:()=>concealed,set(value){concealed=value;changed(element);}});
     panels.push(element);return element;
   }
-  const history=node('hi-panel',false), inspector=node('ms-inspect'), filters=node('filters-panel');
-  const env = {window:{},document:{documentElement:{},activeElement:null,querySelector:selector=>panels.find(panel=>'#'+panel.id===selector)||null,
-    querySelectorAll:selector=>selector.startsWith('.rail-btn')?[]:panels,
-    createElement(){const children=new Map();return{querySelector(selector){if(!children.has(selector))children.set(selector,{getAttribute:()=>null,setAttribute(){}});return children.get(selector);}};},},
-    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,
+  const history=node('hi-panel',options.historyHidden??false), inspector=node('ms-inspect'), filters=node('filters-panel'), places=node('places-panel',options.placesHidden??true),transport=node('transport-panel'),analyze=node('analyze-panel');
+  const railAttributes=new Map(),railClasses=new Set(['active']);
+  const rail={dataset:{panel:'places'},setAttribute:(name,value)=>railAttributes.set(name,value),getAttribute:name=>railAttributes.get(name),classList:{remove:value=>railClasses.delete(value),contains:value=>railClasses.has(value)}};
+  const env = {window:{},document:{documentElement:{dataset:{}},activeElement:null,querySelector:selector=>panels.find(panel=>'#'+panel.id===selector)||null,
+    querySelectorAll:selector=>selector.startsWith('.rail-btn')?[rail]:panels,
+    createElement(){const children=new Map();return{querySelector(selector){if(!children.has(selector)){const attributes=new Map();children.set(selector,{getAttribute:name=>attributes.get(name),setAttribute:(name,value)=>attributes.set(name,value)});}return children.get(selector);}};},},
+    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,queueMicrotask:callback=>microtasks.push(callback),
     MutationObserver:class {constructor(callback){this.callback=callback;}observe(element){const list=observers.get(element)||[];list.push(this.callback);observers.set(element,list);}},
     msState:{open:false},msInfo(){inspector.hidden=!env.msState.open;}};
-  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails};\n  const timer=setInterval(');
+  const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails,captureNavigationIntent};\n  const timer=setInterval(');
   vm.runInNewContext(exposed,env);
-  function flush(){for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
+  function flush(){while(microtasks.length)microtasks.shift()();for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
   const api=env.__SHEETS_TEST__;api.installSheets();flush();
-  return{api,env,history,inspector,filters,flush};
+  return{api,env,history,inspector,filters,places,transport,analyze,rail,flush};
 }
 
 test('a background market inspector refresh cannot close the active history drawer',()=>{
@@ -300,4 +302,87 @@ test('workspace restores preserve history while explicit rail navigation and res
 test('legacy delegated area-details links are explicit requests rather than background refreshes',()=>{
   const h=sheetHarness();h.env.msState.open=true;h.env.msInfo();h.api.activateLegacyDetails({target:{closest:selector=>selector==='[data-ms-details]'?{}:null}});h.flush();
   assert.equal(h.history.classList.contains('hidden'),true);assert.equal(h.inspector.hidden,false);assert.equal(h.api.M.active,h.inspector);
+});
+
+test('first phone setup closes passive workspace cards and clears their rail state',()=>{
+  const h=sheetHarness({historyHidden:true,placesHidden:false});
+  assert.equal(h.places.classList.contains('hidden'),true);
+  assert.equal(h.api.M.active,null);
+  assert.equal(h.rail.getAttribute('aria-expanded'),'false');
+  assert.equal(h.rail.classList.contains('active'),false);
+});
+
+test('responsive setup preserves a deliberately opened or minimized card and never reopens a closed card',()=>{
+  const h=sheetHarness({historyHidden:true,placesHidden:false});
+  h.places.classList.remove('hidden');h.api.activate(h.places);h.flush();
+  h.api.installSheets();h.flush();assert.equal(h.api.M.active,h.places);assert.equal(h.places.dataset.mmSheet,'open');
+  const toggle=h.places.querySelector('.mm-sheet-toggle');toggle.onclick();
+  assert.equal(h.places.dataset.mmSheet,'peek');assert.equal(toggle.getAttribute('aria-expanded'),'false');assert.equal(toggle.getAttribute('aria-label'),'Expand details');
+  h.api.installSheets();h.flush();assert.equal(h.places.dataset.mmSheet,'peek');
+  toggle.onclick();assert.equal(h.places.dataset.mmSheet,'open');assert.equal(toggle.getAttribute('aria-expanded'),'true');
+  h.api.closePanel(h.places);h.api.installSheets();h.flush();assert.equal(h.api.M.active,null);assert.equal(h.places.classList.contains('hidden'),true);
+});
+
+const navigationEvent=(selector,button,isTrusted=true)=>({isTrusted,target:{closest:query=>query===selector?button:null}});
+
+test('delayed synthetic saved-workspace clicks and direct restores cannot reopen a dismissed phone card',()=>{
+  const h=sheetHarness({historyHidden:true,placesHidden:false});
+  for(const syntheticClick of [true,false,true]){
+    h.places.classList.remove('hidden');
+    if(syntheticClick){const event=navigationEvent('.rail-btn[data-panel]',h.rail,false);h.api.captureNavigationIntent(event);h.api.activateLegacyDetails(event);}
+    h.flush();assert.equal(h.api.M.active,null);assert.equal(h.places.classList.contains('hidden'),true);
+  }
+});
+
+test('a trusted rail interaction opens its card, but its intent cannot authorize a later restore',()=>{
+  const h=sheetHarness({historyHidden:true,placesHidden:false}),event=navigationEvent('.rail-btn[data-panel]',h.rail);
+  h.api.captureNavigationIntent(event);h.places.classList.remove('hidden');h.api.activateLegacyDetails(event);h.flush();
+  assert.equal(h.api.M.active,h.places);assert.equal(h.places.dataset.mmSheet,'open');assert.equal(h.api.M.navigationIntent,null);
+  h.api.closePanel(h.places);h.places.classList.remove('hidden');h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',h.rail,false));h.flush();
+  assert.equal(h.places.classList.contains('hidden'),true);assert.equal(h.api.M.active,null);
+});
+
+for(const [name,selector,value] of [['places','#minimal-kind-controls button[data-value]','places'],['transport','#minimal-kind-controls button[data-value]','transport'],['analyze','#minimal-metrics button[data-value="volume"]','volume']]){
+  test(`${name}: a category or metric interaction authorizes its nested legacy rail click`,()=>{
+    const h=sheetHarness(),panel=h[name],trigger=navigationEvent(selector,{dataset:{value}});
+    h.api.captureNavigationIntent(trigger);panel.hidden=false;panel.classList.remove('hidden');
+    h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',{dataset:{panel:name}},false));h.flush();
+    assert.equal(h.api.M.active,panel);assert.equal(panel.classList.contains('hidden'),false);assert.equal(h.history.classList.contains('hidden'),true);
+    h.api.closePanel(panel);panel.classList.remove('hidden');h.flush();assert.equal(panel.classList.contains('hidden'),true);
+  });
+}
+
+test('a delayed passive workspace restore cannot replace or dismiss the selected history drawer',()=>{
+  const h=sheetHarness();h.places.hidden=false;h.places.classList.remove('hidden');h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',h.rail,false));h.flush();
+  assert.equal(h.api.M.active,h.history);assert.equal(h.history.classList.contains('hidden'),false);assert.equal(h.places.classList.contains('hidden'),true);
+});
+
+function geometryHarness(){
+  const nodes=new Map(),properties=new Map(),paddings=[],observed=[];
+  const node=(selector,bottom,height=44)=>{const element={rect:{top:bottom-height,bottom,height},style:{display:'block',visibility:'visible'},getBoundingClientRect(){return this.rect;}};nodes.set(selector,element);return element;};
+  const header=node('header.topbar',64),search=node('.search-wrap',118),categories=node('#minimal-kind-controls',166),modes=node('#minimal-map-modes',214),dock=node('#tl-dock',750,86);node('.layer-rail',837,62);
+  const root={dataset:{},style:{getPropertyValue:name=>properties.get(name),setProperty:(name,value)=>properties.set(name,value)}};
+  const env={document:{documentElement:root,querySelector:selector=>nodes.get(selector)||null},window:{},matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,getComputedStyle:element=>element.style,innerHeight:844,MMCore,map:{isMoving:()=>false,setPadding:padding=>paddings.push(padding)}};
+  vm.runInNewContext(source.replace('  const timer=setInterval(','  globalThis.__GEOMETRY_TEST__={M,measure,refreshGeometry};\n  const timer=setInterval('),env);
+  const api=env.__GEOMETRY_TEST__;api.M.installed=true;api.M.geometryObserved=new WeakSet();api.M.geometryObserver={observe:element=>observed.push(element)};
+  return{api,node,header,search,categories,modes,dock,properties,paddings,observed};
+}
+
+test('camera padding follows visible control rows while header measurement stays independent',()=>{
+  const h=geometryHarness();h.api.measure();
+  assert.equal(h.paddings.at(-1).top,226);
+  assert.equal(h.properties.get('--mm-header-bottom'),'64px');
+  assert.equal(h.properties.get('--mm-controls-bottom'),'214px');
+  h.categories.style.display='none';h.modes.style.visibility='hidden';h.api.measure();
+  assert.equal(h.paddings.at(-1).top,130);
+  assert.equal(h.properties.get('--mm-controls-bottom'),'118px');
+  h.dock.rect={top:706,bottom:750,height:44};h.api.measure();assert.equal(h.paddings.at(-1).bottom,150);
+});
+
+test('late-added controls register for resize geometry once and affect camera clearance',()=>{
+  const h=geometryHarness();h.api.refreshGeometry();const initial=h.observed.length;
+  h.api.refreshGeometry();assert.equal(h.observed.length,initial);
+  const toggle=h.node('#minimal-tools-toggle',236);h.api.refreshGeometry();
+  assert.equal(h.observed.length,initial+1);assert.equal(h.observed.at(-1),toggle);
+  h.api.measure();assert.equal(h.paddings.at(-1).top,248);
 });

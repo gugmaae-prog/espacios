@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261012-map-evidence-v48';
+  const RELEASE='20261013-map-mobile-disclosures-v1';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
@@ -154,6 +154,40 @@
     schedule();
   }
 
+  function installMobileDisclosures(){
+    const phone=matchMedia('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)');
+    const tools=Q('#minimal-tools-toggle'),dock=Q('#tl-dock'),track=Q('#dr-track');
+    tools.setAttribute('aria-controls','minimal-kind-controls minimal-map-modes');
+    const setTools=open=>{
+      const returnFocus=!open&&phone.matches&&[Q('#minimal-kind-controls'),Q('#minimal-map-modes')].some(group=>group?.contains(document.activeElement));
+      root.dataset.minimalTools=open?'1':'0';
+      tools.setAttribute('aria-expanded',String(open));
+      tools.setAttribute('aria-label',open?'Minimize map tools':'Map tools');
+      if(returnFocus)tools.focus({preventScroll:true});
+      window.EspaciosMobileUI?.refreshGeometry?.();
+    };
+    tools.onclick=()=>setTools(root.dataset.minimalTools!=='1');
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&phone.matches&&root.dataset.minimalTools==='1'){
+        setTools(false);tools.focus({preventScroll:true});
+      }
+    });
+    for(const group of [Q('#minimal-kind-controls'),Q('#minimal-map-modes')]){
+      group.addEventListener('click',event=>{if(phone.matches&&event.target.closest('button'))setTools(false);});
+    }
+    const toggle=document.createElement('button');
+    toggle.id='minimal-timeline-toggle';toggle.type='button';toggle.setAttribute('aria-controls','tl-dock');
+    toggle.onclick=()=>Q('#tl-minimize')?.click();track.append(toggle);
+    const sync=()=>{
+      const compact=dock.classList.contains('is-minimized');
+      toggle.textContent=compact?'Expand':'Minimize';
+      toggle.setAttribute('aria-expanded',String(!compact));
+      toggle.setAttribute('aria-label',compact?'Expand timeline controls':'Minimize timeline controls');
+    };
+    new MutationObserver(sync).observe(dock,{attributes:true,attributeFilter:['class']});
+    sync();setTools(false);
+  }
+
   function install(){
     if(UI.installed||!window.EspaciosUnifiedMap||!Q('#tl-dock')||!Q('#dr-track')||!Q('.search-wrap'))return false;
     UI.installed=true;root.dataset.minimalMap='1';
@@ -224,6 +258,7 @@
     const readout=Q('#um-readout');if(readout)readout.hidden=true;
     const status=Q('#mm-status');if(status)status.hidden=true;
 
+    installMobileDisclosures();
     installPanelGeometry();
     setMode('map');setMetric('price');
     return true;
