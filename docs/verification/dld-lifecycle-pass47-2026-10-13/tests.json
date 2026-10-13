@@ -1,0 +1,44 @@
+{
+  "status": "local_candidate_not_published",
+  "packet": "data/historical-intelligence/dld-lifecycle-pass47-20261013.json",
+  "completed": [
+    {
+      "command": "python3 tests/dld-authority-pass47.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "python3 tests/dld-lifecycle-pass47.py",
+      "checks": 4,
+      "passed": true
+    },
+    {
+      "command": "node --test --test-concurrency=2 tests/historical-v47-authority-lifecycle.test.mjs",
+      "tests": 2,
+      "passed": true
+    },
+    {
+      "command": "python3 tests/historical-v47-native-series-preservation.py",
+      "passed": true
+    },
+    {
+      "command": "npm test",
+      "passed": true,
+      "scope": "full local regression suite"
+    }
+  ],
+  "notYetAsserted": [
+    "Immutable archive verification",
+    "GitHub CI",
+    "R2/D1 publication",
+    "Candidate and canonical API verification",
+    "Worker traffic activation",
+    "Canonical desktop and mobile browser acceptance",
+    "Supabase control-plane verification"
+  ],
+  "notCertified": [
+    "Actual completion, handover or occupancy inferred from DLD schedule/status/progress fields",
+    "Financial observations, appreciation coefficients or forecasts inferred from this lifecycle packet",
+    "Complete historical financial coverage for every project and community"
+  ]
+}

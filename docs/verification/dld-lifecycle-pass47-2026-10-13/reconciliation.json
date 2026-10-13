@@ -1,0 +1,36 @@
+{
+  "status": "local_candidate_not_published",
+  "version": "20261013-enrichment-v47",
+  "rootSHA256": "66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240",
+  "changedRecords": 5,
+  "newSources": 1,
+  "newLifecycleFacts": 15,
+  "factTypes": {
+    "registration": 5,
+    "constructionProgress": 5,
+    "authorityStatusSnapshot": 5
+  },
+  "reconciledExistingLifecycle": 5,
+  "invalidCompletionFieldsQuarantined": 2,
+  "newRegisteredSales": 0,
+  "newRegisteredRents": 0,
+  "newForecasts": 0,
+  "historicalRowsPreserved": 633891,
+  "seriesPreserved": 16872,
+  "ledger": {
+    "present": 3351,
+    "partial": 3403,
+    "missing": 26726,
+    "unestablished": 9300,
+    "items": 42780,
+    "unresolved": 39429,
+    "unresolvedPercent": 92.1669
+  },
+  "limits": [
+    "No target completion, status or progress field is treated as actual completion, handover or occupancy.",
+    "No lifecycle fact is transformed into a sale, rent, valuation, appreciation coefficient or forecast.",
+    "The requirement ledger is not a percentage of lifetime prices that can be inferred from data."
+  ],
+  "remoteWrites": 0,
+  "publication": "not_started"
+}

@@ -1,0 +1,45 @@
+{
+  "status": "local_candidate_not_published",
+  "completed": [
+    {
+      "command": "python3 tests/dld-authority-pass47.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "python3 tests/dld-lifecycle-pass47.py",
+      "checks": 4,
+      "passed": true
+    },
+    {
+      "command": "node --test --test-concurrency=2 tests/historical-v47-authority-lifecycle.test.mjs",
+      "tests": 2,
+      "passed": true
+    },
+    {
+      "command": "npm run history:verify:v47-preservation",
+      "passed": true
+    },
+    {
+      "command": "npm test",
+      "passed": true,
+      "scope": "full local regression suite"
+    }
+  ],
+  "pending": [
+    "Archive verification",
+    "GitHub CI",
+    "R2/D1 publication",
+    "Candidate API",
+    "Canonical API",
+    "Traffic activation",
+    "Desktop/mobile browser acceptance",
+    "Control-plane readback"
+  ],
+  "notCertified": [
+    "Complete historical financial coverage for every project and community",
+    "Unverified actual completion, handover or occupancy outcomes",
+    "Causal price effects from contextual events",
+    "Observed future values through 2080"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "verified_local_capture_metadata",
+  "publisher": "Dubai Land Department",
+  "sourceURL": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+  "captures": [{
+    "id": "dld-status-five-project-visible-capture-20261013",
+    "sourceId": "dld47-public-project-status-20261013",
+    "retrievedAt": "2026-10-13T15:32:17Z",
+    "firstAvailableAt": "2026-10-13T15:32:17Z",
+    "publishedAt": null,
+    "bytes": 6099,
+    "captureSHA256": "47653de5aba54b9d391b24ab104449996005a8964b3eeabc64236ba5cd097f7d",
+    "canonicalPayloadSHA256": "e1474113fdc56c1e7f5484a144b73accc9c731134ce902cc64d435a6fc3b47e0",
+    "normalizedAuthorityPacketSHA256": "5a88c276772db154e85aeae06a1773d4fb58660cac61878d8582b08529f1bb8a",
+    "method": "Visible public browser DOM after exact project-number search, then Full Fact Sheet and Inspection Details tabs; no login, API bypass, download, or raw-media redistribution.",
+    "rawCaptureRedistributed": false
+  }],
+  "temporalQualification": "The displayed DLD page-update text and retrieval timestamp do not establish original publication or historical investor availability."
+}

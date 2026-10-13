@@ -1,0 +1,19 @@
+{
+  "status": "captured_and_verified_locally_not_published",
+  "packet": "data/historical-intelligence/dld-lifecycle-pass47-20261013.json",
+  "packetSHA256": "d3a6565f6ad988cf864968c256e97a4c4b38d4b4a5498c13ef3d61fdcc0924e6",
+  "authorityPacket": "data/historical-intelligence/dld-authority-pass47-20261013.json",
+  "authorityPacketSHA256": "5a88c276772db154e85aeae06a1773d4fb58660cac61878d8582b08529f1bb8a",
+  "source": {
+    "id": "dld47-public-project-status-20261013",
+    "publisher": "Dubai Land Department",
+    "retrievedAt": "2026-10-13T15:32:17Z",
+    "firstAvailableAt": "2026-10-13T15:32:17Z",
+    "publishedAt": null,
+    "captureBytes": 6099,
+    "captureSHA256": "47653de5aba54b9d391b24ab104449996005a8964b3eeabc64236ba5cd097f7d",
+    "normalizedPayloadSHA256": "e1474113fdc56c1e7f5484a144b73accc9c731134ce902cc64d435a6fc3b47e0",
+    "rawCaptureRedistributed": false
+  },
+  "temporalQualification": "The portal publication date is unknown. Retrieval and first-known availability are retained; they do not make retrospective lifecycle dates available to historical models before retrieval."
+}

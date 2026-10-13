@@ -5,15 +5,12 @@ import {gunzipSync} from 'node:zlib';
 
 const read = (path) => JSON.parse(fs.readFileSync(path));
 const unpack = (path) => JSON.parse(gunzipSync(fs.readFileSync(path)));
-const snapshot = read('data/historical-intelligence-20261003.json');
-const publication = read('data/historical-intelligence/publication-manifest.json');
+const snapshot = unpack('data/historical-intelligence/objects/9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672.json.gz');
 const packet = read('data/historical-intelligence/dld-lifecycle-pass46-20261013.json');
 const before = unpack('data/historical-intelligence/objects/1c17824d39f4399e1fb1088bb52c2a0e761cb2e935286c617e25c883b4afa2c0.json.gz');
-const current = unpack(`data/historical-intelligence/objects/${publication.rootIndex.sha256}.json.gz`);
 
 test('V46 appends only bounded authority lifecycle/status evidence to nine verified project records', () => {
   assert.equal(snapshot.version, '20261013-enrichment-v46');
-  assert.equal(publication.version, snapshot.version);
   assert.equal(packet.publicationStatus, 'prepared_not_integrated');
   assert.equal(packet.financialObservationsAdded, 0);
   assert.equal(packet.facts.length, 39);
@@ -22,7 +19,6 @@ test('V46 appends only bounded authority lifecycle/status evidence to nine verif
   assert.equal(snapshot.manifest.historicalSeriesCount, 16872);
   assert.equal(snapshot.sources.length, before.sources.length + 2);
   assert.deepEqual(snapshot.sources.slice(0, before.sources.length), before.sources);
-  assert.deepEqual(current.sources, snapshot.sources);
 
   const previous = new Map(before.records.map((record) => [record.id, record]));
   const changed = new Set(packet.facts.map((fact) => fact.recordId));
