@@ -149,9 +149,19 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261013-map-mobile-disclosures-v1'));
+  assert.ok(worker.includes('20261013-map-mobile-disclosures-v5'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
+});
+
+test('opened phone map tools remain above the historical research drawer',()=>{
+  assert.match(css,/data-minimal-tools="1"\] body #app :is\(#minimal-kind-controls,#minimal-map-modes\)\{z-index:142!important;\}/);
+});
+
+test('reopening phone map tools reveals then resets the horizontally scrolled category menu',()=>{
+  const visible=app.indexOf("root.dataset.minimalTools=open?'1':'0';");
+  const reset=app.indexOf("if(open&&phone.matches){const categories=Q('#minimal-kind-controls');if(categories)categories.scrollLeft=0;}");
+  assert.ok(visible>=0&&reset>visible,'the category menu becomes visible before its scroll position resets');
 });
 
 test('all mobile map selection variants use the shared Espacios slate surface',()=>{

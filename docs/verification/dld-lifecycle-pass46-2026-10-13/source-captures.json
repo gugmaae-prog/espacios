@@ -1,0 +1,29 @@
+{
+  "status": "verified_local_capture_metadata",
+  "publisher": "Dubai Land Department",
+  "sourceURL": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+  "captures": [
+    {
+      "id": "dld-status-eight-project-visible-capture-20261013",
+      "sourceId": "dld46-public-project-status-20261013",
+      "retrievedAt": "2026-10-13T09:49:37Z",
+      "bytes": 9497,
+      "captureSHA256": "4cb501e168106bba452e9291180277cee87dc63ca6465277301a84e859483808",
+      "canonicalPayloadSHA256": "8feae0b6c7e620ae54ef2159bc642e7be187e1aeb72325e46dcb19031c085dc5",
+      "method": "Visible public browser DOM after exact project-name search; fact-sheet, inspection-detail, and developer-detail tabs opened for each result.",
+      "rawCaptureRedistributed": false
+    },
+    {
+      "id": "dld-status-binghatti-avenue-visible-capture-20261013",
+      "sourceId": "dld46-public-project-status-binghatti-avenue-20261013",
+      "retrievedAt": "2026-10-13T09:58:46Z",
+      "bytes": 5601,
+      "captureSHA256": "f4ea61a30fd30cd4151c9dc29d5e25e72892efc017b52642f7916c3e76fc2fdd",
+      "canonicalPayloadSHA256": "aad645f45a4bfad95ee6fecee3e5b881cba6f270abc113db57e1532b0692a6c8",
+      "method": "Visible public browser DOM after opening the exact DLD project-number result and its Full Fact Sheet and Inspection Details tabs.",
+      "rawCaptureRedistributed": false
+    }
+  ],
+  "publicationDate": null,
+  "temporalQualification": "The displayed DLD page-update text and retrieval timestamps do not establish original publication or historical investor availability."
+}

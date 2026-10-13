@@ -543,6 +543,10 @@ html[data-minimal-map="1"] body #app :is(#minimal-map-modes,.ae-mobile-map-modes
   html[data-minimal-map="1"][data-unified-map][data-minimal-tools="1"] body #app #minimal-map-modes{
     display:flex!important;top:calc(172px + env(safe-area-inset-top))!important;left:10px!important;right:10px!important;
   }
+  /* Map tools are an explicit, temporary phone-level disclosure. Keep their
+     controls above an open research drawer so the next trusted tap reaches
+     the chosen category before that navigation closes the drawer. */
+  html[data-minimal-map="1"][data-unified-map][data-minimal-tools="1"] body #app :is(#minimal-kind-controls,#minimal-map-modes){z-index:142!important;}
   html[data-minimal-map="1"][data-unified-map] body #app :is(#minimal-kind-controls,#minimal-map-modes) button{min-height:44px!important;}
   html[data-minimal-map="1"][data-unified-map] body #app .ae-search-map-tools{display:none!important;}
   html[data-minimal-map="1"][data-unified-map][data-minimal-tools="1"] body #app .ae-search-map-tools{display:flex!important;}

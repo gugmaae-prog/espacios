@@ -115,7 +115,7 @@
     const intent={panelId:name+'-panel'};M.navigationIntent=intent;
     // A category click can synchronously dispatch its legacy rail click. Its
     // authorization ends with this interaction, before any later saved restore.
-    queueMicrotask(()=>{if(M.navigationIntent===intent)M.navigationIntent=null;});
+    setTimeout(()=>{if(M.navigationIntent===intent)M.navigationIntent=null;},0);
   }
   function updateBar(panel){
     const button=panel.querySelector('.mm-sheet-toggle');if(!button)return;const open=panel.dataset.mmSheet!=='peek';
@@ -140,7 +140,12 @@
         // Delayed legacy workspace restores and market refreshes are not new
         // navigation requests. Keep the user-owned drawer until an explicit
         // rail, Details, map selection or search activation replaces it.
-        if(now&&!was){if(navigationPanels.has(panel.id)&&M.active!==panel&&M.navigationIntent?.panelId!==panel.id)closePanel(panel);else if(M.active?.id==='hi-panel'&&panel!==M.active&&visible(M.active))closePanel(panel);else activate(panel);}
+        if(now&&!was){
+          if(M.navigationIntent?.panelId===panel.id)activate(panel);
+          else if(navigationPanels.has(panel.id)&&M.active!==panel)closePanel(panel);
+          else if(M.active?.id==='hi-panel'&&panel!==M.active&&visible(M.active))closePanel(panel);
+          else activate(panel);
+        }
         if(visible(panel))updateBar(panel);scheduleGeometry();}).observe(panel,{attributes:true,attributeFilter:['class','hidden']});
     }
     if(mobile.matches){const open=panels().filter(visible);const chosen=open.includes(M.active)?M.active:open.find(p=>p.contains(document.activeElement))||open.find(p=>p.id==='hi-panel')||open.find(p=>p.id==='detail'||p.id==='ms-inspect'||p.id==='se-panel')||open[0];if(chosen)activate(chosen,chosen===M.active?chosen.dataset.mmSheet==='peek':chosen.id!=='hi-panel');}
@@ -222,7 +227,7 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
     document.addEventListener('click',captureNavigationIntent,true);
     document.addEventListener('click',activateLegacyDetails);
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261008-map-palette-v33',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261013-map-mobile-disclosures-v5',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();

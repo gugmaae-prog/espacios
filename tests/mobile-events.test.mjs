@@ -247,7 +247,7 @@ test('keyboard and native range-input alternatives reach both unified endpoints'
 });
 
 function sheetHarness(options = {}) {
-  const observers = new Map(), pending = new Set(), panels = [], microtasks=[];
+  const observers = new Map(), pending = new Set(), panels = [], microtasks=[], timers=[];
   const changed = node => {for (const callback of observers.get(node) || []) pending.add(callback);};
   function node(id, hidden = true) {
     const classes = new Set(), attributes = new Map();let concealed = hidden, bar = null;
@@ -265,14 +265,16 @@ function sheetHarness(options = {}) {
   const env = {window:{},document:{documentElement:{dataset:{}},activeElement:null,querySelector:selector=>panels.find(panel=>'#'+panel.id===selector)||null,
     querySelectorAll:selector=>selector.startsWith('.rail-btn')?[rail]:panels,
     createElement(){const children=new Map();return{querySelector(selector){if(!children.has(selector)){const attributes=new Map();children.set(selector,{getAttribute:name=>attributes.get(name),setAttribute:(name,value)=>attributes.set(name,value)});}return children.get(selector);}};},},
-    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,queueMicrotask:callback=>microtasks.push(callback),
+    matchMedia:()=>({matches:true}),setInterval:()=>1,requestAnimationFrame:()=>1,queueMicrotask:callback=>microtasks.push(callback),setTimeout:callback=>{timers.push(callback);return timers.length;},
     MutationObserver:class {constructor(callback){this.callback=callback;}observe(element){const list=observers.get(element)||[];list.push(this.callback);observers.set(element,list);}},
     msState:{open:false},msInfo(){inspector.hidden=!env.msState.open;}};
   const exposed=source.replace('  const timer=setInterval(','  globalThis.__SHEETS_TEST__={M,activate,closePanel,installSheets,activateLegacyDetails,captureNavigationIntent};\n  const timer=setInterval(');
   vm.runInNewContext(exposed,env);
-  function flush(){while(microtasks.length)microtasks.shift()();for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
+  function flushMutations(){while(microtasks.length)microtasks.shift()();for(let i=0;pending.size&&i<10;i++){const callbacks=[...pending];pending.clear();callbacks.forEach(callback=>callback());}assert.equal(pending.size,0,'Sheet visibility reconciliation settles');}
+  function flushTimers(){while(timers.length)timers.shift()();}
+  function flush(){flushMutations();flushTimers();flushMutations();}
   const api=env.__SHEETS_TEST__;api.installSheets();flush();
-  return{api,env,history,inspector,filters,places,transport,analyze,rail,flush};
+  return{api,env,history,inspector,filters,places,transport,analyze,rail,flush,flushMutations,flushTimers};
 }
 
 test('a background market inspector refresh cannot close the active history drawer',()=>{
@@ -340,6 +342,23 @@ test('a trusted rail interaction opens its card, but its intent cannot authorize
   assert.equal(h.api.M.active,h.places);assert.equal(h.places.dataset.mmSheet,'open');assert.equal(h.api.M.navigationIntent,null);
   h.api.closePanel(h.places);h.places.classList.remove('hidden');h.api.activateLegacyDetails(navigationEvent('.rail-btn[data-panel]',h.rail,false));h.flush();
   assert.equal(h.places.classList.contains('hidden'),true);assert.equal(h.api.M.active,null);
+});
+
+test('a trusted category intent survives microtask reconciliation long enough to replace History, then expires',()=>{
+  const h=sheetHarness(),trigger=navigationEvent('#minimal-kind-controls button[data-value]',{dataset:{value:'places'}});
+  h.api.captureNavigationIntent(trigger);h.places.hidden=false;h.places.classList.remove('hidden');h.flushMutations();
+  assert.equal(h.api.M.active,h.places);assert.equal(h.history.classList.contains('hidden'),true);
+  assert.equal(h.api.M.navigationIntent?.panelId,'places-panel');
+  h.flushTimers();assert.equal(h.api.M.navigationIntent,null);
+  h.api.closePanel(h.places);h.places.classList.remove('hidden');h.flush();
+  assert.equal(h.places.classList.contains('hidden'),true);assert.equal(h.api.M.active,null);
+});
+
+test('a trusted rail intent also survives microtask reconciliation long enough to replace History',()=>{
+  const h=sheetHarness(),trigger=navigationEvent('.rail-btn[data-panel]',h.rail);
+  h.api.captureNavigationIntent(trigger);h.places.hidden=false;h.places.classList.remove('hidden');h.flushMutations();
+  assert.equal(h.api.M.active,h.places);assert.equal(h.history.classList.contains('hidden'),true);
+  h.flushTimers();assert.equal(h.api.M.navigationIntent,null);
 });
 
 for(const [name,selector,value] of [['places','#minimal-kind-controls button[data-value]','places'],['transport','#minimal-kind-controls button[data-value]','transport'],['analyze','#minimal-metrics button[data-value="volume"]','volume']]){

@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261013-map-mobile-disclosures-v1';
+  const RELEASE='20261013-map-mobile-disclosures-v5';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
@@ -161,6 +161,10 @@
     const setTools=open=>{
       const returnFocus=!open&&phone.matches&&[Q('#minimal-kind-controls'),Q('#minimal-map-modes')].some(group=>group?.contains(document.activeElement));
       root.dataset.minimalTools=open?'1':'0';
+      // History & events is appended at the far end of this horizontal menu.
+      // Reveal the menu before resetting it: a scroll assignment while its
+      // display is none can be discarded by the browser.
+      if(open&&phone.matches){const categories=Q('#minimal-kind-controls');if(categories)categories.scrollLeft=0;}
       tools.setAttribute('aria-expanded',String(open));
       tools.setAttribute('aria-label',open?'Minimize map tools':'Map tools');
       if(returnFocus)tools.focus({preventScroll:true});
