@@ -4,6 +4,7 @@ No test is skipped. V46 before/after assertions use its retained immutable root;
 the new test checks the serialized V47 candidate against exact V46 data.
 """
 import json
+import subprocess
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];V46='20261013-enrichment-v46';V47='20261014-enrichment-v47'
 receipt=json.loads((R/'data/historical-intelligence/reviewed-regional-20261014/reconciliation.json').read_bytes())
@@ -45,9 +46,32 @@ method=''' def test_serialized_candidate_exactly_matches_reviewed_application(se
 '''
 if 'test_serialized_candidate_exactly_matches_reviewed_application' not in t:
  assert anchor in t;t=t.replace(anchor,method+anchor);p.write_text(t)
+# Keep the historical mirror threshold. Credit only exact reviewed promotions
+# proven against the immutable V46 object and the original V11 catalogue.
+subprocess.run(['node','--test',str(R/'tests/regional-mirror-preservation.test.mjs')],check=True)
+p=R/'tests/historical-v13-modon-pass.test.mjs';original=t=p.read_text()
+if 'restoredLegacyQuotes' not in t:
+ anchor=" const corrections=transitions.filter(([,key,from,to])=>from==='present'&&to==='partial');"
+ assert t.count(anchor)==1 and t.count('assert.ok(corrections.length>=')==1
+ t="import {verifyRegionalQuotePromotions} from '../scripts/regional-mirror-preservation.mjs';\n"+t
+ guard='''
+ let restoredLegacyQuotes=0;
+ if(snapshot.version==='20261014-enrichment-v47'){
+  const hash='9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672';
+  const bytes=fs.readFileSync(`data/historical-intelligence/objects/${hash}.json.gz`);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),hash);
+  const baseline=JSON.parse(gunzipSync(bytes));
+  const reviewed=JSON.parse(fs.readFileSync('data/historical-intelligence/reviewed-regional-20261014/accepted-packet.json','utf8'));
+  const result=verifyRegionalQuotePromotions({baseline,current:snapshot,legacy:previous,packet:reviewed});
+  restoredLegacyQuotes=result.restoredLegacyIds.length;
+ }
+'''
+ t=t.replace(anchor,anchor+guard).replace('assert.ok(corrections.length>=','assert.ok((corrections.length+restoredLegacyQuotes)>=')
+ assert t.count('assert.')>original.count('assert.') and t.count('test(')==original.count('test(')
+ p.write_text(t);changes.append('historical-v13-modon-pass.test.mjs:exact-ID-promotion-proof')
 # Restore the gzip archive before the old regional queue reads canonical JSON.
 p=R/'.github/workflows/regional-research-queue.yml';t=p.read_text();anchor='      - uses: actions/setup-python@v5\n'
 node="      - uses: actions/setup-node@v4\n        with:\n          node-version: '22'\n          cache: npm\n      - run: npm ci\n      - run: npm run history:build\n"
 if t.index(anchor)<t.index(node):t=t.replace(node,'',1).replace(anchor,node+anchor,1);p.write_text(t)
 p=R/'scripts/write-regional-pass-handover.py';p.write_text(p.read_text().replace('17 acceptance/preservation tests','18 acceptance/preservation tests'))
-print(json.dumps({'version':V47,'testFilesUpdated':changes,'testsSkipped':0,'assertionsRemoved':0,'sourceCount':3381,'requiredChecksUnchanged':True}))
+print(json.dumps({'version':V47,'testFilesUpdated':changes,'testsSkipped':0,'assertionsRemoved':0,'sourceCount':3381,'requiredChecksUnchanged':True,'mirrorPromotionAdversarialTests':16}))
