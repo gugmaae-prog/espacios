@@ -1,0 +1,38 @@
+name: Verified regional enrichment (GitHub only)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verified-regional-enrichment.yml'
+      - 'scripts/append-reviewed-regional-pass.py'
+      - 'tests/reviewed-regional-pass.test.py'
+      - 'data/historical-intelligence/reviewed-regional-20261014/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pinned-inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 6cb77c197d1ea6107c94f374f2bfa10c7248a043
+          persist-credentials: false
+      - name: Export exact committed evidence and implementation inputs
+        shell: bash
+        run: |
+          mkdir -p /tmp/regional-v44-inputs
+          tar -czf /tmp/regional-v44-inputs/pinned-inputs.tar.gz \
+            data/historical-intelligence-20261003.json.gz \
+            data/historical-intelligence/publication-manifest.json \
+            data/historical-intelligence/runtime-index.json \
+            scripts tests src/historical-intelligence \
+            docs/HISTORICAL-INTELLIGENCE.md package.json
+          sha256sum /tmp/regional-v44-inputs/pinned-inputs.tar.gz > /tmp/regional-v44-inputs/SHA256SUMS
+          git rev-parse HEAD > /tmp/regional-v44-inputs/COMMIT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: regional-pinned-v44-inputs
+          path: /tmp/regional-v44-inputs/
+          if-no-files-found: error
+          retention-days: 30
