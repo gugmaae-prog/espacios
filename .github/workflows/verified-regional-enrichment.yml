@@ -3,36 +3,41 @@ on:
   pull_request:
     paths:
       - '.github/workflows/verified-regional-enrichment.yml'
-      - 'scripts/append-reviewed-regional-pass.py'
-      - 'tests/reviewed-regional-pass.test.py'
+      - 'scripts/*regional*'
+      - 'tests/*regional*'
       - 'data/historical-intelligence/reviewed-regional-20261014/**'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  pinned-inputs:
+  capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tests/regional-primary-capture.test.py
+      - name: Save research tools outside pinned baseline checkout
+        run: |
+          mkdir -p /tmp/regional-tools
+          cp -a scripts tests data/historical-intelligence/reviewed-regional-20261014 /tmp/regional-tools/
+          mkdir -p /tmp/regional-tools/data/historical-intelligence
+          mv /tmp/regional-tools/reviewed-regional-20261014 /tmp/regional-tools/data/historical-intelligence/
       - uses: actions/checkout@v4
         with:
           ref: 6cb77c197d1ea6107c94f374f2bfa10c7248a043
           persist-credentials: false
-      - name: Export exact committed evidence and implementation inputs
-        shell: bash
-        run: |
-          mkdir -p /tmp/regional-v44-inputs
-          tar -czf /tmp/regional-v44-inputs/pinned-inputs.tar.gz \
-            data/historical-intelligence-20261003.json.gz \
-            data/historical-intelligence/publication-manifest.json \
-            data/historical-intelligence/runtime-index.json \
-            scripts tests src/historical-intelligence \
-            docs/HISTORICAL-INTELLIGENCE.md package.json
-          sha256sum /tmp/regional-v44-inputs/pinned-inputs.tar.gz > /tmp/regional-v44-inputs/SHA256SUMS
-          git rev-parse HEAD > /tmp/regional-v44-inputs/COMMIT
-      - uses: actions/upload-artifact@v4
+      - name: Capture only the reviewed target list; no raw material retained
+        run: python3 /tmp/regional-tools/scripts/run-regional-primary-captures.py "$PWD/data/historical-intelligence-20261003.json.gz" /tmp/regional-v47-captures
+      - name: Retain normalized provenance for manual fact acceptance
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: regional-pinned-v44-inputs
-          path: /tmp/regional-v44-inputs/
+          name: regional-v47-source-captures
+          path: /tmp/regional-v47-captures/
           if-no-files-found: error
           retention-days: 30
