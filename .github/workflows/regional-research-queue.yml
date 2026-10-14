@@ -30,6 +30,7 @@ jobs:
       - run: python3 scripts/build-regional-review-queue.py --verify-only
       - run: python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/2026-10-14
       - name: Bounded public metadata review; no evidence promotion
+        if: ${{ hashFiles('data/historical-intelligence/research-captures/regional-primary-20261014-v2.json') == '' }}
         run: |
           sha256sum data/historical-intelligence-20261003.json data/historical-intelligence/publication-manifest.json > /tmp/regional-preservation.sha256
           python3 scripts/review_regional_sources.py \
