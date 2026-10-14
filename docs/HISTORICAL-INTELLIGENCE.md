@@ -79,3 +79,8 @@ The retained inventory, source partitions, queue and coverage matrix make every 
 ## Accepted regional pass V47 — 14 October 2026
 
 The current GitHub-only candidate extends checksum-verified V46 with 20 accepted facts on 16 records (14 asking-price observations, three launch quarters and three planned completion targets). It preserves the fixed catalogue and native history. The older queue-only figures above are earlier-pass receipts. See [the current handover](verification/regional-research-2026-10-14/ACCEPTED-PASS47.md) for exact source decisions, coverage changes, verification and the separate operator boundary. No publication or production activation is implied.
+
+
+## Reviewed regional candidate V48 (GitHub only)
+
+V47 and V48 append 43 source-backed facts to 21 existing records, preserving all 1,860 IDs and 633,891 native rows. Advertisements, historical launch statements and planned targets remain separate from registered sales, signed leases and valuations. No numeric forecast or remote publication was added. See [consolidated execution handover](verification/regional-research-2026-10-14/EXECUTION-HANDOVER.md) for exact additions, source dispositions, ledger changes and operator boundary.

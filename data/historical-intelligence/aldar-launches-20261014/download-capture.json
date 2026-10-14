@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 1,
+  "passId": "aldar-official-downloads-20261014",
+  "baseVersion": "20261014-enrichment-v47",
+  "baseSHA256": "8be3cc4975d2c23dae8d2d5a370cb4ea1bb317061de12be72fc77ac072a86228",
+  "planSHA256": "50eddf193fbb4d7b2c235507b2c83551a3ba56aa8e1bffdd834546d578118e74",
+  "assetMapSHA256": "5f7b81cc9eb1865d1936937074aba6ee69d5fcbb9a4ff06eda3d99fabab56af5",
+  "httpRequests": 12,
+  "sourcePagesLimit": 20,
+  "requestLimit": 40,
+  "concurrency": 1,
+  "decoderVersion": "pdftotext version 24.02.0",
+  "rawRetained": false,
+  "acceptedFacts": [],
+  "numericForecasts": [],
+  "sources": [
+    {
+      "id": "aldar-launch-454",
+      "recordReviewIds": [
+        "adrec:454"
+      ],
+      "parentUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Press%2BRelease%2B-%2BAldar%2BLaunches%2BYas%2BPark%2BGate/1c071ac05d6711f0beb79632a83a94fd",
+      "publisher": "Aldar",
+      "attemptedAt": "2026-10-14T12:49:12Z",
+      "captureStatus": "captured_normalized_document",
+      "acceptedFacts": [],
+      "rawRetained": false,
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2022-08-24",
+        "identityChecks": {
+          "Yas Park Gate": true,
+          "Aldar": true,
+          "Yas Island": true
+        },
+        "authorityUnitCountMatched": true,
+        "expectedUnits": 508,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "cb59984cc1da300757c7b22f19ad091016748403a31c620175f93a9eb5627018"
+            ],
+            "period": "2022-08-24",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "townhouses-2-3br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "207f3631f0b633042d0c799cbd6fc557e9471bd5aa508beabd464cd8632a1118"
+            ],
+            "observedAmountsAED": [
+              1740000
+            ],
+            "expectedAmountAED": 1740000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "b988d569d1329c0956a3030221e011f8da35f86794824a358124a58525ce9076"
+            ],
+            "observedAmountsAED": [
+              3200000
+            ],
+            "expectedAmountAED": 3200000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "6945da3c598205ad915eb2399d1563c355a3bf5cb955a6ff2d29f559f731d0a7"
+            ],
+            "period": "2023-Q1",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "544e21fb1697c6dc84bd0b4cbbe1a6ee221a942185b5050c5fbeef8b1d4e95db"
+            ],
+            "period": "2026-Q1",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": true,
+        "extractedTextSHA256": "3bd20fb3bb0da17101a974f6577b42df1d99e37c91b47ba55cf81cb4809be207",
+        "nativeQuarterMentions": [
+          "Q1 2023",
+          "Q1 2026"
+        ],
+        "nativePriceMentions": [
+          "AED 1.15",
+          "AED 1.74 million",
+          "AED 3.20 million",
+          "AED 30"
+        ]
+      },
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "c42296c95e222bb1ab5d8e5650b6cf325a9f72a510d1b513f78a37f8573ce978",
+        "responseBytes": 233872,
+        "retrievedAt": "2026-10-14T12:49:16Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "documentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Press%2BRelease%2B-%2BAldar%2BLaunches%2BYas%2BPark%2BGate/1c071ac05d6711f0beb79632a83a94fd",
+        "contentType": "application/pdf",
+        "sha256": "0f687c3412eba0809d386cdf0dc54b946c41b61b7becc0b0805d86f5160c047e",
+        "responseBytes": 327812,
+        "retrievedAt": "2026-10-14T12:49:20Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+            "httpStatus": 404,
+            "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+            "retrievedAt": "2026-10-14T12:49:18Z",
+            "rawRetained": false,
+            "policy": "no_robots_file_404_or_410"
+          }
+        ],
+        "rawRetained": false
+      },
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "firstAvailabilityBasis": "first_retained_download_capture_only_no_historical_publication_vintage",
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention"
+    },
+    {
+      "id": "aldar-launch-456",
+      "recordReviewIds": [
+        "adrec:456"
+      ],
+      "parentUrl": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BAldar%2BSells%2BOut%2BYas%2BPark%2BGate%2Band%2BLaunches%2BYas%2BPark%2BViews%2B-%2BFINAL%2BEN/b70af8685d6511f0af3d0ec76bb501e8",
+      "publisher": "Aldar",
+      "attemptedAt": "2026-10-14T12:49:20Z",
+      "captureStatus": "captured_normalized_document",
+      "acceptedFacts": [],
+      "rawRetained": false,
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2022-11-21",
+        "identityChecks": {
+          "Yas Park Views": true,
+          "Aldar": true,
+          "Yas Island": true
+        },
+        "authorityUnitCountMatched": true,
+        "expectedUnits": 341,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "7fce39ba8741737ecdd670e185a2a4d2329cae398b4e9a7973b39914ca203d8e"
+            ],
+            "period": "2022-11-21",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "villas-3br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "809dcb9d8ef7acce66e85a58686099e1292bc0bddff61af6fc845c7471c89153"
+            ],
+            "observedAmountsAED": [
+              2840000
+            ],
+            "expectedAmountAED": 2840000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "6f39e92dac81c70508f4f4c16c567782fffed754753920ea484dc82163db55a4"
+            ],
+            "observedAmountsAED": [
+              3430000
+            ],
+            "expectedAmountAED": 3430000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-5br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "b579d853ddca22de936227ae6c19ac17dd70933e4bb7df1b283142d36d64c687"
+            ],
+            "observedAmountsAED": [
+              4100000
+            ],
+            "expectedAmountAED": 4100000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "5cc73381ac915b777a95e5db3fbb5e48456742f0171e741d7aeb7b9df6f04b8f"
+            ],
+            "period": "2023-Q2",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "622e144a8b2023e95c6e706d6e135a32a1d5b2a319ed22b3e6850e124299a03b"
+            ],
+            "period": "2026-Q2",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": true,
+        "extractedTextSHA256": "4f655ec4e919585e5fc2536c04d5d5997745c0d940c3f7472392abb4369cecdd",
+        "nativeQuarterMentions": [
+          "Q2 2023",
+          "Q2 2026"
+        ],
+        "nativePriceMentions": [
+          "AED 1.1",
+          "AED 1.1",
+          "AED 2.84 million",
+          "AED 3.43\nmillion",
+          "AED 4.1 million",
+          "AED 30"
+        ]
+      },
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "8a3eb851b78f7042b2d9150fe79676f87f3ec76fd6cfacca72ab6f316a62ccd9",
+        "responseBytes": 234842,
+        "retrievedAt": "2026-10-14T12:49:23Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "documentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BAldar%2BSells%2BOut%2BYas%2BPark%2BGate%2Band%2BLaunches%2BYas%2BPark%2BViews%2B-%2BFINAL%2BEN/b70af8685d6511f0af3d0ec76bb501e8",
+        "contentType": "application/pdf",
+        "sha256": "f314b5d9de2e46c484ab57e5d0d2e4f2b6764e8b2d53133f6b222dbdcf85756e",
+        "responseBytes": 534495,
+        "retrievedAt": "2026-10-14T12:49:26Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+            "httpStatus": 404,
+            "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+            "retrievedAt": "2026-10-14T12:49:18Z",
+            "rawRetained": false,
+            "policy": "no_robots_file_404_or_410"
+          }
+        ],
+        "rawRetained": false
+      },
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "firstAvailabilityBasis": "first_retained_download_capture_only_no_historical_publication_vintage",
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention"
+    },
+    {
+      "id": "aldar-launch-543",
+      "recordReviewIds": [
+        "adrec:543"
+      ],
+      "parentUrl": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar_Nouran%2BLiving_Launch%2BPress%2BRelease_EN_130324/5de2a8405d6411f081973e6907f554f2",
+      "publisher": "Aldar",
+      "attemptedAt": "2026-10-14T12:49:26Z",
+      "captureStatus": "captured_normalized_document",
+      "acceptedFacts": [],
+      "rawRetained": false,
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2024-03-13",
+        "identityChecks": {
+          "Nouran Living": true,
+          "Aldar": true,
+          "Saadiyat Island": true
+        },
+        "authorityUnitCountMatched": true,
+        "expectedUnits": 372,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "6e33823e6e904d655823a6d6e797b331a1b28454d73ff7ed0ab80a5bb245f296"
+            ],
+            "period": "2024-03-13",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "apartments-starting",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "6f64b57afb2bea4b9e891a0d33a54824e3acef0d999e34e385fa03763e79dfee"
+            ],
+            "observedAmountsAED": [
+              750000
+            ],
+            "expectedAmountAED": 750000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "3f5c0ad932911d553b47b3eb5adcdab522736d17b18d5826ab68624ce6ba7dcb"
+            ],
+            "period": "2024-Q4",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "cc5f053cea973b6a4fc442b91121583ebb1ae9fd09bca068dea2a417ce405044"
+            ],
+            "period": "2027-Q4",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": true,
+        "extractedTextSHA256": "b1c59b4da7884b491caf8318b6d386956c8aa172e15b7f64e183882c4050bcf5",
+        "nativeQuarterMentions": [
+          "Q4 2024",
+          "Q4 2027"
+        ],
+        "nativePriceMentions": [
+          "AED 750,000",
+          "AED 37"
+        ]
+      },
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "29d30816e1ad80d47f1375099ffb5b18e65ebb128f9c8efdfb1574728a23baff",
+        "responseBytes": 234143,
+        "retrievedAt": "2026-10-14T12:49:29Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "documentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar_Nouran%2BLiving_Launch%2BPress%2BRelease_EN_130324/5de2a8405d6411f081973e6907f554f2",
+        "contentType": "application/pdf",
+        "sha256": "06848652c0efd8067548b6841c2aa82687ec97956599b3c4e95b8ad1d5823fa0",
+        "responseBytes": 336638,
+        "retrievedAt": "2026-10-14T12:49:31Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+            "httpStatus": 404,
+            "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+            "retrievedAt": "2026-10-14T12:49:18Z",
+            "rawRetained": false,
+            "policy": "no_robots_file_404_or_410"
+          }
+        ],
+        "rawRetained": false
+      },
+      "firstAvailableAt": "2026-10-14T12:49:31Z",
+      "firstAvailabilityBasis": "first_retained_download_capture_only_no_historical_publication_vintage",
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention"
+    },
+    {
+      "id": "aldar-launch-64",
+      "recordReviewIds": [
+        "adrec:64"
+      ],
+      "parentUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BNoya%2BLuma%2BLaunch%2B-%2BEN%2B-%2BFINAL/00800b685d6711f08b6e0ec76bb501e8",
+      "publisher": "Aldar",
+      "attemptedAt": "2026-10-14T12:49:31Z",
+      "captureStatus": "captured_normalized_document",
+      "acceptedFacts": [],
+      "rawRetained": false,
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2021-05-25",
+        "identityChecks": {
+          "Noya Luma": true,
+          "Aldar": true,
+          "Yas Island": true
+        },
+        "authorityUnitCountMatched": true,
+        "expectedUnits": 189,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "cf5f948c4ad0cc9bb63bd4bb09036aaf849c4b02113f82985e6c13779a31e36f"
+            ],
+            "period": "2021-05-25",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "villas-3br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 2410000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "48779bfb069848ab46a1092e1003a8972d857873b6030cd500aa6709bf949b44"
+            ],
+            "observedAmountsAED": [
+              2770000
+            ],
+            "expectedAmountAED": 2770000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-5br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "9fed763cc3aba1d444d2c1a03d700d2274513a92c6fc8fd8d9cdaf4b0a21dc3c"
+            ],
+            "observedAmountsAED": [
+              3270000
+            ],
+            "expectedAmountAED": 3270000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "740bd153334c5da8a46dc74b5ac78baa3c37f590a8d809802948b252cdf8fe19"
+            ],
+            "period": "2021-11",
+            "precision": "month",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "46535a9e7d76a1464b7a520eae8193dc23decca3bbc75d5f3c475ecdb8e6ec12"
+            ],
+            "period": "2024-02",
+            "precision": "month",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": true,
+        "extractedTextSHA256": "3196e4cffd75b8b203665f1a88667e0e88e3ca2df43d0435a9cfb79a50905eb8",
+        "nativeQuarterMentions": [],
+        "nativePriceMentions": [
+          "AED 2.41 million",
+          "AED 2.41 million",
+          "AED 2.77\nmillion",
+          "AED 3.27 million",
+          "AED 45",
+          "AED 16"
+        ]
+      },
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "1344387616e94be66ced9ac990a88f30723ca1a706753cb90bdb7a836885b319",
+        "responseBytes": 232936,
+        "retrievedAt": "2026-10-14T12:49:34Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "documentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BNoya%2BLuma%2BLaunch%2B-%2BEN%2B-%2BFINAL/00800b685d6711f08b6e0ec76bb501e8",
+        "contentType": "application/pdf",
+        "sha256": "c964f89bf8d56c507aa67026a7975a921f4f7cbca84056af25f9ccf8346ead6c",
+        "responseBytes": 399483,
+        "retrievedAt": "2026-10-14T12:49:37Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+            "httpStatus": 404,
+            "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+            "retrievedAt": "2026-10-14T12:49:18Z",
+            "rawRetained": false,
+            "policy": "no_robots_file_404_or_410"
+          }
+        ],
+        "rawRetained": false
+      },
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "firstAvailabilityBasis": "first_retained_download_capture_only_no_historical_publication_vintage",
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention"
+    },
+    {
+      "id": "aldar-launch-65",
+      "recordReviewIds": [
+        "adrec:65"
+      ],
+      "parentUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2BLaunches%2BSaadiyat%2BReserve%2BThe%2BDunes/897ab20a5d6311f0b0846a302fc0481b",
+      "publisher": "Aldar",
+      "attemptedAt": "2026-10-14T12:49:37Z",
+      "captureStatus": "captured_normalized_document",
+      "acceptedFacts": [],
+      "rawRetained": false,
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2021-06-30",
+        "identityChecks": {
+          "Saadiyat Reserve The Dunes": true,
+          "Aldar": true,
+          "Saadiyat Island": true
+        },
+        "authorityUnitCountMatched": true,
+        "expectedUnits": 83,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "b5e4cfa55725f966dd05233365dbebf6dafc5c9c28d0a6ff1f0af486f3e42e00"
+            ],
+            "period": "2021-06-30",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "d5941c338938e526dbaa5ce02eafde581fe4e2a2a215f2d17cd3b6cb409725ab"
+            ],
+            "observedAmountsAED": [
+              6490000
+            ],
+            "expectedAmountAED": 6490000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-5br",
+            "kind": "financial",
+            "matchCount": 1,
+            "matched": true,
+            "matchSHA256": [
+              "f1eb836feb1c3f9bb656fa05b5589b785f0e2e5648b93f61533985d8c2027d28"
+            ],
+            "observedAmountsAED": [
+              7990000
+            ],
+            "expectedAmountAED": 7990000,
+            "unit": "AED"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": true,
+        "extractedTextSHA256": "dcde2fc082831111b4369656785a3ccf3b56e221e00f89b0cb283e0aa137b22a",
+        "nativeQuarterMentions": [
+          "Q1 2024"
+        ],
+        "nativePriceMentions": [
+          "AED 6.49 million",
+          "AED 6.49 million",
+          "AED 7.99 million",
+          "AED 45",
+          "AED 16"
+        ]
+      },
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "3e66dca3562dd8446820d9171321df5a5fe3863216ce3c6da1300c93ca982a25",
+        "responseBytes": 233504,
+        "retrievedAt": "2026-10-14T12:49:39Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "documentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2BLaunches%2BSaadiyat%2BReserve%2BThe%2BDunes/897ab20a5d6311f0b0846a302fc0481b",
+        "contentType": "application/pdf",
+        "sha256": "7faf9b8979e6690da3b35f00f7969f0db2369905bcdf6df183da3fbb48362a6a",
+        "responseBytes": 411117,
+        "retrievedAt": "2026-10-14T12:49:42Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+            "httpStatus": 404,
+            "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+            "retrievedAt": "2026-10-14T12:49:18Z",
+            "rawRetained": false,
+            "policy": "no_robots_file_404_or_410"
+          }
+        ],
+        "rawRetained": false
+      },
+      "firstAvailableAt": "2026-10-14T12:49:42Z",
+      "firstAvailabilityBasis": "first_retained_download_capture_only_no_historical_publication_vintage",
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention"
+    }
+  ]
+}

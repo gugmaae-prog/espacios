@@ -9,8 +9,8 @@ const packet=read('data/historical-intelligence/dld-sales-pass44-20261012.json')
 const before=unpack('data/historical-intelligence/objects/999760c4e7fade1d3f6f5398f19f0521a96dd403cbcc51ac1d2e242188061998.json.gz');
 const snapshot=unpack('data/historical-intelligence/objects/b87232342eabc47776b97277cc7cc8a63dc59846264eb406e816ff2c97bcab4d.json.gz'),after=snapshot;
 test('V44 retains the entire archive and appends only the reviewed Avida Residences evidence',()=>{
- assert.equal(snapshot.version,'20261012-enrichment-v44');assert.ok(['20261013-enrichment-v46','20261014-enrichment-v47'].includes(latest.version));assert.equal(snapshot.asOf,'2026-10-12');
- assert.equal(snapshot.records.length,1860);assert.equal(publication.counts.sources,latest.version==='20261014-enrichment-v47'?3381:3367);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
+ assert.equal(snapshot.version,'20261012-enrichment-v44');assert.ok(['20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48'].includes(latest.version));assert.equal(snapshot.asOf,'2026-10-12');
+ assert.equal(snapshot.records.length,1860);assert.equal(publication.counts.sources,latest.version==='20261014-enrichment-v48'?3386:latest.version==='20261014-enrichment-v47'?3381:3367);assert.equal(publication.counts.historicalRows,633891);assert.equal(publication.counts.series,16872);
  assert.deepEqual(snapshot.sources.slice(0,before.sources.length),before.sources);assert.deepEqual(snapshot.events,before.events);assert.deepEqual(snapshot.exposures,before.exposures);
  const changed=new Set(packet.facts.map(f=>f.recordId)),previous=new Map(before.records.map(r=>[r.id,r]));assert.equal(changed.size,1);
  for(const r of after.records){const old=previous.get(r.id);assert.ok(old);
