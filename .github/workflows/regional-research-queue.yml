@@ -14,7 +14,7 @@ permissions:
 jobs:
   queue:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,6 +23,12 @@ jobs:
       - run: python3 tests/regional-research-queue.test.py
       - run: python3 scripts/build-regional-review-queue.py --verify-only
       - run: python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/2026-10-14
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run history:verify:storage
       - name: Publish review artifact (not an evidence publication)
         uses: actions/upload-artifact@v4
         with:

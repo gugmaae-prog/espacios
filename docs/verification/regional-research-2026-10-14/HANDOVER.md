@@ -27,6 +27,22 @@ Existing V25 checklist: 3,148 present, 3,437 partial, 26,895 missing, 9,300 unes
 
 Abu Dhabi/Ghantoot: exact subject registry and Ghantout geographical link, title/transaction/rent record access, progress-versus-handover distinction and legal developer/marketed developer separation. Palm Jebel Ali: phase/frond-specific IDs, scope of Nakheel releases, realized villa sales versus land, completions, signed rents and site geometry. Umm Al Quwain: verify official land/lease availability and source permissions, exact phases, title and rental registers. Fujairah: EJAAR is a registration system with access control, not a public transaction export; verify any lawful project and rent access without logging in or bypassing service controls. Extend the same standards to other emirates.
 
+
+## Verified generated regional queue (GitHub Actions)
+
+The read-only workflow `38507877270` completed successfully on the pinned V25 base and attached [the full 1,860-record review artifact](https://github.com/gugmaae-prog/espacios/actions/runs/38507877270/artifacts/11868367692) (JSONL, CSV and preservation receipt, available for 30 days). SHA-256 of the deterministic JSONL is `60f61fbfacd927d965f2dd83040dee2f689ce16df84dfe4ca46150dcb7e3ecdb`.
+
+| Queue | Records | Interpretation |
+| --- | ---: | --- |
+| Abu Dhabi / Ghantoot | 347 | Every Abu Dhabi project; 6 have Ghantoot/Ghantout in title/area/crosswalk |
+| Palm Jebel Ali | 7 | Palm Jebel Ali project/phase records and community selected by exact geography label |
+| Umm Al Quwain | 25 | All 20 projects and 5 communities |
+| Fujairah | 3 | Its 1 project and 2 communities |
+| All-emirates remainder | 1,478 | All other records including Abu Dhabi communities |
+| **Total** | **1,860** | All stable record IDs retained once |
+
+The generator flagged **36 duplicate-normalized-name records** for review and **1,059 project records without an accepted exact native authority ID** in its existing register evidence. This is an identity-review queue count, not the count of projects without any published registration evidence. Source facts, quotes, history rows and scenario values are unchanged. The underlying snapshot SHA-256 is `c48c614b0c1e71fb7d0baf687c02890f64b84da06139b5cd39885f2f82d00110`.
+
 ## Explicit handoff — Cloudflare operator only
 
 1. Review and merge this PR with PR #98 reconciliation (never overwrite its newer branch).
