@@ -1,0 +1,50 @@
+name: Aldar historical launch capture (GitHub only)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/aldar-launch-pass48.yml'
+      - 'scripts/capture-aldar-launches-pass48.py'
+      - 'tests/aldar-launch-capture.test.py'
+      - 'data/historical-intelligence/aldar-launches-20261014/source-plan.json'
+permissions:
+  contents: read
+jobs:
+  capture:
+    if: github.repository == 'gugmaae-prog/espacios' && github.event.pull_request.number == 100 && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tests/aldar-launch-capture.test.py
+      - name: Verify exact V47 catalogue and authority crosswalks
+        run: |
+          python3 scripts/capture-aldar-launches-pass48.py --verify-only \
+            --plan data/historical-intelligence/aldar-launches-20261014/source-plan.json \
+            --snapshot data/historical-intelligence-20261003.json.gz --output /tmp/aldar-launch-capture.json
+      - name: Bounded five-page metadata collection; no evidence promotion
+        run: |
+          sha256sum data/historical-intelligence-20261003.json.gz data/historical-intelligence/publication-manifest.json > /tmp/aldar-preservation.sha256
+          python3 scripts/capture-aldar-launches-pass48.py \
+            --plan data/historical-intelligence/aldar-launches-20261014/source-plan.json \
+            --snapshot data/historical-intelligence-20261003.json.gz --output /tmp/aldar-launch-capture.json
+          sha256sum --check /tmp/aldar-preservation.sha256
+      - name: Preserve pinned local-review inputs and normalized captures
+        run: |
+          mkdir -p /tmp/aldar-pass48-review
+          cp /tmp/aldar-launch-capture.json /tmp/aldar-pass48-review/
+          cp data/historical-intelligence/aldar-launches-20261014/source-plan.json /tmp/aldar-pass48-review/
+          git rev-parse HEAD > /tmp/aldar-pass48-review/COMMIT
+          tar -czf /tmp/aldar-pass48-review/v47-inputs.tar.gz data/historical-intelligence-20261003.json.gz data/historical-intelligence/publication-manifest.json data/historical-intelligence/runtime-index.json data/historical-intelligence/reviewed-regional-20261014 scripts tests package.json docs/HISTORICAL-INTELLIGENCE.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aldar-launch-pass48-review
+          path: /tmp/aldar-pass48-review/
+          if-no-files-found: warn
+          retention-days: 30
