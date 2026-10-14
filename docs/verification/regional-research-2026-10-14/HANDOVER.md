@@ -57,3 +57,5 @@ The generator flagged **36 duplicate-normalized-name records** for review and **
 No remote publication or activation has been requested or performed here.
 
 **CI storage prerequisite:** The initial independent storage job was blocked because a generated immutable CSV object was not in the checkout (`ENOENT`); this does **not** show data loss in the approved snapshot. The dedicated job now executes the local, non-network `history:build` before `history:verify:storage`, reproducing the required objects and preserving the no-remote-write boundary. The failure is retained in the workflow history.
+
+**Marketed developer-name preservation:** The reduced pinned 2026-10-03 inventory omits many marketed developer strings. The queue now optionally joins the retained **legacy `enrichment/2026-09-22/data/map-core.json`** by exactly matching stable record ID and emirate (no name-only fan-out), and labels these fields `marketingDeveloperUnverified`. It never substitutes marketed names for proven legal developers; later authority-only records may remain blank.

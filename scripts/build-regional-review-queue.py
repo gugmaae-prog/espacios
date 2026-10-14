@@ -73,9 +73,10 @@ def explicit_id_proofs(rec):
     return proofs, None
 
 
-def compact_record(rec, catalogue, duplicate_names):
+def compact_record(rec, catalogue, duplicate_names, raw_catalogue=None):
     base = catalogue.get(rec["id"], {})
     m = base.get("mapRecord") or {}
+    raw = (raw_catalogue or {}).get(rec["id"]) or {}
     status = rec.get("researchStatus") or {}
     item_statuses = {k: (v or {}).get("status", "unestablished")
                      for k, v in (status.get("itemCoverage") or {}).items()}
@@ -119,7 +120,9 @@ def compact_record(rec, catalogue, duplicate_names):
         "name": rec["name"], "region": region, "priority": priority,
         "ghantootNameOrAreaFlag": near_ghantoot,
         "catalogueArea": m.get("area"), "communityId": rec.get("communityId"),
-        "marketingDeveloperUnverified": m.get("developer") or base.get("facts", {}).get("Developer"),
+        "marketingDeveloperUnverified": m.get("developer") or base.get("facts", {}).get("Developer") or (
+            raw.get("developer") if raw.get("emirate") == rec.get("emirate") else None),
+        "developerSourceId": "legacy_catalogue_same_stable_id" if raw.get("developer") and raw.get("emirate") == rec.get("emirate") else None,
         "legalDeveloper": None,
         "aliasesExplicit": rec.get("aliases") or [],
         "authorityProofs": proofs,
@@ -147,7 +150,7 @@ def compact_record(rec, catalogue, duplicate_names):
     }
 
 
-def compile_queue(snapshot, inventory, publication):
+def compile_queue(snapshot, inventory, publication, raw_catalogue=None):
     if snapshot.get("version") != publication.get("version"):
         raise ValueError("Snapshot and publication manifest versions disagree")
     records = snapshot.get("records") or []
@@ -162,7 +165,7 @@ def compile_queue(snapshot, inventory, publication):
     if set(catalogue) != set(ids):
         raise ValueError("Source catalogue IDs differ from reviewed snapshot")
     names = collections.Counter((x.get("type"), x.get("emirate"), normalized(x.get("name"))) for x in records)
-    output = [compact_record(x, catalogue, names) for x in records]
+    output = [compact_record(x, catalogue, names, raw_catalogue) for x in records]
     output.sort(key=lambda x: (x["priority"], not x["ghantootNameOrAreaFlag"],
                                x["emirate"], x["name"].casefold(), x["id"]))
     if len(output) != 1860 or set(x["id"] for x in output) != set(ids):
@@ -187,7 +190,14 @@ def main():
         inventory = json.load(source)
     publication = read_json(publication_path)
     snapshot = read_json(index_path)
-    output = compile_queue(snapshot, inventory, publication)
+    legacy_path = ROOT / "enrichment/2026-09-22/data/map-core.json"
+    legacy = read_json(legacy_path)
+    raw_catalogue = {x["id"]: x for x in legacy.get("projects") or []}
+    if len(raw_catalogue) != len(legacy.get("projects") or []) or any(
+        x["id"] not in {y["id"] for y in snapshot["records"]} for x in legacy.get("projects") or []
+    ):
+        raise ValueError("Legacy marketed developer catalogue IDs must be exact subset")
+    output = compile_queue(snapshot, inventory, publication, raw_catalogue)
     counts = collections.Counter(x["region"] for x in output)
     priority_counts = {name: counts.get(name, 0) for name in QUEUED_REGIONS}
     inventory_bytes = "".join(canonical_json(x) + "\n" for x in output).encode("utf-8")
@@ -198,6 +208,8 @@ def main():
         "snapshotSha256": digest(index_path),
         "manifestSha256": digest(publication_path),
         "inventoryGzipSha256": digest(input_path),
+        "legacyDeveloperCatalogueSha256": digest(legacy_path),
+        "recordsWithRawMarketingDeveloper": sum(bool(x["marketingDeveloperUnverified"]) for x in output),
         "fixedRecords": {"projects": FIXED[0], "communities": FIXED[1], "total": 1860},
         "queueCounts": priority_counts,
         "ghantootFlagged": sum(x["ghantootNameOrAreaFlag"] for x in output),

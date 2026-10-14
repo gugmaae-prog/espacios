@@ -41,6 +41,18 @@ class RegionalQueueTests(unittest.TestCase):
         self.assertIn("parent_phase_scope_review", rows["reviewReasons"])
         self.assertEqual(rows["financialEvidence"]["directSaleSeries"], [])
 
+    def test_legacy_developer_requires_same_stable_id_and_emirate(self):
+        rec = record("project:a", "Example", "Dubai")
+        row = module.compact_record(rec, {"project:a": {}},
+                                    {("project", "Dubai", "example"): 1},
+                                    {"project:a": {"developer": "Named Seller", "emirate": "Dubai"}})
+        self.assertEqual(row["marketingDeveloperUnverified"], "Named Seller")
+        self.assertIsNone(row["legalDeveloper"])
+        other = module.compact_record(rec, {"project:a": {}},
+                                      {("project", "Dubai", "example"): 1},
+                                      {"project:a": {"developer": "Wrong Area", "emirate": "Abu Dhabi"}})
+        self.assertIsNone(other["marketingDeveloperUnverified"])
+
     def test_duplicate_names_trigger_review(self):
         r = record("project:a", "Example Tower", "Dubai")
         row = module.compact_record(r, {"project:a": {}},
