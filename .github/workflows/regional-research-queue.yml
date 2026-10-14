@@ -3,7 +3,10 @@ on:
   pull_request:
     paths:
       - 'scripts/build-regional-review-queue.py'
+      - 'scripts/review_regional_sources.py'
       - 'tests/regional-research-queue.test.py'
+      - 'tests/regional-source-review.test.py'
+      - 'data/historical-intelligence/research-candidates/regional-primary-20261014-v2.json'
       - 'data/historical-intelligence/inputs/**'
       - 'data/historical-intelligence/publication-manifest.json'
       - 'data/historical-intelligence-20261003.json'
@@ -17,23 +20,38 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python3 tests/regional-research-queue.test.py
+      - run: python3 tests/regional-source-review.test.py
       - run: python3 scripts/build-regional-review-queue.py --verify-only
       - run: python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/2026-10-14
+      - name: Bounded public metadata review; no evidence promotion
+        run: |
+          sha256sum data/historical-intelligence-20261003.json data/historical-intelligence/publication-manifest.json > /tmp/regional-preservation.sha256
+          python3 scripts/review_regional_sources.py \
+            --plan data/historical-intelligence/research-candidates/regional-primary-20261014-v2.json \
+            --queue data/historical-intelligence/review-queues/2026-10-14/all-records.jsonl \
+            --collect --output data/historical-intelligence/review-queues/2026-10-14/primary-capture-v2.json
+          sha256sum --check /tmp/regional-preservation.sha256
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
       - run: npm ci
       - run: npm run history:build
+      - run: npm test
+      - run: npm run check
+      - run: npm run build:smart
       - run: npm run history:verify:storage
       - name: Publish review artifact (not an evidence publication)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: all-emirates-review-queue-20261014
+          name: regional-primary-20261014-v2
           path: data/historical-intelligence/review-queues/2026-10-14/
           if-no-files-found: error
           retention-days: 30
