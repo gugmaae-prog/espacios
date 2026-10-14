@@ -1,0 +1,32 @@
+name: Regional research queue (read-only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/build-regional-review-queue.py'
+      - 'tests/regional-research-queue.test.py'
+      - 'data/historical-intelligence/inputs/**'
+      - 'data/historical-intelligence/publication-manifest.json'
+      - 'data/historical-intelligence-20261003.json'
+      - '.github/workflows/regional-research-queue.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tests/regional-research-queue.test.py
+      - run: python3 scripts/build-regional-review-queue.py --verify-only
+      - run: python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/2026-10-14
+      - name: Publish review artifact (not an evidence publication)
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-emirates-review-queue-20261014
+          path: data/historical-intelligence/review-queues/2026-10-14/
+          if-no-files-found: error
+          retention-days: 30
