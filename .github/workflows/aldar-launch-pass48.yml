@@ -1,20 +1,12 @@
 name: Aldar historical launch capture (GitHub only)
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/aldar-launch-pass48.yml'
-      - 'scripts/capture-aldar-launches-pass48.py'
-      - 'scripts/capture-aldar-downloads-pass48.py'
-      - 'tests/aldar-launch-capture.test.py'
-      - 'tests/aldar-download-capture.test.py'
-      - 'data/historical-intelligence/aldar-launches-20261014/source-plan.json'
-      - 'data/historical-intelligence/aldar-launches-20261014/official-downloads.json'
+  workflow_dispatch:
 permissions:
   contents: read
   actions: read
 jobs:
   capture:
-    if: github.repository == 'gugmaae-prog/espacios' && github.event.pull_request.number == 100 && github.event.pull_request.head.repo.full_name == github.repository
+    if: github.repository == 'gugmaae-prog/espacios'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
