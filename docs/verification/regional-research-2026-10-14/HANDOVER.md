@@ -55,3 +55,5 @@ The generator flagged **36 duplicate-normalized-name records** for review and **
 8. Reconcile Supabase release registry and control plane, preserving audit history.
 
 No remote publication or activation has been requested or performed here.
+
+**CI storage prerequisite:** The initial independent storage job was blocked because a generated immutable CSV object was not in the checkout (`ENOENT`); this does **not** show data loss in the approved snapshot. The dedicated job now executes the local, non-network `history:build` before `history:verify:storage`, reproducing the required objects and preserving the no-remote-write boundary. The failure is retained in the workflow history.

@@ -28,6 +28,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run history:build
       - run: npm run history:verify:storage
       - name: Publish review artifact (not an evidence publication)
         uses: actions/upload-artifact@v4
