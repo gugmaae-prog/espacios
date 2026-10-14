@@ -6,6 +6,9 @@ on:
       - 'scripts/*regional*'
       - 'tests/*regional*'
       - 'data/historical-intelligence/reviewed-regional-20261014/**'
+concurrency:
+  group: regional-v47-candidate
+  cancel-in-progress: true
 permissions:
   contents: read
   actions: read
@@ -44,8 +47,8 @@ jobs:
           if [ "$CURRENT" = '20261014-enrichment-v47' ]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
           else
-            git read-tree -m -u "$COMMON" "$START" "$PRIOR"
-            test -z "$(git ls-files -u)"
+            git read-tree -m -u --aggressive "$COMMON" "$START" "$PRIOR"
+            if test -n "$(git ls-files -u)"; then git ls-files -u; exit 1; fi
             echo 'apply=true' >> "$GITHUB_OUTPUT"
           fi
       - uses: actions/setup-node@v4
@@ -68,6 +71,7 @@ jobs:
           python3 scripts/generate-reviewed-regional-packet.py
           python3 scripts/append-reviewed-regional-pass.py --output /tmp/regional-v47-candidate
           python3 scripts/pack-reviewed-regional-pass.py --candidate-dir /tmp/regional-v47-candidate
+          python3 scripts/update-regional-regression-expectations.py
       - name: Verify candidate archive and new identity/preservation tests
         run: |
           npm run history:build
@@ -75,6 +79,7 @@ jobs:
           python3 tests/reviewed-regional-pass.test.py
           python3 tests/regional-research-queue.test.py
           python3 scripts/build-regional-review-queue.py --verify-only
+      - run: npm run build:smart
       - run: npm test
       - run: npm run check
       - run: npm run build:smart
@@ -87,6 +92,7 @@ jobs:
           python3 scripts/write-regional-pass-handover.py
           git add -f data/historical-intelligence-20261003.json.gz
           git add -f data/historical-intelligence/objects data/historical-intelligence/publication-manifest.json data/historical-intelligence/runtime-index.json data/historical-intelligence/reviewed-regional-20261014
+          git add tests .github/workflows/regional-research-queue.yml scripts/write-regional-pass-handover.py
           git add docs/DATA_SOURCING_WORKFLOW.md docs/HISTORICAL-INTELLIGENCE.md docs/verification/regional-research-2026-10-14/ACCEPTED-PASS47.md
           git diff --cached --check
           git config user.name 'github-actions[bot]'
