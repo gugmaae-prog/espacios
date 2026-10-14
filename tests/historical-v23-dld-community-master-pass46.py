@@ -62,10 +62,10 @@ assert '"transaction_id"' not in serialized
 assert '"transactionId"' not in serialized
 
 manifest = json.loads((BASE / "publication-manifest.json").read_text())
-assert manifest["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24", "20261008-enrichment-v25"}
+assert manifest["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24", "20261008-enrichment-v25", "20261008-enrichment-v26", "20261008-enrichment-v27", "20261008-enrichment-v28", "20261008-enrichment-v29", "20261008-enrichment-v30", "20261008-enrichment-v31", "20261008-enrichment-v32","20261008-enrichment-v33", "20261008-enrichment-v34", "20261008-enrichment-v35","20261008-enrichment-v36","20261008-enrichment-v37","20261008-enrichment-v38", "20261009-enrichment-v39", "20261009-enrichment-v40", "20261012-enrichment-v41",'20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47'}
 snapshot_path = Path(manifest["rootIndex"]["path"])
 snapshot = json.loads(gzip.decompress(snapshot_path.read_bytes()))
-assert snapshot["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24", "20261008-enrichment-v25"}
+assert snapshot["version"] in {"20261008-enrichment-v23", "20261008-enrichment-v24", "20261008-enrichment-v25", "20261008-enrichment-v26", "20261008-enrichment-v27", "20261008-enrichment-v28", "20261008-enrichment-v29", "20261008-enrichment-v30", "20261008-enrichment-v31", "20261008-enrichment-v32","20261008-enrichment-v33", "20261008-enrichment-v34", "20261008-enrichment-v35","20261008-enrichment-v36","20261008-enrichment-v37","20261008-enrichment-v38", "20261009-enrichment-v39", "20261009-enrichment-v40", "20261012-enrichment-v41",'20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47'}
 assert len(snapshot["records"]) == 1860
 assert sum(record["type"] == "project" for record in snapshot["records"]) == 1645
 assert sum(record["type"] == "community" for record in snapshot["records"]) == 215

@@ -66,6 +66,15 @@ async function capture(cdp,name){
   const target=path.join(OUT,`${name}.png`);await writeFile(target,Buffer.from(shot.data,'base64'));return target;
 }
 
+async function trustedClick(cdp,selector){
+  const box=await evaluate(cdp,`(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el)return null;const r=el.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,hit=document.elementFromPoint(x,y);return {x,y,width:r.width,height:r.height,inViewport:x>=0&&x<=innerWidth&&y>=0&&y<=innerHeight,hitTarget:hit===el||hit?.closest?.(${JSON.stringify(selector)})===el};})()`);
+  assert.ok(box,`Missing ${selector}.`);
+  assert.ok(box.width>0&&box.height>0&&box.inViewport,`${selector} is not a visible click target.`);
+  assert.ok(box.hitTarget,`${selector} is covered at its click target.`);
+  await cdp.call('Input.dispatchMouseEvent',{type:'mousePressed',x:box.x,y:box.y,button:'left',buttons:1,clickCount:1});
+  await cdp.call('Input.dispatchMouseEvent',{type:'mouseReleased',x:box.x,y:box.y,button:'left',buttons:0,clickCount:1});
+}
+
 async function runCase(port,{name,width,height,mobile}){
  const cdp=await newPage(port),exceptions=[],networkFailures=[];
  cdp.on('Runtime.exceptionThrown',p=>exceptions.push(p.exceptionDetails?.exception?.description||p.exceptionDetails?.text));
@@ -75,6 +84,10 @@ async function runCase(port,{name,width,height,mobile}){
  if(mobile)await cdp.call('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
  await cdp.call('Page.navigate',{url:BASE});
  try{await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});}catch(error){console.log(JSON.stringify({name,exceptions,networkFailures}));await capture(cdp,name+'-initialization-failure');throw error;}
+ const release=await evaluate(cdp,"({minimal:window.__ESPACIOS_MINIMAL_MAP_RELEASE__,mobile:window.__ESPACIOS_MOBILE_MAP__?.release,script:document.querySelector('script[src*=\\\"app-v2.js\\\"]')?.src,style:document.querySelector('link[href*=\\\"app-v2.css\\\"]')?.href})");
+ const expectedRelease='20261013-map-mobile-disclosures-v5';
+ assert.deepEqual({minimal:release.minimal,mobile:release.mobile},{minimal:expectedRelease,mobile:expectedRelease},name+' delivered mobile release markers');
+ assert.ok(release.script?.includes(expectedRelease)&&release.style?.includes(expectedRelease),name+' delivered immutable v5 asset URLs');
  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali'); true");
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Financial coverage')",{label:name+' PJA coverage'});
  const index=await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),options:document.querySelector('#hi-record-select').options.length,sources:[...document.querySelectorAll('#hi-body a')].every(a=>a.href.startsWith('https://')),chart:document.querySelector('.hi-chart figcaption')?.textContent})");
@@ -116,8 +129,14 @@ async function runCase(port,{name,width,height,mobile}){
   assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' background inspector refresh preserves history');
   await evaluate(cdp,"document.querySelector('#timeline-panel').classList.remove('hidden');new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
   assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' delayed workspace restore preserves history');
-  await evaluate(cdp,"document.querySelector('.rail-btn[data-panel=\"timeline\"]').click();true");
-  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#timeline-panel').classList.contains('hidden')",{label:name+' explicit rail navigation owns mobile sheet'});
+  await trustedClick(cdp,'.rail-btn[data-panel="timeline"]');
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#timeline-panel').classList.contains('hidden')&&document.documentElement.dataset.umExplore==='1'",{label:name+' direct Explore navigation owns mobile sheet'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after direct Explore navigation'});
+  await trustedClick(cdp,'#minimal-tools-toggle');
+  await waitFor(cdp,"document.documentElement.dataset.minimalTools==='1'",{label:name+' Map tools disclosure'});
+  await trustedClick(cdp,'#minimal-kind-controls button[data-value="places"]');
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#places-panel').classList.contains('hidden')",{label:name+' explicit Map tools navigation owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after rail navigation'});
   await evaluate(cdp,"document.querySelector('#um-details').click();true");
@@ -128,6 +147,10 @@ async function runCase(port,{name,width,height,mobile}){
   await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' legacy explicit Details owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after legacy Details'});
+  if(await evaluate(cdp,"document.querySelector('#tl-dock').classList.contains('is-minimized')")){
+    await trustedClick(cdp,'#minimal-timeline-toggle');
+    await waitFor(cdp,"!document.querySelector('#tl-dock').classList.contains('is-minimized')",{label:name+' expand timeline before verifying event touch targets'});
+  }
  }
  try {await waitFor(cdp,`(()=>{const p=document.querySelector('#hi-panel').getBoundingClientRect(),b=document.querySelector('#hi-body').getBoundingClientRect(),d=document.querySelector('#tl-dock').getBoundingClientRect();return Math.min(b.bottom,p.bottom-12)-Math.max(b.top,p.top)>=119&&(window.EspaciosHistoricalUI.getState().layout==='expanded'||p.bottom<=d.top+1)})()`,{label:name+' visible history body and stable dock geometry'});} catch(error) {
   console.log(JSON.stringify(await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),panel:document.querySelector('#hi-panel').getBoundingClientRect().toJSON(),body:document.querySelector('#hi-body').getBoundingClientRect().toJSON(),dock:document.querySelector('#tl-dock').getBoundingClientRect().toJSON()})")));

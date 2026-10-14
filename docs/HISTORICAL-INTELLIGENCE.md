@@ -74,3 +74,8 @@ User calculations use disclosed assumptions and allow capital losses, negative r
 ## Research completion
 
 The retained inventory, source partitions, queue and coverage matrix make every record accountable. Completion still requires evidence for its own earliest verifiable history, explicit identification of each applicable period, current unit/segment facts, and matching financial observations. Missing sources remain sourcing work. Rights-pending numeric sources remain unreleased; a public link or metadata entry is not permission to redistribute a full dataset.
+
+
+## Accepted regional pass V47 — 14 October 2026
+
+The current GitHub-only candidate extends checksum-verified V46 with 20 accepted facts on 16 records (14 asking-price observations, three launch quarters and three planned completion targets). It preserves the fixed catalogue and native history. The older queue-only figures above are earlier-pass receipts. See [the current handover](verification/regional-research-2026-10-14/ACCEPTED-PASS47.md) for exact source decisions, coverage changes, verification and the separate operator boundary. No publication or production activation is implied.

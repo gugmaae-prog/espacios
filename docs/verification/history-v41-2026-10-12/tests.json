@@ -1,0 +1,18 @@
+{
+  "command": "npm run verify",
+  "exitCode": 0,
+  "suiteTestCounts": [
+    "152",
+    "1",
+    "56",
+    "175"
+  ],
+  "suiteFailureCounts": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "individualCoverageRegression": true,
+  "identityReview": "passed"
+}

@@ -1,0 +1,1037 @@
+{
+  "version": 1,
+  "passId": "rak-financial-pass37-20261008",
+  "asOf": "2026-10-08",
+  "priorVersion": "20261008-enrichment-v36",
+  "candidateVersion": "20261008-enrichment-v37",
+  "sources": [
+    {
+      "id": "rak37-rak-fy2024",
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Investor-PPT-2024-Digital_new.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Investor-PPT-2024-Digital_new.pdf",
+      "httpStatus": 200,
+      "bytes": 11070973,
+      "sha256": "fee42a8a605875cd76986502b7a888bcb3c52b319afcb659a1210f7d9fd0fb59",
+      "retrievedAt": "2026-10-08T22:27:48.283Z",
+      "title": "RAK Properties FY2024 investor report, pages 10 and 30",
+      "publisher": "RAK Properties",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "primaryEvidence": true,
+      "classification": "primary_developer_investor_report",
+      "publicationDateStatus": "Unknown; reporting period and upload path do not establish publication day",
+      "availabilityBasis": "Current source vintage first verified at retrieval; no historical backtest availability inferred",
+      "reviewedPages": [
+        10,
+        30
+      ],
+      "visualPagesChecked": true,
+      "licence": "rights_pending: minimal attributed facts only; raw PDFs, articles and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "reportingPeriod": "2024",
+      "pageCount": 51
+    },
+    {
+      "id": "rak37-nb-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-exclusive-beachfront-villas-on-hayat-island-ras-al-khaimah/",
+      "finalUrl": "https://www.rakproperties.ae/news/rak-properties-launches-exclusive-beachfront-villas-on-hayat-island-ras-al-khaimah/",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T22:55:49.918Z",
+      "bytes": 46968,
+      "sha256": "744dc5ad1f2a274e1c71f7e66affcfa253062530cdde120d81568b86ac6ce57e",
+      "contentType": "text/html; charset=UTF-8",
+      "title": "NB Collection launch on Hayat Island, 26 June 2024",
+      "publisher": "RAK Properties",
+      "publishedAt": "2024-06-26",
+      "firstAvailableAt": "2026-10-08T22:55:49.918Z",
+      "primaryEvidence": true,
+      "classification": "primary_operator_announcement",
+      "publicationDateStatus": "Date displayed by the issuing organisation; this captured vintage was first verified at retrieval",
+      "availabilityBasis": "Current source vintage first verified at retrieval; no historical backtest availability inferred",
+      "reviewedPages": [],
+      "visualPagesChecked": false,
+      "licence": "rights_pending: minimal attributed facts only; raw PDFs, articles and rendered pages are not redistributed",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak37-ihg-opening-2022",
+      "url": "https://www.ihgplc.com/en/news-and-media/news-releases/2022/intercontinental-ras-ai-khaimah-mina-ai-arab-resort-and-spa-opens-its-doors",
+      "finalUrl": "https://www.ihgplc.com/en/news-and-media/news-releases/2022/intercontinental-ras-ai-khaimah-mina-ai-arab-resort-and-spa-opens-its-doors",
+      "httpStatus": 200,
+      "bytes": 104897,
+      "sha256": "94fd6b655ddf2728e627455a578ca8f46baad27e4fac113cdcd118f0e52dd77b",
+      "retrievedAt": "2026-10-08T22:27:38.302Z",
+      "title": "InterContinental Ras Al Khaimah Mina Al Arab opening announcement",
+      "publisher": "IHG Hotels & Resorts",
+      "publishedAt": "2022-03-03",
+      "firstAvailableAt": "2026-10-08T22:27:38.302Z",
+      "primaryEvidence": true,
+      "classification": "primary_operator_announcement",
+      "publicationDateStatus": "Date displayed by the issuing organisation; this captured vintage was first verified at retrieval",
+      "availabilityBasis": "Current source vintage first verified at retrieval; no historical backtest availability inferred",
+      "reviewedPages": [],
+      "visualPagesChecked": false,
+      "licence": "rights_pending: minimal attributed facts only; raw PDFs, articles and rendered pages are not redistributed",
+      "rawBodyRedistributed": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "rak37-bayviews-reported-sales",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Bayviews Residences Hayat Island record matches the primary identity release and the FY2024 developer table.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 344,
+        "unit": "developer-reported units sold",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Bayviews",
+          "unitsLaunched": 344,
+          "unitsSold": 344,
+          "netSalesAEDMillion": 421,
+          "revenueBacklogAEDMillion": 240,
+          "reportedSoldPercent": 100,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": 43,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-bayviews-progress",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Bayviews Residences Hayat Island record matches the primary identity release and the FY2024 developer table.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer reports 43% construction completion as of 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024",
+      "progressPercent": 43
+    },
+    {
+      "id": "rak37-marbella2-reported-sales",
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-marbella2-contract"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. Marbella Extension is the 89-home Phase 2, not the original 205-home project.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 85,
+        "unit": "developer-reported units sold",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Marbella Extension",
+          "unitsLaunched": 89,
+          "unitsSold": 85,
+          "netSalesAEDMillion": 225,
+          "revenueBacklogAEDMillion": 0,
+          "reportedSoldPercent": 95,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": 99,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-marbella2-progress",
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-marbella2-contract"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. Marbella Extension is the 89-home Phase 2, not the original 205-home project.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer reports 99% construction completion as of 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024",
+      "progressPercent": 99
+    },
+    {
+      "id": "rak37-cape-reported-sales",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Cape Hayat record matches the primary identity release and the FY2024 developer table.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 650,
+        "unit": "developer-reported units sold",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Cape Hayat",
+          "unitsLaunched": 678,
+          "unitsSold": 650,
+          "netSalesAEDMillion": 965,
+          "revenueBacklogAEDMillion": 617,
+          "reportedSoldPercent": 96,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": 36,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-cape-progress",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Cape Hayat record matches the primary identity release and the FY2024 developer table.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer reports 36% construction completion as of 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024",
+      "progressPercent": 36
+    },
+    {
+      "id": "rak37-quattro-reported-sales",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Quattro Del Mar record matches the primary identity release and the FY2024 developer table. The 888 launched units are a dated table population, retained alongside the Q2 figure of 631; no catalogue inventory overwrite.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 507,
+        "unit": "developer-reported units sold",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Quattro Del Mar",
+          "unitsLaunched": 888,
+          "unitsSold": 507,
+          "netSalesAEDMillion": 687,
+          "revenueBacklogAEDMillion": 606,
+          "reportedSoldPercent": 57,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": 12,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-quattro-progress",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Quattro Del Mar record matches the primary identity release and the FY2024 developer table. The 888 launched units are a dated table population, retained alongside the Q2 figure of 631; no catalogue inventory overwrite.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer reports 12% construction completion as of 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024",
+      "progressPercent": 12
+    },
+    {
+      "id": "rak37-edge-reported-sales",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing EDGE record matches the primary identity release and the FY2024 developer table.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 188,
+        "unit": "developer-reported units sold",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "The Edge",
+          "unitsLaunched": 237,
+          "unitsSold": 188,
+          "netSalesAEDMillion": 205,
+          "revenueBacklogAEDMillion": 205,
+          "reportedSoldPercent": 80,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": "NIL",
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-edge-progress",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing EDGE record matches the primary identity release and the FY2024 developer table.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress_not_reported",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer table reports construction completion as NIL at 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024"
+    },
+    {
+      "id": "rak37-nb-reported-sales",
+      "recordId": "project:nb-collection-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak37-nb-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing NB Collection by RAK Properties on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. The dated launch identifies 11 NB Collection villas on Hayat Island; the report plural NB Collections and 11-unit population refer to the same project.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:55:49.918Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 1,
+        "unit": "developer-reported units sold",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "NB Collections",
+          "unitsLaunched": 11,
+          "unitsSold": 1,
+          "netSalesAEDMillion": 24,
+          "revenueBacklogAEDMillion": 24,
+          "reportedSoldPercent": 9,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": "NIL",
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-nb-progress",
+      "recordId": "project:nb-collection-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak37-nb-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing NB Collection by RAK Properties on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. The dated launch identifies 11 NB Collection villas on Hayat Island; the report plural NB Collections and 11-unit population refer to the same project.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:55:49.918Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress_not_reported",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer table reports construction completion as NIL at 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024"
+    },
+    {
+      "id": "rak37-nb-announcement",
+      "recordId": "project:nb-collection-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-nb-launch"
+      ],
+      "identitySourceIds": [
+        "rak37-nb-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing NB Collection by RAK Properties on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. The dated launch identifies 11 NB Collection villas on Hayat Island; the report plural NB Collections and 11-unit population refer to the same project.",
+      "primaryEvidence": true,
+      "publishedAt": "2024-06-26",
+      "firstAvailableAt": "2026-10-08T22:55:49.918Z",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2024-06-26",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "RAK Properties announces the 11-villa NB Collection on Hayat Island.",
+      "note": "Dated developer announcement, not proof of first-ever marketing, first sale, construction start or earlier land-value inapplicability.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Developer release date displayed as 26 June 2024"
+    },
+    {
+      "id": "rak37-porto-reported-sales",
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-porto-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Porto Playa record matches the primary identity release and the FY2024 developer table. Native table figures retain the 50% JV equity-accounting basis; no whole-project doubling.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "financial",
+      "scope": "subject",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 139,
+        "unit": "developer-reported units sold (50% JV reporting basis)",
+        "period": "2024-12-31",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "observationDateBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+        "note": "Developer cumulative sales and revenue backlog are not registered transactions, cash collections, unit prices or valuations. Even a row with one reported unit does not establish a registered sale or an individual property price. No averages or period-to-period sales flows are derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Porto Playa",
+          "unitsLaunched": 141,
+          "unitsSold": 139,
+          "netSalesAEDMillion": 361,
+          "revenueBacklogAEDMillion": 344,
+          "reportedSoldPercent": 98,
+          "asOf": "2024-12-31",
+          "reportingPeriod": "2024",
+          "sourcePage": 30,
+          "reportedConstructionComplete": 5,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "50% share as per JV equity accounting; native reported values, not whole-project totals",
+          "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak37-porto-progress",
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-porto-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Porto Playa record matches the primary identity release and the FY2024 developer table. Native table figures retain the 50% JV equity-accounting basis; no whole-project doubling.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-12-31",
+        "precision": "day"
+      },
+      "scope": "subject",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer reports 5% construction completion as of 31 December 2024.",
+      "note": "Reported progress is not an inspection, legal completion certificate, occupancy or rental commencement. NIL remains literal and does not establish numeric zero. Earlier reporting vintages remain unchanged.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 30,
+      "dateBasis": "FY2024 investor report table as of 31 December 2024",
+      "progressPercent": 5
+    },
+    {
+      "id": "rak37-mina-anantara-opening",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identitySourceIds": [
+        "rak37-rak-fy2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah. Named operating hotels are community components only, not branded residences or whole-community occupancy.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T22:27:48.283Z",
+      "kind": "lifecycle",
+      "milestone": "phase_opening",
+      "date": {
+        "start": "2024-01-02",
+        "precision": "day"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "Developer reports Anantara Mina Al Arab hotel opened on 2 January 2024.",
+      "note": "Hotel opening does not establish residential occupancy, apartment rents or a property-price uplift.",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 10,
+      "phaseLabel": "Anantara Mina Al Arab hotel",
+      "dateBasis": "FY2024 investor timeline explicitly dates the hotel opening",
+      "relatedMilestoneIds": [
+        "rak36-mina-anantara-opening-target",
+        "rak36-mina-anantara-completion-target"
+      ],
+      "dateReconciliation": "Actual opening report retained alongside earlier 2019 opening and 2021 completion targets; those targets are not overwritten."
+    },
+    {
+      "id": "rak37-mina-intercontinental-opening-report",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak37-ihg-opening-2022"
+      ],
+      "identitySourceIds": [
+        "rak37-ihg-opening-2022"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah. Named operating hotels are community components only, not branded residences or whole-community occupancy.",
+      "primaryEvidence": true,
+      "publishedAt": "2022-03-03",
+      "firstAvailableAt": "2026-10-08T22:27:38.302Z",
+      "kind": "lifecycle",
+      "milestone": "phase_opening_report",
+      "date": {
+        "start": "2022-03-03",
+        "precision": "day"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_operator_reported_milestone",
+      "label": "IHG reports that InterContinental Mina Al Arab has opened, in its 3 March 2022 release.",
+      "note": "The date is the opening announcement publication day, not a verified first operating day. This hotel component supplies no residential occupancy, rents or price uplift.",
+      "preserveAdditionalLifecycleFields": true,
+      "phaseLabel": "InterContinental Ras Al Khaimah Mina Al Arab Resort & Spa",
+      "dateBasis": "Dated operator announcement; opening had occurred by publication, exact first operating day unestablished",
+      "relatedMilestoneIds": [
+        "rak36-mina-intercontinental-opening-target",
+        "rak36-mina-intercontinental-completion-target"
+      ],
+      "dateReconciliation": "Opening reported by March 2022 is retained alongside earlier 2019 opening and 2021 completion targets. No fabricated exact opening day."
+    }
+  ],
+  "seriesLinks": [],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "Bayviews Residences Hayat Island",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-bayviews-launch"
+      ],
+      "basis": "Exact existing Bayviews Residences Hayat Island record matches the primary identity release and the FY2024 developer table."
+    },
+    {
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-marbella2-contract"
+      ],
+      "basis": "Exact existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. Marbella Extension is the 89-home Phase 2, not the original 205-home project."
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "catalogueName": "Cape Hayat",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-cape-launch"
+      ],
+      "basis": "Exact existing Cape Hayat record matches the primary identity release and the FY2024 developer table."
+    },
+    {
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "catalogueName": "Quattro Del Mar",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-quattro-launch"
+      ],
+      "basis": "Exact existing Quattro Del Mar record matches the primary identity release and the FY2024 developer table. The 888 launched units are a dated table population, retained alongside the Q2 figure of 631; no catalogue inventory overwrite."
+    },
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "catalogueName": "EDGE",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak33-edge-launch"
+      ],
+      "basis": "Exact existing EDGE record matches the primary identity release and the FY2024 developer table."
+    },
+    {
+      "recordId": "project:nb-collection-by-rak-properties-on-hayat-island",
+      "catalogueName": "NB Collection by RAK Properties on Hayat Island, Ras Al Khaimah",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak37-nb-launch"
+      ],
+      "basis": "Exact existing NB Collection by RAK Properties on Hayat Island, Ras Al Khaimah record matches the primary identity release and the FY2024 developer table. The dated launch identifies 11 NB Collection villas on Hayat Island; the report plural NB Collections and 11-unit population refer to the same project."
+    },
+    {
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "catalogueName": "Porto Playa",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak37-rak-fy2024",
+        "rak32-porto-groundbreaking"
+      ],
+      "basis": "Exact existing Porto Playa record matches the primary identity release and the FY2024 developer table. Native table figures retain the 50% JV equity-accounting basis; no whole-project doubling."
+    },
+    {
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "catalogueName": "Mina Al Arab",
+      "type": "community",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "basis": "Exact Mina Al Arab community record in Ras Al Khaimah. Named operating hotels are community components only, not branded residences or whole-community occupancy."
+    }
+  ],
+  "nativeSalesSnapshots": [
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "sourceProjectLabel": "Bayviews",
+      "unitsLaunched": 344,
+      "unitsSold": 344,
+      "netSalesAEDMillion": 421,
+      "revenueBacklogAEDMillion": 240,
+      "reportedSoldPercent": 100,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": 43,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "sourceProjectLabel": "Marbella Extension",
+      "unitsLaunched": 89,
+      "unitsSold": 85,
+      "netSalesAEDMillion": 225,
+      "revenueBacklogAEDMillion": 0,
+      "reportedSoldPercent": 95,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": 99,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "sourceProjectLabel": "Cape Hayat",
+      "unitsLaunched": 678,
+      "unitsSold": 650,
+      "netSalesAEDMillion": 965,
+      "revenueBacklogAEDMillion": 617,
+      "reportedSoldPercent": 96,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": 36,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceProjectLabel": "Quattro Del Mar",
+      "unitsLaunched": 888,
+      "unitsSold": 507,
+      "netSalesAEDMillion": 687,
+      "revenueBacklogAEDMillion": 606,
+      "reportedSoldPercent": 57,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": 12,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "sourceProjectLabel": "The Edge",
+      "unitsLaunched": 237,
+      "unitsSold": 188,
+      "netSalesAEDMillion": 205,
+      "revenueBacklogAEDMillion": 205,
+      "reportedSoldPercent": 80,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": "NIL",
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:nb-collection-by-rak-properties-on-hayat-island",
+      "sourceProjectLabel": "NB Collections",
+      "unitsLaunched": 11,
+      "unitsSold": 1,
+      "netSalesAEDMillion": 24,
+      "revenueBacklogAEDMillion": 24,
+      "reportedSoldPercent": 9,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": "NIL",
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "sourceProjectLabel": "Porto Playa",
+      "unitsLaunched": 141,
+      "unitsSold": 139,
+      "netSalesAEDMillion": 361,
+      "revenueBacklogAEDMillion": 344,
+      "reportedSoldPercent": 98,
+      "asOf": "2024-12-31",
+      "reportingPeriod": "2024",
+      "sourcePage": 30,
+      "reportedConstructionComplete": 5,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "50% share as per JV equity accounting; native reported values, not whole-project totals",
+      "periodBasis": "Cumulative project snapshot as of 31 December 2024; not sales occurring only during December or 2024",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    }
+  ],
+  "collection": {
+    "projectRecords": 7,
+    "communityRecords": 1,
+    "acceptedLifecycleFacts": 10,
+    "acceptedDeveloperSalesSnapshots": 7,
+    "newSources": 3,
+    "registeredSaleOrRentObservationsAdded": 0,
+    "currentValuationsAdded": 0,
+    "unitPricesDerived": 0,
+    "approved2080Forecasts": 0,
+    "rawBodiesRedistributed": false
+  },
+  "conflicts": [
+    {
+      "field": "units_launched",
+      "resolution": "Quattro Q2 and FY2024 launched populations differ; both dated snapshots retained. No subtraction presented as comparable sales flows."
+    },
+    {
+      "field": "hotel_openings",
+      "resolution": "Hotel opening reports retain native date semantics and superseded targets; they do not establish residential occupancy."
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "recordId": "project:gateway-residences-for-sale-mina-al-arab-ras-al-khaimah-uae-by-rak-properties",
+      "reason": "Brochure and developer timeline distinguish phases but catalogue lacks a discriminating identity; Gateway II financials and original Gateway delivery are not attached to the project."
+    },
+    {
+      "recordId": "project:south-bay-residences-by-rak-properties-on-hayat-island-mina-al-arab-ras-al-khaimah",
+      "reason": "South-labelled brochure filename has generic Bay content; no verified South-to-Phase-II mapping. Both Bay financial rows remain unassigned."
+    },
+    {
+      "recordId": "project:granada-villas-mina-by-rak-properties-ras-al-khaimah-uae",
+      "reason": "Generic name remains ambiguous between original villas and 80-home Granada Extension. No 2010 delivery or extension financials assigned to this project."
+    },
+    {
+      "field": "corporate_investment_property_valuations_and_rents",
+      "reason": "2024 and 2025 audited statements report portfolio totals and valuation-input ranges without exact catalogue property identities. No allocation to projects or communities, per-unit division or current valuation credit."
+    },
+    {
+      "source": "minor-opening-2024",
+      "reason": "Direct operator capture failed; no source or coverage credit. Exact Anantara opening date is separately supported by reviewed developer report."
+    }
+  ],
+  "methodology": "Visually reviewed native table and timeline, checksummed primary captures, exact identity proofs and separately preserved reporting vintages. No average prices, registered sale inference, aggregate portfolio valuation allocation, NIL-to-zero conversion, hotel-to-residence fan-out or inferred historical online availability."
+}

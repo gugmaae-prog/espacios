@@ -1,0 +1,21 @@
+{
+  "origin": "https://e01d432f-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "checkedAt": "2026-10-11T22:40:53.667Z",
+  "rows": [
+    {
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "individualTransactions": 54,
+      "sparseMonths": 2,
+      "missingMonths": 0,
+      "aggregateMonths": 0
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "individualTransactions": 10,
+      "sparseMonths": 7,
+      "missingMonths": 2,
+      "aggregateMonths": 0
+    }
+  ],
+  "passed": true
+}

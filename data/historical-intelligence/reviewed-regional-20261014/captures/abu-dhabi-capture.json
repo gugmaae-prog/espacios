@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": 1,
+  "passId": "primary-abu-dhabi-20261014-v47",
+  "baselineSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "baselineVersion": "20261013-enrichment-v46",
+  "planSHA256": "af0390bce6782f976482ef2f98067f1b02aa848bfac19722c195db98567fc72f",
+  "httpRequests": 16,
+  "sources": [
+    {
+      "id": "adrec-624",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=624",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:624"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=624",
+      "contentType": "application/json; charset=utf-8",
+      "sha256": "ff8982de52c03c5cbc694b1edfdd01d9ae1229542cff8e1c73e80dfc8b16070d",
+      "retrievedAt": "2026-10-14T09:42:55Z",
+      "attemptedAt": "2026-10-14T09:42:48Z",
+      "firstAvailableAt": "2026-10-14T09:42:55Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://adrec.gov.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "retrievedAt": "2026-10-14T09:42:50Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {},
+      "responseBytes": 9365,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "authorityId": 624,
+        "projectNumber": "20250000579936",
+        "registration": "2025-09-12T00:00:00",
+        "progressPercent": 8.12,
+        "inspectionDate": "2026-09-16",
+        "inspectionPercent": 8.12,
+        "successEnvelope": true,
+        "excludedPrivateFields": true
+      }
+    },
+    {
+      "id": "adrec-628",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=628",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:628"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=628",
+      "contentType": "application/json; charset=utf-8",
+      "sha256": "e64857a0e6e511638a2de4a409f29b878a521394614fa604eb00be1b36433067",
+      "retrievedAt": "2026-10-14T09:42:59Z",
+      "attemptedAt": "2026-10-14T09:42:55Z",
+      "firstAvailableAt": "2026-10-14T09:42:59Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://adrec.gov.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "retrievedAt": "2026-10-14T09:42:50Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {},
+      "responseBytes": 6668,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "authorityId": 628,
+        "projectNumber": "20250000629160",
+        "registration": "2026-01-21T00:00:00",
+        "progressPercent": 8.96,
+        "inspectionDate": "2026-09-16",
+        "inspectionPercent": 8.96,
+        "successEnvelope": true,
+        "excludedPrivateFields": true
+      }
+    },
+    {
+      "id": "adrec-650",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=650",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:650"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=650",
+      "contentType": "application/json; charset=utf-8",
+      "sha256": "6db686dbdc4c72689dd382582a068d17c738631195548f9f4d2685cf9a290849",
+      "retrievedAt": "2026-10-14T09:43:03Z",
+      "attemptedAt": "2026-10-14T09:42:59Z",
+      "firstAvailableAt": "2026-10-14T09:43:03Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://adrec.gov.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "retrievedAt": "2026-10-14T09:42:50Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {},
+      "responseBytes": 3862,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "authorityId": 650,
+        "projectNumber": "20250000729851",
+        "registration": "2026-01-21T00:00:00",
+        "progressPercent": 0,
+        "inspectionDate": null,
+        "inspectionPercent": null,
+        "successEnvelope": true,
+        "excludedPrivateFields": true
+      }
+    },
+    {
+      "id": "adrec-646",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=646",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:646"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=646",
+      "contentType": "application/json; charset=utf-8",
+      "sha256": "10b894e22f34e5e14dcbfcc662137e07b30ccce5ee99bb3df795184661651dea",
+      "retrievedAt": "2026-10-14T09:43:07Z",
+      "attemptedAt": "2026-10-14T09:43:03Z",
+      "firstAvailableAt": "2026-10-14T09:43:07Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://adrec.gov.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "retrievedAt": "2026-10-14T09:42:50Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {},
+      "responseBytes": 7382,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "authorityId": 646,
+        "projectNumber": "20250000736301",
+        "registration": "2026-02-09T00:00:00",
+        "progressPercent": 4.61,
+        "inspectionDate": "2026-09-16",
+        "inspectionPercent": 4.61,
+        "successEnvelope": true,
+        "excludedPrivateFields": true
+      }
+    },
+    {
+      "id": "adrec-623",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=623",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:623"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=623",
+      "contentType": "application/json; charset=utf-8",
+      "sha256": "65509ad603b15cd6ac09f08c28115c3bdb4091ff00f7845cb9284209c9756428",
+      "retrievedAt": "2026-10-14T09:43:11Z",
+      "attemptedAt": "2026-10-14T09:43:07Z",
+      "firstAvailableAt": "2026-10-14T09:43:11Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://adrec.gov.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "retrievedAt": "2026-10-14T09:42:50Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {},
+      "responseBytes": 7816,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "authorityId": 623,
+        "projectNumber": "20250000579884",
+        "registration": "2025-09-12T00:00:00",
+        "progressPercent": 10.77,
+        "inspectionDate": "2026-09-16",
+        "inspectionPercent": 10.77,
+        "successEnvelope": true,
+        "excludedPrivateFields": true
+      }
+    },
+    {
+      "id": "adrec-439",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=439",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:439"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=439",
+      "contentType": "application/json; charset=utf-8",
+      "sha256": "0b2cb363846d5d62afe30683482e84a4390ec1eb68415f28689deb29e0b77e26",
+      "retrievedAt": "2026-10-14T09:43:15Z",
+      "attemptedAt": "2026-10-14T09:43:11Z",
+      "firstAvailableAt": "2026-10-14T09:43:15Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://adrec.gov.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "retrievedAt": "2026-10-14T09:42:50Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {},
+      "responseBytes": 6184,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "authorityId": 439,
+        "projectNumber": "2020/115202",
+        "registration": "2020-03-02T00:00:00",
+        "progressPercent": 0,
+        "inspectionDate": null,
+        "inspectionPercent": null,
+        "successEnvelope": true,
+        "excludedPrivateFields": true
+      }
+    },
+    {
+      "id": "aldar-q1-2025",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-q1-2025-financial-results",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:590"
+      ],
+      "expectedNeedles": [
+        "Manarat Living III",
+        "Saadiyat Island"
+      ],
+      "identityNeedles": [
+        "Manarat Living III",
+        "Saadiyat Island"
+      ],
+      "reportedPublishedAt": "2025-04-29",
+      "reviewedPhrases": [
+        "Aldar launched two new projects in Q1 2025: Manarat Living III on Saadiyat Island"
+      ],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-q1-2025-financial-results",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e161a7d4b258655562d0c44bc3b011f0640b1b5ce488a50a94d0547375d51891",
+      "retrievedAt": "2026-10-14T09:43:21Z",
+      "attemptedAt": "2026-10-14T09:43:15Z",
+      "firstAvailableAt": "2026-10-14T09:43:21Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Manarat Living III": true,
+        "Saadiyat Island": true
+      },
+      "responseBytes": 327016,
+      "lastModified": null,
+      "etag": "\"122ssoqe5zs7026\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Full Highlights: Aldar Q1 2025 Financial Results | Aldar",
+        "identityChecks": {
+          "Manarat Living III": true,
+          "Saadiyat Island": true
+        },
+        "numericMentions": [
+          {
+            "amount": "54.6",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 3619,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "45.9",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 4621,
+            "qualifier": "starting_or_from_advertisement"
+          }
+        ],
+        "cards": [],
+        "reviewedPhraseChecks": {
+          "Aldar launched two new projects in Q1 2025: Manarat Living III on Saadiyat Island": true
+        },
+        "unitFields": {
+          "advertisedAED": [
+            "2.2",
+            "8.9",
+            "2.2",
+            "1.9",
+            "8.9",
+            "7.4",
+            "55.7",
+            "46.7",
+            "764",
+            "46",
+            "3.7",
+            "1.8",
+            "9",
+            "1.8",
+            "0.20",
+            "10.2",
+            "19.3",
+            "7.8",
+            "2.8",
+            "2.5",
+            "1.9",
+            "5.7",
+            "1.8",
+            "8.9",
+            "55.7",
+            "54.6",
+            "88.7",
+            "49.5",
+            "8.4",
+            "7.4"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "aldar-q3-2025",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-q3-9m-2025-financial-results",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:617",
+        "adrec:620"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach Terraces",
+        "Al Deem Townhomes"
+      ],
+      "identityNeedles": [
+        "Fahid Beach Terraces",
+        "Al Deem Townhomes"
+      ],
+      "reportedPublishedAt": "2025-10-28",
+      "reviewedPhrases": [
+        "Aldar launched three projects in Q3 2025: Fahid Beach Terraces, Rise by Athlon, and Al Deem Townhomes"
+      ],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-q3-9m-2025-financial-results",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f123b0f801c2a825a25761a4908007611535dc9075d668a37fa8ae9ee28d3ce6",
+      "retrievedAt": "2026-10-14T09:43:25Z",
+      "attemptedAt": "2026-10-14T09:43:21Z",
+      "firstAvailableAt": "2026-10-14T09:43:25Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Fahid Beach Terraces": true,
+        "Al Deem Townhomes": true
+      },
+      "responseBytes": 317205,
+      "lastModified": null,
+      "etag": "\"pqd9xq4r4u6shm\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Q3 9M 2025 Financial Results Overview | Aldar",
+        "identityChecks": {
+          "Fahid Beach Terraces": true,
+          "Al Deem Townhomes": true
+        },
+        "numericMentions": [
+          {
+            "amount": "54.6",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 4732,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "45.9",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 5857,
+            "qualifier": "starting_or_from_advertisement"
+          }
+        ],
+        "cards": [],
+        "reviewedPhraseChecks": {
+          "Aldar launched three projects in Q3 2025: Fahid Beach Terraces, Rise by Athlon, and Al Deem Townhomes": true
+        },
+        "unitFields": {
+          "advertisedAED": [
+            "6",
+            "6.8",
+            "6.0",
+            "0.64",
+            "28.5",
+            "26.5",
+            "9.1",
+            "20.4",
+            "66.5",
+            "57.3",
+            "2.3",
+            "47",
+            "185",
+            "3.8",
+            "17.6",
+            "12.3",
+            "17.4",
+            "1.8",
+            "23.6",
+            "8.1",
+            "7.8",
+            "6.0",
+            "8.0",
+            "2.8",
+            "2.5",
+            "1.9",
+            "5.8",
+            "17.1",
+            "5.0",
+            "10.2"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "aldar-fahid-unveiled",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-unveils-fahid-island",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:609"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach Residences",
+        "Fahid Island"
+      ],
+      "identityNeedles": [
+        "Fahid Beach Residences",
+        "Fahid Island"
+      ],
+      "reportedPublishedAt": "2025-06-02",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-unveils-fahid-island",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "75f8ea84ce07834f2018643f0a15b0fffd378ab57303dc3a95180badb313ca8f",
+      "retrievedAt": "2026-10-14T09:43:29Z",
+      "attemptedAt": "2026-10-14T09:43:25Z",
+      "firstAvailableAt": "2026-10-14T09:43:29Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Fahid Beach Residences": false,
+        "Fahid Island": true
+      },
+      "responseBytes": 236242,
+      "lastModified": null,
+      "etag": "\"ti3y0lbrqw5242\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Aldar Unveils Fahid Island: A Landmark Coastal Project | Aldar",
+        "identityChecks": {
+          "Fahid Beach Residences": false,
+          "Fahid Island": true
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "aldar-fahid-launch-performance",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-fahid-island-sales-performance",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:609",
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach Residences",
+        "The Beach House"
+      ],
+      "identityNeedles": [
+        "Fahid Beach Residences",
+        "The Beach House"
+      ],
+      "reportedPublishedAt": "2025-06-20",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-fahid-island-sales-performance",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ac4ea4a3cd53012a4191235b13ae9d9cfde2adebae1de76c5e830c5881a5a688",
+      "retrievedAt": "2026-10-14T09:43:34Z",
+      "attemptedAt": "2026-10-14T09:43:29Z",
+      "firstAvailableAt": "2026-10-14T09:43:34Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Fahid Beach Residences": false,
+        "The Beach House": false
+      },
+      "responseBytes": 233698,
+      "lastModified": null,
+      "etag": "\"ykn6w7etvd5056\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Fahid Island Sales: Impressive Launch Performance | Aldar",
+        "identityChecks": {
+          "Fahid Beach Residences": false,
+          "The Beach House": false
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "aldar-fahid-listings",
+      "url": "https://www.aldar.com/properties/en/communities?text=Fahid+Island",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:609",
+        "adrec:617",
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach"
+      ],
+      "identityNeedles": [
+        "Fahid Beach"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/properties/en/communities?text=Fahid+Island",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "63a2224c0c03ababd05638d42535ccd66d46005e554ba46236338ed9aa34fabc",
+      "retrievedAt": "2026-10-14T09:43:40Z",
+      "attemptedAt": "2026-10-14T09:43:34Z",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Fahid Beach": true
+      },
+      "responseBytes": 235601,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Community Listing Page",
+        "identityChecks": {
+          "Fahid Beach": true
+        },
+        "numericMentions": [
+          {
+            "amount": "4,000,000",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 286,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "2,457,300",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 502,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "1,900,000",
+            "scale": null,
+            "currency": "AED",
+            "characterOffset": 700,
+            "qualifier": "starting_or_from_advertisement"
+          }
+        ],
+        "cards": [
+          {
+            "amount": "4,000,000",
+            "currency": "AED",
+            "dateStatus": "planned_not_actual",
+            "inventoryScope": "developer_platform_starting_quote_segment_not_established",
+            "recordId": "adrec:609",
+            "sourceName": "Fahid Beach Residences",
+            "targetCompletion": "2029-Q2"
+          },
+          {
+            "amount": "2,457,300",
+            "currency": "AED",
+            "dateStatus": "planned_not_actual",
+            "inventoryScope": "developer_platform_starting_quote_segment_not_established",
+            "recordId": "adrec:617",
+            "sourceName": "Fahid Beach Terraces",
+            "targetCompletion": "2029-Q4"
+          },
+          {
+            "amount": "1,900,000",
+            "currency": "AED",
+            "dateStatus": "planned_not_actual",
+            "inventoryScope": "developer_platform_starting_quote_segment_not_established",
+            "recordId": "adrec:615",
+            "sourceName": "The Beach House Fahid",
+            "targetCompletion": "2029-Q4"
+          }
+        ],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [
+            "4,000,000",
+            "2,457,300",
+            "1,900,000"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "beach-house-3br",
+      "url": "https://www.aldar.com/properties/en/uae/fahid-island/the-beach-house-fahid/a2DJ7000000HYalMAG",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "TheBeachHouse-B9-07-10"
+      ],
+      "identityNeedles": [
+        "TheBeachHouse-B9-07-10"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/properties/en/uae/fahid-island/the-beach-house-fahid/a2DJ7000000HYalMAG",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f185799d1e7ee1767d523fafe90570eb120b94d403a8c509576787aee85c06e6",
+      "retrievedAt": "2026-10-14T09:43:45Z",
+      "attemptedAt": "2026-10-14T09:43:40Z",
+      "firstAvailableAt": "2026-10-14T09:43:45Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "TheBeachHouse-B9-07-10": false
+      },
+      "responseBytes": 161325,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Aldar - Properties for Sale in Abu Dhabi",
+        "identityChecks": {
+          "TheBeachHouse-B9-07-10": false
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "beach-house-2br",
+      "url": "https://www.aldar.com/properties/en/uae/fahid-island/the-beach-house-fahid/a2DJ7000000HYTTMA4",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "TheBeachHouse-B10-06-04"
+      ],
+      "identityNeedles": [
+        "TheBeachHouse-B10-06-04"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/properties/en/uae/fahid-island/the-beach-house-fahid/a2DJ7000000HYTTMA4",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b3731ea94af0bb7d256ba1377ab1fd59e2428b99383350e414c54ac8129e0220",
+      "retrievedAt": "2026-10-14T09:43:49Z",
+      "attemptedAt": "2026-10-14T09:43:45Z",
+      "firstAvailableAt": "2026-10-14T09:43:49Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "TheBeachHouse-B10-06-04": false
+      },
+      "responseBytes": 161325,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Aldar - Properties for Sale in Abu Dhabi",
+        "identityChecks": {
+          "TheBeachHouse-B10-06-04": false
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "fahid-terraces-duplex",
+      "url": "https://www.aldar.com/properties/en/uae/fahid-island/fahid-Island-terraces/a2DJ7000000HmTqMAK",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:617"
+      ],
+      "expectedNeedles": [
+        "FahidBeachTerraces-B1-02-04"
+      ],
+      "identityNeedles": [
+        "FahidBeachTerraces-B1-02-04"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/properties/en/uae/fahid-island/fahid-Island-terraces/a2DJ7000000HmTqMAK",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f53ceed34a7739a061bd2602a26a7fb61ecdd41e77f947ba00a08588c695831c",
+      "retrievedAt": "2026-10-14T09:43:54Z",
+      "attemptedAt": "2026-10-14T09:43:49Z",
+      "firstAvailableAt": "2026-10-14T09:43:54Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "FahidBeachTerraces-B1-02-04": false
+      },
+      "responseBytes": 161325,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Aldar - Properties for Sale in Abu Dhabi",
+        "identityChecks": {
+          "FahidBeachTerraces-B1-02-04": false
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [],
+          "advertisedAreaSqft": []
+        }
+      }
+    }
+  ],
+  "acceptedFacts": [],
+  "rawRetained": false
+}

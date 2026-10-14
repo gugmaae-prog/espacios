@@ -22,6 +22,17 @@ class Reviewed(unittest.TestCase):
   self.assertEqual([r['id'] for r in after['records']],[r['id'] for r in self.snapshot['records']])
   for old,new in zip(self.snapshot['records'],after['records']):
    for key in ['historySeries','currentSnapshot','scenarioInputs','scenarioCoverage','registerEvidence']:self.assertEqual(new.get(key),old.get(key))
+ def test_serialized_candidate_exactly_matches_reviewed_application(self):
+  candidate=Path(os.environ.get('REGIONAL_CANDIDATE_SNAPSHOT',str(R/'data/historical-intelligence-20261003.json')))
+  actual=json.loads(candidate.read_bytes());expected,_=m.apply_packet(self.snapshot,self.p,self.captures)
+  self.assertEqual(actual['version'],m.VERSION);self.assertEqual(actual['sources'],expected['sources'])
+  self.assertEqual(actual['events'],expected['events']);self.assertEqual(actual['exposures'],expected['exposures'])
+  self.assertEqual(len(actual['records']),1860)
+  for left,right in zip(actual['records'],expected['records']):
+   left=copy.deepcopy(left);right=copy.deepcopy(right)
+   for r in [left,right]:
+    for series in r.get('historySeries',[]):series.pop('partition',None)
+   self.assertEqual(left,right,left['id'])
  def test_unknown_record_and_no_fanout(self):
   self.p['facts'][0]['recordId']='not-a-catalogue-record'
   with self.assertRaises(ValueError):m.validate(self.p,self.snapshot,self.captures)
