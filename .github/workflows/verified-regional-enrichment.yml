@@ -48,6 +48,13 @@ jobs:
             echo 'apply=false' >> "$GITHUB_OUTPUT"
           else
             git read-tree -m -u --aggressive "$COMMON" "$START" "$PRIOR"
+            CONFLICTS=$(git diff --name-only --diff-filter=U)
+            if [ "$CONFLICTS" = 'docs/DATA_SOURCING_WORKFLOW.md' ]; then
+              git show "$PRIOR:docs/DATA_SOURCING_WORKFLOW.md" > /tmp/regional-v46-workflow.md
+              git show "$START:docs/DATA_SOURCING_WORKFLOW.md" > /tmp/regional-v25-workflow.md
+              { cat /tmp/regional-v46-workflow.md; printf '\n\n---\n\n## Retained earlier V25 queue-only workflow\n\nThe following is historical queue-pass documentation, not the current snapshot baseline. Both independently authored workflows are preserved.\n\n'; cat /tmp/regional-v25-workflow.md; } > docs/DATA_SOURCING_WORKFLOW.md
+              git add docs/DATA_SOURCING_WORKFLOW.md
+            fi
             if test -n "$(git ls-files -u)"; then git ls-files -u; exit 1; fi
             echo 'apply=true' >> "$GITHUB_OUTPUT"
           fi
@@ -102,6 +109,8 @@ jobs:
           mkdir -p /tmp/regional-v47-verification
           printf '%s\n' "$COMMIT" > /tmp/regional-v47-verification/COMMIT
           printf '%s\n' "$TREE" > /tmp/regional-v47-verification/TREE
+          git update-ref refs/heads/local-regional-candidate "$COMMIT"
+          git bundle create /tmp/regional-v47-verification/candidate.bundle refs/heads/local-regional-candidate ^"$START" ^"$PRIOR"
           test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$START"
           test "$(git ls-remote origin refs/heads/data/history-v26-dld-project-register | cut -f1)" = "$PRIOR"
           git push origin "$COMMIT:refs/heads/$BRANCH"
