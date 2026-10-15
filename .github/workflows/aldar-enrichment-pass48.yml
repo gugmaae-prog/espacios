@@ -118,7 +118,8 @@ jobs:
           mkdir -p /tmp/aldar-v48-verified
           cp data/historical-intelligence/aldar-launches-20261014/*.json /tmp/aldar-v48-verified/
           cp docs/verification/regional-research-2026-10-14/EXECUTION-HANDOVER.md /tmp/aldar-v48-verified/
-          python3 scripts/build-regional-review-queue.py --out-dir /tmp/aldar-v48-verified/all-records-v48
+          python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/ci-v48-aldar
+          cp -a data/historical-intelligence/review-queues/ci-v48-aldar /tmp/aldar-v48-verified/all-records-v48
       - uses: actions/upload-artifact@v4
         if: always()
         with:

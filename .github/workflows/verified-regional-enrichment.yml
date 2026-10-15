@@ -44,7 +44,7 @@ jobs:
           git fetch --no-tags --depth=1 origin "$PRIOR" "$COMMON"
           git show "$PRIOR:data/historical-intelligence-20261003.json.gz" > "$REGIONAL_BASELINE_SNAPSHOT"
           CURRENT=$(python3 -c "import json; print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])")
-          if [ "$CURRENT" = '20261014-enrichment-v47' ]; then
+          if [ "$CURRENT" = '20261014-enrichment-v47' ] || [ "$CURRENT" = '20261014-enrichment-v48' ]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
           else
             git read-tree -m -u --aggressive "$COMMON" "$START" "$PRIOR"
@@ -122,8 +122,8 @@ jobs:
           mkdir -p /tmp/regional-v47-verification
           cp data/historical-intelligence/reviewed-regional-20261014/reconciliation.json /tmp/regional-v47-verification/
           cp data/historical-intelligence/reviewed-regional-20261014/accepted-packet.json /tmp/regional-v47-verification/
-          python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/v47-2026-10-14
-          cp -a data/historical-intelligence/review-queues/v47-2026-10-14 /tmp/regional-v47-verification/
+          python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/v48-2026-10-14
+          cp -a data/historical-intelligence/review-queues/v48-2026-10-14 /tmp/regional-v47-verification/
       - uses: actions/upload-artifact@v4
         if: always()
         with:
