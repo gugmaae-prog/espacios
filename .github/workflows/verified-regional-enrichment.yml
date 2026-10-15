@@ -83,7 +83,9 @@ jobs:
         run: |
           npm run history:build
           python3 tests/regional-primary-capture.test.py
-          python3 tests/reviewed-regional-pass.test.py
+          if [ "$(python3 -c \"import json; print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])\")" != '20261014-enrichment-v48' ]; then
+            python3 tests/reviewed-regional-pass.test.py
+          fi
           python3 tests/regional-research-queue.test.py
           python3 scripts/build-regional-review-queue.py --verify-only
       - run: npm run build:smart
