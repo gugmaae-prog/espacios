@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-08T22:26:49.905549+00:00",
+  "command": "npm run verify",
+  "exitCode": 0,
+  "suiteTestCounts": [
+    152,
+    1,
+    38,
+    168
+  ],
+  "javascriptTests": 359,
+  "failed": 0,
+  "smokeAndAPI": "passed",
+  "pythonChecks": "passed",
+  "buildAndSyntax": "passed",
+  "testConcurrency": 2,
+  "initialRun": "Stopped after excessive concurrent archive memory pressure; full bounded rerun passed"
+}

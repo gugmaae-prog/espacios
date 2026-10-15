@@ -1,0 +1,49 @@
+{
+  "status": "published_and_verified_interim_v46",
+  "version": "20261013-enrichment-v46",
+  "rootSHA256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+  "changedRecords": 9,
+  "newSources": 2,
+  "newLifecycleFacts": 39,
+  "factTypes": {
+    "registration": 8,
+    "filedProjectStart": 8,
+    "targetCompletion": 5,
+    "constructionProgress": 9,
+    "authorityStatusSnapshot": 9
+  },
+  "invalidCompletionFieldsQuarantined": 3,
+  "newRegisteredSales": 0,
+  "newRegisteredRents": 0,
+  "historicalRowsPreserved": 633891,
+  "seriesPreserved": 16872,
+  "ledger": {
+    "present": 3342,
+    "partial": 3413,
+    "missing": 26725,
+    "unestablished": 9300
+  },
+  "limits": [
+    "No target-completion field is treated as actual completion, handover or occupancy.",
+    "No current status snapshot is projected backward as a historical outcome.",
+    "No lifecycle fact is transformed into a sale, rent, valuation, appreciation coefficient or forecast."
+  ],
+  "releaseVerification": {
+    "immutablePublicationState": "complete",
+    "candidateAPI": {
+      "status": "passed",
+      "checkedAt": "2026-10-13T11:24:10.677Z"
+    },
+    "canonicalAPI": {
+      "status": "passed",
+      "checkedAt": "2026-10-13T11:26:06.569Z"
+    },
+    "productionTraffic": {
+      "workerVersion": "56d24e27-4c41-4d2a-be13-2fde1e7ce889",
+      "deployment": "5976084d-c5fd-4d70-b382-1de452a1a8f5",
+      "trafficPercent": 100,
+      "activatedAt": "2026-10-13T11:25:58.190882Z"
+    },
+    "note": "This is the V46 data-release verification. A later mobile-interface release must preserve the same immutable history root or publish a separate verified evidence version."
+  }
+}

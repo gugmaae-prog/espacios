@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-09T00:15:30.466970+00:00",
+  "command": "npm run verify",
+  "passed": true,
+  "javascriptTests": 371,
+  "pythonIdentityTests": 4,
+  "candidateAndProductionDryRuns": "passed",
+  "allImmutableObjectsHashVerified": 2542,
+  "changes": "30 exact Asora registered sales; V42 diagnostic token; existing palette preserved; fixed omitted V19 test path",
+  "publisherFocusedTests": 13,
+  "combinedCurrentJavaScriptTests": 374,
+  "publisherSQLiteEquivalence": "passed",
+  "publisherFullCI": "https://github.com/gugmaae-prog/espacios/actions/runs/37866542542"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "e0631c8c-eca4-41a6-8398-35ddda6a06f2",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish V34 verified project construction histories; retain V37 Espacios palette",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "3718b0d9-068f-43ca-b852-54a139408896",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T20:54:58.786196Z"
+}

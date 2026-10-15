@@ -1,0 +1,12 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "25b61d3b-7a65-4a61-aabc-4172e9632f23",
+  "previewURL": "https://25b61d3b-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "historyVersion": "20261009-enrichment-v39",
+  "frontendRelease": "20261009-map-evidence-v43",
+  "sourceCommit": "4d3efc8f4a242769f437d357d41e20e18f947f60",
+  "activation": "pending",
+  "productionUnchanged": true,
+  "rootSHA256": "b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760",
+  "receiptStage": "Pre-activation candidate; final state is deployment.json"
+}

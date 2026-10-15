@@ -1,0 +1,1313 @@
+{
+  "schemaVersion": 1,
+  "passId": "aldar-historical-launches-pass48-20261014",
+  "asOf": "2026-10-14",
+  "priorVersion": "20261014-enrichment-v47",
+  "candidateVersion": "20261014-enrichment-v48",
+  "priorSHA256": "8be3cc4975d2c23dae8d2d5a370cb4ea1bb317061de12be72fc77ac072a86228",
+  "sources": [
+    {
+      "id": "aldar48-aldar-launch-454-0f687c3412eb",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Press%2BRelease%2B-%2BAldar%2BLaunches%2BYas%2BPark%2BGate/1c071ac05d6711f0beb79632a83a94fd",
+      "canonicalPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+      "publisher": "Aldar",
+      "classification": "primary_developer_historical_launch_release",
+      "primaryEvidence": true,
+      "publishedAt": "2022-08-24",
+      "datePrecision": "day",
+      "publicationDateStatus": "publisher_dateline_matched_in_official_download",
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "retrievedAt": "2026-10-14T12:49:20Z",
+      "availabilityBasis": "First independently retained download capture; older dateline is not proof of historical publication vintage.",
+      "historicalFirstAvailability": null,
+      "httpStatus": 200,
+      "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Press%2BRelease%2B-%2BAldar%2BLaunches%2BYas%2BPark%2BGate/1c071ac05d6711f0beb79632a83a94fd",
+      "contentType": "application/pdf",
+      "sha256": "0f687c3412eba0809d386cdf0dc54b946c41b61b7becc0b0805d86f5160c047e",
+      "bytes": 327812,
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention",
+      "captureId": "aldar-launch-454",
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "c42296c95e222bb1ab5d8e5650b6cf325a9f72a510d1b513f78a37f8573ce978",
+        "responseBytes": 233872,
+        "retrievedAt": "2026-10-14T12:49:16Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "robotsReceipts": [
+        {
+          "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+          "httpStatus": 404,
+          "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+          "retrievedAt": "2026-10-14T12:49:18Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and provenance only; no redistribution of raw documents, page bodies, images, contact details or transaction exports.",
+      "datasetVersionId": null,
+      "observationStart": "2022-08-24",
+      "observationEnd": "2022-08-24",
+      "frequency": "dated_release_with_native_day_month_and_quarter_statements",
+      "currency": "AED",
+      "unit": "total_advertised_AED_separate_from_lifecycle_dates",
+      "segment": "Separate bedroom and property-type starting advertisements; not a pooled price",
+      "methodology": "Manually selected exact-record historical statements checked against immutable download capture; native periods and asking-price classes preserved."
+    },
+    {
+      "id": "aldar48-aldar-launch-456-f314b5d9de2e",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BAldar%2BSells%2BOut%2BYas%2BPark%2BGate%2Band%2BLaunches%2BYas%2BPark%2BViews%2B-%2BFINAL%2BEN/b70af8685d6511f0af3d0ec76bb501e8",
+      "canonicalPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+      "publisher": "Aldar",
+      "classification": "primary_developer_historical_launch_release",
+      "primaryEvidence": true,
+      "publishedAt": "2022-11-21",
+      "datePrecision": "day",
+      "publicationDateStatus": "publisher_dateline_matched_in_official_download",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "retrievedAt": "2026-10-14T12:49:26Z",
+      "availabilityBasis": "First independently retained download capture; older dateline is not proof of historical publication vintage.",
+      "historicalFirstAvailability": null,
+      "httpStatus": 200,
+      "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BAldar%2BSells%2BOut%2BYas%2BPark%2BGate%2Band%2BLaunches%2BYas%2BPark%2BViews%2B-%2BFINAL%2BEN/b70af8685d6511f0af3d0ec76bb501e8",
+      "contentType": "application/pdf",
+      "sha256": "f314b5d9de2e46c484ab57e5d0d2e4f2b6764e8b2d53133f6b222dbdcf85756e",
+      "bytes": 534495,
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention",
+      "captureId": "aldar-launch-456",
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "8a3eb851b78f7042b2d9150fe79676f87f3ec76fd6cfacca72ab6f316a62ccd9",
+        "responseBytes": 234842,
+        "retrievedAt": "2026-10-14T12:49:23Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "robotsReceipts": [
+        {
+          "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+          "httpStatus": 404,
+          "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+          "retrievedAt": "2026-10-14T12:49:18Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and provenance only; no redistribution of raw documents, page bodies, images, contact details or transaction exports.",
+      "datasetVersionId": null,
+      "observationStart": "2022-11-21",
+      "observationEnd": "2022-11-21",
+      "frequency": "dated_release_with_native_day_month_and_quarter_statements",
+      "currency": "AED",
+      "unit": "total_advertised_AED_separate_from_lifecycle_dates",
+      "segment": "Separate bedroom and property-type starting advertisements; not a pooled price",
+      "methodology": "Manually selected exact-record historical statements checked against immutable download capture; native periods and asking-price classes preserved."
+    },
+    {
+      "id": "aldar48-aldar-launch-543-06848652c0ef",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar_Nouran%2BLiving_Launch%2BPress%2BRelease_EN_130324/5de2a8405d6411f081973e6907f554f2",
+      "canonicalPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+      "publisher": "Aldar",
+      "classification": "primary_developer_historical_launch_release",
+      "primaryEvidence": true,
+      "publishedAt": "2024-03-13",
+      "datePrecision": "day",
+      "publicationDateStatus": "publisher_dateline_matched_in_official_download",
+      "firstAvailableAt": "2026-10-14T12:49:31Z",
+      "retrievedAt": "2026-10-14T12:49:31Z",
+      "availabilityBasis": "First independently retained download capture; older dateline is not proof of historical publication vintage.",
+      "historicalFirstAvailability": null,
+      "httpStatus": 200,
+      "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar_Nouran%2BLiving_Launch%2BPress%2BRelease_EN_130324/5de2a8405d6411f081973e6907f554f2",
+      "contentType": "application/pdf",
+      "sha256": "06848652c0efd8067548b6841c2aa82687ec97956599b3c4e95b8ad1d5823fa0",
+      "bytes": 336638,
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention",
+      "captureId": "aldar-launch-543",
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "29d30816e1ad80d47f1375099ffb5b18e65ebb128f9c8efdfb1574728a23baff",
+        "responseBytes": 234143,
+        "retrievedAt": "2026-10-14T12:49:29Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "robotsReceipts": [
+        {
+          "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+          "httpStatus": 404,
+          "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+          "retrievedAt": "2026-10-14T12:49:18Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and provenance only; no redistribution of raw documents, page bodies, images, contact details or transaction exports.",
+      "datasetVersionId": null,
+      "observationStart": "2024-03-13",
+      "observationEnd": "2024-03-13",
+      "frequency": "dated_release_with_native_day_month_and_quarter_statements",
+      "currency": "AED",
+      "unit": "total_advertised_AED_separate_from_lifecycle_dates",
+      "segment": "Separate bedroom and property-type starting advertisements; not a pooled price",
+      "methodology": "Manually selected exact-record historical statements checked against immutable download capture; native periods and asking-price classes preserved."
+    },
+    {
+      "id": "aldar48-aldar-launch-64-c964f89bf8d5",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BNoya%2BLuma%2BLaunch%2B-%2BEN%2B-%2BFINAL/00800b685d6711f08b6e0ec76bb501e8",
+      "canonicalPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+      "publisher": "Aldar",
+      "classification": "primary_developer_historical_launch_release",
+      "primaryEvidence": true,
+      "publishedAt": "2021-05-25",
+      "datePrecision": "day",
+      "publicationDateStatus": "publisher_dateline_matched_in_official_download",
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "retrievedAt": "2026-10-14T12:49:37Z",
+      "availabilityBasis": "First independently retained download capture; older dateline is not proof of historical publication vintage.",
+      "historicalFirstAvailability": null,
+      "httpStatus": 200,
+      "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BNoya%2BLuma%2BLaunch%2B-%2BEN%2B-%2BFINAL/00800b685d6711f08b6e0ec76bb501e8",
+      "contentType": "application/pdf",
+      "sha256": "c964f89bf8d56c507aa67026a7975a921f4f7cbca84056af25f9ccf8346ead6c",
+      "bytes": 399483,
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention",
+      "captureId": "aldar-launch-64",
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "1344387616e94be66ced9ac990a88f30723ca1a706753cb90bdb7a836885b319",
+        "responseBytes": 232936,
+        "retrievedAt": "2026-10-14T12:49:34Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "robotsReceipts": [
+        {
+          "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+          "httpStatus": 404,
+          "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+          "retrievedAt": "2026-10-14T12:49:18Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and provenance only; no redistribution of raw documents, page bodies, images, contact details or transaction exports.",
+      "datasetVersionId": null,
+      "observationStart": "2021-05-25",
+      "observationEnd": "2021-05-25",
+      "frequency": "dated_release_with_native_day_month_and_quarter_statements",
+      "currency": "AED",
+      "unit": "total_advertised_AED_separate_from_lifecycle_dates",
+      "segment": "Separate bedroom and property-type starting advertisements; not a pooled price",
+      "methodology": "Manually selected exact-record historical statements checked against immutable download capture; native periods and asking-price classes preserved."
+    },
+    {
+      "id": "aldar48-aldar-launch-65-7faf9b8979e6",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2BLaunches%2BSaadiyat%2BReserve%2BThe%2BDunes/897ab20a5d6311f0b0846a302fc0481b",
+      "canonicalPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+      "publisher": "Aldar",
+      "classification": "primary_developer_historical_launch_release",
+      "primaryEvidence": true,
+      "publishedAt": "2021-06-30",
+      "datePrecision": "day",
+      "publicationDateStatus": "publisher_dateline_matched_in_official_download",
+      "firstAvailableAt": "2026-10-14T12:49:42Z",
+      "retrievedAt": "2026-10-14T12:49:42Z",
+      "availabilityBasis": "First independently retained download capture; older dateline is not proof of historical publication vintage.",
+      "historicalFirstAvailability": null,
+      "httpStatus": 200,
+      "finalUrl": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2BLaunches%2BSaadiyat%2BReserve%2BThe%2BDunes/897ab20a5d6311f0b0846a302fc0481b",
+      "contentType": "application/pdf",
+      "sha256": "7faf9b8979e6690da3b35f00f7969f0db2369905bcdf6df183da3fbb48362a6a",
+      "bytes": 411117,
+      "captureMethod": "bounded_https_link_verified_pdf_or_docx_text_in_memory_no_raw_retention",
+      "captureId": "aldar-launch-65",
+      "parentCapture": {
+        "httpStatus": 200,
+        "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+        "contentType": "text/html; charset=utf-8",
+        "sha256": "3e66dca3562dd8446820d9171321df5a5fe3863216ce3c6da1300c93ca982a25",
+        "responseBytes": 233504,
+        "retrievedAt": "2026-10-14T12:49:39Z",
+        "redirectChain": [],
+        "robotsReceipts": [
+          {
+            "url": "https://www.aldar.com/robots.txt",
+            "httpStatus": 200,
+            "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+            "retrievedAt": "2026-10-14T12:49:13Z",
+            "rawRetained": false,
+            "policy": "parsed_robots_rules"
+          }
+        ],
+        "rawRetained": false
+      },
+      "officialDownloadLinkVerified": true,
+      "robotsReceipts": [
+        {
+          "url": "https://vazeno.files.cmp.optimizely.com/robots.txt",
+          "httpStatus": 404,
+          "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+          "retrievedAt": "2026-10-14T12:49:18Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and provenance only; no redistribution of raw documents, page bodies, images, contact details or transaction exports.",
+      "datasetVersionId": null,
+      "observationStart": "2021-06-30",
+      "observationEnd": "2021-06-30",
+      "frequency": "dated_release_with_native_day_month_and_quarter_statements",
+      "currency": "AED",
+      "unit": "total_advertised_AED_separate_from_lifecycle_dates",
+      "segment": "Separate bedroom and property-type starting advertisements; not a pooled price",
+      "methodology": "Manually selected exact-record historical statements checked against immutable download capture; native periods and asking-price classes preserved."
+    }
+  ],
+  "facts": [
+    {
+      "id": "aldar48-adrec-454-launch",
+      "status": "accepted",
+      "recordId": "adrec:454",
+      "sourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:454; authority project 2022/395105; native name NOYA 4 - YAS PARK GATE; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 508 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-08-24",
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "captureClaimId": "launch",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2022-08-24",
+        "precision": "day"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_launch",
+      "label": "Aldar's 2022-08-24 release reports launch for NOYA 4 - YAS PARK GATE at 2022-08-24.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-454-townhouses-2-3br",
+      "status": "accepted",
+      "recordId": "adrec:454",
+      "sourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:454; authority project 2022/395105; native name NOYA 4 - YAS PARK GATE; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 508 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-08-24",
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "captureClaimId": "townhouses-2-3br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 1740000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2022-08-24",
+        "observationStart": "2022-08-24",
+        "observationEnd": "2022-08-24",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "townhouses; combined 2-3-bedroom starting-price band",
+        "bedrooms": [
+          2,
+          3
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-454-villas-4br",
+      "status": "accepted",
+      "recordId": "adrec:454",
+      "sourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:454; authority project 2022/395105; native name NOYA 4 - YAS PARK GATE; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 508 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-08-24",
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "captureClaimId": "villas-4br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 3200000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2022-08-24",
+        "observationStart": "2022-08-24",
+        "observationEnd": "2022-08-24",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "four-bedroom villas",
+        "bedrooms": [
+          4
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-454-construction-target",
+      "status": "accepted",
+      "recordId": "adrec:454",
+      "sourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:454; authority project 2022/395105; native name NOYA 4 - YAS PARK GATE; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 508 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-08-24",
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "captureClaimId": "construction-target",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2023-Q1",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2022-08-24 release reports target_construction_start for NOYA 4 - YAS PARK GATE at 2023-Q1.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-454-handover-target",
+      "status": "accepted",
+      "recordId": "adrec:454",
+      "sourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-454-0f687c3412eb",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:454; authority project 2022/395105; native name NOYA 4 - YAS PARK GATE; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 508 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-08-24",
+      "firstAvailableAt": "2026-10-14T12:49:20Z",
+      "captureClaimId": "handover-target",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-Q1",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2022-08-24 release reports target_handover for NOYA 4 - YAS PARK GATE at 2026-Q1.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-456-launch",
+      "status": "accepted",
+      "recordId": "adrec:456",
+      "sourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-11-21",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "captureClaimId": "launch",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2022-11-21",
+        "precision": "day"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_launch",
+      "label": "Aldar's 2022-11-21 release reports launch for NOYA 5 - YAS PARK VIEWS at 2022-11-21.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-456-villas-3br",
+      "status": "accepted",
+      "recordId": "adrec:456",
+      "sourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-11-21",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "captureClaimId": "villas-3br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 2840000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2022-11-21",
+        "observationStart": "2022-11-21",
+        "observationEnd": "2022-11-21",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "three-bedroom standalone villas",
+        "bedrooms": [
+          3
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-456-villas-4br",
+      "status": "accepted",
+      "recordId": "adrec:456",
+      "sourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-11-21",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "captureClaimId": "villas-4br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 3430000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2022-11-21",
+        "observationStart": "2022-11-21",
+        "observationEnd": "2022-11-21",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "four-bedroom standalone villas",
+        "bedrooms": [
+          4
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-456-villas-5br",
+      "status": "accepted",
+      "recordId": "adrec:456",
+      "sourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-11-21",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "captureClaimId": "villas-5br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 4100000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2022-11-21",
+        "observationStart": "2022-11-21",
+        "observationEnd": "2022-11-21",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "five-bedroom standalone villas",
+        "bedrooms": [
+          5
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-456-construction-target",
+      "status": "accepted",
+      "recordId": "adrec:456",
+      "sourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-11-21",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "captureClaimId": "construction-target",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2023-Q2",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2022-11-21 release reports target_construction_start for NOYA 5 - YAS PARK VIEWS at 2023-Q2.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-456-handover-target",
+      "status": "accepted",
+      "recordId": "adrec:456",
+      "sourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-456-f314b5d9de2e",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2022-11-21",
+      "firstAvailableAt": "2026-10-14T12:49:26Z",
+      "captureClaimId": "handover-target",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2026-Q2",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2022-11-21 release reports target_handover for NOYA 5 - YAS PARK VIEWS at 2026-Q2.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-543-launch",
+      "status": "accepted",
+      "recordId": "adrec:543",
+      "sourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:543; authority project 20240000198137; native name Nouran Living; retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C; district Al Saadiyat Island; 372 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2024-03-13",
+      "firstAvailableAt": "2026-10-14T12:49:31Z",
+      "captureClaimId": "launch",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-03-13",
+        "precision": "day"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_launch",
+      "label": "Aldar's 2024-03-13 release reports launch for Nouran Living at 2024-03-13.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-543-apartments-starting",
+      "status": "accepted",
+      "recordId": "adrec:543",
+      "sourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:543; authority project 20240000198137; native name Nouran Living; retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C; district Al Saadiyat Island; 372 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2024-03-13",
+      "firstAvailableAt": "2026-10-14T12:49:31Z",
+      "captureClaimId": "apartments-starting",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 750000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2024-03-13",
+        "observationStart": "2024-03-13",
+        "observationEnd": "2024-03-13",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "studios and 1-3-bedroom apartments; starting band not assigned to an individual unit",
+        "bedrooms": null,
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-543-construction-target",
+      "status": "accepted",
+      "recordId": "adrec:543",
+      "sourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:543; authority project 20240000198137; native name Nouran Living; retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C; district Al Saadiyat Island; 372 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2024-03-13",
+      "firstAvailableAt": "2026-10-14T12:49:31Z",
+      "captureClaimId": "construction-target",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2024-Q4",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2024-03-13 release reports target_construction_start for Nouran Living at 2024-Q4.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-543-handover-target",
+      "status": "accepted",
+      "recordId": "adrec:543",
+      "sourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-543-06848652c0ef",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:543; authority project 20240000198137; native name Nouran Living; retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C; district Al Saadiyat Island; 372 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2024-03-13",
+      "firstAvailableAt": "2026-10-14T12:49:31Z",
+      "captureClaimId": "handover-target",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2027-Q4",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2024-03-13 release reports target_handover for Nouran Living at 2027-Q4.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-64-launch",
+      "status": "accepted",
+      "recordId": "adrec:64",
+      "sourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:64; authority project 2021/245801; native name Noya Luma; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 189 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-05-25",
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "captureClaimId": "launch",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2021-05-25",
+        "precision": "day"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_launch",
+      "label": "Aldar's 2021-05-25 release reports launch for Noya Luma at 2021-05-25.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-64-villas-4br",
+      "status": "accepted",
+      "recordId": "adrec:64",
+      "sourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:64; authority project 2021/245801; native name Noya Luma; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 189 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-05-25",
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "captureClaimId": "villas-4br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 2770000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2021-05-25",
+        "observationStart": "2021-05-25",
+        "observationEnd": "2021-05-25",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "four-bedroom standalone villas; first value in respectively ordered pair",
+        "bedrooms": [
+          4
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-64-villas-5br",
+      "status": "accepted",
+      "recordId": "adrec:64",
+      "sourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:64; authority project 2021/245801; native name Noya Luma; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 189 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-05-25",
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "captureClaimId": "villas-5br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 3270000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2021-05-25",
+        "observationStart": "2021-05-25",
+        "observationEnd": "2021-05-25",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "five-bedroom standalone villas; second value in respectively ordered pair",
+        "bedrooms": [
+          5
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-64-construction-target",
+      "status": "accepted",
+      "recordId": "adrec:64",
+      "sourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:64; authority project 2021/245801; native name Noya Luma; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 189 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-05-25",
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "captureClaimId": "construction-target",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2021-11",
+        "precision": "month"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2021-05-25 release reports target_construction_start for Noya Luma at 2021-11.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-64-handover-target",
+      "status": "accepted",
+      "recordId": "adrec:64",
+      "sourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-64-c964f89bf8d5",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:64; authority project 2021/245801; native name Noya Luma; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 189 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-05-25",
+      "firstAvailableAt": "2026-10-14T12:49:37Z",
+      "captureClaimId": "handover-target",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2024-02",
+        "precision": "month"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_historical_planned_target",
+      "label": "Aldar's 2021-05-25 release reports target_handover for Noya Luma at 2024-02.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-65-launch",
+      "status": "accepted",
+      "recordId": "adrec:65",
+      "sourceIds": [
+        "aldar48-aldar-launch-65-7faf9b8979e6"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-65-7faf9b8979e6",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:65; authority project 2021/296874; native name Saadiyat Reserve - The Dunes; retained legal developer ALDAR PROPERTIES - P J S C; district Al Saadiyat Island; 83 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-06-30",
+      "firstAvailableAt": "2026-10-14T12:49:42Z",
+      "captureClaimId": "launch",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2021-06-30",
+        "precision": "day"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_launch",
+      "label": "Aldar's 2021-06-30 release reports launch for Saadiyat Reserve - The Dunes at 2021-06-30.",
+      "note": "Publisher-reported marketing launch or historical planned target. No physical completion, handover, occupancy or registered sale is inferred. Past target dates remain planned."
+    },
+    {
+      "id": "aldar48-adrec-65-villas-4br",
+      "status": "accepted",
+      "recordId": "adrec:65",
+      "sourceIds": [
+        "aldar48-aldar-launch-65-7faf9b8979e6"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-65-7faf9b8979e6",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:65; authority project 2021/296874; native name Saadiyat Reserve - The Dunes; retained legal developer ALDAR PROPERTIES - P J S C; district Al Saadiyat Island; 83 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-06-30",
+      "firstAvailableAt": "2026-10-14T12:49:42Z",
+      "captureClaimId": "villas-4br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 6490000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2021-06-30",
+        "observationStart": "2021-06-30",
+        "observationEnd": "2021-06-30",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "four-bedroom villas; not earlier villa plots",
+        "bedrooms": [
+          4
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    },
+    {
+      "id": "aldar48-adrec-65-villas-5br",
+      "status": "accepted",
+      "recordId": "adrec:65",
+      "sourceIds": [
+        "aldar48-aldar-launch-65-7faf9b8979e6"
+      ],
+      "identitySourceIds": [
+        "aldar48-aldar-launch-65-7faf9b8979e6",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:65; authority project 2021/296874; native name Saadiyat Reserve - The Dunes; retained legal developer ALDAR PROPERTIES - P J S C; district Al Saadiyat Island; 83 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "publishedAt": "2021-06-30",
+      "firstAvailableAt": "2026-10-14T12:49:42Z",
+      "captureClaimId": "villas-5br",
+      "kind": "financial",
+      "evidenceClass": "historical_developer_advertised_price",
+      "observation": {
+        "metric": "price",
+        "value": 7990000,
+        "currency": "AED",
+        "unit": "AED",
+        "period": "2021-06-30",
+        "observationStart": "2021-06-30",
+        "observationEnd": "2021-06-30",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "five-bedroom villas; not earlier villa plots",
+        "bedrooms": [
+          5
+        ],
+        "areaBasis": "total_advertised_price_no_area_conversion",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Historical starting advertisement reported in the dated developer release; not a registered transaction, current offer or valuation.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Historical starting-price statement with native bedroom/property segment; availability at a particular unit and completed-sale status unestablished.",
+        "sourceQuoteBasis": "Official publisher-linked release; dateline matched. Later retrieval does not establish the document vintage at the historical forecast origin.",
+        "revisionStatus": "append_only_historical_statement_no_existing_observation_superseded"
+      }
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "recordId": "adrec:454",
+      "catalogueName": "NOYA 4 - YAS PARK GATE",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "projectNumber": "2022/395105",
+      "nativeName": "NOYA 4 - YAS PARK GATE",
+      "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+      "authorityArea": "Yas Island",
+      "authorityUnitCount": 508,
+      "identitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:454; authority project 2022/395105; native name NOYA 4 - YAS PARK GATE; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 508 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "officialPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+      "capturedDocumentURL": "https://vazeno.files.cmp.optimizely.com/download/assets/Press%2BRelease%2B-%2BAldar%2BLaunches%2BYas%2BPark%2BGate/1c071ac05d6711f0beb79632a83a94fd",
+      "legalDeveloperChanged": false
+    },
+    {
+      "recordId": "adrec:456",
+      "catalogueName": "NOYA 5 - YAS PARK VIEWS ",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "projectNumber": "2022/423328",
+      "nativeName": "NOYA 5 - YAS PARK VIEWS ",
+      "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+      "authorityArea": "Yas Island",
+      "authorityUnitCount": 341,
+      "identitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:456; authority project 2022/423328; native name NOYA 5 - YAS PARK VIEWS; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 341 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "officialPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+      "capturedDocumentURL": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BAldar%2BSells%2BOut%2BYas%2BPark%2BGate%2Band%2BLaunches%2BYas%2BPark%2BViews%2B-%2BFINAL%2BEN/b70af8685d6511f0af3d0ec76bb501e8",
+      "legalDeveloperChanged": false
+    },
+    {
+      "recordId": "adrec:543",
+      "catalogueName": "Nouran Living ",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "projectNumber": "20240000198137",
+      "nativeName": "Nouran Living ",
+      "authorityDeveloper": "ALDAR DEVELOPMENT  - L.L.C - O.P.C",
+      "authorityArea": "Al Saadiyat Island",
+      "authorityUnitCount": 372,
+      "identitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:543; authority project 20240000198137; native name Nouran Living; retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C; district Al Saadiyat Island; 372 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "officialPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+      "capturedDocumentURL": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar_Nouran%2BLiving_Launch%2BPress%2BRelease_EN_130324/5de2a8405d6411f081973e6907f554f2",
+      "legalDeveloperChanged": false
+    },
+    {
+      "recordId": "adrec:64",
+      "catalogueName": "Noya Luma",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "projectNumber": "2021/245801",
+      "nativeName": "Noya Luma",
+      "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+      "authorityArea": "Yas Island",
+      "authorityUnitCount": 189,
+      "identitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:64; authority project 2021/245801; native name Noya Luma; retained legal developer ALDAR PROPERTIES - P J S C; district Yas Island; 189 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "officialPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+      "capturedDocumentURL": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2B-%2BPress%2BRelease%2B-%2BNoya%2BLuma%2BLaunch%2B-%2BEN%2B-%2BFINAL/00800b685d6711f08b6e0ec76bb501e8",
+      "legalDeveloperChanged": false
+    },
+    {
+      "recordId": "adrec:65",
+      "catalogueName": "Saadiyat Reserve - The Dunes",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "projectNumber": "2021/296874",
+      "nativeName": "Saadiyat Reserve - The Dunes",
+      "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+      "authorityArea": "Al Saadiyat Island",
+      "authorityUnitCount": 83,
+      "identitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact retained ID adrec:65; authority project 2021/296874; native name Saadiyat Reserve - The Dunes; retained legal developer ALDAR PROPERTIES - P J S C; district Al Saadiyat Island; 83 units. Official publisher page links this specific PDF, whose title, geography, dateline and unit count match. Marketing publisher is not substituted for the retained legal developer. Claims map to this record only.",
+      "officialPublisherURL": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+      "capturedDocumentURL": "https://vazeno.files.cmp.optimizely.com/download/assets/Aldar%2BLaunches%2BSaadiyat%2BReserve%2BThe%2BDunes/897ab20a5d6311f0b0846a302fc0481b",
+      "legalDeveloperChanged": false
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [],
+  "historyInputs": [],
+  "licensedArchives": [],
+  "additionalDatasets": [],
+  "sourceCandidates": [],
+  "numericForecasts": [],
+  "scenarioAssumptions": [],
+  "automaticPriceUplift": null,
+  "methodology": "Five exactly identified Abu Dhabi records; append historical developer advertisements, launch dates and planned construction/handover dates at native precision. One unmatched Noya Luma 3-bedroom quote and the Dunes cross-language completion-year discrepancy remain withheld.",
+  "withheldClaims": [
+    {
+      "recordId": "adrec:64",
+      "claimId": "villas-3br",
+      "reason": "Captured document did not match the predeclared bedroom-specific statement; numeric mentions alone are not segment proof.",
+      "coverageCredit": 0
+    },
+    {
+      "recordId": "adrec:65",
+      "claimId": "completion-target",
+      "reason": "English and Arabic parsed completion years differ; browser screenshot retrieval failed. No completion target or actual delivery fact accepted.",
+      "coverageCredit": 0
+    }
+  ],
+  "collection": {
+    "sourceDocuments": 5,
+    "documentPassHTTPRequests": 12,
+    "originalHTMLPassHTTPRequests": 6,
+    "rawRetained": false,
+    "sourceDisposition": {
+      "accepted_document_sources": 5,
+      "headline_only_html_bodies": 5
+    },
+    "acceptedFacts": 23
+  }
+}

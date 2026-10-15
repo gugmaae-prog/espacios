@@ -1,0 +1,18 @@
+{
+  "status": "active_interim_v46_data_release",
+  "worker": "psr-portfolio-map-v2",
+  "version": "56d24e27-4c41-4d2a-be13-2fde1e7ce889",
+  "deployment": "5976084d-c5fd-4d70-b382-1de452a1a8f5",
+  "trafficPercent": 100,
+  "activatedAt": "2026-10-13T11:25:58.190882Z",
+  "sourceCommit": "698f8b91955bc1cf8daa40379153517be237e890",
+  "frontend": "20261012-map-evidence-v48",
+  "history": "20261013-enrichment-v46",
+  "rootSHA256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+  "ci": {
+    "verification": "https://github.com/gugmaae-prog/espacios/actions/runs/38386782396",
+    "repositorySafety": "https://github.com/gugmaae-prog/espacios/actions/runs/38386782414",
+    "status": "passed"
+  },
+  "note": "This was the real 100% production V46 data deployment at the time of verification. It is an interim deployment record only: an authorized subsequent mobile-interface release must preserve the V46 history/root and create a separate traffic receipt."
+}

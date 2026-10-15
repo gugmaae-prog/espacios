@@ -1,0 +1,12 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "version": "7fa645e8-3d61-44f3-ba39-ced6ee0098d4",
+  "deployment": "4a8d3c82-fe8a-4d74-899a-5a2259154efb",
+  "trafficPercent": 100,
+  "activatedAt": "2026-10-13T09:21:37.005479Z",
+  "sourceCommit": "484c71bdce10a229cf64da43f4ca4aa2e661670d",
+  "frontend": "20261012-map-evidence-v48",
+  "history": "20261013-enrichment-v45",
+  "rootSHA256": "1c17824d39f4399e1fb1088bb52c2a0e761cb2e935286c617e25c883b4afa2c0",
+  "ci": "https://github.com/gugmaae-prog/espacios/actions/runs/38372776915"
+}

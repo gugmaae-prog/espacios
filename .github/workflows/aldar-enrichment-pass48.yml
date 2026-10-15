@@ -1,0 +1,129 @@
+name: Verified Aldar historical enrichment (GitHub only)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/aldar-enrichment-pass48.yml'
+      - 'scripts/*aldar*'
+      - 'tests/aldar*'
+      - 'data/historical-intelligence/aldar-launches-20261014/**'
+concurrency:
+  group: reviewed-aldar-v48
+  cancel-in-progress: true
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-and-commit:
+    if: github.repository == 'gugmaae-prog/espacios' && github.event.pull_request.number == 100 && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/all-emirates-evidence-queue-20261014'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+      actions: read
+    env:
+      BRANCH: research/all-emirates-evidence-queue-20261014
+      ALDAR_BASELINE_SNAPSHOT: /tmp/aldar-v47.json.gz
+      REGIONAL_BASELINE_SNAPSHOT: /tmp/retained-v46.json.gz
+      REGIONAL_CANDIDATE_SNAPSHOT: /tmp/retained-v47.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Verify pinned baselines and refuse another concurrent branch head
+        id: baseline
+        run: |
+          set -euo pipefail
+          START=$(git rev-parse HEAD)
+          echo "START=$START" >> "$GITHUB_ENV"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$START"
+          git fetch --no-tags --depth=1 origin f34708de0ff423902116a48dd11b7b4a6dba0bfa 6cb77c197d1ea6107c94f374f2bfa10c7248a043
+          git show f34708de0ff423902116a48dd11b7b4a6dba0bfa:data/historical-intelligence-20261003.json.gz > "$ALDAR_BASELINE_SNAPSHOT"
+          gzip -dc "$ALDAR_BASELINE_SNAPSHOT" > "$REGIONAL_CANDIDATE_SNAPSHOT"
+          git show 6cb77c197d1ea6107c94f374f2bfa10c7248a043:data/historical-intelligence-20261003.json.gz > "$REGIONAL_BASELINE_SNAPSHOT"
+          CURRENT=$(python3 -c "import json;print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])")
+          if [ "$CURRENT" = '20261014-enrichment-v47' ]; then
+            echo 'apply=true' >> "$GITHUB_OUTPUT"
+          elif [ "$CURRENT" = '20261014-enrichment-v48' ]; then
+            echo 'apply=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Unexpected snapshot version; manual reconciliation required'; exit 1
+          fi
+      - run: npm ci
+      - run: npm run history:build
+      - uses: actions/download-artifact@v4
+        if: steps.baseline.outputs.apply == 'true'
+        with:
+          name: aldar-official-downloads-pass48-review
+          run-id: 38566560077
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/aldar-source-receipts
+      - name: Append reviewed historical facts and pack local immutable V48
+        if: steps.baseline.outputs.apply == 'true'
+        run: |
+          set -euo pipefail
+          echo '702497892c4cc0a15895ceebda25ca72fe1aa5901b61690cda497eed1fb70081  /tmp/aldar-source-receipts/aldar-download-capture.json' | sha256sum --check
+          echo '39aafbf661d78fe148bb60be2f3d59fe9f8a5017f787d2519496e330e966f198  /tmp/aldar-source-receipts/html-capture.json' | sha256sum --check
+          cp /tmp/aldar-source-receipts/aldar-download-capture.json data/historical-intelligence/aldar-launches-20261014/download-capture.json
+          cp /tmp/aldar-source-receipts/html-capture.json data/historical-intelligence/aldar-launches-20261014/html-capture.json
+          python3 scripts/append-aldar-launches-pass48.py --snapshot "$ALDAR_BASELINE_SNAPSHOT" --output /tmp/aldar-v48-candidate
+          python3 scripts/pack-aldar-launches-pass48.py --candidate-dir /tmp/aldar-v48-candidate
+          python3 scripts/update-aldar-regression-expectations.py
+      - name: Independent new and retained historical acceptance tests
+        run: |
+          npm run history:build
+          python3 tests/aldar-launches-preservation.test.py
+          python3 tests/aldar-launch-capture.test.py
+          python3 tests/aldar-download-capture.test.py
+          node --test tests/regional-mirror-preservation.test.mjs
+          python3 tests/reviewed-regional-pass.test.py
+          python3 tests/regional-primary-capture.test.py
+          python3 tests/regional-research-queue.test.py
+          python3 scripts/build-regional-review-queue.py --verify-only
+      - run: npm run build:smart
+      - run: npm test
+      - run: npm run check
+      - run: npm run build:smart
+      - run: npm run history:verify:storage
+      - name: Single reviewed data commit after every required check succeeds
+        if: steps.baseline.outputs.apply == 'true'
+        run: |
+          set -euo pipefail
+          python3 scripts/write-aldar-pass48-handover.py
+          git add -f data/historical-intelligence-20261003.json.gz data/historical-intelligence/objects data/historical-intelligence/publication-manifest.json data/historical-intelligence/runtime-index.json data/historical-intelligence/aldar-launches-20261014
+          git add tests .github/workflows/verified-regional-enrichment.yml .github/workflows/aldar-launch-pass48.yml docs/HISTORICAL-INTELLIGENCE.md docs/verification/regional-research-2026-10-14/EXECUTION-HANDOVER.md
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          TREE=$(git write-tree)
+          COMMIT=$(git commit-tree "$TREE" -p "$START" -m 'data: append 23 verified Aldar historical facts across five exact records' -m 'Preserve V47, all 1860 IDs and 633891 native rows. Add ten historical advertised prices, five launch dates and eight planned targets. Withhold unmatched quote and conflicting completion target. All required tests and isolated local storage checks passed before this data commit. No Cloudflare publication or deployment.')
+          mkdir -p /tmp/aldar-v48-verified
+          printf '%s\n' "$COMMIT" > /tmp/aldar-v48-verified/COMMIT
+          printf '%s\n' "$TREE" > /tmp/aldar-v48-verified/TREE
+          git update-ref refs/heads/local-aldar-candidate "$COMMIT"
+          git bundle create /tmp/aldar-v48-verified/candidate.bundle refs/heads/local-aldar-candidate ^"$START"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$START"
+          git push origin "$COMMIT:refs/heads/$BRANCH"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$COMMIT"
+          printf '%s\n' 'All checks passed; only research branch changed; no remote evidence publication.' > /tmp/aldar-v48-verified/CHECKS
+      - name: Preserve evidence receipts and entire catalogue queue
+        if: success()
+        run: |
+          mkdir -p /tmp/aldar-v48-verified
+          cp data/historical-intelligence/aldar-launches-20261014/*.json /tmp/aldar-v48-verified/
+          cp docs/verification/regional-research-2026-10-14/EXECUTION-HANDOVER.md /tmp/aldar-v48-verified/
+          python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/ci-v48-aldar
+          cp -a data/historical-intelligence/review-queues/ci-v48-aldar /tmp/aldar-v48-verified/all-records-v48
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aldar-v48-verified-candidate
+          path: /tmp/aldar-v48-verified/
+          if-no-files-found: warn
+          retention-days: 30

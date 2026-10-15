@@ -1,0 +1,12 @@
+{
+  "status": "passed_locally",
+  "command": "npm run history:verify:v46-preservation",
+  "baselineVersion": "20261013-enrichment-v45",
+  "candidateVersion": "20261013-enrichment-v46",
+  "series": 16872,
+  "partitionPairs": 1091,
+  "decodedBytes": 1476518068,
+  "payloadVersionOnly": true,
+  "aggregateSeriesMetadataSHA256": "3aaf5c2c14fa57b844b0258c17e460649ec5fee5ff7d19aee234d83492c42982",
+  "scope": "All V45/V46 native partition payloads compare byte-for-byte after normalizing the expected top-level evidence-version string; this is not a remote R2 readback."
+}

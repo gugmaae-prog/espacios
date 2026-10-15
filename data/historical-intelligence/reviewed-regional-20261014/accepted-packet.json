@@ -1,0 +1,1995 @@
+{
+  "schemaVersion": 1,
+  "passId": "reviewed-regional-pass47-20261014",
+  "asOf": "2026-10-14",
+  "priorVersion": "20261013-enrichment-v46",
+  "candidateVersion": "20261014-enrichment-v47",
+  "priorSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "priorCommit": "6cb77c197d1ea6107c94f374f2bfa10c7248a043",
+  "sources": [
+    {
+      "id": "regional47-aldar-q1-2025-e161a7d4b258",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-q1-2025-financial-results",
+      "publisher": "Aldar",
+      "classification": "primary_developer_financial_report",
+      "primaryEvidence": true,
+      "publishedAt": "2025-04-29",
+      "firstAvailableAt": "2026-10-14T09:43:21Z",
+      "retrievedAt": "2026-10-14T09:43:21Z",
+      "datePrecision": "day",
+      "publicationDateStatus": "reported_publisher_dateline",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-q1-2025-financial-results",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e161a7d4b258655562d0c44bc3b011f0640b1b5ce488a50a94d0547375d51891",
+      "bytes": 327016,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "aldar-q1-2025",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": null,
+      "currency": null,
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-aldar-q3-2025-f123b0f801c2",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-q3-9m-2025-financial-results",
+      "publisher": "Aldar",
+      "classification": "primary_developer_financial_report",
+      "primaryEvidence": true,
+      "publishedAt": "2025-10-28",
+      "firstAvailableAt": "2026-10-14T09:43:25Z",
+      "retrievedAt": "2026-10-14T09:43:25Z",
+      "datePrecision": "day",
+      "publicationDateStatus": "reported_publisher_dateline",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-q3-9m-2025-financial-results",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f123b0f801c2a825a25761a4908007611535dc9075d668a37fa8ae9ee28d3ce6",
+      "bytes": 317205,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "aldar-q3-2025",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": null,
+      "currency": null,
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-aldar-fahid-listings-63a2224c0c03",
+      "url": "https://www.aldar.com/properties/en/communities?text=Fahid+Island",
+      "publisher": "Aldar",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "retrievedAt": "2026-10-14T09:43:40Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/properties/en/communities?text=Fahid+Island",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "63a2224c0c03ababd05638d42535ccd66d46005e554ba46236338ed9aa34fabc",
+      "bytes": 235601,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "aldar-fahid-listings",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T09:43:17Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-aquamarine-1452b81f0edf",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:00Z",
+      "retrievedAt": "2026-10-14T09:44:00Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1452b81f0edf734a27a2d7525547dd53ffcb76717d1d0b91dcda882fd628b41f",
+      "bytes": 384145,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-aquamarine",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-pearlside-6a1ba00474e4",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pearlside",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:03Z",
+      "retrievedAt": "2026-10-14T09:44:03Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pearlside",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6a1ba00474e463ec2b7c1f385adf5bb46b1ccc2068749044bb50b29a0dc17019",
+      "bytes": 378977,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-pearlside",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-canalside-186ac49807ae",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/canalside",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:05Z",
+      "retrievedAt": "2026-10-14T09:44:05Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/canalside",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "186ac49807aee82aee1a487c445191f15fd05ea02b1aca2922b12c0db97cf1c2",
+      "bytes": 380383,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-canalside",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-coastline-85f325ff0064",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coastline",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:17Z",
+      "retrievedAt": "2026-10-14T09:44:17Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coastline",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "85f325ff00642733ee771ec143eabec22bffab0c1c7590a946f63b3248643665",
+      "bytes": 394611,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-coastline",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-coraline-f1d74a90a0b4",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coraline",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:23Z",
+      "retrievedAt": "2026-10-14T09:44:23Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coraline",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f1d74a90a0b475b244299741d64bdf5b710a134f2bc0da8a3713e143f8d93f09",
+      "bytes": 368982,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-coraline",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-selene-9a0030a1344d",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/selene",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:28Z",
+      "retrievedAt": "2026-10-14T09:44:28Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/selene",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9a0030a1344d53c1ef53b1cf7d76b8982327d560ecb1ec960f1d26c6052d7030",
+      "bytes": 375040,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-selene",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-palm-grove-villas-fa24405f9cf7",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/palm-grove-villas",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:31Z",
+      "retrievedAt": "2026-10-14T09:44:31Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/palm-grove-villas",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fa24405f9cf7b0d178e8d5bd9536eb7657eb92026d9505e134055db428601603",
+      "bytes": 363485,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-palm-grove-villas",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-coral-villas-21ea73386798",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/coral-villas",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:34Z",
+      "retrievedAt": "2026-10-14T09:44:34Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/coral-villas",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "21ea73386798fe306c8ab19f3f16dc5f488569a252741f5572a525ba355be40a",
+      "bytes": 360801,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-coral-villas",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-sobha-aquamont-a8f085270936",
+      "url": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "publisher": "Sobha Realty",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:36Z",
+      "retrievedAt": "2026-10-14T09:44:36Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a8f085270936a02b19977738059a6e13c902daf1e8e240e21b21cfb1b80f92a8",
+      "bytes": 390004,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "sobha-aquamont",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://sobharealty.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de",
+          "retrievedAt": "2026-10-14T09:43:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ]
+    },
+    {
+      "id": "regional47-oceana-project-730897fa3a23",
+      "url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "publisher": "Reportage Group",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:44:59Z",
+      "retrievedAt": "2026-10-14T09:44:59Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "730897fa3a23524affc224bb3b8a2fa00fccdeddf6ca5916b2006ff77f721d83",
+      "bytes": 151589,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "oceana-project",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://reportagegroup.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "498e1d44041fb29162af97b6fd3cfb69b09b3745a5c7e06163cf356bad4f00e4",
+          "retrievedAt": "2026-10-14T09:44:52Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "preserveRevision": true,
+      "revisionOfSourceId": "scrape-00f0a5aa4721206fd315b965",
+      "canonicalSourceId": "scrape-00f0a5aa4721206fd315b965"
+    },
+    {
+      "id": "regional47-marlin-2-project-dd38464eed6a",
+      "url": "https://reportagegroup.com/projects/residential-apartments/marlin-2/",
+      "publisher": "Reportage Group",
+      "classification": "primary_developer_project_advertisement",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-14T09:45:04Z",
+      "retrievedAt": "2026-10-14T09:45:04Z",
+      "datePrecision": "unknown",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First independently retained capture in this pass; no historical publication vintage or earlier forecasting availability is certified.",
+      "httpStatus": 200,
+      "finalUrl": "https://reportagegroup.com/projects/residential-apartments/marlin-2/",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "dd38464eed6a548b447b3891388e70d5df23ef79bdc8d8929dfa4fdd354fbcd5",
+      "bytes": 114086,
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "captureId": "marlin-2-project",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Minimal normalized factual fields and bibliographic/provenance metadata only. No raw page, PDF, image or dataset redistribution licence is inferred.",
+      "datasetVersionId": null,
+      "observationStart": "2026-10-14",
+      "observationEnd": "2026-10-14",
+      "frequency": "capture_snapshot_not_continuous_series",
+      "unit": "AED",
+      "currency": "AED",
+      "segment": "Separate project-level source statements; no aggregation",
+      "methodology": "Manual exact-project identity and statement review; deterministic native field extraction with no price inference or source averaging.",
+      "robotsReceipts": [
+        {
+          "url": "https://reportagegroup.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "498e1d44041fb29162af97b6fd3cfb69b09b3745a5c7e06163cf356bad4f00e4",
+          "retrievedAt": "2026-10-14T09:44:52Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "preserveRevision": true,
+      "revisionOfSourceId": "scrape-7854568aea8c0c78906e0c8b",
+      "canonicalSourceId": "scrape-7854568aea8c0c78906e0c8b"
+    }
+  ],
+  "facts": [
+    {
+      "id": "regional47-adrec-590-launch",
+      "status": "accepted",
+      "recordId": "adrec:590",
+      "sourceIds": [
+        "regional47-aldar-q1-2025-e161a7d4b258"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-q1-2025-e161a7d4b258",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:590, authority project number 20250000424792, native project name Manarat Living III, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Al Saadiyat Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:21Z",
+      "publishedAt": "2025-04-29",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-Q1",
+        "precision": "quarter"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_project_launch",
+      "label": "Aldar reports launching Manarat Living III during 2025-Q1.",
+      "note": "Native quarter only; no exact launch day, physical construction start, completion, transaction price or earlier forecast availability inferred.",
+      "phraseProof": "Aldar launched two new projects in Q1 2025: Manarat Living III on Saadiyat Island"
+    },
+    {
+      "id": "regional47-adrec-617-launch",
+      "status": "accepted",
+      "recordId": "adrec:617",
+      "sourceIds": [
+        "regional47-aldar-q3-2025-f123b0f801c2"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-q3-2025-f123b0f801c2",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:617, authority project number 20250000558588, native project name Fahid Beach Terraces, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:25Z",
+      "publishedAt": "2025-10-28",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-Q3",
+        "precision": "quarter"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_project_launch",
+      "label": "Aldar reports launching Fahid Beach Terraces during 2025-Q3.",
+      "note": "Native quarter only; no exact launch day, physical construction start, completion, transaction price or earlier forecast availability inferred.",
+      "phraseProof": "Aldar launched three projects in Q3 2025: Fahid Beach Terraces, Rise by Athlon, and Al Deem Townhomes"
+    },
+    {
+      "id": "regional47-adrec-620-launch",
+      "status": "accepted",
+      "recordId": "adrec:620",
+      "sourceIds": [
+        "regional47-aldar-q3-2025-f123b0f801c2"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-q3-2025-f123b0f801c2",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:620, authority project number 20250000555235, native project name Al Deem Townhomes, retained legal developer ALDAR PROJECTS - L.L.C - O.P.C and authority district Al Bahyah are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:25Z",
+      "publishedAt": "2025-10-28",
+      "kind": "lifecycle",
+      "milestone": "launch",
+      "date": {
+        "start": "2025-Q3",
+        "precision": "quarter"
+      },
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_reported_project_launch",
+      "label": "Aldar reports launching Al Deem Townhomes during 2025-Q3.",
+      "note": "Native quarter only; no exact launch day, physical construction start, completion, transaction price or earlier forecast availability inferred.",
+      "phraseProof": "Aldar launched three projects in Q3 2025: Fahid Beach Terraces, Rise by Athlon, and Al Deem Townhomes"
+    },
+    {
+      "id": "regional47-project-apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island",
+      "sourceIds": [
+        "regional47-sobha-aquamarine-1452b81f0edf"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-aquamarine-1452b81f0edf"
+      ],
+      "identityBasis": "One exact marketed project record project:apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine, document/project title Luxury Shoreline Apartments: Aquamarine | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:00Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1530000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-pearlside-marina-residences-siniya-island-uaq-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:pearlside-marina-residences-siniya-island-uaq",
+      "sourceIds": [
+        "regional47-sobha-pearlside-6a1ba00474e4"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-pearlside-6a1ba00474e4"
+      ],
+      "identityBasis": "One exact marketed project record project:pearlside-marina-residences-siniya-island-uaq: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pearlside, document/project title Luxury Waterfront Apartments: Pearlside | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:03Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1400000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-canalside-by-sobha-siniya-island-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:canalside-by-sobha-siniya-island",
+      "sourceIds": [
+        "regional47-sobha-canalside-186ac49807ae"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-canalside-186ac49807ae"
+      ],
+      "identityBasis": "One exact marketed project record project:canalside-by-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/canalside, document/project title Premium Waterfront Apartments: Canalside| Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:05Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1360000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-coastline-beach-residences-sobha-realty-sobha-siniya-island-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:coastline-beach-residences-sobha-realty-sobha-siniya-island",
+      "sourceIds": [
+        "regional47-sobha-coastline-85f325ff0064"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-coastline-85f325ff0064"
+      ],
+      "identityBasis": "One exact marketed project record project:coastline-beach-residences-sobha-realty-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coastline, document/project title Premium Waterfront Apartments: Coastline | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:17Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1860000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island",
+      "sourceIds": [
+        "regional47-sobha-coraline-f1d74a90a0b4"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-coraline-f1d74a90a0b4"
+      ],
+      "identityBasis": "One exact marketed project record project:apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coraline, document/project title Luxury Beachfront Apartments: Coraline | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:23Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 2400000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-selene-beach-residences-by-sobha-realty-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:selene-beach-residences-by-sobha-realty",
+      "sourceIds": [
+        "regional47-sobha-selene-9a0030a1344d"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-selene-9a0030a1344d"
+      ],
+      "identityBasis": "One exact marketed project record project:selene-beach-residences-by-sobha-realty: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/selene, document/project title Premium Beachfront Residences: Selene| Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:28Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1590000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-palm-groove-villas-by-sobha-realty-on-sobha-siniya-island-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:palm-groove-villas-by-sobha-realty-on-sobha-siniya-island",
+      "sourceIds": [
+        "regional47-sobha-palm-grove-villas-fa24405f9cf7"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-palm-grove-villas-fa24405f9cf7"
+      ],
+      "identityBasis": "One exact marketed project record project:palm-groove-villas-by-sobha-realty-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/palm-grove-villas, document/project title Exclusive Island Community Villas | Sobha Palm Grove Villas, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification. The catalogue spelling Palm Groove is retained; official marketed name Palm Grove Villas, Sobha Siniya Island, is recorded as an explicit alias, not a new legal entity.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:31Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 11530000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential villas; unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-coral-beach-villas-by-sobha-realty-on-sobha-siniya-island-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:coral-beach-villas-by-sobha-realty-on-sobha-siniya-island",
+      "sourceIds": [
+        "regional47-sobha-coral-villas-21ea73386798"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-coral-villas-21ea73386798"
+      ],
+      "identityBasis": "One exact marketed project record project:coral-beach-villas-by-sobha-realty-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/coral-villas, document/project title Exclusive UAQ Beachfront Living | Coral Beach Villas, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:34Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 16990000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential villas; unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-sobha-aquamont-apartments-umm-al-quwain-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "sourceIds": [
+        "regional47-sobha-aquamont-a8f085270936"
+      ],
+      "identitySourceIds": [
+        "regional47-sobha-aquamont-a8f085270936"
+      ],
+      "identityBasis": "One exact marketed project record project:sobha-aquamont-apartments-umm-al-quwain: dedicated first-party URL https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont, document/project title Signature Water-Centric Design | Sobha Aquamont, publisher Sobha Realty and project geography Downtown Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:36Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1110000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-oceana-by-reportage-fujairah-uae-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:oceana-by-reportage-fujairah-uae",
+      "sourceIds": [
+        "regional47-oceana-project-730897fa3a23"
+      ],
+      "identitySourceIds": [
+        "regional47-oceana-project-730897fa3a23"
+      ],
+      "identityBasis": "One exact marketed project record project:oceana-by-reportage-fujairah-uae: dedicated first-party URL https://reportagegroup.com/projects/residential-apartments/oceana/, document/project title Oceana - Reportage, publisher Reportage Group and project geography Fujairah are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:44:59Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 530000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-project-marlin-ii-reportage-al-reem-island-abu-dhabi-asking-20261014",
+      "status": "accepted",
+      "recordId": "project:marlin-ii-reportage-al-reem-island-abu-dhabi",
+      "sourceIds": [
+        "regional47-marlin-2-project-dd38464eed6a"
+      ],
+      "identitySourceIds": [
+        "regional47-marlin-2-project-dd38464eed6a"
+      ],
+      "identityBasis": "One exact marketed project record project:marlin-ii-reportage-al-reem-island-abu-dhabi: dedicated first-party URL https://reportagegroup.com/projects/residential-apartments/marlin-2/, document/project title Marlin 2 - Reportage, publisher Reportage Group and project geography Al Reem Island, Abu Dhabi are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:45:04Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "numericMentions",
+        "index": 0
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1600000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "residential apartments/duplexes; exact unit and bedroom basis not specified by starting-price panel",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-adrec-609-asking-20261014",
+      "status": "accepted",
+      "recordId": "adrec:609",
+      "sourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:609, authority project number 20250000506230, native project name Fahid Beach Residences, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "cards",
+        "index": 0,
+        "sourceName": "Fahid Beach Residences"
+      },
+      "observation": {
+        "metric": "price",
+        "value": 4000000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "mixed developer project-card inventory; residential versus retail unit underlying minimum not established",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-adrec-609-planned-completion",
+      "status": "accepted",
+      "recordId": "adrec:609",
+      "sourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:609, authority project number 20250000506230, native project name Fahid Beach Residences, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "publishedAt": null,
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2029-Q2",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_planned_completion_target",
+      "label": "Aldar project card for Fahid Beach Residences advertises completion in 2029-Q2.",
+      "note": "A planned developer target as captured on 14 October 2026, not actual completion, handover or occupancy. Unit-specific target dates are not substituted.",
+      "targetProof": {
+        "index": 0
+      }
+    },
+    {
+      "id": "regional47-adrec-617-asking-20261014",
+      "status": "accepted",
+      "recordId": "adrec:617",
+      "sourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:617, authority project number 20250000558588, native project name Fahid Beach Terraces, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "cards",
+        "index": 1,
+        "sourceName": "Fahid Beach Terraces"
+      },
+      "observation": {
+        "metric": "price",
+        "value": 2457300,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "mixed developer project-card inventory; residential versus retail unit underlying minimum not established",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-adrec-617-planned-completion",
+      "status": "accepted",
+      "recordId": "adrec:617",
+      "sourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:617, authority project number 20250000558588, native project name Fahid Beach Terraces, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "publishedAt": null,
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2029-Q4",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_planned_completion_target",
+      "label": "Aldar project card for Fahid Beach Terraces advertises completion in 2029-Q4.",
+      "note": "A planned developer target as captured on 14 October 2026, not actual completion, handover or occupancy. Unit-specific target dates are not substituted.",
+      "targetProof": {
+        "index": 1
+      }
+    },
+    {
+      "id": "regional47-adrec-615-asking-20261014",
+      "status": "accepted",
+      "recordId": "adrec:615",
+      "sourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:615, authority project number 20250000510334, native project name The Beach House Fahid, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "publishedAt": null,
+      "kind": "financial",
+      "evidenceClass": "advertised_asking_price",
+      "numericProof": {
+        "array": "cards",
+        "index": 2,
+        "sourceName": "The Beach House Fahid"
+      },
+      "observation": {
+        "metric": "price",
+        "value": 1900000,
+        "unit": "AED",
+        "currency": "AED",
+        "period": "2026-10-14",
+        "observationStart": "2026-10-14",
+        "observationEnd": "2026-10-14",
+        "frequency": "daily",
+        "observationKind": "asking_quote",
+        "sampleCount": null,
+        "segment": "mixed developer project-card inventory; residential versus retail unit underlying minimum not established",
+        "areaBasis": "total_advertised_price_no_area_denominator",
+        "tenure": "unestablished",
+        "tenureRegistrationClass": "advertisement_not_registered_transaction",
+        "methodology": "Source-native first-party starting-price advertisement retained at capture date. No aggregation, registered-sale inference, valuation, yield, or unit-area conversion.",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Developer starting-price panel; subject to inventory availability. Not a completed sale, current valuation, or guaranteed available unit.",
+        "sourceQuoteBasis": "Direct HTTPS body captured with checksum and manually reviewed exact project identity. Prior quote vintages retained; no source averaging.",
+        "revisionStatus": "additional_capture_vintage_no_prior_observation_superseded"
+      }
+    },
+    {
+      "id": "regional47-adrec-615-planned-completion",
+      "status": "accepted",
+      "recordId": "adrec:615",
+      "sourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03"
+      ],
+      "identitySourceIds": [
+        "regional47-aldar-fahid-listings-63a2224c0c03",
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:615, authority project number 20250000510334, native project name The Beach House Fahid, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration.",
+      "identityVerified": true,
+      "primaryEvidence": true,
+      "scope": "subject",
+      "firstAvailableAt": "2026-10-14T09:43:40Z",
+      "publishedAt": null,
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2029-Q4",
+        "precision": "quarter"
+      },
+      "eventStatus": "planned",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_planned_completion_target",
+      "label": "Aldar project card for The Beach House Fahid advertises completion in 2029-Q4.",
+      "note": "A planned developer target as captured on 14 October 2026, not actual completion, handover or occupancy. Unit-specific target dates are not substituted.",
+      "targetProof": {
+        "index": 2
+      }
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "recordId": "adrec:590",
+      "catalogueName": "Manarat Living III",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "authority_id_name_developer_geography",
+      "authorityProjectNumber": "20250000424792",
+      "authorityProjectId": 590,
+      "authorityDeveloperName": "ALDAR DEVELOPMENT  - L.L.C - O.P.C",
+      "authorityArea": "Al Saadiyat Island",
+      "authorityIdentitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:590, authority project number 20250000424792, native project name Manarat Living III, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Al Saadiyat Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration."
+    },
+    {
+      "recordId": "adrec:609",
+      "catalogueName": "Fahid Beach Residences",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "authority_id_name_developer_geography",
+      "authorityProjectNumber": "20250000506230",
+      "authorityProjectId": 609,
+      "authorityDeveloperName": "ALDAR DEVELOPMENT  - L.L.C - O.P.C",
+      "authorityArea": "Fahid Island",
+      "authorityIdentitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:609, authority project number 20250000506230, native project name Fahid Beach Residences, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration."
+    },
+    {
+      "recordId": "adrec:615",
+      "catalogueName": "The Beach House Fahid ",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "authority_id_name_developer_geography",
+      "authorityProjectNumber": "20250000510334",
+      "authorityProjectId": 615,
+      "authorityDeveloperName": "ALDAR DEVELOPMENT  - L.L.C - O.P.C",
+      "authorityArea": "Fahid Island",
+      "authorityIdentitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:615, authority project number 20250000510334, native project name The Beach House Fahid, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration."
+    },
+    {
+      "recordId": "adrec:617",
+      "catalogueName": "Fahid Beach Terraces",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "authority_id_name_developer_geography",
+      "authorityProjectNumber": "20250000558588",
+      "authorityProjectId": 617,
+      "authorityDeveloperName": "ALDAR DEVELOPMENT  - L.L.C - O.P.C",
+      "authorityArea": "Fahid Island",
+      "authorityIdentitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:617, authority project number 20250000558588, native project name Fahid Beach Terraces, retained legal developer ALDAR DEVELOPMENT  - L.L.C - O.P.C and authority district Fahid Island are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration."
+    },
+    {
+      "recordId": "adrec:620",
+      "catalogueName": "Al Deem Townhomes",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "authority_id_name_developer_geography",
+      "authorityProjectNumber": "20250000555235",
+      "authorityProjectId": 620,
+      "authorityDeveloperName": "ALDAR PROJECTS - L.L.C - O.P.C",
+      "authorityArea": "Al Bahyah",
+      "authorityIdentitySourceIds": [
+        "v16-src-adrec-project-listing"
+      ],
+      "identityBasis": "Exact catalogue ID adrec:620, authority project number 20250000555235, native project name Al Deem Townhomes, retained legal developer ALDAR PROJECTS - L.L.C - O.P.C and authority district Al Bahyah are reconciled with the specifically named project on Aldar's first-party page. Each source statement/card is linked only to this ID; no master-to-phase propagation. A marketing launch may precede authority registration."
+    },
+    {
+      "recordId": "project:apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island",
+      "catalogueName": "Aquamarine Beach Residences",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Luxury Shoreline Apartments: Aquamarine | Sobha Siniya Island",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine, document/project title Luxury Shoreline Apartments: Aquamarine | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island",
+      "catalogueName": "Coraline Beach Residences by Sobha Realty on Sobha Siniya Island, Umm Al Quwain",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Luxury Beachfront Apartments: Coraline | Sobha Siniya Island",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coraline",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coraline, document/project title Luxury Beachfront Apartments: Coraline | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:canalside-by-sobha-siniya-island",
+      "catalogueName": "Canalside Marina Residences",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Premium Waterfront Apartments: Canalside| Sobha Siniya Island",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/canalside",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:canalside-by-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/canalside, document/project title Premium Waterfront Apartments: Canalside| Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:coastline-beach-residences-sobha-realty-sobha-siniya-island",
+      "catalogueName": "Coastline Beach Residences by Sobha Realty on Sobha Siniya Island, Umm Al Quwain",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Premium Waterfront Apartments: Coastline | Sobha Siniya Island",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coastline",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:coastline-beach-residences-sobha-realty-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coastline, document/project title Premium Waterfront Apartments: Coastline | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:coral-beach-villas-by-sobha-realty-on-sobha-siniya-island",
+      "catalogueName": "Coral Beach Villas by Sobha Realty on Sobha Siniya Island, Umm Al Quwain",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Exclusive UAQ Beachfront Living | Coral Beach Villas",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/coral-villas",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:coral-beach-villas-by-sobha-realty-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/coral-villas, document/project title Exclusive UAQ Beachfront Living | Coral Beach Villas, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:marlin-ii-reportage-al-reem-island-abu-dhabi",
+      "catalogueName": "Marlin II",
+      "type": "project",
+      "emirate": "Abu Dhabi",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Marlin 2 - Reportage",
+      "officialProjectUrl": "https://reportagegroup.com/projects/residential-apartments/marlin-2/",
+      "marketingDeveloper": "Reportage Group",
+      "marketedGeography": "Al Reem Island, Abu Dhabi",
+      "identityBasis": "One exact marketed project record project:marlin-ii-reportage-al-reem-island-abu-dhabi: dedicated first-party URL https://reportagegroup.com/projects/residential-apartments/marlin-2/, document/project title Marlin 2 - Reportage, publisher Reportage Group and project geography Al Reem Island, Abu Dhabi are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:oceana-by-reportage-fujairah-uae",
+      "catalogueName": "Oceana",
+      "type": "project",
+      "emirate": "Fujairah",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Oceana - Reportage",
+      "officialProjectUrl": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "marketingDeveloper": "Reportage Group",
+      "marketedGeography": "Fujairah",
+      "identityBasis": "One exact marketed project record project:oceana-by-reportage-fujairah-uae: dedicated first-party URL https://reportagegroup.com/projects/residential-apartments/oceana/, document/project title Oceana - Reportage, publisher Reportage Group and project geography Fujairah are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:palm-groove-villas-by-sobha-realty-on-sobha-siniya-island",
+      "catalogueName": "Palm Groove Villas",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Exclusive Island Community Villas | Sobha Palm Grove Villas",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/palm-grove-villas",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:palm-groove-villas-by-sobha-realty-on-sobha-siniya-island: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/palm-grove-villas, document/project title Exclusive Island Community Villas | Sobha Palm Grove Villas, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification. The catalogue spelling Palm Groove is retained; official marketed name Palm Grove Villas, Sobha Siniya Island, is recorded as an explicit alias, not a new legal entity."
+    },
+    {
+      "recordId": "project:pearlside-marina-residences-siniya-island-uaq",
+      "catalogueName": "Pearlside Marina Residences",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Luxury Waterfront Apartments: Pearlside | Sobha Siniya Island",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pearlside",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:pearlside-marina-residences-siniya-island-uaq: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pearlside, document/project title Luxury Waterfront Apartments: Pearlside | Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:selene-beach-residences-by-sobha-realty",
+      "catalogueName": "Selene, Beach Residences",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Premium Beachfront Residences: Selene| Sobha Siniya Island",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/selene",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Sobha Siniya Island, Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:selene-beach-residences-by-sobha-realty: dedicated first-party URL https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/selene, document/project title Premium Beachfront Residences: Selene| Sobha Siniya Island, publisher Sobha Realty and project geography Sobha Siniya Island, Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    },
+    {
+      "recordId": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "catalogueName": "Sobha Aquamont",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "legalDeveloperChanged": false,
+      "legalDeveloperIdentity": "retained_existing_authority_evidence_only; not inferred from marketing publisher",
+      "matchMethod": "official_project_page_name_developer_geography",
+      "officialProjectTitle": "Signature Water-Centric Design | Sobha Aquamont",
+      "officialProjectUrl": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "marketingDeveloper": "Sobha Realty",
+      "marketedGeography": "Downtown Umm Al Quwain",
+      "identityBasis": "One exact marketed project record project:sobha-aquamont-apartments-umm-al-quwain: dedicated first-party URL https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont, document/project title Signature Water-Centric Design | Sobha Aquamont, publisher Sobha Realty and project geography Downtown Umm Al Quwain are reconciled with the retained catalogue. The starting-price panel is scoped to this named project only; it is not an authority transaction identity or a legal-developer certification."
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [],
+  "historyInputs": [],
+  "licensedArchives": [],
+  "additionalDatasets": [],
+  "sourceCandidates": [],
+  "numericForecasts": [],
+  "scenarioAssumptions": [],
+  "automaticPriceUplift": null,
+  "methodology": "Append manually accepted exact-project native advertisements, dated launch quarters and planned completion targets to V46. Keep evidence classes, legal/marketed identities and availability dates separate. No new transactions, rents, valuations or numeric forecasts. Five internally inconsistent quote pages are withheld; source presence and repeated captures are not coverage credit.",
+  "collection": {
+    "capturedSources": 33,
+    "httpRequests": 39,
+    "acceptedSources": 14,
+    "acceptedFacts": 20,
+    "sourceDispositionCounts": {
+      "verified_unchanged_authority_capture": 6,
+      "accepted_normalized_evidence": 14,
+      "article_or_unit_content_unconfirmed": 5,
+      "already_retained_no_duplicate": 2,
+      "corroborating_source_no_duplicate": 1,
+      "disputed_quote_withheld": 5
+    },
+    "rawBodiesRetained": false,
+    "rawBodiesRedistributed": false,
+    "concurrency": 1,
+    "sourcePagesPerPassMaximum": 20,
+    "httpRequestsPerPassMaximum": 40
+  },
+  "sourceReconciliation": [
+    {
+      "captureId": "adrec-624",
+      "reviewAgainstIds": [
+        "adrec:624"
+      ],
+      "status": "verified_unchanged_authority_capture",
+      "reason": "Exact authority ID and project number match. Latest inspection date and percentage equal the retained source; no duplicate milestone or financial credit."
+    },
+    {
+      "captureId": "adrec-628",
+      "reviewAgainstIds": [
+        "adrec:628"
+      ],
+      "status": "verified_unchanged_authority_capture",
+      "reason": "Exact authority ID and project number match. Latest inspection date and percentage equal the retained source; no duplicate milestone or financial credit."
+    },
+    {
+      "captureId": "adrec-650",
+      "reviewAgainstIds": [
+        "adrec:650"
+      ],
+      "status": "verified_unchanged_authority_capture",
+      "reason": "Exact authority ID and project number match. Latest inspection date and percentage equal the retained source; no duplicate milestone or financial credit."
+    },
+    {
+      "captureId": "adrec-646",
+      "reviewAgainstIds": [
+        "adrec:646"
+      ],
+      "status": "verified_unchanged_authority_capture",
+      "reason": "Exact authority ID and project number match. Latest inspection date and percentage equal the retained source; no duplicate milestone or financial credit."
+    },
+    {
+      "captureId": "adrec-623",
+      "reviewAgainstIds": [
+        "adrec:623"
+      ],
+      "status": "verified_unchanged_authority_capture",
+      "reason": "Exact authority ID and project number match. Latest inspection date and percentage equal the retained source; no duplicate milestone or financial credit."
+    },
+    {
+      "captureId": "adrec-439",
+      "reviewAgainstIds": [
+        "adrec:439"
+      ],
+      "status": "verified_unchanged_authority_capture",
+      "reason": "Exact authority ID and project number match. Latest inspection date and percentage equal the retained source; no duplicate milestone or financial credit."
+    },
+    {
+      "captureId": "aldar-q1-2025",
+      "reviewAgainstIds": [
+        "adrec:590"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "aldar-q3-2025",
+      "reviewAgainstIds": [
+        "adrec:617",
+        "adrec:620"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "aldar-fahid-unveiled",
+      "reviewAgainstIds": [
+        "adrec:609"
+      ],
+      "status": "article_or_unit_content_unconfirmed",
+      "reason": "HTTP 200 body did not confirm the expected exact article or unit text; indexed snippets are not substituted for captured evidence."
+    },
+    {
+      "captureId": "aldar-fahid-launch-performance",
+      "reviewAgainstIds": [
+        "adrec:609",
+        "adrec:615"
+      ],
+      "status": "article_or_unit_content_unconfirmed",
+      "reason": "HTTP 200 body did not confirm the expected exact article or unit text; indexed snippets are not substituted for captured evidence."
+    },
+    {
+      "captureId": "aldar-fahid-listings",
+      "reviewAgainstIds": [
+        "adrec:609",
+        "adrec:617",
+        "adrec:615"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "beach-house-3br",
+      "reviewAgainstIds": [
+        "adrec:615"
+      ],
+      "status": "article_or_unit_content_unconfirmed",
+      "reason": "HTTP 200 body did not confirm the expected exact article or unit text; indexed snippets are not substituted for captured evidence."
+    },
+    {
+      "captureId": "beach-house-2br",
+      "reviewAgainstIds": [
+        "adrec:615"
+      ],
+      "status": "article_or_unit_content_unconfirmed",
+      "reason": "HTTP 200 body did not confirm the expected exact article or unit text; indexed snippets are not substituted for captured evidence."
+    },
+    {
+      "captureId": "fahid-terraces-duplex",
+      "reviewAgainstIds": [
+        "adrec:617"
+      ],
+      "status": "article_or_unit_content_unconfirmed",
+      "reason": "HTTP 200 body did not confirm the expected exact article or unit text; indexed snippets are not substituted for captured evidence."
+    },
+    {
+      "captureId": "pja-masterplan",
+      "reviewAgainstIds": [
+        "community:Dubai:palm-jebel-ali"
+      ],
+      "status": "already_retained_no_duplicate",
+      "reason": "Masterplan approval / Palm Central next-phase release already exists in V46; no repeat fact or new price effect."
+    },
+    {
+      "captureId": "palm-central-next-phase",
+      "reviewAgainstIds": [
+        "project:palm-central-private-residences-palm-jebel-ali-dubai"
+      ],
+      "status": "already_retained_no_duplicate",
+      "reason": "Masterplan approval / Palm Central next-phase release already exists in V46; no repeat fact or new price effect."
+    },
+    {
+      "captureId": "reportage-directory",
+      "reviewAgainstIds": [
+        "project:oceana-by-reportage-fujairah-uae",
+        "project:marlin-ii-reportage-al-reem-island-abu-dhabi"
+      ],
+      "status": "corroborating_source_no_duplicate",
+      "reason": "Oceana and Marlin II advertisements are accepted from their dedicated project URLs; the directory is additional corroboration, not another observation."
+    },
+    {
+      "captureId": "oceana-project",
+      "reviewAgainstIds": [
+        "project:oceana-by-reportage-fujairah-uae"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "marlin-2-project",
+      "reviewAgainstIds": [
+        "project:marlin-ii-reportage-al-reem-island-abu-dhabi"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-aquamarine",
+      "reviewAgainstIds": [
+        "project:apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-pearlside",
+      "reviewAgainstIds": [
+        "project:pearlside-marina-residences-siniya-island-uaq"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-canalside",
+      "reviewAgainstIds": [
+        "project:canalside-by-sobha-siniya-island"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-starline",
+      "reviewAgainstIds": [
+        "project:starline-beach-residence-siniya-island-uaq-uae"
+      ],
+      "status": "disputed_quote_withheld",
+      "reason": "The same official project page contains different AED starting figures in FAQ and price panel. Both native scalars are retained in capture metadata, but no new numeric observation or coverage credit is applied pending reconciliation.",
+      "conflictingAdvertisedAED": [
+        1290000,
+        1670000
+      ],
+      "canonicalCoverageCredit": 0
+    },
+    {
+      "captureId": "sobha-pierside",
+      "reviewAgainstIds": [
+        "project:apartments-pierside-marina-residences-sobha-siniya-island"
+      ],
+      "status": "disputed_quote_withheld",
+      "reason": "The same official project page contains different AED starting figures in FAQ and price panel. Both native scalars are retained in capture metadata, but no new numeric observation or coverage credit is applied pending reconciliation.",
+      "conflictingAdvertisedAED": [
+        1520000,
+        1430000
+      ],
+      "canonicalCoverageCredit": 0
+    },
+    {
+      "captureId": "sobha-bayside",
+      "reviewAgainstIds": [
+        "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain"
+      ],
+      "status": "disputed_quote_withheld",
+      "reason": "The same official project page contains different AED starting figures in FAQ and price panel. Both native scalars are retained in capture metadata, but no new numeric observation or coverage credit is applied pending reconciliation.",
+      "conflictingAdvertisedAED": [
+        1230000,
+        1390000
+      ],
+      "canonicalCoverageCredit": 0
+    },
+    {
+      "captureId": "sobha-coastline",
+      "reviewAgainstIds": [
+        "project:coastline-beach-residences-sobha-realty-sobha-siniya-island"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-florine",
+      "reviewAgainstIds": [
+        "project:florine-beach-residences-sobha-realty-sobha-siniya-island"
+      ],
+      "status": "disputed_quote_withheld",
+      "reason": "The same official project page contains different AED starting figures in FAQ and price panel. Both native scalars are retained in capture metadata, but no new numeric observation or coverage credit is applied pending reconciliation.",
+      "conflictingAdvertisedAED": [
+        1210000,
+        1930000
+      ],
+      "canonicalCoverageCredit": 0
+    },
+    {
+      "captureId": "sobha-coraline",
+      "reviewAgainstIds": [
+        "project:apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-delphine",
+      "reviewAgainstIds": [
+        "project:apartments-delphine-beach-residences-sobha-siniya-island"
+      ],
+      "status": "disputed_quote_withheld",
+      "reason": "The same official project page contains different AED starting figures in FAQ and price panel. Both native scalars are retained in capture metadata, but no new numeric observation or coverage credit is applied pending reconciliation.",
+      "conflictingAdvertisedAED": [
+        1100000,
+        1600000
+      ],
+      "canonicalCoverageCredit": 0
+    },
+    {
+      "captureId": "sobha-selene",
+      "reviewAgainstIds": [
+        "project:selene-beach-residences-by-sobha-realty"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-palm-grove-villas",
+      "reviewAgainstIds": [
+        "project:palm-groove-villas-by-sobha-realty-on-sobha-siniya-island"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-coral-villas",
+      "reviewAgainstIds": [
+        "project:coral-beach-villas-by-sobha-realty-on-sobha-siniya-island"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    },
+    {
+      "captureId": "sobha-aquamont",
+      "reviewAgainstIds": [
+        "project:sobha-aquamont-apartments-umm-al-quwain"
+      ],
+      "status": "accepted_normalized_evidence",
+      "reason": "Manually reviewed exact named project, source scope, units, capture and availability; only accepted facts in this packet receive coverage credit."
+    }
+  ]
+}

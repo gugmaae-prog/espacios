@@ -1,0 +1,21 @@
+{
+  "origin": "https://espacios.me",
+  "checkedAt": "2026-10-11T22:41:52.748Z",
+  "rows": [
+    {
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "individualTransactions": 54,
+      "sparseMonths": 2,
+      "missingMonths": 0,
+      "aggregateMonths": 0
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "individualTransactions": 10,
+      "sparseMonths": 7,
+      "missingMonths": 2,
+      "aggregateMonths": 0
+    }
+  ],
+  "passed": true
+}
