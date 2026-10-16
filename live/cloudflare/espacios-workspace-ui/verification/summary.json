@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-05 (Asia/Dubai)",
+  "modernSurfaces": 11,
+  "syntheticStates": 91,
+  "responsiveSamples": 546,
+  "clientInteractionAssertions": 44,
+  "focusedControlChecks": 66,
+  "networkAttempts": 0,
+  "responsiveWidths": [
+    390,
+    615,
+    1440
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "fullClientBootstrap": {
+    "pass": true,
+    "oldBootstrapLoaded": false,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "transitions": [
+      "Learn \u2192 CRM",
+      "CRM \u2192 Research",
+      "Research \u2192 Plans"
+    ],
+    "syntheticData": true
+  },
+  "limitations": [
+    "All account rows and role flags were synthetic.",
+    "No authenticated production workflow certification.",
+    "Map excluded.",
+    "Canonical first-class Workspace source remains unlocated."
+  ],
+  "selectedTabContrast": {
+    "tabs": 36,
+    "samples": 66,
+    "minimumLightRatio": 6.03,
+    "minimumDarkRatio": 7.69,
+    "keyboardFocusPassed": true
+  },
+  "liveLegacy": {
+    "viewportThemeCases": 6,
+    "memberProfileLinks": 63,
+    "checks": [
+      "search clear and focus",
+      "menu",
+      "sign-in CTA",
+      "theme migration and dark surfaces"
+    ]
+  }
+}

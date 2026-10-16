@@ -1,0 +1,17 @@
+{
+  "name": "espacios-workspace-ui-preservation",
+  "version": "2026.10.5",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:assets": "node scripts/build-assets.mjs",
+    "test": "npm run build:assets && node --test tests/preservation.test.mjs",
+    "test:client": "node tests/build-client-harness.mjs && node tests/client-interactions.cjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "playwright": "1.58.2",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  }
+}

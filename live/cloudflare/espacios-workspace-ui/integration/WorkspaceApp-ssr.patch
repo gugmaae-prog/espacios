@@ -1,0 +1,153 @@
+--- original/WorkspaceApp-DD_ApiM-.js
++++ revised/WorkspaceApp-DD_ApiM-.js
+@@ -5445,7 +5445,7 @@
+ 		onNotice
+ 	});
+ 	if (surface === "account") return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccountSurface, { bootstrap });
+-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrmSurface, { data: payloads[0] });
++	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrmSurface, { data: payloads[0], canEdit });
+ }
+ function AccountSurface({ bootstrap }) {
+ 	const displayName = bootstrap?.user?.displayName || "Espacios member";
+@@ -7126,6 +7126,17 @@
+ 	const [category, setCategory] = (0, import_react.useState)("All topics");
+ 	const syncCopy = progressConnected ? liveCourseCount > 0 ? "Courses and progress are synced with your account." : "Course catalog connected. Progress will appear after you start a course." : "Course catalog ready. Progress sync is temporarily unavailable.";
+ 	const categories = ["All topics", ...Array.from(new Set(shown.map((course) => value(course, ["category"], "Workspace skills"))))];
++	const hasFilters = Boolean(query.trim()) || category !== "All topics";
++	const clearFilters = () => {
++		setQuery("");
++		setCategory("All topics");
++	};
++	const browseCourses = () => {
++		clearFilters();
++		setView("Courses");
++	};
++	const emptyTitle = hasFilters ? "No courses found" : !progressConnected && view !== "Courses" ? "Progress is temporarily unavailable" : view === "My learning" ? "No courses in progress" : view === "Certificates" ? "No completed courses yet" : "No courses available yet";
++	const emptyDescription = hasFilters ? "Try another search or topic to find a course." : !progressConnected && view !== "Courses" ? "Your progress could not be synced. You can still browse courses while we reconnect." : view === "My learning" ? "Start a course and your progress will appear here." : view === "Certificates" ? "Complete a course to see your achievements here." : "Check back soon for guided lessons.";
+ 	const visibleCourses = shown.filter((course) => {
+ 		const progress = numberValue(course, ["progress", "percent"], 0);
+ 		const matchesView = view === "My learning" ? progress > 0 && progress < 100 : view === "Certificates" ? progress >= 100 : true;
+@@ -7212,9 +7223,19 @@
+ 						})
+ 					]
+ 				}) : null]
+-			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+-				className: "surface-tab-empty",
+-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: view === "Certificates" ? "Completed courses and certificates will appear here." : "No courses match this view yet." })
++			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
++				className: "workspace-panel surface-context-empty",
++				role: "status",
++				children: [
++					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: emptyTitle }),
++					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: emptyDescription }),
++					hasFilters || view !== "Courses" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
++						className: "workspace-primary-button",
++						type: "button",
++						onClick: hasFilters ? clearFilters : browseCourses,
++						children: hasFilters ? "Clear filters" : "Browse courses"
++					}) : null
++				]
+ 			})
+ 		]
+ 	});
+@@ -7450,6 +7471,11 @@
+ 	const completed = processes.filter((item) => /complete|done/i.test(value(item, ["status"]))).length;
+ 	const completion = processes.length ? Math.round(completed / processes.length * 100) : 0;
+ 	const hoursSaved = workflows.reduce((sum, item) => sum + numberValue(item, ["hours_saved", "time_saved_hours"], 0), 0);
++	const processStatuses = Array.from(processes.reduce((counts, item) => {
++		const status = value(item, ["status"], "No status recorded").replace(/[_-]+/g, " ").toLowerCase();
++		counts.set(status, (counts.get(status) || 0) + 1);
++		return counts;
++	}, new Map()), ([status, count]) => ({ status, count }));
+ 	const createWorkflow = async (event) => {
+ 		event.preventDefault();
+ 		if (!goal.trim() || creating) return;
+@@ -7520,27 +7546,22 @@
+ 						empty: "No operating processes yet. Describe the first workflow above."
+ 					})
+ 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Panel, {
+-					title: "Operational activity",
+-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+-						className: "line-chart",
+-						"aria-label": "Operational activity trend",
+-						children: [
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("i", {}),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("b", {}),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", {}),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {})
+-						]
+-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+-						className: "chart-labels",
+-						children: [
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Start" }),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Assigned" }),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Working" }),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Review" }),
+-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Done" })
+-						]
+-					})]
++					title: "Process status",
++					children: processes.length ? [
++						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
++							className: "surface-data-note",
++							children: `Current status of ${processes.length} connected ${processes.length === 1 ? "process" : "processes"}.`
++						}),
++						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dl", {
++							className: "ops-status-summary",
++							children: processStatuses.map(({ status, count }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
++								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", { children: status }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", { children: count })]
++							}, status))
++						})
++					] : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
++						className: "surface-context-empty",
++						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "No process activity yet" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: canEdit ? "Create your first workflow above to see its status here." : "Process status will appear when a workflow is added to this workspace." })]
++					})
+ 				})]
+ 			})
+ 		]
+@@ -7661,7 +7682,7 @@
+ 		]
+ 	});
+ }
+-function CrmSurface({ data }) {
++function CrmSurface({ data, canEdit }) {
+ 	const root = asRecord(data);
+ 	const all = arraysFrom(data);
+ 	const stages = [
+@@ -7709,7 +7730,7 @@
+ 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "All stages" }), stages.map((stage) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: stage }, stage))]
+ 				}) })]
+ 			}),
+-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
++			filtered.length ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+ 				className: "crm-board",
+ 				children: stages.map((stage) => {
+ 					const items = filtered.filter((item) => value(item, ["stage", "status"], "Prospecting").toLowerCase().includes(stage.toLowerCase().split(" ")[0]));
+@@ -7733,6 +7754,26 @@
+ 						})]
+ 					}, stage);
+ 				})
++			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
++				className: "workspace-panel surface-context-empty",
++				role: "status",
++				children: [
++					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: all.length ? "No matching deals" : "No deals yet" }),
++					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: all.length ? "Try another search or pipeline stage." : canEdit ? "Add your first deal in CRM to start tracking relationships and next actions." : "An owner or editor can add the first deal. It will appear here when it is connected." }),
++					all.length ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
++						className: "workspace-primary-button",
++						type: "button",
++						onClick: () => {
++							setQuery("");
++							setStageFilter("All stages");
++						},
++						children: "Clear filters"
++					}) : canEdit ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
++						className: "workspace-primary-button",
++						href: createSurfaceHref("crm"),
++						children: "Add deal"
++					}) : null
++				]
+ 			}),
+ 			Object.keys(root).length ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+ 				className: "surface-data-note",

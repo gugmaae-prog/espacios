@@ -1,0 +1,90 @@
+/* One restrained focus treatment for public and legacy pages. Workspace has
+   its own matching rules; this sheet is never injected into /map. */
+html[data-espacios-input-modality] {
+  --esp-control-line: rgba(82, 95, 118, .25);
+  --esp-control-focus: #596779;
+}
+html[data-espacios-input-modality][data-espacios-theme="dark"] {
+  --esp-control-line: rgba(200, 210, 224, .23);
+  --esp-control-focus: #c4cbd7;
+}
+
+html[data-espacios-input-modality][data-espacios-input-modality] body :is(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="color"]):not([type="file"]),
+  textarea, select
+):not(.workspace-app *):not(.unified-command *):not(.aether-compose *):not([aria-invalid="true"]):not(:user-invalid):is(:focus, :focus-visible) {
+  border-color: var(--esp-control-line) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-espacios-input-modality="keyboard"][data-espacios-input-modality] body :is(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="color"]):not([type="file"]),
+  textarea, select
+):not(.workspace-app *):not(.unified-command *):not(.aether-compose *):not([aria-invalid="true"]):not(:user-invalid):focus-visible {
+  border-color: var(--esp-control-focus) !important;
+  outline: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--esp-control-focus) !important;
+}
+
+/* The directory field's existing ID rule owns its border. Keep its keyboard
+   cue on that same edge rather than adding an outer rectangle. */
+html[data-espacios-input-modality="keyboard"][data-espacios-input-modality] body .workspace-legacy-frame #pcSearch:not([aria-invalid="true"]):not(:user-invalid):focus-visible {
+  border-color: var(--esp-control-focus) !important;
+}
+
+html[data-espacios-input-modality][data-espacios-input-modality] body :is(
+  button, a, summary, [role="button"], input[type="checkbox"], input[type="radio"]
+):not(.workspace-app *):focus-visible {
+  outline: 2px solid var(--esp-control-focus) !important;
+  outline-offset: 2px !important;
+}
+html[data-espacios-input-modality="pointer"][data-espacios-input-modality][data-espacios-input-modality] body :is(
+  button, a, summary, [role="button"], input, textarea, select
+):not(.workspace-app *):is(:focus, :focus-visible) {
+  outline: 0 !important;
+}
+
+html[data-espacios-input-modality][data-espacios-input-modality] body :is(
+  .unified-command, .aether-compose
+):not(.workspace-app *):focus-within {
+  border-color: var(--esp-control-line) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+html[data-espacios-input-modality="keyboard"][data-espacios-input-modality] body :is(
+  .unified-command, .aether-compose
+):not(.workspace-app *):has(:focus-visible) {
+  border-color: var(--esp-control-focus) !important;
+  outline: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--esp-control-focus) !important;
+}
+html[data-espacios-input-modality][data-espacios-input-modality] body :is(
+  .unified-command, .aether-compose
+):not(.workspace-app *) :is(input, textarea):is(:focus, :focus-visible) {
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-espacios-input-modality][data-espacios-input-modality] body :is(
+  .theme-radio, .esp-theme-radio
+):not(.workspace-app *) label:has(input:focus-visible),
+html[data-espacios-input-modality][data-espacios-input-modality] body .service-options:not(.workspace-app *) input:focus-visible + span {
+  outline: 2px solid var(--esp-control-focus) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+html[data-espacios-input-modality="pointer"][data-espacios-input-modality] body :is(
+  .theme-radio, .esp-theme-radio
+):not(.workspace-app *) label:has(input:focus-visible),
+html[data-espacios-input-modality="pointer"][data-espacios-input-modality] body .service-options:not(.workspace-app *) input:focus-visible + span {
+  outline: 0 !important;
+}
+html[data-espacios-input-modality][data-espacios-input-modality] body :is(
+  .theme-radio, .esp-theme-radio, .service-options
+):not(.workspace-app *) input:is(:focus, :focus-visible) {
+  outline: 0 !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,65 @@
+{
+  "source": "WorkspaceApp-DD_ApiM-.js",
+  "target": "WorkspaceApp-DD_ApiM-.js",
+  "sourceSha256": "f8d9f8af1afe83151bbd835f2466ab364d30d67b33c5064de1e89cb814b09f7c",
+  "targetSha256": "a1f49fb1daf1330466c3698a761276619288d4e6a8441a9f85df8d537813ac66",
+  "replacementsAppliedSequentially": [
+    {
+      "label": "Learn distinguishes active filters from personal progress views",
+      "offset": 251565,
+      "oldSha256": "500aaa5b0118b1917453a37a8153b9ff9cafd538ee1de0f6c1565b39632000ad",
+      "old": "\tconst categories = [\"All topics\", ...Array.from(new Set(shown.map((course) => value(course, [\"category\"], \"Workspace skills\"))))];",
+      "new": "\tconst categories = [\"All topics\", ...Array.from(new Set(shown.map((course) => value(course, [\"category\"], \"Workspace skills\"))))];\n\tconst hasFilters = Boolean(query.trim()) || category !== \"All topics\";\n\tconst clearFilters = () => {\n\t\tsetQuery(\"\");\n\t\tsetCategory(\"All topics\");\n\t};\n\tconst browseCourses = () => {\n\t\tclearFilters();\n\t\tsetView(\"Courses\");\n\t};\n\tconst emptyTitle = hasFilters ? \"No courses found\" : !progressConnected && view !== \"Courses\" ? \"Progress is temporarily unavailable\" : view === \"My learning\" ? \"No courses in progress\" : view === \"Certificates\" ? \"No completed courses yet\" : \"No courses available yet\";\n\tconst emptyDescription = hasFilters ? \"Try another search or topic to find a course.\" : !progressConnected && view !== \"Courses\" ? \"Your progress could not be synced. You can still browse courses while we reconnect.\" : view === \"My learning\" ? \"Start a course and your progress will appear here.\" : view === \"Certificates\" ? \"Complete a course to see your achievements here.\" : \"Check back soon for guided lessons.\";"
+    },
+    {
+      "label": "Learn compact contextual empty state with working Clear/Browse actions",
+      "offset": 257061,
+      "oldSha256": "009ea9a2f40a413fc1819ddf593cca352cfc0fbaab8c1ca15ec86b424a13904f",
+      "old": "\t\t\t}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"div\", {\n\t\t\t\tclassName: \"surface-tab-empty\",\n\t\t\t\tchildren: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"p\", { children: view === \"Certificates\" ? \"Completed courses and certificates will appear here.\" : \"No courses match this view yet.\" })\n\t\t\t})",
+      "new": "\t\t\t}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(\"section\", {\n\t\t\t\tclassName: \"workspace-panel surface-context-empty\",\n\t\t\t\trole: \"status\",\n\t\t\t\tchildren: [\n\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"h2\", { children: emptyTitle }),\n\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"p\", { children: emptyDescription }),\n\t\t\t\t\thasFilters || view !== \"Courses\" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"button\", {\n\t\t\t\t\t\tclassName: \"workspace-primary-button\",\n\t\t\t\t\t\ttype: \"button\",\n\t\t\t\t\t\tonClick: hasFilters ? clearFilters : browseCourses,\n\t\t\t\t\t\tchildren: hasFilters ? \"Clear filters\" : \"Browse courses\"\n\t\t\t\t\t}) : null\n\t\t\t\t]\n\t\t\t})"
+    },
+    {
+      "label": "CRM receives existing edit capability for the owning create action",
+      "offset": 177895,
+      "oldSha256": "bcd3739e934ad4fa362123cf4e111c0223acf1e52f7b4443e1122e4b84fdb8e2",
+      "old": "return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrmSurface, { data: payloads[0] });",
+      "new": "return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrmSurface, { data: payloads[0], canEdit });"
+    },
+    {
+      "label": "CRM component declares edit capability",
+      "offset": 277748,
+      "oldSha256": "305ea6a2c5b7b992a470c1b53f9139bc2e35b4095052fbff15c0bcc8717cbc4c",
+      "old": "function CrmSurface({ data }) {",
+      "new": "function CrmSurface({ data, canEdit }) {"
+    },
+    {
+      "label": "CRM hides the empty four-column board",
+      "offset": 280035,
+      "oldSha256": "2d89d2d5b9fdf376d0e2e5251825fd3e6ede941015070036aa3dc6ef409d0f36",
+      "old": "\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"div\", {\n\t\t\t\tclassName: \"crm-board\",",
+      "new": "\t\t\tfiltered.length ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"div\", {\n\t\t\t\tclassName: \"crm-board\","
+    },
+    {
+      "label": "CRM empty state respects filters, permissions and the existing CRM creation route",
+      "offset": 281709,
+      "oldSha256": "49079d81c47e5f58718045ed2d1c2ec3ecae70b2fc5e5e7c096c10c15709da90",
+      "old": "\t\t\t\t})\n\t\t\t}),\n\t\t\tObject.keys(root).length ?",
+      "new": "\t\t\t\t})\n\t\t\t}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(\"section\", {\n\t\t\t\tclassName: \"workspace-panel surface-context-empty\",\n\t\t\t\trole: \"status\",\n\t\t\t\tchildren: [\n\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"h2\", { children: all.length ? \"No matching deals\" : \"No deals yet\" }),\n\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"p\", { children: all.length ? \"Try another search or pipeline stage.\" : canEdit ? \"Add your first deal in CRM to start tracking relationships and next actions.\" : \"An owner or editor can add the first deal. It will appear here when it is connected.\" }),\n\t\t\t\t\tall.length ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"button\", {\n\t\t\t\t\t\tclassName: \"workspace-primary-button\",\n\t\t\t\t\t\ttype: \"button\",\n\t\t\t\t\t\tonClick: () => {\n\t\t\t\t\t\t\tsetQuery(\"\");\n\t\t\t\t\t\t\tsetStageFilter(\"All stages\");\n\t\t\t\t\t\t},\n\t\t\t\t\t\tchildren: \"Clear filters\"\n\t\t\t\t\t}) : canEdit ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {\n\t\t\t\t\t\tclassName: \"workspace-primary-button\",\n\t\t\t\t\t\thref: createSurfaceHref(\"crm\"),\n\t\t\t\t\t\tchildren: \"Add deal\"\n\t\t\t\t\t}) : null\n\t\t\t\t]\n\t\t\t}),\n\t\t\tObject.keys(root).length ?"
+    },
+    {
+      "label": "Ops derives current status counts from actual connected process records",
+      "offset": 268150,
+      "oldSha256": "b4d8c39368882595206abcad6faf5db57ff63f3e29ce0db0a714efec91bc4d4b",
+      "old": "\tconst hoursSaved = workflows.reduce((sum, item) => sum + numberValue(item, [\"hours_saved\", \"time_saved_hours\"], 0), 0);",
+      "new": "\tconst hoursSaved = workflows.reduce((sum, item) => sum + numberValue(item, [\"hours_saved\", \"time_saved_hours\"], 0), 0);\n\tconst processStatuses = Array.from(processes.reduce((counts, item) => {\n\t\tconst status = value(item, [\"status\"], \"No status recorded\").replace(/[_-]+/g, \" \").toLowerCase();\n\t\tcounts.set(status, (counts.get(status) || 0) + 1);\n\t\treturn counts;\n\t}, new Map()), ([status, count]) => ({ status, count }));"
+    },
+    {
+      "label": "Ops replaces fixed decorative trend with an actual status summary",
+      "offset": 271422,
+      "oldSha256": "f60fb6492e73a6d0896324d40ad5509ce6bc1c8d8eac19353b5e0e973b846c4d",
+      "old": "\t\t\t\t}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Panel, {\n\t\t\t\t\ttitle: \"Operational activity\",\n\t\t\t\t\tchildren: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(\"div\", {\n\t\t\t\t\t\tclassName: \"line-chart\",\n\t\t\t\t\t\t\"aria-label\": \"Operational activity trend\",\n\t\t\t\t\t\tchildren: [\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"span\", {}),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"i\", {}),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"b\", {}),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"em\", {}),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"strong\", {})\n\t\t\t\t\t\t]\n\t\t\t\t\t}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(\"div\", {\n\t\t\t\t\t\tclassName: \"chart-labels\",\n\t\t\t\t\t\tchildren: [\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"span\", { children: \"Start\" }),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"span\", { children: \"Assigned\" }),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"span\", { children: \"Working\" }),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"span\", { children: \"Review\" }),\n\t\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"span\", { children: \"Done\" })\n\t\t\t\t\t\t]\n\t\t\t\t\t})]\n\t\t\t\t})]",
+      "new": "\t\t\t\t}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Panel, {\n\t\t\t\t\ttitle: \"Process status\",\n\t\t\t\t\tchildren: processes.length ? [\n\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"p\", {\n\t\t\t\t\t\t\tclassName: \"surface-data-note\",\n\t\t\t\t\t\t\tchildren: `Current status of ${processes.length} connected ${processes.length === 1 ? \"process\" : \"processes\"}.`\n\t\t\t\t\t\t}),\n\t\t\t\t\t\t/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"dl\", {\n\t\t\t\t\t\t\tclassName: \"ops-status-summary\",\n\t\t\t\t\t\t\tchildren: processStatuses.map(({ status, count }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(\"div\", {\n\t\t\t\t\t\t\t\tchildren: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"dt\", { children: status }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"dd\", { children: count })]\n\t\t\t\t\t\t\t}, status))\n\t\t\t\t\t\t})\n\t\t\t\t\t] : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(\"div\", {\n\t\t\t\t\t\tclassName: \"surface-context-empty\",\n\t\t\t\t\t\tchildren: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"h3\", { children: \"No process activity yet\" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(\"p\", { children: canEdit ? \"Create your first workflow above to see its status here.\" : \"Process status will appear when a workflow is added to this workspace.\" })]\n\t\t\t\t\t})\n\t\t\t\t})]"
+    }
+  ],
+  "clientParity": "Apply the equivalent LearnSurface, CrmSurface, OpsSurface and SurfaceContent changes to the owning client module before deployment. No SSR-only release."
+}
