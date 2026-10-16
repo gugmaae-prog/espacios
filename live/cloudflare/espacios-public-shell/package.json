@@ -1,0 +1,13 @@
+{
+  "name": "espacios-public-shell-source",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check worker.js",
+    "test": "node --test public-shell.test.mjs seamless-controls.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
