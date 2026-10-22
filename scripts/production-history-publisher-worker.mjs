@@ -16,6 +16,20 @@ export function validateStatement(item,env){
  }
  throw new Error('Statement not allowed');
 }
+export function compactValidatedBatch(items,env){
+ // Validate every original row before preparing any query. Pack only adjacent
+ // identical allowed INSERTs; keep parameter order and INSERT OR IGNORE intact.
+ // D1 permits at most 100 bound parameters in an individual query.
+ const rows=items.map(item=>validateStatement(item,env)),out=[];
+ for(const row of rows){
+  const match=/^(INSERT OR IGNORE INTO hi_[a-z_]+\([a-z_,]+\) VALUES)(\([?,]+\));$/.exec(row.sql);
+  const previous=out.at(-1);
+  if(match&&previous?.originalSQL===row.sql&&previous.params.length+row.params.length<=100){
+   previous.sql=previous.sql.slice(0,-1)+','+match[2]+';';previous.params.push(...row.params);
+  }else out.push({sql:row.sql,params:[...row.params],originalSQL:match?row.sql:null});
+ }
+ return out.map(({sql,params})=>({sql,params}));
+}
 export default{async fetch(request,env){
  if(!env.PUBLISH_TOKEN||!Number.isFinite(Date.parse(env.PUBLISH_EXPIRES))||Date.now()>=Date.parse(env.PUBLISH_EXPIRES)||request.headers.get('Authorization')!==`Bearer ${env.PUBLISH_TOKEN}`)return json({error:'Unauthorized or expired'},401);
  const url=new URL(request.url);
@@ -42,11 +56,16 @@ export default{async fetch(request,env){
   }
   if(url.pathname==='/d1'&&request.method==='POST'){
    const body=await request.json();if(!Array.isArray(body.statements)||body.statements.length<1||body.statements.length>50)return json({error:'Bounded batch required'},400);
-   const statements=body.statements.map(item=>validateStatement(item,env)).map(item=>env.DB.prepare(item.sql).bind(...item.params));
+   const validated=body.mode==='batch'?compactValidatedBatch(body.statements,env):body.statements.map(item=>validateStatement(item,env));
+   const statements=validated.map(item=>env.DB.prepare(item.sql).bind(...item.params));
    if(body.mode==='first'&&statements.length===1)return json({result:await statements[0].first()});
    if(body.mode==='run'&&statements.length===1)return json({result:await statements[0].run()});
    if(body.mode==='batch')return json({result:await env.DB.batch(statements)});
   }
   return json({error:'Not found'},404);
- }catch(error){return json({error:error.message},400);}
+ }catch(error){
+  const message=String(error?.message||error);
+  const transient=/internal error|please try again|temporarily unavailable|timed? out|overloaded/i.test(message);
+  return json({error:message},transient?503:400);
+ }
 }};

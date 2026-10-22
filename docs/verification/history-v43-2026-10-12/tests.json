@@ -1,0 +1,19 @@
+{
+  "command": "npm run verify",
+  "exitCode": 0,
+  "suiteTestCounts": [
+    "152",
+    "1",
+    "60",
+    "176"
+  ],
+  "suiteFailureCounts": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "identityReview": "passed",
+  "initialFrontendTokenAssertionCorrected": true,
+  "extraLocalStorageEmulator": "Publication reached indexing then failed ECONNRESET; not release proof. Immutable archive and candidate API verified separately."
+}

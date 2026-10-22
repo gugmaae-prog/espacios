@@ -20,6 +20,7 @@ for(const record of data.records)for(const series of record.historySeries||[]){
   partitions.set(series.partition.key,JSON.parse(gunzipSync(object)));
 }
 const rows=[],itemRows=[];
+const advancedCoverageItems=new Set(['complete_registered_sale_history','complete_signed_rent_history','validated_price_forecast','validated_rent_forecast','validated_net_return_forecast']);
 const wholeMilestone=(record,kind)=>record.lifecycle.find(m=>m.kind===kind&&m.status==='verified'&&m.scope==='subject'&&m.primaryEvidence===true);
 for(const savedRecord of data.records){
   const sourceRecord=resolveRecordCommunityHistory(data,savedRecord);
@@ -68,7 +69,7 @@ for(const savedRecord of data.records){
       const row=evidence.get(id);return row?.date?.start?[row.date.start]:row?.period?[row.period]:row?.points?.map(p=>p[0])??[];
     }).filter(Boolean).sort((a,b)=>parseEvidenceDate(a).start.localeCompare(parseEvidenceDate(b).start));
     itemRows.push({record_id:record.id,type:record.type,name:record.name,emirate:record.emirate,
-      item,status:entry.status,reason:entry.reason,evidence_ids:(entry.evidenceIds??[]).join('|'),
+      coverage_tier:advancedCoverageItems.has(item)?'advanced_audit':'primary',item,status:entry.status,reason:entry.reason,evidence_ids:(entry.evidenceIds??[]).join('|'),
       source_ids:(entry.sourceIds??[]).join('|'),source_urls:(entry.sourceIds??[]).map(id=>sourceIndex.get(id)?.url??'').filter(Boolean).join('|'),
       earliest_retained_native_date:dates[0]??null,latest_retained_native_date:dates.at(-1)??null,
       native_point_count:entry.nativePointCount??null,native_series_count:entry.nativeSeriesCount??null,
@@ -89,6 +90,8 @@ if(itemOutput){
   await fs.mkdir(path.dirname(path.resolve(itemOutput)),{recursive:true});
   await fs.writeFile(itemOutput,[columns.join(','),...itemRows.map(row=>columns.map(key=>quote(row[key])).join(','))].join('\n')+'\n');
 }
+const statusSummary=selected=>Object.fromEntries(['present','partial','missing','unestablished','disputed','inaccessible','pre-applicability'].map(status=>[status,selected.filter(row=>row.status===status).length]));
+const primaryItems=itemRows.filter(row=>row.coverage_tier==='primary'),advancedItems=itemRows.filter(row=>row.coverage_tier==='advanced_audit');
 const summary={version:data.version,asOf:data.asOf,snapshotSHA256:digest(bytes),records:rows.length,
   projects:rows.filter(r=>r.type==='project').length,communities:rows.filter(r=>r.type==='community').length,
   contextLinkedRecords:rows.filter(r=>r.native_context_series>0).length,
@@ -99,6 +102,9 @@ const summary={version:data.version,asOf:data.asOf,snapshotSHA256:digest(bytes),
   freshlySourcedFinancialRecords:data.records.filter(r=>r.observations.length>0).length,
   scope:'Per-record accountability and shared context; row totals across records are not unique source observations. Unknown inception prevents certification of complete historical period coverage.',
   evidenceCounts:data.manifest.historicalObservationRows,sourceCount:data.sources.length,eventCount:data.events.length,
-  auditedItemRows:itemRows.length,itemCoverage:Object.fromEntries([...new Set(itemRows.map(r=>r.item))].map(item=>[item,Object.fromEntries(['project','community'].map(type=>[type,Object.fromEntries(['present','partial','missing','unestablished'].map(status=>[status,itemRows.filter(r=>r.item===item&&r.type===type&&r.status===status).length]))]))]))};
+  auditedItemRows:itemRows.length,
+  coveragePolicy:data.manifest.coveragePolicy??null,
+  coverageSummary:{primary:{total:primaryItems.length,...statusSummary(primaryItems)},advancedAudit:{total:advancedItems.length,...statusSummary(advancedItems)},allItems:{total:itemRows.length,...statusSummary(itemRows)}},
+  itemCoverage:Object.fromEntries([...new Set(itemRows.map(r=>r.item))].map(item=>[item,Object.fromEntries(['project','community'].map(type=>[type,Object.fromEntries(['present','partial','missing','unestablished'].map(status=>[status,itemRows.filter(r=>r.item===item&&r.type===type&&r.status===status).length]))]))]))};
 await fs.writeFile(output.replace(/\.csv$/i,'.json'),JSON.stringify(summary,null,2)+'\n');
 console.log(JSON.stringify(summary));

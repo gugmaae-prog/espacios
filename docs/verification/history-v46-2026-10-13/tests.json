@@ -1,0 +1,79 @@
+{
+  "status": "passed_locally_and_release_verified",
+  "completed": [
+    {
+      "command": "python3 tests/dld-authority-pass46.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "python3 tests/dld-lifecycle-pass46.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "node --test --test-concurrency=2 tests/historical-v46-authority-lifecycle.test.mjs",
+      "tests": 2,
+      "passed": true
+    },
+    {
+      "command": "node scripts/verify-historical-archive.mjs",
+      "passed": true
+    },
+    {
+      "command": "npm run history:verify:v46-preservation",
+      "passed": true
+    },
+    {
+      "command": "npm run verify",
+      "passed": true
+    },
+    {
+      "command": "npx wrangler deploy --config wrangler.production.jsonc --dry-run --outdir .wrangler/v46-production-dry-run",
+      "passed": true,
+      "note": "Pre-release configuration validation only; it did not publish a Worker version or data."
+    },
+    {
+      "command": "V46 GitHub verification workflow",
+      "url": "https://github.com/gugmaae-prog/espacios/actions/runs/38386782396",
+      "passed": true
+    },
+    {
+      "command": "V46 GitHub public-repository safety workflow",
+      "url": "https://github.com/gugmaae-prog/espacios/actions/runs/38386782414",
+      "passed": true
+    },
+    {
+      "command": "read-only candidate API verifier",
+      "origin": "https://56d24e27-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+      "passed": true
+    },
+    {
+      "command": "read-only canonical API verifier",
+      "origin": "https://espacios.me",
+      "passed": true
+    },
+    {
+      "command": "history browser acceptance",
+      "origin": "https://espacios.me/map",
+      "layouts": [
+        "desktop",
+        "mobile"
+      ],
+      "passed": true
+    }
+  ],
+  "releaseScope": {
+    "immutableR2D1Publication": "complete",
+    "workerTrafficActivation": "100% for the interim V46 data release",
+    "supabaseRuntimeAndRegistry": "reconciled",
+    "dataRoom": "restricted"
+  },
+  "notCertified": [
+    "Complete historical financial coverage for every project and community",
+    "Unverified actual completion, handover or occupancy outcomes",
+    "Causal price effects from contextual events",
+    "Observed future values through 2080",
+    "Any later combined mobile-interface deployment"
+  ]
+}

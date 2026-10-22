@@ -1,0 +1,150 @@
+name: Verified regional enrichment (GitHub only)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verified-regional-enrichment.yml'
+      - 'scripts/*regional*'
+      - 'tests/*regional*'
+      - 'data/historical-intelligence/reviewed-regional-20261014/**'
+concurrency:
+  group: regional-v47-candidate
+  cancel-in-progress: true
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verified-candidate:
+    if: github.repository == 'gugmaae-prog/espacios' && github.event.pull_request.number == 100 && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/all-emirates-evidence-queue-20261014'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+      actions: read
+    env:
+      PRIOR: 6cb77c197d1ea6107c94f374f2bfa10c7248a043
+      COMMON: 0361b0409c3fe688baa6c06787f9341cf5c17cff
+      BRANCH: research/all-emirates-evidence-queue-20261014
+      REGIONAL_BASELINE_SNAPSHOT: /tmp/regional-v46-baseline.json.gz
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconcile pinned V46 into the research working tree only
+        id: baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          START=$(git rev-parse HEAD)
+          echo "START=$START" >> "$GITHUB_ENV"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$START"
+          test "$(git ls-remote origin refs/heads/data/history-v26-dld-project-register | cut -f1)" = "$PRIOR"
+          git fetch --no-tags --depth=1 origin "$PRIOR" "$COMMON"
+          git show "$PRIOR:data/historical-intelligence-20261003.json.gz" > "$REGIONAL_BASELINE_SNAPSHOT"
+          CURRENT=$(python3 -c "import json; print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])")
+          echo "snapshot_version=$CURRENT" >> "$GITHUB_OUTPUT"
+          if [[ "$CURRENT" =~ ^20261014-enrichment-v4[78]$ ]]; then
+            echo 'apply=false' >> "$GITHUB_OUTPUT"
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          elif [[ "$CURRENT" =~ ^202610(15-enrichment-v49|22-enrichment-v5[0-3])$ ]]; then
+            echo 'apply=false' >> "$GITHUB_OUTPUT"
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
+          else
+            git read-tree -m -u --aggressive "$COMMON" "$START" "$PRIOR"
+            CONFLICTS=$(git diff --name-only --diff-filter=U)
+            if [ "$CONFLICTS" = 'docs/DATA_SOURCING_WORKFLOW.md' ]; then
+              git show "$PRIOR:docs/DATA_SOURCING_WORKFLOW.md" > /tmp/regional-v46-workflow.md
+              git show "$START:docs/DATA_SOURCING_WORKFLOW.md" > /tmp/regional-v25-workflow.md
+              { cat /tmp/regional-v46-workflow.md; printf '\n\n---\n\n## Retained earlier V25 queue-only workflow\n\nThe following is historical queue-pass documentation, not the current snapshot baseline. Both independently authored workflows are preserved.\n\n'; cat /tmp/regional-v25-workflow.md; } > docs/DATA_SOURCING_WORKFLOW.md
+              git add docs/DATA_SOURCING_WORKFLOW.md
+            fi
+            if test -n "$(git ls-files -u)"; then git ls-files -u; exit 1; fi
+            echo 'apply=true' >> "$GITHUB_OUTPUT"
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.baseline.outputs.skip != 'true'
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+        if: steps.baseline.outputs.skip != 'true'
+      - name: Verify exact retained archive before applying anything
+        if: steps.baseline.outputs.skip != 'true'
+        run: npm run history:build
+      - uses: actions/download-artifact@v4
+        if: steps.baseline.outputs.apply == 'true'
+        with:
+          name: regional-v47-source-captures
+          run-id: 38544118240
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: data/historical-intelligence/reviewed-regional-20261014/captures
+      - name: Materialize reviewed packet and append immutable local candidate
+        if: steps.baseline.outputs.apply == 'true'
+        run: |
+          python3 scripts/generate-reviewed-regional-packet.py
+          python3 scripts/append-reviewed-regional-pass.py --output /tmp/regional-v47-candidate
+          python3 scripts/pack-reviewed-regional-pass.py --candidate-dir /tmp/regional-v47-candidate
+          python3 scripts/update-regional-regression-expectations.py
+      - name: Verify candidate archive and new identity/preservation tests
+        if: steps.baseline.outputs.skip != 'true'
+        run: |
+          npm run history:build
+          python3 tests/regional-primary-capture.test.py
+          if [ "${{ steps.baseline.outputs.snapshot_version }}" != '20261014-enrichment-v48' ]; then
+            python3 tests/reviewed-regional-pass.test.py
+          fi
+          python3 tests/regional-research-queue.test.py
+          python3 scripts/build-regional-review-queue.py --verify-only
+      - run: npm run build:smart
+        if: steps.baseline.outputs.skip != 'true'
+      - run: npm test
+        if: steps.baseline.outputs.skip != 'true'
+      - run: npm run check
+        if: steps.baseline.outputs.skip != 'true'
+      - run: npm run build:smart
+        if: steps.baseline.outputs.skip != 'true'
+      - run: npm run history:verify:storage
+        if: steps.baseline.outputs.skip != 'true'
+      - name: Create a data commit only after every required check succeeds
+        if: steps.baseline.outputs.apply == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/write-regional-pass-handover.py
+          git add -f data/historical-intelligence-20261003.json.gz
+          git add -f data/historical-intelligence/objects data/historical-intelligence/publication-manifest.json data/historical-intelligence/runtime-index.json data/historical-intelligence/reviewed-regional-20261014
+          git add tests .github/workflows/regional-research-queue.yml scripts/write-regional-pass-handover.py
+          git add docs/DATA_SOURCING_WORKFLOW.md docs/HISTORICAL-INTELLIGENCE.md docs/verification/regional-research-2026-10-14/ACCEPTED-PASS47.md
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          TREE=$(git write-tree)
+          COMMIT=$(git commit-tree "$TREE" -p "$START" -p "$PRIOR" -m 'data: reconcile V46 and append 20 verified regional facts to 16 records' -m 'Preserve all 1860 IDs, 633891 native rows, prior sources and scenarios. Add 14 first-party asking-price observations, 3 historical launch quarters and 3 planned completion targets. Withhold conflicting quotes. Full tests and isolated local storage checks passed before this commit. No remote evidence publication or deployment.')
+          mkdir -p /tmp/regional-v47-verification
+          printf '%s\n' "$COMMIT" > /tmp/regional-v47-verification/COMMIT
+          printf '%s\n' "$TREE" > /tmp/regional-v47-verification/TREE
+          git update-ref refs/heads/local-regional-candidate "$COMMIT"
+          git bundle create /tmp/regional-v47-verification/candidate.bundle refs/heads/local-regional-candidate ^"$START" ^"$PRIOR"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$START"
+          test "$(git ls-remote origin refs/heads/data/history-v26-dld-project-register | cut -f1)" = "$PRIOR"
+          git push origin "$COMMIT:refs/heads/$BRANCH"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$COMMIT"
+          printf '%s\n' 'All required checks succeeded; research branch only; no Cloudflare writes.' > /tmp/regional-v47-verification/CHECKS
+      - name: Preserve verification and complete queue artifacts
+        if: success() && steps.baseline.outputs.skip != 'true'
+        run: |
+          mkdir -p /tmp/regional-v47-verification
+          cp data/historical-intelligence/reviewed-regional-20261014/reconciliation.json /tmp/regional-v47-verification/
+          cp data/historical-intelligence/reviewed-regional-20261014/accepted-packet.json /tmp/regional-v47-verification/
+          python3 scripts/build-regional-review-queue.py --out-dir data/historical-intelligence/review-queues/v48-2026-10-14
+          cp -a data/historical-intelligence/review-queues/v48-2026-10-14 /tmp/regional-v47-verification/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regional-v47-verified-candidate
+          path: /tmp/regional-v47-verification/
+          if-no-files-found: warn
+          retention-days: 30
