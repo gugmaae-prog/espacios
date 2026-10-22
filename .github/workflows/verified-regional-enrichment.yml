@@ -45,7 +45,7 @@ jobs:
           git show "$PRIOR:data/historical-intelligence-20261003.json.gz" > "$REGIONAL_BASELINE_SNAPSHOT"
           CURRENT=$(python3 -c "import json; print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])")
           echo "snapshot_version=$CURRENT" >> "$GITHUB_OUTPUT"
-          if [ "$CURRENT" = '20261014-enrichment-v47' ] || [ "$CURRENT" = '20261014-enrichment-v48' ]; then
+          if [[ "$CURRENT" =~ ^202610(14-enrichment-v4[78]|15-enrichment-v49|22-enrichment-v5[0-2])$ ]]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
           else
             git read-tree -m -u --aggressive "$COMMON" "$START" "$PRIOR"
