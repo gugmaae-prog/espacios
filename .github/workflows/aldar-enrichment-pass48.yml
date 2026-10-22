@@ -50,7 +50,7 @@ jobs:
           CURRENT=$(python3 -c "import json;print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])")
           if [ "$CURRENT" = '20261014-enrichment-v47' ]; then
             echo 'apply=true' >> "$GITHUB_OUTPUT"
-          elif [ "$CURRENT" = '20261014-enrichment-v48' ]; then
+          elif [[ "$CURRENT" =~ ^202610(14-enrichment-v48|15-enrichment-v49|22-enrichment-v5[0-2])$ ]]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
           else
             echo 'Unexpected snapshot version; manual reconciliation required'; exit 1
