@@ -4,6 +4,7 @@ import copy
 import gzip
 import hashlib
 import json
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,14 +45,19 @@ def main():
 
     partition_pairs = {(old[key]["partition"]["sha256"], new[key]["partition"]["sha256"]) for key in old}
     check(len(partition_pairs) == 1091, "Unexpected history-partition mapping.")
-    decoded = 0
-    for old_sha, new_sha in partition_pairs:
+    def verify_partition(pair):
+        old_sha, new_sha = pair
         old_payload = gzip.decompress((OBJECTS / f"{old_sha}.json.gz").read_bytes())
         new_payload = gzip.decompress((OBJECTS / f"{new_sha}.json.gz").read_bytes())
-        decoded += len(old_payload) + len(new_payload)
         check(old_payload.count(V45.encode()) == 1, f"Unexpected V45 tag multiplicity: {old_sha}")
         check(new_payload.count(V46.encode()) == 1, f"Unexpected V46 tag multiplicity: {new_sha}")
         check(old_payload.replace(V45.encode(), V46.encode()) == new_payload, f"Native payload changed: {old_sha}")
+        return len(old_payload) + len(new_payload)
+
+    # The immutable object store may live on a cloud-backed filesystem. Read a
+    # bounded set concurrently while preserving the same byte-for-byte checks.
+    with ThreadPoolExecutor(max_workers=32) as executor:
+        decoded = sum(executor.map(verify_partition, sorted(partition_pairs)))
 
     check(before["manifest"]["historicalObservationRows"] == current["manifest"]["historicalObservationRows"] == 633891, "Historical row count changed.")
     check(before["manifest"]["historicalSeriesCount"] == current["manifest"]["historicalSeriesCount"] == 16872, "Historical series count changed.")

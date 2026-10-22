@@ -8,6 +8,8 @@ from historical_local_events import local_event_context
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
+RECORD_SHARD_TARGET_BYTES = 2 * 1024 * 1024
+RECORD_SHARD_HARD_LIMIT_BYTES = 4 * 1024 * 1024
 VERSION = '20261008-enrichment-v29'
 ASOF = '2026-10-08'
 ENRICHMENT_SIDECARS = ['community-master-context-enrichment.json','113-residences-enrichment.json','dld-20261007-eight-project-sales-enrichment.json','dld-20261007-community-master-history-enrichment.json','palm-jebel-ali-historical-quotes-20261008.json','dld-project-register-community-context-20261008.json','dld-derived-project-register-enrichment-20261008.json','palm-jebel-ali-nakheel-progress-20261008.json','datadubai-project-sales-20261008.json','dld-verified-project-sales-enrichment-20261008.json']
@@ -109,7 +111,7 @@ def build_runtime_index(snapshot,publication):
   inventory[-1]['researchStatus']=compact
   inventory[-1]['canonicalRecordSHA256']=sha(encoded(original))
   record_size=len(encoded(record))
-  if record_group and (len(record_group)>=16 or record_group_bytes+record_size>2*1024*1024):record_chunk(record_group);record_group=[];record_group_bytes=0
+  if record_group and (len(record_group)>=16 or record_group_bytes+record_size>RECORD_SHARD_TARGET_BYTES):record_chunk(record_group);record_group=[];record_group_bytes=0
   record_group.append(record);record_group_bytes+=record_size
  record_chunk(record_group)
  compact_manifest={k:v for k,v in snapshot['manifest'].items() if k not in ['objects','rawSourcePartitions','inputProvenance','rightsPendingSourceMetadata']}
@@ -119,7 +121,9 @@ def build_runtime_index(snapshot,publication):
  if isinstance(enrichment,dict) and isinstance(enrichment.get('collection'),dict):
   compact_manifest['sourceEnrichment']={**enrichment,'collection':{'classification':'immutable_archive_reference','jsonPointer':'/manifest/sourceEnrichment/collection','sha256':sha(encoded(enrichment['collection'])),'archive':{k:publication['rootIndex'][k] for k in ['key','sha256','bytes','compression']}}}
  compact_manifest['r2']={**{k:publication['rootIndex'][k] for k in ['key','sha256','bytes','compression']},'binding':'MARKET_R2','classification':'archival_only; not inflated by bounded runtime'}
- compact_manifest['runtime']={'classification':'bounded_manifest_backed_runtime','recordCount':len(inventory),'recordShardCount':sum(x['kind']=='runtime_record_shard' for x in runtime_objects),'recordShardMaximumDecodedBytes':max(x['decodedBytes'] for x in runtime_objects if x['kind']=='runtime_record_shard'),'nativePartitionMaximumDecodedBytes':max([x.get('decodedBytes',0) for x in runtime_objects if x['kind']=='runtime_history_partition']+[maximum_native]),'canonicalSnapshotSHA256':sha((ROOT/'data/historical-intelligence-20261003.json').read_bytes()),'canonicalArchiveSHA256':publication['rootIndex']['sha256'],'historyRetrieval':'Selected record evidence plus native immutable partitions; full archive retained separately'}
+ record_shard_max=max(x['decodedBytes'] for x in runtime_objects if x['kind']=='runtime_record_shard')
+ if record_shard_max>RECORD_SHARD_HARD_LIMIT_BYTES:raise ValueError(f'Runtime record shard exceeds hard limit: {record_shard_max} > {RECORD_SHARD_HARD_LIMIT_BYTES}')
+ compact_manifest['runtime']={'classification':'bounded_manifest_backed_runtime','recordCount':len(inventory),'recordShardCount':sum(x['kind']=='runtime_record_shard' for x in runtime_objects),'recordShardTargetDecodedBytes':RECORD_SHARD_TARGET_BYTES,'recordShardMaximumAllowedDecodedBytes':RECORD_SHARD_HARD_LIMIT_BYTES,'recordShardMaximumDecodedBytes':record_shard_max,'nativePartitionMaximumDecodedBytes':max([x.get('decodedBytes',0) for x in runtime_objects if x['kind']=='runtime_history_partition']+[maximum_native]),'canonicalSnapshotSHA256':sha((ROOT/'data/historical-intelligence-20261003.json').read_bytes()),'canonicalArchiveSHA256':publication['rootIndex']['sha256'],'historyRetrieval':'Selected record evidence plus native immutable partitions; full archive retained separately'}
  runtime={**snapshot,'records':inventory,'manifest':compact_manifest}
  dump_json(BASE/'runtime-index.json',runtime)
  obj=gzip_object(runtime,'runtime_index');obj['decodedBytes']=len(encoded(runtime));runtime_objects.append(obj)
