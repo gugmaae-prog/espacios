@@ -50,13 +50,20 @@ jobs:
           CURRENT=$(python3 -c "import json;print(json.load(open('data/historical-intelligence/publication-manifest.json'))['version'])")
           if [ "$CURRENT" = '20261014-enrichment-v47' ]; then
             echo 'apply=true' >> "$GITHUB_OUTPUT"
-          elif [[ "$CURRENT" =~ ^202610(14-enrichment-v48|15-enrichment-v49|22-enrichment-v5[0-2])$ ]]; then
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          elif [ "$CURRENT" = '20261014-enrichment-v48' ]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          elif [[ "$CURRENT" =~ ^202610(15-enrichment-v49|22-enrichment-v5[0-2])$ ]]; then
+            echo 'apply=false' >> "$GITHUB_OUTPUT"
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
           else
             echo 'Unexpected snapshot version; manual reconciliation required'; exit 1
           fi
       - run: npm ci
+        if: steps.baseline.outputs.skip != 'true'
       - run: npm run history:build
+        if: steps.baseline.outputs.skip != 'true'
       - uses: actions/download-artifact@v4
         if: steps.baseline.outputs.apply == 'true'
         with:
@@ -76,6 +83,7 @@ jobs:
           python3 scripts/pack-aldar-launches-pass48.py --candidate-dir /tmp/aldar-v48-candidate
           python3 scripts/update-aldar-regression-expectations.py
       - name: Independent new and retained historical acceptance tests
+        if: steps.baseline.outputs.skip != 'true'
         run: |
           npm run history:build
           python3 tests/aldar-launches-preservation.test.py
@@ -87,10 +95,15 @@ jobs:
           python3 tests/regional-research-queue.test.py
           python3 scripts/build-regional-review-queue.py --verify-only
       - run: npm run build:smart
+        if: steps.baseline.outputs.skip != 'true'
       - run: npm test
+        if: steps.baseline.outputs.skip != 'true'
       - run: npm run check
+        if: steps.baseline.outputs.skip != 'true'
       - run: npm run build:smart
+        if: steps.baseline.outputs.skip != 'true'
       - run: npm run history:verify:storage
+        if: steps.baseline.outputs.skip != 'true'
       - name: Single reviewed data commit after every required check succeeds
         if: steps.baseline.outputs.apply == 'true'
         run: |
@@ -113,7 +126,7 @@ jobs:
           test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$COMMIT"
           printf '%s\n' 'All checks passed; only research branch changed; no remote evidence publication.' > /tmp/aldar-v48-verified/CHECKS
       - name: Preserve evidence receipts and entire catalogue queue
-        if: success()
+        if: success() && steps.baseline.outputs.skip != 'true'
         run: |
           mkdir -p /tmp/aldar-v48-verified
           cp data/historical-intelligence/aldar-launches-20261014/*.json /tmp/aldar-v48-verified/
