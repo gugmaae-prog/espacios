@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "passId": "adrec-market-data-transactions-pass51-20261022",
+  "baseVersion": "20261022-enrichment-v50",
+  "asOf": "2026-10-22",
+  "sourcePage": "https://adrec.gov.ae/en/market-data",
+  "apiEndpoint": "https://adrec.gov.ae/api/feature/MarketData/RecentSales",
+  "dateWindow": {
+    "from": "2019-01-01",
+    "to": "2026-10-22",
+    "basis": "ADREC market-data recent-sales endpoint date filters; not complete lifetime history"
+  },
+  "termsReview": {
+    "status": "reuse_rights_unresolved",
+    "note": "The public dashboard exposes project-filtered registered sales and an export control. ADREC site terms reviewed on 2026-10-22 did not state a data-reuse licence. Keep this batch in the unmerged research candidate pending rights review; do not publish or deploy it."
+  },
+  "capturePolicy": {
+    "maxProjects": 13,
+    "maxHttpRequests": 20,
+    "concurrency": 1,
+    "minimumDelaySeconds": 2,
+    "maxRedirects": 2,
+    "maxResponseBytes": 5000000,
+    "rawResponsesRetained": false,
+    "personalFieldsRetained": false,
+    "partialShareTransactions": "excluded from AED-per-square-foot comparisons; counts recorded"
+  },
+  "projects": [
+    {"recordId":"adrec:561","projectName":"Bal Ghaiylam"},
+    {"recordId":"adrec:564","projectName":"Al Naseem"},
+    {"recordId":"adrec:48","projectName":"Noya - Phase 1"},
+    {"recordId":"adrec:485","projectName":"Reeman Living"},
+    {"recordId":"adrec:620","projectName":"Al Deem Townhomes"},
+    {"recordId":"adrec:560","projectName":"Royal Park"},
+    {"recordId":"adrec:609","projectName":"Fahid Beach Residences"},
+    {"recordId":"adrec:590","projectName":"Manarat Living III"},
+    {"recordId":"adrec:581","projectName":"Mamsha Gardens B"},
+    {"recordId":"adrec:617","projectName":"Fahid Beach Terraces"},
+    {"recordId":"adrec:603","projectName":"Nawayef Village Townhouses"},
+    {"recordId":"adrec:567","projectName":"Nawayef West B"},
+    {"recordId":"adrec:540","projectName":"Mangrove Village"}
+  ]
+}

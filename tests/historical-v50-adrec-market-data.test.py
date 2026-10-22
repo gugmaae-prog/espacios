@@ -6,6 +6,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
 PASS = BASE / 'adrec-market-data-pass50'
 VERSION = '20261022-enrichment-v50'
+LATEST_VERSION = '20261022-enrichment-v52'
 capture = json.loads((PASS / 'capture.json').read_bytes())
 packet = json.loads((PASS / 'accepted-packet.json').read_bytes())
 receipt = json.loads((PASS / 'reconciliation.json').read_bytes())
@@ -43,11 +44,12 @@ expected = {
     'adrec:68': ('Yas Acres - The Dahlias', 194),
 }
 
-check(snapshot['version'] == publication['version'] == receipt['version'] == VERSION, 'V50 snapshot/manifest/receipt mismatch')
+check(snapshot['version'] == publication['version'] and snapshot['version'] in {VERSION, LATEST_VERSION}, 'V50/latest snapshot/manifest mismatch')
+check(receipt['version'] == VERSION, 'V50 receipt version changed')
 check(snapshot['asOf'] == publication['asOf'] == '2026-10-22', 'V50 cutoff mismatch')
 check(len(snapshot['records']) == publication['counts']['records'] == 1860, 'Catalog size changed')
 check(publication['counts']['projects'] == 1645 and publication['counts']['communities'] == 215, 'Catalog type counts changed')
-check(len(snapshot['sources']) == publication['counts']['sources'] == 3426, 'V50 source count mismatch')
+check(len(snapshot['sources']) == publication['counts']['sources'] == (3453 if snapshot['version'] == LATEST_VERSION else 3426), 'V50/latest source count mismatch')
 check(publication['counts']['historicalRows'] == 633891 and publication['counts']['series'] == 16872, 'Prior native history counts changed')
 check(receipt['nativeSeriesCount'] == 16872 and receipt['nativeSeriesDigestBefore'] == receipt['nativeSeriesDigestAfter'], 'Native history digest changed')
 check(receipt['historicalRowsPreserved'] == 633891 and receipt['remoteWrites'] == 0, 'Preservation or no-remote-write receipt failed')
@@ -96,8 +98,8 @@ for source in packet['sources']:
     check(stored['rawTransactionRowsRetained'] is False and stored['rawTransactionIdsAvailable'] is False, 'Raw transaction source claim changed')
     check(source['totalElements'] == source['includedFullShareResidentialRows'] + sum(source['excludedRows'].values()), 'Source row reconciliation failed')
 
-check(hashlib.sha256(root_raw).hexdigest() == root_entry['sha256'] and root['version'] == VERSION, 'Root index integrity/version failure')
-check(len(root['records']) == 1860 and len(root['sources']) == 3426 and len(root['series']) == 16872, 'Root inventory mismatch')
+check(hashlib.sha256(root_raw).hexdigest() == root_entry['sha256'] and root['version'] == snapshot['version'], 'Root index integrity/version failure')
+check(len(root['records']) == 1860 and len(root['sources']) == len(snapshot['sources']) and len(root['series']) == 16872, 'Root inventory mismatch')
 for obj in publication['objects']:
     if obj['kind'] not in {'full_snapshot_index', 'd1_append_only_index'}:
         continue
