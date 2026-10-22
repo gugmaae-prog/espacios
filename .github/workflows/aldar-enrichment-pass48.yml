@@ -54,7 +54,7 @@ jobs:
           elif [ "$CURRENT" = '20261014-enrichment-v48' ]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
             echo 'skip=false' >> "$GITHUB_OUTPUT"
-          elif [[ "$CURRENT" =~ ^202610(15-enrichment-v49|22-enrichment-v5[0-2])$ ]]; then
+          elif [[ "$CURRENT" =~ ^202610(15-enrichment-v49|22-enrichment-v5[0-3])$ ]]; then
             echo 'apply=false' >> "$GITHUB_OUTPUT"
             echo 'skip=true' >> "$GITHUB_OUTPUT"
           else
