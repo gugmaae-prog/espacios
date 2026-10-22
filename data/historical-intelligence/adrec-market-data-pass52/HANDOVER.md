@@ -1,5 +1,7 @@
 # ADREC registered-sales candidates V51 and V52
 
+> Coverage accounting note: V53 applies the later `evidence-presence-v2` policy. It credits these 9,941 observations as bounded registered-sale evidence on 27 records and reports lifetime completeness and forecast validation in a separate advanced audit. See `../coverage-policy-v2/HANDOVER.md`.
+
 ## Scope
 
 V51 and V52 append 9,941 normalized, full-share residential registered-sale observations to 27 exact Abu Dhabi project records already present in the fixed catalogue:

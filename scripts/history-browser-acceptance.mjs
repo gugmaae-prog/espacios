@@ -92,9 +92,9 @@ async function runCase(port,{name,width,height,mobile}){
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Financial coverage')",{label:name+' PJA coverage'});
  const index=await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),options:document.querySelector('#hi-record-select').options.length,sources:[...document.querySelectorAll('#hi-body a')].every(a=>a.href.startsWith('https://')),chart:document.querySelector('.hi-chart figcaption')?.textContent})");
  assert.equal(index.state.recordCount,1860);assert.equal(index.options,1861);assert.equal(index.sources,true);
- const itemCoverage=await evaluate(cdp,"(()=>{const ledger=document.querySelector('#hi-item-coverage');ledger.open=true;return {summary:ledger.querySelector('summary').textContent,items:ledger.querySelectorAll('article').length,text:ledger.textContent,sources:[...ledger.querySelectorAll('a')].map(a=>a.href)}})()");
- assert.equal(itemCoverage.items,23,name+' complete item ledger');assert.match(itemCoverage.summary,/23 items/);
- assert.match(itemCoverage.text,/Complete lifetime price and rent histories/);assert.match(itemCoverage.text,/complete registered sale history/i);assert.match(itemCoverage.text,/unestablished/i);
+ const itemCoverage=await evaluate(cdp,"(()=>{const ledger=document.querySelector('#hi-item-coverage');ledger.open=true;return {summary:ledger.querySelector('summary').textContent,items:ledger.querySelectorAll('article').length,advanced:ledger.querySelectorAll('.hi-advanced-coverage article').length,text:ledger.textContent,sources:[...ledger.querySelectorAll('a')].map(a=>a.href)}})()");
+ assert.equal(itemCoverage.items,23,name+' complete item ledger');assert.equal(itemCoverage.advanced,5,name+' advanced audit item ledger');assert.match(itemCoverage.summary,/18 items/);
+ assert.match(itemCoverage.text,/Lifetime completeness and validated forecasts/);assert.match(itemCoverage.text,/complete registered sale history/i);assert.match(itemCoverage.text,/unestablished/i);
  assert.ok(itemCoverage.sources.every(url=>url.startsWith('https://')),name+' ledger source links');
  await capture(cdp,name+'-coverage-items');
  await evaluate(cdp,"document.querySelector('#hi-item-coverage').open=false;true");

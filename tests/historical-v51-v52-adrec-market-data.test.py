@@ -9,6 +9,7 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
 VERSION = '20261022-enrichment-v52'
+LATEST_VERSION = '20261022-enrichment-v53'
 
 
 def load(path):
@@ -84,13 +85,13 @@ passes = {
     },
 }
 
-check(snapshot['version'] == publication['version'] == VERSION, 'V52 snapshot/manifest mismatch')
+check(snapshot['version'] == publication['version'] and snapshot['version'] in {VERSION, LATEST_VERSION}, 'V52/latest snapshot/manifest mismatch')
 check(snapshot['asOf'] == publication['asOf'] == '2026-10-22', 'V52 cutoff mismatch')
 check(len(snapshot['records']) == publication['counts']['records'] == len(root['records']) == 1860, 'Catalog size changed')
 check(publication['counts']['projects'] == 1645 and publication['counts']['communities'] == 215, 'Catalog type counts changed')
 check(len(snapshot['sources']) == publication['counts']['sources'] == len(root['sources']) == 3453, 'V52 source count mismatch')
 check(publication['counts']['historicalRows'] == 633891 and publication['counts']['series'] == len(root['series']) == 16872, 'Native history changed')
-check(hashlib.sha256(root_raw).hexdigest() == root_entry['sha256'] and root['version'] == VERSION, 'Root integrity/version failure')
+check(hashlib.sha256(root_raw).hexdigest() == root_entry['sha256'] and root['version'] == snapshot['version'], 'Root integrity/version failure')
 
 combined_facts = 0
 combined_records = set()
@@ -142,4 +143,4 @@ check(len(combined_records) == 27, 'Combined exact-project count changed')
 expected_coverage = {'disputed': 0, 'inaccessible': 0, 'missing': 26698, 'partial': 3402, 'pre-applicability': 0, 'present': 3380, 'unestablished': 9300}
 check(passes[52] and load(BASE / 'adrec-market-data-pass52/reconciliation.json')['coverageAfter'] == expected_coverage, 'Coverage ledger totals changed')
 
-print(json.dumps({'version': VERSION, 'passes': [51, 52], 'projects': len(combined_records), 'transactions': combined_facts, 'sources': len(snapshot['sources']), 'coverage': expected_coverage, 'publication': 'candidate-only'}))
+print(json.dumps({'version': snapshot['version'], 'passes': [51, 52], 'projects': len(combined_records), 'transactions': combined_facts, 'sources': len(snapshot['sources']), 'coverage': expected_coverage, 'publication': 'candidate-only'}))

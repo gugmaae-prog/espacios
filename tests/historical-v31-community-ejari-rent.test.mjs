@@ -13,7 +13,7 @@ const records = new Map(snapshot.records.map((record) => [record.id, record]));
 const normalize = (value) => value.normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim().replace(/\s+/g, ' ');
 
 test('V31 preserves the catalogue, prior evidence, events and exposes only exact community rent matches', () => {
-  assert.ok(['20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48','20261015-enrichment-v49','20261022-enrichment-v50','20261022-enrichment-v51','20261022-enrichment-v52'].includes(snapshot.version));
+  assert.ok(['20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48','20261015-enrichment-v49','20261022-enrichment-v50','20261022-enrichment-v51','20261022-enrichment-v52','20261022-enrichment-v53'].includes(snapshot.version));
   assert.equal(publication.version, snapshot.version);
   assert.equal(publication.counts.records, 1860);
   assert.equal(publication.counts.projects, 1645);

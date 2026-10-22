@@ -92,8 +92,10 @@ test('verified planned handovers retain stage, milestone and geographic scope in
 
 test('per-item evidence disclosure distinguishes presence from complete history and escapes source text',()=>{
  const html=UI.itemCoverageHTML({record:{researchStatus:{itemCoverage:{registered_sale_history:{status:'present',nativePointCount:2,reason:'Sparse <evidence>',sourceIds:['source']},complete_registered_sale_history:{status:'unestablished',reason:'Applicable periods unknown',sourceIds:[]}}}},sources:[{id:'source',url:'https://example.org/verified',publisher:'Authority'}]});
- assert.ok(html.includes('Evidence and remaining gaps'));
- assert.ok(html.includes('Complete lifetime price and rent histories require every applicable period'));
+ assert.ok(html.includes('Primary evidence coverage'));
+ assert.ok(html.includes('Bounded observed periods count here'));
+ assert.ok(html.includes('Advanced completeness audit'));
+ assert.ok(html.includes('Lifetime completeness and validated forecasts'));
  assert.ok(html.includes('2 retained native points'));assert.ok(html.includes('Unestablished')||html.includes('unestablished'));
  assert.ok(html.includes('Sparse &lt;evidence&gt;'));assert.ok(!html.includes('Sparse <evidence>'));
  assert.ok(html.includes('https://example.org/verified'));

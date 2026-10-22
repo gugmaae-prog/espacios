@@ -285,7 +285,10 @@
   function itemCoverageHTML(data) {
     const record=data?.record??data,items=Object.entries(record.researchStatus?.itemCoverage??{});
     if(!items.length)return '';
-    return '<details class="hi-section" id="hi-item-coverage"><summary>Evidence and remaining gaps · '+items.length+' items</summary><p class="hi-note">An item marked present has supporting evidence. Complete lifetime price and rent histories require every applicable period to be verified.</p>'+items.map(([name,item])=>'<article class="hi-card"><strong>'+esc(stageLabel(name))+'</strong><p>'+esc(stageLabel(item.status))+'</p><p class="hi-note">'+esc(item.reason)+(item.nativePointCount!=null?' · '+esc(item.nativePointCount)+' retained native points':'')+'</p>'+sourceLinks(item.sourceIds,data)+'</article>').join('')+'</details>';
+    const advancedNames=new Set(['complete_registered_sale_history','complete_signed_rent_history','validated_price_forecast','validated_rent_forecast','validated_net_return_forecast']);
+    const primary=items.filter(([name])=>!advancedNames.has(name)),advanced=items.filter(([name])=>advancedNames.has(name));
+    const cards=rows=>rows.map(([name,item])=>'<article class="hi-card"><strong>'+esc(stageLabel(name))+'</strong><p>'+esc(stageLabel(item.status))+'</p><p class="hi-note">'+esc(item.reason)+(item.nativePointCount!=null?' · '+esc(item.nativePointCount)+' retained native points':'')+'</p>'+sourceLinks(item.sourceIds,data)+'</article>').join('');
+    return '<details class="hi-section" id="hi-item-coverage"><summary>Primary evidence coverage · '+primary.length+' items</summary><p class="hi-note">An item marked present has exact, source-backed evidence. Bounded observed periods count here without claiming every lifetime period is complete.</p>'+cards(primary)+'<details class="hi-section hi-advanced-coverage"><summary>Advanced completeness audit · '+advanced.length+' items</summary><p class="hi-note">Lifetime completeness and validated forecasts are reviewed separately. They do not reduce the primary evidence-presence score.</p>'+cards(advanced)+'</details></details>';
   }
   function developerSalesHTML(row,data) {
     const s=row.developerSalesSnapshot;
