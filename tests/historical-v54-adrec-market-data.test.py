@@ -11,6 +11,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
 PASS = BASE / 'adrec-market-data-pass54'
 VERSION = '20261027-enrichment-v54'
+CURRENT_VERSION = '20261027-enrichment-v55'
+V54_ROOT = 'c9249822ae074ed6cd5393e1e6475161a3cda5d5effae9543e35659c651eb5d3'
 ADVANCED = {
     'complete_registered_sale_history', 'complete_signed_rent_history',
     'validated_price_forecast', 'validated_rent_forecast', 'validated_net_return_forecast',
@@ -53,25 +55,27 @@ def check(value, message):
         raise AssertionError(message)
 
 
-snapshot = json.loads(gzip.decompress((ROOT / 'data/historical-intelligence-20261003.json.gz').read_bytes()))
+current_snapshot = json.loads(gzip.decompress((ROOT / 'data/historical-intelligence-20261003.json.gz').read_bytes()))
+root_raw = (BASE / 'objects' / f'{V54_ROOT}.json.gz').read_bytes()
+snapshot = json.loads(gzip.decompress(root_raw))
 publication = load(BASE / 'publication-manifest.json')
 plan = load(PASS / 'source-plan.json')
 capture = load(PASS / 'capture.json')
 packet = load(PASS / 'accepted-packet.json')
 receipt = load(PASS / 'reconciliation.json')
-root_entry = publication['rootIndex']
-root_raw = (ROOT / root_entry['path']).read_bytes()
 root = json.loads(gzip.decompress(root_raw))
 records = {record['id']: record for record in snapshot['records']}
 sources = {source['id']: source for source in snapshot['sources']}
 
-check(snapshot['version'] == publication['version'] == root['version'] == receipt['version'] == VERSION, 'V54 version mismatch')
-check(snapshot['asOf'] == publication['asOf'] == '2026-10-27', 'V54 cutoff mismatch')
-check(hashlib.sha256(root_raw).hexdigest() == root_entry['sha256'] == receipt['rootSHA256'], 'V54 root integrity mismatch')
-check(receipt['canonicalSHA256'] == hashlib.sha256(gzip.decompress((ROOT / 'data/historical-intelligence-20261003.json.gz').read_bytes())).hexdigest(), 'V54 canonical digest mismatch')
+check(snapshot['version'] == root['version'] == receipt['version'] == VERSION, 'V54 version mismatch')
+check(current_snapshot['version'] == publication['version'] == CURRENT_VERSION, 'Latest publication version mismatch')
+check(snapshot['asOf'] == current_snapshot['asOf'] == publication['asOf'] == '2026-10-27', 'V54/latest cutoff mismatch')
+check(hashlib.sha256(root_raw).hexdigest() == V54_ROOT == receipt['rootSHA256'], 'V54 root integrity mismatch')
+check(receipt['canonicalSHA256'] == '00307fd0338cf91ee14afb0e096094645850ceeb340951e7b9015f9b1c845589', 'V54 canonical digest changed')
 check(len(snapshot['records']) == publication['counts']['records'] == len(root['records']) == 1860, 'Catalogue changed')
 check(publication['counts']['projects'] == 1645 and publication['counts']['communities'] == 215, 'Catalogue type counts changed')
-check(len(snapshot['sources']) == publication['counts']['sources'] == len(root['sources']) == receipt['sourcesAfter'] == 3479, 'V54 source count mismatch')
+check(len(snapshot['sources']) == len(root['sources']) == receipt['sourcesAfter'] == 3479, 'V54 source count mismatch')
+check(len(current_snapshot['sources']) == publication['counts']['sources'] == 3529, 'Latest source count mismatch')
 check(publication['counts']['series'] == len(root['series']) == receipt['nativeSeriesCount'] == 16872, 'Native series changed')
 check(publication['counts']['historicalRows'] == receipt['historicalRowsPreserved'] == 633891, 'Historical row count changed')
 

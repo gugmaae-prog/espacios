@@ -16,7 +16,7 @@ const current = unpack('data/historical-intelligence/objects/9912e0a2c673160168f
 test('V46 appends only bounded authority lifecycle/status evidence to nine verified project records', () => {
   assert.equal(snapshot.version, '20261013-enrichment-v46');
   assert.equal(publication.version, latest.version);
-  assert.ok(['20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48','20261015-enrichment-v49','20261022-enrichment-v50','20261022-enrichment-v51','20261022-enrichment-v52','20261022-enrichment-v53','20261027-enrichment-v54'].includes(latest.version));
+  assert.ok(['20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48','20261015-enrichment-v49','20261022-enrichment-v50','20261022-enrichment-v51','20261022-enrichment-v52','20261022-enrichment-v53','20261027-enrichment-v54','20261027-enrichment-v55'].includes(latest.version));
   assert.equal(packet.publicationStatus, 'prepared_not_integrated');
   assert.equal(packet.financialObservationsAdded, 0);
   assert.equal(packet.facts.length, 39);

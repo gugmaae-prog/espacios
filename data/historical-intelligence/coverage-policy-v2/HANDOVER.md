@@ -55,3 +55,7 @@ The all-item audit remains available for reconciliation: 3,407 present, 3,402 pa
 ## V54 follow-up
 
 V54 adds 10,571 exact-subject ADREC registered-sale observations across 25 additional records. Under this policy, those records move from `missing` to `present` for the bounded registered-sale evidence item. Primary coverage becomes 3,432 present, 3,402 partial, and 26,646 missing. The 9,300 advanced lifetime-completeness and forecast-validation items remain unestablished.
+
+## V55 follow-up
+
+V55 reconciles a 10,042-row current-vintage ADREC capture against the retained transaction multiset. It recognizes 9,400 prior rows without duplicating them, appends 642 genuinely new observations, and promotes 54 exact-subject records with accepted bounded sale evidence. Primary coverage becomes 3,486 present, 3,402 partial, and 26,592 missing. Ambiguous shared dashboard labels remain withheld, and the 9,300 advanced lifetime-completeness and forecast-validation items remain unestablished.

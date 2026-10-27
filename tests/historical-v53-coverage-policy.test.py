@@ -29,7 +29,7 @@ receipt = load(BASE / 'coverage-policy-v2/reconciliation.json')
 publication = load(BASE / 'publication-manifest.json')
 
 assert snapshot['version'] == receipt['version'] == VERSION
-assert publication['version'] in {VERSION, '20261027-enrichment-v54'}
+assert publication['version'] in {VERSION, '20261027-enrichment-v54','20261027-enrichment-v55', '20261027-enrichment-v55'}
 assert len(snapshot['records']) == len(prior['records']) == 1860
 assert snapshot['sources'] == prior['sources'] and snapshot['events'] == prior['events'] and snapshot['exposures'] == prior['exposures']
 assert len(snapshot['sources']) == 3453

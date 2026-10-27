@@ -7,7 +7,7 @@ BASE = ROOT / 'data/historical-intelligence'
 PASS = BASE / 'adrec-market-data-pass49'
 VERSION = '20261015-enrichment-v49'
 LATEST_VERSIONS = {'20261022-enrichment-v52', '20261022-enrichment-v53'}
-CURRENT_VERSION = '20261027-enrichment-v54'
+CURRENT_VERSION = '20261027-enrichment-v55'
 capture = json.loads((PASS / 'capture.json').read_bytes())
 packet = json.loads((PASS / 'accepted-packet.json').read_bytes())
 receipt = json.loads((PASS / 'reconciliation.json').read_bytes())
@@ -27,7 +27,7 @@ check(receipt['version'] == VERSION, 'V49 receipt version changed')
 check(snapshot['asOf'] == publication['asOf'] == ('2026-10-27' if snapshot['version'] == CURRENT_VERSION else '2026-10-22' if snapshot['version'] in LATEST_VERSIONS else '2026-10-15'), 'V49/latest cutoff mismatch')
 check(len(snapshot['records']) == 1860 and publication['counts']['records'] == 1860, 'Catalog size changed')
 check(publication['counts']['projects'] == 1645 and publication['counts']['communities'] == 215, 'Catalog type counts changed')
-check(len(snapshot['sources']) == publication['counts']['sources'] == (3479 if snapshot['version'] == CURRENT_VERSION else 3453 if snapshot['version'] in LATEST_VERSIONS else 3406), 'V49/latest source count mismatch')
+check(len(snapshot['sources']) == publication['counts']['sources'] == (3529 if snapshot['version'] == CURRENT_VERSION else 3453 if snapshot['version'] in LATEST_VERSIONS else 3406), 'V49/latest source count mismatch')
 check(publication['counts']['historicalRows'] == 633891 and publication['counts']['series'] == 16872, 'Prior native history counts changed')
 check(receipt['nativeSeriesCount'] == 16872 and receipt['nativeSeriesDigestBefore'] == receipt['nativeSeriesDigestAfter'], 'Native history digest changed')
 check(receipt['historicalRowsPreserved'] == 633891 and receipt['remoteWrites'] == 0, 'Preservation or no-remote-write receipt failed')

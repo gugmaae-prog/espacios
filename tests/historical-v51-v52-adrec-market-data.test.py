@@ -9,7 +9,7 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
 VERSION = '20261022-enrichment-v52'
-LATEST_VERSION = '20261027-enrichment-v54'
+LATEST_VERSION = '20261027-enrichment-v55'
 V52_ROOT = '1792c42000ba305e5514a1981d8493a22b3fd78c3e3866240c08fbe97ba76cf2'
 
 
@@ -90,7 +90,7 @@ check(snapshot['version'] == VERSION and publication['version'] in {VERSION, '20
 check(snapshot['asOf'] == '2026-10-22' and publication['asOf'] in {'2026-10-22', '2026-10-27'}, 'V52 cutoff mismatch')
 check(len(snapshot['records']) == publication['counts']['records'] == len(root['records']) == 1860, 'Catalog size changed')
 check(publication['counts']['projects'] == 1645 and publication['counts']['communities'] == 215, 'Catalog type counts changed')
-check(len(snapshot['sources']) == len(root['sources']) == 3453 and publication['counts']['sources'] in {3453, 3479}, 'V52 source count mismatch')
+check(len(snapshot['sources']) == len(root['sources']) == 3453 and publication['counts']['sources'] in {3453, 3529}, 'V52 source count mismatch')
 check(publication['counts']['historicalRows'] == 633891 and publication['counts']['series'] == len(root['series']) == 16872, 'Native history changed')
 check(hashlib.sha256(root_raw).hexdigest() == root_entry['sha256'] and root['version'] == snapshot['version'], 'Root integrity/version failure')
 
