@@ -76,7 +76,7 @@ capture_counts = {x['recordId']: x['includedFullShareResidentialRows'] for x in 
 check(capture_counts == receipt['countsByRecord'], 'Capture and receipt counts differ')
 for rid, (project_name, expected_count) in expected.items():
     record = next(r for r in snapshot['records'] if r['id'] == rid)
-    facts = [o for o in record['observations'] if o.get('evidenceClass') == 'registered_sale_transaction_primary_adrec_dashboard']
+    facts = [o for o in record['observations'] if o.get('id', '').startswith('adrec49-sale-')]
     check(record['emirate'] == 'Abu Dhabi' and record['type'] == 'project', f'Wrong record type/emirate for {rid}')
     check(len(facts) == expected_count, f'Fact count mismatch for {rid}')
     check(receipt['countsByRecord'][rid] == expected_count, f'Receipt count mismatch for {rid}')
