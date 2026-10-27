@@ -9,6 +9,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/historical-intelligence'
 VERSION = '20261022-enrichment-v53'
 V52_ROOT = '1792c42000ba305e5514a1981d8493a22b3fd78c3e3866240c08fbe97ba76cf2'
+V53_ROOT = '297f01d6dc212ad7e4f63b1e716d6b55b97044917e9cabafd44e7103d1ff5b3b'
 ADVANCED = {
     'complete_registered_sale_history',
     'complete_signed_rent_history',
@@ -22,12 +23,13 @@ def load(path):
     return json.loads(path.read_bytes())
 
 
-snapshot = json.loads(gzip.decompress((ROOT / 'data/historical-intelligence-20261003.json.gz').read_bytes()))
+snapshot = json.loads(gzip.decompress((BASE / 'objects' / f'{V53_ROOT}.json.gz').read_bytes()))
 prior = json.loads(gzip.decompress((BASE / 'objects' / f'{V52_ROOT}.json.gz').read_bytes()))
 receipt = load(BASE / 'coverage-policy-v2/reconciliation.json')
 publication = load(BASE / 'publication-manifest.json')
 
-assert snapshot['version'] == publication['version'] == receipt['version'] == VERSION
+assert snapshot['version'] == receipt['version'] == VERSION
+assert publication['version'] in {VERSION, '20261027-enrichment-v54'}
 assert len(snapshot['records']) == len(prior['records']) == 1860
 assert snapshot['sources'] == prior['sources'] and snapshot['events'] == prior['events'] and snapshot['exposures'] == prior['exposures']
 assert len(snapshot['sources']) == 3453
@@ -48,7 +50,7 @@ for record in snapshot['records']:
         for key, value in old.items():
             if key != 'historySeriesIds':
                 assert record[key] == value
-        assert [series['id'] for series in record['historySeries']] == old['historySeriesIds']
+        assert record['historySeriesIds'] == old['historySeriesIds']
         continue
     assert record['lifecycle'] == old['lifecycle']
     assert record['observations'] == old['observations']

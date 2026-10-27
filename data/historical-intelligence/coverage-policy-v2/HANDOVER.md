@@ -51,3 +51,7 @@ The all-item audit remains available for reconciliation: 3,407 present, 3,402 pa
 - Numeric forecasts added: 0.
 - Production publication: none.
 - ADREC reuse rights remain unresolved, so the candidate remains blocked from R2, D1, Worker, traffic, and production publication.
+
+## V54 follow-up
+
+V54 adds 10,571 exact-subject ADREC registered-sale observations across 25 additional records. Under this policy, those records move from `missing` to `present` for the bounded registered-sale evidence item. Primary coverage becomes 3,432 present, 3,402 partial, and 26,646 missing. The 9,300 advanced lifetime-completeness and forecast-validation items remain unestablished.
