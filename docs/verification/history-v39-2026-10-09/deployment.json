@@ -1,0 +1,19 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "25b61d3b-7a65-4a61-aabc-4172e9632f23",
+  "previewURL": "https://25b61d3b-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "historyVersion": "20261009-enrichment-v39",
+  "frontendRelease": "20261009-map-evidence-v43",
+  "sourceCommit": "4d3efc8f4a242769f437d357d41e20e18f947f60",
+  "activation": "verified_active",
+  "productionUnchanged": false,
+  "rootSHA256": "b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760",
+  "receiptStage": "Post-activation verification",
+  "deploymentId": "045a8f69-bded-4575-a972-574b004b7813",
+  "activatedAt": "2026-10-09T01:43:06.110308Z",
+  "trafficPercent": 100,
+  "supabaseReleaseId": "15b176a7-a57d-4d2c-a032-ea800af14024",
+  "sourceSyncState": "pending_merge",
+  "ciURL": "https://github.com/gugmaae-prog/espacios/actions/runs/37870493952",
+  "researchComplete": false
+}

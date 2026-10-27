@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-11T22:03:40.093Z",
+  "origin": "https://espacios.me",
+  "version": "20261009-enrichment-v40",
+  "recordId": "community:Dubai:la-mer",
+  "series": 74,
+  "nativePoints": 1828,
+  "allExact": true,
+  "scope": "Preserved native context cohorts, not new subject prices"
+}

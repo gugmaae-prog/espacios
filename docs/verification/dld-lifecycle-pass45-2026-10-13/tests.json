@@ -1,0 +1,10 @@
+{
+  "command": "python3 tests/dld-lifecycle-pass45.py",
+  "tests": 5,
+  "passed": true,
+  "financialObservationsAdded": 0,
+  "preparedFacts": 31,
+  "records": 8,
+  "captureChecksumsVerified": 24,
+  "status": "prepared_not_integrated"
+}

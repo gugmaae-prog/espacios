@@ -1,0 +1,15 @@
+{
+  "route": {
+    "id": "ab6af7e5cc2345f0a3b34a3f11476c31",
+    "pattern": "espacios.me/map*",
+    "script": "espacios-map-shell"
+  },
+  "binding": {
+    "environment": "production",
+    "name": "MAP",
+    "service": "psr-portfolio-map-v2",
+    "type": "service"
+  },
+  "method": "Cloudflare API readback; no changes",
+  "verifiedOnUTC": "2026-10-08"
+}

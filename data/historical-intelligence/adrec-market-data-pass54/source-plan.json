@@ -1,0 +1,134 @@
+{
+  "apiEndpoint": "https://adrec.gov.ae/api/feature/MarketData/RecentSales",
+  "asOf": "2026-10-27",
+  "baseVersion": "20261022-enrichment-v53",
+  "capturePolicy": {
+    "concurrency": 1,
+    "maxHttpRequests": 40,
+    "maxProjects": 26,
+    "maxRedirects": 2,
+    "maxResponseBytes": 5000000,
+    "minimumDelaySeconds": 2,
+    "partialShareTransactions": "excluded from AED-per-square-foot comparisons; counts recorded",
+    "personalFieldsRetained": false,
+    "rawResponsesRetained": false
+  },
+  "dateWindow": {
+    "basis": "ADREC market-data recent-sales endpoint date filters; not complete lifetime history",
+    "from": "2019-01-01",
+    "to": "2026-10-22"
+  },
+  "passId": "adrec-market-data-transactions-pass54-20261022",
+  "projects": [
+    {
+      "projectName": "Water's Edge - Precinct A",
+      "recordId": "adrec:29"
+    },
+    {
+      "projectName": "The Sustainable City - Yas Island - Phase 1",
+      "recordId": "adrec:478"
+    },
+    {
+      "projectName": "Saadiyat Lagoons - Wilds - Phase 1",
+      "recordId": "adrec:465"
+    },
+    {
+      "projectName": "Saadiyat Lagoons - Phase 2 - Al Sidr",
+      "recordId": "adrec:470"
+    },
+    {
+      "projectName": "Hudayriyat Golf Estates - Townhomes",
+      "recordId": "adrec:695"
+    },
+    {
+      "projectName": "Bloom Living - Toledo",
+      "recordId": "adrec:455"
+    },
+    {
+      "projectName": "Bloom Living - Granada 1",
+      "recordId": "adrec:547"
+    },
+    {
+      "projectName": "Bloom Living - Casares",
+      "recordId": "adrec:505"
+    },
+    {
+      "projectName": "Bloom Living - Seville",
+      "recordId": "adrec:559"
+    },
+    {
+      "projectName": "Bloom Living - Granada 2",
+      "recordId": "adrec:619"
+    },
+    {
+      "projectName": "Bloom Living - Carmona",
+      "recordId": "adrec:621"
+    },
+    {
+      "projectName": "Bloom Living - Cordoba",
+      "recordId": "adrec:442"
+    },
+    {
+      "projectName": "Bloom Living - Olvera",
+      "recordId": "adrec:573"
+    },
+    {
+      "projectName": "Saadiyat Lagoons - Phase 2 - Ethir",
+      "recordId": "adrec:471"
+    },
+    {
+      "projectName": "Saadiyat Lagoons - Wilds - Phase 2",
+      "recordId": "adrec:469"
+    },
+    {
+      "projectName": "Hudayriyat Golf Estates - Villas",
+      "recordId": "adrec:694"
+    },
+    {
+      "projectName": "West Yas (Plots)",
+      "recordId": "adrec:49"
+    },
+    {
+      "projectName": "Bayn - Lagoon 2",
+      "recordId": "adrec:628"
+    },
+    {
+      "projectName": "Bayn - Waterway",
+      "recordId": "adrec:623"
+    },
+    {
+      "projectName": "Fay Hills - Fay Gardens",
+      "recordId": "adrec:638"
+    },
+    {
+      "projectName": "Merito",
+      "recordId": "adrec:586"
+    },
+    {
+      "projectName": "Mamsha Gardens A",
+      "recordId": "adrec:578"
+    },
+    {
+      "projectName": "Brabus Island",
+      "recordId": "adrec:600"
+    },
+    {
+      "projectName": "Perla 3",
+      "recordId": "adrec:613"
+    },
+    {
+      "projectName": "The View",
+      "recordId": "adrec:394"
+    },
+    {
+      "projectName": "Al Reeman 2 - Phase 3 - Fay Al Reeman II",
+      "recordId": "adrec:474"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourcePage": "https://adrec.gov.ae/en/market-data",
+  "termsReview": {
+    "note": "The public dashboard exposes project-filtered registered sales and an export control. ADREC site terms reviewed on 2026-10-27 did not state a data-reuse licence. Keep this batch in the unmerged research candidate pending rights review; do not publish or deploy it. The October 27 recapture uses the dashboard’s current exact labels for the same pre-existing ADREC authority records; explicit legacy-to-current label aliases are retained in the candidate identity review.",
+    "status": "reuse_rights_unresolved"
+  }
+}

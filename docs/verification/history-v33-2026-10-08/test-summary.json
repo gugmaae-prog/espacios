@@ -1,0 +1,23 @@
+{
+  "command": "npm test",
+  "exitCode": 0,
+  "nodeTestGroups": [
+    152,
+    1,
+    24,
+    165
+  ],
+  "nodeFailureGroups": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "pythonHistoryChecks": "V19, V20, V22 and V23 passed",
+  "focusedPreservationTests": 8,
+  "build": "npm run build:smart passed",
+  "syntax": "npm run check passed",
+  "coverageRuleRegression": "Full suite passed after explicit price-applicability correction",
+  "assetVersionFollowup": "56 map tests passed after V37 asset-token bump",
+  "cleanCheckoutRegression": "Legacy importer replaced by retained-archive verification; all 20 storage tests pass, including invalid revision argument validation."
+}

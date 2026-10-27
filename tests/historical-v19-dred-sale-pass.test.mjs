@@ -13,7 +13,7 @@ const communityFacts=facts.filter(fact=>fact.recordId.startsWith('community:'));
 const source=sources.get('v19-dred-sales-20261005');
 
 test('V19 appends a pinned, CC BY source snapshot without changing the fixed catalogue',()=>{
- assert.ok(['20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v23'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261008-enrichment-v23','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48','20261015-enrichment-v49','20261022-enrichment-v50','20261022-enrichment-v51','20261022-enrichment-v52','20261022-enrichment-v53','20261027-enrichment-v54','20261027-enrichment-v55'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.equal(snapshot.records.filter(record=>record.type==='project').length,1645);
  assert.equal(snapshot.records.filter(record=>record.type==='community').length,215);

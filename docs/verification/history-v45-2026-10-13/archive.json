@@ -1,0 +1,8 @@
+{
+  "mode": "restore_and_verify_retained_archive",
+  "remoteWrites": 0,
+  "version": "20261013-enrichment-v45",
+  "records": 1860,
+  "objectsVerified": 2542,
+  "canonicalSHA256": "78e046588d1cd3c7508befb8253175a117a04cb05c632d9a334ae421c44f74e4"
+}

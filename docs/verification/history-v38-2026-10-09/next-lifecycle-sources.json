@@ -1,0 +1,43 @@
+{
+  "status": "captured_pending_lifecycle_review",
+  "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+  "coverageCredit": 0,
+  "includedInV38": false,
+  "sources": [
+    {
+      "id": "jumeirah-announcement",
+      "url": "https://mediahub.jumeirah.com/jumeirah-drives-portfolio-expansion-with-three-new-developments-in-dubai/?lang=eng",
+      "finalUrl": "https://mediahub.jumeirah.com/jumeirah-drives-portfolio-expansion-with-three-new-developments-in-dubai/?lang=eng",
+      "status": 200,
+      "retrievedAt": "2026-10-09T00:25:45.887Z",
+      "bytes": 75718,
+      "sha256": "ca74565087180a86e8f36ebb4177b5c581d372c4a16731dc8490707e5e39ab3e"
+    },
+    {
+      "id": "meraas-launch",
+      "url": "https://meraas.com/en/latest-post/news/dubais-meraas-debuts-ultra-luxury-waterfront-address-jumeirah-residences-asora-bay",
+      "finalUrl": "https://meraas.com/en/latest-post/news/dubais-meraas-debuts-ultra-luxury-waterfront-address-jumeirah-residences-asora-bay",
+      "status": 200,
+      "retrievedAt": "2026-10-09T00:25:45.347Z",
+      "bytes": 267767,
+      "sha256": "352879c9efffb8595a281c517045383375e7060f61ca80f37532f398a223a7f2"
+    },
+    {
+      "id": "meraas-target",
+      "url": "https://meraas.com/en/latest-post/news/jumeirah-residences-asora-bay-meraas-pinnacle-luxury-coastal-living-dubai",
+      "finalUrl": "https://meraas.com/en/latest-post/news/jumeirah-residences-asora-bay-meraas-pinnacle-luxury-coastal-living-dubai",
+      "status": 200,
+      "retrievedAt": "2026-10-09T00:25:45.414Z",
+      "bytes": 268420,
+      "sha256": "5b747d30b09a5a546c2c027855916fc3a8edc4a3d4aa67a2ae03dabff4cf1a17"
+    }
+  ],
+  "reviewQuestions": [
+    "Jumeirah release is dated 28 April 2025 and already describes residences as launched; do not call the 7 July 2025 Meraas news date the first-ever launch.",
+    "Meraas article dated 30 June 2025 describes early-2029 handover; preserve existing Q1 2029 source targets separately and retain date precision.",
+    "Residential inventory descriptions and ocean-villa wording require component reconciliation; never infer a unit total from registration count or fan out flat transactions to hotel/villas.",
+    "New captures are available 9 October 2026 and remain outside the V38 October 8 evidence cutoff.",
+    "Official parent-project 3445 register reports project_start_date 2025-05-01, project_end_date 2029-03-31, percent_completed 0, English NOT_STARTED and Arabic under construction in the 2026-06-15 loaded vintage. Preserve conflicts and distinguish declared dates from actual commencement.",
+    "The register combines a hotel, hotel villas and the residential building; a parent-project percentage cannot be silently assigned to individual residences."
+  ]
+}

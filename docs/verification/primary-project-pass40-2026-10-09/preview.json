@@ -1,0 +1,70 @@
+{
+  "stage": "reviewed_packet; production_V39_unchanged",
+  "priorVersion": "20261009-enrichment-v39",
+  "candidateVersion": "20261009-enrichment-v40",
+  "packetSHA256": "96108418dc90c3bd7158f5b262ac4c35949ca183cd73d576e20c4978e5d5b67b",
+  "recordsPreserved": 1860,
+  "newSources": 3,
+  "newLifecycleReports": 4,
+  "newAdvertisedBedroomQuotes": 3,
+  "newRegisteredSales": 0,
+  "newValuations": 0,
+  "beforeChecklist": {
+    "missing": 26740,
+    "unestablished": 9300,
+    "partial": 3439,
+    "present": 3301
+  },
+  "candidateChecklist": {
+    "missing": 26738,
+    "unestablished": 9300,
+    "partial": 3438,
+    "present": 3304
+  },
+  "candidateLedgerChanges": [
+    {
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "item": "advertised_prices",
+      "before": "partial",
+      "after": "present",
+      "evidenceIds": [
+        "primary40-wraith-studio",
+        "primary40-wraith-1-bedroom",
+        "primary40-wraith-2-bedroom"
+      ]
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "item": "construction",
+      "before": "missing",
+      "after": "present",
+      "evidenceIds": [
+        "primary40-marine-construction-report"
+      ]
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "item": "handover_targets",
+      "before": "present",
+      "after": "present",
+      "evidenceIds": [
+        "project:helvetia-marine-dhg-properties-dubai-islands-dubai:reported-handover",
+        "fact-e911810b87fa7f8029d6f660",
+        "primary40-marine-target"
+      ]
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "item": "announcement_registration",
+      "before": "missing",
+      "after": "present",
+      "evidenceIds": [
+        "primary40-marine-premiere"
+      ]
+    }
+  ],
+  "focusedTests": 5,
+  "rawBodiesRedistributed": false,
+  "researchComplete": false,
+  "productionArchiveSHA256": "c112efc54c153338e1a1543a882a16c31894d8d4c16bc00ca66adab38fd58d98"
+}

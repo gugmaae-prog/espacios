@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-08T19:36:02.135Z",
+  "mapStatus": 200,
+  "frontendToken": true,
+  "assets": [
+    {
+      "url": "/map/app-v2.js?v=20261008-map-palette-v36",
+      "status": 200,
+      "bytes": 840169
+    },
+    {
+      "url": "/map/app-v2.css?v=20261008-map-palette-v36",
+      "status": 200,
+      "bytes": 113352
+    }
+  ],
+  "dataRoomStatus": 404
+}
