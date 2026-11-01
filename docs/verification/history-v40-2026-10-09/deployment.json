@@ -1,0 +1,21 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "version": "72786848-58e1-409e-9fa8-4164f9076132",
+  "deployment": "71d912ad-a491-452d-af64-6a9215ec723f",
+  "trafficPercent": 100,
+  "frontend": "20261009-map-evidence-v44",
+  "history": "20261009-enrichment-v40",
+  "sourceCommit": "e4fd852f45a4bee4ff34ba408b546ab117af3336",
+  "ci": "https://github.com/gugmaae-prog/espacios/actions/runs/38178496309",
+  "ciConclusion": "success",
+  "route": "espacios.me/map*",
+  "shell": "espacios-map-shell",
+  "serviceBinding": "MAP -> psr-portfolio-map-v2 production",
+  "dataRoomPublic": false,
+  "temporaryPublisherDeleted": true,
+  "temporaryAuthenticationFilesRemoved": true,
+  "supabaseRegistryId": "a45eaa8d-bef7-4044-9094-452ce86887db",
+  "sourceSyncState": "pending_merge",
+  "researchComplete": false,
+  "receiptRecordedAt": "2026-10-11T22:06:00.697672+00:00"
+}

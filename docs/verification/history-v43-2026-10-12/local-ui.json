@@ -1,0 +1,18 @@
+{
+  "origin": "http://localhost:8798",
+  "frontend": "20261012-map-evidence-v47",
+  "history": "20261012-enrichment-v43",
+  "sourcedFacts": 26,
+  "individualSales": 24,
+  "priceMonthCounts": {
+    "sparse": 5,
+    "missing": 1,
+    "unknown": 204
+  },
+  "mobileWidth": 390,
+  "mobileScrollWidth": 390,
+  "annualSlots": 54,
+  "annualEndpoint": 2080,
+  "unverifiedScenarioValues": "unavailable",
+  "viewportRestored": true
+}

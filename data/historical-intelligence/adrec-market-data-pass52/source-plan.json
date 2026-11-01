@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "passId": "adrec-market-data-transactions-pass52-20261022",
+  "baseVersion": "20261022-enrichment-v51",
+  "asOf": "2026-10-22",
+  "sourcePage": "https://adrec.gov.ae/en/market-data",
+  "apiEndpoint": "https://adrec.gov.ae/api/feature/MarketData/RecentSales",
+  "dateWindow": {
+    "from": "2019-01-01",
+    "to": "2026-10-22",
+    "basis": "ADREC market-data recent-sales endpoint date filters; not complete lifetime history"
+  },
+  "termsReview": {
+    "status": "reuse_rights_unresolved",
+    "note": "The public dashboard exposes project-filtered registered sales and an export control. ADREC site terms reviewed on 2026-10-22 did not state a data-reuse licence. Keep this batch in the unmerged research candidate pending rights review; do not publish or deploy it."
+  },
+  "capturePolicy": {
+    "maxProjects": 14,
+    "maxHttpRequests": 20,
+    "concurrency": 1,
+    "minimumDelaySeconds": 2,
+    "maxRedirects": 2,
+    "maxResponseBytes": 5000000,
+    "rawResponsesRetained": false,
+    "personalFieldsRetained": false,
+    "partialShareTransactions": "excluded from AED-per-square-foot comparisons; counts recorded"
+  },
+  "projects": [
+    {"recordId":"adrec:591","projectName":"Selina Bay"},
+    {"recordId":"adrec:534","projectName":"Sama Yas"},
+    {"recordId":"adrec:582","projectName":"The Fountain View Residences"},
+    {"recordId":"adrec:507","projectName":"Mayyas at the Bay"},
+    {"recordId":"adrec:466","projectName":"The Bay Residence"},
+    {"recordId":"adrec:555","projectName":"Icon"},
+    {"recordId":"adrec:601","projectName":"Yas Links Luxury Living"},
+    {"recordId":"adrec:580","projectName":"Bab Al Qasr Residence 25"},
+    {"recordId":"adrec:627","projectName":"Juman 2"},
+    {"recordId":"adrec:645","projectName":"Juman 3"},
+    {"recordId":"adrec:596","projectName":"Bab Al Qasr Residence 31"},
+    {"recordId":"adrec:635","projectName":"Al Sharq Heights"},
+    {"recordId":"adrec:607","projectName":"Juman 1"},
+    {"recordId":"adrec:496","projectName":"C3 Garden"}
+  ]
+}

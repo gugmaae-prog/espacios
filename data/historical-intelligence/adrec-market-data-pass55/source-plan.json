@@ -1,0 +1,239 @@
+{
+  "apiEndpoint": "https://adrec.gov.ae/api/feature/MarketData/RecentSales",
+  "asOf": "2026-10-27",
+  "baseVersion": "20261027-enrichment-v54",
+  "capturePolicy": {
+    "concurrency": 1,
+    "maxHttpRequests": 70,
+    "maxProjects": 51,
+    "maxRedirects": 2,
+    "maxResponseBytes": 5000000,
+    "minimumDelaySeconds": 2,
+    "partialShareTransactions": "excluded from AED-per-square-foot comparisons; counts recorded",
+    "personalFieldsRetained": false,
+    "rawResponsesRetained": false
+  },
+  "dateWindow": {
+    "basis": "ADREC market-data recent-sales endpoint date filters; not complete lifetime history",
+    "from": "2019-01-01",
+    "to": "2026-10-22"
+  },
+  "identityPolicy": {
+    "duplicateDashboardLabelsExcluded": [
+      "Nudra Beach Villas",
+      "Saadiyat Beach Villas",
+      "Bloom Gardens"
+    ],
+    "nameOnlyFanOut": false,
+    "required": "unique exact pre-existing ADREC authority ID plus exact current dashboard project label"
+  },
+  "passId": "adrec-market-data-transactions-pass55-20261022",
+  "projects": [
+    {
+      "projectName": "River Cove Residences",
+      "recordId": "adrec:733"
+    },
+    {
+      "projectName": "Harmony Residence",
+      "recordId": "adrec:726"
+    },
+    {
+      "projectName": "Rimas",
+      "recordId": "adrec:702"
+    },
+    {
+      "projectName": "Amwaj 1",
+      "recordId": "adrec:710"
+    },
+    {
+      "projectName": "ICONA Residence",
+      "recordId": "adrec:701"
+    },
+    {
+      "projectName": "Al Reeman View",
+      "recordId": "adrec:698"
+    },
+    {
+      "projectName": "Yas Park Place",
+      "recordId": "adrec:690"
+    },
+    {
+      "projectName": "Bab Al Qasr Sea View Residence 51",
+      "recordId": "adrec:688"
+    },
+    {
+      "projectName": "Reeman Residence 01",
+      "recordId": "adrec:689"
+    },
+    {
+      "projectName": "Al Reeman Gate",
+      "recordId": "adrec:681"
+    },
+    {
+      "projectName": "Luluat Marina",
+      "recordId": "adrec:678"
+    },
+    {
+      "projectName": "NOVAYAS",
+      "recordId": "adrec:671"
+    },
+    {
+      "projectName": "Amwaj 2",
+      "recordId": "adrec:641"
+    },
+    {
+      "projectName": "The Row Saadiyat",
+      "recordId": "adrec:630"
+    },
+    {
+      "projectName": "PUD Residence 1",
+      "recordId": "adrec:625"
+    },
+    {
+      "projectName": "One Saadiyat",
+      "recordId": "adrec:618"
+    },
+    {
+      "projectName": "Ville 12",
+      "recordId": "adrec:604"
+    },
+    {
+      "projectName": "Nawayef West A",
+      "recordId": "adrec:598"
+    },
+    {
+      "projectName": "Telal Al Salam 2",
+      "recordId": "adrec:589"
+    },
+    {
+      "projectName": "Reeman Garden 1",
+      "recordId": "adrec:587"
+    },
+    {
+      "projectName": "Yamm Beach Villas",
+      "recordId": "adrec:588"
+    },
+    {
+      "projectName": "Faya Al Saadiyat",
+      "recordId": "adrec:575"
+    },
+    {
+      "projectName": "Right Capital 1",
+      "recordId": "adrec:568"
+    },
+    {
+      "projectName": "Marsa Al Jubail",
+      "recordId": "adrec:556"
+    },
+    {
+      "projectName": "Vista Del Mar",
+      "recordId": "adrec:554"
+    },
+    {
+      "projectName": "Ville 11",
+      "recordId": "adrec:533"
+    },
+    {
+      "projectName": "Manarat Living II",
+      "recordId": "adrec:513"
+    },
+    {
+      "projectName": "Murjan Al Saadiyat",
+      "recordId": "adrec:508"
+    },
+    {
+      "projectName": "Reeman Living 2",
+      "recordId": "adrec:495"
+    },
+    {
+      "projectName": "Sea La Vie",
+      "recordId": "adrec:487"
+    },
+    {
+      "projectName": "Yas Acres - The Dahlias 2",
+      "recordId": "adrec:483"
+    },
+    {
+      "projectName": "Merzab Community",
+      "recordId": "adrec:468"
+    },
+    {
+      "projectName": "Jubail Terraces",
+      "recordId": "adrec:464"
+    },
+    {
+      "projectName": "Perla 2",
+      "recordId": "adrec:453"
+    },
+    {
+      "projectName": "Perla 1",
+      "recordId": "adrec:452"
+    },
+    {
+      "projectName": "Al Reeman 2 - Phase 2",
+      "recordId": "adrec:435"
+    },
+    {
+      "projectName": "Yas Acres - The Dahlias",
+      "recordId": "adrec:68"
+    },
+    {
+      "projectName": "Saadiyat Reserve - The Dunes",
+      "recordId": "adrec:65"
+    },
+    {
+      "projectName": "Yas Beach Residence",
+      "recordId": "adrec:365"
+    },
+    {
+      "projectName": "Al Mahra Residence",
+      "recordId": "adrec:410"
+    },
+    {
+      "projectName": "Bawabat Al Sharq - Phase 2",
+      "recordId": "adrec:367"
+    },
+    {
+      "projectName": "Al Bateen Park",
+      "recordId": "adrec:42"
+    },
+    {
+      "projectName": "Leonardo Residences",
+      "recordId": "adrec:10"
+    },
+    {
+      "projectName": "Water's Edge - Precinct B",
+      "recordId": "adrec:33"
+    },
+    {
+      "projectName": "Golf Gardens",
+      "recordId": "adrec:37"
+    },
+    {
+      "projectName": "Al Raha Gardens",
+      "recordId": "adrec:38"
+    },
+    {
+      "projectName": "Al Zeina",
+      "recordId": "adrec:34"
+    },
+    {
+      "projectName": "Mayan",
+      "recordId": "adrec:23"
+    },
+    {
+      "projectName": "Al Hadeel",
+      "recordId": "adrec:20"
+    },
+    {
+      "projectName": "Al Bandar",
+      "recordId": "adrec:21"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourcePage": "https://adrec.gov.ae/en/market-data",
+  "termsReview": {
+    "note": "The public dashboard exposes project-filtered registered sales and an export control. ADREC site terms reviewed on 2026-10-27 did not state a data-reuse licence. Keep this batch in the unmerged research candidate pending rights review; do not publish or deploy it.",
+    "status": "reuse_rights_unresolved"
+  }
+}

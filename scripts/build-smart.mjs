@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';import vm from 'node:vm';import {createHash} from 'node:crypto';
 import {gunzipSync,gzipSync} from 'node:zlib';
+import {validateCatalogueRevisions} from './validate-catalogue-revisions.mjs';
 const root=new URL('../',import.meta.url),release='20260930-smart-estimates-v1',read=p=>fs.readFile(new URL(p,root),'utf8');
 const baseline=await read('src/baseline/worker-20260930.js');if(createHash('sha256').update(baseline).digest('hex')!=='b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06')throw Error('Acquired live baseline changed');
 const core=await read('src/smart-estimates/core.mjs');const app='\nconst SECore=(()=>{\n'+core.replace(/^export /gm,'')+'\nreturn {derivePriceScenario,calculateROI,combineROI};})();\n'+await read('src/smart-estimates/app.js');
@@ -58,6 +59,8 @@ const canonicalHistorical=JSON.parse(await read('data/historical-intelligence-20
 const historicalCommunities=new Map(canonicalHistorical.records.filter(r=>r.type==='community').map(r=>[r.id,r]));
 const mapCorrections=canonicalHistorical.records.filter(r=>r.communityAssociationRevisions?.length).map(r=>{const revision=r.communityAssociationRevisions.at(-1),community=historicalCommunities.get(revision.toCommunityId);if(!community||revision.verification!=='verified'||!revision.primaryEvidence)throw Error('Unverified map community correction');return{recordId:r.id,emirate:r.emirate,communityId:community.id,area:community.name,revisionId:revision.id,sourceIds:revision.sourceIds,firstAvailableAt:revision.firstAvailableAt,reason:revision.reason};});
 source+='\nvar HI_MAP_CORRECTIONS='+JSON.stringify(mapCorrections)+';\n';
+const catalogueRevisions=JSON.parse(await read('data/map-catalogue-revisions.json'));
+source+='\nvar HI_CATALOGUE_REVISIONS='+JSON.stringify(validateCatalogueRevisions(catalogueRevisions,canonicalHistorical))+';\n';
 if(historicalIndex.version!==canonicalHistorical.version||historicalIndex.asOf!==canonicalHistorical.asOf||historicalIndex.manifest.runtime.canonicalSnapshotSHA256!==createHash('sha256').update(await read('data/historical-intelligence-20261003.json')).digest('hex'))throw Error('Runtime index differs from canonical evidence snapshot');
 source+='\nvar HI_DATA='+JSON.stringify({version:historicalIndex.version,asOf:historicalIndex.asOf})+';\nvar HI_PACKED='+JSON.stringify(gzipSync(historicalData,{level:9}).toString('base64'))+';\nvar HI_DATA_READY;\nasync function HI_GET_DATA(){if(!HI_DATA_READY)HI_DATA_READY=(async()=>{const b=atob(HI_PACKED),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);HI_DATA=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream("gzip"))).json();return HI_DATA;})();return HI_DATA_READY;}\n';
 source+='\nvar HI_ETAG='+JSON.stringify('"'+createHash('sha256').update(historicalData).digest('hex')+'"')+';\n';

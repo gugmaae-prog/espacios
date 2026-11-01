@@ -1,0 +1,42 @@
+{
+  "connected": true,
+  "latestRelease": {
+    "cloudflare_deployment_id": "54a7542c-a49c-4230-9edc-4210a8cc4893",
+    "cloudflare_worker": "psr-portfolio-map-v2",
+    "cloudflare_worker_version": "9f4b75e8-802d-49a6-84a8-79b679709145",
+    "created_at": "2026-10-13T12:52:40.794105+00:00",
+    "data_room_public": false,
+    "environment": "production",
+    "frontend_release": "20261013-map-mobile-disclosures-v5",
+    "github_pr": 98,
+    "github_sha": "f1b54bbaf29ff88e1d26ae39e34ceef073c8b05e",
+    "id": "bd463c29-86f3-450f-949f-4caf98974e2a",
+    "metadata": {
+      "candidate_api_verified": true,
+      "canonical_api_verified": true,
+      "canonical_snapshot_sha256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+      "canonical_ui_verified": true,
+      "communities": 215,
+      "coverage_total": 42780,
+      "coverage_unresolved": 39438,
+      "coverage_unresolved_percent": 92.1879,
+      "data_room_public": false,
+      "events": 105,
+      "exposures": 7382,
+      "github_ci_state": "success",
+      "github_ci_url": "https://github.com/gugmaae-prog/espacios/actions/runs/38399288446",
+      "history_release": "20261013-enrichment-v46",
+      "immutable_root_sha256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+      "native_rows_preserved": 633891,
+      "projects": 1645,
+      "records": 1860,
+      "release_kind": "frontend_navigation_and_palette",
+      "research_complete": false,
+      "series_preserved": 16872,
+      "sources": 3367
+    },
+    "release_tag": "20261013-map-mobile-disclosures-v5",
+    "source_sync_state": "pending_merge"
+  },
+  "origin": "https://espacios.me/map/api/control-plane"
+}

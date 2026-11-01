@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "passId": "adrec-market-data-transactions-pass49-20261015",
+  "baseVersion": "20261014-enrichment-v48",
+  "asOf": "2026-10-15",
+  "sourcePage": "https://adrec.gov.ae/en/market-data",
+  "apiEndpoint": "https://adrec.gov.ae/api/feature/MarketData/RecentSales",
+  "dateWindow": {
+    "from": "2019-01-01",
+    "to": "2026-10-15",
+    "basis": "ADREC market-data recent-sales endpoint date filters; not complete lifetime history"
+  },
+  "termsReview": {
+    "status": "reuse_rights_unresolved",
+    "note": "The public dashboard exposes project-filtered registered sales and an export control. ADREC site terms reviewed on 2026-10-15 did not state a data-reuse licence. Keep this batch in the unmerged research candidate pending rights review; do not publish or deploy it."
+  },
+  "capturePolicy": {
+    "maxProjects": 20,
+    "maxHttpRequests": 40,
+    "concurrency": 1,
+    "minimumDelaySeconds": 2,
+    "maxRedirects": 2,
+    "maxResponseBytes": 5000000,
+    "rawResponsesRetained": false,
+    "personalFieldsRetained": false,
+    "partialShareTransactions": "excluded from AED-per-square-foot comparisons; counts recorded"
+  },
+  "projects": [
+    {"recordId":"adrec:454","projectName":"Noya - Phase 4 - Yas Park Gate"},
+    {"recordId":"adrec:456","projectName":"Noya - Phase 5 - Yas Park Views"},
+    {"recordId":"adrec:543","projectName":"Nouran Living"},
+    {"recordId":"adrec:64","projectName":"Noya - Phase 3 - Luma"},
+    {"recordId":"adrec:65","projectName":"Saadiyat Reserve - The Dunes"},
+    {"recordId":"adrec:733","projectName":"River Cove Residences"},
+    {"recordId":"adrec:726","projectName":"Harmony Residence"},
+    {"recordId":"adrec:710","projectName":"Amwaj 1"},
+    {"recordId":"adrec:701","projectName":"ICONA Residence"},
+    {"recordId":"adrec:698","projectName":"Al Reeman View"},
+    {"recordId":"adrec:690","projectName":"Yas Park Place"},
+    {"recordId":"adrec:688","projectName":"Bab Al Qasr Sea View Residence 51"},
+    {"recordId":"adrec:681","projectName":"Al Reeman Gate"},
+    {"recordId":"adrec:678","projectName":"Luluat Marina"},
+    {"recordId":"adrec:671","projectName":"NOVAYAS"},
+    {"recordId":"adrec:648","projectName":"Bab Al Qasr Garden Residence 66"},
+    {"recordId":"adrec:641","projectName":"Amwaj 2"},
+    {"recordId":"adrec:633","projectName":"Yas Riva Residences"},
+    {"recordId":"adrec:630","projectName":"The Row Saadiyat"},
+    {"recordId":"adrec:626","projectName":"Yas Living"}
+  ]
+}

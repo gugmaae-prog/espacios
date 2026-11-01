@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "mode": "capture_only",
+  "passId": "primary-abu-dhabi-20261014-v47",
+  "baselineVersion": "20261013-enrichment-v46",
+  "baselineSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "baselineCommit": "6cb77c197d1ea6107c94f374f2bfa10c7248a043",
+  "domains": [
+    "adrec.gov.ae",
+    "www.aldar.com"
+  ],
+  "limits": {
+    "sourcePages": 20,
+    "httpRequests": 40,
+    "concurrency": 1,
+    "redirectsPerUrl": 2,
+    "bytesPerResponse": 2000000,
+    "timeoutSeconds": 15,
+    "minimumDelaySeconds": 2
+  },
+  "sources": [
+    {
+      "id": "adrec-624",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=624",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:624"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "adrec-628",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=628",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:628"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "adrec-650",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=650",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:650"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "adrec-646",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=646",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:646"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "adrec-623",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=623",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:623"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "adrec-439",
+      "url": "https://adrec.gov.ae/api/feature/Profession/ProjectDetail?id=439",
+      "publisher": "ADREC",
+      "reviewAgainstIds": [
+        "adrec:439"
+      ],
+      "expectedNeedles": [],
+      "identityNeedles": [],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "adrec",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "aldar-q1-2025",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-q1-2025-financial-results",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:590"
+      ],
+      "expectedNeedles": [
+        "Manarat Living III",
+        "Saadiyat Island"
+      ],
+      "identityNeedles": [
+        "Manarat Living III",
+        "Saadiyat Island"
+      ],
+      "reportedPublishedAt": "2025-04-29",
+      "reviewedPhrases": [
+        "Aldar launched two new projects in Q1 2025: Manarat Living III on Saadiyat Island"
+      ],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "aldar-q3-2025",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-q3-9m-2025-financial-results",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:617",
+        "adrec:620"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach Terraces",
+        "Al Deem Townhomes"
+      ],
+      "identityNeedles": [
+        "Fahid Beach Terraces",
+        "Al Deem Townhomes"
+      ],
+      "reportedPublishedAt": "2025-10-28",
+      "reviewedPhrases": [
+        "Aldar launched three projects in Q3 2025: Fahid Beach Terraces, Rise by Athlon, and Al Deem Townhomes"
+      ],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "aldar-fahid-unveiled",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-unveils-fahid-island",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:609"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach Residences",
+        "Fahid Island"
+      ],
+      "identityNeedles": [
+        "Fahid Beach Residences",
+        "Fahid Island"
+      ],
+      "reportedPublishedAt": "2025-06-02",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "aldar-fahid-launch-performance",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-fahid-island-sales-performance",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:609",
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach Residences",
+        "The Beach House"
+      ],
+      "identityNeedles": [
+        "Fahid Beach Residences",
+        "The Beach House"
+      ],
+      "reportedPublishedAt": "2025-06-20",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "aldar-fahid-listings",
+      "url": "https://www.aldar.com/properties/en/communities?text=Fahid+Island",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:609",
+        "adrec:617",
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "Fahid Beach"
+      ],
+      "identityNeedles": [
+        "Fahid Beach"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "beach-house-3br",
+      "url": "https://www.aldar.com/properties/en/uae/fahid-island/the-beach-house-fahid/a2DJ7000000HYalMAG",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "TheBeachHouse-B9-07-10"
+      ],
+      "identityNeedles": [
+        "TheBeachHouse-B9-07-10"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "beach-house-2br",
+      "url": "https://www.aldar.com/properties/en/uae/fahid-island/the-beach-house-fahid/a2DJ7000000HYTTMA4",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:615"
+      ],
+      "expectedNeedles": [
+        "TheBeachHouse-B10-06-04"
+      ],
+      "identityNeedles": [
+        "TheBeachHouse-B10-06-04"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "fahid-terraces-duplex",
+      "url": "https://www.aldar.com/properties/en/uae/fahid-island/fahid-Island-terraces/a2DJ7000000HmTqMAK",
+      "publisher": "Aldar",
+      "reviewAgainstIds": [
+        "adrec:617"
+      ],
+      "expectedNeedles": [
+        "FahidBeachTerraces-B1-02-04"
+      ],
+      "identityNeedles": [
+        "FahidBeachTerraces-B1-02-04"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mode": "restore_and_verify_retained_archive",
+  "status": "passed_locally",
+  "command": "node scripts/verify-historical-archive.mjs",
+  "remoteWrites": 0,
+  "version": "20261013-enrichment-v46",
+  "records": 1860,
+  "objectsVerified": 2542,
+  "canonicalSnapshotSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8"
+}

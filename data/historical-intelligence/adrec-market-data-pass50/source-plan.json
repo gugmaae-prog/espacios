@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "passId": "adrec-market-data-transactions-pass50-20261022",
+  "baseVersion": "20261015-enrichment-v49",
+  "asOf": "2026-10-22",
+  "sourcePage": "https://adrec.gov.ae/en/market-data",
+  "apiEndpoint": "https://adrec.gov.ae/api/feature/MarketData/RecentSales",
+  "dateWindow": {
+    "from": "2019-01-01",
+    "to": "2026-10-22",
+    "basis": "ADREC market-data recent-sales endpoint date filters; not complete lifetime history"
+  },
+  "termsReview": {
+    "status": "reuse_rights_unresolved",
+    "note": "The public dashboard exposes project-filtered registered sales and an export control. ADREC site terms reviewed on 2026-10-22 did not state a data-reuse licence. Keep this batch in the unmerged research candidate pending rights review; do not publish or deploy it."
+  },
+  "capturePolicy": {
+    "maxProjects": 20,
+    "maxHttpRequests": 40,
+    "concurrency": 1,
+    "minimumDelaySeconds": 2,
+    "maxRedirects": 2,
+    "maxResponseBytes": 5000000,
+    "rawResponsesRetained": false,
+    "personalFieldsRetained": false,
+    "partialShareTransactions": "excluded from AED-per-square-foot comparisons; counts recorded"
+  },
+  "projects": [
+    {"recordId":"adrec:33","projectName":"Water's Edge - Precinct B"},
+    {"recordId":"adrec:23","projectName":"Mayan"},
+    {"recordId":"adrec:487","projectName":"Sea La Vie"},
+    {"recordId":"adrec:435","projectName":"Al Reeman 2 - Phase 2"},
+    {"recordId":"adrec:38","projectName":"Al Raha Gardens"},
+    {"recordId":"adrec:495","projectName":"Reeman Living 2"},
+    {"recordId":"adrec:34","projectName":"Al Zeina"},
+    {"recordId":"adrec:21","projectName":"Al Bandar"},
+    {"recordId":"adrec:513","projectName":"Manarat Living II"},
+    {"recordId":"adrec:10","projectName":"Leonardo Residences"},
+    {"recordId":"adrec:68","projectName":"Yas Acres - The Dahlias"},
+    {"recordId":"adrec:410","projectName":"Al Mahra Residence"},
+    {"recordId":"adrec:464","projectName":"Jubail Terraces"},
+    {"recordId":"adrec:367","projectName":"Bawabat Al Sharq - Phase 2"},
+    {"recordId":"adrec:20","projectName":"Al Hadeel"},
+    {"recordId":"adrec:37","projectName":"Golf Gardens"},
+    {"recordId":"adrec:452","projectName":"Perla 1"},
+    {"recordId":"adrec:365","projectName":"Yas Beach Residence"},
+    {"recordId":"adrec:391","projectName":"Bloom Gardens"},
+    {"recordId":"adrec:453","projectName":"Perla 2"}
+  ]
+}

@@ -103,7 +103,14 @@ export async function publishIndexBatches({indexes,prepare,d1,concurrency=1,onPr
  // immutable rows in the same table are sent concurrently, in bounded batches.
  for(const table of Object.keys(INSERT_COLUMNS).filter(t=>t!=='hi_snapshots')){
   const rows=indexes.filter(s=>s.table===table),batches=[];
-  for(let i=0;i<rows.length;i+=50)batches.push(rows.slice(i,i+50));
+  let batch=[],batchBytes=0;
+  for(const row of rows){
+   const rowBytes=Buffer.byteLength(typeof row.sql==='string'?row.sql:'')+Buffer.byteLength(JSON.stringify(row.values??row));
+   if(rowBytes>4*1024*1024)throw new Error('Generated D1 row exceeds the safe batch payload limit');
+   if(batch.length&&(batch.length>=50||batchBytes+rowBytes>4*1024*1024)){batches.push(batch);batch=[];batchBytes=0;}
+   batch.push(row);batchBytes+=rowBytes;
+  }
+  if(batch.length)batches.push(batch);
   for(let i=0;i<batches.length;i+=concurrency){
    const wave=batches.slice(i,i+concurrency);
    const results=await Promise.allSettled(wave.map(async batch=>{
@@ -155,8 +162,22 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
   expectedRows[statement.table].set(key,encoded);
  }
  if(headers[0].values[2]!==expectedRows.hi_records.size)throw new Error('Generated snapshot record_count differs from unique record keys');
+ async function verifyIndexedCounts(){
+  const counts={};
+  for(const [table,rows] of Object.entries(expectedRows)){
+   const result=await d1.prepare(`SELECT count(*) AS count FROM ${table} WHERE snapshot_version = ?`).bind(manifest.version).first();
+   if(!Number.isSafeInteger(result?.count)||result.count!==rows.size)throw new Error(`Snapshot index count mismatch for ${table}: expected ${rows.size}, found ${result?.count??'unknown'}; publication completion refused`);
+   counts[table]=result.count;
+  }
+  return counts;
+ }
  const indexes=statements.filter(line=>line!==headers[0]);
  const prepare=statement=>d1.prepare(statement.sql).bind(...statement.values);
+ if(prior?.publication_state==='complete'){
+  if(loaded.some(item=>!item.exists))throw new Error('Complete snapshot is missing an immutable object');
+  const indexedTableCounts=await verifyIndexedCounts();
+  return {version:manifest.version,written:0,reused:loaded.length,indexStatements:statements.length,indexedTableCounts,indexCountsVerified:true,publicationState:'complete',rollbackPolicy:'Existing complete immutable snapshot verified; no objects or indexes were rewritten'};
+ }
  let written=0,reused=0;
  async function putObject({object,bytes,exists}){
   if(exists){reused++;return;}
@@ -178,12 +199,7 @@ export async function publishImmutableSnapshot({r2,d1,target,config,manifest,rea
  // OR IGNORE can suppress CHECK failures as well as harmless repeated keys.
  // Every version-scoped table must contain the complete unique-key index
  // before the staged snapshot can be marked complete.
- const indexedTableCounts={};
- for(const [table,rows] of Object.entries(expectedRows)){
-  const result=await d1.prepare(`SELECT count(*) AS count FROM ${table} WHERE snapshot_version = ?`).bind(manifest.version).first();
-  if(!Number.isSafeInteger(result?.count)||result.count!==rows.size)throw new Error(`Snapshot index count mismatch for ${table}: expected ${rows.size}, found ${result?.count??'unknown'}; publication completion refused`);
-  indexedTableCounts[table]=result.count;
- }
+ const indexedTableCounts=await verifyIndexedCounts();
  const completion=await d1.prepare("UPDATE hi_snapshots SET publication_state = 'complete' WHERE snapshot_version = ? AND root_sha256 = ?").bind(manifest.version,manifest.rootIndex.sha256).run();
  const completed=await d1.prepare('SELECT root_sha256, publication_state FROM hi_snapshots WHERE snapshot_version = ?').bind(manifest.version).first();
  if(!completed||completed.root_sha256!==manifest.rootIndex.sha256||completed.publication_state!=='complete'||(Number.isFinite(completion?.meta?.changes)&&completion.meta.changes!==1))throw new Error('Snapshot completion did not verify its immutable root and complete state');

@@ -247,6 +247,23 @@ test('retained verified financial evidence before a public launch keeps applicab
  assert.equal(out.metrics.price.periods[0].status,'observed');assert.equal(out.metrics.price.statusCounts.not_applicable,0);
 });
 
+test('a public launch without a proven first-sale boundary cannot exclude earlier price periods',()=>{
+ const launch={kind:'launch',date:{start:'2022-01-01',precision:'day'},status:'verified',scope:'subject',primaryEvidence:true,eventStatus:'reported',sourceIds:['sales']};
+ const r={...record,historyStartPeriod:'2020-01',lifecycle:[launch]};
+ const out=monthlyCoverage(r,{asOf,sources});
+ assert.equal(out.metrics.price.subjectApplicabilityKnown,false);
+ assert.equal(out.metrics.price.statusCounts.not_applicable,0);
+ assert.equal(out.metrics.price.periods.find(p=>p.period==='2020-01').status,'unknown');
+ assert.equal(out.metrics.price.periods.find(p=>p.period==='2022-01').status,'missing');
+ assert.equal(out.metrics.price.periods.find(p=>p.period==='2026-09').status,'missing');
+ const proven=monthlyCoverage({...r,lifecycle:[{...launch,establishesApplicabilityStart:true}]},{asOf,sources});
+ assert.equal(proven.metrics.price.subjectApplicabilityKnown,true);
+ assert.equal(proven.metrics.price.statusCounts.not_applicable,24);
+ const contradictory=monthlyCoverage({...r,lifecycle:[{...launch,establishesApplicabilityStart:true}],observations:[observation('2020-01')]},{asOf,sources});
+ assert.equal(contradictory.metrics.price.subjectApplicabilityKnown,false);
+ assert.equal(contradictory.metrics.price.periods[0].status,'observed');
+});
+
 test('microsecond source capture timestamps retain text and are available at the current cutoff',()=>{
  const instant='2026-10-05T09:59:36.848680+00:00';
  assert.equal(parseEvidenceDate(instant).instant,Date.parse('2026-10-05T09:59:36.848Z'));
@@ -265,4 +282,41 @@ test('reconstruction tiers never promote contextual history into subject observa
  const community={...record,historySeries:[{id:'community',metric:'price',frequency:'monthly',unit:'AED/sqft',sourceId:'sales',scope:'community_context',identityVerified:false,pointCount:24}]};
  const context=reconstructionCoverage(community);assert.equal(context.recordCovered,true);assert.equal(context.metrics.price.tier,3);assert.equal(context.metrics.price.subjectObserved,false);assert.equal(context.metrics.price.absoluteValueInferenceAllowed,false);
  const empty=reconstructionCoverage(record,{events:[event],exposures:[exposure]});assert.equal(empty.metrics.price.tier,6);assert.equal(empty.metrics.price.numericHistoryAvailable,false);assert.equal(empty.eventContextCount,1);
+});
+
+test('individual registrations account for their month without inventing an aggregate or continuity',()=>{
+ const sale=observation('2026-08-12',1600,{frequency:'daily',observationKind:'transaction',transactionId:'sale-1',sampleCount:1});
+ const other={...sale,id:'sale-2',transactionId:'sale-2',period:'2026-08-20',value:2400};
+ const subject={...record,observations:[sale,{...sale},other]};
+ const result=recordHistory({asOf,sources,events:[],exposures:[],manifest:{}},subject);
+ const august=result.coverage.metrics.price.periods.find(p=>p.period==='2026-08');
+ assert.equal(august.status,'sparse');assert.equal(august.individualTransactionCount,2);
+ assert.equal(august.eligibleCount,0);assert.equal(result.coverage.summary.duplicateRows,1);
+ assert.equal(result.validatedObservations.filter(o=>o.displayEligible).length,2);
+ assert.equal(result.reconstruction.metrics.price.mode,'individual_subject_transactions');
+ assert.equal(result.reconstruction.metrics.price.normalizedIndexEligible,false);
+ assert.equal(result.reconstruction.metrics.price.absoluteValueInferenceAllowed,false);
+ assert.equal(result.reconstruction.metrics.price.continuousHistoryAvailable,false);
+ assert.equal(result.coverage.metrics.price.periods.find(p=>p.period==='2026-09').status,'missing');
+ assert.equal(filterTrainingFold([{...sale,firstAvailableAt:'2026-10-12'}],{asOf,sources}).retained.length,0);
+ const invalid=monthlyCoverage({...record,observations:[{...sale,identityVerified:false}]},{asOf,sources});
+ assert.equal(invalid.metrics.price.periods[0].status,'conflict');
+ const conflicting=monthlyCoverage({...record,observations:[sale,{...sale,value:2000}]},{asOf,sources});
+ assert.equal(conflicting.metrics.price.periods[0].status,'conflict');
+});
+
+
+test('earlier community context does not establish subject price applicability',()=>{
+ const context=observation('2009-Q2',900,{frequency:'quarterly',scope:'community_context',identityVerified:false});
+ const sale=observation('2026-03-02',1400,{frequency:'daily',observationKind:'transaction',transactionId:'new-project-sale',sampleCount:1});
+ const result=monthlyCoverage({...record,observations:[context,sale]},{asOf,sources});
+ const price=result.metrics.price;
+ assert.equal(price.periods.find(p=>p.period==='2009-04').status,'unknown');
+ assert.equal(price.periods.find(p=>p.period==='2026-02').status,'unknown');
+ assert.equal(price.periods.find(p=>p.period==='2026-03').status,'sparse');
+ assert.equal(price.periods.find(p=>p.period==='2026-04').status,'missing');
+ assert.equal(price.nativePeriods.quarterly[0].status,'context_only');
+ assert.equal(price.subjectApplicabilityKnown,false);
+ const explicit=monthlyCoverage({...record,observations:[context,sale],metricApplicability:{price:{verified:true,start:'2026-01',sourceIds:['sales']}}},{asOf,sources});
+ assert.equal(explicit.metrics.price.periods.find(p=>p.period==='2009-04').status,'not_applicable');
 });

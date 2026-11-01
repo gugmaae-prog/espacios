@@ -1,0 +1,1218 @@
+{
+  "version": 1,
+  "passId": "rak-annual-pass36-20261008",
+  "asOf": "2026-10-08",
+  "priorVersion": "20261008-enrichment-v35",
+  "candidateVersion": "20261008-enrichment-v36",
+  "sources": [
+    {
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2015-Annual-Report.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2015-Annual-Report.pdf",
+      "retrievedAt": "2026-10-08T21:59:32.845Z",
+      "sha256": "9dcadc214cc3850ab82f3b6f9b1e9c6584cbf14b5dbe3ede948fe57e66c8e064",
+      "bytes": 5712813,
+      "httpStatus": 200,
+      "id": "rak36-annual-2015",
+      "title": "RAK Properties Annual Report 2015",
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_annual_report",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "publicationDateStatus": "Unknown; report year, signature and upload path do not prove publication date",
+      "availabilityBasis": "This exact captured vintage first verified at retrieval; no earlier model availability inferred",
+      "reviewedPages": [
+        18,
+        20
+      ],
+      "visualPagesChecked": true,
+      "licence": "rights_pending: minimal attributed facts only; raw articles, PDFs and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "reportingPeriod": "2015"
+    },
+    {
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2016-Annual-report.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2016-Annual-report.pdf",
+      "retrievedAt": "2026-10-08T21:40:47.421Z",
+      "sha256": "6c0dd924f35e33a61bb3d9ab0907c8cebaa066dab20df4a2950e2cffe833189e",
+      "bytes": 7981701,
+      "httpStatus": 200,
+      "id": "rak36-annual-2016",
+      "title": "RAK Properties Annual Report 2016",
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_annual_report",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:40:47.421Z",
+      "publicationDateStatus": "Unknown; report year, signature and upload path do not prove publication date",
+      "availabilityBasis": "This exact captured vintage first verified at retrieval; no earlier model availability inferred",
+      "reviewedPages": [
+        27,
+        29
+      ],
+      "visualPagesChecked": true,
+      "licence": "rights_pending: minimal attributed facts only; raw articles, PDFs and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "reportingPeriod": "2016"
+    },
+    {
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2017-Annual-report.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/03/2017-Annual-report.pdf",
+      "retrievedAt": "2026-10-08T21:59:36.216Z",
+      "sha256": "c33dfcd1898670d5446f7718552a40e6e88bfbb4e9990beb94e31f31cb769fa6",
+      "bytes": 5954087,
+      "httpStatus": 200,
+      "id": "rak36-annual-2017",
+      "title": "RAK Properties Annual Report 2017",
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_annual_report",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "publicationDateStatus": "Unknown; report year, signature and upload path do not prove publication date",
+      "availabilityBasis": "This exact captured vintage first verified at retrieval; no earlier model availability inferred",
+      "reviewedPages": [
+        17
+      ],
+      "visualPagesChecked": true,
+      "licence": "rights_pending: minimal attributed facts only; raw articles, PDFs and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "reportingPeriod": "2017"
+    },
+    {
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/03/Annual-Report-2018-EN_V2_low.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/03/Annual-Report-2018-EN_V2_low.pdf",
+      "retrievedAt": "2026-10-08T21:59:41.679Z",
+      "sha256": "c2ef31905450fd3d4ac60451430a41f6e926d8cd8d6486b7d6d74ab893953dd9",
+      "bytes": 10102236,
+      "httpStatus": 200,
+      "id": "rak36-annual-2018",
+      "title": "RAK Properties Annual Report 2018",
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_annual_report",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:41.679Z",
+      "publicationDateStatus": "Unknown; report year, signature and upload path do not prove publication date",
+      "availabilityBasis": "This exact captured vintage first verified at retrieval; no earlier model availability inferred",
+      "reviewedPages": [
+        23
+      ],
+      "visualPagesChecked": true,
+      "licence": "rights_pending: minimal attributed facts only; raw articles, PDFs and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "reportingPeriod": "2018"
+    },
+    {
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/03/Annual-Report-2019-EN_final.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/03/Annual-Report-2019-EN_final.pdf",
+      "retrievedAt": "2026-10-08T21:59:40.520Z",
+      "sha256": "c6727c0e3189b551cd70ab5621b7fb2b32aa8070b5cd370f1c75f01017b1a2ac",
+      "bytes": 3510202,
+      "httpStatus": 200,
+      "id": "rak36-annual-2019",
+      "title": "RAK Properties Annual Report 2019",
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_annual_report",
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:40.520Z",
+      "publicationDateStatus": "Unknown; report year, signature and upload path do not prove publication date",
+      "availabilityBasis": "This exact captured vintage first verified at retrieval; no earlier model availability inferred",
+      "reviewedPages": [
+        21,
+        24
+      ],
+      "visualPagesChecked": true,
+      "licence": "rights_pending: minimal attributed facts only; raw articles, PDFs and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "reportingPeriod": "2019"
+    },
+    {
+      "url": "https://www.thenationalnews.com/business/emirati-and-indian-buyers-snap-up-rak-waterfront-properties-1.480574",
+      "finalUrl": "https://www.thenationalnews.com/business/emirati-and-indian-buyers-snap-up-rak-waterfront-properties-1.480574",
+      "retrievedAt": "2026-10-08T21:59:42.601Z",
+      "sha256": "7a31174c5948a1c6c9aa6f95e16d998bd542c0dd23fabd77942c0e396742f445",
+      "bytes": 659336,
+      "httpStatus": 200,
+      "id": "rak36-flamingo-launch-2013",
+      "title": "The National: Emirati and Indian buyers snap up RAK waterfront properties",
+      "publisher": "The National",
+      "primaryEvidence": false,
+      "classification": "contemporaneous_reporting_developer_interview",
+      "publishedAt": "2013-10-09",
+      "firstAvailableAt": "2026-10-08T21:59:42.601Z",
+      "publicationDateStatus": "Article displays 9 October 2013; present page metadata records a later modification on 17 June 2021",
+      "availabilityBasis": "This exact captured vintage first verified at retrieval; no earlier model availability inferred",
+      "reviewedPages": [],
+      "visualPagesChecked": false,
+      "licence": "rights_pending: minimal attributed facts only; raw articles, PDFs and rendered pages are not redistributed",
+      "rawBodyRedistributed": false,
+      "pageModifiedAt": "2021-06-17T12:44:08.759Z"
+    }
+  ],
+  "facts": [
+    {
+      "id": "rak36-flamingo-launch-cohort",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-flamingo-launch-2013"
+      ],
+      "identitySourceIds": [
+        "rak36-flamingo-launch-2013"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": false,
+      "publishedAt": "2013-10-09",
+      "firstAvailableAt": "2026-10-08T21:59:42.601Z",
+      "kind": "lifecycle",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2013-10",
+        "precision": "month"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "contemporaneously_reported_milestone",
+      "label": "Report describes launch of a 104-villa Flamingo cohort in October 2013.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Dated article; native month/year precision retained",
+      "preserveAdditionalLifecycleFields": true,
+      "phaseLabel": "2013 launch cohort; reported inventory 104 villas"
+    },
+    {
+      "id": "rak36-flamingo-phase2-announcement",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2015-05",
+        "precision": "month"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Developer reports announcing Flamingo Phase II in May 2015.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2015, PDF page 18",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 18,
+      "phaseLabel": "Flamingo Phase II"
+    },
+    {
+      "id": "rak36-flamingo-phase1-handover",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015",
+        "rak36-annual-2016"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015",
+        "rak36-annual-2016"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2015",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Developer reports Flamingo Phase I handed over in 2015.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other.",
+      "dateBasis": "Annual report 2015, PDF page 20",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 20,
+      "phaseLabel": "Flamingo Phase I",
+      "relatedMilestoneIds": [
+        "rak35-flamingo-delivery"
+      ],
+      "dateReconciliation": "The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other."
+    },
+    {
+      "id": "rak36-flamingo-phase2-development",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "phase_development_start",
+      "date": {
+        "start": "2015",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Developer reports starting development of Flamingo Phase II in 2015.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Development commencement is not converted into a verified physical construction-start date.",
+      "dateBasis": "Annual report 2015, PDF page 20",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 20,
+      "phaseLabel": "Flamingo Phase II",
+      "dateReconciliation": "Development commencement is not converted into a verified physical construction-start date."
+    },
+    {
+      "id": "rak36-flamingo-phase2-target",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2016-Q4",
+        "precision": "quarter"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2015 report targeted Flamingo Phase II handover in Q4 2016.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2015, PDF page 20",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 20,
+      "phaseLabel": "Flamingo Phase II"
+    },
+    {
+      "id": "rak36-flamingo-phase2-handover",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2016"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2016"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:40:47.421Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2016-10",
+        "precision": "month"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Developer reports Flamingo Phase II handover in October 2016.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other.",
+      "dateBasis": "Annual report 2016, PDF page 27",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 27,
+      "phaseLabel": "Flamingo Phase II",
+      "relatedMilestoneIds": [
+        "rak35-flamingo-delivery",
+        "rak36-flamingo-phase2-target"
+      ],
+      "dateReconciliation": "The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other."
+    },
+    {
+      "id": "rak36-mina-reported-launch",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-flamingo-launch-2013"
+      ],
+      "identitySourceIds": [
+        "rak36-flamingo-launch-2013"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": false,
+      "publishedAt": "2013-10-09",
+      "firstAvailableAt": "2026-10-08T21:59:42.601Z",
+      "kind": "lifecycle",
+      "milestone": "announcement",
+      "date": {
+        "start": "2005",
+        "precision": "year"
+      },
+      "scope": "published_reference",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "contemporaneously_reported_milestone",
+      "label": "Contemporaneous reporting retrospectively places Mina Al Arab launch in 2005.",
+      "note": "Reported historical announcement year; not a proven first-ever inception boundary or proof that earlier land prices did not exist.",
+      "dateBasis": "Dated article; native month/year precision retained",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak36-mina-flamingo-phase1-handover",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015",
+        "rak36-annual-2016"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015",
+        "rak36-annual-2016"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2015",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Flamingo Phase I within Mina is reported handed over in 2015.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other.",
+      "dateBasis": "Annual report 2015, PDF page 20",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 20,
+      "phaseLabel": "Flamingo Phase I",
+      "relatedMilestoneIds": [
+        "rak35-mina-flamingo-delivery"
+      ],
+      "dateReconciliation": "The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other."
+    },
+    {
+      "id": "rak36-mina-flamingo-phase2-handover",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2016"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2016"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:40:47.421Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2016-10",
+        "precision": "month"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Flamingo Phase II within Mina is reported handed over in October 2016.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other.",
+      "dateBasis": "Annual report 2016, PDF page 27",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 27,
+      "phaseLabel": "Flamingo Phase II",
+      "relatedMilestoneIds": [
+        "rak35-mina-flamingo-delivery"
+      ],
+      "dateReconciliation": "The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other."
+    },
+    {
+      "id": "rak36-mina-bermuda-progress",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2015",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Bermuda Villas construction within Mina is reported in progress in 2015.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2015, PDF page 20",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 20,
+      "phaseLabel": "Bermuda Villas"
+    },
+    {
+      "id": "rak36-mina-bermuda-target-2016",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:32.845Z",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2016-Q4",
+        "precision": "quarter"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2015 report targeted Bermuda Villas handover in Q4 2016.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2015, PDF page 20",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 20,
+      "phaseLabel": "Bermuda Villas"
+    },
+    {
+      "id": "rak36-mina-bermuda-target-2017",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2016"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2016"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:40:47.421Z",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2017-01-01",
+        "precision": "range",
+        "end": "2017-06-30"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2016 report targeted Bermuda Villas handover in H1 2017.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Revised schedule retained alongside the earlier Q4 2016 target; interval endpoints express H1, not exact handover days.",
+      "dateBasis": "Annual report 2016, PDF page 29",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 29,
+      "phaseLabel": "Bermuda Villas",
+      "relatedMilestoneIds": [
+        "rak36-mina-bermuda-target-2016"
+      ],
+      "dateReconciliation": "Revised schedule retained alongside the earlier Q4 2016 target; interval endpoints express H1, not exact handover days."
+    },
+    {
+      "id": "rak36-mina-bermuda-handover",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2017 report records Bermuda Villas handover within Mina.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Earlier annual report and later timeline are the same publisher, not independent corroboration; no exact handover day or occupancy inferred.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "Bermuda Villas",
+      "relatedMilestoneIds": [
+        "rak36-mina-bermuda-target-2017",
+        "rak35-mina-bermuda-delivery"
+      ],
+      "dateReconciliation": "Earlier annual report and later timeline are the same publisher, not independent corroboration; no exact handover day or occupancy inferred."
+    },
+    {
+      "id": "rak36-mina-gateway-launch",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Gateway Residence within Mina is reported launched during 2017.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. No mapping to an ambiguous Gateway/South Bay catalogue phase. The source-native 2017 launch claim is retained separately from later campaigns.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "Gateway Residence as named in the 2017 report",
+      "dateReconciliation": "No mapping to an ambiguous Gateway/South Bay catalogue phase. The source-native 2017 launch claim is retained separately from later campaigns."
+    },
+    {
+      "id": "rak36-mina-north-bay-launch",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "North Bay Residence within Mina is reported launched during 2017.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. No mapping to an ambiguous Gateway/South Bay catalogue phase. The source-native 2017 launch claim is retained separately from later campaigns.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "North Bay Residence as named in the 2017 report",
+      "dateReconciliation": "No mapping to an ambiguous Gateway/South Bay catalogue phase. The source-native 2017 launch claim is retained separately from later campaigns."
+    },
+    {
+      "id": "rak36-mina-gateway-progress-2018",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:41.679Z",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2018",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Gateway Residence is reported under construction in the 2018 report.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2018, PDF page 23",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 23,
+      "phaseLabel": "Gateway Residence as named in the 2018 report"
+    },
+    {
+      "id": "rak36-mina-gateway-target-2019",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:41.679Z",
+      "kind": "lifecycle",
+      "milestone": "target_handover",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2018 report targeted Gateway Residence handover during 2019.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2018, PDF page 23",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 23,
+      "phaseLabel": "Gateway Residence as named in the 2018 report"
+    },
+    {
+      "id": "rak36-mina-gateway-nearing-handover",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:40.520Z",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2019 report describes Gateway Residence as nearing handover.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Nearing handover is a qualitative report, not 100% progress or confirmed delivery; the later timeline retains a 2020 delivery year.",
+      "dateBasis": "Annual report 2019, PDF page 24",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 24,
+      "phaseLabel": "Gateway Residence as named in the 2019 report",
+      "relatedMilestoneIds": [
+        "rak36-mina-gateway-target-2019",
+        "rak35-mina-gateway-delivery"
+      ],
+      "dateReconciliation": "Nearing handover is a qualitative report, not 100% progress or confirmed delivery; the later timeline retains a 2020 delivery year."
+    },
+    {
+      "id": "rak36-mina-marbella-construction-target",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:41.679Z",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2018 report targeted Marbella Villas construction commencement in 2019.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Original named component only; no transfer to Marbella Phase II or an unverified Bay phase.",
+      "dateBasis": "Annual report 2018, PDF page 23",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 23,
+      "phaseLabel": "Marbella Villas as named in the 2018 report",
+      "dateReconciliation": "Original named component only; no transfer to Marbella Phase II or an unverified Bay phase."
+    },
+    {
+      "id": "rak36-mina-bay-construction-target",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2018"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:41.679Z",
+      "kind": "lifecycle",
+      "milestone": "target_construction_start",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2018 report targeted Bay Residence construction commencement in 2019.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Original named component only; no transfer to Marbella Phase II or an unverified Bay phase.",
+      "dateBasis": "Annual report 2018, PDF page 23",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 23,
+      "phaseLabel": "Bay Residence as named in the 2018 report",
+      "dateReconciliation": "Original named component only; no transfer to Marbella Phase II or an unverified Bay phase."
+    },
+    {
+      "id": "rak36-mina-marbella-progress",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:40.520Z",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Marbella villa-community construction is reported progressing in 2019.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2019, PDF page 24",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 24,
+      "phaseLabel": "Marbella villa community as named in the 2019 report",
+      "relatedMilestoneIds": [
+        "rak36-mina-marbella-construction-target"
+      ]
+    },
+    {
+      "id": "rak36-mina-anantara-progress",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "Anantara Mina Al Arab hotel is reported under construction in the 2017 report.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Hotel component, not the later branded-residences catalogue project.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "Anantara Mina Al Arab hotel",
+      "dateReconciliation": "Hotel component, not the later branded-residences catalogue project."
+    },
+    {
+      "id": "rak36-mina-anantara-opening-target",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "target_opening",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2017 report targeted Anantara Mina Al Arab hotel opening late 2019.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "Anantara Mina Al Arab hotel"
+    },
+    {
+      "id": "rak36-mina-anantara-completion-target",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:40.520Z",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2021",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2019 report targeted Anantara Mina Al Arab hotel completion in early 2021.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Earlier opening target and later completion target remain distinct milestone types. Early 2021 is not converted to an exact quarter/day; actual opening is not established here.",
+      "dateBasis": "Annual report 2019, PDF page 21",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 21,
+      "phaseLabel": "Anantara Mina Al Arab hotel",
+      "relatedMilestoneIds": [
+        "rak36-mina-anantara-opening-target"
+      ],
+      "dateReconciliation": "Earlier opening target and later completion target remain distinct milestone types. Early 2021 is not converted to an exact quarter/day; actual opening is not established here."
+    },
+    {
+      "id": "rak36-mina-intercontinental-progress",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "phase_construction_progress",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "InterContinental Mina Al Arab hotel is reported under construction in the 2017 report.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Hotel component, not the later branded-residences catalogue project.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "InterContinental Mina Al Arab hotel",
+      "dateReconciliation": "Hotel component, not the later branded-residences catalogue project."
+    },
+    {
+      "id": "rak36-mina-intercontinental-opening-target",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2017"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:36.216Z",
+      "kind": "lifecycle",
+      "milestone": "target_opening",
+      "date": {
+        "start": "2019",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2017 report targeted InterContinental Mina Al Arab hotel opening by the end of 2019.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established.",
+      "dateBasis": "Annual report 2017, PDF page 17",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 17,
+      "phaseLabel": "InterContinental Mina Al Arab hotel"
+    },
+    {
+      "id": "rak36-mina-intercontinental-completion-target",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identitySourceIds": [
+        "rak36-annual-2019"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:59:40.520Z",
+      "kind": "lifecycle",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2021",
+        "precision": "year"
+      },
+      "scope": "subject_phase",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_reported_milestone",
+      "label": "The 2019 report targeted InterContinental Mina Al Arab hotel completion in early 2021.",
+      "note": "Named phase/component evidence only. No whole-community completion, legal certificate, actual occupancy, financial price or automatic uplift is established. Earlier opening target and later completion target remain distinct milestone types. Early 2021 is not converted to an exact quarter/day; actual opening is not established here.",
+      "dateBasis": "Annual report 2019, PDF page 21",
+      "preserveAdditionalLifecycleFields": true,
+      "sourcePage": 21,
+      "phaseLabel": "InterContinental Mina Al Arab hotel",
+      "relatedMilestoneIds": [
+        "rak36-mina-intercontinental-opening-target"
+      ],
+      "dateReconciliation": "Earlier opening target and later completion target remain distinct milestone types. Early 2021 is not converted to an exact quarter/day; actual opening is not established here."
+    },
+    {
+      "id": "rak36-flamingo-advertised-range",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-flamingo-launch-2013",
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-flamingo-launch-2013",
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded.",
+      "primaryEvidence": false,
+      "publishedAt": "2013-10-09",
+      "firstAvailableAt": "2026-10-08T21:59:42.601Z",
+      "kind": "financial",
+      "scope": "published_reference",
+      "evidenceClass": "historical_reported_advertised_price_range",
+      "observation": {
+        "metric": "price",
+        "value": 750000,
+        "unit": "AED",
+        "period": "2013-10-09",
+        "frequency": "daily",
+        "segment": "Flamingo 2013 launch cohort of 104 villas; mixed sizes, individual unit identities unknown",
+        "observationKind": "asking_quote",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Reported asking range across the stated cohort; not a transaction, average, valuation or current offer",
+        "sourceQuoteBasis": "Contemporaneous developer interview reported by The National on 9 October 2013",
+        "observationDateBasis": "Article reporting date for the offered range; individual quotation and transaction dates are not established",
+        "quotedPriceRange": {
+          "low": 750000,
+          "high": 2500000,
+          "unit": "AED",
+          "basis": "Range across the source-native cohort; no average or midpoint derived"
+        },
+        "note": "The stored value is the lower endpoint solely for schema compatibility; the range and cohort must be shown together. No financial return is calculated from either endpoint."
+      }
+    },
+    {
+      "id": "rak36-mina-apartment-advertised-range",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak36-flamingo-launch-2013",
+        "rak36-annual-2015"
+      ],
+      "identitySourceIds": [
+        "rak36-flamingo-launch-2013",
+        "rak36-annual-2015"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out.",
+      "primaryEvidence": false,
+      "publishedAt": "2013-10-09",
+      "firstAvailableAt": "2026-10-08T21:59:42.601Z",
+      "kind": "financial",
+      "scope": "published_reference",
+      "evidenceClass": "historical_reported_advertised_price_range",
+      "observation": {
+        "metric": "price",
+        "value": 295000,
+        "unit": "AED",
+        "period": "2013-10-09",
+        "frequency": "daily",
+        "segment": "Remaining apartments from the previously developed 808-apartment cohort; remaining count, buildings and individual unit identities unknown",
+        "observationKind": "asking_quote",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "quoteQualifier": "Reported asking range across the stated cohort; not a transaction, average, valuation or current offer",
+        "sourceQuoteBasis": "Contemporaneous developer interview reported by The National on 9 October 2013",
+        "observationDateBasis": "Article reporting date for the offered range; individual quotation and transaction dates are not established",
+        "quotedPriceRange": {
+          "low": 295000,
+          "high": 1200000,
+          "unit": "AED",
+          "basis": "Range across the source-native cohort; no average or midpoint derived"
+        },
+        "note": "The stored value is the lower endpoint solely for schema compatibility; the range and cohort must be shown together. No financial return is calculated from either endpoint."
+      }
+    }
+  ],
+  "seriesLinks": [],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "catalogueName": "Flamingo Villas Mina",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "basis": "Exact Flamingo Villas Mina record matches RAK Properties, Flamingo and Mina Al Arab in Ras Al Khaimah. Phase I, Phase II and the 2013 launch cohort stay explicitly scoped within this umbrella record; Dubai Flamingo Residence is excluded."
+    },
+    {
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "catalogueName": "Mina Al Arab",
+      "type": "community",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "basis": "Exact Mina Al Arab community in Ras Al Khaimah is explicitly named by the source. Named components remain community phase evidence; no automatic alias or project fan-out."
+    }
+  ],
+  "collection": {
+    "projectRecords": 1,
+    "communityRecords": 1,
+    "acceptedLifecycleFacts": 27,
+    "acceptedAdvertisedRanges": 2,
+    "newSources": 6,
+    "registeredSaleOrRentObservationsAdded": 0,
+    "currentValuationsAdded": 0,
+    "approved2080Forecasts": 0,
+    "rawBodiesRedistributed": false
+  },
+  "conflicts": [
+    {
+      "field": "flamingo_phase_and_community_delivery",
+      "resolution": "The later Q2 2024 timeline reports community delivery in 2017. Earlier named phase handovers are retained separately; the difference in scope and date is unresolved and neither report replaces the other."
+    },
+    {
+      "field": "project_schedules",
+      "resolution": "Earlier targets, later targets and reported delivery are separately dated; none silently replaces prior schedules."
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "source": "annual-2014",
+      "reason": "Vague prior-years handover discussion does not establish an exact new dated milestone. Capture is retained privately; no source or coverage credit added."
+    },
+    {
+      "field": "corporate_financials_and_occupancy",
+      "reason": "Company revenue/assets/budgets and qualitative community occupancy do not establish subject prices, valuations, occupancy percentages or rental-start dates."
+    },
+    {
+      "field": "2018_unnamed_205_home_project",
+      "reason": "No exact phase mapping inferred for the unnamed 205-home launch or its H1 construction target."
+    },
+    {
+      "field": "undated_earlier_villa_price_range",
+      "reason": "The 2013 article gives earlier villa prices without an observation date; no year-specific price point is invented."
+    },
+    {
+      "field": "generic_gateway_south_bay_granada_and_anantara_residences",
+      "reason": "Component-level evidence is retained only on the exact Mina community. No numeric phase fan-out or hotel-to-residences mapping."
+    }
+  ],
+  "methodology": "Exact parent identities, explicitly named component/phase scope, visual report-page review and checksummed captures. News quotes remain published references with native price ranges. Endpoints are not separate transactions or averages. Source publication, observation and capture-time availability are distinct. All prior data and superseded schedules remain retained."
+}

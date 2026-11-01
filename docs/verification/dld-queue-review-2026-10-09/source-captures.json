@@ -1,0 +1,26 @@
+[
+  {
+    "id": "wraith-official",
+    "url": "https://www.binghatti.com/en/projects/binghatti-wraith",
+    "finalUrl": "https://www.binghatti.com/en/projects/binghatti-wraith",
+    "status": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "retrievedAt": "2026-10-09T01:58:16.894Z",
+    "bytes": 180482,
+    "sha256": "08c2db823069c4f85a9e470ae7b627bc2b3758abf74b790d8da40c7546d5c875",
+    "publishedAt": null,
+    "rawBodyRedistributed": false
+  },
+  {
+    "id": "dld-projects-portal",
+    "url": "https://data.dubai/en/l/467654",
+    "finalUrl": "https://data.dubai/en/l/467654",
+    "status": 200,
+    "contentType": "text/html;charset=UTF-8",
+    "retrievedAt": "2026-10-09T01:58:17.471Z",
+    "bytes": 653528,
+    "sha256": "a05be5bf6184a6d58a2af3ced62ede212ebea15f92ae172455a7439e85a3592b",
+    "publishedAt": null,
+    "rawBodyRedistributed": false
+  }
+]
