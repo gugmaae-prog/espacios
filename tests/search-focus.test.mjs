@@ -152,6 +152,26 @@ test('Dubai source search excludes reviewed map links and returns ranked search 
   assert.equal(vm.runInContext('aeSearchKindLabel(aeSearchResultsFor("melograno")[0].e)',h.ctx),'Dubai register · licensed copy');
 });
 
+test('a transient source 503 retries once and retains the unlinked Dubai result',async()=>{
+  let dubaiReads=0;
+  const fetchImpl=async url=>{
+    if(url.includes('/ajman/register'))return new Response(JSON.stringify({scope:{evidenceClass:'official_project_register_snapshot'},source:{latestSnapshotDate:'2026-06-30'},projects:[],totalProjects:0}));
+    if(url.includes('/dubai/project-status')){
+      dubaiReads++;
+      if(dubaiReads===1)return new Response('temporarily unavailable',{status:503});
+      return new Response(JSON.stringify({scope:{evidenceClass:'licensed_secondary_copy_of_authority_project_register'},source:{sourcePublicationDate:'2026-11-01'},totalProjects:1,projects:[{sourceProjectNumber:'4591',name:'Melograno Yards By Beyond',community:'Wadi Al Safa 4',developerName:'Beyond',matchStatus:'unmatched_source_identity',canonicalProjectId:null,coordinates:null}]}));
+    }
+    throw Error('Unexpected source request '+url);
+  };
+  const h=runtime({fetchImpl});h.inputListeners.input({target:{value:'melograno'}});
+  const initial=[...h.timers.values()];h.timers.clear();const running=initial.map(fn=>fn());
+  await new Promise(setImmediate);
+  const retry=[...h.timers.values()];h.timers.clear();retry.forEach(fn=>fn());
+  await Promise.all(running);
+  assert.equal(dubaiReads,2);
+  assert.equal(vm.runInContext('aeSearchResultsFor("melograno")[0].e.sourceProject.sourceProjectNumber',h.ctx),'4591');
+});
+
 test('Dubai source selection shows dated evidence without moving the map or claiming delivery',()=>{
   const project={sourceProjectNumber:'4591',name:'Melograno Yards By Beyond',community:'Wadi Al Safa 4',developerName:'Beyond',inspectionDate:null,completionPercent:7.5,declaredHandoverDate:'2029-06-30'};
   const h=runtime({entries:[{type:'record',id:'dubai-register:4591',sourceRegistry:'dubai',record:{kind:'project',name:project.name},sourceProject:project}]});

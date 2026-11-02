@@ -143,6 +143,14 @@ const EspaciosSearchFocusCore = (() => {
     else note.textContent='No additional Ajman register matches.';
     box.append(note);
   }
+  async function fetchSourceSearch(url,signal){
+    for(let attempt=0;attempt<2;attempt++){
+      const response=await fetch(url,{signal,headers:{accept:'application/json'}});
+      if(response.ok)return response;
+      if(attempt===1||![502,503,504].includes(response.status))throw Error('Source request '+response.status);
+      await new Promise(resolve=>setTimeout(resolve,240));
+    }
+  }
   function scheduleAjmanSearch(query,force=false){
     const normalized=aeSearchText(query);
     if(!force&&normalized===ajmanSearch.query&&ajmanSearch.status!=='idle')return;
@@ -154,8 +162,7 @@ const EspaciosSearchFocusCore = (() => {
     ajmanSearch.timer=setTimeout(async()=>{
       const controller=new AbortController();ajmanSearch.controller=controller;
       try{
-        const response=await fetch('/map/api/uae-evidence/ajman/register?q='+encodeURIComponent(query.trim())+'&limit=100',{signal:controller.signal,headers:{accept:'application/json'}});
-        if(!response.ok)throw Error('Ajman register '+response.status);
+        const response=await fetchSourceSearch('/map/api/uae-evidence/ajman/register?q='+encodeURIComponent(query.trim())+'&limit=100',controller.signal);
         const data=await response.json();
         if(data.scope?.evidenceClass!=='official_project_register_snapshot'||data.source?.latestSnapshotDate!=='2026-06-30'||!Array.isArray(data.projects))throw Error('Ajman register scope changed');
         if(token!==ajmanSearch.sequence)return;
@@ -190,8 +197,7 @@ const EspaciosSearchFocusCore = (() => {
     dubaiSearch.timer=setTimeout(async()=>{
       const controller=new AbortController();dubaiSearch.controller=controller;
       try{
-        const response=await fetch('/map/api/uae-evidence/dubai/project-status?q='+encodeURIComponent(query.trim())+'&limit=100',{signal:controller.signal,headers:{accept:'application/json'}});
-        if(!response.ok)throw Error('Dubai register '+response.status);
+        const response=await fetchSourceSearch('/map/api/uae-evidence/dubai/project-status?q='+encodeURIComponent(query.trim())+'&limit=100',controller.signal);
         const data=await response.json();
         if(data.scope?.evidenceClass!=='licensed_secondary_copy_of_authority_project_register'||data.source?.sourcePublicationDate!=='2026-11-01'||!Array.isArray(data.projects))throw Error('Dubai register scope changed');
         if(token!==dubaiSearch.sequence)return;
