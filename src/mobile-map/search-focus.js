@@ -352,7 +352,7 @@ const EspaciosSearchFocusCore = (() => {
       '<div class="detail-facts">'+line('Source project ID',p.sourceProjectId)+line('District',p.districtEn)+line('District · العربية',p.districtAr)+line('Developer',p.developerEn)+line('Reported status',p.statusSource)+line('Reported units',p.reportedUnitCount)+line('Snapshot date',p.snapshotDate)+'</div>'+
       '<div class="detail-section"><h3>Evidence and location</h3><p>This is a dated Ajman authority project ID. Its identity has not been linked to the reviewed map catalogue. No verified project coordinates are available, so the map stays at its current view. Status and units are from the 30 June 2026 source snapshot.</p></div>'+
       '<div class="detail-actions"><a class="secondary" href="/map/api/uae-evidence/ajman/register/'+encodeURIComponent(p.sourceProjectId)+'">Source record history</a><a class="secondary" href="https://data.ajman.ae/explore/dataset/real-estate-projects/" target="_blank" rel="noopener">Official dataset</a></div></div>';
-    Q('#detail')?.classList.remove('hidden');psrApplyDockPadding?.(true);window.EspaciosMobileUI?.activate?.(Q('#detail'),true);
+    Q('#detail')?.classList.remove('hidden');psrApplyDockPadding?.(true);window.EspaciosMobileUI?.activate?.(Q('#detail'));
     window.__ESPACIOS_SEARCH_FOCUS__={status:'source-without-coordinates',recordName:entry.record.name,targetBasis:null};
     document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:entry.id,kind:'official-source-project',name:entry.record.name,emirate:'Ajman',area:p.districtEn||'',exactMarketMatch:false}}));
   }
@@ -364,7 +364,7 @@ const EspaciosSearchFocusCore = (() => {
       '<div class="detail-facts">'+line('DLD project number',p.sourceProjectNumber)+line('Registered developer',p.developerName)+line('Reported district',p.community)+line('Last recorded inspection',p.inspectionDate||'Date not reported')+line('Last recorded completion %',p.completionPercent)+line('Declared handover',p.declaredHandoverDate||'Not reported')+line('Source date','1 November 2026')+'</div>'+
       '<div class="detail-section"><h3>Evidence and location</h3><p>This is a dated, CC BY 4.0 licensed copy of the DLD Mashrooi project register. Its identity has not been linked to the reviewed map catalogue. No verified project coordinates are available, so the map stays at its current view. Completion is the last recorded inspection value; a declared handover is not proof of delivery.</p></div>'+
       '<div class="detail-actions"><a class="secondary" href="/map/api/uae-evidence/dubai/project-status/'+encodeURIComponent(p.sourceProjectNumber)+'">Source record</a><a class="secondary" href="https://continentalclub.ae/en/project-status/" target="_blank" rel="noopener">Licensed dataset</a></div></div>';
-    Q('#detail')?.classList.remove('hidden');psrApplyDockPadding?.(true);window.EspaciosMobileUI?.activate?.(Q('#detail'),true);
+    Q('#detail')?.classList.remove('hidden');psrApplyDockPadding?.(true);window.EspaciosMobileUI?.activate?.(Q('#detail'));
     window.__ESPACIOS_SEARCH_FOCUS__={status:'source-without-coordinates',recordName:entry.record.name,targetBasis:null};
     document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:entry.id,kind:'licensed-source-project',name:entry.record.name,emirate:'Dubai',area:p.community||'',exactMarketMatch:false}}));
   }
