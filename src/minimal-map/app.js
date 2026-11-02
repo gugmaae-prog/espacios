@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261102-map-stack-v5';
+  const RELEASE='20261102-map-stack-v6';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
@@ -317,6 +317,10 @@
 
     installMobileDisclosures();
     installPanelGeometry();
+    // The older persistent dock restores its last panel after map load. The
+    // catalogue opening must start with geography visible on every visit.
+    try{localStorage.setItem('psr-active-panel','timeline')}catch{}
+    state.activePanel='timeline';
     const ai=Q('#ai-panel');if(ai){ai.classList.add('hidden');const rail=Q('.rail-btn[data-panel="ai"]');rail?.classList.remove('active');rail?.setAttribute('aria-expanded','false');}
     setMode('map');setMetric('projects');fitOpeningProjects();
     return true;

@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261102-map-stack-v5';
+var MAP_STACK_RELEASE='20261102-map-stack-v6';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_STACK_PREVIOUS_FETCH=worker_default.fetch;
 psrAllProjectsService=mapCompleteProjects;
