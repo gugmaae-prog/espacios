@@ -217,7 +217,10 @@ for(const [path,page] of [['/map/research','research'],['/map/history','history'
 const abuDhabiResponse=await request('/map/abu-dhabi');
 assert.equal(abuDhabiResponse.status,503);
 assert.match(abuDhabiResponse.headers.get('content-type')||'',/text\/html/);
-assert.match(await abuDhabiResponse.text(),/detailed source package is stored in R2/);
+const abuDhabiHtml=await abuDhabiResponse.text();
+assert.match(abuDhabiHtml,/detailed source package is stored in R2/);
+assert.match(abuDhabiHtml,/data-map-page="abu-dhabi"/);
+assert.match(abuDhabiHtml,/main>\.panel\{max-width:760px/);
 const systemPayload=await (await request('/map/api/system')).json();
 assert.equal(systemPayload.storage.r2BindingAvailable,false);
 assert.equal(systemPayload.storage.mapFallbackActive,true);

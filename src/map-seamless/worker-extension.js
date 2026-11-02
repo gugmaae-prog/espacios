@@ -1,5 +1,5 @@
 /* Theme and outage continuity for the canonical Espacios Map pages. */
-const MAP_SEAMLESS_RELEASE='20261102-map-seamless-v2';
+const MAP_SEAMLESS_RELEASE='20261102-map-seamless-v3';
 const MAP_SEAMLESS_SOURCE_BRANCH='codex/map-seamless-v48-recovery-20261102';
 const MAP_SEAMLESS_PAGES=new Map([
   ['/map/research','research'],['/map/history','history'],['/map/predictions','predictions'],
