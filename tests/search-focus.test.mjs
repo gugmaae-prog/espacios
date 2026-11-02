@@ -67,9 +67,10 @@ test('mobile keyboard and expanded details always retain a nonempty camera viewp
 
 function runtime({reduced = false, entries = [], market = false, unloaded = false} = {}) {
   const frames = new Map(), timers = new Map(), moves = [], events = [], elements = new Map(), canvasListeners=new Map();let frame = 0,timer=0;
-  const basic = () => ({classList:{add(){},contains(){return false;}},setAttribute(){},replaceChildren(){},blur(){},querySelectorAll(){return [];}});
+  const basic = () => ({classList:{add(){},remove(){},contains(){return false;}},setAttribute(){},replaceChildren(){},blur(){},addEventListener(){},querySelectorAll(){return [];}});
   elements.set('#search',basic());elements.set('#search-results',basic());
-  const map = {stop(){moves.push({type:'stop'});},getCanvas(){return{addEventListener(name,handler){canvasListeners.set(name,handler);}};},getContainer(){return {getBoundingClientRect(){return {left:0,top:0,width:390,height:844};}};}};
+  elements.set('#detail',basic());elements.set('#detail-body',basic());
+  const map = {stop(){moves.push({type:'stop'});},getSource(){return{setData(){}};},getCanvas(){return{addEventListener(name,handler){canvasListeners.set(name,handler);}};},getContainer(){return {getBoundingClientRect(){return {left:0,top:0,width:390,height:844};}};}};
   for(const type of ['easeTo','flyTo','jumpTo','fitBounds','setPadding'])map[type]=(...args)=>{moves.push({type,args});return map;};
   const state={searchResults:entries,is3d:false,analysisMetric:market?'history:market-yield':'uae-project-coverage',spatial:{}};
   const env={console,map,state,window:{},sgState:{data:unloaded?null:{features:[polygon('Palm Jumeirah','Dubai')]}},tlState:{series:[]},msState:{kind:'roi',emirate:'Dubai',segment:'villa',area:'Old area',data:{rows:[{community:'Palm Jumeirah',emirate:'Dubai'}]}},
@@ -79,7 +80,9 @@ function runtime({reduced = false, entries = [], market = false, unloaded = fals
     requestAnimationFrame:fn=>{frames.set(++frame,fn);return frame;},cancelAnimationFrame:id=>frames.delete(id),getComputedStyle:()=>({display:'block',visibility:'visible'}),
     setTimeout:fn=>{timers.set(++timer,fn);return timer;},clearTimeout:id=>timers.delete(id),
     recordTitle:r=>r.name,renderSearch(){state.searchResults=entries;},aeActivateSearchPosition(){throw Error('Legacy selection invoked');},aeSearchKindLabel:e=>e.record?.kind||e.type,
+    aeSearchText:value=>String(value||'').toLowerCase().trim(),aeSearchResultsFor:()=>[],aeSearchSubLabel:()=>'',aeSearchEntryForRecord:record=>({type:'record',record,title:record.name||'',id:String(record.id)}),aeSearchScore:()=>0,
     showDetail(record){state.selected=record;map.easeTo({center:[0,0],duration:850});},psrSetSelectedPoint(){},aeShowDeveloperSearch(){map.fitBounds([[0,0],[1,1]]);},
+    fc:features=>({type:'FeatureCollection',features}),esc:value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;'),psrApplyDockPadding(){},
     msVisible:()=>market,ppActive:()=>false,msSync(){},msOpen(){},toast(){}};
   elements.get('#search-results').addEventListener=()=>{};
   const ctx=vm.createContext(env);vm.runInContext(source,ctx);
@@ -118,6 +121,17 @@ test('unlocated search result still opens its own dossier but cannot borrow anot
   const h=runtime({entries:[{type:'record',id:'unlocated',record:{kind:'project',name:'Unlocated',emirate:'Dubai',area:'Palm Jumeirah'}}]});
   vm.runInContext('aeActivateSearchPosition(0)',h.ctx);h.flush();
   assert.equal(h.state.selected.name,'Unlocated');assert.equal(cameraMoves(h).length,0);
+});
+test('Arabic project names remain searchable and an Ajman source selection never invents a map location', () => {
+  const project={sourceProjectId:412,nameEn:'سيسايد هيلز فيلا',nameAr:'Seaside Hills Villa',districtEn:'Zorah',statusSource:'Completed',snapshotDate:'2026-06-30',reportedUnitCount:1};
+  const h=runtime({entries:[{type:'record',id:'ajman-register:412',sourceRegistry:'ajman',record:{kind:'project',name:project.nameEn},sourceProject:project}]});
+  assert.equal(vm.runInContext('aeSearchText("سيسايد هيلز")',h.ctx),'سيسايد هيلز');
+  vm.runInContext('aeActivateSearchPosition(0)',h.ctx);h.flush();
+  assert.equal(cameraMoves(h).length,0);
+  assert.equal(h.env.window.__ESPACIOS_SEARCH_FOCUS__.status,'source-without-coordinates');
+  assert.match(h.elements.get('#detail-body').innerHTML,/No verified project coordinates/);
+  assert.match(h.elements.get('#detail-body').innerHTML,/2026-06-30/);
+  assert.equal(h.events[0].detail.kind,'official-source-project');
 });
 
 test('fresh density community selection loads exact source geometry before measured navigation', async()=>{

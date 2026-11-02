@@ -93,6 +93,69 @@ const EspaciosSearchFocusCore = (() => {
 (() => {
   const K = EspaciosSearchFocusCore, Q = selector => document.querySelector(selector);
   let sequence = 0, pending = 0, cameraOwner = null, releaseTimer = 0;
+  // The acquired search normalizer dropped Arabic letters. Preserve both scripts
+  // in the index and query so the authority's Arabic names stay discoverable.
+  aeSearchText=value=>String(value||'').normalize('NFKD').replace(/\p{M}/gu,'').toLocaleLowerCase().replace(/&/g,' and ').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+  state.searchIndex=[];state.searchDevelopers=[];
+  const ajmanSearch={query:'',status:'idle',entries:[],total:0,timer:0,controller:null,sequence:0};
+  const oldSearchResultsFor=aeSearchResultsFor;
+  const oldSearchKindLabel=aeSearchKindLabel;
+  const oldSearchSubLabel=aeSearchSubLabel;
+  function ajmanEntry(project) {
+    const name=project.nameEn||project.nameAr||('Ajman project '+project.sourceProjectId);
+    const record={kind:'project',name,emirate:'Ajman',area:project.districtEn||'',developer:project.developerEn||'',aliases:[project.nameAr,project.districtAr,project.developerAr,project.registrationNumber].filter(Boolean)};
+    return {...aeSearchEntryForRecord(record),id:'ajman-register:'+project.sourceProjectId,sourceRegistry:'ajman',sourceProject:project};
+  }
+  aeSearchResultsFor=function(query) {
+    const local=oldSearchResultsFor(query);
+    if(ajmanSearch.status!=='ready'||ajmanSearch.query!==query)return local;
+    const official=ajmanSearch.entries.map(e=>({e,score:aeSearchScore(e,query)})).filter(hit=>hit.score>=0).sort((a,b)=>b.score-a.score||a.e.id.localeCompare(b.e.id));
+    return official.length?[...local.slice(0,12),...official.slice(0,8)]:local;
+  };
+  aeSearchKindLabel=function(entry){return entry.sourceRegistry==='ajman'?'Ajman register':oldSearchKindLabel(entry)};
+  aeSearchSubLabel=function(entry){
+    if(entry.sourceRegistry!=='ajman')return oldSearchSubLabel(entry);
+    const p=entry.sourceProject;
+    return [p.districtEn||'Ajman',p.statusSource||p.status,p.snapshotDate,'No verified project pin'].filter(Boolean).join(' · ');
+  };
+  function ajmanSearchStatus(box,query){
+    if(query.length<2||ajmanSearch.query!==query||!['loading','unavailable','ready'].includes(ajmanSearch.status))return;
+    const noLocal=!(state.searchResults||[]).length;
+    if(noLocal&&ajmanSearch.status==='loading')box.querySelector('.ae-search-empty')?.replaceChildren(document.createTextNode('Searching the Ajman project register…'));
+    const note=document.createElement('div');note.className='ae-search-source-status';note.setAttribute('role','status');
+    if(ajmanSearch.status==='loading')note.textContent='Checking the official Ajman project register…';
+    else if(ajmanSearch.status==='unavailable'){
+      note.append('Ajman register temporarily unavailable. ');
+      const retry=document.createElement('button');retry.type='button';retry.textContent='Retry';retry.addEventListener('click',()=>{scheduleAjmanSearch(query,true);renderSearch();});note.append(retry);
+    }else if(ajmanSearch.total>8||ajmanSearch.total>ajmanSearch.entries.length){
+      note.append('Showing up to 8 source IDs · '+ajmanSearch.total.toLocaleString()+' Ajman register matches. ');
+      const link=document.createElement('a');link.href='/map/api/uae-evidence/ajman/register?q='+encodeURIComponent(query)+'&limit=100';link.textContent='View source results';note.append(link);
+    }else if(ajmanSearch.entries.length)note.textContent='Ajman register · '+ajmanSearch.entries.length+' source matches · 30 June 2026 snapshot';
+    else note.textContent='No additional Ajman register matches.';
+    box.append(note);
+  }
+  function scheduleAjmanSearch(query,force=false){
+    const normalized=aeSearchText(query);
+    if(!force&&normalized===ajmanSearch.query&&ajmanSearch.status!=='idle')return;
+    clearTimeout(ajmanSearch.timer);ajmanSearch.controller?.abort();
+    const token=++ajmanSearch.sequence;
+    ajmanSearch.query=normalized;ajmanSearch.entries=[];ajmanSearch.total=0;
+    if(normalized.length<2||normalized.length>120){ajmanSearch.status='idle';return;}
+    ajmanSearch.status='loading';
+    ajmanSearch.timer=setTimeout(async()=>{
+      const controller=new AbortController();ajmanSearch.controller=controller;
+      try{
+        const response=await fetch('/map/api/uae-evidence/ajman/register?q='+encodeURIComponent(query.trim())+'&limit=100',{signal:controller.signal,headers:{accept:'application/json'}});
+        if(!response.ok)throw Error('Ajman register '+response.status);
+        const data=await response.json();
+        if(data.scope?.evidenceClass!=='official_project_register_snapshot'||data.source?.latestSnapshotDate!=='2026-06-30'||!Array.isArray(data.projects))throw Error('Ajman register scope changed');
+        if(token!==ajmanSearch.sequence)return;
+        ajmanSearch.entries=data.projects.filter(p=>p.inLatestSnapshot&&p.matchStatus==='unmatched'&&p.coordinates===null&&Number.isSafeInteger(p.sourceProjectId)).map(ajmanEntry);
+        ajmanSearch.total=data.totalProjects;ajmanSearch.status='ready';
+      }catch(error){if(token!==ajmanSearch.sequence||error.name==='AbortError')return;ajmanSearch.status='unavailable';ajmanSearch.entries=[];}
+      if(token===ajmanSearch.sequence&&Q('#search')?.value&&aeSearchText(Q('#search').value)===normalized)renderSearch();
+    },140);
+  }
   const sourceGeometry = () => ({territories: state.masterTerritoryData?.features, surfaces: sgState.data?.features, communities: state.spatial?.dubaiPolygonData?.features});
   const shown = element => element && !element.hidden && !element.classList.contains('hidden') && getComputedStyle(element).display !== 'none' && getComputedStyle(element).visibility !== 'hidden';
   function measurePadding() {
@@ -216,15 +279,41 @@ const EspaciosSearchFocusCore = (() => {
     const options = [...(box?.querySelectorAll('[data-search-pos]') || [])];
     if (options.length && options.length === state.searchResults?.length) {
       state.searchResults = K.groupedEntries(state.searchResults, aeSearchKindLabel);
-      options.forEach((button, index) => {button.dataset.searchId = String(state.searchResults[index].id);});
+      options.forEach((button, index) => {
+        const entry=state.searchResults[index];button.dataset.searchId=String(entry.id);
+        if(entry.sourceRegistry==='ajman'){
+          const title=button.querySelector('.ae-search-copy strong');title?.setAttribute('dir','auto');
+          if(title&&/\p{Script=Arabic}/u.test(entry.record.name))title.lang='ar';
+        }
+      });
     }
+    if(box)ajmanSearchStatus(box,aeSearchText(Q('#search')?.value));
     return result;
   };
+  Q('#search')?.addEventListener('input',event=>{scheduleAjmanSearch(event.target.value);queueMicrotask(()=>renderSearch());});
+  Q('#clear-search')?.addEventListener('click',()=>scheduleAjmanSearch(''));
+  function showAjmanSource(entry){
+    const p=entry.sourceProject,body=Q('#detail-body');
+    state.selected=null;map.getSource('selection')?.setData(fc([]));
+    const line=(label,value)=>value===null||value===undefined||value===''?'':'<div class="detail-fact"><span>'+esc(label)+'</span><b>'+esc(String(value))+'</b></div>';
+    body.innerHTML='<div class="detail-content"><span class="detail-badge">OFFICIAL AJMAN REGISTER</span><h2 dir="auto">'+esc(entry.record.name)+'</h2>'+
+      (p.nameAr&&p.nameAr!==entry.record.name?'<div class="detail-sub" lang="ar" dir="auto">'+esc(p.nameAr)+'</div>':'')+
+      '<div class="detail-facts">'+line('Source project ID',p.sourceProjectId)+line('District',p.districtEn)+line('District · العربية',p.districtAr)+line('Developer',p.developerEn)+line('Reported status',p.statusSource)+line('Reported units',p.reportedUnitCount)+line('Snapshot date',p.snapshotDate)+'</div>'+
+      '<div class="detail-section"><h3>Evidence and location</h3><p>This is a dated Ajman authority project ID. Its identity has not been linked to the reviewed map catalogue. No verified project coordinates are available, so the map stays at its current view. Status and units are from the 30 June 2026 source snapshot.</p></div>'+
+      '<div class="detail-actions"><a class="secondary" href="/map/api/uae-evidence/ajman/register/'+encodeURIComponent(p.sourceProjectId)+'">Source record history</a><a class="secondary" href="https://data.ajman.ae/explore/dataset/real-estate-projects/" target="_blank" rel="noopener">Official dataset</a></div></div>';
+    Q('#detail')?.classList.remove('hidden');psrApplyDockPadding?.(true);window.EspaciosMobileUI?.activate?.(Q('#detail'),true);
+    window.__ESPACIOS_SEARCH_FOCUS__={status:'source-without-coordinates',recordName:entry.record.name,targetBasis:null};
+    document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:entry.id,kind:'official-source-project',name:entry.record.name,emirate:'Ajman',area:p.districtEn||'',exactMarketMatch:false}}));
+  }
   aeActivateSearchPosition = function(position) {
     const entry = state.searchResults?.[position];if (!entry) return;
     cancelFocus();const token = sequence, input = Q('#search'), box = Q('#search-results');
     map.stop();cancelAnimationFrame(pending);
     box?.classList.add('hidden');input?.setAttribute('aria-expanded', 'false');box?.replaceChildren();
+    if(entry.sourceRegistry==='ajman'){
+      if(input){input.value=entry.record.name;input.blur();}
+      showAjmanSource(entry);return;
+    }
     if (input) {input.value = entry.type === 'developer' ? entry.name : recordTitle(entry.record);input.blur();}
     let area = null;
     withoutLegacyCamera(() => {

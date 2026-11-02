@@ -18,6 +18,9 @@ html[data-minimal-map][data-espacios-theme] body #app :is(button,a,input,select,
 html[data-minimal-map][data-espacios-theme] .ae-map-recovery{background:var(--su-panel)!important;color:var(--su-ink)!important;border-color:var(--su-line)!important;box-shadow:var(--eg-theme-shadow)!important}
 html[data-minimal-map][data-espacios-theme] .ae-map-recovery span{color:var(--su-muted)!important}
 html[data-minimal-map][data-espacios-theme] .ae-map-recovery button{background:var(--eg-theme-control)!important;color:var(--su-ink)!important;border-color:var(--su-line)!important}
+.ae-search-source-status{padding:9px 12px;border-top:1px solid var(--eg-theme-line);color:var(--eg-theme-muted);font-size:11px;line-height:1.45}
+.ae-search-source-status :is(a,button){margin-left:3px;color:var(--eg-theme-accent)!important;font:inherit;text-decoration:underline;text-underline-offset:2px}
+.ae-search-source-status button{border:0;background:transparent;cursor:pointer;padding:2px 4px}
 @media(max-width:760px){#ae-map-layer-error{left:12px;bottom:82px}}
 html[data-map-page]{color-scheme:light;--bg:var(--eg-theme-canvas);--fg:var(--eg-theme-text);--text:var(--eg-theme-text);--card:var(--eg-theme-surface);--surface:var(--eg-theme-surface);--panel:var(--eg-theme-surface);--line:var(--eg-theme-line);--muted:var(--eg-theme-muted);--accent:var(--eg-theme-accent);background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
 html[data-map-page][data-espacios-theme="dark"]{color-scheme:dark}
