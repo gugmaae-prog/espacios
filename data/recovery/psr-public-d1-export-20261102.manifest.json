@@ -1,0 +1,38 @@
+{
+  "version": "20261102-psr-public-d1-export-v1",
+  "source": "Cloudflare D1 table export of espacios-data-registry",
+  "databaseId": "3ad3a1ff-83cc-42fa-a106-d6f715e1e967",
+  "bookmark": "00000436-00000000-00005117",
+  "exportedAt": "2026-11-02T16:38:33Z",
+  "tables": [
+    {
+      "table": "projects",
+      "sha256": "553c49f03e6ae7ff361fdeff19341cff0ce571b7d17e1bc9c2c39ae0b74eed9c"
+    },
+    {
+      "table": "tenant-project-publications",
+      "sha256": "5042cdaf6afdbbfe8a1e3f8546621869fd65af608b7c116cb085261718faa08c"
+    },
+    {
+      "table": "project-registry-state",
+      "sha256": "24029fe54f87d4b7616864dbbc32bf606d570ee163b6ecaa86c13d7b250cab90"
+    }
+  ],
+  "publicDerivation": "espacios-data-hub-v6 publicProject from D1 published PSR rows",
+  "registry": {
+    "total": 1091,
+    "revision": 2,
+    "updatedAt": "2026-09-27 08:49:40",
+    "contentHash": "01ee8ae625988bb935d8ffcd2a61d76f30298bfd50e27e3b6454381847a61b81"
+  },
+  "localProjectionHash": "b35bf93a3f08c3b57ffca56904a77d5029b1d61df3fa7fa62eebf113e57ee842",
+  "registryContentHashReproduced": false,
+  "rows": 1091,
+  "uniqueSlugs": 1091,
+  "rawBytes": 1002950,
+  "rawSha256": "0043711bfc99ec5a58cc29a149c3c35aae21158f4ca44d42321fa7bdb7d5d59e",
+  "compressedBytes": 118419,
+  "compressedSha256": "ed1093545526c6def86642b8deec7ac91c46ac4a412aac9e643c4e1def2f9930",
+  "classified": "exported_public_registry_snapshot_not_live_api_response",
+  "completeForCurrentLiveHub": false
+}

@@ -140,6 +140,11 @@ const psrLegacyRaw=gunzipSync(psrLegacyCompressed),psrLegacy=JSON.parse(psrLegac
 const digest=value=>createHash('sha256').update(value).digest('hex');
 if(psrLegacyCompressed.length!==psrLegacyManifest.compressedBytes||digest(psrLegacyCompressed)!==psrLegacyManifest.compressedSha256||psrLegacyRaw.length!==psrLegacyManifest.rawBytes||digest(psrLegacyRaw)!==psrLegacyManifest.rawSha256||psrLegacy.projects?.length!==psrLegacyManifest.uniqueProjectSlugs||new Set(psrLegacy.projects.map(project=>project.slug)).size!==psrLegacyManifest.uniqueProjectSlugs||psrLegacy.registry?.total!==psrLegacyManifest.registryReportedTotal)throw Error('PSR legacy recovery snapshot changed');
 stackSource+='\nvar MAP_PSR_LEGACY_SNAPSHOT='+JSON.stringify({...psrLegacyManifest,base64:psrLegacyCompressed.toString('base64')})+';\n';
+const psrD1Manifest=JSON.parse(await read('data/recovery/psr-public-d1-export-20261102.manifest.json'));
+const psrD1Compressed=await fs.readFile(new URL('data/recovery/psr-public-d1-export-20261102.json.gz',root));
+const psrD1Raw=gunzipSync(psrD1Compressed),psrD1=JSON.parse(psrD1Raw);
+if(psrD1Compressed.length!==psrD1Manifest.compressedBytes||digest(psrD1Compressed)!==psrD1Manifest.compressedSha256||psrD1Raw.length!==psrD1Manifest.rawBytes||digest(psrD1Raw)!==psrD1Manifest.rawSha256||psrD1.projects?.length!==psrD1Manifest.rows||new Set(psrD1.projects.map(project=>project.slug)).size!==psrD1Manifest.uniqueSlugs||psrD1.registry?.total!==psrD1Manifest.registry.total)throw Error('PSR D1 export recovery snapshot changed');
+stackSource+='\nvar MAP_PSR_D1_EXPORT_SNAPSHOT='+JSON.stringify({...psrD1Manifest,base64:psrD1Compressed.toString('base64')})+';\n';
 stackSource+='\nvar MAP_ARCHIVE_MANIFEST='+JSON.stringify(archiveManifest)+';\nvar MAP_NATIVE_INDEX_MANIFEST='+JSON.stringify(nativeIndexManifest)+';\n';
 stackSource+='\nvar MAP_FULL_INVENTORY_MANIFEST='+JSON.stringify(inventoryManifest)+';\n';
 for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^export /gm,'')+'\n';

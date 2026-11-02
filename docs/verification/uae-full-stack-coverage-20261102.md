@@ -1,6 +1,6 @@
 # UAE map data coverage — 2 November 2026
 
-This is a release audit, not a claim that every UAE development or transaction is present. Counts below are from the accepted V48 `/map/api/uae-heatmap` population served by Worker v17. They describe that snapshot only; no authoritative all-UAE denominator has been established.
+This is a release audit, not a claim that every UAE development or transaction is present. Counts below are from the accepted V48 `/map/api/uae-heatmap` population served by Worker v18. They describe that snapshot only; no authoritative all-UAE denominator has been established.
 
 | Emirate | V48 projects | Reported project/source points | Approximate community-centre points | Searchable without coordinates | Local registered-sale history in V48 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -27,7 +27,7 @@ The V48 record archive has 1,860 project and community records and 16,872 native
 
 These three Ajman sources are stored as separate, checksum-verified private IDrive objects and exposed through read-only, source-labelled APIs. Neither their row counts nor their project labels can be added to the V48 project total without a reviewed identity crosswalk. Their metadata reports CC BY 4.0. The published APIs are `/map/api/uae-evidence/ajman/register`, `/map/api/uae-evidence/ajman/sales`, and `/map/api/uae-evidence/ajman/registrations`.
 
-The newer PSR Data Hub public registry currently returns 503 after the Cloudflare D1 account exceeded its free-tier daily row-read limit. `/map/api/projects-all` serves an exact reviewed older public snapshot during that outage, labelled degraded with `completeForCurrentDataHub:false`. Its 1,073 unique slugs have a 22 July 2026 registry vintage and represent a separate PSR population, not current UAE completeness.
+The newer PSR Data Hub public registry currently returns 503 because Cloudflare D1 rejects reads with free-tier daily row-read error 7500. Read-only D1 exports of the `projects`, `tenant_project_publications`, and `project_registry_state` tables shared bookmark `00000436-00000000-00005117`. The public Data Hub projection from those exports contains 1,091 published PSR projects and unique slugs, matching the recorded registry count and revision 2, updated 27 September 2026. The public projection and its exact checksums are packaged in `data/recovery/psr-public-d1-export-20261102.*`; raw SQL exports remain private. The recorded registry content hash did not reproduce under the current Worker algorithm, so the fallback is labelled degraded with `registryHashReconciled:false` and `completeForCurrentDataHub:false`. If this newer export cannot be verified, the exact older 1,073-slug July snapshot remains a separate degraded fallback. Neither population is the accepted V48 map identity universe or an all-UAE census.
 
 ## Work needed for full UAE coverage
 
@@ -35,5 +35,5 @@ The newer PSR Data Hub public registry currently returns 503 after the Cloudflar
 2. Prioritize official project registers for Fujairah, Umm Al Quwain, Sharjah, and Ras Al Khaimah, then validate IDs, dates, status and coordinates before adding any pins. Current V48 project counts are especially thin in Fujairah and Ajman. The Ajman register is available now but cannot be converted into 298 pins without verified coordinates.
 3. Resolve Abu Dhabi ADREC V55 reuse rights before publishing its separate registered-sale candidate. The 127 Abu Dhabi V48 records without verified coordinates remain searchable.
 4. Recover the missing original history and saved model bundles from exact, approved backups. Preserve V48 native history and conditional scenarios as distinct evidence classes until then.
-5. Restore a current PSR Data Hub source after D1 capacity recovers and reduce repeated row reads or arrange a reviewed paid capacity change. Retire the older fallback only after all current pages and source totals reconcile.
+5. Restore a current PSR Data Hub source after D1 capacity recovers and reduce repeated row reads, especially the full project-filter scan repeated on every page. Reconcile all live pages, registry totals, and content hash before treating the D1 export as superseded. A paid capacity change requires a separate cost decision.
 6. For each new source, capture publisher metadata and licence, preserve immutable source bytes and checksums, validate row grain and quality, publish a source-labelled API, stage at 0%, verify live readback and restrictions, then promote and recheck normal traffic.

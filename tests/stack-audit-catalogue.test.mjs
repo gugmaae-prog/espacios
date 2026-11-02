@@ -22,6 +22,23 @@ test('explicit malformed pagination never becomes a cached single-page catalogue
 const legacyManifest=JSON.parse(await fs.readFile(new URL('../data/recovery/psr-public-legacy-20261102.manifest.json',import.meta.url),'utf8'));
 const legacyBytes=await fs.readFile(new URL('../data/recovery/psr-public-legacy-20261102.json.gz',import.meta.url));
 const snapshot={...legacyManifest,base64:legacyBytes.toString('base64')};
+const d1Manifest=JSON.parse(await fs.readFile(new URL('../data/recovery/psr-public-d1-export-20261102.manifest.json',import.meta.url),'utf8'));
+const d1Bytes=await fs.readFile(new URL('../data/recovery/psr-public-d1-export-20261102.json.gz',import.meta.url));
+const d1Snapshot={...d1Manifest,base64:d1Bytes.toString('base64')};
+test('D1 quota failure serves the exact current registry export with explicit degraded labels',async()=>{
+ let calls=0;const service={fetch:async()=>{calls++;return new Response('D1 read quota',{status:503});}};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_D1_SNAPSHOT:d1Snapshot,MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(response.headers.get('x-espacios-catalogue'),'reviewed-d1-export-degraded-v1');
+ assert.equal(body.total,1091);assert.equal(body.projects.length,1091);assert.equal(new Set(body.projects.map(p=>p.slug)).size,1091);
+ assert.equal(body.source.service,'reviewed-psr-d1-public-export');assert.equal(body.source.snapshotSHA256,d1Manifest.rawSha256);
+ assert.equal(body.registry.contentHash,d1Manifest.registry.contentHash);assert.equal(body.coverage.registryHashReconciled,false);
+ assert.equal(body.completeForCurrentDataHub,false);assert.equal(body.degraded,true);assert.equal(calls,2);
+});
+test('a corrupt D1 export fails over to the separately verified older snapshot',async()=>{
+ const service={fetch:async()=>new Response('D1 read quota',{status:503})};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_D1_SNAPSHOT:{...d1Snapshot,compressedSha256:'0'.repeat(64)},MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(body.total,1073);assert.equal(body.source.service,'reviewed-older-psr-public-snapshot');
+});
 test('D1 quota failure serves only the exact older PSR snapshot with its degraded vintage',async()=>{
  let calls=0;const service={fetch:async url=>{calls++;assert.match(url,/\/data\/api\/v1\/projects/);return new Response('D1 quota',{status:503});}};
  const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
