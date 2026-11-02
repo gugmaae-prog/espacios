@@ -65,6 +65,7 @@ worker_default.fetch=async function(request,env,ctx){
  const ajmanDispositions=await mapAjmanDispositions(request,UAE_AJMAN_DISPOSITION_REPORT,store,MAP_ARCHIVE_MANIFEST);if(ajmanDispositions)return mapStackPreparedResponse(request,ajmanDispositions);
  const ajmanManagement=await mapAjmanManagement(request,UAE_AJMAN_MANAGEMENT_REPORT,UAE_AJMAN_MANAGEMENT_PACKED);if(ajmanManagement)return mapStackPreparedResponse(request,ajmanManagement);
  const ajmanAreaReference=await mapAjmanAreaReference(request,UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED);if(ajmanAreaReference)return mapStackPreparedResponse(request,ajmanAreaReference);
+ const ajmanLandSales=await mapAjmanLandSales(request,UAE_AJMAN_LAND_SALES_REPORT,UAE_AJMAN_LAND_SALES_PACKED);if(ajmanLandSales)return mapStackPreparedResponse(request,ajmanLandSales);
  const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT);if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
  // This public UI response is a verified derivation of the accepted V48 map
  // snapshot. Streaming the private asset avoids rebuilding 1,518 features on
