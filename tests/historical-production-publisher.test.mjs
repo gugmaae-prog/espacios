@@ -30,10 +30,14 @@ const manifest={version:'version',rootIndex:{sha256:'a'.repeat(64)}};
 const target={environment:'production',authorization:{kind:'explicit_user_request',scope:'publish_historical_snapshot_and_deploy_map'},workerName:config.name,accountId:config.account_id,r2:{binding:'MARKET_R2',bucketName:'psr-market-intelligence'},d1:{binding:'DB',databaseName:'cba-property-db',databaseId:'a5165cff-70a5-4685-af87-5ffdcf08652a'},snapshotVersion:manifest.version,rootSHA256:manifest.rootIndex.sha256};
 const env={PUBLISH_TOKEN:'test-token',PUBLISH_EXPIRES:new Date(Date.now()+60000).toISOString(),PUBLISH_VERSION:manifest.version,PUBLISH_ROOT:manifest.rootIndex.sha256};
 test('production requires explicit exact snapshot, account, bindings and restricted routes',()=>{
- assert.equal(validateProductionTarget(config,target,manifest),true);
- for(const changed of [{...target,authorization:null},{...target,accountId:'other'},{...target,rootSHA256:'b'.repeat(64)},{...target,r2:{...target.r2,bucketName:'other'}}])assert.throws(()=>validateProductionTarget(config,changed,manifest));
- assert.throws(()=>validateProductionTarget({...config,vars:{...config.vars,DATA_ROOM_PUBLIC:'true'}},target,manifest));
- assert.throws(()=>validateProductionTarget({...config,routes:['example/*']},target,manifest));
+ // The active map intentionally omits R2. Its historical publisher must fail
+ // closed until an exact production binding is deliberately restored.
+ assert.throws(()=>validateProductionTarget(config,target,manifest),/bindings differ/);
+ const bound={...config,r2_buckets:[{binding:'MARKET_R2',bucket_name:'psr-market-intelligence'}]};
+ assert.equal(validateProductionTarget(bound,target,manifest),true);
+ for(const changed of [{...target,authorization:null},{...target,accountId:'other'},{...target,rootSHA256:'b'.repeat(64)},{...target,r2:{...target.r2,bucketName:'other'}}])assert.throws(()=>validateProductionTarget(bound,changed,manifest));
+ assert.throws(()=>validateProductionTarget({...bound,vars:{...bound.vars,DATA_ROOM_PUBLIC:'true'}},target,manifest));
+ assert.throws(()=>validateProductionTarget({...bound,routes:['example/*']},target,manifest));
 });
 test('production publisher adapter accepts only the released bridge endpoints',()=>{
  assert.equal(isApprovedPublisherURL('https://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev'),true);
