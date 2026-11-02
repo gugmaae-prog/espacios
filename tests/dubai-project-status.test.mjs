@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {gunzipSync,gzipSync} from 'node:zlib';
+import {gunzipSync} from 'node:zlib';
 import {normalizeDubaiStatusCsv,parseDubaiStatusCsv,mapDubaiProjectStatus} from '../src/stack-audit/dubai-project-status.mjs';
 import worker from '../src/worker.js';
 
@@ -10,8 +10,9 @@ const root=new URL('../',import.meta.url);
 const report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/dld-project-status-validation.json',root)));
 const crosswalk=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/reviewed-v48-crosswalk.json',root)));
 const captured=await fs.readFile(new URL('data/uae-evidence/dubai/dld-project-status-20261101.csv.gz',root));
+const normalizedArtifact=await fs.readFile(new URL('data/uae-evidence/dubai/dld-project-status-20261101.normalized.json.gz',root));
 const raw=gunzipSync(captured),rows=normalizeDubaiStatusCsv(raw.toString('utf8'),report);
-const normalized=Buffer.from(JSON.stringify(rows)),normalizedPacked=gzipSync(normalized,{level:9}).toString('base64');
+const normalized=Buffer.from(JSON.stringify(rows)),normalizedPacked=normalizedArtifact.toString('base64');
 const sha=value=>createHash('sha256').update(value).digest('hex');
 const request=(suffix='',method='GET')=>new Request('https://espacios.me/map/api/uae-evidence/dubai/project-status'+suffix,{method});
 
@@ -25,7 +26,8 @@ test('licensed 1 November source capture survives byte, schema and identity chec
  assert.equal(report.actualCsvFieldCount,14);
  assert.equal(report.sourcePageClaimedFieldCount,16);
  assert.equal(sha(normalized),report.normalizedSha256);
- assert.equal(sha(Buffer.from(normalizedPacked,'base64')),report.normalizedCompressedSha256);
+ assert.equal(sha(normalizedArtifact),report.normalizedCompressedSha256);
+ assert.ok(gunzipSync(normalizedArtifact).equals(normalized));
  assert.ok(rows.every(row=>row.canonicalProjectId===null&&row.coordinates===null&&row.completionPercent>=0&&row.completionPercent<=100));
  assert.deepEqual(parseDubaiStatusCsv('a,b\n"one, two","a""b"\n'),[['a','b'],['one, two','a"b']]);
 });
