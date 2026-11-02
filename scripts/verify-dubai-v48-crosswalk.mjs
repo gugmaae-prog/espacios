@@ -19,6 +19,12 @@ assert.equal(crosswalk.sourceSnapshotDate,report.sourcePublicationDate);
 assert.equal(crosswalk.sourceDatasetId,report.sourceId);
 assert.equal(crosswalk.districtAliasEvidence?.jvcAlBarshaSouthFourth,'https://dubailand.gov.ae/en/eservices/old-and-new-area-names/old-and-new-area-names-list/');
 assert.equal(crosswalk.districtAliasEvidence?.jvcPlotPlan,'https://cdn.emiratesauction.com/media/2e5ozhhqvdf6n4xkjjz3gcvyrjujynriotwq0erotla426mmhy/doc7914.pdf/12834_Affection_Plan.pdf');
+const projectIdentityEvidence={
+  emaarSouth:'https://www.emaar.com/en/our-communities/emaar-south',
+  townSquare:'https://nshama.ae/properties/town-square-dubai/',
+  evelyn:'https://nshama.ae/properties/evelyn/'
+};
+assert.deepEqual(crosswalk.projectIdentityEvidence,projectIdentityEvidence);
 const source=normalizeDubaiStatusCsv(sourceBytes.toString('utf8'),report);
 const map=JSON.parse(mapBytes).projects.filter(project=>project.emirate==='Dubai');
 const sourceIds=new Set(),mapIds=new Set();
@@ -40,8 +46,11 @@ for(const match of crosswalk.matches){
   assert.ok(developerTokens.some(token=>row.developerName.toLowerCase().includes(token)),'Developer or brand must agree');
   const compatibleDistrict=norm(project.area)===norm(row.community)||
     (norm(project.area)==='aljaddaf'&&norm(row.community)==='aljadaf')||
-    (row.community==='Al Barsha South Fourth'&&/^(?:Dubai, )?Jumeirah Village Circle \(JVC\)$/.test(project.area));
+    (row.community==='Al Barsha South Fourth'&&/^(?:Dubai, )?Jumeirah Village Circle \(JVC\)$/.test(project.area))||
+    (row.community==='Madinat Al Mataar'&&project.area==='Emaar South'&&project.developer==='Emaar'&&match.identityEvidenceUrl===projectIdentityEvidence.emaarSouth)||
+    (row.community==='Al Yelayiss 2'&&project.area==='Town Square Dubai'&&project.developer==='NSHAMA'&&match.identityEvidenceUrl===(row.name==='Evelyn On The Park'?projectIdentityEvidence.evelyn:projectIdentityEvidence.townSquare));
   assert.ok(compatibleDistrict,'District must agree or use a documented alias');
+  if(row.community==='Madinat Al Mataar'||row.community==='Al Yelayiss 2')assert.ok(match.identityEvidenceUrl,'Cross-district project identity needs developer evidence');
   assert.equal(row.coordinates,null);
 }
 console.log(JSON.stringify({passed:true,sourceProjects:source.length,v48DubaiProjects:map.length,reviewedOneToOneMatches:crosswalk.matches.length,unmatchedSourceProjects:source.length-crosswalk.matches.length}));

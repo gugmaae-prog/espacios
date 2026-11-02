@@ -1,10 +1,10 @@
 {
-  "version": "20261103-dubai-v48-reviewed-crosswalk-v3",
+  "version": "20261103-dubai-v48-reviewed-crosswalk-v4",
   "sourceDatasetId": "continental-dld-mashrooi-project-status-20261101",
   "sourceRawSha256": "3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f",
   "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
   "sourceSnapshotDate": "2026-11-01",
-  "matchPolicy": "Reviewed unique name, named developer or developer brand, and compatible district in the dated licensed source and accepted V48 map. For Jumeirah Village Circle, DLD area code 681 maps to Al Barsha South Fourth in the authority area-name list; no broader cadastral alias is inferred. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
+  "matchPolicy": "Reviewed unique project name and developer brand in the dated licensed source and accepted V48 map. For the 29 Emaar South and Town Square projects, the named developer's official project pages corroborate each specific identity despite source district versus map master-community labels; this is not a blanket district equivalence. JVC links use the DLD area-code 681 evidence. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
   "matches": [
     {
       "sourceProjectNumber": "443",
@@ -277,6 +277,50 @@
       "mapArea": "Business Bay"
     },
     {
+      "sourceProjectNumber": "2986",
+      "canonicalProjectId": "project:elaya-by-nshama-in-town-square-dubai",
+      "sourceProjectName": "Elaya",
+      "mapProjectName": "ELAYA",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3032",
+      "canonicalProjectId": "project:greenway-by-emaar-properties-in-emaar-south-dubai",
+      "sourceProjectName": "Greenway",
+      "mapProjectName": "Greenway",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3111",
+      "canonicalProjectId": "project:golf-lane-by-emaar-properties-in-emaar-south",
+      "sourceProjectName": "Golf Lane",
+      "mapProjectName": "Golf Lane",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3144",
+      "canonicalProjectId": "project:savannah-by-nshama-in-town-square-dubai",
+      "sourceProjectName": "Savannah",
+      "mapProjectName": "Savannah",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
       "sourceProjectNumber": "3195",
       "canonicalProjectId": "project:studios-apartments-starlight-binghatti-al-jaddaf",
       "sourceProjectName": "Binghatti Starlight",
@@ -285,6 +329,28 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Jadaf",
       "mapArea": "Al Jaddaf"
+    },
+    {
+      "sourceProjectNumber": "3211",
+      "canonicalProjectId": "project:apartments-and-duplexes-hillcrest-town-square-dubai",
+      "sourceProjectName": "Hillcrest",
+      "mapProjectName": "Hillcrest",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3215",
+      "canonicalProjectId": "project:golf-point-by-emaar-properties-in-emaar-south",
+      "sourceProjectName": "Golf Point",
+      "mapProjectName": "Golf Point",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
     },
     {
       "sourceProjectNumber": "3256",
@@ -297,6 +363,39 @@
       "mapArea": "Al Jaddaf"
     },
     {
+      "sourceProjectNumber": "3283",
+      "canonicalProjectId": "project:townhouses-greenridge-emaar-south-dubai",
+      "sourceProjectName": "Greenridge",
+      "mapProjectName": "Greenridge",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3312",
+      "canonicalProjectId": "project:apartments-and-duplexes-berkshire-park-complex-town-square-dubai-dubai",
+      "sourceProjectName": "Berkshire Park",
+      "mapProjectName": "BERKSHIRE Park",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3316",
+      "canonicalProjectId": "project:townhouses-greenville-community-emaar-south-dubai",
+      "sourceProjectName": "Greenville",
+      "mapProjectName": "Greenville",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
       "sourceProjectNumber": "3349",
       "canonicalProjectId": "project:studios-and-apartments-binghatti-skyrise-business-bay-dubai",
       "sourceProjectName": "Binghatti Skyrise",
@@ -305,6 +404,83 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3364",
+      "canonicalProjectId": "project:apartments-and-duplexes-in-lexington-in-town-square-dubai",
+      "sourceProjectName": "Lexington",
+      "mapProjectName": "Lexington",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3365",
+      "canonicalProjectId": "project:apartments-baltimore-complex-town-square-dubai",
+      "sourceProjectName": "The Baltimore",
+      "mapProjectName": "THE BALTIMORE",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3385",
+      "canonicalProjectId": "project:apartments-and-townhouses-golf-edge-emaar-south-dubai",
+      "sourceProjectName": "Golf Edge",
+      "mapProjectName": "Golf Edge",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3426",
+      "canonicalProjectId": "project:golf-acres-emaar-properties-emaar-south",
+      "sourceProjectName": "Golf Acres",
+      "mapProjectName": "Golf Acres",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3427",
+      "canonicalProjectId": "project:golf-dale-emaar-properties-emaar-south",
+      "sourceProjectName": "Golf Dale",
+      "mapProjectName": "Golf Dale",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3450",
+      "canonicalProjectId": "project:apartments-odessa-town-square-dubai",
+      "sourceProjectName": "Odessa",
+      "mapProjectName": "Odessa",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3451",
+      "canonicalProjectId": "project:apartments-and-duplexes-ellison-town-square-dubai",
+      "sourceProjectName": "Ellison",
+      "mapProjectName": "Ellison",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
     },
     {
       "sourceProjectNumber": "3467",
@@ -327,6 +503,17 @@
       "mapArea": "Business Bay"
     },
     {
+      "sourceProjectNumber": "3514",
+      "canonicalProjectId": "project:townhouses-and-land-plots-greenspoint-emaar-south-dubai",
+      "sourceProjectName": "Greenspoint",
+      "mapProjectName": "Greenspoint",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
       "sourceProjectNumber": "3519",
       "canonicalProjectId": "project:olaia-residences-by-gulf-house-real-estate",
       "sourceProjectName": "Olaia Residences",
@@ -337,6 +524,28 @@
       "mapArea": "Palm Jumeirah"
     },
     {
+      "sourceProjectNumber": "3578",
+      "canonicalProjectId": "project:apartments-golf-verge-emaar-south-dubai",
+      "sourceProjectName": "Golf Verge",
+      "mapProjectName": "Golf Verge",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "3579",
+      "canonicalProjectId": "project:apartments-and-townhouses-golf-meadow-emaar-south",
+      "sourceProjectName": "Golf Meadow",
+      "mapProjectName": "Golf Meadow",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
       "sourceProjectNumber": "3585",
       "canonicalProjectId": "project:binghatti-aquarise-business-bay",
       "sourceProjectName": "Binghatti Aquarise",
@@ -345,6 +554,28 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3649",
+      "canonicalProjectId": "project:augusta-nshama-town-square-dubai",
+      "sourceProjectName": "Augusta",
+      "mapProjectName": "Augusta",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3685",
+      "canonicalProjectId": "project:alton-nshama-town-square",
+      "sourceProjectName": "Alton",
+      "mapProjectName": "Alton",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
     },
     {
       "sourceProjectNumber": "3716",
@@ -367,6 +598,72 @@
       "mapArea": "Al Jaddaf"
     },
     {
+      "sourceProjectNumber": "3749",
+      "canonicalProjectId": "project:olbia-nshama-town-square-dubai",
+      "sourceProjectName": "Olbia",
+      "mapProjectName": "Olbia",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "3839",
+      "canonicalProjectId": "project:camden-nshama-town-square-dubai",
+      "sourceProjectName": "Camden",
+      "mapProjectName": "Camden",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "4117",
+      "canonicalProjectId": "project:golf-hills-emaar-south-dubai",
+      "sourceProjectName": "Golf Hills",
+      "mapProjectName": "Golf Hills",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "4149",
+      "canonicalProjectId": "project:rosewell-nshama-town-square-dubai",
+      "sourceProjectName": "Rosewell",
+      "mapProjectName": "Rosewell",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/town-square-dubai/"
+    },
+    {
+      "sourceProjectNumber": "4150",
+      "canonicalProjectId": "project:evelyn-on-the-park-nshama-town-square-dubai",
+      "sourceProjectName": "Evelyn On The Park",
+      "mapProjectName": "EVELYN on the Park",
+      "sourceDeveloper": "Nshama Properties Owned By Nshmi Development One Person Company L.L.C",
+      "mapDeveloper": "NSHAMA",
+      "sourceDistrict": "Al Yelayiss 2",
+      "mapArea": "Town Square Dubai",
+      "identityEvidenceUrl": "https://nshama.ae/properties/evelyn/"
+    },
+    {
+      "sourceProjectNumber": "4200",
+      "canonicalProjectId": "project:grove-ridge-emaar-south-dubai",
+      "sourceProjectName": "Grove Ridge",
+      "mapProjectName": "Grove Ridge",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
       "sourceProjectNumber": "4227",
       "canonicalProjectId": "project:avarra-palace-emaar-business-bay",
       "sourceProjectName": "Avarra By Palace",
@@ -385,10 +682,37 @@
       "mapDeveloper": "IRTH",
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "4415",
+      "canonicalProjectId": "project:golf-fields-emaar-south-dubai",
+      "sourceProjectName": "Golf Fields",
+      "mapProjectName": "Golf Fields",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
+    },
+    {
+      "sourceProjectNumber": "4416",
+      "canonicalProjectId": "project:golf-vale-emaar-south-dubai",
+      "sourceProjectName": "Golf Vale",
+      "mapProjectName": "Golf Vale",
+      "sourceDeveloper": "Emaar Dubai South Dwc Llc",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Madinat Al Mataar",
+      "mapArea": "Emaar South",
+      "identityEvidenceUrl": "https://www.emaar.com/en/our-communities/emaar-south"
     }
   ],
   "districtAliasEvidence": {
     "jvcAlBarshaSouthFourth": "https://dubailand.gov.ae/en/eservices/old-and-new-area-names/old-and-new-area-names-list/",
     "jvcPlotPlan": "https://cdn.emiratesauction.com/media/2e5ozhhqvdf6n4xkjjz3gcvyrjujynriotwq0erotla426mmhy/doc7914.pdf/12834_Affection_Plan.pdf"
+  },
+  "projectIdentityEvidence": {
+    "emaarSouth": "https://www.emaar.com/en/our-communities/emaar-south",
+    "townSquare": "https://nshama.ae/properties/town-square-dubai/",
+    "evelyn": "https://nshama.ae/properties/evelyn/"
   }
 }

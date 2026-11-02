@@ -38,7 +38,7 @@ test('read-only Dubai API keeps republisher, date, inspection and identity limit
  assert.equal(body.source.republisher,'Continental Club Property LLC');
  assert.equal(body.source.sourcePublicationDate,'2026-11-01');
  assert.equal(body.source.rawSha256,report.rawSha256);
- assert.equal(body.scope.canonicalProjectMatches,38);
+ assert.equal(body.scope.canonicalProjectMatches,67);
  assert.equal(body.scope.crosswalkVersion,crosswalk.version);
  assert.equal(body.scope.projectCoordinatesPresent,false);
  assert.equal(body.projects[0].sourceProjectNumber,'2');
@@ -54,6 +54,14 @@ test('read-only Dubai API keeps republisher, date, inspection and identity limit
  assert.equal(jvc.project.canonicalProjectId,'project:binghatti-gate-jvc-apartments-in-jumeirah-village-circle-for-sale-in-dubai');
  assert.equal(jvc.project.community,'Al Barsha South Fourth');
  assert.equal(jvc.project.coordinates,null);
+ const emaar=await (await mapDubaiProjectStatus(request('/3032'),report,normalizedPacked,crosswalk)).json();
+ assert.equal(emaar.project.canonicalProjectId,'project:greenway-by-emaar-properties-in-emaar-south-dubai');
+ assert.equal(emaar.project.community,'Madinat Al Mataar');
+ assert.equal(emaar.project.coordinates,null);
+ const nshama=await (await mapDubaiProjectStatus(request('/4150'),report,normalizedPacked,crosswalk)).json();
+ assert.equal(nshama.project.canonicalProjectId,'project:evelyn-on-the-park-nshama-town-square-dubai');
+ assert.equal(nshama.project.community,'Al Yelayiss 2');
+ assert.equal(nshama.project.coordinates,null);
  const filtered=await (await mapDubaiProjectStatus(request('?q=Melograno%20Yards&community=Wadi%20Al%20Safa%204'),report,normalizedPacked,crosswalk)).json();
  assert.equal(filtered.totalProjects,1);
  assert.equal((await mapDubaiProjectStatus(request('?limit=0'),report,normalizedPacked,crosswalk)).status,400);
@@ -71,7 +79,7 @@ test('compiled Worker serves the attributed register and keeps raw source privat
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
  assert.equal(body.totalProjects,1);
- assert.equal(body.scope.canonicalProjectMatches,38);
+ assert.equal(body.scope.canonicalProjectMatches,67);
  assert.equal(body.projects[0].sourceProjectNumber,'2');
  const asset=await worker.fetch(new Request('https://espacios.me/map/dld-project-status-20261101.csv.gz'),env,{});
  assert.equal(asset.status,404);
