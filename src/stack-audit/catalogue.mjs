@@ -19,8 +19,11 @@ export async function mapCompleteProjects(request,env,ctx){
   const first=await readPage(1),pages=first.pages===undefined?1:Number(first.pages);
   if(!Number.isInteger(pages)||pages<1||pages>50)throw new Error('Unsupported catalogue page count.');
   const all=[...first.projects];
-  for(let start=2;start<=pages;start+=4){const nums=Array.from({length:Math.min(4,pages-start+1)},(_,i)=>start+i),results=await Promise.allSettled(nums.map(readPage)),failed=results.find(r=>r.status==='rejected');if(failed)throw failed.reason;
-   for(const {value:row} of results){if(first.registry?.updatedAt&&row.registry?.updatedAt&&first.registry.updatedAt!==row.registry.updatedAt)throw new Error('Catalogue changed while paging.');all.push(...row.projects);}}
+  for(let page=2;page<=pages;page++){
+   const row=await readPage(page);
+   if(first.registry?.updatedAt&&row.registry?.updatedAt&&first.registry.updatedAt!==row.registry.updatedAt)throw new Error('Catalogue changed while paging.');
+   all.push(...row.projects);
+  }
   const projects=[...new Map(all.map(p=>[p.slug,p])).values()],reported=Number(first.total),registry=Number(first.registry?.total);
   const registryReconciled=Number.isFinite(registry)&&registry>=0?registry===projects.length:null;
   const response=json({projects,total:projects.length,pages,registry:first.registry||null,complete:true,completenessBasis:'Every declared page successfully retrieved; unique source-population completeness is separately reported.',coverage:{allDeclaredPagesRetrieved:true,retriedPages,fetchCalls,maximumFetchCalls:50,registryReconciled,populationReconciled:registryReconciled===true,upstreamTotalMatchesFetchedRows:Number.isFinite(reported)?reported===all.length:null,warning:registryReconciled===false?'The upstream registry total differs from retrieved unique slugs. The cause and true source population remain unestablished.':null},totals:{returned:projects.length,unique:projects.length,rowsFetched:all.length,duplicateRows:all.length-projects.length,upstreamReported:Number.isFinite(reported)?reported:null,registryReported:Number.isFinite(registry)?registry:null},population:'Unique project slugs retrieved from every declared upstream page; reported totals are retained separately and do not establish omitted identities.'});
