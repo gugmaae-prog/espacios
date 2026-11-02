@@ -196,7 +196,14 @@
     return false;
   }
   function install(){
-    if(!suState.installed||!Q('#se-panel')||!Q('#su-market-filters'))return false;
+    if(!suState.installed||!Q('#se-panel'))return false;
+    // The timeline shell can install before market controls. Complete its
+    // filter slot when the market toolbar arrives so this UI never waits forever.
+    if(!Q('#su-market-filters')){
+      const market=Q('#ms-toolbar');if(!market)return false;
+      const filters=document.createElement('details');filters.id='su-market-filters';filters.innerHTML='<summary>Property & evidence filters</summary>';
+      market.before(filters);filters.append(market);filters.addEventListener('toggle',()=>requestAnimationFrame(tlResize));
+    }
     const dock=Q('#tl-dock'),head=dock.querySelector('.tl-head'),dialog=Q('#su-settings');
     const metrics=document.createElement('div');metrics.id='mm-metrics';metrics.setAttribute('aria-label','Map data view');metrics.innerHTML='<button type="button" data-mm-metric="projects">Projects</button><button type="button" data-mm-metric="price">Prices</button><button type="button" data-mm-metric="roi">ROI</button><button type="button" id="mm-points">Points</button><button type="button" id="mm-settings" aria-label="Map filters and timeline settings">'+icons.settings+'</button>';dock.prepend(metrics);
     metrics.querySelectorAll('[data-mm-metric]').forEach(b=>b.onclick=()=>{finish(null,true);tlStop();if(mobile.matches)for(const panel of panels())if(visible(panel))closePanel(panel);if(window.EspaciosUnifiedMap)window.EspaciosUnifiedMap.setMetric(b.dataset.mmMetric);else if(b.dataset.mmMetric==='projects')psrSetAnalysis('uae-project-coverage');else msOpen(b.dataset.mmMetric);schedule();});
@@ -227,7 +234,7 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
     document.addEventListener('click',captureNavigationIntent,true);
     document.addEventListener('click',activateLegacyDetails);
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261102-map-stack-v4',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261102-map-stack-v5',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();
