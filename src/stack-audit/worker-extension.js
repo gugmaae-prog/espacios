@@ -67,6 +67,7 @@ worker_default.fetch=async function(request,env,ctx){
  const ajmanManagement=await mapAjmanManagement(request,UAE_AJMAN_MANAGEMENT_REPORT,UAE_AJMAN_MANAGEMENT_PACKED);if(ajmanManagement)return mapStackPreparedResponse(request,ajmanManagement);
  const ajmanAreaReference=await mapAjmanAreaReference(request,UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED);if(ajmanAreaReference)return mapStackPreparedResponse(request,ajmanAreaReference);
  const ajmanLandSales=await mapAjmanLandSales(request,UAE_AJMAN_LAND_SALES_REPORT,UAE_AJMAN_LAND_SALES_PACKED);if(ajmanLandSales)return mapStackPreparedResponse(request,ajmanLandSales);
+ const ajmanLandDispositions=await mapAjmanLandDispositions(request,UAE_AJMAN_LAND_DISPOSITIONS_REPORT,UAE_AJMAN_LAND_DISPOSITIONS_PACKED);if(ajmanLandDispositions)return mapStackPreparedResponse(request,ajmanLandDispositions);
  const ajmanRentContracts=await mapAjmanRentContracts(request,UAE_AJMAN_RENT_REPORT,UAE_AJMAN_RENT_PACKED);if(ajmanRentContracts)return mapStackPreparedResponse(request,ajmanRentContracts);
  const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT);if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
  // This public UI response is a verified derivation of the accepted V48 map

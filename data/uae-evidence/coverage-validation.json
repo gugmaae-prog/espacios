@@ -1,5 +1,5 @@
 {
-  "version": "20261103-uae-evidence-coverage-v1",
+  "version": "20261103-uae-evidence-coverage-v2",
   "basis": "Accepted V48 map snapshot plus separately published, dated source snapshots. This is an inventory, not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -132,6 +132,16 @@
           "grain": "district-quarter land-sales aggregates",
           "sourceVintage": "2026-08-21T04:22:34.886000+00:00",
           "sourceUrl": "https://data.ajman.ae/explore/dataset/lands-sales/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260821-land-dispositions",
+          "route": "/map/api/uae-evidence/ajman/land-dispositions",
+          "sourceRows": 1646,
+          "grain": "district-quarter mixed land dispositions and mortgage aggregates",
+          "sourceVintage": "2026-08-21T04:29:59.419000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/lands-transactions/",
           "rights": "CC BY 4.0",
           "liveRouteHealth": "not_asserted_by_inventory"
         },
@@ -280,6 +290,7 @@
     "ajmanManagement": "14296f6890d4ba45450372ee5692de45f318ef7ff75c4b24123fae52867696b9",
     "ajmanAreas": "fa25b9edd0cb846b20e40e6a6cbb2607e390ccc3e7d70fb8d8298e9327ed091b",
     "ajmanLandSales": "8f9f14d4763f756969610d3e4b0271d3589e5180ccdd248888844de08342e96d",
+    "ajmanLandDispositions": "cbc6a97374a316eceede8e68dad51f35ce7db8db1a00bdf60de0aa468904f7fa",
     "ajmanRents": "0af8b5b7b4d29f9e3a4205292fd0a5f57bd4375a01af6f30a5279909c72f48b2",
     "ajmanCrosswalk": "4b7e43a8d340a7652447f7bd13b2f97f3421f4710c79594239cab799cbfde3ce",
     "dubaiStatus": "15ba7f74ce5e441ca5eceece8ffaa39c73a2e1085151b530bc14ee27a475400c",

@@ -13,13 +13,14 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(report.acceptedSnapshot.mappedProjectRecords,1518);assert.equal(report.acceptedSnapshot.approximateCommunityCentrePoints,360);
  assert.equal(report.acceptedSnapshot.searchableWithoutCoordinates,127);assert.equal(report.allUaeProjectDenominator,null);assert.equal(report.projectCompletenessPercent,null);
  assert.equal(report.emirates.reduce((sum,item)=>sum+item.acceptedV48.projectRecords,0),1645);
- assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),13);
+ assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),14);
  assert.deepEqual(report.emirates.filter(item=>item.publishedSources.length===0).map(item=>item.name),['Fujairah','Ras Al Khaimah','Sharjah','Umm Al Quwain']);
- const sourcePaths={heatmap:'data/recovery/accepted-uae-heatmap-20261102.json',ajmanRegister:'data/uae-evidence/ajman/projects-validation.json',ajmanRents:'data/uae-evidence/ajman/certified-rent-validation.json',dubaiStatus:'data/uae-evidence/dubai/dld-project-status-validation.json'};
+ const sourcePaths={heatmap:'data/recovery/accepted-uae-heatmap-20261102.json',ajmanRegister:'data/uae-evidence/ajman/projects-validation.json',ajmanLandDispositions:'data/uae-evidence/ajman/lands-transactions-validation.json',ajmanRents:'data/uae-evidence/ajman/certified-rent-validation.json',dubaiStatus:'data/uae-evidence/dubai/dld-project-status-validation.json'};
  for(const [key,path] of Object.entries(sourcePaths)){const bytes=await fs.readFile(new URL(path,root));assert.equal(createHash('sha256').update(bytes).digest('hex'),report.basisSha256[key]);}
  const ajman=report.emirates.find(item=>item.name==='Ajman'),dubai=report.emirates.find(item=>item.name==='Dubai');
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).latestSourceProjectIds,298);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,3);
+ assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/land-dispositions')).sourceRows,1646);
  assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,67);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3804);
  assert.ok(report.emirates.every(item=>item.authoritativeAllProjectDenominator===null&&item.gaps.length>0));
 });
