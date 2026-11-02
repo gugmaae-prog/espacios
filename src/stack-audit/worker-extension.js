@@ -1,6 +1,8 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261102-map-stack-v9';
+var MAP_STACK_RELEASE='20261102-map-stack-v10';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
+var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
+var MAP_ACCEPTED_HEATMAP_SHA256='3d455cf37ebd1e022e4298ad75cf7e884cff3d69043c7c2d6c58deab5b0eb70b';
 var MAP_STACK_PREVIOUS_FETCH=worker_default.fetch;
 psrAllProjectsService=mapCompleteProjects;
 function mapStackJSON(request,payload,status=200){return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff','x-espacios-map-release':MAP_STACK_RELEASE,'referrer-policy':'strict-origin-when-cross-origin','x-frame-options':'SAMEORIGIN','strict-transport-security':'max-age=86400',...(status===405?{allow:'GET, HEAD'}:{})}});}
@@ -55,6 +57,20 @@ worker_default.fetch=async function(request,env,ctx){
  const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;
  const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
+ // This public UI response is a verified derivation of the accepted V48 map
+ // snapshot. Streaming the private asset avoids rebuilding 1,518 features on
+ // every cold request, which can exceed the Worker resource ceiling.
+ if(path==='/map/api/uae-heatmap'&&['GET','HEAD'].includes(request.method)&&env.MAP_ARCHIVE&&env.MAP_HEATMAP_REBUILD!=='true'){
+  const entry=MAP_ARCHIVE_MANIFEST.entries[MAP_ACCEPTED_HEATMAP_KEY];
+  if(entry?.sha256===MAP_ACCEPTED_HEATMAP_SHA256&&entry.bytes===799421){
+   const headers=mapStackHeaders(new Response(null,{headers:{'content-type':'application/json; charset=utf-8','cache-control':'public,max-age=60,s-maxage=300','etag':'"'+entry.sha256+'"','x-ae-data-source':'verified-accepted-v48-derived-heatmap','x-espacios-derived-asset-sha256':entry.sha256}}));
+   if(request.headers.get('if-none-match')==='"'+entry.sha256+'"')return new Response(null,{status:304,headers});
+   if(request.method==='HEAD')return new Response(null,{status:200,headers});
+   try{const asset=await env.MAP_ARCHIVE.fetch(new Request('https://map-archive.internal'+entry.path,{headers:{accept:'application/octet-stream'}}));
+    if(asset.ok){if(env.MAP_IDRIVE_TRACE)env.MAP_IDRIVE_TRACE.reads.immutable_static_recovery++;return new Response(asset.body,{status:200,headers});}
+   }catch{}
+  }
+ }
  if(store&&path==='/map/api/record-history'&&url.searchParams.get('includeItemCoverage')==='1'&&!url.searchParams.get('recordId')&&['GET','HEAD'].includes(request.method))return mapStackFullInventory(request,bindings);
  const retainedHistory=await mapLegacyHistoryRoute(request,bindings,ctx);if(retainedHistory)return mapStackPreparedResponse(request,retainedHistory);
  const recoveredContext=await mapRecoveredContextRoute(request,bindings,ctx);if(recoveredContext)return mapStackPreparedResponse(request,recoveredContext);
