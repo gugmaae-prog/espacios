@@ -65,14 +65,25 @@ async function dubaiRows(report,packed){
  return DUBAI_STATUS_ROWS;
 }
 
-export async function mapDubaiProjectStatus(request,report,packed){
+export async function mapDubaiProjectStatus(request,report,packed,crosswalk=null){
  const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'');
  if(path!==DUBAI_STATUS_BASE&&!(path.startsWith(DUBAI_STATUS_BASE+'/')&&/^\d+$/.test(path.slice(DUBAI_STATUS_BASE.length+1))))return null;
  if(!['GET','HEAD'].includes(request.method))return dubaiReply(request,{error:'Read-only endpoint'},405);
  const source={id:report?.sourceId,originator:report?.originator,republisher:report?.republisher,title:report?.title,sourcePageUrl:report?.sourcePageUrl,sourceCsvUrl:report?.sourceCsvUrl,originatorPageUrl:report?.originatorPageUrl,license:report?.license,attribution:report?.attribution,sourcePublicationDate:report?.sourcePublicationDate,retrievedAt:report?.retrievedAt,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rowCount:report?.rowCount,distinctProjectNumbers:report?.distinctProjectNumbers,actualCsvFieldCount:report?.actualCsvFieldCount,sourcePageClaimedFieldCount:report?.sourcePageClaimedFieldCount,storage:'checksum_verified_immutable_worker_snapshot'};
- const scope={emirate:'Dubai',evidenceClass:'licensed_secondary_copy_of_authority_project_register',grain:'one_republisher_csv_row_per_dld_project_number',canonicalProjectMatches:0,projectCoordinatesPresent:false,geometryCaptured:false,limits:report?.limits};
  try{
-  const rows=await dubaiRows(report,packed);
+  const sourceRows=await dubaiRows(report,packed);
+  const links=new Map();
+  if(crosswalk){
+   if(crosswalk.sourceRawSha256!==report.rawSha256||crosswalk.sourceDatasetId!==report.sourceId||crosswalk.sourceSnapshotDate!==report.sourcePublicationDate||!Array.isArray(crosswalk.matches))throw Error('Dubai crosswalk manifest mismatch');
+   const known=new Map(sourceRows.map(row=>[row.sourceProjectNumber,row])),canonicalIds=new Set();
+   for(const match of crosswalk.matches){
+    const row=known.get(match.sourceProjectNumber);
+    if(!row||links.has(match.sourceProjectNumber)||canonicalIds.has(match.canonicalProjectId)||row.name!==match.sourceProjectName||row.developerName!==match.sourceDeveloper||row.community!==match.sourceDistrict||typeof match.canonicalProjectId!=='string')throw Error('Dubai crosswalk identity mismatch');
+    links.set(match.sourceProjectNumber,match.canonicalProjectId);canonicalIds.add(match.canonicalProjectId);
+   }
+  }
+  const scope={emirate:'Dubai',evidenceClass:'licensed_secondary_copy_of_authority_project_register',grain:'one_republisher_csv_row_per_dld_project_number',canonicalProjectMatches:links.size,crosswalkVersion:crosswalk?.version||null,projectCoordinatesPresent:false,geometryCaptured:false,limits:report?.limits};
+  const rows=links.size?sourceRows.map(row=>links.has(row.sourceProjectNumber)?{...row,canonicalProjectId:links.get(row.sourceProjectNumber),matchStatus:'reviewed_one_to_one'}:row):sourceRows;
   if(path!==DUBAI_STATUS_BASE){const id=path.slice(DUBAI_STATUS_BASE.length+1),project=rows.find(row=>row.sourceProjectNumber===id);return project?dubaiReply(request,{source,scope,project}):dubaiReply(request,{error:'Source project not found'},404);}
   const params=url.searchParams,limit=params.has('limit')?dubaiInt(params.get('limit'),1,100):50,offset=params.has('offset')?dubaiInt(params.get('offset'),0,report.rowCount):0,q=(params.get('q')||'').trim(),community=(params.get('community')||'').trim();
   if(limit===null||offset===null||q.length>120||community.length>120)return dubaiReply(request,{error:'Invalid q, community, limit, or offset'},400);
