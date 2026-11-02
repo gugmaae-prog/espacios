@@ -5453,7 +5453,7 @@ worker_default.fetch=async function(request,env,ctx){
   return PSR_TENANT_GUARD_PREVIOUS_FETCH.call(this,request,env,ctx);
 };
 
-var MAP_STACK_SOURCE_COMMIT="873758035c742d273c9be860f690fd984c09ee5a";
+var MAP_STACK_SOURCE_COMMIT="48632c3a868f3f77a2e72f9c25199eb72807737a";
 
 var UAE_AJMAN_REPORT={"sourceId":"ajman-dlrr-20260821-unit-sales","datasetUrl":"https://data.ajman.ae/explore/dataset/real-estate-units-sales/","api":"https://data.ajman.ae/api/explore/v2.1/catalog/datasets/real-estate-units-sales","publisher":"Department of Land and Real Estate Regulation","licence":"CC BY 4.0","licenceUrl":"https://creativecommons.org/licenses/by/4.0/","sourceModifiedAt":"2026-08-21T04:37:58.396000+00:00","retrievedAt":"2026-11-02T14:34:19Z","metadataRetrievedAt":"2026-11-02T14:36:40Z","nativeFrequency":"quarterly","grain":"source_project_label × sector × district × unit_type × rooms × quarter; aggregated sales, not individual transactions","emirate":"Ajman","evidenceClass":"official_registered_sale_aggregate","storageKey":"uae/evidence/ajman/2026-08-21/real-estate-units-sales.json.gz","rawSha256":"801cafef1f269d919ace2282f4f5cec8e7a021ce0241eba040f904a9fd672afd","rawBytes":3613910,"compressedSha256":"45f6984b4804b95ba5aebe997c07330cc5547a20bbff25f1cdd9e5b9a6c86f8e","compressedBytes":138830,"metadataSha256":"7a04d551abb7c825de519f8a8b0ac0abdaf41d90d0cff9b83f4eed1f367f82e1","rows":6075,"distinctSourceProjectLabels":239,"reportedUnitSalesCountSum":15991,"reportedValueAedSum":6218360220.16,"firstPeriod":"2019-01-01","lastPeriod":"2026-06-30","canonicalProjectMatches":0,"matchPolicy":"No name-only joins; source project labels have not been matched to accepted V48 identities or coordinates."};
 
@@ -5989,6 +5989,66 @@ async function mapAjmanAreaReference(request,report,packed){
 }
 
 
+const SCAD_STOCK_SOURCE = Object.freeze({
+  id: 'scad-abu-dhabi-census-2024-real-estate-stock',
+  publisher: 'Statistics Centre – Abu Dhabi',
+  product: 'Abu Dhabi Census 2024, Real Estate: Number of Units and Buildings by Region, Emirate of Abu Dhabi',
+  url: 'https://census.scad.gov.ae/home/realestate?lang=en',
+  termsUrl: 'https://www.scad.gov.ae/web/guest/terms-of-use',
+  policyUrl: 'https://scad.gov.ae/documents/d/guest/scad-open-data-policy',
+  sourceResponseSha256: '2a1f58d1818a0c0b2a227e3e274f7c38daa3864754e18e8888119d418f06569b',
+  retrievedAt: '2026-11-02T18:25:47.028399+00:00',
+  referencePeriods: [2023, 2024],
+  table: 'Number of Units and Buildings by Region, Emirate of Abu Dhabi',
+  attribution: 'Source: Statistics Centre – Abu Dhabi; Abu Dhabi Census 2024, Real Estate; reference periods 2023–2024; Number of Units and Buildings by Region table. The web table displays no catalogue or archive number.'
+});
+
+// The source table is rounded to multiples of five. These are stock totals,
+// including non-residential uses, not project counts or registered sales.
+const SCAD_STOCK_ROWS = Object.freeze([
+  {region:'emirate-of-abu-dhabi',regionName:'Emirate of Abu Dhabi',period:2023,units:754555,buildings:281780},
+  {region:'emirate-of-abu-dhabi',regionName:'Emirate of Abu Dhabi',period:2024,units:783970,buildings:299360},
+  {region:'abu-dhabi-region',regionName:'Abu Dhabi Region',period:2023,units:513455,buildings:148655},
+  {region:'abu-dhabi-region',regionName:'Abu Dhabi Region',period:2024,units:535925,buildings:161930},
+  {region:'al-ain-region',regionName:'Al Ain Region',period:2023,units:189680,buildings:110740},
+  {region:'al-ain-region',regionName:'Al Ain Region',period:2024,units:196175,buildings:114715},
+  {region:'al-dhafra-region',regionName:'Al Dhafra Region',period:2023,units:51425,buildings:22385},
+  {region:'al-dhafra-region',regionName:'Al Dhafra Region',period:2024,units:51870,buildings:22715}
+]);
+
+const PATH = '/map/api/uae-evidence/abu-dhabi/stock';
+const reply = (request, body, status=200) => new Response(request.method==='HEAD'?null:JSON.stringify(body), {
+  status,
+  headers:{
+    'content-type':'application/json; charset=utf-8',
+    'cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store',
+    'x-content-type-options':'nosniff',
+    'x-espacios-evidence-source':SCAD_STOCK_SOURCE.id,
+    ...(status===405?{allow:'GET, HEAD'}:{})
+  }
+});
+
+function mapScadStock(request) {
+  const url = new URL(request.url);
+  if (url.pathname.replace(/\/+$/,'') !== PATH) return null;
+  if (!['GET','HEAD'].includes(request.method)) return reply(request,{error:'Read-only endpoint'},405);
+  const period = url.searchParams.get('period');
+  const region = url.searchParams.get('region');
+  if ((period !== null && !['2023','2024'].includes(period)) ||
+      (region !== null && !SCAD_STOCK_ROWS.some(row=>row.region===region))) {
+    return reply(request,{error:'Invalid period or region'},400);
+  }
+  const rows = SCAD_STOCK_ROWS.filter(row=>(period===null||row.period===Number(period))&&(region===null||row.region===region));
+  return reply(request,{
+    source:SCAD_STOCK_SOURCE,
+    scope:{emirate:'Abu Dhabi',evidenceClass:'official_rounded_census_stock',grain:'region_year',isAllUae:false,projectCoordinatesPresent:false,limitations:'Rounded to multiples of 5. Units and buildings include non-residential uses. Regional sums can differ from the emirate total. Revised 2023 figures; no project, sale, price, or current-period claim.'},
+    filters:{period:period===null?null:Number(period),region},
+    totalRows:rows.length,
+    rows
+  });
+}
+
+
 /** Summarize the coordinate basis already carried by each accepted map feature. */
 function mapCoordinateQuality(payload) {
  const features=payload.projectFeatures?.features;
@@ -6195,6 +6255,7 @@ worker_default.fetch=async function(request,env,ctx){
  const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;
  const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
+ const scadStock=mapScadStock(request);if(scadStock)return mapStackPreparedResponse(request,scadStock);
  const ajmanRegister=await mapAjmanRegister(request,env,UAE_AJMAN_REGISTER_REPORT);if(ajmanRegister)return mapStackPreparedResponse(request,ajmanRegister);
  const ajmanRegistration=await mapAjmanRegistration(request,env,UAE_AJMAN_REGISTRATION_REPORT);if(ajmanRegistration)return mapStackPreparedResponse(request,ajmanRegistration);
  const ajmanDispositions=await mapAjmanDispositions(request,UAE_AJMAN_DISPOSITION_REPORT,store,MAP_ARCHIVE_MANIFEST);if(ajmanDispositions)return mapStackPreparedResponse(request,ajmanDispositions);
