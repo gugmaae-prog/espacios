@@ -1,0 +1,11 @@
+{
+  "recordsUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/ajman-area/records?limit=100&order_by=area_in_ajman",
+  "retrievedAt": "2026-11-02T17:35:48.418Z",
+  "totalCount": 20,
+  "rawSha256": "2d2f0af69c775ca7cfdaf7b8214b207c3d282506f5b96d80a9a80c4e7c1f3907",
+  "rawBytes": 2471,
+  "compressedSha256": "98e653013e12cd9b22afe0c86cf4695ea5fbba873cc3e3f32ad96bc84a95c75f",
+  "compressedBytes": 583,
+  "independentReadbackSha256": "2d2f0af69c775ca7cfdaf7b8214b207c3d282506f5b96d80a9a80c4e7c1f3907",
+  "independentReadbackCount": 20
+}

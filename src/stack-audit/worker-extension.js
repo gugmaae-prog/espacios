@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261102-map-stack-v19';
+var MAP_STACK_RELEASE='20261102-map-stack-v20';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -61,6 +61,7 @@ worker_default.fetch=async function(request,env,ctx){
  const ajmanRegistration=await mapAjmanRegistration(request,env,UAE_AJMAN_REGISTRATION_REPORT);if(ajmanRegistration)return mapStackPreparedResponse(request,ajmanRegistration);
  const ajmanDispositions=await mapAjmanDispositions(request,UAE_AJMAN_DISPOSITION_REPORT,store,MAP_ARCHIVE_MANIFEST);if(ajmanDispositions)return mapStackPreparedResponse(request,ajmanDispositions);
  const ajmanManagement=await mapAjmanManagement(request,UAE_AJMAN_MANAGEMENT_REPORT,UAE_AJMAN_MANAGEMENT_PACKED);if(ajmanManagement)return mapStackPreparedResponse(request,ajmanManagement);
+ const ajmanAreaReference=await mapAjmanAreaReference(request,UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED);if(ajmanAreaReference)return mapStackPreparedResponse(request,ajmanAreaReference);
  const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT);if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
  // This public UI response is a verified derivation of the accepted V48 map
  // snapshot. Streaming the private asset avoids rebuilding 1,518 features on

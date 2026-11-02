@@ -37,3 +37,9 @@ The [Management Companies for Real Estate Development Projects dataset](https://
 `management-companies-20260609.json.gz` stores the reviewed 9 June 2026 source vintage. `management-capture.json` records the paged API capture and matching independent readback checksum. `management-source-metadata.json` retains licence and schema metadata without republishing the portal's descriptive text. `management-validation.json` records exact hashes and quality checks; `scripts/build-ajman-management.mjs --check` reproduces them. One official register English-name field contains Arabic text for source ID 415; the exact numeric ID is retained without inventing an English-name match.
 
 `/map/api/uae-evidence/ajman/management` serves the checksum-verified snapshot with `scope=latest` by default and supports reported year, source project ID, and text filters. The 2026 rows are the latest reported appointments, not proof of today's management status. The API publishes no V48 canonical ID or map coordinate, and raw snapshot bytes have no public route.
+
+## Dated area reference points
+
+The Ajman Municipality & Planning Department's [Ajman area dataset](https://data.ajman.ae/explore/dataset/ajman-area/) publishes 20 named point references under CC BY 4.0. Its last reported source modification was 3 October 2023. The two independent ordered API reads of all 20 rows matched exactly; `area-reference-capture.json` and `area-reference-validation.json` record the source and compressed SHA-256 checksums. `scripts/build-ajman-area-reference.mjs --check` validates the names and coordinates.
+
+`/map/api/uae-evidence/ajman/areas` serves these as labelled **area reference points**. The dataset does not state that they are project sites, cadastral boundaries, or verified district centroids. No source project ID is joined to a point and the map's project-pin population is unchanged.

@@ -125,7 +125,7 @@ source=source.replace('\nexport {worker_default as default};\n','\n'+await read(
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace(\"d.version!=='20260927-area-evidence-v1'||d.rows?.length!==2652\",\"!['20260927-area-evidence-v1','20261102-area-evidence-recovery-v1'].includes(d.version)||!Array.isArray(d.rows)\");\n`;
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(`\nconst STACK_OLD_AREA_HTML=ueAvailableHtml;ueAvailableHtml=function(){const html=STACK_OLD_AREA_HTML();return (ueState.data?.recovery?'<p class="ue-note">Recovered native source-area availability. Only complete periods by 14 September 2026 with n≥20 qualify; sparse and partial periods remain retained. Additional early native cohorts remain available in <a href=\"/map/history\">History</a>. This is not complete lifetime coverage or a property valuation.</p>':'')+html;};\n`)+';\n';
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace("d.version!=='20260927-history-predictions-v1'", "d.version!=='20260927-history-predictions-v1'&&!(d.recoveryVersion==='20261102-retained-history-v1'&&d.sourceVersion==='20260927-history-predictions-v1')");\n`;
-const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','coordinate-quality.mjs'];
+const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','ajman-area-reference.mjs','coordinate-quality.mjs'];
 const archiveManifest=JSON.parse(await read('data/recovery/static-archive-manifest.json'));
 const nativeIndexManifest=JSON.parse(await read('data/recovery/v48-native-history-index.manifest.json'));delete nativeIndexManifest.localPath;
 const inventoryManifest=JSON.parse(await read('data/recovery/full-item-inventory.manifest.json'));delete inventoryManifest.sourceShards;
@@ -140,6 +140,11 @@ const managementCompressed=await fs.readFile(new URL('data/uae-evidence/ajman/ma
 const managementRaw=gunzipSync(managementCompressed);
 if(managementCompressed.length!==managementReport.compressedBytes||digest(managementCompressed)!==managementReport.compressedSha256||managementRaw.length!==managementReport.rawBytes||digest(managementRaw)!==managementReport.rawSha256)throw Error('Ajman management embedded source changed');
 stackSource+='\nvar UAE_AJMAN_MANAGEMENT_REPORT='+JSON.stringify(managementReport)+';\nvar UAE_AJMAN_MANAGEMENT_PACKED='+JSON.stringify(managementCompressed.toString('base64'))+';\n';
+const areaReferenceReport=JSON.parse(await read('data/uae-evidence/ajman/area-reference-validation.json'));
+const areaReferenceCompressed=await fs.readFile(new URL('data/uae-evidence/ajman/area-reference-20231003.json.gz',root));
+const areaReferenceRaw=gunzipSync(areaReferenceCompressed);
+if(areaReferenceCompressed.length!==areaReferenceReport.compressedBytes||digest(areaReferenceCompressed)!==areaReferenceReport.compressedSha256||areaReferenceRaw.length!==areaReferenceReport.rawBytes||digest(areaReferenceRaw)!==areaReferenceReport.rawSha256)throw Error('Ajman area-reference embedded source changed');
+stackSource+='\nvar UAE_AJMAN_AREA_REFERENCE_REPORT='+JSON.stringify(areaReferenceReport)+';\nvar UAE_AJMAN_AREA_REFERENCE_PACKED='+JSON.stringify(areaReferenceCompressed.toString('base64'))+';\n';
 const psrLegacyManifest=JSON.parse(await read('data/recovery/psr-public-legacy-20261102.manifest.json'));
 const psrLegacyCompressed=await fs.readFile(new URL('data/recovery/psr-public-legacy-20261102.json.gz',root));
 const psrLegacyRaw=gunzipSync(psrLegacyCompressed),psrLegacy=JSON.parse(psrLegacyRaw);
