@@ -51,8 +51,8 @@ worker_default.fetch=async function(request,env,ctx){
  if(path==='/map/api/ai'){const response=await mapBoundedAI(request,env,ctx);return new Response(response.body,{status:response.status,headers:mapStackHeaders(response)});}
  if(url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
  if(path==='/map/api/value-drivers')return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
- const primary=env.MAP_EVIDENCE&&env.MAP_IDRIVE_READY==='true'?mapEvidenceStore(env.MAP_EVIDENCE):null;
- const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST):primary;
+ const primary=env.MAP_EVIDENCE&&env.MAP_IDRIVE_READY==='true'?mapEvidenceStore(env.MAP_EVIDENCE,env.MAP_IDRIVE_TRACE):null;
+ const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;
  const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
  if(store&&path==='/map/api/record-history'&&url.searchParams.get('includeItemCoverage')==='1'&&!url.searchParams.get('recordId')&&['GET','HEAD'].includes(request.method))return mapStackFullInventory(request,bindings);

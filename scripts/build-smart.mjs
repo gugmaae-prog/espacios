@@ -135,6 +135,7 @@ stackSource+='\nvar MAP_FULL_INVENTORY_MANIFEST='+JSON.stringify(inventoryManife
 for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^export /gm,'')+'\n';
 stackSource+='\n'+(await read('src/map-recovery/legacy-history-compat.mjs')).replace(/^export /gm,'')+'\n';
 stackSource+='\n'+await read('src/stack-audit/worker-extension.js')+'\n';
+stackSource+='\n'+await read('src/stack-audit/idrive-cutover.js')+'\n';
 source=source.replace('\nexport {worker_default as default};\n',stackSource+'\nexport {worker_default as default};\n');
 await fs.writeFile(new URL('src/worker.js',root),source);
 const context=vm.createContext({console,Headers,Request,Response,URL,URLSearchParams,atob,btoa,TextEncoder,TextDecoder,DecompressionStream,CompressionStream,ReadableStream,Blob,crypto:globalThis.crypto,fetch});vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,''),context);
