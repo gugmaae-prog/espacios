@@ -56,7 +56,7 @@
   },
   "geometryCaptured": false,
   "v48IdentityCrosswalk": "23 manually reviewed one-to-one links in reviewed-v48-crosswalk.json; 3,848 source IDs remain unmatched",
-  "limits": "This is a dated CC BY 4.0 republished DLD register snapshot, not a live DLD API or an all-UAE census. Percentages are the last recorded technical inspection and may be stale; handover dates are declared, not actual. Eight independently reviewed V48 identity links do not supply geometry, sales, prices, or new project-pin coordinates, and do not revise V48 status or timelines.",
+  "limits": "This is a dated CC BY 4.0 republished DLD register snapshot, not a live DLD API or an all-UAE census. Percentages are the last recorded technical inspection and may be stale; handover dates are declared, not actual. Twenty-three independently reviewed V48 identity links do not supply geometry, sales, prices, or new project-pin coordinates, and do not revise V48 status or timelines.",
   "normalizedBytes": 1963576,
   "normalizedSha256": "7334b5f6db0ebdcc9731a5c9d5b2a84308f32b45ee245ed45a942b3bf16bac44",
   "normalizedCompressedBytes": 210976,
