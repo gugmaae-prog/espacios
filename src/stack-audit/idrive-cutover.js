@@ -32,7 +32,7 @@ mapStackRelease=function(env){
 const MAP_IDRIVE_PREVIOUS_SYSTEM=esmSystemPayload;
 esmSystemPayload=function(env){
   const payload=MAP_IDRIVE_PREVIOUS_SYSTEM(env),release=mapStackRelease(env),enabled=release.idrive.enabledForReads;
-  payload.currentRelease=release;payload.topology=payload.topology.map(row=>['MARKET_R2','MAP_ARCHIVE','MAP_EVIDENCE'].includes(row.to)?{...row,to:enabled?'MAP_EVIDENCE':env.MAP_ARCHIVE?'MAP_ARCHIVE':row.to,via:enabled?'Configured private IDrive E2 primary; immutable recovery fallback retained':'Immutable recovery binding; primary not enabled'}:row);
+  payload.currentRelease=release;payload.topology=payload.topology.map(row=>['MARKET_R2','MAP_ARCHIVE','MAP_EVIDENCE'].includes(row.to)?{...row,to:enabled?'MAP_EVIDENCE':env.MAP_ARCHIVE?'MAP_ARCHIVE':row.to,via:enabled?'Configured private IDrive E2 primary; immutable recovery fallback retained':env.MAP_ARCHIVE?'Immutable recovery binding; primary not enabled':env.MARKET_R2?'R2 binding; verify read health':'Storage unavailable; reviewed embedded snapshot active'}:row);
   payload.storage={...payload.storage,provider:release.storage,policy:release.storagePolicy,readbackAttestation:release.idrive.readbackAttestation,primaryReadProof:release.idrive.primaryReadProof};payload.publicSurfaces.idriveHealth=release.idrive.primaryReadProof;payload.publicSurfaces.immutableRecoveryHealth=release.idrive.immutableRecoveryProof;return payload;
 };
 function mapIdriveObservedOrigin(counts){return counts.idrive_e2&&counts.immutable_static_recovery?'mixed':counts.idrive_e2?'idrive_e2':counts.immutable_static_recovery?'immutable_static_recovery':'none_observed';}
@@ -68,6 +68,9 @@ async function mapImmutableRecoveryOnlyHealth(request,env,trace){
 const MAP_IDRIVE_PREVIOUS_FETCH=worker_default.fetch;
 worker_default.fetch=async function(request,env,ctx){
   const url=new URL(request.url);if(url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,env,ctx);
+  // The public value-driver snapshot is binding-free. Keep that contract even
+  // when callers deliberately supply an unreadable bindings proxy.
+  if(url.pathname.replace(/\/+$/,'')==='/map/api/value-drivers')return MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,env,ctx);
   const trace={reads:{idrive_e2:0,immutable_static_recovery:0},heads:{idrive_e2:0,immutable_static_recovery:0},primaryFailures:0,primaryMisses:0},attestation=mapIdriveReadbackAttestation(env),requested=env.MAP_IDRIVE_READY==='true',enabled=requested&&Boolean(env.MAP_EVIDENCE)&&attestation.valid;
   const bindings={...env,MAP_IDRIVE_REQUESTED_READY:requested?'true':'false',MAP_IDRIVE_READY:enabled?'true':'false',MAP_IDRIVE_TRACE:trace};
   const proofRequest=url.pathname.replace(/\/+$/,'')==='/map/api/health',storage=url.searchParams.get('storage');const response=proofRequest&&storage==='idrive'?await mapIdriveOnlyHealth(request,bindings,trace):proofRequest&&storage==='immutable_recovery'?await mapImmutableRecoveryOnlyHealth(request,bindings,trace):await MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,bindings,ctx);
