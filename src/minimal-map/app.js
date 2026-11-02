@@ -1,9 +1,9 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261102-map-stack-v3';
+  const RELEASE='20261102-map-stack-v4';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
-  const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
+  const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
   const selectionLight='#5f6d85',selectionDark='#aab7bd',legacySelection='#69d8ff';
   const hotspotColors=['#4f817c','#718991','#9ba8ac'];
   const selectionColor=()=>root.dataset.espaciosTheme==='dark'?selectionDark:selectionLight;
@@ -50,8 +50,23 @@
     const legend=Q('#analysis-legend .analysis-legend-row');
     if(legend)legend.querySelectorAll('span').forEach((span,index)=>{if(hotspotColors[index])span.style.setProperty('color',hotspotColors[index],'important')});
   }
+  function syncCartography(){
+    const map=window.__PSR_MAP__;
+    if(!map?.getStyle?.()?.layers)return;
+    const fade={
+      highway_path:[.3,.9],highway_minor:[.32,.9],highway_major_casing:[.38,1],
+      highway_major_inner:[.44,1],highway_major_subtle:[.4,1],
+      highway_motorway_casing:[.4,1],highway_motorway_inner:[.5,1],
+      highway_motorway_subtle:[.45,1],boundary_state:[.45,1],'boundary_country_z5-':[.55,1]
+    };
+    for(const [id,[wide,close]]of Object.entries(fade)){
+      if(!map.getLayer(id))continue;
+      const value=['interpolate',['linear'],['zoom'],5,wide,9,close];
+      if(JSON.stringify(map.getPaintProperty(id,'line-opacity'))!==JSON.stringify(value))map.setPaintProperty(id,'line-opacity',value);
+    }
+  }
   let selectionPaletteFrame=0;
-  function scheduleSelectionPalette(){if(selectionPaletteFrame)return;selectionPaletteFrame=requestAnimationFrame(()=>{selectionPaletteFrame=0;syncSelectionPalette()})}
+  function scheduleSelectionPalette(){if(selectionPaletteFrame)return;selectionPaletteFrame=requestAnimationFrame(()=>{selectionPaletteFrame=0;syncSelectionPalette();syncCartography()})}
   const SAT_SOURCE='minimal-satellite';
   const SAT_LAYER='minimal-satellite-layer';
 
@@ -113,15 +128,13 @@
   }
   function setMetric(metric){
     UI.metric=metric;
-    if(metric==='price'||metric==='roi'){
+    if(metric==='projects'){
+      window.EspaciosUnifiedMap?.setMetric('projects');
+      pointView();
+    }else if(metric==='price'||metric==='roi'){
       window.EspaciosUnifiedMap?.setMetric(metric);
     }else if(metric==='forecast'){
-      window.EspaciosUnifiedMap?.setMetric('price');
-      setTimeout(()=>{
-        const timeline=window.EspaciosUnifiedMap?.timeline?.();
-        const next=timeline?.periods?.find(id=>/Estimate/i.test(timeline.labels?.[id]||''));
-        if(next)window.EspaciosUnifiedMap?.choose(next);
-      },80);
+      window.EspaciosUnifiedMap?.enterForecast();
     }else if(metric==='volume'){
       const rail=Q('.rail-btn[data-panel="analyze"]');
       if(rail&&!rail.classList.contains('active'))rail.click();
@@ -134,6 +147,26 @@
       },80);
     }
     syncMetricButtons();
+    syncProjectStatus();
+  }
+  function syncProjectStatus(){
+    const status=Q('#minimal-project-status');if(!status)return;
+    status.hidden=UI.metric!=='projects';
+    if(status.hidden)return;
+    const counts=typeof aeUaeState==='undefined'?null:aeUaeState.manifest?.counts;
+    const mapped=Number(counts?.geocodedProjects),unmapped=Number(counts?.unmappedProjects);
+    status.textContent=Number.isFinite(mapped)&&mapped>0?mapped.toLocaleString()+' mapped across the UAE · '+unmapped.toLocaleString()+' without verified coordinates remain searchable'+(aeUaeState.degraded?' · reviewed snapshot':''):'Loading UAE project catalogue…';
+  }
+  function fitOpeningProjects(){
+    if(UI.openingFitDone||UI.userMoved||UI.metric!=='projects'||state.selected||!window.__ESPACIOS_COVERAGE_RENDER__?.initialized)return;
+    const features=typeof aeUaeState==='undefined'?[]:aeUaeState.manifest?.projectFeatures?.features||[];
+    const points=features.map(f=>f.geometry?.type==='Point'?f.geometry.coordinates:null).filter(p=>Array.isArray(p)&&Number.isFinite(p[0])&&Number.isFinite(p[1]));
+    if(!points.length)return;
+    const west=Math.min(...points.map(p=>p[0])),east=Math.max(...points.map(p=>p[0])),south=Math.min(...points.map(p=>p[1])),north=Math.max(...points.map(p=>p[1]));
+    if(!(west<east&&south<north))return;
+    UI.openingFitDone=true;
+    const narrow=matchMedia('(max-width:760px)').matches,reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    window.__PSR_MAP__?.fitBounds([[west,south],[east,north]],{padding:narrow?{top:135,right:20,bottom:195,left:20}:{top:180,right:65,bottom:180,left:65},maxZoom:7.2,duration:reduced?0:550});
   }
 
   function setKind(kind){
@@ -212,8 +245,9 @@
     if(UI.installed||!window.EspaciosUnifiedMap||!Q('#tl-dock')||!Q('#dr-track')||!Q('.search-wrap'))return false;
     UI.installed=true;root.dataset.minimalMap='1';
     const map=window.__PSR_MAP__;
-    if(map){map.on('styledata',scheduleSelectionPalette);scheduleSelectionPalette();}
+    if(map){map.on('styledata',scheduleSelectionPalette);map.on('movestart',event=>{if(event.originalEvent)UI.userMoved=true});map.on('idle',fitOpeningProjects);scheduleSelectionPalette();}
     new MutationObserver(scheduleSelectionPalette).observe(root,{attributes:true,attributeFilter:['data-espacios-theme']});
+    new MutationObserver(()=>{fitOpeningProjects();syncProjectStatus()}).observe(root,{attributes:true,attributeFilter:['data-cx-catalogue','data-ae-map-loading']});
     const analysisLegend=Q('#analysis-legend');
     if(analysisLegend)new MutationObserver(scheduleSelectionPalette).observe(analysisLegend,{childList:true,subtree:true});
 
@@ -251,15 +285,18 @@
 
     const metric=document.createElement('div');metric.id='minimal-metrics';metric.setAttribute('role','group');metric.setAttribute('aria-label','Data point');
     const items=[
+      ['projects','Projects','neutral'],
       ['price','Price / sqft','accent'],
       ['roi','ROI','neutral'],
       ['volume','Transaction Volume','blue'],
       ['forecast','Forecast','green']
     ];
     for(const [value,label,tone] of items){
-      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='price'));b.onclick=()=>setMetric(value);metric.append(b);
+      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='projects'));b.onclick=()=>setMetric(value);metric.append(b);
     }
     Q('#tl-dock').prepend(metric);
+    const projectStatus=document.createElement('div');projectStatus.id='minimal-project-status';projectStatus.setAttribute('role','status');Q('#app').append(projectStatus);
+    const densityCount=Q('#ae-density-count');if(densityCount)new MutationObserver(syncProjectStatus).observe(densityCount,{childList:true,characterData:true,subtree:true});
 
     const property=Q('#um-property'),settings=Q('#su-settings');
     if(property&&settings&&!Q('#minimal-property-settings')){
@@ -280,7 +317,8 @@
 
     installMobileDisclosures();
     installPanelGeometry();
-    setMode('map');setMetric('price');
+    const ai=Q('#ai-panel');if(ai){ai.classList.add('hidden');const rail=Q('.rail-btn[data-panel="ai"]');rail?.classList.remove('active');rail?.setAttribute('aria-expanded','false');}
+    setMode('map');setMetric('projects');fitOpeningProjects();
     return true;
   }
 

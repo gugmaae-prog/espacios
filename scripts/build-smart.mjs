@@ -30,6 +30,9 @@ source=source.replace(oldHeatmapNote,"const note=tlQ('#analysis-note'),counts=ae
 // Dubai history requires its R2 catalogue. The independently available UAE
 // project timeline must still install while that unrelated source is offline.
 source=source.replace(oldHeatmapUiGate,"if(aeUaeState.installed||!tlState?.ready||!drState?.installed||!tlQ('#tl-dock'))return false;");
+const oldStyleLayerInstall="map.on('style.load',()=>setTimeout(()=>{aeUaeInstallLayers();aeUaeSetView(aeUaeState.view,false);},180));";
+if(source.split(oldStyleLayerInstall).length!==2)throw Error('Expected one UAE style layer readiness handler');
+source=source.replace(oldStyleLayerInstall,"map.on('style.load',()=>{aeUaeInstallLayers();aeUaeSetView(aeUaeState.view,false);});");
 source=source.replace('Timeline is taking longer to load. Reload to retry.','Map timeline is still initializing. The catalogue remains available.');
 source=source.replace(oldHeatmapTimer,`const aeUaeStartedAt=Date.now();
 const aeUaeTimer=setInterval(()=>{

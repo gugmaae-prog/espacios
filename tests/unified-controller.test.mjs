@@ -15,7 +15,7 @@ const registrations = ['const oldTooltip=sgTooltip;', 'const oldExport=tlExport;
   assert.equal(matches.length, 1, `One production ${prefix} registration exists`);
   return matches[0];
 }).join('\n');
-const controller = controllerSource.replace(' const timer=setInterval', `${registrations}\n globalThis.__UNIFIED_TEST__={U,refresh,choose,render,prepare,readout,mapValue,cohort,current,future,setMetric,setType,hide};\n const timer=setInterval`);
+const controller = controllerSource.replace(' const timer=setInterval', `${registrations}\n globalThis.__UNIFIED_TEST__={U,refresh,choose,render,prepare,readout,mapValue,cohort,current,future,setMetric,enterForecast,setType,hide};\n const timer=setInterval`);
 const smart = smartSource.replace(' const timer=setInterval', ' globalThis.__SMART_TEST__={S,estimate,calculation,render};\n const timer=setInterval');
 assert.notEqual(controller, controllerSource, 'Controller closure instrumentation point exists');
 assert.notEqual(smart, smartSource, 'Smart closure instrumentation point exists');
@@ -88,6 +88,7 @@ function harness(records = [row()]) {
   Object.assign(api.U, {metric: 'price', data: snapshot});
   return {api, smart: sandbox.__SMART_TEST__, sandbox, calls, timers, node, layers, snapshot};
 }
+async function enterForecast(h){h.api.enterForecast();await h.api.refresh();}
 
 test('native options exclude synthetic future gap months but preserve an explicit null source point', async () => {
   const h = harness(); await h.api.refresh();
@@ -97,7 +98,11 @@ test('native options exclude synthetic future gap months but preserve an explici
     ['2026-07', 'registered_sale'], ['2026-08', 'registered_sale'], ['2026-11', 'released_projection'],
   ]);
   assert.ok(!h.api.U.options.some(option => ['2026-09', '2026-10'].includes(option.period)));
+  assert.equal(h.api.U.options.filter(option => option.kind === 'scenario').length, 0);
+  assert.equal(h.api.current().period, '2026-08', 'Price opens on the latest compatible observed period');
+  await enterForecast(h);
   assert.equal(h.api.U.options.filter(option => option.kind === 'scenario').length, 10);
+  assert.equal(h.api.current().kind, 'scenario', 'Forecast explicitly enters conditional estimates');
   assert.equal(h.sandbox.tlState.series[0].points[0].value, null);
 });
 
@@ -105,7 +110,7 @@ test('estimate endpoint failure preserves loaded historical and released-project
   const h = harness();
   const retained = plain({periods: h.sandbox.tlState.periods, series: h.sandbox.tlState.series});
   h.sandbox.window.EspaciosEstimateUI = {...h.sandbox.window.EspaciosEstimateUI, load: async () => {throw new Error('Scenario snapshot temporarily unavailable');}};
-  await h.api.refresh();
+  await enterForecast(h);
   assert.equal(h.api.U.loading, false); assert.equal(h.api.U.error, '');
   assert.match(h.api.U.estimatesError, /Future estimates are temporarily unavailable/);
   assert.deepEqual(plain(h.api.U.options.map(option => [option.period, option.evidenceClass])), [
@@ -121,7 +126,7 @@ test('estimate endpoint failure preserves loaded historical and released-project
 
 test('failed estimate refresh exits future shading honestly and recovery restores conditional options', async () => {
   const h = harness(), bridge = h.sandbox.window.EspaciosEstimateUI;
-  await h.api.refresh();
+  await enterForecast(h);
   h.api.choose(h.api.U.options.find(option => option.kind === 'scenario').id); await h.api.render();
   assert.equal(h.layers.get('um-fill').visibility, 'visible');
   h.sandbox.window.EspaciosEstimateUI = {...bridge, load: async () => {throw new Error('Transient estimate failure');}};
@@ -147,7 +152,7 @@ test('native controller render flushes the real history owner, not only the cont
 });
 
 test('future then immediate historical selection cancels pending work and clears the loading state', async () => {
-  const h = harness(); await h.api.refresh();
+  const h = harness(); await enterForecast(h);
   const future = h.api.U.options.find(option => option.kind === 'scenario');
   const native = h.api.U.options.find(option => option.period === '2026-08');
   h.api.choose(future.id);
@@ -169,7 +174,7 @@ test('historical readout never shows an old frame value under a newly selected p
 
 test('metric and property changes invalidate a pending future calculation', async () => {
   for (const change of [api => api.setMetric('projects'), api => api.setType('villa')]) {
-    const h = harness(); await h.api.refresh();
+    const h = harness(); await enterForecast(h);
     h.api.choose(h.api.U.options.find(option => option.kind === 'scenario').id);
     assert.equal(h.api.U.pending, true);
     change(h.api);
@@ -191,7 +196,7 @@ test('one selected target period cannot label a different property anchor annive
 });
 
 test('future export uses selected conditional target rather than retained historical tlState', async () => {
-  const h = harness(); await h.api.refresh();
+  const h = harness(); await enterForecast(h);
   const future = h.api.U.options.find(option => option.period === '2036Q2');
   h.api.choose(future.id); h.sandbox.tlExport();
   assert.equal(h.calls.legacyExport, 0); assert.equal(h.calls.downloads.length, 1);
@@ -205,7 +210,8 @@ test('future export uses selected conditional target rather than retained histor
 });
 
 test('legacy historical tooltips are suppressed in future views and restored in history', async () => {
-  const h = harness(); await h.api.refresh();
+  const h = harness(); await enterForecast(h);
+  h.api.choose(h.api.U.options.find(option => option.kind === 'native').id);
   h.sandbox.sgTooltip({point: {x: 1, y: 1}}); assert.equal(h.calls.tooltip, 1);
   h.api.choose(h.api.U.options.find(option => option.kind === 'scenario').id);
   h.node('#tl-tooltip').hidden = false; h.node('#sg-tooltip').hidden = false;
@@ -216,7 +222,7 @@ test('legacy historical tooltips are suppressed in future views and restored in 
 });
 
 test('future rendering hides historical fallback pins and restores their original visibility', async () => {
-  const h = harness(); await h.api.refresh();
+  const h = harness(); await enterForecast(h);
   h.layers.set('ue-benchmark-point', {visibility: 'visible'});
   h.layers.set('ue-benchmark-label', {visibility: 'none'});
   h.api.choose(h.api.U.options.find(option => option.kind === 'scenario').id);

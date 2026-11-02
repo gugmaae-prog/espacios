@@ -315,6 +315,13 @@ html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="green"] 
 html[data-minimal-map="1"] body #app #minimal-metrics button[aria-pressed="true"]{
   border-color:color-mix(in srgb,var(--minimal-accent) 45%,var(--su-line));background:color-mix(in srgb,var(--su-panel) 88%,transparent);
 }
+html[data-minimal-map="1"] body #app :is(#minimal-project-status,#um-status){
+  position:fixed;left:28px;bottom:184px;z-index:114;max-width:min(460px,calc(100vw - 56px));
+  padding:8px 12px;border:1px solid var(--su-line);border-radius:12px;
+  background:color-mix(in srgb,var(--su-panel) 94%,transparent);color:var(--su-ink);
+  box-shadow:0 2px 12px #172b3a12;font:500 11px/1.4 Inter,system-ui,sans-serif;
+}
+html[data-minimal-map="1"] body #app :is(#minimal-project-status,#um-status)[hidden]{display:none!important;}
 html[data-minimal-map="1"] body #app #tl-dock .dr-player{display:block!important;width:100%!important;margin:0!important;padding:0!important;}
 html[data-minimal-map="1"] body #app #tl-dock #dr-track{
   position:relative!important;display:block!important;width:100%!important;height:58px!important;min-height:58px!important;
@@ -576,8 +583,9 @@ html[data-minimal-map="1"] body #app :is(#minimal-map-modes,.ae-mobile-map-modes
   }
   html[data-minimal-map="1"][data-unified-map][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #dr-dates{top:76px!important;font-size:9px!important;}
   html[data-minimal-map="1"][data-unified-map][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #minimal-metrics{
-    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;margin:0 0 8px!important;overflow:visible!important;
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;margin:0 0 8px!important;overflow:visible!important;
   }
+  html[data-minimal-map="1"] body #app :is(#minimal-project-status,#um-status){left:10px;bottom:calc(var(--mm-nav-height,64px) + max(8px,env(safe-area-inset-bottom)) + 150px);max-width:calc(100vw - 20px);font-size:10px;}
   html[data-minimal-map="1"][data-unified-map] body #app #minimal-metrics button{min-height:44px!important;height:auto!important;white-space:normal!important;font-size:11px!important;}
   html[data-minimal-map="1"][data-unified-map][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized :is(#minimal-metrics,#vd-evidence,#hi-event-overlay){display:none!important;}
   html[data-minimal-map="1"][data-unified-map] body #app #mm-legend{bottom:calc(var(--mm-bottom,190px) + 2px)!important;}

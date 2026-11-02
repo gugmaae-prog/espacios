@@ -2,7 +2,7 @@
 (() => {
  window.__ESPACIOS_UNIFIED_RELEASE__='20260930-unified-map-v2';
  const Q=s=>document.querySelector(s),root=document.documentElement;
- const U={installed:false,metric:'projects',options:[],selected:'',horizon:10,path:'reference',data:null,loading:false,key:'',request:0,renderToken:0,refreshTimer:0,busy:false,contextKey:'',preferFuture:false,result:null,hidden:new Map()};
+ const U={installed:false,metric:'projects',options:[],selected:'',horizon:10,path:'reference',data:null,loading:false,key:'',request:0,renderToken:0,refreshTimer:0,busy:false,contextKey:'',preferFuture:false,forecastEnabled:false,result:null,hidden:new Map()};
  const finite=n=>typeof n==='number'&&Number.isFinite(n),num=(n,d=0)=>finite(n)?n.toLocaleString('en',{maximumFractionDigits:d}):'—';
  const text=(el,value)=>{if(el&&el.textContent!==value)el.textContent=value;};
  const types=()=>msState.segment==='both'?['apartment','villa']:[msState.segment];
@@ -16,20 +16,25 @@
   if(U.metric==='projects'){U.options=[];U.loading=false;hide();sync();return;}
   const token=++U.request;U.loading=!!tlState.loading;U.contextKey=JSON.stringify(context());
   try{
-   try{U.data=await window.EspaciosEstimateUI.load();U.estimatesError='';}
-   catch(error){if(token!==U.request||U.metric==='projects')return;U.data=null;U.estimatesError='Future estimates are temporarily unavailable; source history is unchanged.';}
+   if(U.forecastEnabled){
+    try{U.data=await window.EspaciosEstimateUI.load();U.estimatesError='';}
+    catch(error){if(token!==U.request||U.metric==='projects')return;U.data=null;U.estimatesError='Future estimates are temporarily unavailable; source history is unchanged.';}
+   }else{U.data=null;U.estimatesError='';}
    if(token!==U.request||U.metric==='projects')return;
    if(tlState.loading){U.loading=true;window.EspaciosMobileUI.sync();return;}
    const sourcePeriods=new Set(tlState.series.flatMap(s=>(s.points||[]).map(p=>p.period)));
    const nativePeriods=(tlState.periods||[]).filter(p=>/^\d{4}/.test(p)&&sourcePeriods.has(p)).map(period=>({period,evidenceClass:nativeClass(period)}));
    // A selected area with no compatible estimate keeps its native evidence; a
    // neighbour's anchor is never used to manufacture an estimate for that area.
-   const estimates=msState.area?selectedRows():rowPool();
+   const estimates=U.forecastEnabled?(msState.area?selectedRows():rowPool()):[];
    const previous=current();U.options=UMCore.timelineOptions({nativePeriods,estimates,path:U.path,horizonYears:U.horizon});
    U.key=JSON.stringify([U.contextKey,U.horizon,U.path,U.options.map(o=>o.id)]);
    const same=U.options.find(o=>o.id===U.selected);
-   U.selected=(U.preferFuture?U.options.find(o=>o.kind==='scenario'):same)||U.options.find(o=>o.kind==='native'&&o.period===tlState.period)||U.options.at(-1);
+   const observed=U.options.filter(o=>o.kind==='native'&&o.evidenceClass!=='released_projection');
+   U.selected=(U.preferFuture?U.options.find(o=>o.kind==='scenario'):same)||observed.at(-1)||U.options.find(o=>o.kind==='native')||null;
    U.selected=U.selected?.id||'';U.preferFuture=false;U.loading=false;U.error='';
+   if(U.forecastEnabled&&!U.options.some(o=>o.kind==='scenario')&&!U.estimatesError)U.error='No compatible conditional estimate is available for this selection.';
+   if(!U.selected&&!U.error)U.error='No compatible dated evidence is available for this selection.';
    if(previous?.kind==='scenario'&&!future())hide();
    if(current()?.kind==='native'&&current().period!==tlState.period)tlChooseDate(current().period);
    prepare();render();window.EspaciosMobileUI.sync();
@@ -44,14 +49,15 @@
   clearTimeout(U.renderTimer);if(option.kind==='native'){U.pending=false;U.result=null;hide();tlChooseDate(option.period);}else{tlStop();U.result=null;U.pending=true;U.renderTimer=setTimeout(render,120);}
   window.EspaciosMobileUI.sync();
  }
- function setMetric(metric){
-  if(!['projects','price','roi'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.preferFuture=metric==='roi';hide();tlStop();window.EspaciosEstimateUI.close(false);
+ function setMetric(metric,{forecast=false}={}){
+  if(!['projects','price','roi'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.forecastEnabled=forecast&&metric==='price';U.preferFuture=U.forecastEnabled;hide();tlStop();window.EspaciosEstimateUI.close(false);
   U.busy=true;msState.open=false;
   if(metric==='projects')psrSetAnalysis('uae-project-coverage');
   else{if(metric==='roi')msState.basis='asking';msOpen(metric,false);}
   U.busy=false;refreshSoon();sync();
  }
- function setType(type){if(!['apartment','villa','townhouse','both'].includes(type))return;U.pending=false;U.result=null;U.busy=true;msSetSegment(type);msOpen(U.metric,false);U.busy=false;U.selected='';U.preferFuture=U.metric==='roi';refreshSoon();}
+ function enterForecast(){setMetric('price',{forecast:true});}
+ function setType(type){if(!['apartment','villa','townhouse','both'].includes(type))return;U.pending=false;U.result=null;U.busy=true;msSetSegment(type);msOpen(U.metric,false);U.busy=false;U.selected='';U.preferFuture=U.forecastEnabled;refreshSoon();}
  function hide(){
   U.renderToken++;for(const id of ['um-fill','um-outline'])if(map.getLayer(id))map.setLayoutProperty(id,'visibility','none');
   for(const [id,value]of U.hidden)if(map.getLayer(id))map.setLayoutProperty(id,'visibility',value);U.hidden.clear();Q('#um-map-key')?.remove();delete root.dataset.unifiedFuture;
@@ -115,6 +121,7 @@
   for(const option of Q('#ms-area').options)if(option.value)text(option,option.value);
   const option=current(),label=U.metric==='projects'?'Project density':future()?U.metric==='roi'?'Net return · estimate':'Conditional estimate':U.metric==='roi'?'Yield history · not profit':option?.evidenceClass==='released_projection'?'Research projection':'Recorded source period';
   text(Q('#um-evidence'),label);Q('#um-evidence').title=label;
+  const status=Q('#um-status');if(status){const message=U.metric==='projects'?'':U.loading||tlState.loading?'Loading matching evidence…':U.error||U.estimatesError||'';text(status,message);status.hidden=!message;}
   const [headline,note]=readout();text(Q('#um-value'),headline);text(Q('#um-note'),note);Q('#um-details').hidden=U.metric==='projects';text(Q('#um-details'),future()&&U.metric==='roi'?'Assumptions':'Details');
   Q('#mm-legend').hidden=U.metric==='projects'||future();Q('#um-horizon-label').hidden=U.metric==='projects';Q('#um-path-label').hidden=U.metric==='projects';
   if(U.metric!=='projects'&&U.options.length){const i=Math.max(0,U.options.findIndex(o=>o.id===U.selected)),slider=Q('#tl-slider');slider.max=String(U.options.length-1);slider.value=String(i);slider.disabled=U.loading||U.options.length<2;
@@ -132,6 +139,7 @@
   const actions=document.createElement('div');actions.id='um-actions';actions.append(Q('#mm-settings'),Q('#tl-minimize'));dock.querySelector('.tl-head').append(actions);
   const evidence=document.createElement('small');evidence.id='um-evidence';Q('#su-date').append(evidence);
   const output=document.createElement('div');output.id='um-readout';output.innerHTML='<div><strong id="um-value"></strong><small id="um-note"></small></div><button id="um-details" type="button">Details</button>';dock.append(output);Q('#um-details').onclick=details;
+  const status=document.createElement('div');status.id='um-status';status.setAttribute('role','status');status.hidden=true;Q('#app').append(status);
   const horizon=document.createElement('label');horizon.id='um-horizon-label';horizon.textContent='Future scenario horizon';horizon.insertAdjacentHTML('beforeend','<select id="um-horizon"><option value="10">10 years from source anchor</option><option value="20">20 years · long-term assumptions</option><option value="30">30 years · long-term assumptions</option></select><small>Native history is retained. Longer paths continue disclosed damping; they are not validated forecasts.</small>');Q('#su-settings').querySelector('.su-dialog-head').after(horizon);
   Q('#um-horizon').onchange=e=>{U.horizon=+e.target.value;refreshSoon();};
   const path=document.createElement('label');path.id='um-path-label';path.innerHTML='Future path<select id="um-path"><option value="lower">Lower</option><option value="reference">Reference</option><option value="higher">Higher</option></select>';horizon.after(path);Q('#um-path').value=U.path;Q('#um-path').onchange=e=>{U.path=e.target.value;refreshSoon();};
@@ -150,7 +158,7 @@
   document.addEventListener('click',event=>{const button=event.target.closest?.('[data-ms-period],[data-pp-date]');if(!button||U.metric==='projects')return;const period=button.dataset.msPeriod||button.dataset.ppDate,option=U.options.find(o=>o.kind==='native'&&o.period===period);if(option){event.preventDefault();event.stopImmediatePropagation();choose(option.id);}},true);
   Q('#se-assumptions').addEventListener('input',()=>{if(future()){prepare();render();window.EspaciosMobileUI.sync();}});
   document.addEventListener('espacios:search-selection',event=>{if(U.metric==='projects')return;const d=event.detail;if(d.kind==='community'){msState.area=d.area||d.name;if(d.emirate)msState.emirate=d.emirate;if(msState.emirate!=='Dubai')msState.basis='asking';U.busy=true;msOpen(U.metric,false);U.busy=false;msState.area=d.area||d.name;}refreshSoon();});
-  window.EspaciosUnifiedMap=Object.freeze({setMetric,choose,render,sync,timeline:()=>U.metric==='projects'?null:{periods:U.options.map(o=>o.id),labels:Object.fromEntries(U.options.map(o=>[o.id,o.period+(o.kind==='scenario'?' · Estimate':o.evidenceClass==='released_projection'?' · Projection':'')])),selected:U.selected,loading:U.loading,key:U.key,metric:U.metric},pick(event){if(!future())return false;if(event.originalEvent?.detail>1)return true;const hit=map.getLayer('um-fill')&&map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['um-fill']})[0];if(hit)queueMicrotask(()=>{msState.area=hit.properties.name;prepare();details();refreshSoon();});return true;}});
+  window.EspaciosUnifiedMap=Object.freeze({setMetric,enterForecast,choose,render,sync,timeline:()=>U.metric==='projects'?null:{periods:U.options.map(o=>o.id),labels:Object.fromEntries(U.options.map(o=>[o.id,o.period+(o.kind==='scenario'?' · Estimate':o.evidenceClass==='released_projection'?' · Projection':'')])),selected:U.selected,loading:U.loading,key:U.key,metric:U.metric},pick(event){if(!future())return false;if(event.originalEvent?.detail>1)return true;const hit=map.getLayer('um-fill')&&map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['um-fill']})[0];if(hit)queueMicrotask(()=>{msState.area=hit.properties.name;prepare();details();refreshSoon();});return true;}});
   refreshSoon();window.EspaciosMobileUI.sync();return true;
  }
  const timer=setInterval(()=>{if(install())clearInterval(timer);},150);

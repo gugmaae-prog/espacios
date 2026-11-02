@@ -1,10 +1,10 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261102-map-stack-v3';
+var MAP_STACK_RELEASE='20261102-map-stack-v4';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_STACK_PREVIOUS_FETCH=worker_default.fetch;
 psrAllProjectsService=mapCompleteProjects;
 function mapStackJSON(request,payload,status=200){return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff','x-espacios-map-release':MAP_STACK_RELEASE,'referrer-policy':'strict-origin-when-cross-origin','x-frame-options':'SAMEORIGIN','strict-transport-security':'max-age=86400',...(status===405?{allow:'GET, HEAD'}:{})}});}
-function mapStackRelease(env){return{release:MAP_STACK_RELEASE,workerVersion:env.MAP_VERSION?.id||null,createdAt:env.MAP_VERSION?.timestamp||null,baseSourceCommit:typeof MAP_STACK_SOURCE_COMMIT==='string'?MAP_STACK_SOURCE_COMMIT:null,sourceState:'isolated_local_audit_branch; generated artifact identified by Worker version',incorporatedVisualCommit:'03fecf08c',source:'deployed_artifact',data:MAP_STACK_ACCEPTED,storage:env.MAP_IDRIVE_READY==='true'&&env.MAP_EVIDENCE?'private_idrive_e2_with_immutable_recovery_fallback':env.MAP_ARCHIVE?'immutable_static_recovery; idrive_pending_verified_endpoint':env.MAP_EVIDENCE?'private_idrive_e2_not_yet_verified':env.MARKET_R2?'cloudflare_r2':'embedded_catalogue_fallback',storageHealth:'not_asserted_by_binding_presence',commercialForecastReady:false,recoveryState:'accepted_v48_recovered_with_documented_legacy_gaps',idrive:{bindingPresent:Boolean(env.MAP_EVIDENCE),endpointReady:env.MAP_IDRIVE_READY==='true',readVerified:env.MAP_IDRIVE_READY==='true'?null:false,status:env.MAP_IDRIVE_READY==='true'?'configured; verify actual reads':'pending_actual_s3_endpoint'},legacyGaps:['Original official-history bundle not restored; retained V48 native series are separate','Saved model capture is partial; no missing projections are reconstructed']};}
+function mapStackRelease(env){return{release:MAP_STACK_RELEASE,workerVersion:env.MAP_VERSION?.id||null,createdAt:env.MAP_VERSION?.timestamp||null,baseSourceCommit:typeof MAP_STACK_SOURCE_COMMIT==='string'?MAP_STACK_SOURCE_COMMIT:null,sourceState:'draft_github_pr_branch; generated artifact identified by Worker version',incorporatedVisualCommit:'03fecf08c',source:'deployed_artifact',data:MAP_STACK_ACCEPTED,storage:env.MAP_IDRIVE_READY==='true'&&env.MAP_EVIDENCE?'private_idrive_e2_with_immutable_recovery_fallback':env.MAP_ARCHIVE?'immutable_static_recovery; idrive_pending_verified_endpoint':env.MAP_EVIDENCE?'private_idrive_e2_not_yet_verified':env.MARKET_R2?'cloudflare_r2':'embedded_catalogue_fallback',storageHealth:'not_asserted_by_binding_presence',commercialForecastReady:false,recoveryState:'accepted_v48_recovered_with_documented_legacy_gaps',idrive:{bindingPresent:Boolean(env.MAP_EVIDENCE),endpointReady:env.MAP_IDRIVE_READY==='true',readVerified:env.MAP_IDRIVE_READY==='true'?null:false,status:env.MAP_IDRIVE_READY==='true'?'configured; verify actual reads':'pending_actual_s3_endpoint'},legacyGaps:['Original official-history bundle not restored; retained V48 native series are separate','Saved model capture is partial; no missing projections are reconstructed']};}
 async function mapStackHealth(request,env){
  const storage=env.MARKET_R2,checks={};
  const keys={catalogue:MAP_RECOVERED_KEY,nativeHistoryIndex:MAP_NATIVE_INDEX_MANIFEST.key,conditionalScenarios:SE_R2_KEY,fullItemInventory:MAP_FULL_INVENTORY_MANIFEST.key};
@@ -21,7 +21,7 @@ function mapStackHeaders(response){
  return headers;
 }
 function mapStackHtml(html){
- for(const [id,label]of [['ai-question','Ask a question about the selected map context'],['compare-inventory-search','Find a project or published unit to compare']]){
+ for(const [id,label]of [['ai-question','Ask about the current map or selected place'],['compare-inventory-search','Find a project or published unit to compare']]){
   const pattern=new RegExp('<(?:input|textarea)\\b[^>]*\\bid=[\"\']'+id+'[\"\'][^>]*>','g');
   html=html.replace(pattern,tag=>/\baria-label(?:ledby)?=/.test(tag)?tag:tag.replace(/>$/,' aria-label="'+label+'">'));
  }
@@ -50,6 +50,7 @@ worker_default.fetch=async function(request,env,ctx){
  if(path==='/map/api/ai'&&url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return new Response('Not found',{status:404,headers:{'cache-control':'no-store','x-robots-tag':'noindex, nofollow'}});
  if(path==='/map/api/ai'){const response=await mapBoundedAI(request,env,ctx);return new Response(response.body,{status:response.status,headers:mapStackHeaders(response)});}
  if(url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
+ if(path==='/map/api/value-drivers')return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
  const primary=env.MAP_EVIDENCE&&env.MAP_IDRIVE_READY==='true'?mapEvidenceStore(env.MAP_EVIDENCE):null;
  const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;
@@ -100,7 +101,7 @@ worker_default.fetch=async function(request,env,ctx){
   headers.delete('content-length');headers.delete('etag');headers.set('cache-control','public,max-age=60,s-maxage=300');return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status:response.status,headers});
  }
 
- if(path.startsWith('/map/api/')&&!response.ok&&type.includes('application/json')){
+ if(path.startsWith('/map/api/')&&response.status>=400&&type.includes('application/json')){
   // Keep public availability errors useful without exposing internal exceptions.
   const status=response.status;let body;try{body=await response.json();}catch{body={error:'Map data is temporarily unavailable.'};}delete body.message;delete body.detail;
   headers.set('cache-control','no-store');headers.delete('content-length');return new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers});
@@ -108,5 +109,5 @@ worker_default.fetch=async function(request,env,ctx){
  if(type.includes('text/html')&&request.method!=='HEAD'){
   const html=mapStackHtml(await response.text());headers.delete('content-length');headers.delete('etag');return new Response(html,{status:response.status,headers});
  }
- return new Response(request.method==='HEAD'?null:response.body,{status:response.status,headers});
+ return new Response(request.method==='HEAD'||[204,205,304].includes(response.status)?null:response.body,{status:response.status,headers});
 };
