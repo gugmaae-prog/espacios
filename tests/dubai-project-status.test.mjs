@@ -36,7 +36,7 @@ test('read-only Dubai API keeps republisher, date, inspection and identity limit
  assert.equal(body.source.republisher,'Continental Club Property LLC');
  assert.equal(body.source.sourcePublicationDate,'2026-11-01');
  assert.equal(body.source.rawSha256,report.rawSha256);
- assert.equal(body.scope.canonicalProjectMatches,8);
+ assert.equal(body.scope.canonicalProjectMatches,23);
  assert.equal(body.scope.crosswalkVersion,crosswalk.version);
  assert.equal(body.scope.projectCoordinatesPresent,false);
  assert.equal(body.projects[0].sourceProjectNumber,'2');
@@ -65,7 +65,7 @@ test('compiled Worker serves the attributed register and keeps raw source privat
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
  assert.equal(body.totalProjects,1);
- assert.equal(body.scope.canonicalProjectMatches,8);
+ assert.equal(body.scope.canonicalProjectMatches,23);
  assert.equal(body.projects[0].sourceProjectNumber,'2');
  const asset=await worker.fetch(new Request('https://espacios.me/map/dld-project-status-20261101.csv.gz'),env,{});
  assert.equal(asset.status,404);

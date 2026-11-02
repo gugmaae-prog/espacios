@@ -1,5 +1,5 @@
 {
-  "version": "20261102-dubai-v48-reviewed-crosswalk-v1",
+  "version": "20261102-dubai-v48-reviewed-crosswalk-v2",
   "sourceDatasetId": "continental-dld-mashrooi-project-status-20261101",
   "sourceRawSha256": "3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f",
   "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
@@ -7,44 +7,54 @@
   "matchPolicy": "Manually reviewed unique name, named developer or developer brand, and compatible district in the dated licensed source and accepted V48 map. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
   "matches": [
     {
-      "sourceProjectNumber": "3519",
-      "canonicalProjectId": "project:olaia-residences-by-gulf-house-real-estate",
-      "sourceProjectName": "Olaia Residences",
-      "mapProjectName": "Olaia Residences",
-      "sourceDeveloper": "Gulf House Real Estate Development L.L.C",
-      "mapDeveloper": "Gulf House Real Estate Development",
+      "sourceProjectNumber": "443",
+      "canonicalProjectId": "project:damac-towers-paramount-hotels-and-resorts-dubai-business-bay-for-sale",
+      "sourceProjectName": "Damac Towers By Paramount",
+      "mapProjectName": "DAMAC Towers by Paramount",
+      "sourceDeveloper": "Damac Star Properties (L L C)",
+      "mapDeveloper": "DAMAC",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "1771",
+      "canonicalProjectId": "project:azizi-mina-apartments-for-sale-on-palm-jumeirah",
+      "sourceProjectName": "Azizi Mina",
+      "mapProjectName": "Azizi Mina",
+      "sourceDeveloper": "Azizi Developments L.L.C",
+      "mapDeveloper": "Azizi",
       "sourceDistrict": "Palm Jumeirah",
       "mapArea": "Palm Jumeirah"
     },
     {
-      "sourceProjectNumber": "3467",
-      "canonicalProjectId": "project:elire-qube-development-business-bay-dubai",
-      "sourceProjectName": "Elire",
-      "mapProjectName": "Elire",
-      "sourceDeveloper": "Qube Development L.L.C",
-      "mapDeveloper": "Qube Developments",
-      "sourceDistrict": "Business Bay",
-      "mapArea": "Business Bay"
-    },
-    {
-      "sourceProjectNumber": "3585",
-      "canonicalProjectId": "project:binghatti-aquarise-business-bay",
-      "sourceProjectName": "Binghatti Aquarise",
-      "mapProjectName": "Binghatti Aquarise",
+      "sourceProjectNumber": "2117",
+      "canonicalProjectId": "project:binghatti-gateway-apartments-for-sale-in-al-jaddaf-dubai",
+      "sourceProjectName": "Binghatti Gateway",
+      "mapProjectName": "Binghatti Gateway",
       "sourceDeveloper": "Binghatti Developers Fze",
       "mapDeveloper": "Binghatti Properties",
-      "sourceDistrict": "Business Bay",
-      "mapArea": "Business Bay"
+      "sourceDistrict": "Al Jadaf",
+      "mapArea": "Al Jaddaf"
     },
     {
-      "sourceProjectNumber": "3504",
-      "canonicalProjectId": "project:luxury-apartments-studios-binghatti-skyhall-business-bay",
-      "sourceProjectName": "Binghatti Skyhall",
-      "mapProjectName": "Binghatti Skyhall",
+      "sourceProjectNumber": "2185",
+      "canonicalProjectId": "project:binghatti-avenue-apartments-for-sale-in-al-jaddaf-dubai",
+      "sourceProjectName": "Binghatti Avenue",
+      "mapProjectName": "Binghatti Avenue",
       "sourceDeveloper": "Binghatti Developers Fze",
       "mapDeveloper": "Binghatti Properties",
-      "sourceDistrict": "Business Bay",
-      "mapArea": "Business Bay"
+      "sourceDistrict": "Al Jadaf",
+      "mapArea": "Al Jaddaf"
+    },
+    {
+      "sourceProjectNumber": "2361",
+      "canonicalProjectId": "project:binghatti-creek-apartments-for-sale-in-dubai-al-jaddaf",
+      "sourceProjectName": "Binghatti Creek",
+      "mapProjectName": "Binghatti Creek",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Jadaf",
+      "mapArea": "Al Jaddaf"
     },
     {
       "sourceProjectNumber": "2366",
@@ -53,6 +63,36 @@
       "mapProjectName": "Binghatti Canal",
       "sourceDeveloper": "Binghatti Developers Fze",
       "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "2480",
+      "canonicalProjectId": "project:burj-binghatti-jacob-co-residences-business-bay-dubai",
+      "sourceProjectName": "Burj Binghatti Jacob & Co. Residences",
+      "mapProjectName": "Burj Binghatti Jacob & Co Residences",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "2579",
+      "canonicalProjectId": "project:tiger-sky-tower-business-bay-dubai",
+      "sourceProjectName": "Tiger Sky Tower",
+      "mapProjectName": "Tiger Sky Tower",
+      "sourceDeveloper": "Tiger Properties",
+      "mapDeveloper": "Tiger Group",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "2656",
+      "canonicalProjectId": "project:al-habtoor-tower-business-bay-dubai-for-sale",
+      "sourceProjectName": "Al Habtoor Tower",
+      "mapProjectName": "Al Habtoor Tower",
+      "sourceDeveloper": "Al Habtoor City Real Estate Development (Br. Of Dubai National Investment Co L.L.C)",
+      "mapDeveloper": "Al Habtoor Group",
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
     },
@@ -67,14 +107,104 @@
       "mapArea": "Business Bay"
     },
     {
-      "sourceProjectNumber": "2361",
-      "canonicalProjectId": "project:binghatti-creek-apartments-for-sale-in-dubai-al-jaddaf",
-      "sourceProjectName": "Binghatti Creek",
-      "mapProjectName": "Binghatti Creek",
+      "sourceProjectNumber": "2929",
+      "canonicalProjectId": "project:one-river-point-by-ellington-properties-dutco-in-business-bay",
+      "sourceProjectName": "One River Point",
+      "mapProjectName": "One River Point",
+      "sourceDeveloper": "Dutco Ellington Canal Front Real Estate L.L.C",
+      "mapDeveloper": "Ellington Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "2966",
+      "canonicalProjectId": "project:rove-home-marasi-drive-by-irth-development-and-octa-properties-in-business-bay",
+      "sourceProjectName": "Rove Home Marasi Drive",
+      "mapProjectName": "Rove Home Marasi Drive",
+      "sourceDeveloper": "Irth Signature Development L.L.C",
+      "mapDeveloper": "IRTH Development and OCTA Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3195",
+      "canonicalProjectId": "project:studios-apartments-starlight-binghatti-al-jaddaf",
+      "sourceProjectName": "Binghatti Starlight",
+      "mapProjectName": "Binghatti Starlight",
       "sourceDeveloper": "Binghatti Developers Fze",
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Jadaf",
       "mapArea": "Al Jaddaf"
+    },
+    {
+      "sourceProjectNumber": "3256",
+      "canonicalProjectId": "project:binghatti-pinnacle-binghatti-holding-al-jaddaf-dubai",
+      "sourceProjectName": "Binghatti Pinnacle",
+      "mapProjectName": "Binghatti Pinnacle",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Holding Limited",
+      "sourceDistrict": "Al Jadaf",
+      "mapArea": "Al Jaddaf"
+    },
+    {
+      "sourceProjectNumber": "3349",
+      "canonicalProjectId": "project:studios-and-apartments-binghatti-skyrise-business-bay-dubai",
+      "sourceProjectName": "Binghatti Skyrise",
+      "mapProjectName": "Binghatti Skyrise",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3467",
+      "canonicalProjectId": "project:elire-qube-development-business-bay-dubai",
+      "sourceProjectName": "Elire",
+      "mapProjectName": "Elire",
+      "sourceDeveloper": "Qube Development L.L.C",
+      "mapDeveloper": "Qube Developments",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3504",
+      "canonicalProjectId": "project:luxury-apartments-studios-binghatti-skyhall-business-bay",
+      "sourceProjectName": "Binghatti Skyhall",
+      "mapProjectName": "Binghatti Skyhall",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3519",
+      "canonicalProjectId": "project:olaia-residences-by-gulf-house-real-estate",
+      "sourceProjectName": "Olaia Residences",
+      "mapProjectName": "Olaia Residences",
+      "sourceDeveloper": "Gulf House Real Estate Development L.L.C",
+      "mapDeveloper": "Gulf House Real Estate Development",
+      "sourceDistrict": "Palm Jumeirah",
+      "mapArea": "Palm Jumeirah"
+    },
+    {
+      "sourceProjectNumber": "3585",
+      "canonicalProjectId": "project:binghatti-aquarise-business-bay",
+      "sourceProjectName": "Binghatti Aquarise",
+      "mapProjectName": "Binghatti Aquarise",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "3716",
+      "canonicalProjectId": "project:maison-margiela-residences-palm-jumeirah-dubai",
+      "sourceProjectName": "Maison Margiela Residences",
+      "mapProjectName": "Maison Margiela Residences",
+      "sourceDeveloper": "Alta Real Estate Development L.L.C",
+      "mapDeveloper": "Alta",
+      "sourceDistrict": "Palm Jumeirah",
+      "mapArea": "Palm Jumeirah"
     },
     {
       "sourceProjectNumber": "3722",
@@ -85,6 +215,26 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Jadaf",
       "mapArea": "Al Jaddaf"
+    },
+    {
+      "sourceProjectNumber": "4227",
+      "canonicalProjectId": "project:avarra-palace-emaar-business-bay",
+      "sourceProjectName": "Avarra By Palace",
+      "mapProjectName": "Avarra by Palace",
+      "sourceDeveloper": "Emaar Development P.J.S.C.",
+      "mapDeveloper": "Emaar",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "4253",
+      "canonicalProjectId": "project:haus-of-tenet-irth-business-bay-dubai",
+      "sourceProjectName": "Haus Of Tenet",
+      "mapProjectName": "Haus of Tenet",
+      "sourceDeveloper": "Irth Urban Two Development L.L.C",
+      "mapDeveloper": "IRTH",
+      "sourceDistrict": "Business Bay",
+      "mapArea": "Business Bay"
     }
   ]
 }
