@@ -5453,7 +5453,7 @@ worker_default.fetch=async function(request,env,ctx){
   return PSR_TENANT_GUARD_PREVIOUS_FETCH.call(this,request,env,ctx);
 };
 
-var MAP_STACK_SOURCE_COMMIT="f57d14d8";
+var MAP_STACK_SOURCE_COMMIT="e74e9951";
 
 var UAE_AJMAN_REPORT={"sourceId":"ajman-dlrr-20260821-unit-sales","datasetUrl":"https://data.ajman.ae/explore/dataset/real-estate-units-sales/","api":"https://data.ajman.ae/api/explore/v2.1/catalog/datasets/real-estate-units-sales","publisher":"Department of Land and Real Estate Regulation","licence":"CC BY 4.0","licenceUrl":"https://creativecommons.org/licenses/by/4.0/","sourceModifiedAt":"2026-08-21T04:37:58.396000+00:00","retrievedAt":"2026-11-02T14:34:19Z","metadataRetrievedAt":"2026-11-02T14:36:40Z","nativeFrequency":"quarterly","grain":"source_project_label × sector × district × unit_type × rooms × quarter; aggregated sales, not individual transactions","emirate":"Ajman","evidenceClass":"official_registered_sale_aggregate","storageKey":"uae/evidence/ajman/2026-08-21/real-estate-units-sales.json.gz","rawSha256":"801cafef1f269d919ace2282f4f5cec8e7a021ce0241eba040f904a9fd672afd","rawBytes":3613910,"compressedSha256":"45f6984b4804b95ba5aebe997c07330cc5547a20bbff25f1cdd9e5b9a6c86f8e","compressedBytes":138830,"metadataSha256":"7a04d551abb7c825de519f8a8b0ac0abdaf41d90d0cff9b83f4eed1f367f82e1","rows":6075,"distinctSourceProjectLabels":239,"reportedUnitSalesCountSum":15991,"reportedValueAedSum":6218360220.16,"firstPeriod":"2019-01-01","lastPeriod":"2026-06-30","canonicalProjectMatches":0,"matchPolicy":"No name-only joins; source project labels have not been matched to accepted V48 identities or coordinates."};
 
@@ -5578,7 +5578,7 @@ async function mapCompleteProjects(request,env,ctx){
  // The Espacios Data Hub is the newer source. An exact older public snapshot
  // remains labelled and available when the newer hub is temporarily unavailable.
  const upstreamFetch=env.MAP_CATALOGUE_FETCH?.fetch?.bind(env.MAP_CATALOGUE_FETCH)||fetch;
- const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-provenance-v4',request.url),{method:'GET'});
+ const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-v10-provenance-v5',request.url),{method:'GET'});
  const cached=cache&&await cache.match(key);if(cached)return cached;
  const maximumFetchCalls=30;
  let failedPage=null,retriesRemaining=4,fetchCalls=0;const retriedPages=[];
