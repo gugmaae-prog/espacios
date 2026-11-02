@@ -24,6 +24,8 @@ test('Ajman API verifies exact source bytes and reports licensed aggregate grain
  assert.equal(body.sources[0].licence,'CC BY 4.0');
  assert.equal(body.scope.canonicalProjectMatches,0);
  assert.match(body.scope.limits,/not individual transactions/);
+ const disabled=await mapUaeEvidence(request(),{...env,MAP_IDRIVE_READY:'false'},report,store);
+ assert.equal(disabled.status,503,'cached data must not bypass a disabled private binding');
 });
 
 test('project summary and filtered rows preserve source project labels without joins',async()=>{

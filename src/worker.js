@@ -5655,8 +5655,8 @@ const uaeDigest=async bytes=>uaeHex(await crypto.subtle.digest('SHA-256',bytes))
 function uaeEvidenceResponse(request,body,status=200){return new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'ajman-dlrr-20260821-unit-sales'}});}
 function uaeInteger(value,min,max){if(value===null||!/^\d+$/.test(value))return null;const n=Number(value);return Number.isSafeInteger(n)&&n>=min&&n<=max?n:null;}
 async function uaeAjmanRows(env,report,storeFactory){
+ if(!env.MAP_EVIDENCE||env.MAP_IDRIVE_READY!=='true')throw Error('IDrive evidence source unavailable');
  if(!UAE_AJMAN_DATA_PROMISE)UAE_AJMAN_DATA_PROMISE=(async()=>{
-  if(!env.MAP_EVIDENCE||env.MAP_IDRIVE_READY!=='true')throw Error('IDrive evidence source unavailable');
   const object=await storeFactory(env.MAP_EVIDENCE,env.MAP_IDRIVE_TRACE).get(report.storageKey);
   if(!object||object.sha256!==report.compressedSha256||object.size!==report.compressedBytes)throw Error('Ajman source metadata mismatch');
   const compressed=await object.arrayBuffer();
