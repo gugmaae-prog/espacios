@@ -59,6 +59,7 @@ worker_default.fetch=async function(request,env,ctx){
  const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
  const scadStock=mapScadStock(request);if(scadStock)return mapStackPreparedResponse(request,scadStock);
  const urbanProjects=await mapAbuDhabiUrbanProjects(request,UAE_ABU_DHABI_URBAN_REPORT,UAE_ABU_DHABI_URBAN_PACKED);if(urbanProjects)return mapStackPreparedResponse(request,urbanProjects);
+ const dubaiStatus=await mapDubaiProjectStatus(request,UAE_DUBAI_STATUS_REPORT,UAE_DUBAI_STATUS_PACKED);if(dubaiStatus)return mapStackPreparedResponse(request,dubaiStatus);
  const ajmanRegister=await mapAjmanRegister(request,env,UAE_AJMAN_REGISTER_REPORT,mapEvidenceStore,AJMAN_V48_CROSSWALK);if(ajmanRegister)return mapStackPreparedResponse(request,ajmanRegister);
  const ajmanRegistration=await mapAjmanRegistration(request,env,UAE_AJMAN_REGISTRATION_REPORT);if(ajmanRegistration)return mapStackPreparedResponse(request,ajmanRegistration);
  const ajmanDispositions=await mapAjmanDispositions(request,UAE_AJMAN_DISPOSITION_REPORT,store,MAP_ARCHIVE_MANIFEST);if(ajmanDispositions)return mapStackPreparedResponse(request,ajmanDispositions);

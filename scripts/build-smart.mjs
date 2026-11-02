@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';import vm from 'node:vm';import {createHash} from 'node:crypto';
 import {gunzipSync,gzipSync} from 'node:zlib';
 import {validateCatalogueRevisions} from './validate-catalogue-revisions.mjs';
+import {normalizeDubaiStatusCsv} from '../src/stack-audit/dubai-project-status.mjs';
 const root=new URL('../',import.meta.url),release='20260930-smart-estimates-v1',read=p=>fs.readFile(new URL(p,root),'utf8');
 const baseline=await read('src/baseline/worker-20260930.js');if(createHash('sha256').update(baseline).digest('hex')!=='b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06')throw Error('Acquired live baseline changed');
 const core=await read('src/smart-estimates/core.mjs');const app='\nconst SECore=(()=>{\n'+core.replace(/^export /gm,'')+'\nreturn {derivePriceScenario,calculateROI,combineROI};})();\n'+await read('src/smart-estimates/app.js');
@@ -125,7 +126,7 @@ source=source.replace('\nexport {worker_default as default};\n','\n'+await read(
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace(\"d.version!=='20260927-area-evidence-v1'||d.rows?.length!==2652\",\"!['20260927-area-evidence-v1','20261102-area-evidence-recovery-v1'].includes(d.version)||!Array.isArray(d.rows)\");\n`;
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(`\nconst STACK_OLD_AREA_HTML=ueAvailableHtml;ueAvailableHtml=function(){const html=STACK_OLD_AREA_HTML();return (ueState.data?.recovery?'<p class="ue-note">Recovered native source-area availability. Only complete periods by 14 September 2026 with n≥20 qualify; sparse and partial periods remain retained. Additional early native cohorts remain available in <a href=\"/map/history\">History</a>. This is not complete lifetime coverage or a property valuation.</p>':'')+html;};\n`)+';\n';
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace("d.version!=='20260927-history-predictions-v1'", "d.version!=='20260927-history-predictions-v1'&&!(d.recoveryVersion==='20261102-retained-history-v1'&&d.sourceVersion==='20260927-history-predictions-v1')");\n`;
-const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','ajman-area-reference.mjs','scad-stock.mjs','abu-dhabi-urban-projects.mjs','coordinate-quality.mjs'];
+const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','ajman-area-reference.mjs','scad-stock.mjs','abu-dhabi-urban-projects.mjs','dubai-project-status.mjs','coordinate-quality.mjs'];
 const archiveManifest=JSON.parse(await read('data/recovery/static-archive-manifest.json'));
 const nativeIndexManifest=JSON.parse(await read('data/recovery/v48-native-history-index.manifest.json'));delete nativeIndexManifest.localPath;
 const inventoryManifest=JSON.parse(await read('data/recovery/full-item-inventory.manifest.json'));delete inventoryManifest.sourceShards;
@@ -151,6 +152,14 @@ const urbanCompressed=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi
 const urbanRaw=gunzipSync(urbanCompressed),urbanSource=JSON.parse(urbanRaw);
 if(urbanCompressed.length!==urbanReport.compressedBytes||digest(urbanCompressed)!==urbanReport.compressedSha256||urbanRaw.length!==urbanReport.rawBytes||digest(urbanRaw)!==urbanReport.rawSha256||urbanReport.independentReadbackSha256!==urbanReport.rawSha256||urbanSource.features?.length!==374||urbanReport.distinctSourceProjectIds!==372||urbanReport.geometryCaptured!==false)throw Error('Abu Dhabi urban-project source changed');
 stackSource+='\nvar UAE_ABU_DHABI_URBAN_REPORT='+JSON.stringify(urbanReport)+';\nvar UAE_ABU_DHABI_URBAN_PACKED='+JSON.stringify(urbanCompressed.toString('base64'))+';\n';
+const dubaiStatusReport=JSON.parse(await read('data/uae-evidence/dubai/dld-project-status-validation.json'));
+const dubaiStatusCompressed=await fs.readFile(new URL('data/uae-evidence/dubai/dld-project-status-20261101.csv.gz',root));
+const dubaiStatusRaw=gunzipSync(dubaiStatusCompressed);
+if(dubaiStatusCompressed.length!==dubaiStatusReport.compressedBytes||digest(dubaiStatusCompressed)!==dubaiStatusReport.compressedSha256||dubaiStatusRaw.length!==dubaiStatusReport.rawBytes||digest(dubaiStatusRaw)!==dubaiStatusReport.rawSha256||dubaiStatusReport.independentReadbackSha256!==dubaiStatusReport.rawSha256)throw Error('Dubai project-status captured CSV changed');
+const dubaiStatusRows=normalizeDubaiStatusCsv(new TextDecoder('utf-8',{fatal:true}).decode(dubaiStatusRaw),dubaiStatusReport);
+const dubaiStatusNormalized=Buffer.from(JSON.stringify(dubaiStatusRows)),dubaiStatusNormalizedCompressed=gzipSync(dubaiStatusNormalized,{level:9});
+if(dubaiStatusNormalized.length!==dubaiStatusReport.normalizedBytes||digest(dubaiStatusNormalized)!==dubaiStatusReport.normalizedSha256||dubaiStatusNormalizedCompressed.length!==dubaiStatusReport.normalizedCompressedBytes||digest(dubaiStatusNormalizedCompressed)!==dubaiStatusReport.normalizedCompressedSha256)throw Error('Dubai project-status normalization changed');
+stackSource+='\nvar UAE_DUBAI_STATUS_REPORT='+JSON.stringify(dubaiStatusReport)+';\nvar UAE_DUBAI_STATUS_PACKED='+JSON.stringify(dubaiStatusNormalizedCompressed.toString('base64'))+';\n';
 const psrLegacyManifest=JSON.parse(await read('data/recovery/psr-public-legacy-20261102.manifest.json'));
 const psrLegacyCompressed=await fs.readFile(new URL('data/recovery/psr-public-legacy-20261102.json.gz',root));
 const psrLegacyRaw=gunzipSync(psrLegacyCompressed),psrLegacy=JSON.parse(psrLegacyRaw);
