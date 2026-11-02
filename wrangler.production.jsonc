@@ -14,7 +14,7 @@
   // MARKET_R2 is intentionally omitted while R2 is disabled account-wide.
   // Accepted V48 runtime evidence uses a private immutable asset binding.
   // The private IDrive primary was independently read back; immutable assets remain the fallback.
-  "services": [{ "binding": "PSR_PROPERTY", "service": "psr-property", "environment": "production" }, { "binding": "ESPACIOS_DATA_HUB", "service": "espacios-data-hub" }, { "binding": "MAP_EVIDENCE", "service": "espacios-auth-central", "entrypoint": "MapEvidence" }],
+  "services": [{ "binding": "PSR_PROPERTY", "service": "psr-property", "environment": "production" }, { "binding": "MAP_EVIDENCE", "service": "espacios-auth-central", "entrypoint": "MapEvidence" }],
   "version_metadata": { "binding": "MAP_VERSION" },
   "observability": { "enabled": true, "head_sampling_rate": 0.1, "logs": { "enabled": true, "invocation_logs": false } },
   "vars": {

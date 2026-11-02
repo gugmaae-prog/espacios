@@ -5548,17 +5548,17 @@ function mapArchiveFallback(primary,assets,manifest){
  * is reported separately from complete retrieval of all declared pages. */
 async function mapCompleteProjects(request,env,ctx){
  const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-catalogue':'complete-pages-v2'}});
- // The public PSR domain is served by Espacios Data Hub. The PSR_PROPERTY
- // binding bypasses that route and still returns 24-row pages, so it cannot
- // satisfy a complete catalogue read within this Worker's subrequest budget.
- if(!env.ESPACIOS_DATA_HUB?.fetch)return json({error:'Project catalogue is temporarily unavailable.',projects:[],complete:false},503);
+ // The public PSR domain is served by Espacios Data Hub. Direct service
+ // bindings to either backend bypass its public route and do not return the
+ // 100-row registry pages. This fixed cross-zone URL is the published source.
+ const upstreamFetch=env.MAP_CATALOGUE_FETCH?.fetch?.bind(env.MAP_CATALOGUE_FETCH)||fetch;
  const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-v1',request.url),{method:'GET'});
  const cached=cache&&await cache.match(key);if(cached)return cached;
  const maximumFetchCalls=30;
  let failedPage=null,retriesRemaining=4,fetchCalls=0;const retriedPages=[];
  const call=async page=>{
   if(fetchCalls>=maximumFetchCalls)throw new Error('Catalogue read budget exceeded.');fetchCalls++;
-  const response=await env.ESPACIOS_DATA_HUB.fetch('https://psrhomes.ae/api/projects?limit=100'+(page>1?'&page='+page:''),{headers:{accept:'application/json'}});
+  const response=await upstreamFetch('https://psrhomes.ae/api/projects?limit=100'+(page>1?'&page='+page:''),{headers:{accept:'application/json'}});
   if(!response.ok){failedPage=page;await response.body?.cancel().catch(()=>{});throw Object.assign(new Error('Upstream page unavailable.'),{retryable:response.status===429||response.status>=500});}
   const value=await response.json();if(!Array.isArray(value.projects)||value.projects.some(p=>!p||typeof p.slug!=='string'||!p.slug)||(value.pageSize!==undefined&&value.pageSize!==100)||(value.page!==undefined&&value.page!==page)||value.projects.length>100){failedPage=page;throw new Error('Malformed project page.');}
   return {...value,dataHubRelease:response.headers.get('x-espacios-data-release'),publisherRelease:response.headers.get('x-espacios-publisher-release')};
@@ -5575,7 +5575,7 @@ async function mapCompleteProjects(request,env,ctx){
   }
   const projects=[...new Map(all.map(p=>[p.slug,p])).values()],reported=Number(first.total),registry=Number(first.registry?.total);
   const registryReconciled=Number.isFinite(registry)&&registry>=0?registry===projects.length:null;
-  const response=json({projects,total:projects.length,pages,registry:first.registry||null,source:{service:'espacios-data-hub',population:'PSR public project registry',registryUpdatedAt:first.registry?.updatedAt||null,registryContentHash:first.registry?.contentHash||null,dataRelease:first.dataHubRelease||null,publisherRelease:first.publisherRelease||null},complete:true,completenessBasis:'Every declared page from the Espacios data hub was retrieved; this PSR registry is a separate population from the accepted V48 map archive.',coverage:{allDeclaredPagesRetrieved:true,retriedPages,fetchCalls,maximumFetchCalls,registryReconciled,populationReconciled:registryReconciled===true,upstreamTotalMatchesFetchedRows:Number.isFinite(reported)?reported===all.length:null,warning:registryReconciled===false?'The upstream registry total differs from retrieved unique slugs. The cause and true source population remain unestablished.':null},totals:{returned:projects.length,unique:projects.length,rowsFetched:all.length,duplicateRows:all.length-projects.length,upstreamReported:Number.isFinite(reported)?reported:null,registryReported:Number.isFinite(registry)?registry:null},population:'Unique PSR project slugs retrieved from every declared data-hub page; this is not the V48 map identity universe or a complete current UAE project census.'});
+  const response=json({projects,total:projects.length,pages,registry:first.registry||null,source:{service:'espacios-data-hub-public-route',url:'https://psrhomes.ae/api/projects',population:'PSR public project registry',registryUpdatedAt:first.registry?.updatedAt||null,registryContentHash:first.registry?.contentHash||null,dataRelease:first.dataHubRelease||null,publisherRelease:first.publisherRelease||null},complete:true,completenessBasis:'Every declared page from the Espacios data hub was retrieved; this PSR registry is a separate population from the accepted V48 map archive.',coverage:{allDeclaredPagesRetrieved:true,retriedPages,fetchCalls,maximumFetchCalls,registryReconciled,populationReconciled:registryReconciled===true,upstreamTotalMatchesFetchedRows:Number.isFinite(reported)?reported===all.length:null,warning:registryReconciled===false?'The upstream registry total differs from retrieved unique slugs. The cause and true source population remain unestablished.':null},totals:{returned:projects.length,unique:projects.length,rowsFetched:all.length,duplicateRows:all.length-projects.length,upstreamReported:Number.isFinite(reported)?reported:null,registryReported:Number.isFinite(registry)?registry:null},population:'Unique PSR project slugs retrieved from every declared data-hub page; this is not the V48 map identity universe or a complete current UAE project census.'});
   if(cache){const put=cache.put(key,response.clone());if(ctx?.waitUntil)ctx.waitUntil(put.catch(()=>{}));else await put.catch(()=>{});}return response;
  }catch{return json({error:'The complete project catalogue could not be verified. Please retry.',projects:[],complete:false,...(failedPage?{failedPage}:{})},503);}
 }
