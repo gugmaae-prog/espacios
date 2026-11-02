@@ -120,6 +120,7 @@
   Q('#um-property').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.umType===msState.segment)));
   for(const option of Q('#ms-area').options)if(option.value)text(option,option.value);
   const option=current(),label=U.metric==='projects'?'Project density':future()?U.metric==='roi'?'Net return · estimate':'Conditional estimate':U.metric==='roi'?'Yield history · not profit':option?.evidenceClass==='released_projection'?'Research projection':'Recorded source period';
+  if(option)text(Q('#dr-handle'),option.period+(option.kind==='scenario'?' · Estimate':option.evidenceClass==='released_projection'?' · Projection':''));
   text(Q('#um-evidence'),label);Q('#um-evidence').title=label;
   const status=Q('#um-status');if(status){const message=U.metric==='projects'?'':U.loading||tlState.loading?'Loading matching evidence…':U.error||U.estimatesError||'';text(status,message);status.hidden=!message;}
   const [headline,note]=readout();text(Q('#um-value'),headline);text(Q('#um-note'),note);Q('#um-details').hidden=U.metric==='projects';text(Q('#um-details'),future()&&U.metric==='roi'?'Assumptions':'Details');

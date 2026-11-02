@@ -350,6 +350,9 @@ html[data-minimal-map="1"] body #app #tl-dock #mm-date{
   background:var(--minimal-selected)!important;color:var(--su-ink)!important;font:600 11px/1 Inter,system-ui,sans-serif!important;
   box-shadow:0 3px 10px #00000012!important;
 }
+@media (min-width:761px){
+  html[data-minimal-map="1"][data-minimal-metric="forecast"] body #app #tl-dock #mm-date{min-width:182px!important;}
+}
 html[data-minimal-map="1"] body #app #minimal-property-settings{
   margin:10px 0 14px;padding:12px;border:1px solid var(--su-line);border-radius:12px;
 }
