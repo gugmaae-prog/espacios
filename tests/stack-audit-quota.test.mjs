@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';import {DatabaseSync} from 'node:sqlite';
+const source=fs.readFileSync(new URL('../src/stack-audit/quota.mjs',import.meta.url),'utf8').replace(/^import .*;\n/,'').replace('export class MapAIQuota','globalThis.MapAIQuota=class MapAIQuota');
+function quota(){const db=new DatabaseSync(':memory:');let now=Date.parse('2026-11-02T00:00:01Z');class ClockDate extends Date{static now(){return now;}}
+ const sql={exec(statement,...args){const prepared=db.prepare(statement);const rows=prepared.all(...args);return{toArray:()=>rows};}};
+ const state={storage:{sql,transactionSync(fn){db.exec('BEGIN');try{const result=fn();db.exec('COMMIT');return result;}catch(error){db.exec('ROLLBACK');throw error;}}}};
+ class Base{constructor(ctx){this.ctx=ctx;}}
+ const context=vm.createContext({DurableObject:Base,Date:ClockDate,Map,TypeError});vm.runInContext(source,context);const instance=new context.MapAIQuota(state,{});return{instance,db,advance:ms=>now+=ms};}
+test('actual SQLite reservations enforce all three quotas across rollover without partial claims',()=>{const q=quota(),a='a'.repeat(64);for(let n=0;n<3;n++)assert.equal(q.instance.reserve(a).allowed,true);assert.equal(q.instance.reserve(a).reason,'actor_minute');let accepted=3;for(let i=0;i<30;i++){const result=q.instance.reserve(i.toString(16).padStart(64,'0'));if(result.allowed)accepted++;}assert.equal(accepted,10);assert.equal(q.instance.reserve('b'.repeat(64)).reason,'global_minute');
+ for(let minute=1;minute<4;minute++){q.advance(60000);for(let i=0;i<10;i++)assert.equal(q.instance.reserve((100+minute*10+i).toString(16).padStart(64,'0')).allowed,true);}
+ q.advance(60000);assert.equal(q.instance.reserve('c'.repeat(64)).reason,'global_day');assert.equal(q.db.prepare("SELECT requests FROM quota WHERE quota_key='day:2026-11-02'").get().requests,40);q.advance(86400000);assert.equal(q.instance.reserve(a).allowed,true);q.db.close();});

@@ -1,5 +1,6 @@
 /* Theme and outage continuity for the canonical Espacios Map pages. */
-const MAP_SEAMLESS_RELEASE='20261102-map-seamless-v1';
+const MAP_SEAMLESS_RELEASE='20261102-map-seamless-v3';
+const MAP_SEAMLESS_SOURCE_BRANCH='codex/map-seamless-v48-recovery-20261102';
 const MAP_SEAMLESS_PAGES=new Map([
   ['/map/research','research'],['/map/history','history'],['/map/predictions','predictions'],
   ['/map/intelligence','intelligence'],['/map/abu-dhabi','abu-dhabi'],['/map/system','system']
@@ -9,17 +10,24 @@ esmSystemPayload=function(env){
   const result=mapSeamlessSystemPayload(env),available=Boolean(env.MARKET_R2);
   result.topology=result.topology.map(row=>row.to==='MARKET_R2'?{...row,via:available?'R2 binding':'R2 unavailable; reviewed map snapshot active'}:row);
   result.storage={r2BindingAvailable:available,mapFallbackActive:!available,source:available?'Cloudflare R2':'reviewed embedded snapshot',historyAvailability:available?'check-evidence-endpoints':'r2-unavailable'};
+  result.source={...result.source,branch:MAP_SEAMLESS_SOURCE_BRANCH};
   return result;
 };
 const MAP_THEME_BOOT=`<script id="map-seamless-theme">(function(){var root=document.documentElement,key='espacios_theme_v1';function saved(){try{return localStorage.getItem(key)==='light'?'light':'dark'}catch{return 'dark'}}var initial=saved();root.dataset.espaciosTheme=initial;root.dataset.theme=initial;new MutationObserver(function(){var value=root.dataset.theme==='light'?'light':'dark';root.dataset.espaciosTheme=value;try{localStorage.setItem(key,value)}catch{}}).observe(root,{attributes:true,attributeFilter:['data-theme']});document.addEventListener('DOMContentLoaded',function(){var button=document.getElementById('map-theme-toggle');if(button)button.onclick=function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark'}})})();<\/script>`;
 function mapSeamlessHtml(html,page,storageAvailable){
-  html=html.replace(/<html(\s|>)/,'<html data-map-page="'+page+'"$1');
+  html=html.replace(/<html(\s|>)/,'<html data-map-page="'+page+'"'+(storageAvailable?'':' data-map-degraded="r2"')+'$1');
   html=html.replace('</head>','<style id="map-seamless-style">'+AE_MAP_SEAMLESS_CSS+'</style>'+MAP_THEME_BOOT+'</head>');
   if(!html.includes('id="theme"')&&!html.includes('id="map-theme-toggle"'))html=html.replace('</header>','<button id="map-theme-toggle" type="button" aria-label="Toggle light and dark theme">Theme</button></header>');
   if(!storageAvailable){
     const message=page==='research'?'Showing the reviewed 1,337-project catalogue snapshot. Live additions and R2-only research are temporarily unavailable.':page==='system'?'R2 is unavailable. The map is using its reviewed snapshot; historical storage endpoints remain unavailable.':'R2-backed evidence is temporarily unavailable. The retained V48 record history remains accessible.';
     html=html.replace('</header>','</header><div class="map-degraded-banner" role="status">'+message+' <a href="/map/api/record-history">V48 record history</a></div>');
+    if(page==='history'){
+      const status='R2-backed historical series are unavailable. The retained V48 record history is linked above.';
+      html=html.replace('Loading the accepted data manifest…',status);
+      html=html.replaceAll("Q('#error').textContent=e.message;","Q('#error').textContent='';Q('#status').textContent="+JSON.stringify(status)+";");
+    }
   }
+  if(page==='system')html=html.replace('<span>Branch</span><span>main</span>','<span>Source branch</span><span>'+MAP_SEAMLESS_SOURCE_BRANCH+'</span>');
   return html;
 }
 const MAP_SEAMLESS_PREVIOUS_FETCH=worker_default.fetch;

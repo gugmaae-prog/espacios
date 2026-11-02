@@ -2,18 +2,24 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   // Explicit production release configuration. The default remains a candidate.
   "name": "psr-portfolio-map-v2",
-  "main": "src/worker.js",
+  "main": "src/production-entry.mjs",
+  "assets": { "directory": "work/archive-assets", "binding": "MAP_ARCHIVE", "run_worker_first": true, "html_handling": "none", "not_found_handling": "none" },
+  "durable_objects": { "bindings": [{ "name": "MAP_AI_QUOTA", "class_name": "MapAIQuota" }] },
+  "migrations": [{ "tag": "map-ai-quota-v1", "new_sqlite_classes": ["MapAIQuota"] }],
   "account_id": "b1b843ec85bc39a3a4d370ba4f84f17a",
   "compatibility_date": "2026-08-20",
   "compatibility_flags": ["nodejs_compat"],
   "ai": { "binding": "AI" },
   "d1_databases": [{ "binding": "DB", "database_name": "cba-property-db", "database_id": "a5165cff-70a5-4685-af87-5ffdcf08652a" }],
   // MARKET_R2 is intentionally omitted while R2 is disabled account-wide.
-  // The Worker serves the reviewed embedded map snapshot for its public map
-  // and UAE timeline endpoints until the bucket can be re-enabled and rebound.
-  "services": [{ "binding": "PSR_PROPERTY", "service": "psr-property", "environment": "production" }],
+  // Accepted V48 runtime evidence uses a private immutable asset binding.
+  // IDrive reads remain disabled until the actual endpoint and readback are verified.
+  "services": [{ "binding": "PSR_PROPERTY", "service": "psr-property", "environment": "production" }, { "binding": "MAP_EVIDENCE", "service": "espacios-auth-central", "entrypoint": "MapEvidence" }],
+  "version_metadata": { "binding": "MAP_VERSION" },
+  "observability": { "enabled": true, "head_sampling_rate": 0.1, "logs": { "enabled": true, "invocation_logs": false } },
   "vars": {
     "DATA_ROOM_PUBLIC": "false",
+    "MAP_IDRIVE_READY": "false",
     "SUPABASE_CONTROL_URL": "https://ypkfganbwdvcjrcxygta.supabase.co/functions/v1/espacios-map-control"
   }
   // No routes: preserve the separately managed canonical map shell.
