@@ -67,6 +67,9 @@ for(const [before,after] of paletteCopyReplacements){
   paletteReplacementCount+=matches;
 }
 if(paletteReplacementCount!==6)throw Error(`Expected six legacy palette sentences; replaced ${paletteReplacementCount}`);
+const unsafeHistoryDiagnostic='bhState.manifest?.stats.sourceTransactionRows';
+if(paletteBrowser.split(unsafeHistoryDiagnostic).length!==2)throw Error('Expected one history diagnostic stats access');
+paletteBrowser=paletteBrowser.replace(unsafeHistoryDiagnostic,'bhState.manifest?.stats?.sourceTransactionRows');
 const guardedBrowser=paletteBrowser.replace(legacyCollapseSync,guardedCollapseSync);
 source+='\n// Idempotent legacy collapse icons; evidence and all other embedded assets unchanged.\nGZ.js = '+JSON.stringify(gzipSync(guardedBrowser,{level:9}).toString('base64'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(app)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/smart-estimates/style.css'))+';\n';

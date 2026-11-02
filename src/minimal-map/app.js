@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261102-map-stack-v1';
+  const RELEASE='20261102-map-stack-v2';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
@@ -20,6 +20,19 @@
   }
   function syncSelectionPalette(){
     const map=window.__PSR_MAP__,layers=map?.getStyle?.()?.layers;if(!layers)return;const color=selectionColor();
+    const light=root.dataset.espaciosTheme!=='dark';
+    const geography={
+      'psr-community-line':light?'rgba(78,101,121,.28)':'rgba(153,177,190,.36)',
+      'psr-emirate-line':light?'rgba(78,101,121,.34)':'rgba(153,177,190,.42)',
+      'psr-official-district-line':light?'rgba(77,100,120,.28)':'rgba(153,177,190,.34)',
+      'psr-official-subdistrict-line':light?'rgba(83,106,126,.20)':'rgba(153,177,190,.25)',
+      'psr-official-block-line':light?'rgba(84,106,124,.14)':'rgba(153,177,190,.17)',
+      'psr-official-parcel-line':light?'rgba(84,106,124,.10)':'rgba(153,177,190,.12)',
+      'psr-official-building-line':light?'rgba(84,106,124,.12)':'rgba(153,177,190,.14)'
+    };
+    for(const [id,next] of Object.entries(geography)){
+      if(map.getLayer(id)&&map.getPaintProperty(id,'line-color')!==next)map.setPaintProperty(id,'line-color',next);
+    }
     for(const layer of layers){
       if(!/(selected|selection|project-footprint)/i.test(layer.id)&&!['psr-route-line','psr-projects','project-points','project-fallback-ring'].includes(layer.id))continue;
       for(const property of ['fill-color','fill-outline-color','line-color','fill-extrusion-color','circle-color','circle-stroke-color']){
