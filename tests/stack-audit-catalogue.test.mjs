@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {mapCompleteProjects} from '../src/stack-audit/catalogue.mjs';import {mapEvidenceStore} from '../src/stack-audit/storage.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {mapCompleteProjects} from '../src/stack-audit/catalogue.mjs';import {mapEvidenceStore} from '../src/stack-audit/storage.mjs';
 const req=()=>new Request('https://espacios.me/map/api/projects-all');
 test('complete pages reconcile duplicate-aware returned and registry totals',async()=>{const service={fetch:async url=>{const page=new URL(url).searchParams.get('page')||'1';return Response.json({projects:page==='1'?[{slug:'one'},{slug:'two'}]:[{slug:'two'},{slug:'three'}],total:4,pages:2,registry:{total:3,updatedAt:'v1'}});}};const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service});assert.equal(response.status,200);const data=await response.json();assert.equal(data.total,3);assert.equal(data.complete,true);assert.deepEqual(data.totals,{returned:3,unique:3,rowsFetched:4,duplicateRows:1,upstreamReported:4,registryReported:3});});
 test('a failed, malformed or changing page never returns or caches a partial catalogue',async()=>{for(const mode of ['failed','malformed','changed']){let put=0;globalThis.caches={default:{match:async()=>null,put:async()=>put++}};const service={fetch:async url=>{const page=new URL(url).searchParams.get('page')||'1';return page==='1'?Response.json({projects:[{slug:'one'}],total:2,pages:2,registry:{total:2,updatedAt:'v1'}}):mode==='failed'?new Response('unavailable',{status:503}):Response.json({projects:mode==='malformed'?null:[{slug:'two'}],registry:{updatedAt:'v2'}});}};const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service});assert.equal(response.status,503);assert.equal((await response.json()).complete,false);assert.equal(put,0);}delete globalThis.caches;});
@@ -18,3 +18,19 @@ test('24-row service pages fail closed instead of claiming a complete catalogue'
 test('a page count beyond the hard request budget fails before extra I/O',async()=>{let calls=0;const service={fetch:async()=>{calls++;return Response.json({projects:[{slug:'one'}],pages:51,total:51});}};const r=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service});assert.equal(r.status,503);assert.equal(calls,1);});
 
 test('explicit malformed pagination never becomes a cached single-page catalogue',async()=>{for(const pages of [0,'broken',null,-1,1.5]){let calls=0;const service={fetch:async()=>{calls++;return Response.json({projects:[{slug:'one'}],pages,total:2});}};const r=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service});assert.equal(r.status,503);assert.equal(calls,1);}});
+
+const legacyManifest=JSON.parse(await fs.readFile(new URL('../data/recovery/psr-public-legacy-20261102.manifest.json',import.meta.url),'utf8'));
+const legacyBytes=await fs.readFile(new URL('../data/recovery/psr-public-legacy-20261102.json.gz',import.meta.url));
+const snapshot={...legacyManifest,base64:legacyBytes.toString('base64')};
+test('D1 quota failure serves only the exact older PSR snapshot with its degraded vintage',async()=>{
+ let calls=0;const service={fetch:async url=>{calls++;assert.match(url,/\/data\/api\/v1\/projects/);return new Response('D1 quota',{status:503});}};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(body.total,1073);assert.equal(body.projects.length,1073);assert.equal(body.source.service,'reviewed-older-psr-public-snapshot');assert.equal(body.source.degraded,true);assert.equal(body.completeForCurrentDataHub,false);assert.equal(body.coverage.allDeclaredPagesRetrieved,false);assert.equal(body.source.registryUpdatedAt,'2026-07-22T11:20:58.155Z');assert.equal(calls,2);
+});
+
+test('missing or checksum-mismatched legacy snapshot cannot be published',async()=>{
+ const service={fetch:async()=>new Response('D1 quota',{status:503})};
+ for(const candidate of [null,{...snapshot,compressedSha256:'0'.repeat(64)}]){
+  const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_SNAPSHOT:candidate});assert.equal(response.status,503);assert.equal((await response.json()).complete,false);
+ }
+});

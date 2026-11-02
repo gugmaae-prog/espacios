@@ -132,6 +132,12 @@ const inventoryManifest=JSON.parse(await read('data/recovery/full-item-inventory
 let stackSource='\nvar MAP_STACK_SOURCE_COMMIT='+JSON.stringify(process.env.MAP_SOURCE_COMMIT||'local-candidate')+';\n';
 stackSource+='\nvar UAE_AJMAN_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/validation.json')))+';\n';
 stackSource+='\nvar UAE_AJMAN_REGISTER_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/projects-validation.json')))+';\n';
+const psrLegacyManifest=JSON.parse(await read('data/recovery/psr-public-legacy-20261102.manifest.json'));
+const psrLegacyCompressed=await fs.readFile(new URL('data/recovery/psr-public-legacy-20261102.json.gz',root));
+const psrLegacyRaw=gunzipSync(psrLegacyCompressed),psrLegacy=JSON.parse(psrLegacyRaw);
+const digest=value=>createHash('sha256').update(value).digest('hex');
+if(psrLegacyCompressed.length!==psrLegacyManifest.compressedBytes||digest(psrLegacyCompressed)!==psrLegacyManifest.compressedSha256||psrLegacyRaw.length!==psrLegacyManifest.rawBytes||digest(psrLegacyRaw)!==psrLegacyManifest.rawSha256||psrLegacy.projects?.length!==psrLegacyManifest.uniqueProjectSlugs||new Set(psrLegacy.projects.map(project=>project.slug)).size!==psrLegacyManifest.uniqueProjectSlugs||psrLegacy.registry?.total!==psrLegacyManifest.registryReportedTotal)throw Error('PSR legacy recovery snapshot changed');
+stackSource+='\nvar MAP_PSR_LEGACY_SNAPSHOT='+JSON.stringify({...psrLegacyManifest,base64:psrLegacyCompressed.toString('base64')})+';\n';
 stackSource+='\nvar MAP_ARCHIVE_MANIFEST='+JSON.stringify(archiveManifest)+';\nvar MAP_NATIVE_INDEX_MANIFEST='+JSON.stringify(nativeIndexManifest)+';\n';
 stackSource+='\nvar MAP_FULL_INVENTORY_MANIFEST='+JSON.stringify(inventoryManifest)+';\n';
 for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^export /gm,'')+'\n';
