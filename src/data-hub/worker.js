@@ -4,7 +4,7 @@ var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
 // src/index.js
-var RELEASE = "espacios-data-hub-v10-versioned-cache";
+var RELEASE = "espacios-data-hub-v11-cache-provenance";
 var TENANTS = {
   psr: { key: "psr", slug: "psr", name: "PSR Homes", site: "https://psrhomes.ae" },
   "haus-and-grace": { key: "haus-and-grace", slug: "haus-and-grace", name: "Haus & Grace", site: "https://hausandgrace.ae" }
@@ -340,9 +340,24 @@ async function listPublishedProjects(request, env, tenantKey, ctx) {
     try {
       const hit = await cache.match(cacheKey);
       if (hit) {
-        const cachedEtag = hit.headers.get("etag");
-        if (etagMatches(request.headers.get("if-none-match"), cachedEtag)) return new Response(null, { status: 304, headers: hit.headers });
-        return hit;
+        const saved = await hit.clone().json();
+        if (saved?.ok === true && Array.isArray(saved.projects) && saved.registry) {
+          // A cache hit proves that this page was read earlier. It cannot prove
+          // that D1 is available now or that the registry is still current.
+          return json({
+            ...saved,
+            source: {
+              service: "cached-verified-d1-page",
+              degraded: true,
+              completeForCurrentDataHub: false,
+              registryHashReconciled: null,
+              note: "Previously verified D1 page served from cache; current D1 availability was not checked."
+            }
+          }, {
+            cache: "no-store",
+            headers: { "access-control-allow-origin": "*", "x-espacios-data-degraded": "true" }
+          });
+        }
       }
     } catch { /* Fall through to the registry. */ }
   }

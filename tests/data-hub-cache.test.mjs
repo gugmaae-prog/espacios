@@ -12,7 +12,7 @@ const rows=[
 const makeEnv=(state={tenant_key:'psr',revision:3,project_count:2,content_hash:'hash',updated_at:'today'})=>{
  const calls={state:0,count:0,page:0,filters:0};
  const REGISTRY={prepare(sql){let kind=sql.includes('FROM project_registry_state')?'state':sql.includes('COUNT(*) AS total')?'count':sql.includes('SELECT p.developer, p.emirate, p.payload_json')?'filters':'page';calls[kind]++;return {bind(...args){return {first:async()=>kind==='state'?state:{total:2},all:async()=>kind==='filters'?{results:rows.map(({developer,emirate,payload_json})=>({developer,emirate,payload_json}))}:{results:rows.slice((Number(args.at(-1))||0),(Number(args.at(-1))||0)+Number(args.at(-2))||1)}};}};}};
- return {env:{REGISTRY,DATA_RELEASE:'espacios-data-hub-v7-public-read-cache'},calls};
+ return {env:{REGISTRY,DATA_RELEASE:'espacios-data-hub-v11-cache-provenance'},calls};
 };
 const makeCache=()=>{const values=new Map();return {match:async key=>values.get(key.url)?.clone()||null,put:async(key,response)=>{values.set(key.url,response.clone());}};};
 
@@ -33,11 +33,11 @@ test('public project pages reuse exact cached responses and revision-keyed filte
   const first=await hub.fetch(request('&page=1'),env),body=await first.json();
   assert.equal(first.status,200);assert.equal(body.total,2);assert.equal(body.projects[0].slug,'alpha');assert.deepEqual(body.filters.emirates,{Dubai:1,Ajman:1});
   assert.deepEqual(calls,{state:1,count:0,page:1,filters:1});
-  const again=await hub.fetch(request('&page=1'),env);assert.equal(again.status,200);assert.deepEqual(calls,{state:1,count:0,page:1,filters:1});
+  const again=await hub.fetch(request('&page=1'),env),cached=await again.json();assert.equal(again.status,200);assert.equal(cached.source.service,'cached-verified-d1-page');assert.equal(cached.source.degraded,true);assert.equal(cached.source.completeForCurrentDataHub,false);assert.equal(again.headers.get('x-espacios-data-degraded'),'true');assert.equal(again.headers.get('etag'),null);assert.deepEqual(calls,{state:1,count:0,page:1,filters:1});
   const second=await hub.fetch(request('&page=2'),env),secondBody=await second.json();assert.equal(secondBody.projects[0].slug,'beta');
   assert.deepEqual(calls,{state:2,count:0,page:2,filters:1});
   const conditional=await hub.fetch(new Request(request('&page=1'),{headers:{'if-none-match':first.headers.get('etag')}}),env);
-  assert.equal(conditional.status,304);assert.deepEqual(calls,{state:2,count:0,page:2,filters:1});
+  assert.equal(conditional.status,200);assert.equal((await conditional.json()).source.degraded,true);assert.deepEqual(calls,{state:2,count:0,page:2,filters:1});
  }finally{delete globalThis.caches;}
 });
 

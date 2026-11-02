@@ -11,8 +11,27 @@ test('new map release ignores a prior cached live-format catalogue',async()=>{
   const service={fetch:async()=>Response.json({projects:[{slug:'one'}],total:1,pages:1,page:1,pageSize:100,registry:{total:1,revision:2,updatedAt:'snapshot'},source},{headers:{'x-espacios-data-release':'espacios-data-hub-v10-versioned-cache'}})};
   const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service}),body=await response.json();
   assert.equal(response.status,200);assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
-  assert.deepEqual(matched,['20261102-data-hub-v10-provenance-v6']);
+  assert.deepEqual(matched,['20261103-data-hub-v11-provenance-v7']);
  }finally{if(prior===undefined)delete globalThis.caches;else globalThis.caches=prior;}
+});
+test('a later cached Data Hub page makes the complete catalogue degraded',async()=>{
+ const service={fetch:async url=>{
+  const page=Number(new URL(url).searchParams.get('page')||1);
+  return Response.json({projects:[{slug:'project-'+page}],total:2,pages:2,page,pageSize:100,registry:{total:2,revision:2,updatedAt:'same',contentHash:'same'},...(page===2?{source:{service:'cached-verified-d1-page',degraded:true,completeForCurrentDataHub:false}}:{})},{headers:{'x-espacios-data-release':'v11'}});
+ }};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(body.total,2);assert.equal(body.complete,true);
+ assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
+ assert.equal(body.source.service,'espacios-data-hub-degraded-pages');
+ assert.match(body.coverage.warning,/cached or degraded page/);
+});
+test('a live page cannot be mixed with the reviewed snapshot',async()=>{
+ const service={fetch:async url=>{
+  const page=Number(new URL(url).searchParams.get('page')||1);
+  return Response.json({projects:[{slug:'project-'+page}],total:2,pages:2,page,pageSize:100,registry:{total:2,revision:2,updatedAt:'same',contentHash:'same'},...(page===2?{source:{service:'reviewed-psr-d1-public-export',degraded:true,completeForCurrentDataHub:false,sha256:'snapshot'}}:{})},{headers:{'x-espacios-data-release':'v11'}});
+ }};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service});
+ assert.equal(response.status,503);assert.equal((await response.json()).complete,false);
 });
 test('a cached live-format catalogue cannot imply a current D1 read',async()=>{
  const prior=globalThis.caches;
