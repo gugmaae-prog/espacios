@@ -1,0 +1,43 @@
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {SCAD_STOCK_SOURCE,SCAD_STOCK_ROWS} from '../src/stack-audit/scad-stock.mjs';
+
+const root=new URL('../',import.meta.url),sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const files={heatmap:'data/recovery/accepted-uae-heatmap-20261102.json',heatmapManifest:'data/recovery/accepted-uae-heatmap-20261102.manifest.json',inventory:'data/recovery/full-item-inventory.manifest.json',nativeIndex:'data/recovery/v48-native-history-index.manifest.json',urban:'data/uae-evidence/abu-dhabi/sdi-urban-projects-validation.json',ajmanRegister:'data/uae-evidence/ajman/projects-validation.json',ajmanSales:'data/uae-evidence/ajman/validation.json',ajmanRegistrations:'data/uae-evidence/ajman/registration-validation.json',ajmanDispositions:'data/uae-evidence/ajman/transactions-validation.json',ajmanManagement:'data/uae-evidence/ajman/management-validation.json',ajmanAreas:'data/uae-evidence/ajman/area-reference-validation.json',ajmanLandSales:'data/uae-evidence/ajman/lands-sales-validation.json',ajmanRents:'data/uae-evidence/ajman/certified-rent-validation.json',ajmanCrosswalk:'data/uae-evidence/ajman/reviewed-v48-crosswalk.json',dubaiStatus:'data/uae-evidence/dubai/dld-project-status-validation.json',dubaiCrosswalk:'data/uae-evidence/dubai/reviewed-v48-crosswalk.json'};
+const data={},basisSha256={};
+for(const [name,path] of Object.entries(files)){const bytes=await fs.readFile(new URL(path,root));data[name]=JSON.parse(bytes);basisSha256[name]=sha(bytes);}
+const heat=data.heatmap,counts=heat.counts,manifest=data.heatmapManifest;
+if(counts.projects!==1645||counts.geocodedProjects!==1518||counts.unmappedProjects!==127||counts.emirates!==7||manifest.counts?.projects!==1645||manifest.counts?.geocodedProjects!==1518||manifest.sha256!==basisSha256.heatmap||manifest.bytes!==(await fs.readFile(new URL(files.heatmap,root))).length||data.inventory.records!==1860||data.nativeIndex.sourceVersion!=='20261014-enrichment-v48'||data.ajmanCrosswalk.matches.length!==3||data.dubaiCrosswalk.matches.length!==67||SCAD_STOCK_ROWS.length!==8)throw Error('Accepted UAE coverage baseline changed');
+const source=(id,route,rows,grain,vintage,url,rights,extra={})=>({id,route,sourceRows:rows,grain,sourceVintage:vintage,sourceUrl:url,rights,liveRouteHealth:'not_asserted_by_inventory',...extra});
+const published={
+ 'Abu Dhabi':[
+  source(SCAD_STOCK_SOURCE.id,'/map/api/uae-evidence/abu-dhabi/stock',SCAD_STOCK_ROWS.length,'region-year rounded building and unit stock','2023–2024',SCAD_STOCK_SOURCE.url,'SCAD open-data policy with attribution'),
+  source(data.urban.sourceId,'/map/api/uae-evidence/abu-dhabi/urban-projects',data.urban.rows,'urban-development feature attributes, mixed uses','captured 2026-11-02',data.urban.serviceLayerUrl,'AD-SDI open-data terms with attribution',{distinctSourceProjectIds:data.urban.distinctSourceProjectIds})
+ ],
+ Ajman:[
+  source(data.ajmanRegister.sourceId,'/map/api/uae-evidence/ajman/register',data.ajmanRegister.rows,'dated project-register snapshots',data.ajmanRegister.latestSnapshotDate,data.ajmanRegister.datasetUrl,'CC BY 4.0',{latestSourceProjectIds:data.ajmanRegister.latestSnapshotProjectIds,reviewedV48IdentityLinks:data.ajmanCrosswalk.matches.length}),
+  source(data.ajmanSales.sourceId,'/map/api/uae-evidence/ajman/sales',data.ajmanSales.rows,'quarterly unit-sales aggregates',data.ajmanSales.sourceModifiedAt,data.ajmanSales.datasetUrl,'CC BY 4.0'),
+  source(data.ajmanRegistrations.sourceId,'/map/api/uae-evidence/ajman/registrations',data.ajmanRegistrations.rows,'quarterly registration-stage aggregates',data.ajmanRegistrations.sourceModifiedAt,data.ajmanRegistrations.datasetUrl,'CC BY 4.0'),
+  source(data.ajmanDispositions.sourceId,'/map/api/uae-evidence/ajman/dispositions',data.ajmanDispositions.rows,'mixed unit dispositions and mortgage aggregates',data.ajmanDispositions.sourceModifiedAt,data.ajmanDispositions.datasetUrl,'CC BY 4.0'),
+  source(data.ajmanManagement.sourceId,'/map/api/uae-evidence/ajman/management',data.ajmanManagement.rows,'annual project-management appointments',data.ajmanManagement.sourceModifiedAt,data.ajmanManagement.datasetUrl,'CC BY 4.0'),
+  source(data.ajmanAreas.sourceId,'/map/api/uae-evidence/ajman/areas',data.ajmanAreas.rows,'dated named area reference points',data.ajmanAreas.sourceModifiedAt,data.ajmanAreas.datasetUrl,'CC BY 4.0'),
+  source(data.ajmanLandSales.sourceId,'/map/api/uae-evidence/ajman/land-sales',data.ajmanLandSales.quality.rows,'district-quarter land-sales aggregates',data.ajmanLandSales.sourceModifiedAt,data.ajmanLandSales.datasetUrl,'CC BY 4.0'),
+  ...data.ajmanRents.sources.map(item=>source(item.id,`/map/api/uae-evidence/ajman/rent-contracts?city=${item.city}`,item.quality.rows,'city-month certified-rent contract counts',item.sourceModifiedAt,item.datasetUrl,'CC BY 4.0'))
+ ],
+ Dubai:[source(data.dubaiStatus.sourceId,'/map/api/uae-evidence/dubai/project-status',data.dubaiStatus.rowCount,'dated DLD project-status register copy',data.dubaiStatus.sourcePublicationDate,data.dubaiStatus.sourcePageUrl,'CC BY 4.0 secondary publication',{reviewedV48IdentityLinks:data.dubaiCrosswalk.matches.length,unmatchedSourceProjectIds:data.dubaiStatus.rowCount-data.dubaiCrosswalk.matches.length})]
+};
+const gaps={
+ 'Abu Dhabi':['No approved ADREC V55 transaction-data reuse; candidate sales remain unpublished.','No authoritative all-project denominator or verified coordinates for 127 accepted V48 records.'],
+ Ajman:['Only three latest official project IDs have reviewed V48 identity links.','Source records do not provide verified project-site coordinates or complete rent prices.'],
+ Dubai:['The primary DLD project-register raw vintage is not retained; the published status copy is secondary.','Most source project IDs remain separate from V48 identities.'],
+ Fujairah:['No reusable bulk project register or verified project-site coordinate source established.'],
+ 'Ras Al Khaimah':['The public off-plan list has not been cleared for backend republication or reconciled to V48 identities.'],
+ Sharjah:['No reusable bulk project register or verified project-site coordinate source established.'],
+ 'Umm Al Quwain':['No reusable bulk project register or verified project-site coordinate source established.']
+};
+const emirates=Object.entries(counts.byEmirate).map(([name,item])=>({name,acceptedV48:{projectRecords:item.projects,projectOrSourcePoints:item.coordinateQuality.projectOrSource,approximateCommunityCentrePoints:item.coordinateQuality.approximateCommunityCentre,withoutCoordinates:item.coordinateQuality.withoutCoordinates,communities:item.communities,initiatives:item.initiatives},publishedSources:published[name]||[],gaps:gaps[name],authoritativeAllProjectDenominator:null}));
+if(emirates.length!==7||emirates.reduce((n,item)=>n+item.acceptedV48.projectRecords,0)!==1645||emirates.reduce((n,item)=>n+item.acceptedV48.approximateCommunityCentrePoints,0)!==360||emirates.reduce((n,item)=>n+item.acceptedV48.withoutCoordinates,0)!==127||emirates.some(item=>!Array.isArray(item.gaps)))throw Error('Emirate coverage inventory mismatch');
+const report={version:'20261103-uae-evidence-coverage-v1',basis:'Accepted V48 map snapshot plus separately published, dated source snapshots. This is an inventory, not a live source-health result or a complete UAE census.',acceptedSnapshot:{version:data.nativeIndex.sourceVersion,projectRecords:counts.projects,mappedProjectRecords:counts.geocodedProjects,approximateCommunityCentrePoints:counts.coordinateQuality.approximateCommunityCentre,searchableWithoutCoordinates:counts.unmappedProjects,recordHistory:data.inventory.records,nativeHistorySeries:16872},allUaeProjectDenominator:null,projectCompletenessPercent:null,emirates,basisSha256};
+const path=new URL('data/uae-evidence/coverage-validation.json',root);
+if(process.argv.includes('--check')){const saved=JSON.parse(await fs.readFile(path,'utf8'));if(JSON.stringify(saved)!==JSON.stringify(report))throw Error('UAE coverage report is out of date');console.log(JSON.stringify({passed:true,emirates:emirates.length,publishedSourceSnapshots:emirates.reduce((n,item)=>n+item.publishedSources.length,0),denominator:report.allUaeProjectDenominator}));}
+else{await fs.writeFile(path,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({emirates:emirates.length,publishedSourceSnapshots:emirates.reduce((n,item)=>n+item.publishedSources.length,0),report:path.pathname}));}
