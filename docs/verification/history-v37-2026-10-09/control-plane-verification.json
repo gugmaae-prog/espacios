@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-10-08T23:39:48.072353+00:00",
+  "url": "https://espacios.me/map/api/control-plane",
+  "connected": true,
+  "config": {
+    "id": "production",
+    "data_room_public": false,
+    "expected_frontend_release": "20261009-map-evidence-v41",
+    "expected_worker_version": "d9cf3e2c-19d6-47d2-a2f8-9dfd79dc6b23",
+    "updated_at": "2026-10-08T23:39:09.361058+00:00"
+  },
+  "latestRelease": {
+    "id": "0a585d14-f15a-4a58-8204-44ff72ac1921",
+    "release_tag": "20261008-enrichment-v37",
+    "frontend_release": "20261009-map-evidence-v41",
+    "github_sha": "ab5c63cf198084b137ae469744243fa589be8765",
+    "github_pr": 98,
+    "cloudflare_worker_version": "d9cf3e2c-19d6-47d2-a2f8-9dfd79dc6b23",
+    "cloudflare_deployment_id": "0c10d080-2ec0-450d-94d3-f7519d4d7807",
+    "source_sync_state": "pending_merge"
+  },
+  "verifiedMetadata": {
+    "history_release": "20261008-enrichment-v37",
+    "root_sha256": "be31d7f61e60b822c9fc005051f958613d2cd2db0c830b69fb1366e9a3dacf75",
+    "published_sources": 3343,
+    "published_facts": 6718,
+    "coverage_present": 3299,
+    "coverage_partial": 3439,
+    "coverage_missing": 26742,
+    "coverage_unestablished": 9300,
+    "coverage_unresolved": 39481,
+    "approved_2080_forecast_records": 0,
+    "publication_state": "complete",
+    "research_complete": false
+  },
+  "passed": true
+}

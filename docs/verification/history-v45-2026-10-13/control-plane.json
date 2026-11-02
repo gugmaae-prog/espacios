@@ -1,0 +1,11 @@
+{
+  "registryId": "969840e5-b705-4e1e-8a1a-1ecf6c8c419f",
+  "runtime": "production",
+  "expectedFrontend": "20261012-map-evidence-v48",
+  "expectedWorker": "7fa645e8-3d61-44f3-ba39-ced6ee0098d4",
+  "history": "20261013-enrichment-v45",
+  "rootSHA256": "1c17824d39f4399e1fb1088bb52c2a0e761cb2e935286c617e25c883b4afa2c0",
+  "researchComplete": false,
+  "sourceSyncState": "pending_merge",
+  "dataRoomPublic": false
+}

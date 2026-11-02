@@ -1,0 +1,18 @@
+{
+  "route": {
+    "id": "ab6af7e5cc2345f0a3b34a3f11476c31",
+    "pattern": "espacios.me/map*",
+    "script": "espacios-map-shell",
+    "request_limit_fail_open": false
+  },
+  "mapBinding": [
+    {
+      "environment": "production",
+      "name": "MAP",
+      "service": "psr-portfolio-map-v2",
+      "type": "service"
+    }
+  ],
+  "checkedAt": "2026-10-08T23:36:07.230Z",
+  "passed": true
+}

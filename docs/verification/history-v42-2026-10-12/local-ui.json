@@ -1,0 +1,24 @@
+{
+  "origin": "http://localhost:8798",
+  "frontend": "20261012-map-evidence-v46",
+  "history": "20261012-enrichment-v42",
+  "recordFacts": {
+    "Inaura": 36,
+    "SOMA": 6,
+    "EIRA": 31,
+    "Divine Elements": 50
+  },
+  "divineElementsPriceMonths": {
+    "sparse": 7,
+    "unknown": 203,
+    "missing": 0
+  },
+  "inauraBenchmarkPreserved": true,
+  "desktopWidth": 1280,
+  "mobileWidth": 390,
+  "mobileScrollWidth": 390,
+  "annualEndpoint": 2080,
+  "annualSlots": 54,
+  "unverifiedScenarioValues": "unavailable",
+  "localLogoCrossOriginBlocked": true
+}

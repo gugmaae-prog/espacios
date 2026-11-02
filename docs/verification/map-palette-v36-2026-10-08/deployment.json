@@ -1,0 +1,16 @@
+{
+  "id": "e68ebf28-410c-4cdd-83b1-251b61645628",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Espacios V36: verified soft controls and measured desktop panel spacing",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "f332a69c-c36c-427e-82ea-6887a2ab51e0",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T19:04:28.103522Z"
+}

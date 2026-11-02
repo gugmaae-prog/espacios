@@ -1,0 +1,47 @@
+{
+  "status": "published_candidate_and_canonical_verified_interim_v46",
+  "checkedOn": "2026-10-13",
+  "version": "20261013-enrichment-v46",
+  "immutableArchiveRootSHA256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+  "canonicalSnapshotSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "records": 1860,
+  "projects": 1645,
+  "communities": 215,
+  "sources": 3367,
+  "events": 105,
+  "exposures": 7382,
+  "historicalRowsPreserved": 633891,
+  "seriesPreserved": 16872,
+  "newSources": 2,
+  "newLifecycleFacts": 39,
+  "newAuthorityStatusSnapshots": 9,
+  "newRegisteredSales": 0,
+  "newRegisteredRents": 0,
+  "newForecasts": 0,
+  "ledger": {
+    "present": 3342,
+    "partial": 3413,
+    "missing": 26725,
+    "unestablished": 9300,
+    "items": 42780,
+    "unresolved": 39438,
+    "unresolvedPercent": 92.1879,
+    "annualEndpoint": 2080
+  },
+  "remoteWrites": "completed_by_scoped_production_publisher",
+  "releaseClaims": {
+    "r2D1Publication": true,
+    "candidateAPI": true,
+    "workerUpload": true,
+    "trafficActivation": true,
+    "canonicalAPI": true,
+    "canonicalUI": true,
+    "supabaseControlPlane": true
+  },
+  "interimDeployment": {
+    "workerVersion": "56d24e27-4c41-4d2a-be13-2fde1e7ce889",
+    "deployment": "5976084d-c5fd-4d70-b382-1de452a1a8f5",
+    "trafficPercent": 100,
+    "note": "A later authorized mobile-interface release is outside this V46 data receipt and needs separate verification."
+  }
+}

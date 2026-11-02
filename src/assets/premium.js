@@ -25,9 +25,11 @@
   function connect(map){
     if(connectedMap===map){paint();return}
     connectedMap=map;
-    map.on?.('style.load',()=>paint());
-    map.on?.('load',()=>{paint();document.querySelector('.ae-map-recovery')?.remove()});
+    const clearRecovery=()=>document.querySelector('.ae-map-recovery')?.remove();
+    map.on?.('style.load',()=>{paint();clearRecovery()});
+    map.on?.('load',()=>{paint();clearRecovery()});
     if(map.isStyleLoaded?.())paint();
+    if(map.getCanvas?.()&&map.getStyle?.()?.layers?.length)clearRecovery();
   }
 
   function waitForMap(){

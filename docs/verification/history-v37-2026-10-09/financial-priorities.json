@@ -1,0 +1,159 @@
+{
+  "version": "20261008-enrichment-v37",
+  "basis": "Record-level evidence presence, not complete lifetime histories or an estimate of inaccessible records. Missing means no qualifying accepted direct evidence in this archive.",
+  "projectCountsByEmirate": {
+    "Abu Dhabi": {
+      "records": 347,
+      "items": {
+        "registered_sale_history": {
+          "missing": 345,
+          "present": 2
+        },
+        "signed_rent_history": {
+          "missing": 347
+        },
+        "advertised_prices": {
+          "present": 6,
+          "missing": 313,
+          "partial": 28
+        },
+        "dated_current_valuation": {
+          "missing": 347
+        },
+        "annual_scenario_inputs": {
+          "missing": 347
+        }
+      }
+    },
+    "Ajman": {
+      "records": 10,
+      "items": {
+        "registered_sale_history": {
+          "missing": 10
+        },
+        "signed_rent_history": {
+          "missing": 10
+        },
+        "advertised_prices": {
+          "partial": 10
+        },
+        "dated_current_valuation": {
+          "missing": 10
+        },
+        "annual_scenario_inputs": {
+          "missing": 10
+        }
+      }
+    },
+    "Dubai": {
+      "records": 1119,
+      "items": {
+        "registered_sale_history": {
+          "missing": 796,
+          "present": 321,
+          "partial": 2
+        },
+        "signed_rent_history": {
+          "missing": 1029,
+          "present": 89,
+          "partial": 1
+        },
+        "advertised_prices": {
+          "missing": 71,
+          "partial": 1046,
+          "present": 2
+        },
+        "dated_current_valuation": {
+          "missing": 1119
+        },
+        "annual_scenario_inputs": {
+          "missing": 1119
+        }
+      }
+    },
+    "Fujairah": {
+      "records": 1,
+      "items": {
+        "registered_sale_history": {
+          "missing": 1
+        },
+        "signed_rent_history": {
+          "missing": 1
+        },
+        "advertised_prices": {
+          "partial": 1
+        },
+        "dated_current_valuation": {
+          "missing": 1
+        },
+        "annual_scenario_inputs": {
+          "missing": 1
+        }
+      }
+    },
+    "Ras Al Khaimah": {
+      "records": 89,
+      "items": {
+        "registered_sale_history": {
+          "missing": 89
+        },
+        "signed_rent_history": {
+          "missing": 89
+        },
+        "advertised_prices": {
+          "partial": 81,
+          "missing": 3,
+          "present": 5
+        },
+        "dated_current_valuation": {
+          "missing": 89
+        },
+        "annual_scenario_inputs": {
+          "missing": 89
+        }
+      }
+    },
+    "Sharjah": {
+      "records": 59,
+      "items": {
+        "registered_sale_history": {
+          "missing": 59
+        },
+        "signed_rent_history": {
+          "missing": 59
+        },
+        "advertised_prices": {
+          "missing": 4,
+          "partial": 55
+        },
+        "dated_current_valuation": {
+          "missing": 59
+        },
+        "annual_scenario_inputs": {
+          "missing": 59
+        }
+      }
+    },
+    "Umm Al Quwain": {
+      "records": 20,
+      "items": {
+        "registered_sale_history": {
+          "missing": 20
+        },
+        "signed_rent_history": {
+          "missing": 20
+        },
+        "advertised_prices": {
+          "partial": 19,
+          "missing": 1
+        },
+        "dated_current_valuation": {
+          "missing": 20
+        },
+        "annual_scenario_inputs": {
+          "missing": 20
+        }
+      }
+    }
+  }
+}

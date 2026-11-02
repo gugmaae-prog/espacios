@@ -1,0 +1,28 @@
+{
+  "origin": "http://localhost:8798",
+  "version": "20261012-enrichment-v41",
+  "checkedAt": "2026-10-11T22:36:42.900Z",
+  "readOnly": true,
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 26736,
+      "unestablished": 9300,
+      "partial": 3438,
+      "present": 3306
+    },
+    "annualEndpoint": 2080
+  },
+  "events": {
+    "events": 105,
+    "sources": 3353,
+    "exposures": 7382
+  },
+  "increment": {
+    "series": 0,
+    "nativePoints": 0,
+    "factRecords": 2
+  },
+  "passed": true
+}

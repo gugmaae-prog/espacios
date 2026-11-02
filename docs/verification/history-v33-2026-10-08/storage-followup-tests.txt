@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: parallel indexing bounds requests, completes parents first, and drains failures before advancing
+ok 1 - parallel indexing bounds requests, completes parents first, and drains failures before advancing
+  ---
+  duration_ms: 17.9285
+  type: 'test'
+  ...
+# Subtest: production bindings rejected before mutation
+ok 2 - production bindings rejected before mutation
+  ---
+  duration_ms: 0.294334
+  type: 'test'
+  ...
+# Subtest: JSONC preserves HTTPS URLs and removes comments
+ok 3 - JSONC preserves HTTPS URLs and removes comments
+  ---
+  duration_ms: 0.150584
+  type: 'test'
+  ...
+# Subtest: checks all objects before writing; late existing collision prevents partial writes
+ok 4 - checks all objects before writing; late existing collision prevents partial writes
+  ---
+  duration_ms: 2.041666
+  type: 'test'
+  ...
+# Subtest: incoming checksum failure prevents writes and indexing
+ok 5 - incoming checksum failure prevents writes and indexing
+  ---
+  duration_ms: 0.41775
+  type: 'test'
+  ...
+# Subtest: immutable publication uses conditional create; second run reuses verified bytes
+ok 6 - immutable publication uses conditional create; second run reuses verified bytes
+  ---
+  duration_ms: 1.771
+  type: 'test'
+  ...
+# Subtest: snapshot version collision never modifies object store
+ok 7 - snapshot version collision never modifies object store
+  ---
+  duration_ms: 0.415833
+  type: 'test'
+  ...
+# Subtest: remote byte checksums support reuse and refuse corrupt or missing readback before activation
+ok 8 - remote byte checksums support reuse and refuse corrupt or missing readback before activation
+  ---
+  duration_ms: 1.364583
+  type: 'test'
+  ...
+# Subtest: index failure leaves immutable objects but never marks snapshot complete
+ok 9 - index failure leaves immutable objects but never marks snapshot complete
+  ---
+  duration_ms: 0.600792
+  type: 'test'
+  ...
+# Subtest: a competing immutable root claimed after the initial read aborts before record indexes
+ok 10 - a competing immutable root claimed after the initial read aborts before record indexes
+  ---
+  duration_ms: 0.507666
+  type: 'test'
+  ...
+# Subtest: completion must verify both its D1 mutation and the persisted complete state
+ok 11 - completion must verify both its D1 mutation and the persisted complete state
+  ---
+  duration_ms: 0.324916
+  type: 'test'
+  ...
+# Subtest: a silently CHECK-rejected relation leaves the snapshot staged instead of declaring completion
+ok 12 - a silently CHECK-rejected relation leaves the snapshot staged instead of declaring completion
+  ---
+  duration_ms: 0.440542
+  type: 'test'
+  ...
+# Subtest: count validation uses unique keys and allows identical repeated INSERTs
+ok 13 - count validation uses unique keys and allows identical repeated INSERTs
+  ---
+  duration_ms: 0.311959
+  type: 'test'
+  ...
+# Subtest: unexpected extra version-scoped rows and conflicting duplicate keys refuse completion
+ok 14 - unexpected extra version-scoped rows and conflicting duplicate keys refuse completion
+  ---
+  duration_ms: 0.37675
+  type: 'test'
+  ...
+# Subtest: missing immutable snapshot header is rejected before any object write
+ok 15 - missing immutable snapshot header is rejected before any object write
+  ---
+  duration_ms: 0.163833
+  type: 'test'
+  ...
+# Subtest: generated INSERT parser binds quoted data without interpreting punctuation or doubled apostrophes
+ok 16 - generated INSERT parser binds quoted data without interpreting punctuation or doubled apostrophes
+  ---
+  duration_ms: 0.071666
+  type: 'test'
+  ...
+# Subtest: unsupported generated SQL fails before immutable writes or record indexing
+ok 17 - unsupported generated SQL fails before immutable writes or record indexing
+  ---
+  duration_ms: 1.128125
+  type: 'test'
+  ...
+# Subtest: snapshot SQL cannot claim a different manifest version or root
+ok 18 - snapshot SQL cannot claim a different manifest version or root
+  ---
+  duration_ms: 0.407292
+  type: 'test'
+  ...
+# Subtest: local D1 publishes and round-trips >100KiB header/record JSON using bound values
+ok 19 - local D1 publishes and round-trips >100KiB header/record JSON using bound values
+  ---
+  duration_ms: 1001.530416
+  type: 'test'
+  ...
+# Subtest: revision options reject path-like versions and impossible as-of dates before building
+ok 20 - revision options reject path-like versions and impossible as-of dates before building
+  ---
+  duration_ms: 110.703334
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1936.483875

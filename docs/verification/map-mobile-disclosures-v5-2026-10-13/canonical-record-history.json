@@ -1,0 +1,20 @@
+{
+  "eventsReturned": 35,
+  "origin": "https://espacios.me/map/api/record-history?recordId=project%3Aaddress-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+  "record": {
+    "id": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+    "name": "Address Residences Zabeel"
+  },
+  "scenario": {
+    "baselineYear": 2026,
+    "causalPriceUplift": false,
+    "classification": "conditional_scenario",
+    "priceAnchor": null,
+    "rentAnchor": null,
+    "targetEnd": 2080,
+    "targetStart": 2027,
+    "targetYearCount": 54,
+    "validatedForecast": false
+  },
+  "version": "20261013-enrichment-v46"
+}

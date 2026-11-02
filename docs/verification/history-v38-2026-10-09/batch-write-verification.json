@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-09T00:51:57.089Z",
+  "version": "20261008-enrichment-v38",
+  "root": "01b716e001347142944eda86c5c649f4a2e05b47be05df70f8302db4450d09fd",
+  "table": "hi_series",
+  "sourceIndexRange": [
+    16000,
+    16050
+  ],
+  "originalRows": 50,
+  "groupedQueries": 2,
+  "changes": 50,
+  "elapsedMs": 2123,
+  "passed": true,
+  "source": "Exact existing V38 index rows; no generated evidence or altered statements",
+  "helperCommit": "be6525ddba33e358bf3e17f411c9677de819e2d4"
+}

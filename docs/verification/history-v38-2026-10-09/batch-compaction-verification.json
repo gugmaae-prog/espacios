@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-09T00:47:48.747Z",
+  "originalRows": 50,
+  "groupedQueries": 2,
+  "changes": 0,
+  "elapsedMs": 1099,
+  "passed": true,
+  "helperCommit": "be6525ddba33e358bf3e17f411c9677de819e2d4"
+}
