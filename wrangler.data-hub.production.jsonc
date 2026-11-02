@@ -7,7 +7,7 @@
   "preview_urls": false,
   "compatibility_date": "2026-09-26",
   "d1_databases": [{ "binding": "REGISTRY", "database_name": "espacios-data-registry", "database_id": "3ad3a1ff-83cc-42fa-a106-d6f715e1e967" }],
-  "r2_buckets": [{ "binding": "ARCHIVES", "bucket_name": "espacios-data-snapshots" }],
+  "unsafe": { "bindings": [{ "type": "inherit", "name": "ARCHIVES" }] },
   "services": [{ "binding": "AUTH", "service": "espacios-auth-central", "environment": "production" }],
   "observability": { "enabled": true, "head_sampling_rate": 1, "redact_query_string": false, "logs": { "enabled": true, "head_sampling_rate": 1, "persist": true, "invocation_logs": true }, "traces": { "enabled": false, "persist": true, "head_sampling_rate": 1 } },
   "vars": { "DATA_RELEASE": "espacios-data-hub-v7-public-read-cache" }
