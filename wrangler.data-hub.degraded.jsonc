@@ -9,7 +9,7 @@
   "d1_databases": [{ "binding": "REGISTRY", "database_name": "espacios-data-registry", "database_id": "3ad3a1ff-83cc-42fa-a106-d6f715e1e967" }],
   "services": [{ "binding": "AUTH", "service": "espacios-auth-central", "environment": "production" }],
   "observability": { "enabled": true, "head_sampling_rate": 1, "redact_query_string": false, "logs": { "enabled": true, "head_sampling_rate": 1, "persist": true, "invocation_logs": true }, "traces": { "enabled": false, "persist": true, "head_sampling_rate": 1 } },
-  "vars": { "DATA_RELEASE": "espacios-data-hub-v8-public-snapshot-fallback" }
+  "vars": { "DATA_RELEASE": "espacios-data-hub-v9-filter-read-reduction" }
   // Temporary release config while Cloudflare R2 is disabled (10042).
   // ARCHIVES must be restored with wrangler.data-hub.production.jsonc after R2 service is enabled.
 }

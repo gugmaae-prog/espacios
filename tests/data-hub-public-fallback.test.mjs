@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import hub from '../src/data-hub/worker.js';
 
-const env={REGISTRY:{prepare(){throw Error('D1 read quota exceeded (7500)');}},DATA_RELEASE:'espacios-data-hub-v8-public-snapshot-fallback'};
+const env={REGISTRY:{prepare(){throw Error('D1 read quota exceeded (7500)');}},DATA_RELEASE:'espacios-data-hub-v9-filter-read-reduction'};
 const get=path=>hub.fetch(new Request('https://espacios.me'+path),env,{});
 
 test('public PSR registry serves a labelled, checksum-verified D1 export when live reads fail',async()=>{
@@ -27,6 +27,8 @@ test('public PSR registry serves a labelled, checksum-verified D1 export when li
 });
 
 test('fallback preserves tenant and archive restrictions',async()=>{
+ const health=await (await get('/data/api/health')).json();
+ assert.equal(health.release,'espacios-data-hub-v9-filter-read-reduction');
  assert.equal((await get('/data/api/v1/projects?tenant=haus-and-grace')).status,503);
  assert.equal((await get('/data/psr/api/archive')).status,401);
  assert.equal((await get('/data/api/v1/projects?tenant=unknown')).status,400);

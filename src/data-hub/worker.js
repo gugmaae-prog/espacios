@@ -4,7 +4,7 @@ var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
 // src/index.js
-var RELEASE = "espacios-data-hub-v8-public-snapshot-fallback";
+var RELEASE = "espacios-data-hub-v9-filter-read-reduction";
 var TENANTS = {
   psr: { key: "psr", slug: "psr", name: "PSR Homes", site: "https://psrhomes.ae" },
   "haus-and-grace": { key: "haus-and-grace", slug: "haus-and-grace", name: "Haus & Grace", site: "https://hausandgrace.ae" }
