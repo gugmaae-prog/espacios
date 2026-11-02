@@ -34,3 +34,15 @@ test('missing or checksum-mismatched legacy snapshot cannot be published',async(
   const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_SNAPSHOT:candidate});assert.equal(response.status,503);assert.equal((await response.json()).complete,false);
  }
 });
+
+test('unverifiable first Data Hub page uses the reviewed snapshot and remains degraded',async()=>{
+ const service={fetch:async()=>Response.json({projects:[{slug:'one'}],pageSize:24,total:1,pages:1})};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(body.total,1073);assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
+});
+
+test('first page transport failure uses only the verified older snapshot',async()=>{
+ const service={fetch:async()=>{throw new Error('transport unavailable')}};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(body.total,1073);assert.equal(body.completeForCurrentDataHub,false);
+});
