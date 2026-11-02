@@ -1,8 +1,8 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261102-map-stack-v15';
+var MAP_STACK_RELEASE='20261102-map-stack-v16';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
-var MAP_ACCEPTED_HEATMAP_SHA256='3d455cf37ebd1e022e4298ad75cf7e884cff3d69043c7c2d6c58deab5b0eb70b';
+var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
 var MAP_STACK_PREVIOUS_FETCH=worker_default.fetch;
 psrAllProjectsService=mapCompleteProjects;
 function mapStackJSON(request,payload,status=200){return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff','x-espacios-map-release':MAP_STACK_RELEASE,'referrer-policy':'strict-origin-when-cross-origin','x-frame-options':'SAMEORIGIN','strict-transport-security':'max-age=86400',...(status===405?{allow:'GET, HEAD'}:{})}});}
@@ -65,7 +65,7 @@ worker_default.fetch=async function(request,env,ctx){
  // every cold request, which can exceed the Worker resource ceiling.
  if(path==='/map/api/uae-heatmap'&&['GET','HEAD'].includes(request.method)&&env.MAP_ARCHIVE&&env.MAP_HEATMAP_REBUILD!=='true'){
   const entry=MAP_ARCHIVE_MANIFEST.entries[MAP_ACCEPTED_HEATMAP_KEY];
-  if(entry?.sha256===MAP_ACCEPTED_HEATMAP_SHA256&&entry.bytes===799421){
+  if(entry?.sha256===MAP_ACCEPTED_HEATMAP_SHA256&&entry.bytes===800612){
    const headers=mapStackHeaders(new Response(null,{headers:{'content-type':'application/json; charset=utf-8','cache-control':'public,max-age=60,s-maxage=300','etag':'"'+entry.sha256+'"','x-ae-data-source':'verified-accepted-v48-derived-heatmap','x-espacios-derived-asset-sha256':entry.sha256}}));
    if(request.headers.get('if-none-match')==='"'+entry.sha256+'"')return new Response(null,{status:304,headers});
    if(request.method==='HEAD')return new Response(null,{status:200,headers});
@@ -90,7 +90,7 @@ worker_default.fetch=async function(request,env,ctx){
     if(path==='/map/api/research'){const response=mapStackJSON(request,catalogue),headers=mapStackHeaders(response);headers.set('cache-control','public,max-age=60,s-maxage=300');return new Response(response.body,{headers});}
     const fullKey='snapshots/current/map-data.json',text=JSON.stringify(reviewed),localStore={head:async key=>key===fullKey?{etag:MAP_RECOVERED_SHA256}:null,get:async key=>key===fullKey?{body:text,customMetadata:{source_etag:MAP_RECOVERED_SHA256},text:async()=>text}:null,put:async()=>undefined};
     const response=await aeUaeHeatmap(request,{...bindings,MARKET_R2:localStore,AE_EMERGENCY_CATALOGUE:catalogue},ctx);
-    if(response.ok){const payload=await response.json();payload.sourceSnapshot={...payload.sourceSnapshot,basis:'Recovered accepted public catalogue response captured13October2026, SHA256 '+MAP_RECOVERED_SHA256+'. All1645 accepted project identities retained; coordinates are retained only where published. Live feed is not included. Authority phases may overlap marketing records; density counts records, not unique developments, transactions or prices.',recovery:reviewed.meta.recovery};payload.completeness={...payload.completeness,mode:'accepted_snapshot',acceptedProjectRecords:1645,availableProjectRecords:1645,liveFeedIncluded:false};const headers=mapStackHeaders(response);headers.set('cache-control','public,max-age=60,s-maxage=300');headers.set('x-ae-data-source','recovered-accepted-public-response');headers.delete('content-length');headers.delete('etag');return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{headers});}
+    if(response.ok){const payload=await response.json();payload.sourceSnapshot={...payload.sourceSnapshot,basis:'Recovered accepted public catalogue response captured13October2026, SHA256 '+MAP_RECOVERED_SHA256+'. All1645 accepted project identities retained; reported source/project coordinates and approximate community-centre locations remain distinguishable. Live feed is not included. Authority phases may overlap marketing records; density counts records, not unique developments, transactions or prices.',recovery:reviewed.meta.recovery};payload.completeness={...payload.completeness,mode:'accepted_snapshot',acceptedProjectRecords:1645,availableProjectRecords:1645,liveFeedIncluded:false};mapCoordinateQuality(payload);const headers=mapStackHeaders(response);headers.set('cache-control','public,max-age=60,s-maxage=300');headers.set('x-ae-data-source','recovered-accepted-public-response');headers.delete('content-length');headers.delete('etag');return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{headers});}
    }
   }catch(error){console.warn(JSON.stringify({event:'map_recovery_unavailable',reason:'accepted_snapshot_could_not_be_verified'}));}
  }
@@ -117,6 +117,7 @@ worker_default.fetch=async function(request,env,ctx){
  if(path==='/map/api/uae-heatmap'&&response.ok&&headers.has('x-ae-data-degraded')){
   const payload=await response.json();payload.sourceSnapshot={...payload.sourceSnapshot,basis:'Degraded mode: reviewed 1,337-project catalogue snapshot only. Live additions and the accepted Abu Dhabi authority additions are unavailable. Counts describe source records, not unique developments or transactions.'};
   payload.completeness={...payload.completeness,mode:'degraded_snapshot',acceptedProjectRecords:1645,availableProjectRecords:1337,missingAuthorityRecordIdentities:308,missingIdentityEmirate:'Abu Dhabi',limitation:'The 308 absent authority identities are catalogue records; this does not claim all had verified map coordinates.'};
+  mapCoordinateQuality(payload);
   headers.delete('content-length');headers.delete('etag');headers.set('cache-control','public,max-age=60,s-maxage=300');return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status:response.status,headers});
  }
 

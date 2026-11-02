@@ -1,17 +1,19 @@
 # UAE map data coverage — 2 November 2026
 
-This is a release audit, not a claim that every UAE development or transaction is present. Counts below are from the deployed accepted V48 `/map/api/uae-heatmap` population on Worker v15. They describe that snapshot only; no authoritative all-UAE denominator has been established.
+This is a release audit, not a claim that every UAE development or transaction is present. Counts below are from the accepted V48 `/map/api/uae-heatmap` population prepared for Worker v16. They describe that snapshot only; no authoritative all-UAE denominator has been established.
 
-| Emirate | V48 projects | Mapped in V48 | Searchable without coordinates | Local registered-sale history in V48 |
-| --- | ---: | ---: | ---: | --- |
-| Abu Dhabi | 347 | 220 | 127 | No |
-| Ajman | 10 | 10 | 0 | No |
-| Dubai | 1,119 | 1,119 | 0 | Yes, DLD-derived area history with sample safeguards |
-| Fujairah | 1 | 1 | 0 | No |
-| Ras Al Khaimah | 89 | 89 | 0 | No |
-| Sharjah | 59 | 59 | 0 | No |
-| Umm Al Quwain | 20 | 20 | 0 | No |
-| **Total** | **1,645** | **1,518** | **127** | Scope varies by emirate |
+| Emirate | V48 projects | Reported project/source points | Approximate community-centre points | Searchable without coordinates | Local registered-sale history in V48 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Abu Dhabi | 347 | 199 | 21 | 127 | No |
+| Ajman | 10 | 2 | 8 | 0 | No |
+| Dubai | 1,119 | 825 | 294 | 0 | Yes, DLD-derived area history with sample safeguards |
+| Fujairah | 1 | 0 | 1 | 0 | No |
+| Ras Al Khaimah | 89 | 68 | 21 | 0 | No |
+| Sharjah | 59 | 49 | 10 | 0 | No |
+| Umm Al Quwain | 20 | 15 | 5 | 0 | No |
+| **Total** | **1,645** | **1,158** | **360** | **127** | Scope varies by emirate |
+
+The 1,158 project/source points are retained as reported, not all independently surveyed project sites. The 360 community-centre points indicate approximate areas and must not be used as project-site locations. Together these 1,518 points are renderable on the map; the other 127 records remain searchable.
 
 The V48 record archive has 1,860 project and community records and 16,872 native history series. Its 2,717 approved recovery objects are verified in private IDrive E2 with immutable fallback. This archive does not establish complete current UAE market coverage or recover the original history and saved model bundles.
 

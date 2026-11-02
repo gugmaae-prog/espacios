@@ -149,9 +149,16 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261102-map-stack-v15'));
+  assert.ok(worker.includes('20261102-map-stack-v16'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
+});
+
+test('project status distinguishes reported points from approximate community locations',()=>{
+  assert.match(app,/quality\?\.projectOrSource/);
+  assert.match(app,/quality\?\.approximateCommunityCentre/);
+  assert.match(app,/approximate community locations/);
+  assert.match(app,/community_centroid_fallback/);
 });
 
 test('opened phone map tools remain above the historical research drawer',()=>{

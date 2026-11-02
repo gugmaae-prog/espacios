@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261102-map-stack-v15';
+  const RELEASE='20261102-map-stack-v16';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
@@ -46,6 +46,10 @@
       const expression=['match',['get','band'],'emerging_hotspot',hotspotColors[0],'watchlist',hotspotColors[1],hotspotColors[2]];
       const current=map.getPaintProperty('ae-emerging-hotspots','circle-color');
       if(JSON.stringify(current)!==JSON.stringify(expression))map.setPaintProperty('ae-emerging-hotspots','circle-color',expression);
+    }
+    if(map.getLayer('ae-uae-project-points')){
+      const color=['match',['get','coordinateQuality'],'community_centroid_fallback','#83969d','#5c8e97'];
+      if(JSON.stringify(map.getPaintProperty('ae-uae-project-points','circle-color'))!==JSON.stringify(color))map.setPaintProperty('ae-uae-project-points','circle-color',color);
     }
     const legend=Q('#analysis-legend .analysis-legend-row');
     if(legend)legend.querySelectorAll('span').forEach((span,index)=>{if(hotspotColors[index])span.style.setProperty('color',hotspotColors[index],'important')});
@@ -154,8 +158,11 @@
     status.hidden=UI.metric!=='projects';
     if(status.hidden)return;
     const counts=typeof aeUaeState==='undefined'?null:aeUaeState.manifest?.counts;
-    const mapped=Number(counts?.geocodedProjects),unmapped=Number(counts?.unmappedProjects);
-    status.textContent=Number.isFinite(mapped)&&mapped>0?mapped.toLocaleString()+' mapped across the UAE · '+unmapped.toLocaleString()+' without verified coordinates remain searchable'+(aeUaeState.degraded?' · reviewed snapshot':''):'Loading UAE project catalogue…';
+    const quality=counts?.coordinateQuality;
+    const source=Number(quality?.projectOrSource),approximate=Number(quality?.approximateCommunityCentre),unmapped=Number(quality?.withoutCoordinates),all=Number(counts?.projects);
+    status.textContent=Number.isFinite(source)&&Number.isFinite(approximate)&&Number.isFinite(unmapped)&&all>0
+      ?all.toLocaleString()+' catalogue projects · '+source.toLocaleString()+' reported project/source locations · '+approximate.toLocaleString()+' approximate community locations · '+unmapped.toLocaleString()+' searchable without coordinates'+(aeUaeState.degraded?' · reviewed snapshot':'')
+      :'Loading UAE project catalogue…';
   }
   function fitOpeningProjects(){
     if(UI.openingFitDone||UI.userMoved||UI.metric!=='projects'||state.selected||!window.__ESPACIOS_COVERAGE_RENDER__?.initialized)return;
