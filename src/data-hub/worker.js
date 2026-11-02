@@ -1,8 +1,9 @@
+import {publicProjectFallback} from './public-fallback.mjs';
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
 // src/index.js
-var RELEASE = "espacios-data-hub-v7-public-read-cache";
+var RELEASE = "espacios-data-hub-v8-public-snapshot-fallback";
 var TENANTS = {
   psr: { key: "psr", slug: "psr", name: "PSR Homes", site: "https://psrhomes.ae" },
   "haus-and-grace": { key: "haus-and-grace", slug: "haus-and-grace", name: "Haus & Grace", site: "https://hausandgrace.ae" }
@@ -1141,6 +1142,7 @@ async function listPages(request, env, tenantKey) {
 }
 __name(listPages, "listPages");
 async function artifact(env, tenantKey, kind) {
+  if (!env.ARCHIVES) return errorResponse("Archive storage is currently unavailable.", 503);
   const summary = await tenantSummary(env, tenantKey);
   if (!summary?.batch_id) return errorResponse("No recorded snapshot exists for this tenant.", 404);
   const key = kind === "manifest" ? summary.manifest_key : summary.archive_key;
@@ -1239,9 +1241,9 @@ async function handle(request, env, ctx) {
   if (path === "/data/api/v1/projects" || path === "/data/api/v1/projects/manifest" || path === "/data/api/v1/projects/sitemap") {
     const tenantKey2 = normalizeTenant(url.searchParams.get("tenant"));
     if (!tenantKey2) return errorResponse("A valid tenant query parameter is required.", 400);
-    if (path.endsWith("/manifest")) return projectManifest(env, tenantKey2);
-    if (path.endsWith("/sitemap")) return projectSitemap(env, tenantKey2);
-    return listPublishedProjects(request, env, tenantKey2, ctx);
+    const kind=path.endsWith("/manifest")?"manifest":path.endsWith("/sitemap")?"sitemap":"list";
+    try { return kind==="manifest"?await projectManifest(env,tenantKey2):kind==="sitemap"?await projectSitemap(env,tenantKey2):await listPublishedProjects(request,env,tenantKey2,ctx); }
+    catch(error){ console.error(JSON.stringify({event:'data_hub_public_registry_fallback',kind,tenant:tenantKey2,message:String(error?.message||error)})); if(tenantKey2==='psr')return publicProjectFallback(request,tenantKey2,kind); throw error; }
   }
   if (path === "/data/api/v1/developers" || path === "/data/api/v1/developers/manifest" || path === "/data/api/v1/developers/sitemap") {
     const tenantKey2 = normalizeTenant(url.searchParams.get("tenant"));
@@ -1254,7 +1256,8 @@ async function handle(request, env, ctx) {
   if (projectMatch) {
     const tenantKey2 = normalizeTenant(url.searchParams.get("tenant"));
     if (!tenantKey2) return errorResponse("A valid tenant query parameter is required.", 400);
-    return publishedProject(request, env, tenantKey2, projectMatch[1]);
+    try { return await publishedProject(request,env,tenantKey2,projectMatch[1]); }
+    catch(error){ console.error(JSON.stringify({event:'data_hub_public_registry_fallback',kind:'detail',tenant:tenantKey2,message:String(error?.message||error)})); if(tenantKey2==='psr')return publicProjectFallback(request,tenantKey2,'detail',projectMatch[1]); throw error; }
   }
   const developerMatch = path.match(/^\/data\/api\/v1\/developers\/([^/]+)$/);
   if (developerMatch) {
