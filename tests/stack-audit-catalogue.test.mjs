@@ -5,13 +5,24 @@ test('Data Hub degraded pages retain their source and never become a current liv
 test('new map release ignores a prior cached live-format catalogue',async()=>{
  const prior=globalThis.caches,matched=[];
  const stale=Response.json({projects:[{slug:'one'}],total:1,degraded:false,completeForCurrentDataHub:true});
- globalThis.caches={default:{match:async key=>{const url=new URL(key.url);matched.push(url.searchParams.get('catalogue'));return url.searchParams.get('catalogue')==='20261102-data-hub-provenance-v4'?stale.clone():null;},put:async()=>{}}};
+ globalThis.caches={default:{match:async key=>{const url=new URL(key.url);matched.push(url.searchParams.get('catalogue'));return url.searchParams.get('catalogue')==='20261102-data-hub-v10-provenance-v5'?stale.clone():null;},put:async()=>{}}};
  try{
   const source={service:'reviewed-psr-d1-public-export',degraded:true,completeForCurrentDataHub:false,registryHashReconciled:false,sha256:'abc'};
   const service={fetch:async()=>Response.json({projects:[{slug:'one'}],total:1,pages:1,page:1,pageSize:100,registry:{total:1,revision:2,updatedAt:'snapshot'},source},{headers:{'x-espacios-data-release':'espacios-data-hub-v10-versioned-cache'}})};
   const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service}),body=await response.json();
   assert.equal(response.status,200);assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
-  assert.deepEqual(matched,['20261102-data-hub-v10-provenance-v5']);
+  assert.deepEqual(matched,['20261102-data-hub-v10-provenance-v6']);
+ }finally{if(prior===undefined)delete globalThis.caches;else globalThis.caches=prior;}
+});
+test('a cached live-format catalogue cannot imply a current D1 read',async()=>{
+ const prior=globalThis.caches;
+ globalThis.caches={default:{match:async()=>Response.json({projects:[{slug:'one'}],total:1,complete:true,degraded:false,completeForCurrentDataHub:true,source:{service:'espacios-data-hub-public-route'},coverage:{allDeclaredPagesRetrieved:true,registryReconciled:true}}),put:async()=>{}}};
+ try{
+  const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:{fetch:async()=>{throw Error('Cached read must not fetch upstream.')}}}),body=await response.json();
+  assert.equal(response.status,200);assert.equal(response.headers.get('x-espacios-catalogue'),'verified-live-cache-degraded-v1');
+  assert.equal(body.total,1);assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
+  assert.equal(body.source.service,'cached-verified-psr-data-hub-response');
+  assert.match(body.coverage.warning,/current live D1 availability is unconfirmed/);
  }finally{if(prior===undefined)delete globalThis.caches;else globalThis.caches=prior;}
 });
 test('a failed, malformed or changing page never returns or caches a partial catalogue',async()=>{for(const mode of ['failed','malformed','changed']){let put=0;globalThis.caches={default:{match:async()=>null,put:async()=>put++}};const service={fetch:async url=>{const page=new URL(url).searchParams.get('page')||'1';return page==='1'?Response.json({projects:[{slug:'one'}],total:2,pages:2,registry:{total:2,updatedAt:'v1'}}):mode==='failed'?new Response('unavailable',{status:503}):Response.json({projects:mode==='malformed'?null:[{slug:'two'}],registry:{updatedAt:'v2'}});}};const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service});assert.equal(response.status,503);assert.equal((await response.json()).complete,false);assert.equal(put,0);}delete globalThis.caches;});

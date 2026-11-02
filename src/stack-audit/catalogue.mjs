@@ -7,8 +7,17 @@ export async function mapCompleteProjects(request,env,ctx){
  // The Espacios Data Hub is the newer source. An exact older public snapshot
  // remains labelled and available when the newer hub is temporarily unavailable.
  const upstreamFetch=env.MAP_CATALOGUE_FETCH?.fetch?.bind(env.MAP_CATALOGUE_FETCH)||fetch;
- const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-v10-provenance-v5',request.url),{method:'GET'});
- const cached=cache&&await cache.match(key);if(cached)return cached;
+ const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-v10-provenance-v6',request.url),{method:'GET'});
+ const cached=cache&&await cache.match(key);
+ if(cached){
+  try{
+   const saved=await cached.clone().json();
+   if(saved?.degraded===true)return cached;
+   if(saved?.degraded===false&&saved?.complete===true&&saved?.coverage?.allDeclaredPagesRetrieved===true){
+    return new Response(JSON.stringify({...saved,degraded:true,completeForCurrentDataHub:false,source:{...saved.source,service:'cached-verified-psr-data-hub-response',degraded:true,degradedReason:'Previously verified Data Hub pages were served from map cache; current live D1 availability was not checked.'},completenessBasis:'Previously verified Data Hub pages served from map cache. Current live D1 availability is not confirmed by this response.',coverage:{...saved.coverage,warning:'Previously verified Data Hub pages served from map cache; current live D1 availability is unconfirmed.'}}),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff','x-espacios-catalogue':'verified-live-cache-degraded-v1'}});
+   }
+  }catch{ /* A malformed cache entry must not hide the source. */ }
+ }
  const maximumFetchCalls=30;
  let failedPage=null,retriesRemaining=4,fetchCalls=0;const retriedPages=[];
  const call=async page=>{
