@@ -4,7 +4,7 @@ var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
 // src/index.js
-var RELEASE = "espacios-data-hub-v9-filter-read-reduction";
+var RELEASE = "espacios-data-hub-v10-versioned-cache";
 var TENANTS = {
   psr: { key: "psr", slug: "psr", name: "PSR Homes", site: "https://psrhomes.ae" },
   "haus-and-grace": { key: "haus-and-grace", slug: "haus-and-grace", name: "Haus & Grace", site: "https://hausandgrace.ae" }
@@ -331,7 +331,11 @@ __name(projectQuery, "projectQuery");
 async function listPublishedProjects(request, env, tenantKey, ctx) {
   const query = projectQuery(request, tenantKey);
   const cache = globalThis.caches?.default;
-  const cacheKey = new Request(query.url.toString(), { method: "GET" });
+  // Older releases cached a live-format response at the public URL. Keep this
+  // release's cache separate so those entries cannot erase degraded provenance.
+  const cacheUrl=new URL(query.url);
+  cacheUrl.searchParams.set('__data_release',RELEASE);
+  const cacheKey = new Request(cacheUrl.toString(), { method: "GET" });
   if (cache) {
     try {
       const hit = await cache.match(cacheKey);

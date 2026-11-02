@@ -16,6 +16,17 @@ const makeEnv=(state={tenant_key:'psr',revision:3,project_count:2,content_hash:'
 };
 const makeCache=()=>{const values=new Map();return {match:async key=>values.get(key.url)?.clone()||null,put:async(key,response)=>{values.set(key.url,response.clone());}};};
 
+test('a prior release cache entry cannot hide the current source state',async()=>{
+ const cache=makeCache(),{env,calls}=makeEnv();
+ await cache.put(request('&page=1'),Response.json({ok:true,projects:[],total:0}));
+ globalThis.caches={default:cache};
+ try{
+  const response=await hub.fetch(request('&page=1'),env),body=await response.json();
+  assert.equal(response.status,200);assert.equal(body.total,2);assert.equal(body.projects[0].slug,'alpha');
+  assert.deepEqual(calls,{state:1,count:0,page:1,filters:1});
+ }finally{delete globalThis.caches;}
+});
+
 test('public project pages reuse exact cached responses and revision-keyed filters',async()=>{
  const {env,calls}=makeEnv();globalThis.caches={default:makeCache()};
  try{
