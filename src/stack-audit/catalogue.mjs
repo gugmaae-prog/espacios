@@ -7,7 +7,7 @@ export async function mapCompleteProjects(request,env,ctx){
  // The Espacios Data Hub is the newer source. An exact older public snapshot
  // remains labelled and available when the newer hub is temporarily unavailable.
  const upstreamFetch=env.MAP_CATALOGUE_FETCH?.fetch?.bind(env.MAP_CATALOGUE_FETCH)||fetch;
- const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-provenance-v4',request.url),{method:'GET'});
+ const cache=globalThis.caches?.default,key=new Request(new URL('/map/api/projects-all?catalogue=20261102-data-hub-v10-provenance-v5',request.url),{method:'GET'});
  const cached=cache&&await cache.match(key);if(cached)return cached;
  const maximumFetchCalls=30;
  let failedPage=null,retriesRemaining=4,fetchCalls=0;const retriedPages=[];
