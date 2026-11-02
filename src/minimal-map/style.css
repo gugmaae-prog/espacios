@@ -350,9 +350,6 @@ html[data-minimal-map="1"] body #app #tl-dock #mm-date{
   background:var(--minimal-selected)!important;color:var(--su-ink)!important;font:600 11px/1 Inter,system-ui,sans-serif!important;
   box-shadow:0 3px 10px #00000012!important;
 }
-@media (min-width:761px){
-  html[data-minimal-map="1"][data-minimal-metric="forecast"] body #app #tl-dock #mm-date{min-width:182px!important;}
-}
 html[data-minimal-map="1"] body #app #minimal-property-settings{
   margin:10px 0 14px;padding:12px;border:1px solid var(--su-line);border-radius:12px;
 }
@@ -412,6 +409,14 @@ html[data-minimal-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] 
   width:100%!important;min-width:0!important;height:40px!important;min-height:40px!important;
   border:1px solid var(--minimal-selected-line)!important;background:var(--su-panel)!important;color:var(--su-ink)!important;
   padding:0 24px 0 10px!important;font:600 11px/1 Inter,system-ui,sans-serif!important;box-sizing:border-box!important;
+}
+@media (min-width:761px){
+  html[data-minimal-map="1"][data-minimal-metric="forecast"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #su-date{
+    width:182px!important;left:clamp(92px,var(--su-position,50%),calc(100% - 92px))!important;
+  }
+  html[data-minimal-map="1"][data-minimal-metric="forecast"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-date{
+    width:182px!important;min-width:182px!important;max-width:none!important;
+  }
 }
 /* V26: keep selected map controls on the same quiet Espacios surface in both
    themes. A pale fill and soft border indicate selection without a dark pill
