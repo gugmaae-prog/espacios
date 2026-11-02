@@ -98,6 +98,7 @@ const EspaciosSearchFocusCore = (() => {
   aeSearchText=value=>String(value||'').normalize('NFKD').replace(/\p{M}/gu,'').toLocaleLowerCase().replace(/&/g,' and ').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
   state.searchIndex=[];state.searchDevelopers=[];
   const ajmanSearch={query:'',status:'idle',entries:[],total:0,timer:0,controller:null,sequence:0};
+  const dubaiSearch={query:'',status:'idle',entries:[],total:0,timer:0,controller:null,sequence:0};
   const oldSearchResultsFor=aeSearchResultsFor;
   const oldSearchKindLabel=aeSearchKindLabel;
   const oldSearchSubLabel=aeSearchSubLabel;
@@ -106,14 +107,22 @@ const EspaciosSearchFocusCore = (() => {
     const record={kind:'project',name,emirate:'Ajman',area:project.districtEn||'',developer:project.developerEn||'',aliases:[project.nameAr,project.districtAr,project.developerAr,project.registrationNumber].filter(Boolean)};
     return {...aeSearchEntryForRecord(record),id:'ajman-register:'+project.sourceProjectId,sourceRegistry:'ajman',sourceProject:project};
   }
+  function dubaiEntry(project) {
+    const record={kind:'project',name:project.name,emirate:'Dubai',area:project.community,developer:project.developerName,aliases:[project.sourceProjectNumber,project.developerName,project.community].filter(Boolean)};
+    return {...aeSearchEntryForRecord(record),id:'dubai-register:'+project.sourceProjectNumber,sourceRegistry:'dubai',sourceProject:project};
+  }
   aeSearchResultsFor=function(query) {
     const local=oldSearchResultsFor(query);
-    if(ajmanSearch.status!=='ready'||ajmanSearch.query!==query)return local;
-    const official=ajmanSearch.entries.map(e=>({e,score:aeSearchScore(e,query)})).filter(hit=>hit.score>=0).sort((a,b)=>b.score-a.score||a.e.id.localeCompare(b.e.id));
-    return official.length?[...local.slice(0,12),...official.slice(0,8)]:local;
+    const ranked=search=>search.status==='ready'&&search.query===query?search.entries.map(e=>({e,score:aeSearchScore(e,query)})).filter(hit=>hit.score>=0).sort((a,b)=>b.score-a.score||a.e.id.localeCompare(b.e.id)).slice(0,8):[];
+    const ajman=ranked(ajmanSearch),dubai=ranked(dubaiSearch);
+    return ajman.length||dubai.length?[...local.slice(0,12),...ajman,...dubai]:local;
   };
-  aeSearchKindLabel=function(entry){return entry.sourceRegistry==='ajman'?'Ajman register':oldSearchKindLabel(entry)};
+  aeSearchKindLabel=function(entry){return entry.sourceRegistry==='ajman'?'Ajman register':entry.sourceRegistry==='dubai'?'Dubai register · licensed copy':oldSearchKindLabel(entry)};
   aeSearchSubLabel=function(entry){
+    if(entry.sourceRegistry==='dubai'){
+      const p=entry.sourceProject;
+      return [p.community||'Dubai',p.developerName,'1 Nov 2026 source','No verified project pin'].filter(Boolean).join(' · ');
+    }
     if(entry.sourceRegistry!=='ajman')return oldSearchSubLabel(entry);
     const p=entry.sourceProject;
     return [p.districtEn||'Ajman',p.statusSource||p.status,p.snapshotDate,'No verified project pin'].filter(Boolean).join(' · ');
@@ -154,6 +163,42 @@ const EspaciosSearchFocusCore = (() => {
         ajmanSearch.total=data.totalProjects;ajmanSearch.status='ready';
       }catch(error){if(token!==ajmanSearch.sequence||error.name==='AbortError')return;ajmanSearch.status='unavailable';ajmanSearch.entries=[];}
       if(token===ajmanSearch.sequence&&Q('#search')?.value&&aeSearchText(Q('#search').value)===normalized)renderSearch();
+    },140);
+  }
+  function dubaiSearchStatus(box,query){
+    if(query.length<2||dubaiSearch.query!==query||!['loading','unavailable','ready'].includes(dubaiSearch.status))return;
+    const note=document.createElement('div');note.className='ae-search-source-status';note.setAttribute('role','status');
+    if(dubaiSearch.status==='loading')note.textContent='Checking the dated Dubai project register…';
+    else if(dubaiSearch.status==='unavailable'){
+      note.append('Dubai source temporarily unavailable. ');
+      const retry=document.createElement('button');retry.type='button';retry.textContent='Retry';retry.addEventListener('click',()=>{scheduleDubaiSearch(query,true);renderSearch();});note.append(retry);
+    }else if(dubaiSearch.total>8||dubaiSearch.total>dubaiSearch.entries.length){
+      note.append('Showing up to 8 source IDs · '+dubaiSearch.total.toLocaleString()+' Dubai register matches, including any linked map projects. ');
+      const link=document.createElement('a');link.href='/map/api/uae-evidence/dubai/project-status?q='+encodeURIComponent(query)+'&limit=100';link.textContent='View source results';note.append(link);
+    }else if(dubaiSearch.entries.length)note.textContent='Dubai register · '+dubaiSearch.entries.length+' source matches · 1 November 2026 licensed copy';
+    else note.textContent='No additional unlinked Dubai source IDs.';
+    box.append(note);
+  }
+  function scheduleDubaiSearch(query,force=false){
+    const normalized=aeSearchText(query);
+    if(!force&&normalized===dubaiSearch.query&&dubaiSearch.status!=='idle')return;
+    clearTimeout(dubaiSearch.timer);dubaiSearch.controller?.abort();
+    const token=++dubaiSearch.sequence;
+    dubaiSearch.query=normalized;dubaiSearch.entries=[];dubaiSearch.total=0;
+    if(normalized.length<2||normalized.length>120){dubaiSearch.status='idle';return;}
+    dubaiSearch.status='loading';
+    dubaiSearch.timer=setTimeout(async()=>{
+      const controller=new AbortController();dubaiSearch.controller=controller;
+      try{
+        const response=await fetch('/map/api/uae-evidence/dubai/project-status?q='+encodeURIComponent(query.trim())+'&limit=100',{signal:controller.signal,headers:{accept:'application/json'}});
+        if(!response.ok)throw Error('Dubai register '+response.status);
+        const data=await response.json();
+        if(data.scope?.evidenceClass!=='licensed_secondary_copy_of_authority_project_register'||data.source?.sourcePublicationDate!=='2026-11-01'||!Array.isArray(data.projects))throw Error('Dubai register scope changed');
+        if(token!==dubaiSearch.sequence)return;
+        dubaiSearch.entries=data.projects.filter(p=>p.matchStatus==='unmatched_source_identity'&&p.canonicalProjectId===null&&p.coordinates===null&&/^\d+$/.test(p.sourceProjectNumber)).map(dubaiEntry);
+        dubaiSearch.total=data.totalProjects;dubaiSearch.status='ready';
+      }catch(error){if(token!==dubaiSearch.sequence||error.name==='AbortError')return;dubaiSearch.status='unavailable';dubaiSearch.entries=[];}
+      if(token===dubaiSearch.sequence&&Q('#search')?.value&&aeSearchText(Q('#search').value)===normalized)renderSearch();
     },140);
   }
   const sourceGeometry = () => ({territories: state.masterTerritoryData?.features, surfaces: sgState.data?.features, communities: state.spatial?.dubaiPolygonData?.features});
@@ -287,11 +332,11 @@ const EspaciosSearchFocusCore = (() => {
         }
       });
     }
-    if(box)ajmanSearchStatus(box,aeSearchText(Q('#search')?.value));
+    if(box){const query=aeSearchText(Q('#search')?.value);ajmanSearchStatus(box,query);dubaiSearchStatus(box,query);}
     return result;
   };
-  Q('#search')?.addEventListener('input',event=>{scheduleAjmanSearch(event.target.value);queueMicrotask(()=>renderSearch());});
-  Q('#clear-search')?.addEventListener('click',()=>scheduleAjmanSearch(''));
+  Q('#search')?.addEventListener('input',event=>{scheduleAjmanSearch(event.target.value);scheduleDubaiSearch(event.target.value);queueMicrotask(()=>renderSearch());});
+  Q('#clear-search')?.addEventListener('click',()=>{scheduleAjmanSearch('');scheduleDubaiSearch('');});
   function showAjmanSource(entry){
     const p=entry.sourceProject,body=Q('#detail-body');
     state.selected=null;map.getSource('selection')?.setData(fc([]));
@@ -305,6 +350,18 @@ const EspaciosSearchFocusCore = (() => {
     window.__ESPACIOS_SEARCH_FOCUS__={status:'source-without-coordinates',recordName:entry.record.name,targetBasis:null};
     document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:entry.id,kind:'official-source-project',name:entry.record.name,emirate:'Ajman',area:p.districtEn||'',exactMarketMatch:false}}));
   }
+  function showDubaiSource(entry){
+    const p=entry.sourceProject,body=Q('#detail-body');
+    state.selected=null;map.getSource('selection')?.setData(fc([]));
+    const line=(label,value)=>value===null||value===undefined||value===''?'':'<div class="detail-fact"><span>'+esc(label)+'</span><b>'+esc(String(value))+'</b></div>';
+    body.innerHTML='<div class="detail-content"><span class="detail-badge">DUBAI REGISTER · LICENSED COPY</span><h2 dir="auto">'+esc(entry.record.name)+'</h2>'+
+      '<div class="detail-facts">'+line('DLD project number',p.sourceProjectNumber)+line('Registered developer',p.developerName)+line('Reported district',p.community)+line('Last recorded inspection',p.inspectionDate||'Date not reported')+line('Last recorded completion %',p.completionPercent)+line('Declared handover',p.declaredHandoverDate||'Not reported')+line('Source date','1 November 2026')+'</div>'+
+      '<div class="detail-section"><h3>Evidence and location</h3><p>This is a dated, CC BY 4.0 licensed copy of the DLD Mashrooi project register. Its identity has not been linked to the reviewed map catalogue. No verified project coordinates are available, so the map stays at its current view. Completion is the last recorded inspection value; a declared handover is not proof of delivery.</p></div>'+
+      '<div class="detail-actions"><a class="secondary" href="/map/api/uae-evidence/dubai/project-status/'+encodeURIComponent(p.sourceProjectNumber)+'">Source record</a><a class="secondary" href="https://continentalclub.ae/en/project-status/" target="_blank" rel="noopener">Licensed dataset</a></div></div>';
+    Q('#detail')?.classList.remove('hidden');psrApplyDockPadding?.(true);window.EspaciosMobileUI?.activate?.(Q('#detail'),true);
+    window.__ESPACIOS_SEARCH_FOCUS__={status:'source-without-coordinates',recordName:entry.record.name,targetBasis:null};
+    document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:entry.id,kind:'licensed-source-project',name:entry.record.name,emirate:'Dubai',area:p.community||'',exactMarketMatch:false}}));
+  }
   aeActivateSearchPosition = function(position) {
     const entry = state.searchResults?.[position];if (!entry) return;
     cancelFocus();const token = sequence, input = Q('#search'), box = Q('#search-results');
@@ -313,6 +370,10 @@ const EspaciosSearchFocusCore = (() => {
     if(entry.sourceRegistry==='ajman'){
       if(input){input.value=entry.record.name;input.blur();}
       showAjmanSource(entry);return;
+    }
+    if(entry.sourceRegistry==='dubai'){
+      if(input){input.value=entry.record.name;input.blur();}
+      showDubaiSource(entry);return;
     }
     if (input) {input.value = entry.type === 'developer' ? entry.name : recordTitle(entry.record);input.blur();}
     let area = null;

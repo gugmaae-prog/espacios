@@ -65,15 +65,16 @@ test('mobile keyboard and expanded details always retain a nonempty camera viewp
   assert.ok(Object.values(result).every(Number.isFinite));
 });
 
-function runtime({reduced = false, entries = [], market = false, unloaded = false} = {}) {
+function runtime({reduced = false, entries = [], market = false, unloaded = false, fetchImpl} = {}) {
   const frames = new Map(), timers = new Map(), moves = [], events = [], elements = new Map(), canvasListeners=new Map();let frame = 0,timer=0;
   const basic = () => ({classList:{add(){},remove(){},contains(){return false;}},setAttribute(){},replaceChildren(){},blur(){},addEventListener(){},querySelectorAll(){return [];}});
   elements.set('#search',basic());elements.set('#search-results',basic());
+  const inputListeners={};elements.get('#search').addEventListener=(name,fn)=>{inputListeners[name]=fn;};
   elements.set('#detail',basic());elements.set('#detail-body',basic());
   const map = {stop(){moves.push({type:'stop'});},getSource(){return{setData(){}};},getCanvas(){return{addEventListener(name,handler){canvasListeners.set(name,handler);}};},getContainer(){return {getBoundingClientRect(){return {left:0,top:0,width:390,height:844};}};}};
   for(const type of ['easeTo','flyTo','jumpTo','fitBounds','setPadding'])map[type]=(...args)=>{moves.push({type,args});return map;};
   const state={searchResults:entries,is3d:false,analysisMetric:market?'history:market-yield':'uae-project-coverage',spatial:{}};
-  const env={console,map,state,window:{},sgState:{data:unloaded?null:{features:[polygon('Palm Jumeirah','Dubai')]}},tlState:{series:[]},msState:{kind:'roi',emirate:'Dubai',segment:'villa',area:'Old area',data:{rows:[{community:'Palm Jumeirah',emirate:'Dubai'}]}},
+  const env={console,map,state,window:{},fetch:fetchImpl,AbortController,queueMicrotask:()=>{},sgState:{data:unloaded?null:{features:[polygon('Palm Jumeirah','Dubai')]}},tlState:{series:[]},msState:{kind:'roi',emirate:'Dubai',segment:'villa',area:'Old area',data:{rows:[{community:'Palm Jumeirah',emirate:'Dubai'}]}},
     document:{querySelector:selector=>elements.get(selector)||null,querySelectorAll:()=>[],dispatchEvent:event=>events.push(event)},
     CustomEvent:class {constructor(type,options){this.type=type;this.detail=options.detail;}},
     matchMedia:query=>({matches:query.includes('reduced-motion')?reduced:true}),
@@ -87,7 +88,7 @@ function runtime({reduced = false, entries = [], market = false, unloaded = fals
   elements.get('#search-results').addEventListener=()=>{};
   const ctx=vm.createContext(env);vm.runInContext(source,ctx);
   const flush=()=>{for(let passes=0;frames.size&&passes<5;passes++){const pending=[...frames.values()];frames.clear();pending.forEach(fn=>fn());}};
-  return {ctx,moves,events,flush,state,env,elements,timers,canvasListeners};
+  return {ctx,moves,events,flush,state,env,elements,timers,canvasListeners,inputListeners};
 }
 test('selection suppresses legacy fixed camera and reduced-motion performs one immediate measured focus', () => {
   const h=runtime({reduced:true,entries:[{type:'record',id:'palm',record:community()}]});
@@ -132,6 +133,35 @@ test('Arabic project names remain searchable and an Ajman source selection never
   assert.match(h.elements.get('#detail-body').innerHTML,/No verified project coordinates/);
   assert.match(h.elements.get('#detail-body').innerHTML,/2026-06-30/);
   assert.equal(h.events[0].detail.kind,'official-source-project');
+});
+
+test('Dubai source search excludes reviewed map links and returns ranked search hits',async()=>{
+  const fetchImpl=async url=>{
+    if(url.includes('/ajman/register'))return new Response(JSON.stringify({scope:{evidenceClass:'official_project_register_snapshot'},source:{latestSnapshotDate:'2026-06-30'},projects:[],totalProjects:0}));
+    if(url.includes('/dubai/project-status'))return new Response(JSON.stringify({scope:{evidenceClass:'licensed_secondary_copy_of_authority_project_register'},source:{sourcePublicationDate:'2026-11-01'},totalProjects:2,projects:[
+      {sourceProjectNumber:'4591',name:'Melograno Yards By Beyond',community:'Wadi Al Safa 4',developerName:'Beyond',matchStatus:'unmatched_source_identity',canonicalProjectId:null,coordinates:null},
+      {sourceProjectNumber:'3519',name:'Olaia Residences',community:'Palm Jumeirah',developerName:'Gulf House',matchStatus:'reviewed_one_to_one',canonicalProjectId:'project:olaia',coordinates:null}
+    ]}));
+    throw Error('Unexpected source request '+url);
+  };
+  const h=runtime({fetchImpl});h.inputListeners.input({target:{value:'melograno'}});
+  const pending=[...h.timers.values()];h.timers.clear();await Promise.all(pending.map(fn=>fn()));
+  const hits=vm.runInContext('aeSearchResultsFor("melograno")',h.ctx);
+  assert.equal(hits.length,1);assert.equal(hits[0].e.sourceProject.sourceProjectNumber,'4591');
+  assert.equal(hits[0].e.sourceRegistry,'dubai');
+  assert.equal(vm.runInContext('aeSearchKindLabel(aeSearchResultsFor("melograno")[0].e)',h.ctx),'Dubai register · licensed copy');
+});
+
+test('Dubai source selection shows dated evidence without moving the map or claiming delivery',()=>{
+  const project={sourceProjectNumber:'4591',name:'Melograno Yards By Beyond',community:'Wadi Al Safa 4',developerName:'Beyond',inspectionDate:null,completionPercent:7.5,declaredHandoverDate:'2029-06-30'};
+  const h=runtime({entries:[{type:'record',id:'dubai-register:4591',sourceRegistry:'dubai',record:{kind:'project',name:project.name},sourceProject:project}]});
+  vm.runInContext('aeActivateSearchPosition(0)',h.ctx);h.flush();
+  assert.equal(cameraMoves(h).length,0);
+  assert.equal(h.env.window.__ESPACIOS_SEARCH_FOCUS__.status,'source-without-coordinates');
+  assert.match(h.elements.get('#detail-body').innerHTML,/LICENSED COPY/);
+  assert.match(h.elements.get('#detail-body').innerHTML,/not proof of delivery/);
+  assert.match(h.elements.get('#detail-body').innerHTML,/2029-06-30/);
+  assert.equal(h.events[0].detail.kind,'licensed-source-project');
 });
 
 test('fresh density community selection loads exact source geometry before measured navigation', async()=>{
