@@ -14,6 +14,7 @@ derived_raw=(ROOT/'data/recovery/accepted-uae-heatmap-20261102.json').read_bytes
 assert derived['sourceBodySHA256']=='b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56'
 assert len(derived_raw)==derived['bytes'] and hashlib.sha256(derived_raw).hexdigest()==derived['sha256']
 extra.append(('recovery/accepted-map-20261013/uae-heatmap-derived.json','data/recovery/accepted-uae-heatmap-20261102.json','derived_ui_heatmap_from_accepted_v48_catalogue'))
+extra.append(('uae/evidence/ajman/2026-08-21/real-estate-units-transactions.json.gz','data/uae-evidence/ajman/real-estate-units-transactions-20260821.json.gz','official_ajman_mixed_unit_disposition_aggregate'))
 for key,path,kind in extra:
  raw=(ROOT/path).read_bytes();entries.append({'key':key,'path':path,'kind':kind,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
 for key,path,kind in [('recovery/accepted-history-library-20261003/series-metadata.json','data/recovery/legacy-history-series-metadata.json','accepted_legacy_history_metadata'),('recovery/accepted-v48/area-evidence.json','data/recovery/recovered-area-evidence.json','accepted_native_area_availability'),('recovery/accepted-intelligence-20261013/context.json','data/recovery/intelligence-public-20261013.json','accepted_public_intelligence_response'),('recovery/accepted-model-catalogue-20261013/published-first-page.json','data/recovery/predictions-public-page-20261013.json','partial_accepted_prediction_catalogue_response')]:

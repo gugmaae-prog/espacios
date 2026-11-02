@@ -14,8 +14,18 @@ The [Real Estate Projects dataset](https://data.ajman.ae/explore/dataset/real-es
 
 `/map/api/uae-evidence/ajman/register` searches the latest source snapshot by default and can list the latest known row for all 364 source IDs with `scope=all`. `/map/api/uae-evidence/ajman/register/{sourceProjectId}` returns that ID's dated source history. The public API omits escrow account numbers and does not manufacture V48 identities, current status for absent IDs, or map pins.
 
+The [Completed Real Estate Development Projects dataset](https://data.ajman.ae/explore/dataset/completed-real-estate-projects/) has 496 dated rows and 191 source project IDs. Its IDs and dated completed statuses exactly match rows already in the development-project register, so it adds no new project identities. It must not be added to the 364-ID register or the V48 map count.
+
 ## Tentative and final unit registrations
 
 The separate [Real Estate Units Registration dataset](https://data.ajman.ae/explore/dataset/real-estate-units-registration/) is CC BY 4.0 and contains 5,124 quarterly aggregate rows from 2019 Q1 through 2026 Q2 under 335 source project labels. Its two measures are tentative registration certificates and final title deeds. The captured rows sum to 14,242 certificates and 7,852 title deeds; these are separate stages and must not be added into a unique-unit or sale count. The source does not identify individual transactions.
 
 `registration-validation.json` records the exact source vintage, metadata, hashes, row count, distinct labels, and separate stage totals. `scripts/build-ajman-unit-registration.mjs --check` revalidates the full export. The compressed source is in the private IDrive E2 allowlist and was independently read back after upload. `/map/api/uae-evidence/ajman/registrations` pages source rows and supports year, quarter, exact project-label, and registration-stage filters. It reports no canonical V48 match or coordinate.
+
+## Mixed unit dispositions
+
+The [Real Estate Units Transactions dataset](https://data.ajman.ae/explore/dataset/real-estate-units-transactions/) is CC BY 4.0 and contains 6,299 aggregate rows under 249 source project labels. The publisher description includes unit dispositions, mortgage registrations and mortgage-value changes, but the export does not include a transaction-type field. This is not a sale-only count and overlaps the unit-sales dataset; its 18,057 reported counts must not be added to the 15,991 sale count. No canonical project join or coordinate is asserted.
+
+The captured export has 318 rows with unknown year and quarter and 4,594 rows with unknown monetary values. These remain null. Reported monetary values occur only through 2021 Q4 in this export, so the known-value sum is incomplete and must not be treated as later-period zero value. One duplicate dimension tuple is preserved as separate source rows. The 2021 Q2 and 2025 Q4 quarters are absent from the dated rows; absence is not zero activity. `transactions-validation.json` records the source vintage, metadata, exact hashes, counts, and limits. `scripts/build-ajman-unit-transactions.mjs --check` verifies the compressed source against its independent readback.
+
+`/map/api/uae-evidence/ajman/dispositions` serves a paged, read-only view with exact source labels and known/unknown filters. Its checksum-verified immutable Worker asset is separate from the private IDrive objects above; the API reports its actual storage origin. Raw asset paths remain inaccessible.

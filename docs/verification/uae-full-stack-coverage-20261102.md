@@ -1,6 +1,6 @@
 # UAE map data coverage — 2 November 2026
 
-This is a release audit, not a claim that every UAE development or transaction is present. Counts below are from the accepted V48 `/map/api/uae-heatmap` population prepared for Worker v16. They describe that snapshot only; no authoritative all-UAE denominator has been established.
+This is a release audit, not a claim that every UAE development or transaction is present. Counts below are from the accepted V48 `/map/api/uae-heatmap` population served by Worker v17. They describe that snapshot only; no authoritative all-UAE denominator has been established.
 
 | Emirate | V48 projects | Reported project/source points | Approximate community-centre points | Searchable without coordinates | Local registered-sale history in V48 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -22,6 +22,8 @@ The V48 record archive has 1,860 project and community records and 16,872 native
 - [Ajman Real Estate Projects](https://data.ajman.ae/explore/dataset/real-estate-projects/): 3,457 dated snapshot rows, 364 distinct source IDs ever and 298 in the latest 2026-06-30 snapshot. It has no coordinates. Source IDs remain separate from V48 map identities.
 - [Ajman Real Estate Units Sales](https://data.ajman.ae/explore/dataset/real-estate-units-sales/): 6,075 quarterly aggregate rows under 239 source project labels. These are not individual transactions.
 - [Ajman Real Estate Units Registration](https://data.ajman.ae/explore/dataset/real-estate-units-registration/): 5,124 quarterly aggregate rows under 335 source project labels. Tentative certificates and final title deeds are separate stages and are not added into a unique-unit count.
+- [Ajman Real Estate Units Transactions](https://data.ajman.ae/explore/dataset/real-estate-units-transactions/): 6,299 aggregate rows under 249 source labels. This mixes dispositions and mortgage activity without a transaction-type field. It overlaps unit sales, so reported counts cannot be summed. The 318 rows without a reported period and 4,594 rows without monetary values retain nulls. It is served from a checksum-verified immutable Worker asset at `/map/api/uae-evidence/ajman/dispositions`.
+- [Ajman Completed Real Estate Development Projects](https://data.ajman.ae/explore/dataset/completed-real-estate-projects/): 496 dated rows and 191 IDs, all already in the Ajman project register with matching dated completed status. It adds zero distinct project identities and is not ingested again.
 
 These three Ajman sources are stored as separate, checksum-verified private IDrive objects and exposed through read-only, source-labelled APIs. Neither their row counts nor their project labels can be added to the V48 project total without a reviewed identity crosswalk. Their metadata reports CC BY 4.0. The published APIs are `/map/api/uae-evidence/ajman/register`, `/map/api/uae-evidence/ajman/sales`, and `/map/api/uae-evidence/ajman/registrations`.
 

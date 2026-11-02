@@ -1,0 +1,7 @@
+{
+  "exportUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/real-estate-units-transactions/exports/json",
+  "metadataUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/real-estate-units-transactions",
+  "retrievedAt": "2026-11-02T16:16:27.701344Z",
+  "independentReadbackSha256": "b50db8dae50f920d7d9b6b6684296187cc2b9174e8f033468d3e40025e096b15",
+  "rawBytes": 3828161
+}
