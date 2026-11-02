@@ -133,6 +133,7 @@ let stackSource='\nvar MAP_STACK_SOURCE_COMMIT='+JSON.stringify(process.env.MAP_
 const digest=value=>createHash('sha256').update(value).digest('hex');
 stackSource+='\nvar UAE_AJMAN_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/validation.json')))+';\n';
 stackSource+='\nvar UAE_AJMAN_REGISTER_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/projects-validation.json')))+';\n';
+stackSource+='\nvar AJMAN_V48_CROSSWALK='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/reviewed-v48-crosswalk.json')))+';\n';
 stackSource+='\nvar UAE_AJMAN_REGISTRATION_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/registration-validation.json')))+';\n';
 stackSource+='\nvar UAE_AJMAN_DISPOSITION_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/transactions-validation.json')))+';\n';
 const managementReport=JSON.parse(await read('data/uae-evidence/ajman/management-validation.json'));

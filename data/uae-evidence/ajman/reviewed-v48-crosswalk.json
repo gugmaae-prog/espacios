@@ -1,0 +1,43 @@
+{
+  "version": "20261102-ajman-v48-reviewed-crosswalk-v1",
+  "sourceDatasetId": "real-estate-projects",
+  "sourceRawSha256": "d97f062b7f08998d7e75debcf8a42b055f132d1f8e1672b5eb61f92f774626e6",
+  "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
+  "latestSourceSnapshotDate": "2026-06-30",
+  "matchPolicy": "Manually reviewed one-to-one identity matches using source project name, developer and district against the accepted V48 catalogue. Source status and unit count remain dated Ajman evidence; V48 coordinates and timeline are not revised.",
+  "matches": [
+    {
+      "sourceProjectId": 416,
+      "canonicalProjectId": "project:seaside-hills-residence-by-al-zorah-development-company-in-al-zorah-ajman",
+      "nameRelation": "exact_normalized",
+      "sourceProjectName": "Seaside Hills Residence",
+      "mapProjectName": "Seaside Hills Residence",
+      "sourceDeveloper": "Al zorah develoment ( Private ) Company Limited ( Private Shareholding Company )",
+      "mapDeveloper": "Al Zorah Development",
+      "sourceDistrict": "Zorah",
+      "mapArea": "Al Zorah (Al Zorah City)"
+    },
+    {
+      "sourceProjectId": 528,
+      "canonicalProjectId": "project:barajeel-towers-rashidiya-1-ajman-uae",
+      "nameRelation": "exact_normalized",
+      "sourceProjectName": "BARAJEEL TOWERS",
+      "mapProjectName": "Barajeel Towers",
+      "sourceDeveloper": "G J PROPERTIES INVESTMENTS L.L.C",
+      "mapDeveloper": "GJ Properties",
+      "sourceDistrict": "Rashideya 1",
+      "mapArea": "Rashidiya 1 (Ajman Emirate)"
+    },
+    {
+      "sourceProjectId": 501,
+      "canonicalProjectId": "project:sealine-residence-by-al-zorah-development-in-al-zorah-city",
+      "nameRelation": "official_name_plus_marketing_attribution",
+      "sourceProjectName": "SEALINE RESIDENCE",
+      "mapProjectName": "Sealine Residence by Al Zorah Development Company in Al Zorah City",
+      "sourceDeveloper": "Al zorah develoment ( Private ) Company Limited ( Private Shareholding Company )",
+      "mapDeveloper": "Al Zorah Development Company",
+      "sourceDistrict": "Zorah",
+      "mapArea": "Ajman, Al Zorah"
+    }
+  ]
+}
