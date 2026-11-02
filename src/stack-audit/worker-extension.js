@@ -57,6 +57,7 @@ worker_default.fetch=async function(request,env,ctx){
  const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;
  const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
+ const scadStock=mapScadStock(request);if(scadStock)return mapStackPreparedResponse(request,scadStock);
  const ajmanRegister=await mapAjmanRegister(request,env,UAE_AJMAN_REGISTER_REPORT);if(ajmanRegister)return mapStackPreparedResponse(request,ajmanRegister);
  const ajmanRegistration=await mapAjmanRegistration(request,env,UAE_AJMAN_REGISTRATION_REPORT);if(ajmanRegistration)return mapStackPreparedResponse(request,ajmanRegistration);
  const ajmanDispositions=await mapAjmanDispositions(request,UAE_AJMAN_DISPOSITION_REPORT,store,MAP_ARCHIVE_MANIFEST);if(ajmanDispositions)return mapStackPreparedResponse(request,ajmanDispositions);
