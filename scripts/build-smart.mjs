@@ -126,7 +126,7 @@ source=source.replace('\nexport {worker_default as default};\n','\n'+await read(
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace(\"d.version!=='20260927-area-evidence-v1'||d.rows?.length!==2652\",\"!['20260927-area-evidence-v1','20261102-area-evidence-recovery-v1'].includes(d.version)||!Array.isArray(d.rows)\");\n`;
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(`\nconst STACK_OLD_AREA_HTML=ueAvailableHtml;ueAvailableHtml=function(){const html=STACK_OLD_AREA_HTML();return (ueState.data?.recovery?'<p class="ue-note">Recovered native source-area availability. Only complete periods by 14 September 2026 with n≥20 qualify; sparse and partial periods remain retained. Additional early native cohorts remain available in <a href=\"/map/history\">History</a>. This is not complete lifetime coverage or a property valuation.</p>':'')+html;};\n`)+';\n';
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace("d.version!=='20260927-history-predictions-v1'", "d.version!=='20260927-history-predictions-v1'&&!(d.recoveryVersion==='20261102-retained-history-v1'&&d.sourceVersion==='20260927-history-predictions-v1')");\n`;
-const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','ajman-area-reference.mjs','ajman-land-sales.mjs','scad-stock.mjs','abu-dhabi-urban-projects.mjs','dubai-project-status.mjs','coordinate-quality.mjs'];
+const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','ajman-area-reference.mjs','ajman-land-sales.mjs','ajman-rent-contracts.mjs','scad-stock.mjs','abu-dhabi-urban-projects.mjs','dubai-project-status.mjs','coordinate-quality.mjs'];
 const archiveManifest=JSON.parse(await read('data/recovery/static-archive-manifest.json'));
 const nativeIndexManifest=JSON.parse(await read('data/recovery/v48-native-history-index.manifest.json'));delete nativeIndexManifest.localPath;
 const inventoryManifest=JSON.parse(await read('data/recovery/full-item-inventory.manifest.json'));delete inventoryManifest.sourceShards;
@@ -152,6 +152,15 @@ const landSalesCompressed=await fs.readFile(new URL('data/uae-evidence/ajman/lan
 const landSalesRaw=gunzipSync(landSalesCompressed);
 if(landSalesCompressed.length!==landSalesReport.compressedBytes||digest(landSalesCompressed)!==landSalesReport.compressedSha256||landSalesRaw.length!==landSalesReport.rawBytes||digest(landSalesRaw)!==landSalesReport.rawSha256||landSalesReport.independentReadbackSha256!==landSalesReport.rawSha256||landSalesReport.quality?.rows!==1554)throw Error('Ajman land-sales embedded source changed');
 stackSource+='\nvar UAE_AJMAN_LAND_SALES_REPORT='+JSON.stringify(landSalesReport)+';\nvar UAE_AJMAN_LAND_SALES_PACKED='+JSON.stringify(landSalesCompressed.toString('base64'))+';\n';
+const rentReport=JSON.parse(await read('data/uae-evidence/ajman/certified-rent-validation.json'));
+const rentPacked=[];
+for(const rentSource of rentReport.sources){
+ const compressed=await fs.readFile(new URL(`data/uae-evidence/ajman/certified-rent-${rentSource.city}.json.gz`,root)),raw=gunzipSync(compressed);
+ if(compressed.length!==rentSource.compressedBytes||digest(compressed)!==rentSource.compressedSha256||raw.length!==rentSource.rawBytes||digest(raw)!==rentSource.rawSha256||rentSource.independentReadbackSha256!==rentSource.rawSha256)throw Error(`Ajman ${rentSource.city} rent-contract source changed`);
+ rentPacked.push(compressed.toString('base64'));
+}
+if(rentReport.sources.length!==3||rentReport.sources.reduce((sum,source)=>sum+source.quality.rows,0)!==2756)throw Error('Ajman rent-contract source inventory changed');
+stackSource+='\nvar UAE_AJMAN_RENT_REPORT='+JSON.stringify(rentReport)+';\nvar UAE_AJMAN_RENT_PACKED='+JSON.stringify(rentPacked)+';\n';
 const urbanReport=JSON.parse(await read('data/uae-evidence/abu-dhabi/sdi-urban-projects-validation.json'));
 const urbanCompressed=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-urban-projects-20261102.json.gz',root));
 const urbanRaw=gunzipSync(urbanCompressed),urbanSource=JSON.parse(urbanRaw);

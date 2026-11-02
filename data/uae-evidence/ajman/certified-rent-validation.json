@@ -1,0 +1,113 @@
+{
+  "version": "20261103-ajman-city-certified-rent-contracts-v1",
+  "sources": [
+    {
+      "id": "ajman-municipality-ajman-certified-rent-2026-09-08",
+      "city": "ajman",
+      "cityName": "Ajman city",
+      "datasetUrl": "https://data.ajman.ae/explore/dataset/certified-rent-contracts-in-ajman/",
+      "api": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/certified-rent-contracts-in-ajman",
+      "publisher": "Municipality & Planning Department",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceModifiedAt": "2026-09-08T04:39:41.424000+00:00",
+      "retrievedAt": "2026-11-02T23:19:00Z",
+      "rawSha256": "01665ba0f137654f6c45f679b7cb8b43d90fa482230f3b110dd19f198e4c7cf9",
+      "rawBytes": 486676,
+      "independentReadbackSha256": "01665ba0f137654f6c45f679b7cb8b43d90fa482230f3b110dd19f198e4c7cf9",
+      "compressedSha256": "e4e5086ed170b42bddd5311309727da5318fa9d922e366790fe1184f98d6d3ac",
+      "compressedBytes": 8108,
+      "metadataSha256": "e6fbb1457f21dcad8716f7a934a3d1bcb774276ed22d124abee9c46cfd95ebb8",
+      "quality": {
+        "rows": 948,
+        "observedMonthStart": "2016-01",
+        "observedMonthEnd": "2026-06",
+        "observedMonths": 126,
+        "minimumRowsPerReportedMonth": 5,
+        "maximumRowsPerReportedMonth": 11,
+        "duplicateDimensionRows": 3,
+        "zeroCountRows": 163,
+        "unavailableTokens": {
+          "NA": 24
+        }
+      }
+    },
+    {
+      "id": "ajman-municipality-manama-certified-rent-2026-09-23",
+      "city": "manama",
+      "cityName": "Manama",
+      "datasetUrl": "https://data.ajman.ae/explore/dataset/certified-rent-contract-in-manama/",
+      "api": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/certified-rent-contract-in-manama",
+      "publisher": "Municipality & Planning Department",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceModifiedAt": "2026-09-23T10:50:20.364000+00:00",
+      "retrievedAt": "2026-11-02T23:19:00Z",
+      "rawSha256": "f9b71bc2e612e51daf29ae3620eeb4dc464ce4736200bfb06552b5f384449bc4",
+      "rawBytes": 485664,
+      "independentReadbackSha256": "f9b71bc2e612e51daf29ae3620eeb4dc464ce4736200bfb06552b5f384449bc4",
+      "compressedSha256": "1c7fb4411bc9b1bc033c471f370ad2c9b760215091405128e3f61c816ee89bc1",
+      "compressedBytes": 6562,
+      "metadataSha256": "8274d872e205282d41661efa994f9b52976e82e65203e576e8d5849a65f29425",
+      "quality": {
+        "rows": 946,
+        "observedMonthStart": "2016-01",
+        "observedMonthEnd": "2026-06",
+        "observedMonths": 126,
+        "minimumRowsPerReportedMonth": 5,
+        "maximumRowsPerReportedMonth": 11,
+        "duplicateDimensionRows": 1,
+        "zeroCountRows": 557,
+        "unavailableTokens": {
+          "NA": 51,
+          "#REF!": 1
+        }
+      }
+    },
+    {
+      "id": "ajman-municipality-masfoot-certified-rent-2025-11-26",
+      "city": "masfoot",
+      "cityName": "Masfoot",
+      "datasetUrl": "https://data.ajman.ae/explore/dataset/certified-rent-contracts-in-masfoot/",
+      "api": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/certified-rent-contracts-in-masfoot",
+      "publisher": "Municipality & Planning Department",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceModifiedAt": "2025-11-26T05:57:10.257000+00:00",
+      "retrievedAt": "2026-11-02T23:19:00Z",
+      "rawSha256": "283eb8eae1d2bc36b6012a140afb1060b5bfcdf893c4ce2e5b6a037d50b6e9a5",
+      "rawBytes": 445829,
+      "independentReadbackSha256": "283eb8eae1d2bc36b6012a140afb1060b5bfcdf893c4ce2e5b6a037d50b6e9a5",
+      "compressedSha256": "adabb4f8cd8cfdd444ec856a9d7e964328974282ecd6c8c649aaaff06e94f0b2",
+      "compressedBytes": 6098,
+      "metadataSha256": "44bc232b8886293c52c407fd986736dcb132dba922f104649dcd4eecc5285b2c",
+      "quality": {
+        "rows": 862,
+        "observedMonthStart": "2016-01",
+        "observedMonthEnd": "2025-09",
+        "observedMonths": 117,
+        "minimumRowsPerReportedMonth": 5,
+        "maximumRowsPerReportedMonth": 10,
+        "duplicateDimensionRows": 10,
+        "zeroCountRows": 478,
+        "unavailableTokens": {
+          "NA": 53
+        }
+      }
+    }
+  ],
+  "scope": {
+    "emirate": "Ajman",
+    "evidenceClass": "official_certified_rent_contract_count",
+    "grain": "one reported city, month, service, contract category and channel row; duplicate dimensions remain separate source rows",
+    "cities": [
+      "Ajman city",
+      "Manama",
+      "Masfoot"
+    ],
+    "canonicalProjectMatches": 0,
+    "coordinatesPresent": false,
+    "amountsPresent": false,
+    "limits": "These are published counts of certified rent contracts, not contract-level records, active leases, rents paid, asking rents, yields, project prices, or an all-Ajman denominator. Source NA and #REF! values remain null. Repeated dimensions and uneven category coverage prevent a reliable cross-city or market total; source vintages differ."
+  }
+}
