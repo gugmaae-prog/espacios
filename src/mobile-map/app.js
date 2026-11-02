@@ -234,7 +234,7 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
     document.addEventListener('click',captureNavigationIntent,true);
     document.addEventListener('click',activateLegacyDetails);
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261102-map-stack-v20',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261102-map-frontend-v31',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();
