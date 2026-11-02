@@ -51,7 +51,7 @@ html[data-map-page="history"][data-map-degraded="r2"] #error:empty{display:none!
 @media(prefers-reduced-motion:reduce){html[data-map-page] *,html[data-minimal-map] #ae-map-layer-error *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 /* On roomy screens, keep branding with the other floating map controls. */
 @media(min-width:1025px){
-  html[data-minimal-map="1"] body #app .topbar{
+  html[data-minimal-map="1"][data-unified-map][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app .topbar{
     top:18px!important;left:28px!important;right:auto!important;
     width:max-content!important;max-width:calc(100vw - 56px)!important;
     height:48px!important;min-height:48px!important;
@@ -64,6 +64,7 @@ html[data-map-page="history"][data-map-degraded="r2"] #error:empty{display:none!
   html[data-minimal-map="1"] body #app .topbar .theme-radio-map{margin:0!important}
   html[data-minimal-map="1"] body #app .topbar .search-wrap{top:98px!important}
   html[data-minimal-map="1"] body #app #minimal-kind-controls{top:156px!important}
+  html[data-minimal-map="1"][data-minimal-tools="0"] body #app :is(#timeline-panel,#places-panel,#transport-panel,#analyze-panel,#valuation-panel,#ai-panel){left:28px!important}
   html[data-minimal-map="1"] body #app #minimal-map-modes,
   html[data-minimal-map="1"] body #app #minimal-tools-toggle{top:98px!important}
 }

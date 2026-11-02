@@ -184,6 +184,9 @@
       window.EspaciosMobileUI?.refreshGeometry?.();
     };
     tools.onclick=()=>setTools(root.dataset.minimalTools!=='1');
+    document.querySelectorAll('.rail-btn[data-panel]').forEach(button=>button.addEventListener('click',()=>{
+      if(!phone.matches&&root.dataset.minimalTools==='1')setTools(false);
+    }));
     document.addEventListener('keydown',event=>{
       if(event.key==='Escape'&&phone.matches&&root.dataset.minimalTools==='1'){
         setTools(false);tools.focus({preventScroll:true});
