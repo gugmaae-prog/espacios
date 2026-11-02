@@ -68,6 +68,17 @@ const snapshot={...legacyManifest,base64:legacyBytes.toString('base64')};
 const d1Manifest=JSON.parse(await fs.readFile(new URL('../data/recovery/psr-public-d1-export-20261102.manifest.json',import.meta.url),'utf8'));
 const d1Bytes=await fs.readFile(new URL('../data/recovery/psr-public-d1-export-20261102.json.gz',import.meta.url));
 const d1Snapshot={...d1Manifest,base64:d1Bytes.toString('base64')};
+test('mixed live and fallback pages switch to the full reviewed export',async()=>{
+ const service={fetch:async url=>{
+  const page=Number(new URL(url).searchParams.get('page')||1);
+  return Response.json({projects:[{slug:'partial-'+page}],total:2,pages:2,page,pageSize:100,registry:{total:2,revision:2,updatedAt:'same',contentHash:'same'},...(page===2?{source:{service:'reviewed-psr-d1-public-export',degraded:true,completeForCurrentDataHub:false,sha256:'snapshot'}}:{})},{headers:{'x-espacios-data-release':'v11'}});
+ }};
+ const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_D1_SNAPSHOT:d1Snapshot}),body=await response.json();
+ assert.equal(response.status,200);assert.equal(body.total,1091);
+ assert.equal(body.source.service,'reviewed-psr-d1-public-export');
+ assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
+ assert.equal(body.projects.some(project=>project.slug==='partial-1'),false);
+});
 test('D1 quota failure serves the exact current registry export with explicit degraded labels',async()=>{
  let calls=0;const service={fetch:async()=>{calls++;return new Response('D1 read quota',{status:503});}};
  const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service,MAP_CATALOGUE_D1_SNAPSHOT:d1Snapshot,MAP_CATALOGUE_SNAPSHOT:snapshot}),body=await response.json();
