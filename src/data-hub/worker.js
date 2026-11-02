@@ -1,4 +1,5 @@
 import {publicProjectFallback} from './public-fallback.mjs';
+import {PSR_PUBLIC_FILTERS} from './psr-public-filters.mjs';
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -239,9 +240,14 @@ async function developerRegistryState(env, tenantKey) {
   };
 }
 __name(developerRegistryState, "developerRegistryState");
-async function projectFilters(env, tenantKey, revision) {
+async function projectFilters(env, tenantKey, state) {
+  // The reviewed export's filter population was checked against the same D1
+  // table export. Only reuse it while the live registry signature is exact.
+  const reviewed=PSR_PUBLIC_FILTERS.registry;
+  if(tenantKey==='psr'&&Number(state.revision)===reviewed.revision&&Number(state.project_count)===reviewed.total&&state.content_hash===reviewed.contentHash&&state.updated_at===reviewed.updatedAt)return PSR_PUBLIC_FILTERS.filters;
+  const revision=state.revision;
   const cache = globalThis.caches?.default;
-  const key = new Request(`https://espacios.me/data/api/v1/projects/_filter-cache?tenant=${encodeURIComponent(tenantKey)}&revision=${Number(revision) || 0}`);
+  const key = new Request(`https://espacios.me/data/api/v1/projects/_filter-cache?tenant=${encodeURIComponent(tenantKey)}&revision=${Number(revision) || 0}&hash=${encodeURIComponent(state.content_hash||'')}`);
   if (cache) {
     try {
       const hit = await cache.match(key);
@@ -382,7 +388,7 @@ ${query.url.searchParams.toString()}`);
     page: query.page,
     pages: Math.max(1, Math.ceil(total / query.limit)),
     pageSize: query.limit,
-    filters: await projectFilters(env, tenantKey, state.revision),
+    filters: await projectFilters(env, tenantKey, state),
     registry: {
       total: Number(state.project_count || total),
       revision: Number(state.revision || 0),
