@@ -49,7 +49,9 @@ assert.match(indexHtml, /data-context-status/);
 assert.match(indexHtml, /id="ae-premium-ui"/);
 assert.match(indexHtml, /id="ae-premium-map"/);
 assert.match(indexHtml, /map-seamless-v1|map-seamless-style|--eg-theme-canvas:#edf1f4/);
+assert.doesNotMatch(indexHtml, /Timeline is taking longer to load/);
 assert.match(indexHtml, /__ESPACIOS_PAINT_MAP__/);
+assert.match(indexHtml, /map\.getCanvas\?\.\(\)&&map\.getStyle\?\.\(\)\?\.layers\?\.length\)clearRecovery\(\)/);
 assert.doesNotMatch(indexHtml, /p\('ae-bg','background-color','#07121c'\)/);
 
 const jsResponse = await request("/map/app-v2.js");
@@ -94,6 +96,11 @@ assert.match(javascript, /Spatial interaction layers are installed only after th
 assert.match(javascript, /seamless-v12: community polygon layers hydrate on load or selection/);
 assert.match(javascript, /Timeline layer could not finish loading/);
 assert.match(javascript, /Retry timeline/);
+assert.match(javascript, /reviewed snapshot projects across seven emirates/);
+assert.match(javascript, /Number\(counts\.unmappedProjects\?\?0\)/);
+assert.doesNotMatch(javascript, /Number\(counts\.unmappedProjects\|\|45\)/);
+assert.match(javascript, /if\(aeUaeState\.installed\|\|!tlState\?\.ready\|\|!drState\?\.installed\|\|!tlQ\('#tl-dock'\)\)return false/);
+assert.doesNotMatch(javascript, /aeUaeState\.installed\|\|!tlState\?\.ready\|\|!drState\?\.installed\|\|!bhState\?\.installed/);
 
 const cssResponse = await request("/map/app-v2.css");
 assert.equal(cssResponse.status, 200);
@@ -104,6 +111,7 @@ assert.match(css, /AE camera-only zoom guard v4/);
 assert.match(css, /#map\{contain:layout paint style;overscroll-behavior:none;touch-action:none!important\}/);
 assert.match(indexHtml, /@media\(max-width:760px\)/);
 assert.match(indexHtml, /@media\(prefers-reduced-motion:reduce\)/);
+assert.match(indexHtml, /\.ae-map-recovery\{background:var\(--su-panel\)/);
 assert.match(indexHtml, /min-width:44px!important;min-height:44px!important/);
 
 const vendorBody = new TextEncoder().encode("export const mapVersion = '6.8.0';");
@@ -196,9 +204,15 @@ for(const [path,page] of [['/map/research','research'],['/map/history','history'
   assert.equal(response.status,200,path);
   const html=await response.text();
   assert.match(html,new RegExp('data-map-page="'+page+'"'));
+  assert.match(html,/data-map-degraded="r2"/);
   assert.match(html,/map-seamless-style/);
   assert.match(html,/map-degraded-banner/);
   assert.match(html,/espacios_theme_v1/);
+  if(page==='history'){
+    assert.doesNotMatch(html,/<p id="status" role="status">Loading the accepted data manifest/);
+    assert.match(html,/R2-backed historical series are unavailable/);
+  }
+  if(page==='system')assert.match(html,/Source branch<\/span><span>codex\/map-seamless-v48-recovery-20261102/);
 }
 const abuDhabiResponse=await request('/map/abu-dhabi');
 assert.equal(abuDhabiResponse.status,503);
@@ -207,6 +221,7 @@ assert.match(await abuDhabiResponse.text(),/detailed source package is stored in
 const systemPayload=await (await request('/map/api/system')).json();
 assert.equal(systemPayload.storage.r2BindingAvailable,false);
 assert.equal(systemPayload.storage.mapFallbackActive,true);
+assert.equal(systemPayload.source.branch,'codex/map-seamless-v48-recovery-20261102');
 assert.match(systemPayload.topology.find(row=>row.to==='MARKET_R2').via,/unavailable/);
 
 const missingResponse = await request("/not-a-map-route");

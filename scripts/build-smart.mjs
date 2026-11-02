@@ -5,6 +5,10 @@ const root=new URL('../',import.meta.url),release='20260930-smart-estimates-v1',
 const baseline=await read('src/baseline/worker-20260930.js');if(createHash('sha256').update(baseline).digest('hex')!=='b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06')throw Error('Acquired live baseline changed');
 const core=await read('src/smart-estimates/core.mjs');const app='\nconst SECore=(()=>{\n'+core.replace(/^export /gm,'')+'\nreturn {derivePriceScenario,calculateROI,combineROI};})();\n'+await read('src/smart-estimates/app.js');
 let source=baseline.replace(/export \{\s*worker_default as default\s*\};/,'').replace(/\/\/# sourceMappingURL=.*\n?/g,'').replaceAll('20260929-collapse-repair-v3',release);
+const oldPremiumMapReady="if(connectedMap===map){paint();return}\n    connectedMap=map;\n    map.on?.('style.load',()=>paint());\n    map.on?.('load',()=>{paint();document.querySelector('.ae-map-recovery')?.remove()});\n    if(map.isStyleLoaded?.())paint();";
+const readyPremiumMap="if(connectedMap===map){paint();return}\n    connectedMap=map;\n    const clearRecovery=()=>document.querySelector('.ae-map-recovery')?.remove();\n    map.on?.('style.load',()=>{paint();clearRecovery()});\n    map.on?.('load',()=>{paint();clearRecovery()});\n    if(map.isStyleLoaded?.())paint();\n    if(map.getCanvas?.()&&map.getStyle?.()?.layers?.length)clearRecovery();";
+if(source.split(oldPremiumMapReady).length!==2)throw Error('Expected one premium map recovery handler');
+source=source.replace(oldPremiumMapReady,readyPremiumMap);
 const heatmapCatalogueLoad='catalogue = await arServerCatalogue(request, env);';
 const heatmapCatalogueMatches=source.split(heatmapCatalogueLoad).length-1;
 if(heatmapCatalogueMatches!==1)throw Error('Expected exactly one UAE heatmap catalogue loader; found '+heatmapCatalogueMatches);
@@ -15,8 +19,18 @@ if(heatmapCoreMatches!==1)throw Error('Expected exactly one UAE heatmap core loa
 source=source.replace(heatmapCoreLoad,'const response = await (env.AE_EMERGENCY_CATALOGUE ? aeCoreMapDataLegacy : aeCoreMapData)(request, env, ctx);');
 const oldHeatmapCatch=".catch(e=>console.warn('UAE heatmap manifest',e));";
 const oldHeatmapTimer="const aeUaeTimer=setInterval(()=>{aeUaeInstallUi();if(aeUaeState.installed&&aeUaeState.manifest&&aeUaeInstallLayers()){aeUaeState.initComplete=true;delete document.documentElement.dataset.aeMapLoading;clearInterval(aeUaeTimer);aeUaeCoverageEvidence();}},250);";
-if(source.split(oldHeatmapCatch).length!==2||source.split(oldHeatmapTimer).length!==2)throw Error('Expected exactly one UAE timeline readiness path');
+const oldHeatmapUiGate="if(aeUaeState.installed||!tlState?.ready||!drState?.installed||!bhState?.installed||!tlQ('#tl-dock'))return false;";
+if(source.split(oldHeatmapCatch).length!==2||source.split(oldHeatmapTimer).length!==2||source.split(oldHeatmapUiGate).length!==2)throw Error('Expected exactly one UAE timeline readiness path');
 source=source.replace(oldHeatmapCatch,".catch(e=>{aeUaeState.loadError=String(e?.message||e);console.warn('UAE heatmap manifest',e)});");
+const oldHeatmapFetch="if(!r.ok)throw Error('UAE heatmap '+r.status);return r.json();";
+const oldHeatmapNote="const note=tlQ('#analysis-note'),counts=aeUaeState.manifest?.counts||{},all=Number(counts.projects||1384),mapped=Number(counts.geocodedProjects||1339),unmapped=Number(counts.unmappedProjects||45);\n const text=all.toLocaleString()+' catalogue records across seven emirates · '+mapped.toLocaleString()+' mapped · '+unmapped.toLocaleString()+' awaiting coordinates. Colour shows catalogue density, not prices, demand or expected returns.';";
+if(source.split(oldHeatmapFetch).length!==2||source.split(oldHeatmapNote).length!==2)throw Error('Expected one UAE coverage source and note');
+source=source.replace(oldHeatmapFetch,"if(!r.ok)throw Error('UAE heatmap '+r.status);aeUaeState.degraded=r.headers.get('x-ae-data-degraded')==='r2-account-unavailable';return r.json();");
+source=source.replace(oldHeatmapNote,"const note=tlQ('#analysis-note'),counts=aeUaeState.manifest?.counts||{},all=Number(counts.projects??0),mapped=Number(counts.geocodedProjects??0),unmapped=Number(counts.unmappedProjects??0);\n const text=aeUaeState.degraded?all.toLocaleString()+' reviewed snapshot projects across seven emirates · '+mapped.toLocaleString()+' mapped · R2 live catalogue unavailable. Colour shows catalogue density, not prices, demand or expected returns.':all.toLocaleString()+' catalogue records across seven emirates · '+mapped.toLocaleString()+' mapped · '+unmapped.toLocaleString()+' awaiting coordinates. Colour shows catalogue density, not prices, demand or expected returns.';");
+// Dubai history requires its R2 catalogue. The independently available UAE
+// project timeline must still install while that unrelated source is offline.
+source=source.replace(oldHeatmapUiGate,"if(aeUaeState.installed||!tlState?.ready||!drState?.installed||!tlQ('#tl-dock'))return false;");
+source=source.replace('Timeline is taking longer to load. Reload to retry.','Map timeline is still initializing. The catalogue remains available.');
 source=source.replace(oldHeatmapTimer,`const aeUaeStartedAt=Date.now();
 const aeUaeTimer=setInterval(()=>{
  try{aeUaeInstallUi();if(aeUaeState.installed&&aeUaeState.manifest&&aeUaeInstallLayers()){aeUaeState.initComplete=true;delete document.documentElement.dataset.aeMapLoading;clearInterval(aeUaeTimer);aeUaeCoverageEvidence();return;}}catch(e){aeUaeState.loadError=String(e?.message||e);}
