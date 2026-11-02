@@ -1,10 +1,10 @@
 {
-  "version": "20261102-dubai-v48-reviewed-crosswalk-v2",
+  "version": "20261103-dubai-v48-reviewed-crosswalk-v3",
   "sourceDatasetId": "continental-dld-mashrooi-project-status-20261101",
   "sourceRawSha256": "3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f",
   "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
   "sourceSnapshotDate": "2026-11-01",
-  "matchPolicy": "Manually reviewed unique name, named developer or developer brand, and compatible district in the dated licensed source and accepted V48 map. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
+  "matchPolicy": "Reviewed unique name, named developer or developer brand, and compatible district in the dated licensed source and accepted V48 map. For Jumeirah Village Circle, DLD area code 681 maps to Al Barsha South Fourth in the authority area-name list; no broader cadastral alias is inferred. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
   "matches": [
     {
       "sourceProjectNumber": "443",
@@ -47,6 +47,46 @@
       "mapArea": "Al Jaddaf"
     },
     {
+      "sourceProjectNumber": "2232",
+      "canonicalProjectId": "project:binghatti-gate-jvc-apartments-in-jumeirah-village-circle-for-sale-in-dubai",
+      "sourceProjectName": "Binghatti Gate",
+      "mapProjectName": "Binghatti Gate",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2233",
+      "canonicalProjectId": "project:binghatti-mirage-apartments-for-sale-in-jvc-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Binghatti Mirage",
+      "mapProjectName": "Binghatti Mirage",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2271",
+      "canonicalProjectId": "project:binghatti-gems-apartments-in-jumeirah-village-circle-jvc-dubai",
+      "sourceProjectName": "Binghatti Gems",
+      "mapProjectName": "Binghatti Gems",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2326",
+      "canonicalProjectId": "project:binghatti-rose-jvc-apartments-in-jumeirah-village-circle-for-sale-in-dubai",
+      "sourceProjectName": "Binghatti Rose",
+      "mapProjectName": "Binghatti Rose",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
       "sourceProjectNumber": "2361",
       "canonicalProjectId": "project:binghatti-creek-apartments-for-sale-in-dubai-al-jaddaf",
       "sourceProjectName": "Binghatti Creek",
@@ -67,6 +107,66 @@
       "mapArea": "Business Bay"
     },
     {
+      "sourceProjectNumber": "2386",
+      "canonicalProjectId": "project:binghatti-jasmine-apartments-in-jumeirah-village-circle-jvc-for-sale-in-dubai",
+      "sourceProjectName": "Binghatti Jasmine",
+      "mapProjectName": "Binghatti Jasmine",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2412",
+      "canonicalProjectId": "project:maimoon-gardens-by-fakhruddin-properties-in-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Maimoon Gardens",
+      "mapProjectName": "Maimoon Gardens",
+      "sourceDeveloper": "Fakhruddin Properties Development L.L.C",
+      "mapDeveloper": "Fakhruddin Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Dubai, Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2415",
+      "canonicalProjectId": "project:binghatti-heights-jvc-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Binghatti Heights",
+      "mapProjectName": "Binghatti Heights",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2441",
+      "canonicalProjectId": "project:binghatti-luna-jvc-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Binghatti Luna",
+      "mapProjectName": "Binghatti Luna",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2473",
+      "canonicalProjectId": "project:binghatti-crest-apartments-for-sale-in-jvc-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Binghatti Crest",
+      "mapProjectName": "Binghatti Crest",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2478",
+      "canonicalProjectId": "project:binghatti-corner-jvc-apartments-for-sale-in-jumeirah-village-circle",
+      "sourceProjectName": "Binghatti Corner",
+      "mapProjectName": "Binghatti Corner",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
       "sourceProjectNumber": "2480",
       "canonicalProjectId": "project:burj-binghatti-jacob-co-residences-business-bay-dubai",
       "sourceProjectName": "Burj Binghatti Jacob & Co. Residences",
@@ -75,6 +175,26 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "2494",
+      "canonicalProjectId": "project:binghatti-nova-jvc-apartments-for-sale-in-jumeirah-village-circle",
+      "sourceProjectName": "Binghatti Nova",
+      "mapProjectName": "Binghatti Nova",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2571",
+      "canonicalProjectId": "project:binghatti-emerald-jvc-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Binghatti Emerald",
+      "mapProjectName": "Binghatti Emerald",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
     },
     {
       "sourceProjectNumber": "2579",
@@ -87,6 +207,26 @@
       "mapArea": "Business Bay"
     },
     {
+      "sourceProjectNumber": "2610",
+      "canonicalProjectId": "project:binghatti-onyx-jvc-apartments-for-sale-in-jumeirah-village-circle",
+      "sourceProjectName": "Binghatti Onyx",
+      "mapProjectName": "Binghatti Onyx",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2629",
+      "canonicalProjectId": "project:solena-the-orchard-place-jumeirah-village",
+      "sourceProjectName": "The Orchard Place",
+      "mapProjectName": "The Orchard Place",
+      "sourceDeveloper": "Peak Summit Real Estate Development L.L.C",
+      "mapDeveloper": "Peak Summit Real Estate Development",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
       "sourceProjectNumber": "2656",
       "canonicalProjectId": "project:al-habtoor-tower-business-bay-dubai-for-sale",
       "sourceProjectName": "Al Habtoor Tower",
@@ -95,6 +235,16 @@
       "mapDeveloper": "Al Habtoor Group",
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
+    },
+    {
+      "sourceProjectNumber": "2671",
+      "canonicalProjectId": "project:binghatti-venus-jvc-apartments-for-sale-in-jumeirah-village-circle-dubai",
+      "sourceProjectName": "Binghatti Venus",
+      "mapProjectName": "Binghatti Venus",
+      "sourceDeveloper": "Binghatti Developers Fze",
+      "mapDeveloper": "Binghatti Properties",
+      "sourceDistrict": "Al Barsha South Fourth",
+      "mapArea": "Jumeirah Village Circle (JVC)"
     },
     {
       "sourceProjectNumber": "2927",
@@ -236,5 +386,9 @@
       "sourceDistrict": "Business Bay",
       "mapArea": "Business Bay"
     }
-  ]
+  ],
+  "districtAliasEvidence": {
+    "jvcAlBarshaSouthFourth": "https://dubailand.gov.ae/en/eservices/old-and-new-area-names/old-and-new-area-names-list/",
+    "jvcPlotPlan": "https://cdn.emiratesauction.com/media/2e5ozhhqvdf6n4xkjjz3gcvyrjujynriotwq0erotla426mmhy/doc7914.pdf/12834_Affection_Plan.pdf"
+  }
 }
