@@ -67,6 +67,7 @@ test('public API needs no bindings, rejects writes and stays off the PSR tenant'
  const palm=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali'),forbidden,ctx);assert.equal(palm.status,200);
  const palmData=await palm.json();assert.equal(palmData.recordId,'community:Dubai:palm-jebel-ali');assert.equal(palmData.palmJebelAli.history.aggregateDistinctSaleCounts.total,2102);assert.notEqual(palm.headers.get('etag'),etag);
  const palm304=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali',{headers:{'if-none-match':palm.headers.get('etag')}}),forbidden,ctx);assert.equal(palm304.status,304);
+ const palmWeak304=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali',{headers:{'if-none-match':'W/'+palm.headers.get('etag')}}),forbidden,ctx);assert.equal(palmWeak304.status,304);
  const post=await worker.fetch(new Request('https://espacios.me/map/api/value-drivers',{method:'POST'}),forbidden,ctx);assert.equal(post.status,405);
  const palmPost=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali',{method:'POST'}),forbidden,ctx);assert.equal(palmPost.status,405);
  const tenant=await worker.fetch(new Request('https://psrhomes.ae/map/api/value-drivers'),forbidden,ctx);assert.equal(tenant.status,404);
