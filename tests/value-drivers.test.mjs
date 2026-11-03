@@ -41,6 +41,21 @@ test('Palm quarterly cohorts reconcile to accepted V48 without inventing villa p
  assert.equal(data.palmJebelAli.historicalQuotes.classification,'published_reference_asking_quotes_not_registered_sales');
  assert.equal(data.palmJebelAli.deliveryMilestones.length,3);
 });
+test('Palm named-phase cohorts are immutable, disjoint subdivisions with no villa estimate',()=>{
+ const h=data.palmJebelAli.history;
+ assert.equal(h.version,'20261103-palm-jebel-ali-history-v2');
+ assert.equal(h.phaseSeries.length,19);
+ assert.equal(createHash('sha256').update(JSON.stringify(h.phaseSeries)).digest('hex'),h.phaseSeriesSHA256);
+ const sum=kind=>h.phaseSeries.filter(s=>s.kind===kind).reduce((n,s)=>n+s.points.reduce((m,p)=>m+p.saleCount,0),0);
+ assert.equal(sum('land'),1573);assert.equal(sum('unit'),415);
+ assert.equal(h.phaseReconciliation.unassignedCommercialLandSales,112);
+ assert.equal(h.phaseReconciliation.additiveToAreaTotal,false);
+ assert.deepEqual(h.scenarioPolicy.horizonsYears,[1,3,5,10]);
+ for(const s of h.phaseSeries){
+  assert.equal(s.identityVerified,false);assert.equal(s.sourceAreaId,411);assert.match(s.archivePartitionSHA256,/^[a-f0-9]{64}$/);
+  for(const p of s.points)if(p.saleCount<20||!p.periodComplete){assert.equal(p.medianAEDPerSqft,null);assert.equal(p.p25AEDPerSqft,null);}
+ }
+});
 test('catalogue count partitions reconcile and archive/compound labels are retained',()=>{
  const c=data.catalogue;assert.equal(c.propertyRecords,c.activeRecords+c.archivedRecords);
  assert.equal(c.areas.reduce((n,a)=>n+a.records,0),c.propertyRecords);assert.equal(c.communities.length,c.communityRecords);

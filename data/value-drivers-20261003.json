@@ -1,5 +1,5 @@
 {
-  "version": "20261103-value-drivers-v3",
+  "version": "20261103-value-drivers-v4",
   "asOf": "2026-11-03",
   "owner": "Espacios",
   "classification": "catalysts_and_conditional_outlook",
@@ -4906,7 +4906,7 @@
       "limitation": "Count in a luxury threshold cohort; not repeat-sales appreciation, occupancy or evidence of every villa phase."
     },
     "history": {
-      "version": "20261103-palm-jebel-ali-history-v1",
+      "version": "20261103-palm-jebel-ali-history-v2",
       "recordId": "community:Dubai:palm-jebel-ali",
       "asOf": "2026-11-03",
       "acceptedV48AsOf": "2026-10-14",
@@ -5160,14 +5160,1346 @@
         "horizonsYears": [
           1,
           3,
-          5
+          5,
+          10
         ],
         "formula": "anchorAEDPerSqft * (1 + annualGrowthPct / 100) ** years",
         "confidenceInterval": null,
         "calibration": null,
         "limitation": "Illustrative nominal unit-area sensitivity from a dated observed cohort. Not a villa price, current appraisal, validated forecast, or probability interval. Excludes rent, fees, financing, inflation, mix change, and phase differences."
       },
-      "seriesSHA256": "cc92179b870da18f7ba549d3e736ee82fd1710347af75e73eaeb0081369198ba"
+      "seriesSHA256": "cc92179b870da18f7ba549d3e736ee82fd1710347af75e73eaeb0081369198ba",
+      "phaseSeries": [
+        {
+          "id": "dld-primary-ed033c7cafc451f7822c",
+          "label": "Palm Jebel Ali - Frond A",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond A",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "2afbaf75b68d7a91492e9660ae2d684b6bf257a9b6b38a363958de54e8b240c4",
+          "observedPeriodStart": "2024Q4",
+          "observedPeriodEnd": "2026Q2",
+          "points": [
+            {
+              "period": "2024Q4",
+              "saleCount": 4,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 52,
+              "medianAEDPerSqft": 2727.05,
+              "p25AEDPerSqft": 2594.94,
+              "p75AEDPerSqft": 2816.1,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 4,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-ddf8a3b996c093ca8e47",
+          "label": "Palm Jebel Ali - Frond B",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond B",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "8313ed9521df204ade6db6676063f2c9e563ed7742843589f9a9fdecfb966bb6",
+          "observedPeriodStart": "2024Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2024Q4",
+              "saleCount": 11,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 55,
+              "medianAEDPerSqft": 2790.93,
+              "p25AEDPerSqft": 2677.33,
+              "p75AEDPerSqft": 2884.46,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 12,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-d5563328169d28991b93",
+          "label": "Palm Jebel Ali - Frond C",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond C",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "3ae427479dc4619281693be3de9325f0a4085846b532de74ccc9fc435017578d",
+          "observedPeriodStart": "2024Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2024Q4",
+              "saleCount": 16,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 77,
+              "medianAEDPerSqft": 2791.42,
+              "p25AEDPerSqft": 2646.94,
+              "p75AEDPerSqft": 2949.45,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-e2769d1dba55c10a273b",
+          "label": "Palm Jebel Ali - Frond D",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond D",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "03cc2457623da6e8ca21ee5c54665d8318678a01900d805a725cf800ffdbd6f5",
+          "observedPeriodStart": "2025Q1",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2025Q1",
+              "saleCount": 79,
+              "medianAEDPerSqft": 2921.55,
+              "p25AEDPerSqft": 2710.82,
+              "p75AEDPerSqft": 3060.12,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 36,
+              "medianAEDPerSqft": 2826.69,
+              "p25AEDPerSqft": 2670.42,
+              "p75AEDPerSqft": 2950.03,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-7b2914eab58603722f59",
+          "label": "Palm Jebel Ali - Frond E",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond E",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "d9b2eb406000cac263709e3458862d41c62f7d8dcc107a696b23d664ded8d6c3",
+          "observedPeriodStart": "2025Q1",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2025Q1",
+              "saleCount": 24,
+              "medianAEDPerSqft": 2889.28,
+              "p25AEDPerSqft": 2667.47,
+              "p75AEDPerSqft": 3018.53,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 85,
+              "medianAEDPerSqft": 2957.3,
+              "p25AEDPerSqft": 2782.48,
+              "p75AEDPerSqft": 3098.08,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-59eceee067f7a1dfd864",
+          "label": "Palm Jebel Ali - Frond F",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond F",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "e367b4c4225e30342f32e3932c3077a0e324a900762733a6e357db466a88410a",
+          "observedPeriodStart": "2025Q1",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2025Q1",
+              "saleCount": 9,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 67,
+              "medianAEDPerSqft": 2905,
+              "p25AEDPerSqft": 2769.04,
+              "p75AEDPerSqft": 3042.99,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-17fe5bbcfaea57f5b138",
+          "label": "Palm Jebel Ali - Frond K",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond K",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "ae335cdd3ad3461f36972dde34c60c3b0213d8bfadad6593ca27a842a7e9bac3",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 13,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 53,
+              "medianAEDPerSqft": 2750.79,
+              "p25AEDPerSqft": 2617.51,
+              "p75AEDPerSqft": 2890.57,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q2",
+              "saleCount": 19,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 12,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 8,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 4,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-80a17680f21ab6e1c311",
+          "label": "Palm Jebel Ali - Frond L",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond L",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "8e6e823eda9af38e837d5134fa6ebf91f07eecfcb47f2d9857474b4ffa946ab1",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 104,
+              "medianAEDPerSqft": 2600.02,
+              "p25AEDPerSqft": 2493.37,
+              "p75AEDPerSqft": 2713.69,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 9,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 17,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 5,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-ff178aa9991783ed7980",
+          "label": "Palm Jebel Ali - Frond M",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond M",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "acb59e15a94a6f117ae005f1b89c1e1a4bfb223efdeb3f06c005603cc8e0a835",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 123,
+              "medianAEDPerSqft": 2568.07,
+              "p25AEDPerSqft": 2502.83,
+              "p75AEDPerSqft": 2645.82,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 5,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 11,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 4,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 5,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-f2e64b00f079618379f8",
+          "label": "Palm Jebel Ali - Frond N",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond N",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "deef52c81391c34854a89e79b71d210adaf30458ff07ceff5cb3224419814cbc",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 114,
+              "medianAEDPerSqft": 2562.72,
+              "p25AEDPerSqft": 2431.97,
+              "p75AEDPerSqft": 2650.29,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 7,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 7,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 5,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-9c799c8ab2a19557a33c",
+          "label": "Palm Jebel Ali - Frond O",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond O",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "7f3d7cdf2239d097c03ef7ce2763ecd9dfab44d797cd67953e604fd761bdda3b",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 91,
+              "medianAEDPerSqft": 2563.26,
+              "p25AEDPerSqft": 2347.21,
+              "p75AEDPerSqft": 2651.38,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 8,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-02106d7554e48ef87d58",
+          "label": "Palm Jebel Ali - Frond P",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - Frond P",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "a11aa7a8ace0a53927fbcaebc5c3dc0609623c52a92690e1cf8c7a58196082ca",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 82,
+              "medianAEDPerSqft": 2551.56,
+              "p25AEDPerSqft": 2315.41,
+              "p75AEDPerSqft": 2638.24,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 4,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 3,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-891276fd78883fe6f789",
+          "label": "Palm Jebel Ali - The Beach and Coral Collection",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - The Beach and Coral Collection",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "b43b01da228841b722723d7a21a8b6a9957290af08f7381cd49cc28e411a4195",
+          "observedPeriodStart": "2025Q4",
+          "observedPeriodEnd": "2026Q1",
+          "points": [
+            {
+              "period": "2025Q4",
+              "saleCount": 26,
+              "medianAEDPerSqft": 3365.07,
+              "p25AEDPerSqft": 2307.4,
+              "p75AEDPerSqft": 3505,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 18,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-58a7dca10c1e14c9fbf3",
+          "label": "Palm Jebel Ali - The Beach and Coral Collection - Frond B",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - The Beach and Coral Collection - Frond B",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "0521060eb173be89036bb23b6268e378db32c1e5ff78caff793f3b12c85cf227",
+          "observedPeriodStart": "2025Q4",
+          "observedPeriodEnd": "2026Q1",
+          "points": [
+            {
+              "period": "2025Q4",
+              "saleCount": 24,
+              "medianAEDPerSqft": 3649.09,
+              "p25AEDPerSqft": 3218.86,
+              "p75AEDPerSqft": 3718.41,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 20,
+              "medianAEDPerSqft": 3513.6,
+              "p25AEDPerSqft": 2441.35,
+              "p75AEDPerSqft": 3707.43,
+              "withheldReason": null,
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-7c42545dc478e54e19c9",
+          "label": "Palm Jebel Ali - The Beach and Coral Collection - Frond C",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - The Beach and Coral Collection - Frond C",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "c68b3b5b3d0c14443e967f120ea303475a2a6c1361de1865f34d5e128bff074e",
+          "observedPeriodStart": "2025Q4",
+          "observedPeriodEnd": "2026Q1",
+          "points": [
+            {
+              "period": "2025Q4",
+              "saleCount": 24,
+              "medianAEDPerSqft": 3625.79,
+              "p25AEDPerSqft": 3264.76,
+              "p75AEDPerSqft": 3777.11,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 20,
+              "medianAEDPerSqft": 3685.07,
+              "p25AEDPerSqft": 2476.19,
+              "p75AEDPerSqft": 3766.91,
+              "withheldReason": null,
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-2ec1a0219e422428ef94",
+          "label": "Palm Jebel Ali - The Beach and Coral Collection - Frond D",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - The Beach and Coral Collection - Frond D",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "ebf4781d16164a9279c0f439962240b15544c1edc6d1af946652fc168787dc05",
+          "observedPeriodStart": "2026Q1",
+          "observedPeriodEnd": "2026Q2",
+          "points": [
+            {
+              "period": "2026Q1",
+              "saleCount": 15,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 26,
+              "medianAEDPerSqft": 4034.72,
+              "p25AEDPerSqft": 3828.64,
+              "p75AEDPerSqft": 4116.85,
+              "withheldReason": null,
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-d45421e360ead153c05e",
+          "label": "Palm Jebel Ali - The Beach and Coral Collection - Frond E",
+          "kind": "land",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Commercial | Land | native project: Palm Jebel Ali - The Beach and Coral Collection - Frond E",
+          "registration": "Existing Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "553d9541b63ab9db1218e53fecbc2f330155d2f6f0f6799beb29a4468690b5c8",
+          "observedPeriodStart": "2026Q2",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2026Q2",
+              "saleCount": 30,
+              "medianAEDPerSqft": 3941.97,
+              "p25AEDPerSqft": 2514.86,
+              "p75AEDPerSqft": 4160.83,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 6,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-c8cfad2f482b857cb352",
+          "label": "Palm Central Private Residences - Frond M",
+          "kind": "unit",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Residential | Unit | native project: Palm Central Private Residences - Frond M",
+          "registration": "Off-Plan Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "82f109e5dab38bd0c3629f721266a12b4aa3c92914c3d0206f21b70ef047358c",
+          "observedPeriodStart": "2025Q4",
+          "observedPeriodEnd": "2026Q2",
+          "points": [
+            {
+              "period": "2025Q4",
+              "saleCount": 86,
+              "medianAEDPerSqft": 3500.23,
+              "p25AEDPerSqft": 3412.11,
+              "p75AEDPerSqft": 3711.06,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 126,
+              "medianAEDPerSqft": 3476.36,
+              "p25AEDPerSqft": 3412.11,
+              "p75AEDPerSqft": 3685.28,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-90b534a8e0cb7487231f",
+          "label": "Palm Central Private Residences - Frond N",
+          "kind": "unit",
+          "scope": "native_project_label_within_dld_area_411",
+          "identityVerified": false,
+          "segment": "Residential | Unit | native project: Palm Central Private Residences - Frond N",
+          "registration": "Off-Plan Properties",
+          "sourceId": "dld-official-transactions-20261003",
+          "sourceAreaId": 411,
+          "archivePartitionSHA256": "bebc290e0ce489fc5c51c89877b880c972a3255ab74e7b269edd04081cdcaef0",
+          "observedPeriodStart": "2026Q3",
+          "observedPeriodEnd": "2026Q4",
+          "points": [
+            {
+              "period": "2026Q3",
+              "saleCount": 197,
+              "medianAEDPerSqft": 3564.89,
+              "p25AEDPerSqft": 3351.79,
+              "p75AEDPerSqft": 3805.79,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q4",
+              "saleCount": 5,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "partial_period",
+              "periodComplete": false
+            }
+          ]
+        }
+      ],
+      "phaseSeriesSHA256": "1b55d64d308fd8d6fc3dc3de27594b255134cbd7e450c62fced6a1501bb7f86c",
+      "phaseReconciliation": {
+        "namedCommercialLandSales": 1573,
+        "unassignedCommercialLandSales": 112,
+        "namedResidentialUnitSales": 415,
+        "additiveToAreaTotal": false,
+        "basis": "The native project-name cohorts subdivide the same DLD area 411 sales. Do not add them to area aggregates; project names and historical marketed identity are not independently verified."
+      }
     },
     "deliveryMilestones": [
       {
