@@ -1,5 +1,5 @@
 {
-  "version": "20261103-uae-evidence-coverage-v7",
+  "version": "20261103-uae-evidence-coverage-v8",
   "basis": "Accepted V48 map snapshot plus separately published, dated source snapshots. This is an inventory, not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -137,6 +137,27 @@
           "sourceUrl": "https://data.ajman.ae/explore/dataset/ajman-area/",
           "rights": "CC BY 4.0",
           "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-mpd-20260901-building-permits-by-type",
+          "route": "/map/api/uae-evidence/ajman/building-permits",
+          "sourceRows": 741,
+          "grain": "building-type-month permit counts with ambiguous and blank rows withheld",
+          "sourceVintage": "2026-09-01T08:11:41.069000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/building-licenses-by-building-type/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "usableRows": 537,
+          "conflictingGroups": 33,
+          "completeYears": [
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
+          ]
         },
         {
           "id": "ajman-dlrr-20260821-land-sales",
@@ -314,6 +335,7 @@
     "ajmanDispositions": "869002c92d7f242e0365b56785e36123522d581a96c2fd31a46cdf8a29e2f142",
     "ajmanManagement": "14296f6890d4ba45450372ee5692de45f318ef7ff75c4b24123fae52867696b9",
     "ajmanAreas": "fa25b9edd0cb846b20e40e6a6cbb2607e390ccc3e7d70fb8d8298e9327ed091b",
+    "ajmanBuildingPermits": "a1ae59081b39ca2e15729a50e241218abbd096579c10017fe6b896e79f33fbcf",
     "ajmanLandSales": "8f9f14d4763f756969610d3e4b0271d3589e5180ccdd248888844de08342e96d",
     "ajmanLandDispositions": "cbc6a97374a316eceede8e68dad51f35ce7db8db1a00bdf60de0aa468904f7fa",
     "ajmanUnitMortgages": "c32ce09771fd28a77b80c0f99bef1512b5f10474423b1ed318469123f7340a0a",
