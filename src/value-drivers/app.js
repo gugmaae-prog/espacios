@@ -7,7 +7,7 @@
  async function load(){
   if(V.data)return V.data;if(V.promise)return V.promise;
   V.promise=fetch('/map/api/value-drivers',{signal:AbortSignal.timeout(12000)}).then(r=>{if(!r.ok)throw Error('Research unavailable');return r.json();}).then(d=>{
-   if(d.version!=='20261103-value-drivers-v6'||!Array.isArray(d.drivers)||!d.palmJebelAli?.history)throw Error('Research version mismatch');V.data=d;return d;
+   if(d.version!=='20261103-value-drivers-v7'||!Array.isArray(d.drivers)||!d.palmJebelAli?.history||!d.palmJebelAli?.latestDldRefresh)throw Error('Research version mismatch');V.data=d;return d;
   }).finally(()=>{V.promise=null;});return V.promise;
  }
  function close(){Q('#vd-panel').classList.add('hidden');Q('[data-value="government"]')?.setAttribute('aria-expanded','false');Q('#vd-launch')?.focus({preventScroll:true});}
@@ -24,11 +24,13 @@
  }
  function palmHistoryHTML(p){
   const h=p.history,c=h.aggregateDistinctSaleCounts;
+  const refresh=p.latestDldRefresh,q4=refresh.latestPeriod;
+  const recent='<h4>Newer DLD snapshot · 2 November 2026</h4><p><strong>'+refresh.reconciliation.newerSnapshotSales.toLocaleString()+' area sale rows</strong> in the newer export, a net '+refresh.reconciliation.netCountDifference+' more than the accepted V48 snapshot. Its open 2026 Q4 period contains '+q4.landSales+' commercial-land and '+q4.residentialUnitSales+' residential-unit sales through '+esc(q4.throughDate)+'.</p><p class="vd-note">Q4 prices are withheld while the quarter is incomplete; the unit cohort also has fewer than '+h.minimumDisplaySales+' sales. Earlier quarterly counts and displayed price statistics matched the accepted archive. This source-vintage difference is not a certified transaction-ID addition, a villa price, or a new forecast.</p><div class="vd-sources">'+links([refresh.source.id])+'</div>';
   const tables=h.series.map(s=>'<details class="vd-cohort" '+(s.kind==='unit'?'open':'')+'><summary>'+esc(s.label)+' · '+s.points.reduce((n,row)=>n+row.saleCount,0).toLocaleString()+' sales</summary><div class="vd-table-scroll"><table><caption>'+esc(s.registration)+' · '+esc(s.unit)+' · quarterly native periods</caption><thead><tr><th>Period</th><th>Sales</th><th>Median</th><th>P25–P75</th></tr></thead><tbody>'+s.points.map(row=>'<tr><td>'+esc(row.period)+'</td><td>'+row.saleCount+'</td><td>'+(row.medianAEDPerSqft===null?'Withheld':fmt(row.medianAEDPerSqft))+'</td><td>'+(row.p25AEDPerSqft===null?'n &lt; '+h.minimumDisplaySales:fmt(row.p25AEDPerSqft)+'–'+fmt(row.p75AEDPerSqft))+'</td></tr>').join('')+'</tbody></table></div></details>').join('');
   const quotes=p.historicalQuotes;
   const registered='<h4>Registered-sale history · DLD area 411</h4><p><strong>'+c.total.toLocaleString()+' distinct area sales</strong>: '+c.commercialLand.toLocaleString()+' commercial land, '+c.residentialUnit+' residential units, '+c.commercialBuilding+' commercial buildings. This is cadastral area context, not a villa transaction count.</p>'+tables+'<p class="vd-note">'+esc(h.methodology)+'</p><a href="/map/api/record-history?recordId='+encodeURIComponent(h.recordId)+'" target="_blank" rel="noopener">Open full accepted V48 native history</a><p class="vd-note">Registered villa prices and verified villa rents: unavailable. No validated Palm price forecast.</p>';
   const published='<h4>Published 2003–05 asking quotes</h4><p class="vd-note">Historic reported launch and resale quotes for the original plan. They are not registered sales, current phases or a repeat-sales price index.</p><div class="vd-table-scroll"><table><thead><tr><th>Period</th><th>Published quote</th><th>AED</th></tr></thead><tbody>'+quotes.rows.map(row=>'<tr><td>'+esc(row.period)+'</td><td>'+esc(row.qualifier)+'</td><td>'+fmt(row.valueAED)+'</td></tr>').join('')+'</tbody></table></div><div class="vd-sources">'+links([quotes.sourceId])+'</div>';
-  return registered+phaseHistoryHTML(h)+published;
+  return recent+registered+phaseHistoryHTML(h)+published;
  }
  function progressHTML(p){
   const progress=p.constructionProgress;

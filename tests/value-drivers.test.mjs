@@ -23,7 +23,7 @@ test('Palm aliases require explicit geography and do not match a different islan
  assert.equal(isPalmJebelAli({emirate:'Abu Dhabi',name:'Palm Jebel Ali'}),false);
 });
 test('research preserves sparse source evidence and never creates local uplift percentages',()=>{
- assert.equal(data.drivers.length,16);assert.equal(data.sources.length,35);assert.equal(data.coverage.length,7);
+ assert.equal(data.drivers.length,16);assert.equal(data.sources.length,36);assert.equal(data.coverage.length,7);
  assert.ok(data.drivers.some(d=>d.id==='guggenheim-abu-dhabi'));assert.ok(data.drivers.some(d=>d.id==='disney-yas'));assert.ok(data.drivers.some(d=>d.id==='wynn-al-marjan'));
  assert.equal(new Set(data.drivers.map(d=>d.id)).size,data.drivers.length);
  for(const d of data.drivers){assert.equal(d.priceUpliftPct,null);assert.equal(d.geometry,null);assert.ok(d.risk);for(const id of d.sourceIds)assert.ok(data.sources.some(s=>s.id===id));}
@@ -75,6 +75,24 @@ test('Palm named-phase cohorts are immutable, disjoint subdivisions with no vill
   assert.equal(s.identityVerified,false);assert.equal(s.sourceAreaId,411);assert.match(s.archivePartitionSHA256,/^[a-f0-9]{64}$/);
   for(const p of s.points)if(p.saleCount<20||!p.periodComplete){assert.equal(p.medianAEDPerSqft,null);assert.equal(p.p25AEDPerSqft,null);}
  }
+});
+test('newer DLD Palm snapshot adds only count evidence for the incomplete quarter',async()=>{
+ const refresh=data.palmJebelAli.latestDldRefresh;
+ const stored=JSON.parse(await fs.readFile(new URL('../data/palm-jebel-ali-dld-refresh-20261103.json',import.meta.url)));
+ assert.deepEqual(refresh,stored);
+ assert.equal(refresh.geography.sourceAreaId,411);
+ assert.equal(refresh.reconciliation.acceptedSnapshotSales,2102);
+ assert.equal(refresh.reconciliation.newerSnapshotSales,2141);
+ assert.equal(refresh.reconciliation.netCountDifference,39);
+ assert.equal(refresh.reconciliation.priorPeriodPointsMatched,17);
+ assert.deepEqual(refresh.saleCohortTotals,{land:1716,unit:423,building:2});
+ assert.deepEqual([refresh.latestPeriod.landSales,refresh.latestPeriod.residentialUnitSales],[31,13]);
+ assert.equal(refresh.latestPeriod.periodComplete,false);
+ assert.equal(refresh.latestPeriod.medianAEDPerSqft,null);
+ assert.equal(refresh.source.files.length,2);
+ assert.ok(refresh.source.files.every(file=>/^[a-f0-9]{64}$/.test(file.sha256)));
+ assert.equal(data.palmJebelAli.history.aggregateDistinctSaleCounts.total,2102);
+ assert.equal(data.palmJebelAli.villaScenarioPolicy.purchasePriceAED,null);
 });
 test('catalogue count partitions reconcile and archive/compound labels are retained',()=>{
  const c=data.catalogue;assert.equal(c.propertyRecords,c.activeRecords+c.archivedRecords);

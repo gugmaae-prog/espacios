@@ -1,0 +1,68 @@
+{
+  "version": "20261103-palm-jebel-ali-dld-refresh-v1",
+  "asOf": "2026-11-03",
+  "classification": "newer_dld_derived_area_sale_snapshot",
+  "source": {
+    "id": "dld-pja-transactions-export-20261102",
+    "publisher": "Dubai Land Department / Data Dubai",
+    "url": "https://data.dubai/en/l/470061",
+    "exportFolderDate": "2026-11-02",
+    "retrieved": "2026-11-03",
+    "classification": "official_open_data_export",
+    "licence": "Dubai Open Data Licence; attributed derivatives allowed; original data resale prohibited",
+    "files": [
+      {
+        "name": "transactions_2026-11-02_17-44-57_0001.csv.gz",
+        "compressedBytes": 81774779,
+        "uncompressedBytes": 581003826,
+        "sha256": "a776a572d60fc1598f7bee3c8bc04e74ae1a75fd21b0bf456b40cf427f330e07"
+      },
+      {
+        "name": "transactions_2026-11-02_17-44-57_0002.csv.gz",
+        "compressedBytes": 81783077,
+        "uncompressedBytes": 581124654,
+        "sha256": "09cfc14b46539d8f64d7179ac95d23b62d22a53098444b5eb2f753bccf74c9b5"
+      }
+    ],
+    "rawRowsRedistributed": false
+  },
+  "geography": {
+    "sourceAreaId": 411,
+    "sourceAreaName": "Palm Jabal Ali",
+    "scope": "cadastral_area_context"
+  },
+  "reconciliation": {
+    "acceptedVersion": "20261014-enrichment-v48",
+    "acceptedSnapshotSales": 2102,
+    "priorPeriodPointsMatched": 17,
+    "priorDisplayedMedianAndQuartilesMatched": true,
+    "newerSnapshotSales": 2141,
+    "netCountDifference": 39,
+    "identityCaveat": "The older focused archive retains aggregate counts, not a comparable transaction-ID list. The +39 is a net source-vintage difference, not a certified ID-level addition."
+  },
+  "sourceInventory": {
+    "areaRows": 2218,
+    "distinctAreaTransactionIds": 2218,
+    "excludedGifts": 53,
+    "excludedMortgages": 24
+  },
+  "latestPeriod": {
+    "period": "2026Q4",
+    "periodComplete": false,
+    "throughDate": "2026-10-30",
+    "landSales": 31,
+    "residentialUnitSales": 13,
+    "commercialBuildingSales": 0,
+    "previousSnapshotLandSales": 0,
+    "previousSnapshotResidentialUnitSales": 5,
+    "medianAEDPerSqft": null,
+    "withheldReason": "partial_quarter",
+    "note": "Q4 counts are incomplete. The 13 residential unit sales also remain below the 20-sale display gate. No Q4 price anchor or villa price is inferred."
+  },
+  "saleCohortTotals": {
+    "land": 1716,
+    "unit": 423,
+    "building": 2
+  },
+  "methodology": "Exact DLD area 411; Sales only; commercial existing Land/Building and residential off-plan Unit cohorts remain separate. Positive worth and area, distinct source transaction IDs, and exact reconciliation of all prior quarterly counts and displayed price statistics. Q4 count-only; price statistics withheld while the quarter is open. Native project names do not certify a marketed villa transaction."
+}
