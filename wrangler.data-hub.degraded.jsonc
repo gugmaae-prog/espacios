@@ -10,6 +10,6 @@
   "services": [{ "binding": "AUTH", "service": "espacios-auth-central", "environment": "production" }],
   "observability": { "enabled": true, "head_sampling_rate": 1, "redact_query_string": false, "logs": { "enabled": true, "head_sampling_rate": 1, "persist": true, "invocation_logs": true }, "traces": { "enabled": false, "persist": true, "head_sampling_rate": 1 } },
   "vars": { "DATA_RELEASE": "espacios-data-hub-v11-cache-provenance" }
-  // Temporary release config while Cloudflare R2 is disabled (10042).
-  // ARCHIVES must be restored with wrangler.data-hub.production.jsonc after R2 service is enabled.
+  // Legacy R2-free release config. New releases use wrangler.data-hub.production.jsonc,
+  // which also omits ARCHIVES while the owner keeps R2 disabled.
 }
