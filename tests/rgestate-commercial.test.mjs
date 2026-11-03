@@ -40,6 +40,7 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  const page=mapRgestateCommercialPage(new Request('https://espacios.me/map/commercial'));
  assert.equal(page.status,200);
  const html=await page.text();assert.match(html,/Historical evidence/);assert.match(html,/No listing photos/);assert.doesNotMatch(html,/<img\b/);
+ assert.match(html,/\[hidden\]\{display:none!important\}/);
 });
 
 test('compiled Worker serves commercial API and page with restricted raw path',async()=>{
