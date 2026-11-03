@@ -14,7 +14,7 @@ test('Palm aliases require explicit geography and do not match a different islan
  assert.equal(isPalmJebelAli({emirate:'Abu Dhabi',name:'Palm Jebel Ali'}),false);
 });
 test('research preserves sparse source evidence and never creates local uplift percentages',()=>{
- assert.equal(data.drivers.length,16);assert.equal(data.sources.length,29);assert.equal(data.coverage.length,7);
+ assert.equal(data.drivers.length,16);assert.equal(data.sources.length,34);assert.equal(data.coverage.length,7);
  assert.ok(data.drivers.some(d=>d.id==='guggenheim-abu-dhabi'));assert.ok(data.drivers.some(d=>d.id==='disney-yas'));assert.ok(data.drivers.some(d=>d.id==='wynn-al-marjan'));
  assert.equal(new Set(data.drivers.map(d=>d.id)).size,data.drivers.length);
  for(const d of data.drivers){assert.equal(d.priceUpliftPct,null);assert.equal(d.geometry,null);assert.ok(d.risk);for(const id of d.sourceIds)assert.ok(data.sources.some(s=>s.id===id));}
@@ -39,7 +39,9 @@ test('Palm quarterly cohorts reconcile to accepted V48 without inventing villa p
  assert.equal(h.missing.registeredVillaPrices,true);assert.equal(h.missing.verifiedVillaRents,true);assert.equal(h.scenarioPolicy.confidenceInterval,null);
  assert.equal(data.palmJebelAli.historicalQuotes.rows.length,5);
  assert.equal(data.palmJebelAli.historicalQuotes.classification,'published_reference_asking_quotes_not_registered_sales');
- assert.equal(data.palmJebelAli.deliveryMilestones.length,3);
+ assert.equal(data.palmJebelAli.deliveryMilestones.length,8);
+ assert.deepEqual(data.palmJebelAli.deliveryMilestones.map(m=>m.date),[...data.palmJebelAli.deliveryMilestones.map(m=>m.date)].sort());
+ assert.equal(data.palmJebelAli.deliveryMilestones.find(m=>m.date==='2026-06-24').unit,'released residences');
 });
 test('Palm named-phase cohorts are immutable, disjoint subdivisions with no villa estimate',()=>{
  const h=data.palmJebelAli.history;

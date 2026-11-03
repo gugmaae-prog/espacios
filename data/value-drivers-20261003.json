@@ -1,5 +1,5 @@
 {
-  "version": "20261103-value-drivers-v4",
+  "version": "20261103-value-drivers-v5",
   "asOf": "2026-11-03",
   "owner": "Espacios",
   "classification": "catalysts_and_conditional_outlook",
@@ -264,6 +264,51 @@
       "url": "https://gulfnews.com/business/property/realty-talk-an-in-depth-view-of-the-palm-projects-1.282042",
       "classification": "contemporaneous_broker_market_report",
       "licence": "Factual quoted-price summaries with citation; article body and images are not republished."
+    },
+    {
+      "id": "pja-first-villa-launch",
+      "publisher": "Nakheel",
+      "published": "2023-09-18",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2023/09/18/nakheel-launches-first-villas-on-new-futuristic-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-access-road-award",
+      "publisher": "Nakheel",
+      "published": "2024-05-26",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2024/05/26/nakheel-awards-contracts-for-the-commencement-of-infrastructure-works-on-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-beach-collection-2024",
+      "publisher": "Nakheel",
+      "published": "2024-11-11",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2024/11/11/nakheel-reveals-latest-release-of-exclusive-waterfront-villas-on-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-beach-coral-2025",
+      "publisher": "Nakheel",
+      "published": "2025-10-23",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2025/10/23/nakheel-unveils-exclusive-collection-of-premium-waterfront-villas-at-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-palm-central-2026",
+      "publisher": "Nakheel",
+      "published": "2026-06-24",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
     }
   ],
   "drivers": [
@@ -4889,6 +4934,11 @@
       "pja-fronds-kp-contracts",
       "pja-frond-f-release",
       "kf-luxury",
+      "pja-first-villa-launch",
+      "pja-access-road-award",
+      "pja-beach-collection-2024",
+      "pja-beach-coral-2025",
+      "pja-palm-central-2026",
       "pja-gulfnews-2005-real-estate-report"
     ],
     "driverIds": [
@@ -6503,6 +6553,24 @@
     },
     "deliveryMilestones": [
       {
+        "date": "2023-09-18",
+        "label": "First villa release across four fronds",
+        "value": 4,
+        "unit": "fronds",
+        "sourceId": "pja-first-villa-launch",
+        "classification": "developer_product_release",
+        "limitation": "Launch announcement; the four fronds are not a sale count or verified handover."
+      },
+      {
+        "date": "2024-05-26",
+        "label": "Access-road and lighting contracts awarded",
+        "value": null,
+        "unit": null,
+        "sourceId": "pja-access-road-award",
+        "classification": "infrastructure_contract_award",
+        "limitation": "The nearly 6 km public access road was planned at award; completion is not established by this announcement."
+      },
+      {
         "date": "2024-10-16",
         "label": "Contracts for 723 villas on Fronds K–P",
         "value": 723,
@@ -6512,6 +6580,24 @@
         "limitation": "Contract award and late-2026 target at the time; not verified handovers."
       },
       {
+        "date": "2024-11-11",
+        "label": "Beach Collection release with 10 villa designs",
+        "value": 10,
+        "unit": "designs",
+        "sourceId": "pja-beach-collection-2024",
+        "classification": "developer_product_release",
+        "limitation": "Ten design styles are not ten sale transactions. The end-2027 completion expectation was a target at publication, not a verified handover."
+      },
+      {
+        "date": "2025-10-23",
+        "label": "Beach and Coral collection release with 11 villa designs",
+        "value": 11,
+        "unit": "designs",
+        "sourceId": "pja-beach-coral-2025",
+        "classification": "developer_product_release",
+        "limitation": "Eleven design styles are not an inventory or sale count. The release does not establish villa transaction prices."
+      },
+      {
         "date": "2026-04-27",
         "label": "Contracts for 544 villas on Fronds A–F",
         "value": 544,
@@ -6519,6 +6605,15 @@
         "sourceId": "pja-villas",
         "classification": "construction_contract_award",
         "limitation": "Separate package with Q4 2028 target; not verified handovers."
+      },
+      {
+        "date": "2026-06-24",
+        "label": "Palm Central phase release with 222 residences",
+        "value": 222,
+        "unit": "released residences",
+        "sourceId": "pja-palm-central-2026",
+        "classification": "developer_product_release",
+        "limitation": "Released apartments and townhouses across three buildings; not registered sales or verified current availability."
       },
       {
         "date": "2026-08-20",
