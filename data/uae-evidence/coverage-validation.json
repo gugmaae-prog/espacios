@@ -1,5 +1,5 @@
 {
-  "version": "20261103-uae-evidence-coverage-v6",
+  "version": "20261103-uae-evidence-coverage-v7",
   "basis": "Accepted V48 map snapshot plus separately published, dated source snapshots. This is an inventory, not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -49,12 +49,14 @@
           "id": "ad-sdi-developer-projects-20261103",
           "route": "/map/api/uae-evidence/abu-dhabi/developer-projects",
           "sourceRows": 411,
-          "grain": "developer-project feature attributes, mixed uses",
+          "grain": "developer-project feature attributes and source polygons, mixed uses",
           "sourceVintage": "captured 2026-11-03",
           "sourceUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/207",
           "rights": "AD-SDI open-data terms with attribution",
           "liveRouteHealth": "not_asserted_by_inventory",
-          "distinctNames": 410
+          "distinctNames": 410,
+          "sourceGeometryAvailable": true,
+          "sourceGeometrySha256": "99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2"
         }
       ],
       "gaps": [
@@ -305,6 +307,7 @@
     "nativeIndex": "a637adc5e274913abae6a1020a3b906b9bb1257198dd13c466a9e38d4e5c39ba",
     "urban": "55712a99dffe8f874a922b84d45be84cbada6b828bde8df2ce9be83b50da37c9",
     "developerProjects": "164af448570dabd0dfd512a8977fb7fbf7a758d77116ce095b86c3147a4eadb6",
+    "developerGeometry": "96b3dff68b292368db50648eb5140031c0fedbd8b4d4624564b781274c91131f",
     "ajmanRegister": "869289fe3bda282651d3ac1a06dddcbd0dd92520a52cec80982ba2f0fc8b2103",
     "ajmanSales": "ca027f3ccfc10bf16ad688bf0624fcbbea36a0803d0bd14a82687ca7d6240609",
     "ajmanRegistrations": "621b6a13e0ad452458728e996fc366dbce1f56cb4b88c3f78ff5aab6e16413ad",

@@ -184,6 +184,23 @@ const developerCompressed=await fs.readFile(new URL('data/uae-evidence/abu-dhabi
 const developerRaw=gunzipSync(developerCompressed),developerSource=JSON.parse(developerRaw);
 if(developerCompressed.length!==developerReport.compressedBytes||digest(developerCompressed)!==developerReport.compressedSha256||developerRaw.length!==developerReport.rawBytes||digest(developerRaw)!==developerReport.rawSha256||developerReport.independentReadbackSha256!==developerReport.rawSha256||developerSource.features?.length!==411||developerReport.distinctNames!==410||developerReport.geometryCaptured!==false)throw Error('Abu Dhabi developer-project source changed');
 stackSource+='\nvar UAE_ABU_DHABI_DEVELOPER_REPORT='+JSON.stringify(developerReport)+';\nvar UAE_ABU_DHABI_DEVELOPER_PACKED='+JSON.stringify(developerCompressed.toString('base64'))+';\n';
+const developerGeometryReport=JSON.parse(await read('data/uae-evidence/abu-dhabi/sdi-developer-projects-geometry-validation.json'));
+const developerGeometryCompressed=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-developer-projects-geometry-20261103.json.gz',root));
+const developerGeometryRaw=gunzipSync(developerGeometryCompressed),developerGeometrySource=JSON.parse(developerGeometryRaw);
+if(developerGeometryCompressed.length!==developerGeometryReport.compressedBytes||digest(developerGeometryCompressed)!==developerGeometryReport.compressedSha256||developerGeometryRaw.length!==developerGeometryReport.rawBytes||digest(developerGeometryRaw)!==developerGeometryReport.rawSha256||developerGeometryReport.independentReadbackSha256!==developerGeometryReport.rawSha256||developerGeometryReport.attributesCrosscheckedAgainst!==developerReport.rawSha256||developerGeometryReport.featureCount!==411||developerGeometrySource.features?.length!==411||developerGeometrySource.spatialReference?.wkid!==4326||developerGeometrySource.geometryType!=='esriGeometryPolygon')throw Error('Abu Dhabi developer geometry source changed');
+const developerGeometryIndexCompressed=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-developer-projects-geometry-chunks-20261103.json.gz',root));
+if(developerGeometryIndexCompressed.length!==developerGeometryReport.chunkIndex.compressedBytes||digest(developerGeometryIndexCompressed)!==developerGeometryReport.chunkIndex.compressedSha256)throw Error('Abu Dhabi developer geometry chunk index changed');
+const developerGeometryIndex=JSON.parse(gunzipSync(developerGeometryIndexCompressed)),developerGeometryById={};
+if(developerGeometryIndex.length!==411||developerGeometryReport.chunkIndex.chunks!==411)throw Error('Abu Dhabi developer geometry chunk count changed');
+for(let i=0;i<411;i++){
+ const feature=developerGeometrySource.features[i],attributeFeature=developerSource.features[i],entry=developerGeometryIndex[i],id=feature?.attributes?.OBJECTID;
+ if(!Number.isSafeInteger(id)||id!==attributeFeature?.attributes?.OBJECTID||entry?.[0]!==id||developerGeometryById[id])throw Error('Abu Dhabi developer geometry identity changed');
+ for(const field of ['PROJECT_NAME','DEVELOPER_NAME','CH_FID'])if(feature.attributes[field]!==attributeFeature.attributes[field])throw Error('Abu Dhabi developer geometry attribute changed');
+ const compressed=Buffer.from(entry[1],'base64'),raw=gunzipSync(compressed);
+ if(digest(compressed)!==entry[2]||raw.length!==entry[3]||digest(raw)!==entry[4]||JSON.stringify(JSON.parse(raw))!==JSON.stringify(feature))throw Error('Abu Dhabi developer geometry chunk changed');
+ developerGeometryById[id]=entry.slice(1);
+}
+stackSource+='\nvar UAE_ABU_DHABI_DEVELOPER_GEOMETRY_REPORT='+JSON.stringify(developerGeometryReport)+';\nvar UAE_ABU_DHABI_DEVELOPER_GEOMETRY_CHUNKS='+JSON.stringify(developerGeometryById)+';\n';
 const dubaiStatusReport=JSON.parse(await read('data/uae-evidence/dubai/dld-project-status-validation.json'));
 const dubaiStatusCrosswalk=JSON.parse(await read('data/uae-evidence/dubai/reviewed-v48-crosswalk.json'));
 const dubaiStatusCompressed=await fs.readFile(new URL('data/uae-evidence/dubai/dld-project-status-20261101.csv.gz',root));
