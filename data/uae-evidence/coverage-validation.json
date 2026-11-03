@@ -1,5 +1,5 @@
 {
-  "version": "20261103-uae-evidence-coverage-v4",
+  "version": "20261103-uae-evidence-coverage-v5",
   "basis": "Accepted V48 map snapshot plus separately published, dated source snapshots. This is an inventory, not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -212,8 +212,8 @@
           "sourceUrl": "https://continentalclub.ae/en/project-status/",
           "rights": "CC BY 4.0 secondary publication",
           "liveRouteHealth": "not_asserted_by_inventory",
-          "reviewedV48IdentityLinks": 75,
-          "unmatchedSourceProjectIds": 3796
+          "reviewedV48IdentityLinks": 79,
+          "unmatchedSourceProjectIds": 3792
         }
       ],
       "gaps": [
@@ -304,7 +304,7 @@
     "ajmanUnitMortgages": "c32ce09771fd28a77b80c0f99bef1512b5f10474423b1ed318469123f7340a0a",
     "ajmanRents": "0af8b5b7b4d29f9e3a4205292fd0a5f57bd4375a01af6f30a5279909c72f48b2",
     "ajmanCrosswalk": "4b7e43a8d340a7652447f7bd13b2f97f3421f4710c79594239cab799cbfde3ce",
-    "dubaiStatus": "044582482f6f0ef864b06d4e63b063a5df99b6143b57229d0470efb52802aba2",
-    "dubaiCrosswalk": "15c27b35c02541b803f0794ce23d2cd1cdfd4494c25fbc4554eb620e19783bc9"
+    "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
+    "dubaiCrosswalk": "ca98fa68a2b8f1df440cb1d26294ff23ed15d850aa70787db4cb50f81d9641e6"
   }
 }

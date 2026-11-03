@@ -55,7 +55,7 @@
     "handover_date": 3407
   },
   "geometryCaptured": false,
-  "v48IdentityCrosswalk": "75 reviewed one-to-one links in reviewed-v48-crosswalk.json; 3,796 source IDs remain unmatched. Fifteen JVC links use DLD area-code 681 evidence. Another 29 specific identities are corroborated by Emaar South and Nshama Town Square project pages. Eight Dubai Marina and Sobha Hartland identities have project-specific developer evidence; the DLD annual report explicitly equates Marsa Dubai with Dubai Marina. No blanket district equivalence is inferred.",
+  "v48IdentityCrosswalk": "79 reviewed one-to-one links in reviewed-v48-crosswalk.json; 3,792 source IDs remain unmatched. Fifteen JVC links use DLD area-code 681 evidence. Another 29 specific identities are corroborated by Emaar South and Nshama Town Square project pages. Eight Dubai Marina and Sobha Hartland identities have project-specific developer evidence; the DLD annual report explicitly equates Marsa Dubai with Dubai Marina. Four more named developments have project-specific developer pages corroborating their marketed areas. No blanket district equivalence is inferred.",
   "limits": "This is a dated CC BY 4.0 republished DLD register snapshot, not a live DLD API or an all-UAE census. Percentages are the last recorded technical inspection and may be stale; handover dates are declared, not actual. Sixty-seven reviewed V48 identity links do not supply geometry, sales, prices, or new project-pin coordinates, and do not revise V48 status or timelines.",
   "normalizedBytes": 1963576,
   "normalizedSha256": "7334b5f6db0ebdcc9731a5c9d5b2a84308f32b45ee245ed45a942b3bf16bac44",

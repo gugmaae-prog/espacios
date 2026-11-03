@@ -22,7 +22,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,3);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/land-dispositions')).sourceRows,1646);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/unit-mortgages')).sourceRows,651);
- assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,75);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3796);
+ assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,79);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3792);
  assert.ok(report.emirates.every(item=>item.authoritativeAllProjectDenominator===null&&item.gaps.length>0));
 });
 

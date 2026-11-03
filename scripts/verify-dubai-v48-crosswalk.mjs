@@ -34,7 +34,11 @@ const additionalIdentityEvidence={
   '2447':'https://sobharealty.com/properties-in-dubai/sobha-hartland/the-crest',
   '2482':'https://sobharealty.com/properties-in-dubai/sobha-hartland/crest-grande',
   '2564':'https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-opulence',
-  '2797':'https://londongate.ae/projects/aeternitas'
+  '2797':'https://londongate.ae/projects/aeternitas',
+  '4142':'https://www.takmeeldevelopment.com/divine-elements-page',
+  '4300':'https://ellingtonproperties.ae/en/property-for-sale/windsor-house-ii-dubai-south',
+  '4482':'https://www.binghatti.com/en/projects/binghatti-wraith',
+  '4503':'https://www.imandevelopers.com/iman-properties/113-residences'
 };
 assert.deepEqual(crosswalk.additionalIdentityEvidence,additionalIdentityEvidence);
 const source=normalizeDubaiStatusCsv(sourceBytes.toString('utf8'),report);
@@ -61,6 +65,9 @@ for(const match of crosswalk.matches){
     (row.community==='Al Barsha South Fourth'&&/^(?:Dubai, )?Jumeirah Village Circle \(JVC\)$/.test(project.area))||
     (row.community==='Marsa Dubai'&&project.area==='Dubai Marina'&&match.identityEvidenceUrl===additionalIdentityEvidence[match.sourceProjectNumber])||
     (row.community==='Al Merkadh'&&project.area==='Sobha Hartland'&&match.identityEvidenceUrl===additionalIdentityEvidence[match.sourceProjectNumber])||
+    (row.community==='Madinat Al Mataar'&&project.area==='Dubai South Residential District'&&['4142','4300'].includes(match.sourceProjectNumber)&&match.identityEvidenceUrl===additionalIdentityEvidence[match.sourceProjectNumber])||
+    (row.community==='Al Jadaf'&&project.area==='Al Jaddaf, Dubai'&&match.sourceProjectNumber==='4482'&&match.identityEvidenceUrl===additionalIdentityEvidence['4482'])||
+    (row.community==='Al Safouh First'&&project.area==='Al Sufouh, Dubai'&&match.sourceProjectNumber==='4503'&&match.identityEvidenceUrl===additionalIdentityEvidence['4503'])||
     (row.community==='Madinat Al Mataar'&&project.area==='Emaar South'&&project.developer==='Emaar'&&match.identityEvidenceUrl===projectIdentityEvidence.emaarSouth)||
     (row.community==='Al Yelayiss 2'&&project.area==='Town Square Dubai'&&project.developer==='NSHAMA'&&match.identityEvidenceUrl===(row.name==='Evelyn On The Park'?projectIdentityEvidence.evelyn:projectIdentityEvidence.townSquare));
   assert.ok(compatibleDistrict,'District must agree or use a documented alias');
