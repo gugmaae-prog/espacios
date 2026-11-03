@@ -16,7 +16,8 @@ const sourceLatest=source.filter(row=>row.update_date===crosswalk.latestSourceSn
 const mapAjman=map.projects.filter(project=>project.emirate==='Ajman');
 assert.equal(sourceLatest.length,298);
 assert.equal(mapAjman.length,10);
-assert.equal(crosswalk.matches.length,3);
+assert.equal(crosswalk.matches.length,4);
+assert.equal(crosswalk.familyRelations.length,2);
 const ids=new Set(),canonicalIds=new Set();
 const norm=value=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,'');
 for(const match of crosswalk.matches){
@@ -38,6 +39,32 @@ for(const match of crosswalk.matches){
   else assert.fail('Unknown name relation');
   assert.equal(sourceLatest.filter(candidate=>norm(candidate.project_name_english)===norm(row.project_name_english)).length,1,'Source name must be unique in latest snapshot');
   assert.ok(row.developer_name_english.toLowerCase().includes(match.sourceProjectId===528?'g j properties':'al zorah'));
-  assert.ok(project.developer.toLowerCase().includes(match.sourceProjectId===528?'gj properties':'al zorah'));
+  if(match.sourceProjectId===522){
+    assert.equal(project.developer,'creekside','Known V48 developer corruption must remain explicit');
+    assert.equal(Number(row.number_of_real_estate_units),144);
+    assert.equal(match.independentIdentityEvidenceUrl,'https://www.alzorahcity.com/creekside_residence');
+    assert.ok(match.reviewNote.includes('corrupted'));
+  }else assert.ok(project.developer.toLowerCase().includes(match.sourceProjectId===528?'gj properties':'al zorah'));
 }
-console.log(JSON.stringify({passed:true,latestSourceProjectIds:sourceLatest.length,v48AjmanProjects:mapAjman.length,reviewedOneToOneMatches:crosswalk.matches.length,unmatchedLatestSourceProjectIds:sourceLatest.length-crosswalk.matches.length}));
+let reviewedFamilySourceIds=0;
+const familyIds=new Set();
+for(const relation of crosswalk.familyRelations){
+  const family=mapAjman.filter(project=>project.id===relation.canonicalFamilyId);
+  assert.equal(family.length,1);
+  assert.equal(family[0].name,relation.mapFamilyName);
+  assert.equal(relation.relation,'source_villa_within_v48_family');
+  assert.ok(relation.independentFamilyEvidenceUrl.startsWith('https://www.alzorahcity.com/'));
+  const pattern=new RegExp(relation.sourceNamePattern);
+  const sourceIds=new Set(relation.sourceProjectIds);
+  assert.equal(sourceIds.size,relation.sourceProjectIds.length);
+  const expected=sourceLatest.filter(row=>pattern.test(row.project_name_english)&&row.district_english===relation.sourceDistrict&&row.developer_name_english.includes(relation.sourceDeveloperContains));
+  assert.deepEqual([...sourceIds].sort((a,b)=>a-b),expected.map(row=>row.project_id).sort((a,b)=>a-b),'Family source IDs must be explicitly complete for the reviewed dated snapshot');
+  for(const row of expected){
+    assert.ok(!ids.has(row.project_id)&&!familyIds.has(row.project_id),'Identity and family relations must be disjoint');
+    assert.equal(row.number_of_real_estate_units,'1');
+    familyIds.add(row.project_id);
+  }
+  reviewedFamilySourceIds+=expected.length;
+}
+assert.equal(reviewedFamilySourceIds,30);
+console.log(JSON.stringify({passed:true,latestSourceProjectIds:sourceLatest.length,v48AjmanProjects:mapAjman.length,reviewedOneToOneMatches:crosswalk.matches.length,reviewedVillaFamilyRelations:reviewedFamilySourceIds,unmatchedLatestSourceProjectIds:sourceLatest.length-crosswalk.matches.length-reviewedFamilySourceIds}));

@@ -21,7 +21,8 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/developer-projects')).sourceRows,411);
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/developer-projects')).sourceGeometryAvailable,true);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).latestSourceProjectIds,298);
- assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,3);
+ assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,4);
+ assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedVillaFamilyRelations,30);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/land-dispositions')).sourceRows,1646);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/building-permits')).sourceRows,741);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/building-permits')).usableRows,537);
@@ -45,4 +46,6 @@ test('compiled Worker serves the seven-emirate inventory',async()=>{
  const response=await worker.fetch(request(),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'coverage-test'}},{}),body=await response.json();
  assert.equal(response.status,200);assert.equal(response.headers.get('x-espacios-evidence-source'),'accepted-v48-and-published-source-inventory');
  assert.equal(body.emirates.length,7);assert.equal(body.allUaeProjectDenominator,null);
+ const ajman=body.emirates.find(item=>item.name==='Ajman').publishedSources.find(item=>item.route.endsWith('/register'));
+ assert.equal(ajman.reviewedV48IdentityLinks,4);assert.equal(ajman.reviewedVillaFamilyRelations,30);
 });

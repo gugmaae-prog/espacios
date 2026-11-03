@@ -1,10 +1,10 @@
 {
-  "version": "20261102-ajman-v48-reviewed-crosswalk-v1",
+  "version": "20261103-ajman-v48-reviewed-crosswalk-v2",
   "sourceDatasetId": "real-estate-projects",
   "sourceRawSha256": "d97f062b7f08998d7e75debcf8a42b055f132d1f8e1672b5eb61f92f774626e6",
   "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
   "latestSourceSnapshotDate": "2026-06-30",
-  "matchPolicy": "Manually reviewed one-to-one identity matches using source project name, developer and district against the accepted V48 catalogue. Source status and unit count remain dated Ajman evidence; V48 coordinates and timeline are not revised.",
+  "matchPolicy": "Manually reviewed one-to-one identities and separate villa-to-family relations using source name, developer and district, accepted V48 catalogue and Al Zorah developer evidence. Source status and unit count remain dated Ajman evidence; V48 coordinates and timeline are not revised. Villa IDs are not treated as new mapped projects or exact project identities.",
   "matches": [
     {
       "sourceProjectId": 416,
@@ -38,6 +38,41 @@
       "mapDeveloper": "Al Zorah Development Company",
       "sourceDistrict": "Zorah",
       "mapArea": "Ajman, Al Zorah"
+    },
+    {
+      "sourceProjectId": 522,
+      "canonicalProjectId": "project:creekside-residence-solidere-international-al-zorah-city",
+      "nameRelation": "official_name_plus_marketing_attribution",
+      "sourceProjectName": "Creekside Residence",
+      "mapProjectName": "Creekside Residence by Solidere International",
+      "sourceDeveloper": "Al zorah develoment ( Private ) Company Limited ( Private Shareholding Company )",
+      "mapDeveloper": "creekside",
+      "sourceDistrict": "Zorah",
+      "mapArea": "Ajman, Al Zorah City",
+      "independentIdentityEvidenceUrl": "https://www.alzorahcity.com/creekside_residence",
+      "reviewNote": "The accepted V48 developer field is corrupted. The exact project name, Al Zorah district, official 144-unit count and developer's own project page establish the identity; the V48 developer field is not corrected by this link."
+    }
+  ],
+  "familyRelations": [
+    {
+      "canonicalFamilyId": "project:beach-hills-villas-by-al-zorah-development-company-in-al-zorah-city-ajman",
+      "sourceProjectIds": [429,430,431,432,433,434,435,436,437,438,439,440,442,445,446,447,448,449,450,451,452,453,454],
+      "sourceNamePattern": "^Beach Hills Villas [0-9]{2}$",
+      "mapFamilyName": "Beach Hills Villas",
+      "sourceDistrict": "Zorah",
+      "sourceDeveloperContains": "Al zorah develoment",
+      "independentFamilyEvidenceUrl": "https://www.alzorahcity.com/assets/pdf/Press-Release-AlZorahCity-Beach-Hills-Villas.pdf",
+      "relation": "source_villa_within_v48_family"
+    },
+    {
+      "canonicalFamilyId": "project:sea-glints-mansions-by-al-zorah-development-company",
+      "sourceProjectIds": [460,461,462,463,464,465,466],
+      "sourceNamePattern": "^(?:SEA GLINTS MANSIONS-[0-9]{2}|01-SEA GLINTS MANSIONS)$",
+      "mapFamilyName": "Sea Glints Mansions by Solidere International in Al Zorah City, Ajman",
+      "sourceDistrict": "Zorah",
+      "sourceDeveloperContains": "Al zorah develoment",
+      "independentFamilyEvidenceUrl": "https://www.alzorahcity.com/seaglint",
+      "relation": "source_villa_within_v48_family"
     }
   ]
 }

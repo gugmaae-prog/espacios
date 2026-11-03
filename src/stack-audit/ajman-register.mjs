@@ -29,19 +29,27 @@ async function ajmanRegisterRows(env,report,storeFactory){
  return AJMAN_REGISTER_PROMISE;
 }
 function ajmanRegisterCrosswalk(report,crosswalk){
- if(!crosswalk)return new Map();
- if(crosswalk.sourceRawSha256!==report.rawSha256||crosswalk.latestSourceSnapshotDate!==report.latestSnapshotDate||!Array.isArray(crosswalk.matches)||crosswalk.matches.length!==3)throw Error('Ajman identity crosswalk source mismatch');
- const byId=new Map(),canonicalIds=new Set();
+ if(!crosswalk)return {identities:new Map(),families:new Map()};
+ if(crosswalk.sourceRawSha256!==report.rawSha256||crosswalk.latestSourceSnapshotDate!==report.latestSnapshotDate||!Array.isArray(crosswalk.matches)||crosswalk.matches.length!==4||!Array.isArray(crosswalk.familyRelations)||crosswalk.familyRelations.length!==2)throw Error('Ajman identity crosswalk source mismatch');
+ const byId=new Map(),families=new Map(),canonicalIds=new Set();
  for(const match of crosswalk.matches){
   if(!Number.isSafeInteger(match.sourceProjectId)||!match.canonicalProjectId?.startsWith('project:')||byId.has(match.sourceProjectId)||canonicalIds.has(match.canonicalProjectId))throw Error('Ajman identity crosswalk invalid');
   byId.set(match.sourceProjectId,match);canonicalIds.add(match.canonicalProjectId);
  }
- return byId;
+ for(const relation of crosswalk.familyRelations){
+  if(relation.relation!=='source_villa_within_v48_family'||!relation.canonicalFamilyId?.startsWith('project:')||!Array.isArray(relation.sourceProjectIds))throw Error('Ajman family relation invalid');
+  for(const id of relation.sourceProjectIds){
+   if(!Number.isSafeInteger(id)||byId.has(id)||families.has(id))throw Error('Ajman family source ID duplicated');
+   families.set(id,relation);
+  }
+ }
+ if(families.size!==30)throw Error('Ajman family relation total mismatch');
+ return {identities:byId,families};
 }
-function ajmanRegisterProject(row,latestDate,match){
+function ajmanRegisterProject(row,latestDate,match,family){
  const units=/^\d+$/.test(String(row.number_of_real_estate_units))?Number(row.number_of_real_estate_units):null;
  const status=row.project_status_english?.toLowerCase()==='completed'?'completed':'under_construction';
- return {sourceProjectId:row.project_id,nameEn:row.project_name_english,nameAr:row.project_name_arabic,status,statusSource:row.project_status_english,registrationNumber:row.project_registration_number==='none'?null:row.project_registration_number,reportedUnitCount:units,districtEn:row.district_english,districtAr:row.district_arabic,developerEn:row.developer_name_english,developerAr:row.developer_name_arabic,mainProjectNameEn:row.main_project_name_english==='none'?null:row.main_project_name_english,snapshotDate:row.update_date,inLatestSnapshot:row.update_date===latestDate,canonicalProjectId:match?.canonicalProjectId||null,matchStatus:match?'reviewed_one_to_one_identity':'unmatched',coordinates:null,sourceFieldWarnings:[...(units===null?['unit_count_unknown']:[]),...(row.city_english!=='Ajman'?['city_field_anomaly']:[])]};
+ return {sourceProjectId:row.project_id,nameEn:row.project_name_english,nameAr:row.project_name_arabic,status,statusSource:row.project_status_english,registrationNumber:row.project_registration_number==='none'?null:row.project_registration_number,reportedUnitCount:units,districtEn:row.district_english,districtAr:row.district_arabic,developerEn:row.developer_name_english,developerAr:row.developer_name_arabic,mainProjectNameEn:row.main_project_name_english==='none'?null:row.main_project_name_english,snapshotDate:row.update_date,inLatestSnapshot:row.update_date===latestDate,canonicalProjectId:match?.canonicalProjectId||null,relatedV48FamilyId:family?.canonicalFamilyId||null,matchStatus:match?'reviewed_one_to_one_identity':family?'reviewed_family_relation':'unmatched',coordinates:null,sourceFieldWarnings:[...(units===null?['unit_count_unknown']:[]),...(row.city_english!=='Ajman'?['city_field_anomaly']:[])]};
 }
 export async function mapAjmanRegister(request,env,report,storeFactory=mapEvidenceStore,crosswalk=null){
  const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'');
@@ -49,13 +57,14 @@ export async function mapAjmanRegister(request,env,report,storeFactory=mapEviden
  if(!['GET','HEAD'].includes(request.method))return ajmanReply(request,{error:'Read-only endpoint'},405);
  if(!report?.storageKey||!report.compressedSha256)return ajmanReply(request,{error:'Verified Ajman register is not configured.'},503);
  const source={id:report.sourceId,publisher:report.publisher,datasetUrl:report.datasetUrl,licence:report.licence,licenceUrl:report.licenceUrl,sourceModifiedAt:report.sourceModifiedAt,retrievedAt:report.retrievedAt,rawSha256:report.rawSha256,compressedSha256:report.compressedSha256,rows:report.rows,distinctSourceProjectIds:report.distinctSourceProjectIds,latestSnapshotDate:report.latestSnapshotDate,latestSnapshotProjectIds:report.latestSnapshotProjectIds,notInLatestSnapshotProjectIds:report.notInLatestSnapshotProjectIds,unknownUnitRows:report.unknownUnitRows,cityFieldAnomalyRows:report.cityFieldAnomalyRows,coordinatesPresent:false,storage:'private_idrive_e2_verified_object',grain:report.grain,identityCrosswalk:crosswalk?.version||null};
- const scope={emirate:'Ajman',evidenceClass:'official_project_register_snapshot',canonicalProjectMatches:crosswalk?.matches?.length||0,unmatchedLatestSourceProjectIds:report.latestSnapshotProjectIds-(crosswalk?.matches?.length||0),limits:'Dated source snapshots, not 3,457 unique projects or complete current coverage. Three manually reviewed identity links when the crosswalk is present; no coordinate or timeline inference and no automatic name-only joins.'};
+ const familyRelations=crosswalk?.familyRelations?.reduce((sum,relation)=>sum+relation.sourceProjectIds.length,0)||0;
+ const scope={emirate:'Ajman',evidenceClass:'official_project_register_snapshot',canonicalProjectMatches:crosswalk?.matches?.length||0,reviewedVillaFamilyRelations:familyRelations,unmatchedLatestSourceProjectIds:report.latestSnapshotProjectIds-(crosswalk?.matches?.length||0)-familyRelations,limits:'Dated source snapshots, not 3,457 unique projects or complete current coverage. Reviewed one-to-one identities and villa-to-family relations are separate; villa IDs are not additional mapped projects. No coordinate or timeline inference and no automatic name-only joins.'};
  try{
   const rows=await ajmanRegisterRows(env,report,storeFactory);
   const matches=ajmanRegisterCrosswalk(report,crosswalk);
   if(path!==AJMAN_REGISTER_BASE){
    const id=Number(path.slice(AJMAN_REGISTER_BASE.length+1));
-   const history=rows.filter(row=>row.project_id===id).sort((a,b)=>b.update_date.localeCompare(a.update_date)).map(row=>ajmanRegisterProject(row,report.latestSnapshotDate,matches.get(id)));
+   const history=rows.filter(row=>row.project_id===id).sort((a,b)=>b.update_date.localeCompare(a.update_date)).map(row=>ajmanRegisterProject(row,report.latestSnapshotDate,matches.identities.get(id),matches.families.get(id)));
    if(!history.length)return ajmanReply(request,{error:'Source project ID not found.'},404);
    return ajmanReply(request,{source,scope,sourceProjectId:id,inLatestSnapshot:history[0].inLatestSnapshot,currentStatusEstablished:history[0].inLatestSnapshot,history});
   }
@@ -63,7 +72,7 @@ export async function mapAjmanRegister(request,env,report,storeFactory=mapEviden
   if(limit===null||offset===null||!['latest','all'].includes(scopeParam)||!['','completed','under_construction'].includes(status)||query.length>120)return ajmanReply(request,{error:'Invalid scope, status, q, limit, or offset.'},400);
   const latestById=new Map();for(const row of rows){const prev=latestById.get(row.project_id);if(!prev||prev.update_date<row.update_date)latestById.set(row.project_id,row);}
   const q=query.toLocaleLowerCase('en');
-  const projects=[...latestById.values()].filter(row=>scopeParam==='all'||row.update_date===report.latestSnapshotDate).map(row=>ajmanRegisterProject(row,report.latestSnapshotDate,matches.get(row.project_id))).filter(row=>(!status||row.status===status)&&(!q||[row.nameEn,row.nameAr,row.developerEn,row.developerAr,row.districtEn,row.districtAr].some(value=>String(value||'').toLocaleLowerCase('en').includes(q)))).sort((a,b)=>a.nameEn.localeCompare(b.nameEn)||a.sourceProjectId-b.sourceProjectId);
+  const projects=[...latestById.values()].filter(row=>scopeParam==='all'||row.update_date===report.latestSnapshotDate).map(row=>ajmanRegisterProject(row,report.latestSnapshotDate,matches.identities.get(row.project_id),matches.families.get(row.project_id))).filter(row=>(!status||row.status===status)&&(!q||[row.nameEn,row.nameAr,row.developerEn,row.developerAr,row.districtEn,row.districtAr].some(value=>String(value||'').toLocaleLowerCase('en').includes(q)))).sort((a,b)=>a.nameEn.localeCompare(b.nameEn)||a.sourceProjectId-b.sourceProjectId);
   return ajmanReply(request,{source,scope,filters:{scope:scopeParam,status:status||null,q:query||null},totalProjects:projects.length,limit,offset,projects:projects.slice(offset,offset+limit)});
  }catch{return ajmanReply(request,{error:'The verified Ajman project register is temporarily unavailable.'},503);}
 }

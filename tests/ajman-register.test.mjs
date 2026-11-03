@@ -28,18 +28,27 @@ test('latest snapshot and historical source IDs remain distinct without a review
  assert.equal(all.totalProjects,364);
  assert.equal(all.source.notInLatestSnapshotProjectIds,66);
 });
-test('three reviewed source IDs link to V48 identity without borrowing map coordinates or timeline',async()=>{
+test('reviewed source IDs link to V48 identities or villa families without borrowing coordinates or timeline',async()=>{
  const list=await (await mapAjmanRegister(req('?q=SEALINE%20RESIDENCE'),env,report,store,crosswalk)).json();
- assert.equal(list.scope.canonicalProjectMatches,3);
- assert.equal(list.scope.unmatchedLatestSourceProjectIds,295);
+ assert.equal(list.scope.canonicalProjectMatches,4);
+ assert.equal(list.scope.reviewedVillaFamilyRelations,30);
+ assert.equal(list.scope.unmatchedLatestSourceProjectIds,264);
  assert.equal(list.totalProjects,1);
  assert.equal(list.projects[0].sourceProjectId,501);
  assert.equal(list.projects[0].canonicalProjectId,'project:sealine-residence-by-al-zorah-development-in-al-zorah-city');
  assert.equal(list.projects[0].matchStatus,'reviewed_one_to_one_identity');
  assert.equal(list.projects[0].coordinates,null);
- for(const [id,canonical] of [[416,'project:seaside-hills-residence-by-al-zorah-development-company-in-al-zorah-ajman'],[528,'project:barajeel-towers-rashidiya-1-ajman-uae']]){
+ for(const [id,canonical] of [[416,'project:seaside-hills-residence-by-al-zorah-development-company-in-al-zorah-ajman'],[528,'project:barajeel-towers-rashidiya-1-ajman-uae'],[522,'project:creekside-residence-solidere-international-al-zorah-city']]){
   const detail=await (await mapAjmanRegister(req('/'+id),env,report,store,crosswalk)).json();
   assert.equal(detail.history[0].canonicalProjectId,canonical);
+  assert.equal(detail.history[0].coordinates,null);
+ }
+ for(const [id,family] of [[429,'project:beach-hills-villas-by-al-zorah-development-company-in-al-zorah-city-ajman'],[466,'project:sea-glints-mansions-by-al-zorah-development-company']]){
+  const detail=await (await mapAjmanRegister(req('/'+id),env,report,store,crosswalk)).json();
+  assert.equal(detail.history[0].canonicalProjectId,null);
+  assert.equal(detail.history[0].relatedV48FamilyId,family);
+  assert.equal(detail.history[0].matchStatus,'reviewed_family_relation');
+  assert.equal(detail.history[0].reportedUnitCount,1);
   assert.equal(detail.history[0].coordinates,null);
  }
  const unmatched=await (await mapAjmanRegister(req('/493'),env,report,store,crosswalk)).json();
