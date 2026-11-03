@@ -1,0 +1,95 @@
+{
+  "version": "20261103-rgestate-emirate-labels-v1",
+  "sourceId": "rgestate-full-index-20261103",
+  "sourceRawSha256": "1a6ecad078a8664dc4b79f6bf3ee31d40e5c790888580629b98300ffe1a9af83",
+  "sourceObservedAt": "2026-11-03T09:02:31Z",
+  "method": "Exact equality against the publisher location label; no title, URL, nearby district, or coordinate inference.",
+  "labelMap": {
+    "Abu Dhabi": "Abu Dhabi",
+    "Ajman": "Ajman",
+    "Dubai": "Dubai",
+    "Fujairah": "Fujairah",
+    "Ras Al Khaimah": "Ras Al Khaimah",
+    "Sharjah": "Sharjah",
+    "Umm Al Quwain": "Umm Al Quwain",
+    "Emirate of Umm Al Quwain": "Umm Al Quwain"
+  },
+  "byEmirate": {
+    "Abu Dhabi": {
+      "rows": 9,
+      "byPathClass": {
+        "sale": 2,
+        "rent": 6,
+        "off-plan": 0,
+        "business-sale": 1
+      },
+      "commercialCategoryRows": 8
+    },
+    "Ajman": {
+      "rows": 32,
+      "byPathClass": {
+        "sale": 20,
+        "rent": 10,
+        "off-plan": 0,
+        "business-sale": 2
+      },
+      "commercialCategoryRows": 16
+    },
+    "Dubai": {
+      "rows": 5,
+      "byPathClass": {
+        "sale": 4,
+        "rent": 1,
+        "off-plan": 0,
+        "business-sale": 0
+      },
+      "commercialCategoryRows": 3
+    },
+    "Fujairah": {
+      "rows": 3,
+      "byPathClass": {
+        "sale": 2,
+        "rent": 0,
+        "off-plan": 0,
+        "business-sale": 1
+      },
+      "commercialCategoryRows": 2
+    },
+    "Ras Al Khaimah": {
+      "rows": 7,
+      "byPathClass": {
+        "sale": 4,
+        "rent": 3,
+        "off-plan": 0,
+        "business-sale": 0
+      },
+      "commercialCategoryRows": 4
+    },
+    "Sharjah": {
+      "rows": 355,
+      "byPathClass": {
+        "sale": 191,
+        "rent": 162,
+        "off-plan": 0,
+        "business-sale": 2
+      },
+      "commercialCategoryRows": 130
+    },
+    "Umm Al Quwain": {
+      "rows": 193,
+      "byPathClass": {
+        "sale": 87,
+        "rent": 105,
+        "off-plan": 0,
+        "business-sale": 1
+      },
+      "commercialCategoryRows": 144
+    }
+  },
+  "explicitEmirateRows": 604,
+  "unassignedRows": 1104,
+  "evidenceClass": "brokerage_advertised_listing_facts",
+  "geographyStatus": "publisher_label_unverified",
+  "availabilityStatus": "publisher_listed_at_capture_unverified_now",
+  "limits": "These are dated asking-listing facts, not registered transactions, project identities, project coordinates, or complete emirate inventories. Unassigned rows may still be located in one of the seven emirates; their location labels are not exact emirate names."
+}

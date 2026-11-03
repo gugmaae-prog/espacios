@@ -9,5 +9,5 @@ export function mapUaeCoverage(request,report){
  if(selected===null)return uaeCoverageReply(request,report);
  const emirate=report.emirates.find(item=>item.name.toLocaleLowerCase('en')===selected.trim().toLocaleLowerCase('en'));
  if(!emirate)return uaeCoverageReply(request,{error:'Unknown emirate. Use an emirate name from the coverage catalogue.'},400);
- return uaeCoverageReply(request,{version:report.version,basis:report.basis,acceptedSnapshot:report.acceptedSnapshot,allUaeProjectDenominator:report.allUaeProjectDenominator,projectCompletenessPercent:report.projectCompletenessPercent,emirates:[emirate],basisSha256:report.basisSha256});
+ return uaeCoverageReply(request,{version:report.version,basis:report.basis,acceptedSnapshot:report.acceptedSnapshot,publisherListingInventory:report.publisherListingInventory,allUaeProjectDenominator:report.allUaeProjectDenominator,projectCompletenessPercent:report.projectCompletenessPercent,emirates:[emirate],basisSha256:report.basisSha256});
 }
