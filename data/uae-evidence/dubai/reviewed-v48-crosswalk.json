@@ -1,11 +1,22 @@
 {
-  "version": "20261103-dubai-v48-reviewed-crosswalk-v4",
+  "version": "20261103-dubai-v48-reviewed-crosswalk-v5",
   "sourceDatasetId": "continental-dld-mashrooi-project-status-20261101",
   "sourceRawSha256": "3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f",
   "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
   "sourceSnapshotDate": "2026-11-01",
-  "matchPolicy": "Reviewed unique project name and developer brand in the dated licensed source and accepted V48 map. For the 29 Emaar South and Town Square projects, the named developer's official project pages corroborate each specific identity despite source district versus map master-community labels; this is not a blanket district equivalence. JVC links use the DLD area-code 681 evidence. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
+  "matchPolicy": "Reviewed unique project name and developer brand in the dated licensed source and accepted V48 map. For the 29 Emaar South and Town Square projects, the named developer’s official project pages corroborate each specific identity despite source district versus map master-community labels. Eight additional Dubai Marina and Sobha Hartland identities use project-specific developer evidence; DLD’s 2024 report explicitly names Marsa Dubai as Dubai Marina. This is not a blanket district equivalence. JVC links use the DLD area-code 681 evidence. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised.",
   "matches": [
+    {
+      "sourceProjectNumber": "430",
+      "canonicalProjectId": "project:damac-heights-apartments-dubai-marina",
+      "sourceProjectName": "Damac Heights",
+      "mapProjectName": "DAMAC Heights",
+      "sourceDeveloper": "Damac Gulf Properties (L.L.C)",
+      "mapDeveloper": "DAMAC",
+      "sourceDistrict": "Marsa Dubai",
+      "mapArea": "Dubai Marina",
+      "identityEvidenceUrl": "https://www.damacproperties.com/sites/default/files/documents/financial-statements/annualreport2016english.pdf"
+    },
     {
       "sourceProjectNumber": "443",
       "canonicalProjectId": "project:damac-towers-paramount-hotels-and-resorts-dubai-business-bay-for-sale",
@@ -35,6 +46,17 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Jadaf",
       "mapArea": "Al Jaddaf"
+    },
+    {
+      "sourceProjectNumber": "2166",
+      "canonicalProjectId": "project:sobha-hartland-one-park-avenue",
+      "sourceProjectName": "Sobha Hartland One Park Avenue",
+      "mapProjectName": "Sobha Hartland One Park Avenue",
+      "sourceDeveloper": "Sobha L.L.C",
+      "mapDeveloper": "Sobha",
+      "sourceDistrict": "Al Merkadh",
+      "mapArea": "Sobha Hartland",
+      "identityEvidenceUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland/one-park-avenue"
     },
     {
       "sourceProjectNumber": "2185",
@@ -67,6 +89,17 @@
       "mapArea": "Jumeirah Village Circle (JVC)"
     },
     {
+      "sourceProjectNumber": "2239",
+      "canonicalProjectId": "project:sobha-hartland-waves-apartments-for-sale-in-mbr-city-dubai",
+      "sourceProjectName": "Sobha Hartland Waves",
+      "mapProjectName": "Sobha Hartland Waves",
+      "sourceDeveloper": "Sobha L.L.C",
+      "mapDeveloper": "Sobha",
+      "sourceDistrict": "Al Merkadh",
+      "mapArea": "Sobha Hartland",
+      "identityEvidenceUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland/waves"
+    },
+    {
       "sourceProjectNumber": "2271",
       "canonicalProjectId": "project:binghatti-gems-apartments-in-jumeirah-village-circle-jvc-dubai",
       "sourceProjectName": "Binghatti Gems",
@@ -75,6 +108,17 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Barsha South Fourth",
       "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2305",
+      "canonicalProjectId": "project:sobha-hartland-waves-grande-apartments-for-sale-in-mbr-city-dubai",
+      "sourceProjectName": "Sobha Hartland Waves Grande",
+      "mapProjectName": "Sobha Hartland Waves Grande",
+      "sourceDeveloper": "Sobha L.L.C",
+      "mapDeveloper": "Sobha",
+      "sourceDistrict": "Al Merkadh",
+      "mapArea": "Sobha Hartland",
+      "identityEvidenceUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-grande"
     },
     {
       "sourceProjectNumber": "2326",
@@ -147,6 +191,17 @@
       "mapArea": "Jumeirah Village Circle (JVC)"
     },
     {
+      "sourceProjectNumber": "2447",
+      "canonicalProjectId": "project:sobha-hartland-the-crest-apartments-for-sale-in-mbr-city-dubai",
+      "sourceProjectName": "Sobha Hartland - The Crest",
+      "mapProjectName": "Sobha Hartland The Crest",
+      "sourceDeveloper": "Sobha L.L.C",
+      "mapDeveloper": "Sobha",
+      "sourceDistrict": "Al Merkadh",
+      "mapArea": "Sobha Hartland",
+      "identityEvidenceUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland/the-crest"
+    },
+    {
       "sourceProjectNumber": "2473",
       "canonicalProjectId": "project:binghatti-crest-apartments-for-sale-in-jvc-jumeirah-village-circle-dubai",
       "sourceProjectName": "Binghatti Crest",
@@ -177,6 +232,17 @@
       "mapArea": "Business Bay"
     },
     {
+      "sourceProjectNumber": "2482",
+      "canonicalProjectId": "project:sobha-hartland-crest-grande-apartments-for-sale-in-mbr-city-dubai",
+      "sourceProjectName": "Sobha Hartland - Crest Grande",
+      "mapProjectName": "Sobha Hartland Crest Grande",
+      "sourceDeveloper": "Sobha L.L.C",
+      "mapDeveloper": "Sobha",
+      "sourceDistrict": "Al Merkadh",
+      "mapArea": "Sobha Hartland",
+      "identityEvidenceUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland/crest-grande"
+    },
+    {
       "sourceProjectNumber": "2494",
       "canonicalProjectId": "project:binghatti-nova-jvc-apartments-for-sale-in-jumeirah-village-circle",
       "sourceProjectName": "Binghatti Nova",
@@ -185,6 +251,17 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Barsha South Fourth",
       "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2564",
+      "canonicalProjectId": "project:sobha-hartland-waves-opulence-apartments-for-sale-in-mbr-city-dubai",
+      "sourceProjectName": "Sobha Hartland Waves Opulence",
+      "mapProjectName": "Sobha Hartland Waves Opulence",
+      "sourceDeveloper": "Sobha L.L.C",
+      "mapDeveloper": "Sobha",
+      "sourceDistrict": "Al Merkadh",
+      "mapArea": "Sobha Hartland",
+      "identityEvidenceUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-opulence"
     },
     {
       "sourceProjectNumber": "2571",
@@ -245,6 +322,17 @@
       "mapDeveloper": "Binghatti Properties",
       "sourceDistrict": "Al Barsha South Fourth",
       "mapArea": "Jumeirah Village Circle (JVC)"
+    },
+    {
+      "sourceProjectNumber": "2797",
+      "canonicalProjectId": "project:aeternitas-by-london-gate-in-dubai-marina-dubai",
+      "sourceProjectName": "Aeternitas Tower",
+      "mapProjectName": "Aeternitas Tower",
+      "sourceDeveloper": "London Gate Real Estate Development L.L.C",
+      "mapDeveloper": "London Gate",
+      "sourceDistrict": "Marsa Dubai",
+      "mapArea": "Dubai Marina",
+      "identityEvidenceUrl": "https://londongate.ae/projects/aeternitas"
     },
     {
       "sourceProjectNumber": "2927",
@@ -708,11 +796,22 @@
   ],
   "districtAliasEvidence": {
     "jvcAlBarshaSouthFourth": "https://dubailand.gov.ae/en/eservices/old-and-new-area-names/old-and-new-area-names-list/",
-    "jvcPlotPlan": "https://cdn.emiratesauction.com/media/2e5ozhhqvdf6n4xkjjz3gcvyrjujynriotwq0erotla426mmhy/doc7914.pdf/12834_Affection_Plan.pdf"
+    "jvcPlotPlan": "https://cdn.emiratesauction.com/media/2e5ozhhqvdf6n4xkjjz3gcvyrjujynriotwq0erotla426mmhy/doc7914.pdf/12834_Affection_Plan.pdf",
+    "marsaDubaiDubaiMarina": "https://dubailand.gov.ae/media/c5ejvvoe/annual_report_2024_english.pdf"
   },
   "projectIdentityEvidence": {
     "emaarSouth": "https://www.emaar.com/en/our-communities/emaar-south",
     "townSquare": "https://nshama.ae/properties/town-square-dubai/",
     "evelyn": "https://nshama.ae/properties/evelyn/"
+  },
+  "additionalIdentityEvidence": {
+    "430": "https://www.damacproperties.com/sites/default/files/documents/financial-statements/annualreport2016english.pdf",
+    "2166": "https://sobharealty.com/properties-in-dubai/sobha-hartland/one-park-avenue",
+    "2239": "https://sobharealty.com/properties-in-dubai/sobha-hartland/waves",
+    "2305": "https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-grande",
+    "2447": "https://sobharealty.com/properties-in-dubai/sobha-hartland/the-crest",
+    "2482": "https://sobharealty.com/properties-in-dubai/sobha-hartland/crest-grande",
+    "2564": "https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-opulence",
+    "2797": "https://londongate.ae/projects/aeternitas"
   }
 }
