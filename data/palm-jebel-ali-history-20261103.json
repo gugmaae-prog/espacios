@@ -1,0 +1,264 @@
+{
+  "version": "20261103-palm-jebel-ali-history-v1",
+  "recordId": "community:Dubai:palm-jebel-ali",
+  "asOf": "2026-11-03",
+  "acceptedV48AsOf": "2026-10-14",
+  "acceptedV48Version": "20261014-enrichment-v48",
+  "sourceAPI": "https://espacios.me/map/api/record-history?recordId=community%3ADubai%3Apalm-jebel-ali",
+  "sourceURL": "https://data.dubai/en/l/470061",
+  "publisher": "Dubai Land Department via accepted V48 derived archive",
+  "classification": "official_dld_derived_area_context",
+  "geography": "DLD native area 411 Palm Jabal Ali; not a verified marketed villa project boundary",
+  "minimumDisplaySales": 20,
+  "methodology": "Distinct quarterly DLD area 411 usage, type and registration cohorts. Median actual_worth/procedure_area converted to AED/sqft, as preserved in accepted V48 native partitions. Cells below 20 sales have prices withheld. Quarterly medians are unadjusted for property mix; do not infer repeat-sales appreciation. Land and building cohorts are not villa prices. No raw transaction IDs are republished.",
+  "series": [
+    {
+      "id": "dld-primary-943678c9e88f0100b226",
+      "kind": "land",
+      "label": "DLD cadastral area · commercial land",
+      "sourceId": "dld-official-transactions-20261003",
+      "scope": "area_context",
+      "identityVerified": false,
+      "sourceAreaId": 411,
+      "frequency": "quarterly",
+      "registration": "Existing Properties",
+      "segment": "Commercial | Land",
+      "unit": "AED/sqft",
+      "archivePartitionSHA256": "8057b2c0c92e778ac7158faefa9a87c728db85db662f8b6fa708f4c08edb669b",
+      "observedPeriodStart": "2023Q4",
+      "observedPeriodEnd": "2026Q3",
+      "points": [
+        {
+          "period": "2023Q4",
+          "saleCount": 572,
+          "medianAEDPerSqft": 2559.77,
+          "p25AEDPerSqft": 2418.15,
+          "p75AEDPerSqft": 2670.57,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2024Q1",
+          "saleCount": 90,
+          "medianAEDPerSqft": 2647.6,
+          "p25AEDPerSqft": 2431.48,
+          "p75AEDPerSqft": 2777.41,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2024Q2",
+          "saleCount": 25,
+          "medianAEDPerSqft": 2579.93,
+          "p25AEDPerSqft": 2256.08,
+          "p75AEDPerSqft": 2705.61,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2024Q3",
+          "saleCount": 58,
+          "medianAEDPerSqft": 2646.59,
+          "p25AEDPerSqft": 2328.34,
+          "p75AEDPerSqft": 2763.43,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2024Q4",
+          "saleCount": 52,
+          "medianAEDPerSqft": 2595.39,
+          "p25AEDPerSqft": 2167.78,
+          "p75AEDPerSqft": 2878.03,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2025Q1",
+          "saleCount": 322,
+          "medianAEDPerSqft": 2789.64,
+          "p25AEDPerSqft": 2638.07,
+          "p75AEDPerSqft": 2936.56,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2025Q2",
+          "saleCount": 241,
+          "medianAEDPerSqft": 2877.28,
+          "p25AEDPerSqft": 2718.33,
+          "p75AEDPerSqft": 3033.89,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2025Q3",
+          "saleCount": 16,
+          "medianAEDPerSqft": null,
+          "p25AEDPerSqft": null,
+          "p75AEDPerSqft": null,
+          "withheldReason": "fewer_than_20_sales",
+          "periodComplete": true
+        },
+        {
+          "period": "2025Q4",
+          "saleCount": 107,
+          "medianAEDPerSqft": 3038.9,
+          "p25AEDPerSqft": 2314.68,
+          "p75AEDPerSqft": 3636.96,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q1",
+          "saleCount": 98,
+          "medianAEDPerSqft": 3418.45,
+          "p25AEDPerSqft": 2443.35,
+          "p75AEDPerSqft": 3712.41,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q2",
+          "saleCount": 77,
+          "medianAEDPerSqft": 2981.35,
+          "p25AEDPerSqft": 2476.01,
+          "p75AEDPerSqft": 4104.37,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q3",
+          "saleCount": 27,
+          "medianAEDPerSqft": 2784.45,
+          "p25AEDPerSqft": 2485.79,
+          "p75AEDPerSqft": 3019.16,
+          "withheldReason": null,
+          "periodComplete": true
+        }
+      ]
+    },
+    {
+      "id": "dld-primary-a7bc89e60a0356e2e422",
+      "kind": "unit",
+      "label": "DLD cadastral area · off-plan residential unit",
+      "sourceId": "dld-official-transactions-20261003",
+      "scope": "area_context",
+      "identityVerified": false,
+      "sourceAreaId": 411,
+      "frequency": "quarterly",
+      "registration": "Off-Plan Properties",
+      "segment": "Residential | Unit",
+      "unit": "AED/sqft",
+      "archivePartitionSHA256": "113179fffd11998604f91d438e833f855344c06b04bb5bbadd8c8927f838fc7d",
+      "observedPeriodStart": "2025Q4",
+      "observedPeriodEnd": "2026Q4",
+      "points": [
+        {
+          "period": "2025Q4",
+          "saleCount": 86,
+          "medianAEDPerSqft": 3500.23,
+          "p25AEDPerSqft": 3412.11,
+          "p75AEDPerSqft": 3711.06,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q1",
+          "saleCount": 126,
+          "medianAEDPerSqft": 3476.36,
+          "p25AEDPerSqft": 3412.11,
+          "p75AEDPerSqft": 3685.28,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q2",
+          "saleCount": 1,
+          "medianAEDPerSqft": null,
+          "p25AEDPerSqft": null,
+          "p75AEDPerSqft": null,
+          "withheldReason": "fewer_than_20_sales",
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q3",
+          "saleCount": 197,
+          "medianAEDPerSqft": 3564.89,
+          "p25AEDPerSqft": 3351.79,
+          "p75AEDPerSqft": 3805.79,
+          "withheldReason": null,
+          "periodComplete": true
+        },
+        {
+          "period": "2026Q4",
+          "saleCount": 5,
+          "medianAEDPerSqft": null,
+          "p25AEDPerSqft": null,
+          "p75AEDPerSqft": null,
+          "withheldReason": "fewer_than_20_sales",
+          "periodComplete": false
+        }
+      ]
+    },
+    {
+      "id": "dld-primary-5892b2498d95fe7848c9",
+      "kind": "building",
+      "label": "DLD cadastral area · commercial building",
+      "sourceId": "dld-official-transactions-20261003",
+      "scope": "area_context",
+      "identityVerified": false,
+      "sourceAreaId": 411,
+      "frequency": "quarterly",
+      "registration": "Existing Properties",
+      "segment": "Commercial | Building",
+      "unit": "AED/sqft",
+      "archivePartitionSHA256": "bdf9e2402324022350e7fb7db7c2a35e312cf79525024b5f729ac2f3c3200c1c",
+      "observedPeriodStart": "2008Q3",
+      "observedPeriodEnd": "2008Q3",
+      "points": [
+        {
+          "period": "2008Q3",
+          "saleCount": 2,
+          "medianAEDPerSqft": null,
+          "p25AEDPerSqft": null,
+          "p75AEDPerSqft": null,
+          "withheldReason": "fewer_than_20_sales",
+          "periodComplete": true
+        }
+      ]
+    }
+  ],
+  "aggregateDistinctSaleCounts": {
+    "commercialLand": 1685,
+    "residentialUnit": 415,
+    "commercialBuilding": 2,
+    "total": 2102,
+    "basis": "Distinct category counts in accepted V48; quarterly rows within each category are disjoint; do not add monthly or native-frond subseries."
+  },
+  "missing": {
+    "registeredVillaPrices": true,
+    "verifiedVillaRents": true,
+    "validatedPalmPriceForecast": true
+  },
+  "scenarioPolicy": {
+    "classification": "conditional_user_assumption",
+    "eligibleAnchorSeriesId": "dld-primary-a7bc89e60a0356e2e422",
+    "eligibleAnchorRule": "latest complete quarter with at least 20 registered residential unit sales",
+    "annualGrowthInputsPct": [
+      -5,
+      0,
+      5
+    ],
+    "horizonsYears": [
+      1,
+      3,
+      5
+    ],
+    "formula": "anchorAEDPerSqft * (1 + annualGrowthPct / 100) ** years",
+    "confidenceInterval": null,
+    "calibration": null,
+    "limitation": "Illustrative nominal unit-area sensitivity from a dated observed cohort. Not a villa price, current appraisal, validated forecast, or probability interval. Excludes rent, fees, financing, inflation, mix change, and phase differences."
+  },
+  "seriesSHA256": "cc92179b870da18f7ba549d3e736ee82fd1710347af75e73eaeb0081369198ba"
+}

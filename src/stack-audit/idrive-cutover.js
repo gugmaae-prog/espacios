@@ -70,7 +70,7 @@ worker_default.fetch=async function(request,env,ctx){
   const url=new URL(request.url);if(url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,env,ctx);
   // The public value-driver snapshot is binding-free. Keep that contract even
   // when callers deliberately supply an unreadable bindings proxy.
-  if(url.pathname.replace(/\/+$/,'')==='/map/api/value-drivers')return MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,env,ctx);
+  if(['/map/api/value-drivers','/map/api/palm-jebel-ali'].includes(url.pathname.replace(/\/+$/,'')))return MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,env,ctx);
   const trace={reads:{idrive_e2:0,immutable_static_recovery:0},heads:{idrive_e2:0,immutable_static_recovery:0},primaryFailures:0,primaryMisses:0},attestation=mapIdriveReadbackAttestation(env),requested=env.MAP_IDRIVE_READY==='true',enabled=requested&&Boolean(env.MAP_EVIDENCE)&&attestation.valid;
   const bindings={...env,MAP_IDRIVE_REQUESTED_READY:requested?'true':'false',MAP_IDRIVE_READY:enabled?'true':'false',MAP_IDRIVE_TRACE:trace};
   const proofRequest=url.pathname.replace(/\/+$/,'')==='/map/api/health',storage=url.searchParams.get('storage');const response=proofRequest&&storage==='idrive'?await mapIdriveOnlyHealth(request,bindings,trace):proofRequest&&storage==='immutable_recovery'?await mapImmutableRecoveryOnlyHealth(request,bindings,trace):await MAP_IDRIVE_PREVIOUS_FETCH.call(this,request,bindings,ctx);

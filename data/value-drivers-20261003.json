@@ -1,6 +1,6 @@
 {
-  "version": "20261005-value-drivers-v2",
-  "asOf": "2026-10-05",
+  "version": "20261103-value-drivers-v3",
+  "asOf": "2026-11-03",
   "owner": "Espacios",
   "classification": "catalysts_and_conditional_outlook",
   "sources": [
@@ -237,6 +237,33 @@
       "url": "https://www.gcgra.gov.ae/en/licensing/our-licensees/",
       "classification": "official_registry_current_state",
       "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-fronds-kp-contracts",
+      "publisher": "Nakheel",
+      "published": "2024-10-16",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2024/10/05/nakheel-awards-aed-5-billion-in-contracts-for-luxury-villa-construction-on-palm-jebel-ali",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-frond-f-release",
+      "publisher": "Nakheel",
+      "published": "2026-08-20",
+      "retrieved": "2026-11-03",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/nakheel-unveils-limited-collection-of-44-beachfront-villas-on-palm-jebel-ali-s-frond-f",
+      "classification": "official_publication",
+      "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-gulfnews-2005-real-estate-report",
+      "publisher": "Gulf News",
+      "published": "2005-03-25",
+      "retrieved": "2026-10-08",
+      "url": "https://gulfnews.com/business/property/realty-talk-an-in-depth-view-of-the-palm-projects-1.282042",
+      "classification": "contemporaneous_broker_market_report",
+      "licence": "Factual quoted-price summaries with citation; article body and images are not republished."
     }
   ],
   "drivers": [
@@ -4841,7 +4868,7 @@
       "The Palm Jebel Ali"
     ],
     "emirate": "Dubai",
-    "assessment": "Compelling long-term thesis; magnitude and timing of appreciation remain unproven",
+    "assessment": "Long-term thesis with observed land and unit sales; villa appreciation and rent remain unproven",
     "nearTerm": "1–3 years: execution, resale liquidity, financing and market-cycle risk dominate; villa contract target extends into 2028.",
     "longTerm": "5–10 years: delivered waterfront amenities and southern Dubai employment/connectivity could support demand; entry price and new supply determine capture.",
     "upside": [
@@ -4859,7 +4886,10 @@
       "pja-masterplan",
       "pja-infrastructure",
       "pja-villas",
-      "kf-luxury"
+      "pja-fronds-kp-contracts",
+      "pja-frond-f-release",
+      "kf-luxury",
+      "pja-gulfnews-2005-real-estate-report"
     ],
     "driverIds": [
       "pja-utilities",
@@ -4875,6 +4905,299 @@
       "sourceId": "kf-luxury",
       "limitation": "Count in a luxury threshold cohort; not repeat-sales appreciation, occupancy or evidence of every villa phase."
     },
+    "history": {
+      "version": "20261103-palm-jebel-ali-history-v1",
+      "recordId": "community:Dubai:palm-jebel-ali",
+      "asOf": "2026-11-03",
+      "acceptedV48AsOf": "2026-10-14",
+      "acceptedV48Version": "20261014-enrichment-v48",
+      "sourceAPI": "https://espacios.me/map/api/record-history?recordId=community%3ADubai%3Apalm-jebel-ali",
+      "sourceURL": "https://data.dubai/en/l/470061",
+      "publisher": "Dubai Land Department via accepted V48 derived archive",
+      "classification": "official_dld_derived_area_context",
+      "geography": "DLD native area 411 Palm Jabal Ali; not a verified marketed villa project boundary",
+      "minimumDisplaySales": 20,
+      "methodology": "Distinct quarterly DLD area 411 usage, type and registration cohorts. Median actual_worth/procedure_area converted to AED/sqft, as preserved in accepted V48 native partitions. Cells below 20 sales have prices withheld. Quarterly medians are unadjusted for property mix; do not infer repeat-sales appreciation. Land and building cohorts are not villa prices. No raw transaction IDs are republished.",
+      "series": [
+        {
+          "id": "dld-primary-943678c9e88f0100b226",
+          "kind": "land",
+          "label": "DLD cadastral area · commercial land",
+          "sourceId": "dld-official-transactions-20261003",
+          "scope": "area_context",
+          "identityVerified": false,
+          "sourceAreaId": 411,
+          "frequency": "quarterly",
+          "registration": "Existing Properties",
+          "segment": "Commercial | Land",
+          "unit": "AED/sqft",
+          "archivePartitionSHA256": "8057b2c0c92e778ac7158faefa9a87c728db85db662f8b6fa708f4c08edb669b",
+          "observedPeriodStart": "2023Q4",
+          "observedPeriodEnd": "2026Q3",
+          "points": [
+            {
+              "period": "2023Q4",
+              "saleCount": 572,
+              "medianAEDPerSqft": 2559.77,
+              "p25AEDPerSqft": 2418.15,
+              "p75AEDPerSqft": 2670.57,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q1",
+              "saleCount": 90,
+              "medianAEDPerSqft": 2647.6,
+              "p25AEDPerSqft": 2431.48,
+              "p75AEDPerSqft": 2777.41,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q2",
+              "saleCount": 25,
+              "medianAEDPerSqft": 2579.93,
+              "p25AEDPerSqft": 2256.08,
+              "p75AEDPerSqft": 2705.61,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q3",
+              "saleCount": 58,
+              "medianAEDPerSqft": 2646.59,
+              "p25AEDPerSqft": 2328.34,
+              "p75AEDPerSqft": 2763.43,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2024Q4",
+              "saleCount": 52,
+              "medianAEDPerSqft": 2595.39,
+              "p25AEDPerSqft": 2167.78,
+              "p75AEDPerSqft": 2878.03,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q1",
+              "saleCount": 322,
+              "medianAEDPerSqft": 2789.64,
+              "p25AEDPerSqft": 2638.07,
+              "p75AEDPerSqft": 2936.56,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q2",
+              "saleCount": 241,
+              "medianAEDPerSqft": 2877.28,
+              "p25AEDPerSqft": 2718.33,
+              "p75AEDPerSqft": 3033.89,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q3",
+              "saleCount": 16,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2025Q4",
+              "saleCount": 107,
+              "medianAEDPerSqft": 3038.9,
+              "p25AEDPerSqft": 2314.68,
+              "p75AEDPerSqft": 3636.96,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 98,
+              "medianAEDPerSqft": 3418.45,
+              "p25AEDPerSqft": 2443.35,
+              "p75AEDPerSqft": 3712.41,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 77,
+              "medianAEDPerSqft": 2981.35,
+              "p25AEDPerSqft": 2476.01,
+              "p75AEDPerSqft": 4104.37,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 27,
+              "medianAEDPerSqft": 2784.45,
+              "p25AEDPerSqft": 2485.79,
+              "p75AEDPerSqft": 3019.16,
+              "withheldReason": null,
+              "periodComplete": true
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-a7bc89e60a0356e2e422",
+          "kind": "unit",
+          "label": "DLD cadastral area · off-plan residential unit",
+          "sourceId": "dld-official-transactions-20261003",
+          "scope": "area_context",
+          "identityVerified": false,
+          "sourceAreaId": 411,
+          "frequency": "quarterly",
+          "registration": "Off-Plan Properties",
+          "segment": "Residential | Unit",
+          "unit": "AED/sqft",
+          "archivePartitionSHA256": "113179fffd11998604f91d438e833f855344c06b04bb5bbadd8c8927f838fc7d",
+          "observedPeriodStart": "2025Q4",
+          "observedPeriodEnd": "2026Q4",
+          "points": [
+            {
+              "period": "2025Q4",
+              "saleCount": 86,
+              "medianAEDPerSqft": 3500.23,
+              "p25AEDPerSqft": 3412.11,
+              "p75AEDPerSqft": 3711.06,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q1",
+              "saleCount": 126,
+              "medianAEDPerSqft": 3476.36,
+              "p25AEDPerSqft": 3412.11,
+              "p75AEDPerSqft": 3685.28,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q2",
+              "saleCount": 1,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q3",
+              "saleCount": 197,
+              "medianAEDPerSqft": 3564.89,
+              "p25AEDPerSqft": 3351.79,
+              "p75AEDPerSqft": 3805.79,
+              "withheldReason": null,
+              "periodComplete": true
+            },
+            {
+              "period": "2026Q4",
+              "saleCount": 5,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": false
+            }
+          ]
+        },
+        {
+          "id": "dld-primary-5892b2498d95fe7848c9",
+          "kind": "building",
+          "label": "DLD cadastral area · commercial building",
+          "sourceId": "dld-official-transactions-20261003",
+          "scope": "area_context",
+          "identityVerified": false,
+          "sourceAreaId": 411,
+          "frequency": "quarterly",
+          "registration": "Existing Properties",
+          "segment": "Commercial | Building",
+          "unit": "AED/sqft",
+          "archivePartitionSHA256": "bdf9e2402324022350e7fb7db7c2a35e312cf79525024b5f729ac2f3c3200c1c",
+          "observedPeriodStart": "2008Q3",
+          "observedPeriodEnd": "2008Q3",
+          "points": [
+            {
+              "period": "2008Q3",
+              "saleCount": 2,
+              "medianAEDPerSqft": null,
+              "p25AEDPerSqft": null,
+              "p75AEDPerSqft": null,
+              "withheldReason": "fewer_than_20_sales",
+              "periodComplete": true
+            }
+          ]
+        }
+      ],
+      "aggregateDistinctSaleCounts": {
+        "commercialLand": 1685,
+        "residentialUnit": 415,
+        "commercialBuilding": 2,
+        "total": 2102,
+        "basis": "Distinct category counts in accepted V48; quarterly rows within each category are disjoint; do not add monthly or native-frond subseries."
+      },
+      "missing": {
+        "registeredVillaPrices": true,
+        "verifiedVillaRents": true,
+        "validatedPalmPriceForecast": true
+      },
+      "scenarioPolicy": {
+        "classification": "conditional_user_assumption",
+        "eligibleAnchorSeriesId": "dld-primary-a7bc89e60a0356e2e422",
+        "eligibleAnchorRule": "latest complete quarter with at least 20 registered residential unit sales",
+        "annualGrowthInputsPct": [
+          -5,
+          0,
+          5
+        ],
+        "horizonsYears": [
+          1,
+          3,
+          5
+        ],
+        "formula": "anchorAEDPerSqft * (1 + annualGrowthPct / 100) ** years",
+        "confidenceInterval": null,
+        "calibration": null,
+        "limitation": "Illustrative nominal unit-area sensitivity from a dated observed cohort. Not a villa price, current appraisal, validated forecast, or probability interval. Excludes rent, fees, financing, inflation, mix change, and phase differences."
+      },
+      "seriesSHA256": "cc92179b870da18f7ba549d3e736ee82fd1710347af75e73eaeb0081369198ba"
+    },
+    "deliveryMilestones": [
+      {
+        "date": "2024-10-16",
+        "label": "Contracts for 723 villas on Fronds K–P",
+        "value": 723,
+        "unit": "villas",
+        "sourceId": "pja-fronds-kp-contracts",
+        "classification": "construction_contract_award",
+        "limitation": "Contract award and late-2026 target at the time; not verified handovers."
+      },
+      {
+        "date": "2026-04-27",
+        "label": "Contracts for 544 villas on Fronds A–F",
+        "value": 544,
+        "unit": "villas",
+        "sourceId": "pja-villas",
+        "classification": "construction_contract_award",
+        "limitation": "Separate package with Q4 2028 target; not verified handovers."
+      },
+      {
+        "date": "2026-08-20",
+        "label": "Frond F release",
+        "value": 44,
+        "unit": "villas",
+        "sourceId": "pja-frond-f-release",
+        "classification": "developer_product_release",
+        "limitation": "Released inventory, not registered sales or verified availability."
+      }
+    ],
     "localPriceEvidence": {
       "classification": "derived_registered_sale_research",
       "sourceFile": "data/smart-estimates-20260930.json",
@@ -4907,7 +5230,45 @@
       ],
       "minimumSample": 20,
       "forecastStatus": "insufficient_anchor_evidence",
-      "limitation": "Existing derived research snapshot, not independently reconciled government export. Source classifies this series as apartments; do not use as villa evidence. Latest quarter has one sale and fails the map sample gate."
+      "limitation": "Earlier derived apartment research snapshot, retained for provenance. The newer accepted V48 DLD unit cohort is shown separately. Neither is villa price evidence."
+    },
+    "historicalQuotes": {
+      "classification": "published_reference_asking_quotes_not_registered_sales",
+      "sourceId": "pja-gulfnews-2005-real-estate-report",
+      "sourceFileSHA256": "fc22b21a43e3567427f1f595d9c7c0e6f09eb821273f8ab7bc2e7997e17411c0",
+      "methodology": "A contemporaneous Gulf News broker-authored article dated 25 March 2005 reports original Palm Jebel Ali launch prices and a resale quote floor. It states that the development launched in May 2003. These values are published-reference quotes, not registered transactions, independently verified developer price lists, or evidence for a current Palm Jebel Ali phase. Publication and retrieval availability are retained separately from the reported launch period. No appreciation rate is calculated.",
+      "rows": [
+        {
+          "id": "pja-2003-garden-home-launch-quote",
+          "period": "2003-05",
+          "qualifier": "Reported original launch price · Garden Homes",
+          "valueAED": 2860000
+        },
+        {
+          "id": "pja-2003-signature-villa-launch-quote",
+          "period": "2003-05",
+          "qualifier": "Reported original launch price · Signature Villas",
+          "valueAED": 5115000
+        },
+        {
+          "id": "pja-2003-waterhome-lower-launch-quote",
+          "period": "2003-05",
+          "qualifier": "Reported lower original launch price · Waterhomes; exact product distinction unknown",
+          "valueAED": 2000000
+        },
+        {
+          "id": "pja-2003-waterhome-higher-launch-quote",
+          "period": "2003-05",
+          "qualifier": "Reported higher original launch price · Waterhomes; exact product distinction unknown",
+          "valueAED": 3000000
+        },
+        {
+          "id": "pja-2005-waterhome-resale-quote-floor",
+          "period": "2005-03",
+          "qualifier": "Broker-reported resale quote floor · Waterhomes; actual transaction not established",
+          "valueAED": 2900000
+        }
+      ]
     }
   },
   "publishedOutlooks": [
@@ -4938,7 +5299,7 @@
     "baseline": {
       "value": 100,
       "unit": "Index; not AED price",
-      "period": "2026-10-03"
+      "period": "2026-11-03"
     },
     "defaultAnnualRatesPct": [
       -5,

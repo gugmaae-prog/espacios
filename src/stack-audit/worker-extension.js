@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261103-map-stack-v24';
+var MAP_STACK_RELEASE='20261103-map-stack-v25';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -56,7 +56,7 @@ worker_default.fetch=async function(request,env,ctx){
  if(path==='/map/api/ai'&&url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return new Response('Not found',{status:404,headers:{'cache-control':'no-store','x-robots-tag':'noindex, nofollow'}});
  if(path==='/map/api/ai'){const response=await mapBoundedAI(request,env,ctx);return new Response(response.body,{status:response.status,headers:mapStackHeaders(response)});}
  if(url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
- if(path==='/map/api/value-drivers')return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
+ if(['/map/api/value-drivers','/map/api/palm-jebel-ali'].includes(path))return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
  const primary=env.MAP_EVIDENCE&&env.MAP_IDRIVE_READY==='true'?mapEvidenceStore(env.MAP_EVIDENCE,env.MAP_IDRIVE_TRACE):null;
  const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;

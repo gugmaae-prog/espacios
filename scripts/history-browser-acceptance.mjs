@@ -85,7 +85,7 @@ async function runCase(port,{name,width,height,mobile}){
  await cdp.call('Page.navigate',{url:BASE});
  try{await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});}catch(error){console.log(JSON.stringify({name,exceptions,networkFailures}));await capture(cdp,name+'-initialization-failure');throw error;}
  const release=await evaluate(cdp,"({minimal:window.__ESPACIOS_MINIMAL_MAP_RELEASE__,mobile:window.__ESPACIOS_MOBILE_MAP__?.release,script:document.querySelector('script[src*=\\\"app-v2.js\\\"]')?.src,style:document.querySelector('link[href*=\\\"app-v2.css\\\"]')?.href})");
- const expectedRelease='20261103-map-stack-v24';
+ const expectedRelease='20261103-map-stack-v25';
  assert.deepEqual({minimal:release.minimal,mobile:release.mobile},{minimal:expectedRelease,mobile:expectedRelease},name+' delivered mobile release markers');
  assert.ok(release.script?.includes(expectedRelease)&&release.style?.includes(expectedRelease),name+' delivered immutable v5 asset URLs');
  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali'); true");
