@@ -48,5 +48,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  assert.equal(result.status,200);assert.ok(body.totalRows>0);
  assert.equal(result.headers.get('x-espacios-map-release'),'20261103-map-stack-v24');
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
+ const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
+ assert.match(mapHtml,/a\.href="\/map\/commercial"/);
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial-listings-20261103.json.gz'),env,{})).status,404);
 });
