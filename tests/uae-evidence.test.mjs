@@ -36,9 +36,31 @@ test('project summary and filtered rows preserve source project labels without j
  assert.ok(sales.rows.every(row=>row.project_name_english==='AJMAN ONE  T11'&&row.year===2026&&row.quarter===2&&row.canonicalProjectId===null&&row.matchStatus==='unmatched'));
 });
 
+test('commercial sales expose only verified office and shop aggregates without availability claims',async()=>{
+ const response=await mapUaeEvidence(request('/ajman/commercial-sales?limit=100'),env,report,store);
+ assert.equal(response.status,200);
+ const body=await response.json();
+ assert.equal(body.source.rawSha256,report.rawSha256);
+ assert.equal(body.scope.evidenceClass,'official_commercial_unit_sale_aggregate');
+ assert.match(body.scope.limits,/no active listing/);
+ assert.equal(body.totalRows,89);
+ assert.equal(body.reportedSalesCountSum,346);
+ assert.equal(body.reportedValueAedSum,121329157);
+ assert.equal(body.distinctSourceProjectLabels,22);
+ assert.ok(body.rows.every(row=>['Office','Shop'].includes(row.unit_type_english)&&row.canonicalProjectId===null&&row.matchStatus==='unmatched'));
+ const office=await (await mapUaeEvidence(request('/ajman/commercial-sales?unitType=Office'),env,report,store)).json();
+ const shop=await (await mapUaeEvidence(request('/ajman/commercial-sales?unitType=Shop'),env,report,store)).json();
+ assert.equal(office.totalRows,64);
+ assert.equal(shop.totalRows,25);
+ assert.equal(office.reportedSalesCountSum,315);
+ assert.equal(shop.reportedSalesCountSum,31);
+});
+
 test('invalid filters and write methods cannot expose source rows',async()=>{
  assert.equal((await mapUaeEvidence(request('/ajman/sales?limit=101'),env,report,store)).status,400);
  assert.equal((await mapUaeEvidence(request('/ajman/sales?year=2027'),env,report,store)).status,400);
  assert.equal((await mapUaeEvidence(request('/ajman/sales','POST'),env,report,store)).status,405);
+ assert.equal((await mapUaeEvidence(request('/ajman/commercial-sales?unitType=Apartment'),env,report,store)).status,400);
+ assert.equal((await mapUaeEvidence(request('/ajman/commercial-sales','POST'),env,report,store)).status,405);
  assert.equal(await mapUaeEvidence(new Request('https://espacios.me/map/api/system'),env,report,store),null);
 });

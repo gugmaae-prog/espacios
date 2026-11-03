@@ -6,6 +6,8 @@ The export contains 6,075 quarterly aggregate rows for 2019 Q1 through 2026 Q2. 
 
 `validation.json` records the source URL, licence, hashes, row count and limitations. `scripts/build-ajman-open-data.mjs --check` verifies the package against the full official export. The immutable compressed object is served through a separate, private IDrive E2 prefix and a strict one-key allowlist. `/map/api/uae-evidence` reports the source and limits; `/map/api/uae-evidence/ajman/projects` exposes source labels without canonical joins; `/map/api/uae-evidence/ajman/sales` pages the native aggregates.
 
+The same verified export has **89 commercial unit-sale aggregate rows**: 64 labelled Office and 25 labelled Shop, across 22 distinct source project labels. Their reported counts sum to 346 sales (315 Office and 31 Shop), with AED 121,329,157 in reported value. `/map/api/uae-evidence/ajman/commercial-sales` exposes this subset with `unitType=Office|Shop`, year, quarter, exact project label and pagination filters. It retains the underlying source row index and checksum, and makes no claim about individual unit identity, current availability, asking price, rent, floor area, or map location. The separate municipal `/map/api/uae-evidence/ajman/rent-contracts?city=ajman&category=Commercial` route supplies commercial contract **counts**, not prices or available spaces; Manama and Masfoot have separate city routes.
+
 No name-only links to accepted V48 identities or map coordinates have been made. The existing 1,645-project map and 1,860-record V48 history remain separate from this Ajman source. A broader UAE catalogue and the missing original history and model bundles still require exact, licensed source recovery.
 
 ## Official development-project register
