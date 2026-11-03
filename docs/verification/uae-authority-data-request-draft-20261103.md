@@ -21,6 +21,18 @@ If there is a data request form, subscription or fee, please point us to it. A s
 Kind regards,  
 Espacios
 
+## Verified submission channels — not used
+
+Use the common request text above with the corresponding authority-specific question below. The email addresses are published by the authorities; no message has been sent. Data Dubai's request form requires an authenticated account, and the other listed channels have not been tested by sending mail.
+
+| Authority | Official channel | Verification |
+| --- | --- | --- |
+| Dubai Data and Statistics Establishment / DLD | [Data Dubai Request for Data](https://data.dubai/request-data) | The [official service listing](https://data.dubai/services) says the request is open to everyone and can supply digital files with regular updates. The route currently redirects to Data Dubai sign-in; an authenticated account is needed to submit. Ask DDSE to route the dataset-specific licence question to DLD if necessary. |
+| Ras Al Khaimah Municipality RERA | `info@mun.rak.ae` | Published on the [municipality contact page](https://mun.rak.ae/home/communications-center/contact-us/); address the request to the Real Estate Regulatory Administration. |
+| Sharjah Real Estate Registration Department | `info@shjrerd.gov.ae` | Published in the [Sharjah government directory](https://protocol.shj.ae/Documents/00%20-%20Gov%20List%2014-1-2025%D8%A7%D9%84%D9%82%D8%A7%D8%A6%D9%85%D8%A9%20%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9.pdf), page 45. |
+| Fujairah Statistics Centre | `fsc@fsc.fujairah.ae` | Published on the [centre's contact page](https://www.fscfuj.gov.ae/contact.html); ask it to identify the correct project-register authority if it only holds aggregate statistics. |
+| Umm Al Quwain Land and Property Department | `info.ld@ld.uaqgov.ae` | Published on the [department's own website](https://ld.uaq.ae/ar/home.html); ask for the current register and any public reuse route. |
+
 ## Suggested routing and source-specific question
 
 | Authority | Reviewed lead | Additional question |
