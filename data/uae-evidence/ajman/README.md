@@ -30,6 +30,12 @@ The captured export has 318 rows with unknown year and quarter and 4,594 rows wi
 
 `/map/api/uae-evidence/ajman/dispositions` serves a paged, read-only view with exact source labels and known/unknown filters. Its checksum-verified immutable Worker asset is separate from the private IDrive objects above; the API reports its actual storage origin. Raw asset paths remain inaccessible.
 
+## Unit mortgage aggregates
+
+The [Real Estate Units Mortgage dataset](https://data.ajman.ae/explore/dataset/real-estate-units-mortgage/) separately reports 651 quarterly project-label, district, unit-type and room-count aggregates from 2019 Q1 to 2026 Q2 under CC BY 4.0. Two independent publisher exports matched all 386,928 bytes. They contain 155 distinct project labels, 1,244 reported mortgage actions, and AED 646,133,934 in reported value. The publisher includes mortgage registrations and mortgage-value modifications, so these are not necessarily unique loans. The source overlaps the mixed unit-dispositions dataset and must not be added to it. The 2021 Q2 period is absent; five rows have unknown room counts.
+
+`real-estate-units-mortgage-validation.json` records the source vintage, exact hashes, quality counts and limits. `scripts/build-ajman-unit-mortgages.mjs --check` verifies the immutable compressed source against the independently read publisher copy. `/map/api/uae-evidence/ajman/unit-mortgages` pages source-labelled rows and supports year, quarter, project-label and district filters. It provides no canonical V48 identity, project-site coordinate, individual mortgage, sale price or all-UAE denominator.
+
 ## Project management appointments
 
 The [Management Companies for Real Estate Development Projects dataset](https://data.ajman.ae/explore/dataset/management-companies-for-real-estate-development-projects/) is a separate [CC BY 4.0](https://data.ajman.ae/terms/terms-and-conditions.pdf) Ajman source. Its 451 annual rows cover 153 distinct official project IDs: 149 appointments each in 2024 and 2025, and 153 in 2026. All 153 IDs exist in the official Ajman project register. Thirteen office IDs appear, and three projects have a changed office ID across the reported years. The management company is neither the developer nor the owner.
