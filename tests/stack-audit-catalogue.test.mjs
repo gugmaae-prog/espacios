@@ -11,7 +11,7 @@ test('new map release ignores a prior cached live-format catalogue',async()=>{
   const service={fetch:async()=>Response.json({projects:[{slug:'one'}],total:1,pages:1,page:1,pageSize:100,registry:{total:1,revision:2,updatedAt:'snapshot'},source},{headers:{'x-espacios-data-release':'espacios-data-hub-v10-versioned-cache'}})};
   const response=await mapCompleteProjects(req(),{MAP_CATALOGUE_FETCH:service}),body=await response.json();
   assert.equal(response.status,200);assert.equal(body.degraded,true);assert.equal(body.completeForCurrentDataHub,false);
-  assert.deepEqual(matched,['20261103-data-hub-v11-provenance-v7']);
+  assert.deepEqual(matched,['20261103-data-hub-v12-reconciled-v8']);
  }finally{if(prior===undefined)delete globalThis.caches;else globalThis.caches=prior;}
 });
 test('a later cached Data Hub page makes the complete catalogue degraded',async()=>{
