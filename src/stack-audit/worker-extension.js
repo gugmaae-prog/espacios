@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261103-map-stack-v23';
+var MAP_STACK_RELEASE='20261103-map-stack-v24';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -26,6 +26,10 @@ function mapStackHtml(html){
  for(const [id,label]of [['ai-question','Ask about the current map or selected place'],['compare-inventory-search','Find a project or published unit to compare']]){
   const pattern=new RegExp('<(?:input|textarea)\\b[^>]*\\bid=[\"\']'+id+'[\"\'][^>]*>','g');
   html=html.replace(pattern,tag=>/\baria-label(?:ledby)?=/.test(tag)?tag:tag.replace(/>$/,' aria-label="'+label+'">'));
+ }
+ if(html.includes('ae-search-map-tools')&&!html.includes('ae-commercial-access')){
+  html=html.replace('</head>','<style id="ae-commercial-access-style">#ae-commercial-access{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 12px;border:1px solid var(--su-line,#b9cad7);border-radius:11px;background:var(--eg-theme-control,#edf3f7);color:var(--su-ink,#1c3044);text-decoration:none;font:700 11px/1 ui-sans-serif,system-ui;white-space:nowrap}#ae-commercial-access:focus-visible{outline:3px solid #3d7797;outline-offset:3px}@media(max-width:760px){#ae-commercial-access{min-height:36px;padding:0 8px}}</style></head>');
+  html=html.replace('</body>','<script>(function(){function add(){if(document.getElementById("ae-commercial-access"))return;var host=document.querySelector(".ae-search-map-tools")||document.querySelector(".topbar");if(!host)return;var a=document.createElement("a");a.id="ae-commercial-access";a.href="/map/commercial";a.textContent="Commercial";a.setAttribute("aria-label","Browse commercial spaces for sale and rent");host.appendChild(a)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",add,{once:true});else add()})();<\/script></body>');
  }
  return html;
 }
@@ -57,6 +61,8 @@ worker_default.fetch=async function(request,env,ctx){
  const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
  const bindings=store?{...env,MARKET_R2:store}:env;
  const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
+ const commercialPage=mapRgestateCommercialPage(request);if(commercialPage)return mapStackPreparedResponse(request,commercialPage);
+ const commercialListings=await mapRgestateCommercial(request,RGE_COMMERCIAL_REPORT,RGE_COMMERCIAL_PACKED);if(commercialListings)return mapStackPreparedResponse(request,commercialListings);
  const scadStock=mapScadStock(request);if(scadStock)return mapStackPreparedResponse(request,scadStock);
  const coverage=mapUaeCoverage(request,UAE_COVERAGE_REPORT);if(coverage)return mapStackPreparedResponse(request,coverage);
  const urbanProjects=await mapAbuDhabiUrbanProjects(request,UAE_ABU_DHABI_URBAN_REPORT,UAE_ABU_DHABI_URBAN_PACKED);if(urbanProjects)return mapStackPreparedResponse(request,urbanProjects);
