@@ -19,6 +19,8 @@ The read-only `/map/api/uae-evidence/coverage` endpoint reports this accepted V4
 
 The V48 record archive has 1,860 project and community records and 16,872 native history series. Its 2,717 approved recovery objects are verified in private IDrive E2 with immutable fallback. This archive does not establish complete current UAE market coverage or recover the original history and saved model bundles.
 
+The [3 November commercial-space audit](commercial-spaces-20261103.md) records Map v49's Ajman Office and Shop sale aggregates and the separate commercial certified-rent counts. It also records that no verified active sale or lease unit feed is connected; commercial-tagged PSR project cards are not live unit inventory. Map v48's separately verified Abu Dhabi source polygons are documented there as well. Neither release changes the V48 project or map-pin counts.
+
 ## Additional source-backed backend data
 
 - [SCAD Abu Dhabi Census 2024 real estate table](https://census.scad.gov.ae/home/realestate?lang=en): 8 region-year stock rows for 2023 and 2024, recording rounded units and buildings for the emirate total and the Abu Dhabi, Al Ain, and Al Dhafra regions. The exact public source response is retained with SHA-256 validation; the read-only API is `/map/api/uae-evidence/abu-dhabi/stock`. SCAD's [terms](https://www.scad.gov.ae/web/guest/terms-of-use) permit reproduction with full attribution and its [open-data policy](https://scad.gov.ae/documents/d/guest/scad-open-data-policy) permits sharing open data with source credit. The figures include non-residential uses, are rounded to multiples of five, and use revised 2023 data. They are not project identities, registered sales, map coordinates, or an all-UAE stock census.
