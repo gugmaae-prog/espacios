@@ -1,0 +1,25 @@
+{
+  "version": "20261103-palm-jebel-ali-progress-v1",
+  "asOf": "2026-11-03",
+  "source": {
+    "id": "pja-nakheel-construction-progress-20261103",
+    "publisher": "Nakheel",
+    "url": "https://www.nakheel.com/en/construction-progress/palm-jebel-ali",
+    "retrieved": "2026-11-03",
+    "retrievedAt": "2026-11-03T15:35:33Z",
+    "published": null,
+    "sourcePageBytes": 143946,
+    "sourcePageSHA256": "0d3f2f02c40398e395a634473726107c8bbce94df7bb16452ff987ce6a9bb71a",
+    "classification": "developer_page_reporting_rera_inspection",
+    "licence": "Public factual metadata with attribution; page text and photographs not redistributed"
+  },
+  "observations": [
+    {"frond":"A","inspectionDate":"2026-06-18","progressPct":4.39},
+    {"frond":"B","inspectionDate":"2026-06-18","progressPct":4.36},
+    {"frond":"C","inspectionDate":"2026-06-18","progressPct":4.05},
+    {"frond":"D","inspectionDate":"2026-06-18","progressPct":4.23},
+    {"frond":"E","inspectionDate":"2026-06-18","progressPct":4.03},
+    {"frond":"F","inspectionDate":"2026-06-18","progressPct":4.31}
+  ],
+  "methodology": "Nakheel's Palm Jebel Ali construction page attributes these six Fronds A–F percentages to a Real Estate Regulatory Agency inspection on 18 June 2026. The page gives no publication date; first availability is the retrieval date. These are phase-specific construction snapshots, not sales, handovers, whole-island completion, or a price model. The page's overall and component percentages are excluded because their date and denominator are less explicit."
+}

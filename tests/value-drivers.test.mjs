@@ -1,11 +1,20 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {createHash} from 'node:crypto';
-import {sensitivity,isPalmJebelAli,contextFeatures,visibleDrivers} from '../src/value-drivers/core.mjs';
+import {sensitivity,villaCapitalScenario,isPalmJebelAli,contextFeatures,visibleDrivers} from '../src/value-drivers/core.mjs';
 import worker from '../src/worker.js';
 const data=JSON.parse(await fs.readFile(new URL('../data/value-drivers-20261003.json',import.meta.url)));
 test('sensitivity permits losses and flat outcomes without claiming a forecast',()=>{
  assert.equal(sensitivity(0,10).index,100);assert.ok(sensitivity(-5,10).index<100);assert.ok(sensitivity(5,10).index>100);
  for(const [r,y]of [[NaN,5],[-100,5],[5,0],[5,31],['5',10],[101,10]])assert.equal(sensitivity(r,y),null);
  assert.equal(sensitivity(5,5).classification,'user_assumption_sensitivity');
+});
+test('villa scenario uses only user price and costs and permits a capital loss',()=>{
+ const inputs={purchasePriceAED:10000000,entryCostPct:4,exitCostPct:2,annualHoldingCostAED:100000,annualGrowthPct:0,years:5};
+ const flat=villaCapitalScenario(inputs);
+ assert.equal(flat.classification,'user_entered_villa_capital_scenario');
+ assert.equal(flat.committedAED,10400000);assert.equal(flat.grossExitAED,10000000);
+ assert.equal(flat.netProceedsAED,9300000);assert.equal(flat.capitalGainAED,-1100000);
+ assert.ok(villaCapitalScenario({...inputs,annualGrowthPct:-5}).capitalReturnPct<flat.capitalReturnPct);
+ for(const bad of [{purchasePriceAED:0},{entryCostPct:-1},{exitCostPct:101},{annualHoldingCostAED:-1},{annualGrowthPct:-100}])assert.equal(villaCapitalScenario({...inputs,...bad}),null);
 });
 test('Palm aliases require explicit geography and do not match a different island',()=>{
  assert.equal(isPalmJebelAli({emirate:'Dubai',area:'The Palm Jebel Ali'}),true);
@@ -14,7 +23,7 @@ test('Palm aliases require explicit geography and do not match a different islan
  assert.equal(isPalmJebelAli({emirate:'Abu Dhabi',name:'Palm Jebel Ali'}),false);
 });
 test('research preserves sparse source evidence and never creates local uplift percentages',()=>{
- assert.equal(data.drivers.length,16);assert.equal(data.sources.length,34);assert.equal(data.coverage.length,7);
+ assert.equal(data.drivers.length,16);assert.equal(data.sources.length,35);assert.equal(data.coverage.length,7);
  assert.ok(data.drivers.some(d=>d.id==='guggenheim-abu-dhabi'));assert.ok(data.drivers.some(d=>d.id==='disney-yas'));assert.ok(data.drivers.some(d=>d.id==='wynn-al-marjan'));
  assert.equal(new Set(data.drivers.map(d=>d.id)).size,data.drivers.length);
  for(const d of data.drivers){assert.equal(d.priceUpliftPct,null);assert.equal(d.geometry,null);assert.ok(d.risk);for(const id of d.sourceIds)assert.ok(data.sources.some(s=>s.id===id));}
@@ -23,7 +32,7 @@ test('research preserves sparse source evidence and never creates local uplift p
  assert.equal(data.policy.validatedPalmForecast,false);assert.equal(data.policy.automaticForecastAdjustment,false);
  assert.equal(data.sensitivity.confidenceInterval,null);assert.equal(data.drivers.find(d=>d.id==='metro-blue').palmRelationship,'not_direct');
 });
-test('Palm quarterly cohorts reconcile to accepted V48 without inventing villa prices',()=>{
+test('Palm quarterly cohorts reconcile to accepted V48 without inventing villa prices',async()=>{
  const h=data.palmJebelAli.history;
  assert.equal(h.classification,'official_dld_derived_area_context');assert.equal(h.acceptedV48AsOf,'2026-10-14');
  assert.equal(createHash('sha256').update(JSON.stringify(h.series)).digest('hex'),h.seriesSHA256);
@@ -42,6 +51,15 @@ test('Palm quarterly cohorts reconcile to accepted V48 without inventing villa p
  assert.equal(data.palmJebelAli.deliveryMilestones.length,8);
  assert.deepEqual(data.palmJebelAli.deliveryMilestones.map(m=>m.date),[...data.palmJebelAli.deliveryMilestones.map(m=>m.date)].sort());
  assert.equal(data.palmJebelAli.deliveryMilestones.find(m=>m.date==='2026-06-24').unit,'released residences');
+ const progress=data.palmJebelAli.constructionProgress;
+ const captured=JSON.parse(await fs.readFile(new URL('../data/palm-jebel-ali-progress-20261103.json',import.meta.url)));
+ assert.equal(progress.version,'20261103-palm-jebel-ali-progress-v1');
+ assert.deepEqual(progress.observations,captured.observations);
+ assert.match(captured.source.sourcePageSHA256,/^[a-f0-9]{64}$/);
+ assert.deepEqual(progress.observations.map(row=>row.frond),'ABCDEF'.split(''));
+ assert.ok(progress.observations.every(row=>row.inspectionDate==='2026-06-18'&&row.progressPct>4&&row.progressPct<5));
+ assert.ok(data.sources.some(row=>row.id===progress.sourceId&&row.publisher==='Nakheel'));
+ assert.equal(data.palmJebelAli.villaScenarioPolicy.purchasePriceAED,null);
 });
 test('Palm named-phase cohorts are immutable, disjoint subdivisions with no villa estimate',()=>{
  const h=data.palmJebelAli.history;
@@ -82,7 +100,7 @@ test('public API needs no bindings, rejects writes and stays off the PSR tenant'
  const etag=get.headers.get('etag');const head=await worker.fetch(new Request('https://espacios.me/map/api/value-drivers/',{method:'HEAD'}),forbidden,ctx);assert.equal(head.status,200);assert.equal(await head.text(),'');
  const conditional=await worker.fetch(new Request('https://espacios.me/map/api/value-drivers',{headers:{'if-none-match':etag}}),forbidden,ctx);assert.equal(conditional.status,304);
  const palm=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali'),forbidden,ctx);assert.equal(palm.status,200);
- const palmData=await palm.json();assert.equal(palmData.recordId,'community:Dubai:palm-jebel-ali');assert.equal(palmData.palmJebelAli.history.aggregateDistinctSaleCounts.total,2102);assert.notEqual(palm.headers.get('etag'),etag);
+ const palmData=await palm.json();assert.equal(palmData.recordId,'community:Dubai:palm-jebel-ali');assert.equal(palmData.palmJebelAli.history.aggregateDistinctSaleCounts.total,2102);assert.equal(palmData.palmJebelAli.constructionProgress.observations.length,6);assert.equal(palmData.palmJebelAli.villaScenarioPolicy.purchasePriceAED,null);assert.notEqual(palm.headers.get('etag'),etag);
  const palm304=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali',{headers:{'if-none-match':palm.headers.get('etag')}}),forbidden,ctx);assert.equal(palm304.status,304);
  const palmWeak304=await worker.fetch(new Request('https://espacios.me/map/api/palm-jebel-ali',{headers:{'if-none-match':'W/'+palm.headers.get('etag')}}),forbidden,ctx);assert.equal(palmWeak304.status,304);
  const post=await worker.fetch(new Request('https://espacios.me/map/api/value-drivers',{method:'POST'}),forbidden,ctx);assert.equal(post.status,405);

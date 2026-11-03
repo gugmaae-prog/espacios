@@ -26,4 +26,12 @@ Five earlier 2003–05 whole-price quotes remain a separate [published-reference
 
 The Palm drawer uses the latest complete residential-unit quarter with at least 20 sales: 2026 Q3, 197 sales, median AED 3,564.89/sqft. User-editable −5%, 0%, and +5% annual inputs produce one-, three-, five-, and ten-year nominal paths using `anchor × (1 + input / 100)^years`. The ten-year column is an explicitly long-horizon assumption, not a backtested model. These are assumption scenarios from a dated area-unit cohort, without fitted probabilities or confidence intervals. They are not current appraisals, villa prices, validated forecasts, or ROI. A separate index starts at 100 for unanchored assets. No regional catalyst is converted into a price uplift.
 
+The Palm drawer now also offers a separate **villa capital scenario**. Its purchase price is blank until the user enters one; entry and exit costs and annual holding costs are user-editable and initially zero. For each annual assumption and horizon, it shows an assumed gross exit value and capital gain or loss after those costs. It does not borrow the residential-unit median as a villa price. Rental income, financing, inflation, tax, interim payment timing and liquidity are excluded. The scenario has no fitted probabilities or confidence interval.
+
+## Construction inspection history
+
+The focused Palm API now includes six [Nakheel-reported RERA inspection observations](https://www.nakheel.com/en/construction-progress/palm-jebel-ali) dated **18 June 2026**, one for each Frond A–F: A 4.39%, B 4.36%, C 4.05%, D 4.23%, E 4.03%, F 4.31%. The page was retrieved 3 November 2026; it does not state its publication date. The captured HTML was 143,946 bytes with SHA-256 `0d3f2f02c40398e395a634473726107c8bbce94df7bb16452ff987ce6a9bb71a`. Structured facts and provenance are in `data/palm-jebel-ali-progress-20261103.json`; the full page and photographs are not republished.
+
+These are dated, phase-specific construction observations, separate from the accepted V48 DLD sale archive and the earlier six **Nakheel internal** Fronds K–P snapshots from March 2026. They are neither completed homes nor a price forecast. The page's group-level construction components are excluded because their date and denominator are less explicit.
+
 Registered Palm villa prices, villa rents, and a validated Palm price forecast remain unavailable. R2 remains disabled. The accepted V48 history archive, IDrive readback, fixed catalogue, and Data Room restrictions remain the release baseline.

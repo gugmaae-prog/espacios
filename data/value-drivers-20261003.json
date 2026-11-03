@@ -1,5 +1,5 @@
 {
-  "version": "20261103-value-drivers-v5",
+  "version": "20261103-value-drivers-v6",
   "asOf": "2026-11-03",
   "owner": "Espacios",
   "classification": "catalysts_and_conditional_outlook",
@@ -309,6 +309,15 @@
       "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
       "classification": "official_publication",
       "licence": "Public citation and paraphrase only; no bulk redistribution licence inferred"
+    },
+    {
+      "id": "pja-nakheel-construction-progress-20261103",
+      "publisher": "Nakheel",
+      "url": "https://www.nakheel.com/en/construction-progress/palm-jebel-ali",
+      "retrieved": "2026-11-03",
+      "published": null,
+      "classification": "developer_page_reporting_rera_inspection",
+      "licence": "Public factual metadata with attribution; page text and photographs not redistributed"
     }
   ],
   "drivers": [
@@ -4934,6 +4943,7 @@
       "pja-fronds-kp-contracts",
       "pja-frond-f-release",
       "kf-luxury",
+      "pja-nakheel-construction-progress-20261103",
       "pja-first-villa-launch",
       "pja-access-road-award",
       "pja-beach-collection-2024",
@@ -6550,6 +6560,53 @@
         "additiveToAreaTotal": false,
         "basis": "The native project-name cohorts subdivide the same DLD area 411 sales. Do not add them to area aggregates; project names and historical marketed identity are not independently verified."
       }
+    },
+    "constructionProgress": {
+      "version": "20261103-palm-jebel-ali-progress-v1",
+      "sourceId": "pja-nakheel-construction-progress-20261103",
+      "classification": "developer_page_reporting_rera_inspection",
+      "observations": [
+        {
+          "frond": "A",
+          "inspectionDate": "2026-06-18",
+          "progressPct": 4.39
+        },
+        {
+          "frond": "B",
+          "inspectionDate": "2026-06-18",
+          "progressPct": 4.36
+        },
+        {
+          "frond": "C",
+          "inspectionDate": "2026-06-18",
+          "progressPct": 4.05
+        },
+        {
+          "frond": "D",
+          "inspectionDate": "2026-06-18",
+          "progressPct": 4.23
+        },
+        {
+          "frond": "E",
+          "inspectionDate": "2026-06-18",
+          "progressPct": 4.03
+        },
+        {
+          "frond": "F",
+          "inspectionDate": "2026-06-18",
+          "progressPct": 4.31
+        }
+      ],
+      "methodology": "Nakheel's Palm Jebel Ali construction page attributes these six Fronds A–F percentages to a Real Estate Regulatory Agency inspection on 18 June 2026. The page gives no publication date; first availability is the retrieval date. These are phase-specific construction snapshots, not sales, handovers, whole-island completion, or a price model. The page's overall and component percentages are excluded because their date and denominator are less explicit."
+    },
+    "villaScenarioPolicy": {
+      "classification": "user_entered_villa_capital_scenario",
+      "purchasePriceAED": null,
+      "entryCostPct": null,
+      "exitCostPct": null,
+      "annualHoldingCostAED": null,
+      "formula": "netProceeds = purchasePrice * (1 + annualGrowthPct / 100) ** years * (1 - exitCostPct / 100) - annualHoldingCostAED * years; committed = purchasePrice * (1 + entryCostPct / 100)",
+      "limitation": "No observed Palm villa price anchor. All price and cost inputs must come from the user. Illustrative nominal capital return only; excludes rent, financing, inflation, taxes, payment timing and sale liquidity. Not a forecast or appraisal."
     },
     "deliveryMilestones": [
       {
