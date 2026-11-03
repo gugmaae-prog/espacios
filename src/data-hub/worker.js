@@ -4,7 +4,7 @@ var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
 // src/index.js
-var RELEASE = "espacios-data-hub-v12-registry-hash-reconciled";
+var RELEASE = "espacios-data-hub-v12-hash-repair-ready";
 var TENANTS = {
   psr: { key: "psr", slug: "psr", name: "PSR Homes", site: "https://psrhomes.ae" },
   "haus-and-grace": { key: "haus-and-grace", slug: "haus-and-grace", name: "Haus & Grace", site: "https://hausandgrace.ae" }
@@ -244,7 +244,7 @@ async function projectFilters(env, tenantKey, state) {
   // The reviewed export's filter population was checked against the same D1
   // table export. Only reuse it while the live registry signature is exact.
   const reviewed=PSR_PUBLIC_FILTERS.registry;
-  if(tenantKey==='psr'&&Number(state.revision)===reviewed.revision&&Number(state.project_count)===reviewed.total&&[reviewed.contentHash,PSR_PUBLIC_FILTERS.reconciledContentHash].includes(state.content_hash)&&state.updated_at===reviewed.updatedAt)return PSR_PUBLIC_FILTERS.filters;
+  if(tenantKey==='psr'&&Number(state.revision)===reviewed.revision&&Number(state.project_count)===reviewed.total&&[reviewed.contentHash,PSR_PUBLIC_FILTERS.verifiedProjectionHash].includes(state.content_hash)&&state.updated_at===reviewed.updatedAt)return PSR_PUBLIC_FILTERS.filters;
   const revision=state.revision;
   const cache = globalThis.caches?.default;
   const key = new Request(`https://espacios.me/data/api/v1/projects/_filter-cache?tenant=${encodeURIComponent(tenantKey)}&revision=${Number(revision) || 0}&hash=${encodeURIComponent(state.content_hash||'')}`);
