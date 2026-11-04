@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261103-map-frontend-v36';
+  const RELEASE='20261104-map-frontend-v37';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
@@ -116,7 +116,7 @@
       }else if(mode==='heatmap'){
         turn3d(false);
         const metric=window.EspaciosUnifiedMap?.timeline?.()?.metric||'projects';
-        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'projects';
+        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'uae-project-coverage';
         try{psrSetAnalysis(analysis);}catch{}
         try{if(aeUaeCoverageActive())aeUaeSetView('heat');}catch{}
       }else{
@@ -264,6 +264,9 @@
       const b=document.createElement('button');b.type='button';b.dataset.value=value;b.textContent=label;b.setAttribute('aria-pressed',String(value==='map'));b.onclick=()=>setMode(value);modes.append(b);
     }
     Q('#app').append(modes);
+    Q('.rail-btn[data-panel="analyze"]')?.addEventListener('click',()=>{
+      if(UI.metric==='projects'&&Q('#analysis-metric')?.value==='projects')setMode('heatmap');
+    });
 
     const tools=document.createElement('button');
     tools.id='minimal-tools-toggle';tools.type='button';tools.setAttribute('aria-label','Map tools');
