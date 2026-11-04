@@ -6463,7 +6463,7 @@ const RGE_PAGE=`<!doctype html><html lang="en" data-theme="light"><head><meta ch
  function areaGeojson(){return {type:'FeatureCollection',features:(areaData?.areas||[]).map(a=>({type:'Feature',geometry:{type:'Point',coordinates:a.center},properties:{key:a.key,name:a.name,count:a.count,rentRows:a.rentRows,saleRows:a.saleRows}}))}}
  function circleColor(){return ['case',['==',['get','key'],selectedArea||''],root.dataset.theme==='dark'?'#e2f0fa':'#203d53',purpose==='rent'?'#5f988f':purpose==='sale'?'#5b7f9d':root.dataset.theme==='dark'?'#9ac3d8':'#456e87']}
  function installLayers(){
-  if(!map||!map.isStyleLoaded())return;
+  if(!map||!map.getStyle()?.layers)return;
   const data=areaGeojson();
   if(!map.getSource('commercial-areas'))map.addSource('commercial-areas',{type:'geojson',data,cluster:true,clusterMaxZoom:10,clusterRadius:55,clusterProperties:{spaceCount:['+',['get','count']]}});
   else map.getSource('commercial-areas').setData(data);
@@ -6472,6 +6472,7 @@ const RGE_PAGE=`<!doctype html><html lang="en" data-theme="light"><head><meta ch
   if(!map.getLayer('commercial-places'))map.addLayer({id:'commercial-places',type:'circle',source:'commercial-areas',filter:['!',['has','point_count']],paint:{'circle-color':circleColor(),'circle-radius':['interpolate',['linear'],['get','count'],1,11,10,17,50,25,150,34],'circle-stroke-color':root.dataset.theme==='dark'?'#eaf2f7':'#fff','circle-stroke-width':2,'circle-opacity':.95}});
   if(!map.getLayer('commercial-place-count'))map.addLayer({id:'commercial-place-count',type:'symbol',source:'commercial-areas',filter:['!',['has','point_count']],layout:{'text-field':['to-string',['get','count']],'text-size':12,'text-font':['Noto Sans Regular']},paint:{'text-color':'#fff'}});
   mapLoaded=true;
+  document.getElementById('commercial-map').dataset.layersReady='true';
   if(firstFit&&areaData?.areas?.length)fitMap();
  }
  function fitMap(){if(!mapLoaded||!areaData?.areas?.length)return;firstFit=false;const bounds=areaData.areas.reduce((b,a)=>b.extend(a.center),new maplibreBounds());map.fitBounds(bounds,{padding:window.innerWidth<620?28:60,maxZoom:9,duration:reduceMotion.matches?0:260})}
@@ -6482,6 +6483,7 @@ const RGE_PAGE=`<!doctype html><html lang="en" data-theme="light"><head><meta ch
    map=new lib.Map({container:'commercial-map',style:'/map/basemap/styles/dark?theme='+root.dataset.theme,center:[55.1,25.1],zoom:6.2,minZoom:5,maxZoom:15,attributionControl:true});
    map.addControl(new lib.NavigationControl({showCompass:false}),'top-right');
    map.on('style.load',installLayers);
+   map.on('load',installLayers);
    map.on('click','commercial-clusters',async e=>{const feature=e.features?.[0];if(!feature)return;try{const zoom=await map.getSource('commercial-areas').getClusterExpansionZoom(feature.properties.cluster_id);map.easeTo({center:feature.geometry.coordinates,zoom,duration:reduceMotion.matches?0:260})}catch{}});
    map.on('click','commercial-places',e=>{const key=e.features?.[0]?.properties?.key;if(key)chooseArea(key)});
    for(const layer of ['commercial-clusters','commercial-places']){map.on('mouseenter',layer,()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave',layer,()=>map.getCanvas().style.cursor='')}
@@ -6522,7 +6524,7 @@ const RGE_PAGE=`<!doctype html><html lang="en" data-theme="light"><head><meta ch
  }
  function chooseArea(key){selectedArea=selectedArea===key?null:key;renderSelection();loadCards(false)}
  function refresh(){selectedArea=null;renderSelection();loadAreas();loadCards(false)}
- theme.onclick=function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('espacios_theme_v1',root.dataset.theme)}catch{};if(map){mapLoaded=false;map.setStyle('/map/basemap/styles/dark?theme='+root.dataset.theme)}};
+ theme.onclick=function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('espacios_theme_v1',root.dataset.theme)}catch{};if(map){mapLoaded=false;document.getElementById('commercial-map').dataset.layersReady='false';map.setStyle('/map/basemap/styles/dark?theme='+root.dataset.theme)}};
  document.querySelectorAll('[data-purpose]').forEach(button=>button.onclick=()=>{purpose=button.dataset.purpose;document.querySelectorAll('[data-purpose]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));refresh()});
  let timer;search.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(refresh,220)});
  more.onclick=()=>loadCards(true);
