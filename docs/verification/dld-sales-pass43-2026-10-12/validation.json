@@ -1,0 +1,11 @@
+{
+  "packet": "dld-sales-pass43-20261012",
+  "checks": "five packet tests plus complete identity-review suite",
+  "passed": true,
+  "acceptedTransactions": 24,
+  "liveCoverageCredit": 0,
+  "sourceRowsScanned": 1800588,
+  "duplicateReconciliationRowsScanned": 1800588,
+  "priorArchiveSHA256": "472486d78f139da3a2e111fbaa110578698248c20e31359c96580b8200cce05a",
+  "completeLifetimeHistory": false
+}

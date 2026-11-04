@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: V32 preserves every V31 record, source, event, and native financial series
+ok 1 - V32 preserves every V31 record, source, event, and native financial series
+  ---
+  duration_ms: 14532.077208
+  type: 'test'
+  ...
+# Subtest: Primary RAK facts retain exact identities, date precision, schedules and contradictions
+ok 2 - Primary RAK facts retain exact identities, date precision, schedules and contradictions
+  ---
+  duration_ms: 1.297625
+  type: 'test'
+  ...
+# Subtest: Undated segmented developer prices cannot become transactions, current values or forecast anchors
+ok 3 - Undated segmented developer prices cannot become transactions, current values or forecast anchors
+  ---
+  duration_ms: 3.373209
+  type: 'test'
+  ...
+# Subtest: V32 D1 count and identity flags retain their numeric types
+ok 4 - V32 D1 count and identity flags retain their numeric types
+  ---
+  duration_ms: 909.305208
+  type: 'test'
+  ...
+# Subtest: V33 preserves all 1860 identities, prior facts, current values and every native financial series
+ok 5 - V33 preserves all 1860 identities, prior facts, current values and every native financial series
+  ---
+  duration_ms: 14510.384958
+  type: 'test'
+  ...
+# Subtest: Sources, precision, phases and availability distinguish reports from actual delivery
+ok 6 - Sources, precision, phases and availability distinguish reports from actual delivery
+  ---
+  duration_ms: 6.231625
+  type: 'test'
+  ...
+# Subtest: Four dated historical advertisements are separate from current valuations and transactions
+ok 7 - Four dated historical advertisements are separate from current valuations and transactions
+  ---
+  duration_ms: 0.595542
+  type: 'test'
+  ...
+# Subtest: V33 D1 generated counts and identity flags retain numeric types
+ok 8 - V33 D1 generated counts and identity flags retain numeric types
+  ---
+  duration_ms: 959.766833
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19827.152042

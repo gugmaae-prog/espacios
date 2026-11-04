@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "dld-identity-pass38-review-20261009",
+  "baselineVersion": "20261008-enrichment-v37",
+  "sourceRowsScanned": 1798873,
+  "acceptedFacts": 0,
+  "coverageCredit": 0,
+  "publishedDataChanged": false,
+  "sourceCaptures": [
+    {
+      "id": "asora-official",
+      "url": "https://meraas.com/en/project/jumeirah-asora-bay",
+      "finalUrl": "https://meraas.com/en/project/jumeirah-asora-bay",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T23:48:12.944Z",
+      "bytes": 952651,
+      "sha256": "497492e71dc2ec1a37204f7d32abd6cb28fab346e654d12df23f4359fc2993e6",
+      "contentType": "text/html; charset=utf-8",
+      "publicationDate": null,
+      "firstKnownAvailability": "2026-10-08T23:48:12.944Z",
+      "coverageCredit": 0,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "iquna-avida",
+      "url": "https://www.iqunaproperties.com/projects/avida-residences",
+      "finalUrl": "https://www.iqunaproperties.com/projects/avida-residences",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T23:48:11.101Z",
+      "bytes": 38644,
+      "sha256": "cbfd4c1cdd40ffddfebb4f372e06cc486b26fc8bcaca3e7b3ca5e647ac61db0a",
+      "contentType": "text/html; charset=utf-8",
+      "publicationDate": null,
+      "firstKnownAvailability": "2026-10-08T23:48:11.101Z",
+      "coverageCredit": 0,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "avida-official",
+      "url": "https://www.avidaresidences.com/",
+      "finalUrl": "https://www.avidaresidences.com/",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T23:48:11.572Z",
+      "bytes": 46212,
+      "sha256": "8d911c0612fac39936293792774a16799cd523490129f874b5b31b5bfcc8a03f",
+      "contentType": "text/html; charset=utf-8",
+      "publicationDate": null,
+      "firstKnownAvailability": "2026-10-08T23:48:11.572Z",
+      "coverageCredit": 0,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "avida-brochure",
+      "url": "https://cdn.prod.website-files.com/68cfe1206ad5e1ebc36f50be/68d99064fdb687e14cd615e1_Avida%20Residences%20-%20Brochure.pdf",
+      "finalUrl": "https://cdn.prod.website-files.com/68cfe1206ad5e1ebc36f50be/68d99064fdb687e14cd615e1_Avida%20Residences%20-%20Brochure.pdf",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T23:48:54.876Z",
+      "bytes": 9952790,
+      "sha256": "101e9033278ccd57c0b1d30efb908e65dacaaba0eefef6bf5d036bba313cc526",
+      "contentType": "application/pdf",
+      "publicationDate": null,
+      "firstKnownAvailability": "2026-10-08T23:48:54.876Z",
+      "coverageCredit": 0,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "open-data-licence",
+      "url": "https://data.dubai/documents/20117/0/Open+Data+License+-+English+%284%29.pdf/b4116590-0abb-ee75-5d74-ca33eca79b64?version=1.0&t=1762239598209&download=true",
+      "finalUrl": "https://data.dubai/documents/20117/0/Open+Data+License+-+English+%284%29.pdf/b4116590-0abb-ee75-5d74-ca33eca79b64?version=1.0&t=1762239598209&download=true",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-08T23:48:55.142Z",
+      "bytes": 92998,
+      "sha256": "f380f9fe755c9f298bba40f94bf2638abd06de851dc813a0c35ad8a9adacbadc",
+      "contentType": "application/pdf",
+      "publicationDate": null,
+      "firstKnownAvailability": "2026-10-08T23:48:55.142Z",
+      "coverageCredit": 0,
+      "rawBodyRedistributed": false
+    }
+  ],
+  "dldCaptureManifest": {
+    "retrievedAt": "2026-10-08T14:13:10Z",
+    "source": "https://data.dubai/en/l/470061",
+    "files": [
+      {
+        "name": "projects_2026-07-06_16-25-21_0001.csv.gz",
+        "bytes": 2473575,
+        "sha256": "ffee59d637b1383e62ea24dab5be77e957090abf3860ce26b00b873fbdda6078",
+        "reused": false
+      },
+      {
+        "name": "developers_2026-10-01_23-34-28_0001.csv.gz",
+        "bytes": 710949,
+        "sha256": "d722ae0f2c093fc4497c62ab0d215eff3c6011dd8f2c51ce026119218659cff7",
+        "reused": false
+      },
+      {
+        "name": "lkp_areas_2026-10-02_06-34-03_0001.csv.gz",
+        "bytes": 24566,
+        "sha256": "4a4506544ee13343bef919c09207ce28da19a24e6db136321e5993062d014eef",
+        "reused": false
+      },
+      {
+        "name": "transactions_2026-10-07_17-55-58_0001.csv.gz",
+        "bytes": 577014839,
+        "sha256": "cf444d854274eebdcbc23aaa2e1df7b32aba5081b64d3ec8ccd99d36d31dc6de",
+        "reused": false
+      },
+      {
+        "name": "transactions_2026-10-07_17-55-58_0002.csv.gz",
+        "bytes": 577000411,
+        "sha256": "7d273da7864a58d472dd063e1073cf290d85412ee2eef7cb35e66a8cb6d9f3e7",
+        "reused": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "recordId": "project:jumeirah-asora-bay-by-meraas-in-la-mer-dubai",
+      "name": "Jumeirah Asora Bay",
+      "projectNumber": 3445,
+      "projectId": 691710228,
+      "areaId": 317,
+      "developerId": 452208509,
+      "buildingName": "Jumeirah Residences Asora Bay",
+      "captureIds": [
+        "asora-official"
+      ],
+      "sourceRows": 30,
+      "duplicateRows": 0,
+      "financiallyEligibleUniqueCandidates": 30,
+      "firstCandidateRegistrationDate": "2025-05-07",
+      "lastCandidateRegistrationDate": "2026-08-05",
+      "excludedOrQuarantined": {},
+      "monthlyCandidateCounts": {
+        "2025-05": 16,
+        "2025-06": 7,
+        "2025-10": 2,
+        "2025-11": 2,
+        "2025-12": 1,
+        "2026-05": 1,
+        "2026-08": 1
+      },
+      "acceptedFacts": 0,
+      "coverageCredit": 0,
+      "identityStatus": "review_pending",
+      "registrationDateBasis": "DLD instance_date; not contract execution or first-ever sale",
+      "registeredDeveloperName": "DHRE 2 BTS L.L.C",
+      "registerLoadedAt": "2026-06-15 15:24:01.000",
+      "existingSaleCoverageStatus": "missing",
+      "unresolved": [
+        "Marketing-brand/legal-entity relationship requires explicit review; not inferred from a name token.",
+        "Confirm exact catalogue/component scope before promoting any transaction.",
+        "Check cross-record ownership and earlier source vintages before publication."
+      ]
+    },
+    {
+      "recordId": "project:avida-residences-iquna-properties-dubai-islands",
+      "name": "Avida Residences",
+      "projectNumber": 4066,
+      "projectId": 808700174,
+      "areaId": 432,
+      "developerId": 685297965,
+      "buildingName": "Avida Residences",
+      "captureIds": [
+        "iquna-avida",
+        "avida-official",
+        "avida-brochure"
+      ],
+      "sourceRows": 43,
+      "duplicateRows": 0,
+      "financiallyEligibleUniqueCandidates": 40,
+      "firstCandidateRegistrationDate": "2025-10-30",
+      "lastCandidateRegistrationDate": "2026-09-10",
+      "excludedOrQuarantined": {
+        "not_residential_flat": 1,
+        "not_sale": 2
+      },
+      "monthlyCandidateCounts": {
+        "2025-10": 6,
+        "2025-11": 9,
+        "2025-12": 12,
+        "2026-01": 3,
+        "2026-03": 1,
+        "2026-04": 4,
+        "2026-05": 2,
+        "2026-06": 1,
+        "2026-07": 1,
+        "2026-09": 1
+      },
+      "acceptedFacts": 0,
+      "coverageCredit": 0,
+      "identityStatus": "review_pending",
+      "registrationDateBasis": "DLD instance_date; not contract execution or first-ever sale",
+      "registeredDeveloperName": "SERENE MARINA REAL ESTATE DEVELOPMENT L.L.C",
+      "registerLoadedAt": "2026-06-15 15:24:01.000",
+      "existingSaleCoverageStatus": "missing",
+      "unresolved": [
+        "Marketing-brand/legal-entity relationship requires explicit review; not inferred from a name token.",
+        "Confirm exact catalogue/component scope before promoting any transaction.",
+        "Check cross-record ownership and earlier source vintages before publication."
+      ]
+    }
+  ],
+  "limitations": [
+    "Candidate counts do not establish verified subject history or complete lifetime coverage.",
+    "Land sales and gifts remain separate; they do not become apartment prices.",
+    "The July project export carries June row load dates; it does not prove current project status.",
+    "No price medians, current valuations, scenario anchors or 2080 forecasts are generated."
+  ]
+}

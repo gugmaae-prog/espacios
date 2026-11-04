@@ -1,9 +1,9 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261008-map-palette-v29';
+  const RELEASE='20261104-map-frontend-v37';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
-  const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
+  const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
   const selectionLight='#5f6d85',selectionDark='#aab7bd',legacySelection='#69d8ff';
   const hotspotColors=['#4f817c','#718991','#9ba8ac'];
   const selectionColor=()=>root.dataset.espaciosTheme==='dark'?selectionDark:selectionLight;
@@ -20,6 +20,19 @@
   }
   function syncSelectionPalette(){
     const map=window.__PSR_MAP__,layers=map?.getStyle?.()?.layers;if(!layers)return;const color=selectionColor();
+    const light=root.dataset.espaciosTheme!=='dark';
+    const geography={
+      'psr-community-line':light?'rgba(78,101,121,.28)':'rgba(153,177,190,.36)',
+      'psr-emirate-line':light?'rgba(78,101,121,.34)':'rgba(153,177,190,.42)',
+      'psr-official-district-line':light?'rgba(77,100,120,.28)':'rgba(153,177,190,.34)',
+      'psr-official-subdistrict-line':light?'rgba(83,106,126,.20)':'rgba(153,177,190,.25)',
+      'psr-official-block-line':light?'rgba(84,106,124,.14)':'rgba(153,177,190,.17)',
+      'psr-official-parcel-line':light?'rgba(84,106,124,.10)':'rgba(153,177,190,.12)',
+      'psr-official-building-line':light?'rgba(84,106,124,.12)':'rgba(153,177,190,.14)'
+    };
+    for(const [id,next] of Object.entries(geography)){
+      if(map.getLayer(id)&&map.getPaintProperty(id,'line-color')!==next)map.setPaintProperty(id,'line-color',next);
+    }
     for(const layer of layers){
       if(!/(selected|selection|project-footprint)/i.test(layer.id)&&!['psr-route-line','psr-projects','project-points','project-fallback-ring'].includes(layer.id))continue;
       for(const property of ['fill-color','fill-outline-color','line-color','fill-extrusion-color','circle-color','circle-stroke-color']){
@@ -34,11 +47,30 @@
       const current=map.getPaintProperty('ae-emerging-hotspots','circle-color');
       if(JSON.stringify(current)!==JSON.stringify(expression))map.setPaintProperty('ae-emerging-hotspots','circle-color',expression);
     }
+    if(map.getLayer('ae-uae-project-points')){
+      const color=['match',['get','coordinateQuality'],'community_centroid_fallback','#83969d','#5c8e97'];
+      if(JSON.stringify(map.getPaintProperty('ae-uae-project-points','circle-color'))!==JSON.stringify(color))map.setPaintProperty('ae-uae-project-points','circle-color',color);
+    }
     const legend=Q('#analysis-legend .analysis-legend-row');
     if(legend)legend.querySelectorAll('span').forEach((span,index)=>{if(hotspotColors[index])span.style.setProperty('color',hotspotColors[index],'important')});
   }
+  function syncCartography(){
+    const map=window.__PSR_MAP__;
+    if(!map?.getStyle?.()?.layers)return;
+    const fade={
+      highway_path:[.3,.9],highway_minor:[.32,.9],highway_major_casing:[.38,1],
+      highway_major_inner:[.44,1],highway_major_subtle:[.4,1],
+      highway_motorway_casing:[.4,1],highway_motorway_inner:[.5,1],
+      highway_motorway_subtle:[.45,1],boundary_state:[.45,1],'boundary_country_z5-':[.55,1]
+    };
+    for(const [id,[wide,close]]of Object.entries(fade)){
+      if(!map.getLayer(id))continue;
+      const value=['interpolate',['linear'],['zoom'],5,wide,9,close];
+      if(JSON.stringify(map.getPaintProperty(id,'line-opacity'))!==JSON.stringify(value))map.setPaintProperty(id,'line-opacity',value);
+    }
+  }
   let selectionPaletteFrame=0;
-  function scheduleSelectionPalette(){if(selectionPaletteFrame)return;selectionPaletteFrame=requestAnimationFrame(()=>{selectionPaletteFrame=0;syncSelectionPalette()})}
+  function scheduleSelectionPalette(){if(selectionPaletteFrame)return;selectionPaletteFrame=requestAnimationFrame(()=>{selectionPaletteFrame=0;syncSelectionPalette();syncCartography()})}
   const SAT_SOURCE='minimal-satellite';
   const SAT_LAYER='minimal-satellite-layer';
 
@@ -84,7 +116,7 @@
       }else if(mode==='heatmap'){
         turn3d(false);
         const metric=window.EspaciosUnifiedMap?.timeline?.()?.metric||'projects';
-        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'projects';
+        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'uae-project-coverage';
         try{psrSetAnalysis(analysis);}catch{}
         try{if(aeUaeCoverageActive())aeUaeSetView('heat');}catch{}
       }else{
@@ -99,16 +131,14 @@
     active(group,UI.metric);
   }
   function setMetric(metric){
-    UI.metric=metric;
-    if(metric==='price'||metric==='roi'){
+    UI.metric=metric;root.dataset.minimalMetric=metric;
+    if(metric==='projects'){
+      window.EspaciosUnifiedMap?.setMetric('projects');
+      pointView();
+    }else if(metric==='price'||metric==='roi'){
       window.EspaciosUnifiedMap?.setMetric(metric);
     }else if(metric==='forecast'){
-      window.EspaciosUnifiedMap?.setMetric('price');
-      setTimeout(()=>{
-        const timeline=window.EspaciosUnifiedMap?.timeline?.();
-        const next=timeline?.periods?.find(id=>/Estimate/i.test(timeline.labels?.[id]||''));
-        if(next)window.EspaciosUnifiedMap?.choose(next);
-      },80);
+      window.EspaciosUnifiedMap?.enterForecast();
     }else if(metric==='volume'){
       const rail=Q('.rail-btn[data-panel="analyze"]');
       if(rail&&!rail.classList.contains('active'))rail.click();
@@ -121,6 +151,29 @@
       },80);
     }
     syncMetricButtons();
+    syncProjectStatus();
+  }
+  function syncProjectStatus(){
+    const status=Q('#minimal-project-status');if(!status)return;
+    status.hidden=UI.metric!=='projects';
+    if(status.hidden)return;
+    const counts=typeof aeUaeState==='undefined'?null:aeUaeState.manifest?.counts;
+    const quality=counts?.coordinateQuality;
+    const source=Number(quality?.projectOrSource),approximate=Number(quality?.approximateCommunityCentre),unmapped=Number(quality?.withoutCoordinates),all=Number(counts?.projects);
+    status.textContent=Number.isFinite(source)&&Number.isFinite(approximate)&&Number.isFinite(unmapped)&&all>0
+      ?all.toLocaleString()+' catalogue projects · '+source.toLocaleString()+' reported project/source locations · '+approximate.toLocaleString()+' approximate community locations · '+unmapped.toLocaleString()+' searchable without coordinates'+(aeUaeState.degraded?' · reviewed snapshot':'')
+      :'Loading UAE project catalogue…';
+  }
+  function fitOpeningProjects(){
+    if(UI.openingFitDone||UI.userMoved||UI.metric!=='projects'||state.selected||!window.__ESPACIOS_COVERAGE_RENDER__?.initialized)return;
+    const features=typeof aeUaeState==='undefined'?[]:aeUaeState.manifest?.projectFeatures?.features||[];
+    const points=features.map(f=>f.geometry?.type==='Point'?f.geometry.coordinates:null).filter(p=>Array.isArray(p)&&Number.isFinite(p[0])&&Number.isFinite(p[1]));
+    if(!points.length)return;
+    const west=Math.min(...points.map(p=>p[0])),east=Math.max(...points.map(p=>p[0])),south=Math.min(...points.map(p=>p[1])),north=Math.max(...points.map(p=>p[1]));
+    if(!(west<east&&south<north))return;
+    UI.openingFitDone=true;
+    const narrow=matchMedia('(max-width:760px)').matches,reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    window.__PSR_MAP__?.fitBounds([[west,south],[east,north]],{padding:narrow?{top:135,right:20,bottom:195,left:20}:{top:180,right:65,bottom:180,left:65},maxZoom:7.2,duration:reduced?0:550});
   }
 
   function setKind(kind){
@@ -136,12 +189,72 @@
     if(button)button.click();
   }
 
+  // Measure the finished controls, including later-added research buttons.
+  // Panels must clear wrapped categories as well as the search and mode row.
+  function installPanelGeometry(){
+    let frame=0;
+    const measure=()=>{
+      frame=0;
+      const controls=[Q('.topbar'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes')];
+      const bottom=Math.max(0,...controls.filter(Boolean).map(el=>el.getBoundingClientRect().bottom));
+      const value=Math.ceil(bottom+12)+'px';
+      if(root.style.getPropertyValue('--minimal-panel-top')!==value)root.style.setProperty('--minimal-panel-top',value);
+    };
+    const schedule=()=>{if(!frame)frame=requestAnimationFrame(measure);};
+    const observer=new ResizeObserver(schedule);
+    for(const el of [Q('.topbar'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes')].filter(Boolean))observer.observe(el);
+    addEventListener('resize',schedule);
+    schedule();
+  }
+
+  function installMobileDisclosures(){
+    const phone=matchMedia('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)');
+    const tools=Q('#minimal-tools-toggle'),dock=Q('#tl-dock'),track=Q('#dr-track');
+    tools.setAttribute('aria-controls','minimal-kind-controls minimal-map-modes');
+    const setTools=open=>{
+      const returnFocus=!open&&phone.matches&&[Q('#minimal-kind-controls'),Q('#minimal-map-modes')].some(group=>group?.contains(document.activeElement));
+      root.dataset.minimalTools=open?'1':'0';
+      // History & events is appended at the far end of this horizontal menu.
+      // Reveal the menu before resetting it: a scroll assignment while its
+      // display is none can be discarded by the browser.
+      if(open&&phone.matches){const categories=Q('#minimal-kind-controls');if(categories)categories.scrollLeft=0;}
+      tools.setAttribute('aria-expanded',String(open));
+      tools.setAttribute('aria-label',open?'Minimize map tools':'Map tools');
+      if(returnFocus)tools.focus({preventScroll:true});
+      window.EspaciosMobileUI?.refreshGeometry?.();
+    };
+    tools.onclick=()=>setTools(root.dataset.minimalTools!=='1');
+    document.querySelectorAll('.rail-btn[data-panel]').forEach(button=>button.addEventListener('click',()=>{
+      if(!phone.matches&&root.dataset.minimalTools==='1')setTools(false);
+    }));
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&phone.matches&&root.dataset.minimalTools==='1'){
+        setTools(false);tools.focus({preventScroll:true});
+      }
+    });
+    for(const group of [Q('#minimal-kind-controls'),Q('#minimal-map-modes')]){
+      group.addEventListener('click',event=>{if(phone.matches&&event.target.closest('button'))setTools(false);});
+    }
+    const toggle=document.createElement('button');
+    toggle.id='minimal-timeline-toggle';toggle.type='button';toggle.setAttribute('aria-controls','tl-dock');
+    toggle.onclick=()=>Q('#tl-minimize')?.click();track.append(toggle);
+    const sync=()=>{
+      const compact=dock.classList.contains('is-minimized');
+      toggle.textContent=compact?'Expand':'Minimize';
+      toggle.setAttribute('aria-expanded',String(!compact));
+      toggle.setAttribute('aria-label',compact?'Expand timeline controls':'Minimize timeline controls');
+    };
+    new MutationObserver(sync).observe(dock,{attributes:true,attributeFilter:['class']});
+    sync();setTools(false);
+  }
+
   function install(){
     if(UI.installed||!window.EspaciosUnifiedMap||!Q('#tl-dock')||!Q('#dr-track')||!Q('.search-wrap'))return false;
     UI.installed=true;root.dataset.minimalMap='1';
     const map=window.__PSR_MAP__;
-    if(map){map.on('styledata',scheduleSelectionPalette);scheduleSelectionPalette();}
+    if(map){map.on('styledata',scheduleSelectionPalette);map.on('movestart',event=>{if(event.originalEvent)UI.userMoved=true});map.on('idle',fitOpeningProjects);scheduleSelectionPalette();}
     new MutationObserver(scheduleSelectionPalette).observe(root,{attributes:true,attributeFilter:['data-espacios-theme']});
+    new MutationObserver(()=>{fitOpeningProjects();syncProjectStatus()}).observe(root,{attributes:true,attributeFilter:['data-cx-catalogue','data-ae-map-loading']});
     const analysisLegend=Q('#analysis-legend');
     if(analysisLegend)new MutationObserver(scheduleSelectionPalette).observe(analysisLegend,{childList:true,subtree:true});
 
@@ -151,6 +264,9 @@
       const b=document.createElement('button');b.type='button';b.dataset.value=value;b.textContent=label;b.setAttribute('aria-pressed',String(value==='map'));b.onclick=()=>setMode(value);modes.append(b);
     }
     Q('#app').append(modes);
+    Q('.rail-btn[data-panel="analyze"]')?.addEventListener('click',()=>{
+      if(UI.metric==='projects'&&Q('#analysis-metric')?.value==='projects')setMode('heatmap');
+    });
 
     const tools=document.createElement('button');
     tools.id='minimal-tools-toggle';tools.type='button';tools.setAttribute('aria-label','Map tools');
@@ -179,15 +295,18 @@
 
     const metric=document.createElement('div');metric.id='minimal-metrics';metric.setAttribute('role','group');metric.setAttribute('aria-label','Data point');
     const items=[
+      ['projects','Projects','neutral'],
       ['price','Price / sqft','accent'],
       ['roi','ROI','neutral'],
       ['volume','Transaction Volume','blue'],
       ['forecast','Forecast','green']
     ];
     for(const [value,label,tone] of items){
-      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='price'));b.onclick=()=>setMetric(value);metric.append(b);
+      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='projects'));b.onclick=()=>setMetric(value);metric.append(b);
     }
     Q('#tl-dock').prepend(metric);
+    const projectStatus=document.createElement('div');projectStatus.id='minimal-project-status';projectStatus.setAttribute('role','status');Q('#app').append(projectStatus);
+    const densityCount=Q('#ae-density-count');if(densityCount)new MutationObserver(syncProjectStatus).observe(densityCount,{childList:true,characterData:true,subtree:true});
 
     const property=Q('#um-property'),settings=Q('#su-settings');
     if(property&&settings&&!Q('#minimal-property-settings')){
@@ -206,7 +325,14 @@
     const readout=Q('#um-readout');if(readout)readout.hidden=true;
     const status=Q('#mm-status');if(status)status.hidden=true;
 
-    setMode('map');setMetric('price');
+    installMobileDisclosures();
+    installPanelGeometry();
+    // The older persistent dock restores its last panel after map load. The
+    // catalogue opening must start with geography visible on every visit.
+    try{localStorage.setItem('psr-active-panel','timeline')}catch{}
+    state.activePanel='timeline';
+    const ai=Q('#ai-panel');if(ai){ai.classList.add('hidden');const rail=Q('.rail-btn[data-panel="ai"]');rail?.classList.remove('active');rail?.setAttribute('aria-expanded','false');}
+    setMode('map');setMetric('projects');fitOpeningProjects();
     return true;
   }
 

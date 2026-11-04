@@ -1,0 +1,73 @@
+{
+  "passId": "dld-authority-pass44-20261012",
+  "sourceCaptures": [
+    {
+      "id": "avida-fact-sheet",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:28:30.161Z",
+      "captureSHA256": "30cad0b3d52f03bcd69686d65d36e05878b2c070ced3474a6079b18df594e8b4",
+      "bytes": 763,
+      "method": "Visible public DLD browser DOM"
+    },
+    {
+      "id": "avida-developer",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:28:40.068Z",
+      "captureSHA256": "f5e2130b0d6b9973974e458b6d54d10fe13aaae5064a4c0c953f720537cba0bf",
+      "bytes": 688,
+      "method": "Visible public DLD browser DOM"
+    },
+    {
+      "id": "avida-inspection",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:28:49.335Z",
+      "captureSHA256": "5a999e1c0ee6fb9b7203f1ef3e462f0905879984ecc5b6555ad19166b48a80e8",
+      "bytes": 667,
+      "method": "Visible public DLD browser DOM"
+    },
+    {
+      "id": "avida-location",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "retrievedAt": "2026-10-11T23:29:47.127Z",
+      "captureSHA256": "5bbcc39bff36da49a06f8f3254eefbe27935c66bbb1ca62d2a89d32a7c97996c",
+      "bytes": 318,
+      "method": "Visible public DLD browser DOM"
+    }
+  ],
+  "record": {
+    "projectNumber": 4066,
+    "authorityName": "Avida Residences",
+    "registeredDeveloperName": "Serene Marina Real Estate Development L.L.C",
+    "registeredDeveloperNumber": 2139,
+    "downloadRegisterDeveloperId": 685297965,
+    "registeredDate": "2025-09-11",
+    "registerStartDate": "2026-01-02",
+    "scheduledCompletionDate": "2027-12-01",
+    "registeredUnits": 50,
+    "registerAreaSqm": 5652.37,
+    "locationLabel": "United Arab Emirates - Dubai - Avida Residences, Palm Deira",
+    "mapURL": "https://maps.google.com/?q=25.276987,55.296249",
+    "mapCoordinatesEligible": false,
+    "mapCoordinatesReason": "Repeated generic authority coordinates; not accepted as property geometry",
+    "buildingBreakdown": [
+      "Residential (50)",
+      "1 B/R (28)",
+      "2 B/R (10)",
+      "3 B/R (12)"
+    ],
+    "inspection": {
+      "date": "2026-08-25",
+      "percent": 6.81,
+      "status": "dated_authority_report",
+      "currentProgressEligible": false
+    },
+    "publicDeveloperContactDomain": "iqunaproperties.com",
+    "corporateEquivalenceInferred": false,
+    "firstAvailableAt": "2026-10-11T23:29:47.127Z",
+    "publicationDate": null,
+    "dateSemantics": "Registered is not first sale. Started is a source schedule field; completion is planned, not actual completion/occupancy. Inspection describes the dated authority report, not progress as of retrieval."
+  },
+  "rawCapturesRedistributed": false,
+  "fullContactDetailsRedistributed": false,
+  "coverageCredit": 0
+}

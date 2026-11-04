@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-08T21:54:50.934004+00:00",
+  "frontend": "20261009-map-evidence-v39",
+  "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+  "developerSalesCard": {
+    "unitsLaunched": 141,
+    "unitsSold": 138,
+    "netSalesAEDMillion": 357,
+    "revenueBacklogAEDMillion": 357,
+    "reportedSoldPercent": 98,
+    "JV50PercentBasisVisible": true,
+    "firstAvailabilityVisible": true
+  },
+  "desktop": {
+    "viewport": 1280,
+    "pageWidth": 1280,
+    "selectedMapBackground": "rgb(248, 250, 252)",
+    "selectedMapText": "rgb(32, 48, 68)"
+  },
+  "mobile": {
+    "viewport": 390,
+    "pageWidth": 390,
+    "panelWidth": 366,
+    "viewportReset": true
+  },
+  "method": "Live browser DOM/accessibility and screenshots",
+  "passed": true
+}

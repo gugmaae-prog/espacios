@@ -1,0 +1,44 @@
+{
+  "status": "next_batch_candidates_not_ingested",
+  "coverageCredit": 0,
+  "captures": [
+    {
+      "id": "ihg-opening-2022",
+      "url": "https://www.ihgplc.com/en/news-and-media/news-releases/2022/intercontinental-ras-ai-khaimah-mina-ai-arab-resort-and-spa-opens-its-doors",
+      "finalUrl": "https://www.ihgplc.com/en/news-and-media/news-releases/2022/intercontinental-ras-ai-khaimah-mina-ai-arab-resort-and-spa-opens-its-doors",
+      "httpStatus": 200,
+      "bytes": 104897,
+      "sha256": "94fd6b655ddf2728e627455a578ca8f46baad27e4fac113cdcd118f0e52dd77b",
+      "retrievedAt": "2026-10-08T22:27:38.302Z",
+      "status": "captured_pending_review"
+    },
+    {
+      "id": "minor-opening-2024",
+      "url": "https://media.minorhotels.com/en-GLO/233670-unveiling-the-uae-s-most-anticipated-resort-anantara-mina-al-arab-in-ras-al-khaimah/",
+      "status": "unavailable",
+      "error": "fetch failed",
+      "retrievedAt": "2026-10-08T22:27:40.853Z"
+    },
+    {
+      "id": "rak-fy2024",
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Investor-PPT-2024-Digital_new.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2025/02/RAKP-Investor-PPT-2024-Digital_new.pdf",
+      "httpStatus": 200,
+      "bytes": 11070973,
+      "sha256": "fee42a8a605875cd76986502b7a888bcb3c52b319afcb659a1210f7d9fd0fb59",
+      "retrievedAt": "2026-10-08T22:27:48.283Z",
+      "status": "captured_pending_review"
+    }
+  ],
+  "visualPagesReviewed": [
+    10,
+    30
+  ],
+  "findings": [
+    "FY2024 report page 10 explicitly states Anantara hotel opened 2 January 2024; hotel component only, no transfer to residences.",
+    "Page 30 provides cumulative project accounting as of 31 December 2024, retaining native AED million, NIL and Porto Playa 50% JV basis.",
+    "Quattro launched inventory changes from 631 at June 2024 to 888 at December 2024; retain dated launch-population vintages instead of rewriting total inventory.",
+    "IHG release dated 3 March 2022 announces an opened hotel. Publication date is not automatically the exact first operating date."
+  ],
+  "nextAction": "Prepare a separate exact-identity additive packet with opening/schedule reconciliation and native accounting snapshots; verify every figure and preserve capture-time availability before publishing."
+}

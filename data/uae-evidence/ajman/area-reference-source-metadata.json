@@ -1,0 +1,64 @@
+{
+  "dataset_id": "ajman-area",
+  "fields": [
+    {
+      "name": "area_in_ajman",
+      "description": null,
+      "annotations": {},
+      "label": "Area in Ajman",
+      "type": "text",
+      "label_en": "Area in Ajman",
+      "label_ar": "المنطقة في عجمان",
+      "description_en": null,
+      "description_ar": null
+    },
+    {
+      "name": "geopoint",
+      "description": null,
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "geopoint",
+      "type": "geo_point_2d",
+      "label_en": "geopoint",
+      "label_ar": "النقطة الجغرافية",
+      "description_en": null,
+      "description_ar": null
+    },
+    {
+      "name": "latitude",
+      "description": null,
+      "annotations": {},
+      "label": "latitude",
+      "type": "text",
+      "label_en": "latitude",
+      "label_ar": "خط العرض",
+      "description_en": null,
+      "description_ar": null
+    },
+    {
+      "name": "longitude",
+      "description": null,
+      "annotations": {},
+      "label": "longitude",
+      "type": "text",
+      "label_en": "longitude",
+      "label_ar": "خط الطول",
+      "description_en": null,
+      "description_ar": null
+    }
+  ],
+  "metas": {
+    "default": {
+      "title": "Ajman area",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "modified": "2023-10-03T09:39:18+00:00",
+      "publisher": "Municipality & Planning Department",
+      "records_count": 20,
+      "geometry_types": [
+        "Point"
+      ]
+    }
+  }
+}

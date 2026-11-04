@@ -1,0 +1,466 @@
+{
+  "version": "20261103-uae-evidence-coverage-v10",
+  "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
+  "acceptedSnapshot": {
+    "version": "20261014-enrichment-v48",
+    "projectRecords": 1645,
+    "mappedProjectRecords": 1518,
+    "approximateCommunityCentrePoints": 360,
+    "searchableWithoutCoordinates": 127,
+    "recordHistory": 1860,
+    "nativeHistorySeries": 16872
+  },
+  "publisherListingInventory": {
+    "sourceId": "rgestate-full-index-20261103",
+    "route": "/map/api/uae-evidence/rgestate/index",
+    "snapshotRows": 1708,
+    "explicitEmirateLocationLabelRows": 604,
+    "unassignedLocationLabelRows": 1104,
+    "method": "Exact equality against the publisher location label; no title, URL, nearby district, or coordinate inference.",
+    "geographyStatus": "publisher_label_unverified",
+    "availabilityStatus": "publisher_listed_at_capture_unverified_now",
+    "limits": "These are dated asking-listing facts, not registered transactions, project identities, project coordinates, or complete emirate inventories. Unassigned rows may still be located in one of the seven emirates; their location labels are not exact emirate names."
+  },
+  "allUaeProjectDenominator": null,
+  "projectCompletenessPercent": null,
+  "emirates": [
+    {
+      "name": "Abu Dhabi",
+      "acceptedV48": {
+        "projectRecords": 347,
+        "projectOrSourcePoints": 199,
+        "approximateCommunityCentrePoints": 21,
+        "withoutCoordinates": 127,
+        "communities": 22,
+        "initiatives": 12
+      },
+      "publishedSources": [
+        {
+          "id": "scad-abu-dhabi-census-2024-real-estate-stock",
+          "route": "/map/api/uae-evidence/abu-dhabi/stock",
+          "sourceRows": 8,
+          "grain": "region-year rounded building and unit stock",
+          "sourceVintage": "2023–2024",
+          "sourceUrl": "https://census.scad.gov.ae/home/realestate?lang=en",
+          "rights": "SCAD open-data policy with attribution",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ad-sdi-urban-development-projects-20261102",
+          "route": "/map/api/uae-evidence/abu-dhabi/urban-projects",
+          "sourceRows": 374,
+          "grain": "urban-development feature attributes, mixed uses",
+          "sourceVintage": "captured 2026-11-02",
+          "sourceUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/828",
+          "rights": "AD-SDI open-data terms with attribution",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "distinctSourceProjectIds": 372
+        },
+        {
+          "id": "ad-sdi-developer-projects-20261103",
+          "route": "/map/api/uae-evidence/abu-dhabi/developer-projects",
+          "sourceRows": 411,
+          "grain": "developer-project feature attributes and source polygons, mixed uses",
+          "sourceVintage": "captured 2026-11-03",
+          "sourceUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/207",
+          "rights": "AD-SDI open-data terms with attribution",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "distinctNames": 410,
+          "sourceGeometryAvailable": true,
+          "sourceGeometrySha256": "99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2"
+        }
+      ],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Abu%20Dhabi",
+        "explicitLocationLabelRows": 9,
+        "byPathClass": {
+          "sale": 2,
+          "rent": 6,
+          "off-plan": 0,
+          "business-sale": 1
+        },
+        "commercialCategoryRows": 8,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "No approved ADREC V55 transaction-data reuse; candidate sales remain unpublished.",
+        "No authoritative all-project denominator or verified coordinates for 127 accepted V48 records."
+      ],
+      "authoritativeAllProjectDenominator": null
+    },
+    {
+      "name": "Ajman",
+      "acceptedV48": {
+        "projectRecords": 10,
+        "projectOrSourcePoints": 2,
+        "approximateCommunityCentrePoints": 8,
+        "withoutCoordinates": 0,
+        "communities": 6,
+        "initiatives": 7
+      },
+      "publishedSources": [
+        {
+          "id": "ajman-dlrr-20260826-project-register",
+          "route": "/map/api/uae-evidence/ajman/register",
+          "sourceRows": 3457,
+          "grain": "dated project-register snapshots",
+          "sourceVintage": "2026-06-30",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/real-estate-projects/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "latestSourceProjectIds": 298,
+          "reviewedV48IdentityLinks": 4,
+          "reviewedVillaFamilyRelations": 30
+        },
+        {
+          "id": "ajman-dlrr-20260821-unit-sales",
+          "route": "/map/api/uae-evidence/ajman/sales",
+          "sourceRows": 6075,
+          "grain": "quarterly unit-sales aggregates",
+          "sourceVintage": "2026-08-21T04:37:58.396000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/real-estate-units-sales/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260821-unit-registration",
+          "route": "/map/api/uae-evidence/ajman/registrations",
+          "sourceRows": 5124,
+          "grain": "quarterly registration-stage aggregates",
+          "sourceVintage": "2026-08-21T04:36:00.775000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/real-estate-units-registration/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260821-unit-dispositions",
+          "route": "/map/api/uae-evidence/ajman/dispositions",
+          "sourceRows": 6299,
+          "grain": "mixed unit dispositions and mortgage aggregates",
+          "sourceVintage": "2026-08-21T04:40:00.945000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/real-estate-units-transactions/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260609-project-management",
+          "route": "/map/api/uae-evidence/ajman/management",
+          "sourceRows": 451,
+          "grain": "annual project-management appointments",
+          "sourceVintage": "2026-06-09T04:23:49.791000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/management-companies-for-real-estate-development-projects/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-mpd-20231003-area-reference",
+          "route": "/map/api/uae-evidence/ajman/areas",
+          "sourceRows": 20,
+          "grain": "dated named area reference points",
+          "sourceVintage": "2023-10-03T09:39:18+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/ajman-area/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-mpd-20260901-building-permits-by-type",
+          "route": "/map/api/uae-evidence/ajman/building-permits",
+          "sourceRows": 741,
+          "grain": "building-type-month permit counts with ambiguous and blank rows withheld",
+          "sourceVintage": "2026-09-01T08:11:41.069000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/building-licenses-by-building-type/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "usableRows": 537,
+          "conflictingGroups": 33,
+          "completeYears": [
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
+          ]
+        },
+        {
+          "id": "ajman-dlrr-20260821-land-sales",
+          "route": "/map/api/uae-evidence/ajman/land-sales",
+          "sourceRows": 1554,
+          "grain": "district-quarter land-sales aggregates",
+          "sourceVintage": "2026-08-21T04:22:34.886000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/lands-sales/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260821-land-dispositions",
+          "route": "/map/api/uae-evidence/ajman/land-dispositions",
+          "sourceRows": 1646,
+          "grain": "district-quarter mixed land dispositions and mortgage aggregates",
+          "sourceVintage": "2026-08-21T04:29:59.419000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/lands-transactions/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260821-unit-mortgages",
+          "route": "/map/api/uae-evidence/ajman/unit-mortgages",
+          "sourceRows": 651,
+          "grain": "project-label-quarter unit mortgage aggregates",
+          "sourceVintage": "2026-08-21T04:35:06.802000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/real-estate-units-mortgage/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-municipality-ajman-certified-rent-2026-09-08",
+          "route": "/map/api/uae-evidence/ajman/rent-contracts?city=ajman",
+          "sourceRows": 948,
+          "grain": "city-month certified-rent contract counts",
+          "sourceVintage": "2026-09-08T04:39:41.424000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/certified-rent-contracts-in-ajman/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-municipality-manama-certified-rent-2026-09-23",
+          "route": "/map/api/uae-evidence/ajman/rent-contracts?city=manama",
+          "sourceRows": 946,
+          "grain": "city-month certified-rent contract counts",
+          "sourceVintage": "2026-09-23T10:50:20.364000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/certified-rent-contract-in-manama/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-municipality-masfoot-certified-rent-2025-11-26",
+          "route": "/map/api/uae-evidence/ajman/rent-contracts?city=masfoot",
+          "sourceRows": 862,
+          "grain": "city-month certified-rent contract counts",
+          "sourceVintage": "2025-11-26T05:57:10.257000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/certified-rent-contracts-in-masfoot/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory"
+        }
+      ],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Ajman",
+        "explicitLocationLabelRows": 32,
+        "byPathClass": {
+          "sale": 20,
+          "rent": 10,
+          "off-plan": 0,
+          "business-sale": 2
+        },
+        "commercialCategoryRows": 16,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "Only four latest official project IDs have reviewed one-to-one V48 identities; 30 more villa IDs have family-level relations only.",
+        "Source records do not provide verified project-site coordinates or complete rent prices."
+      ],
+      "authoritativeAllProjectDenominator": null
+    },
+    {
+      "name": "Dubai",
+      "acceptedV48": {
+        "projectRecords": 1119,
+        "projectOrSourcePoints": 825,
+        "approximateCommunityCentrePoints": 294,
+        "withoutCoordinates": 0,
+        "communities": 147,
+        "initiatives": 11
+      },
+      "publishedSources": [
+        {
+          "id": "continental-dld-mashrooi-project-status-20261101",
+          "route": "/map/api/uae-evidence/dubai/project-status",
+          "sourceRows": 3871,
+          "grain": "dated DLD project-status register copy",
+          "sourceVintage": "2026-11-01",
+          "sourceUrl": "https://continentalclub.ae/en/project-status/",
+          "rights": "CC BY 4.0 secondary publication",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "reviewedV48IdentityLinks": 79,
+          "unmatchedSourceProjectIds": 3792
+        }
+      ],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Dubai",
+        "explicitLocationLabelRows": 5,
+        "byPathClass": {
+          "sale": 4,
+          "rent": 1,
+          "off-plan": 0,
+          "business-sale": 0
+        },
+        "commercialCategoryRows": 3,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "The primary DLD project-register raw vintage is not retained; the published status copy is secondary.",
+        "Most source project IDs remain separate from V48 identities."
+      ],
+      "authoritativeAllProjectDenominator": null
+    },
+    {
+      "name": "Fujairah",
+      "acceptedV48": {
+        "projectRecords": 1,
+        "projectOrSourcePoints": 0,
+        "approximateCommunityCentrePoints": 1,
+        "withoutCoordinates": 0,
+        "communities": 2,
+        "initiatives": 6
+      },
+      "publishedSources": [],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Fujairah",
+        "explicitLocationLabelRows": 3,
+        "byPathClass": {
+          "sale": 2,
+          "rent": 0,
+          "off-plan": 0,
+          "business-sale": 1
+        },
+        "commercialCategoryRows": 2,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "No reusable bulk project register or verified project-site coordinate source established."
+      ],
+      "authoritativeAllProjectDenominator": null
+    },
+    {
+      "name": "Ras Al Khaimah",
+      "acceptedV48": {
+        "projectRecords": 89,
+        "projectOrSourcePoints": 68,
+        "approximateCommunityCentrePoints": 21,
+        "withoutCoordinates": 0,
+        "communities": 15,
+        "initiatives": 9
+      },
+      "publishedSources": [],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Ras%20Al%20Khaimah",
+        "explicitLocationLabelRows": 7,
+        "byPathClass": {
+          "sale": 4,
+          "rent": 3,
+          "off-plan": 0,
+          "business-sale": 0
+        },
+        "commercialCategoryRows": 4,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "The public off-plan list has not been cleared for backend republication or reconciled to V48 identities."
+      ],
+      "authoritativeAllProjectDenominator": null
+    },
+    {
+      "name": "Sharjah",
+      "acceptedV48": {
+        "projectRecords": 59,
+        "projectOrSourcePoints": 49,
+        "approximateCommunityCentrePoints": 10,
+        "withoutCoordinates": 0,
+        "communities": 18,
+        "initiatives": 7
+      },
+      "publishedSources": [],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Sharjah",
+        "explicitLocationLabelRows": 355,
+        "byPathClass": {
+          "sale": 191,
+          "rent": 162,
+          "off-plan": 0,
+          "business-sale": 2
+        },
+        "commercialCategoryRows": 130,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "No reusable bulk project register or verified project-site coordinate source established."
+      ],
+      "authoritativeAllProjectDenominator": null
+    },
+    {
+      "name": "Umm Al Quwain",
+      "acceptedV48": {
+        "projectRecords": 20,
+        "projectOrSourcePoints": 15,
+        "approximateCommunityCentrePoints": 5,
+        "withoutCoordinates": 0,
+        "communities": 5,
+        "initiatives": 8
+      },
+      "publishedSources": [],
+      "publisherListingSnapshot": {
+        "sourceId": "rgestate-full-index-20261103",
+        "route": "/map/api/uae-evidence/rgestate/index?emirate=Umm%20Al%20Quwain",
+        "explicitLocationLabelRows": 193,
+        "byPathClass": {
+          "sale": 87,
+          "rent": 105,
+          "off-plan": 0,
+          "business-sale": 1
+        },
+        "commercialCategoryRows": 144,
+        "evidenceClass": "brokerage_advertised_listing_facts",
+        "geographyStatus": "publisher_label_unverified",
+        "availabilityStatus": "publisher_listed_at_capture_unverified_now"
+      },
+      "gaps": [
+        "No reusable bulk project register or verified project-site coordinate source established."
+      ],
+      "authoritativeAllProjectDenominator": null
+    }
+  ],
+  "basisSha256": {
+    "heatmap": "98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d",
+    "heatmapManifest": "4c4d8e66394984b0ffa2fc4149226ee10b3ee11098b8c9268fefce91a96a0b7f",
+    "inventory": "bbea6d6daf05894a00431f14bc3b0e0af59bbf77eb6a1ac40acc1e24e7f60aa7",
+    "nativeIndex": "a637adc5e274913abae6a1020a3b906b9bb1257198dd13c466a9e38d4e5c39ba",
+    "urban": "55712a99dffe8f874a922b84d45be84cbada6b828bde8df2ce9be83b50da37c9",
+    "developerProjects": "164af448570dabd0dfd512a8977fb7fbf7a758d77116ce095b86c3147a4eadb6",
+    "developerGeometry": "96b3dff68b292368db50648eb5140031c0fedbd8b4d4624564b781274c91131f",
+    "ajmanRegister": "869289fe3bda282651d3ac1a06dddcbd0dd92520a52cec80982ba2f0fc8b2103",
+    "ajmanSales": "ca027f3ccfc10bf16ad688bf0624fcbbea36a0803d0bd14a82687ca7d6240609",
+    "ajmanRegistrations": "621b6a13e0ad452458728e996fc366dbce1f56cb4b88c3f78ff5aab6e16413ad",
+    "ajmanDispositions": "869002c92d7f242e0365b56785e36123522d581a96c2fd31a46cdf8a29e2f142",
+    "ajmanManagement": "14296f6890d4ba45450372ee5692de45f318ef7ff75c4b24123fae52867696b9",
+    "ajmanAreas": "fa25b9edd0cb846b20e40e6a6cbb2607e390ccc3e7d70fb8d8298e9327ed091b",
+    "ajmanBuildingPermits": "a1ae59081b39ca2e15729a50e241218abbd096579c10017fe6b896e79f33fbcf",
+    "ajmanLandSales": "8f9f14d4763f756969610d3e4b0271d3589e5180ccdd248888844de08342e96d",
+    "ajmanLandDispositions": "cbc6a97374a316eceede8e68dad51f35ce7db8db1a00bdf60de0aa468904f7fa",
+    "ajmanUnitMortgages": "c32ce09771fd28a77b80c0f99bef1512b5f10474423b1ed318469123f7340a0a",
+    "ajmanRents": "0af8b5b7b4d29f9e3a4205292fd0a5f57bd4375a01af6f30a5279909c72f48b2",
+    "ajmanCrosswalk": "b2d532fafc547bb2fe65274f9247ff46e641f48bf79759a7ca9ac6fa27e5b0e6",
+    "rgeIndex": "3208dd03379ac5c989bf0f4e29e98f29b68743cc70a9dd5d51eba47a0f08f60f",
+    "rgeLabels": "2fad8d6ea31d7589a8f9d11778232abf6fc0d1d8806ec0b5908a4a594550d75f",
+    "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
+    "dubaiCrosswalk": "ca98fa68a2b8f1df440cb1d26294ff23ed15d850aa70787db4cb50f81d9641e6"
+  }
+}

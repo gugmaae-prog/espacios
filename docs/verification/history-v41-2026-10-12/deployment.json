@@ -1,0 +1,17 @@
+{
+  "frontend": "20261012-map-evidence-v45",
+  "history": "20261012-enrichment-v41",
+  "sourceSHA": "76f2e9dae622a1c1a6855217106b4b641e6a6fe5",
+  "ci": "https://github.com/gugmaae-prog/espacios/actions/runs/38181125643",
+  "workerVersion": "e01d432f-33da-4141-acc1-6079d930b1a0",
+  "deployment": "9e38df3c-a147-4f5c-a940-ee239c6ce8ec",
+  "trafficPercent": 100,
+  "activatedAt": "2026-10-11T22:41:41.192828Z",
+  "route": "espacios.me/map* -> espacios-map-shell -> MAP production -> psr-portfolio-map-v2",
+  "supabaseRegistry": "c99cc747-1639-451e-9ef0-7dda2ea63c27",
+  "supabaseReconciled": true,
+  "publisherDeleted": true,
+  "temporaryAuthenticationRemoved": true,
+  "sourceSyncState": "pending_merge",
+  "researchComplete": false
+}

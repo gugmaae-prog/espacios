@@ -1,0 +1,65 @@
+{
+  "origin": "https://espacios.me",
+  "checkedAt": "2026-10-08T20:19:31.776Z",
+  "version": "20261008-enrichment-v33",
+  "readOnly": true,
+  "records": [
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "firstEvidenceMonth": "2024-05",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:studios-apartments-and-penthouses-skai-raha-island",
+      "firstEvidenceMonth": "2025-02",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:mirasol-by-rak-properties-in-mina-al-arab",
+      "firstEvidenceMonth": "2025-01",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:mirasol-2-north-harbour-mina-rak-uae",
+      "firstEvidenceMonth": "2025-09",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:enta-mina-hive-rak-properties-uae",
+      "firstEvidenceMonth": "2025-05",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:anantara-mina-ras-al-khaimah-residences",
+      "firstEvidenceMonth": "2024-10",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "firstEvidenceMonth": "2025-12",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    },
+    {
+      "recordId": "project:buy-apartment-solera-raha-island",
+      "firstEvidenceMonth": "2025-06",
+      "priceApplicabilityKnown": false,
+      "priceNotApplicableMonths": 0,
+      "firstPriceMonthStatus": "missing"
+    }
+  ],
+  "passed": true
+}
