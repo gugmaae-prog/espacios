@@ -76,7 +76,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows,817);assert.equal(areas.unmappedRows,77);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261109-map-stack-v28');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261109-map-stack-v29');
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);

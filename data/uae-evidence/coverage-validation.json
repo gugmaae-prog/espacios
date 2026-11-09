@@ -1,5 +1,5 @@
 {
-  "version": "20261103-uae-evidence-coverage-v10",
+  "version": "20261109-uae-evidence-coverage-v11",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -385,7 +385,21 @@
         "communities": 18,
         "initiatives": 7
       },
-      "publishedSources": [],
+      "publishedSources": [
+        {
+          "id": "sharjah-rerd-reported-market-aggregates-20261109",
+          "route": "/map/api/uae-evidence/sharjah/market-aggregates",
+          "sourceRows": 2,
+          "grain": "emirate cumulative market aggregates",
+          "sourceVintage": "2026 H1 and January–September",
+          "sourceUrl": "https://sharjah24.ae/en/Articles/2026/10/13/AL021",
+          "rights": "numerical facts and source links only; article content excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "notTransactionLevel": true,
+          "notProjectRegister": true,
+          "sourceSha256": "07167d9922c6ae2227152a9179af635e03fdd985ca73a445e2c4eccc77616de0"
+        }
+      ],
       "publisherListingSnapshot": {
         "sourceId": "rgestate-full-index-20261103",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Sharjah",
@@ -402,7 +416,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "No reusable bulk project register or verified project-site coordinate source established."
+        "Two published cumulative market aggregates are available, but no reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -461,6 +475,7 @@
     "rgeIndex": "3208dd03379ac5c989bf0f4e29e98f29b68743cc70a9dd5d51eba47a0f08f60f",
     "rgeLabels": "2fad8d6ea31d7589a8f9d11778232abf6fc0d1d8806ec0b5908a4a594550d75f",
     "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
-    "dubaiCrosswalk": "ca98fa68a2b8f1df440cb1d26294ff23ed15d850aa70787db4cb50f81d9641e6"
+    "dubaiCrosswalk": "ca98fa68a2b8f1df440cb1d26294ff23ed15d850aa70787db4cb50f81d9641e6",
+    "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df"
   }
 }
