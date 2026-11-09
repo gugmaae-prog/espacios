@@ -33,7 +33,7 @@ test('compiled Worker serves the area source without making its raw bytes public
  const response=await worker.fetch(request('?q=YASMEEN'),env,{}),body=await response.json();
  assert.equal(response.status,200);assert.equal(body.totalRows,1);assert.equal(body.rows[0].areaName,'YASMEEN');
  assert.equal(body.source.storage,'checksum_verified_immutable_worker_snapshot');
- assert.equal(response.headers.get('x-espacios-map-release'),'20261109-map-stack-v36');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261109-map-stack-v37');
  const raw=await worker.fetch(new Request('https://espacios.me/map/area-reference-20231003.json.gz'),env,{});
  assert.equal(raw.status,404);
 });

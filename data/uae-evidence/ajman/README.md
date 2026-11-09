@@ -18,6 +18,12 @@ The [Real Estate Projects dataset](https://data.ajman.ae/explore/dataset/real-es
 
 The [Completed Real Estate Development Projects dataset](https://data.ajman.ae/explore/dataset/completed-real-estate-projects/) has 496 dated rows and 191 source project IDs. Its IDs and dated completed statuses exactly match rows already in the development-project register, so it adds no new project identities. It must not be added to the 364-ID register or the V48 map count.
 
+## New-building permissions by broad use
+
+The municipality's [Licenses Issued for New Buildings by Number of Buildings](https://data.ajman.ae/explore/dataset/licenses-issued-for-new-buildings-by-number-of-buildings/) is a separate CC BY 4.0 dataset. Two independent full exports matched exactly. The captured 23 September 2026 vintage has 284 month/use rows for 2015–June 2026. Eight 2023 month/use pairs contain conflicting duplicate values, so both values in each pair are withheld. The remaining 268 rows include complete 2024 and 2025 series; 2026 is partial through June.
+
+`/map/api/uae-evidence/ajman/new-building-use` exposes the verified rows, with year, month, and broad residential or non-residential use filters. The 2025 non-residential rows sum to **228 buildings on new-building permissions**. Non-residential includes uses beyond commercial; this is not a count of commercial spaces, completed buildings, transactions, or current inventory. The source is distinct from the Ajman building-type permit series and must not be added to it. `new-building-use-capture.json`, `new-building-use-validation.json`, the metadata, and the immutable compressed export retain exact provenance and checksums. The commercial page labels this as historical permit evidence.
+
 ## Tentative and final unit registrations
 
 The separate [Real Estate Units Registration dataset](https://data.ajman.ae/explore/dataset/real-estate-units-registration/) is CC BY 4.0 and contains 5,124 quarterly aggregate rows from 2019 Q1 through 2026 Q2 under 335 source project labels. Its two measures are tentative registration certificates and final title deeds. The captured rows sum to 14,242 certificates and 7,852 title deeds; these are separate stages and must not be added into a unique-unit or sale count. The source does not identify individual transactions.

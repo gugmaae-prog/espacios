@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261109-map-stack-v36';
+var MAP_STACK_RELEASE='20261109-map-stack-v37';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -79,6 +79,7 @@ worker_default.fetch=async function(request,env,ctx){
  const ajmanManagement=await mapAjmanManagement(request,UAE_AJMAN_MANAGEMENT_REPORT,UAE_AJMAN_MANAGEMENT_PACKED);if(ajmanManagement)return mapStackPreparedResponse(request,ajmanManagement);
  const ajmanAreaReference=await mapAjmanAreaReference(request,UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED);if(ajmanAreaReference)return mapStackPreparedResponse(request,ajmanAreaReference);
  const ajmanBuildingPermits=await mapAjmanBuildingPermits(request,UAE_AJMAN_BUILDING_PERMITS_REPORT,UAE_AJMAN_BUILDING_PERMITS_PACKED);if(ajmanBuildingPermits)return mapStackPreparedResponse(request,ajmanBuildingPermits);
+ const ajmanNewBuildingUse=await mapAjmanNewBuildingUse(request,UAE_AJMAN_NEW_BUILDING_REPORT,UAE_AJMAN_NEW_BUILDING_PACKED);if(ajmanNewBuildingUse)return mapStackPreparedResponse(request,ajmanNewBuildingUse);
  const ajmanLandSales=await mapAjmanLandSales(request,UAE_AJMAN_LAND_SALES_REPORT,UAE_AJMAN_LAND_SALES_PACKED);if(ajmanLandSales)return mapStackPreparedResponse(request,ajmanLandSales);
  const ajmanLandDispositions=await mapAjmanLandDispositions(request,UAE_AJMAN_LAND_DISPOSITIONS_REPORT,UAE_AJMAN_LAND_DISPOSITIONS_PACKED);if(ajmanLandDispositions)return mapStackPreparedResponse(request,ajmanLandDispositions);
  const ajmanUnitMortgages=await mapAjmanUnitMortgages(request,UAE_AJMAN_UNIT_MORTGAGES_REPORT,UAE_AJMAN_UNIT_MORTGAGES_PACKED);if(ajmanUnitMortgages)return mapStackPreparedResponse(request,ajmanUnitMortgages);
