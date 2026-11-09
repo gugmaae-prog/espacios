@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 
 const source=await fs.readFile(new URL('../src/worker.js',import.meta.url),'utf8');
 const context=vm.createContext({console,Headers,Request,Response,URL,URLSearchParams,atob,btoa,TextEncoder,TextDecoder,DecompressionStream,CompressionStream,ReadableStream,Blob,crypto:globalThis.crypto});
-vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,''),context);
+vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,'').replace(/^export /gm,''),context);
 const app=await(await vm.runInContext('aePatchedAppJs()',context)).text();
 const extension=await fs.readFile(new URL('../src/mobile-map/worker-extension.js',import.meta.url),'utf8');
 const frontendRelease=/var MM_RELEASE\s*=\s*['"]([^'"]+)['"]/.exec(extension)?.[1];
