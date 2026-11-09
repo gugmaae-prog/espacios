@@ -53,7 +53,7 @@ export const rgeAreaLocationFor=row=>{const area=rgeAreaFor(row);return area?{ke
 let RGE_ROWS;
 let RGE_CACHE_SHA;
 const rgeDigest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
-const rgeReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-commercial-category-20261103',...(status===405?{allow:'GET, HEAD'}:{})}});
+const rgeReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-commercial-category-20261109',...(status===405?{allow:'GET, HEAD'}:{})}});
 
 async function rgeVerifiedRows(report,packed){
  if(RGE_CACHE_SHA!==report.rawSha256){RGE_ROWS=undefined;RGE_CACHE_SHA=report.rawSha256;}
@@ -87,7 +87,7 @@ export async function mapRgestateCommercial(request,report,packed){
    return rgeReply(request,{source:{id:report.sourceId,observedAt:report.observedAt,evidenceClass:report.evidenceClass,rawSha256:report.rawSha256},scope:{totalSnapshotRows:report.rows,availability:'publisher_listed_at_capture_unverified_now',mapGranularity:'publisher_area_label',unitCoordinatesPresent:false,areaReference:'OpenStreetMap',areaAttribution:'© OpenStreetMap contributors',mapLimits:'Circles represent publisher location labels at reviewed OSM area references; they are not property, building, or available-unit pins. Unmatched listings remain in the list.'},filters:{purpose,q:q||null},totalRows:matches.length,mappedRows:matches.length-unmappedRows,unmappedRows,areas});
   }
   const listed=area?matches.filter(row=>rgeAreaFor(row)?.[0]===area):matches;
-  return rgeReply(request,{source:{id:report.sourceId,publisher:report.publisher,categoryUrls:report.categoryUrls,observedAt:report.observedAt,evidenceClass:report.evidenceClass,rawSha256:report.rawSha256,verification:report.verification,storage:'checksum_verified_immutable_worker_snapshot'},scope:{totalSnapshotRows:report.rows,rentRows:report.rentRows,saleRows:report.saleRows,availability:'publisher_listed_at_capture_unverified_now',limits:report.limits,photosIncluded:false,coordinatesPresent:false,registeredTransactionEvidence:false},filters:{purpose,q:q||null,area},totalRows:listed.length,limit,offset,rows:listed.slice(offset,offset+limit)});
+  return rgeReply(request,{source:{id:report.sourceId,publisher:report.publisher,categoryUrls:report.categoryUrls,observedAt:report.observedAt,evidenceClass:report.evidenceClass,rawSha256:report.rawSha256,verification:report.verification,comparison:report.comparison,storage:'checksum_verified_immutable_worker_snapshot'},scope:{totalSnapshotRows:report.rows,rentRows:report.rentRows,saleRows:report.saleRows,availability:'publisher_listed_at_capture_unverified_now',limits:report.limits,photosIncluded:false,coordinatesPresent:false,registeredTransactionEvidence:false},filters:{purpose,q:q||null,area},totalRows:listed.length,limit,offset,rows:listed.slice(offset,offset+limit)});
  }catch{return rgeReply(request,{error:'The verified commercial listing snapshot is temporarily unavailable.'},503);}
 }
 
@@ -184,7 +184,8 @@ const RGE_PAGE=`<!doctype html><html lang="en" data-theme="light"><head><meta ch
    const response=await fetch(url,{signal:listController.signal});if(!response.ok)throw Error('Source unavailable');const data=await response.json();
    const fragment=document.createDocumentFragment();data.rows.forEach(row=>fragment.appendChild(card(row)));
    if(!append)cards.replaceChildren();cards.appendChild(fragment);offset=nextOffset+data.rows.length;total=data.totalRows;
-   summary.textContent=total?number.format(total)+' publisher-listed spaces · availability unverified':'No matching spaces in this snapshot.';
+   const observed=data.source?.observedAt?new Date(data.source.observedAt).toLocaleDateString('en-AE',{day:'numeric',month:'short',year:'numeric'}):'dated snapshot';
+   summary.textContent=total?number.format(total)+' publisher-listed spaces · captured '+observed+' · availability unverified':'No matching spaces in the '+observed+' snapshot.';
    more.textContent='Show more';more.onclick=()=>loadCards(true);more.hidden=offset>=total;
   }catch(error){if(error.name==='AbortError')return;summary.textContent='The verified listing snapshot is temporarily unavailable. Retry below.';more.hidden=false;more.textContent='Retry';more.onclick=()=>loadCards(false)}
  }

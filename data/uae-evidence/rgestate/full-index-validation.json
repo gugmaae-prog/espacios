@@ -1,40 +1,110 @@
 {
-  "sourceId": "rgestate-full-index-20261103",
+  "sourceId": "rgestate-full-index-20261109",
   "publisher": "RGEstate",
   "sourceUrl": "https://www.rgestate.com/properties",
-  "observedAt": "2026-11-03T09:02:31Z",
+  "observedAt": "2026-11-09T17:16:27.531472+00:00",
   "captures": [
     {
       "pass": "first",
-      "retrievedAt": "2026-11-03T08:59:19Z",
-      "pages": 82,
-      "pageManifestSha256": "2322df382a72be9e975fc6a56741244ad1fce4c805a0c85c4d88777ea16b77e6"
+      "retrievedAt": "2026-11-09T17:14:46.794544+00:00",
+      "pages": 80,
+      "pageManifestSha256": "34bf803b6a462332810c83487b0e3084765d43c1aeeecf6b6b6957bb2883bfcd"
     },
     {
       "pass": "second",
-      "retrievedAt": "2026-11-03T09:02:31Z",
-      "pages": 82,
-      "pageManifestSha256": "e39b09f56cd54a0d2620bdf5c431e55274e5acb84c8836b64e2582a04714bd3f"
+      "retrievedAt": "2026-11-09T17:16:27.531472+00:00",
+      "pages": 80,
+      "pageManifestSha256": "c90e78ecb7cb2c06c997853979f9c620f6812adaaef9fd1a3058bb0a6b5d5759"
     }
   ],
   "evidenceClass": "brokerage_advertised_listing_facts",
   "rights": "Owner confirmed reuse of factual details and links for all RGEstate listings, including third-party advertisers; photos excluded.",
-  "rows": 1708,
+  "rows": 1670,
   "pathClassCounts": {
-    "rent": 756,
-    "sale": 831,
+    "rent": 727,
+    "sale": 823,
     "off-plan": 15,
-    "business-sale": 106
+    "business-sale": 105
   },
-  "commercialCategoryRows": 894,
-  "notInCommercialCategoryRows": 814,
-  "missingAreaRows": 602,
+  "comparison": {
+    "previousSourceId": "rgestate-full-index-20261103",
+    "previousObservedAt": "2026-11-03T09:02:31Z",
+    "previousRawSha256": "1a6ecad078a8664dc4b79f6bf3ee31d40e5c790888580629b98300ffe1a9af83",
+    "continuingIds": 1670,
+    "addedIds": [],
+    "absentFromCurrentIndexIds": [
+      "44251",
+      "46522",
+      "46580",
+      "46769",
+      "47177",
+      "49327",
+      "49433",
+      "49540",
+      "49544",
+      "49629",
+      "50091",
+      "50292",
+      "51271",
+      "52188",
+      "54695",
+      "55694",
+      "55988",
+      "57625",
+      "59305",
+      "59306",
+      "59333",
+      "59341",
+      "59342",
+      "59344",
+      "59416",
+      "59447",
+      "59601",
+      "59650",
+      "59717",
+      "59718",
+      "59779",
+      "59780",
+      "60555",
+      "60556",
+      "60562",
+      "60569",
+      "60725",
+      "60754"
+    ],
+    "changedAskingPrices": [
+      {
+        "sourceListingId": "43704",
+        "previousPriceLabel": "AED 42,000,000",
+        "currentPriceLabel": "AED 55,000,000"
+      },
+      {
+        "sourceListingId": "59468",
+        "previousPriceLabel": "AED 42,000,000",
+        "currentPriceLabel": "AED 44,000,000"
+      },
+      {
+        "sourceListingId": "59759",
+        "previousPriceLabel": "AED 2,400,000 / Year",
+        "currentPriceLabel": "AED 4,000,000 / Year"
+      },
+      {
+        "sourceListingId": "60554",
+        "previousPriceLabel": "AED 11,000,000",
+        "currentPriceLabel": "AED 20,000,000"
+      }
+    ],
+    "limits": "A missing publisher index ID does not establish a sale, withdrawal, or current unavailability. Price changes are advertised asks, not transactions."
+  },
+  "commercialCategoryRows": 863,
+  "notInCommercialCategoryRows": 807,
+  "missingAreaRows": 595,
   "missingLocationRows": 23,
-  "unknownPriceRows": 144,
-  "rawBytes": 899930,
-  "rawSha256": "1a6ecad078a8664dc4b79f6bf3ee31d40e5c790888580629b98300ffe1a9af83",
-  "compressedBytes": 91205,
-  "compressedSha256": "96da5c887a72f5d5577b2e1fc58f8da0f95155750100fe14b972b8a9a71429c5",
-  "verification": "Two independent 82-page full-index reads matched all 1,708 facts; each captured HTML page checksum passed; all 894 commercial-category rows match the full index.",
+  "unknownPriceRows": 143,
+  "rawBytes": 879412,
+  "rawSha256": "366428ffadb56adbf2d995be31b93ce723a8b9d3b3008e778b2b7e503ab16096",
+  "compressedBytes": 89411,
+  "compressedSha256": "7ece8af1957661f3baa9f7253f3f7b344b48174f5a3eade50b54966b0604f05c",
+  "verification": "Two independent 1670-row full-index reads matched facts; each captured HTML page checksum passed; all 863 commercial-category rows match the full index.",
   "limits": "Publisher-listed at capture only. Current availability, category for rows outside the verified commercial pages, asking-price accuracy, coordinates, and exact project identity are unverified. Business-sale asks can include operating businesses and are not property prices. Off-plan path entries have no verified sale/rent classification. Not registered transactions or a complete UAE inventory."
 }

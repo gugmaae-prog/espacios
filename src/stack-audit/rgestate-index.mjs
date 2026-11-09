@@ -9,7 +9,7 @@ const RGE_EMIRATES=['Abu Dhabi','Ajman','Dubai','Fujairah','Ras Al Khaimah','Sha
 let RGE_INDEX_ROWS;
 let RGE_INDEX_CACHE_SHA;
 const rgeIndexDigest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
-const rgeIndexReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-full-index-20261103',...(status===405?{allow:'GET, HEAD'}:{})}});
+const rgeIndexReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-full-index-20261109',...(status===405?{allow:'GET, HEAD'}:{})}});
 
 async function rgeIndexVerifiedRows(report,packed){
  if(RGE_INDEX_CACHE_SHA!==report.rawSha256){RGE_INDEX_ROWS=undefined;RGE_INDEX_CACHE_SHA=report.rawSha256;}
@@ -32,7 +32,7 @@ async function rgeIndexVerifiedRows(report,packed){
 }
 
 function rgeIndexLabelReport(report,labels,rows){
- if(labels?.sourceRawSha256!==report.rawSha256||labels.sourceId!==report.sourceId||JSON.stringify(labels.labelMap)!==JSON.stringify(RGE_EMIRATE_LABELS)||labels.explicitEmirateRows!==604||labels.unassignedRows!==1104)throw Error('Publisher emirate label derivation changed');
+ if(labels?.sourceRawSha256!==report.rawSha256||labels.sourceId!==report.sourceId||JSON.stringify(labels.labelMap)!==JSON.stringify(RGE_EMIRATE_LABELS)||labels.explicitEmirateRows+labels.unassignedRows!==rows.length)throw Error('Publisher emirate label derivation changed');
  let assigned=0;
  for(const emirate of RGE_EMIRATES){
   const subset=rows.filter(row=>RGE_EMIRATE_LABELS[row.locationLabel]===emirate);
@@ -43,10 +43,10 @@ function rgeIndexLabelReport(report,labels,rows){
  if(assigned!==labels.explicitEmirateRows||rows.length-assigned!==labels.unassignedRows)throw Error('Publisher unassigned label count changed');
 }
 
-async function rgeIndexAreaReport(report,areas,rows){
- if(areas?.sourceRawSha256!==report.rawSha256||areas.sourceId!==report.sourceId||areas.reviewedAreaReferences!==30||areas.reviewedAreaRows!==767||areas.unresolvedRows!==337||areas.areaReferenceSha256!==await rgeIndexDigest(new TextEncoder().encode(JSON.stringify({areas:RGE_AREA_CENTRES,emirates:RGE_AREA_EMIRATES}))))throw Error('Reviewed area geography derivation changed');
+async function rgeIndexAreaReport(report,areas,labels,rows){
+ if(areas?.sourceRawSha256!==report.rawSha256||areas.sourceId!==report.sourceId||areas.reviewedAreaReferences!==30||areas.reviewedAreaRows+areas.unresolvedRows!==labels.unassignedRows||areas.areaReferenceSha256!==await rgeIndexDigest(new TextEncoder().encode(JSON.stringify({areas:RGE_AREA_CENTRES,emirates:RGE_AREA_EMIRATES}))))throw Error('Reviewed area geography derivation changed');
  const matched=rows.filter(row=>!RGE_EMIRATE_LABELS[row.locationLabel]&&rgeAreaLocationFor(row));
- if(matched.length!==areas.reviewedAreaRows||rows.length-604-matched.length!==areas.unresolvedRows||RGE_EMIRATES.some(name=>matched.filter(row=>rgeAreaLocationFor(row).emirate===name).length!==areas.byEmirate[name]))throw Error('Reviewed area geography counts changed');
+ if(matched.length!==areas.reviewedAreaRows||rows.length-labels.explicitEmirateRows-matched.length!==areas.unresolvedRows||RGE_EMIRATES.some(name=>matched.filter(row=>rgeAreaLocationFor(row).emirate===name).length!==areas.byEmirate[name]))throw Error('Reviewed area geography counts changed');
 }
 
 export async function mapRgestateIndex(request,report,packed,labels,areas){
@@ -59,9 +59,9 @@ export async function mapRgestateIndex(request,report,packed,labels,areas){
  try{
   const rows=await rgeIndexVerifiedRows(report,packed),needle=q.toLocaleLowerCase('en');
   rgeIndexLabelReport(report,labels,rows);
-  await rgeIndexAreaReport(report,areas,rows);
+  await rgeIndexAreaReport(report,areas,labels,rows);
   const locationFor=row=>RGE_EMIRATE_LABELS[row.locationLabel]||rgeAreaLocationFor(row)?.emirate||null;
   const matches=rows.filter(row=>(kind==='all'||row.listingPathClass===kind)&&(commercial==='all'||row.commercialCategoryMember===(commercial==='yes'))&&(emirate==='all'||(emirate==='unassigned'?!RGE_EMIRATE_LABELS[row.locationLabel]:RGE_EMIRATE_LABELS[row.locationLabel]===emirate))&&(locationEmirate==='all'||(locationEmirate==='unresolved'?!locationFor(row):locationFor(row)===locationEmirate))&&(!needle||[row.title,row.locationLabel,row.sourceListingId].some(value=>String(value||'').toLocaleLowerCase('en').includes(needle))));
-  return rgeIndexReply(request,{source:{id:report.sourceId,publisher:report.publisher,sourceUrl:report.sourceUrl,observedAt:report.observedAt,evidenceClass:report.evidenceClass,rights:report.rights,rawSha256:report.rawSha256,verification:report.verification,storage:'checksum_verified_immutable_worker_snapshot'},scope:{totalSnapshotRows:report.rows,pathClassCounts:report.pathClassCounts,commercialCategoryRows:report.commercialCategoryRows,notInCommercialCategoryRows:report.notInCommercialCategoryRows,explicitEmirateLabelRows:labels.explicitEmirateRows,unassignedEmirateRows:labels.unassignedRows,reviewedAreaLocationRows:areas.reviewedAreaRows,unresolvedLocationRows:areas.unresolvedRows,reviewedAreaEmirateCounts:areas.byEmirate,reviewedAreaMethod:areas.method,reviewedAreaStatus:areas.geographyStatus,areaReferenceAttribution:'© OpenStreetMap contributors',publisherEmirateLabelCounts:Object.fromEntries(RGE_EMIRATES.map(name=>[name,labels.byEmirate[name].rows])),geographyStatus:labels.geographyStatus,emirateLabelMethod:labels.method,availability:'publisher_listed_at_capture_unverified_now',limits:report.limits+' '+labels.limits+' '+areas.limits,photosIncluded:false,coordinatesPresent:false,registeredTransactionEvidence:false,projectIdentityVerified:false},filters:{kind,commercial,emirate,locationEmirate,q:q||null},totalRows:matches.length,limit,offset,rows:matches.slice(offset,offset+limit).map(row=>({...row,publisherEmirate:RGE_EMIRATE_LABELS[row.locationLabel]||null,reviewedAreaLocation:RGE_EMIRATE_LABELS[row.locationLabel]?null:rgeAreaLocationFor(row)}))});
+  return rgeIndexReply(request,{source:{id:report.sourceId,publisher:report.publisher,sourceUrl:report.sourceUrl,observedAt:report.observedAt,evidenceClass:report.evidenceClass,rights:report.rights,rawSha256:report.rawSha256,verification:report.verification,comparison:report.comparison,storage:'checksum_verified_immutable_worker_snapshot'},scope:{totalSnapshotRows:report.rows,pathClassCounts:report.pathClassCounts,commercialCategoryRows:report.commercialCategoryRows,notInCommercialCategoryRows:report.notInCommercialCategoryRows,explicitEmirateLabelRows:labels.explicitEmirateRows,unassignedEmirateRows:labels.unassignedRows,reviewedAreaLocationRows:areas.reviewedAreaRows,unresolvedLocationRows:areas.unresolvedRows,reviewedAreaEmirateCounts:areas.byEmirate,reviewedAreaMethod:areas.method,reviewedAreaStatus:areas.geographyStatus,areaReferenceAttribution:'© OpenStreetMap contributors',publisherEmirateLabelCounts:Object.fromEntries(RGE_EMIRATES.map(name=>[name,labels.byEmirate[name].rows])),geographyStatus:labels.geographyStatus,emirateLabelMethod:labels.method,availability:'publisher_listed_at_capture_unverified_now',limits:report.limits+' '+labels.limits+' '+areas.limits,photosIncluded:false,coordinatesPresent:false,registeredTransactionEvidence:false,projectIdentityVerified:false},filters:{kind,commercial,emirate,locationEmirate,q:q||null},totalRows:matches.length,limit,offset,rows:matches.slice(offset,offset+limit).map(row=>({...row,publisherEmirate:RGE_EMIRATE_LABELS[row.locationLabel]||null,reviewedAreaLocation:RGE_EMIRATE_LABELS[row.locationLabel]?null:rgeAreaLocationFor(row)}))});
  }catch{return rgeIndexReply(request,{error:'The verified publisher index is temporarily unavailable.'},503);}
 }

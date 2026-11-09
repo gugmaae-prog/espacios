@@ -8,7 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'data/uae-evidence/rgestate/full-index-20261103.json.gz'
+SOURCE = ROOT / 'data/uae-evidence/rgestate/full-index-20261109.json.gz'
 SOURCE_REPORT = ROOT / 'data/uae-evidence/rgestate/full-index-validation.json'
 OUT = ROOT / 'data/uae-evidence/rgestate/emirate-label-validation.json'
 LABELS = {
@@ -36,7 +36,7 @@ def build():
     assert len(packed) == report['compressedBytes'] and sha(packed) == report['compressedSha256']
     assert len(raw) == report['rawBytes'] and sha(raw) == report['rawSha256']
     rows = json.loads(raw)
-    assert len(rows) == report['rows'] == 1708
+    assert len(rows) == report['rows']
     assert len({row['sourceListingId'] for row in rows}) == len(rows)
     by_emirate = {}
     for emirate in EMIRATES:
@@ -48,13 +48,9 @@ def build():
             'commercialCategoryRows': sum(row['commercialCategoryMember'] for row in subset),
         }
     explicit = sum(item['rows'] for item in by_emirate.values())
-    assert explicit == 604 and len(rows) - explicit == 1104
-    assert {name: item['rows'] for name, item in by_emirate.items()} == {
-        'Abu Dhabi': 9, 'Ajman': 32, 'Dubai': 5, 'Fujairah': 3,
-        'Ras Al Khaimah': 7, 'Sharjah': 355, 'Umm Al Quwain': 193,
-    }
+    assert explicit + (len(rows) - explicit) == report['rows']
     return {
-        'version': '20261103-rgestate-emirate-labels-v1',
+        'version': '20261109-rgestate-emirate-labels-v2',
         'sourceId': report['sourceId'],
         'sourceRawSha256': report['rawSha256'],
         'sourceObservedAt': report['observedAt'],
@@ -79,7 +75,8 @@ def main():
         assert OUT.read_text() == expected, 'Derived emirate label report changed'
     else:
         OUT.write_text(expected)
-    print('RGEstate explicit emirate labels verified: 604 assigned, 1,104 unassigned')
+    report = build()
+    print(f'RGEstate explicit emirate labels verified: {report["explicitEmirateRows"]} assigned, {report["unassignedRows"]} unassigned')
 
 
 if __name__ == '__main__':

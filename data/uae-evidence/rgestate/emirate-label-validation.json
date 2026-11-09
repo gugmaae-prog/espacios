@@ -1,8 +1,8 @@
 {
-  "version": "20261103-rgestate-emirate-labels-v1",
-  "sourceId": "rgestate-full-index-20261103",
-  "sourceRawSha256": "1a6ecad078a8664dc4b79f6bf3ee31d40e5c790888580629b98300ffe1a9af83",
-  "sourceObservedAt": "2026-11-03T09:02:31Z",
+  "version": "20261109-rgestate-emirate-labels-v2",
+  "sourceId": "rgestate-full-index-20261109",
+  "sourceRawSha256": "366428ffadb56adbf2d995be31b93ce723a8b9d3b3008e778b2b7e503ab16096",
+  "sourceObservedAt": "2026-11-09T17:16:27.531472+00:00",
   "method": "Exact equality against the publisher location label; no title, URL, nearby district, or coordinate inference.",
   "labelMap": {
     "Abu Dhabi": "Abu Dhabi",
@@ -66,14 +66,14 @@
       "commercialCategoryRows": 4
     },
     "Sharjah": {
-      "rows": 355,
+      "rows": 354,
       "byPathClass": {
-        "sale": 191,
+        "sale": 190,
         "rent": 162,
         "off-plan": 0,
         "business-sale": 2
       },
-      "commercialCategoryRows": 130
+      "commercialCategoryRows": 129
     },
     "Umm Al Quwain": {
       "rows": 193,
@@ -86,8 +86,8 @@
       "commercialCategoryRows": 144
     }
   },
-  "explicitEmirateRows": 604,
-  "unassignedRows": 1104,
+  "explicitEmirateRows": 603,
+  "unassignedRows": 1067,
   "evidenceClass": "brokerage_advertised_listing_facts",
   "geographyStatus": "publisher_label_unverified",
   "availabilityStatus": "publisher_listed_at_capture_unverified_now",
