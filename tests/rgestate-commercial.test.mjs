@@ -65,6 +65,14 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  const page=mapRgestateCommercialPage(new Request('https://espacios.me/map/commercial'));
  assert.equal(page.status,200);
  const html=await page.text();assert.match(html,/Historical evidence/);assert.match(html,/No listing photos/);assert.doesNotMatch(html,/<img\b/);
+ assert.match(html,/id="history-cards"/);
+ assert.match(html,/ajman\/commercial-sales/);
+ assert.match(html,/city=ajman&category=Commercial/);
+ assert.match(html,/sharjah\/market-aggregates/);
+ assert.match(html,/Includes H1; periods must not be added/);
+ assert.match(html,/No rent amounts or comparable asking prices/);
+ const inlineScript=html.match(/<script>\s*\(function\(\)\{([\s\S]*?)<\/script>/)?.[0].replace(/^<script>/,'').replace(/<\/script>$/,'');
+ assert.ok(inlineScript);assert.doesNotThrow(()=>new Function(inlineScript));
  assert.match(html,/id="commercial-map"/);assert.match(html,/publisher location labels/i);assert.match(html,/not property, building, or available-unit pins|do not mark the actual unit/);
  assert.match(html,/\[hidden\]\{display:none!important\}/);
 });
@@ -76,7 +84,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows,817);assert.equal(areas.unmappedRows,77);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261109-map-stack-v31');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261109-map-stack-v32');
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);
