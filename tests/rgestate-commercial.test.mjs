@@ -71,6 +71,8 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  const page=mapRgestateCommercialPage(new Request('https://espacios.me/map/commercial'));
  assert.equal(page.status,200);
  const html=await page.text();assert.match(html,/Historical evidence/);assert.match(html,/No listing photos/);assert.doesNotMatch(html,/<img\b/);
+ assert.match(html,/The current capture date appears with the results/);
+ assert.doesNotMatch(html,/observed on 3 November 2026/);
  assert.match(html,/id="history-cards"/);
  assert.match(html,/ajman\/commercial-sales/);
  assert.match(html,/city=ajman&category=Commercial/);
