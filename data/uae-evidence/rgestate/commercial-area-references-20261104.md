@@ -30,3 +30,13 @@ publisher labels now group 817 listings at 30 reviewed area references;
 77 listings remain searchable without a mapped area. The unmatched Al Layan,
 Dubai World Central, and road labels were not assigned to narrower or
 ambiguous OSM results.
+
+The 9 November full RGEstate index also reuses the 30 reviewed references to
+classify exact publisher area labels separately from exact publisher emirate
+labels. Of 1,708 dated listing rows, 604 have an explicit emirate label and
+767 other rows match reviewed OSM areas in Dubai. The remaining 337 rows have
+no established emirate. `/map/api/uae-evidence/rgestate/index?locationEmirate=Dubai`
+includes both basis types; `?emirate=Dubai` retains only exact publisher
+emirate labels. Each area-matched row returns its OSM reference and an area
+geography status. These counts are listing facts, not project or transaction
+coverage, and the area references do not establish unit coordinates.

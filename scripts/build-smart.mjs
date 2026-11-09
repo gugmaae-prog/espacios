@@ -140,11 +140,13 @@ if(rgePacked.length!==rgeReport.compressedBytes||digest(rgePacked)!==rgeReport.c
 stackSource+='\nvar RGE_COMMERCIAL_REPORT='+JSON.stringify(rgeReport)+';\nvar RGE_COMMERCIAL_PACKED='+JSON.stringify(rgePacked.toString('base64'))+';\n';
 const rgeIndexReport=JSON.parse(await read('data/uae-evidence/rgestate/full-index-validation.json'));
 const rgeEmirateLabels=JSON.parse(await read('data/uae-evidence/rgestate/emirate-label-validation.json'));
+const rgeAreaGeography=JSON.parse(await read('data/uae-evidence/rgestate/area-geography-validation.json'));
 const rgeIndexPacked=await fs.readFile(new URL('data/uae-evidence/rgestate/full-index-20261103.json.gz',root));
 const rgeIndexRaw=gunzipSync(rgeIndexPacked);
 if(rgeIndexPacked.length!==rgeIndexReport.compressedBytes||digest(rgeIndexPacked)!==rgeIndexReport.compressedSha256||rgeIndexRaw.length!==rgeIndexReport.rawBytes||digest(rgeIndexRaw)!==rgeIndexReport.rawSha256||JSON.parse(rgeIndexRaw).length!==1708)throw Error('RGEstate full index snapshot changed');
 if(rgeEmirateLabels.sourceId!==rgeIndexReport.sourceId||rgeEmirateLabels.sourceRawSha256!==rgeIndexReport.rawSha256||rgeEmirateLabels.explicitEmirateRows!==604||rgeEmirateLabels.unassignedRows!==1104)throw Error('RGEstate emirate labels changed');
-stackSource+='\nvar RGE_INDEX_REPORT='+JSON.stringify(rgeIndexReport)+';\nvar RGE_INDEX_PACKED='+JSON.stringify(rgeIndexPacked.toString('base64'))+';\nvar RGE_EMIRATE_LABEL_REPORT='+JSON.stringify(rgeEmirateLabels)+';\n';
+if(rgeAreaGeography.sourceId!==rgeIndexReport.sourceId||rgeAreaGeography.sourceRawSha256!==rgeIndexReport.rawSha256||rgeAreaGeography.reviewedAreaRows!==767||rgeAreaGeography.unresolvedRows!==337)throw Error('RGEstate area geography changed');
+stackSource+='\nvar RGE_INDEX_REPORT='+JSON.stringify(rgeIndexReport)+';\nvar RGE_INDEX_PACKED='+JSON.stringify(rgeIndexPacked.toString('base64'))+';\nvar RGE_EMIRATE_LABEL_REPORT='+JSON.stringify(rgeEmirateLabels)+';\nvar RGE_AREA_GEOGRAPHY_REPORT='+JSON.stringify(rgeAreaGeography)+';\n';
 if(coverageReport.acceptedSnapshot?.projectRecords!==1645||coverageReport.emirates?.length!==7||coverageReport.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0)!==18||coverageReport.publisherListingInventory?.explicitEmirateLocationLabelRows!==604||coverageReport.publisherListingInventory?.unassignedLocationLabelRows!==1104||coverageReport.allUaeProjectDenominator!==null||coverageReport.projectCompletenessPercent!==null)throw Error('UAE coverage inventory changed');
 stackSource+='\nvar UAE_COVERAGE_REPORT='+JSON.stringify(coverageReport)+';\n';
 const sharjahBytes=await fs.readFile(new URL('data/uae-evidence/sharjah/market-aggregates-20261109.json',root));
@@ -246,7 +248,7 @@ if(psrD1Compressed.length!==psrD1Manifest.compressedBytes||digest(psrD1Compresse
 stackSource+='\nvar MAP_PSR_D1_EXPORT_SNAPSHOT='+JSON.stringify({...psrD1Manifest,base64:psrD1Compressed.toString('base64')})+';\n';
 stackSource+='\nvar MAP_ARCHIVE_MANIFEST='+JSON.stringify(archiveManifest)+';\nvar MAP_NATIVE_INDEX_MANIFEST='+JSON.stringify(nativeIndexManifest)+';\n';
 stackSource+='\nvar MAP_FULL_INVENTORY_MANIFEST='+JSON.stringify(inventoryManifest)+';\n';
-for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^export /gm,'')+'\n';
+for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^import \{RGE_AREA_CENTRES,RGE_AREA_EMIRATES,rgeAreaLocationFor\} from '\.\/rgestate-commercial\.mjs';\n/m,'').replace(/^export /gm,'')+'\n';
 stackSource+='\n'+(await read('src/map-recovery/legacy-history-compat.mjs')).replace(/^export /gm,'')+'\n';
 stackSource+='\n'+await read('src/stack-audit/worker-extension.js')+'\n';
 stackSource+='\n'+await read('src/stack-audit/idrive-cutover.js')+'\n';

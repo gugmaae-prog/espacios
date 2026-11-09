@@ -1,7 +1,7 @@
 const RGE_API='/map/api/uae-evidence/commercial/listings';
 const RGE_AREAS_API='/map/api/uae-evidence/commercial/areas';
 // Reviewed OpenStreetMap area references. These are never listing or building coordinates.
-const RGE_AREA_CENTRES=[
+export const RGE_AREA_CENTRES=[
  ['umm-al-quwain','Umm Al Quwain emirate',55.7182920,25.5144944,'relation/3766487',['Emirate of Umm Al Quwain','Umm Al Quwain']],
  ['sharjah','Sharjah city',55.4210633,25.3461498,'relation/12905785',['Sharjah']],
  ['al-quoz','Al Quoz',55.2540203,25.1595803,'node/8143204838',['Al Quoz','Al quoz']],
@@ -33,9 +33,23 @@ const RGE_AREA_CENTRES=[
  ['dubai-islands','Dubai Islands',55.3263177,25.3179174,'relation/8122161',['Dubai Islands']],
  ['jebel-ali-village','Jebel Ali Village',55.1126987,25.0301768,'way/1018273191',['Jebel Ali Village']],
 ];
+// Emirate of each reviewed OSM area reference, distinct from the publisher's label.
+export const RGE_AREA_EMIRATES={
+ 'umm-al-quwain':'Umm Al Quwain',sharjah:'Sharjah',
+ 'al-quoz':'Dubai',dip:'Dubai','jebel-ali-industrial':'Dubai','ras-al-khor':'Dubai',
+ 'dubai-industrial-city':'Dubai',jafza:'Dubai','al-qusais':'Dubai',muhaisnah:'Dubai',
+ 'al-khawaneej':'Dubai','umm-ramool':'Dubai','al-warsan':'Dubai',ajman:'Ajman',
+ deira:'Dubai','abu-dhabi':'Abu Dhabi','business-bay':'Dubai',jvc:'Dubai',
+ 'bur-dubai':'Dubai','techno-park':'Dubai','ras-al-khaimah':'Ras Al Khaimah',
+ 'al-jaddaf':'Dubai','dubai-silicon-oasis':'Dubai','nad-al-hamar':'Dubai',
+ 'al-garhoud':'Dubai','barsha-heights':'Dubai','dubai-production-city':'Dubai',
+ fujairah:'Fujairah','dubai-islands':'Dubai','jebel-ali-village':'Dubai'
+};
+if(RGE_AREA_CENTRES.length!==30||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==30)throw Error('Reviewed RGEstate area-to-emirate references changed');
 const RGE_AREA_BY_LABEL=new Map(RGE_AREA_CENTRES.flatMap(area=>area[5].map(label=>[label.toLocaleLowerCase('en'),area])));
 const RGE_AREA_BY_KEY=new Map(RGE_AREA_CENTRES.map(area=>[area[0],area]));
 const rgeAreaFor=row=>RGE_AREA_BY_LABEL.get(String(row.locationLabel||'').toLocaleLowerCase('en'));
+export const rgeAreaLocationFor=row=>{const area=rgeAreaFor(row);return area?{key:area[0],name:area[1],emirate:RGE_AREA_EMIRATES[area[0]],osmUrl:'https://www.openstreetmap.org/'+area[4]}:null};
 let RGE_ROWS;
 let RGE_CACHE_SHA;
 const rgeDigest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
