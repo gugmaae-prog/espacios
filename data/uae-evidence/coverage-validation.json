@@ -1,5 +1,5 @@
 {
-  "version": "20261109-uae-evidence-coverage-v13",
+  "version": "20261109-uae-evidence-coverage-v14",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -337,7 +337,23 @@
         "communities": 2,
         "initiatives": 6
       },
-      "publishedSources": [],
+      "publishedSources": [
+        {
+          "id": "fscfuj-construction-chapter-selected-permits-20261109",
+          "route": "/map/api/uae-evidence/fujairah/building-permits",
+          "sourceRows": 3,
+          "grain": "municipality-year issued building-permit aggregates; selected 2024 building-use counts",
+          "sourceVintage": "2022–2024",
+          "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+          "rights": "selected numerical facts and source link only; chapter content excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "buildingUseRows2024": 3,
+          "notProjectRegister": true,
+          "notTransactions": true,
+          "notAvailableUnits": true,
+          "sourceSha256": "e49e71e4bf8442429a0422627af3ee7506a22081dd2a9d0e3d6901ffbdce45b4"
+        }
+      ],
       "publisherListingSnapshot": {
         "sourceId": "rgestate-full-index-20261103",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Fujairah",
@@ -357,7 +373,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "No reusable bulk project register or verified project-site coordinate source established."
+        "Published municipal permit counts are not a project register, unit inventory, transaction history, or verified project-site coordinate source. No reusable bulk project register established."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -519,6 +535,7 @@
     "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
     "dubaiCrosswalk": "24b40b1611a80f33227fc898c98966a19c9a847812e75be79b7f6de0a1132638",
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
-    "rakMarket": "86339d7ad64b4d7e8864b824ee00a9ac033dccfa16931e84a388f0724ff1fe62"
+    "rakMarket": "86339d7ad64b4d7e8864b824ee00a9ac033dccfa16931e84a388f0724ff1fe62",
+    "fujairahPermits": "f78adf96bb77abdcf150d3d4798d499e0d972719f6c4b45aed6307c319d4d044"
   }
 }

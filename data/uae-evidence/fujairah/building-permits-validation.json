@@ -1,0 +1,30 @@
+{
+  "sourceId": "fscfuj-construction-chapter-selected-permits-20261109",
+  "annualRows": 3,
+  "buildingUseRows2024": 3,
+  "years": [
+    2022,
+    2023,
+    2024
+  ],
+  "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+  "dataBytes": 2324,
+  "dataSha256": "e49e71e4bf8442429a0422627af3ee7506a22081dd2a9d0e3d6901ffbdce45b4",
+  "capturePdf": {
+    "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+    "retrievedAt": "2026-11-09",
+    "bytes": 5100936,
+    "sha256": "fdb36502f4956eb5de20d9d851e79372ef9cd7ce6730b7737b5ce5e0c091ff78",
+    "publicationPageNumbers": [
+      50,
+      51
+    ],
+    "pdfPageNumbers": [
+      7,
+      8
+    ]
+  },
+  "rightsScope": "Selected numerical facts and source link only. No chapter text, images, layout, or full table redistribution; no project-register or transaction-feed reuse right asserted.",
+  "verification": "The three 2022–2024 annual municipal rows reconcile across permit types and to the displayed emirate totals in Table 2-4. Selected 2024 building-use rows reconcile across municipalities to printed totals in Table 2-5. The source describes new and renewed permits together.",
+  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The 2024 building-use categories are a separate breakdown of the same permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings."
+}

@@ -1,0 +1,9 @@
+# Fujairah building-permit figures
+
+Source: [Fujairah Statistics Centre, Construction and Building chapter](https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf), Tables 2-4 and 2-5, printed pages 50–51. The tables name Fujairah Municipality and Dibba Municipality as their underlying sources. The PDF was retrieved on 9 November 2026 (5,100,936 bytes; SHA-256 `fdb36502f4956eb5de20d9d851e79372ef9cd7ce6730b7737b5ce5e0c091ff78`).
+
+The committed [selected facts](building-permits-20261109.json) contain annual issued-permit counts for 2022–2024 by municipality and permit type, plus three selected 2024 building-use categories. Each municipality's permit-type components reconcile to its printed total; the municipal totals reconcile to the emirate total. The selected building-use categories reconcile separately across the two municipalities. See [validation receipt](building-permits-validation.json) for the data checksum.
+
+The source does not split new from renewed permits. Building-use types in Table 2-5 describe the same 2024 permit population as Table 2-4 and cannot be added to it. Commercial-only, mixed residential-commercial, and industrial buildings remain separate categories. These are authorizations, not completed buildings, spaces for sale or rent, registered transactions, a project register, or geocoded properties.
+
+Only selected numerical facts and the source link are published. The PDF and its images, prose, layout, and complete tables are not distributed through Espacios. No dataset-specific bulk redistribution right was established. The read-only API is `/map/api/uae-evidence/fujairah/building-permits`; the commercial page displays the 2024 commercial-only count as historical permit evidence, separate from RGEstate asking listings.

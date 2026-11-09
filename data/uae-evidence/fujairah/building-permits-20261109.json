@@ -1,0 +1,21 @@
+{
+  "sourceId": "fscfuj-construction-chapter-selected-permits-20261109",
+  "emirate": "Fujairah",
+  "authority": "Fujairah Statistics Centre",
+  "originalSources": ["Fujairah Municipality", "Dibba Municipality"],
+  "publication": "Construction and Building chapter, Tables 2-4 and 2-5, pages 50–51",
+  "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+  "evidenceClass": "official_building_permit_count_aggregate",
+  "grain": "municipality-calendar-year permit type count; 2024 building-use count",
+  "annual": [
+    {"year": 2022, "fujairahMunicipality": {"newAndRenew": 885, "annexes": 160, "maintenance": 212, "temporary": 52, "other": 25, "total": 1334}, "dibbaMunicipality": {"newAndRenew": 369, "annexes": 145, "maintenance": 91, "temporary": 0, "other": 9, "total": 614}, "emirateTotal": 1948},
+    {"year": 2023, "fujairahMunicipality": {"newAndRenew": 1286, "annexes": 182, "maintenance": 229, "temporary": 35, "other": 75, "total": 1807}, "dibbaMunicipality": {"newAndRenew": 502, "annexes": 183, "maintenance": 103, "temporary": 1, "other": 14, "total": 803}, "emirateTotal": 2610},
+    {"year": 2024, "fujairahMunicipality": {"newAndRenew": 1533, "annexes": 221, "maintenance": 243, "temporary": 53, "other": 72, "total": 2122}, "dibbaMunicipality": {"newAndRenew": 405, "annexes": 132, "maintenance": 112, "temporary": 0, "other": 8, "total": 657}, "emirateTotal": 2779}
+  ],
+  "buildingUse2024": [
+    {"use": "commercial_buildings", "fujairahMunicipality": 81, "dibbaMunicipality": 31, "emirateTotal": 112},
+    {"use": "residential_and_commercial_buildings", "fujairahMunicipality": 53, "dibbaMunicipality": 42, "emirateTotal": 95},
+    {"use": "industrial_buildings", "fujairahMunicipality": 82, "dibbaMunicipality": 34, "emirateTotal": 116}
+  ],
+  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The 2024 building-use categories are a separate breakdown of the same permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings."
+}
