@@ -10,6 +10,36 @@
   "sourceMethod": "Selected numerical facts transcribed from the 2026 official yearbook construction tables. Source text, images, layout, and the full tables are not republished.",
   "observations": [
     {
+      "year": 2015,
+      "salesValueAedThousand": 2375891,
+      "mortgagesValueAedThousand": 1192492,
+      "waiverMarketValueAedThousand": 1457365,
+      "totalTransactionValueAedThousand": 5025748,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 331865,
+      "commercialLandSalesValueAedThousand": 35414,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2020,
+      "salesValueAedThousand": 1001412.2,
+      "mortgagesValueAedThousand": 2551290.62,
+      "waiverMarketValueAedThousand": 414698.71,
+      "totalTransactionValueAedThousand": 3967401.53,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 49040,
+      "commercialLandSalesValueAedThousand": 12901.55,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2022,
+      "salesValueAedThousand": 2184142,
+      "mortgagesValueAedThousand": 4088089,
+      "waiverMarketValueAedThousand": 1060155,
+      "totalTransactionValueAedThousand": 7332385,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 218184.38,
+      "commercialLandSalesValueAedThousand": 11192.18,
+      "commercialUnitSalesValueAedThousand": 14646.44
+    },
+    {
       "year": 2023,
       "salesValueAedThousand": 3482718.68,
       "mortgagesValueAedThousand": 2504208.14,
@@ -40,5 +70,5 @@
       "commercialUnitSalesValueAedThousand": 31787.85
     }
   ],
-  "limits": "Annual monetary values, not sale counts, individual transactions, asking listings, prices per unit, available commercial spaces, or a project register. Mortgage and waiver values are separate from sales. Mixed commercial-residential land is not classified as a commercial-only unit. Table 7-1 rounds 2025 total sales to AED 3,192,316 thousand; Table 7-2 prints AED 3,192,316.42 thousand. No project location, current availability, or return estimate is inferred."
+  "limits": "Selected annual monetary values, not a continuous time series, sale counts, individual transactions, asking listings, prices per unit, available commercial spaces, or a project register. Mortgage and waiver values are separate from sales. Null commercial-unit values mean that the source prints a dash, not zero. Mixed commercial-residential land is not classified as a commercial-only unit. The printed 2022 component sum exceeds its total by AED 1 thousand. Table 7-1 rounds 2025 total sales to AED 3,192,316 thousand; Table 7-2 prints AED 3,192,316.42 thousand. No project location, current availability, or return estimate is inferred."
 }

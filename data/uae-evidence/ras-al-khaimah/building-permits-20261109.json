@@ -1,0 +1,23 @@
+{
+  "sourceId": "raksc-yearbook-2026-selected-building-permits-20261109",
+  "emirate": "Ras Al Khaimah",
+  "authority": "Ras Al Khaimah Statistics Centre",
+  "originalSource": "Ras Al Khaimah Municipality",
+  "publication": "Statistical Yearbook 2026, Table 7-3",
+  "sourceUrl": "https://css.rak.ae/en/statistical-yearbook-2026/",
+  "evidenceClass": "official_annual_building_permit_count_aggregate",
+  "grain": "emirate-calendar-year issued building permits",
+  "sourceMethod": "Annual total row transcribed from Table 7-3; quarterly rows and yearbook content are not republished.",
+  "annual": [
+    {"year": 2017, "issuedPermits": 9561},
+    {"year": 2018, "issuedPermits": 10071},
+    {"year": 2019, "issuedPermits": 8909},
+    {"year": 2020, "issuedPermits": 6789},
+    {"year": 2021, "issuedPermits": 6561},
+    {"year": 2022, "issuedPermits": 5756},
+    {"year": 2023, "issuedPermits": 6258},
+    {"year": 2024, "issuedPermits": 5830},
+    {"year": 2025, "issuedPermits": 6315}
+  ],
+  "limits": "Annual issued-permit totals are authorizations, not completed buildings, distinct projects, sale or rent transactions, commercial unit availability, or verified project coordinates. The source does not split this Table 7-3 total into residential and commercial permits. Table 7-4 uses a different building-type classification with different totals; its rows are not combined with Table 7-3."
+}

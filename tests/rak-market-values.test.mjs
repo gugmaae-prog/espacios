@@ -13,13 +13,14 @@ const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/
 test('selected official annual values preserve source units and component totals',()=>{
  assert.equal(createHash('sha256').update(bytes).digest('hex'),report.dataSha256);
  assert.equal(bytes.length,report.dataBytes);
- assert.deepEqual(data.observations.map(row=>row.year),[2023,2024,2025]);
+ assert.deepEqual(data.observations.map(row=>row.year),[2015,2020,2022,2023,2024,2025]);
  for(const row of data.observations){
-  assert.ok(Math.abs(row.salesValueAedThousand+row.mortgagesValueAedThousand+row.waiverMarketValueAedThousand-row.totalTransactionValueAedThousand)<0.00001);
-  assert.ok(row.commercialUnitSalesValueAedThousand>0);
+  assert.ok(Math.abs(row.salesValueAedThousand+row.mortgagesValueAedThousand+row.waiverMarketValueAedThousand-row.totalTransactionValueAedThousand)<=1.01);
+  assert.ok(row.commercialUnitSalesValueAedThousand===null||row.commercialUnitSalesValueAedThousand>0);
  }
- assert.equal(data.observations[2].commercialUnitSalesValueAedThousand,31787.85);
- assert.equal(data.observations[2].totalTransactionValueAedThousand,18803019);
+ assert.equal(data.observations[0].commercialUnitSalesValueAedThousand,null);
+ assert.equal(data.observations[2].commercialUnitSalesValueAedThousand,14646.44);
+ assert.equal(data.observations[5].totalTransactionValueAedThousand,18803019);
  assert.equal(report.capturePage.sha256.length,64);
 });
 
@@ -28,7 +29,7 @@ test('read-only API keeps annual values separate from listings and transaction c
  assert.equal(response.status,200);assert.equal(body.scope.unit,'AED thousand');
  assert.equal(body.scope.transactionLevel,false);assert.equal(body.scope.transactionCountsPresent,false);
  assert.equal(body.scope.listingAvailability,false);assert.equal(body.scope.projectRegister,false);
- assert.equal(body.observations.length,3);
+ assert.equal(body.observations.length,6);
  assert.deepEqual((await mapRakMarketValues(request('?year=2025'),report,data).json()).observations.map(row=>row.year),[2025]);
  assert.equal(mapRakMarketValues(request('?year=2026'),report,data).status,400);
  assert.equal(mapRakMarketValues(request('','POST'),report,data).status,405);
@@ -39,5 +40,5 @@ test('compiled Worker serves the RAK source',async()=>{
  const response=await worker.fetch(request(),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'rak-test'}},{}),body=await response.json();
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
- assert.equal(body.observations[2].commercialLandSalesValueAedThousand,10720);
+ assert.equal(body.observations[5].commercialLandSalesValueAedThousand,10720);
 });
