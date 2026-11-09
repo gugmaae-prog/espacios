@@ -380,19 +380,24 @@
       },
       "publishedSources": [
         {
-          "id": "fscfuj-construction-chapter-selected-permits-20261109",
+          "id": "fscfuj-construction-chapter-selected-permits-2025-20261109",
           "route": "/map/api/uae-evidence/fujairah/building-permits",
-          "sourceRows": 3,
-          "grain": "municipality-year issued building-permit aggregates; selected 2024 building-use counts",
-          "sourceVintage": "2022–2024",
-          "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
-          "rights": "selected numerical facts and source link only; chapter content excluded",
+          "sourceRows": 4,
+          "grain": "municipality-year issued building-permit aggregates; selected 2024 and 2025 building-use counts",
+          "sourceVintage": "2022–2025",
+          "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+          "rights": "selected numerical facts and source links only; chapter content excluded",
           "liveRouteHealth": "not_asserted_by_inventory",
           "buildingUseRows2024": 3,
+          "buildingUseRows2025": 3,
+          "sourceUrls": [
+            "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+            "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf"
+          ],
           "notProjectRegister": true,
           "notTransactions": true,
           "notAvailableUnits": true,
-          "sourceSha256": "e49e71e4bf8442429a0422627af3ee7506a22081dd2a9d0e3d6901ffbdce45b4"
+          "sourceSha256": "2f69fb800926d2379b9a60f7f0ba53885fbe0a63b1b2d01b41a55779c7e8dd95"
         }
       ],
       "publisherListingSnapshot": {
@@ -593,7 +598,7 @@
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",
     "rakPermits": "b77f992ee9d81ec2cd0b01deb232b3bf9cb18f484e17ceb843ea41df16d9169c",
-    "fujairahPermits": "f78adf96bb77abdcf150d3d4798d499e0d972719f6c4b45aed6307c319d4d044",
+    "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1"
   }
 }

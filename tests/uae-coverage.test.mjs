@@ -38,7 +38,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,83);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3788);
  assert.equal(sharjah.publishedSources[0].sourceRows,2);assert.equal(sharjah.publishedSources[0].notTransactionLevel,true);
  assert.equal(rak.publishedSources[0].sourceRows,6);assert.equal(rak.publishedSources[0].notTransactionCounts,true);assert.equal(rak.publishedSources[1].sourceRows,9);assert.equal(rak.publishedSources[1].notAvailableUnits,true);
- const fujairah=report.emirates.find(item=>item.name==='Fujairah');assert.equal(fujairah.publishedSources[0].sourceRows,3);assert.equal(fujairah.publishedSources[0].buildingUseRows2024,3);assert.equal(fujairah.publishedSources[0].notAvailableUnits,true);
+ const fujairah=report.emirates.find(item=>item.name==='Fujairah');assert.equal(fujairah.publishedSources[0].sourceRows,4);assert.equal(fujairah.publishedSources[0].buildingUseRows2024,3);assert.equal(fujairah.publishedSources[0].buildingUseRows2025,3);assert.equal(fujairah.publishedSources[0].notAvailableUnits,true);
  assert.deepEqual(Object.fromEntries(report.emirates.map(item=>[item.name,item.publisherListingSnapshot.explicitLocationLabelRows])),{'Abu Dhabi':9,Ajman:32,Dubai:5,Fujairah:3,'Ras Al Khaimah':7,Sharjah:354,'Umm Al Quwain':193});
  assert.equal(dubai.publisherListingSnapshot.reviewedAreaLocationRows,835);
  assert.equal(abuDhabi.publisherListingSnapshot.reviewedAreaLocationRows,2);

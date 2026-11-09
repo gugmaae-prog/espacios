@@ -172,7 +172,7 @@ stackSource+='\nvar UAE_RAK_PERMITS_REPORT='+JSON.stringify(rakPermitsReport)+';
 const fujairahBytes=await fs.readFile(new URL('data/uae-evidence/fujairah/building-permits-20261109.json',root));
 const fujairahReport=JSON.parse(await read('data/uae-evidence/fujairah/building-permits-validation.json'));
 const fujairahData=JSON.parse(fujairahBytes);
-if(fujairahBytes.length!==fujairahReport.dataBytes||digest(fujairahBytes)!==fujairahReport.dataSha256||fujairahData.sourceId!==fujairahReport.sourceId||fujairahData.annual.length!==3||fujairahData.buildingUse2024.length!==3||fujairahData.annual.some(row=>row.fujairahMunicipality.total+row.dibbaMunicipality.total!==row.emirateTotal))throw Error('Fujairah permit evidence changed');
+if(fujairahBytes.length!==fujairahReport.dataBytes||digest(fujairahBytes)!==fujairahReport.dataSha256||fujairahData.sourceId!==fujairahReport.sourceId||fujairahData.annual.length!==4||fujairahData.buildingUse2024.length!==3||fujairahData.buildingUse2025.length!==3||fujairahData.annual.some(row=>row.fujairahMunicipality.total+row.dibbaMunicipality.total!==row.emirateTotal)||fujairahData.annual.at(-1).emirateTotal!==2806||fujairahData.buildingUse2025.some(row=>row.fujairahMunicipality+row.dibbaMunicipality!==row.emirateTotal))throw Error('Fujairah permit evidence changed');
 stackSource+='\nvar UAE_FUJAIRAH_PERMITS_REPORT='+JSON.stringify(fujairahReport)+';\nvar UAE_FUJAIRAH_PERMITS_DATA='+JSON.stringify(fujairahData)+';\n';
 stackSource+='\nvar UAE_AJMAN_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/validation.json')))+';\n';
 stackSource+='\nvar UAE_AJMAN_REGISTER_REPORT='+JSON.stringify(JSON.parse(await read('data/uae-evidence/ajman/projects-validation.json')))+';\n';

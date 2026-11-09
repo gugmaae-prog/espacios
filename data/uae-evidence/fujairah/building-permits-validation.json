@@ -1,16 +1,39 @@
 {
-  "sourceId": "fscfuj-construction-chapter-selected-permits-20261109",
-  "annualRows": 3,
+  "sourceId": "fscfuj-construction-chapter-selected-permits-2025-20261109",
+  "annualRows": 4,
   "buildingUseRows2024": 3,
   "years": [
     2022,
     2023,
-    2024
+    2024,
+    2025
   ],
-  "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
-  "dataBytes": 2324,
-  "dataSha256": "e49e71e4bf8442429a0422627af3ee7506a22081dd2a9d0e3d6901ffbdce45b4",
+  "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+  "dataBytes": 4047,
+  "dataSha256": "2f69fb800926d2379b9a60f7f0ba53885fbe0a63b1b2d01b41a55779c7e8dd95",
   "capturePdf": {
+    "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+    "retrievedAt": "2026-11-09",
+    "bytes": 1317448,
+    "sha256": "e8a4ed335e435a6c0460c0dcb395a85fab64113b2dc080aca9414bd1863f4721",
+    "publicationPageNumbers": [
+      50,
+      51
+    ],
+    "pdfPageNumbers": [
+      7,
+      8
+    ]
+  },
+  "rightsScope": "Selected numerical facts and source link only. No chapter text, images, layout, or full table redistribution; no project-register or transaction-feed reuse right asserted.",
+  "verification": "The 2025 annual municipal permit-type rows reconcile to Fujairah 2,126 and Dibba 680, then to the 2,806 emirate total in Table 2-4. The selected 2025 building-use rows each reconcile across municipalities to Table 2-5. The prior 2022–2024 rows and selected 2024 building-use rows are preserved; 2023–2024 annual rows also match the newer chapter. New and renewed permits remain combined.",
+  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The selected 2024 and 2025 building-use categories are a separate breakdown of their respective annual permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings.",
+  "buildingUseRows2025": 3,
+  "sourceUrls": [
+    "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+    "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf"
+  ],
+  "priorCapturePdf": {
     "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
     "retrievedAt": "2026-11-09",
     "bytes": 5100936,
@@ -23,8 +46,5 @@
       7,
       8
     ]
-  },
-  "rightsScope": "Selected numerical facts and source link only. No chapter text, images, layout, or full table redistribution; no project-register or transaction-feed reuse right asserted.",
-  "verification": "The three 2022–2024 annual municipal rows reconcile across permit types and to the displayed emirate totals in Table 2-4. Selected 2024 building-use rows reconcile across municipalities to printed totals in Table 2-5. The source describes new and renewed permits together.",
-  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The 2024 building-use categories are a separate breakdown of the same permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings."
+  }
 }
