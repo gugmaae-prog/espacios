@@ -52,6 +52,22 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  assert.equal(all.areas.find(area=>area.key==='umm-al-quwain').count,144);
  assert.equal(all.areas.find(area=>area.key==='al-ain').count,1);
  assert.equal(all.areas.find(area=>area.key==='majan').count,2);
+ const byEmirate={
+  'Abu Dhabi':9,Ajman:16,Dubai:504,Fujairah:2,
+  'Ras Al Khaimah':4,Sharjah:129,'Umm Al Quwain':144,
+ };
+ for(const [emirate,count] of Object.entries(byEmirate)){
+  const query='?emirate='+encodeURIComponent(emirate);
+  const filtered=await(await mapRgestateCommercial(areaRequest(query),report,packed)).json();
+  assert.equal(filtered.totalRows,count);
+  assert.equal(filtered.mappedRows,count);
+  assert.equal(filtered.unmappedRows,0);
+  assert.ok(filtered.areas.every(area=>area.emirate===emirate));
+  const listings=await(await mapRgestateCommercial(request(query+'&limit=100'),report,packed)).json();
+  assert.equal(listings.totalRows,count);
+  assert.ok(listings.rows.every(row=>row.reviewedAreaEmirate===emirate&&row.coordinates===null));
+ }
+ assert.equal(Object.values(byEmirate).reduce((sum,count)=>sum+count,0),all.mappedRows);
  for(const area of all.areas){
   assert.match(area.osmUrl,/^https:\/\/www\.openstreetmap\.org\/(relation|node|way)\/\d+$/);
   assert.equal(area.locationBasis,'osm_area_reference_not_unit_coordinate');
@@ -69,6 +85,24 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  const ambiguous=await(await mapRgestateCommercial(areaRequest('?q=Al%20Layan'),report,packed)).json();
  assert.equal(ambiguous.mappedRows,0);assert.ok(ambiguous.unmappedRows>0);
  assert.equal((await mapRgestateCommercial(request('?area=unknown'),report,packed)).status,400);
+ assert.equal((await mapRgestateCommercial(request('?emirate=Unknown'),report,packed)).status,400);
+});
+
+test('commercial asking rates are derived only from usable publisher prices and areas',async()=>{
+ const page=await(await mapRgestateCommercial(request('?limit=100'),report,packed)).json();
+ assert.match(page.scope.askingRateBasis,/not a registered transaction/);
+ assert.equal(page.scope.askingRateEligibleSnapshotRows,731);
+ const warehouse=page.rows.find(row=>row.sourceListingId==='60770');
+ assert.equal(warehouse.askingAedPerSqft,55);
+ assert.equal(warehouse.askingRatePeriod,'year');
+ for(let offset=0;offset<report.rows;offset+=100){
+  const data=await(await mapRgestateCommercial(request(`?limit=100&offset=${offset}`),report,packed)).json();
+  for(const row of data.rows){
+   const valid=Number.isFinite(row.priceAed)&&row.priceAed>0&&Number.isFinite(row.areaSqft)&&row.areaSqft>0&&['year','total'].includes(row.pricePeriod);
+   assert.equal(row.askingAedPerSqft,valid?Math.round(row.priceAed/row.areaSqft*100)/100:null);
+   assert.equal(row.askingRatePeriod,valid?row.pricePeriod:null);
+  }
+ }
 });
 
 test('commercial routes reject bad input and tampered bytes',async()=>{
@@ -89,6 +123,9 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  const inlineScript=html.match(/<script>\s*\(function\(\)\{([\s\S]*?)<\/script>/)?.[0].replace(/^<script>/,'').replace(/<\/script>$/,'');
  assert.ok(inlineScript);assert.doesNotThrow(()=>new Function(inlineScript));
  assert.match(html,/id="commercial-map"/);assert.match(html,/publisher location labels/i);assert.match(html,/not property, building, or available-unit pins|do not mark the actual unit/);
+ assert.match(html,/role="region" aria-label="Interactive map/);
+ assert.match(html,/id="emirate"/);assert.match(html,/Asking rate/);
+ assert.match(html,/publisher listings/);
  assert.match(html,/https:\/\/www\.openstreetmap\.org\/copyright/);
  assert.match(html,/\[hidden\]\{display:none!important\}/);
 });
