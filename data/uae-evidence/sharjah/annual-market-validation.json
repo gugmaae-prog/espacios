@@ -1,21 +1,61 @@
 {
   "sourceId": "sharjah-rerd-reported-annual-market-20261109",
-  "rows": 2,
+  "rows": 4,
   "years": [
+    2022,
+    2023,
     2024,
     2025
   ],
   "sourceUrls": [
+    "https://sharjah24.ae/ar/articles/2023/01/19/zx50",
+    "https://sharjah24.ae/ar/Articles/2024/01/31/al099",
     "https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024",
     "https://sharjah24.ae/en/Articles/2026/01/20/kmr1"
   ],
   "corroboratingUrls": [
+    "https://www.wam.ae/en/article/hszrgaee-sharjah%E2%80%99s-real-estate-transactions-topped-aed24",
+    "https://www.wam.ae/en/article/b1fg7a2-165-surge-real-estate-investments-sharjah-during",
     "https://www.wam.ae/en/article/bhtgrp8-sharjah%E2%80%99s-real-estate-transactions-hit-record",
     "https://www.wam.ae/en/article/bybncv4-sharjah-real-estate-hits-record-aed656-billion"
   ],
-  "dataBytes": 2347,
-  "dataSha256": "7bdd57b41956cf9e39da3f94835a3a1e5fe9489cf140af3aa4121f8e6405ef79",
+  "dataBytes": 3980,
+  "dataSha256": "d702eec2796beff90223b1a2bf2e897c738c467f01c7f028174464f67c04ab67",
   "capturePages": [
+    {
+      "year": 2022,
+      "url": "https://sharjah24.ae/ar/articles/2023/01/19/zx50",
+      "retrievedAt": "2026-11-09",
+      "passes": [
+        {
+          "pass": "first",
+          "bytes": 99192,
+          "sha256": "ba0ca773acf9a8bb522d034bb82989db65d509ff51f8dbe6810179fd26ef48b8"
+        },
+        {
+          "pass": "second",
+          "bytes": 99192,
+          "sha256": "bc16fd074e89ec87ecb361966917a52123f98bca30dd29ce490767471260ef4d"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "url": "https://sharjah24.ae/ar/Articles/2024/01/31/al099",
+      "retrievedAt": "2026-11-09",
+      "passes": [
+        {
+          "pass": "first",
+          "bytes": 103055,
+          "sha256": "efbf085adf4c47c5b4323d7d6650bd3abc2dca34b5e4a6226d99cdf0d99ffe85"
+        },
+        {
+          "pass": "second",
+          "bytes": 103055,
+          "sha256": "5b6171a7a5f0770a12d954ab3c1d03359fe75f321985bd5f4294297ecdf33f05"
+        }
+      ]
+    },
     {
       "year": 2024,
       "url": "https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024",
@@ -52,6 +92,6 @@
     }
   ],
   "rightsScope": "Selected numerical facts and source links only. No article text, images, logos, or bulk transaction-register redistribution; no project-register reuse right asserted.",
-  "verification": "Two independently fetched HTML passes for each Sharjah 24 report displayed the selected figures; dynamic page bytes differed and both hashes are retained. WAM independently corroborated AED 40 billion for 2024 and AED 65.6 billion, 132,659 total registration transactions, and 33,580 sales for 2025. Exact 2024 registration and sale counts were not inferred.",
-  "limits": "Annual emirate-wide reported totals, not transaction records, commercial-only sales, sale prices, current listings, a project register, or a complete Sharjah project denominator. Trading value includes transaction types beyond sales. The 2024 report did not print an exact overall registration or sale count in these sources; those fields remain null. The 2025 report did not print a new-project count. Values are rounded at their stated precision. Annual periods must not be added to any same-year partial cumulative period."
+  "verification": "Two independently fetched Sharjah 24 HTML passes per selected report displayed the transcribed figures; dynamic page bytes differed. WAM independently corroborated AED 24 billion and 7,267 sales for 2022; AED 27.1 billion and 8,731 sales for 2023; and the previously reviewed 2024–2025 values. The 2022 Sharjah 24 department article reports 91,507 overall registrations and a 5,373 / 807 / 760 / 327 sale-use split, which reconciles to 7,267. The 2023 Sharjah 24 department article reports five newly registered projects. Unknown metrics remain null.",
+  "limits": "Annual emirate-wide reported totals, not transaction records, available spaces, sale prices, or a complete Sharjah project denominator. The 2022 sale-use breakdown is category counts within 7,267 sales; it is not commercial inventory. Trading value includes transaction types beyond sales. Exact overall registration counts for 2023 and 2024 are unavailable in these selected sources. Sale-use breakdowns for 2023–2025 and a 2022/2025 new-project count are not established. Values are rounded at their stated precision. Annual periods must not be added to any same-year partial cumulative period."
 }
