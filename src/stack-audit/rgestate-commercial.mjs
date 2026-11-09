@@ -25,6 +25,13 @@ const RGE_AREA_CENTRES=[
  ['ras-al-khaimah','Ras Al Khaimah city',55.9382320,25.7737705,'node/262479317',['Ras Al Khaimah']],
  ['al-jaddaf','Al Jaddaf',55.3245395,25.2142622,'relation/18471794',['Al Jaddaf','Al Jadaf']],
  ['dubai-silicon-oasis','Dubai Silicon Oasis',55.3855055,25.1217058,'way/364819827',['Dubai Silicon Oasis']],
+ ['nad-al-hamar','Nad Al Hamar',55.3857707,25.1988837,'relation/18471802',['Nad Al Hamar','Nadd Al hamar']],
+ ['al-garhoud','Al Garhoud',55.3519978,25.2406551,'relation/18471788',['Al Garhoud','Garhoud']],
+ ['barsha-heights','Barsha Heights',55.1757823,25.0982842,'node/3087418334',['Barsha Heights (Tecom)']],
+ ['dubai-production-city','Dubai Production City',55.1912732,25.0321285,'relation/18471777',['Dubai Production City','IMPZ']],
+ ['fujairah','Fujairah city',56.3355085,25.1244604,'way/872858707',['Fujairah']],
+ ['dubai-islands','Dubai Islands',55.3263177,25.3179174,'relation/8122161',['Dubai Islands']],
+ ['jebel-ali-village','Jebel Ali Village',55.1126987,25.0301768,'way/1018273191',['Jebel Ali Village']],
 ];
 const RGE_AREA_BY_LABEL=new Map(RGE_AREA_CENTRES.flatMap(area=>area[5].map(label=>[label.toLocaleLowerCase('en'),area])));
 const RGE_AREA_BY_KEY=new Map(RGE_AREA_CENTRES.map(area=>[area[0],area]));

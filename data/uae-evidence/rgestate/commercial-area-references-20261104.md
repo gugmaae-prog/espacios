@@ -20,3 +20,13 @@ for example, was not assigned to either `Al Layan 1` or `Al Layan 2`.
 The commercial map represents where the publisher said listings were located
 at area scale. It cannot establish a unit's address, current availability, or
 exact placement. Historical sale and rent evidence stays in separate routes.
+
+On 9 November 2026, seven more area references were reviewed against OSM
+Nominatim results: Nad Al Hamar (`relation/18471802`), Al Garhoud
+(`relation/18471788`), Barsha Heights (`node/3087418334`), Dubai Production
+City (`relation/18471777`), Fujairah city (`way/872858707`), Dubai Islands
+(`relation/8122161`), and Jebel Ali Village (`way/1018273191`). Exact
+publisher labels now group 817 listings at 30 reviewed area references;
+77 listings remain searchable without a mapped area. The unmatched Al Layan,
+Dubai World Central, and road labels were not assigned to narrower or
+ambiguous OSM results.
