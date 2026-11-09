@@ -66,6 +66,7 @@ worker_default.fetch=async function(request,env,ctx){
  const publisherIndex=await mapRgestateIndex(request,RGE_INDEX_REPORT,RGE_INDEX_PACKED,RGE_EMIRATE_LABEL_REPORT,RGE_AREA_GEOGRAPHY_REPORT);if(publisherIndex)return mapStackPreparedResponse(request,publisherIndex);
  const scadStock=mapScadStock(request);if(scadStock)return mapStackPreparedResponse(request,scadStock);
  const sharjahMarket=mapSharjahMarketAggregates(request,UAE_SHARJAH_MARKET_REPORT,UAE_SHARJAH_MARKET_DATA);if(sharjahMarket)return mapStackPreparedResponse(request,sharjahMarket);
+ const sharjahAnnual=mapSharjahAnnualMarket(request,UAE_SHARJAH_ANNUAL_REPORT,UAE_SHARJAH_ANNUAL_DATA);if(sharjahAnnual)return mapStackPreparedResponse(request,sharjahAnnual);
  const rakMarket=mapRakMarketValues(request,UAE_RAK_MARKET_REPORT,UAE_RAK_MARKET_DATA);if(rakMarket)return mapStackPreparedResponse(request,rakMarket);
  const rakPermits=mapRakBuildingPermits(request,UAE_RAK_PERMITS_REPORT,UAE_RAK_PERMITS_DATA);if(rakPermits)return mapStackPreparedResponse(request,rakPermits);
  const fujairahPermits=mapFujairahBuildingPermits(request,UAE_FUJAIRAH_PERMITS_REPORT,UAE_FUJAIRAH_PERMITS_DATA);if(fujairahPermits)return mapStackPreparedResponse(request,fujairahPermits);

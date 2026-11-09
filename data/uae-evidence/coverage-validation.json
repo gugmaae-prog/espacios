@@ -509,6 +509,20 @@
           "notTransactionLevel": true,
           "notProjectRegister": true,
           "sourceSha256": "07167d9922c6ae2227152a9179af635e03fdd985ca73a445e2c4eccc77616de0"
+        },
+        {
+          "id": "sharjah-rerd-reported-annual-market-20261109",
+          "route": "/map/api/uae-evidence/sharjah/annual-market",
+          "sourceRows": 2,
+          "grain": "emirate-calendar-year reported trading and registration aggregates",
+          "sourceVintage": "2024–2025",
+          "sourceUrl": "https://sharjah24.ae/en/Articles/2026/01/20/kmr1",
+          "rights": "selected numerical facts and source links only; articles excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "notTransactionLevel": true,
+          "notCommercialOnly": true,
+          "notProjectRegister": true,
+          "sourceSha256": "7bdd57b41956cf9e39da3f94835a3a1e5fe9489cf140af3aa4121f8e6405ef79"
         }
       ],
       "publisherListingSnapshot": {
@@ -530,7 +544,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Two published cumulative market aggregates are available, but no reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established."
+        "Two published cumulative market aggregates and two annual aggregates are available, but no reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -596,6 +610,7 @@
     "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
     "dubaiCrosswalk": "24b40b1611a80f33227fc898c98966a19c9a847812e75be79b7f6de0a1132638",
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
+    "sharjahAnnual": "0bed1160119da04525361a22a2de67c51f8bcd2a1245d82762e30719d43c7412",
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",
     "rakPermits": "b77f992ee9d81ec2cd0b01deb232b3bf9cb18f484e17ceb843ea41df16d9169c",
     "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",

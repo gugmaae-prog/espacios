@@ -1,0 +1,57 @@
+{
+  "sourceId": "sharjah-rerd-reported-annual-market-20261109",
+  "rows": 2,
+  "years": [
+    2024,
+    2025
+  ],
+  "sourceUrls": [
+    "https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024",
+    "https://sharjah24.ae/en/Articles/2026/01/20/kmr1"
+  ],
+  "corroboratingUrls": [
+    "https://www.wam.ae/en/article/bhtgrp8-sharjah%E2%80%99s-real-estate-transactions-hit-record",
+    "https://www.wam.ae/en/article/bybncv4-sharjah-real-estate-hits-record-aed656-billion"
+  ],
+  "dataBytes": 2347,
+  "dataSha256": "7bdd57b41956cf9e39da3f94835a3a1e5fe9489cf140af3aa4121f8e6405ef79",
+  "capturePages": [
+    {
+      "year": 2024,
+      "url": "https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024",
+      "retrievedAt": "2026-11-09",
+      "passes": [
+        {
+          "pass": "first",
+          "bytes": 95023,
+          "sha256": "9b598b929effd63578e1c0e122ade5fbaf6b429da268fedf492ff495f89b9d50"
+        },
+        {
+          "pass": "second",
+          "bytes": 95023,
+          "sha256": "cac62c35198d2f1aa93937519dd3254d9ae6de318e2d6aacc76df9e1f3560437"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "url": "https://sharjah24.ae/en/Articles/2026/01/20/kmr1",
+      "retrievedAt": "2026-11-09",
+      "passes": [
+        {
+          "pass": "first",
+          "bytes": 89127,
+          "sha256": "465509a1500a39997db3db9e06f796e521273689aaf9348833d594af0499ae60"
+        },
+        {
+          "pass": "second",
+          "bytes": 89127,
+          "sha256": "12b7f8946c977d9dc0f6646a6e32d29146c47ff5b0c247344d2ba4d6f3799f8e"
+        }
+      ]
+    }
+  ],
+  "rightsScope": "Selected numerical facts and source links only. No article text, images, logos, or bulk transaction-register redistribution; no project-register reuse right asserted.",
+  "verification": "Two independently fetched HTML passes for each Sharjah 24 report displayed the selected figures; dynamic page bytes differed and both hashes are retained. WAM independently corroborated AED 40 billion for 2024 and AED 65.6 billion, 132,659 total registration transactions, and 33,580 sales for 2025. Exact 2024 registration and sale counts were not inferred.",
+  "limits": "Annual emirate-wide reported totals, not transaction records, commercial-only sales, sale prices, current listings, a project register, or a complete Sharjah project denominator. Trading value includes transaction types beyond sales. The 2024 report did not print an exact overall registration or sale count in these sources; those fields remain null. The 2025 report did not print a new-project count. Values are rounded at their stated precision. Annual periods must not be added to any same-year partial cumulative period."
+}

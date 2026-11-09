@@ -1,0 +1,9 @@
+# Sharjah annual market aggregates
+
+Selected official department disclosures for full calendar years 2024 and 2025 appear in the [annual-market data](annual-market-20261109.json) and [validation receipt](annual-market-validation.json). Sharjah 24 reported the [2024 year-end results](https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024) and [2025 year-end results](https://sharjah24.ae/en/Articles/2026/01/20/kmr1). The [Emirates News Agency 2024 report](https://www.wam.ae/en/article/bhtgrp8-sharjah%E2%80%99s-real-estate-transactions-hit-record) and [2025 report](https://www.wam.ae/en/article/bybncv4-sharjah-real-estate-hits-record-aed656-billion) corroborate the selected figures. The underlying authority is the Sharjah Real Estate Registration Department.
+
+The 2024 report gives approximately AED 40 billion in total trading value and 14 newly registered projects, but these sources do not print an exact full-year overall registration count or sale count. Those fields are null. The 2025 report gives approximately AED 65.6 billion in total trading value, 132,659 overall registration transactions, and 33,580 sales. It does not print a new-project count. No count is back-solved from a percentage.
+
+These full-year totals are separate from the existing 2026 H1 and January–September cumulative observations. Trading value includes transaction types beyond sales. The annual counts do not isolate commercial units, registered projects, or currently available spaces. Values are reported rounded totals; no price per unit or return is inferred.
+
+Only selected numerical facts and source links are served by `/map/api/uae-evidence/sharjah/annual-market`. Article text, images, logos and full tables are excluded. The receipt records two independently retrieved HTML pass hashes for each article; dynamic page bytes differed while the selected facts agreed. No bulk transaction-register reuse right is asserted.
