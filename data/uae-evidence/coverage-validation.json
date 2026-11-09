@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v20",
+  "version": "20261110-uae-evidence-coverage-v21",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -342,6 +342,21 @@
           "liveRouteHealth": "not_asserted_by_inventory",
           "reviewedV48IdentityLinks": 83,
           "unmatchedSourceProjectIds": 3788
+        },
+        {
+          "id": "dsc-dubai-housing-building-kapsarc-public-domain-2019",
+          "route": "/map/api/uae-evidence/dubai/commercial-building-stock",
+          "sourceRows": 966,
+          "grain": "calendar year × building type × all/urban/rural Dubai; unique selected rows only",
+          "sourceVintage": "2015–2019",
+          "sourceUrl": "https://data.kapsarc.org/api/explore/v2.1/catalog/datasets/housing-and-building-statistics-of-emirate-of-dubai/exports/csv?delimiter=%2C",
+          "rights": "Public Domain (KAPSARC catalogue label)",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "selectedRows": 30,
+          "ambiguousKeyRowsWithheld": 403,
+          "notAnnualNewCompletions": true,
+          "notAvailableUnits": true,
+          "sourceSha256": "031affe1ceae4228429640d2d69aefdaf2513633c276ad5d9a42382a0fbbaf97"
         }
       ],
       "publisherListingSnapshot": {
@@ -364,7 +379,8 @@
       },
       "gaps": [
         "The primary DLD project-register raw vintage is not retained; the published status copy is secondary.",
-        "Most source project IDs remain separate from V48 identities."
+        "Most source project IDs remain separate from V48 identities.",
+        "The historical building counts stop at 2019; 403 ambiguous export rows are withheld and these counts do not identify available commercial spaces."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -636,6 +652,7 @@
     "rakPermits": "a5efea7bcf2767b9c331c4c9fdedf045b65e386af18d5c3a96deeef9ef2b28ec",
     "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
-    "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12"
+    "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
+    "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0"
   }
 }
