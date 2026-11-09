@@ -1,5 +1,5 @@
 {
-  "version": "20261109-uae-evidence-coverage-v18",
+  "version": "20261110-uae-evidence-coverage-v19",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -558,7 +558,22 @@
         "communities": 5,
         "initiatives": 8
       },
-      "publishedSources": [],
+      "publishedSources": [
+        {
+          "id": "uaq-industrial-city-investor-guide-2021-selected-plot-rates-20261110",
+          "route": "/map/api/uae-evidence/umm-al-quwain/industrial-plot-guide",
+          "sourceRows": 4,
+          "grain": "2021 industrial-city land-lease plot-category guide; rate period unstated",
+          "sourceVintage": "2021-10",
+          "sourceUrl": "https://ia.uaq.ae/wp-content/uploads/2021/10/industrial-authority-UAQ-INVESTOR-GUIDE.pdf",
+          "rights": "selected numerical guide facts and source link only; PDF content excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "notCurrentOffer": true,
+          "notAvailableUnits": true,
+          "notProjectRegister": true,
+          "sourceSha256": "1a80324b9d0fba499e652c0781db4ae5f9fd005c11a427ab16c8307d4b44bd27"
+        }
+      ],
       "publisherListingSnapshot": {
         "sourceId": "rgestate-full-index-20261109",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Umm%20Al%20Quwain",
@@ -578,7 +593,8 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "No reusable bulk project register or verified project-site coordinate source established."
+        "The published 2021 industrial land-lease guide does not establish current rates or available built spaces.",
+        "No reusable bulk project register, registered sale/rent feed, or verified project-site coordinate source established."
       ],
       "authoritativeAllProjectDenominator": null
     }
@@ -614,6 +630,7 @@
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",
     "rakPermits": "b77f992ee9d81ec2cd0b01deb232b3bf9cb18f484e17ceb843ea41df16d9169c",
     "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",
-    "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1"
+    "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
+    "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12"
   }
 }
