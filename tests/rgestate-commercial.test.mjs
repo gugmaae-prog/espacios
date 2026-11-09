@@ -43,12 +43,15 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  const areaRequest=(query='')=>new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'+query);
  const all=await(await mapRgestateCommercial(areaRequest(),report,packed)).json();
  assert.equal(all.totalRows,863);
- assert.equal(all.mappedRows,786);
- assert.equal(all.unmappedRows,77);
- assert.equal(all.areas.reduce((sum,area)=>sum+area.count,0),786);
+ assert.equal(all.mappedRows,808);
+ assert.equal(all.unmappedRows,55);
+ assert.equal(all.areas.reduce((sum,area)=>sum+area.count,0),808);
  assert.equal(all.scope.mapGranularity,'publisher_area_label');
  assert.equal(all.scope.unitCoordinatesPresent,false);
+ assert.equal(all.scope.areaAttributionUrl,'https://www.openstreetmap.org/copyright');
  assert.equal(all.areas.find(area=>area.key==='umm-al-quwain').count,144);
+ assert.equal(all.areas.find(area=>area.key==='al-ain').count,1);
+ assert.equal(all.areas.find(area=>area.key==='majan').count,2);
  for(const area of all.areas){
   assert.match(area.osmUrl,/^https:\/\/www\.openstreetmap\.org\/(relation|node|way)\/\d+$/);
   assert.equal(area.locationBasis,'osm_area_reference_not_unit_coordinate');
@@ -61,6 +64,10 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  assert.equal(rent.mappedRows+rent.unmappedRows,452);assert.equal(sale.mappedRows+sale.unmappedRows,411);
  const dip=await(await mapRgestateCommercial(request('?area=dip&limit=100'),report,packed)).json();
  assert.equal(dip.totalRows,61);assert.ok(dip.rows.every(row=>['DIP Dubai Investment Park','DIP','Dubai Investment Park'].includes(row.locationLabel)));
+ const alAin=await(await mapRgestateCommercial(request('?area=al-ain'),report,packed)).json();
+ assert.equal(alAin.totalRows,1);assert.equal(alAin.rows[0].locationLabel,'Al Ain');assert.equal(alAin.rows[0].coordinates,null);
+ const ambiguous=await(await mapRgestateCommercial(areaRequest('?q=Al%20Layan'),report,packed)).json();
+ assert.equal(ambiguous.mappedRows,0);assert.ok(ambiguous.unmappedRows>0);
  assert.equal((await mapRgestateCommercial(request('?area=unknown'),report,packed)).status,400);
 });
 
@@ -82,6 +89,7 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  const inlineScript=html.match(/<script>\s*\(function\(\)\{([\s\S]*?)<\/script>/)?.[0].replace(/^<script>/,'').replace(/<\/script>$/,'');
  assert.ok(inlineScript);assert.doesNotThrow(()=>new Function(inlineScript));
  assert.match(html,/id="commercial-map"/);assert.match(html,/publisher location labels/i);assert.match(html,/not property, building, or available-unit pins|do not mark the actual unit/);
+ assert.match(html,/https:\/\/www\.openstreetmap\.org\/copyright/);
  assert.match(html,/\[hidden\]\{display:none!important\}/);
 });
 
@@ -91,8 +99,8 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  assert.equal(result.status,200);assert.ok(body.totalRows>0);
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
- assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows,786);assert.equal(areas.unmappedRows,77);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261109-map-stack-v38');
+ assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows,808);assert.equal(areas.unmappedRows,55);
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261109-map-stack-v39');
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);

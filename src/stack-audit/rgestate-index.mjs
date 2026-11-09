@@ -44,7 +44,7 @@ function rgeIndexLabelReport(report,labels,rows){
 }
 
 async function rgeIndexAreaReport(report,areas,labels,rows){
- if(areas?.sourceRawSha256!==report.rawSha256||areas.sourceId!==report.sourceId||areas.reviewedAreaReferences!==30||areas.reviewedAreaRows+areas.unresolvedRows!==labels.unassignedRows||areas.areaReferenceSha256!==await rgeIndexDigest(new TextEncoder().encode(JSON.stringify({areas:RGE_AREA_CENTRES,emirates:RGE_AREA_EMIRATES}))))throw Error('Reviewed area geography derivation changed');
+ if(areas?.sourceRawSha256!==report.rawSha256||areas.sourceId!==report.sourceId||areas.reviewedAreaReferences!==RGE_AREA_CENTRES.length||areas.reviewedAreaRows+areas.unresolvedRows!==labels.unassignedRows||areas.areaReferenceSha256!==await rgeIndexDigest(new TextEncoder().encode(JSON.stringify({areas:RGE_AREA_CENTRES,emirates:RGE_AREA_EMIRATES}))))throw Error('Reviewed area geography derivation changed');
  const matched=rows.filter(row=>!RGE_EMIRATE_LABELS[row.locationLabel]&&rgeAreaLocationFor(row));
  if(matched.length!==areas.reviewedAreaRows||rows.length-labels.explicitEmirateRows-matched.length!==areas.unresolvedRows||RGE_EMIRATES.some(name=>matched.filter(row=>rgeAreaLocationFor(row).emirate===name).length!==areas.byEmirate[name]))throw Error('Reviewed area geography counts changed');
 }
