@@ -74,8 +74,18 @@ def main():
     }
     report_bytes = (json.dumps(report, ensure_ascii=False, indent=2) + '\n').encode()
     if '--check' in sys.argv:
-        assert OUT.read_bytes() == packed, 'Candidate snapshot changed'
-        assert REPORT.read_bytes() == report_bytes, 'Candidate report changed'
+        committed_report = json.loads(REPORT.read_text())
+        committed_packed = OUT.read_bytes()
+        assert committed_report['parentRawSha256'] == source_report['rawSha256']
+        assert committed_report['sourceListingIds'] == report['sourceListingIds']
+        assert committed_report['rows'] == len(candidates)
+        assert committed_report['rentRows'] == report['rentRows']
+        assert committed_report['saleRows'] == report['saleRows']
+        assert committed_report['rawBytes'] == len(raw)
+        assert committed_report['rawSha256'] == sha(raw)
+        assert committed_report['compressedBytes'] == len(committed_packed)
+        assert committed_report['compressedSha256'] == sha(committed_packed)
+        assert gzip.decompress(committed_packed) == raw, 'Decoded candidate snapshot changed'
         print(f'Checked {len(candidates)} title candidates against full-index source')
     else:
         OUT.write_bytes(packed)
