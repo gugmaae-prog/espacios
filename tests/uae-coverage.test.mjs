@@ -13,7 +13,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(report.acceptedSnapshot.mappedProjectRecords,1518);assert.equal(report.acceptedSnapshot.approximateCommunityCentrePoints,360);
  assert.equal(report.acceptedSnapshot.searchableWithoutCoordinates,127);assert.equal(report.allUaeProjectDenominator,null);assert.equal(report.projectCompletenessPercent,null);
  assert.equal(report.emirates.reduce((sum,item)=>sum+item.acceptedV48.projectRecords,0),1645);
- assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),22);
+ assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),23);
  assert.deepEqual(report.emirates.filter(item=>item.publishedSources.length===0).map(item=>item.name),['Umm Al Quwain']);
  assert.equal(report.publisherListingInventory.snapshotRows,1670);
  assert.equal(report.publisherListingInventory.explicitEmirateLocationLabelRows,603);
@@ -25,6 +25,8 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  const abuDhabi=report.emirates.find(item=>item.name==='Abu Dhabi'),ajman=report.emirates.find(item=>item.name==='Ajman'),dubai=report.emirates.find(item=>item.name==='Dubai'),sharjah=report.emirates.find(item=>item.name==='Sharjah'),rak=report.emirates.find(item=>item.name==='Ras Al Khaimah');
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/developer-projects')).sourceRows,411);
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/developer-projects')).sourceGeometryAvailable,true);
+ assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-uses')).layerFeatureCount,392495);
+ assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-uses')).unknownUseFeatures,249177);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).latestSourceProjectIds,298);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,4);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedVillaFamilyRelations,30);

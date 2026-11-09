@@ -1,5 +1,5 @@
 {
-  "version": "20261109-uae-evidence-coverage-v17",
+  "version": "20261109-uae-evidence-coverage-v18",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -74,6 +74,21 @@
           "distinctNames": 410,
           "sourceGeometryAvailable": true,
           "sourceGeometrySha256": "99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2"
+        },
+        {
+          "id": "ad-sdi-building-use-20261109",
+          "route": "/map/api/uae-evidence/abu-dhabi/building-uses",
+          "sourceRows": 266,
+          "grain": "municipality code × exact primary-use label; count of published building polygon features",
+          "sourceVintage": "captured 2026-11-09; source observation date unstated",
+          "sourceUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/353",
+          "rights": "AD-SDI open-data terms with attribution",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "layerFeatureCount": 392495,
+          "unknownUseFeatures": 249177,
+          "notVerifiedDistinctBuildings": true,
+          "notAvailableUnits": true,
+          "sourceSha256": "b226cb6da45ae7ac2e19f54a31499c35a7e27bf2682654c54017c779d9215572"
         }
       ],
       "publisherListingSnapshot": {
@@ -578,6 +593,7 @@
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",
     "rakPermits": "b77f992ee9d81ec2cd0b01deb232b3bf9cb18f484e17ceb843ea41df16d9169c",
-    "fujairahPermits": "f78adf96bb77abdcf150d3d4798d499e0d972719f6c4b45aed6307c319d4d044"
+    "fujairahPermits": "f78adf96bb77abdcf150d3d4798d499e0d972719f6c4b45aed6307c319d4d044",
+    "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1"
   }
 }
