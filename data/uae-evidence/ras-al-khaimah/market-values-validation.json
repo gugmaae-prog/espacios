@@ -1,0 +1,21 @@
+{
+  "sourceId": "raksc-yearbook-2026-selected-market-values-20261109",
+  "rows": 3,
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "sourceUrl": "https://css.rak.ae/en/statistical-yearbook-2026/",
+  "dataBytes": 2354,
+  "dataSha256": "28a84b6c3ed0b582aeaf97fa9fb00e08a0db83b1dc13f17477100b5074b70935",
+  "capturePage": {
+    "url": "https://css.rak.ae/en/statistical-yearbook-2026/",
+    "retrievedAt": "2026-11-09",
+    "bytes": 409142,
+    "sha256": "9367cd9259e11cbdaaed9a3a1e9cec2510cb9d7a9a2591b361506b1313eed1d9"
+  },
+  "rightsScope": "Selected numerical facts and source link only. No yearbook text, images, layout, or bulk table redistribution; no transaction-register reuse right asserted.",
+  "verification": "Selected values checked against the official page source. Table 7-1 sales, mortgage, and waiver values sum to each annual total at its printed precision. Table 7-2 commercial categories retain their separate labels.",
+  "limits": "Annual monetary values, not sale counts, individual transactions, asking listings, prices per unit, available commercial spaces, or a project register. Mortgage and waiver values are separate from sales. Mixed commercial-residential land is not classified as a commercial-only unit. Table 7-1 rounds 2025 total sales to AED 3,192,316 thousand; Table 7-2 prints AED 3,192,316.42 thousand. No project location, current availability, or return estimate is inferred."
+}

@@ -1,5 +1,5 @@
 {
-  "version": "20261109-uae-evidence-coverage-v12",
+  "version": "20261109-uae-evidence-coverage-v13",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -371,7 +371,22 @@
         "communities": 15,
         "initiatives": 9
       },
-      "publishedSources": [],
+      "publishedSources": [
+        {
+          "id": "raksc-yearbook-2026-selected-market-values-20261109",
+          "route": "/map/api/uae-evidence/ras-al-khaimah/market-values",
+          "sourceRows": 3,
+          "grain": "emirate annual monetary aggregates; AED thousand",
+          "sourceVintage": "2023–2025",
+          "sourceUrl": "https://css.rak.ae/en/statistical-yearbook-2026/",
+          "rights": "selected numerical facts and source link only; yearbook content excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "notTransactionLevel": true,
+          "notTransactionCounts": true,
+          "notProjectRegister": true,
+          "sourceSha256": "28a84b6c3ed0b582aeaf97fa9fb00e08a0db83b1dc13f17477100b5074b70935"
+        }
+      ],
       "publisherListingSnapshot": {
         "sourceId": "rgestate-full-index-20261103",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Ras%20Al%20Khaimah",
@@ -391,7 +406,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "The public off-plan list has not been cleared for backend republication or reconciled to V48 identities."
+        "Annual market values are published, but the public off-plan list has not been cleared for backend republication or reconciled to V48 identities. No unit-level sale records or current commercial availability are established."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -503,6 +518,7 @@
     "rgeAreas": "c6c10c026fed2e4663d0223b3eaa25d56547b3b49b56af8e7c542056a87df812",
     "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
     "dubaiCrosswalk": "24b40b1611a80f33227fc898c98966a19c9a847812e75be79b7f6de0a1132638",
-    "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df"
+    "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
+    "rakMarket": "86339d7ad64b4d7e8864b824ee00a9ac033dccfa16931e84a388f0724ff1fe62"
   }
 }
