@@ -30,7 +30,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/building-permits')).sourceRows,741);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/building-permits')).usableRows,537);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/unit-mortgages')).sourceRows,651);
- assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,79);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3792);
+ assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,83);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3788);
  assert.equal(sharjah.publishedSources[0].sourceRows,2);assert.equal(sharjah.publishedSources[0].notTransactionLevel,true);
  assert.deepEqual(Object.fromEntries(report.emirates.map(item=>[item.name,item.publisherListingSnapshot.explicitLocationLabelRows])),{'Abu Dhabi':9,Ajman:32,Dubai:5,Fujairah:3,'Ras Al Khaimah':7,Sharjah:355,'Umm Al Quwain':193});
  assert.ok(report.emirates.every(item=>item.publisherListingSnapshot.geographyStatus==='publisher_label_unverified'));

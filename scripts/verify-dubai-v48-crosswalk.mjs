@@ -28,13 +28,17 @@ const projectIdentityEvidence={
 assert.deepEqual(crosswalk.projectIdentityEvidence,projectIdentityEvidence);
 const additionalIdentityEvidence={
   '430':'https://www.damacproperties.com/sites/default/files/documents/financial-statements/annualreport2016english.pdf',
+  '1946':'https://www.dubaisouth.ae/en/newsroom/dubai-south-properties-unveils-south-living-an-exclusive-luxury-apartment-project-in-the-residential-district',
   '2166':'https://sobharealty.com/properties-in-dubai/sobha-hartland/one-park-avenue',
   '2239':'https://sobharealty.com/properties-in-dubai/sobha-hartland/waves',
   '2305':'https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-grande',
   '2447':'https://sobharealty.com/properties-in-dubai/sobha-hartland/the-crest',
   '2482':'https://sobharealty.com/properties-in-dubai/sobha-hartland/crest-grande',
+  '2550':'https://sobharealty.com/media-center/press-releases/sobha-realty-introduces-33-exquisite-seahaven-apartments-in-dubai',
   '2564':'https://sobharealty.com/properties-in-dubai/sobha-hartland/waves-opulence',
   '2797':'https://londongate.ae/projects/aeternitas',
+  '3328':'https://www.emaar.com/en/properties/marina-cove-at-dubai-marina',
+  '3393':'https://assets.irth.ae/marketing-assets/3.Rove%20Home%20Dubai%20Marina/6.Marketing%20NOC%20%26%20QR%20Code/NOC%20-%20ROVE%20HOME%20DUBAI%20MARINA-3393.pdf',
   '4142':'https://www.takmeeldevelopment.com/divine-elements-page',
   '4300':'https://ellingtonproperties.ae/en/property-for-sale/windsor-house-ii-dubai-south',
   '4482':'https://www.binghatti.com/en/projects/binghatti-wraith',
@@ -66,6 +70,7 @@ for(const match of crosswalk.matches){
     (row.community==='Marsa Dubai'&&project.area==='Dubai Marina'&&match.identityEvidenceUrl===additionalIdentityEvidence[match.sourceProjectNumber])||
     (row.community==='Al Merkadh'&&project.area==='Sobha Hartland'&&match.identityEvidenceUrl===additionalIdentityEvidence[match.sourceProjectNumber])||
     (row.community==='Madinat Al Mataar'&&project.area==='Dubai South Residential District'&&['4142','4300'].includes(match.sourceProjectNumber)&&match.identityEvidenceUrl===additionalIdentityEvidence[match.sourceProjectNumber])||
+    (row.community==='Madinat Al Mataar'&&project.area==='Dubai South'&&match.sourceProjectNumber==='1946'&&match.identityEvidenceUrl===additionalIdentityEvidence['1946'])||
     (row.community==='Al Jadaf'&&project.area==='Al Jaddaf, Dubai'&&match.sourceProjectNumber==='4482'&&match.identityEvidenceUrl===additionalIdentityEvidence['4482'])||
     (row.community==='Al Safouh First'&&project.area==='Al Sufouh, Dubai'&&match.sourceProjectNumber==='4503'&&match.identityEvidenceUrl===additionalIdentityEvidence['4503'])||
     (row.community==='Madinat Al Mataar'&&project.area==='Emaar South'&&project.developer==='Emaar'&&match.identityEvidenceUrl===projectIdentityEvidence.emaarSouth)||
