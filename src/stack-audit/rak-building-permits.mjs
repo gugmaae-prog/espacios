@@ -9,5 +9,6 @@ export function mapRakBuildingPermits(request,report,data){
  const selected=url.searchParams.get('year');
  if(selected&&!data.annual.some(row=>String(row.year)===selected))return reply({error:'Unknown calendar year.'},400);
  const annual=selected?data.annual.filter(row=>String(row.year)===selected):data.annual;
- return reply({source:{id:report.sourceId,authority:data.authority,originalSource:data.originalSource,publication:data.publication,sourceUrl:data.sourceUrl,evidenceClass:data.evidenceClass,grain:data.grain,sourcePageSha256:report.capturePage.sha256,dataSha256:report.dataSha256,rightsScope:report.rightsScope},scope:{emirate:data.emirate,years:annual.map(row=>row.year),unit:'issued permits',projectRegister:false,transactions:false,listingAvailability:false,projectCoordinates:false,limits:data.limits},annual});
+ const buildingTypes=selected?data.buildingTypes.filter(row=>String(row.year)===selected):data.buildingTypes;
+ return reply({source:{id:report.sourceId,authority:data.authority,originalSource:data.originalSource,publication:data.publication,sourceUrl:data.sourceUrl,evidenceClass:data.evidenceClass,grain:data.grain,sourcePageSha256:report.capturePage.sha256,dataSha256:report.dataSha256,rightsScope:report.rightsScope},scope:{emirate:data.emirate,years:annual.map(row=>row.year),unit:'issued permits',buildingTypeClassification:'Table 7-4, separate from Table 7-3 annual totals',projectRegister:false,transactions:false,listingAvailability:false,projectCoordinates:false,limits:data.limits},annual,buildingTypes});
 }

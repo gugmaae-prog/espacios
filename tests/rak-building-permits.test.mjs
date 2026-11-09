@@ -6,7 +6,7 @@ import {mapRakBuildingPermits} from '../src/stack-audit/rak-building-permits.mjs
 import worker from '../src/worker.js';
 
 const root=new URL('../',import.meta.url);
-const bytes=await fs.readFile(new URL('data/uae-evidence/ras-al-khaimah/building-permits-20261109.json',root));
+const bytes=await fs.readFile(new URL('data/uae-evidence/ras-al-khaimah/building-permits-20261110.json',root));
 const data=JSON.parse(bytes),report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/ras-al-khaimah/building-permits-validation.json',root)));
 const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/ras-al-khaimah/building-permits${query}`,{method});
 
@@ -16,7 +16,10 @@ test('official RAK annual permit totals retain their source grain',()=>{
  assert.deepEqual(data.annual.map(row=>row.year),[2017,2018,2019,2020,2021,2022,2023,2024,2025]);
  assert.deepEqual(data.annual.map(row=>row.issuedPermits),[9561,10071,8909,6789,6561,5756,6258,5830,6315]);
  assert.equal(1595+1396+1319+2005,data.annual.at(-1).issuedPermits);
- assert.equal(report.capturePage.sha256,'9367cd9259e11cbdaaed9a3a1e9cec2510cb9d7a9a2591b361506b1313eed1d9');
+ assert.equal(report.capturePage.sha256,'853e7cbe3907235d287fdf8f137d76136acf9aa6615c97b3f798111dc894290a');
+ assert.equal(report.capturePage.independentReads,2);
+ assert.deepEqual(data.buildingTypes.map(row=>row.oneStoreyCommercialBuildingPermits),[90,138,91,49,108,46,62,59,69]);
+ assert.deepEqual(data.buildingTypes.map(row=>row.industrialBuildingPermits),[26,33,59,18,119,16,22,26,41]);
 });
 
 test('read-only API does not describe permits as buildings or listings',async()=>{
@@ -24,8 +27,10 @@ test('read-only API does not describe permits as buildings or listings',async()=
  assert.equal(response.status,200);assert.equal(body.scope.unit,'issued permits');
  assert.equal(body.scope.projectRegister,false);assert.equal(body.scope.transactions,false);
  assert.equal(body.scope.listingAvailability,false);assert.equal(body.scope.projectCoordinates,false);
+ assert.match(body.scope.buildingTypeClassification,/separate from Table 7-3/);
  assert.equal(body.annual.length,9);
  assert.deepEqual((await mapRakBuildingPermits(request('?year=2025'),report,data).json()).annual,[{year:2025,issuedPermits:6315}]);
+ assert.deepEqual((await mapRakBuildingPermits(request('?year=2025'),report,data).json()).buildingTypes,[{year:2025,oneStoreyCommercialBuildingPermits:69,industrialBuildingPermits:41}]);
  assert.equal(mapRakBuildingPermits(request('?year=2026'),report,data).status,400);
  assert.equal(mapRakBuildingPermits(request('','POST'),report,data).status,405);
  assert.equal(mapRakBuildingPermits(request('','HEAD'),report,data).body,null);
@@ -36,4 +41,5 @@ test('compiled Worker serves the RAK permit series',async()=>{
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
  assert.equal(body.annual.at(-1).issuedPermits,6315);
+ assert.equal(body.buildingTypes.at(-1).oneStoreyCommercialBuildingPermits,69);
 });

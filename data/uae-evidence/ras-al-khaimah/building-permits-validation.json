@@ -1,5 +1,5 @@
 {
-  "sourceId": "raksc-yearbook-2026-selected-building-permits-20261109",
+  "sourceId": "raksc-yearbook-2026-selected-building-permits-20261110",
   "rows": 9,
   "years": [
     2017,
@@ -12,16 +12,22 @@
     2024,
     2025
   ],
-  "sourceUrl": "https://css.rak.ae/en/statistical-yearbook-2026/",
-  "dataBytes": 1397,
-  "dataSha256": "f38c823c7507fee067d96f02518644f3916ddd75f49e711aae074fec8072e9f1",
+  "sourceUrl": "https://css.rak.ae/en/syvb2026/",
+  "dataBytes": 2747,
+  "dataSha256": "a978832afbf1ca922bac6b3ae642e1835b3b9cb0dab4f32bd93bcd436b3d6d08",
   "capturePage": {
-    "url": "https://css.rak.ae/en/statistical-yearbook-2026/",
-    "retrievedAt": "2026-11-09",
-    "bytes": 409142,
-    "sha256": "9367cd9259e11cbdaaed9a3a1e9cec2510cb9d7a9a2591b361506b1313eed1d9"
+    "url": "https://css.rak.ae/en/syvb2026/",
+    "retrievedAt": "2026-11-10",
+    "independentReads": 2,
+    "bytes": 626364,
+    "sha256": "853e7cbe3907235d287fdf8f137d76136acf9aa6615c97b3f798111dc894290a"
   },
-  "rightsScope": "Selected annual total row and source link only. No quarterly rows, yearbook text, images, layout, or bulk table redistribution; no permit-register reuse right asserted.",
-  "verification": "The nine annual totals match Table 7-3. The 2025 quarterly counts 1,595 + 1,396 + 1,319 + 2,005 reconcile to 6,315. Table 7-4 is a different classification and is not combined.",
-  "limits": "Annual issued-permit totals are authorizations, not completed buildings, distinct projects, sale or rent transactions, commercial unit availability, or verified project coordinates. The source does not split this Table 7-3 total into residential and commercial permits. Table 7-4 uses a different building-type classification with different totals; its rows are not combined with Table 7-3."
+  "rightsScope": "Selected annual numerical facts and source link only. No quarterly rows, full yearbook table, text, images, layout, or permit-register redistribution.",
+  "verification": "Two independent official-page reads matched byte-for-byte. Selected Table 7-4 rows were checked against the source: one-storey commercial buildings 90,138,91,49,108,46,62,59,69 and industrial buildings 26,33,59,18,119,16,22,26,41 for 2017–2025. Table 7-3 annual totals remain unchanged and are not combined with Table 7-4.",
+  "limits": "Table 7-4 labels one-storey buildings as commercial in Arabic and industrial buildings separately. These are permit counts, not completed buildings, distinct projects, commercial units, transactions, or available listings. Multi-storey buildings are not assumed commercial. Table 7-4 has a different classification and total from Table 7-3; the two totals are not combined. No verified project coordinates or rates are inferred.",
+  "buildingTypeRows": 9,
+  "buildingTypeSeries": [
+    "oneStoreyCommercialBuildingPermits",
+    "industrialBuildingPermits"
+  ]
 }

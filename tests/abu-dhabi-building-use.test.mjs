@@ -50,7 +50,7 @@ test('compiled Worker exposes the canonical route without raw captures',async()=
  assert.equal(response.status,200);
  const body=await response.json();
  assert.equal(body.matchedFeatureCount,0);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v41');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v42');
  assert.equal((await worker.fetch(request('','GET','another.example'),env,{})).status,404);
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/data/uae-evidence/abu-dhabi/sdi-building-use-capture.json'),env,{})).status,404);
 });

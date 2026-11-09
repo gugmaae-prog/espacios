@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v19",
+  "version": "20261110-uae-evidence-coverage-v20",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -449,18 +449,23 @@
           "sourceSha256": "3e66bd2e7bef03f6849ec78f19180d11159a144d23b4d4d0bb894d06e235c6f2"
         },
         {
-          "id": "raksc-yearbook-2026-selected-building-permits-20261109",
+          "id": "raksc-yearbook-2026-selected-building-permits-20261110",
           "route": "/map/api/uae-evidence/ras-al-khaimah/building-permits",
           "sourceRows": 9,
-          "grain": "emirate-year issued building-permit totals",
+          "grain": "emirate-year issued building-permit totals and two separate building-type series",
           "sourceVintage": "2017–2025",
-          "sourceUrl": "https://css.rak.ae/en/statistical-yearbook-2026/",
-          "rights": "selected annual totals and source link only; quarterly rows and yearbook content excluded",
+          "sourceUrl": "https://css.rak.ae/en/syvb2026/",
+          "rights": "selected annual numerical facts and source link only; yearbook content excluded",
           "liveRouteHealth": "not_asserted_by_inventory",
+          "buildingTypeRows": 9,
+          "buildingTypeSeries": [
+            "oneStoreyCommercialBuildingPermits",
+            "industrialBuildingPermits"
+          ],
           "notBuildingsCompleted": true,
           "notProjectRegister": true,
           "notAvailableUnits": true,
-          "sourceSha256": "f38c823c7507fee067d96f02518644f3916ddd75f49e711aae074fec8072e9f1"
+          "sourceSha256": "a978832afbf1ca922bac6b3ae642e1835b3b9cb0dab4f32bd93bcd436b3d6d08"
         }
       ],
       "publisherListingSnapshot": {
@@ -628,7 +633,7 @@
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
     "sharjahAnnual": "a94c8d322e457a64f89804943c7a0c208918ac9ef4843a1dad03f7796c9119f4",
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",
-    "rakPermits": "b77f992ee9d81ec2cd0b01deb232b3bf9cb18f484e17ceb843ea41df16d9169c",
+    "rakPermits": "a5efea7bcf2767b9c331c4c9fdedf045b65e386af18d5c3a96deeef9ef2b28ec",
     "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12"
