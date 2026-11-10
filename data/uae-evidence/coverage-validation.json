@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v23",
+  "version": "20261110-uae-evidence-coverage-v24",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -396,24 +396,26 @@
       },
       "publishedSources": [
         {
-          "id": "fscfuj-construction-chapter-selected-permits-2025-20261109",
+          "id": "fscfuj-construction-chapter-selected-permits-2025-20261110",
           "route": "/map/api/uae-evidence/fujairah/building-permits",
-          "sourceRows": 4,
-          "grain": "municipality-year issued building-permit aggregates; selected 2024 and 2025 building-use counts",
-          "sourceVintage": "2022–2025",
+          "sourceRows": 5,
+          "grain": "municipality-year issued building-permit aggregates; selected 2023–2025 building-use counts",
+          "sourceVintage": "2021–2025",
           "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
           "rights": "selected numerical facts and source links only; chapter content excluded",
           "liveRouteHealth": "not_asserted_by_inventory",
+          "buildingUseRows2023": 3,
           "buildingUseRows2024": 3,
           "buildingUseRows2025": 3,
           "sourceUrls": [
+            "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1045/Chapter2ConstructionandBuilding.pdf",
             "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
             "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf"
           ],
           "notProjectRegister": true,
           "notTransactions": true,
           "notAvailableUnits": true,
-          "sourceSha256": "2f69fb800926d2379b9a60f7f0ba53885fbe0a63b1b2d01b41a55779c7e8dd95"
+          "sourceSha256": "0c932c4baf574d6df38daa75543f0d7227aae8073e38b88ab3eb39345a5462ac"
         }
       ],
       "publisherListingSnapshot": {
@@ -672,7 +674,7 @@
     "sharjahAnnual": "a94c8d322e457a64f89804943c7a0c208918ac9ef4843a1dad03f7796c9119f4",
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",
     "rakPermits": "a5efea7bcf2767b9c331c4c9fdedf045b65e386af18d5c3a96deeef9ef2b28ec",
-    "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",
+    "fujairahPermits": "ae6a9f928262bffc00d3d3a8356d9f757f33f9cd82e2815d98a70c9b0baa757b",
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",

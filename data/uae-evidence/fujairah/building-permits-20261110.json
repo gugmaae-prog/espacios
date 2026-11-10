@@ -1,16 +1,36 @@
 {
-  "sourceId": "fscfuj-construction-chapter-selected-permits-2025-20261109",
+  "sourceId": "fscfuj-construction-chapter-selected-permits-2025-20261110",
   "emirate": "Fujairah",
   "authority": "Fujairah Statistics Centre",
   "originalSources": [
     "Fujairah Municipality",
     "Dibba Municipality"
   ],
-  "publication": "Construction and Building chapters, Tables 2-4 and 2-5, pages 50–51 (2024 and 2025 editions)",
+  "publication": "Construction and Building chapters, Tables 2-4 and 2-5, pages 50–51 (2023, 2024 and 2025 editions)",
   "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
   "evidenceClass": "official_building_permit_count_aggregate",
-  "grain": "municipality-calendar-year permit type count; selected 2024 and 2025 building-use counts",
+  "grain": "municipality-calendar-year permit type count; selected 2023–2025 building-use counts",
   "annual": [
+    {
+      "year": 2021,
+      "fujairahMunicipality": {
+        "newAndRenew": 812,
+        "annexes": 86,
+        "maintenance": 269,
+        "temporary": 46,
+        "other": 18,
+        "total": 1231
+      },
+      "dibbaMunicipality": {
+        "newAndRenew": 506,
+        "annexes": 170,
+        "maintenance": 72,
+        "temporary": 0,
+        "other": 10,
+        "total": 758
+      },
+      "emirateTotal": 1989
+    },
     {
       "year": 2022,
       "fujairahMunicipality": {
@@ -112,8 +132,9 @@
       "emirateTotal": 116
     }
   ],
-  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The selected 2024 and 2025 building-use categories are a separate breakdown of their respective annual permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings.",
+  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The selected 2023–2025 building-use categories are a separate breakdown of their respective annual permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings.",
   "sourceUrls": [
+    "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1045/Chapter2ConstructionandBuilding.pdf",
     "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
     "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf"
   ],
@@ -135,6 +156,26 @@
       "fujairahMunicipality": 92,
       "dibbaMunicipality": 44,
       "emirateTotal": 136
+    }
+  ],
+  "buildingUse2023": [
+    {
+      "use": "commercial_buildings",
+      "fujairahMunicipality": 60,
+      "dibbaMunicipality": 29,
+      "emirateTotal": 89
+    },
+    {
+      "use": "residential_and_commercial_buildings",
+      "fujairahMunicipality": 36,
+      "dibbaMunicipality": 41,
+      "emirateTotal": 77
+    },
+    {
+      "use": "industrial_buildings",
+      "fujairahMunicipality": 68,
+      "dibbaMunicipality": 35,
+      "emirateTotal": 103
     }
   ]
 }
