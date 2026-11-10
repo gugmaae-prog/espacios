@@ -1,8 +1,8 @@
 {
-  "version": "20261109-rgestate-emirate-labels-v2",
-  "sourceId": "rgestate-full-index-20261109",
-  "sourceRawSha256": "366428ffadb56adbf2d995be31b93ce723a8b9d3b3008e778b2b7e503ab16096",
-  "sourceObservedAt": "2026-11-09T17:16:27.531472+00:00",
+  "version": "20261110-rgestate-emirate-labels-v3",
+  "sourceId": "rgestate-full-index-20261110",
+  "sourceRawSha256": "3a2890886d3dbaf0f36d9fae96baef28b8b3f0b89bbb314128796a47e204cdbd",
+  "sourceObservedAt": "2026-11-10T11:04:45.697616+00:00",
   "method": "Exact equality against the publisher location label; no title, URL, nearby district, or coordinate inference.",
   "labelMap": {
     "Abu Dhabi": "Abu Dhabi",
@@ -87,7 +87,7 @@
     }
   },
   "explicitEmirateRows": 603,
-  "unassignedRows": 1067,
+  "unassignedRows": 1065,
   "evidenceClass": "brokerage_advertised_listing_facts",
   "geographyStatus": "publisher_label_unverified",
   "availabilityStatus": "publisher_listed_at_capture_unverified_now",

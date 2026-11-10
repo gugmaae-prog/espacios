@@ -8,7 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'data/uae-evidence/rgestate/full-index-20261109.json.gz'
+SOURCE = ROOT / 'data/uae-evidence/rgestate/full-index-20261110.json.gz'
 SOURCE_REPORT = ROOT / 'data/uae-evidence/rgestate/full-index-validation.json'
 OUT = ROOT / 'data/uae-evidence/rgestate/emirate-label-validation.json'
 LABELS = {
@@ -50,7 +50,7 @@ def build():
     explicit = sum(item['rows'] for item in by_emirate.values())
     assert explicit + (len(rows) - explicit) == report['rows']
     return {
-        'version': '20261109-rgestate-emirate-labels-v2',
+        'version': '20261110-rgestate-emirate-labels-v3',
         'sourceId': report['sourceId'],
         'sourceRawSha256': report['rawSha256'],
         'sourceObservedAt': report['observedAt'],

@@ -1,110 +1,66 @@
 {
-  "sourceId": "rgestate-full-index-20261109",
+  "sourceId": "rgestate-full-index-20261110",
   "publisher": "RGEstate",
   "sourceUrl": "https://www.rgestate.com/properties",
-  "observedAt": "2026-11-09T17:16:27.531472+00:00",
+  "observedAt": "2026-11-10T11:04:45.697616+00:00",
   "captures": [
     {
       "pass": "first",
-      "retrievedAt": "2026-11-09T17:14:46.794544+00:00",
+      "retrievedAt": "2026-11-10T11:03:38.950319+00:00",
       "pages": 80,
-      "pageManifestSha256": "34bf803b6a462332810c83487b0e3084765d43c1aeeecf6b6b6957bb2883bfcd"
+      "pageManifestSha256": "c9a974d3309613532bc7045e4d02e0a7dc72b5fd0b3f79a852d478882d1b3404"
     },
     {
       "pass": "second",
-      "retrievedAt": "2026-11-09T17:16:27.531472+00:00",
+      "retrievedAt": "2026-11-10T11:04:45.697616+00:00",
       "pages": 80,
-      "pageManifestSha256": "c90e78ecb7cb2c06c997853979f9c620f6812adaaef9fd1a3058bb0a6b5d5759"
+      "pageManifestSha256": "15eae19aef63bde11e0b07d5f07c67001982b048b6697f26aea9257909ec6a39"
     }
   ],
   "evidenceClass": "brokerage_advertised_listing_facts",
   "rights": "Owner confirmed reuse of factual details and links for all RGEstate listings, including third-party advertisers; photos excluded.",
-  "rows": 1670,
+  "rows": 1668,
   "pathClassCounts": {
-    "rent": 727,
+    "rent": 725,
     "sale": 823,
     "off-plan": 15,
     "business-sale": 105
   },
   "comparison": {
-    "previousSourceId": "rgestate-full-index-20261103",
-    "previousObservedAt": "2026-11-03T09:02:31Z",
-    "previousRawSha256": "1a6ecad078a8664dc4b79f6bf3ee31d40e5c790888580629b98300ffe1a9af83",
-    "continuingIds": 1670,
+    "previousSourceId": "rgestate-full-index-20261109",
+    "previousObservedAt": "2026-11-09T17:16:27.531472+00:00",
+    "previousRawSha256": "366428ffadb56adbf2d995be31b93ce723a8b9d3b3008e778b2b7e503ab16096",
+    "continuingIds": 1668,
     "addedIds": [],
     "absentFromCurrentIndexIds": [
-      "44251",
-      "46522",
-      "46580",
-      "46769",
-      "47177",
-      "49327",
-      "49433",
-      "49540",
-      "49544",
-      "49629",
-      "50091",
-      "50292",
-      "51271",
-      "52188",
-      "54695",
-      "55694",
-      "55988",
-      "57625",
-      "59305",
-      "59306",
-      "59333",
-      "59341",
-      "59342",
-      "59344",
-      "59416",
-      "59447",
-      "59601",
-      "59650",
-      "59717",
-      "59718",
-      "59779",
-      "59780",
-      "60555",
-      "60556",
-      "60562",
-      "60569",
-      "60725",
-      "60754"
+      "57677",
+      "57678"
     ],
     "changedAskingPrices": [
       {
-        "sourceListingId": "43704",
-        "previousPriceLabel": "AED 42,000,000",
-        "currentPriceLabel": "AED 55,000,000"
-      },
+        "sourceListingId": "42657",
+        "previousPriceLabel": "AED 100,000,000",
+        "currentPriceLabel": "AED 150,000,000"
+      }
+    ],
+    "changedTitles": [
       {
-        "sourceListingId": "59468",
-        "previousPriceLabel": "AED 42,000,000",
-        "currentPriceLabel": "AED 44,000,000"
-      },
-      {
-        "sourceListingId": "59759",
-        "previousPriceLabel": "AED 2,400,000 / Year",
-        "currentPriceLabel": "AED 4,000,000 / Year"
-      },
-      {
-        "sourceListingId": "60554",
-        "previousPriceLabel": "AED 11,000,000",
-        "currentPriceLabel": "AED 20,000,000"
+        "sourceListingId": "42657",
+        "previousTitle": "400,000 sqft Plot with 167,000 sqft Warehouse & Office for Sale in DIP",
+        "currentTitle": "Prime 167,000 Sq.Ft Warehouse & Office on 400,000 Sq.Ft Super-Plot for Sale in DIP | ASH PP 702 | 12M High-Bay Clearance | 2,000 kW Heavy Power | 233,000 Sq.Ft Hardstand Yard | AED 150M Net"
       }
     ],
     "limits": "A missing publisher index ID does not establish a sale, withdrawal, or current unavailability. Price changes are advertised asks, not transactions."
   },
-  "commercialCategoryRows": 863,
+  "commercialCategoryRows": 861,
   "notInCommercialCategoryRows": 807,
   "missingAreaRows": 595,
   "missingLocationRows": 23,
   "unknownPriceRows": 143,
-  "rawBytes": 879412,
-  "rawSha256": "366428ffadb56adbf2d995be31b93ce723a8b9d3b3008e778b2b7e503ab16096",
-  "compressedBytes": 89411,
-  "compressedSha256": "7ece8af1957661f3baa9f7253f3f7b344b48174f5a3eade50b54966b0604f05c",
-  "verification": "Two independent 1670-row full-index reads matched facts; each captured HTML page checksum passed; all 863 commercial-category rows match the full index.",
+  "rawBytes": 878584,
+  "rawSha256": "3a2890886d3dbaf0f36d9fae96baef28b8b3f0b89bbb314128796a47e204cdbd",
+  "compressedBytes": 89413,
+  "compressedSha256": "43f5a80181b6b39869ee7a8264af18ffb39f03ad02c76381d6eb016888121afc",
+  "verification": "Two independent 1668-row full-index reads matched facts; each captured HTML page checksum passed; all 861 commercial-category rows match the full index.",
   "limits": "Publisher-listed at capture only. Current availability, category for rows outside the verified commercial pages, asking-price accuracy, coordinates, and exact project identity are unverified. Business-sale asks can include operating businesses and are not property prices. Off-plan path entries have no verified sale/rent classification. Not registered transactions or a complete UAE inventory."
 }

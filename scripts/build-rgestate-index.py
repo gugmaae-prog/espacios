@@ -74,8 +74,8 @@ def build():
     assert set(kinds) <= KINDS and sum(kinds.values()) == len(first)
     assert sum(row['commercialCategoryMember'] for row in rows) == len(commercial)
     rows.sort(key=lambda row: -int(row['sourceListingId']))
-    previous_report = json.loads((OUT / 'full-index-validation-20261103.json').read_text())
-    previous_packed = (OUT / 'full-index-20261103.json.gz').read_bytes()
+    previous_report = json.loads((OUT / 'full-index-validation-20261109.json').read_text())
+    previous_packed = (OUT / 'full-index-20261109.json.gz').read_bytes()
     previous_raw = gzip.decompress(previous_packed)
     assert sha(previous_packed) == previous_report['compressedSha256'] and sha(previous_raw) == previous_report['rawSha256']
     previous = {row['sourceListingId']: row for row in json.loads(previous_raw)}
@@ -92,12 +92,17 @@ def build():
             for key in sorted(previous.keys() & current.keys(), key=int)
             if previous[key]['priceLabel'] != current[key]['priceLabel']
         ],
+        'changedTitles': [
+            {'sourceListingId': key, 'previousTitle': previous[key]['title'], 'currentTitle': current[key]['title']}
+            for key in sorted(previous.keys() & current.keys(), key=int)
+            if previous[key]['title'] != current[key]['title']
+        ],
         'limits': 'A missing publisher index ID does not establish a sale, withdrawal, or current unavailability. Price changes are advertised asks, not transactions.',
     }
     raw = (json.dumps(rows, ensure_ascii=False, separators=(',', ':')) + '\n').encode()
     packed = gzip.compress(raw, compresslevel=9, mtime=0)
     report = {
-        'sourceId': 'rgestate-full-index-20261109', 'publisher': 'RGEstate',
+        'sourceId': 'rgestate-full-index-20261110', 'publisher': 'RGEstate',
         'sourceUrl': 'https://www.rgestate.com/properties',
         'observedAt': captures[-1]['retrievedAt'], 'captures': captures,
         'evidenceClass': 'brokerage_advertised_listing_facts',
@@ -121,7 +126,7 @@ def main():
     args = parser.parse_args()
     if args.check:
         report = json.loads((OUT / 'full-index-validation.json').read_text())
-        packed = (OUT / 'full-index-20261109.json.gz').read_bytes()
+        packed = (OUT / 'full-index-20261110.json.gz').read_bytes()
         raw = gzip.decompress(packed)
         rows = json.loads(raw)
         assert len(packed) == report['compressedBytes'] and sha(packed) == report['compressedSha256']
@@ -132,7 +137,7 @@ def main():
     else:
         packed, report = build()
         OUT.mkdir(parents=True, exist_ok=True)
-        (OUT / 'full-index-20261109.json.gz').write_bytes(packed)
+        (OUT / 'full-index-20261110.json.gz').write_bytes(packed)
         (OUT / 'full-index-validation.json').write_text(json.dumps(report, indent=2) + '\n')
     print(f'RGEstate full index verified: {report["rows"]} listing facts, no photos')
 

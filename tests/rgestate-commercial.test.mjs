@@ -6,29 +6,33 @@ import worker from '../src/worker.js';
 
 const root=new URL('../',import.meta.url);
 const report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/rgestate/commercial-listings-validation.json',root)));
-const packed=(await fs.readFile(new URL('data/uae-evidence/rgestate/commercial-listings-20261109.json.gz',root))).toString('base64');
+const packed=(await fs.readFile(new URL('data/uae-evidence/rgestate/commercial-listings-20261110.json.gz',root))).toString('base64');
 const candidateReport=JSON.parse(await fs.readFile(new URL('data/uae-evidence/rgestate/commercial-title-candidates-validation.json',root)));
-const candidatePacked=(await fs.readFile(new URL('data/uae-evidence/rgestate/commercial-title-candidates-20261109.json.gz',root))).toString('base64');
+const candidatePacked=(await fs.readFile(new URL('data/uae-evidence/rgestate/commercial-title-candidates-20261110.json.gz',root))).toString('base64');
 const parentReport=JSON.parse(await fs.readFile(new URL('data/uae-evidence/rgestate/full-index-validation.json',root)));
 const combined=(query='')=>mapRgestateCommercial(request(query),report,packed,candidateReport,candidatePacked,parentReport);
 const request=(query='',method='GET')=>new Request('https://espacios.me/map/api/uae-evidence/commercial/listings'+query,{method});
 
 test('commercial listing facts retain publisher and evidence boundaries',async()=>{
  const all=await(await mapRgestateCommercial(request('?limit=100'),report,packed)).json();
- assert.equal(all.scope.totalSnapshotRows,863);
- assert.equal(all.scope.rentRows,452);
+ assert.equal(all.scope.totalSnapshotRows,861);
+ assert.equal(all.scope.rentRows,450);
  assert.equal(all.scope.saleRows,411);
- assert.equal(all.source.comparison.previousSourceId,'rgestate-commercial-category-20261103');
- assert.equal(all.source.comparison.continuingIds,863);
+ assert.equal(all.source.comparison.previousSourceId,'rgestate-commercial-category-20261109');
+ assert.equal(all.source.comparison.continuingIds,861);
  assert.equal(all.source.comparison.addedIds.length,0);
- assert.equal(all.source.comparison.absentFromCurrentCategoryIds.length,31);
- assert.equal(all.source.comparison.changedAskingPrices.length,3);
+ assert.equal(all.source.comparison.absentFromCurrentCategoryIds.length,2);
+ assert.equal(all.source.comparison.changedAskingPrices.length,1);
+ assert.deepEqual(all.source.comparison.absentFromCurrentCategoryIds,['57677','57678']);
+ assert.deepEqual(all.source.comparison.changedAskingPrices,[{sourceListingId:'42657',previousPriceLabel:'AED 100,000,000',currentPriceLabel:'AED 150,000,000'}]);
+ assert.equal(all.source.comparison.changedTitles.length,1);
+ assert.equal(all.source.comparison.changedTitles[0].sourceListingId,'42657');
  assert.match(all.source.comparison.limits,/does not establish a sale/);
  assert.equal(all.scope.photosIncluded,false);
  assert.equal(all.scope.registeredTransactionEvidence,false);
  assert.equal(all.scope.availability,'publisher_listed_at_capture_unverified_now');
  const seen=new Set();
- for(let offset=0;offset<863;offset+=100){
+ for(let offset=0;offset<861;offset+=100){
   const page=await(await mapRgestateCommercial(request(`?limit=100&offset=${offset}`),report,packed)).json();
   for(const row of page.rows){
    assert.ok(row.sourceUrl.startsWith(`https://www.rgestate.com/${row.purpose}/`));
@@ -38,18 +42,18 @@ test('commercial listing facts retain publisher and evidence boundaries',async()
    seen.add(row.sourceListingId);
   }
  }
- assert.equal(seen.size,863);
- assert.equal((await(await mapRgestateCommercial(request('?purpose=rent&limit=100'),report,packed)).json()).totalRows,452);
+ assert.equal(seen.size,861);
+ assert.equal((await(await mapRgestateCommercial(request('?purpose=rent&limit=100'),report,packed)).json()).totalRows,450);
  assert.equal((await(await mapRgestateCommercial(request('?purpose=sale&limit=100'),report,packed)).json()).totalRows,411);
 });
 
 test('commercial area map aggregates reviewed labels without assigning unit pins',async()=>{
  const areaRequest=(query='')=>new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'+query);
  const all=await(await mapRgestateCommercial(areaRequest(),report,packed)).json();
- assert.equal(all.totalRows,863);
- assert.equal(all.mappedRows,808);
+ assert.equal(all.totalRows,861);
+ assert.equal(all.mappedRows,806);
  assert.equal(all.unmappedRows,55);
- assert.equal(all.areas.reduce((sum,area)=>sum+area.count,0),808);
+ assert.equal(all.areas.reduce((sum,area)=>sum+area.count,0),806);
  assert.equal(all.scope.mapGranularity,'publisher_area_label');
  assert.equal(all.scope.unitCoordinatesPresent,false);
  assert.equal(all.scope.areaAttributionUrl,'https://www.openstreetmap.org/copyright');
@@ -57,7 +61,7 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  assert.equal(all.areas.find(area=>area.key==='al-ain').count,1);
  assert.equal(all.areas.find(area=>area.key==='majan').count,2);
  const byEmirate={
-  'Abu Dhabi':9,Ajman:16,Dubai:504,Fujairah:2,
+  'Abu Dhabi':9,Ajman:16,Dubai:502,Fujairah:2,
   'Ras Al Khaimah':4,Sharjah:129,'Umm Al Quwain':144,
  };
  for(const [emirate,count] of Object.entries(byEmirate)){
@@ -80,8 +84,8 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  }
  const rent=await(await mapRgestateCommercial(areaRequest('?purpose=rent'),report,packed)).json();
  const sale=await(await mapRgestateCommercial(areaRequest('?purpose=sale'),report,packed)).json();
- assert.equal(rent.totalRows,452);assert.equal(sale.totalRows,411);
- assert.equal(rent.mappedRows+rent.unmappedRows,452);assert.equal(sale.mappedRows+sale.unmappedRows,411);
+ assert.equal(rent.totalRows,450);assert.equal(sale.totalRows,411);
+ assert.equal(rent.mappedRows+rent.unmappedRows,450);assert.equal(sale.mappedRows+sale.unmappedRows,411);
  const dip=await(await mapRgestateCommercial(request('?area=dip&limit=100'),report,packed)).json();
  assert.equal(dip.totalRows,61);assert.ok(dip.rows.every(row=>['DIP Dubai Investment Park','DIP','Dubai Investment Park'].includes(row.locationLabel)));
  const alAin=await(await mapRgestateCommercial(request('?area=al-ain'),report,packed)).json();
@@ -95,7 +99,7 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
 test('commercial asking rates are derived only from usable publisher prices and areas',async()=>{
  const page=await(await mapRgestateCommercial(request('?limit=100'),report,packed)).json();
  assert.match(page.scope.askingRateBasis,/not a registered transaction/);
- assert.equal(page.scope.askingRateEligibleSnapshotRows,731);
+ assert.equal(page.scope.askingRateEligibleSnapshotRows,729);
  const warehouse=page.rows.find(row=>row.sourceListingId==='60770');
  assert.equal(warehouse.askingAedPerSqft,55);
  assert.equal(warehouse.askingRatePeriod,'year');
@@ -111,11 +115,11 @@ test('commercial asking rates are derived only from usable publisher prices and 
 
 test('137 title-matched spaces add publisher data without becoming category rows or unit pins',async()=>{
  const all=await(await combined('?limit=100')).json();
- assert.equal(all.scope.totalSnapshotRows,1000);
- assert.equal(all.scope.publisherCategoryRows,863);
+ assert.equal(all.scope.totalSnapshotRows,998);
+ assert.equal(all.scope.publisherCategoryRows,861);
  assert.equal(all.scope.titleCandidateRows,137);
  assert.equal(all.source.supplement.parentRawSha256,parentReport.rawSha256);
- assert.equal((await(await combined('?scope=category')).json()).totalRows,863);
+ assert.equal((await(await combined('?scope=category')).json()).totalRows,861);
  const candidate=await(await combined('?scope=title-candidates&limit=100')).json();
  assert.equal(candidate.totalRows,137);
  assert.ok(candidate.rows.every(row=>row.sourceCategory==='title_matched_candidate'&&row.coordinates===null&&row.canonicalProjectId===null));
@@ -123,8 +127,8 @@ test('137 title-matched spaces add publisher data without becoming category rows
  assert.equal((await(await combined('?scope=title-candidates&purpose=rent')).json()).totalRows,candidateReport.rentRows);
  assert.equal((await(await combined('?scope=title-candidates&purpose=sale')).json()).totalRows,candidateReport.saleRows);
  const areas=await(await mapRgestateCommercial(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),report,packed,candidateReport,candidatePacked,parentReport)).json();
- assert.equal(areas.totalRows,1000);
- assert.equal(areas.mappedRows,938);
+ assert.equal(areas.totalRows,998);
+ assert.equal(areas.mappedRows,936);
  assert.equal(areas.unmappedRows,62);
  assert.equal(areas.areas.reduce((sum,area)=>sum+area.count,0),areas.mappedRows);
  assert.equal(areas.scope.unitCoordinatesPresent,false);
@@ -178,12 +182,12 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  assert.equal(result.status,200);assert.ok(body.totalRows>0);
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
- assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,1000);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v55');
+ assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,998);
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v56');
  const commercialPage=await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{});
  assert.equal(commercialPage.status,200);
  assert.match(await commercialPage.text(),/The source table does not state the rate period/);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);
- assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial-listings-20261109.json.gz'),env,{})).status,404);
+ assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial-listings-20261110.json.gz'),env,{})).status,404);
 });
