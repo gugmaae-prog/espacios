@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261110-map-stack-v53';
+var MAP_STACK_RELEASE='20261110-map-stack-v54';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';

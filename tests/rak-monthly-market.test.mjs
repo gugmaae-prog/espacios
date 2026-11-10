@@ -43,6 +43,6 @@ test('compiled Worker serves September monthly source',async()=>{
  const body=await response.json();
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v53');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v54');
  assert.equal(body.observations[0].salesTransactions,202);
 });

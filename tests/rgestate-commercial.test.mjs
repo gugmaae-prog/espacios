@@ -161,8 +161,8 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  assert.match(html,/This is not commercial-only activity or available space/);
  assert.match(html,/Includes H1; periods must not be added/);
  assert.match(html,/No rent amounts or comparable asking prices/);
- const inlineScript=html.match(/<script>\s*\(function\(\)\{([\s\S]*?)<\/script>/)?.[0].replace(/^<script>/,'').replace(/<\/script>$/,'');
- assert.ok(inlineScript);assert.doesNotThrow(()=>new Function(inlineScript));
+ const inlineScripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(match=>match[1]);
+ assert.ok(inlineScripts.length>=2);for(const script of inlineScripts)assert.doesNotThrow(()=>new Function(script));
  assert.match(html,/id="commercial-map"/);assert.match(html,/publisher location labels/i);assert.match(html,/not property, building, or available-unit pins|do not mark the actual unit/);
  assert.match(html,/role="region" aria-label="Interactive map/);
  assert.match(html,/id="emirate"/);assert.match(html,/Asking rate/);
@@ -179,7 +179,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,1000);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v53');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v54');
  const commercialPage=await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{});
  assert.equal(commercialPage.status,200);
  assert.match(await commercialPage.text(),/The source table does not state the rate period/);
