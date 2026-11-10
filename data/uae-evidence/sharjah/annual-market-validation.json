@@ -1,27 +1,108 @@
 {
-  "sourceId": "sharjah-rerd-reported-annual-market-20261109",
-  "rows": 4,
+  "sourceId": "sharjah-rerd-reported-annual-market-20261110",
+  "rows": 8,
   "years": [
+    2018,
+    2019,
+    2020,
+    2021,
     2022,
     2023,
     2024,
     2025
   ],
   "sourceUrls": [
+    "https://www.wam.ae/en/article/hszr83sm-sharjah-realty-deals-stood-aed225-billion-2018",
+    "https://sharjah24.ae/ar/Articles/2020/01/19/article-1643",
+    "https://sharjah24.ae/en/articles/2021/02/08/Sharjah-Real-Estate-transactions-value-record-AED-159-bn-in-2020",
+    "https://sharjah24.ae/en/Articles/2022/02/09/Real-estate-trading-volume-in-the-Emirate-of-Sharjah-reaches-its-highest-level-in-4-years",
     "https://sharjah24.ae/ar/articles/2023/01/19/zx50",
     "https://sharjah24.ae/ar/Articles/2024/01/31/al099",
     "https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024",
     "https://sharjah24.ae/en/Articles/2026/01/20/kmr1"
   ],
   "corroboratingUrls": [
+    null,
+    "https://www.wam.ae/en/article/hszr9s5b-sharjah-real-estate-transactions-reached-aed242",
+    "https://www.wam.ae/en/article/hszrbqgr-sharjah-real-estate-transactions-value-record",
+    null,
     "https://www.wam.ae/en/article/hszrgaee-sharjah%E2%80%99s-real-estate-transactions-topped-aed24",
     "https://www.wam.ae/en/article/b1fg7a2-165-surge-real-estate-investments-sharjah-during",
     "https://www.wam.ae/en/article/bhtgrp8-sharjah%E2%80%99s-real-estate-transactions-hit-record",
     "https://www.wam.ae/en/article/bybncv4-sharjah-real-estate-hits-record-aed656-billion"
   ],
-  "dataBytes": 3980,
-  "dataSha256": "d702eec2796beff90223b1a2bf2e897c738c467f01c7f028174464f67c04ab67",
+  "dataBytes": 7297,
+  "dataSha256": "29cdb2c9b3195383ed5a81b9234016a6aa7d79c7a8a97f98184822715e6db816",
   "capturePages": [
+    {
+      "year": 2018,
+      "url": "https://www.wam.ae/en/article/hszr83sm-sharjah-realty-deals-stood-aed225-billion-2018",
+      "retrievedAt": "2026-11-10",
+      "passes": [
+        {
+          "passName": "first",
+          "bytes": 12766,
+          "sha256": "8a7b8c1e78a1ad0ddcb4e9291e4f9548ddbb12fb6466ee7cf276414f27f7850b"
+        },
+        {
+          "passName": "second",
+          "bytes": 12766,
+          "sha256": "8a7b8c1e78a1ad0ddcb4e9291e4f9548ddbb12fb6466ee7cf276414f27f7850b"
+        }
+      ],
+      "captureNote": "WAM direct HTML is a client-rendered shell; selected figures were independently found in the authority 2018 PDF and the indexed WAM article. The HTML checksums are transport receipts, not textual proof."
+    },
+    {
+      "year": 2019,
+      "url": "https://sharjah24.ae/ar/Articles/2020/01/19/article-1643",
+      "retrievedAt": "2026-11-10",
+      "passes": [
+        {
+          "passName": "first",
+          "bytes": 85461,
+          "sha256": "a0f378843cae00787cdf373ceb7fb3643241526b69b592a5661476f338155908"
+        },
+        {
+          "passName": "second",
+          "bytes": 85465,
+          "sha256": "74f2e9e3e73b542064b1336782de61b5e8f25f72060ac1b7920594c61beaa041"
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "url": "https://sharjah24.ae/en/articles/2021/02/08/Sharjah-Real-Estate-transactions-value-record-AED-159-bn-in-2020",
+      "retrievedAt": "2026-11-10",
+      "passes": [
+        {
+          "passName": "first",
+          "bytes": 94823,
+          "sha256": "66117bd21bb89bb235e78ef6d47c7ebbdf1b88000bf798c8acfd6e83c230ce7c"
+        },
+        {
+          "passName": "second",
+          "bytes": 94827,
+          "sha256": "b943393887d80bb0a8c0993c5b4a1a63b500bbd875382ebc62117e5742e3b80a"
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "url": "https://sharjah24.ae/en/Articles/2022/02/09/Real-estate-trading-volume-in-the-Emirate-of-Sharjah-reaches-its-highest-level-in-4-years",
+      "retrievedAt": "2026-11-10",
+      "passes": [
+        {
+          "passName": "first",
+          "bytes": 93619,
+          "sha256": "0fa78c259101874e034c7e1d3a8e23f4ede1e1ee5cd5357a38b4a20d3a753b45"
+        },
+        {
+          "passName": "second",
+          "bytes": 93619,
+          "sha256": "abf42eff739bdeb8b7ea644c9bb4336df9703ccf8aaf19d5b901e8c53c878d94"
+        }
+      ]
+    },
     {
       "year": 2022,
       "url": "https://sharjah24.ae/ar/articles/2023/01/19/zx50",
@@ -92,6 +173,44 @@
     }
   ],
   "rightsScope": "Selected numerical facts and source links only. No article text, images, logos, or bulk transaction-register redistribution; no project-register reuse right asserted.",
-  "verification": "Two independently fetched Sharjah 24 HTML passes per selected report displayed the transcribed figures; dynamic page bytes differed. WAM independently corroborated AED 24 billion and 7,267 sales for 2022; AED 27.1 billion and 8,731 sales for 2023; and the previously reviewed 2024–2025 values. The 2022 Sharjah 24 department article reports 91,507 overall registrations and a 5,373 / 807 / 760 / 327 sale-use split, which reconciles to 7,267. The 2023 Sharjah 24 department article reports five newly registered projects. Unknown metrics remain null.",
-  "limits": "Annual emirate-wide reported totals, not transaction records, available spaces, sale prices, or a complete Sharjah project denominator. The 2022 sale-use breakdown is category counts within 7,267 sales; it is not commercial inventory. Trading value includes transaction types beyond sales. Exact overall registration counts for 2023 and 2024 are unavailable in these selected sources. Sale-use breakdowns for 2023–2025 and a 2022/2025 new-project count are not established. Values are rounded at their stated precision. Annual periods must not be added to any same-year partial cumulative period."
+  "verification": "The 2018–2020 official annual PDFs corroborate reported annual trading values, overall registration counts, sales counts and commercial-use shares. Dated WAM and Sharjah 24 reports corroborate 2018–2021 trading values of AED 22.5bn/24.2bn/15.9bn/26.2bn, overall registrations of 54,125/61,357/64,459/84,238, and sales of 3,254/3,328/3,773/6,304. The 2021 Sharjah 24 disclosure reports seven newly registered projects; archive entry 481 was mislabelled 2021 but contains the 2022 annual report and was excluded. The 2018–2020 commercial-use shares are percentages only; exact counts remain unknown. Previously reviewed 2022–2025 observations and receipts are retained.",
+  "limits": "Annual emirate-wide reported totals, not transaction records, available spaces, sale prices, or a complete Sharjah project denominator. The 2018–2020 commercial-use shares are reported percentages, not exact commercial-sale counts; no counts are back-solved. The 2022 sale-use breakdown is exact category counts within 7,267 sales, not commercial inventory. Trading value includes transaction types beyond sales. Exact overall registration counts for 2023 and 2024 and sale counts for 2024 remain unavailable in these selected sources. Values are rounded at their stated precision. Annual periods must not be added to any same-year partial cumulative period.",
+  "archivePdfCaptures": [
+    {
+      "year": 2018,
+      "reportId": 478,
+      "url": "https://cms-proxy.shjrerd.gov.ae/api/CmsReport/GetFile?id=478&lang=en",
+      "sha256": "32fd5dc6b3ddba69608d7de30bfd2661d2f814456135af1bbbe7d3a30675e322",
+      "bytes": 18694658,
+      "retrievedAt": "2026-11-10",
+      "note": "Official annual PDF captured for provenance. Selected totals were verified in extracted PDF text and cross-checked against dated WAM or Sharjah 24 department disclosures; the PDF itself is not republished."
+    },
+    {
+      "year": 2019,
+      "reportId": 479,
+      "url": "https://cms-proxy.shjrerd.gov.ae/api/CmsReport/GetFile?id=479&lang=en",
+      "sha256": "7105a1a811768eb1f1fd6e1348b74d524aaeba85c3e362a012b2387c4c82eb13",
+      "bytes": 14523201,
+      "retrievedAt": "2026-11-10",
+      "note": "Official annual PDF captured for provenance. Selected totals were verified in extracted PDF text and cross-checked against dated WAM or Sharjah 24 department disclosures; the PDF itself is not republished."
+    },
+    {
+      "year": 2020,
+      "reportId": 480,
+      "url": "https://cms-proxy.shjrerd.gov.ae/api/CmsReport/GetFile?id=480&lang=en",
+      "sha256": "bf751737c55cbab41cc3029682ed2f00c05bb0120d160e9a7046cb20be48acd3",
+      "bytes": 19137637,
+      "retrievedAt": "2026-11-10",
+      "note": "Official annual PDF captured for provenance. Selected totals were verified in extracted PDF text and cross-checked against dated WAM or Sharjah 24 department disclosures; the PDF itself is not republished."
+    }
+  ],
+  "archiveCatalogAnomaly": "Archive entry 481 is labelled Annual report 2021, but the retrieved PDF itself is the 2022 annual report; it is excluded as proof for 2021.",
+  "archiveCatalogAnomalyCapture": {
+    "reportId": 481,
+    "catalogLabel": "Annual report 2021",
+    "actualPdfReportYear": 2022,
+    "sha256": "67730f684e26282dde54edd2d34881c242d8a3c3e0c8f51022fe02729274233a",
+    "bytes": 14919835,
+    "excludedAs2021Proof": true
+  }
 }
