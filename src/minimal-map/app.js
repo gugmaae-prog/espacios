@@ -173,7 +173,7 @@
     if(!(west<east&&south<north))return;
     UI.openingFitDone=true;
     const narrow=matchMedia('(max-width:760px)').matches,reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-    window.__PSR_MAP__?.fitBounds([[west,south],[east,north]],{padding:narrow?{top:135,right:20,bottom:195,left:20}:{top:180,right:65,bottom:180,left:65},maxZoom:7.2,duration:reduced?0:550});
+    window.__PSR_MAP__?.fitBounds([[west,south],[east,north]],{padding:narrow?{top:70,right:20,bottom:110,left:20}:{top:180,right:65,bottom:180,left:65},maxZoom:7.2,duration:reduced?0:550});
   }
 
   function setKind(kind){
