@@ -94,7 +94,7 @@ test('compiled Worker serves the Ajman area map through the private evidence bin
  }};
  const live=await worker.fetch(request('/ajman/commercial-sales?view=map&year=2025'),{MAP_IDRIVE_READY:'true',MAP_IDRIVE_VERIFIED_MANIFEST_SHA256:'7b3d9aa40cc8df795f6036f98f5a8c97d99e1d3ec26def3b9fa75b477c6fc642',MAP_IDRIVE_VERIFIED_AT:'2026-11-02T08:57:41.734Z',MAP_EVIDENCE:binding,DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'ajman-map-test'}},{});
  assert.equal(live.status,200);
- assert.equal(live.headers.get('x-espacios-map-release'),'20261111-map-stack-v58');
+ assert.equal(live.headers.get('x-espacios-map-release'),'20261111-map-stack-v59');
  const body=await live.json();
  assert.equal(body.scope.mappedReportedSales,77);
  assert.equal(body.scope.unmappedReportedSales,3);

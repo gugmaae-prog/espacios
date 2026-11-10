@@ -168,6 +168,8 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  assert.match(html,/id="asking-map"[^>]*aria-pressed="true"/);
  assert.match(html,/id="sales-map"[^>]*aria-pressed="false"/);
  assert.match(html,/id="ajman-sales-map"[^>]*aria-pressed="false"/);
+ assert.match(html,/id="ajman-area-attribution" hidden/);
+ assert.match(html,/data\.ajman\.ae\/explore\/dataset\/ajman-area\//);
  assert.match(html,/commercial-unit-sales\?view=map&year=2025/);
  assert.match(html,/ajman\/commercial-sales\?view=map&year=2025/);
  assert.match(html,/Inspect all 2025 DLD areas/);
@@ -186,7 +188,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,998);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261111-map-stack-v58');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261111-map-stack-v59');
  const commercialPage=await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{});
  assert.equal(commercialPage.status,200);
  assert.match(await commercialPage.text(),/The source table does not state the rate period/);

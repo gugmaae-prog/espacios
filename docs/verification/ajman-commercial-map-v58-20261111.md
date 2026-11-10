@@ -20,3 +20,5 @@ The 2025 map's Rashideya 1 circle has five aggregate rows and 35 reported sales;
 ## Release checks
 
 The focused tests verify both source checksums, exact join counts, the 2025 and all-period unmapped balances, invalid filters, and absence of an area source. Full preservation, production dry run, staged route, and normal-traffic checks are recorded with the release before promotion. R2 remains disabled; Data Room access remains restricted.
+
+The v59 presentation follow-up links the Ajman Municipality CC BY area dataset directly in Ajman mode and fits the two nearby references at a closer country-map zoom. It changes no underlying source row, join, count, or asking listing.

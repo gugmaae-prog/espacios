@@ -51,7 +51,7 @@ test('compiled Worker serves SCAD evidence and restricted routes stay restricted
  const response=await worker.fetch(request('?period=2026Q2'),env,{}),body=await response.json();
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v58');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v59');
  assert.equal(body.observations[0].permitByUsage.commercial.emirateTotal,689);
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/data-room'),env,{})).status,404);
 });

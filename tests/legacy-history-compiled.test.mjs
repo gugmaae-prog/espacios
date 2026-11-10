@@ -55,7 +55,7 @@ test('generated Worker opens formerly oversized native archives through its priv
   assert.equal(payload.series.recoveryEnvelopeSHA256,e.pointer.sha256);
   assert.notEqual(payload.series.sourcePartitionSHA256,payload.series.recoveryEnvelopeSHA256);
   assert.equal(payload.series.pagination.nextPointOffset,2);
-  assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v58');
+  assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v59');
  }
  assert.ok(assetReads>=3,'Actual generated decoder read native metadata plus bounded point assets');
 });
