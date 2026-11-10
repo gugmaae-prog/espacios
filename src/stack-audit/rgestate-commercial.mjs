@@ -14,7 +14,7 @@ export const RGE_AREA_CENTRES=[
  ['muhaisnah','Muhaisnah',55.4181049,25.2445037,'relation/18471781',['Muhaisnah','Al Muhaisnah']],
  ['al-khawaneej','Al Khawaneej',55.4890201,25.2407108,'way/874795353',['Al Khawaneej']],
  ['umm-ramool','Umm Ramool',55.3685667,25.2311645,'relation/18471720',['Umm Ramool']],
- ['al-warsan','Al Warsan',55.4082859,25.1539236,'relation/18471741',['Al Warsan','Al warsan international city']],
+ ['al-warsan','Al Warsan',55.4082859,25.1539236,'relation/18471741',['Al Warsan','Al warsan international city','Warsan']],
  ['ajman','Ajman city',55.4451432,25.3936557,'node/262479959',['Ajman']],
  ['deira','Deira',55.3053340,25.2727936,'node/7826901099',['Deira']],
  ['abu-dhabi','Abu Dhabi city',54.3774014,24.4538352,'relation/4479763',['Abu Dhabi']],
@@ -28,7 +28,7 @@ export const RGE_AREA_CENTRES=[
  ['nad-al-hamar','Nad Al Hamar',55.3857707,25.1988837,'relation/18471802',['Nad Al Hamar','Nadd Al hamar']],
  ['al-garhoud','Al Garhoud',55.3519978,25.2406551,'relation/18471788',['Al Garhoud','Garhoud']],
  ['barsha-heights','Barsha Heights',55.1757823,25.0982842,'node/3087418334',['Barsha Heights (Tecom)']],
- ['dubai-production-city','Dubai Production City',55.1912732,25.0321285,'relation/18471777',['Dubai Production City','IMPZ']],
+ ['dubai-production-city','Dubai Production City',55.1912732,25.0321285,'relation/18471777',['Dubai Production City','IMPZ','Dubai Production City (IMPZ)']],
  ['fujairah','Fujairah city',56.3355085,25.1244604,'way/872858707',['Fujairah']],
  ['dubai-islands','Dubai Islands',55.3263177,25.3179174,'relation/8122161',['Dubai Islands']],
  ['jebel-ali-village','Jebel Ali Village',55.1126987,25.0301768,'way/1018273191',['Jebel Ali Village']],
@@ -52,6 +52,13 @@ export const RGE_AREA_CENTRES=[
  ['culture-village','Culture Village',55.3380978,25.2263324,'way/396553693',['Culture Village']],
  ['al-manara','Al Manara',55.2144527,25.1448185,'relation/18471689',['Al Manara']],
  ['jebel-ali','Jebel Ali',55.1366041,25.0338168,'node/8143204857',['Jebel Ali']],
+ ['meydan','Meydan',55.3142967,25.1629302,'way/1159907277',['Meydan']],
+ ['jumeirah-lake-towers','Jumeirah Lake Towers',55.1437432,25.0723832,'way/433279682',['Jumeirah Lake Tower']],
+ ['al-warqa','Al Warqa',55.4292488,25.1902960,'relation/18471737',['Al Warqa']],
+ ['al-karama','Al Karama',55.3050609,25.2482136,'relation/18471789',['AL Karama','Al Karama']],
+ ['motor-city','Motor City',55.2382095,25.0476902,'way/1090402642',['Motor City']],
+ ['al-baraha','Al Baraha',55.3195255,25.2809884,'relation/18471780',['Al Baraha']],
+ ['al-sufouh','Al Sufouh',55.1611169,25.0983566,'way/1153975042',['Al Sufouh']],
 ];
 // Emirate of each reviewed OSM area reference, distinct from the publisher's label.
 export const RGE_AREA_EMIRATES={
@@ -68,9 +75,11 @@ export const RGE_AREA_EMIRATES={
  'al-furjan':'Dubai','academic-city':'Dubai',arjan:'Dubai','dubai-marina':'Dubai',
  difc:'Dubai','al-satwa':'Dubai','al-wasl':'Dubai','umm-suqeim':'Dubai',
  mirdif:'Dubai','dubai-south':'Dubai',liwan:'Dubai','al-barsha':'Dubai',
- 'al-nahda-2':'Dubai','culture-village':'Dubai','al-manara':'Dubai','jebel-ali':'Dubai'
+ 'al-nahda-2':'Dubai','culture-village':'Dubai','al-manara':'Dubai','jebel-ali':'Dubai',
+ meydan:'Dubai','jumeirah-lake-towers':'Dubai','al-warqa':'Dubai','al-karama':'Dubai',
+ 'motor-city':'Dubai','al-baraha':'Dubai','al-sufouh':'Dubai'
 };
-if(RGE_AREA_CENTRES.length!==50||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==50)throw Error('Reviewed RGEstate area-to-emirate references changed');
+if(RGE_AREA_CENTRES.length!==57||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==57)throw Error('Reviewed RGEstate area-to-emirate references changed');
 const RGE_AREA_ALIASES=RGE_AREA_CENTRES.flatMap(area=>area[5].map(label=>[label.toLocaleLowerCase('en'),area]));
 if(RGE_AREA_ALIASES.some(([label,area])=>RGE_AREA_ALIASES.some(([otherLabel,otherArea])=>label===otherLabel&&area!==otherArea)))throw Error('Conflicting reviewed RGEstate area label');
 const RGE_AREA_BY_LABEL=new Map(RGE_AREA_ALIASES);

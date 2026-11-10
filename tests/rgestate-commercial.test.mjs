@@ -124,9 +124,17 @@ test('137 title-matched spaces add publisher data without becoming category rows
  assert.equal((await(await combined('?scope=title-candidates&purpose=sale')).json()).totalRows,candidateReport.saleRows);
  const areas=await(await mapRgestateCommercial(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),report,packed,candidateReport,candidatePacked,parentReport)).json();
  assert.equal(areas.totalRows,1000);
- assert.equal(areas.mappedRows+areas.unmappedRows,1000);
+ assert.equal(areas.mappedRows,925);
+ assert.equal(areas.unmappedRows,75);
  assert.equal(areas.areas.reduce((sum,area)=>sum+area.count,0),areas.mappedRows);
  assert.equal(areas.scope.unitCoordinatesPresent,false);
+ for(const [key,label] of [['meydan','Meydan'],['jumeirah-lake-towers','Jumeirah Lake Tower'],['al-warqa','Al Warqa'],['al-karama','Al Karama']]){
+  const area=areas.areas.find(item=>item.key===key);
+  assert.ok(area&&area.count>0,key);
+  const rows=await(await combined('?area='+key+'&limit=100')).json();
+  assert.ok(rows.rows.some(row=>row.locationLabel===label),key);
+  assert.ok(rows.rows.every(row=>row.coordinates===null&&row.reviewedAreaEmirate==='Dubai'));
+ }
 });
 
 test('commercial routes reject bad input and tampered bytes',async()=>{
@@ -162,7 +170,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,1000);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v43');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v44');
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);
