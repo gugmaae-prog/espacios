@@ -94,6 +94,7 @@ test('unique frontend release identifies matching HTML, JS and CSS without relab
       const html=await response.text();
       assert.ok(html.includes('app-v2.js?v='+frontendRelease));assert.ok(html.includes('app-v2.css?v='+frontendRelease));
       assert.ok(!html.includes('app-v2.js?v=20261102-map-frontend-v31'),'HTML must not reuse the previous immutable JavaScript URL');
+      assert.ok(!html.includes('app-v2.js?v=20261104-map-frontend-v37'),'HTML must not reuse the cached v37 JavaScript URL');
       assert.ok(!html.includes('20261008-map-palette-v23'),'HTML must not retain the previous immutable cache key');
       assert.ok(!html.includes('20261008-map-palette-v33'),'HTML must not retain the previous palette cache key');
       assert.match(response.headers.get('link')||new Headers().get('link')||'',new RegExp('app-v2\\.js\\?v='+frontendRelease));
