@@ -10,7 +10,11 @@ const root=new URL('../',import.meta.url);
 const report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-validation.json',root)));
 const packed=await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-20261110.json.gz',root));
 const base64=packed.toString('base64');
+const partialReport=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-2026-partial-validation.json',root)));
+const partialPacked=await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-2026-partial-20261110.json.gz',root));
+const partialBase64=partialPacked.toString('base64');
 const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/dubai/commercial-unit-sales${query}`,{method});
+const partialRequest=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/dubai/commercial-unit-sales-2026-partial${query}`,{method});
 
 test('commercial unit sale subset keeps exact source rows and quality flags',()=>{
  assert.equal(packed.length,report.compressedBytes);
@@ -56,7 +60,32 @@ test('compiled Worker serves the new data without an R2 binding',async()=>{
  const response=await worker.fetch(request('?year=2025'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-test'}},{});
  const body=await response.json();
  assert.equal(response.status,200);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v54');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v55');
  assert.equal(body.registeredSaleRecords,6092);
  assert.equal(body.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');
+});
+
+test('2026 commercial sales remain a separate, explicitly partial source',async()=>{
+ assert.equal(partialPacked.length,partialReport.compressedBytes);
+ assert.equal(partialReport.other2026SalesAfterCommercialCutoff,113302);
+ assert.equal(partialReport.latestOther2026SaleDate,'2026-11-02');
+ assert.equal(createHash('sha256').update(partialPacked).digest('hex'),partialReport.compressedSha256);
+ assert.equal(createHash('sha256').update(gunzipSync(partialPacked)).digest('hex'),partialReport.rawSha256);
+ const response=await mapDubaiCommercialSales(partialRequest('?view=summary&year=2026'),report,base64,partialReport,partialBase64);
+ const body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(body.scope.periodStatus,'partial_source_classification_stops_2026-02-09');
+ assert.deepEqual(body.scope.dateRange,['2026-01-01','2026-02-09']);
+ assert.equal(body.registeredSaleRecords,1133);
+ assert.equal(body.officeRecords,889);
+ assert.equal(body.shopRecords,244);
+ assert.equal(body.cleanPriceRecords,1077);
+ assert.match(body.scope.limits,/Do not annualize/);
+ const records=await(await mapDubaiCommercialSales(partialRequest('?view=records&type=Shop&limit=2'),report,base64,partialReport,partialBase64)).json();
+ assert.equal(records.totalRecords,244);
+ assert.ok(records.records.every(row=>row.spaceType==='Shop'&&row.date.startsWith('2026')));
+ assert.equal((await mapDubaiCommercialSales(partialRequest('?year=2025'),report,base64,partialReport,partialBase64)).status,400);
+ const live=await worker.fetch(partialRequest(),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-partial-test'}},{});
+ assert.equal(live.status,200);
+ assert.equal((await live.json()).registeredSaleRecords,1133);
 });

@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v28",
+  "version": "20261110-uae-evidence-coverage-v29",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -391,6 +391,22 @@
           "incomplete2026Withheld": true,
           "notCurrentAvailability": true,
           "sourceSha256": "c9aa65221e1b8b522103a6ce2646df928cc5c0116ff158f53022bde19efd265c"
+        },
+        {
+          "id": "dred-dld-commercial-unit-sales-2026-partial-20261102",
+          "route": "/map/api/uae-evidence/dubai/commercial-unit-sales-2026-partial",
+          "sourceRows": 1133,
+          "grain": "registered commercial office and shop unit sales; explicitly partial 2026 source period",
+          "sourceVintage": "2026-01-01–2026-02-09 only",
+          "sourceUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions",
+          "rights": "CC BY 4.0; derived subset with attribution",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "cleanRows": 1077,
+          "distinctAreaIds": 38,
+          "periodStatus": "partial_source_classification_stops_2026-02-09",
+          "notFullYear": true,
+          "notCurrentAvailability": true,
+          "sourceSha256": "ec6178e6d5b5894fa395f45461f08eaccd67d9f6ecfc25252003e4d423b3f718"
         }
       ],
       "publisherListingSnapshot": {
@@ -415,7 +431,7 @@
         "The primary DLD project-register raw vintage is not retained; the published status copy is secondary.",
         "Most source project IDs remain separate from V48 identities.",
         "The historical building counts stop at 2019; 403 ambiguous export rows are withheld and these counts do not identify available commercial spaces.",
-        "The licensed commercial-unit sales snapshot covers office and shop registrations through 2025. Source commercial-unit classification stops on 9 February 2026; 2026 is withheld as incomplete. These are registered sales, not asking inventory or available spaces."
+        "The licensed historical commercial-unit sales snapshot covers 2006–2025. A separate 1 January–9 February 2026 slice is explicitly partial because source classification stops then. These are registered sales, not asking inventory or available spaces."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -731,6 +747,7 @@
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
     "dubaiCommercialSales": "6e3cc163dccb7bf2b43c4af2364f1e16c1162f3be08b582894d6c8f9af591003",
+    "dubaiCommercialPartial": "18112ebde0f928ff7af70a2fbf499eb93fd49470d5c66c6b3c05d70d0905dbb6",
     "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160"
