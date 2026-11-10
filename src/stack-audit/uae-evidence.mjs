@@ -22,7 +22,28 @@ async function uaeAjmanRows(env,report,storeFactory){
  })().catch(error=>{UAE_AJMAN_DATA_PROMISE=undefined;throw error});
  return UAE_AJMAN_DATA_PROMISE;
 }
-export async function mapUaeEvidence(request,env,report,storeFactory=mapEvidenceStore){
+const AJMAN_COMMERCIAL_MAP_DISTRICTS=[
+ {name:'Rashideya 1',arabic:'الراشدية 1',areaName:'AL RASHIDEYA 1'},
+ {name:'Rashideya 2',arabic:'الراشدية 2',areaName:'AL RASHIDEYA 2'},
+];
+function ajmanCommercialMap(rows,areaSource){
+ const references=areaSource?.rows,areaReport=areaSource?.report;
+ if(!Array.isArray(references)||areaReport?.sourceId!=='ajman-mpd-20231003-area-reference')throw Error('Reviewed Ajman area references unavailable');
+ const byName=new Map(references.map(row=>[row.area_in_ajman,row]));
+ const mappedAreas=AJMAN_COMMERCIAL_MAP_DISTRICTS.map(district=>{
+  const reference=byName.get(district.areaName);
+  if(!reference||!Number.isFinite(Number(reference.longitude))||!Number.isFinite(Number(reference.latitude)))throw Error('Ajman area reference mismatch');
+  const group=rows.filter(row=>
+   row.district_english===district.name&&row.district_arabic===district.arabic||
+   row.district_english===district.arabic&&row.district_arabic===district.name);
+  return {areaKey:district.areaName,areaName:district.name,center:[Number(reference.longitude),Number(reference.latitude)],locationBasis:'dated_official_area_reference_not_project_or_unit_coordinate',aggregateRows:group.length,reportedSalesCountSum:group.reduce((sum,row)=>sum+row.sales_count,0),reportedValueAedSum:Number(group.reduce((sum,row)=>sum+row.total_sales_values_in_aed,0).toFixed(2)),officeRows:group.filter(row=>row.unit_type_english==='Office').length,shopRows:group.filter(row=>row.unit_type_english==='Shop').length};
+ }).filter(area=>area.aggregateRows>0);
+ const mappedAggregateRows=mappedAreas.reduce((sum,area)=>sum+area.aggregateRows,0);
+ const mappedReportedSales=mappedAreas.reduce((sum,area)=>sum+area.reportedSalesCountSum,0);
+ const totalReportedSales=rows.reduce((sum,row)=>sum+row.sales_count,0);
+ return {mappedAreas,mappedAggregateRows,unmappedAggregateRows:rows.length-mappedAggregateRows,mappedReportedSales,unmappedReportedSales:totalReportedSales-mappedReportedSales,areaSource:{id:areaReport.sourceId,datasetUrl:areaReport.datasetUrl,licence:areaReport.licence,sourceModifiedAt:areaReport.sourceModifiedAt,rawSha256:areaReport.rawSha256}};
+}
+export async function mapUaeEvidence(request,env,report,storeFactory=mapEvidenceStore,areaLoader=null){
  const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'');
  const commercialPath=UAE_EVIDENCE_BASE+'/ajman/commercial-sales';
  if(![UAE_EVIDENCE_BASE,UAE_EVIDENCE_BASE+'/ajman/sales',UAE_EVIDENCE_BASE+'/ajman/projects',commercialPath].includes(path))return null;
@@ -39,11 +60,16 @@ export async function mapUaeEvidence(request,env,report,storeFactory=mapEvidence
    const projects=[...grouped.values()].map(item=>({...item,reportedValueAedSum:Number(item.reportedValueAedSum.toFixed(2))})).sort((a,b)=>a.nameEn.localeCompare(b.nameEn));
    return uaeEvidenceResponse(request,{source,scope,projects,count:projects.length});
   }
-  const commercial=path===commercialPath,params=url.searchParams,year=params.has('year')?uaeInteger(params.get('year'),2019,2026):null,quarter=params.has('quarter')?uaeInteger(params.get('quarter'),1,4):null,limit=params.has('limit')?uaeInteger(params.get('limit'),1,100):50,offset=params.has('offset')?uaeInteger(params.get('offset'),0,6075):0,project=params.get('project'),unitType=params.get('unitType');
-  if((params.has('year')&&year===null)||(params.has('quarter')&&quarter===null)||limit===null||offset===null||(project!==null&&(!project.trim()||project.length>180))||(unitType!==null&&(!commercial||!['Office','Shop'].includes(unitType))))return uaeEvidenceResponse(request,{error:'Invalid year, quarter, project, unitType, limit, or offset.'},400);
+  const commercial=path===commercialPath,params=url.searchParams,view=params.get('view')||'rows',year=params.has('year')?uaeInteger(params.get('year'),2019,2026):null,quarter=params.has('quarter')?uaeInteger(params.get('quarter'),1,4):null,limit=params.has('limit')?uaeInteger(params.get('limit'),1,100):50,offset=params.has('offset')?uaeInteger(params.get('offset'),0,6075):0,project=params.get('project'),unitType=params.get('unitType');
+  if((params.has('year')&&year===null)||(params.has('quarter')&&quarter===null)||limit===null||offset===null||(project!==null&&(!project.trim()||project.length>180))||(unitType!==null&&(!commercial||!['Office','Shop'].includes(unitType)))||!['rows',...(commercial?['map']:[])].includes(view)||view==='map'&&(params.has('limit')||params.has('offset')))return uaeEvidenceResponse(request,{error:'Invalid view, year, quarter, project, unitType, limit, or offset.'},400);
   const matches=[];for(let i=0;i<rows.length;i++){const row=rows[i];if(commercial&&!['Office','Shop'].includes(row.unit_type_english)||unitType!==null&&row.unit_type_english!==unitType||year!==null&&row.year!==year||quarter!==null&&row.quarter!==quarter||project!==null&&row.project_name_english!==project)continue;matches.push({...row,sourceRowIndex:i,canonicalProjectId:null,matchStatus:'unmatched'});}
   matches.sort((a,b)=>b.year-a.year||b.quarter-a.quarter||a.project_name_english.localeCompare(b.project_name_english)||a.sourceRowIndex-b.sourceRowIndex);
   const commercialScope=commercial?{...scope,evidenceClass:'official_commercial_unit_sale_aggregate',unitTypes:['Office','Shop'],limits:'Quarterly office and shop sale aggregates for named Ajman projects. Reported sales counts are not distinct available spaces; no active listing, rent quote, floor area, exact unit identity, coordinates, or complete market coverage is established.'}:scope;
+  if(view==='map'){
+   if(typeof areaLoader!=='function')throw Error('Reviewed Ajman area references unavailable');
+   const mapped=ajmanCommercialMap(matches,await areaLoader());
+   return uaeEvidenceResponse(request,{source,scope:{...commercialScope,grain:'quarterly source aggregate with dated official area reference',mapLimits:'Only two bilingual exact Rashideya district matches have dated Ajman Municipality area reference points. These points are not verified district centroids, project sites, or unit coordinates. Unmapped aggregate rows and reported sales remain in the source API.',mappedAggregateRows:mapped.mappedAggregateRows,unmappedAggregateRows:mapped.unmappedAggregateRows,mappedReportedSales:mapped.mappedReportedSales,unmappedReportedSales:mapped.unmappedReportedSales},areaSource:mapped.areaSource,filters:{year,quarter,project,unitType},totalRows:matches.length,reportedSalesCountSum:mapped.mappedReportedSales+mapped.unmappedReportedSales,mappedAreas:mapped.mappedAreas});
+  }
   return uaeEvidenceResponse(request,{source,scope:commercialScope,filters:{year,quarter,project,...(commercial?{unitType}:{} )},totalRows:matches.length,...(commercial?{reportedSalesCountSum:matches.reduce((sum,row)=>sum+row.sales_count,0),reportedValueAedSum:Number(matches.reduce((sum,row)=>sum+row.total_sales_values_in_aed,0).toFixed(2)),distinctSourceProjectLabels:new Set(matches.map(row=>row.project_name_english)).size,relatedRentalEvidence:'/map/api/uae-evidence/ajman/rent-contracts?city=ajman&category=Commercial'}:{}),limit,offset,rows:matches.slice(offset,offset+limit)});
  }catch{return uaeEvidenceResponse(request,{error:'The verified Ajman evidence source is temporarily unavailable.'},503);}
 }

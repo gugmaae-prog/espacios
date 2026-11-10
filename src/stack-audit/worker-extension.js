@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261111-map-stack-v57';
+var MAP_STACK_RELEASE='20261111-map-stack-v58';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -92,7 +92,7 @@ worker_default.fetch=async function(request,env,ctx){
  const ajmanLandDispositions=await mapAjmanLandDispositions(request,UAE_AJMAN_LAND_DISPOSITIONS_REPORT,UAE_AJMAN_LAND_DISPOSITIONS_PACKED);if(ajmanLandDispositions)return mapStackPreparedResponse(request,ajmanLandDispositions);
  const ajmanUnitMortgages=await mapAjmanUnitMortgages(request,UAE_AJMAN_UNIT_MORTGAGES_REPORT,UAE_AJMAN_UNIT_MORTGAGES_PACKED);if(ajmanUnitMortgages)return mapStackPreparedResponse(request,ajmanUnitMortgages);
  const ajmanRentContracts=await mapAjmanRentContracts(request,UAE_AJMAN_RENT_REPORT,UAE_AJMAN_RENT_PACKED);if(ajmanRentContracts)return mapStackPreparedResponse(request,ajmanRentContracts);
- const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT);if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
+ const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT,mapEvidenceStore,async()=>({rows:await verifiedAreaReferenceRows(UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED),report:UAE_AJMAN_AREA_REFERENCE_REPORT}));if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
  // This public UI response is a verified derivation of the accepted V48 map
  // snapshot. Streaming the private asset avoids rebuilding 1,518 features on
  // every cold request, which can exceed the Worker resource ceiling.
