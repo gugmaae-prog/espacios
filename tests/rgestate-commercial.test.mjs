@@ -150,6 +150,8 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  assert.match(html,/ajman\/commercial-sales/);
  assert.match(html,/city=ajman&category=Commercial/);
  assert.match(html,/sharjah\/market-aggregates/);
+ assert.match(html,/ras-al-khaimah\/monthly-market\?month=2026-09/);
+ assert.match(html,/This is not commercial-only activity or available space/);
  assert.match(html,/Includes H1; periods must not be added/);
  assert.match(html,/No rent amounts or comparable asking prices/);
  const inlineScript=html.match(/<script>\s*\(function\(\)\{([\s\S]*?)<\/script>/)?.[0].replace(/^<script>/,'').replace(/<\/script>$/,'');
@@ -170,7 +172,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,1000);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v49');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v50');
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);

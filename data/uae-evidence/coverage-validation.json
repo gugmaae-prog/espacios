@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v25",
+  "version": "20261110-uae-evidence-coverage-v26",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -467,6 +467,22 @@
           "sourceSha256": "3e66bd2e7bef03f6849ec78f19180d11159a144d23b4d4d0bb894d06e235c6f2"
         },
         {
+          "id": "rak-municipality-2026-monthly-transaction-aggregates-20261110",
+          "route": "/map/api/uae-evidence/ras-al-khaimah/monthly-market",
+          "sourceRows": 9,
+          "grain": "emirate-calendar-month sales, mortgage, and waiver values; AED",
+          "sourceVintage": "January–September 2026",
+          "sourceUrl": "https://mun.rak.ae/home/rak-municipality/organizational-structure/lands-properties-sector/",
+          "rights": "selected numerical facts and source links only; report PDFs excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "notTransactionLevel": true,
+          "notCommercialOnly": true,
+          "notAvailableUnits": true,
+          "incompleteYear": true,
+          "roundedChartValues": true,
+          "sourceSha256": "187c378dbc026654b08087436fb4cc137bbdd0d55b61b7a0c7a325b767c9dcf9"
+        },
+        {
           "id": "raksc-yearbook-2026-commercial-sales-values-20261110",
           "route": "/map/api/uae-evidence/ras-al-khaimah/commercial-sales-history",
           "sourceRows": 11,
@@ -527,7 +543,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Selected annual market values and permit counts are published, but the public off-plan list has not been cleared for backend republication or reconciled to V48 identities. No unit-level sale records or current commercial availability are established."
+        "Selected annual and January–September 2026 monthly market aggregates and permit counts are published, but the public off-plan list has not been cleared for backend republication or reconciled to V48 identities. No unit-level sale records or current commercial availability are established. Monthly figures are all-use and must not be treated as commercial-only."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -678,6 +694,7 @@
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
-    "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e"
+    "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
+    "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566"
   }
 }
