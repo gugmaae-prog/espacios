@@ -1,0 +1,62 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
+import {mapDubaiCommercialSales} from '../src/stack-audit/dubai-commercial-sales.mjs';
+import worker from '../src/worker.js';
+
+const root=new URL('../',import.meta.url);
+const report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-validation.json',root)));
+const packed=await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-20261110.json.gz',root));
+const base64=packed.toString('base64');
+const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/dubai/commercial-unit-sales${query}`,{method});
+
+test('commercial unit sale subset keeps exact source rows and quality flags',()=>{
+ assert.equal(packed.length,report.compressedBytes);
+ assert.equal(createHash('sha256').update(packed).digest('hex'),report.compressedSha256);
+ const raw=gunzipSync(packed);
+ assert.equal(createHash('sha256').update(raw).digest('hex'),report.rawSha256);
+ const rows=JSON.parse(raw).rows;
+ assert.equal(rows.length,66366);
+ assert.equal(new Set(rows.map(row=>row[0])).size,66366);
+ assert.equal(rows.filter(row=>row[10]===0).length,64151);
+ assert.ok(rows.every(row=>row[1]<'2026-01-01'&&['Office','Shop'].includes(row[6])));
+});
+
+test('API separates registered 2025 sales from current asking listings',async()=>{
+ const response=await mapDubaiCommercialSales(request('?year=2025'),report,base64);
+ const body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
+ assert.equal(body.scope.evidenceClass,'registered_commercial_unit_sales');
+ assert.equal(body.registeredSaleRecords,6092);
+ assert.equal(body.officeRecords,4564);
+ assert.equal(body.shopRecords,1528);
+ assert.equal(body.readyRecords,3920);
+ assert.equal(body.offPlanRecords,2172);
+ assert.ok(body.cleanPriceRecords<body.registeredSaleRecords);
+ assert.match(body.scope.limits,/2026 is withheld/);
+});
+
+test('API pages records, groups DLD areas, and refuses incomplete 2026',async()=>{
+ const records=await(await mapDubaiCommercialSales(request('?view=records&year=2025&type=Office&limit=2'),report,base64)).json();
+ assert.equal(records.totalRecords,4564);
+ assert.equal(records.records.length,2);
+ assert.ok(records.records.every(row=>row.spaceType==='Office'&&row.date.startsWith('2025')));
+ const areas=await(await mapDubaiCommercialSales(request('?view=areas&year=2025'),report,base64)).json();
+ assert.ok(areas.totalAreas>0);
+ assert.equal(areas.areas.reduce((sum,row)=>sum+row.registeredSaleRecords,0),6092);
+ assert.equal((await mapDubaiCommercialSales(request('?year=2026'),report,base64)).status,400);
+ assert.equal((await mapDubaiCommercialSales(request('','POST'),report,base64)).status,405);
+ assert.equal((await mapDubaiCommercialSales(request('','HEAD'),report,base64)).status,200);
+});
+
+test('compiled Worker serves the new data without an R2 binding',async()=>{
+ const response=await worker.fetch(request('?year=2025'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-test'}},{});
+ const body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v53');
+ assert.equal(body.registeredSaleRecords,6092);
+ assert.equal(body.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');
+});
