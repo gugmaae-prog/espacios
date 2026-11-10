@@ -5,7 +5,7 @@ export const RGE_AREA_CENTRES=[
  ['umm-al-quwain','Umm Al Quwain emirate',55.7182920,25.5144944,'relation/3766487',['Emirate of Umm Al Quwain','Umm Al Quwain']],
  ['sharjah','Sharjah city',55.4210633,25.3461498,'relation/12905785',['Sharjah']],
  ['al-quoz','Al Quoz',55.2540203,25.1595803,'node/8143204838',['Al Quoz','Al quoz']],
- ['dip','Dubai Investments Park',55.1911925,24.9779669,'node/8143204859',['DIP Dubai Investment Park','DIP','Dubai Investment Park']],
+ ['dip','Dubai Investments Park',55.1911925,24.9779669,'node/8143204859',['DIP Dubai Investment Park','DIP','Dubai Investment Park','DIP 1']],
  ['jebel-ali-industrial','Jebel Ali Industrial Area',55.1215037,24.9985748,'way/874795299',['Jebel Ali Industrial Area','Jebel AL Industrial Area']],
  ['ras-al-khor','Ras Al Khor',55.3392449,25.1939625,'node/8143204820',['Ras Al Khor']],
  ['dubai-industrial-city','Dubai Industrial City',55.0662934,24.8399006,'node/4916824174',['Dubai Industrial City']],
@@ -19,7 +19,7 @@ export const RGE_AREA_CENTRES=[
  ['deira','Deira',55.3053340,25.2727936,'node/7826901099',['Deira']],
  ['abu-dhabi','Abu Dhabi city',54.3774014,24.4538352,'relation/4479763',['Abu Dhabi']],
  ['business-bay','Business Bay',55.2683707,25.1794564,'relation/18471755',['Business Bay','Business bay']],
- ['jvc','Jumeirah Village Circle',55.2079869,25.0565882,'node/11800596709',['Jumeirah Village Circle (JVC)','JVC']],
+ ['jvc','Jumeirah Village Circle',55.2079869,25.0565882,'node/11800596709',['Jumeirah Village Circle (JVC)','Jumeirah Village Circle','JVC']],
  ['bur-dubai','Bur Dubai',55.2963265,25.2623727,'way/1154380547',['Bur Dubai','Bur Dubai , Dubai']],
  ['techno-park','Techno Park',55.0604857,24.8966830,'way/354260411',['Technopark','Technology Park','Techno park','Techno Park']],
  ['ras-al-khaimah','Ras Al Khaimah city',55.9382320,25.7737705,'node/262479317',['Ras Al Khaimah']],
@@ -30,7 +30,7 @@ export const RGE_AREA_CENTRES=[
  ['barsha-heights','Barsha Heights',55.1757823,25.0982842,'node/3087418334',['Barsha Heights (Tecom)']],
  ['dubai-production-city','Dubai Production City',55.1912732,25.0321285,'relation/18471777',['Dubai Production City','IMPZ','Dubai Production City (IMPZ)']],
  ['fujairah','Fujairah city',56.3355085,25.1244604,'way/872858707',['Fujairah']],
- ['dubai-islands','Dubai Islands',55.3263177,25.3179174,'relation/8122161',['Dubai Islands']],
+ ['dubai-islands','Dubai Islands',55.3263177,25.3179174,'relation/8122161',['Dubai Islands','Dubai Island']],
  ['jebel-ali-village','Jebel Ali Village',55.1126987,25.0301768,'way/1018273191',['Jebel Ali Village']],
  ['al-ain','Al Ain',55.7452211,24.2248697,'node/82799640',['Al Ain']],
  ['majan','Majan',55.3184835,25.0929388,'way/1012399700',['Majan']],
@@ -59,6 +59,8 @@ export const RGE_AREA_CENTRES=[
  ['motor-city','Motor City',55.2382095,25.0476902,'way/1090402642',['Motor City']],
  ['al-baraha','Al Baraha',55.3195255,25.2809884,'relation/18471780',['Al Baraha']],
  ['al-sufouh','Al Sufouh',55.1611169,25.0983566,'way/1153975042',['Al Sufouh']],
+ ['dubai-internet-city','Dubai Internet City',55.1597571,25.0952352,'way/1154309751',['Dubai Internet City']],
+ ['jumeirah','Jumeirah',55.2474974,25.2069604,'relation/11912729',['Jumeirah']],
 ];
 // Emirate of each reviewed OSM area reference, distinct from the publisher's label.
 export const RGE_AREA_EMIRATES={
@@ -77,9 +79,10 @@ export const RGE_AREA_EMIRATES={
  mirdif:'Dubai','dubai-south':'Dubai',liwan:'Dubai','al-barsha':'Dubai',
  'al-nahda-2':'Dubai','culture-village':'Dubai','al-manara':'Dubai','jebel-ali':'Dubai',
  meydan:'Dubai','jumeirah-lake-towers':'Dubai','al-warqa':'Dubai','al-karama':'Dubai',
- 'motor-city':'Dubai','al-baraha':'Dubai','al-sufouh':'Dubai'
+ 'motor-city':'Dubai','al-baraha':'Dubai','al-sufouh':'Dubai',
+ 'dubai-internet-city':'Dubai',jumeirah:'Dubai'
 };
-if(RGE_AREA_CENTRES.length!==57||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==57)throw Error('Reviewed RGEstate area-to-emirate references changed');
+if(RGE_AREA_CENTRES.length!==59||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==59)throw Error('Reviewed RGEstate area-to-emirate references changed');
 const RGE_AREA_ALIASES=RGE_AREA_CENTRES.flatMap(area=>area[5].map(label=>[label.toLocaleLowerCase('en'),area]));
 if(RGE_AREA_ALIASES.some(([label,area])=>RGE_AREA_ALIASES.some(([otherLabel,otherArea])=>label===otherLabel&&area!==otherArea)))throw Error('Conflicting reviewed RGEstate area label');
 const RGE_AREA_BY_LABEL=new Map(RGE_AREA_ALIASES);
@@ -173,7 +176,8 @@ const RGE_PAGE=`<!doctype html><html lang="en" data-theme="light"><head><meta ch
    {path:'/map/api/uae-evidence/ras-al-khaimah/market-values?year=2025',label:'Ras Al Khaimah · commercial units',read:d=>{const row=d.observations?.[0];return d.scope?.unit==='AED thousand'&&row?.year===2025&&Number.isFinite(row.commercialUnitSalesValueAedThousand)?{value:'AED '+number.format(Math.round(row.commercialUnitSalesValueAedThousand/1000*100)/100)+'m',detail:'2025 annual commercial-unit sales value, not a sale count, asking price, or available unit.'}:null}},
    {path:'/map/api/uae-evidence/ras-al-khaimah/building-permits?year=2025',label:'Ras Al Khaimah · commercial building permits',read:d=>{const row=d.buildingTypes?.[0];return d.scope?.listingAvailability===false&&d.scope?.buildingTypeClassification?.includes('Table 7-4')&&row?.year===2025&&row.oneStoreyCommercialBuildingPermits===69&&row.industrialBuildingPermits===41?{value:'69 one-storey commercial permits',detail:'2025 issued building permits. Another 41 were classified as industrial buildings. Neither count is completed or available units.'}:null}},
    {path:'/map/api/uae-evidence/dubai/commercial-building-stock?year=2019&area=all',label:'Dubai · historical building counts',read:d=>{const commercial=d.observations?.find(x=>x.buildingType==='commercial_building'),industrial=d.observations?.find(x=>x.buildingType==='industrial_building');return d.scope?.evidenceClass==='historical_published_completed_building_count_by_type'&&commercial?.buildingCount===10405&&industrial?.buildingCount===1055?{value:'10,405 commercial buildings',detail:'2019 published building count; 1,055 industrial buildings separately. Historical stock, not new completions, current availability, or a map of units.'}:null}},
-   {path:'/map/api/uae-evidence/fujairah/building-permits?year=2025',label:'Fujairah · commercial buildings',read:d=>{const row=d.buildingUse2025?.find(x=>x.use==='commercial_buildings');return d.scope?.unit==='issued permits'&&d.scope?.buildingUseYears?.includes(2025)&&row?.emirateTotal===112?{value:number.format(row.emirateTotal)+' permits',detail:'2025 commercial-building permits across Fujairah and Dibba municipalities. Not completed spaces, transactions, or available listings.'}:null}}
+   {path:'/map/api/uae-evidence/fujairah/building-permits?year=2025',label:'Fujairah · commercial buildings',read:d=>{const row=d.buildingUse2025?.find(x=>x.use==='commercial_buildings');return d.scope?.unit==='issued permits'&&d.scope?.buildingUseYears?.includes(2025)&&row?.emirateTotal===112?{value:number.format(row.emirateTotal)+' permits',detail:'2025 commercial-building permits across Fujairah and Dibba municipalities. Not completed spaces, transactions, or available listings.'}:null}},
+   {path:'/map/api/uae-evidence/umm-al-quwain/industrial-plot-guide?plotType=commercial',label:'Umm Al Quwain · archived commercial plot guide',read:d=>{const row=d.rows?.[0];return d.scope?.evidenceClass==='official_dated_land_lease_guide_rate'&&d.scope?.ratePeriodStatus==='not_stated_in_source_table'&&d.scope?.currentOffer===false&&d.totalRows===1&&row?.plotType==='commercial'&&row.guidePlotSizeSqm===1200&&row.guideRateAedPerSqm===20?{value:'2021 guide · AED 20 / sqm',detail:'Commercial plot category at 1,200 sqm. The source table does not state the rate period. This is not a current offer, built space, or available unit.'}:null}}
   ];
   historyCards.replaceChildren();
   specs.forEach(async spec=>{

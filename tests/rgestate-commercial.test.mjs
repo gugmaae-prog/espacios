@@ -124,13 +124,18 @@ test('137 title-matched spaces add publisher data without becoming category rows
  assert.equal((await(await combined('?scope=title-candidates&purpose=sale')).json()).totalRows,candidateReport.saleRows);
  const areas=await(await mapRgestateCommercial(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),report,packed,candidateReport,candidatePacked,parentReport)).json();
  assert.equal(areas.totalRows,1000);
- assert.equal(areas.mappedRows,925);
- assert.equal(areas.unmappedRows,75);
+ assert.equal(areas.mappedRows,938);
+ assert.equal(areas.unmappedRows,62);
  assert.equal(areas.areas.reduce((sum,area)=>sum+area.count,0),areas.mappedRows);
  assert.equal(areas.scope.unitCoordinatesPresent,false);
  for(const [key,label] of [['meydan','Meydan'],['jumeirah-lake-towers','Jumeirah Lake Tower'],['al-warqa','Al Warqa'],['al-karama','Al Karama']]){
   const area=areas.areas.find(item=>item.key===key);
   assert.ok(area&&area.count>0,key);
+  const rows=await(await combined('?area='+key+'&limit=100')).json();
+  assert.ok(rows.rows.some(row=>row.locationLabel===label),key);
+  assert.ok(rows.rows.every(row=>row.coordinates===null&&row.reviewedAreaEmirate==='Dubai'));
+ }
+ for(const [key,label] of [['jvc','Jumeirah Village Circle'],['dip','DIP 1'],['dubai-islands','Dubai Island'],['dubai-internet-city','Dubai Internet City'],['jumeirah','Jumeirah']]){
   const rows=await(await combined('?area='+key+'&limit=100')).json();
   assert.ok(rows.rows.some(row=>row.locationLabel===label),key);
   assert.ok(rows.rows.every(row=>row.coordinates===null&&row.reviewedAreaEmirate==='Dubai'));
@@ -151,6 +156,8 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  assert.match(html,/city=ajman&category=Commercial/);
  assert.match(html,/sharjah\/market-aggregates/);
  assert.match(html,/ras-al-khaimah\/monthly-market\?month=2026-09/);
+ assert.match(html,/umm-al-quwain\/industrial-plot-guide\?plotType=commercial/);
+ assert.match(html,/The source table does not state the rate period/);
  assert.match(html,/This is not commercial-only activity or available space/);
  assert.match(html,/Includes H1; periods must not be added/);
  assert.match(html,/No rent amounts or comparable asking prices/);
@@ -172,8 +179,10 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,1000);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v51');
- assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{})).status,200);
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261110-map-stack-v52');
+ const commercialPage=await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{});
+ assert.equal(commercialPage.status,200);
+ assert.match(await commercialPage.text(),/The source table does not state the rate period/);
  const mapHtml=await(await worker.fetch(new Request('https://espacios.me/map'),env,{})).text();
  assert.match(mapHtml,/a\.href="\/map\/commercial"/);
  assert.equal((await worker.fetch(new Request('https://espacios.me/map/commercial-listings-20261109.json.gz'),env,{})).status,404);
