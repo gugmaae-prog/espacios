@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v26",
+  "version": "20261110-uae-evidence-coverage-v27",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -50,6 +50,24 @@
           "sourceUrl": "https://census.scad.gov.ae/home/realestate?lang=en",
           "rights": "SCAD open-data policy with attribution",
           "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "scad-abu-dhabi-quarterly-building-activity-20261110",
+          "route": "/map/api/uae-evidence/abu-dhabi/building-activity",
+          "sourceRows": 5,
+          "grain": "quarter × region × permit type/use and completion construction type counts",
+          "sourceVintage": "2025 Q1–Q4; 2026 Q2",
+          "sourceUrl": "https://www.scad.gov.ae/industry-construction?ThemeID=3294937&tab=Publications",
+          "rights": "SCAD open-data policy with attribution; selected numerical facts only",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "periodsUnavailable": [
+            "2026Q1"
+          ],
+          "preliminary": true,
+          "notCommercialCompletions": true,
+          "notTransactions": true,
+          "notAvailableUnits": true,
+          "sourceSha256": "7d53e9ef5b77ee2da7d33b00372c6667b405bb19038c1d48e7774b04df80ca98"
         },
         {
           "id": "ad-sdi-urban-development-projects-20261102",
@@ -111,6 +129,7 @@
       },
       "gaps": [
         "No approved ADREC V55 transaction-data reuse; candidate sales remain unpublished.",
+        "The verified SCAD building-activity set omits Q1 2026 and does not split completions by commercial use.",
         "No authoritative all-project denominator or verified coordinates for 127 accepted V48 records."
       ],
       "authoritativeAllProjectDenominator": null
@@ -543,7 +562,8 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Selected annual and January–September 2026 monthly market aggregates and permit counts are published, but the public off-plan list has not been cleared for backend republication or reconciled to V48 identities. No unit-level sale records or current commercial availability are established. Monthly figures are all-use and must not be treated as commercial-only."
+        "Selected annual and January–September 2026 monthly market aggregates and permit counts are published. The municipality links a dated 2024 project-status PDF; its website copyright notice prohibits unauthorized reproduction, and the indexed 2025 list URL currently returns 404. The list has no established backend reuse right or verified V48 identity crosswalk.",
+        "No unit-level sale records or current commercial availability are established. Monthly figures are all-use and must not be treated as commercial-only."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -695,6 +715,7 @@
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
     "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
-    "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566"
+    "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
+    "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160"
   }
 }

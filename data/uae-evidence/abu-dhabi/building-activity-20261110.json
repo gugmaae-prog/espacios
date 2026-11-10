@@ -1,0 +1,526 @@
+{
+  "sourceId": "scad-abu-dhabi-quarterly-building-activity-20261110",
+  "publisher": "Statistics Centre - Abu Dhabi (SCAD)",
+  "underlyingSource": "Department of Municipalities and Transport",
+  "evidenceClass": "official_quarterly_building_permit_and_completion_aggregates",
+  "emirate": "Abu Dhabi",
+  "grain": "quarter × permit type or building use or completion construction type × region",
+  "unit": "count",
+  "regions": [
+    "Abu Dhabi Region",
+    "Al Ain Region",
+    "Al Dhafra Region",
+    "Emirate total"
+  ],
+  "periodsUnavailable": [
+    "2026Q1"
+  ],
+  "limits": "Preliminary quarterly counts from selected SCAD publications. Permit type and usage are alternative breakdowns of the same permits and must not be added together. Completion counts include all uses; the source does not split completions by commercial use. Q1 2026 is not in this verified set. Counts are not completed commercial units, registered sales, prices, project identities, or current availability.",
+  "observations": [
+    {
+      "period": "2025Q1",
+      "publicationDate": "2025-06-30",
+      "preliminary": true,
+      "permitByType": {
+        "total": {
+          "abuDhabi": 1840,
+          "alAin": 476,
+          "alDhafra": 107,
+          "emirateTotal": 2423
+        },
+        "newBuildings": {
+          "abuDhabi": 1226,
+          "alAin": 385,
+          "alDhafra": 96,
+          "emirateTotal": 1707
+        },
+        "additions": {
+          "abuDhabi": 86,
+          "alAin": 24,
+          "alDhafra": 6,
+          "emirateTotal": 116
+        },
+        "modifications": {
+          "abuDhabi": 528,
+          "alAin": 67,
+          "alDhafra": 5,
+          "emirateTotal": 600
+        }
+      },
+      "permitByUsage": {
+        "total": {
+          "abuDhabi": 1840,
+          "alAin": 476,
+          "alDhafra": 107,
+          "emirateTotal": 2423
+        },
+        "residential": {
+          "abuDhabi": 969,
+          "alAin": 273,
+          "alDhafra": 42,
+          "emirateTotal": 1284
+        },
+        "commercial": {
+          "abuDhabi": 558,
+          "alAin": 42,
+          "alDhafra": 7,
+          "emirateTotal": 607
+        },
+        "industrial": {
+          "abuDhabi": 111,
+          "alAin": 33,
+          "alDhafra": 4,
+          "emirateTotal": 148
+        },
+        "publicFacilities": {
+          "abuDhabi": 147,
+          "alAin": 99,
+          "alDhafra": 36,
+          "emirateTotal": 282
+        },
+        "agricultural": {
+          "abuDhabi": 32,
+          "alAin": 15,
+          "alDhafra": 17,
+          "emirateTotal": 64
+        },
+        "other": {
+          "abuDhabi": 23,
+          "alAin": 14,
+          "alDhafra": 1,
+          "emirateTotal": 38
+        }
+      },
+      "completionByConstruction": {
+        "total": {
+          "abuDhabi": 3662,
+          "alAin": 1912,
+          "alDhafra": 193,
+          "emirateTotal": 5767
+        },
+        "newBuilding": {
+          "abuDhabi": 3150,
+          "alAin": 1704,
+          "alDhafra": 171,
+          "emirateTotal": 5025
+        },
+        "additions": {
+          "abuDhabi": 110,
+          "alAin": 133,
+          "alDhafra": 16,
+          "emirateTotal": 259
+        },
+        "modifications": {
+          "abuDhabi": 402,
+          "alAin": 75,
+          "alDhafra": 6,
+          "emirateTotal": 483
+        }
+      }
+    },
+    {
+      "period": "2025Q2",
+      "publicationDate": "2025-09-30",
+      "preliminary": true,
+      "permitByType": {
+        "total": {
+          "abuDhabi": 1891,
+          "alAin": 528,
+          "alDhafra": 152,
+          "emirateTotal": 2571
+        },
+        "newBuildings": {
+          "abuDhabi": 1334,
+          "alAin": 433,
+          "alDhafra": 140,
+          "emirateTotal": 1907
+        },
+        "additions": {
+          "abuDhabi": 99,
+          "alAin": 28,
+          "alDhafra": 4,
+          "emirateTotal": 131
+        },
+        "modifications": {
+          "abuDhabi": 458,
+          "alAin": 67,
+          "alDhafra": 8,
+          "emirateTotal": 533
+        }
+      },
+      "permitByUsage": {
+        "total": {
+          "abuDhabi": 1891,
+          "alAin": 528,
+          "alDhafra": 152,
+          "emirateTotal": 2571
+        },
+        "residential": {
+          "abuDhabi": 1046,
+          "alAin": 328,
+          "alDhafra": 64,
+          "emirateTotal": 1438
+        },
+        "commercial": {
+          "abuDhabi": 526,
+          "alAin": 51,
+          "alDhafra": 8,
+          "emirateTotal": 585
+        },
+        "industrial": {
+          "abuDhabi": 137,
+          "alAin": 56,
+          "alDhafra": 15,
+          "emirateTotal": 208
+        },
+        "publicFacilities": {
+          "abuDhabi": 115,
+          "alAin": 61,
+          "alDhafra": 45,
+          "emirateTotal": 221
+        },
+        "agricultural": {
+          "abuDhabi": 27,
+          "alAin": 19,
+          "alDhafra": 18,
+          "emirateTotal": 64
+        },
+        "other": {
+          "abuDhabi": 40,
+          "alAin": 13,
+          "alDhafra": 2,
+          "emirateTotal": 55
+        }
+      },
+      "completionByConstruction": {
+        "total": {
+          "abuDhabi": 4362,
+          "alAin": 1960,
+          "alDhafra": 220,
+          "emirateTotal": 6542
+        },
+        "newBuilding": {
+          "abuDhabi": 3906,
+          "alAin": 1773,
+          "alDhafra": 208,
+          "emirateTotal": 5887
+        },
+        "additions": {
+          "abuDhabi": 88,
+          "alAin": 120,
+          "alDhafra": 6,
+          "emirateTotal": 214
+        },
+        "modifications": {
+          "abuDhabi": 368,
+          "alAin": 67,
+          "alDhafra": 6,
+          "emirateTotal": 441
+        }
+      }
+    },
+    {
+      "period": "2025Q3",
+      "publicationDate": "2025-12-31",
+      "preliminary": true,
+      "permitByType": {
+        "total": {
+          "abuDhabi": 2191,
+          "alAin": 714,
+          "alDhafra": 132,
+          "emirateTotal": 3037
+        },
+        "newBuildings": {
+          "abuDhabi": 1462,
+          "alAin": 588,
+          "alDhafra": 123,
+          "emirateTotal": 2173
+        },
+        "additions": {
+          "abuDhabi": 87,
+          "alAin": 41,
+          "alDhafra": 6,
+          "emirateTotal": 134
+        },
+        "modifications": {
+          "abuDhabi": 642,
+          "alAin": 85,
+          "alDhafra": 3,
+          "emirateTotal": 730
+        }
+      },
+      "permitByUsage": {
+        "total": {
+          "abuDhabi": 2191,
+          "alAin": 714,
+          "alDhafra": 132,
+          "emirateTotal": 3037
+        },
+        "residential": {
+          "abuDhabi": 1144,
+          "alAin": 473,
+          "alDhafra": 55,
+          "emirateTotal": 1672
+        },
+        "commercial": {
+          "abuDhabi": 668,
+          "alAin": 81,
+          "alDhafra": 2,
+          "emirateTotal": 751
+        },
+        "industrial": {
+          "abuDhabi": 146,
+          "alAin": 57,
+          "alDhafra": 14,
+          "emirateTotal": 217
+        },
+        "publicFacilities": {
+          "abuDhabi": 175,
+          "alAin": 62,
+          "alDhafra": 47,
+          "emirateTotal": 284
+        },
+        "agricultural": {
+          "abuDhabi": 36,
+          "alAin": 26,
+          "alDhafra": 14,
+          "emirateTotal": 76
+        },
+        "other": {
+          "abuDhabi": 22,
+          "alAin": 15,
+          "alDhafra": 0,
+          "emirateTotal": 37
+        }
+      },
+      "completionByConstruction": {
+        "total": {
+          "abuDhabi": 5336,
+          "alAin": 2208,
+          "alDhafra": 253,
+          "emirateTotal": 7797
+        },
+        "newBuilding": {
+          "abuDhabi": 4788,
+          "alAin": 1989,
+          "alDhafra": 238,
+          "emirateTotal": 7015
+        },
+        "additions": {
+          "abuDhabi": 106,
+          "alAin": 175,
+          "alDhafra": 12,
+          "emirateTotal": 293
+        },
+        "modifications": {
+          "abuDhabi": 442,
+          "alAin": 44,
+          "alDhafra": 3,
+          "emirateTotal": 489
+        }
+      }
+    },
+    {
+      "period": "2025Q4",
+      "publicationDate": "2026-04-09",
+      "preliminary": true,
+      "permitByType": {
+        "total": {
+          "abuDhabi": 2203,
+          "alAin": 828,
+          "alDhafra": 165,
+          "emirateTotal": 3196
+        },
+        "newBuildings": {
+          "abuDhabi": 1478,
+          "alAin": 698,
+          "alDhafra": 152,
+          "emirateTotal": 2328
+        },
+        "additions": {
+          "abuDhabi": 100,
+          "alAin": 41,
+          "alDhafra": 9,
+          "emirateTotal": 150
+        },
+        "modifications": {
+          "abuDhabi": 625,
+          "alAin": 89,
+          "alDhafra": 4,
+          "emirateTotal": 718
+        }
+      },
+      "permitByUsage": {
+        "total": {
+          "abuDhabi": 2203,
+          "alAin": 828,
+          "alDhafra": 165,
+          "emirateTotal": 3196
+        },
+        "residential": {
+          "abuDhabi": 1165,
+          "alAin": 622,
+          "alDhafra": 65,
+          "emirateTotal": 1852
+        },
+        "commercial": {
+          "abuDhabi": 686,
+          "alAin": 86,
+          "alDhafra": 9,
+          "emirateTotal": 781
+        },
+        "industrial": {
+          "abuDhabi": 138,
+          "alAin": 45,
+          "alDhafra": 17,
+          "emirateTotal": 200
+        },
+        "publicFacilities": {
+          "abuDhabi": 158,
+          "alAin": 40,
+          "alDhafra": 56,
+          "emirateTotal": 254
+        },
+        "agricultural": {
+          "abuDhabi": 26,
+          "alAin": 19,
+          "alDhafra": 16,
+          "emirateTotal": 61
+        },
+        "other": {
+          "abuDhabi": 30,
+          "alAin": 16,
+          "alDhafra": 2,
+          "emirateTotal": 48
+        }
+      },
+      "completionByConstruction": {
+        "total": {
+          "abuDhabi": 4655,
+          "alAin": 2322,
+          "alDhafra": 272,
+          "emirateTotal": 7249
+        },
+        "newBuilding": {
+          "abuDhabi": 4036,
+          "alAin": 2093,
+          "alDhafra": 260,
+          "emirateTotal": 6389
+        },
+        "additions": {
+          "abuDhabi": 125,
+          "alAin": 122,
+          "alDhafra": 11,
+          "emirateTotal": 258
+        },
+        "modifications": {
+          "abuDhabi": 494,
+          "alAin": 107,
+          "alDhafra": 1,
+          "emirateTotal": 602
+        }
+      }
+    },
+    {
+      "period": "2026Q2",
+      "publicationDate": "2026-09-30",
+      "preliminary": true,
+      "permitByType": {
+        "total": {
+          "abuDhabi": 1722,
+          "alAin": 476,
+          "alDhafra": 87,
+          "emirateTotal": 2285
+        },
+        "newBuildings": {
+          "abuDhabi": 1103,
+          "alAin": 382,
+          "alDhafra": 74,
+          "emirateTotal": 1559
+        },
+        "additions": {
+          "abuDhabi": 77,
+          "alAin": 19,
+          "alDhafra": 2,
+          "emirateTotal": 98
+        },
+        "modifications": {
+          "abuDhabi": 542,
+          "alAin": 75,
+          "alDhafra": 11,
+          "emirateTotal": 628
+        }
+      },
+      "permitByUsage": {
+        "total": {
+          "abuDhabi": 1722,
+          "alAin": 476,
+          "alDhafra": 87,
+          "emirateTotal": 2285
+        },
+        "residential": {
+          "abuDhabi": 760,
+          "alAin": 296,
+          "alDhafra": 37,
+          "emirateTotal": 1093
+        },
+        "commercial": {
+          "abuDhabi": 635,
+          "alAin": 52,
+          "alDhafra": 2,
+          "emirateTotal": 689
+        },
+        "industrial": {
+          "abuDhabi": 121,
+          "alAin": 35,
+          "alDhafra": 16,
+          "emirateTotal": 172
+        },
+        "publicFacilities": {
+          "abuDhabi": 149,
+          "alAin": 64,
+          "alDhafra": 18,
+          "emirateTotal": 231
+        },
+        "agricultural": {
+          "abuDhabi": 26,
+          "alAin": 18,
+          "alDhafra": 9,
+          "emirateTotal": 53
+        },
+        "other": {
+          "abuDhabi": 31,
+          "alAin": 11,
+          "alDhafra": 5,
+          "emirateTotal": 47
+        }
+      },
+      "completionByConstruction": {
+        "total": {
+          "abuDhabi": 4238,
+          "alAin": 2378,
+          "alDhafra": 351,
+          "emirateTotal": 6967
+        },
+        "newBuilding": {
+          "abuDhabi": 3680,
+          "alAin": 2216,
+          "alDhafra": 340,
+          "emirateTotal": 6236
+        },
+        "additions": {
+          "abuDhabi": 92,
+          "alAin": 72,
+          "alDhafra": 6,
+          "emirateTotal": 170
+        },
+        "modifications": {
+          "abuDhabi": 466,
+          "alAin": 90,
+          "alDhafra": 5,
+          "emirateTotal": 561
+        }
+      }
+    }
+  ]
+}
