@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261110-map-stack-v44';
+var MAP_STACK_RELEASE='20261110-map-stack-v45';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -68,6 +68,7 @@ worker_default.fetch=async function(request,env,ctx){
  const sharjahMarket=mapSharjahMarketAggregates(request,UAE_SHARJAH_MARKET_REPORT,UAE_SHARJAH_MARKET_DATA);if(sharjahMarket)return mapStackPreparedResponse(request,sharjahMarket);
  const sharjahAnnual=mapSharjahAnnualMarket(request,UAE_SHARJAH_ANNUAL_REPORT,UAE_SHARJAH_ANNUAL_DATA);if(sharjahAnnual)return mapStackPreparedResponse(request,sharjahAnnual);
  const rakMarket=mapRakMarketValues(request,UAE_RAK_MARKET_REPORT,UAE_RAK_MARKET_DATA);if(rakMarket)return mapStackPreparedResponse(request,rakMarket);
+ const rakCommercial=mapRakCommercialHistory(request,UAE_RAK_COMMERCIAL_REPORT,UAE_RAK_COMMERCIAL_DATA);if(rakCommercial)return mapStackPreparedResponse(request,rakCommercial);
  const rakPermits=mapRakBuildingPermits(request,UAE_RAK_PERMITS_REPORT,UAE_RAK_PERMITS_DATA);if(rakPermits)return mapStackPreparedResponse(request,rakPermits);
  const dubaiStock=mapDubaiBuildingStock(request,UAE_DUBAI_BUILDING_STOCK_REPORT,UAE_DUBAI_BUILDING_STOCK_DATA);if(dubaiStock)return mapStackPreparedResponse(request,dubaiStock);
  const fujairahPermits=mapFujairahBuildingPermits(request,UAE_FUJAIRAH_PERMITS_REPORT,UAE_FUJAIRAH_PERMITS_DATA);if(fujairahPermits)return mapStackPreparedResponse(request,fujairahPermits);

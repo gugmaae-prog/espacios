@@ -1,0 +1,80 @@
+{
+  "sourceId": "raksc-yearbook-2026-commercial-sales-values-20261110",
+  "emirate": "Ras Al Khaimah",
+  "authority": "Ras Al Khaimah Statistics Centre",
+  "originalSource": "Ras Al Khaimah Municipality",
+  "publication": "Statistical Yearbook 2026, construction Table 7-2",
+  "sourceUrl": "https://css.rak.ae/en/syvb2026/",
+  "evidenceClass": "official_annual_commercial_sales_value_aggregate",
+  "grain": "emirate-calendar-year use-category sales value",
+  "unit": "AED thousand",
+  "observations": [
+    {
+      "year": 2015,
+      "commercialLandSalesValueAedThousand": 35414,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 331865,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2016,
+      "commercialLandSalesValueAedThousand": 28964,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 334607,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2017,
+      "commercialLandSalesValueAedThousand": 41800,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 312573,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2018,
+      "commercialLandSalesValueAedThousand": 39451,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 125972,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2019,
+      "commercialLandSalesValueAedThousand": 25835,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 75549,
+      "commercialUnitSalesValueAedThousand": 2269
+    },
+    {
+      "year": 2020,
+      "commercialLandSalesValueAedThousand": 12901.55,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 49040,
+      "commercialUnitSalesValueAedThousand": null
+    },
+    {
+      "year": 2021,
+      "commercialLandSalesValueAedThousand": 28375,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 160614.01,
+      "commercialUnitSalesValueAedThousand": 8341.45
+    },
+    {
+      "year": 2022,
+      "commercialLandSalesValueAedThousand": 11192.18,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 218184.38,
+      "commercialUnitSalesValueAedThousand": 14646.44
+    },
+    {
+      "year": 2023,
+      "commercialLandSalesValueAedThousand": 65562.84,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 378479.45,
+      "commercialUnitSalesValueAedThousand": 21677.94
+    },
+    {
+      "year": 2024,
+      "commercialLandSalesValueAedThousand": 23272.33,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 1201006.4,
+      "commercialUnitSalesValueAedThousand": 35209.02
+    },
+    {
+      "year": 2025,
+      "commercialLandSalesValueAedThousand": 10720,
+      "mixedCommercialResidentialLandSalesValueAedThousand": 603003.37,
+      "commercialUnitSalesValueAedThousand": 31787.85
+    }
+  ],
+  "limits": "Annual emirate aggregate values, not sale counts, unit prices, registered individual transactions, asking listings, available commercial spaces, or project locations. Commercial land, mixed commercial-residential land, and commercial units are distinct categories and must not be combined as a single commercial-unit series. A missing commercial-unit value is unreported in the source, not zero. Historical observations do not establish current availability."
+}

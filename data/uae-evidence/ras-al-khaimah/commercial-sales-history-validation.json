@@ -1,0 +1,38 @@
+{
+  "sourceId": "raksc-yearbook-2026-commercial-sales-values-20261110",
+  "sourceUrl": "https://css.rak.ae/en/syvb2026/",
+  "sourceTable": "construction Table 7-2",
+  "rows": 11,
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "commercialUnitReportedYears": [
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "dataBytes": 3270,
+  "dataSha256": "1e79294be7cef2ad119a930ab03cc45ff9143e9c4c13d213be4ae9887b61f45f",
+  "sourceCapture": {
+    "retrievedAt": "2026-11-10",
+    "bytes": 626394,
+    "sha256": "d11c6ad2dc3fcaa055eafa97d0fceb196fbde79aab74c536a396ee393bfd7d28",
+    "independentReadbackSha256": "d11c6ad2dc3fcaa055eafa97d0fceb196fbde79aab74c536a396ee393bfd7d28"
+  },
+  "rightsScope": "Selected numerical facts and source link only; no yearbook prose, images, layout, or complete table redistribution.",
+  "verification": "Three exact Table 7-2 use-category rows matched on two independent official page reads. Six existing market-values observations were crosschecked separately. Dashes in the commercial-unit series are null.",
+  "limits": "Annual emirate aggregate values, not sale counts, unit prices, registered individual transactions, asking listings, available commercial spaces, or project locations. Commercial land, mixed commercial-residential land, and commercial units are distinct categories and must not be combined as a single commercial-unit series. A missing commercial-unit value is unreported in the source, not zero. Historical observations do not establish current availability."
+}

@@ -1,5 +1,5 @@
 {
-  "version": "20261110-uae-evidence-coverage-v22",
+  "version": "20261110-uae-evidence-coverage-v23",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -465,6 +465,28 @@
           "sourceSha256": "3e66bd2e7bef03f6849ec78f19180d11159a144d23b4d4d0bb894d06e235c6f2"
         },
         {
+          "id": "raksc-yearbook-2026-commercial-sales-values-20261110",
+          "route": "/map/api/uae-evidence/ras-al-khaimah/commercial-sales-history",
+          "sourceRows": 11,
+          "grain": "emirate-calendar-year commercial, mixed-use land, and commercial-unit sale values; AED thousand",
+          "sourceVintage": "2015–2025",
+          "sourceUrl": "https://css.rak.ae/en/syvb2026/",
+          "rights": "selected numerical facts and source link only; yearbook content excluded",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "commercialUnitReportedYears": [
+            2019,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "notTransactionLevel": true,
+          "notTransactionCounts": true,
+          "notAvailableUnits": true,
+          "sourceSha256": "1e79294be7cef2ad119a930ab03cc45ff9143e9c4c13d213be4ae9887b61f45f"
+        },
+        {
           "id": "raksc-yearbook-2026-selected-building-permits-20261110",
           "route": "/map/api/uae-evidence/ras-al-khaimah/building-permits",
           "sourceRows": 9,
@@ -653,6 +675,7 @@
     "fujairahPermits": "355123dd4d15cc536d248d979832086b8b5f634e9194d41c682d155c5ce73721",
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
-    "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0"
+    "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
+    "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e"
   }
 }
