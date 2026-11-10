@@ -6,7 +6,7 @@ import {RGE_AREA_CENTRES,RGE_AREA_EMIRATES,rgeAreaLocationFor} from '../src/stac
 const root=new URL('../',import.meta.url);
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const source=JSON.parse(await fs.readFile(new URL('data/uae-evidence/rgestate/full-index-validation.json',root)));
-const raw=gunzipSync(await fs.readFile(new URL('data/uae-evidence/rgestate/full-index-20261110.json.gz',root)));
+const raw=gunzipSync(await fs.readFile(new URL('data/uae-evidence/rgestate/full-index-20261111.json.gz',root)));
 if(sha(raw)!==source.rawSha256)throw Error('RGEstate source checksum mismatch');
 const rows=JSON.parse(raw);
 const explicit=new Set(['Abu Dhabi','Ajman','Dubai','Fujairah','Ras Al Khaimah','Sharjah','Umm Al Quwain','Emirate of Umm Al Quwain']);

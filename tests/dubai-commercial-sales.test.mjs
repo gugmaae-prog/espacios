@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
 import {mapDubaiCommercialSales} from '../src/stack-audit/dubai-commercial-sales.mjs';
+import {RGE_AREA_CENTRES} from '../src/stack-audit/rgestate-commercial.mjs';
 import worker from '../src/worker.js';
 
 const root=new URL('../',import.meta.url);
@@ -56,11 +57,28 @@ test('API pages records, groups DLD areas, and refuses incomplete 2026',async()=
  assert.equal((await mapDubaiCommercialSales(request('','HEAD'),report,base64)).status,200);
 });
 
+test('2025 registered sales map uses only four reviewed area references',async()=>{
+ const url=request('?view=map&year=2025');
+ const response=await mapDubaiCommercialSales(url,report,base64,null,null,RGE_AREA_CENTRES);
+ const body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(body.totalSaleRecords,6092);
+ assert.equal(body.scope.mappedSaleRecords,1288);
+ assert.equal(body.scope.unmappedSaleRecords,4804);
+ assert.deepEqual(body.mappedAreas.map(area=>[area.areaName,area.registeredSaleRecords]),[['Business Bay',1167],['Al Jadaf',112],['Al Wasl',1],['Mirdif',8]]);
+ assert.ok(body.mappedAreas.every(area=>area.locationBasis==='reviewed_osm_area_reference_not_cadastral_centroid_or_unit_coordinate'&&area.osmUrl.startsWith('https://www.openstreetmap.org/')));
+ assert.match(body.scope.mapLimits,/not DLD boundary centroids/);
+ assert.equal((await mapDubaiCommercialSales(url,report,base64)).status,503);
+ const live=await worker.fetch(url,{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-map-test'}},{});
+ assert.equal(live.status,200);
+ assert.equal((await live.json()).scope.mappedSaleRecords,1288);
+});
+
 test('compiled Worker serves the new data without an R2 binding',async()=>{
  const response=await worker.fetch(request('?year=2025'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-test'}},{});
  const body=await response.json();
  assert.equal(response.status,200);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261110-map-stack-v56');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v57');
  assert.equal(body.registeredSaleRecords,6092);
  assert.equal(body.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');
 });

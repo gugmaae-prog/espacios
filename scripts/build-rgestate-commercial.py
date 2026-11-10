@@ -64,8 +64,8 @@ def build():
             })
     assert len(rows) == sum(counts.values()) and len({row['sourceListingId'] for row in rows}) == len(rows)
     rows.sort(key=lambda row: (row['purpose'], -int(row['sourceListingId'])))
-    previous_report = json.loads((OUT / 'commercial-listings-validation-20261109.json').read_text())
-    previous_packed = (OUT / 'commercial-listings-20261109.json.gz').read_bytes()
+    previous_report = json.loads((OUT / 'commercial-listings-validation-20261110.json').read_text())
+    previous_packed = (OUT / 'commercial-listings-20261110.json.gz').read_bytes()
     previous_raw = gzip.decompress(previous_packed)
     assert digest(previous_packed) == previous_report['compressedSha256'] and digest(previous_raw) == previous_report['rawSha256']
     previous = {row['sourceListingId']: row for row in json.loads(previous_raw)}
@@ -92,7 +92,7 @@ def build():
     raw = (json.dumps(rows, ensure_ascii=False, separators=(',', ':')) + '\n').encode()
     packed = gzip.compress(raw, compresslevel=9, mtime=0)
     report = {
-        'sourceId': 'rgestate-commercial-category-20261110',
+        'sourceId': 'rgestate-commercial-category-20261111',
         'publisher': 'RGEstate', 'publisherUrl': 'https://www.rgestate.com',
         'categoryUrls': ['https://www.rgestate.com/property-for-rent/commercial', 'https://www.rgestate.com/property-for-sale/commercial'],
         'observedAt': max(read(f'commercial-{purpose}-{pass_name}-manifest')['retrievedAt'] for purpose in ('rent', 'sale') for pass_name in ('first', 'second')),
@@ -115,7 +115,7 @@ def main():
     args = check.parse_args()
     if args.check:
         report = json.loads((OUT / 'commercial-listings-validation.json').read_text())
-        packed = (OUT / 'commercial-listings-20261110.json.gz').read_bytes()
+        packed = (OUT / 'commercial-listings-20261111.json.gz').read_bytes()
         raw = gzip.decompress(packed)
         rows = json.loads(raw)
         assert len(packed) == report['compressedBytes'] and digest(packed) == report['compressedSha256']
@@ -127,7 +127,7 @@ def main():
     else:
         raw, packed, report = build()
         OUT.mkdir(parents=True, exist_ok=True)
-        (OUT / 'commercial-listings-20261110.json.gz').write_bytes(packed)
+        (OUT / 'commercial-listings-20261111.json.gz').write_bytes(packed)
         (OUT / 'commercial-listings-validation.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
     print(f'RGEstate commercial snapshot verified: {report["rows"]} listing facts, no photos')
 

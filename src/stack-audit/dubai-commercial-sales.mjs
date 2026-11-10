@@ -1,5 +1,13 @@
 const DUBAI_COMMERCIAL_SALES_PATH='/map/api/uae-evidence/dubai/commercial-unit-sales';
 const DUBAI_COMMERCIAL_SALES_PARTIAL_PATH='/map/api/uae-evidence/dubai/commercial-unit-sales-2026-partial';
+// Exact reviewed DLD area names with a separate OSM area reference. A broader
+// neighbourhood (for example Al Warsan) is not a match for a numbered DLD area.
+const DUBAI_COMMERCIAL_MAP_AREAS=[
+ [526,'Business Bay','business-bay'],
+ [334,'Al Jadaf','al-jaddaf'],
+ [364,'Al Wasl','al-wasl'],
+ [232,'Mirdif','mirdif'],
+];
 const dubaiCommercialSalesRowsPromises=new Map();
 
 async function dubaiCommercialSalesRows(base64,report){
@@ -20,7 +28,7 @@ function dubaiSalesSummary(rows){
  return {registeredSaleRecords:rows.length,cleanPriceRecords:clean.length,cleanSaleValueAed:clean.reduce((sum,row)=>sum+row[9],0),medianCleanPriceAedPerSqft:median===null?null:Math.round(median),readyRecords:rows.filter(row=>row[7]==='Ready').length,offPlanRecords:rows.filter(row=>row[7]==='Off-Plan').length,officeRecords:rows.filter(row=>row[6]==='Office').length,shopRecords:rows.filter(row=>row[6]==='Shop').length};
 }
 
-export async function mapDubaiCommercialSales(request,report,packed,partialReport=null,partialPacked=null){
+export async function mapDubaiCommercialSales(request,report,packed,partialReport=null,partialPacked=null,mapReferences=null){
  const url=new URL(request.url);
  const path=url.pathname.replace(/\/+$/,'');
  if(path!==DUBAI_COMMERCIAL_SALES_PATH&&path!==DUBAI_COMMERCIAL_SALES_PARTIAL_PATH)return null;
@@ -30,13 +38,25 @@ export async function mapDubaiCommercialSales(request,report,packed,partialRepor
  const reply=(body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{...headers,...(status===200?{}:{'cache-control':'no-store'})}});
  if(!['GET','HEAD'].includes(request.method))return new Response(JSON.stringify({error:'Read-only endpoint'}),{status:405,headers:{...headers,'cache-control':'no-store',allow:'GET, HEAD'}});
  const year=url.searchParams.get('year'),areaId=url.searchParams.get('areaId'),type=url.searchParams.get('type'),registration=url.searchParams.get('registration'),view=url.searchParams.get('view')||'summary';
- if((year&&(!/^\d{4}$/.test(year)||(partial?+year!==2026:+year<2006||+year>2025)))||(areaId&&(!/^\d+$/.test(areaId)||+areaId<=0))||(type&&!['Office','Shop'].includes(type))||(registration&&!['Ready','Off-Plan'].includes(registration))||!['summary','areas','records'].includes(view))return reply({error:partial?'Unknown filter. This endpoint contains only the partial 1 January–9 February 2026 period.':'Unknown filter. Supported years are 2006–2025; use the separately labelled 2026 partial endpoint for later records.'},400);
+ if((year&&(!/^\d{4}$/.test(year)||(partial?+year!==2026:+year<2006||+year>2025)))||(areaId&&(!/^\d+$/.test(areaId)||+areaId<=0))||(type&&!['Office','Shop'].includes(type))||(registration&&!['Ready','Off-Plan'].includes(registration))||!['summary','areas','records',...(partial?[]:['map'])].includes(view))return reply({error:partial?'Unknown filter. This endpoint contains only the partial 1 January–9 February 2026 period.':'Unknown filter. Supported years are 2006–2025; use the separately labelled 2026 partial endpoint for later records.'},400);
  const source={id:report.sourceId,publisher:report.publisher,sourceUrl:report.sourceUrl,originalSourceUrl:report.originalSourceUrl,license:report.license,licenseUrl:report.licenseUrl,sourceSnapshotDate:report.sourceSnapshotDate,sourceParquetSha256:report.sourceParquetSha256,derivedSubsetSha256:report.rawSha256};
  const scope={emirate:'Dubai',evidenceClass:'registered_commercial_unit_sales',population:'DLD Commercial Unit Office and Shop sale registrations',grain:view==='records'?'one registered sale':view==='areas'?'DLD cadastral area':'selected population',dateRange:report.dateRange,periodStatus:partial?report.periodStatus:'pre_2026_historical_source_slice',qualityRule:'Counts include flagged source rows; sale value and price median use qualityFlags=0 only.',limits:partial?'Partial 2026 source period, 1 January–9 February only. The source commercial-unit classification then stops while other sale categories continue. Do not annualize or compare this count with a full year. Registered prices are not asking prices, current availability, rents, or valuations. DLD cadastral areas are not verified unit coordinates.':'Historical snapshot through 2025. The source commercial-unit classification stops after 9 February 2026 despite other sale categories continuing, so 2026 is withheld from this historical series. Registered prices are not asking prices, current availability, rents, or property valuations. DLD cadastral areas are not verified unit coordinates.'};
  try{
   const all=await dubaiCommercialSalesRows(packed,report);
   const rows=all.filter(row=>(!year||row[1].startsWith(year))&&(!areaId||row[2]===+areaId)&&(!type||row[6]===type)&&(!registration||row[7]===registration));
   if(view==='summary')return reply({source,scope,filters:{year:year?+year:null,areaId:areaId?+areaId:null,type:type||null,registration:registration||null},...dubaiSalesSummary(rows)});
+  if(view==='map'){
+   if(!Array.isArray(mapReferences))throw Error('Reviewed area references unavailable');
+   const byKey=new Map(mapReferences.map(area=>[area[0],area]));
+   const groups=new Map();for(const row of rows){if(!groups.has(row[2]))groups.set(row[2],[]);groups.get(row[2]).push(row)}
+   const mapped=DUBAI_COMMERCIAL_MAP_AREAS.map(([areaId,areaName,key])=>{
+    const ref=byKey.get(key),group=groups.get(areaId)||[];
+    if(!ref||ref[1]!==areaName&&!(areaName==='Al Jadaf'&&ref[1]==='Al Jaddaf')||!ref[5].includes(areaName)||group.some(row=>row[3]!==areaName))throw Error('DLD area reference mismatch');
+    return {areaId,areaName,center:[ref[2],ref[3]],osmUrl:'https://www.openstreetmap.org/'+ref[4],locationBasis:'reviewed_osm_area_reference_not_cadastral_centroid_or_unit_coordinate',...dubaiSalesSummary(group)};
+   }).filter(area=>area.registeredSaleRecords>0);
+   const mappedCount=mapped.reduce((sum,area)=>sum+area.registeredSaleRecords,0);
+   return reply({source,scope:{...scope,grain:'DLD cadastral area with reviewed OSM area reference',mapLimits:'Only exact reviewed name matches receive area reference points. These are not DLD boundary centroids, building or unit coordinates. Unmatched sale records remain in the source API.',mappedSaleRecords:mappedCount,unmappedSaleRecords:rows.length-mappedCount,areaAttribution:'© OpenStreetMap contributors',areaAttributionUrl:'https://www.openstreetmap.org/copyright'},filters:{year:year?+year:null,type:type||null,registration:registration||null},totalSaleRecords:rows.length,mappedAreas:mapped});
+  }
   if(view==='areas'){
    const groups=new Map();for(const row of rows){const key=row[2];if(!groups.has(key))groups.set(key,[]);groups.get(key).push(row)}
    const areas=[...groups].map(([id,group])=>({areaId:id,areaName:group[0][3],...dubaiSalesSummary(group)})).sort((a,b)=>b.registeredSaleRecords-a.registeredSaleRecords||a.areaId-b.areaId);

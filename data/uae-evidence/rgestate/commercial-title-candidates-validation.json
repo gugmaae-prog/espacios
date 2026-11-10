@@ -1,10 +1,10 @@
 {
-  "sourceId": "rgestate-commercial-title-candidates-20261110",
-  "parentSourceId": "rgestate-full-index-20261110",
-  "parentRawSha256": "3a2890886d3dbaf0f36d9fae96baef28b8b3f0b89bbb314128796a47e204cdbd",
+  "sourceId": "rgestate-commercial-title-candidates-20261111",
+  "parentSourceId": "rgestate-full-index-20261111",
+  "parentRawSha256": "312a6a65ab6e3fda6582e5e93d8e0333c58092f1f3e2b9e25f95bdb15e8ee606",
   "publisher": "RGEstate",
   "sourceUrl": "https://www.rgestate.com/properties",
-  "observedAt": "2026-11-10T11:04:45.697616+00:00",
+  "observedAt": "2026-11-10T21:36:36.127783+00:00",
   "evidenceClass": "brokerage_advertised_listing_title_candidate",
   "classification": "Explicit commercial built-space title term, excluding plot, land, yard, residential, project, and typo plor; publisher commercial-category membership is false.",
   "classificationRule": {

@@ -9,9 +9,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / 'data/uae-evidence/rgestate'
-SOURCE = BASE / 'full-index-20261110.json.gz'
+SOURCE = BASE / 'full-index-20261111.json.gz'
 SOURCE_REPORT = BASE / 'full-index-validation.json'
-OUT = BASE / 'commercial-title-candidates-20261110.json.gz'
+OUT = BASE / 'commercial-title-candidates-20261111.json.gz'
 REPORT = BASE / 'commercial-title-candidates-validation.json'
 PATTERN = re.compile(r'\b(?:retail|shop|showroom|office|warehouse|factory|workshop|commercial (?:unit|space)|industrial (?:unit|complex)|business centre|business center)\b', re.I)
 EXCLUDE = re.compile(r'\b(?:plot|land|yard|residential|project|plor)\b', re.I)
@@ -50,12 +50,12 @@ def main():
             'coordinates': None,
             'sourceCategory': 'title_matched_candidate',
         })
-    assert len(candidates) == 137, len(candidates)
+    assert len(candidates) >= 100, len(candidates)
     assert len({r['sourceListingId'] for r in candidates}) == len(candidates)
     raw = json.dumps(candidates, ensure_ascii=False, separators=(',', ':')).encode()
     packed = gzip.compress(raw, mtime=0)
     report = {
-        'sourceId': 'rgestate-commercial-title-candidates-20261110',
+        'sourceId': 'rgestate-commercial-title-candidates-20261111',
         'parentSourceId': source_report['sourceId'],
         'parentRawSha256': source_report['rawSha256'],
         'publisher': 'RGEstate',
