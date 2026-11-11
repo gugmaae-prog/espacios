@@ -1,0 +1,100 @@
+{
+  "sourceId": "adrec-reported-market-and-commercial-context-20261111",
+  "emirate": "Abu Dhabi",
+  "authority": "Abu Dhabi Real Estate Centre",
+  "evidenceClass": "official_published_aggregate_selected_facts",
+  "sourceMethod": "Selected numerical facts from four dated ADREC press releases. Article text, images, charts, and transaction-level records are excluded.",
+  "marketObservations": [
+    {
+      "periodId": "2025",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31",
+      "periodGrain": "calendar_year",
+      "sourceUrl": "https://adrec.gov.ae/en/News/News-item-1---Abu-Dhabi-Real-Estate-Centre-Releases-2025-Real-Estate",
+      "sourceDatelineDate": "2026-01",
+      "totalTransactionValueAedApprox": 142000000000,
+      "totalTransactionCount": 42814,
+      "salesValueAedApprox": 99400000000,
+      "salesTransactions": 25604,
+      "mortgageValueAedApprox": 42700000000,
+      "mortgageTransactions": 17210,
+      "newRegisteredProjects": 56
+    },
+    {
+      "periodId": "2026Q1",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-03-31",
+      "periodGrain": "calendar_quarter",
+      "sourceUrl": "https://adrec.gov.ae/en/news/press-release1-abudhabi",
+      "sourceDatelineDate": "2026-04-07",
+      "totalTransactionValueAedApprox": 66000000000,
+      "totalTransactionCount": 13518,
+      "salesValueAedApprox": 50970000000,
+      "salesTransactions": 8940,
+      "mortgageValueAedApprox": 15030000000,
+      "mortgageTransactions": 4578,
+      "newRegisteredProjects": 16
+    },
+    {
+      "periodId": "2026H1",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodGrain": "calendar_half_year",
+      "sourceUrl": "https://adrec.gov.ae/en/news/press-release-27---adrec-h1-2026-transaction-report",
+      "sourceDatelineDate": "2026-07-17",
+      "totalTransactionValueAedApprox": 117000000000,
+      "totalTransactionCount": null,
+      "salesValueAedApprox": 86100000000,
+      "salesTransactions": 16838,
+      "mortgageValueAedApprox": 26700000000,
+      "mortgageTransactions": 8876,
+      "newRegisteredProjects": 28
+    }
+  ],
+  "segmentObservations": [
+    {
+      "periodId": "2026H1",
+      "segment": "residential_units",
+      "sourceUrl": "https://adrec.gov.ae/en/news/press-29---adrec-releases-the-abu-dhabi-real-estate-market-report-for-h1-2026",
+      "salesValueAedApprox": 70400000000,
+      "offPlanShareOfSalesValuePct": 89,
+      "activeResidentialLeaseContractsApprox": 233000,
+      "activeResidentialLeaseValueAedApprox": 9300000000,
+      "residentialStockUnitsApprox": 409000
+    },
+    {
+      "periodId": "2026H1",
+      "segment": "retail",
+      "sourceUrl": "https://adrec.gov.ae/en/news/press-29---adrec-releases-the-abu-dhabi-real-estate-market-report-for-h1-2026",
+      "supplyGrossLeasableAreaSqmApprox": 3850000,
+      "occupancyReportedDescription": "mid-nineties",
+      "occupancyPct": null,
+      "newLeasePriceChangeReportedPct": 9,
+      "comparisonPeriodForLeasePriceChange": "not specified in press summary"
+    },
+    {
+      "periodId": "2026H1",
+      "segment": "office",
+      "sourceUrl": "https://adrec.gov.ae/en/news/press-29---adrec-releases-the-abu-dhabi-real-estate-market-report-for-h1-2026",
+      "supplyGrossLeasableAreaSqmApprox": 3400000,
+      "occupancyReportedDescription": "95 percent for overall market and prime and Grade A segments",
+      "occupancyPct": 95,
+      "newLeasePriceChangeReportedPct": 13,
+      "comparisonPeriodForLeasePriceChange": "not specified in press summary"
+    }
+  ],
+  "publishedProjections": [
+    {
+      "periodId": "2026H1",
+      "segment": "residential_units",
+      "sourceUrl": "https://adrec.gov.ae/en/news/press-29---adrec-releases-the-abu-dhabi-real-estate-market-report-for-h1-2026",
+      "projectionKind": "ADREC_reported_supply_pipeline_projection",
+      "targetEndYear": 2030,
+      "additionalUnitsApprox": 71000,
+      "expectedPeakDeliveryYear": 2028,
+      "expectedPeakDeliveryUnitsApprox": 21800,
+      "validatedForecast": false
+    }
+  ],
+  "limits": "These are selected emirate-level aggregates, not licensed transaction-level ADREC data, commercial-unit sales, project identities, prices per square metre, available spaces, or project coordinates. The 2026 H1 figures include Q1 and must not be added to Q1. Annual and partial-year values are not comparable without matching periods. Reported AED values and stock figures are rounded. Retail occupancy is described only as mid-nineties; no exact percentage is inferred. New-lease price change comparison periods are not stated in the press summary. The residential supply projection is an ADREC scenario, not observed completions or an Espacios validated forecast."
+}

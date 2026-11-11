@@ -1,5 +1,5 @@
 {
-  "version": "20261111-uae-evidence-coverage-v32",
+  "version": "20261111-uae-evidence-coverage-v33",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -107,6 +107,24 @@
           "notVerifiedDistinctBuildings": true,
           "notAvailableUnits": true,
           "sourceSha256": "b226cb6da45ae7ac2e19f54a31499c35a7e27bf2682654c54017c779d9215572"
+        },
+        {
+          "id": "adrec-reported-market-and-commercial-context-20261111",
+          "route": "/map/api/uae-evidence/abu-dhabi/reported-market",
+          "sourceRows": 7,
+          "grain": "selected calendar-year, quarter and half-year aggregates; half-year segment stock; separately labelled publisher projection",
+          "sourceVintage": "2025; 2026 Q1 and H1",
+          "sourceUrl": "https://adrec.gov.ae/en/News/News-item-1---Abu-Dhabi-Real-Estate-Centre-Releases-2025-Real-Estate",
+          "rights": "Selected published numerical facts and attribution links only. No ADREC API or transaction-level candidate rows, report pages, charts, images or article text redistributed.",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "marketRows": 3,
+          "segmentRows": 3,
+          "publishedProjectionRows": 1,
+          "notTransactionLevel": true,
+          "notCommercialUnitSales": true,
+          "notAvailableUnits": true,
+          "unpublishedCandidateStillRestricted": true,
+          "sourceSha256": "6400e739817c466543ed157ebfeab6efb2a32c628870f965c4a2401020f6c847"
         }
       ],
       "publisherListingSnapshot": {
@@ -128,7 +146,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "No approved ADREC V55 transaction-data reuse; candidate sales remain unpublished.",
+        "Selected ADREC public aggregates are published, but no approved ADREC V55 transaction-data reuse; candidate sale records remain unpublished.",
         "The verified SCAD building-activity set omits Q1 2026 and does not split completions by commercial use.",
         "No authoritative all-project denominator or verified coordinates for 127 accepted V48 records."
       ],
@@ -771,6 +789,7 @@
     "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
-    "sharjahMonthly": "db0c65a35b7d38364936e3062b10c4b5ea14e7bbc7b42fda872cb36bad2f24fb"
+    "sharjahMonthly": "db0c65a35b7d38364936e3062b10c4b5ea14e7bbc7b42fda872cb36bad2f24fb",
+    "adrecMarket": "99311025a095ba5f30f895e15cd66bf41b5296e8bdccf01937917ea95e4dc3b2"
   }
 }

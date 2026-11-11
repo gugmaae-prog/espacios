@@ -1,0 +1,42 @@
+{
+  "sourceId": "adrec-reported-market-and-commercial-context-20261111",
+  "retrievedAtDate": "2026-11-11",
+  "method": "Two independent direct reads of each official ADREC press page matched byte-for-byte. Selected numerical facts were checked against the publisher text; source HTML and article wording are excluded from publication.",
+  "captures": [
+    {
+      "key": "annual2025",
+      "url": "https://adrec.gov.ae/en/News/News-item-1---Abu-Dhabi-Real-Estate-Centre-Releases-2025-Real-Estate",
+      "bytes": 117291,
+      "sha256": "f07dc9e6b0ac4bdf942a63a1af37471bc4a46f28de241889439995278d2878d4",
+      "independentReads": 2
+    },
+    {
+      "key": "q12026",
+      "url": "https://adrec.gov.ae/en/news/press-release1-abudhabi",
+      "bytes": 130055,
+      "sha256": "7087f19b065fad8cad8a19957e325c9b13fcbbfbd9b07cc20ad263425a6bc66d",
+      "independentReads": 2
+    },
+    {
+      "key": "h12026_transactions",
+      "url": "https://adrec.gov.ae/en/news/press-release-27---adrec-h1-2026-transaction-report",
+      "bytes": 129389,
+      "sha256": "5f1065385e92190fafc92cc104ff9810f7ded0f349f38ad4f4d464d116cdb75f",
+      "independentReads": 2
+    },
+    {
+      "key": "h12026_report",
+      "url": "https://adrec.gov.ae/en/news/press-29---adrec-releases-the-abu-dhabi-real-estate-market-report-for-h1-2026",
+      "bytes": 131021,
+      "sha256": "d01e2529f395a49111d4783dfa40bdd79483548fc906122124e67ae4c4e084a3",
+      "independentReads": 2
+    }
+  ],
+  "marketRows": 3,
+  "segmentRows": 3,
+  "publishedProjectionRows": 1,
+  "dataBytes": 4721,
+  "dataSha256": "6400e739817c466543ed157ebfeab6efb2a32c628870f965c4a2401020f6c847",
+  "rightsScope": "Selected published numerical facts and attribution links only. No ADREC API or transaction-level candidate rows, report pages, charts, images or article text redistributed.",
+  "unpublishedCandidateStillRestricted": true
+}
