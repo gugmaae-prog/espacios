@@ -1,5 +1,5 @@
 {
-  "version": "20261111-uae-evidence-coverage-v35",
+  "version": "20261111-uae-evidence-coverage-v36",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -460,6 +460,24 @@
           "notCurrentAvailability": true,
           "notForecast": true,
           "sourceSha256": "2b9ff322a7987623019ceaebd9ca55c6235729c4208c994b9a86806f6183135d"
+        },
+        {
+          "id": "datadubai-dld-ejari-community-rents-20261101",
+          "route": "/map/api/uae-evidence/dubai/ejari-community-rents",
+          "sourceRows": 520,
+          "grain": "publisher community and separate community × bedroom registered Ejari rent aggregates",
+          "sourceVintage": "source data through 2026-10-29; publisher trailing 12 complete months",
+          "sourceUrl": "https://huggingface.co/datasets/datadubai/dubai-real-estate-dld/tree/28fcfe459d3bf135a2e266dcdacdbe9575cf2ea7",
+          "rights": "CC BY 4.0; derived subset with attribution",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "communityRows": 102,
+          "bedroomRows": 418,
+          "bedroomMediansWithheld": 66,
+          "palmJabalAliRentContracts": 0,
+          "notCommercialRent": true,
+          "notCurrentAvailability": true,
+          "notForecast": true,
+          "sourceSha256": "e83261cc208ed14c694aad70af8b89dc9eb0a4bcc4cfa3a8d0d0ad67ed51c248"
         }
       ],
       "publisherListingSnapshot": {
@@ -484,7 +502,7 @@
         "The primary DLD project-register raw vintage is not retained; the published status copy is secondary.",
         "Most source project IDs remain separate from V48 identities.",
         "The historical building counts stop at 2019; 403 ambiguous export rows are withheld and these counts do not identify available commercial spaces.",
-        "The licensed historical commercial-unit sales snapshot covers 2006–2025. The 2026 Office/Shop subtype series runs through October, but 4,319 rows have a conflicting Residential usage label and need source verification. It is partial-year registered sale evidence, not asking inventory or available spaces. A separate 2026 residential Flat sale aggregate covers January–October only; it contains no unit coordinates, rents or forecasts."
+        "The licensed historical commercial-unit sales snapshot covers 2006–2025. The 2026 Office/Shop subtype series runs through October, but 4,319 rows have a conflicting Residential usage label and need source verification. It is partial-year registered sale evidence, not asking inventory or available spaces. A separate 2026 residential Flat sale aggregate covers January–October only; it contains no unit coordinates, rents or forecasts. A separate licensed Ejari rent aggregate covers 102 publisher communities and 418 bedroom rows, but its source CSV does not encode property class or exact observation dates; renewals are included and Palm Jabal Ali has no registered rent contracts in that snapshot."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -823,6 +841,7 @@
     "dubaiCommercialPartial": "18112ebde0f928ff7af70a2fbf499eb93fd49470d5c66c6b3c05d70d0905dbb6",
     "dubaiCommercialSubtype": "ad478bb2a4da917523d71cf97bae45708e4f84684271c9d6cd2ff65fcc5d8ebb",
     "dubaiFlatSales": "854e57f187797deb555adbc3062c6d7699d401eb944907bcd76c387963a055de",
+    "dubaiEjariRents": "af601747fca57fe56a348c5002f8bf401674a3989ca4e67365bd37f5b0966ab3",
     "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
