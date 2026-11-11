@@ -1,0 +1,46 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {mapSharjahMonthlyMarket} from '../src/stack-audit/sharjah-monthly-market.mjs';
+import worker from '../src/worker.js';
+
+const root=new URL('../',import.meta.url);
+const bytes=await fs.readFile(new URL('data/uae-evidence/sharjah/monthly-market-20261111.json',root));
+const data=JSON.parse(bytes),report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/sharjah/monthly-market-validation.json',root)));
+const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/sharjah/monthly-market${query}`,{method});
+
+test('Sharjah monthly evidence is hash pinned and partial',()=>{
+ assert.equal(bytes.length,report.dataBytes);
+ assert.equal(createHash('sha256').update(bytes).digest('hex'),report.dataSha256);
+ assert.deepEqual(data.observations.map(row=>row.month),['2026-01','2026-04','2026-05','2026-07','2026-08']);
+ assert.deepEqual(data.missingMonths,['2026-02','2026-03','2026-06','2026-09']);
+ assert.deepEqual(data.observations.map(row=>row.salesTransactions),[4868,2675,1851,2884,2367]);
+ assert.deepEqual(data.observations.map(row=>row.allProcedureTransactions),[10333,15669,7119,9376,9139]);
+ assert.equal(data.observations[3].officeUnitSales,17);
+ assert.equal(data.observations[3].shopUnitSales,1);
+ assert.ok(data.observations.filter(row=>row.month!=='2026-07').every(row=>row.officeUnitSales===null&&row.shopUnitSales===null));
+ assert.ok(report.sourceArticles.every(item=>item.articleBodySha256.length===64));
+});
+
+test('read-only API labels missing months and keeps transaction classes separate',async()=>{
+ const response=mapSharjahMonthlyMarket(request(),report,data),body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(body.scope.partial,true);
+ assert.equal(body.scope.transactionLevel,false);
+ assert.equal(body.scope.commercialOnly,false);
+ assert.equal(body.scope.currentAvailability,false);
+ assert.equal(body.observations.length,5);
+ assert.deepEqual(body.scope.missingMonths,data.missingMonths);
+ assert.equal((await mapSharjahMonthlyMarket(request('?month=2026-07'),report,data).json()).observations[0].officeUnitSales,17);
+ assert.equal(mapSharjahMonthlyMarket(request('?month=2026-06'),report,data).status,400);
+ assert.equal(mapSharjahMonthlyMarket(request('','POST'),report,data).status,405);
+ assert.equal(mapSharjahMonthlyMarket(request('','HEAD'),report,data).body,null);
+});
+
+test('compiled Worker serves Sharjah partial monthly source',async()=>{
+ const response=await worker.fetch(request(),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'sharjah-monthly-test'}},{}),body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
+ assert.equal(body.observations[3].shopUnitSales,1);
+});

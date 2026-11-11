@@ -78,7 +78,7 @@ test('compiled Worker serves the new data without an R2 binding',async()=>{
  const response=await worker.fetch(request('?year=2025'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-test'}},{});
  const body=await response.json();
  assert.equal(response.status,200);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v59');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v60');
  assert.equal(body.registeredSaleRecords,6092);
  assert.equal(body.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');
 });
