@@ -30,9 +30,10 @@ test('latest snapshot and historical source IDs remain distinct without a review
 });
 test('reviewed source IDs link to V48 identities or villa families without borrowing coordinates or timeline',async()=>{
  const list=await (await mapAjmanRegister(req('?q=SEALINE%20RESIDENCE'),env,report,store,crosswalk)).json();
- assert.equal(list.scope.canonicalProjectMatches,4);
+ assert.equal(list.scope.canonicalProjectMatches,5);
+ assert.equal(list.scope.reviewedCatalogueAliasRelations,1);
  assert.equal(list.scope.reviewedVillaFamilyRelations,30);
- assert.equal(list.scope.unmatchedLatestSourceProjectIds,264);
+ assert.equal(list.scope.unmatchedLatestSourceProjectIds,263);
  assert.equal(list.totalProjects,1);
  assert.equal(list.projects[0].sourceProjectId,501);
  assert.equal(list.projects[0].canonicalProjectId,'project:sealine-residence-by-al-zorah-development-in-al-zorah-city');
@@ -43,6 +44,11 @@ test('reviewed source IDs link to V48 identities or villa families without borro
   assert.equal(detail.history[0].canonicalProjectId,canonical);
   assert.equal(detail.history[0].coordinates,null);
  }
+ const gateway=await (await mapAjmanRegister(req('/471'),env,report,store,crosswalk)).json();
+ assert.equal(gateway.history[0].canonicalProjectId,'project:gateway-porto-al-zorah-by-solidere-international-in-al-zorah-ajman');
+ assert.deepEqual(gateway.history[0].otherV48CatalogueIds,['project:the-gateway-porto-al-zorah-ajman-uae']);
+ assert.equal(gateway.history[0].reportedUnitCount,157);
+ assert.equal(gateway.history[0].coordinates,null);
  for(const [id,family] of [[429,'project:beach-hills-villas-by-al-zorah-development-company-in-al-zorah-city-ajman'],[466,'project:sea-glints-mansions-by-al-zorah-development-company']]){
   const detail=await (await mapAjmanRegister(req('/'+id),env,report,store,crosswalk)).json();
   assert.equal(detail.history[0].canonicalProjectId,null);

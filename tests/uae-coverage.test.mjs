@@ -41,7 +41,8 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/ejari-community-rents')).palmJabalAliRentContracts,0);
  assert.deepEqual(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-activity')).periodsUnavailable,['2026Q1']);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).latestSourceProjectIds,298);
- assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,4);
+ assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedV48IdentityLinks,5);
+ assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedCatalogueAliasRelations,1);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).reviewedVillaFamilyRelations,30);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/land-dispositions')).sourceRows,1646);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/building-permits')).sourceRows,741);
@@ -89,5 +90,5 @@ test('compiled Worker serves the seven-emirate inventory',async()=>{
  assert.equal(body.publisherListingInventory.explicitEmirateLocationLabelRows,603);
  assert.equal(body.publisherListingInventory.reviewedAreaLocationRows,913);
  const ajman=body.emirates.find(item=>item.name==='Ajman').publishedSources.find(item=>item.route.endsWith('/register'));
- assert.equal(ajman.reviewedV48IdentityLinks,4);assert.equal(ajman.reviewedVillaFamilyRelations,30);
+ assert.equal(ajman.reviewedV48IdentityLinks,5);assert.equal(ajman.reviewedCatalogueAliasRelations,1);assert.equal(ajman.reviewedVillaFamilyRelations,30);
 });

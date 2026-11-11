@@ -16,7 +16,8 @@ const sourceLatest=source.filter(row=>row.update_date===crosswalk.latestSourceSn
 const mapAjman=map.projects.filter(project=>project.emirate==='Ajman');
 assert.equal(sourceLatest.length,298);
 assert.equal(mapAjman.length,10);
-assert.equal(crosswalk.matches.length,4);
+assert.equal(crosswalk.matches.length,5);
+assert.equal(crosswalk.catalogueAliases.length,1);
 assert.equal(crosswalk.familyRelations.length,2);
 const ids=new Set(),canonicalIds=new Set();
 const norm=value=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,'');
@@ -45,7 +46,26 @@ for(const match of crosswalk.matches){
     assert.equal(match.independentIdentityEvidenceUrl,'https://www.alzorahcity.com/creekside_residence');
     assert.ok(match.reviewNote.includes('corrupted'));
   }else assert.ok(project.developer.toLowerCase().includes(match.sourceProjectId===528?'gj properties':'al zorah'));
+  if(match.sourceProjectId===471){
+    assert.equal(row.project_name_english,'GATEWAY');
+    assert.equal(Number(row.number_of_real_estate_units),157);
+    assert.equal(match.independentIdentityEvidenceUrl,'https://www.alzorahcity.com/gateway-porto-al-zorah');
+    assert.ok(match.independentAnnouncementUrl.endsWith('/Al-Zorah-City-introduces-its-latest-luxury-marina-front-project-Gateway.pdf'));
+    assert.equal(project.archived,false);
+    assert.match(match.reviewNote,/157 units/);
+  }
 }
+const [gatewayAlias]=crosswalk.catalogueAliases;
+assert.equal(gatewayAlias.sourceProjectId,471);
+assert.equal(gatewayAlias.relation,'same_source_project_as_reviewed_identity');
+assert.equal(gatewayAlias.canonicalProjectId,'project:gateway-porto-al-zorah-by-solidere-international-in-al-zorah-ajman');
+assert.equal(gatewayAlias.aliasProjectId,'project:the-gateway-porto-al-zorah-ajman-uae');
+const gatewayPrimary=mapAjman.find(project=>project.id===gatewayAlias.canonicalProjectId);
+const gatewayArchived=mapAjman.find(project=>project.id===gatewayAlias.aliasProjectId);
+assert.ok(gatewayPrimary&&gatewayArchived&&gatewayArchived.archived);
+assert.equal(gatewayArchived.handover,gatewayPrimary.handover);
+assert.deepEqual(gatewayArchived.coordinates,gatewayPrimary.coordinates);
+assert.match(gatewayAlias.reviewNote,/corrupted/);
 let reviewedFamilySourceIds=0;
 const familyIds=new Set();
 for(const relation of crosswalk.familyRelations){
@@ -67,4 +87,4 @@ for(const relation of crosswalk.familyRelations){
   reviewedFamilySourceIds+=expected.length;
 }
 assert.equal(reviewedFamilySourceIds,30);
-console.log(JSON.stringify({passed:true,latestSourceProjectIds:sourceLatest.length,v48AjmanProjects:mapAjman.length,reviewedOneToOneMatches:crosswalk.matches.length,reviewedVillaFamilyRelations:reviewedFamilySourceIds,unmatchedLatestSourceProjectIds:sourceLatest.length-crosswalk.matches.length-reviewedFamilySourceIds}));
+console.log(JSON.stringify({passed:true,latestSourceProjectIds:sourceLatest.length,v48AjmanProjects:mapAjman.length,reviewedOneToOneMatches:crosswalk.matches.length,reviewedCatalogueAliasRelations:crosswalk.catalogueAliases.length,reviewedVillaFamilyRelations:reviewedFamilySourceIds,unmatchedLatestSourceProjectIds:sourceLatest.length-crosswalk.matches.length-reviewedFamilySourceIds}));

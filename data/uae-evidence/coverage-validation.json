@@ -1,5 +1,5 @@
 {
-  "version": "20261111-uae-evidence-coverage-v36",
+  "version": "20261111-uae-evidence-coverage-v37",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -173,7 +173,8 @@
           "rights": "CC BY 4.0",
           "liveRouteHealth": "not_asserted_by_inventory",
           "latestSourceProjectIds": 298,
-          "reviewedV48IdentityLinks": 4,
+          "reviewedV48IdentityLinks": 5,
+          "reviewedCatalogueAliasRelations": 1,
           "reviewedVillaFamilyRelations": 30
         },
         {
@@ -352,7 +353,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Only four latest official project IDs have reviewed one-to-one V48 identities; 30 more villa IDs have family-level relations only.",
+        "Only five latest official project IDs have reviewed one-to-one V48 identities; one archived V48 card is a separately labelled alias of an already counted identity, and 30 villa IDs have family-level relations only.",
         "Source records do not provide verified project-site coordinates or complete rent prices."
       ],
       "authoritativeAllProjectDenominator": null
@@ -823,7 +824,7 @@
     "ajmanLandDispositions": "cbc6a97374a316eceede8e68dad51f35ce7db8db1a00bdf60de0aa468904f7fa",
     "ajmanUnitMortgages": "c32ce09771fd28a77b80c0f99bef1512b5f10474423b1ed318469123f7340a0a",
     "ajmanRents": "0af8b5b7b4d29f9e3a4205292fd0a5f57bd4375a01af6f30a5279909c72f48b2",
-    "ajmanCrosswalk": "b2d532fafc547bb2fe65274f9247ff46e641f48bf79759a7ca9ac6fa27e5b0e6",
+    "ajmanCrosswalk": "ef7a3f478b85a4510c88b56f512a554a2964993d792f20a1a54f674510fd1f94",
     "rgeIndex": "a7caf4914026edf1ecc770389bc8224e8b5fb0bd237ea7495371b5e97a65e771",
     "rgeLabels": "4ae7bc16dc299c07e97fcc5de33fb5dbf94a6272ae8623655144a7e4c7ea2d26",
     "rgeAreas": "4c6ef541992073c2709c0c59b7598bc2d35c0439957c66db23d6e10aee720609",
