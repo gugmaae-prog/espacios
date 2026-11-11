@@ -1,7 +1,7 @@
 {
   "sourceId": "adrec-reported-market-and-commercial-context-20261111",
   "retrievedAtDate": "2026-11-11",
-  "method": "Two independent direct reads of each official ADREC press page matched byte-for-byte. Selected numerical facts were checked against the publisher text; source HTML and article wording are excluded from publication.",
+  "method": "Two independent direct reads of each official ADREC or Abu Dhabi Media Office press page matched byte-for-byte. Selected numerical facts were checked against the publisher text; source HTML and article wording are excluded from publication.",
   "captures": [
     {
       "key": "annual2025",
@@ -30,13 +30,33 @@
       "bytes": 131021,
       "sha256": "d01e2529f395a49111d4783dfa40bdd79483548fc906122124e67ae4c4e084a3",
       "independentReads": 2
+    },
+    {
+      "key": "ytd9_2026_en",
+      "url": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/",
+      "bytes": 51570,
+      "sha256": "041f23c809ec93dc1bc303408a292554c4fef31e38905639388a22e64001424c",
+      "independentReads": 2
+    },
+    {
+      "key": "ytd9_2026_ar",
+      "url": "https://www.mediaoffice.abudhabi/ar/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/",
+      "bytes": 62366,
+      "sha256": "4e1b51e1151c0940c1b41bb9844441063449754a9238c86550d109211827547a",
+      "independentReads": 2
     }
   ],
-  "marketRows": 3,
+  "marketRows": 5,
+  "districtTransactionValueRows": 5,
   "segmentRows": 3,
   "publishedProjectionRows": 1,
-  "dataBytes": 4721,
-  "dataSha256": "6400e739817c466543ed157ebfeab6efb2a32c628870f965c4a2401020f6c847",
+  "dataBytes": 8518,
+  "dataSha256": "e5e4f2e5adb349ee528260a6811991e7a90dd5f4f206e2fa488103baa31874f0",
+  "nineMonth2026CategoryReconciliation": {
+    "transactionCountsMatchTotal": true,
+    "roundedCategoryValuesMatchReportedTotal": true,
+    "overlappingPeriodsAreNotSummed": true
+  },
   "rightsScope": "Selected published numerical facts and attribution links only. No ADREC API or transaction-level candidate rows, report pages, charts, images or article text redistributed.",
   "unpublishedCandidateStillRestricted": true
 }

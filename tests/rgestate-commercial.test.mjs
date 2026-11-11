@@ -190,7 +190,7 @@ test('compiled Worker serves commercial API and page with restricted raw path',a
  const areaResponse=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),env,{});
  const areas=await areaResponse.json();
  assert.equal(areaResponse.status,200);assert.equal(areas.mappedRows+areas.unmappedRows,998);
- assert.equal(result.headers.get('x-espacios-map-release'),'20261111-map-stack-v65');
+ assert.equal(result.headers.get('x-espacios-map-release'),'20261111-map-stack-v66');
  const commercialPage=await worker.fetch(new Request('https://espacios.me/map/commercial'),env,{});
  assert.equal(commercialPage.status,200);
  assert.match(await commercialPage.text(),/The source table does not state the rate period/);

@@ -162,7 +162,7 @@ stackSource+='\nvar UAE_ABU_DHABI_BUILDING_USE_REPORT='+JSON.stringify(adBuildin
 const adrecMarketBytes=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/adrec-reported-market-20261111.json',root));
 const adrecMarketReport=JSON.parse(await read('data/uae-evidence/abu-dhabi/adrec-reported-market-validation.json'));
 const adrecMarketData=JSON.parse(adrecMarketBytes);
-if(adrecMarketBytes.length!==adrecMarketReport.dataBytes||digest(adrecMarketBytes)!==adrecMarketReport.dataSha256||adrecMarketData.sourceId!==adrecMarketReport.sourceId||adrecMarketData.marketObservations.length!==3||adrecMarketData.segmentObservations.length!==3||adrecMarketData.publishedProjections.length!==1||adrecMarketReport.unpublishedCandidateStillRestricted!==true)throw Error('ADREC reported-market source changed');
+if(adrecMarketBytes.length!==adrecMarketReport.dataBytes||digest(adrecMarketBytes)!==adrecMarketReport.dataSha256||adrecMarketData.sourceId!==adrecMarketReport.sourceId||adrecMarketData.marketObservations.length!==5||adrecMarketData.districtTransactionValues.length!==5||adrecMarketData.segmentObservations.length!==3||adrecMarketData.publishedProjections.length!==1||adrecMarketReport.unpublishedCandidateStillRestricted!==true)throw Error('ADREC reported-market source changed');
 stackSource+='\nvar UAE_ADREC_MARKET_REPORT='+JSON.stringify(adrecMarketReport)+';\nvar UAE_ADREC_MARKET_DATA='+JSON.stringify(adrecMarketData)+';\n';
 const scadActivityBytes=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/building-activity-20261110.json',root));
 const scadActivityReport=JSON.parse(await read('data/uae-evidence/abu-dhabi/building-activity-validation.json'));

@@ -13,7 +13,8 @@ export function mapAbuDhabiReportedMarket(request,report,data){
  if(segment&&!segments.includes(segment))return reply({error:'No verified observation for this segment.',availableSegments:segments},400);
  if(segment&&period&&period!=='2026H1')return reply({error:'Segment observations are available only for 2026H1.',availablePeriod:'2026H1'},400);
  const marketObservations=segment?[]:data.marketObservations.filter(row=>!period||row.periodId===period);
+ const districtTransactionValues=segment?[]:data.districtTransactionValues.filter(row=>!period||row.periodId===period);
  const segmentObservations=data.segmentObservations.filter(row=>(!period||row.periodId===period)&&(!segment||row.segment===segment));
  const publishedProjections=data.publishedProjections.filter(row=>(!period||row.periodId===period)&&(!segment||row.segment===segment));
- return reply({source:{id:report.sourceId,authority:data.authority,evidenceClass:data.evidenceClass,sourceMethod:data.sourceMethod,dataSha256:report.dataSha256,rightsScope:report.rightsScope,sourceLinks:report.captures.map(item=>item.url)},scope:{emirate:data.emirate,periods,segments,selectedPeriod:period||null,selectedSegment:segment||null,transactionLevel:false,commercialUnitSales:false,availableUnits:false,projectionIsObserved:false,limits:data.limits},marketObservations,segmentObservations,publishedProjections});
+ return reply({source:{id:report.sourceId,authority:data.authority,evidenceClass:data.evidenceClass,sourceMethod:data.sourceMethod,dataSha256:report.dataSha256,rightsScope:report.rightsScope,sourceLinks:report.captures.map(item=>item.url)},scope:{emirate:data.emirate,periods,segments,selectedPeriod:period||null,selectedSegment:segment||null,transactionLevel:false,commercialUnitSales:false,availableUnits:false,districtValuesAreAllUseTransactions:true,projectionIsObserved:false,limits:data.limits},marketObservations,districtTransactionValues,segmentObservations,publishedProjections});
 }

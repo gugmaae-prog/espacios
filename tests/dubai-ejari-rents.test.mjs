@@ -56,7 +56,7 @@ test('invalid filters and writes fail closed',async()=>{
 test('compiled Worker serves Ejari rent rows without an R2 binding',async()=>{
  const response=await worker.fetch(request('?view=bedrooms&community=palm-jabal-ali'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'ejari-test'}},{}),body=await response.json();
  assert.equal(response.status,200);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v65');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v66');
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
  assert.equal(body.totalRows,5);
  assert.equal(body.totalContractCount,0);

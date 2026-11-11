@@ -28,7 +28,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-uses')).layerFeatureCount,392495);
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-uses')).unknownUseFeatures,249177);
  assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-activity')).sourceRows,5);
- assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/reported-market')).sourceRows,7);
+ assert.equal(abuDhabi.publishedSources.find(item=>item.route.endsWith('/reported-market')).sourceRows,14);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/commercial-unit-sales')).sourceRows,66366);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/commercial-unit-sales')).incomplete2026Withheld,true);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/commercial-unit-sales-2026-partial')).sourceRows,1133);

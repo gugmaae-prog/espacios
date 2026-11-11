@@ -60,7 +60,7 @@ test('filters, corrupted bytes, and methods fail closed',async()=>{
 test('compiled Worker serves flat aggregates without an R2 binding',async()=>{
  const response=await worker.fetch(request('?month=2026-01'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'flat-sales-test'}},{}),data=await response.json();
  assert.equal(response.status,200);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v65');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v66');
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
  assert.equal(data.totalSaleRows,12112);
  assert.equal(data.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');

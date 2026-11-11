@@ -3,7 +3,7 @@
   "emirate": "Abu Dhabi",
   "authority": "Abu Dhabi Real Estate Centre",
   "evidenceClass": "official_published_aggregate_selected_facts",
-  "sourceMethod": "Selected numerical facts from four dated ADREC press releases. Article text, images, charts, and transaction-level records are excluded.",
+  "sourceMethod": "Selected numerical facts from four ADREC press releases and the Abu Dhabi Media Office's dated ADREC disclosure. Article text, images, charts, and transaction-level records are excluded.",
   "marketObservations": [
     {
       "periodId": "2025",
@@ -49,6 +49,77 @@
       "mortgageValueAedApprox": 26700000000,
       "mortgageTransactions": 8876,
       "newRegisteredProjects": 28
+    },
+    {
+      "periodId": "2025YTD9",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-09-30",
+      "periodGrain": "cumulative_first_nine_months",
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/",
+      "sourceDatelineDate": "2026-11-07",
+      "totalTransactionValueAedApprox": 97190000000,
+      "totalTransactionCount": 28977,
+      "salesValueAedApprox": 58200000000,
+      "salesTransactions": 15910,
+      "mortgageValueAedApprox": 35260000000,
+      "mortgageTransactions": 12706,
+      "newRegisteredProjects": null
+    },
+    {
+      "periodId": "2026YTD9",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-09-30",
+      "periodGrain": "cumulative_first_nine_months",
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/",
+      "sourceDatelineDate": "2026-11-07",
+      "totalTransactionValueAedApprox": 171260000000,
+      "totalTransactionCount": 38483,
+      "salesValueAedApprox": 119330000000,
+      "salesTransactions": 23749,
+      "mortgageValueAedApprox": 45920000000,
+      "mortgageTransactions": 14390,
+      "giftValueAedApprox": 440000000,
+      "giftTransactions": 76,
+      "musatahaAndLongLeaseValueAedApprox": 5570000000,
+      "musatahaAndLongLeaseTransactions": 268,
+      "newRegisteredProjects": 54
+    }
+  ],
+  "districtTransactionValues": [
+    {
+      "periodId": "2026YTD9",
+      "district": "Al Reem Island",
+      "districtAr": "جزيرة الريم",
+      "allUseTransactionValueAedApprox": 29860000000,
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/"
+    },
+    {
+      "periodId": "2026YTD9",
+      "district": "Al Hudayriyat Island",
+      "districtAr": "جزيرة الحديريات",
+      "allUseTransactionValueAedApprox": 28620000000,
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/"
+    },
+    {
+      "periodId": "2026YTD9",
+      "district": "Al Saadiyat Island",
+      "districtAr": "جزيرة السعديات",
+      "allUseTransactionValueAedApprox": 18690000000,
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/"
+    },
+    {
+      "periodId": "2026YTD9",
+      "district": "Yas Island",
+      "districtAr": "جزيرة ياس",
+      "allUseTransactionValueAedApprox": 13400000000,
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/"
+    },
+    {
+      "periodId": "2026YTD9",
+      "district": "Zayed City",
+      "districtAr": "مدينة زايد",
+      "allUseTransactionValueAedApprox": 5360000000,
+      "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/"
     }
   ],
   "segmentObservations": [
@@ -96,5 +167,5 @@
       "validatedForecast": false
     }
   ],
-  "limits": "These are selected emirate-level aggregates, not licensed transaction-level ADREC data, commercial-unit sales, project identities, prices per square metre, available spaces, or project coordinates. The 2026 H1 figures include Q1 and must not be added to Q1. Annual and partial-year values are not comparable without matching periods. Reported AED values and stock figures are rounded. Retail occupancy is described only as mid-nineties; no exact percentage is inferred. New-lease price change comparison periods are not stated in the press summary. The residential supply projection is an ADREC scenario, not observed completions or an Espacios validated forecast."
+  "limits": "These are selected emirate-level aggregates and five reported district transaction values, not licensed transaction-level ADREC data, commercial-unit sales, project identities, prices per square metre, available spaces, or project coordinates. The 2026 nine-month figures include H1 and Q1; overlapping periods must not be added. Compare 2025 and 2026 nine-month figures only with each other, not annual totals. District figures are all-use transaction values, not sale prices or a complete district breakdown. The 54 projects are newly registered during the period, not a full project register. Reported AED values and stock figures are rounded. Retail occupancy is described only as mid-nineties; no exact percentage is inferred. New-lease price change comparison periods are not stated in the press summary. The residential supply projection is an ADREC scenario, not observed completions or an Espacios validated forecast."
 }

@@ -1,5 +1,5 @@
 {
-  "version": "20261111-uae-evidence-coverage-v37",
+  "version": "20261111-uae-evidence-coverage-v38",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -111,20 +111,21 @@
         {
           "id": "adrec-reported-market-and-commercial-context-20261111",
           "route": "/map/api/uae-evidence/abu-dhabi/reported-market",
-          "sourceRows": 7,
-          "grain": "selected calendar-year, quarter and half-year aggregates; half-year segment stock; separately labelled publisher projection",
-          "sourceVintage": "2025; 2026 Q1 and H1",
-          "sourceUrl": "https://adrec.gov.ae/en/News/News-item-1---Abu-Dhabi-Real-Estate-Centre-Releases-2025-Real-Estate",
+          "sourceRows": 14,
+          "grain": "selected calendar-year, quarter, half-year and cumulative nine-month aggregates; five all-use district transaction values; half-year segment stock; separately labelled publisher projection",
+          "sourceVintage": "2025 annual and nine months; 2026 Q1, H1 and nine months",
+          "sourceUrl": "https://www.mediaoffice.abudhabi/en/economy/abu-dhabi-real-estate-centre-records-761-year-on-year-increase-in-transaction-value-reaching-aed1712bn-during-first-9-months-of-2026/",
           "rights": "Selected published numerical facts and attribution links only. No ADREC API or transaction-level candidate rows, report pages, charts, images or article text redistributed.",
           "liveRouteHealth": "not_asserted_by_inventory",
-          "marketRows": 3,
+          "marketRows": 5,
+          "districtTransactionValueRows": 5,
           "segmentRows": 3,
           "publishedProjectionRows": 1,
           "notTransactionLevel": true,
           "notCommercialUnitSales": true,
           "notAvailableUnits": true,
           "unpublishedCandidateStillRestricted": true,
-          "sourceSha256": "6400e739817c466543ed157ebfeab6efb2a32c628870f965c4a2401020f6c847"
+          "sourceSha256": "e5e4f2e5adb349ee528260a6811991e7a90dd5f4f206e2fa488103baa31874f0"
         }
       ],
       "publisherListingSnapshot": {
@@ -847,6 +848,6 @@
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
     "sharjahMonthly": "db0c65a35b7d38364936e3062b10c4b5ea14e7bbc7b42fda872cb36bad2f24fb",
-    "adrecMarket": "99311025a095ba5f30f895e15cd66bf41b5296e8bdccf01937917ea95e4dc3b2"
+    "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f"
   }
 }
