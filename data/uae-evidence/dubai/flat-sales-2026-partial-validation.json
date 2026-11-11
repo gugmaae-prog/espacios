@@ -1,0 +1,29 @@
+{
+  "sourceId": "dred-dld-registered-flat-sales-2026-partial-20261111",
+  "publisher": "Dubai Real Estate Data, based on Dubai Land Department open data",
+  "sourceUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions",
+  "originalSourceUrl": "https://dubailand.gov.ae/en/open-data/real-estate-data/",
+  "license": "CC BY 4.0; derived subset with attribution",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "sourceSnapshotDate": "2026-11-02",
+  "sourceParquetBytes": 22819023,
+  "sourceParquetSha256": "8294c3dd83dde2e16e64eaf1ef155a1ad14ec16b6b39384561777afb8425417e",
+  "captureRule": "DLD-derived Sale records from 2026-01-01 through 2026-10-31 with usage Residential, property type Unit, subtype Flat. Ready and Off-Plan remain separate. The source is a 2 November 2026 snapshot, not the complete year or all property types.",
+  "qualityRule": "Sale counts include all rows. Monetary sums and price-per-sqft medians use quality_flags=0. Area-month monetary values and medians require at least 10 clean records; null means withheld for sparse groups, not zero. Monthly totals are computed independently from source records. No weighted or averaged median is derived from group medians.",
+  "sourceRows": 105473,
+  "cleanRows": 103804,
+  "areaMonthRows": 1117,
+  "monthlyRows": 20,
+  "suppressedAreaMonetaryGroups": 316,
+  "distinctAreaIds": 70,
+  "unknownAreaSaleRows": 35,
+  "dateRange": [
+    "2026-01-01",
+    "2026-10-31"
+  ],
+  "compressedBytes": 14691,
+  "compressedSha256": "2517a4ff3ff3d268e7ffff801925d31aea1d6c68c6bbfded03dd861bb8a97eca",
+  "rawBytes": 71656,
+  "rawSha256": "2b9ff322a7987623019ceaebd9ca55c6235729c4208c994b9a86806f6183135d",
+  "limits": "Registered flat sale aggregates only, not individual transaction records in this endpoint, a full UAE census, live availability, asking inventory, rent, or a valuation. Source categories after 9 February mislabel Office/Shop subtypes as Residential; this subset explicitly requires Flat and excludes them. DLD area IDs are cadastral labels, not verified building or unit coordinates. Snapshot may receive later revisions."
+}
