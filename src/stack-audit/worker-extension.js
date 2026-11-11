@@ -1,5 +1,5 @@
 /* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
-var MAP_STACK_RELEASE='20261111-map-stack-v61';
+var MAP_STACK_RELEASE='20261111-map-stack-v62';
 var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
 var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
 var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
@@ -74,7 +74,7 @@ worker_default.fetch=async function(request,env,ctx){
  const rakCommercial=mapRakCommercialHistory(request,UAE_RAK_COMMERCIAL_REPORT,UAE_RAK_COMMERCIAL_DATA);if(rakCommercial)return mapStackPreparedResponse(request,rakCommercial);
  const rakPermits=mapRakBuildingPermits(request,UAE_RAK_PERMITS_REPORT,UAE_RAK_PERMITS_DATA);if(rakPermits)return mapStackPreparedResponse(request,rakPermits);
  const dubaiStock=mapDubaiBuildingStock(request,UAE_DUBAI_BUILDING_STOCK_REPORT,UAE_DUBAI_BUILDING_STOCK_DATA);if(dubaiStock)return mapStackPreparedResponse(request,dubaiStock);
- const dubaiCommercial=await mapDubaiCommercialSales(request,UAE_DUBAI_COMMERCIAL_REPORT,UAE_DUBAI_COMMERCIAL_PACKED,UAE_DUBAI_COMMERCIAL_PARTIAL_REPORT,UAE_DUBAI_COMMERCIAL_PARTIAL_PACKED,RGE_AREA_CENTRES);if(dubaiCommercial)return mapStackPreparedResponse(request,dubaiCommercial);
+ const dubaiCommercial=await mapDubaiCommercialSales(request,UAE_DUBAI_COMMERCIAL_REPORT,UAE_DUBAI_COMMERCIAL_PACKED,UAE_DUBAI_COMMERCIAL_PARTIAL_REPORT,UAE_DUBAI_COMMERCIAL_PARTIAL_PACKED,RGE_AREA_CENTRES,UAE_DUBAI_COMMERCIAL_SUBTYPE_REPORT,UAE_DUBAI_COMMERCIAL_SUBTYPE_PACKED);if(dubaiCommercial)return mapStackPreparedResponse(request,dubaiCommercial);
  const fujairahPermits=mapFujairahBuildingPermits(request,UAE_FUJAIRAH_PERMITS_REPORT,UAE_FUJAIRAH_PERMITS_DATA);if(fujairahPermits)return mapStackPreparedResponse(request,fujairahPermits);
  const uaqIndustrialGuide=mapUaqIndustrialGuide(request,UAE_UAQ_INDUSTRIAL_GUIDE_REPORT,UAE_UAQ_INDUSTRIAL_GUIDE_DATA);if(uaqIndustrialGuide)return mapStackPreparedResponse(request,uaqIndustrialGuide);
  const adrecMarket=mapAbuDhabiReportedMarket(request,UAE_ADREC_MARKET_REPORT,UAE_ADREC_MARKET_DATA);if(adrecMarket)return mapStackPreparedResponse(request,adrecMarket);

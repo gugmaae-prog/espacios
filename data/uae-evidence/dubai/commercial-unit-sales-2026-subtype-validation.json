@@ -1,0 +1,27 @@
+{
+  "sourceId": "dred-dld-office-shop-subtype-sales-2026-partial-20261111",
+  "publisher": "Dubai Real Estate Data, based on Dubai Land Department open data",
+  "sourceUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions",
+  "originalSourceUrl": "https://dubailand.gov.ae/en/open-data/real-estate-data/",
+  "license": "CC BY 4.0; derived subset with attribution",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "sourceSnapshotDate": "2026-11-02",
+  "sourceParquetBytes": 22819023,
+  "sourceParquetSha256": "8294c3dd83dde2e16e64eaf1ef155a1ad14ec16b6b39384561777afb8425417e",
+  "captureRule": "DLD-derived 2026 sale registrations through October 31 with property type Unit and subtype Office or Shop, regardless of usage label. The source changes Office/Shop usage from Commercial to Residential on February 9–10; subtype is retained but this mismatch requires source verification. Not a full-year count.",
+  "periodStatus": "partial_2026_subtype_based_usage_label_conflict",
+  "rows": 5452,
+  "cleanRows": 4982,
+  "commercialUsageRows": 1133,
+  "residentialUsageRows": 4319,
+  "distinctAreaIds": 48,
+  "dateRange": [
+    "2026-01-01",
+    "2026-10-31"
+  ],
+  "compressedBytes": 92233,
+  "compressedSha256": "13e44fd846691d2f59a44dfe04c29ef676754b67ca67f58e5c1969d879acc27a",
+  "rawBytes": 721814,
+  "rawSha256": "8a1168a714ff637d9d41a14c9928e2f44506182bbb93a2e97541a93031b4b1f8",
+  "limits": "Registered Office and Shop subtype rows from a licensed secondary DLD copy; 4,319 rows have a conflicting Residential usage label and need primary source verification. Interpret them as subtype-based candidate commercial evidence. No current availability, asking rent, other commercial types, exact coordinates, or complete 2026 year. Values and medians use quality_flags=0 only."
+}

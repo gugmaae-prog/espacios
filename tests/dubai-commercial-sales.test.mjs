@@ -14,8 +14,12 @@ const base64=packed.toString('base64');
 const partialReport=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-2026-partial-validation.json',root)));
 const partialPacked=await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-2026-partial-20261110.json.gz',root));
 const partialBase64=partialPacked.toString('base64');
+const subtypeReport=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-2026-subtype-validation.json',root)));
+const subtypePacked=await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-2026-subtype-20261111.json.gz',root));
+const subtypeBase64=subtypePacked.toString('base64');
 const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/dubai/commercial-unit-sales${query}`,{method});
 const partialRequest=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/dubai/commercial-unit-sales-2026-partial${query}`,{method});
+const subtypeRequest=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/dubai/commercial-unit-sales-2026-subtype${query}`,{method});
 
 test('commercial unit sale subset keeps exact source rows and quality flags',()=>{
  assert.equal(packed.length,report.compressedBytes);
@@ -78,7 +82,7 @@ test('compiled Worker serves the new data without an R2 binding',async()=>{
  const response=await worker.fetch(request('?year=2025'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-test'}},{});
  const body=await response.json();
  assert.equal(response.status,200);
- assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v61');
+ assert.equal(response.headers.get('x-espacios-map-release'),'20261111-map-stack-v62');
  assert.equal(body.registeredSaleRecords,6092);
  assert.equal(body.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');
 });
@@ -106,4 +110,30 @@ test('2026 commercial sales remain a separate, explicitly partial source',async(
  const live=await worker.fetch(partialRequest(),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'commercial-partial-test'}},{});
  assert.equal(live.status,200);
  assert.equal((await live.json()).registeredSaleRecords,1133);
+});
+
+test('2026 subtype source preserves usage conflicts and maps only reviewed area references',async()=>{
+ assert.equal(createHash('sha256').update(subtypePacked).digest('hex'),subtypeReport.compressedSha256);
+ const snapshot=JSON.parse(gunzipSync(subtypePacked));
+ assert.equal(snapshot.rows.length,5452);
+ assert.equal(snapshot.rows.filter(row=>row[11]==='Residential').length,4319);
+ assert.equal(snapshot.rows.filter(row=>row[11]==='Commercial').length,1133);
+ assert.equal(snapshot.rows.filter(row=>row[10]===0).length,4982);
+ const args=[report,base64,partialReport,partialBase64,RGE_AREA_CENTRES,subtypeReport,subtypeBase64];
+ const summary=await (await mapDubaiCommercialSales(subtypeRequest('?year=2026'),...args)).json();
+ assert.equal(summary.scope.evidenceClass,'registered_office_shop_subtype_sales_with_usage_conflict');
+ assert.equal(summary.scope.periodStatus,'partial_2026_subtype_based_usage_label_conflict');
+ assert.equal(summary.registeredSaleRecords,5452);
+ assert.equal(summary.conflictingResidentialUsageRecords,4319);
+ assert.match(summary.scope.limits,/source verification/i);
+ const mapped=await (await mapDubaiCommercialSales(subtypeRequest('?view=map&year=2026'),...args)).json();
+ assert.equal(mapped.scope.mappedSaleRecords+mapped.scope.unmappedSaleRecords,5452);
+ assert.ok(mapped.mappedAreas.length>0&&mapped.mappedAreas.length<=4);
+ assert.ok(mapped.mappedAreas.every(area=>area.locationBasis==='reviewed_osm_area_reference_not_cadastral_centroid_or_unit_coordinate'));
+ const records=await (await mapDubaiCommercialSales(subtypeRequest('?view=records&limit=2'),...args)).json();
+ assert.ok(records.records.every(row=>['Commercial','Residential'].includes(row.usageLabel)));
+ assert.equal((await mapDubaiCommercialSales(subtypeRequest('?year=2025'),...args)).status,400);
+ const live=await worker.fetch(subtypeRequest('?view=map&year=2026'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'subtype-test'}},{});
+ assert.equal(live.status,200);
+ assert.equal((await live.json()).totalSaleRecords,5452);
 });
