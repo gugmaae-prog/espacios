@@ -6,25 +6,31 @@ import {mapSharjahMonthlyMarket} from '../src/stack-audit/sharjah-monthly-market
 import worker from '../src/worker.js';
 
 const root=new URL('../',import.meta.url);
-const bytes=await fs.readFile(new URL('data/uae-evidence/sharjah/monthly-market-20261114.json',root));
-const data=JSON.parse(bytes),report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/sharjah/monthly-market-validation.json',root)));
+const bytes=await fs.readFile(new URL('data/uae-evidence/sharjah/monthly-market-20261114-supplement.json',root));
+const data=JSON.parse(bytes),report=JSON.parse(await fs.readFile(new URL('data/uae-evidence/sharjah/monthly-market-20261114-supplement-validation.json',root)));
 const request=(query='',method='GET')=>new Request(`https://espacios.me/map/api/uae-evidence/sharjah/monthly-market${query}`,{method});
 
 test('Sharjah monthly evidence is hash pinned and partial',()=>{
  assert.equal(bytes.length,report.dataBytes);
  assert.equal(createHash('sha256').update(bytes).digest('hex'),report.dataSha256);
- assert.deepEqual(data.observations.map(row=>row.month),['2026-01','2026-04','2026-05','2026-06','2026-07','2026-08']);
- assert.deepEqual(data.missingMonths,['2026-02','2026-03','2026-09']);
- assert.deepEqual(data.incompleteMonths,['2026-06']);
- assert.deepEqual(data.observations.map(row=>row.salesTransactions),[4868,2675,1851,null,2884,2367]);
- assert.deepEqual(data.observations.map(row=>row.allProcedureTransactions),[10333,15669,7119,null,9376,9139]);
+ assert.deepEqual(data.observations.map(row=>row.month),['2026-01','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09']);
+ assert.deepEqual(data.missingMonths,['2026-02','2026-03']);
+ assert.deepEqual(data.incompleteMonths,['2026-06','2026-09']);
+ assert.deepEqual(data.observations.map(row=>row.salesTransactions),[4868,2675,1851,null,2884,2367,null]);
+ assert.deepEqual(data.observations.map(row=>row.allProcedureTransactions),[10333,15669,7119,null,9376,9139,null]);
  assert.equal(data.observations[3].reportedTransactionValueAedApprox,4400000000);
  assert.equal(data.observations[3].reportingBasis,'retrospective_comparison_in_july_release');
  assert.equal(data.observations[4].officeUnitSales,17);
  assert.equal(data.observations[4].shopUnitSales,1);
  assert.ok(data.observations.filter(row=>row.month!=='2026-07').every(row=>row.officeUnitSales===null&&row.shopUnitSales===null));
- assert.equal(report.reconciliation.retainedOriginalObservations,5);
- assert.ok(report.sourceArticles.every(item=>item.articleBodySha256.length===64));
+ assert.equal(data.observations[6].reportedTransactionValueAedApprox,5700000000);
+ assert.equal(data.observations[6].reportedAllProcedureTransactionsApprox,13700);
+ assert.equal(data.combinedPeriodObservations.length,1);
+ assert.deepEqual([data.combinedPeriodObservations[0].startMonth,data.combinedPeriodObservations[0].endMonth],['2026-02','2026-03']);
+ assert.equal(data.combinedPeriodObservations[0].reportedTransactionValueAedApprox,9200000000);
+ assert.equal(data.combinedPeriodObservations[0].reportedAllProcedureTransactionsApprox,18900);
+ assert.equal(report.reconciliation.retainedOriginalObservations,6);
+ assert.equal(report.sourceArticles[5].tableSha256.length,64);
 });
 
 test('read-only API labels missing months and keeps transaction classes separate',async()=>{
@@ -34,11 +40,14 @@ test('read-only API labels missing months and keeps transaction classes separate
  assert.equal(body.scope.transactionLevel,false);
  assert.equal(body.scope.commercialOnly,false);
  assert.equal(body.scope.currentAvailability,false);
- assert.equal(body.observations.length,6);
+ assert.equal(body.observations.length,7);
  assert.deepEqual(body.scope.missingMonths,data.missingMonths);
- assert.deepEqual(body.scope.incompleteMonths,['2026-06']);
+ assert.deepEqual(body.scope.incompleteMonths,['2026-06','2026-09']);
+ assert.equal(body.combinedPeriodObservations.length,1);
  assert.equal((await mapSharjahMonthlyMarket(request('?month=2026-07'),report,data).json()).observations[0].officeUnitSales,17);
  assert.deepEqual((await mapSharjahMonthlyMarket(request('?month=2026-06'),report,data).json()).observations.map(row=>[row.reportedTransactionValueAedApprox,row.salesTransactions]),[[4400000000,null]]);
+ assert.deepEqual((await mapSharjahMonthlyMarket(request('?month=2026-09'),report,data).json()).observations.map(row=>[row.reportedTransactionValueAedApprox,row.allProcedureTransactions]),[[5700000000,null]]);
+ assert.deepEqual((await mapSharjahMonthlyMarket(request('?month=2026-09'),report,data).json()).combinedPeriodObservations,[]);
  assert.equal(mapSharjahMonthlyMarket(request('?month=2026-03'),report,data).status,400);
  assert.equal(mapSharjahMonthlyMarket(request('','POST'),report,data).status,405);
  assert.equal(mapSharjahMonthlyMarket(request('','HEAD'),report,data).body,null);
@@ -49,4 +58,5 @@ test('compiled Worker serves Sharjah partial monthly source',async()=>{
  assert.equal(response.status,200);
  assert.equal(response.headers.get('x-espacios-evidence-source'),report.sourceId);
  assert.equal(body.observations[4].shopUnitSales,1);
+ assert.equal(body.combinedPeriodObservations[0].reportedTransactionValueAedApprox,9200000000);
 });
