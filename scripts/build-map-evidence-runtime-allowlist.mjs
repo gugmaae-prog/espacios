@@ -29,9 +29,11 @@ async function build(){
   attestations.push({planId:plan.planId,planSha256:sha(planBytes),attestationId:attestation.attestationId,verifiedAt:attestation.verifiedAt,objectCount:plan.objectCount});
   for(const object of plan.objects){
    if(!object.idriveKey?.startsWith('espacios-map/uae-evidence/')||!object.idriveKey.startsWith(plan.prefix)||!object.sourceId||!Number.isSafeInteger(object.bytes)||object.bytes<1||object.bytes>8*1024*1024||!/^[a-f0-9]{64}$/.test(object.sha256)||!['application/gzip','application/json'].includes(object.contentType))fail('Invalid planned object: '+planPath);
+   // Original CSV parts stay private and are absent from clean Git checkouts.
+   // Their full transfer was attested above; no runtime key is minted for them.
+   if(object.idriveKey.includes('/originals/')){excludedPrivateOriginals++;continue;}
    const localPath=path.resolve(root,object.localPath||'');if(!localPath.startsWith(root+path.sep))fail('Object path escapes checkout');
    const local=await fs.readFile(localPath);if(local.byteLength!==object.bytes||sha(local)!==object.sha256)fail('Local object changed: '+object.localPath);
-   if(object.idriveKey.includes('/originals/')){excludedPrivateOriginals++;continue;}
    entries.push({key:object.idriveKey,sourceId:object.sourceId,bytes:object.bytes,sha256:object.sha256,contentType:object.contentType,attestationId:attestation.attestationId});
   }
  }
