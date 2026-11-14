@@ -9,9 +9,9 @@ const RGE_EMIRATES=['Abu Dhabi','Ajman','Dubai','Fujairah','Ras Al Khaimah','Sha
 let RGE_INDEX_ROWS;
 let RGE_INDEX_CACHE_SHA;
 const rgeIndexDigest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
-const rgeIndexReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-full-index-20261111',...(status===405?{allow:'GET, HEAD'}:{})}});
+const rgeIndexReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-full-index-20261114',...(status===405?{allow:'GET, HEAD'}:{})}});
 const rgeIndexReplica=id=>{
- const replica=typeof UAE_CURRENT_IDRIVE_REPLICA==='object'?UAE_CURRENT_IDRIVE_REPLICA:null;
+ const replica=typeof UAE_RGESTATE_IDRIVE_REPLICA==='object'?UAE_RGESTATE_IDRIVE_REPLICA:null;
  return replica?.sourceIds?.includes(id)?{verifiedAt:replica.verifiedAt,attestationId:replica.attestationId,role:replica.storageRole}:null;
 };
 

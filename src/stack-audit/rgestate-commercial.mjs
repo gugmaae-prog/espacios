@@ -1,7 +1,7 @@
 const RGE_API='/map/api/uae-evidence/commercial/listings';
 const RGE_AREAS_API='/map/api/uae-evidence/commercial/areas';
 const rgeCommercialReplica=id=>{
- const replica=typeof UAE_CURRENT_IDRIVE_REPLICA==='object'?UAE_CURRENT_IDRIVE_REPLICA:null;
+ const replica=typeof UAE_RGESTATE_IDRIVE_REPLICA==='object'?UAE_RGESTATE_IDRIVE_REPLICA:null;
  return replica?.sourceIds?.includes(id)?{verifiedAt:replica.verifiedAt,attestationId:replica.attestationId,role:replica.storageRole}:null;
 };
 // Reviewed OpenStreetMap area references. These are never listing or building coordinates.
@@ -98,7 +98,7 @@ const rgeAskingRate=row=>Number.isFinite(row.priceAed)&&row.priceAed>0&&Number.i
 export const rgeAreaLocationFor=row=>{const area=rgeAreaFor(row);return area?{key:area[0],name:area[1],emirate:RGE_AREA_EMIRATES[area[0]],osmUrl:'https://www.openstreetmap.org/'+area[4]}:null};
 const RGE_ROWS_BY_SHA=new Map();
 const rgeDigest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
-const rgeReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-commercial-publisher-snapshots-20261111',...(status===405?{allow:'GET, HEAD'}:{})}});
+const rgeReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'rgestate-commercial-publisher-snapshots-20261114',...(status===405?{allow:'GET, HEAD'}:{})}});
 
 async function rgeVerifiedRows(report,packed){
  if(!RGE_ROWS_BY_SHA.has(report.rawSha256))RGE_ROWS_BY_SHA.set(report.rawSha256,(async()=>{

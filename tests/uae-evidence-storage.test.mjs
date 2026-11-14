@@ -10,11 +10,13 @@ test('all 40 published projections have source-matched, dated IDrive readback at
  assert.deepEqual(inventory.unreplicatedSourceIds,[]);
  assert.equal(inventory.byEmirate.length,7);
  assert.equal(new Set(inventory.sources.map(source=>source.id)).size,40);
- assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.objectCount,0),200);
- assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.totalBytes,0),108329560);
+ assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.objectCount,0),203);
+ assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.totalBytes,0),108467580);
  assert.equal(inventory.sources.find(source=>source.id==='ajman-mpd-20260901-new-building-licences')?.replica?.attestationId,'ajman-new-building-permissions-idrive-e2-readback-20261114');
  assert.equal(inventory.sources.find(source=>source.id==='scad-abu-dhabi-census-2024-real-estate-stock')?.replica?.role,'verified_private_replica_not_runtime_primary');
  assert.equal(inventory.publisherListingInventory.availability,'publisher_listed_at_capture_unverified_now');
+ assert.equal(inventory.publisherListingInventory.sourceId,'rgestate-full-index-20261114');
+ assert.equal(inventory.publisherListingInventory.replicaAttestationId,'rgestate-20261114-idrive-e2-readback');
 });
 
 test('storage endpoint filters the attested inventory and keeps the archive proof scoped',async()=>{

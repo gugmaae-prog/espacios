@@ -1,14 +1,14 @@
 {
-  "sourceId": "rgestate-full-index-20261111",
-  "sourceRawSha256": "312a6a65ab6e3fda6582e5e93d8e0333c58092f1f3e2b9e25f95bdb15e8ee606",
+  "sourceId": "rgestate-full-index-20261114",
+  "sourceRawSha256": "79e6845a3285513033aba314e6234a6f0a03a1aa22ba1d0f2d9194b6a1af8ca2",
   "areaReferenceSha256": "7932313414ff3221795ee7b415aa088b3d1674dd84e3f7ef059fade00a1ec4f2",
   "reviewedAreaReferences": 59,
-  "reviewedAreaRows": 913,
+  "reviewedAreaRows": 907,
   "unresolvedRows": 150,
   "byEmirate": {
     "Abu Dhabi": 2,
     "Ajman": 0,
-    "Dubai": 911,
+    "Dubai": 905,
     "Fujairah": 0,
     "Ras Al Khaimah": 0,
     "Sharjah": 0,

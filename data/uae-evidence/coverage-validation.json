@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v43",
+  "version": "20261114-uae-evidence-coverage-v44",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -11,14 +11,14 @@
     "nativeHistorySeries": 16872
   },
   "publisherListingInventory": {
-    "sourceId": "rgestate-full-index-20261111",
+    "sourceId": "rgestate-full-index-20261114",
     "route": "/map/api/uae-evidence/rgestate/index",
-    "snapshotRows": 1666,
-    "observedAt": "2026-11-10T21:36:36.127783+00:00",
+    "snapshotRows": 1660,
+    "observedAt": "2026-11-14T12:16:40.280409+00:00",
     "explicitEmirateLocationLabelRows": 603,
-    "reviewedAreaLocationRows": 913,
+    "reviewedAreaLocationRows": 907,
     "unresolvedLocationRows": 150,
-    "unassignedLocationLabelRows": 1063,
+    "unassignedLocationLabelRows": 1057,
     "method": "Exact equality against the publisher location label; no title, URL, nearby district, or coordinate inference.",
     "geographyStatus": "publisher_label_unverified",
     "reviewedAreaMethod": "Exact publisher locationLabel alias matched to a previously reviewed OpenStreetMap area reference; the area reference has a separately reviewed emirate.",
@@ -129,7 +129,7 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Abu%20Dhabi",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Abu%20Dhabi",
         "explicitLocationLabelRows": 9,
@@ -377,7 +377,7 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Ajman",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Ajman",
         "explicitLocationLabelRows": 32,
@@ -579,11 +579,11 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Dubai",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Dubai",
         "explicitLocationLabelRows": 5,
-        "reviewedAreaLocationRows": 911,
+        "reviewedAreaLocationRows": 905,
         "byPathClass": {
           "sale": 4,
           "rent": 1,
@@ -639,7 +639,7 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Fujairah",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Fujairah",
         "explicitLocationLabelRows": 3,
@@ -745,7 +745,7 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Ras%20Al%20Khaimah",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Ras%20Al%20Khaimah",
         "explicitLocationLabelRows": 7,
@@ -837,7 +837,7 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Sharjah",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Sharjah",
         "explicitLocationLabelRows": 354,
@@ -886,7 +886,7 @@
         }
       ],
       "publisherListingSnapshot": {
-        "sourceId": "rgestate-full-index-20261111",
+        "sourceId": "rgestate-full-index-20261114",
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Umm%20Al%20Quwain",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Umm%20Al%20Quwain",
         "explicitLocationLabelRows": 193,
@@ -931,9 +931,9 @@
     "ajmanUnitMortgages": "c32ce09771fd28a77b80c0f99bef1512b5f10474423b1ed318469123f7340a0a",
     "ajmanRents": "0af8b5b7b4d29f9e3a4205292fd0a5f57bd4375a01af6f30a5279909c72f48b2",
     "ajmanCrosswalk": "ef7a3f478b85a4510c88b56f512a554a2964993d792f20a1a54f674510fd1f94",
-    "rgeIndex": "a7caf4914026edf1ecc770389bc8224e8b5fb0bd237ea7495371b5e97a65e771",
-    "rgeLabels": "4ae7bc16dc299c07e97fcc5de33fb5dbf94a6272ae8623655144a7e4c7ea2d26",
-    "rgeAreas": "4c6ef541992073c2709c0c59b7598bc2d35c0439957c66db23d6e10aee720609",
+    "rgeIndex": "ddca1762e34aa20d1da5bdb07254f65f52b18f219b02a7a4617ccd273c4be1c5",
+    "rgeLabels": "f7492ec5ca7f25724c87aa8825594369f1bcdf85941a64167000131bdb8dd6b9",
+    "rgeAreas": "94073d2f4a0c61e042fdfd5fabf390cfd48f9e12d9b6dadbda24e1cc70c2060d",
     "dubaiStatus": "21cbae13b542fdf224255d0172af37d07cb59cc83338dd41b11c7b5d48d9044b",
     "dubaiCrosswalk": "79c969fb7eec6607a49034f5d5894f32b84201a67d5dc108c448579c174e57d9",
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",

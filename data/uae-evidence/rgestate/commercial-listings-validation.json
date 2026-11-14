@@ -1,539 +1,554 @@
 {
-  "sourceId": "rgestate-commercial-category-20261111",
+  "sourceId": "rgestate-commercial-category-20261114",
   "publisher": "RGEstate",
   "publisherUrl": "https://www.rgestate.com",
   "categoryUrls": [
     "https://www.rgestate.com/property-for-rent/commercial",
     "https://www.rgestate.com/property-for-sale/commercial"
   ],
-  "observedAt": "2026-11-10T21:37:49.603516+00:00",
+  "observedAt": "2026-11-14T12:17:56.293505+00:00",
   "evidenceClass": "brokerage_advertised_listing_facts",
   "rights": "Owner confirmed reuse of factual details and links for all RGEstate listings, including third-party advertiser listings; photos excluded at user request.",
-  "rows": 861,
-  "rentRows": 450,
-  "saleRows": 411,
+  "rows": 859,
+  "rentRows": 449,
+  "saleRows": 410,
   "comparison": {
-    "previousSourceId": "rgestate-commercial-category-20261110",
-    "previousObservedAt": "2026-11-10T11:05:51.155650+00:00",
+    "previousSourceId": "rgestate-commercial-category-20261111",
+    "previousObservedAt": "2026-11-10T21:37:49.603516+00:00",
     "previousRawSha256": "26d676904d98892cd606b27842b600c009fa43b6430c6c02f114bdd0d67e0a03",
-    "continuingIds": 861,
+    "continuingIds": 859,
     "addedIds": [],
-    "absentFromCurrentCategoryIds": [],
-    "changedAskingPrices": [],
-    "changedTitles": [],
+    "absentFromCurrentCategoryIds": [
+      "60628",
+      "60662"
+    ],
+    "changedAskingPrices": [
+      {
+        "sourceListingId": "43737",
+        "previousPriceLabel": "AED 45,000,000",
+        "currentPriceLabel": "AED 40,000,000"
+      }
+    ],
+    "changedTitles": [
+      {
+        "sourceListingId": "43737",
+        "previousTitle": "Invest in a 56,000 Sqft Leasehold Property with a 50,000 Sqft Build-up, Generating AED 2,500,000 Net Income Annually. Prime ROI of 5.55%. Contact Now!",
+        "currentTitle": "Invest in a 56,000 Sqft Leasehold Property with a 50,000 Sqft Build-up, Generating AED 3,000,000 Net Income Annually. Prime ROI of 6.87%. Contact Now!"
+      }
+    ],
     "limits": "A missing publisher category ID does not establish a sale, withdrawal, or current unavailability. Price changes are advertised asks, not transactions."
   },
-  "missingAreaRows": 121,
+  "missingAreaRows": 119,
   "missingLocationRows": 15,
-  "unknownPriceRows": 18,
-  "rawBytes": 399154,
-  "rawSha256": "26d676904d98892cd606b27842b600c009fa43b6430c6c02f114bdd0d67e0a03",
-  "compressedBytes": 41353,
-  "compressedSha256": "d39c4a461329508e5572125e281ae058be1cdddcbb77c0b06a3b0d7117916278",
+  "unknownPriceRows": 17,
+  "rawBytes": 398136,
+  "rawSha256": "b658b0615a545938cda7344506e476b4ccba318b6ebba331c9df824c8d340ba8",
+  "compressedBytes": 41251,
+  "compressedSha256": "6028cb167d5163268cedeea2e795fe7615146079dc6eeecf254dca4f29947183",
   "capturePages": [
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial",
-      "sha256": "3d1200e576b1406b55a216ae7b3346392273a6affcb84ae2952ac2e9b0caa736",
-      "bytes": 484678
+      "sha256": "09116fcafd509fe0fb831915e1ef877426eaec6127f3c59ad9823b8ab77b6f87",
+      "bytes": 484688
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=2",
-      "sha256": "17940beecb96955295cc0cf655548a609bc3a55f53cd3a49d421f235d312de50",
-      "bytes": 487574
+      "sha256": "f16e8c8e31eb5ee903bef9caafbd346c19319c0a7350865e4077221f5df75cdc",
+      "bytes": 487762
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=3",
-      "sha256": "4e43131c9bfa20311123c1d4869df94d110c385e60bb097eddc2fc3c8fb9e90f",
-      "bytes": 488758
+      "sha256": "535edc33467208ef6f0a70a1b67246d2ee7e677ec879257cd8aaac8596b59800",
+      "bytes": 488769
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=4",
-      "sha256": "aaf532ed3ea38ee544c1ce61bf1cb20c00e0ad93cd9a216984fd51175d3da98a",
-      "bytes": 488955
+      "sha256": "62569fb4d44e918a98e23bf772a29b4333305cce1271b5d7d3ae8485fddd6164",
+      "bytes": 488813
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=5",
-      "sha256": "290ac35943fb734faf1b087f7324b8c9d5b3e85617aca68a27ba485f69c64fa5",
-      "bytes": 487466
+      "sha256": "6b249bc2cd9b2eb694a17431054fdb471a37cfa1e3a029299ed8fdaec50bb3f9",
+      "bytes": 487257
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=6",
-      "sha256": "b98cc802bb618cbac5c076c6a97909da0b65f4a133e99b7d6cc5e1991679a898",
-      "bytes": 484169
+      "sha256": "257a88287f857709ab77243daeabb0024902851cd0a96c5a52c6da3293817f08",
+      "bytes": 484353
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=7",
-      "sha256": "abe2d64aab05a645caa1e521d7383a3dae17c42b2d5ec2247b19af01c6b7bbba",
-      "bytes": 483253
+      "sha256": "35d4fc4407d07ec4c63281eee0f3a4916a73d7dd5e1aeb1bf03bb481635dfa28",
+      "bytes": 483179
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=8",
-      "sha256": "523f6af88f93318d5c6366802109b002878ad4639cf8da926757ac4fdfff6d60",
-      "bytes": 482045
+      "sha256": "ca8ba7221484122301f32b4b54c80a41e0418c10865296fc9e1052c1071f42b9",
+      "bytes": 481942
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=9",
-      "sha256": "25c78e7f7e999f42a45295624a72b4fbd0aba923cc20af8b42ce045740ae7dac",
-      "bytes": 481039
+      "sha256": "a0356956f4356fc0b7a60d6f66320bbcc396bbc7d54c6a32700044df170722ec",
+      "bytes": 481027
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=10",
-      "sha256": "38b4b2dd422655f0a51c1bc8e2d2317c07ada53ed50452593bf640369f1a2f15",
-      "bytes": 481330
+      "sha256": "a460adf18163a01722cf3e0780767d85232a108a6d4bc8767ecc68bd3b9549fe",
+      "bytes": 481355
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=11",
-      "sha256": "8a3b59476d7e5c3085f1369d294828483d0f7980fdbf6d540819f073683acdaf",
-      "bytes": 481692
+      "sha256": "42d252417e598de4a3b851ceb6dc487ef1f98bebb3d09e393fb9380fc32a3e1a",
+      "bytes": 481662
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=12",
-      "sha256": "815b0e6a6725324795e5d4ec573e997eda94c7edbb003b1585d9849fe36d7098",
-      "bytes": 481986
+      "sha256": "e98dffc42415f114f8adbf07835d87835a04d12588b807adb284ddbb36051583",
+      "bytes": 482008
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=13",
-      "sha256": "d3fe040f8ab7620cb675d4b4de1b02ab38be8e8a645843bfa9ebe46743b1d3da",
-      "bytes": 481818
+      "sha256": "39b98c93fb06f93e8bb4834007a5a7f9657bba27bc1ef9718963e451eb08cb7a",
+      "bytes": 481810
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=14",
-      "sha256": "c49591ac74936454a0578c655a8a3648aada13d1f55c0c378ff669137fe001ec",
-      "bytes": 481887
+      "sha256": "e84f7dc7c3d80045dddac2cac11eecc57968c88ae5cfd6c2fc4bd916d2c0ed60",
+      "bytes": 481913
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=15",
-      "sha256": "085aa10bad9c47cd5e116941c6737569a660d5e857eb8b462d33f4ed33e7fc63",
-      "bytes": 482268
+      "sha256": "29501b425ad93910cf06fafce7cf1dded252d6108a3ece25f73a249f0c6ae5e2",
+      "bytes": 482285
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=16",
-      "sha256": "4c74b7bb577114f23d02b67db758d610b0303eaea1388bbad17a16e363f4451e",
-      "bytes": 482682
+      "sha256": "4f4ae5728cd16f064005c419507802edd6f8cb734dbee6c4949908833bc96496",
+      "bytes": 482648
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=17",
-      "sha256": "6b6e1246e4536ba35359ba6d4d3f2bf7b639128296de75c04fb6f101dc8ac90e",
-      "bytes": 481924
+      "sha256": "ffab7d14d33780784472d2fc5ecbbeee35060c8c4bbba5beef2492788367b4db",
+      "bytes": 481932
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=18",
-      "sha256": "9ea7721c948e449bcd5306b038d51e3e01f56d97cb9a15731543d8a7cde2144e",
-      "bytes": 481882
+      "sha256": "e48504bc255186ab90d7bf142cd02cf7b2334f0f2f80803f577dd8eb07955409",
+      "bytes": 481988
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=19",
-      "sha256": "e1d1450a05047fc8512be8f4bdde60dddb74aeb02678f56965a8982199c5c85f",
-      "bytes": 482746
+      "sha256": "f11c9b723b3ab94a87a5f1e26167e48b6ba7368066f843339da6dedad828755a",
+      "bytes": 482658
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=20",
-      "sha256": "9945ea4b973ae28eae32328b1f404607b52c793188c274d9d33d6a070136d469",
-      "bytes": 482972
+      "sha256": "2bbd8e0865fa6f54420468066b60ada603cfa52c139dc480c33935394e3e4bec",
+      "bytes": 482975
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=21",
-      "sha256": "cc2a2ecda6d0371452fe0b08200588fd97eddc504d85dc5d2332083456fbdbb8",
-      "bytes": 482324
+      "sha256": "c967160d7a7153f389c5e2f269d196b45e35384ac6d8148bc826ed94b5a63efb",
+      "bytes": 482312
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=22",
-      "sha256": "bf0237cb66c4ea0b695d5daf9a697429e0baf3b5c73af86ca4983161e0a13451",
-      "bytes": 399574
+      "sha256": "5b126ee1373685a67202be2a044389c312457264926f284ced701c29b653da32",
+      "bytes": 392667
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial",
-      "sha256": "a7bf2683937b0c7ab244d83d0f18e3ca1a5d883906351723bff1e0b9fd06effe",
-      "bytes": 484682
+      "sha256": "4c165f2df958f2b138dd2770ccf014e16aa6696d68ddd2b23dd9ffe6dcae0d65",
+      "bytes": 484688
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=2",
-      "sha256": "8c592e8ce036a74f0c37d3fc011abe2ad435e64f7eddeb7b888fdaf71e0804da",
-      "bytes": 487584
+      "sha256": "4e32a66e6c3c821daba3891120316afe3cb947e002f51f837933fea86eeb7a33",
+      "bytes": 487758
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=3",
-      "sha256": "54dd92573d6e0590ca128178843cf1579420ff3e524d5b2df7052484f88e3020",
-      "bytes": 488768
+      "sha256": "43278545b96afa6041f63d58ec3307eea4284253af5c7a7f290a34ccd233ac3e",
+      "bytes": 488767
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=4",
-      "sha256": "f68f01d4f37607dd17432c02bd18da2ed7e506c04a187c3ee97260e014aa9ead",
-      "bytes": 488955
+      "sha256": "9900ab9a0eccf0a3586ce6c05fcc9064cb31775f73ba1c6517833135cd9189a0",
+      "bytes": 488821
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=5",
-      "sha256": "21e6e88cdf1100262704be1e4c0faba7dc2b2ef400233bdb7ce9fa20afdf3ea7",
-      "bytes": 487466
+      "sha256": "4592f37d5a3eb8a14d7db885b9000bed3cbcc14b3211a2a24bc0f83de6fee48d",
+      "bytes": 487255
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=6",
-      "sha256": "d20617927e70dada513e017fdb4a32dff0bf84e959f9b0eb584ff9bd353ea119",
-      "bytes": 484167
+      "sha256": "afac11711b61d6e002975e820d9d7f73dfdb602e21a59c2ad2d2048ba8402636",
+      "bytes": 484355
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=7",
-      "sha256": "da0cd1fce535f41ee6328d7807c48b88923fa45c439cde6763489f7c61ee3330",
-      "bytes": 483251
+      "sha256": "15a71d70bb73c4660d3a1262e5679c8b7bbecae9fe02019c94ff0b7a7e0ad123",
+      "bytes": 483167
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=8",
-      "sha256": "858edb00d6e10186204c9c1ccdd40df6fa8ceb2e15cc580a40396195e1e67409",
-      "bytes": 482053
+      "sha256": "5598a517fc355c37ba17f40e4b8d3d15bc05421223a434c9db3a849c71581c6f",
+      "bytes": 481944
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=9",
-      "sha256": "bae6d099ade32c700d04707738f0d9e164010c3542535dab17342baf1f153a10",
-      "bytes": 481047
+      "sha256": "b7f49a1745d01e5bcbf868a2004287792148acfe51d9cea7004a94830807e1cc",
+      "bytes": 481025
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=10",
-      "sha256": "796f03544f600096fa1c7d5c79ebf4b621e8a00dc042cc8cd8f974b00fc0f3f8",
-      "bytes": 481336
+      "sha256": "18360d18ef801b3fb57538a5a3712c1f8348ed4823e6e91c763c89c17199a75e",
+      "bytes": 481357
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=11",
-      "sha256": "ca0b70805ba7b066c6eead74a20b87ddfc0a5765af06f3dae9841c4f51fc8474",
-      "bytes": 481688
+      "sha256": "d1b81c71b97398cbfe871c05c1075b52f0be141d7c5139244424cca9c3ffbce4",
+      "bytes": 481666
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=12",
-      "sha256": "286537cb930a005e49278397df1484c608aaf9d0c955a7e27a8555b1eda0e8b7",
-      "bytes": 481984
+      "sha256": "0340f76cd4d26a700cbe3c7445629b4d1540ac92f11274ba5799652c03ca3eec",
+      "bytes": 482010
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=13",
-      "sha256": "b3cee26e8f668a3bddd9316f7c59422840c0f8e27784e90433674b14664d7ee0",
-      "bytes": 481818
+      "sha256": "fa54a95f42ad47e751e9eb21d15682c8643ba6d131a45213ac7da464928fea59",
+      "bytes": 481816
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=14",
-      "sha256": "da8283d7de88cde27e04531f7ad637548dd2eecd0cc569aeddc5c52cbb83837a",
-      "bytes": 481891
+      "sha256": "9b7c025cc8ac0538b13e26fef674811702b59dbc8b3b95a9580747eef89da17e",
+      "bytes": 481907
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=15",
-      "sha256": "53dec75b9e3d76d5cc5adb350adad911b224fe857c36290b68fe667018ad6ca7",
-      "bytes": 482260
+      "sha256": "3e888d3c8ce375446933f75a276f615e8e1e818ee1121eb23cb0ae0d8150f2b8",
+      "bytes": 482283
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=16",
-      "sha256": "cdb91c62b8d0fb567acc11130e972722b986b888ca8b8b9209e63e20984b4b62",
-      "bytes": 482684
+      "sha256": "2c161bb31282807413270e0d8bf3ad11fde67865f22d543ac25d1151603a7dde",
+      "bytes": 482650
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=17",
-      "sha256": "8317f8aa8a79e7b505bcfc9fc661c94c7868a40f5b36000a0b093c12142f732f",
-      "bytes": 481920
+      "sha256": "532201bd2801a856b143cd008f3bd54ccc9d086efe71547c51ac4591db64706d",
+      "bytes": 481942
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=18",
-      "sha256": "aabf7ae79c3b07406d68a007573499b7da29e63524092fcf5a09e6da30515e5c",
-      "bytes": 481882
+      "sha256": "d0764a852a61d0e64b432acc8246826da0abb7c6d560faf8335a86189a3cd0c6",
+      "bytes": 481972
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=19",
-      "sha256": "9300c74833f9249f5b8c3329888f3aee1a753c4a44389e7719148a8854ba1bdb",
-      "bytes": 482742
+      "sha256": "a69a582a045737763f915013b2c2edf8f370915ad6d39fddf7ac8d3088c863ee",
+      "bytes": 482664
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=20",
-      "sha256": "266f3137ff79056e79029fa7b03ff8f155618161a8676758b38b895eb9578818",
-      "bytes": 482976
+      "sha256": "3c79f1290f5590416bca4abdffb35db845a48148ee10834ca0d7417161c30f63",
+      "bytes": 482979
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=21",
-      "sha256": "4581f75adb75295ef8f607e8ddbe55e2644bdf9eb8ff64bf50a74ddb7642412c",
-      "bytes": 482322
+      "sha256": "48e209996fef6871cf11fe788f445bc6fa15e3fc1740ecc5be66463685e6aef2",
+      "bytes": 482310
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-rent/commercial?page=22",
-      "sha256": "906fdab6ec0bb5083f0e983b4e80116206c183a6c032060c4986719eb8af00b4",
-      "bytes": 399580
+      "sha256": "4df5251c9dde76e07a1650f2646d1def3b347c8763c56f86d45d223db853adeb",
+      "bytes": 392663
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial",
-      "sha256": "5a08b9f5f0ac783507f2590e2af6323c6660e2126758e7e6f64c38db2e381626",
-      "bytes": 495790
+      "sha256": "b3fad9d256da277c4a0acab0b047571bdffc847eed2efa57025be82360e5b973",
+      "bytes": 495716
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=2",
-      "sha256": "c4fa81de61fcd6c88ae57b23c57e8ce5ab49058780c8695fafa06ef6c18d1814",
-      "bytes": 498005
+      "sha256": "e091e59ae39528ea09f11f77271f75660c3e9d72b55148705e86a4a3297ab344",
+      "bytes": 498222
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=3",
-      "sha256": "b4fef41ea47f11fb948f1a12f6f970301be71275b4d0d5658ef1569b06205f99",
-      "bytes": 499146
+      "sha256": "3698b7bc07f8918f46d8108ce4f5b24e04b31206638ea59d01a10f0a71eb408a",
+      "bytes": 499194
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=4",
-      "sha256": "a1cbb30358a736498d6bb7372c4576d1e08f1bb21d2edf7ef6aef24893f7abd4",
-      "bytes": 499639
+      "sha256": "806d14071bfc39f97f29de3372f8a6d2d6a87b063e9d390f1deca6cde0637fec",
+      "bytes": 499600
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=5",
-      "sha256": "7238411dffbefa1e5d761f24e5384f3ae3182407bfee8f550752bfe8fae9fd5c",
-      "bytes": 498749
+      "sha256": "bd0327eab4717eb346138bdb3535299784067c623440abac25a7db290c8396ce",
+      "bytes": 498471
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=6",
-      "sha256": "2b590e3625db13444385343cca39ec68f10a3ffec26007a90cff146ff3d24c91",
-      "bytes": 494034
+      "sha256": "ae0160bdb17a57444e7aa3cb70b41aa15acaa476c0821830bd356b768cb2bf2b",
+      "bytes": 493978
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=7",
-      "sha256": "edfb20e506668becf63f59426f5b0768aa83b97d05f41e607d6388db19fcdf61",
-      "bytes": 492730
+      "sha256": "2095e452c1515769ad70d3b5e69857fd1dc312d84c19963078c2b319e3695873",
+      "bytes": 492630
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=8",
-      "sha256": "d3d422f7bcf37ac8f086a2d3bc8af8dc9170128edc815c47360acc10959d26e5",
-      "bytes": 490475
+      "sha256": "d2b7dde2db9b45f61f17c30ea84e45bda078f538621b337991e217f3924bd067",
+      "bytes": 490537
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=9",
-      "sha256": "c0117c4588793dd5d33e355d7b35b40f144f2087396c08a694dfe2c7bbc28944",
-      "bytes": 490901
+      "sha256": "6988eaf011f87aa4479581fbc1cc96b0222f56bddc1f366ca22dea2fc1e11ebc",
+      "bytes": 490896
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=10",
-      "sha256": "a76a83549cebc04e42094bd720d50cb8eb25e8056df4e40d73d513efcce874d0",
-      "bytes": 490852
+      "sha256": "5df60348f6b27c5c0f9c3eb2d030175f6561e0218366c92ba597ea18922c94d2",
+      "bytes": 490791
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=11",
-      "sha256": "886a0675e34727ab082a10e9c59647810504d74d0b86811d804f168028ca34eb",
-      "bytes": 492462
+      "sha256": "2773c606d312844879891ea1d7f282a348ee4c73cc3e88de4031d60a3cfc77d1",
+      "bytes": 492475
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=12",
-      "sha256": "ca4294bad2023cb44d898696bb26a89bc9d1862c1b4431b53e85ee48b7241c09",
-      "bytes": 492062
+      "sha256": "453aeb23706da1793e315d108090d550959b14972b5496008c9397282aa480a1",
+      "bytes": 492157
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=13",
-      "sha256": "540f8cd1e29ab17e2e8d503e5a6fb461073cfb39621cbc9368222fc3ba3f721d",
-      "bytes": 493463
+      "sha256": "5fb52bf6bc6c67951bb45eeb28b46cbf04ced561e608a30708562c725c54a003",
+      "bytes": 493419
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=14",
-      "sha256": "da61ec3952d0e4915ef8d43fb4155caf87fddcf22b07d858e52d2fedf2243d79",
-      "bytes": 492890
+      "sha256": "68e7787f5ab561d19bb630d6f5ca5597c2fb76582a3160c620d34aa80fa60f1a",
+      "bytes": 492908
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=15",
-      "sha256": "024d8689cea4b88b5db7bdf14dead6f5b6d53949217e16fe82cfaa9a970ccf08",
-      "bytes": 492436
+      "sha256": "b5088e110068cb81328afe39ed138ee8421fe8e1cb787770bf37f0361550dc5f",
+      "bytes": 492576
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=16",
-      "sha256": "1f6eb29ad413ddb8d4b85489e7acf5e99d481ab135725b8aee94eabed7259faf",
-      "bytes": 493868
+      "sha256": "3691902300775c38e3fdf9a531a7731b0f45937e8dfeefb2a17bc4b9b832961b",
+      "bytes": 493769
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=17",
-      "sha256": "7b4e700d268c3c7b5129eba670f0d681563bfb79807a932bc0deb9525329894a",
-      "bytes": 492964
+      "sha256": "fcf5fe83434f214ffc49c3250af4a6512302c77b973a81eefd0fef2fffa4f23b",
+      "bytes": 492898
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=18",
-      "sha256": "43937a96ce210149aab01fa0bd3eb147f37154217756143fa81205ad5c3f28a5",
-      "bytes": 492149
+      "sha256": "080fa8b6fd50b91a0bb93c756489c857df8cb01665192febc4458a06d2e6c737",
+      "bytes": 492204
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=19",
-      "sha256": "b28db831cb4bb343c91b6230e226f05acc03aa2ac8f989fce6806c5f4fb981c7",
-      "bytes": 494173
+      "sha256": "55696850122ef126afbac4c146b047b1ec5e347f40d9e78a0e0a34e86742584f",
+      "bytes": 494159
     },
     {
       "pass": "first",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=20",
-      "sha256": "5a9111eb5c08e6fb5228bef6defb1c0f601947ff55d80e349efdc63282ad1d2c",
-      "bytes": 430772
+      "sha256": "5191eb2abe7d1891639be997f1b1324e3f76d4fa105222ba5a527943f37e4bb8",
+      "bytes": 423893
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial",
-      "sha256": "2816608f147ad8e125ce93202b555bd49e64d642cb7ae967fb39418d1aabb228",
-      "bytes": 495790
+      "sha256": "3acb2cc9b23420b9a56ff185dc74b2ffc177d69adb1ff123dc0a257b3acde36f",
+      "bytes": 495720
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=2",
-      "sha256": "acc3aa3f3dee80eb627071f73d6c859633f74d1ee5ad0adacd6a2a94fad16ab7",
-      "bytes": 497995
+      "sha256": "364f6347c5121306a3ec2be7b3928d583939a91a12fbd207e4799a0b994b73b0",
+      "bytes": 498206
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=3",
-      "sha256": "f4ac5a44502665f173c66529c58f056db9411ed246354b425986728eb688941e",
-      "bytes": 499164
+      "sha256": "26d2c4f07142229e574f197f61d07f2aac364afe37fdfdf624cf10fc80be9851",
+      "bytes": 499190
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=4",
-      "sha256": "9132026e98a3ee8cb0bb0078777abba767bbcc8ebe96f7e8cdfb099f2aa51ae8",
-      "bytes": 499643
+      "sha256": "068e04ef1a50bf3ec0867b50c6cc8f5333a51899860cc34a6c4e7a2cfb541704",
+      "bytes": 499604
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=5",
-      "sha256": "0f22adbd39a4bbdcc665b56961e36351b798246450facc7af5db87d2861414ab",
-      "bytes": 498745
+      "sha256": "e7e20c7c0616bc7c51d357bd3ee0fc65806b85b62a9f61beb04a8db1410b1064",
+      "bytes": 498479
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=6",
-      "sha256": "ddfaf05f5d0bc6e49ef5ef2f8ae1971c85d718db0f819ad9ddc0dfeea00304f7",
-      "bytes": 494024
+      "sha256": "969f7043cf8c9208feab7f535a7349b2bed72edc64625741ca93106cbcc16496",
+      "bytes": 493988
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=7",
-      "sha256": "26c9abb1deeef67dea5a0ef0a9d42743ce61c6552219257b7502cfbc1678d864",
-      "bytes": 492730
+      "sha256": "bb1e442b2b0b05c9cb742704cd157175571d2a12f39b7f7b91e00f6bd5128055",
+      "bytes": 492632
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=8",
-      "sha256": "280308eca1f38a7e597c9f188ab562f6561af27cd2ff475b3f8db866ea91c2fd",
-      "bytes": 490487
+      "sha256": "b2f838074d0d418f21ed051641d91d1a0d0d018a00988db6b74cb32acbe6eea7",
+      "bytes": 490535
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=9",
-      "sha256": "90700ea711b433dc3499767dd1ffa69871b17ec1ff146629eeabd28a830a804f",
-      "bytes": 490907
+      "sha256": "3968db332d8f619bfcfe819d83b5a1817a3ae56190a7e6485372333a3e1e1b75",
+      "bytes": 490894
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=10",
-      "sha256": "614502855939e550c5e7ab62b250b7dd57e9fb494ad255cb161636d6b26d55e9",
-      "bytes": 490854
+      "sha256": "c6ec29c118e06c7c6c5331013dd601dd99c4a7e3577986d975976d883b02d09b",
+      "bytes": 490779
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=11",
-      "sha256": "24d1029f44bc95ccb3990621d325cafd71fb9a93fb135d45cb32c4112bcfa8ac",
-      "bytes": 492458
+      "sha256": "74d62a874821b1ab0824c8980d59eb0d6abb29487d46f53250e2f9153fdb484b",
+      "bytes": 492467
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=12",
-      "sha256": "0b5767ea2150833ead1d681721b3615c666157bee3484ac4caff4bf64cc10947",
-      "bytes": 492068
+      "sha256": "916316cfbf396542c979479377d9db5ef5503c6cf1270544396f2e78f422b2b6",
+      "bytes": 492153
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=13",
-      "sha256": "846404284e0abc26b4f52718ae8a26c9a690116b8d46d37c80674671df225ecc",
-      "bytes": 493463
+      "sha256": "8e4a0ea848fa25cae035249d0cd7a1fd0ca4dc369d3775dbe32c6ef0f63b3e34",
+      "bytes": 493415
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=14",
-      "sha256": "17cf7359381f194d192f4972b831bf4c09182363724537581e7e335b8e237268",
-      "bytes": 492892
+      "sha256": "54fc1b6a42d931f0e7f1341ec73dd69d86c059a14132a350ad3fe002d37a6c20",
+      "bytes": 492922
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=15",
-      "sha256": "b4d4f1fe161b9cc72331e06b2741a92456de3be46f9536016789b86b3fa4c647",
-      "bytes": 492432
+      "sha256": "b7f666487ad74bf2a1b758640cb90f10229652486dd26522c33f916bcd6dffa2",
+      "bytes": 492574
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=16",
-      "sha256": "92d0278eef5a84d06d2b6a67d975f0aa33226a7631e804358678a5859f5c130d",
-      "bytes": 493874
+      "sha256": "67e471e334d9792b80841c8adf1cdd4304f8f78bba66cdb7e6b29b2fc1587cee",
+      "bytes": 493761
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=17",
-      "sha256": "974f5adf538bdfc78676ead979baddc2662e87753cb9266e49bbceb37ed8be76",
-      "bytes": 492964
+      "sha256": "efc2e26dca9d7d5d9c6a021599131c7da4bd3ae28ec5cf43765bcd93c64e8c75",
+      "bytes": 492900
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=18",
-      "sha256": "f398d570bb27a24a8182dfe9c52164f08446cae7449761850b56d798ae37924d",
-      "bytes": 492155
+      "sha256": "6dcf9994a188823c4cd4f709acb0c3a70eac78d720910df390ad727d64acea7d",
+      "bytes": 492208
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=19",
-      "sha256": "cf80d9770fde56a806384d3eaec768cc24a4fed87684df24968f95f13958e7a7",
-      "bytes": 494173
+      "sha256": "c2c26746cbe7ce6700fa5885a96d464653d094af4a1ba5228a8b269ed9a399d7",
+      "bytes": 494159
     },
     {
       "pass": "second",
       "url": "https://www.rgestate.com/property-for-sale/commercial?page=20",
-      "sha256": "a3dba681097798f9a92ecc87dae120e0052751d2a5cdb78b511246373ab69b54",
-      "bytes": 430760
+      "sha256": "97a41641b9189461b251e1554137818f89b0bf9bcded718a7de40c641021d5b7",
+      "bytes": 423893
     }
   ],
   "verification": "Two independent full-index and category reads matched facts; every category row matched the full index and all captured HTML page checksums were verified.",
