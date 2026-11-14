@@ -81,6 +81,7 @@ worker_default.fetch=async function(request,env,ctx){
  const dubaiFlat=await mapDubaiFlatSales(request,UAE_DUBAI_FLAT_REPORT,UAE_DUBAI_FLAT_PACKED);if(dubaiFlat)return mapStackPreparedResponse(request,dubaiFlat);
  const dubaiEjari=mapDubaiEjariRents(request,UAE_DUBAI_EJARI_REPORT,UAE_DUBAI_EJARI_DATA);if(dubaiEjari)return mapStackPreparedResponse(request,dubaiEjari);
  const fujairahPermits=mapFujairahBuildingPermits(request,UAE_FUJAIRAH_PERMITS_REPORT,UAE_FUJAIRAH_PERMITS_DATA);if(fujairahPermits)return mapStackPreparedResponse(request,fujairahPermits);
+ const fujairahMonthly=mapFujairahMonthlyPermits(request,UAE_FUJAIRAH_MONTHLY_REPORT,UAE_FUJAIRAH_MONTHLY_DATA,UAE_IDRIVE_STORAGE_INVENTORY.replicas.fujairahMonthly);if(fujairahMonthly)return mapStackPreparedResponse(request,fujairahMonthly);
  const uaqIndustrialGuide=mapUaqIndustrialGuide(request,UAE_UAQ_INDUSTRIAL_GUIDE_REPORT,UAE_UAQ_INDUSTRIAL_GUIDE_DATA);if(uaqIndustrialGuide)return mapStackPreparedResponse(request,uaqIndustrialGuide);
  const adrecMarket=mapAbuDhabiReportedMarket(request,UAE_ADREC_MARKET_REPORT,UAE_ADREC_MARKET_DATA);if(adrecMarket)return mapStackPreparedResponse(request,adrecMarket);
  const adBuildingUses=await mapAbuDhabiBuildingUses(request,UAE_ABU_DHABI_BUILDING_USE_REPORT,UAE_ABU_DHABI_BUILDING_USE_PACKED);if(adBuildingUses)return mapStackPreparedResponse(request,adBuildingUses);

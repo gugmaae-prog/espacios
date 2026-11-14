@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v46",
+  "version": "20261114-uae-evidence-coverage-v47",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -636,6 +636,63 @@
           "notTransactions": true,
           "notAvailableUnits": true,
           "sourceSha256": "0c932c4baf574d6df38daa75543f0d7227aae8073e38b88ab3eb39345a5462ac"
+        },
+        {
+          "id": "fscfuj-construction-chapter-monthly-permits-2023-2025-20261114",
+          "route": "/map/api/uae-evidence/fujairah/building-permits-monthly",
+          "sourceRows": 72,
+          "grain": "municipality-calendar-month total and combined new/renew issued permit counts",
+          "sourceVintage": "2023–2025",
+          "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+          "rights": "Only monthly total and combined new/renew permit counts plus source links; other source-table columns, chapter text, images and layout are excluded.",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "sourcePdfs": [
+            {
+              "year": 2023,
+              "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1045/Chapter2ConstructionandBuilding.pdf",
+              "sha256": "7182e94f918f81e1c0b28795aac4d3890974efe836b4974b1facceffb35b6cb7",
+              "publicationPageNumbers": [
+                47,
+                48
+              ],
+              "pdfPageNumbers": [
+                4,
+                5
+              ]
+            },
+            {
+              "year": 2024,
+              "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+              "sha256": "fdb36502f4956eb5de20d9d851e79372ef9cd7ce6730b7737b5ce5e0c091ff78",
+              "publicationPageNumbers": [
+                47,
+                48
+              ],
+              "pdfPageNumbers": [
+                4,
+                5
+              ]
+            },
+            {
+              "year": 2025,
+              "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+              "sha256": "e8a4ed335e435a6c0460c0dcb395a85fab64113b2dc080aca9414bd1863f4721",
+              "publicationPageNumbers": [
+                47,
+                48
+              ],
+              "pdfPageNumbers": [
+                4,
+                5
+              ]
+            }
+          ],
+          "notCommercialUseAtMonthlyGrain": true,
+          "notCompletedBuildings": true,
+          "notProjectRegister": true,
+          "notTransactions": true,
+          "notAvailableUnits": true,
+          "sourceSha256": "5f4f25214e5fdcca0864aa064d1d533bd331b8eba1f3368c18f208ea5ef739bf"
         }
       ],
       "publisherListingSnapshot": {
@@ -657,7 +714,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Published municipal permit counts are not a project register, unit inventory, transaction history, or verified project-site coordinate source. No reusable bulk project register established."
+        "Published annual and 2023–2025 selected monthly permit counts are authorizations, not a project register, unit inventory, transaction history, commercial-use monthly breakdown, or verified project-site coordinate source. No reusable bulk project register established."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -957,6 +1014,7 @@
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
     "sharjahMonthly": "7352a7cd9a740758c00e0901643c55b5d783e5c5e15f0d14e2328f585f1afbec",
+    "fujairahMonthly": "11beab1eb2c7b51c506dc56d1039d3703854954a15a436cb7a1bbe8b31d8eb8a",
     "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f",
     "dmBuildingCards": "d8bc1520b7d107c85c9a9ece8226540677efec7573776f5a4b7b1590e00fccc3",
     "dmMunicipalProjects": "79c90a696a8280afa10119b603bdf0852769b2eb2b47edda44a884d6e0ba1787"
