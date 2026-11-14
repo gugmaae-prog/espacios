@@ -7,6 +7,10 @@ const dubaiHex=bytes=>Array.from(new Uint8Array(bytes),x=>x.toString(16).padStar
 const dubaiDigest=async bytes=>dubaiHex(await crypto.subtle.digest('SHA-256',bytes));
 const dubaiInt=(value,min,max)=>/^\d+$/.test(value||'')&&Number.isSafeInteger(Number(value))&&Number(value)>=min&&Number(value)<=max?Number(value):null;
 const dubaiReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'continental-dld-mashrooi-project-status-20261114',...(status===405?{allow:'GET, HEAD'}:{})}});
+const dubaiStatusReplica=id=>{
+ const replica=typeof UAE_CURRENT_IDRIVE_REPLICA==='object'?UAE_CURRENT_IDRIVE_REPLICA:null;
+ return replica?.sourceIds?.includes(id)?{verifiedAt:replica.verifiedAt,attestationId:replica.attestationId,role:replica.storageRole}:null;
+};
 
 export function parseDubaiStatusCsv(text){
  const rows=[];let row=[],field='',quoted=false;
@@ -76,7 +80,7 @@ export async function mapDubaiProjectStatus(request,report,packed,crosswalk=null
  const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'');
  if(path!==DUBAI_STATUS_BASE&&!(path.startsWith(DUBAI_STATUS_BASE+'/')&&/^\d+$/.test(path.slice(DUBAI_STATUS_BASE.length+1))))return null;
  if(!['GET','HEAD'].includes(request.method))return dubaiReply(request,{error:'Read-only endpoint'},405);
- const source={id:report?.sourceId,originator:report?.originator,republisher:report?.republisher,title:report?.title,sourcePageUrl:report?.sourcePageUrl,sourceCsvUrl:report?.sourceCsvUrl,originatorPageUrl:report?.originatorPageUrl,license:report?.license,attribution:report?.attribution,sourcePublicationDate:report?.sourcePublicationDate,retrievedAt:report?.retrievedAt,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rowCount:report?.rowCount,distinctProjectNumbers:report?.distinctProjectNumbers,actualCsvFieldCount:report?.actualCsvFieldCount,sourcePageClaimedFieldCount:report?.sourcePageClaimedFieldCount,sourcePageClaimedRowCount:report?.sourcePageClaimedRowCount,sourcePageMetaProjectCount:report?.sourcePageMetaProjectCount,storage:'checksum_verified_immutable_worker_snapshot'};
+ const source={id:report?.sourceId,originator:report?.originator,republisher:report?.republisher,title:report?.title,sourcePageUrl:report?.sourcePageUrl,sourceCsvUrl:report?.sourceCsvUrl,originatorPageUrl:report?.originatorPageUrl,license:report?.license,attribution:report?.attribution,sourcePublicationDate:report?.sourcePublicationDate,retrievedAt:report?.retrievedAt,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rowCount:report?.rowCount,distinctProjectNumbers:report?.distinctProjectNumbers,actualCsvFieldCount:report?.actualCsvFieldCount,sourcePageClaimedFieldCount:report?.sourcePageClaimedFieldCount,sourcePageClaimedRowCount:report?.sourcePageClaimedRowCount,sourcePageMetaProjectCount:report?.sourcePageMetaProjectCount,storage:'checksum_verified_immutable_worker_snapshot',idriveReplica:dubaiStatusReplica(report?.sourceId)};
  try{
   const sourceRows=await dubaiRows(report,packed);
   const links=new Map();

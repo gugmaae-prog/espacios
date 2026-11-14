@@ -3,6 +3,7 @@ import {gunzipSync,gzipSync} from 'node:zlib';
 import {validateCatalogueRevisions} from './validate-catalogue-revisions.mjs';
 import {normalizeDubaiStatusCsv} from '../src/stack-audit/dubai-project-status.mjs';
 import {loadDubaiIdriveReplica} from './idrive-dubai-upload/verify-attestation.mjs';
+import {verifyAttestation as verifyCurrentIdriveReplica} from './idrive-current-evidence-upload/transfer.mjs';
 const root=new URL('../',import.meta.url),release='20260930-smart-estimates-v1',read=p=>fs.readFile(new URL(p,root),'utf8');
 const baseline=await read('src/baseline/worker-20260930.js');if(createHash('sha256').update(baseline).digest('hex')!=='b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06')throw Error('Acquired live baseline changed');
 const core=await read('src/smart-estimates/core.mjs');const app='\nconst SECore=(()=>{\n'+core.replace(/^export /gm,'')+'\nreturn {derivePriceScenario,calculateROI,combineROI};})();\n'+await read('src/smart-estimates/app.js');
@@ -131,7 +132,9 @@ const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','
 const archiveManifest=JSON.parse(await read('data/recovery/static-archive-manifest.json'));
 const nativeIndexManifest=JSON.parse(await read('data/recovery/v48-native-history-index.manifest.json'));delete nativeIndexManifest.localPath;
 const inventoryManifest=JSON.parse(await read('data/recovery/full-item-inventory.manifest.json'));delete inventoryManifest.sourceShards;
+const currentIdriveReplica=await verifyCurrentIdriveReplica();
 let stackSource='\nvar MAP_STACK_SOURCE_COMMIT='+JSON.stringify(process.env.MAP_SOURCE_COMMIT||'local-candidate')+';\n';
+stackSource+='\nvar UAE_CURRENT_IDRIVE_REPLICA='+JSON.stringify(currentIdriveReplica)+';\n';
 const digest=value=>createHash('sha256').update(value).digest('hex');
 const coverageReport=JSON.parse(await read('data/uae-evidence/coverage-validation.json'));
 const rgeReport=JSON.parse(await read('data/uae-evidence/rgestate/commercial-listings-validation.json'));

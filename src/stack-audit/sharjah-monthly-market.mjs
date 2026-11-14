@@ -1,4 +1,8 @@
 const SHARJAH_MONTHLY_PATH='/map/api/uae-evidence/sharjah/monthly-market';
+const sharjahMonthlyReplica=id=>{
+ const replica=typeof UAE_CURRENT_IDRIVE_REPLICA==='object'?UAE_CURRENT_IDRIVE_REPLICA:null;
+ return replica?.sourceIds?.includes(id)?{verifiedAt:replica.verifiedAt,attestationId:replica.attestationId,role:replica.storageRole}:null;
+};
 
 export function mapSharjahMonthlyMarket(request,report,data){
  const url=new URL(request.url);
@@ -9,5 +13,5 @@ export function mapSharjahMonthlyMarket(request,report,data){
  const month=url.searchParams.get('month');
  if(month&&!data.observations.some(row=>row.month===month))return reply({error:'This month is not in the verified partial series.',availableMonths:data.observations.map(row=>row.month),missingMonths:data.missingMonths,incompleteMonths:data.incompleteMonths},400);
  const observations=month?data.observations.filter(row=>row.month===month):data.observations;
- return reply({source:{id:report.sourceId,authority:data.authority,publication:data.publication,evidenceClass:data.evidenceClass,grain:data.grain,sourceMethod:data.sourceMethod,dataSha256:report.dataSha256,rightsScope:report.rightsScope},scope:{emirate:data.emirate,period:data.period,months:observations.map(row=>row.month),missingMonths:data.missingMonths,incompleteMonths:data.incompleteMonths,partial:true,transactionLevel:false,commercialOnly:false,currentAvailability:false,sourceLinks:observations.map(row=>({month:row.month,sourceUrl:row.sourceUrl})),limits:data.limits},observations});
+ return reply({source:{id:report.sourceId,authority:data.authority,publication:data.publication,evidenceClass:data.evidenceClass,grain:data.grain,sourceMethod:data.sourceMethod,dataSha256:report.dataSha256,rightsScope:report.rightsScope,storage:'checksum_verified_immutable_worker_snapshot',idriveReplica:sharjahMonthlyReplica(report.sourceId)},scope:{emirate:data.emirate,period:data.period,months:observations.map(row=>row.month),missingMonths:data.missingMonths,incompleteMonths:data.incompleteMonths,partial:true,transactionLevel:false,commercialOnly:false,currentAvailability:false,sourceLinks:observations.map(row=>({month:row.month,sourceUrl:row.sourceUrl})),limits:data.limits},observations});
 }

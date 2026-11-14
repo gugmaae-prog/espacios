@@ -16,4 +16,4 @@ Of the existing rows, 535 have a different `land_number` display. This field oft
 
 The publisher page's prose says **3,883 rows and 16 fields**. Its metadata says **3,882 projects**, and the downloaded CSV has **3,882 rows and 14 fields**. The API reports the actual CSV population and exposes the page claims separately. This mismatch remains unresolved.
 
-The new source is served from a checksum-verified Worker snapshot. It has **not** been copied to IDrive E2. The accepted V48 archive remains IDrive-primary, and the separate Dubai Municipality snapshots retain their verified IDrive replicas. R2 remains disabled.
+At the v71 release, the new source was served from a checksum-verified Worker snapshot and had **not** been copied to IDrive E2. The [subsequent v72 replica](uae-current-idrive-replica-v72-20261114.md) copied and independently read back its source and normalized snapshot without changing the runtime primary. The accepted V48 archive remains IDrive-primary, and the separate Dubai Municipality snapshots retain their verified IDrive replicas. R2 remains disabled.
