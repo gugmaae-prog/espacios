@@ -1,5 +1,5 @@
 {
-  "version": "20261111-uae-evidence-coverage-v38",
+  "version": "20261114-uae-evidence-coverage-v39",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -480,6 +480,25 @@
           "notCurrentAvailability": true,
           "notForecast": true,
           "sourceSha256": "e83261cc208ed14c694aad70af8b89dc9eb0a4bcc4cfa3a8d0d0ad67ed51c248"
+        },
+        {
+          "id": "dm-building-summary-information-20261026",
+          "route": "/map/api/uae-evidence/dubai/building-cards",
+          "sourceRows": 536946,
+          "grain": "building_id permit-system card; all 38 publisher fields preserved",
+          "sourceVintage": "portal last updated 2026-10-26; captured 2026-11-11",
+          "sourceUrl": "https://data.dubai/en/l/459523",
+          "rights": "Dubai Municipality open data and Data.Dubai Open Data License displayed; attribution required. Dataset metadata says License Not Specified.",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "storage": "checksum_verified_immutable_worker_assets",
+          "idriveReplicaVerified": false,
+          "sourceSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798",
+          "manifestSha256": "934b2a485e3fc21f71eb60f828afdc1e85f8cb2a048e6e0f0fc68d3d2fc8208c",
+          "missingCompletionDateRows": 343489,
+          "coordinatesPresent": false,
+          "notVerifiedStandingStock": true,
+          "notAvailableUnits": true,
+          "notTransactions": true
         }
       ],
       "publisherListingSnapshot": {
@@ -503,7 +522,7 @@
       "gaps": [
         "The primary DLD project-register raw vintage is not retained; the published status copy is secondary.",
         "Most source project IDs remain separate from V48 identities.",
-        "The historical building counts stop at 2019; 403 ambiguous export rows are withheld and these counts do not identify available commercial spaces.",
+        "The historical published building-count series stops at 2019; 403 ambiguous export rows remain withheld. A separate 2026 Dubai Municipality permit-system snapshot has 536,946 building cards, but does not verify standing completed stock, building coordinates, available spaces, sales, or rents.",
         "The licensed historical commercial-unit sales snapshot covers 2006–2025. The 2026 Office/Shop subtype series runs through October, but 4,319 rows have a conflicting Residential usage label and need source verification. It is partial-year registered sale evidence, not asking inventory or available spaces. A separate 2026 residential Flat sale aggregate covers January–October only; it contains no unit coordinates, rents or forecasts. A separate licensed Ejari rent aggregate covers 102 publisher communities and 418 bedroom rows, but its source CSV does not encode property class or exact observation dates; renewals are included and Palm Jabal Ali has no registered rent contracts in that snapshot."
       ],
       "authoritativeAllProjectDenominator": null
@@ -848,6 +867,7 @@
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
     "sharjahMonthly": "db0c65a35b7d38364936e3062b10c4b5ea14e7bbc7b42fda872cb36bad2f24fb",
-    "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f"
+    "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f",
+    "dmBuildingCards": "d8bc1520b7d107c85c9a9ece8226540677efec7573776f5a4b7b1590e00fccc3"
   }
 }

@@ -3,6 +3,7 @@ node_modules/
 .DS_Store
 *.log
 coverage/
+/work/
 
 # This repository is public. Runtime credentials stay in secret stores.
 .env

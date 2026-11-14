@@ -74,6 +74,7 @@ worker_default.fetch=async function(request,env,ctx){
  const rakCommercial=mapRakCommercialHistory(request,UAE_RAK_COMMERCIAL_REPORT,UAE_RAK_COMMERCIAL_DATA);if(rakCommercial)return mapStackPreparedResponse(request,rakCommercial);
  const rakPermits=mapRakBuildingPermits(request,UAE_RAK_PERMITS_REPORT,UAE_RAK_PERMITS_DATA);if(rakPermits)return mapStackPreparedResponse(request,rakPermits);
  const dubaiStock=mapDubaiBuildingStock(request,UAE_DUBAI_BUILDING_STOCK_REPORT,UAE_DUBAI_BUILDING_STOCK_DATA);if(dubaiStock)return mapStackPreparedResponse(request,dubaiStock);
+ const dubaiBuildingCards=await mapDubaiBuildingCards(request,UAE_DUBAI_BUILDING_CARDS_MANIFEST,env.MAP_ARCHIVE);if(dubaiBuildingCards)return mapStackPreparedResponse(request,dubaiBuildingCards);
  const dubaiCommercial=await mapDubaiCommercialSales(request,UAE_DUBAI_COMMERCIAL_REPORT,UAE_DUBAI_COMMERCIAL_PACKED,UAE_DUBAI_COMMERCIAL_PARTIAL_REPORT,UAE_DUBAI_COMMERCIAL_PARTIAL_PACKED,RGE_AREA_CENTRES,UAE_DUBAI_COMMERCIAL_SUBTYPE_REPORT,UAE_DUBAI_COMMERCIAL_SUBTYPE_PACKED);if(dubaiCommercial)return mapStackPreparedResponse(request,dubaiCommercial);
  const dubaiFlat=await mapDubaiFlatSales(request,UAE_DUBAI_FLAT_REPORT,UAE_DUBAI_FLAT_PACKED);if(dubaiFlat)return mapStackPreparedResponse(request,dubaiFlat);
  const dubaiEjari=mapDubaiEjariRents(request,UAE_DUBAI_EJARI_REPORT,UAE_DUBAI_EJARI_DATA);if(dubaiEjari)return mapStackPreparedResponse(request,dubaiEjari);
