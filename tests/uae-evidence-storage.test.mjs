@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadUaeIdriveStorage} from '../scripts/verify-uae-idrive-storage.mjs';
 import {mapUaeEvidenceStorage} from '../src/stack-audit/uae-evidence-storage.mjs';
+import worker from '../src/worker.js';
 
 test('all 42 published projections have source-matched, dated IDrive readback attestations',async()=>{
  const inventory=await loadUaeIdriveStorage();
@@ -22,6 +23,14 @@ test('all 42 published projections have source-matched, dated IDrive readback at
  assert.equal(inventory.publisherListingInventory.replicaAttestationId,'rgestate-20261114-idrive-e2-readback');
 });
 
+test('compiled Worker keeps the federal source in emirate-filtered storage results',async()=>{
+ const response=await worker.fetch(new Request('https://espacios.me/map/api/uae-evidence/storage?emirate=Dubai'),{DATA_ROOM_PUBLIC:'false',MAP_VERSION:{id:'storage-filter-test'}},{});
+ assert.equal(response.status,200);
+ const body=await response.json();
+ assert.equal(body.sources.length,10);
+ assert.equal(body.sources.filter(source=>source.geographicScope==='all_seven_emirates').length,1);
+});
+
 test('storage endpoint filters the attested inventory and keeps the archive proof scoped',async()=>{
  const inventory=await loadUaeIdriveStorage();
  const runtime={storagePolicy:{primary:'idrive_e2',fallback:'immutable_static_recovery'}};
@@ -31,6 +40,12 @@ test('storage endpoint filters the attested inventory and keeps the archive proo
  const body=await selected.json();
  assert.equal(body.sources.length,1);
  assert.equal(body.sources[0].emirate,'Abu Dhabi');
+ const byEmirate=mapUaeEvidenceStorage(new Request(url+'?emirate=Dubai'),inventory,runtime);
+ assert.equal(byEmirate.status,200);
+ const dubai=await byEmirate.json();
+ assert.equal(dubai.sources.length,inventory.byEmirate.find(row=>row.name==='Dubai').publishedSourceSnapshots+1);
+ assert.equal(dubai.sources.filter(source=>source.geographicScope==='all_seven_emirates').length,1);
+ assert.equal((await mapUaeEvidenceStorage(new Request(url+'?emirate=Dubai&sourceId=fcsc-emirates-in-figures-2009-historical-building-housing'),inventory,runtime).json()).sources.length,1);
  assert.equal(body.acceptedV48Archive.configuredPrimary,'idrive_e2');
  assert.match(body.acceptedV48Archive.proofScope,/not whole-store health/);
  assert.match(body.limits,/not complete authority archives/);

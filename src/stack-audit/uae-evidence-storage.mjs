@@ -8,7 +8,7 @@ export function mapUaeEvidenceStorage(request,inventory,runtime=null){
  const sourceId=url.searchParams.get('sourceId'),emirate=url.searchParams.get('emirate');
  if(sourceId!==null&&!inventory.sources.some(source=>source.id===sourceId))return uaeEvidenceStorageReply(request,{error:'Unknown published source ID.'},400);
  if(emirate!==null&&!inventory.byEmirate.some(item=>item.name.toLocaleLowerCase('en')===emirate.trim().toLocaleLowerCase('en')))return uaeEvidenceStorageReply(request,{error:'Unknown emirate.'},400);
- const sources=inventory.sources.filter(source=>(sourceId===null||source.id===sourceId)&&(emirate===null||source.emirate.toLocaleLowerCase('en')===emirate.trim().toLocaleLowerCase('en')));
+ const sources=inventory.sources.filter(source=>(sourceId===null||source.id===sourceId)&&(emirate===null||source.emirate===null||source.emirate.toLocaleLowerCase('en')===emirate.trim().toLocaleLowerCase('en')));
  return uaeEvidenceStorageReply(request,{
   inventoryVersion:inventory.inventoryVersion,
   evidenceScope:inventory.evidenceScope,
