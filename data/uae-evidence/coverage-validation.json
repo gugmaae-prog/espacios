@@ -762,24 +762,26 @@
           "sourceSha256": "29cdb2c9b3195383ed5a81b9234016a6aa7d79c7a8a97f98184822715e6db816"
         },
         {
-          "id": "sharjah-rerd-reported-monthly-market-20261111",
+          "id": "sharjah-rerd-reported-monthly-market-20261114",
           "route": "/map/api/uae-evidence/sharjah/monthly-market",
-          "sourceRows": 5,
+          "sourceRows": 6,
           "grain": "selected emirate-calendar-month reported market aggregates",
-          "sourceVintage": "January–September 2026, five months only",
+          "sourceVintage": "January–September 2026, six selected months; June value only",
           "sourceUrl": "https://sharjah24.ae/en/Articles/2026/02/26/KMR2",
           "rights": "Selected department-disclosed numerical facts and source links only; Sharjah 24 article content excluded.",
           "liveRouteHealth": "not_asserted_by_inventory",
           "missingMonths": [
             "2026-02",
             "2026-03",
-            "2026-06",
             "2026-09"
+          ],
+          "incompleteMonths": [
+            "2026-06"
           ],
           "notTransactionLevel": true,
           "notCommercialOnly": true,
           "notAvailableUnits": true,
-          "sourceSha256": "299a477aca65e1b22e672c74f65ddf6d5674e052503266aba8f325314d43d59f"
+          "sourceSha256": "e4dda5afe4b7de18eb41f57c1038b25848de23329efd89e740347d3793834597"
         }
       ],
       "publisherListingSnapshot": {
@@ -801,7 +803,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Two published cumulative market aggregates, eight annual aggregates, and five selected 2026 monthly releases are available. February, March, June and September monthly releases are missing from this series. No reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established. Historical commercial-use shares in 2018–2020 are percentages, not exact sale counts."
+        "Two published cumulative market aggregates, eight annual aggregates, and five selected 2026 monthly releases are available. February, March and September monthly releases are missing from this series; June has only a retrospectively reported rounded monetary value, with sale and procedure counts unreported. No reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established. Historical commercial-use shares in 2018–2020 are percentages, not exact sale counts."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -898,7 +900,7 @@
     "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
-    "sharjahMonthly": "db0c65a35b7d38364936e3062b10c4b5ea14e7bbc7b42fda872cb36bad2f24fb",
+    "sharjahMonthly": "2a02203e9ba5c4c963a9de7fe3076575cd3c7be314ab0bebf66ba0a84b8410bd",
     "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f",
     "dmBuildingCards": "d8bc1520b7d107c85c9a9ece8226540677efec7573776f5a4b7b1590e00fccc3",
     "dmMunicipalProjects": "79c90a696a8280afa10119b603bdf0852769b2eb2b47edda44a884d6e0ba1787"

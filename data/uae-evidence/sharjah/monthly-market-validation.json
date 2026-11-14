@@ -1,8 +1,8 @@
 {
-  "sourceId": "sharjah-rerd-reported-monthly-market-20261111",
+  "sourceId": "sharjah-rerd-reported-monthly-market-20261114",
   "evidenceClass": "government_reported_monthly_market_aggregate",
-  "method": "Two independent direct reads of each Sharjah 24 NewsArticle JSON-LD articleBody matched by SHA-256; only selected numerical facts and links retained, not article content.",
-  "retrievedAtDate": "2026-11-11",
+  "method": "Two independent direct reads of each Sharjah 24 NewsArticle JSON-LD articleBody matched by SHA-256, with the July article rechecked on 2026-11-14 for its June comparison; only selected numerical facts and links retained, not article content.",
+  "retrievedAtDate": "2026-11-14",
   "sourceArticles": [
     {
       "month": "2026-01",
@@ -40,14 +40,26 @@
       "articleBodyBytes": 3410
     }
   ],
-  "rows": 5,
+  "rows": 6,
   "missingMonths": [
     "2026-02",
     "2026-03",
-    "2026-06",
     "2026-09"
   ],
-  "dataBytes": 3203,
-  "dataSha256": "299a477aca65e1b22e672c74f65ddf6d5674e052503266aba8f325314d43d59f",
-  "rightsScope": "Selected department-disclosed numerical facts and source links only; Sharjah 24 article content excluded."
+  "dataBytes": 3891,
+  "dataSha256": "e4dda5afe4b7de18eb41f57c1038b25848de23329efd89e740347d3793834597",
+  "rightsScope": "Selected department-disclosed numerical facts and source links only; Sharjah 24 article content excluded.",
+  "incompleteMonths": [
+    "2026-06"
+  ],
+  "reconciliation": {
+    "previousSourceId": "sharjah-rerd-reported-monthly-market-20261111",
+    "previousRows": 5,
+    "addedMonth": "2026-06",
+    "addedFields": [
+      "reportedTransactionValueAedApprox"
+    ],
+    "retainedOriginalObservations": 5,
+    "sourceArticle": "https://sharjah24.ae/en/Articles/2026/08/06/mm03"
+  }
 }

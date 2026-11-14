@@ -1,0 +1,88 @@
+{
+  "sourceId": "sharjah-rerd-reported-monthly-market-20261114",
+  "emirate": "Sharjah",
+  "authority": "Sharjah Real Estate Registration Department",
+  "publication": "Sharjah 24 reports of department monthly disclosures",
+  "evidenceClass": "government_reported_monthly_market_aggregate",
+  "grain": "emirate-calendar-month selected reported aggregates",
+  "sourceMethod": "Selected numerical facts from dated Sharjah 24 reports of department disclosures; June value is a retrospective comparison stated in the July release. Article text, images and logos excluded.",
+  "period": "January–September 2026, partial month coverage",
+  "missingMonths": [
+    "2026-02",
+    "2026-03",
+    "2026-09"
+  ],
+  "observations": [
+    {
+      "month": "2026-01",
+      "publishedAt": "2026-02-26T15:16:48Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/02/26/KMR2",
+      "reportedTransactionValueAedApprox": 9300000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 10333,
+      "salesTransactions": 4868,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-04",
+      "publishedAt": "2026-05-12T06:46:26Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/05/12/KMR5",
+      "reportedTransactionValueAedApprox": 3500000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 15669,
+      "salesTransactions": 2675,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-05",
+      "publishedAt": "2026-06-05T08:44:36Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/06/05/gh-6",
+      "reportedTransactionValueAedApprox": 3100000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 7119,
+      "salesTransactions": 1851,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-06",
+      "publishedAt": "2026-08-06T06:48:04Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/08/06/mm03",
+      "reportingBasis": "retrospective_comparison_in_july_release",
+      "reportedTransactionValueAedApprox": 4400000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": null,
+      "salesTransactions": null,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-07",
+      "publishedAt": "2026-08-06T06:48:04Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/08/06/mm03",
+      "reportedTransactionValueAedApprox": 7000000000,
+      "valuePrecision": "reported_rounded_to_aed_1_billion",
+      "allProcedureTransactions": 9376,
+      "salesTransactions": 2884,
+      "officeUnitSales": 17,
+      "shopUnitSales": 1
+    },
+    {
+      "month": "2026-08",
+      "publishedAt": "2026-09-10T06:20:06Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/09/10/a8",
+      "reportedTransactionValueAedApprox": 4600000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 9139,
+      "salesTransactions": 2367,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    }
+  ],
+  "limits": "Six selected monthly observations, including a June value-only comparison in the July disclosure. February, March and September have no verified monthly observation; June procedure and sale counts are unreported, so these observations cannot be summed into a January–September total. All-procedure transactions include registrations other than sales. The reported transaction value is rounded and is not commercial-only. Office/shop unit sale counts appear only for July; null means not reported, not zero. No unit identities, prices, coordinates, available spaces, or complete market coverage are established.",
+  "incompleteMonths": [
+    "2026-06"
+  ]
+}
