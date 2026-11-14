@@ -1,0 +1,39 @@
+{
+  "sourceId": "fcsc-emirates-in-figures-2009-historical-building-housing",
+  "publisher": "Federal Competitiveness and Statistics Centre",
+  "evidenceClass": "official_historical_census_stock_count",
+  "grain": "census year × emirate × building or housing-unit count",
+  "primaryEdition": {
+    "year": 2009,
+    "url": "https://fcsc.gov.ae/wp-content/uploads/2025/04/%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-2009.pdf",
+    "pdfSha256": "7f23a54f8cae8857238db82539f5275adbe6dc362315267e2d2a9980083225db",
+    "pdfPage": 30,
+    "printedPage": 27
+  },
+  "crossCheckEdition": {
+    "year": 2007,
+    "url": "https://fcsc.gov.ae/wp-content/uploads/2025/04/%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-2007.pdf",
+    "pdfSha256": "a7bce34a4f45553ac7321974de82b2a8769cfa513e44f5f26d889ac3c630025f",
+    "pdfPage": 23
+  },
+  "buildingYears": [1975, 1980, 1985, 1995, 2005],
+  "housingYears": [1985, 1995, 2005],
+  "emirates": [
+    { "name": "Abu Dhabi", "buildings": [28756, 46738, 55635, 76419, 117469], "housingUnits": [105749, 153803, 242324] },
+    { "name": "Dubai", "buildings": [26381, 36043, 39064, 52151, 77886], "housingUnits": [69909, 111722, 205518] },
+    { "name": "Sharjah", "buildings": [10415, 30305, 38760, 47473, 57153], "housingUnits": [49167, 78051, 167142] },
+    { "name": "Ajman", "buildings": [3368, 7058, 9803, 13773, 17898], "housingUnits": [10717, 21626, 39700] },
+    { "name": "Umm Al Quwain", "buildings": [1083, 3039, 4578, 7006, 8741], "housingUnits": [4499, 6921, 8828] },
+    { "name": "Ras Al Khaimah", "buildings": [4969, 19712, 24908, 29273, 40143], "housingUnits": [23898, 28828, 39815] },
+    { "name": "Fujairah", "buildings": [532, 7708, 8938, 11385, 16197], "housingUnits": [8852, 12227, 19532] }
+  ],
+  "officialNationalTotals": {
+    "buildings": [75504, 150603, 181686, 237480, 335487],
+    "housingUnits": [272791, 413178, 722859]
+  },
+  "excludedSourceDiscrepancies": [
+    "The 2006 edition reports 79,214 Dubai buildings and 336,815 UAE buildings for 2005, while the 2007 and 2009 tables report 77,886 and 335,487. Only the later matching table values are selected.",
+    "The 2007 edition labels the oldest housing-unit column 1980; the 2009 edition labels the same numbers 1975. Both oldest columns are excluded.",
+    "A 2007 chart still prints the earlier 79,214 Dubai building value; its table agrees with the 2009 table and is the cross-check used here."
+  ]
+}

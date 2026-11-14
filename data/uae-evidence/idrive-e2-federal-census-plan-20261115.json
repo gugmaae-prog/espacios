@@ -1,0 +1,25 @@
+{
+  "planId": "federal-census-20261115-idrive-e2-replica",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "host": "s3.us-west-2.idrivee2.com",
+  "signingRegion": "us-east-1",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "sourceScope": "One versioned federal historical census snapshot; selected numerical facts and source links only",
+  "separateFromExistingCloudflareBackupRun": true,
+  "objects": [
+    {
+      "sourceId": "fcsc-emirates-in-figures-2009-historical-building-housing",
+      "role": "selected_historical_census_counts",
+      "localPath": "data/uae-evidence/federal/fcsc-census-selected-20261114.json",
+      "idriveKey": "espacios-map/uae-evidence/federal/historical-census/20261115/cbe8dfef7534bab84ddcce7427d1eb892c5b66cf8adfd7913e393aba8b6b4bb1/fcsc-census-selected-20261114.json",
+      "bytes": 6510,
+      "sha256": "cbe8dfef7534bab84ddcce7427d1eb892c5b66cf8adfd7913e393aba8b6b4bb1",
+      "validationSha256": "ac5b9b089b9a2034012d436ae2d0e0303d8a46cb735c62e7e95f4a21e96a61e8",
+      "contentType": "application/json"
+    }
+  ],
+  "objectCount": 1,
+  "totalBytes": 6510
+}

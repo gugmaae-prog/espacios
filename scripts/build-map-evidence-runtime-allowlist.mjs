@@ -4,12 +4,13 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const output='data/uae-evidence/idrive-e2-runtime-allowlist-20261114.json';
+const output='data/uae-evidence/idrive-e2-runtime-allowlist-20261115.json';
 const pairs=[
  ['data/uae-evidence/dubai/idrive-e2-replica-plan-20261114.json','data/uae-evidence/dubai/idrive-e2-replica-readback-20261114.json'],
  ['data/uae-evidence/idrive-e2-ajman-permissions-replica-plan-20261114.json','data/uae-evidence/idrive-e2-ajman-permissions-replica-readback-20261114.json'],
  ['data/uae-evidence/idrive-e2-current-replica-plan-20261114.json','data/uae-evidence/idrive-e2-current-replica-readback-20261114.json'],
  ['data/uae-evidence/idrive-e2-fujairah-monthly-plan-20261114.json','data/uae-evidence/idrive-e2-fujairah-monthly-readback-20261114.json'],
+ ['data/uae-evidence/idrive-e2-federal-census-plan-20261115.json','data/uae-evidence/idrive-e2-federal-census-readback-20261115.json'],
  ['data/uae-evidence/idrive-e2-published-replica-plan-20261114.json','data/uae-evidence/idrive-e2-published-replica-readback-20261114.json'],
  ['data/uae-evidence/idrive-e2-rgestate-refresh-plan-20261114.json','data/uae-evidence/idrive-e2-rgestate-refresh-readback-20261114.json'],
  ['data/uae-evidence/idrive-e2-sharjah-supplement-plan-20261114.json','data/uae-evidence/idrive-e2-sharjah-supplement-readback-20261114.json'],
@@ -38,11 +39,11 @@ async function build(){
   }
  }
  entries.sort((a,b)=>a.key.localeCompare(b.key));
- if(entries.length!==195||excludedPrivateOriginals!==10||new Set(entries.map(x=>x.key)).size!==entries.length)fail('Published/private object boundary changed');
+ if(entries.length!==196||excludedPrivateOriginals!==10||new Set(entries.map(x=>x.key)).size!==entries.length)fail('Published/private object boundary changed');
  const coverage=await json('data/uae-evidence/coverage-validation.json');
- const sourceIds=new Set(entries.map(x=>x.sourceId)),coverageIds=new Set(coverage.emirates.flatMap(e=>e.publishedSources.map(s=>s.id)));
- if(coverageIds.size!==41||[...coverageIds].some(id=>!sourceIds.has(id)))fail('Published source coverage changed');
- return {version:'20261114-idrive-e2-runtime-allowlist-v1',accountId:'b1b843ec85bc39a3a4d370ba4f84f17a',bucket:'espacios-store-a',prefix:'espacios-map/uae-evidence/',scope:'Exact checksum-pinned private reads of published source objects only; no private originals or arbitrary keys',publishedObjectCount:entries.length,excludedPrivateOriginalParts:excludedPrivateOriginals,coveredInventoryVersion:coverage.version,coveredInventorySourceCount:coverageIds.size,attestations,entries};
+ const sourceIds=new Set(entries.map(x=>x.sourceId)),coverageIds=new Set([...coverage.emirates.flatMap(e=>e.publishedSources.map(s=>s.id)),...coverage.federalSources.map(s=>s.id)]);
+ if(coverageIds.size!==42||[...coverageIds].some(id=>!sourceIds.has(id)))fail('Published source coverage changed');
+ return {version:'20261115-idrive-e2-runtime-allowlist-v2',accountId:'b1b843ec85bc39a3a4d370ba4f84f17a',bucket:'espacios-store-a',prefix:'espacios-map/uae-evidence/',scope:'Exact checksum-pinned private reads of published source objects only; no private originals or arbitrary keys',publishedObjectCount:entries.length,excludedPrivateOriginalParts:excludedPrivateOriginals,coveredInventoryVersion:coverage.version,coveredInventorySourceCount:coverageIds.size,attestations,entries};
 }
 
 const result=await build(),bytes=Buffer.from(JSON.stringify(result,null,2)+'\n');

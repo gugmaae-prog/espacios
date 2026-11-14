@@ -14,6 +14,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(report.acceptedSnapshot.searchableWithoutCoordinates,127);assert.equal(report.allUaeProjectDenominator,null);assert.equal(report.projectCompletenessPercent,null);
  assert.equal(report.emirates.reduce((sum,item)=>sum+item.acceptedV48.projectRecords,0),1645);
  assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),41);
+ assert.equal(report.federalSources.length,1);assert.equal(report.federalSources[0].sourceRows,56);assert.equal(report.federalSources[0].historicalOnly,true);
  assert.deepEqual(report.emirates.filter(item=>item.publishedSources.length===0).map(item=>item.name),[]);
  assert.equal(report.publisherListingInventory.snapshotRows,1660);
  assert.equal(report.publisherListingInventory.explicitEmirateLocationLabelRows,603);
@@ -83,6 +84,7 @@ test('read-only API selects an emirate without inventing completeness or source 
  assert.equal(chosen.emirates[0].publisherListingSnapshot.explicitLocationLabelRows,7);
  assert.equal(chosen.publisherListingInventory.unassignedLocationLabelRows,1057);
  assert.equal(chosen.publisherListingInventory.unresolvedLocationRows,138);
+ assert.equal(chosen.federalSources[0].sourceRows,56);
  assert.ok(body.emirates.flatMap(item=>item.publishedSources).every(item=>item.liveRouteHealth==='not_asserted_by_inventory'));
  assert.equal((await mapUaeCoverage(request('?emirate=Unknown'),report)).status,400);
  assert.equal((await mapUaeCoverage(request('','POST'),report)).status,405);

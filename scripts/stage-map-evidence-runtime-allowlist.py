@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / 'work/private-map-evidence-runtime-20261114'
-ALLOWLIST = ROOT / 'data/uae-evidence/idrive-e2-runtime-allowlist-20261114.json'
+ALLOWLIST = ROOT / 'data/uae-evidence/idrive-e2-runtime-allowlist-20261115.json'
 ACCOUNT = 'b1b843ec85bc39a3a4d370ba4f84f17a'
 WORKER = 'espacios-auth-central'
 PRODUCTION = '19ebc965-ec69-49d3-a50a-4b7b0cc2dcc3'
@@ -109,7 +109,7 @@ def patched(auth):
         raise RuntimeError('Shared auth Worker bindings changed')
     source = modules(auth)
     manifest = json.loads(ALLOWLIST.read_bytes())
-    if manifest['version'] != '20261114-idrive-e2-runtime-allowlist-v1' or manifest['publishedObjectCount'] != 195 or manifest['excludedPrivateOriginalParts'] != 10 or manifest['coveredInventorySourceCount'] != 41:
+    if manifest['version'] != '20261115-idrive-e2-runtime-allowlist-v2' or manifest['publishedObjectCount'] != 196 or manifest['excludedPrivateOriginalParts'] != 10 or manifest['coveredInventorySourceCount'] != 42:
         raise RuntimeError('Runtime allowlist changed')
     registry_text = source['map-evidence-registry.mjs'].decode()
     if not registry_text.startswith('export default ') or not registry_text.endswith(';\n'):
@@ -157,7 +157,7 @@ def main():
     if (STATE / 'stage.json').exists():
         raise RuntimeError('A prior staged version exists; inspect it before another upload')
     save_private('base-source-sha256.json', (json.dumps({name: sha(data) for name, data in modules(auth).items()}, indent=2) + '\n').encode())
-    payload = {'main_module': 'worker.js', 'compatibility_date': runtime['compatibility_date'], 'compatibility_flags': runtime['compatibility_flags'], 'bindings': [{'name': item['name'], 'type': 'inherit', 'version_id': PRODUCTION} for item in bindings], 'bindings_inherit': 'strict', 'modules': [{'name': name, 'content_type': 'application/javascript+module', 'content_base64': base64.b64encode(data).decode()} for name, data in source.items()], 'annotations': {'workers/message': '195 checksum-pinned published UAE evidence objects; 0 percent traffic; auth source unchanged'}}
+    payload = {'main_module': 'worker.js', 'compatibility_date': runtime['compatibility_date'], 'compatibility_flags': runtime['compatibility_flags'], 'bindings': [{'name': item['name'], 'type': 'inherit', 'version_id': PRODUCTION} for item in bindings], 'bindings_inherit': 'strict', 'modules': [{'name': name, 'content_type': 'application/javascript+module', 'content_base64': base64.b64encode(data).decode()} for name, data in source.items()], 'annotations': {'workers/message': '196 checksum-pinned published UAE evidence objects; 0 percent traffic; auth source unchanged'}}
     created = result(auth, 'POST', f'/accounts/{ACCOUNT}/workers/workers/{WORKER}/versions?deploy=false', payload)
     candidate = created.get('id')
     if not candidate:

@@ -86,6 +86,7 @@ worker_default.fetch=async function(request,env,ctx){
  const adrecMarket=mapAbuDhabiReportedMarket(request,UAE_ADREC_MARKET_REPORT,UAE_ADREC_MARKET_DATA);if(adrecMarket)return mapStackPreparedResponse(request,adrecMarket);
  const adBuildingUses=await mapAbuDhabiBuildingUses(request,UAE_ABU_DHABI_BUILDING_USE_REPORT,UAE_ABU_DHABI_BUILDING_USE_PACKED);if(adBuildingUses)return mapStackPreparedResponse(request,adBuildingUses);
  const evidenceStorage=mapUaeEvidenceStorage(request,UAE_IDRIVE_STORAGE_INVENTORY,mapStackRelease(env));if(evidenceStorage)return mapStackPreparedResponse(request,evidenceStorage);
+ const federalCensus=mapFcscHistoricalCensus(request,UAE_FCSC_CENSUS_REPORT,UAE_FCSC_CENSUS_DATA,UAE_IDRIVE_STORAGE_INVENTORY.replicas.fcscCensus);if(federalCensus)return mapStackPreparedResponse(request,federalCensus);
  const coverage=mapUaeCoverage(request,UAE_COVERAGE_REPORT);if(coverage)return mapStackPreparedResponse(request,coverage);
  const urbanProjects=await mapAbuDhabiUrbanProjects(request,UAE_ABU_DHABI_URBAN_REPORT,UAE_ABU_DHABI_URBAN_PACKED);if(urbanProjects)return mapStackPreparedResponse(request,urbanProjects);
  const developerProjects=await mapAbuDhabiDeveloperProjects(request,UAE_ABU_DHABI_DEVELOPER_REPORT,UAE_ABU_DHABI_DEVELOPER_PACKED,UAE_ABU_DHABI_DEVELOPER_GEOMETRY_REPORT,UAE_ABU_DHABI_DEVELOPER_GEOMETRY_CHUNKS);if(developerProjects)return mapStackPreparedResponse(request,developerProjects);

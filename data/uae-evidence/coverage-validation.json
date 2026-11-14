@@ -1,6 +1,6 @@
 {
-  "version": "20261114-uae-evidence-coverage-v48",
-  "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
+  "version": "20261115-uae-evidence-coverage-v49",
+  "basis": "Accepted V48 map snapshot plus separately published dated source snapshots, a historical federal census table, and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
     "projectRecords": 1645,
@@ -969,6 +969,24 @@
       "authoritativeAllProjectDenominator": null
     }
   ],
+  "federalSources": [
+    {
+      "id": "fcsc-emirates-in-figures-2009-historical-building-housing",
+      "route": "/map/api/uae-evidence/federal/historical-building-housing",
+      "sourceRows": 56,
+      "grain": "census year × emirate × building or housing-unit count",
+      "sourceVintage": "1975–2005 selected census years",
+      "sourceUrl": "https://fcsc.gov.ae/wp-content/uploads/2025/04/%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-2009.pdf",
+      "rights": "Selected numerical facts from FCSC official publications with source attribution",
+      "liveRouteHealth": "not_asserted_by_inventory",
+      "historicalOnly": true,
+      "notCurrentStock": true,
+      "notAvailableUnits": true,
+      "notTransactions": true,
+      "notForecast": true,
+      "sourceSha256": "cbe8dfef7534bab84ddcce7427d1eb892c5b66cf8adfd7913e393aba8b6b4bb1"
+    }
+  ],
   "basisSha256": {
     "heatmap": "98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d",
     "heatmapManifest": "4c4d8e66394984b0ffa2fc4149226ee10b3ee11098b8c9268fefce91a96a0b7f",
@@ -1015,6 +1033,7 @@
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
     "sharjahMonthly": "7352a7cd9a740758c00e0901643c55b5d783e5c5e15f0d14e2328f585f1afbec",
     "fujairahMonthly": "11beab1eb2c7b51c506dc56d1039d3703854954a15a436cb7a1bbe8b31d8eb8a",
+    "fcscCensus": "ac5b9b089b9a2034012d436ae2d0e0303d8a46cb735c62e7e95f4a21e96a61e8",
     "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f",
     "dmBuildingCards": "d8bc1520b7d107c85c9a9ece8226540677efec7573776f5a4b7b1590e00fccc3",
     "dmMunicipalProjects": "79c90a696a8280afa10119b603bdf0852769b2eb2b47edda44a884d6e0ba1787"
