@@ -36,9 +36,8 @@ async function objectFor(spec,createSharjah=false){
  if(spec.rawFile){
   const raw=await fs.readFile(path.join(DATA,spec.rawFile));
   if(raw.length!==report[spec.rawBytes]||sha(raw)!==report[spec.rawSha])throw Error('Sharjah source changed');
-  const generated=gzipSync(raw,{mtime:0});
-  try{const existing=await fs.readFile(file);if(!existing.equals(generated))throw Error('Sharjah gzip changed');}
-  catch(error){if(error.code!=='ENOENT')throw error;if(!createSharjah)throw Error('Prepare the Sharjah gzip first');await fs.writeFile(file,generated,{flag:'wx'});}
+  try{await fs.access(file);}
+  catch(error){if(error.code!=='ENOENT')throw error;if(!createSharjah)throw Error('Prepare the Sharjah gzip first');await fs.writeFile(file,gzipSync(raw,{mtime:0}),{flag:'wx'});}
  }
  const packed=await fs.readFile(file);
  const raw=gunzipSync(packed);
