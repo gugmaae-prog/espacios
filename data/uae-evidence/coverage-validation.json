@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v41",
+  "version": "20261114-uae-evidence-coverage-v42",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -371,16 +371,19 @@
       },
       "publishedSources": [
         {
-          "id": "continental-dld-mashrooi-project-status-20261101",
+          "id": "continental-dld-mashrooi-project-status-20261114",
           "route": "/map/api/uae-evidence/dubai/project-status",
-          "sourceRows": 3871,
+          "sourceRows": 3882,
           "grain": "dated DLD project-status register copy",
-          "sourceVintage": "2026-11-01",
+          "sourceVintage": "2026-11-14",
           "sourceUrl": "https://continentalclub.ae/en/project-status/",
           "rights": "CC BY 4.0 secondary publication",
           "liveRouteHealth": "not_asserted_by_inventory",
           "reviewedV48IdentityLinks": 83,
-          "unmatchedSourceProjectIds": 3788
+          "sourcePageClaimedRowCount": 3883,
+          "sourceCsvFieldCount": 14,
+          "sourcePageClaimedFieldCount": 16,
+          "unmatchedSourceProjectIds": 3799
         },
         {
           "id": "dsc-dubai-housing-building-kapsarc-public-domain-2019",
@@ -552,7 +555,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "The primary DLD project-register raw vintage is not retained; the published status copy is secondary.",
+        "The primary DLD project-register raw vintage is not retained; the published 14 November status copy is secondary. Its page prose claims 3,883 rows and 16 fields, while the downloadable CSV has 3,882 rows and 14 fields; the page metadata also says 3,882 projects.",
         "Most source project IDs remain separate from V48 identities.",
         "The historical published building-count series stops at 2019; 403 ambiguous export rows remain withheld. A separate 2026 Dubai Municipality permit-system snapshot has 536,946 building cards, but does not verify standing completed stock, building coordinates, available spaces, sales, or rents.",
         "The licensed historical commercial-unit sales snapshot covers 2006–2025. The 2026 Office/Shop subtype series runs through October, but 4,319 rows have a conflicting Residential usage label and need source verification. It is partial-year registered sale evidence, not asking inventory or available spaces. A separate 2026 residential Flat sale aggregate covers January–October only; it contains no unit coordinates, rents or forecasts. A separate licensed Ejari rent aggregate covers 102 publisher communities and 418 bedroom rows, but its source CSV does not encode property class or exact observation dates; renewals are included and Palm Jabal Ali has no registered rent contracts in that snapshot."
@@ -889,8 +892,8 @@
     "rgeIndex": "a7caf4914026edf1ecc770389bc8224e8b5fb0bd237ea7495371b5e97a65e771",
     "rgeLabels": "4ae7bc16dc299c07e97fcc5de33fb5dbf94a6272ae8623655144a7e4c7ea2d26",
     "rgeAreas": "4c6ef541992073c2709c0c59b7598bc2d35c0439957c66db23d6e10aee720609",
-    "dubaiStatus": "9abede06bda2bc2ca3cee95b392f5e70d5f8facb3a78e17de1038d9a7659924c",
-    "dubaiCrosswalk": "24b40b1611a80f33227fc898c98966a19c9a847812e75be79b7f6de0a1132638",
+    "dubaiStatus": "21cbae13b542fdf224255d0172af37d07cb59cc83338dd41b11c7b5d48d9044b",
+    "dubaiCrosswalk": "79c969fb7eec6607a49034f5d5894f32b84201a67d5dc108c448579c174e57d9",
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",
     "sharjahAnnual": "f4e53062f4207fc8ca4138f2bbb47c3bee1cae827fddbf610422a220f747fe67",
     "rakMarket": "896276a233aa06cb1966a7ce6ab1f5268955e75d121c101c1324a05a007dca0b",

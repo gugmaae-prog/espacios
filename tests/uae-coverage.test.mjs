@@ -54,7 +54,8 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/building-permits')).usableRows,537);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/new-building-use')).usableRows,268);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/unit-mortgages')).sourceRows,651);
- assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,83);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3788);assert.equal(dubai.publishedSources[1].selectedRows,30);assert.equal(dubai.publishedSources[1].ambiguousKeyRowsWithheld,403);
+ assert.equal(dubai.publishedSources[0].sourceRows,3882);assert.equal(dubai.publishedSources[0].sourcePageClaimedRowCount,3883);assert.equal(dubai.publishedSources[0].sourceCsvFieldCount,14);
+ assert.equal(dubai.publishedSources[0].reviewedV48IdentityLinks,83);assert.equal(dubai.publishedSources[0].unmatchedSourceProjectIds,3799);assert.equal(dubai.publishedSources[1].selectedRows,30);assert.equal(dubai.publishedSources[1].ambiguousKeyRowsWithheld,403);
  assert.equal(sharjah.publishedSources[0].sourceRows,2);assert.equal(sharjah.publishedSources[0].notTransactionLevel,true);assert.equal(sharjah.publishedSources[1].sourceRows,8);assert.equal(sharjah.publishedSources[1].notCommercialOnly,true);
  const rakAnnual=rak.publishedSources.find(item=>item.route.endsWith('/market-values'));
  const rakMonthly=rak.publishedSources.find(item=>item.route.endsWith('/monthly-market'));

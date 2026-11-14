@@ -1,12 +1,12 @@
 const DUBAI_STATUS_BASE='/map/api/uae-evidence/dubai/project-status';
-const DUBAI_STATUS_SHA='3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f';
-const DUBAI_STATUS_NORMALIZED_SHA='7334b5f6db0ebdcc9731a5c9d5b2a84308f32b45ee245ed45a942b3bf16bac44';
+const DUBAI_STATUS_SHA='e27ecc33ef7bb065b499a5395188c448dff4c2943d593a0157cdbca7ffbcee03';
+const DUBAI_STATUS_NORMALIZED_SHA='1b684f784bbaff51255b086365b5a1c6d413aa533b4c736a37bbe145c3d60fc1';
 const DUBAI_STATUS_FIELDS=['project_number','project_name','developer_number','developer_name','community','land_number','total_area_sqm','total_units','completion_percent','completion_date','previous_percent','previous_date','start_date','handover_date'];
 let DUBAI_STATUS_ROWS,DUBAI_STATUS_PACKED;
 const dubaiHex=bytes=>Array.from(new Uint8Array(bytes),x=>x.toString(16).padStart(2,'0')).join('');
 const dubaiDigest=async bytes=>dubaiHex(await crypto.subtle.digest('SHA-256',bytes));
 const dubaiInt=(value,min,max)=>/^\d+$/.test(value||'')&&Number.isSafeInteger(Number(value))&&Number(value)>=min&&Number(value)<=max?Number(value):null;
-const dubaiReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'continental-dld-mashrooi-project-status-20261101',...(status===405?{allow:'GET, HEAD'}:{})}});
+const dubaiReply=(request,body,status=200)=>new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':status===200?'public,max-age=60,s-maxage=300':'no-store','x-content-type-options':'nosniff','x-espacios-evidence-source':'continental-dld-mashrooi-project-status-20261114',...(status===405?{allow:'GET, HEAD'}:{})}});
 
 export function parseDubaiStatusCsv(text){
  const rows=[];let row=[],field='',quoted=false;
@@ -45,7 +45,7 @@ const dubaiDateReviewFlags=row=>{
 
 export function normalizeDubaiStatusCsv(text,report){
  const table=parseDubaiStatusCsv(text.replace(/^\uFEFF/,'')),header=table.shift();
- if(header?.join('|')!==DUBAI_STATUS_FIELDS.join('|')||table.length!==report?.rowCount||report.actualCsvFieldCount!==14||report.distinctProjectNumbers!==3871)throw Error('Dubai source schema or population mismatch');
+ if(header?.join('|')!==DUBAI_STATUS_FIELDS.join('|')||table.length!==report?.rowCount||report.actualCsvFieldCount!==14||report.distinctProjectNumbers!==report.rowCount)throw Error('Dubai source schema or population mismatch');
  const ids=new Set(),names=new Set();
  const rows=table.map(cells=>{
   if(cells.length!==14)throw Error('Dubai source row width changed');
@@ -59,7 +59,7 @@ export function normalizeDubaiStatusCsv(text,report){
 }
 
 async function dubaiRows(report,packed){
- if(report?.rawSha256!==DUBAI_STATUS_SHA||report.independentReadbackSha256!==report.rawSha256||report.normalizedSha256!==DUBAI_STATUS_NORMALIZED_SHA||report.rowCount!==3871||report.actualCsvFieldCount!==14||report.sourcePublicationDate!=='2026-11-01'||report.geometryCaptured!==false)throw Error('Dubai source manifest mismatch');
+ if(report?.rawSha256!==DUBAI_STATUS_SHA||report.independentReadbackSha256!==report.rawSha256||report.normalizedSha256!==DUBAI_STATUS_NORMALIZED_SHA||report.rowCount!==3882||report.actualCsvFieldCount!==14||report.sourcePublicationDate!=='2026-11-14'||report.geometryCaptured!==false)throw Error('Dubai source manifest mismatch');
  if(!DUBAI_STATUS_ROWS||DUBAI_STATUS_PACKED!==packed){DUBAI_STATUS_PACKED=packed;DUBAI_STATUS_ROWS=(async()=>{
   const binary=atob(packed),compressed=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)compressed[i]=binary.charCodeAt(i);
   if(compressed.byteLength!==report.normalizedCompressedBytes||await dubaiDigest(compressed)!==report.normalizedCompressedSha256)throw Error('Dubai compressed source mismatch');
@@ -76,7 +76,7 @@ export async function mapDubaiProjectStatus(request,report,packed,crosswalk=null
  const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'');
  if(path!==DUBAI_STATUS_BASE&&!(path.startsWith(DUBAI_STATUS_BASE+'/')&&/^\d+$/.test(path.slice(DUBAI_STATUS_BASE.length+1))))return null;
  if(!['GET','HEAD'].includes(request.method))return dubaiReply(request,{error:'Read-only endpoint'},405);
- const source={id:report?.sourceId,originator:report?.originator,republisher:report?.republisher,title:report?.title,sourcePageUrl:report?.sourcePageUrl,sourceCsvUrl:report?.sourceCsvUrl,originatorPageUrl:report?.originatorPageUrl,license:report?.license,attribution:report?.attribution,sourcePublicationDate:report?.sourcePublicationDate,retrievedAt:report?.retrievedAt,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rowCount:report?.rowCount,distinctProjectNumbers:report?.distinctProjectNumbers,actualCsvFieldCount:report?.actualCsvFieldCount,sourcePageClaimedFieldCount:report?.sourcePageClaimedFieldCount,storage:'checksum_verified_immutable_worker_snapshot'};
+ const source={id:report?.sourceId,originator:report?.originator,republisher:report?.republisher,title:report?.title,sourcePageUrl:report?.sourcePageUrl,sourceCsvUrl:report?.sourceCsvUrl,originatorPageUrl:report?.originatorPageUrl,license:report?.license,attribution:report?.attribution,sourcePublicationDate:report?.sourcePublicationDate,retrievedAt:report?.retrievedAt,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rowCount:report?.rowCount,distinctProjectNumbers:report?.distinctProjectNumbers,actualCsvFieldCount:report?.actualCsvFieldCount,sourcePageClaimedFieldCount:report?.sourcePageClaimedFieldCount,sourcePageClaimedRowCount:report?.sourcePageClaimedRowCount,sourcePageMetaProjectCount:report?.sourcePageMetaProjectCount,storage:'checksum_verified_immutable_worker_snapshot'};
  try{
   const sourceRows=await dubaiRows(report,packed);
   const links=new Map();

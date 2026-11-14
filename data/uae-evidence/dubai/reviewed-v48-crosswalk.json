@@ -1,9 +1,9 @@
 {
-  "version": "20261109-dubai-v48-reviewed-crosswalk-v7",
-  "sourceDatasetId": "continental-dld-mashrooi-project-status-20261101",
-  "sourceRawSha256": "3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f",
+  "version": "20261114-dubai-v48-reviewed-crosswalk-v8",
+  "sourceDatasetId": "continental-dld-mashrooi-project-status-20261114",
+  "sourceRawSha256": "e27ecc33ef7bb065b499a5395188c448dff4c2943d593a0157cdbca7ffbcee03",
   "acceptedMapSha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
-  "sourceSnapshotDate": "2026-11-01",
+  "sourceSnapshotDate": "2026-11-14",
   "matchPolicy": "Reviewed unique project name and developer brand in the dated licensed source and accepted V48 map. For the 29 Emaar South and Town Square projects, the named developer’s official project pages corroborate each specific identity despite source district versus map master-community labels. Eight Dubai Marina and Sobha Hartland identities use project-specific developer evidence; DLD’s 2024 report explicitly names Marsa Dubai as Dubai Marina. Four further identities (Divine Elements, Windsor House II, Binghatti Wraith and 113 Residences) use their developer’s project-specific page to corroborate the named development and marketed area. This is not a blanket district equivalence. JVC links use the DLD area-code 681 evidence. Source inspection and declared handover dates remain source evidence; V48 coordinates, status and timelines are not revised. Four additional links use project-specific primary developer evidence for South Living, Sobha SeaHaven Tower A and Marina Cove, and an IRTH NOC naming DLD project 3393 for Rove Home Dubai Marina. Source dates, units, coordinates and V48 status remain unmodified.",
   "matches": [
     {
@@ -909,5 +909,6 @@
     "4300": "https://ellingtonproperties.ae/en/property-for-sale/windsor-house-ii-dubai-south",
     "4482": "https://www.binghatti.com/en/projects/binghatti-wraith",
     "4503": "https://www.imandevelopers.com/iman-properties/113-residences"
-  }
+  },
+  "revalidation": "All 83 prior one-to-one source project numbers remain present; project name, developer name, developer number and source district are unchanged in the 14 November snapshot. Other source fields may have changed and do not alter identity review."
 }
