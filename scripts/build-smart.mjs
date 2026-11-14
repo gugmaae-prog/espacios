@@ -130,6 +130,7 @@ source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace(\"d.version!=='20
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(`\nconst STACK_OLD_AREA_HTML=ueAvailableHtml;ueAvailableHtml=function(){const html=STACK_OLD_AREA_HTML();return (ueState.data?.recovery?'<p class="ue-note">Recovered native source-area availability. Only complete periods by 14 September 2026 with n≥20 qualify; sparse and partial periods remain retained. Additional early native cohorts remain available in <a href=\"/map/history\">History</a>. This is not complete lifetime coverage or a property valuation.</p>':'')+html;};\n`)+';\n';
 source+=`\nAE_UAE_RELEASE_APP_JS=AE_UAE_RELEASE_APP_JS.replace("d.version!=='20260927-history-predictions-v1'", "d.version!=='20260927-history-predictions-v1'&&!(d.recoveryVersion==='20261102-retained-history-v1'&&d.sourceVersion==='20260927-history-predictions-v1')");\n`;
 const stackModules=['ai.mjs','storage.mjs','catalogue.mjs','recovered-map.mjs','recovered-context.mjs','uae-evidence.mjs','abu-dhabi-building-use.mjs','abu-dhabi-reported-market.mjs','ajman-register.mjs','ajman-registration.mjs','ajman-transactions.mjs','ajman-management.mjs','ajman-area-reference.mjs','ajman-building-permits.mjs','ajman-new-building-use.mjs','ajman-land-sales.mjs','ajman-land-dispositions.mjs','ajman-unit-mortgages.mjs','ajman-rent-contracts.mjs','rgestate-commercial.mjs','rgestate-index.mjs','uae-evidence-storage.mjs','uae-coverage.mjs','scad-stock.mjs','scad-building-activity.mjs','sharjah-market-aggregates.mjs','sharjah-annual-market.mjs','sharjah-monthly-market.mjs','rak-market-values.mjs','rak-monthly-market.mjs','rak-building-permits.mjs','dubai-building-stock.mjs','dubai-building-cards.mjs','dubai-municipal-projects.mjs','dubai-commercial-sales.mjs','dubai-flat-sales.mjs','dubai-ejari-rents.mjs','fujairah-building-permits.mjs','uaq-industrial-guide.mjs','abu-dhabi-urban-projects.mjs','abu-dhabi-developer-projects.mjs','dubai-project-status.mjs','coordinate-quality.mjs'];
+stackModules.splice(stackModules.indexOf('ajman-new-building-use.mjs')+1,0,'ajman-new-building-measures.mjs');
 const archiveManifest=JSON.parse(await read('data/recovery/static-archive-manifest.json'));
 const nativeIndexManifest=JSON.parse(await read('data/recovery/v48-native-history-index.manifest.json'));delete nativeIndexManifest.localPath;
 const inventoryManifest=JSON.parse(await read('data/recovery/full-item-inventory.manifest.json'));delete inventoryManifest.sourceShards;
@@ -159,7 +160,7 @@ const rgeCandidatePacked=await fs.readFile(new URL('data/uae-evidence/rgestate/c
 const rgeCandidateRaw=gunzipSync(rgeCandidatePacked);
 if(rgeCandidateReport.parentRawSha256!==rgeIndexReport.rawSha256||rgeCandidatePacked.length!==rgeCandidateReport.compressedBytes||digest(rgeCandidatePacked)!==rgeCandidateReport.compressedSha256||rgeCandidateRaw.length!==rgeCandidateReport.rawBytes||digest(rgeCandidateRaw)!==rgeCandidateReport.rawSha256||JSON.parse(rgeCandidateRaw).length!==rgeCandidateReport.rows)throw Error('RGEstate commercial title candidates changed');
 stackSource+='\nvar RGE_CANDIDATE_REPORT='+JSON.stringify(rgeCandidateReport)+';\nvar RGE_CANDIDATE_PACKED='+JSON.stringify(rgeCandidatePacked.toString('base64'))+';\n';
-if(coverageReport.acceptedSnapshot?.projectRecords!==1645||coverageReport.emirates?.length!==7||coverageReport.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0)!==38||coverageReport.publisherListingInventory?.snapshotRows!==rgeIndexReport.rows||coverageReport.publisherListingInventory?.explicitEmirateLocationLabelRows!==rgeEmirateLabels.explicitEmirateRows||coverageReport.allUaeProjectDenominator!==null||coverageReport.projectCompletenessPercent!==null)throw Error('UAE coverage inventory changed');
+if(coverageReport.acceptedSnapshot?.projectRecords!==1645||coverageReport.emirates?.length!==7||coverageReport.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0)!==40||coverageReport.publisherListingInventory?.snapshotRows!==rgeIndexReport.rows||coverageReport.publisherListingInventory?.explicitEmirateLocationLabelRows!==rgeEmirateLabels.explicitEmirateRows||coverageReport.allUaeProjectDenominator!==null||coverageReport.projectCompletenessPercent!==null)throw Error('UAE coverage inventory changed');
 stackSource+='\nvar UAE_COVERAGE_REPORT='+JSON.stringify(coverageReport)+';\n';
 const adBuildingReport=JSON.parse(await read('data/uae-evidence/abu-dhabi/sdi-building-use-validation.json'));
 const adBuildingCompressed=await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-building-use-20261109.json.gz',root));
@@ -300,6 +301,15 @@ const newBuildingCompressed=await fs.readFile(new URL('data/uae-evidence/ajman/n
 const newBuildingRaw=gunzipSync(newBuildingCompressed);
 if(newBuildingCompressed.length!==newBuildingReport.compressedBytes||digest(newBuildingCompressed)!==newBuildingReport.compressedSha256||newBuildingRaw.length!==newBuildingReport.rawBytes||digest(newBuildingRaw)!==newBuildingReport.rawSha256||newBuildingReport.sourceRows!==284||newBuildingReport.usableRows!==268||newBuildingReport.conflictingGroups!==8)throw Error('Ajman new-building embedded source changed');
 stackSource+='\nvar UAE_AJMAN_NEW_BUILDING_REPORT='+JSON.stringify(newBuildingReport)+';\nvar UAE_AJMAN_NEW_BUILDING_PACKED='+JSON.stringify(newBuildingCompressed.toString('base64'))+';\n';
+const newPermissionMeasures=[];
+for(const stem of ['new-building-licences-20260901','new-building-area-20240709']){
+ const report=JSON.parse(await read('data/uae-evidence/ajman/'+stem+'-validation.json'));
+ const compressed=await fs.readFile(new URL('data/uae-evidence/ajman/'+stem+'.json.gz',root));
+ const raw=gunzipSync(compressed);
+ if(compressed.length!==report.compressedBytes||digest(compressed)!==report.compressedSha256||raw.length!==report.rawBytes||digest(raw)!==report.rawSha256)throw Error('Ajman permission measure embedded source changed');
+ newPermissionMeasures.push({report,packed:compressed.toString('base64')});
+}
+stackSource+='\nvar UAE_AJMAN_NEW_PERMISSION_MEASURES='+JSON.stringify(newPermissionMeasures)+';\n';
 const landSalesReport=JSON.parse(await read('data/uae-evidence/ajman/lands-sales-validation.json'));
 const landSalesCompressed=await fs.readFile(new URL('data/uae-evidence/ajman/lands-sales-20260821.json.gz',root));
 const landSalesRaw=gunzipSync(landSalesCompressed);

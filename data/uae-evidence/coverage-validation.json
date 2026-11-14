@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v42",
+  "version": "20261114-uae-evidence-coverage-v43",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -275,6 +275,47 @@
           "latestReportedMonth": "2026-06"
         },
         {
+          "id": "ajman-mpd-20260901-new-building-licences",
+          "route": "/map/api/uae-evidence/ajman/new-building-licences",
+          "sourceRows": 268,
+          "grain": "month × residential/non-residential new-building licence counts",
+          "sourceVintage": "2026-09-01T09:56:43.758000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/licenses-issued-for-new-buildings-by-number-of-licenses/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "usableRows": 248,
+          "conflictingGroups": 10,
+          "completeReportedDimensionYears": [
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2024
+          ],
+          "latestReportedMonth": "2025-09",
+          "notBuildingCount": true,
+          "notAvailableSpaces": true
+        },
+        {
+          "id": "ajman-mpd-20240709-new-building-area",
+          "route": "/map/api/uae-evidence/ajman/new-building-built-up-area",
+          "sourceRows": 198,
+          "grain": "month × residential/non-residential reported built-up area, source unit unspecified",
+          "sourceVintage": "2024-07-09T20:38:37.413000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/new-licenses-issued-by-built-up-area/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "usableRows": 198,
+          "latestReportedMonth": "2023-03",
+          "sourceUnit": null,
+          "notCompletedFloorArea": true,
+          "notAvailableSpaces": true
+        },
+        {
           "id": "ajman-dlrr-20260821-land-sales",
           "route": "/map/api/uae-evidence/ajman/land-sales",
           "sourceRows": 1554,
@@ -355,6 +396,7 @@
       },
       "gaps": [
         "Only five latest official project IDs have reviewed one-to-one V48 identities; one archived V48 card is a separately labelled alias of an already counted identity, and 30 villa IDs have family-level relations only.",
+        "The new-building licence series withholds ten conflicting 2023 month/use groups and stops at September 2025. The separate built-up-area series ends in March 2023 and does not specify its area unit. Neither establishes completed or available commercial spaces.",
         "Source records do not provide verified project-site coordinates or complete rent prices."
       ],
       "authoritativeAllProjectDenominator": null
@@ -901,6 +943,8 @@
     "fujairahPermits": "ae6a9f928262bffc00d3d3a8356d9f757f33f9cd82e2815d98a70c9b0baa757b",
     "adBuildingUse": "1dd40b2ff8e7658a7cd7be7246a5a9f012af697dc94a76d20fa75e94c1d2a8c1",
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
+    "ajmanNewBuildingLicences": "8881dc2938e1d464b9d5f9ce4d44d46fa518aabcd2e18d20d29d1b196479b0cd",
+    "ajmanNewBuildingArea": "45b47a8e1b58843bd51cb9ad22f1df77d44af1a293fdabb9fdddee9853e53250",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
     "dubaiCommercialSales": "6e3cc163dccb7bf2b43c4af2364f1e16c1162f3be08b582894d6c8f9af591003",
     "dubaiCommercialPartial": "18112ebde0f928ff7af70a2fbf499eb93fd49470d5c66c6b3c05d70d0905dbb6",

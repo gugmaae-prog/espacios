@@ -3,14 +3,16 @@ import assert from 'node:assert/strict';
 import {loadUaeIdriveStorage} from '../scripts/verify-uae-idrive-storage.mjs';
 import {mapUaeEvidenceStorage} from '../src/stack-audit/uae-evidence-storage.mjs';
 
-test('all 38 published projections have source-matched, dated IDrive readback attestations',async()=>{
+test('all 40 published projections have source-matched, dated IDrive readback attestations',async()=>{
  const inventory=await loadUaeIdriveStorage();
- assert.equal(inventory.publishedSourceSnapshots,38);
- assert.equal(inventory.verifiedReplicaSnapshots,38);
+ assert.equal(inventory.publishedSourceSnapshots,40);
+ assert.equal(inventory.verifiedReplicaSnapshots,40);
  assert.deepEqual(inventory.unreplicatedSourceIds,[]);
  assert.equal(inventory.byEmirate.length,7);
- assert.equal(new Set(inventory.sources.map(source=>source.id)).size,38);
- assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.objectCount,0),198);
+ assert.equal(new Set(inventory.sources.map(source=>source.id)).size,40);
+ assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.objectCount,0),200);
+ assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.totalBytes,0),108329560);
+ assert.equal(inventory.sources.find(source=>source.id==='ajman-mpd-20260901-new-building-licences')?.replica?.attestationId,'ajman-new-building-permissions-idrive-e2-readback-20261114');
  assert.equal(inventory.sources.find(source=>source.id==='scad-abu-dhabi-census-2024-real-estate-stock')?.replica?.role,'verified_private_replica_not_runtime_primary');
  assert.equal(inventory.publisherListingInventory.availability,'publisher_listed_at_capture_unverified_now');
 });

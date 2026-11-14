@@ -1,0 +1,24 @@
+{
+  "attestationId": "ajman-new-building-permissions-idrive-e2-readback-20261114",
+  "planId": "ajman-new-building-permissions-idrive-e2-replica-20261114",
+  "planSha256": "1bcdb454952ef8fc6a4ff42aeb6d4011eb45d9af998240a2ac35bd97c4073148",
+  "privateJournalSha256": "1b0f7a4589f07061321e6d3f5922029d573c6a134c913cb54748ecec19d7e0c9",
+  "previewVersion": "926e34c8-4f63-491a-aa03-a91cc613616f",
+  "bridgeSha256": "0d00423cae77735afc9538d831ecf501209f2aca4d04ec394580d2f0a0f72611",
+  "verifiedAt": "2026-11-14T11:40:12.294Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261114-ajman-permissions/",
+  "objectCount": 2,
+  "totalBytes": 5358,
+  "publishedSourceIds": [
+    "ajman-mpd-20240709-new-building-area",
+    "ajman-mpd-20260901-new-building-licences"
+  ],
+  "publishedSourceCount": 2,
+  "coverageInventoryVersion": "20261114-uae-evidence-coverage-v43",
+  "previousReplicaAttestationId": "uae-published-evidence-idrive-e2-readback-20261114",
+  "verification": "Both allowlisted objects passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact content type, byte length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}
