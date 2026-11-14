@@ -1,0 +1,12 @@
+{
+  "datasetUrl": "https://data.ajman.ae/explore/dataset/building-licenses-by-building-type/",
+  "recordsUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/building-licenses-by-building-type/exports/json",
+  "retrievedAt": "2026-11-03T13:06:15.804892+00:00",
+  "sourceResponseSha256": "a6bec5ebd69be97252ab7ce35333ab1f21331f99dfc209a8089163db38155ca6",
+  "independentReadbackSha256": "a6bec5ebd69be97252ab7ce35333ab1f21331f99dfc209a8089163db38155ca6",
+  "rawBytes": 197482,
+  "compressedSha256": "8a131ac306be1038a93d9a71844cb96a8588d77a15539c947005f7ab25b05cbd",
+  "compressedBytes": 4932,
+  "totalCount": 741,
+  "independentReadbackCount": 741
+}

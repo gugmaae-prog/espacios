@@ -1,0 +1,16 @@
+{
+  "id": "80bd958d-3b2b-42f2-8e21-bb7343dbf57e",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish V32 verified RAK lifecycle and advertised evidence; preserve V36 UI",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "79e41530-2430-42e5-a5f0-6e10921a3dce",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T19:35:30.620433Z"
+}

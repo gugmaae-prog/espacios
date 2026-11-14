@@ -1,0 +1,24 @@
+{
+  "sourceId": "dred-dld-commercial-unit-sales-20261102",
+  "publisher": "Dubai Real Estate Data, based on Dubai Land Department open data",
+  "sourceUrl": "https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions",
+  "originalSourceUrl": "https://dubailand.gov.ae/en/open-data/real-estate-data/",
+  "license": "CC BY 4.0; derived subset with attribution",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "sourceSnapshotDate": "2026-11-02",
+  "sourceRows": 1382848,
+  "sourceParquetBytes": 22819023,
+  "sourceParquetSha256": "8294c3dd83dde2e16e64eaf1ef155a1ad14ec16b6b39384561777afb8425417e",
+  "captureRule": "DLD Sales; usage Commercial; property type Unit; subtype Office or Shop; registration date before 2026-01-01. Retains quality flags. Source classification for these unit types stops on 2026-02-09, so 2026 is withheld as incomplete.",
+  "rows": 66366,
+  "cleanRows": 64151,
+  "distinctAreaIds": 51,
+  "dateRange": [
+    "2006-02-16",
+    "2025-12-31"
+  ],
+  "compressedBytes": 951872,
+  "compressedSha256": "cd0ada4d7d81027cd66bbfa16ed26860aa4937431c1b91d33e000d3fd718529b",
+  "rawBytes": 7983303,
+  "rawSha256": "c9aa65221e1b8b522103a6ce2646df928cc5c0116ff158f53022bde19efd265c"
+}

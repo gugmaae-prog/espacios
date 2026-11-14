@@ -1,0 +1,175 @@
+/* Full-stack audit fixes. Evidence stays on its approved V48 vintage. */
+var MAP_STACK_RELEASE='20261111-map-stack-v66';
+var MAP_STACK_ACCEPTED={version:'20261014-enrichment-v48',asOf:'2026-10-14',projects:1645,communities:215,records:1860,series:16872,historicalRows:633891};
+var MAP_ACCEPTED_HEATMAP_KEY='recovery/accepted-map-20261013/uae-heatmap-derived.json';
+var MAP_ACCEPTED_HEATMAP_SHA256='98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d';
+var MAP_STACK_PREVIOUS_FETCH=worker_default.fetch;
+psrAllProjectsService=mapCompleteProjects;
+function mapStackJSON(request,payload,status=200){return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff','x-espacios-map-release':MAP_STACK_RELEASE,'referrer-policy':'strict-origin-when-cross-origin','x-frame-options':'SAMEORIGIN','strict-transport-security':'max-age=86400',...(status===405?{allow:'GET, HEAD'}:{})}});}
+function mapStackRelease(env){return{release:MAP_STACK_RELEASE,workerVersion:env.MAP_VERSION?.id||null,createdAt:env.MAP_VERSION?.timestamp||null,baseSourceCommit:typeof MAP_STACK_SOURCE_COMMIT==='string'?MAP_STACK_SOURCE_COMMIT:null,sourceState:'draft_github_pr_branch; generated artifact identified by Worker version',incorporatedVisualCommit:'03fecf08c',source:'deployed_artifact',data:MAP_STACK_ACCEPTED,storage:env.MAP_IDRIVE_READY==='true'&&env.MAP_EVIDENCE?'private_idrive_e2_with_immutable_recovery_fallback':env.MAP_ARCHIVE?'immutable_static_recovery; idrive_pending_verified_endpoint':env.MAP_EVIDENCE?'private_idrive_e2_not_yet_verified':env.MARKET_R2?'cloudflare_r2':'embedded_catalogue_fallback',storageHealth:'not_asserted_by_binding_presence',commercialForecastReady:false,recoveryState:'accepted_v48_recovered_with_documented_legacy_gaps',idrive:{bindingPresent:Boolean(env.MAP_EVIDENCE),endpointReady:env.MAP_IDRIVE_READY==='true',readVerified:env.MAP_IDRIVE_READY==='true'?null:false,status:env.MAP_IDRIVE_READY==='true'?'configured; verify actual reads':'pending_actual_s3_endpoint'},legacyGaps:['Original official-history bundle not restored; retained V48 native series are separate','Saved model capture is partial; no missing projections are reconstructed']};}
+async function mapStackHealth(request,env){
+ const storage=env.MARKET_R2,checks={};
+ const keys={catalogue:MAP_RECOVERED_KEY,nativeHistoryIndex:MAP_NATIVE_INDEX_MANIFEST.key,conditionalScenarios:SE_R2_KEY,fullItemInventory:MAP_FULL_INVENTORY_MANIFEST.key};
+ await Promise.all(Object.entries(keys).map(async([name,key])=>{try{checks[name]=Boolean(await storage?.head(key));}catch{checks[name]=false;}}));
+ if(typeof HI_GET_DATA==='function')await HI_GET_DATA();
+ const record=HI_DATA.records?.find(r=>r.id==='project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai');
+ try{checks.recordShard=Boolean(record?.recordPartition?.key&&await storage?.head(record.recordPartition.key));}catch{checks.recordShard=false;}
+ const ok=Object.values(checks).every(Boolean);
+ return mapStackJSON(request,{ok,mode:ok?'available_with_documented_legacy_gaps':'degraded',release:mapStackRelease(env),checks,legacyArchives:{originalOfficialArchive:'not_restored; V48 native library available',savedPredictionModels:'partial_public_page_only; 50_of_185_query_matches; no missing forecasts reconstructed'},note:'Storage presence probe only. Record and dataset acceptance is verified separately; no numerical forecast approval is implied.'},ok?200:503);
+}
+function mapStackHeaders(response){
+ const headers=new Headers(response.headers);headers.set('x-espacios-map-release',MAP_STACK_RELEASE);headers.set('x-content-type-options','nosniff');headers.set('referrer-policy','strict-origin-when-cross-origin');headers.set('x-frame-options','SAMEORIGIN');headers.set('strict-transport-security','max-age=86400');
+ if((headers.get('content-type')||'').includes('text/html'))headers.set('content-security-policy',"object-src 'none'; base-uri 'self'; frame-ancestors 'self'");
+ return headers;
+}
+function mapStackHtml(html){
+ for(const [id,label]of [['ai-question','Ask about the current map or selected place'],['compare-inventory-search','Find a project or published unit to compare']]){
+  const pattern=new RegExp('<(?:input|textarea)\\b[^>]*\\bid=[\"\']'+id+'[\"\'][^>]*>','g');
+  html=html.replace(pattern,tag=>/\baria-label(?:ledby)?=/.test(tag)?tag:tag.replace(/>$/,' aria-label="'+label+'">'));
+ }
+ if(html.includes('ae-search-map-tools')&&!html.includes('ae-commercial-access')){
+  html=html.replace('</head>','<style id="ae-commercial-access-style">#ae-commercial-access{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 12px;border:1px solid var(--su-line,#b9cad7);border-radius:11px;background:var(--eg-theme-control,#edf3f7);color:var(--su-ink,#1c3044);text-decoration:none;font:700 11px/1 ui-sans-serif,system-ui;white-space:nowrap}#ae-commercial-access:focus-visible{outline:3px solid #3d7797;outline-offset:3px}@media(max-width:760px){#ae-commercial-access{min-height:36px;padding:0 8px}}</style></head>');
+  html=html.replace('</body>','<script>(function(){function add(){if(document.getElementById("ae-commercial-access"))return;var host=document.querySelector(".ae-search-map-tools")||document.querySelector(".topbar");if(!host)return;var a=document.createElement("a");a.id="ae-commercial-access";a.href="/map/commercial";a.textContent="Commercial";a.setAttribute("aria-label","Browse commercial spaces for sale and rent");host.appendChild(a)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",add,{once:true});else add()})();<\/script></body>');
+ }
+ return html;
+}
+
+var MAP_STACK_SYSTEM_PAYLOAD=esmSystemPayload;
+esmSystemPayload=function(env){
+ const payload=MAP_STACK_SYSTEM_PAYLOAD(env),release=mapStackRelease(env);
+ payload.release=MAP_STACK_RELEASE;payload.currentRelease=release;
+ payload.topology=payload.topology.map(row=>row.to==='MARKET_R2'?{...row,to:env.MAP_ARCHIVE?'MAP_ARCHIVE':env.MAP_IDRIVE_READY==='true'?'MAP_EVIDENCE':'MARKET_R2',via:env.MAP_ARCHIVE?'Private immutable recovery asset binding; raw paths denied':env.MAP_IDRIVE_READY==='true'?'Verified private IDrive E2 service':env.MARKET_R2?'R2 binding; verify read health':'Storage unavailable; reviewed embedded snapshot active'}:row);
+ payload.source={repository:'https://github.com/gugmaae-prog/espacios',branch:'codex/map-full-stack-fixes-20261102',deploymentManifest:'wrangler.production.jsonc',baseSourceCommit:release.baseSourceCommit,sourceState:release.sourceState,deploymentSafety:'Current code identity comes from deployed version metadata. Historical external attestations are not a live health receipt.'};
+ payload.storage={r2BindingAvailable:Boolean(env.MARKET_R2&&!env.MAP_ARCHIVE&&!env.MAP_EVIDENCE),mapFallbackActive:!env.MARKET_R2&&!env.MAP_ARCHIVE&&!env.MAP_EVIDENCE,provider:release.storage,healthEndpoint:'/map/api/health',availability:'Check data endpoints; binding presence does not establish healthy storage.'};
+ payload.storage.publishedEvidence={inventoryVersion:UAE_IDRIVE_STORAGE_INVENTORY.inventoryVersion,publishedSourceSnapshots:UAE_IDRIVE_STORAGE_INVENTORY.publishedSourceSnapshots,verifiedReplicaSnapshots:UAE_IDRIVE_STORAGE_INVENTORY.verifiedReplicaSnapshots,readbackInventory:'/map/api/uae-evidence/storage',availability:'Dated verified readback, not a current whole-store health assertion.'};
+ payload.publicSurfaces.health='/map/api/health';return payload;
+};
+async function mapStackPreparedResponse(request,response){const headers=mapStackHeaders(response);if((headers.get('content-type')||'').includes('text/html')&&request.method!=='HEAD'){headers.delete('content-length');headers.delete('etag');return new Response(mapStackHtml(await response.text()),{status:response.status,headers});}return new Response(request.method==='HEAD'?null:response.body,{status:response.status,headers});}
+async function mapStackFullInventory(request,env){
+ const spec=MAP_FULL_INVENTORY_MANIFEST,etag='"recovery-full-ledgers-'+spec.sha256+'"',headers=mapStackHeaders(new Response(null,{headers:{'content-type':'application/json; charset=utf-8','content-encoding':'gzip','cache-control':'public,max-age=60,s-maxage=300','etag':etag,'x-espacios-historical':MAP_STACK_ACCEPTED.version,'x-espacios-item-inventory-records':'1860','x-espacios-recovery-envelope-sha256':spec.sha256,'x-espacios-decoded-sha256':spec.decodedSHA256}}));
+ if((request.headers.get('if-none-match')||'').split(',').map(v=>v.trim().replace(/^W\//,'')).includes(etag))return new Response(null,{status:304,headers});
+ try{const meta=await env.MARKET_R2?.head(spec.key);if(!meta||meta.sha256!==spec.sha256||meta.size!==spec.bytes)throw Error('Unavailable');if(request.method==='HEAD')return new Response(null,{headers});const object=await env.MARKET_R2.get(spec.key);if(!object||object.sha256!==spec.sha256||!object.body)throw Error('Unavailable');return new Response(object.body,{headers,encodeBody:'manual'});}catch{return mapStackJSON(request,{error:'The complete retained item inventory is temporarily unavailable.',complete:false},503);}
+}
+worker_default.fetch=async function(request,env,ctx){
+ const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'')||'/';
+ // Preserve tenant exclusions before applying canonical or private preview fixes.
+ if(path.startsWith('/__map_archive/'))return new Response('Not found',{status:404,headers:{'cache-control':'no-store','x-robots-tag':'noindex, nofollow'}});
+ if(path==='/map/api/ai'&&url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return new Response('Not found',{status:404,headers:{'cache-control':'no-store','x-robots-tag':'noindex, nofollow'}});
+ if(path==='/map/api/ai'){const response=await mapBoundedAI(request,env,ctx);return new Response(response.body,{status:response.status,headers:mapStackHeaders(response)});}
+ if(url.hostname!=='espacios.me'&&!url.hostname.endsWith('.workers.dev'))return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
+ if(['/map/api/value-drivers','/map/api/palm-jebel-ali'].includes(path))return MAP_STACK_PREVIOUS_FETCH.call(this,request,env,ctx);
+ const primary=env.MAP_EVIDENCE&&env.MAP_IDRIVE_READY==='true'?mapEvidenceStore(env.MAP_EVIDENCE,env.MAP_IDRIVE_TRACE):null;
+ const store=env.MAP_ARCHIVE?mapArchiveFallback(primary,env.MAP_ARCHIVE,MAP_ARCHIVE_MANIFEST,env.MAP_IDRIVE_TRACE):primary;
+ const bindings=store?{...env,MARKET_R2:store}:env;
+ const delegatedRequest=url.hostname.endsWith('.workers.dev')?new Request(new URL(url.pathname+url.search,'https://espacios.me'),request):request;
+ const commercialPage=mapRgestateCommercialPage(request);if(commercialPage)return mapStackPreparedResponse(request,commercialPage);
+ const commercialListings=await mapRgestateCommercial(request,RGE_COMMERCIAL_REPORT,RGE_COMMERCIAL_PACKED,RGE_CANDIDATE_REPORT,RGE_CANDIDATE_PACKED,RGE_INDEX_REPORT);if(commercialListings)return mapStackPreparedResponse(request,commercialListings);
+ const publisherIndex=await mapRgestateIndex(request,RGE_INDEX_REPORT,RGE_INDEX_PACKED,RGE_EMIRATE_LABEL_REPORT,RGE_AREA_GEOGRAPHY_REPORT);if(publisherIndex)return mapStackPreparedResponse(request,publisherIndex);
+ const scadStock=mapScadStock(request);if(scadStock)return mapStackPreparedResponse(request,scadStock);
+ const scadActivity=mapScadBuildingActivity(request,UAE_SCAD_BUILDING_ACTIVITY_REPORT,UAE_SCAD_BUILDING_ACTIVITY_DATA);if(scadActivity)return mapStackPreparedResponse(request,scadActivity);
+ const sharjahMarket=mapSharjahMarketAggregates(request,UAE_SHARJAH_MARKET_REPORT,UAE_SHARJAH_MARKET_DATA);if(sharjahMarket)return mapStackPreparedResponse(request,sharjahMarket);
+ const sharjahAnnual=mapSharjahAnnualMarket(request,UAE_SHARJAH_ANNUAL_REPORT,UAE_SHARJAH_ANNUAL_DATA);if(sharjahAnnual)return mapStackPreparedResponse(request,sharjahAnnual);
+ const sharjahMonthly=mapSharjahMonthlyMarket(request,UAE_SHARJAH_MONTHLY_REPORT,UAE_SHARJAH_MONTHLY_DATA);if(sharjahMonthly)return mapStackPreparedResponse(request,sharjahMonthly);
+ const rakMarket=mapRakMarketValues(request,UAE_RAK_MARKET_REPORT,UAE_RAK_MARKET_DATA);if(rakMarket)return mapStackPreparedResponse(request,rakMarket);
+ const rakMonthly=mapRakMonthlyMarket(request,UAE_RAK_MONTHLY_REPORT,UAE_RAK_MONTHLY_DATA);if(rakMonthly)return mapStackPreparedResponse(request,rakMonthly);
+ const rakCommercial=mapRakCommercialHistory(request,UAE_RAK_COMMERCIAL_REPORT,UAE_RAK_COMMERCIAL_DATA);if(rakCommercial)return mapStackPreparedResponse(request,rakCommercial);
+ const rakPermits=mapRakBuildingPermits(request,UAE_RAK_PERMITS_REPORT,UAE_RAK_PERMITS_DATA);if(rakPermits)return mapStackPreparedResponse(request,rakPermits);
+ const dubaiStock=mapDubaiBuildingStock(request,UAE_DUBAI_BUILDING_STOCK_REPORT,UAE_DUBAI_BUILDING_STOCK_DATA);if(dubaiStock)return mapStackPreparedResponse(request,dubaiStock);
+ const dubaiBuildingCards=await mapDubaiBuildingCards(request,UAE_DUBAI_BUILDING_CARDS_MANIFEST,env.MAP_ARCHIVE);if(dubaiBuildingCards)return mapStackPreparedResponse(request,dubaiBuildingCards);
+ const dubaiMunicipalProjects=await mapDubaiMunicipalProjects(request,UAE_DUBAI_MUNICIPAL_PROJECTS_MANIFEST,env.MAP_ARCHIVE);if(dubaiMunicipalProjects)return mapStackPreparedResponse(request,dubaiMunicipalProjects);
+ const dubaiCommercial=await mapDubaiCommercialSales(request,UAE_DUBAI_COMMERCIAL_REPORT,UAE_DUBAI_COMMERCIAL_PACKED,UAE_DUBAI_COMMERCIAL_PARTIAL_REPORT,UAE_DUBAI_COMMERCIAL_PARTIAL_PACKED,RGE_AREA_CENTRES,UAE_DUBAI_COMMERCIAL_SUBTYPE_REPORT,UAE_DUBAI_COMMERCIAL_SUBTYPE_PACKED);if(dubaiCommercial)return mapStackPreparedResponse(request,dubaiCommercial);
+ const dubaiFlat=await mapDubaiFlatSales(request,UAE_DUBAI_FLAT_REPORT,UAE_DUBAI_FLAT_PACKED);if(dubaiFlat)return mapStackPreparedResponse(request,dubaiFlat);
+ const dubaiEjari=mapDubaiEjariRents(request,UAE_DUBAI_EJARI_REPORT,UAE_DUBAI_EJARI_DATA);if(dubaiEjari)return mapStackPreparedResponse(request,dubaiEjari);
+ const fujairahPermits=mapFujairahBuildingPermits(request,UAE_FUJAIRAH_PERMITS_REPORT,UAE_FUJAIRAH_PERMITS_DATA);if(fujairahPermits)return mapStackPreparedResponse(request,fujairahPermits);
+ const uaqIndustrialGuide=mapUaqIndustrialGuide(request,UAE_UAQ_INDUSTRIAL_GUIDE_REPORT,UAE_UAQ_INDUSTRIAL_GUIDE_DATA);if(uaqIndustrialGuide)return mapStackPreparedResponse(request,uaqIndustrialGuide);
+ const adrecMarket=mapAbuDhabiReportedMarket(request,UAE_ADREC_MARKET_REPORT,UAE_ADREC_MARKET_DATA);if(adrecMarket)return mapStackPreparedResponse(request,adrecMarket);
+ const adBuildingUses=await mapAbuDhabiBuildingUses(request,UAE_ABU_DHABI_BUILDING_USE_REPORT,UAE_ABU_DHABI_BUILDING_USE_PACKED);if(adBuildingUses)return mapStackPreparedResponse(request,adBuildingUses);
+ const evidenceStorage=mapUaeEvidenceStorage(request,UAE_IDRIVE_STORAGE_INVENTORY,mapStackRelease(env));if(evidenceStorage)return mapStackPreparedResponse(request,evidenceStorage);
+ const coverage=mapUaeCoverage(request,UAE_COVERAGE_REPORT);if(coverage)return mapStackPreparedResponse(request,coverage);
+ const urbanProjects=await mapAbuDhabiUrbanProjects(request,UAE_ABU_DHABI_URBAN_REPORT,UAE_ABU_DHABI_URBAN_PACKED);if(urbanProjects)return mapStackPreparedResponse(request,urbanProjects);
+ const developerProjects=await mapAbuDhabiDeveloperProjects(request,UAE_ABU_DHABI_DEVELOPER_REPORT,UAE_ABU_DHABI_DEVELOPER_PACKED,UAE_ABU_DHABI_DEVELOPER_GEOMETRY_REPORT,UAE_ABU_DHABI_DEVELOPER_GEOMETRY_CHUNKS);if(developerProjects)return mapStackPreparedResponse(request,developerProjects);
+ const dubaiStatus=await mapDubaiProjectStatus(request,UAE_DUBAI_STATUS_REPORT,UAE_DUBAI_STATUS_PACKED,UAE_DUBAI_STATUS_CROSSWALK);if(dubaiStatus)return mapStackPreparedResponse(request,dubaiStatus);
+ const ajmanRegister=await mapAjmanRegister(request,env,UAE_AJMAN_REGISTER_REPORT,mapEvidenceStore,AJMAN_V48_CROSSWALK);if(ajmanRegister)return mapStackPreparedResponse(request,ajmanRegister);
+ const ajmanRegistration=await mapAjmanRegistration(request,env,UAE_AJMAN_REGISTRATION_REPORT);if(ajmanRegistration)return mapStackPreparedResponse(request,ajmanRegistration);
+ const ajmanDispositions=await mapAjmanDispositions(request,UAE_AJMAN_DISPOSITION_REPORT,store,MAP_ARCHIVE_MANIFEST);if(ajmanDispositions)return mapStackPreparedResponse(request,ajmanDispositions);
+ const ajmanManagement=await mapAjmanManagement(request,UAE_AJMAN_MANAGEMENT_REPORT,UAE_AJMAN_MANAGEMENT_PACKED);if(ajmanManagement)return mapStackPreparedResponse(request,ajmanManagement);
+ const ajmanAreaReference=await mapAjmanAreaReference(request,UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED);if(ajmanAreaReference)return mapStackPreparedResponse(request,ajmanAreaReference);
+ const ajmanBuildingPermits=await mapAjmanBuildingPermits(request,UAE_AJMAN_BUILDING_PERMITS_REPORT,UAE_AJMAN_BUILDING_PERMITS_PACKED);if(ajmanBuildingPermits)return mapStackPreparedResponse(request,ajmanBuildingPermits);
+ const ajmanNewBuildingUse=await mapAjmanNewBuildingUse(request,UAE_AJMAN_NEW_BUILDING_REPORT,UAE_AJMAN_NEW_BUILDING_PACKED);if(ajmanNewBuildingUse)return mapStackPreparedResponse(request,ajmanNewBuildingUse);
+ const ajmanNewPermissionMeasures=await mapAjmanNewBuildingMeasures(request,UAE_AJMAN_NEW_PERMISSION_MEASURES);if(ajmanNewPermissionMeasures)return mapStackPreparedResponse(request,ajmanNewPermissionMeasures);
+ const ajmanLandSales=await mapAjmanLandSales(request,UAE_AJMAN_LAND_SALES_REPORT,UAE_AJMAN_LAND_SALES_PACKED);if(ajmanLandSales)return mapStackPreparedResponse(request,ajmanLandSales);
+ const ajmanLandDispositions=await mapAjmanLandDispositions(request,UAE_AJMAN_LAND_DISPOSITIONS_REPORT,UAE_AJMAN_LAND_DISPOSITIONS_PACKED);if(ajmanLandDispositions)return mapStackPreparedResponse(request,ajmanLandDispositions);
+ const ajmanUnitMortgages=await mapAjmanUnitMortgages(request,UAE_AJMAN_UNIT_MORTGAGES_REPORT,UAE_AJMAN_UNIT_MORTGAGES_PACKED);if(ajmanUnitMortgages)return mapStackPreparedResponse(request,ajmanUnitMortgages);
+ const ajmanRentContracts=await mapAjmanRentContracts(request,UAE_AJMAN_RENT_REPORT,UAE_AJMAN_RENT_PACKED);if(ajmanRentContracts)return mapStackPreparedResponse(request,ajmanRentContracts);
+ const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT,mapEvidenceStore,async()=>({rows:await verifiedAreaReferenceRows(UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED),report:UAE_AJMAN_AREA_REFERENCE_REPORT}));if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
+ // This public UI response is a verified derivation of the accepted V48 map
+ // snapshot. Streaming the private asset avoids rebuilding 1,518 features on
+ // every cold request, which can exceed the Worker resource ceiling.
+ if(path==='/map/api/uae-heatmap'&&['GET','HEAD'].includes(request.method)&&env.MAP_ARCHIVE&&env.MAP_HEATMAP_REBUILD!=='true'){
+  const entry=MAP_ARCHIVE_MANIFEST.entries[MAP_ACCEPTED_HEATMAP_KEY];
+  if(entry?.sha256===MAP_ACCEPTED_HEATMAP_SHA256&&entry.bytes===800612){
+   const headers=mapStackHeaders(new Response(null,{headers:{'content-type':'application/json; charset=utf-8','cache-control':'public,max-age=60,s-maxage=300','etag':'"'+entry.sha256+'"','x-ae-data-source':'verified-accepted-v48-derived-heatmap','x-espacios-derived-asset-sha256':entry.sha256}}));
+   if(request.headers.get('if-none-match')==='"'+entry.sha256+'"')return new Response(null,{status:304,headers});
+   if(request.method==='HEAD')return new Response(null,{status:200,headers});
+   try{const asset=await env.MAP_ARCHIVE.fetch(new Request('https://map-archive.internal'+entry.path,{headers:{accept:'application/octet-stream'}}));
+    if(asset.ok){if(env.MAP_IDRIVE_TRACE)env.MAP_IDRIVE_TRACE.reads.immutable_static_recovery++;return new Response(asset.body,{status:200,headers});}
+   }catch{}
+  }
+ }
+ if(store&&path==='/map/api/record-history'&&url.searchParams.get('includeItemCoverage')==='1'&&!url.searchParams.get('recordId')&&['GET','HEAD'].includes(request.method))return mapStackFullInventory(request,bindings);
+ const retainedHistory=await mapLegacyHistoryRoute(request,bindings,ctx);if(retainedHistory)return mapStackPreparedResponse(request,retainedHistory);
+ const recoveredContext=await mapRecoveredContextRoute(request,bindings,ctx);if(recoveredContext)return mapStackPreparedResponse(request,recoveredContext);
+ if(['GET','HEAD'].includes(request.method)&&['/map/map-core.json','/map/map-data.json','/map/api/uae-heatmap','/map/api/research'].includes(path)&&(env.MAP_EVIDENCE||env.MAP_ARCHIVE)){
+  try{
+   if(typeof HI_GET_DATA==='function')await HI_GET_DATA();
+   const snapshot=await mapRecoveredSnapshot(bindings.MARKET_R2,HI_DATA);
+   if(snapshot){
+    const reviewed=HI_CORE.applyCatalogueRevisions(HI_CORE.applyCommunityCorrections(snapshot,typeof HI_MAP_CORRECTIONS==='undefined'?[]:HI_MAP_CORRECTIONS),typeof HI_CATALOGUE_REVISIONS==='undefined'?[]:HI_CATALOGUE_REVISIONS);
+    if(path==='/map/map-core.json'||path==='/map/map-data.json'){
+     const response=mapStackJSON(request,reviewed),headers=mapStackHeaders(response);headers.set('cache-control','public,max-age=60,s-maxage=300');headers.set('x-ae-data-source','recovered-accepted-public-response');headers.set('x-espacios-evidence-date',snapshot.meta?.exportedAt||'unknown');return new Response(response.body,{headers});
+    }
+    const catalogue=AR.build(reviewed,{projects:[]});catalogue.asOf=reviewed.meta?.exportedAt||null;catalogue.upstream={completeForAcceptedSnapshot:true,liveFeedIncluded:false,reason:'restored_accepted_public_snapshot',snapshotSHA256:MAP_RECOVERED_SHA256};catalogue.counts.snapshotProjects=reviewed.projects.length;catalogue.counts.liveProjects=0;
+    if(path==='/map/api/research'){const response=mapStackJSON(request,catalogue),headers=mapStackHeaders(response);headers.set('cache-control','public,max-age=60,s-maxage=300');return new Response(response.body,{headers});}
+    const fullKey='snapshots/current/map-data.json',text=JSON.stringify(reviewed),localStore={head:async key=>key===fullKey?{etag:MAP_RECOVERED_SHA256}:null,get:async key=>key===fullKey?{body:text,customMetadata:{source_etag:MAP_RECOVERED_SHA256},text:async()=>text}:null,put:async()=>undefined};
+    const response=await aeUaeHeatmap(request,{...bindings,MARKET_R2:localStore,AE_EMERGENCY_CATALOGUE:catalogue},ctx);
+    if(response.ok){const payload=await response.json();payload.sourceSnapshot={...payload.sourceSnapshot,basis:'Recovered accepted public catalogue response captured13October2026, SHA256 '+MAP_RECOVERED_SHA256+'. All1645 accepted project identities retained; reported source/project coordinates and approximate community-centre locations remain distinguishable. Live feed is not included. Authority phases may overlap marketing records; density counts records, not unique developments, transactions or prices.',recovery:reviewed.meta.recovery};payload.completeness={...payload.completeness,mode:'accepted_snapshot',acceptedProjectRecords:1645,availableProjectRecords:1645,liveFeedIncluded:false};mapCoordinateQuality(payload);const headers=mapStackHeaders(response);headers.set('cache-control','public,max-age=60,s-maxage=300');headers.set('x-ae-data-source','recovered-accepted-public-response');headers.delete('content-length');headers.delete('etag');return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{headers});}
+   }
+  }catch(error){console.warn(JSON.stringify({event:'map_recovery_unavailable',reason:'accepted_snapshot_could_not_be_verified'}));}
+ }
+
+ if(['/map/api/control-plane','/map/api/system','/map/api/health'].includes(path)){
+  if(!['GET','HEAD'].includes(request.method))return mapStackJSON(request,{error:'Read-only endpoint'},405);
+  if(path==='/map/api/health')return mapStackHealth(request,bindings);
+  const release=mapStackRelease(env);
+  if(path==='/map/api/control-plane')return mapStackJSON(request,{connected:Boolean(env.MAP_VERSION?.id),release:MAP_STACK_RELEASE,authority:'Cloudflare deployed artifact',currentRelease:release,legacyControlPlane:{role:'historical_attestation_only',currentHealthAuthority:false},dataRoom:{public:String(env.DATA_ROOM_PUBLIC)==='true',route:'/map/data-room'}});
+  const payload=esmSystemPayload(bindings);payload.source={repository:'https://github.com/gugmaae-prog/espacios',branch:'codex/map-full-stack-fixes-20261102',deploymentManifest:'wrangler.production.jsonc',baseSourceCommit:release.baseSourceCommit,sourceState:release.sourceState,reconciliation:'Version identified from deployed artifact; historical external attestations are not current runtime state.'};
+  payload.currentRelease=release;delete payload.controlPlane;
+  payload.publicSurfaces.health='/map/api/health';payload.smartEstimates={release:SE_RELEASE,route:'/map/api/smart-estimates',key:SE_R2_KEY,horizonsYears:[1,3,5,10],storage:release.storage,classification:'conditional_scenarios_not_validated_forecasts',originalHistoryPreserved:true};return mapStackJSON(request,payload);
+ }
+ let response;
+ try{
+  if(path==='/map/api/projects-all'&&['GET','HEAD'].includes(request.method))response=await mapCompleteProjects(request,bindings,ctx);
+  else response=await MAP_STACK_PREVIOUS_FETCH.call(this,delegatedRequest,bindings,ctx);
+  // A storage outage must preserve the reviewed map with its degraded labels.
+  if(!response.ok&&['/map/map-core.json','/map/map-data.json','/map/api/uae-heatmap'].includes(path)&&env.MAP_EVIDENCE)response=await MAP_STACK_PREVIOUS_FETCH.call(this,delegatedRequest,{...env,MARKET_R2:undefined,MAP_EVIDENCE:undefined},ctx);
+ }catch{
+  response=mapStackJSON(request,{error:'This map resource is temporarily unavailable. Please retry.',release:MAP_STACK_RELEASE},503);
+ }
+ const headers=mapStackHeaders(response),type=headers.get('content-type')||'';
+ if(path==='/map/api/uae-heatmap'&&response.ok&&headers.has('x-ae-data-degraded')){
+  const payload=await response.json();payload.sourceSnapshot={...payload.sourceSnapshot,basis:'Degraded mode: reviewed 1,337-project catalogue snapshot only. Live additions and the accepted Abu Dhabi authority additions are unavailable. Counts describe source records, not unique developments or transactions.'};
+  payload.completeness={...payload.completeness,mode:'degraded_snapshot',acceptedProjectRecords:1645,availableProjectRecords:1337,missingAuthorityRecordIdentities:308,missingIdentityEmirate:'Abu Dhabi',limitation:'The 308 absent authority identities are catalogue records; this does not claim all had verified map coordinates.'};
+  mapCoordinateQuality(payload);
+  headers.delete('content-length');headers.delete('etag');headers.set('cache-control','public,max-age=60,s-maxage=300');return new Response(request.method==='HEAD'?null:JSON.stringify(payload),{status:response.status,headers});
+ }
+
+ if(path.startsWith('/map/api/')&&response.status>=400&&type.includes('application/json')){
+  // Keep public availability errors useful without exposing internal exceptions.
+  const status=response.status;let body;try{body=await response.json();}catch{body={error:'Map data is temporarily unavailable.'};}delete body.message;delete body.detail;
+  headers.set('cache-control','no-store');headers.delete('content-length');return new Response(request.method==='HEAD'?null:JSON.stringify(body),{status,headers});
+ }
+ if(type.includes('text/html')&&request.method!=='HEAD'){
+  const html=mapStackHtml(await response.text());headers.delete('content-length');headers.delete('etag');return new Response(html,{status:response.status,headers});
+ }
+ return new Response(request.method==='HEAD'||[204,205,304].includes(response.status)?null:response.body,{status:response.status,headers});
+};

@@ -1,0 +1,116 @@
+{
+  "sourceId": "sharjah-rerd-reported-monthly-market-20261114-supplement",
+  "emirate": "Sharjah",
+  "authority": "Sharjah Real Estate Registration Department",
+  "publication": "Sharjah 24 department disclosures and Argaam nine-month table",
+  "evidenceClass": "government_reported_monthly_market_aggregate",
+  "grain": "emirate-calendar-month selected reported aggregates",
+  "sourceMethod": "Six prior selected monthly facts are preserved. Argaam reports a department nine-month table: September is a separate rounded month; February and March share merged cells and remain a separate two-month observation. WAM H1 and nine-month totals cross-check the rounded values. Only numerical facts and links are retained.",
+  "period": "January–September 2026, partial month coverage",
+  "missingMonths": [
+    "2026-02",
+    "2026-03"
+  ],
+  "observations": [
+    {
+      "month": "2026-01",
+      "publishedAt": "2026-02-26T15:16:48Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/02/26/KMR2",
+      "reportedTransactionValueAedApprox": 9300000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 10333,
+      "salesTransactions": 4868,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-04",
+      "publishedAt": "2026-05-12T06:46:26Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/05/12/KMR5",
+      "reportedTransactionValueAedApprox": 3500000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 15669,
+      "salesTransactions": 2675,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-05",
+      "publishedAt": "2026-06-05T08:44:36Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/06/05/gh-6",
+      "reportedTransactionValueAedApprox": 3100000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 7119,
+      "salesTransactions": 1851,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-06",
+      "publishedAt": "2026-08-06T06:48:04Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/08/06/mm03",
+      "reportingBasis": "retrospective_comparison_in_july_release",
+      "reportedTransactionValueAedApprox": 4400000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": null,
+      "salesTransactions": null,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-07",
+      "publishedAt": "2026-08-06T06:48:04Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/08/06/mm03",
+      "reportedTransactionValueAedApprox": 7000000000,
+      "valuePrecision": "reported_rounded_to_aed_1_billion",
+      "allProcedureTransactions": 9376,
+      "salesTransactions": 2884,
+      "officeUnitSales": 17,
+      "shopUnitSales": 1
+    },
+    {
+      "month": "2026-08",
+      "publishedAt": "2026-09-10T06:20:06Z",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/09/10/a8",
+      "reportedTransactionValueAedApprox": 4600000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": 9139,
+      "salesTransactions": 2367,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    },
+    {
+      "month": "2026-09",
+      "publishedAt": "2026-10-13",
+      "sourceUrl": "https://www.argaam.com/en/article/articledetail/id/1943896",
+      "reportingBasis": "secondary_compilation_of_department_nine_month_report",
+      "reportedTransactionValueAedApprox": 5700000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "allProcedureTransactions": null,
+      "reportedAllProcedureTransactionsApprox": 13700,
+      "countPrecision": "reported_rounded_to_0_1_thousand",
+      "salesTransactions": null,
+      "officeUnitSales": null,
+      "shopUnitSales": null
+    }
+  ],
+  "limits": "Seven selected monthly observations; June and September lack exact procedure and sale counts. February and March have only a combined rounded value and approximate procedure count, so neither is represented as an individual month. Rounded monetary values and mixed exact/approximate procedure counts must not be summed into a precise January–September total. All-procedure counts include registrations other than sales. Figures are not commercial-only, transaction-level, unit prices, locations, or current availability.",
+  "incompleteMonths": [
+    "2026-06",
+    "2026-09"
+  ],
+  "combinedPeriodObservations": [
+    {
+      "startMonth": "2026-02",
+      "endMonth": "2026-03",
+      "sourceUrl": "https://www.argaam.com/en/article/articledetail/id/1943896",
+      "publishedAt": "2026-10-13",
+      "reportingBasis": "secondary_table_cells_span_february_and_march",
+      "reportedTransactionValueAedApprox": 9200000000,
+      "valuePrecision": "reported_rounded_to_aed_0_1_billion",
+      "reportedAllProcedureTransactionsApprox": 18900,
+      "countPrecision": "reported_rounded_to_0_1_thousand",
+      "salesTransactions": null
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "origin": "https://espacios.me",
+  "version": "20261012-enrichment-v44",
+  "checkedAt": "2026-10-13T08:06:30.719Z",
+  "readOnly": true,
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 26730,
+      "unestablished": 9300,
+      "partial": 3438,
+      "present": 3312
+    },
+    "annualEndpoint": 2080
+  },
+  "events": {
+    "events": 105,
+    "sources": 3365,
+    "exposures": 7382
+  },
+  "increment": {
+    "series": 0,
+    "nativePoints": 0,
+    "factRecords": 1
+  },
+  "passed": true
+}

@@ -1,0 +1,131 @@
+{
+  "sourceId": "rak-municipality-2026-monthly-transaction-aggregates-20261110",
+  "emirate": "Ras Al Khaimah",
+  "authority": "Ras Al Khaimah Municipality, Lands and Properties Sector",
+  "sourcePageUrl": "https://mun.rak.ae/home/rak-municipality/organizational-structure/lands-properties-sector/",
+  "publication": "2026 monthly real estate transaction reports, through September 2026",
+  "evidenceClass": "official_monthly_registered_real_estate_market_aggregate",
+  "grain": "emirate-calendar-month",
+  "unit": "AED",
+  "sourceMethod": "The September municipality infographic labels the monthly sales, mortgage, and waiver values for January–September 2026 in AED million. January uses the exact AED values and counts in the separate January report. July, August, and September counts come from their own month reports. The July and August charts agree with the September chart for overlapping months. Values shown only in infographics are rounded to AED million.",
+  "sourceReports": [
+    {
+      "month": "2026-01",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D8%AD%D8%B5%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A-%D9%84%D8%B4%D9%87%D8%B1-%D9%8A%D9%86%D8%A7%D9%8A%D8%B1-2025-2026-in-English.pdf"
+    },
+    {
+      "month": "2026-07",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%A7%D9%84%D8%AA%D8%B5%D8%B1%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9-2026-%D9%8A%D9%88%D9%84%D9%8A%D9%88.pdf"
+    },
+    {
+      "month": "2026-08",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%A7%D9%84%D8%AA%D8%B5%D8%B1%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9-2026-%D8%A7%D8%BA%D8%B3%D8%B7%D8%B3.pdf"
+    },
+    {
+      "month": "2026-09",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%A7%D9%84%D8%AA%D8%B5%D8%B1%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A91-2026-%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B1.pdf"
+    }
+  ],
+  "limits": "Emirate-wide, all-use monthly totals; no commercial-only split, unit-level transactions, project addresses, current listing availability, or prices per unit. February–September values are chart labels rounded to AED million; January exact figures come from the January PDF. Counts are unavailable for February–June and remain null. The nine months are incomplete 2026 coverage, not an annual total. Mortgage and waiver values must not be treated as sales.",
+  "observations": [
+    {
+      "month": "2026-01",
+      "salesValueAed": 249794299,
+      "mortgagesValueAed": 136953350,
+      "waiverMarketValueAed": 36171892,
+      "valuePrecision": "reported_exact_aed",
+      "salesTransactions": 302,
+      "mortgageRegistrations": 104,
+      "waiverTransactions": 39,
+      "countSourceMonth": "2026-01"
+    },
+    {
+      "month": "2026-02",
+      "salesValueAed": 371000000,
+      "mortgagesValueAed": 151000000,
+      "waiverMarketValueAed": 26000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": null,
+      "mortgageRegistrations": null,
+      "waiverTransactions": null,
+      "countSourceMonth": null
+    },
+    {
+      "month": "2026-03",
+      "salesValueAed": 144000000,
+      "mortgagesValueAed": 254000000,
+      "waiverMarketValueAed": 64000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": null,
+      "mortgageRegistrations": null,
+      "waiverTransactions": null,
+      "countSourceMonth": null
+    },
+    {
+      "month": "2026-04",
+      "salesValueAed": 205000000,
+      "mortgagesValueAed": 133000000,
+      "waiverMarketValueAed": 152000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": null,
+      "mortgageRegistrations": null,
+      "waiverTransactions": null,
+      "countSourceMonth": null
+    },
+    {
+      "month": "2026-05",
+      "salesValueAed": 184000000,
+      "mortgagesValueAed": 67000000,
+      "waiverMarketValueAed": 29000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": null,
+      "mortgageRegistrations": null,
+      "waiverTransactions": null,
+      "countSourceMonth": null
+    },
+    {
+      "month": "2026-06",
+      "salesValueAed": 199000000,
+      "mortgagesValueAed": 418000000,
+      "waiverMarketValueAed": 73000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": null,
+      "mortgageRegistrations": null,
+      "waiverTransactions": null,
+      "countSourceMonth": null
+    },
+    {
+      "month": "2026-07",
+      "salesValueAed": 321000000,
+      "mortgagesValueAed": 57000000,
+      "waiverMarketValueAed": 75000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": 199,
+      "mortgageRegistrations": 48,
+      "waiverTransactions": 64,
+      "countSourceMonth": "2026-07"
+    },
+    {
+      "month": "2026-08",
+      "salesValueAed": 220000000,
+      "mortgagesValueAed": 129000000,
+      "waiverMarketValueAed": 63000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": 218,
+      "mortgageRegistrations": 78,
+      "waiverTransactions": 57,
+      "countSourceMonth": "2026-08"
+    },
+    {
+      "month": "2026-09",
+      "salesValueAed": 230000000,
+      "mortgagesValueAed": 92000000,
+      "waiverMarketValueAed": 52000000,
+      "valuePrecision": "rounded_nearest_aed_million",
+      "salesTransactions": 202,
+      "mortgageRegistrations": 66,
+      "waiverTransactions": 64,
+      "countSourceMonth": "2026-09"
+    }
+  ]
+}

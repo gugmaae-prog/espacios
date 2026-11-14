@@ -1,0 +1,27 @@
+{
+  "url": "https://data.dubai/o/dda/data-services/dataset-download?datasetId=467654&page=1&pageSize=10&sortDir=desc",
+  "status": 200,
+  "retrievedAt": "2026-10-11T22:07:34.827286+00:00",
+  "sha256": "00b709dd83cf3f89b379a4958dfa2744b62c9ec0ceeae7b33fb6af7ed649e1b9",
+  "bytes": 2217,
+  "versions": [
+    {
+      "folder": "projects_2026-07-06_16-25-21_0001",
+      "files": [
+        {
+          "name": "projects_2026-07-06_16-25-21_0001.csv.gz",
+          "bytes": 2473575
+        },
+        {
+          "name": "projects_2026-07-06_16-25-21_0001.json.gz",
+          "bytes": 4814073
+        },
+        {
+          "name": "projects_2026-07-06_16-25-21_0001.xlsx.gz",
+          "bytes": 1086929
+        }
+      ]
+    }
+  ],
+  "signedURLsOmitted": true
+}

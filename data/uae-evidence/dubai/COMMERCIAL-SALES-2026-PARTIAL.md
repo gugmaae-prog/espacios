@@ -1,0 +1,7 @@
+# Dubai commercial unit sales: partial 2026 source slice
+
+The [Dubai Real Estate Data CC BY 4.0 snapshot](https://huggingface.co/datasets/dubairealestatedata/dubai-real-estate-sales-transactions), derived from [Dubai Land Department open data](https://dubailand.gov.ae/en/open-data/real-estate-data/), contains 1,133 distinct registered office/shop unit sales dated 1 January–9 February 2026. Of these, 889 are offices, 244 shops, and 1,077 pass the source's quality flag. The source Parquet is the same SHA-256 verified input used for the separately published 66,366-row 2006–2025 series. The exact derived bytes and checksums are in `commercial-unit-sales-2026-partial-validation.json`.
+
+The source stops classifying further 2026 rows as these commercial unit types after 9 February while other sales continue. This slice is therefore **incomplete by source coverage**, not a full-year 2026 total. It has its own read-only API and coverage entry so consumers cannot silently merge it into complete-year comparisons. It is neither currently available inventory nor an asking-price feed. DLD cadastral areas are not unit pins. Flagged records remain in counts; price medians and summed sale values use quality-clean records only.
+
+The captured source Parquet is retained locally under `work/dubai-commercial-capture/` and excluded from the Worker release. The Worker embeds only the verified derived subset, source metadata, and attribution. No R2 dependency is added.

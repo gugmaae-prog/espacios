@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "mode": "capture_only",
+  "passId": "primary-pja-fujairah-20261014-v47",
+  "baselineVersion": "20261013-enrichment-v46",
+  "baselineSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "baselineCommit": "6cb77c197d1ea6107c94f374f2bfa10c7248a043",
+  "domains": [
+    "reportagegroup.com",
+    "www.nakheel.com",
+    "www.protocol.dubai.ae"
+  ],
+  "limits": {
+    "sourcePages": 20,
+    "httpRequests": 40,
+    "concurrency": 1,
+    "redirectsPerUrl": 2,
+    "bytesPerResponse": 2000000,
+    "timeoutSeconds": 15,
+    "minimumDelaySeconds": 2
+  },
+  "sources": [
+    {
+      "id": "pja-masterplan",
+      "url": "https://www.protocol.dubai.ae/en/media-listing/news-events/mohammed-bin-rashid-approves-new-futuristic-masterplan-for-palm-jebel-ali/",
+      "publisher": "Dubai Protocol Department",
+      "reviewAgainstIds": [
+        "community:Dubai:palm-jebel-ali"
+      ],
+      "expectedNeedles": [
+        "Palm Jebel Ali",
+        "masterplan"
+      ],
+      "identityNeedles": [
+        "Palm Jebel Ali",
+        "masterplan"
+      ],
+      "reportedPublishedAt": "2023-05-31",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "palm-central-next-phase",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "publisher": "Nakheel",
+      "reviewAgainstIds": [
+        "project:palm-central-private-residences-palm-jebel-ali-dubai"
+      ],
+      "expectedNeedles": [
+        "Palm Central",
+        "222"
+      ],
+      "identityNeedles": [
+        "Palm Central",
+        "222"
+      ],
+      "reportedPublishedAt": "2026-06-24",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "reportage-directory",
+      "url": "https://reportagegroup.com/projects/residential-apartments/",
+      "publisher": "Reportage Group",
+      "reviewAgainstIds": [
+        "project:oceana-by-reportage-fujairah-uae",
+        "project:marlin-ii-reportage-al-reem-island-abu-dhabi"
+      ],
+      "expectedNeedles": [
+        "Oceana",
+        "Fujairah",
+        "530k",
+        "Marlin",
+        "1.6M"
+      ],
+      "identityNeedles": [
+        "Oceana",
+        "Fujairah",
+        "530k",
+        "Marlin",
+        "1.6M"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "oceana-project",
+      "url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "publisher": "Reportage Group",
+      "reviewAgainstIds": [
+        "project:oceana-by-reportage-fujairah-uae"
+      ],
+      "expectedNeedles": [
+        "Oceana",
+        "Fujairah",
+        "605"
+      ],
+      "identityNeedles": [
+        "Oceana",
+        "Fujairah",
+        "605"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "marlin-2-project",
+      "url": "https://reportagegroup.com/projects/residential-apartments/marlin-2/",
+      "publisher": "Reportage Group",
+      "reviewAgainstIds": [
+        "project:marlin-ii-reportage-al-reem-island-abu-dhabi"
+      ],
+      "expectedNeedles": [
+        "Marlin",
+        "Abu Dhabi",
+        "164"
+      ],
+      "identityNeedles": [
+        "Marlin",
+        "Abu Dhabi",
+        "164"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    }
+  ]
+}

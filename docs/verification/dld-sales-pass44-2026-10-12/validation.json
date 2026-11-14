@@ -1,0 +1,16 @@
+{
+  "passId": "dld-sales-pass44-20261012",
+  "acceptedTransactions": 40,
+  "sourceRowsScanned": 1800588,
+  "duplicateReconciliationRowsScanned": 1800588,
+  "excludedRows": {
+    "not_sale": 2,
+    "not_residential_flat": 1
+  },
+  "packetTests": 5,
+  "packetTestsPassed": true,
+  "completeIdentityReviewPassed": true,
+  "priorArchiveSHA256": "999760c4e7fade1d3f6f5398f19f0521a96dd403cbcc51ac1d2e242188061998",
+  "liveCoverageCredit": 0,
+  "completeLifetimeHistory": false
+}

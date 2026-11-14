@@ -1,0 +1,13 @@
+{
+  "datasetUrl": "https://data.ajman.ae/explore/dataset/licenses-issued-for-new-buildings-by-number-of-licenses/",
+  "recordsUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/licenses-issued-for-new-buildings-by-number-of-licenses/exports/json",
+  "retrievedAt": "2026-11-14T11:35:17.155004+00:00",
+  "totalCount": 268,
+  "independentReadbackCount": 268,
+  "sourceResponseSha256": "0ffefea58b2d8f97b11a71525935a14c35bc257d7c881a9bf8d18100819e8339",
+  "independentReadbackSha256": "0ffefea58b2d8f97b11a71525935a14c35bc257d7c881a9bf8d18100819e8339",
+  "rawBytes": 149973,
+  "compressedSha256": "c37cb925ff5383cd4c4a7506c0f9609a70ec2728200c42e879f6e3233b1b3628",
+  "compressedBytes": 2696,
+  "metadataSha256": "db82a8c907f27b8760bdebb494b5ae7d60674ed8fd91615b74d658be80d1d9c3"
+}

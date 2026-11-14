@@ -2,16 +2,26 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   // Explicit production release configuration. The default remains a candidate.
   "name": "psr-portfolio-map-v2",
-  "main": "src/worker.js",
+  "main": "src/production-entry.mjs",
+  "assets": { "directory": "work/archive-assets", "binding": "MAP_ARCHIVE", "run_worker_first": true, "html_handling": "none", "not_found_handling": "none" },
+  "durable_objects": { "bindings": [{ "name": "MAP_AI_QUOTA", "class_name": "MapAIQuota" }] },
+  "migrations": [{ "tag": "map-ai-quota-v1", "new_sqlite_classes": ["MapAIQuota"] }],
   "account_id": "b1b843ec85bc39a3a4d370ba4f84f17a",
   "compatibility_date": "2026-08-20",
   "compatibility_flags": ["nodejs_compat"],
   "ai": { "binding": "AI" },
   "d1_databases": [{ "binding": "DB", "database_name": "cba-property-db", "database_id": "a5165cff-70a5-4685-af87-5ffdcf08652a" }],
-  "r2_buckets": [{ "binding": "MARKET_R2", "bucket_name": "psr-market-intelligence" }],
-  "services": [{ "binding": "PSR_PROPERTY", "service": "psr-property", "environment": "production" }],
+  // MARKET_R2 is intentionally omitted while R2 is disabled account-wide.
+  // Accepted V48 runtime evidence uses a private immutable asset binding.
+  // The private IDrive primary was independently read back; immutable assets remain the fallback.
+  "services": [{ "binding": "PSR_PROPERTY", "service": "psr-property", "environment": "production" }, { "binding": "MAP_EVIDENCE", "service": "espacios-auth-central", "entrypoint": "MapEvidence" }, { "binding": "MAP_CATALOGUE_FETCH", "service": "espacios-data-hub" }],
+  "version_metadata": { "binding": "MAP_VERSION" },
+  "observability": { "enabled": true, "head_sampling_rate": 0.1, "logs": { "enabled": true, "invocation_logs": false } },
   "vars": {
     "DATA_ROOM_PUBLIC": "false",
+    "MAP_IDRIVE_READY": "true",
+    "MAP_IDRIVE_VERIFIED_MANIFEST_SHA256": "7b3d9aa40cc8df795f6036f98f5a8c97d99e1d3ec26def3b9fa75b477c6fc642",
+    "MAP_IDRIVE_VERIFIED_AT": "2026-11-02T08:57:41.734Z",
     "SUPABASE_CONTROL_URL": "https://ypkfganbwdvcjrcxygta.supabase.co/functions/v1/espacios-map-control"
   }
   // No routes: preserve the separately managed canonical map shell.

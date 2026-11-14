@@ -1,0 +1,27 @@
+{
+  "planId": "sharjah-supplement-20261114-idrive-e2-replica",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "host": "s3.us-west-2.idrivee2.com",
+  "signingRegion": "us-east-1",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "sourceScope": "One versioned Sharjah reported aggregate supplement; selected numerical facts and links only",
+  "separateFromExistingCloudflareBackupRun": true,
+  "objects": [
+    {
+      "sourceId": "sharjah-rerd-reported-monthly-market-20261114-supplement",
+      "role": "selected_monthly_and_combined_period_numerical_facts",
+      "localPath": "data/uae-evidence/sharjah/monthly-market-20261114-supplement.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/sharjah/monthly-market/20261114-supplement/f8b39ade84228e90c856a2df7e91bdf4c34db91b0539e842ad3db6010d621f69/monthly-market-20261114-supplement.json.gz",
+      "bytes": 1324,
+      "sha256": "f8b39ade84228e90c856a2df7e91bdf4c34db91b0539e842ad3db6010d621f69",
+      "rawBytes": 5117,
+      "rawSha256": "ef3071410d7bb5410a66cac7a53462c1a967507ec0fa0e0cf4ceb2240e3869dc",
+      "validationSha256": "7352a7cd9a740758c00e0901643c55b5d783e5c5e15f0d14e2328f585f1afbec",
+      "contentType": "application/gzip"
+    }
+  ],
+  "objectCount": 1,
+  "totalBytes": 1324
+}

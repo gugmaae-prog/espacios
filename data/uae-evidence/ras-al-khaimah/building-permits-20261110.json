@@ -1,0 +1,97 @@
+{
+  "sourceId": "raksc-yearbook-2026-selected-building-permits-20261110",
+  "emirate": "Ras Al Khaimah",
+  "authority": "Ras Al Khaimah Statistics Centre",
+  "originalSource": "Ras Al Khaimah Municipality",
+  "publication": "Statistical Yearbook 2026, Tables 7-3 and 7-4",
+  "sourceUrl": "https://css.rak.ae/en/syvb2026/",
+  "evidenceClass": "official_annual_building_permit_count_aggregate",
+  "grain": "emirate-calendar-year issued building permits",
+  "sourceMethod": "Selected annual total row from Table 7-3 and two separately labelled building-type rows from Table 7-4; quarterly rows and yearbook content are not republished.",
+  "annual": [
+    {
+      "year": 2017,
+      "issuedPermits": 9561
+    },
+    {
+      "year": 2018,
+      "issuedPermits": 10071
+    },
+    {
+      "year": 2019,
+      "issuedPermits": 8909
+    },
+    {
+      "year": 2020,
+      "issuedPermits": 6789
+    },
+    {
+      "year": 2021,
+      "issuedPermits": 6561
+    },
+    {
+      "year": 2022,
+      "issuedPermits": 5756
+    },
+    {
+      "year": 2023,
+      "issuedPermits": 6258
+    },
+    {
+      "year": 2024,
+      "issuedPermits": 5830
+    },
+    {
+      "year": 2025,
+      "issuedPermits": 6315
+    }
+  ],
+  "limits": "Table 7-4 labels one-storey buildings as commercial in Arabic and industrial buildings separately. These are permit counts, not completed buildings, distinct projects, commercial units, transactions, or available listings. Multi-storey buildings are not assumed commercial. Table 7-4 has a different classification and total from Table 7-3; the two totals are not combined. No verified project coordinates or rates are inferred.",
+  "buildingTypes": [
+    {
+      "year": 2017,
+      "oneStoreyCommercialBuildingPermits": 90,
+      "industrialBuildingPermits": 26
+    },
+    {
+      "year": 2018,
+      "oneStoreyCommercialBuildingPermits": 138,
+      "industrialBuildingPermits": 33
+    },
+    {
+      "year": 2019,
+      "oneStoreyCommercialBuildingPermits": 91,
+      "industrialBuildingPermits": 59
+    },
+    {
+      "year": 2020,
+      "oneStoreyCommercialBuildingPermits": 49,
+      "industrialBuildingPermits": 18
+    },
+    {
+      "year": 2021,
+      "oneStoreyCommercialBuildingPermits": 108,
+      "industrialBuildingPermits": 119
+    },
+    {
+      "year": 2022,
+      "oneStoreyCommercialBuildingPermits": 46,
+      "industrialBuildingPermits": 16
+    },
+    {
+      "year": 2023,
+      "oneStoreyCommercialBuildingPermits": 62,
+      "industrialBuildingPermits": 22
+    },
+    {
+      "year": 2024,
+      "oneStoreyCommercialBuildingPermits": 59,
+      "industrialBuildingPermits": 26
+    },
+    {
+      "year": 2025,
+      "oneStoreyCommercialBuildingPermits": 69,
+      "industrialBuildingPermits": 41
+    }
+  ]
+}

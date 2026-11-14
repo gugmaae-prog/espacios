@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-09T00:18:45.692292+00:00",
+  "recordId": "project:avida-residences-iquna-properties-dubai-islands",
+  "status": "primary_legal_developer_bridge_unresolved",
+  "acceptedFinancialObservations": 0,
+  "coverageCredit": 0,
+  "sources": [
+    {
+      "url": "https://www.iqunaproperties.com/terms-and-conditions",
+      "finalUrl": "https://www.iqunaproperties.com/terms-and-conditions",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-09T00:17:33.889Z",
+      "bytes": 43188,
+      "sha256": "47f795cfb80f5a54824303ffcf8bd1f608deb235466b74aa741b0d114a280251"
+    },
+    {
+      "url": "https://devmark.com/",
+      "finalUrl": "https://devmark.com/",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-09T00:17:35.308Z",
+      "bytes": 102925,
+      "sha256": "c54c84cc9cb615d8e75a720a22431c007015e54947c89d30039ac503079ef50c"
+    },
+    {
+      "url": "https://devmark.com/our-case-studies/Avida-Residences",
+      "finalUrl": "https://devmark.com/our-case-studies/Avida-Residences",
+      "httpStatus": 200,
+      "retrievedAt": "2026-10-09T00:18:18.261Z",
+      "bytes": 89443,
+      "sha256": "4dd86777859c4f58b9ba732bbed9240bac1ac190f890e82d8923eac2ca8d2faa"
+    }
+  ],
+  "reason": "Official IQUNA terms, Devmark home and exact Avida case-study captures name the marketed project/developer but do not supply the explicit Serene Marina relationship needed to join the 40 transaction candidates. Secondary directory claims remain leads only."
+}

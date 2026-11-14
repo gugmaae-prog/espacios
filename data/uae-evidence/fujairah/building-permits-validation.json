@@ -1,0 +1,67 @@
+{
+  "sourceId": "fscfuj-construction-chapter-selected-permits-2025-20261110",
+  "annualRows": 5,
+  "buildingUseRows2024": 3,
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "sourceUrl": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+  "dataBytes": 5039,
+  "dataSha256": "0c932c4baf574d6df38daa75543f0d7227aae8073e38b88ab3eb39345a5462ac",
+  "capturePdf": {
+    "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+    "retrievedAt": "2026-11-09",
+    "bytes": 1317448,
+    "sha256": "e8a4ed335e435a6c0460c0dcb395a85fab64113b2dc080aca9414bd1863f4721",
+    "publicationPageNumbers": [
+      50,
+      51
+    ],
+    "pdfPageNumbers": [
+      7,
+      8
+    ]
+  },
+  "rightsScope": "Selected numerical facts and source link only. No chapter text, images, layout, or full table redistribution; no project-register or transaction-feed reuse right asserted.",
+  "verification": "The 2021 annual permit-type rows reconcile to Fujairah 1,231 and Dibba 758, then to the 1,989 emirate total in the 2023 chapter. Its selected 2023 building-use rows reconcile across municipalities to Table 2-5. The 2022–2025 annual and selected 2024–2025 building-use rows remain unchanged and reconcile as documented. New and renewed permits remain combined.",
+  "limits": "Issued permits count authorizations, not completed buildings, distinct developments, units, sale or rent transactions, asking listings, current availability, or project coordinates. New and renewed permits are combined in the source and must not be described as new construction alone. The selected 2023–2025 building-use categories are a separate breakdown of their respective annual permits, not additional permits. Mixed residential-commercial and industrial buildings are separate from commercial-only buildings.",
+  "buildingUseRows2025": 3,
+  "sourceUrls": [
+    "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1045/Chapter2ConstructionandBuilding.pdf",
+    "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+    "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf"
+  ],
+  "priorCapturePdf": {
+    "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+    "retrievedAt": "2026-11-09",
+    "bytes": 5100936,
+    "sha256": "fdb36502f4956eb5de20d9d851e79372ef9cd7ce6730b7737b5ce5e0c091ff78",
+    "publicationPageNumbers": [
+      50,
+      51
+    ],
+    "pdfPageNumbers": [
+      7,
+      8
+    ]
+  },
+  "buildingUseRows2023": 3,
+  "earliestCapturePdf": {
+    "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1045/Chapter2ConstructionandBuilding.pdf",
+    "retrievedAt": "2026-11-10",
+    "bytes": 969132,
+    "sha256": "7182e94f918f81e1c0b28795aac4d3890974efe836b4974b1facceffb35b6cb7",
+    "publicationPageNumbers": [
+      50,
+      51
+    ],
+    "pdfPageNumbers": [
+      7,
+      8
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sourceId": "raksc-yearbook-2026-selected-market-values-20261109",
+  "rows": 6,
+  "years": [
+    2015,
+    2020,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "sourceUrl": "https://css.rak.ae/en/statistical-yearbook-2026/",
+  "dataBytes": 3711,
+  "dataSha256": "3e66bd2e7bef03f6849ec78f19180d11159a144d23b4d4d0bb894d06e235c6f2",
+  "capturePage": {
+    "url": "https://css.rak.ae/en/statistical-yearbook-2026/",
+    "retrievedAt": "2026-11-09",
+    "bytes": 409142,
+    "sha256": "9367cd9259e11cbdaaed9a3a1e9cec2510cb9d7a9a2591b361506b1313eed1d9"
+  },
+  "rightsScope": "Selected numerical facts and source link only. No yearbook text, images, layout, or bulk table redistribution; no transaction-register reuse right asserted.",
+  "verification": "Selected figures checked against Tables 7-1 and 7-2 in the official page source. Printed 2022 components differ from the printed total by AED 1 thousand; values are retained as published. Dashes in the commercial-unit row are null, not zero.",
+  "limits": "Selected annual monetary values, not a continuous time series, sale counts, individual transactions, asking listings, prices per unit, available commercial spaces, or a project register. Mortgage and waiver values are separate from sales. Null commercial-unit values mean that the source prints a dash, not zero. Mixed commercial-residential land is not classified as a commercial-only unit. The printed 2022 component sum exceeds its total by AED 1 thousand. Table 7-1 rounds 2025 total sales to AED 3,192,316 thousand; Table 7-2 prints AED 3,192,316.42 thousand. No project location, current availability, or return estimate is inferred."
+}

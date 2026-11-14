@@ -1,0 +1,33 @@
+{
+  "sourceId": "ad-sdi-developer-projects-geometry-20261103",
+  "sourceLayerId": "ad-sdi-developer-projects-20261103",
+  "sourceQuery": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/207/query?where=1%3D1&outFields=OBJECTID%2CPROJECT_NAME%2CDEVELOPER_NAME%2CCH_FID&returnGeometry=true&outSR=4326&orderByFields=OBJECTID%20ASC&resultRecordCount=2000&f=json",
+  "retrievedAt": "2026-11-03T08:09:39.903517Z",
+  "sourcePublicationDate": null,
+  "geometryFormat": "esriPolygonRings",
+  "spatialReferenceWkid": 4326,
+  "featureCount": 411,
+  "ringCount": 528,
+  "vertexCount": 92121,
+  "bounds": [
+    51.747011791000034,
+    22.873174779000067,
+    55.87714450200008,
+    24.90170833600007
+  ],
+  "rawBytes": 3736212,
+  "rawSha256": "99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2",
+  "independentReadbackSha256": "99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2",
+  "compressedBytes": 1096290,
+  "compressedSha256": "ed2a5805a5c504142d4a982e542bbe7f2d812dccad475b83f4b159d5e31f55af",
+  "attributesCrosscheckedAgainst": "347fa57d07e57cd359f63fffbed14cd5beda429475ba24db954950240d479f45",
+  "geometryGrain": "source feature polygon, not building footprint, unit location or verified V48 project point",
+  "attribution": "Source: Abu Dhabi Spatial Data Infrastructure Open Data, Department of Government Enablement. Developer Projects layer 207, geometry queried 3 November 2026. Source polygons are preserved as Esri rings in EPSG:4326 and are not matched to ADREC or V48 project identities.",
+  "chunkIndex": {
+    "file": "sdi-developer-projects-geometry-chunks-20261103.json.gz",
+    "format": "array_of_objectid_base64gzip_compressedsha_rawbytes_rawsha",
+    "chunks": 411,
+    "compressedBytes": 1164221,
+    "compressedSha256": "3ac5405fc4a8568361f71b0aa0998cb843d7b2e54aefb1bef3b0ac5335d7a2e8"
+  }
+}

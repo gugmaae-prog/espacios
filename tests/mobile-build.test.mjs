@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 
 const source=await fs.readFile(new URL('../src/worker.js',import.meta.url),'utf8');
 const context=vm.createContext({console,Headers,Request,Response,URL,URLSearchParams,atob,btoa,TextEncoder,TextDecoder,DecompressionStream,CompressionStream,ReadableStream,Blob,crypto:globalThis.crypto});
-vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,''),context);
+vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,'').replace(/^export /gm,''),context);
 const app=await(await vm.runInContext('aePatchedAppJs()',context)).text();
 const extension=await fs.readFile(new URL('../src/mobile-map/worker-extension.js',import.meta.url),'utf8');
 const frontendRelease=/var MM_RELEASE\s*=\s*['"]([^'"]+)['"]/.exec(extension)?.[1];
@@ -93,7 +93,10 @@ test('unique frontend release identifies matching HTML, JS and CSS without relab
     if(path==='/map'){
       const html=await response.text();
       assert.ok(html.includes('app-v2.js?v='+frontendRelease));assert.ok(html.includes('app-v2.css?v='+frontendRelease));
+      assert.ok(!html.includes('app-v2.js?v=20261102-map-frontend-v31'),'HTML must not reuse the previous immutable JavaScript URL');
+      assert.ok(!html.includes('app-v2.js?v=20261104-map-frontend-v37'),'HTML must not reuse the cached v37 JavaScript URL');
       assert.ok(!html.includes('20261008-map-palette-v23'),'HTML must not retain the previous immutable cache key');
+      assert.ok(!html.includes('20261008-map-palette-v33'),'HTML must not retain the previous palette cache key');
       assert.match(response.headers.get('link')||new Headers().get('link')||'',new RegExp('app-v2\\.js\\?v='+frontendRelease));
       assert.equal(response.headers.get('x-ae-navigation'),frontendRelease);
     }
@@ -101,7 +104,9 @@ test('unique frontend release identifies matching HTML, JS and CSS without relab
       assert.equal(response.headers.get('x-psr-map-navfix'),frontendRelease);
       const javascript=await response.text();
       assert.ok(javascript.includes("release:'"+frontendRelease+"'"));
+      assert.ok(!javascript.includes("const RELEASE='20261102-map-frontend-v31'"),'JavaScript must carry the refreshed frontend release');
       assert.ok(!javascript.includes('20261008-map-palette-v23'),'JavaScript must not retain the previous immutable cache key');
+      assert.ok(!javascript.includes('20261008-map-palette-v33'),'JavaScript must not retain the previous palette cache key');
     }
   }
   const api=await worker.fetch(new Request('https://espacios.me/map/api/smart-estimates'),{MARKET_R2:{get:async()=>({body:'{}',httpEtag:'"retained-snapshot"'})}},ctx);

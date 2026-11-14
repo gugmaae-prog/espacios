@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: V34 preserves all identities, every native financial series, prior observations and unaffected records
+ok 1 - V34 preserves all identities, every native financial series, prior observations and unaffected records
+  ---
+  duration_ms: 10277.751625
+  type: 'test'
+  ...
+# Subtest: Monthly developer progress retains native precision, component values, phases and capture-time availability
+ok 2 - Monthly developer progress retains native precision, component values, phases and capture-time availability
+  ---
+  duration_ms: 1.049667
+  type: 'test'
+  ...
+# Subtest: Zero and declining reports survive; 100 percent does not certify delivery, occupancy or future returns
+ok 3 - Zero and declining reports survive; 100 percent does not certify delivery, occupancy or future returns
+  ---
+  duration_ms: 1.022416
+  type: 'test'
+  ...
+# Subtest: V35 adds exact developer reports while preserving every native financial series, prior observation and unaffected record
+ok 4 - V35 adds exact developer reports while preserving every native financial series, prior observation and unaffected record
+  ---
+  duration_ms: 9972.533625
+  type: 'test'
+  ...
+# Subtest: developer sold units and money remain cumulative native accounting data, not unit prices, registered sales or forecast inputs
+ok 5 - developer sold units and money remain cumulative native accounting data, not unit prices, registered sales or forecast inputs
+  ---
+  duration_ms: 20.166375
+  type: 'test'
+  ...
+# Subtest: retrospective Mina development and delivery retain year precision without inventing occupancy or duplicate alias facts
+ok 6 - retrospective Mina development and delivery retain year precision without inventing occupancy or duplicate alias facts
+  ---
+  duration_ms: 0.098
+  type: 'test'
+  ...
+# Subtest: UI labels developer totals, money units, JV share and first availability without offering an average price
+ok 7 - UI labels developer totals, money units, JV share and first availability without offering an average price
+  ---
+  duration_ms: 40.219417
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12147.504542

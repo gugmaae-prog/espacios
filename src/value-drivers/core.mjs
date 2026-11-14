@@ -3,6 +3,15 @@ export function sensitivity(ratePct,years){
  const index=100*(1+ratePct/100)**years;
  return {classification:'user_assumption_sensitivity',index,capitalChangePct:index-100,ratePct,years};
 }
+export function villaCapitalScenario({purchasePriceAED,annualGrowthPct,years,entryCostPct,exitCostPct,annualHoldingCostAED}){
+ if(!Number.isFinite(purchasePriceAED)||purchasePriceAED<=0||!Number.isFinite(entryCostPct)||entryCostPct<0||entryCostPct>100||!Number.isFinite(exitCostPct)||exitCostPct<0||exitCostPct>100||!Number.isFinite(annualHoldingCostAED)||annualHoldingCostAED<0)return null;
+ const path=sensitivity(annualGrowthPct,years);
+ if(!path)return null;
+ const grossExitAED=purchasePriceAED*path.index/100;
+ const committedAED=purchasePriceAED*(1+entryCostPct/100);
+ const netProceedsAED=grossExitAED*(1-exitCostPct/100)-annualHoldingCostAED*years;
+ return {classification:'user_entered_villa_capital_scenario',grossExitAED,committedAED,netProceedsAED,capitalGainAED:netProceedsAED-committedAED,capitalReturnPct:(netProceedsAED/committedAED-1)*100};
+}
 export function isPalmJebelAli(record){
  if(record?.emirate!=='Dubai')return false;
  const aliases=['palm jebel ali','palm jabal ali','the palm jebel ali'];

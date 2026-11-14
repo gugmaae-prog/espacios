@@ -1,0 +1,9 @@
+# Current UAE evidence IDrive E2 replica
+
+The 14 November copy has six private gzip objects, totaling 513,330 stored bytes, in `espacios-store-a` under `espacios-map/uae-evidence/`. The [copy plan](../../data/uae-evidence/idrive-e2-current-replica-plan-20261114.json) pins each local file, source ID, byte length, raw and packed SHA-256, and immutable IDrive key. The [readback attestation](../../data/uae-evidence/idrive-e2-current-replica-readback-20261114.json) records a separate signed GET of every object. The upload capability and journal stay outside Git in `work/idrive-replica/current-evidence-20261114/` with private file modes.
+
+The set contains the dated Dubai project-status CSV and normalized JSON, the RGEstate full index, commercial category and commercial title-candidate snapshots, and selected Sharjah monthly numerical facts. It includes no listing photos or article bodies. RGEstate availability remains unverified at the capture time; these copies do not turn asking listings into registered transactions or give them unit coordinates.
+
+`transfer.mjs prepare` checks source validation reports and creates the immutable plan. `stage` creates an inactive, short-lived upload-only version of `espacios-ai-router` with inherited E2 secret bindings and an exact six-key manifest. `upload` conditionally writes and immediately checks each object. `verify` makes a separate signed GET for each. `attest` reconciles receipts and confirms production routing was unchanged. `verify-attestation` pins the public attestation to the build without reading credentials.
+
+The map APIs still serve checksum-checked Worker snapshots. Their source metadata labels IDrive as a verified **replica**, with its readback time, not a runtime primary or a continuous availability check. The accepted V48 archive remains IDrive-primary with immutable recovery fallback; the separate Dubai Municipality replica remains intact. R2 remains disabled and Data Room restricted.

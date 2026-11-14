@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-08T21:50:31.269Z",
+  "token": "20261009-map-evidence-v39",
+  "checks": [
+    {
+      "path": "/map",
+      "status": 200,
+      "bytes": 260270
+    },
+    {
+      "path": "/map/app-v2.js?v=20261009-map-evidence-v39",
+      "status": 200,
+      "bytes": 842588
+    },
+    {
+      "path": "/map/app-v2.css?v=20261009-map-evidence-v39",
+      "status": 200,
+      "bytes": 113352
+    },
+    {
+      "path": "/map/map-core.json?review=20261009-map-evidence-v39",
+      "status": 200,
+      "bytes": 1279319,
+      "projects": 1645,
+      "communities": 215,
+      "cataloguePreserved": true,
+      "nuraDeveloper": "RAK Properties"
+    },
+    {
+      "path": "/map/data-room",
+      "status": 404,
+      "bytes": 41
+    }
+  ],
+  "passed": true
+}

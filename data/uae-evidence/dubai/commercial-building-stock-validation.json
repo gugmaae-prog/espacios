@@ -1,0 +1,29 @@
+{
+  "sourceId": "dsc-dubai-housing-building-kapsarc-public-domain-2019",
+  "sourceRows": 966,
+  "sourceDistinctKeys": 718,
+  "ambiguousKeyRowsWithheld": 403,
+  "selectedRows": 30,
+  "selectedYears": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "sourceExportUrl": "https://data.kapsarc.org/api/explore/v2.1/catalog/datasets/housing-and-building-statistics-of-emirate-of-dubai/exports/csv?delimiter=%2C",
+  "sourceRawBytes": 54720,
+  "sourceRawSha256": "2ea02dc39e6a158b2c626072822315c9fb9703868646ef42d3f08bba7c9a7bcd",
+  "sourcePackedBytes": 7122,
+  "sourcePackedSha256": "cf82ca3db122fae00f4cc3053fc7e0cb5b6600efd85ec508cd7eb431615122bf",
+  "sourceMetadataUrl": "https://data.kapsarc.org/api/explore/v2.1/catalog/datasets/housing-and-building-statistics-of-emirate-of-dubai",
+  "sourceMetadataLicense": "Public Domain (KAPSARC catalogue label)",
+  "sourceMetadataPublisher": "Dubai Statistics Centre (DSC)",
+  "sourceMetadataModified": "2024-03-11T10:29:16.212000+00:00",
+  "sourceDataProcessed": "2023-11-02T12:05:56.635000+00:00",
+  "capturedAt": "2026-11-10",
+  "official2019CrossCheck": "https://www.dsc.gov.ae/Report/DSC_SYB_2019_02%20_%2001.pdf",
+  "dataBytes": 4769,
+  "dataSha256": "031affe1ceae4228429640d2d69aefdaf2513633c276ad5d9a42382a0fbbaf97",
+  "exclusionRule": "Only unique-key Number rows for Commercial Building and Industrial Building in complete 2015–2019 all/urban/rural groups; all other source rows excluded."
+}

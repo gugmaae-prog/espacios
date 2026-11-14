@@ -1,0 +1,16 @@
+{
+  "id": "99820b0f-111b-4492-b486-b13f37a29853",
+  "source": "wrangler",
+  "strategy": "percentage",
+  "annotations": {
+    "workers/message": "Publish V36 phased history and advertised ranges; preserve Espacios palette in V40",
+    "workers/triggered_by": "deployment"
+  },
+  "versions": [
+    {
+      "version_id": "ce235bd1-ed12-4e40-a336-1f3cb11fd11d",
+      "percentage": 100
+    }
+  ],
+  "created_on": "2026-10-08T22:45:07.567504Z"
+}

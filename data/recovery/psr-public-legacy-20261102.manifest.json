@@ -1,0 +1,15 @@
+{
+  "source": "https://espacios.me/map/api/projects-all",
+  "classification": "reviewed_older_public_psr_snapshot",
+  "capturedFileModifiedAt": "2026-11-01T23:46:08Z",
+  "registryUpdatedAt": "2026-07-22T11:20:58.155Z",
+  "rawBytes": 587601,
+  "rawSha256": "3ef26159d8460ced25652aa51307e6bb706fbd988d05dc6521a3a6aea4a9cdb1",
+  "compressedBytes": 92011,
+  "compressedSha256": "cb95f9f7b6f599d2d87310f384e2cdb735a72969d30de37a9efa243ffafe4fd4",
+  "uniqueProjectSlugs": 1073,
+  "registryReportedTotal": 1073,
+  "upstreamReportedTotalAtCapture": 1102,
+  "pagesReportedAtCapture": 46,
+  "limits": "This archived public response has 1,073 unique slugs and an older source vintage. The captured top-level total was 1,102, so it does not establish current Data Hub completeness or reconcile that source's distinct population. It is a degraded snapshot, separate from the accepted V48 map."
+}

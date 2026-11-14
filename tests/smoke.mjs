@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
+globalThis.caches ??= { default: { async match() { return null; }, async put() {} } };
 const workerUrl = new URL(process.env.ESPACIOS_TEST_WORKER_MODULE || "../src/worker.js", import.meta.url);
 const { default: worker } = await import(workerUrl.href);
 const workerSource = fs.readFileSync(workerUrl, "utf8");
@@ -47,7 +48,10 @@ assert.match(indexHtml, /Map needs another moment/);
 assert.match(indexHtml, /data-context-status/);
 assert.match(indexHtml, /id="ae-premium-ui"/);
 assert.match(indexHtml, /id="ae-premium-map"/);
+assert.match(indexHtml, /map-seamless-v1|map-seamless-style|--eg-theme-canvas:#edf1f4/);
+assert.doesNotMatch(indexHtml, /Timeline is taking longer to load/);
 assert.match(indexHtml, /__ESPACIOS_PAINT_MAP__/);
+assert.match(indexHtml, /map\.getCanvas\?\.\(\)&&map\.getStyle\?\.\(\)\?\.layers\?\.length\)clearRecovery\(\)/);
 assert.doesNotMatch(indexHtml, /p\('ae-bg','background-color','#07121c'\)/);
 
 const jsResponse = await request("/map/app-v2.js");
@@ -90,6 +94,10 @@ assert.ok(
 );
 assert.match(javascript, /Spatial interaction layers are installed only after the user reaches city scale/);
 assert.match(javascript, /seamless-v12: community polygon layers hydrate on load or selection/);
+assert.match(javascript, /Timeline layer could not finish loading/);
+assert.match(javascript, /Retry timeline/);
+assert.match(javascript, /if\(aeUaeState\.installed\|\|!tlState\?\.ready\|\|!drState\?\.installed\|\|!tlQ\('#tl-dock'\)\)return false/);
+assert.doesNotMatch(javascript, /aeUaeState\.installed\|\|!tlState\?\.ready\|\|!drState\?\.installed\|\|!bhState\?\.installed/);
 
 const cssResponse = await request("/map/app-v2.css");
 assert.equal(cssResponse.status, 200);
@@ -100,6 +108,7 @@ assert.match(css, /AE camera-only zoom guard v4/);
 assert.match(css, /#map\{contain:layout paint style;overscroll-behavior:none;touch-action:none!important\}/);
 assert.match(indexHtml, /@media\(max-width:760px\)/);
 assert.match(indexHtml, /@media\(prefers-reduced-motion:reduce\)/);
+assert.match(indexHtml, /\.ae-map-recovery\{background:var\(--su-panel\)/);
 assert.match(indexHtml, /min-width:44px!important;min-height:44px!important/);
 
 const vendorBody = new TextEncoder().encode("export const mapVersion = '6.8.0';");
@@ -129,6 +138,81 @@ const verification = await verificationResponse.json();
 assert.equal(verification.meta.verifiedProjects, 50);
 assert.equal(verification.projects.length, 50);
 assert.equal(verification.developers.length, 916);
+
+for (const pathname of ["/map/map-core.json", "/map/map-data.json"]) {
+  const emergencyResponse = await worker.fetch(
+    new Request(`https://espacios.me${pathname}`),
+    {
+      MARKET_R2: {
+        async head() { throw new Error("R2 account unavailable"); },
+        async get() { throw new Error("R2 account unavailable"); }
+      }
+    },
+    context
+  );
+  assert.equal(emergencyResponse.status, 200, `${pathname} has a bounded repository fallback`);
+  assert.equal(emergencyResponse.headers.get("x-ae-data-source"), "embedded-reviewed-emergency-snapshot");
+  assert.equal(emergencyResponse.headers.get("x-ae-data-degraded"), "r2-account-unavailable");
+  const emergency = await emergencyResponse.json();
+  assert.equal(emergency.projects.length, 1337);
+  assert.equal(emergency.communities.length, 215);
+  assert.equal(emergency.initiatives.length, 72);
+  assert.equal(emergency.projects.filter(project => Number.isFinite(project?.coordinates?.lat) && Number.isFinite(project?.coordinates?.lng)).length, 1337);
+
+  const unboundResponse = await worker.fetch(
+    new Request(`https://espacios.me${pathname}`),
+    {},
+    context
+  );
+  assert.equal(unboundResponse.status, 200, `${pathname} works when MARKET_R2 is unbound`);
+  assert.equal(unboundResponse.headers.get("x-ae-data-source"), "embedded-reviewed-emergency-snapshot");
+  assert.equal(unboundResponse.headers.get("x-ae-data-degraded"), "r2-account-unavailable");
+  const unbound = await unboundResponse.json();
+  assert.equal(unbound.projects.length, 1337);
+  assert.equal(unbound.communities.length, 215);
+  assert.equal(unbound.initiatives.length, 72);
+}
+
+const emergencyHeatmapResponse = await worker.fetch(
+  new Request("https://espacios.me/map/api/uae-heatmap"),
+  {},
+  context
+);
+assert.equal(emergencyHeatmapResponse.status, 200, "UAE timeline heatmap works without MARKET_R2");
+assert.equal(emergencyHeatmapResponse.headers.get("x-ae-data-source"), "embedded-reviewed-emergency-snapshot");
+assert.equal(emergencyHeatmapResponse.headers.get("x-ae-data-degraded"), "r2-account-unavailable");
+const emergencyHeatmap = await emergencyHeatmapResponse.json();
+assert.equal(emergencyHeatmap.version, "20260927-uae-heatmap-v3-adrec");
+assert.ok(emergencyHeatmap.projectFeatures.features.length >= 1337);
+assert.equal(emergencyHeatmap.counts.emirates, 7);
+assert.deepEqual(emergencyHeatmap.completeness.mappedEmirates, ["Abu Dhabi", "Ajman", "Dubai", "Fujairah", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain"]);
+
+const researchResponse=await request('/map/api/research');
+assert.equal(researchResponse.status,200);
+assert.equal(researchResponse.headers.get('x-ae-data-degraded'),'r2-account-unavailable');
+const research=await researchResponse.json();
+assert.equal(research.counts.snapshotProjects,1337);
+assert.equal(research.projects.length,1337);
+assert.equal(research.upstream.complete,false);
+assert.equal(research.upstream.liveProjectsIncluded,false);
+assert.equal(research.counts.projectPsfVerified,0);
+for(const [path,page] of [['/map/research','research'],['/map/history','history'],['/map/predictions','predictions'],['/map/intelligence','intelligence'],['/map/system','system']]){
+  const response=await request(path);
+  assert.equal(response.status,200,path);
+  const html=await response.text();
+  assert.match(html,new RegExp('data-map-page="'+page+'"'));
+  assert.match(html,/map-seamless-style/);
+  assert.match(html,/map-degraded-banner/);
+  assert.match(html,/espacios_theme_v1/);
+}
+const abuDhabiResponse=await request('/map/abu-dhabi');
+assert.equal(abuDhabiResponse.status,503);
+assert.match(abuDhabiResponse.headers.get('content-type')||'',/text\/html/);
+assert.match(await abuDhabiResponse.text(),/detailed source package is stored in R2/);
+const systemPayload=await (await request('/map/api/system')).json();
+assert.equal(systemPayload.storage.r2BindingAvailable,false);
+assert.equal(systemPayload.storage.mapFallbackActive,true);
+assert.match(systemPayload.topology.find(row=>row.to==='MARKET_R2').via,/unavailable/);
 
 const missingResponse = await request("/not-a-map-route");
 assert.equal(missingResponse.status, 404);

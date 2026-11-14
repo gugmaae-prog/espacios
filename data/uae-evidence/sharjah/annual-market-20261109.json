@@ -1,0 +1,87 @@
+{
+  "sourceId": "sharjah-rerd-reported-annual-market-20261109",
+  "emirate": "Sharjah",
+  "authority": "Sharjah Real Estate Registration Department",
+  "publication": "Sharjah 24 annual department disclosures, corroborated by Emirates News Agency",
+  "evidenceClass": "government_reported_annual_market_aggregate",
+  "grain": "emirate-calendar-year reported aggregate",
+  "sourceMethod": "Selected numerical facts transcribed from dated reports of department disclosures; article text and images are excluded.",
+  "observations": [
+    {
+      "year": 2022,
+      "periodStart": "2022-01-01",
+      "periodEnd": "2022-12-31",
+      "publishedAt": "2023-01-19",
+      "sourceUrl": "https://sharjah24.ae/ar/articles/2023/01/19/zx50",
+      "corroboratingUrl": "https://www.wam.ae/en/article/hszrgaee-sharjah%E2%80%99s-real-estate-transactions-topped-aed24",
+      "tradingValueAedApprox": 24000000000,
+      "tradingValuePrecision": "approximately AED 1 billion",
+      "allRegistrationTransactions": 91507,
+      "saleTransactions": 7267,
+      "saleTransactionsByUse": {
+        "residential": 5373,
+        "commercial": 807,
+        "industrial": 760,
+        "agricultural": 327
+      },
+      "registeredNewProjects": null,
+      "unavailable": [
+        "new_project_count"
+      ]
+    },
+    {
+      "year": 2023,
+      "periodStart": "2023-01-01",
+      "periodEnd": "2023-12-31",
+      "publishedAt": "2024-01-31",
+      "sourceUrl": "https://sharjah24.ae/ar/Articles/2024/01/31/al099",
+      "corroboratingUrl": "https://www.wam.ae/en/article/b1fg7a2-165-surge-real-estate-investments-sharjah-during",
+      "tradingValueAedApprox": 27100000000,
+      "tradingValuePrecision": "approximately AED 0.1 billion",
+      "allRegistrationTransactions": null,
+      "saleTransactions": 8731,
+      "saleTransactionsByUse": null,
+      "registeredNewProjects": 5,
+      "unavailable": [
+        "all_registration_transaction_count",
+        "sale_use_breakdown"
+      ]
+    },
+    {
+      "year": 2024,
+      "periodStart": "2024-01-01",
+      "periodEnd": "2024-12-31",
+      "publishedAt": "2025-01-22",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2025/01/22/AED-40-billion-Sharjahs-real-estate-transactions-in-2024",
+      "corroboratingUrl": "https://www.wam.ae/en/article/bhtgrp8-sharjah%E2%80%99s-real-estate-transactions-hit-record",
+      "tradingValueAedApprox": 40000000000,
+      "tradingValuePrecision": "approximately AED 1 billion",
+      "allRegistrationTransactions": null,
+      "saleTransactions": null,
+      "registeredNewProjects": 14,
+      "unavailable": [
+        "all_registration_transaction_count",
+        "sale_transaction_count"
+      ],
+      "saleTransactionsByUse": null
+    },
+    {
+      "year": 2025,
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31",
+      "publishedAt": "2026-01-20",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/01/20/kmr1",
+      "corroboratingUrl": "https://www.wam.ae/en/article/bybncv4-sharjah-real-estate-hits-record-aed656-billion",
+      "tradingValueAedApprox": 65600000000,
+      "tradingValuePrecision": "approximately AED 0.1 billion",
+      "allRegistrationTransactions": 132659,
+      "saleTransactions": 33580,
+      "registeredNewProjects": null,
+      "unavailable": [
+        "new_project_count"
+      ],
+      "saleTransactionsByUse": null
+    }
+  ],
+  "limits": "Annual emirate-wide reported totals, not transaction records, available spaces, sale prices, or a complete Sharjah project denominator. The 2022 sale-use breakdown is category counts within 7,267 sales; it is not commercial inventory. Trading value includes transaction types beyond sales. Exact overall registration counts for 2023 and 2024 are unavailable in these selected sources. Sale-use breakdowns for 2023–2025 and a 2022/2025 new-project count are not established. Values are rounded at their stated precision. Annual periods must not be added to any same-year partial cumulative period."
+}
