@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v40",
+  "version": "20261114-uae-evidence-coverage-v41",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -770,6 +770,13 @@
           "sourceUrl": "https://sharjah24.ae/en/Articles/2026/02/26/KMR2",
           "rights": "Selected department-disclosed numerical facts and source links only; Sharjah 24 article content excluded.",
           "liveRouteHealth": "not_asserted_by_inventory",
+          "sourceArticleUrls": [
+            "https://sharjah24.ae/en/Articles/2026/02/26/KMR2",
+            "https://sharjah24.ae/en/Articles/2026/05/12/KMR5",
+            "https://sharjah24.ae/en/Articles/2026/06/05/gh-6",
+            "https://sharjah24.ae/en/Articles/2026/08/06/mm03",
+            "https://sharjah24.ae/en/Articles/2026/09/10/a8"
+          ],
           "missingMonths": [
             "2026-02",
             "2026-03",
@@ -803,7 +810,7 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Two published cumulative market aggregates, eight annual aggregates, and five selected 2026 monthly releases are available. February, March and September monthly releases are missing from this series; June has only a retrospectively reported rounded monetary value, with sale and procedure counts unreported. No reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established. Historical commercial-use shares in 2018–2020 are percentages, not exact sale counts."
+        "Two published cumulative market aggregates, eight annual aggregates, and six selected 2026 monthly observations from five releases are available. February, March and September monthly releases are missing from this series; June has only a retrospectively reported rounded monetary value, with sale and procedure counts unreported. No reusable bulk project register, transaction-level feed, or verified project-site coordinate source is established. Historical commercial-use shares in 2018–2020 are percentages, not exact sale counts."
       ],
       "authoritativeAllProjectDenominator": null
     },
