@@ -18,7 +18,7 @@ The [Real Estate Projects dataset](https://data.ajman.ae/explore/dataset/real-es
 
 `/map/api/uae-evidence/ajman/register` searches the latest source snapshot by default and can list the latest known row for all 364 source IDs with `scope=all`. `/map/api/uae-evidence/ajman/register/{sourceProjectId}` returns that ID's dated source history. The public API omits escrow account numbers and does not manufacture V48 identities, current status for absent IDs, or map pins.
 
-The [Completed Real Estate Development Projects dataset](https://data.ajman.ae/explore/dataset/completed-real-estate-projects/) has 496 dated rows and 191 source project IDs. Its IDs and dated completed statuses exactly match rows already in the development-project register, so it adds no new project identities. It must not be added to the 364-ID register or the V48 map count.
+The [Completed Real Estate Development Projects dataset](https://data.ajman.ae/explore/dataset/completed-real-estate-projects/) has 496 dated rows and 191 source project IDs. Its IDs and dated completed statuses exactly match rows already in the development-project register, so it adds no new project identities. It must not be added to the 364-ID register or the V48 map count. The [dated candidate audit](completed-projects-candidate-audit-20261114.json) records the independent export hashes and row-level reconciliation. Its additional Arabic sector label is a possible language correction, not another project observation.
 
 ## New-building permissions by broad use
 
