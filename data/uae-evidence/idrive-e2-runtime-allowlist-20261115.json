@@ -1,13 +1,13 @@
 {
-  "version": "20261115-idrive-e2-runtime-allowlist-v2",
+  "version": "20261115-idrive-e2-runtime-allowlist-v3",
   "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
   "bucket": "espacios-store-a",
   "prefix": "espacios-map/uae-evidence/",
   "scope": "Exact checksum-pinned private reads of published source objects only; no private originals or arbitrary keys",
-  "publishedObjectCount": 196,
+  "publishedObjectCount": 198,
   "excludedPrivateOriginalParts": 10,
-  "coveredInventoryVersion": "20261115-uae-evidence-coverage-v49",
-  "coveredInventorySourceCount": 42,
+  "coveredInventoryVersion": "20261115-uae-evidence-coverage-v50",
+  "coveredInventorySourceCount": 44,
   "attestations": [
     {
       "planId": "dubai-municipality-idrive-e2-replica-20261114",
@@ -21,6 +21,13 @@
       "planSha256": "1bcdb454952ef8fc6a4ff42aeb6d4011eb45d9af998240a2ac35bd97c4073148",
       "attestationId": "ajman-new-building-permissions-idrive-e2-readback-20261114",
       "verifiedAt": "2026-11-14T11:40:12.294Z",
+      "objectCount": 2
+    },
+    {
+      "planId": "ajman-planning-idrive-e2-replica-20261115",
+      "planSha256": "db762954b2910493278aa21aad9b2257973ae26a929eebdeac640e6314c73509",
+      "attestationId": "ajman-planning-idrive-e2-readback-20261115",
+      "verifiedAt": "2026-11-14T21:43:56.249Z",
       "objectCount": 2
     },
     {
@@ -1570,6 +1577,22 @@
       "sha256": "1a80324b9d0fba499e652c0781db4ae5f9fd005c11a427ab16c8307d4b44bd27",
       "contentType": "application/json",
       "attestationId": "uae-published-evidence-idrive-e2-readback-20261114"
+    },
+    {
+      "key": "espacios-map/uae-evidence/published/20261115-ajman-planning/ajman/ajman-mpd-20240709-site-plans-by-use/f856ab60794d18528185a874c1012f4e34a4f8168c4d5fc545ba3858ecaf6c74/site-plans-by-use-20240709.json.gz",
+      "sourceId": "ajman-mpd-20240709-site-plans-by-use",
+      "bytes": 1417,
+      "sha256": "f856ab60794d18528185a874c1012f4e34a4f8168c4d5fc545ba3858ecaf6c74",
+      "contentType": "application/gzip",
+      "attestationId": "ajman-planning-idrive-e2-readback-20261115"
+    },
+    {
+      "key": "espacios-map/uae-evidence/published/20261115-ajman-planning/ajman/ajman-mpd-20260901-licence-types/bd99d94cbab55fe7636bd2e5650915dc03a43b94bf20be6604e26fdd9ffea13f/licence-types-20260901.json.gz",
+      "sourceId": "ajman-mpd-20260901-licence-types",
+      "bytes": 4105,
+      "sha256": "bd99d94cbab55fe7636bd2e5650915dc03a43b94bf20be6604e26fdd9ffea13f",
+      "contentType": "application/gzip",
+      "attestationId": "ajman-planning-idrive-e2-readback-20261115"
     },
     {
       "key": "espacios-map/uae-evidence/rgestate/listings/20261111/c4005d979616fb5b10cfc0d2121ce3fc47c9983c2c63d6c8ac417fae14bb6767/commercial-title-candidates-20261111.json.gz",

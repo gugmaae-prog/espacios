@@ -4,15 +4,16 @@ import {loadUaeIdriveStorage} from '../scripts/verify-uae-idrive-storage.mjs';
 import {mapUaeEvidenceStorage} from '../src/stack-audit/uae-evidence-storage.mjs';
 import worker from '../src/worker.js';
 
-test('all 42 published projections have source-matched, dated IDrive readback attestations',async()=>{
+test('all 44 published projections have source-matched, dated IDrive readback attestations',async()=>{
  const inventory=await loadUaeIdriveStorage();
- assert.equal(inventory.publishedSourceSnapshots,42);
- assert.equal(inventory.verifiedReplicaSnapshots,42);
+ assert.equal(inventory.publishedSourceSnapshots,44);
+ assert.equal(inventory.verifiedReplicaSnapshots,44);
  assert.deepEqual(inventory.unreplicatedSourceIds,[]);
  assert.equal(inventory.byEmirate.length,7);
- assert.equal(new Set(inventory.sources.map(source=>source.id)).size,42);
- assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.objectCount,0),206);
- assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.totalBytes,0),108476586);
+ assert.equal(new Set(inventory.sources.map(source=>source.id)).size,44);
+ assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.objectCount,0),208);
+ assert.equal(Object.values(inventory.replicas).reduce((sum,item)=>sum+item.totalBytes,0),108482108);
+ assert.equal(inventory.sources.find(source=>source.id==='ajman-mpd-20240709-site-plans-by-use')?.replica?.attestationId,'ajman-planning-idrive-e2-readback-20261115');
  assert.equal(inventory.sources.find(source=>source.id==='fcsc-emirates-in-figures-2009-historical-building-housing')?.replica?.attestationId,'federal-census-20261115-idrive-e2-readback');
  assert.equal(inventory.sources.find(source=>source.id==='fscfuj-construction-chapter-monthly-permits-2023-2025-20261114')?.replica?.attestationId,'fujairah-monthly-20261114-idrive-e2-readback');
  assert.equal(inventory.sources.find(source=>source.id==='sharjah-rerd-reported-monthly-market-20261114-supplement')?.replica?.attestationId,'sharjah-supplement-20261114-idrive-e2-readback');

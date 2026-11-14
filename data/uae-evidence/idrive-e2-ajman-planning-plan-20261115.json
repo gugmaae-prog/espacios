@@ -1,0 +1,46 @@
+{
+  "planId": "ajman-planning-idrive-e2-replica-20261115",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261115-ajman-planning/",
+  "sourceInventoryVersion": "20261115-uae-evidence-coverage-v50",
+  "previousReplicaAttestationId": "federal-census-20261115-idrive-e2-readback",
+  "publishedSourceIds": [
+    "ajman-mpd-20240709-site-plans-by-use",
+    "ajman-mpd-20260901-licence-types"
+  ],
+  "publishedSourceCount": 2,
+  "objectCount": 2,
+  "totalBytes": 5522,
+  "objects": [
+    {
+      "sourceId": "ajman-mpd-20260901-licence-types",
+      "publishedSourceId": "ajman-mpd-20260901-licence-types",
+      "role": "published_projection",
+      "localPath": "data/uae-evidence/ajman/licence-types-20260901.json.gz",
+      "validationPath": "data/uae-evidence/ajman/licence-types-20260901-validation.json",
+      "validationSha256": "7b41204d66aafc030a8b460392af48d3d718d85ece76ed8aa4be033cb404e465",
+      "idriveKey": "espacios-map/uae-evidence/published/20261115-ajman-planning/ajman/ajman-mpd-20260901-licence-types/bd99d94cbab55fe7636bd2e5650915dc03a43b94bf20be6604e26fdd9ffea13f/licence-types-20260901.json.gz",
+      "bytes": 4105,
+      "sha256": "bd99d94cbab55fe7636bd2e5650915dc03a43b94bf20be6604e26fdd9ffea13f",
+      "rawBytes": 147784,
+      "rawSha256": "4e29f729a4ad9e797c354054acd6e9105a063115379bc9828e6356f2a46434a2",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "ajman-mpd-20240709-site-plans-by-use",
+      "publishedSourceId": "ajman-mpd-20240709-site-plans-by-use",
+      "role": "published_projection",
+      "localPath": "data/uae-evidence/ajman/site-plans-by-use-20240709.json.gz",
+      "validationPath": "data/uae-evidence/ajman/site-plans-by-use-20240709-validation.json",
+      "validationSha256": "7c582dcea3d98dec835fc00415afd6937c8ebbcfc9fcecec92ef7ca3b20a6f32",
+      "idriveKey": "espacios-map/uae-evidence/published/20261115-ajman-planning/ajman/ajman-mpd-20240709-site-plans-by-use/f856ab60794d18528185a874c1012f4e34a4f8168c4d5fc545ba3858ecaf6c74/site-plans-by-use-20240709.json.gz",
+      "bytes": 1417,
+      "sha256": "f856ab60794d18528185a874c1012f4e34a4f8168c4d5fc545ba3858ecaf6c74",
+      "rawBytes": 80929,
+      "rawSha256": "38b366008e3f38657855172071f543689bbb9b74b3623a8cb2ee4191e4ca14dd",
+      "contentType": "application/gzip"
+    }
+  ]
+}

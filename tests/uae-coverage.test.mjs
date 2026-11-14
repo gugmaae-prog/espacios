@@ -13,7 +13,7 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(report.acceptedSnapshot.mappedProjectRecords,1518);assert.equal(report.acceptedSnapshot.approximateCommunityCentrePoints,360);
  assert.equal(report.acceptedSnapshot.searchableWithoutCoordinates,127);assert.equal(report.allUaeProjectDenominator,null);assert.equal(report.projectCompletenessPercent,null);
  assert.equal(report.emirates.reduce((sum,item)=>sum+item.acceptedV48.projectRecords,0),1645);
- assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),41);
+ assert.equal(report.emirates.reduce((sum,item)=>sum+item.publishedSources.length,0),43);
  assert.equal(report.federalSources.length,1);assert.equal(report.federalSources[0].sourceRows,56);assert.equal(report.federalSources[0].historicalOnly,true);
  assert.deepEqual(report.emirates.filter(item=>item.publishedSources.length===0).map(item=>item.name),[]);
  assert.equal(report.publisherListingInventory.snapshotRows,1660);

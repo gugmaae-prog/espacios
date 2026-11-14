@@ -1,5 +1,5 @@
 {
-  "version": "20261115-uae-evidence-coverage-v49",
+  "version": "20261115-uae-evidence-coverage-v50",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots, a historical federal census table, and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -316,6 +316,35 @@
           "notAvailableSpaces": true
         },
         {
+          "id": "ajman-mpd-20260901-licence-types",
+          "route": "/map/api/uae-evidence/ajman/licence-types",
+          "sourceRows": 572,
+          "grain": "month × building-licence type issued-count; conflicting 2023 groups withheld",
+          "sourceVintage": "2015–June 2026",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/building-licenses-by-license-type/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "usableRows": 532,
+          "conflictingGroups": 20,
+          "notCompletedBuildings": true,
+          "notAvailableSpaces": true,
+          "notAdditiveWithOtherPermits": true
+        },
+        {
+          "id": "ajman-mpd-20240709-site-plans-by-use",
+          "route": "/map/api/uae-evidence/ajman/site-plans-by-use",
+          "sourceRows": 126,
+          "grain": "year × Ajman City/Masfout/Manama × main land use site-plan count",
+          "sourceVintage": "2013–2019",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/number-of-site-plans-according-to-use/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "usableRows": 126,
+          "notStandingParcels": true,
+          "notAvailableSpaces": true,
+          "notAdditiveWithOtherPermits": true
+        },
+        {
           "id": "ajman-dlrr-20260821-land-sales",
           "route": "/map/api/uae-evidence/ajman/land-sales",
           "sourceRows": 1554,
@@ -396,7 +425,7 @@
       },
       "gaps": [
         "Only five latest official project IDs have reviewed one-to-one V48 identities; one archived V48 card is a separately labelled alias of an already counted identity, and 30 villa IDs have family-level relations only.",
-        "The new-building licence series withholds ten conflicting 2023 month/use groups and stops at September 2025. The separate built-up-area series ends in March 2023 and does not specify its area unit. Neither establishes completed or available commercial spaces.",
+        "The new-building licence series withholds ten conflicting 2023 month/use groups and stops at September 2025. The separate built-up-area series ends in March 2023 and does not specify its area unit. The additional licence-type series withholds twenty conflicting 2023 month/type groups and reaches June 2026; its counts overlap other permission measures. Historical site-plan counts cover 2013–2019 land uses in three cities. None establishes completed or available commercial spaces.",
         "Source records do not provide verified project-site coordinates or complete rent prices."
       ],
       "authoritativeAllProjectDenominator": null
@@ -1022,6 +1051,8 @@
     "uaqIndustrialGuide": "568f3c4e0dd6dd2ec16035bda8bcca2e89e3952653ed175810960c43329f2c12",
     "ajmanNewBuildingLicences": "8881dc2938e1d464b9d5f9ce4d44d46fa518aabcd2e18d20d29d1b196479b0cd",
     "ajmanNewBuildingArea": "45b47a8e1b58843bd51cb9ad22f1df77d44af1a293fdabb9fdddee9853e53250",
+    "ajmanLicenceTypes": "7b41204d66aafc030a8b460392af48d3d718d85ece76ed8aa4be033cb404e465",
+    "ajmanSitePlans": "7c582dcea3d98dec835fc00415afd6937c8ebbcfc9fcecec92ef7ca3b20a6f32",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
     "dubaiCommercialSales": "6e3cc163dccb7bf2b43c4af2364f1e16c1162f3be08b582894d6c8f9af591003",
     "dubaiCommercialPartial": "18112ebde0f928ff7af70a2fbf499eb93fd49470d5c66c6b3c05d70d0905dbb6",

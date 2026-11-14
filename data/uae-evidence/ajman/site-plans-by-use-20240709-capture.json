@@ -1,0 +1,14 @@
+{
+  "sourceId": "ajman-mpd-20240709-site-plans-by-use",
+  "datasetUrl": "https://data.ajman.ae/explore/dataset/number-of-site-plans-according-to-use/",
+  "recordsUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/number-of-site-plans-according-to-use/exports/json",
+  "retrievedAt": "2026-11-14T21:40:09.307Z",
+  "sourceResponseSha256": "38b366008e3f38657855172071f543689bbb9b74b3623a8cb2ee4191e4ca14dd",
+  "independentReadbackSha256": "38b366008e3f38657855172071f543689bbb9b74b3623a8cb2ee4191e4ca14dd",
+  "totalCount": 126,
+  "independentReadbackCount": 126,
+  "rawBytes": 80929,
+  "compressedSha256": "f856ab60794d18528185a874c1012f4e34a4f8168c4d5fc545ba3858ecaf6c74",
+  "compressedBytes": 1417,
+  "metadataSha256": "3f3acf4ab58dfb4ffe5d42bb61842ce86377e3ab7ae2ed338a9bc9167ec1573b"
+}
