@@ -395,7 +395,7 @@ if(psrD1Compressed.length!==psrD1Manifest.compressedBytes||digest(psrD1Compresse
 stackSource+='\nvar MAP_PSR_D1_EXPORT_SNAPSHOT='+JSON.stringify({...psrD1Manifest,base64:psrD1Compressed.toString('base64')})+';\n';
 stackSource+='\nvar MAP_ARCHIVE_MANIFEST='+JSON.stringify(archiveManifest)+';\nvar MAP_NATIVE_INDEX_MANIFEST='+JSON.stringify(nativeIndexManifest)+';\n';
 stackSource+='\nvar MAP_FULL_INVENTORY_MANIFEST='+JSON.stringify(inventoryManifest)+';\n';
-for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^import \{RGE_AREA_CENTRES,RGE_AREA_EMIRATES,rgeAreaLocationFor\} from '\.\/rgestate-commercial\.mjs';\n/m,'').replace(/^export /gm,'')+'\n';
+for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+file)).replace(/^import \{RGE_AREA_CENTRES,RGE_AREA_EMIRATES,rgeAreaLocationFor,rgeLocationReviewFor\} from '\.\/rgestate-commercial\.mjs';\n/m,'').replace(/^export /gm,'')+'\n';
 stackSource+='\n'+(await read('src/map-recovery/legacy-history-compat.mjs')).replace(/^export /gm,'')+'\n';
 stackSource+='\n'+await read('src/stack-audit/worker-extension.js')+'\n';
 stackSource+='\n'+await read('src/stack-audit/idrive-cutover.js')+'\n';

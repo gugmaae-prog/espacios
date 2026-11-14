@@ -37,25 +37,31 @@ test('full index preserves all source facts and boundaries without adding projec
   assert.equal(body.scope.photosIncluded,false);
   assert.equal(body.scope.explicitEmirateLabelRows,603);
   assert.equal(body.scope.unassignedEmirateRows,1057);
-  assert.equal(body.scope.reviewedAreaLocationRows,922);
-  assert.equal(body.scope.unresolvedLocationRows,135);
+  assert.equal(body.scope.reviewedAreaLocationRows,919);
+  assert.equal(body.scope.unresolvedLocationRows,138);
   seen.push(...body.rows);
  }
- assert.deepEqual(seen.map(({publisherEmirate,reviewedAreaLocation,...row})=>row),sourceRows);
+ assert.deepEqual(seen.map(({publisherEmirate,reviewedAreaLocation,locationReview,...row})=>row),sourceRows);
  assert.equal(new Set(seen.map(row=>row.sourceListingId)).size,1660);
  assert.ok(seen.every(row=>row.coordinates===null&&row.canonicalProjectId===null&&row.availabilityStatus==='publisher_listed_unverified'));
  assert.ok(seen.every(row=>!('image' in row)&&!('phone' in row)));
  assert.equal(seen.filter(row=>row.commercialCategoryMember).length,859);
  assert.equal(seen.filter(row=>row.listingPathClass==='business-sale'&&row.priceAed!==null).length,0);
  assert.equal(seen.filter(row=>row.publisherEmirate).length,603);
- assert.equal(seen.find(row=>row.locationLabel==='Al Qusais').publisherEmirate,null);
- assert.equal(seen.find(row=>row.locationLabel==='Al Qusais').reviewedAreaLocation.emirate,'Dubai');
- assert.equal(seen.filter(row=>row.reviewedAreaLocation).length,922);
- assert.equal(seen.find(row=>row.locationLabel==='Al Ain').reviewedAreaLocation.emirate,'Abu Dhabi');
+ assert.equal(seen.find(row=>row.locationLabel==='Al Qusais'&&row.sourceListingId!=='49428').publisherEmirate,null);
+ assert.equal(seen.find(row=>row.locationLabel==='Al Qusais'&&row.sourceListingId!=='49428').reviewedAreaLocation.emirate,'Dubai');
+ assert.equal(seen.filter(row=>row.reviewedAreaLocation).length,919);
+ assert.equal(seen.find(row=>row.locationLabel==='Al Ain'&&row.sourceListingId!=='49066').reviewedAreaLocation.emirate,'Abu Dhabi');
  assert.equal(seen.find(row=>row.locationLabel==='International City').reviewedAreaLocation.osmUrl,'https://www.openstreetmap.org/relation/18471686');
  assert.equal(seen.find(row=>row.locationLabel==='Nad Al Sheba').reviewedAreaLocation.osmUrl,'https://www.openstreetmap.org/relation/18471683');
  assert.equal(seen.find(row=>row.locationLabel==='JVT').reviewedAreaLocation.osmUrl,'https://www.openstreetmap.org/node/11800596710');
  assert.equal(seen.find(row=>row.locationLabel==='Al Layan').reviewedAreaLocation,null);
+ for(const id of ['49428','43139','49066']){
+  const row=seen.find(item=>item.sourceListingId===id);
+  assert.ok(row?.sourceUrl.startsWith('https://www.rgestate.com/'));
+  assert.equal(row.reviewedAreaLocation,null);
+  assert.equal(row.locationReview?.status,'publisher_fields_conflict');
+ }
 });
 
 test('filters and read-only boundary retain source classification',async()=>{
@@ -71,10 +77,10 @@ test('filters and read-only boundary retain source classification',async()=>{
  const sharjahRent=await (await mapRgestateIndex(request('?emirate=Sharjah&kind=rent'),report,packed,labels,areas)).json();
  assert.equal(sharjahRent.totalRows,162);
  const dubai=await (await mapRgestateIndex(request('?locationEmirate=Dubai&limit=100'),report,packed,labels,areas)).json();
- assert.equal(dubai.totalRows,925);
+ assert.equal(dubai.totalRows,923);
  assert.ok(dubai.rows.every(row=>row.publisherEmirate==='Dubai'||row.reviewedAreaLocation?.emirate==='Dubai'));
  const unresolved=await (await mapRgestateIndex(request('?locationEmirate=unresolved'),report,packed,labels,areas)).json();
- assert.equal(unresolved.totalRows,135);
+ assert.equal(unresolved.totalRows,138);
  for(const query of ['?kind=forecast','?commercial=maybe','?emirate=Oman','?locationEmirate=Oman','?limit=101','?offset=-1','?q='+encodeURIComponent('x'.repeat(121))])assert.equal((await mapRgestateIndex(request(query),report,packed,labels,areas)).status,400);
  assert.equal((await mapRgestateIndex(request('','POST'),report,packed,labels,areas)).status,405);
  assert.equal((await mapRgestateIndex(request('','HEAD'),report,packed,labels,areas)).status,200);

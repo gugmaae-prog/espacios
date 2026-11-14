@@ -48,9 +48,9 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  const areaRequest=(query='')=>new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'+query);
  const all=await(await mapRgestateCommercial(areaRequest(),report,packed)).json();
  assert.equal(all.totalRows,859);
- assert.equal(all.mappedRows,804);
- assert.equal(all.unmappedRows,55);
- assert.equal(all.areas.reduce((sum,area)=>sum+area.count,0),804);
+ assert.equal(all.mappedRows,803);
+ assert.equal(all.unmappedRows,56);
+ assert.equal(all.areas.reduce((sum,area)=>sum+area.count,0),803);
  assert.equal(all.scope.mapGranularity,'publisher_area_label');
  assert.equal(all.scope.unitCoordinatesPresent,false);
  assert.equal(all.scope.areaAttributionUrl,'https://www.openstreetmap.org/copyright');
@@ -58,7 +58,7 @@ test('commercial area map aggregates reviewed labels without assigning unit pins
  assert.equal(all.areas.find(area=>area.key==='al-ain').count,1);
  assert.equal(all.areas.find(area=>area.key==='majan').count,2);
  const byEmirate={
-  'Abu Dhabi':9,Ajman:16,Dubai:500,Fujairah:2,
+  'Abu Dhabi':9,Ajman:16,Dubai:499,Fujairah:2,
   'Ras Al Khaimah':4,Sharjah:129,'Umm Al Quwain':144,
  };
  for(const [emirate,count] of Object.entries(byEmirate)){
@@ -125,10 +125,16 @@ test('137 title-matched spaces add publisher data without becoming category rows
  assert.equal((await(await combined('?scope=title-candidates&purpose=sale')).json()).totalRows,candidateReport.saleRows);
  const areas=await(await mapRgestateCommercial(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),report,packed,candidateReport,candidatePacked,parentReport)).json();
  assert.equal(areas.totalRows,996);
- assert.equal(areas.mappedRows,936);
- assert.equal(areas.unmappedRows,60);
+ assert.equal(areas.mappedRows,934);
+ assert.equal(areas.unmappedRows,62);
  assert.equal(areas.areas.reduce((sum,area)=>sum+area.count,0),areas.mappedRows);
  assert.equal(areas.scope.unitCoordinatesPresent,false);
+ for(const id of ['49428','43139']){
+  const page=await(await combined('?q='+id)).json();
+  assert.equal(page.totalRows,1);
+  assert.equal(page.rows[0].reviewedAreaEmirate,null);
+  assert.equal(page.rows[0].locationReview?.status,'publisher_fields_conflict');
+ }
  for(const [key,label] of [['meydan','Meydan'],['jumeirah-lake-towers','Jumeirah Lake Tower'],['al-warqa','Al Warqa'],['al-karama','Al Karama']]){
   const area=areas.areas.find(item=>item.key===key);
   assert.ok(area&&area.count>0,key);

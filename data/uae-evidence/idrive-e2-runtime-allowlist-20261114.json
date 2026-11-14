@@ -6,7 +6,7 @@
   "scope": "Exact checksum-pinned private reads of published source objects only; no private originals or arbitrary keys",
   "publishedObjectCount": 195,
   "excludedPrivateOriginalParts": 10,
-  "coveredInventoryVersion": "20261114-uae-evidence-coverage-v47",
+  "coveredInventoryVersion": "20261114-uae-evidence-coverage-v48",
   "coveredInventorySourceCount": 41,
   "attestations": [
     {
