@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {createHash,webcrypto} from 'node:crypto';
 import {mapDubaiMunicipalProjects} from '../src/stack-audit/dubai-municipal-projects.mjs';
+import {loadDubaiIdriveReplica} from '../scripts/idrive-dubai-upload/verify-attestation.mjs';
 
 globalThis.crypto??=webcrypto;
 const root=new URL('../',import.meta.url);
@@ -49,6 +50,16 @@ test('read-only API labels storage, preserves conflicts, and pages exact project
  assert.ok(conflict.buildings.some(row=>row.building_id==='87836'&&row.conflictsWithBuildingCardProjectNo));
  assert.equal(conflict.source.storage,'checksum_verified_immutable_worker_assets');
  assert.equal((await call('/14738','HEAD')).body,null);
+});
+
+test('verified IDrive copy is labelled as a replica while Worker assets still serve the API',async()=>{
+ const replica=await loadDubaiIdriveReplica();
+ const result=await mapDubaiMunicipalProjects(new Request(base+'?view=summary'),{...manifest,...replica},assets);
+ const body=await result.json();
+ assert.equal(body.source.storage,'checksum_verified_immutable_worker_assets');
+ assert.equal(body.source.idriveReplicaVerified,true);
+ assert.equal(body.source.idriveReplicaAttestationId,'dubai-municipality-idrive-e2-readback-20261114');
+ assert.equal(body.scope.projectRows,481358);
 });
 
 test('bad filters, absent IDs and damaged assets fail honestly',async()=>{

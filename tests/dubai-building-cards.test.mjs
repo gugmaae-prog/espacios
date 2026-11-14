@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {createHash,webcrypto} from 'node:crypto';
 import {mapDubaiBuildingCards} from '../src/stack-audit/dubai-building-cards.mjs';
+import {loadDubaiIdriveReplica} from '../scripts/idrive-dubai-upload/verify-attestation.mjs';
 
 globalThis.crypto??=webcrypto;
 const root=new URL('../',import.meta.url);
@@ -50,6 +51,16 @@ test('read-only API returns source labels, pages, detail, and stable cursor',asy
  const firstShard=manifest.shards[0],edge=await (await call(`?limit=3&cursor=${firstShard.bucket}:${firstShard.rows-1}`)).json();
  assert.equal(edge.rows.length,1);
  assert.equal(edge.nextCursor,`${manifest.shards[1].bucket}:0`);
+});
+
+test('verified IDrive copy is labelled as a replica while Worker assets still serve the API',async()=>{
+ const replica=await loadDubaiIdriveReplica();
+ const result=await mapDubaiBuildingCards(new Request(base+'?view=summary'),{...manifest,...replica},assets);
+ const body=await result.json();
+ assert.equal(body.source.storage,'checksum_verified_immutable_worker_assets');
+ assert.equal(body.source.idriveReplicaVerified,true);
+ assert.equal(body.source.idriveReplicaAttestationId,'dubai-municipality-idrive-e2-readback-20261114');
+ assert.equal(body.totalRows,536946);
 });
 
 test('invalid filters and broken storage fail without invented records',async()=>{

@@ -39,10 +39,10 @@ test('coverage inventory is tied to the accepted map and source reports',async()
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/flat-sales-2026-partial')).suppressedAreaMonetaryGroups,316);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/ejari-community-rents')).sourceRows,520);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/building-cards')).sourceRows,536946);
- assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/building-cards')).idriveReplicaVerified,false);
+ assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/building-cards')).idriveReplicaVerified,true);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/municipal-projects')).sourceRows,481358);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/municipal-projects')).buildingLinkRows,208946);
- assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/municipal-projects')).idriveReplicaVerified,false);
+ assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/municipal-projects')).idriveReplicaVerified,true);
  assert.equal(dubai.publishedSources.find(item=>item.route.endsWith('/ejari-community-rents')).palmJabalAliRentContracts,0);
  assert.deepEqual(abuDhabi.publishedSources.find(item=>item.route.endsWith('/building-activity')).periodsUnavailable,['2026Q1']);
  assert.equal(ajman.publishedSources.find(item=>item.route.endsWith('/register')).latestSourceProjectIds,298);

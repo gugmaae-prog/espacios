@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';import vm from 'node:vm';import {createHash} f
 import {gunzipSync,gzipSync} from 'node:zlib';
 import {validateCatalogueRevisions} from './validate-catalogue-revisions.mjs';
 import {normalizeDubaiStatusCsv} from '../src/stack-audit/dubai-project-status.mjs';
+import {loadDubaiIdriveReplica} from './idrive-dubai-upload/verify-attestation.mjs';
 const root=new URL('../',import.meta.url),release='20260930-smart-estimates-v1',read=p=>fs.readFile(new URL(p,root),'utf8');
 const baseline=await read('src/baseline/worker-20260930.js');if(createHash('sha256').update(baseline).digest('hex')!=='b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06')throw Error('Acquired live baseline changed');
 const core=await read('src/smart-estimates/core.mjs');const app='\nconst SECore=(()=>{\n'+core.replace(/^export /gm,'')+'\nreturn {derivePriceScenario,calculateROI,combineROI};})();\n'+await read('src/smart-estimates/app.js');
@@ -218,7 +219,8 @@ for(const shard of dmBuildingManifest.shards){
  const decoded=gunzipSync(packed);
  if(decoded.length!==shard.decodedBytes||digest(decoded)!==shard.decodedSha256||JSON.parse(decoded).rows.length!==shard.rows)throw Error('Dubai Municipality building-card decoded shard changed');
 }
-stackSource+='\nvar UAE_DUBAI_BUILDING_CARDS_MANIFEST='+JSON.stringify(dmBuildingManifest)+';\n';
+const dmIdriveReplica=await loadDubaiIdriveReplica();
+stackSource+='\nvar UAE_DUBAI_BUILDING_CARDS_MANIFEST='+JSON.stringify({...dmBuildingManifest,...dmIdriveReplica})+';\n';
 const dmProjectsManifest=JSON.parse(await read('data/uae-evidence/dubai/dm-municipal-projects-20261026/manifest.json'));
 if(dmProjectsManifest.sourceId!=='dm-municipal-projects-and-building-links-20261026'||dmProjectsManifest.projectRows!==481358||dmProjectsManifest.linkRows!==208946||dmProjectsManifest.shards.length!==49||dmProjectsManifest.sources[0].sha256!=='1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e'||dmProjectsManifest.sources[1].sha256!=='e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2'||dmProjectsManifest.idriveReplicaVerified!==false)throw Error('Dubai municipal-project manifest changed');
 for(const shard of dmProjectsManifest.shards){
@@ -227,7 +229,7 @@ for(const shard of dmProjectsManifest.shards){
  const decoded=gunzipSync(packed),payload=JSON.parse(decoded);
  if(decoded.length!==shard.decodedBytes||digest(decoded)!==shard.decodedSha256||payload.projects.length!==shard.projects||payload.links.length!==shard.links)throw Error('Dubai municipal-project decoded shard changed');
 }
-stackSource+='\nvar UAE_DUBAI_MUNICIPAL_PROJECTS_MANIFEST='+JSON.stringify(dmProjectsManifest)+';\n';
+stackSource+='\nvar UAE_DUBAI_MUNICIPAL_PROJECTS_MANIFEST='+JSON.stringify({...dmProjectsManifest,...dmIdriveReplica})+';\n';
 const dubaiCommercialReport=JSON.parse(await read('data/uae-evidence/dubai/commercial-unit-sales-validation.json'));
 const dubaiCommercialPacked=await fs.readFile(new URL('data/uae-evidence/dubai/commercial-unit-sales-20261110.json.gz',root));
 const dubaiCommercialRaw=gunzipSync(dubaiCommercialPacked);
