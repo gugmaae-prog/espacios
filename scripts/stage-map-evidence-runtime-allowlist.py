@@ -15,8 +15,6 @@ import sys
 import tomllib
 import urllib.error
 import urllib.request
-from email.parser import BytesParser
-from email.policy import default
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,16 +78,13 @@ def deployed(auth):
 
 
 def modules(auth):
-    route = f'/accounts/{ACCOUNT}/workers/scripts/{WORKER}'
-    _, headers, body = request(auth, 'GET', route)
-    if headers.get('ETag', '').strip('"') != PRODUCTION_ETAG:
-        raise RuntimeError('Shared auth Worker source etag changed')
-    boundary = headers.get('Content-Type', '').split('boundary=', 1)[-1]
-    if not boundary or not body.startswith(('--' + boundary).encode()):
-        raise RuntimeError('Unexpected Worker module response')
-    prefix = f'MIME-Version: 1.0\r\nContent-Type: multipart/form-data; boundary={boundary}\r\n\r\n'.encode()
-    message = BytesParser(policy=default).parsebytes(prefix + body)
-    found = {part.get_param('name', header='content-disposition'): part.get_payload(decode=True) for part in message.iter_parts()}
+    # A script download returns the latest upload, which may be an undeployed candidate.
+    # Fetch the immutable production version explicitly before checking every module hash.
+    route = f'/accounts/{ACCOUNT}/workers/workers/{WORKER}/versions/{PRODUCTION}?include=modules'
+    version = result(auth, 'GET', route)
+    if version.get('id') != PRODUCTION or not isinstance(version.get('modules'), list):
+        raise RuntimeError('Unexpected production Worker version response')
+    found = {part['name']: base64.b64decode(part['content_base64'], validate=True) for part in version['modules']}
     if set(found) != set(MODULE_HASHES) or any(sha(found[name]) != expected for name, expected in MODULE_HASHES.items()):
         raise RuntimeError('Shared auth Worker module bytes changed')
     return found
