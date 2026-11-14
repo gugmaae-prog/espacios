@@ -1,5 +1,5 @@
 {
-  "version": "20261115-uae-evidence-coverage-v50",
+  "version": "20261115-uae-evidence-coverage-v51",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots, a historical federal census table, and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -363,6 +363,24 @@
           "sourceUrl": "https://data.ajman.ae/explore/dataset/lands-transactions/",
           "rights": "CC BY 4.0",
           "liveRouteHealth": "not_asserted_by_inventory"
+        },
+        {
+          "id": "ajman-dlrr-20260821-land-mortgage",
+          "route": "/map/api/uae-evidence/ajman/land-mortgages",
+          "sourceRows": 1098,
+          "grain": "one source row per sector, bilingual district and quarter; mortgage registrations and mortgage-value modifications",
+          "sourceVintage": "2026-08-21T04:30:51.835000+00:00",
+          "sourceUrl": "https://data.ajman.ae/explore/dataset/lands-mortgage/",
+          "rights": "CC BY 4.0",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "observedPeriods": 29,
+          "missingPeriods": [
+            "2021Q2"
+          ],
+          "notNewLoans": true,
+          "notLandSales": true,
+          "notAdditiveWithLandDispositions": true,
+          "sourceSha256": "094e429358acdbb17f967ab3714a32e8c575a72a9e4de08e13cd539a39315813"
         },
         {
           "id": "ajman-dlrr-20260821-unit-mortgages",
@@ -1053,6 +1071,7 @@
     "ajmanNewBuildingArea": "45b47a8e1b58843bd51cb9ad22f1df77d44af1a293fdabb9fdddee9853e53250",
     "ajmanLicenceTypes": "7b41204d66aafc030a8b460392af48d3d718d85ece76ed8aa4be033cb404e465",
     "ajmanSitePlans": "7c582dcea3d98dec835fc00415afd6937c8ebbcfc9fcecec92ef7ca3b20a6f32",
+    "ajmanLandMortgages": "6f98f0f14d8f1ffdaf0a9b91a6156c6dcdd5c765c74ed53f6b5839a0337e4048",
     "dubaiBuildingStock": "bb236ddba5c997b5e0d4f94e3a6d580682ebc80bcf3c6c866a7a5356cfeed0a0",
     "dubaiCommercialSales": "6e3cc163dccb7bf2b43c4af2364f1e16c1162f3be08b582894d6c8f9af591003",
     "dubaiCommercialPartial": "18112ebde0f928ff7af70a2fbf499eb93fd49470d5c66c6b3c05d70d0905dbb6",

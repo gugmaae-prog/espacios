@@ -1,0 +1,14 @@
+{
+  "sourceId": "ajman-dlrr-20260821-land-mortgage",
+  "datasetUrl": "https://data.ajman.ae/explore/dataset/lands-mortgage/",
+  "recordsUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/lands-mortgage/exports/json",
+  "retrievedAt": "2026-11-14T22:07:29.356Z",
+  "sourceResponseSha256": "094e429358acdbb17f967ab3714a32e8c575a72a9e4de08e13cd539a39315813",
+  "independentReadbackSha256": "094e429358acdbb17f967ab3714a32e8c575a72a9e4de08e13cd539a39315813",
+  "sourceRows": 1098,
+  "independentReadbackCount": 1098,
+  "rawBytes": 369822,
+  "compressedSha256": "aa2f5d686700a13a5b24582c8c509ae12fbdedc22d03af1312c74db482880d7b",
+  "compressedBytes": 15852,
+  "metadataSha256": "5e13385fea59e885d8abf8765fbfcc411aba0683ed710329240736b876528fa1"
+}

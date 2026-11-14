@@ -109,7 +109,7 @@ def patched(auth):
         raise RuntimeError('Shared auth Worker bindings changed')
     source = modules(auth)
     manifest = json.loads(ALLOWLIST.read_bytes())
-    if manifest['version'] != '20261115-idrive-e2-runtime-allowlist-v3' or manifest['publishedObjectCount'] != 198 or manifest['excludedPrivateOriginalParts'] != 10 or manifest['coveredInventorySourceCount'] != 44:
+    if manifest['version'] != '20261115-idrive-e2-runtime-allowlist-v4' or manifest['publishedObjectCount'] != 199 or manifest['excludedPrivateOriginalParts'] != 10 or manifest['coveredInventorySourceCount'] != 45:
         raise RuntimeError('Runtime allowlist changed')
     registry_text = source['map-evidence-registry.mjs'].decode()
     if not registry_text.startswith('export default ') or not registry_text.endswith(';\n'):

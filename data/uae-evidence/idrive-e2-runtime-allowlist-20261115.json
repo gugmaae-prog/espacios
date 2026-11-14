@@ -1,13 +1,13 @@
 {
-  "version": "20261115-idrive-e2-runtime-allowlist-v3",
+  "version": "20261115-idrive-e2-runtime-allowlist-v4",
   "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
   "bucket": "espacios-store-a",
   "prefix": "espacios-map/uae-evidence/",
   "scope": "Exact checksum-pinned private reads of published source objects only; no private originals or arbitrary keys",
-  "publishedObjectCount": 198,
+  "publishedObjectCount": 199,
   "excludedPrivateOriginalParts": 10,
-  "coveredInventoryVersion": "20261115-uae-evidence-coverage-v50",
-  "coveredInventorySourceCount": 44,
+  "coveredInventoryVersion": "20261115-uae-evidence-coverage-v51",
+  "coveredInventorySourceCount": 45,
   "attestations": [
     {
       "planId": "dubai-municipality-idrive-e2-replica-20261114",
@@ -29,6 +29,13 @@
       "attestationId": "ajman-planning-idrive-e2-readback-20261115",
       "verifiedAt": "2026-11-14T21:43:56.249Z",
       "objectCount": 2
+    },
+    {
+      "planId": "ajman-land-mortgage-idrive-e2-replica-20261115",
+      "planSha256": "82680cdbc0a74d5424f203b179bb3737e7daa415a1580c4236c7774f3cde7a50",
+      "attestationId": "ajman-land-mortgage-idrive-e2-readback-20261115",
+      "verifiedAt": "2026-11-14T22:12:31.233Z",
+      "objectCount": 1
     },
     {
       "planId": "uae-current-evidence-idrive-e2-replica-20261114",
@@ -1577,6 +1584,14 @@
       "sha256": "1a80324b9d0fba499e652c0781db4ae5f9fd005c11a427ab16c8307d4b44bd27",
       "contentType": "application/json",
       "attestationId": "uae-published-evidence-idrive-e2-readback-20261114"
+    },
+    {
+      "key": "espacios-map/uae-evidence/published/20261115-ajman-land-mortgage/ajman/ajman-dlrr-20260821-land-mortgage/aa2f5d686700a13a5b24582c8c509ae12fbdedc22d03af1312c74db482880d7b/lands-mortgage-20260821.json.gz",
+      "sourceId": "ajman-dlrr-20260821-land-mortgage",
+      "bytes": 15852,
+      "sha256": "aa2f5d686700a13a5b24582c8c509ae12fbdedc22d03af1312c74db482880d7b",
+      "contentType": "application/gzip",
+      "attestationId": "ajman-land-mortgage-idrive-e2-readback-20261115"
     },
     {
       "key": "espacios-map/uae-evidence/published/20261115-ajman-planning/ajman/ajman-mpd-20240709-site-plans-by-use/f856ab60794d18528185a874c1012f4e34a4f8168c4d5fc545ba3858ecaf6c74/site-plans-by-use-20240709.json.gz",

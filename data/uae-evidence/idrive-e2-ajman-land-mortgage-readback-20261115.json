@@ -1,0 +1,23 @@
+{
+  "attestationId": "ajman-land-mortgage-idrive-e2-readback-20261115",
+  "planId": "ajman-land-mortgage-idrive-e2-replica-20261115",
+  "planSha256": "82680cdbc0a74d5424f203b179bb3737e7daa415a1580c4236c7774f3cde7a50",
+  "privateJournalSha256": "441d950349e70f8436c83bbabb8947855fa65eb157284ef5c1fbb8b8dc482bcf",
+  "previewVersion": "053144a1-8760-4d94-9129-b10a1b7acc5a",
+  "bridgeSha256": "0d00423cae77735afc9538d831ecf501209f2aca4d04ec394580d2f0a0f72611",
+  "verifiedAt": "2026-11-14T22:12:31.233Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261115-ajman-land-mortgage/",
+  "objectCount": 1,
+  "totalBytes": 15852,
+  "publishedSourceIds": [
+    "ajman-dlrr-20260821-land-mortgage"
+  ],
+  "publishedSourceCount": 1,
+  "coverageInventoryVersion": "20261115-uae-evidence-coverage-v51",
+  "previousReplicaAttestationId": "ajman-planning-idrive-e2-readback-20261115",
+  "verification": "Both allowlisted object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact content type, byte length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

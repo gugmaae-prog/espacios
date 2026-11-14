@@ -102,6 +102,7 @@ worker_default.fetch=async function(request,env,ctx){
  const ajmanPlanning=await mapAjmanPlanningEvidence(request,UAE_AJMAN_PLANNING_SOURCES);if(ajmanPlanning)return mapStackPreparedResponse(request,ajmanPlanning);
  const ajmanLandSales=await mapAjmanLandSales(request,UAE_AJMAN_LAND_SALES_REPORT,UAE_AJMAN_LAND_SALES_PACKED);if(ajmanLandSales)return mapStackPreparedResponse(request,ajmanLandSales);
  const ajmanLandDispositions=await mapAjmanLandDispositions(request,UAE_AJMAN_LAND_DISPOSITIONS_REPORT,UAE_AJMAN_LAND_DISPOSITIONS_PACKED);if(ajmanLandDispositions)return mapStackPreparedResponse(request,ajmanLandDispositions);
+ const ajmanLandMortgages=await mapAjmanLandMortgages(request,UAE_AJMAN_LAND_MORTGAGE_REPORT,UAE_AJMAN_LAND_MORTGAGE_PACKED);if(ajmanLandMortgages)return mapStackPreparedResponse(request,ajmanLandMortgages);
  const ajmanUnitMortgages=await mapAjmanUnitMortgages(request,UAE_AJMAN_UNIT_MORTGAGES_REPORT,UAE_AJMAN_UNIT_MORTGAGES_PACKED);if(ajmanUnitMortgages)return mapStackPreparedResponse(request,ajmanUnitMortgages);
  const ajmanRentContracts=await mapAjmanRentContracts(request,UAE_AJMAN_RENT_REPORT,UAE_AJMAN_RENT_PACKED);if(ajmanRentContracts)return mapStackPreparedResponse(request,ajmanRentContracts);
  const uaeEvidence=await mapUaeEvidence(request,env,UAE_AJMAN_REPORT,mapEvidenceStore,async()=>({rows:await verifiedAreaReferenceRows(UAE_AJMAN_AREA_REFERENCE_REPORT,UAE_AJMAN_AREA_REFERENCE_PACKED),report:UAE_AJMAN_AREA_REFERENCE_REPORT}));if(uaeEvidence)return mapStackPreparedResponse(request,uaeEvidence);
