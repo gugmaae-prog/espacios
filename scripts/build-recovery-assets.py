@@ -31,7 +31,7 @@ for item in entries:
  files.add(name);result[item['key']]={'path':'/__map_archive/'+name,'sha256':item['sha256'],'bytes':item['bytes'],'kind':item['kind'],'contentType':'application/octet-stream'};total+=len(raw)
 for old in out.iterdir():
  if old.name not in files:
-  if old.name=='dm' and old.is_dir():continue
+  if old.name in {'dm','dmprojects'} and old.is_dir():continue
   assert old.name.endswith('.bin') and len(old.name)==68
   old.unlink()
 dm_source=ROOT/'data/uae-evidence/dubai/dm-building-cards-20261026'
@@ -48,6 +48,22 @@ for shard in dm_manifest['shards']:
 for old in dm_out.iterdir():
  if old.name not in dm_files:old.unlink()
 assert sum(item['rows'] for item in dm_manifest['shards'])==dm_manifest['sourceRows']
+projects_source=ROOT/'data/uae-evidence/dubai/dm-municipal-projects-20261026'
+projects_manifest=json.loads((projects_source/'manifest.json').read_text())
+assert projects_manifest['sourceId']=='dm-municipal-projects-and-building-links-20261026'
+assert projects_manifest['projectRows']==481358 and projects_manifest['linkRows']==208946
+projects_out=out/'dmprojects';projects_out.mkdir(exist_ok=True)
+projects_files=set()
+for shard in projects_manifest['shards']:
+ source=projects_source/shard['file'];raw=source.read_bytes()
+ assert len(raw)==shard['bytes'] and hashlib.sha256(raw).hexdigest()==shard['sha256'] and len(raw)<25*1024*1024
+ name=shard['sha256']+'.bin';destination=projects_out/name
+ if not destination.exists():os.link(source,destination)
+ projects_files.add(name)
+for old in projects_out.iterdir():
+ if old.name not in projects_files:old.unlink()
+assert sum(item['projects'] for item in projects_manifest['shards'])==projects_manifest['projectRows']
+assert sum(item['links'] for item in projects_manifest['shards'])==projects_manifest['linkRows']
 assert len(files)<20000
 manifest={'version':publication['version'],'classification':'private_worker_binding_recovery_subset','entries':result,'files':len(files),'logicalKeys':len(result),'evidenceLogicalKeys':len(result)-1,'derivedUIAssets':1,'bytes':total,'exclusions':['raw transaction parquet','lossless source CSV','SQL index','full canonical archive'],'publicRawAccess':False}
 (ROOT/'data/recovery/static-archive-manifest.json').write_text(json.dumps(manifest,separators=(',',':'))+'\n')

@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v39",
+  "version": "20261114-uae-evidence-coverage-v40",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -499,6 +499,34 @@
           "notVerifiedStandingStock": true,
           "notAvailableUnits": true,
           "notTransactions": true
+        },
+        {
+          "id": "dm-municipal-projects-and-building-links-20261026",
+          "route": "/map/api/uae-evidence/dubai/municipal-projects",
+          "sourceRows": 481358,
+          "grain": "Dubai Municipality project_no permit/application row, with separate building link rows",
+          "sourceVintage": "portal last updated 2026-10-26; captured 2026-11-14",
+          "sourceUrl": "https://data.dubai/en/l/467616",
+          "rights": "Dubai Municipality open data and Data.Dubai Open Data License displayed; attribution required. Personal and private entity fields withheld.",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "storage": "checksum_verified_immutable_worker_assets",
+          "idriveReplicaVerified": false,
+          "projectRows": 481358,
+          "buildingLinkRows": 208946,
+          "linkedProjectNos": 129113,
+          "linkedBuildingIds": 208944,
+          "ambiguousBuildingIds": [
+            "87836",
+            "144968"
+          ],
+          "projectSourceSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e",
+          "linkSourceSha256": "e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2",
+          "manifestSha256": "082ead61ec8e5aab43f26bd301f04c610290cfe39ae2c2b561887bedf1fcece3",
+          "coordinatesPresent": false,
+          "notDldProjectIdentity": true,
+          "notAvailableUnits": true,
+          "notTransactions": true,
+          "notPhysicalCompletionProof": true
         }
       ],
       "publisherListingSnapshot": {
@@ -868,6 +896,7 @@
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
     "sharjahMonthly": "db0c65a35b7d38364936e3062b10c4b5ea14e7bbc7b42fda872cb36bad2f24fb",
     "adrecMarket": "f0c35881575155b73acaf52023b1e205cd373d0e68026ef8d973eccd4353783f",
-    "dmBuildingCards": "d8bc1520b7d107c85c9a9ece8226540677efec7573776f5a4b7b1590e00fccc3"
+    "dmBuildingCards": "d8bc1520b7d107c85c9a9ece8226540677efec7573776f5a4b7b1590e00fccc3",
+    "dmMunicipalProjects": "79c90a696a8280afa10119b603bdf0852769b2eb2b47edda44a884d6e0ba1787"
   }
 }

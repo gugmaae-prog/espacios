@@ -1,0 +1,22 @@
+{
+  "sourceId": "dm-municipal-projects-and-building-links-20261026",
+  "projectSourceSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e",
+  "linkSourceSha256": "e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2",
+  "manifestSha256": "082ead61ec8e5aab43f26bd301f04c610290cfe39ae2c2b561887bedf1fcece3",
+  "projectRows": 481358,
+  "linkRows": 208946,
+  "projectFieldsPublished": 10,
+  "projectFieldsWithheld": 9,
+  "linkFieldsPublished": 6,
+  "linkedProjectNos": 129113,
+  "linkedBuildingIds": 208944,
+  "ambiguousBuildingIds": [
+    "87836",
+    "144968"
+  ],
+  "shards": 49,
+  "partitionBytes": 9945453,
+  "exactProjectionReconciliation": "all_481358_project_rows_and_208946_link_rows_match_the_approved_field_projection",
+  "verifiedOn": "2026-11-14",
+  "sourceAccess": "local downloads from official Data.Dubai pages; original CSVs are not committed"
+}
