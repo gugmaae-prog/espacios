@@ -1,0 +1,66 @@
+{
+  "reviewVersion": "20261114-ad-sdi-v48-relation-review",
+  "reviewedAt": "2026-11-14",
+  "purpose": "Review the 127 accepted V48 Abu Dhabi projects without verified points against the AD-SDI Developer Projects polygon layer.",
+  "inputs": {
+    "acceptedV48Catalogue": {
+      "file": "data/recovery/accepted-map-20261013.json",
+      "sha256": "b662672fb72cdcbaf62aa5df248c7373105a8f4ca514028188f91315c8fc6b56",
+      "projects": 1645
+    },
+    "acceptedUnmappedIndex": {
+      "file": "data/recovery/accepted-uae-heatmap-20261102.json",
+      "sha256": "98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d",
+      "abuDhabiUnmappedProjects": 127
+    },
+    "adSdiDeveloperAttributes": {
+      "file": "data/uae-evidence/abu-dhabi/sdi-developer-projects-20261103.json.gz",
+      "rawSha256": "347fa57d07e57cd359f63fffbed14cd5beda429475ba24db954950240d479f45",
+      "features": 411,
+      "sourceLayerUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/207"
+    },
+    "adSdiDeveloperGeometry": {
+      "file": "data/uae-evidence/abu-dhabi/sdi-developer-projects-geometry-20261103.json.gz",
+      "rawSha256": "99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2",
+      "geometryGrain": "source feature polygon, not a verified V48 project point"
+    }
+  },
+  "method": "Compare whitespace-trimmed, case-folded exact project names among the 127 unmapped V48 projects and all 411 AD-SDI source features; review developer labels and source geometry before exposing a relationship. No polygon centroid is converted into a V48 coordinate.",
+  "exactNameCandidates": [
+    {
+      "v48ProjectId": "adrec:395",
+      "v48Name": "Rawdhat Abu Dhabi",
+      "v48Developer": "REEM DEVELOPERS  - SOLE PROPRIETORSHIP L.L.C.",
+      "v48Area": "E48",
+      "v48SourceUrl": "https://adrec.gov.ae/en/Directory/ProjectsDetails?projectId=395",
+      "adSdiObjectId": 200,
+      "adSdiName": "Rawdhat Abu Dhabi",
+      "adSdiDeveloper": "Reem Developers",
+      "adSdiFeatureId": "DMA_4_12_2024_7669#1980#65",
+      "decision": "reviewed_name_and_developer_relationship_not_same_plot_identity",
+      "reason": "Names and developer labels align. The AD-SDI polygon covers a named masterplan; the V48 ADREC record is a plot project in area E48. The source evidence does not establish identical parcel geometry or a precise project point.",
+      "assignV48Coordinate": false,
+      "canonicalIdentityMatch": false
+    },
+    {
+      "v48ProjectId": "adrec:444",
+      "v48Name": "THE VILLAGES",
+      "v48Developer": "MODON HOLDING - P.S.C",
+      "v48Area": "AIN AL FAYDA2",
+      "adSdiObjectId": 737,
+      "adSdiName": "The Villages",
+      "adSdiDeveloper": "Al Qudra Holding",
+      "decision": "rejected",
+      "reason": "Developer names disagree; the shared name alone is insufficient for a relationship or coordinate.",
+      "assignV48Coordinate": false,
+      "canonicalIdentityMatch": false
+    }
+  ],
+  "outcome": {
+    "reviewedRelationships": 1,
+    "canonicalIdentityMatches": 0,
+    "newVerifiedProjectPoints": 0,
+    "unmappedV48ProjectsRemain": 127
+  },
+  "limits": "This is a bounded cross-source identity review, not a complete geocoding exercise. The AD-SDI source geometry can be returned by source object ID, but remains distinct from accepted V48 project coordinates and registered sale or rent evidence."
+}

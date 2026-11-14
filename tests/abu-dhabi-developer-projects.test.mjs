@@ -14,6 +14,7 @@ const geometryReport=JSON.parse(await fs.readFile(new URL('data/uae-evidence/abu
 const geometrySource=JSON.parse(gunzipSync(await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-developer-projects-geometry-20261103.json.gz',root))));
 const geometryChunks=JSON.parse(gunzipSync(await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-developer-projects-geometry-chunks-20261103.json.gz',root))));
 const geometryById=Object.fromEntries(geometryChunks.map(([id,...chunk])=>[id,chunk]));
+const relationReview=JSON.parse(await fs.readFile(new URL('data/uae-evidence/abu-dhabi/sdi-v48-relation-review-20261114.json',root)));
 const request=(suffix='',method='GET')=>new Request('https://espacios.me/map/api/uae-evidence/abu-dhabi/developer-projects'+suffix,{method});
 
 test('independent authority reads match a bounded public-attribute capture',()=>{
@@ -57,6 +58,40 @@ test('developer layer is searchable and separate from V48 identities and ADREC s
  const detail=await (await mapAbuDhabiDeveloperProjects(request('/1016'),report,packed)).json();
  assert.equal(detail.project.name,'Al Haffar');
  assert.equal(detail.project.developerName,'Aldar');
+});
+
+test('reviewed V48 relationship preserves source identity and leaves all unverified points unset',async()=>{
+ const acceptedBytes=await fs.readFile(new URL(relationReview.inputs.acceptedV48Catalogue.file,root));
+ const unmappedBytes=await fs.readFile(new URL(relationReview.inputs.acceptedUnmappedIndex.file,root));
+ assert.equal(createHash('sha256').update(acceptedBytes).digest('hex'),relationReview.inputs.acceptedV48Catalogue.sha256);
+ assert.equal(createHash('sha256').update(unmappedBytes).digest('hex'),relationReview.inputs.acceptedUnmappedIndex.sha256);
+ assert.equal(report.rawSha256,relationReview.inputs.adSdiDeveloperAttributes.rawSha256);
+ assert.equal(geometryReport.rawSha256,relationReview.inputs.adSdiDeveloperGeometry.rawSha256);
+ const accepted=JSON.parse(acceptedBytes),unmapped=JSON.parse(unmappedBytes).unmappedProjectRecords;
+ const source=JSON.parse(gunzipSync(compressed)).features.map(feature=>feature.attributes);
+ const normalize=value=>value.trim().replace(/\s+/g,' ').toLocaleLowerCase('en');
+ const candidates=unmapped.flatMap(project=>source.filter(feature=>normalize(project.name)===normalize(feature.PROJECT_NAME)).map(feature=>[project.id,feature.OBJECTID]));
+ assert.equal(accepted.projects.length,1645);
+ assert.equal(unmapped.length,127);
+ assert.deepEqual(candidates.sort((a,b)=>a[1]-b[1]),[['adrec:395',200],['adrec:444',737]]);
+ assert.deepEqual(relationReview.exactNameCandidates.map(row=>[row.v48ProjectId,row.adSdiObjectId]),candidates);
+ for(const candidate of relationReview.exactNameCandidates){
+  const v48=accepted.projects.find(project=>project.id===candidate.v48ProjectId);
+  const adSdi=source.find(feature=>feature.OBJECTID===candidate.adSdiObjectId);
+  assert.equal(v48.coordinates,null);assert.equal(v48.developer,candidate.v48Developer);
+  assert.equal(adSdi.DEVELOPER_NAME,candidate.adSdiDeveloper);
+  assert.equal(candidate.assignV48Coordinate,false);assert.equal(candidate.canonicalIdentityMatch,false);
+ }
+ const response=await mapAbuDhabiDeveloperProjects(request('/200?geometry=1'),report,packed,geometryReport,geometryById),body=await response.json();
+ assert.equal(response.status,200);
+ assert.equal(body.project.relatedV48Project.id,'adrec:395');
+ assert.equal(body.project.relatedV48Project.reviewVersion,relationReview.reviewVersion);
+ assert.equal(body.project.canonicalProjectId,null);assert.equal(body.project.coordinates,null);
+ assert.equal(body.scope.canonicalProjectMatches,0);assert.equal(body.scope.reviewedV48Relationships,1);
+ assert.equal(body.scope.unmappedV48ProjectsRemain,127);
+ assert.deepEqual(body.project.sourceGeometry.rings,geometrySource.features.find(feature=>feature.attributes.OBJECTID===200).geometry.rings);
+ const rejected=await (await mapAbuDhabiDeveloperProjects(request('/737'),report,packed)).json();
+ assert.equal(rejected.project.relatedV48Project,undefined);
 });
 
 test('source route is read-only and fails closed on altered bytes',async()=>{

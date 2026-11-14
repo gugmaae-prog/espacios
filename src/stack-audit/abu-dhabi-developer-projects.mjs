@@ -1,6 +1,8 @@
 const ABU_DHABI_DEVELOPER_BASE='/map/api/uae-evidence/abu-dhabi/developer-projects';
 const ABU_DHABI_DEVELOPER_RAW_SHA='347fa57d07e57cd359f63fffbed14cd5beda429475ba24db954950240d479f45';
 const ABU_DHABI_DEVELOPER_GEOMETRY_SHA='99fbeb679f3c45a22d54145560a79c70940985d05d009acef8b307f43d271cb2';
+const ABU_DHABI_V48_RELATION_REVIEW='20261114-ad-sdi-v48-relation-review';
+const ABU_DHABI_RAWDHAT_RELATION={sourceObjectId:200,sourceName:'Rawdhat Abu Dhabi',sourceDeveloper:'Reem Developers',sourceFeatureId:'DMA_4_12_2024_7669#1980#65',v48ProjectId:'adrec:395'};
 let developerRowsPromise,developerPacked;
 const developerDigest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');
 const developerInt=(value,min,max)=>/^\d+$/.test(value||'')&&Number.isSafeInteger(Number(value))&&Number(value)>=min&&Number(value)<=max?Number(value):null;
@@ -23,7 +25,10 @@ async function verifiedDeveloperRows(report,packed){
    objectIds.add(a.OBJECTID);featureIds.add(a.CH_FID);names.add(a.PROJECT_NAME);if(a.DEVELOPER_NAME)developers.add(a.DEVELOPER_NAME);else nullDevelopers++;
   }
   if(names.size!==report.distinctNames||developers.size!==report.distinctDevelopers||nullDevelopers!==report.nullDeveloperRows)throw Error('Developer source distinct counts mismatch');
-  return features.map(({attributes:a})=>({sourceObjectId:a.OBJECTID,name:a.PROJECT_NAME,developerName:a.DEVELOPER_NAME,sourceFeatureId:a.CH_FID,canonicalProjectId:null,matchStatus:'unmatched_source_identity',coordinates:null}));
+  return features.map(({attributes:a})=>{
+   const reviewed=a.OBJECTID===ABU_DHABI_RAWDHAT_RELATION.sourceObjectId&&a.PROJECT_NAME===ABU_DHABI_RAWDHAT_RELATION.sourceName&&a.DEVELOPER_NAME===ABU_DHABI_RAWDHAT_RELATION.sourceDeveloper&&a.CH_FID===ABU_DHABI_RAWDHAT_RELATION.sourceFeatureId;
+   return{sourceObjectId:a.OBJECTID,name:a.PROJECT_NAME,developerName:a.DEVELOPER_NAME,sourceFeatureId:a.CH_FID,canonicalProjectId:null,matchStatus:'unmatched_source_identity',coordinates:null,...(reviewed?{relatedV48Project:{id:ABU_DHABI_RAWDHAT_RELATION.v48ProjectId,relation:'reviewed_name_and_developer_relationship_not_same_plot_identity',reviewVersion:ABU_DHABI_V48_RELATION_REVIEW}}:{})};
+  });
  })().catch(error=>{developerRowsPromise=undefined;developerPacked=undefined;throw error});}
  return developerRowsPromise;
 }
@@ -47,8 +52,8 @@ export async function mapAbuDhabiDeveloperProjects(request,report,packed,geometr
  if(path!==ABU_DHABI_DEVELOPER_BASE&&!(path.startsWith(ABU_DHABI_DEVELOPER_BASE+'/')&&/^\d+$/.test(path.slice(ABU_DHABI_DEVELOPER_BASE.length+1))))return null;
  if(!['GET','HEAD'].includes(request.method))return developerReply(request,{error:'Read-only endpoint'},405);
  const geometryAvailable=Boolean(geometryReport&&geometryChunks);
- const source={id:report?.sourceId,publisher:report?.publisher,layerTitle:report?.layerTitle,serviceLayerUrl:report?.serviceLayerUrl,termsUrl:report?.termsUrl,retrievedAt:report?.retrievedAt,sourcePublicationDate:report?.sourcePublicationDate,attribution:report?.attribution,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rows:report?.rows,distinctNames:report?.distinctNames,geometryAvailable,geometrySourceSha256:geometryAvailable?geometryReport.rawSha256:null,geometryQuery:'Append ?geometry=1 to a feature detail URL',storage:'checksum_verified_immutable_worker_snapshot'};
- const scope={emirate:'Abu Dhabi',evidenceClass:'official_open_geospatial_developer_project_feature_attributes',grain:'one_polygon_layer_feature_attribute_row',canonicalProjectMatches:0,geometryCaptured:geometryAvailable,projectCoordinatesPresent:false,limits:'411 source features with 410 distinct names. Developer names are source labels, not independently validated project ownership. Source polygons are not building footprints or verified V48 project points. This layer overlaps the separate Urban Development Projects layer and is not an ADREC register, current property-project census or sales source. No automatic V48 joins.'};
+ const source={id:report?.sourceId,publisher:report?.publisher,layerTitle:report?.layerTitle,serviceLayerUrl:report?.serviceLayerUrl,termsUrl:report?.termsUrl,retrievedAt:report?.retrievedAt,sourcePublicationDate:report?.sourcePublicationDate,attribution:report?.attribution,rawSha256:report?.rawSha256,compressedSha256:report?.compressedSha256,rows:report?.rows,distinctNames:report?.distinctNames,geometryAvailable,geometrySourceSha256:geometryAvailable?geometryReport.rawSha256:null,geometryQuery:'Append ?geometry=1 to a feature detail URL',relationReviewVersion:ABU_DHABI_V48_RELATION_REVIEW,storage:'checksum_verified_immutable_worker_snapshot'};
+ const scope={emirate:'Abu Dhabi',evidenceClass:'official_open_geospatial_developer_project_feature_attributes',grain:'one_polygon_layer_feature_attribute_row',canonicalProjectMatches:0,reviewedV48Relationships:1,unmappedV48ProjectsRemain:127,geometryCaptured:geometryAvailable,projectCoordinatesPresent:false,limits:'411 source features with 410 distinct names. One source feature has a reviewed name-and-developer relationship to an unlocated V48 project; this does not establish identical plot identity or a project coordinate. Developer names are source labels, not independently validated project ownership. Source polygons are not building footprints or verified V48 project points. This layer overlaps the separate Urban Development Projects layer and is not an ADREC register, current property-project census or sales source. No automatic V48 joins.'};
  try{
   const rows=await verifiedDeveloperRows(report,packed);
   if(path!==ABU_DHABI_DEVELOPER_BASE){
