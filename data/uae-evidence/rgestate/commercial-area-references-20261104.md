@@ -40,3 +40,22 @@ includes both basis types; `?emirate=Dubai` retains only exact publisher
 emirate labels. Each area-matched row returns its OSM reference and an area
 geography status. These counts are listing facts, not project or transaction
 coverage, and the area references do not establish unit coordinates.
+
+On 14 November 2026, three more exact publisher area labels were checked against
+OpenStreetMap Nominatim's returned place or boundary object and Dubai address:
+
+| Publisher label | OSM area reference | Map classification |
+| --- | --- | --- |
+| International City | [relation/18471686](https://www.openstreetmap.org/relation/18471686) | Dubai suburb boundary centre |
+| Nad Al Sheba | [relation/18471683](https://www.openstreetmap.org/relation/18471683) | Dubai suburb boundary centre |
+| JVT | [node/11800596710](https://www.openstreetmap.org/node/11800596710) | Jumeirah Village Triangle neighbourhood reference |
+
+All three use exact `locationLabel` equality. They classify 15 more of the
+1,660-row publisher index at area scale: 922 reviewed area rows now have a
+Dubai or Abu Dhabi reference, and 135 remain unresolved. Two of the 15 are
+title-matched commercial candidates, raising the combined commercial map's
+area-grouped rows from 934 to 936 of 996. Its 60 remaining rows are still
+searchable without an area point. `Al Layan`, `Al Nahda`, `Dubai World Central`
+and missing labels remain unresolved because their available search results
+did not verify the exact area intended by the publisher. No individual unit
+was geocoded, and no listing became an official transaction.

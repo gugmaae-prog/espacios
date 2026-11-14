@@ -125,8 +125,8 @@ test('137 title-matched spaces add publisher data without becoming category rows
  assert.equal((await(await combined('?scope=title-candidates&purpose=sale')).json()).totalRows,candidateReport.saleRows);
  const areas=await(await mapRgestateCommercial(new Request('https://espacios.me/map/api/uae-evidence/commercial/areas'),report,packed,candidateReport,candidatePacked,parentReport)).json();
  assert.equal(areas.totalRows,996);
- assert.equal(areas.mappedRows,934);
- assert.equal(areas.unmappedRows,62);
+ assert.equal(areas.mappedRows,936);
+ assert.equal(areas.unmappedRows,60);
  assert.equal(areas.areas.reduce((sum,area)=>sum+area.count,0),areas.mappedRows);
  assert.equal(areas.scope.unitCoordinatesPresent,false);
  for(const [key,label] of [['meydan','Meydan'],['jumeirah-lake-towers','Jumeirah Lake Tower'],['al-warqa','Al Warqa'],['al-karama','Al Karama']]){
@@ -136,7 +136,7 @@ test('137 title-matched spaces add publisher data without becoming category rows
   assert.ok(rows.rows.some(row=>row.locationLabel===label),key);
   assert.ok(rows.rows.every(row=>row.coordinates===null&&row.reviewedAreaEmirate==='Dubai'));
  }
- for(const [key,label] of [['jvc','Jumeirah Village Circle'],['dip','DIP 1'],['dubai-islands','Dubai Island'],['dubai-internet-city','Dubai Internet City'],['jumeirah','Jumeirah']]){
+ for(const [key,label] of [['jvc','Jumeirah Village Circle'],['dip','DIP 1'],['dubai-islands','Dubai Island'],['dubai-internet-city','Dubai Internet City'],['jumeirah','Jumeirah'],['international-city','International City']]){
   const rows=await(await combined('?area='+key+'&limit=100')).json();
   assert.ok(rows.rows.some(row=>row.locationLabel===label),key);
   assert.ok(rows.rows.every(row=>row.coordinates===null&&row.reviewedAreaEmirate==='Dubai'));

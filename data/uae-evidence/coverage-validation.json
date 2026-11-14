@@ -1,5 +1,5 @@
 {
-  "version": "20261114-uae-evidence-coverage-v45",
+  "version": "20261114-uae-evidence-coverage-v46",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -16,8 +16,8 @@
     "snapshotRows": 1660,
     "observedAt": "2026-11-14T12:16:40.280409+00:00",
     "explicitEmirateLocationLabelRows": 603,
-    "reviewedAreaLocationRows": 907,
-    "unresolvedLocationRows": 150,
+    "reviewedAreaLocationRows": 922,
+    "unresolvedLocationRows": 135,
     "unassignedLocationLabelRows": 1057,
     "method": "Exact equality against the publisher location label; no title, URL, nearby district, or coordinate inference.",
     "geographyStatus": "publisher_label_unverified",
@@ -583,7 +583,7 @@
         "route": "/map/api/uae-evidence/rgestate/index?emirate=Dubai",
         "locationEmirateRoute": "/map/api/uae-evidence/rgestate/index?locationEmirate=Dubai",
         "explicitLocationLabelRows": 5,
-        "reviewedAreaLocationRows": 905,
+        "reviewedAreaLocationRows": 920,
         "byPathClass": {
           "sale": 4,
           "rent": 1,
@@ -935,7 +935,7 @@
     "ajmanCrosswalk": "ef7a3f478b85a4510c88b56f512a554a2964993d792f20a1a54f674510fd1f94",
     "rgeIndex": "ddca1762e34aa20d1da5bdb07254f65f52b18f219b02a7a4617ccd273c4be1c5",
     "rgeLabels": "f7492ec5ca7f25724c87aa8825594369f1bcdf85941a64167000131bdb8dd6b9",
-    "rgeAreas": "94073d2f4a0c61e042fdfd5fabf390cfd48f9e12d9b6dadbda24e1cc70c2060d",
+    "rgeAreas": "41d9131dfa30befe8d77d3ef56e21813fa9e68d2d4c85a5bab7b0afc5ccccecc",
     "dubaiStatus": "21cbae13b542fdf224255d0172af37d07cb59cc83338dd41b11c7b5d48d9044b",
     "dubaiCrosswalk": "79c969fb7eec6607a49034f5d5894f32b84201a67d5dc108c448579c174e57d9",
     "sharjahMarket": "9beea62a75d7e92e94431380153a4f550d8bb1c8b9959cf8269cbfb7217403df",

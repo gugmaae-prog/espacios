@@ -37,8 +37,8 @@ test('full index preserves all source facts and boundaries without adding projec
   assert.equal(body.scope.photosIncluded,false);
   assert.equal(body.scope.explicitEmirateLabelRows,603);
   assert.equal(body.scope.unassignedEmirateRows,1057);
-  assert.equal(body.scope.reviewedAreaLocationRows,907);
-  assert.equal(body.scope.unresolvedLocationRows,150);
+  assert.equal(body.scope.reviewedAreaLocationRows,922);
+  assert.equal(body.scope.unresolvedLocationRows,135);
   seen.push(...body.rows);
  }
  assert.deepEqual(seen.map(({publisherEmirate,reviewedAreaLocation,...row})=>row),sourceRows);
@@ -50,8 +50,11 @@ test('full index preserves all source facts and boundaries without adding projec
  assert.equal(seen.filter(row=>row.publisherEmirate).length,603);
  assert.equal(seen.find(row=>row.locationLabel==='Al Qusais').publisherEmirate,null);
  assert.equal(seen.find(row=>row.locationLabel==='Al Qusais').reviewedAreaLocation.emirate,'Dubai');
- assert.equal(seen.filter(row=>row.reviewedAreaLocation).length,907);
+ assert.equal(seen.filter(row=>row.reviewedAreaLocation).length,922);
  assert.equal(seen.find(row=>row.locationLabel==='Al Ain').reviewedAreaLocation.emirate,'Abu Dhabi');
+ assert.equal(seen.find(row=>row.locationLabel==='International City').reviewedAreaLocation.osmUrl,'https://www.openstreetmap.org/relation/18471686');
+ assert.equal(seen.find(row=>row.locationLabel==='Nad Al Sheba').reviewedAreaLocation.osmUrl,'https://www.openstreetmap.org/relation/18471683');
+ assert.equal(seen.find(row=>row.locationLabel==='JVT').reviewedAreaLocation.osmUrl,'https://www.openstreetmap.org/node/11800596710');
  assert.equal(seen.find(row=>row.locationLabel==='Al Layan').reviewedAreaLocation,null);
 });
 
@@ -68,10 +71,10 @@ test('filters and read-only boundary retain source classification',async()=>{
  const sharjahRent=await (await mapRgestateIndex(request('?emirate=Sharjah&kind=rent'),report,packed,labels,areas)).json();
  assert.equal(sharjahRent.totalRows,162);
  const dubai=await (await mapRgestateIndex(request('?locationEmirate=Dubai&limit=100'),report,packed,labels,areas)).json();
- assert.equal(dubai.totalRows,910);
+ assert.equal(dubai.totalRows,925);
  assert.ok(dubai.rows.every(row=>row.publisherEmirate==='Dubai'||row.reviewedAreaLocation?.emirate==='Dubai'));
  const unresolved=await (await mapRgestateIndex(request('?locationEmirate=unresolved'),report,packed,labels,areas)).json();
- assert.equal(unresolved.totalRows,150);
+ assert.equal(unresolved.totalRows,135);
  for(const query of ['?kind=forecast','?commercial=maybe','?emirate=Oman','?locationEmirate=Oman','?limit=101','?offset=-1','?q='+encodeURIComponent('x'.repeat(121))])assert.equal((await mapRgestateIndex(request(query),report,packed,labels,areas)).status,400);
  assert.equal((await mapRgestateIndex(request('','POST'),report,packed,labels,areas)).status,405);
  assert.equal((await mapRgestateIndex(request('','HEAD'),report,packed,labels,areas)).status,200);

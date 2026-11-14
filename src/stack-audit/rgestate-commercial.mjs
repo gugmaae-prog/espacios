@@ -65,6 +65,9 @@ export const RGE_AREA_CENTRES=[
  ['al-sufouh','Al Sufouh',55.1611169,25.0983566,'way/1153975042',['Al Sufouh']],
  ['dubai-internet-city','Dubai Internet City',55.1597571,25.0952352,'way/1154309751',['Dubai Internet City']],
  ['jumeirah','Jumeirah',55.2474974,25.2069604,'relation/11912729',['Jumeirah']],
+ ['international-city','International City',55.3981414,25.1322737,'relation/18471686',['International City']],
+ ['nad-al-sheba','Nad Al Sheba',55.3642750,25.1456302,'relation/18471683',['Nad Al Sheba']],
+ ['jvt','Jumeirah Village Triangle',55.1907008,25.0498433,'node/11800596710',['JVT','Jumeirah Village Triangle']],
 ];
 // Emirate of each reviewed OSM area reference, distinct from the publisher's label.
 export const RGE_AREA_EMIRATES={
@@ -84,9 +87,10 @@ export const RGE_AREA_EMIRATES={
  'al-nahda-2':'Dubai','culture-village':'Dubai','al-manara':'Dubai','jebel-ali':'Dubai',
  meydan:'Dubai','jumeirah-lake-towers':'Dubai','al-warqa':'Dubai','al-karama':'Dubai',
  'motor-city':'Dubai','al-baraha':'Dubai','al-sufouh':'Dubai',
- 'dubai-internet-city':'Dubai',jumeirah:'Dubai'
+ 'dubai-internet-city':'Dubai',jumeirah:'Dubai',
+ 'international-city':'Dubai','nad-al-sheba':'Dubai',jvt:'Dubai'
 };
-if(RGE_AREA_CENTRES.length!==59||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==59)throw Error('Reviewed RGEstate area-to-emirate references changed');
+if(RGE_AREA_CENTRES.length!==62||RGE_AREA_CENTRES.some(area=>!RGE_AREA_EMIRATES[area[0]])||Object.keys(RGE_AREA_EMIRATES).length!==62)throw Error('Reviewed RGEstate area-to-emirate references changed');
 const RGE_AREA_ALIASES=RGE_AREA_CENTRES.flatMap(area=>area[5].map(label=>[label.toLocaleLowerCase('en'),area]));
 if(RGE_AREA_ALIASES.some(([label,area])=>RGE_AREA_ALIASES.some(([otherLabel,otherArea])=>label===otherLabel&&area!==otherArea)))throw Error('Conflicting reviewed RGEstate area label');
 const RGE_AREA_BY_LABEL=new Map(RGE_AREA_ALIASES);
