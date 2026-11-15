@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-08T22:48:42.128Z",
+  "frontend": "20261009-map-evidence-v40",
+  "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+  "desktop": {
+    "mapBackground": "rgb(248, 250, 252)",
+    "mapText": "rgb(32, 48, 68)",
+    "pageWidth": 1280,
+    "panelWidth": 440,
+    "rangeText": "Historical advertised range\n\n750,000–2,500,000 AED\n\nFlamingo 2013 launch cohort of 104 villas; mixed sizes, individual unit identities unknown · reported 2013-10-09\n\nContemporaneous developer interview reported by The National on 9 October 2013\n\nReported asking range across the stated cohort; not a transaction, average, valuation or current offer. No average or midpoint is derived. First verified source availability: 2026-10-08T21:59:42.601Z.\n\nThe National\nPublished 2013-10-09\nFirst available 2026-10-08T21:59:42.601Z\nRAK Properties\nPublication date not supplied\nFirst available 2026-10-08T21:59:32.845Z",
+    "sourceURLs": "https://www.thenationalnews.com/business/emirati-and-indian-buyers-snap-up-rak-waterfront-properties-1.480574",
+    "viewport": 1280
+  },
+  "mobile": {
+    "pageWidth": 390,
+    "panelWidth": 366,
+    "rangeText": "Historical advertised range\n\n750,000–2,500,000 AED\n\nFlamingo 2013 launch cohort of 104 villas; mixed sizes, individual unit identities unknown · reported 2013-10-09\n\nContemporaneous developer interview reported by The National on 9 October 2013\n\nReported asking range across the stated cohort; not a transaction, average, valuation or current offer. No average or midpoint is derived. First verified source availability: 2026-10-08T21:59:42.601Z.\n\nThe National\nPublished 2013-10-09\nFirst available 2026-10-08T21:59:42.601Z\nRAK Properties\nPublication date not supplied\nFirst available 2026-10-08T21:59:32.845Z",
+    "viewport": 390
+  },
+  "rangeAndCohortVerified": true,
+  "sourceLinkVerified": true,
+  "viewportReset": true,
+  "passed": true
+}

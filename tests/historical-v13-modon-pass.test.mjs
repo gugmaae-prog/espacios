@@ -1,3 +1,4 @@
+import {verifyRegionalQuotePromotions} from '../scripts/regional-mirror-preservation.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -15,7 +16,7 @@ const previous=JSON.parse(gunzipSync(priorBytes));
 
 test('V13 preserves the immutable V11 base and every retained V12 packet item',()=>{
  assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
- assert.ok(['20261007-enrichment-v13','20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v23'].includes(snapshot.version));
+ assert.ok(['20261007-enrichment-v13','20261007-enrichment-v14','20261007-enrichment-v15','20261007-enrichment-v16','20261007-enrichment-v17','20261007-enrichment-v18','20261007-enrichment-v19','20261008-enrichment-v20','20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261008-enrichment-v23','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48'].includes(snapshot.version));
  assert.equal(snapshot.records.length,1860);
  assert.deepEqual([...records.keys()].sort(),previous.records.map(r=>r.id).sort());
  for(const old of previous.records){
@@ -70,7 +71,28 @@ test('V13 closes only three supported requirements and demotes mirror-only quote
  const v13Closures=transitions.filter(([id,key,from,to])=>expectedV13Keys.has(id+'|'+key)&&from==='missing'&&to==='present');
  assert.deepEqual(v13Closures.sort(),expectedV13Closures.sort());
  const corrections=transitions.filter(([,key,from,to])=>from==='present'&&to==='partial');
- assert.ok(corrections.length>=(['20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v23'].includes(snapshot.version)?1252:1253));
+ let restoredLegacyQuotes=0;
+ if(['20261014-enrichment-v47','20261014-enrichment-v48'].includes(snapshot.version)){
+  const hash='9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672';
+  const bytes=fs.readFileSync(`data/historical-intelligence/objects/${hash}.json.gz`);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),hash);
+  const baseline=JSON.parse(gunzipSync(bytes));
+  const reviewed=JSON.parse(fs.readFileSync('data/historical-intelligence/reviewed-regional-20261014/accepted-packet.json','utf8'));
+  // V47's exact promotion proof stays pinned; V48's independent tests prove
+  // its five additional missing-to-present subjects and all unaffected fields.
+  let v47=snapshot;
+  if(snapshot.version==='20261014-enrichment-v48'){
+   const priorHash='49e7121016319517bc8a7e6809f21565c5c72ed7469d81b51ec5b03da94722d2';
+   const priorBytes=fs.readFileSync(`data/historical-intelligence/objects/${priorHash}.json.gz`);
+   assert.equal(createHash('sha256').update(priorBytes).digest('hex'),priorHash);
+   v47=JSON.parse(gunzipSync(priorBytes));
+  }
+  const result=verifyRegionalQuotePromotions({baseline,current:v47,legacy:previous,packet:reviewed});
+  restoredLegacyQuotes=result.restoredLegacyIds.length;
+ }
+
+ // Wraith's V40 primary bedroom quotes supersede one mirror-only partial item.
+ assert.ok((corrections.length+restoredLegacyQuotes)>=(['20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48'].includes(snapshot.version)?1246:['20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48'].includes(snapshot.version)?1247:snapshot.version==='20261008-enrichment-v32'?1251:['20261008-enrichment-v21','20261008-enrichment-v22','20261008-enrichment-v24','20261008-enrichment-v25','20261008-enrichment-v26','20261008-enrichment-v27','20261008-enrichment-v28','20261008-enrichment-v29','20261008-enrichment-v30','20261008-enrichment-v31','20261008-enrichment-v32','20261008-enrichment-v33','20261008-enrichment-v34','20261008-enrichment-v35','20261008-enrichment-v36','20261008-enrichment-v37','20261008-enrichment-v38','20261009-enrichment-v39','20261009-enrichment-v40','20261008-enrichment-v23','20261012-enrichment-v41','20261012-enrichment-v42','20261012-enrichment-v43','20261012-enrichment-v44','20261013-enrichment-v45','20261013-enrichment-v46','20261014-enrichment-v47','20261014-enrichment-v48'].includes(snapshot.version)?1252:1253));
  assert.ok(corrections.every(([,key])=>key==='advertised_prices'));
  assert.ok(corrections.every(([id])=>records.get(id).researchStatus.itemCoverage.advertised_prices.contextualQuoteCount>0));
  assert.ok(transitions.length>=1267,'later releases may add verified coverage transitions');

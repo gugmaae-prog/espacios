@@ -1,0 +1,201 @@
+{
+  "sourceId": "dsc-dubai-housing-building-kapsarc-public-domain-2019",
+  "emirate": "Dubai",
+  "publisher": "Dubai Statistics Centre (DSC)",
+  "host": "KAPSARC Data Portal",
+  "sourceUrl": "https://data.kapsarc.org/explore/dataset/housing-and-building-statistics-of-emirate-of-dubai/",
+  "officialCrossCheckUrl": "https://www.dsc.gov.ae/Report/DSC_SYB_2019_02%20_%2001.pdf",
+  "evidenceClass": "historical_published_completed_building_count_by_type",
+  "sourceObservationYears": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "grain": "calendar year × building type × all/urban/rural Dubai",
+  "unit": "buildings",
+  "limits": "Historical published building counts. Classification and rural geography follow the source vintage. These are not annual new completions, permits, units, available spaces, transactions, prices, or project locations. Do not use year-to-year differences as completion counts.",
+  "observations": [
+    {
+      "year": 2015,
+      "buildingType": "commercial_building",
+      "area": "all",
+      "buildingCount": 7576
+    },
+    {
+      "year": 2015,
+      "buildingType": "commercial_building",
+      "area": "urban",
+      "buildingCount": 7302
+    },
+    {
+      "year": 2015,
+      "buildingType": "commercial_building",
+      "area": "rural",
+      "buildingCount": 274
+    },
+    {
+      "year": 2015,
+      "buildingType": "industrial_building",
+      "area": "all",
+      "buildingCount": 885
+    },
+    {
+      "year": 2015,
+      "buildingType": "industrial_building",
+      "area": "urban",
+      "buildingCount": 880
+    },
+    {
+      "year": 2015,
+      "buildingType": "industrial_building",
+      "area": "rural",
+      "buildingCount": 5
+    },
+    {
+      "year": 2016,
+      "buildingType": "commercial_building",
+      "area": "all",
+      "buildingCount": 8759
+    },
+    {
+      "year": 2016,
+      "buildingType": "commercial_building",
+      "area": "urban",
+      "buildingCount": 8461
+    },
+    {
+      "year": 2016,
+      "buildingType": "commercial_building",
+      "area": "rural",
+      "buildingCount": 298
+    },
+    {
+      "year": 2016,
+      "buildingType": "industrial_building",
+      "area": "all",
+      "buildingCount": 859
+    },
+    {
+      "year": 2016,
+      "buildingType": "industrial_building",
+      "area": "urban",
+      "buildingCount": 855
+    },
+    {
+      "year": 2016,
+      "buildingType": "industrial_building",
+      "area": "rural",
+      "buildingCount": 4
+    },
+    {
+      "year": 2017,
+      "buildingType": "commercial_building",
+      "area": "all",
+      "buildingCount": 9276
+    },
+    {
+      "year": 2017,
+      "buildingType": "commercial_building",
+      "area": "urban",
+      "buildingCount": 8793
+    },
+    {
+      "year": 2017,
+      "buildingType": "commercial_building",
+      "area": "rural",
+      "buildingCount": 483
+    },
+    {
+      "year": 2017,
+      "buildingType": "industrial_building",
+      "area": "all",
+      "buildingCount": 899
+    },
+    {
+      "year": 2017,
+      "buildingType": "industrial_building",
+      "area": "urban",
+      "buildingCount": 895
+    },
+    {
+      "year": 2017,
+      "buildingType": "industrial_building",
+      "area": "rural",
+      "buildingCount": 4
+    },
+    {
+      "year": 2018,
+      "buildingType": "commercial_building",
+      "area": "all",
+      "buildingCount": 10038
+    },
+    {
+      "year": 2018,
+      "buildingType": "commercial_building",
+      "area": "urban",
+      "buildingCount": 9535
+    },
+    {
+      "year": 2018,
+      "buildingType": "commercial_building",
+      "area": "rural",
+      "buildingCount": 503
+    },
+    {
+      "year": 2018,
+      "buildingType": "industrial_building",
+      "area": "all",
+      "buildingCount": 993
+    },
+    {
+      "year": 2018,
+      "buildingType": "industrial_building",
+      "area": "urban",
+      "buildingCount": 986
+    },
+    {
+      "year": 2018,
+      "buildingType": "industrial_building",
+      "area": "rural",
+      "buildingCount": 7
+    },
+    {
+      "year": 2019,
+      "buildingType": "commercial_building",
+      "area": "all",
+      "buildingCount": 10405
+    },
+    {
+      "year": 2019,
+      "buildingType": "commercial_building",
+      "area": "urban",
+      "buildingCount": 9867
+    },
+    {
+      "year": 2019,
+      "buildingType": "commercial_building",
+      "area": "rural",
+      "buildingCount": 538
+    },
+    {
+      "year": 2019,
+      "buildingType": "industrial_building",
+      "area": "all",
+      "buildingCount": 1055
+    },
+    {
+      "year": 2019,
+      "buildingType": "industrial_building",
+      "area": "urban",
+      "buildingCount": 1045
+    },
+    {
+      "year": 2019,
+      "buildingType": "industrial_building",
+      "area": "rural",
+      "buildingCount": 10
+    }
+  ]
+}

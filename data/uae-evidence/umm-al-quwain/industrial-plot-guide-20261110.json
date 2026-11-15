@@ -1,0 +1,18 @@
+{
+  "sourceId": "uaq-industrial-city-investor-guide-2021-selected-plot-rates-20261110",
+  "emirate": "Umm Al Quwain",
+  "authority": "Umm Al-Quwain Industrial City Authority",
+  "publication": "Investor Guide, page 8; PDF metadata modified 2021-10-16",
+  "sourceUrl": "https://ia.uaq.ae/wp-content/uploads/2021/10/industrial-authority-UAQ-INVESTOR-GUIDE.pdf",
+  "evidenceClass": "official_dated_land_lease_guide_rate",
+  "grain": "published plot-product category in a 2021 investor guide",
+  "rateUnit": "AED per square metre; charging period not stated in table",
+  "standardLeaseTermYears": 20,
+  "rows": [
+    {"plotType": "industrial", "guidePlotSizeSqm": 5000, "guideRateAedPerSqm": 10},
+    {"plotType": "warehouse", "guidePlotSizeSqm": 5000, "guideRateAedPerSqm": 12},
+    {"plotType": "labour_accommodation", "guidePlotSizeSqm": 1200, "guideRateAedPerSqm": 15},
+    {"plotType": "commercial", "guidePlotSizeSqm": 1200, "guideRateAedPerSqm": 20}
+  ],
+  "limits": "This is an archived 2021 land-lease guide, not a current offer, completed warehouse/shop/office inventory, signed rent, registered sale, project register, or location of an available plot. The table does not state the rate charging period; no annual or 20-year total is inferred. Sizes are guide categories, not verified individual plot areas. Current rates, contract fees, VAT, eligibility, and availability require direct authority confirmation."
+}

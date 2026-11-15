@@ -1,0 +1,40 @@
+{
+  "sourceId": "datadubai-dld-ejari-community-rents-20261101",
+  "publisher": "Dubai Data / Continental Club Property; based on Dubai Land Department Ejari open data",
+  "sourceUrl": "https://huggingface.co/datasets/datadubai/dubai-real-estate-dld/tree/28fcfe459d3bf135a2e266dcdacdbe9575cf2ea7",
+  "methodologyUrl": "https://datadubai.ae/methodology/",
+  "originalSourceUrl": "https://dubailand.gov.ae/en/open-data/real-estate-data/",
+  "license": "CC BY 4.0; derived subset with attribution",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "sourceCommit": "28fcfe459d3bf135a2e266dcdacdbe9575cf2ea7",
+  "sourceRepositoryUpdatedAt": "2026-11-01T22:06:05Z",
+  "sourceDataThrough": "2026-10-29",
+  "sourceWindow": "Publisher trailing 12 complete months; inferred October 2025–September 2026 from source data-through date. CSV has no explicit observation dates.",
+  "sourceCsvSha256": {
+    "communities": "0d0ef0d66da68a45867b8219c0be1efb8b83299ef3e1658f0eb6e2f60cdff213",
+    "bedrooms": "623a99aec05b8959ab698ec742d45d18e5b58851a7b96396a4ca13cc72423b79"
+  },
+  "sourceCsvBytes": {
+    "communities": 8896,
+    "bedrooms": 66719
+  },
+  "dataSha256": "e83261cc208ed14c694aad70af8b89dc9eb0a4bcc4cfa3a8d0d0ad67ed51c248",
+  "dataBytes": 138660,
+  "communityRows": 102,
+  "bedroomRows": 418,
+  "communityContracts": 304464,
+  "bedroomContracts": 286628,
+  "bedroomMediansWithheld": 66,
+  "bedroomLowSampleMedians": 33,
+  "palmJabalAliBedroomRows": 5,
+  "palmJabalAliRentContracts": 0,
+  "excludedSourceColumns": [
+    "yield_pct",
+    "n",
+    "quality",
+    "price_median",
+    "psf_median",
+    "sqft_median"
+  ],
+  "limits": "Publisher community aggregates mix unspecified home types and include renewals. The two views overlap and their contract counts must not be summed. These are registered single-property Ejari contract rents, not current asking rents, commercial-space rents, unit availability, valuations, forecasts, or exact property coordinates. Bedroom labels are publisher labels; the CSV does not encode property class. Null medians mean fewer than five contracts, not zero rent. Source window dates are inferred from the publisher rule, not carried in the CSV."
+}

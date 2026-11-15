@@ -1,0 +1,30 @@
+{
+  "sourceLayerUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/353",
+  "queryUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/353/query?where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22OBJECTID%22%2C%22outStatisticFieldName%22%3A%22feature_count%22%7D%5D&groupByFieldsForStatistics=MUNICIPALITYNAME%2CPRIMARYUSAGETYPE&returnGeometry=false&f=json",
+  "countUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/353/query?where=1%3D1&returnCountOnly=true&f=json",
+  "termsUrl": "https://sdi.gov.abudhabi/sdi/opendata.html",
+  "retrievedAt": "2026-11-09T18:10:24.723744+00:00",
+  "captureA": {
+    "rawSha256": "72613743df84aa58a1b0325a0f58966a6043f6d46d79756173f8300c0d4b56b1",
+    "rawBytes": 25608
+  },
+  "captureB": {
+    "rawSha256": "5a7b586f5e8e208d0a17abe10fe3caf7439dbb230115ab1d5067901e26c88ec6",
+    "rawBytes": 25608
+  },
+  "canonicalSha256": "b226cb6da45ae7ac2e19f54a31499c35a7e27bf2682654c54017c779d9215572",
+  "canonicalBytes": 19315,
+  "metadataSha256": "3cadd3b8c284527ec6075ac19b2c9699fd8647a7dad0b3299e688be78b2bc6ed",
+  "countReads": [
+    {
+      "sha256": "22ec13206586302924d9540b5fef98a18b52f5e9fa916d8edb7c36aeaf0f34be",
+      "bytes": 16,
+      "count": 392495
+    },
+    {
+      "sha256": "22ec13206586302924d9540b5fef98a18b52f5e9fa916d8edb7c36aeaf0f34be",
+      "bytes": 16,
+      "count": 392495
+    }
+  ]
+}

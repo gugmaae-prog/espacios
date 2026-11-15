@@ -1,0 +1,88 @@
+{
+  "sourceId": "sharjah-rerd-reported-monthly-market-20261114-supplement",
+  "evidenceClass": "government_reported_monthly_market_aggregate",
+  "method": "Two independent direct reads of Argaam HTML had an identical 15,804-byte normalized table; its February–March numeric cells span two table rows. The prior six-month source remains pinned by checksum.",
+  "retrievedAtDate": "2026-11-14",
+  "sourceArticles": [
+    {
+      "month": "2026-01",
+      "url": "https://sharjah24.ae/en/Articles/2026/02/26/KMR2",
+      "publishedAt": "2026-02-26T15:16:48Z",
+      "articleBodySha256": "892d42609adad7c3c7c184867c60e75d30c5598e1972b5caf93c3ff7011ebaa0",
+      "articleBodyBytes": 2878
+    },
+    {
+      "month": "2026-04",
+      "url": "https://sharjah24.ae/en/Articles/2026/05/12/KMR5",
+      "publishedAt": "2026-05-12T06:46:26Z",
+      "articleBodySha256": "b8c4fec3ca40ddeeee5fec2c30276a464824ff3863e9c1b62d8d8cc509638b2e",
+      "articleBodyBytes": 3279
+    },
+    {
+      "month": "2026-05",
+      "url": "https://sharjah24.ae/en/Articles/2026/06/05/gh-6",
+      "publishedAt": "2026-06-05T08:44:36Z",
+      "articleBodySha256": "986e38a1dc5a5c32ce0af8ee2bbdad616018934e95bdb42f0b9c2875c26ee9b3",
+      "articleBodyBytes": 3117
+    },
+    {
+      "month": "2026-07",
+      "url": "https://sharjah24.ae/en/Articles/2026/08/06/mm03",
+      "publishedAt": "2026-08-06T06:48:04Z",
+      "articleBodySha256": "a6fe508a8c348c776b8815b6770cb371a592321d14935b76a5d4c646c3fceba2",
+      "articleBodyBytes": 4093
+    },
+    {
+      "month": "2026-08",
+      "url": "https://sharjah24.ae/en/Articles/2026/09/10/a8",
+      "publishedAt": "2026-09-10T06:20:06Z",
+      "articleBodySha256": "fb2c735a5988e5bb7c4a114b027bd7dc6de3677efc5919aa1afea1c0c5d614ba",
+      "articleBodyBytes": 3410
+    },
+    {
+      "period": "2026-02/2026-03 and 2026-09",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1943896",
+      "publishedAt": "2026-10-13",
+      "tableBytes": 15804,
+      "tableSha256": "be52a1d5be9d4e15aafc5f450942bb923ec68eabdbfbba4ac22616c5d25b4f79",
+      "secondaryReport": true
+    }
+  ],
+  "crossChecks": [
+    {
+      "period": "2026-H1",
+      "sourceUrl": "https://www.wam.ae/en/article/c18fnby-sharjah-real-estate-transactions-reach-aed295",
+      "reportedTransactionValueAedApprox": 29500000000
+    },
+    {
+      "period": "2026-01/2026-09",
+      "sourceUrl": "https://www.wam.ae/en/article/c2q0o4j-sharjah-real-estate-transactions-hit-aed-468bn",
+      "reportedTransactionValueAedApprox": 46800000000,
+      "allProcedureTransactions": 91560
+    }
+  ],
+  "rows": 7,
+  "combinedPeriodRows": 1,
+  "missingMonths": [
+    "2026-02",
+    "2026-03"
+  ],
+  "incompleteMonths": [
+    "2026-06",
+    "2026-09"
+  ],
+  "dataBytes": 5117,
+  "dataSha256": "ef3071410d7bb5410a66cac7a53462c1a967507ec0fa0e0cf4ceb2240e3869dc",
+  "compressedBytes": 1324,
+  "compressedSha256": "f8b39ade84228e90c856a2df7e91bdf4c34db91b0539e842ad3db6010d621f69",
+  "rightsScope": "Selected reported numerical facts and source links only; Sharjah 24, Argaam, and WAM article content excluded.",
+  "reconciliation": {
+    "previousSourceId": "sharjah-rerd-reported-monthly-market-20261114",
+    "previousDataSha256": "e4dda5afe4b7de18eb41f57c1038b25848de23329efd89e740347d3793834597",
+    "retainedOriginalObservations": 6,
+    "addedMonth": "2026-09",
+    "addedCombinedPeriod": "2026-02/2026-03",
+    "roundedValueSumAedApprox": 46800000000,
+    "roundedValueSumMatchesNineMonthReport": true
+  }
+}

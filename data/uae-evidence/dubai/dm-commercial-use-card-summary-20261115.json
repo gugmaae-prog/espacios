@@ -1,0 +1,4657 @@
+{
+  "version": "20261115-dm-commercial-use-cards-v1",
+  "sourceId": "dm-building-summary-information-20261026",
+  "sourceSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798",
+  "sourceUpdatedLabel": "26 October 2026, 3:51 PM (portal display; timezone unstated)",
+  "evidenceClass": "derived_exact_usage_token_building_card_counts",
+  "grain": "one unique building card; multiple usage tokens may occur on one card",
+  "sourceRows": 536946,
+  "selectedUniqueCards": 93146,
+  "selectedCardsPermitDatePresent": 28707,
+  "selectedCardsPermitDateMissingOrInvalid": 64439,
+  "cardsWithMultipleSelectedTokens": 16572,
+  "selectedUsageTokens": [
+    "Commercial",
+    "Offices",
+    "Warehouse",
+    "Shopping Centre",
+    "Factory",
+    "Workshops"
+  ],
+  "usageTokenCards": [
+    {
+      "token": "Commercial",
+      "cards": 43553,
+      "statusCounts": {
+        "Approved": 140,
+        "Building Cancelled": 698,
+        "Demolition Approved": 0,
+        "Expired": 2822,
+        "New": 26780,
+        "On Hold For Design Change": 2,
+        "On Hold for Card Cancellation": 0,
+        "Permit Delivered": 13104,
+        "Request For Demolition": 7
+      },
+      "permitDatePresent": 13707,
+      "permitDateMissingOrInvalid": 29846
+    },
+    {
+      "token": "Offices",
+      "cards": 22186,
+      "statusCounts": {
+        "Approved": 71,
+        "Building Cancelled": 403,
+        "Demolition Approved": 0,
+        "Expired": 1649,
+        "New": 14223,
+        "On Hold For Design Change": 1,
+        "On Hold for Card Cancellation": 0,
+        "Permit Delivered": 5837,
+        "Request For Demolition": 2
+      },
+      "permitDatePresent": 5962,
+      "permitDateMissingOrInvalid": 16224
+    },
+    {
+      "token": "Warehouse",
+      "cards": 29437,
+      "statusCounts": {
+        "Approved": 53,
+        "Building Cancelled": 521,
+        "Demolition Approved": 0,
+        "Expired": 2314,
+        "New": 16812,
+        "On Hold For Design Change": 0,
+        "On Hold for Card Cancellation": 0,
+        "Permit Delivered": 9726,
+        "Request For Demolition": 11
+      },
+      "permitDatePresent": 10209,
+      "permitDateMissingOrInvalid": 19228
+    },
+    {
+      "token": "Shopping Centre",
+      "cards": 2091,
+      "statusCounts": {
+        "Approved": 3,
+        "Building Cancelled": 34,
+        "Demolition Approved": 0,
+        "Expired": 107,
+        "New": 1508,
+        "On Hold For Design Change": 0,
+        "On Hold for Card Cancellation": 0,
+        "Permit Delivered": 438,
+        "Request For Demolition": 1
+      },
+      "permitDatePresent": 438,
+      "permitDateMissingOrInvalid": 1653
+    },
+    {
+      "token": "Factory",
+      "cards": 5780,
+      "statusCounts": {
+        "Approved": 7,
+        "Building Cancelled": 167,
+        "Demolition Approved": 0,
+        "Expired": 461,
+        "New": 3539,
+        "On Hold For Design Change": 0,
+        "On Hold for Card Cancellation": 0,
+        "Permit Delivered": 1605,
+        "Request For Demolition": 1
+      },
+      "permitDatePresent": 1810,
+      "permitDateMissingOrInvalid": 3970
+    },
+    {
+      "token": "Workshops",
+      "cards": 8578,
+      "statusCounts": {
+        "Approved": 46,
+        "Building Cancelled": 195,
+        "Demolition Approved": 0,
+        "Expired": 455,
+        "New": 5652,
+        "On Hold For Design Change": 0,
+        "On Hold for Card Cancellation": 0,
+        "Permit Delivered": 2227,
+        "Request For Demolition": 3
+      },
+      "permitDatePresent": 2317,
+      "permitDateMissingOrInvalid": 6261
+    }
+  ],
+  "communityCodeCount": 216,
+  "cardsWithoutCommunityCode": 0,
+  "communities": [
+    {
+      "communityNo": 111,
+      "sourceNameVariants": [
+        {
+          "name": "AL CORNICHE",
+          "cards": 259
+        },
+        {
+          "name": "CORNICHE",
+          "cards": 2
+        }
+      ],
+      "missingNameCards": 3,
+      "nameConflict": true,
+      "selectedUniqueCards": 264,
+      "usageTokenCards": {
+        "Commercial": 234,
+        "Offices": 83,
+        "Warehouse": 0,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 112,
+      "sourceNameVariants": [
+        {
+          "name": "AL RAS",
+          "cards": 713
+        },
+        {
+          "name": "AL DAGHAYA",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 163,
+      "nameConflict": true,
+      "selectedUniqueCards": 877,
+      "usageTokenCards": {
+        "Commercial": 834,
+        "Offices": 272,
+        "Warehouse": 14,
+        "Shopping Centre": 17,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 113,
+      "sourceNameVariants": [
+        {
+          "name": "AL DAGHAYA",
+          "cards": 713
+        }
+      ],
+      "missingNameCards": 253,
+      "nameConflict": false,
+      "selectedUniqueCards": 966,
+      "usageTokenCards": {
+        "Commercial": 922,
+        "Offices": 214,
+        "Warehouse": 27,
+        "Shopping Centre": 16,
+        "Factory": 2,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 114,
+      "sourceNameVariants": [
+        {
+          "name": "AL BUTEEN",
+          "cards": 579
+        }
+      ],
+      "missingNameCards": 229,
+      "nameConflict": false,
+      "selectedUniqueCards": 808,
+      "usageTokenCards": {
+        "Commercial": 791,
+        "Offices": 211,
+        "Warehouse": 7,
+        "Shopping Centre": 5,
+        "Factory": 1,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 115,
+      "sourceNameVariants": [
+        {
+          "name": "AL SABKHA",
+          "cards": 235
+        }
+      ],
+      "missingNameCards": 66,
+      "nameConflict": false,
+      "selectedUniqueCards": 301,
+      "usageTokenCards": {
+        "Commercial": 293,
+        "Offices": 76,
+        "Warehouse": 6,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 116,
+      "sourceNameVariants": [
+        {
+          "name": "AYAL NASIR",
+          "cards": 522
+        }
+      ],
+      "missingNameCards": 190,
+      "nameConflict": false,
+      "selectedUniqueCards": 712,
+      "usageTokenCards": {
+        "Commercial": 684,
+        "Offices": 70,
+        "Warehouse": 3,
+        "Shopping Centre": 24,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 117,
+      "sourceNameVariants": [
+        {
+          "name": "AL MURAR",
+          "cards": 830
+        }
+      ],
+      "missingNameCards": 401,
+      "nameConflict": false,
+      "selectedUniqueCards": 1231,
+      "usageTokenCards": {
+        "Commercial": 1211,
+        "Offices": 115,
+        "Warehouse": 7,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 118,
+      "sourceNameVariants": [
+        {
+          "name": "NAIF",
+          "cards": 1638
+        }
+      ],
+      "missingNameCards": 474,
+      "nameConflict": false,
+      "selectedUniqueCards": 2112,
+      "usageTokenCards": {
+        "Commercial": 2029,
+        "Offices": 347,
+        "Warehouse": 26,
+        "Shopping Centre": 62,
+        "Factory": 3,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 119,
+      "sourceNameVariants": [
+        {
+          "name": "AL RIGGA",
+          "cards": 258
+        }
+      ],
+      "missingNameCards": 106,
+      "nameConflict": false,
+      "selectedUniqueCards": 364,
+      "usageTokenCards": {
+        "Commercial": 335,
+        "Offices": 126,
+        "Warehouse": 6,
+        "Shopping Centre": 9,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 121,
+      "sourceNameVariants": [
+        {
+          "name": "CORNICHE DEIRA",
+          "cards": 28
+        }
+      ],
+      "missingNameCards": 11,
+      "nameConflict": false,
+      "selectedUniqueCards": 39,
+      "usageTokenCards": {
+        "Commercial": 12,
+        "Offices": 20,
+        "Warehouse": 5,
+        "Shopping Centre": 10,
+        "Factory": 1,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 122,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARAHA",
+          "cards": 101
+        }
+      ],
+      "missingNameCards": 80,
+      "nameConflict": false,
+      "selectedUniqueCards": 181,
+      "usageTokenCards": {
+        "Commercial": 147,
+        "Offices": 40,
+        "Warehouse": 15,
+        "Shopping Centre": 1,
+        "Factory": 3,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 123,
+      "sourceNameVariants": [
+        {
+          "name": "AL MUTEENA",
+          "cards": 264
+        }
+      ],
+      "missingNameCards": 123,
+      "nameConflict": false,
+      "selectedUniqueCards": 387,
+      "usageTokenCards": {
+        "Commercial": 350,
+        "Offices": 137,
+        "Warehouse": 16,
+        "Shopping Centre": 10,
+        "Factory": 1,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 124,
+      "sourceNameVariants": [
+        {
+          "name": "AL MURAQQABAT",
+          "cards": 414
+        }
+      ],
+      "missingNameCards": 596,
+      "nameConflict": false,
+      "selectedUniqueCards": 1010,
+      "usageTokenCards": {
+        "Commercial": 531,
+        "Offices": 643,
+        "Warehouse": 17,
+        "Shopping Centre": 54,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 125,
+      "sourceNameVariants": [
+        {
+          "name": "RIGGAT AL BUTEEN",
+          "cards": 82
+        }
+      ],
+      "missingNameCards": 32,
+      "nameConflict": false,
+      "selectedUniqueCards": 114,
+      "usageTokenCards": {
+        "Commercial": 87,
+        "Offices": 73,
+        "Warehouse": 0,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 126,
+      "sourceNameVariants": [
+        {
+          "name": "ABU HAIL",
+          "cards": 209
+        }
+      ],
+      "missingNameCards": 73,
+      "nameConflict": false,
+      "selectedUniqueCards": 282,
+      "usageTokenCards": {
+        "Commercial": 248,
+        "Offices": 18,
+        "Warehouse": 5,
+        "Shopping Centre": 5,
+        "Factory": 16,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 127,
+      "sourceNameVariants": [
+        {
+          "name": "HOR AL ANZ",
+          "cards": 1106
+        }
+      ],
+      "missingNameCards": 188,
+      "nameConflict": false,
+      "selectedUniqueCards": 1294,
+      "usageTokenCards": {
+        "Commercial": 1168,
+        "Offices": 192,
+        "Warehouse": 108,
+        "Shopping Centre": 14,
+        "Factory": 2,
+        "Workshops": 18
+      }
+    },
+    {
+      "communityNo": 128,
+      "sourceNameVariants": [
+        {
+          "name": "AL KHABAISI",
+          "cards": 1075
+        }
+      ],
+      "missingNameCards": 207,
+      "nameConflict": false,
+      "selectedUniqueCards": 1282,
+      "usageTokenCards": {
+        "Commercial": 402,
+        "Offices": 410,
+        "Warehouse": 827,
+        "Shopping Centre": 7,
+        "Factory": 17,
+        "Workshops": 78
+      }
+    },
+    {
+      "communityNo": 129,
+      "sourceNameVariants": [
+        {
+          "name": "PORT SAEED",
+          "cards": 603
+        }
+      ],
+      "missingNameCards": 121,
+      "nameConflict": false,
+      "selectedUniqueCards": 724,
+      "usageTokenCards": {
+        "Commercial": 541,
+        "Offices": 415,
+        "Warehouse": 26,
+        "Shopping Centre": 55,
+        "Factory": 4,
+        "Workshops": 17
+      }
+    },
+    {
+      "communityNo": 131,
+      "sourceNameVariants": [
+        {
+          "name": "AL HAMRIYA PORT",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 5,
+      "nameConflict": false,
+      "selectedUniqueCards": 6,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 2,
+        "Warehouse": 3,
+        "Shopping Centre": 0,
+        "Factory": 1,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 132,
+      "sourceNameVariants": [
+        {
+          "name": "AL WUHEIDA",
+          "cards": 26
+        }
+      ],
+      "missingNameCards": 38,
+      "nameConflict": false,
+      "selectedUniqueCards": 64,
+      "usageTokenCards": {
+        "Commercial": 51,
+        "Offices": 8,
+        "Warehouse": 9,
+        "Shopping Centre": 0,
+        "Factory": 1,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 133,
+      "sourceNameVariants": [
+        {
+          "name": "HOR AL ANZ EAST",
+          "cards": 171
+        }
+      ],
+      "missingNameCards": 108,
+      "nameConflict": false,
+      "selectedUniqueCards": 279,
+      "usageTokenCards": {
+        "Commercial": 236,
+        "Offices": 79,
+        "Warehouse": 12,
+        "Shopping Centre": 28,
+        "Factory": 2,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 134,
+      "sourceNameVariants": [
+        {
+          "name": "AL MAMZAR",
+          "cards": 381
+        }
+      ],
+      "missingNameCards": 52,
+      "nameConflict": false,
+      "selectedUniqueCards": 433,
+      "usageTokenCards": {
+        "Commercial": 335,
+        "Offices": 172,
+        "Warehouse": 10,
+        "Shopping Centre": 4,
+        "Factory": 3,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 213,
+      "sourceNameVariants": [
+        {
+          "name": "NADD SHAMMA",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 17,
+      "nameConflict": false,
+      "selectedUniqueCards": 18,
+      "usageTokenCards": {
+        "Commercial": 12,
+        "Offices": 1,
+        "Warehouse": 5,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 214,
+      "sourceNameVariants": [
+        {
+          "name": "AL GARHOUD",
+          "cards": 669
+        }
+      ],
+      "missingNameCards": 154,
+      "nameConflict": false,
+      "selectedUniqueCards": 823,
+      "usageTokenCards": {
+        "Commercial": 473,
+        "Offices": 435,
+        "Warehouse": 209,
+        "Shopping Centre": 15,
+        "Factory": 13,
+        "Workshops": 42
+      }
+    },
+    {
+      "communityNo": 215,
+      "sourceNameVariants": [
+        {
+          "name": "UMM RAMOOL",
+          "cards": 2539
+        }
+      ],
+      "missingNameCards": 288,
+      "nameConflict": false,
+      "selectedUniqueCards": 2827,
+      "usageTokenCards": {
+        "Commercial": 203,
+        "Offices": 362,
+        "Warehouse": 1936,
+        "Shopping Centre": 5,
+        "Factory": 158,
+        "Workshops": 625
+      }
+    },
+    {
+      "communityNo": 216,
+      "sourceNameVariants": [
+        {
+          "name": "AL RASHIDIYA",
+          "cards": 154
+        }
+      ],
+      "missingNameCards": 82,
+      "nameConflict": false,
+      "selectedUniqueCards": 236,
+      "usageTokenCards": {
+        "Commercial": 166,
+        "Offices": 62,
+        "Warehouse": 32,
+        "Shopping Centre": 24,
+        "Factory": 3,
+        "Workshops": 7
+      }
+    },
+    {
+      "communityNo": 221,
+      "sourceNameVariants": [
+        {
+          "name": "DUBAI INT`L AIRPORT",
+          "cards": 116
+        }
+      ],
+      "missingNameCards": 28,
+      "nameConflict": false,
+      "selectedUniqueCards": 144,
+      "usageTokenCards": {
+        "Commercial": 95,
+        "Offices": 59,
+        "Warehouse": 77,
+        "Shopping Centre": 1,
+        "Factory": 5,
+        "Workshops": 8
+      }
+    },
+    {
+      "communityNo": 226,
+      "sourceNameVariants": [
+        {
+          "name": "AL TWAR FIRST",
+          "cards": 111
+        }
+      ],
+      "missingNameCards": 22,
+      "nameConflict": false,
+      "selectedUniqueCards": 133,
+      "usageTokenCards": {
+        "Commercial": 69,
+        "Offices": 62,
+        "Warehouse": 11,
+        "Shopping Centre": 11,
+        "Factory": 1,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 227,
+      "sourceNameVariants": [
+        {
+          "name": "AL TWAR SECOND",
+          "cards": 9
+        }
+      ],
+      "missingNameCards": 31,
+      "nameConflict": false,
+      "selectedUniqueCards": 40,
+      "usageTokenCards": {
+        "Commercial": 28,
+        "Offices": 9,
+        "Warehouse": 6,
+        "Shopping Centre": 0,
+        "Factory": 2,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 228,
+      "sourceNameVariants": [
+        {
+          "name": "AL TWAR THIRD",
+          "cards": 12
+        }
+      ],
+      "missingNameCards": 110,
+      "nameConflict": false,
+      "selectedUniqueCards": 122,
+      "usageTokenCards": {
+        "Commercial": 106,
+        "Offices": 30,
+        "Warehouse": 13,
+        "Shopping Centre": 6,
+        "Factory": 1,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 231,
+      "sourceNameVariants": [
+        {
+          "name": "AL NAHDA FIRST",
+          "cards": 362
+        }
+      ],
+      "missingNameCards": 42,
+      "nameConflict": false,
+      "selectedUniqueCards": 404,
+      "usageTokenCards": {
+        "Commercial": 367,
+        "Offices": 109,
+        "Warehouse": 0,
+        "Shopping Centre": 6,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 232,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS FIRST",
+          "cards": 288
+        },
+        {
+          "name": "AL QUSAIS",
+          "cards": 7
+        }
+      ],
+      "missingNameCards": 59,
+      "nameConflict": true,
+      "selectedUniqueCards": 354,
+      "usageTokenCards": {
+        "Commercial": 182,
+        "Offices": 143,
+        "Warehouse": 40,
+        "Shopping Centre": 24,
+        "Factory": 0,
+        "Workshops": 8
+      }
+    },
+    {
+      "communityNo": 233,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS SECOND",
+          "cards": 221
+        },
+        {
+          "name": "AL TWAR FIFTH",
+          "cards": 7
+        }
+      ],
+      "missingNameCards": 53,
+      "nameConflict": true,
+      "selectedUniqueCards": 281,
+      "usageTokenCards": {
+        "Commercial": 191,
+        "Offices": 106,
+        "Warehouse": 19,
+        "Shopping Centre": 12,
+        "Factory": 0,
+        "Workshops": 27
+      }
+    },
+    {
+      "communityNo": 234,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS THIRD",
+          "cards": 40
+        },
+        {
+          "name": "AL TWAR FOURTH",
+          "cards": 16
+        }
+      ],
+      "missingNameCards": 24,
+      "nameConflict": true,
+      "selectedUniqueCards": 80,
+      "usageTokenCards": {
+        "Commercial": 63,
+        "Offices": 12,
+        "Warehouse": 10,
+        "Shopping Centre": 0,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 236,
+      "sourceNameVariants": [],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 1,
+      "usageTokenCards": {
+        "Commercial": 1,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 237,
+      "sourceNameVariants": [],
+      "missingNameCards": 4,
+      "nameConflict": false,
+      "selectedUniqueCards": 4,
+      "usageTokenCards": {
+        "Commercial": 2,
+        "Offices": 0,
+        "Warehouse": 1,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 241,
+      "sourceNameVariants": [
+        {
+          "name": "AL NAHDA SECOND",
+          "cards": 265
+        }
+      ],
+      "missingNameCards": 38,
+      "nameConflict": false,
+      "selectedUniqueCards": 303,
+      "usageTokenCards": {
+        "Commercial": 245,
+        "Offices": 61,
+        "Warehouse": 23,
+        "Shopping Centre": 9,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 242,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS IND. FIRST",
+          "cards": 1196
+        }
+      ],
+      "missingNameCards": 278,
+      "nameConflict": false,
+      "selectedUniqueCards": 1474,
+      "usageTokenCards": {
+        "Commercial": 133,
+        "Offices": 120,
+        "Warehouse": 961,
+        "Shopping Centre": 56,
+        "Factory": 47,
+        "Workshops": 274
+      }
+    },
+    {
+      "communityNo": 243,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS IND. SECOND",
+          "cards": 673
+        }
+      ],
+      "missingNameCards": 94,
+      "nameConflict": false,
+      "selectedUniqueCards": 767,
+      "usageTokenCards": {
+        "Commercial": 121,
+        "Offices": 152,
+        "Warehouse": 503,
+        "Shopping Centre": 8,
+        "Factory": 61,
+        "Workshops": 86
+      }
+    },
+    {
+      "communityNo": 244,
+      "sourceNameVariants": [
+        {
+          "name": "MUHAISANAH THIRD",
+          "cards": 22
+        }
+      ],
+      "missingNameCards": 10,
+      "nameConflict": false,
+      "selectedUniqueCards": 32,
+      "usageTokenCards": {
+        "Commercial": 21,
+        "Offices": 8,
+        "Warehouse": 2,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 245,
+      "sourceNameVariants": [
+        {
+          "name": "MUHAISANAH FOURTH",
+          "cards": 170
+        }
+      ],
+      "missingNameCards": 3,
+      "nameConflict": false,
+      "selectedUniqueCards": 173,
+      "usageTokenCards": {
+        "Commercial": 129,
+        "Offices": 38,
+        "Warehouse": 1,
+        "Shopping Centre": 24,
+        "Factory": 0,
+        "Workshops": 11
+      }
+    },
+    {
+      "communityNo": 246,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS IND. THIRD",
+          "cards": 555
+        }
+      ],
+      "missingNameCards": 173,
+      "nameConflict": false,
+      "selectedUniqueCards": 728,
+      "usageTokenCards": {
+        "Commercial": 76,
+        "Offices": 90,
+        "Warehouse": 536,
+        "Shopping Centre": 0,
+        "Factory": 33,
+        "Workshops": 103
+      }
+    },
+    {
+      "communityNo": 247,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS IND. FOURTH",
+          "cards": 521
+        }
+      ],
+      "missingNameCards": 157,
+      "nameConflict": false,
+      "selectedUniqueCards": 678,
+      "usageTokenCards": {
+        "Commercial": 132,
+        "Offices": 87,
+        "Warehouse": 424,
+        "Shopping Centre": 1,
+        "Factory": 29,
+        "Workshops": 106
+      }
+    },
+    {
+      "communityNo": 248,
+      "sourceNameVariants": [
+        {
+          "name": "AL QUSAIS IND. FIFTH",
+          "cards": 606
+        }
+      ],
+      "missingNameCards": 71,
+      "nameConflict": false,
+      "selectedUniqueCards": 677,
+      "usageTokenCards": {
+        "Commercial": 168,
+        "Offices": 70,
+        "Warehouse": 400,
+        "Shopping Centre": 7,
+        "Factory": 29,
+        "Workshops": 71
+      }
+    },
+    {
+      "communityNo": 251,
+      "sourceNameVariants": [
+        {
+          "name": "MIRDIF",
+          "cards": 370
+        }
+      ],
+      "missingNameCards": 188,
+      "nameConflict": false,
+      "selectedUniqueCards": 558,
+      "usageTokenCards": {
+        "Commercial": 427,
+        "Offices": 185,
+        "Warehouse": 25,
+        "Shopping Centre": 62,
+        "Factory": 3,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 252,
+      "sourceNameVariants": [
+        {
+          "name": "MUSHRAIF",
+          "cards": 25
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 25,
+      "usageTokenCards": {
+        "Commercial": 17,
+        "Offices": 16,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 261,
+      "sourceNameVariants": [
+        {
+          "name": "MUHAISNAH FIRST",
+          "cards": 72
+        }
+      ],
+      "missingNameCards": 23,
+      "nameConflict": false,
+      "selectedUniqueCards": 95,
+      "usageTokenCards": {
+        "Commercial": 63,
+        "Offices": 22,
+        "Warehouse": 20,
+        "Shopping Centre": 7,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 262,
+      "sourceNameVariants": [
+        {
+          "name": "AL MIZHAR FIRST",
+          "cards": 128
+        }
+      ],
+      "missingNameCards": 37,
+      "nameConflict": false,
+      "selectedUniqueCards": 165,
+      "usageTokenCards": {
+        "Commercial": 77,
+        "Offices": 60,
+        "Warehouse": 17,
+        "Shopping Centre": 36,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 263,
+      "sourceNameVariants": [
+        {
+          "name": "AL MIZHAR SECOND",
+          "cards": 16
+        }
+      ],
+      "missingNameCards": 41,
+      "nameConflict": false,
+      "selectedUniqueCards": 57,
+      "usageTokenCards": {
+        "Commercial": 37,
+        "Offices": 19,
+        "Warehouse": 9,
+        "Shopping Centre": 0,
+        "Factory": 1,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 264,
+      "sourceNameVariants": [
+        {
+          "name": "MUHAISANAH SECOND",
+          "cards": 625
+        }
+      ],
+      "missingNameCards": 79,
+      "nameConflict": false,
+      "selectedUniqueCards": 704,
+      "usageTokenCards": {
+        "Commercial": 570,
+        "Offices": 116,
+        "Warehouse": 26,
+        "Shopping Centre": 14,
+        "Factory": 2,
+        "Workshops": 12
+      }
+    },
+    {
+      "communityNo": 265,
+      "sourceNameVariants": [
+        {
+          "name": "OUD AL MUTEENA FIRST",
+          "cards": 25
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 26,
+      "usageTokenCards": {
+        "Commercial": 23,
+        "Offices": 10,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 266,
+      "sourceNameVariants": [
+        {
+          "name": "AL MIZHAR THIRD",
+          "cards": 12
+        },
+        {
+          "name": "OUD AL MUTEENA SECOND",
+          "cards": 5
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": true,
+      "selectedUniqueCards": 18,
+      "usageTokenCards": {
+        "Commercial": 8,
+        "Offices": 1,
+        "Warehouse": 0,
+        "Shopping Centre": 9,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 267,
+      "sourceNameVariants": [
+        {
+          "name": "MUHAISANAH FIFTH",
+          "cards": 12
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 12,
+      "usageTokenCards": {
+        "Commercial": 3,
+        "Offices": 4,
+        "Warehouse": 4,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 5
+      }
+    },
+    {
+      "communityNo": 268,
+      "sourceNameVariants": [
+        {
+          "name": "OUD AL MUTEENA THIRD",
+          "cards": 8
+        },
+        {
+          "name": "OUD AL MUTEENA SECOND",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 9,
+      "usageTokenCards": {
+        "Commercial": 8,
+        "Offices": 1,
+        "Warehouse": 1,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 271,
+      "sourceNameVariants": [
+        {
+          "name": "WADI ALAMARDI",
+          "cards": 144
+        }
+      ],
+      "missingNameCards": 6,
+      "nameConflict": false,
+      "selectedUniqueCards": 150,
+      "usageTokenCards": {
+        "Commercial": 105,
+        "Offices": 38,
+        "Warehouse": 9,
+        "Shopping Centre": 4,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 281,
+      "sourceNameVariants": [
+        {
+          "name": "AL KHWANEEJ FIRST",
+          "cards": 64
+        }
+      ],
+      "missingNameCards": 3,
+      "nameConflict": false,
+      "selectedUniqueCards": 67,
+      "usageTokenCards": {
+        "Commercial": 46,
+        "Offices": 14,
+        "Warehouse": 8,
+        "Shopping Centre": 8,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 282,
+      "sourceNameVariants": [
+        {
+          "name": "AL KHWANEEJ SECOND",
+          "cards": 90
+        }
+      ],
+      "missingNameCards": 6,
+      "nameConflict": false,
+      "selectedUniqueCards": 96,
+      "usageTokenCards": {
+        "Commercial": 63,
+        "Offices": 23,
+        "Warehouse": 9,
+        "Shopping Centre": 7,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 283,
+      "sourceNameVariants": [
+        {
+          "name": "ALEYAS",
+          "cards": 146
+        }
+      ],
+      "missingNameCards": 16,
+      "nameConflict": false,
+      "selectedUniqueCards": 162,
+      "usageTokenCards": {
+        "Commercial": 13,
+        "Offices": 14,
+        "Warehouse": 113,
+        "Shopping Centre": 1,
+        "Factory": 21,
+        "Workshops": 8
+      }
+    },
+    {
+      "communityNo": 284,
+      "sourceNameVariants": [
+        {
+          "name": "AL TTAY",
+          "cards": 1048
+        },
+        {
+          "name": "ALKHAWANIJ",
+          "cards": 10
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 1058,
+      "usageTokenCards": {
+        "Commercial": 88,
+        "Offices": 86,
+        "Warehouse": 725,
+        "Shopping Centre": 8,
+        "Factory": 80,
+        "Workshops": 242
+      }
+    },
+    {
+      "communityNo": 302,
+      "sourceNameVariants": [
+        {
+          "name": "JUMEIRA BAY",
+          "cards": 23
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 23,
+      "usageTokenCards": {
+        "Commercial": 23,
+        "Offices": 4,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 311,
+      "sourceNameVariants": [
+        {
+          "name": "AL SHINDAGHA",
+          "cards": 26
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 26,
+      "usageTokenCards": {
+        "Commercial": 11,
+        "Offices": 9,
+        "Warehouse": 6,
+        "Shopping Centre": 6,
+        "Factory": 4,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 312,
+      "sourceNameVariants": [
+        {
+          "name": "AL SOUQ AL KABEER",
+          "cards": 1388
+        }
+      ],
+      "missingNameCards": 421,
+      "nameConflict": false,
+      "selectedUniqueCards": 1809,
+      "usageTokenCards": {
+        "Commercial": 1706,
+        "Offices": 463,
+        "Warehouse": 15,
+        "Shopping Centre": 33,
+        "Factory": 2,
+        "Workshops": 10
+      }
+    },
+    {
+      "communityNo": 313,
+      "sourceNameVariants": [
+        {
+          "name": "AL HAMRIYA",
+          "cards": 413
+        }
+      ],
+      "missingNameCards": 76,
+      "nameConflict": false,
+      "selectedUniqueCards": 489,
+      "usageTokenCards": {
+        "Commercial": 449,
+        "Offices": 72,
+        "Warehouse": 15,
+        "Shopping Centre": 5,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 314,
+      "sourceNameVariants": [
+        {
+          "name": "UMM HURAIR FIRST",
+          "cards": 184
+        }
+      ],
+      "missingNameCards": 13,
+      "nameConflict": false,
+      "selectedUniqueCards": 197,
+      "usageTokenCards": {
+        "Commercial": 163,
+        "Offices": 82,
+        "Warehouse": 1,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 315,
+      "sourceNameVariants": [
+        {
+          "name": "UMM HURAIR SECOND",
+          "cards": 229
+        }
+      ],
+      "missingNameCards": 37,
+      "nameConflict": false,
+      "selectedUniqueCards": 266,
+      "usageTokenCards": {
+        "Commercial": 109,
+        "Offices": 149,
+        "Warehouse": 6,
+        "Shopping Centre": 34,
+        "Factory": 0,
+        "Workshops": 12
+      }
+    },
+    {
+      "communityNo": 316,
+      "sourceNameVariants": [
+        {
+          "name": "AL RAFFA",
+          "cards": 297
+        }
+      ],
+      "missingNameCards": 103,
+      "nameConflict": false,
+      "selectedUniqueCards": 400,
+      "usageTokenCards": {
+        "Commercial": 349,
+        "Offices": 132,
+        "Warehouse": 2,
+        "Shopping Centre": 6,
+        "Factory": 5,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 317,
+      "sourceNameVariants": [
+        {
+          "name": "MANKHOOL",
+          "cards": 187
+        }
+      ],
+      "missingNameCards": 119,
+      "nameConflict": false,
+      "selectedUniqueCards": 306,
+      "usageTokenCards": {
+        "Commercial": 220,
+        "Offices": 152,
+        "Warehouse": 6,
+        "Shopping Centre": 31,
+        "Factory": 0,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 318,
+      "sourceNameVariants": [
+        {
+          "name": "AL KARAMA",
+          "cards": 1385
+        }
+      ],
+      "missingNameCards": 408,
+      "nameConflict": false,
+      "selectedUniqueCards": 1793,
+      "usageTokenCards": {
+        "Commercial": 1661,
+        "Offices": 296,
+        "Warehouse": 73,
+        "Shopping Centre": 39,
+        "Factory": 2,
+        "Workshops": 7
+      }
+    },
+    {
+      "communityNo": 319,
+      "sourceNameVariants": [
+        {
+          "name": "OUD METHA",
+          "cards": 406
+        }
+      ],
+      "missingNameCards": 93,
+      "nameConflict": false,
+      "selectedUniqueCards": 499,
+      "usageTokenCards": {
+        "Commercial": 417,
+        "Offices": 174,
+        "Warehouse": 22,
+        "Shopping Centre": 28,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 321,
+      "sourceNameVariants": [
+        {
+          "name": "MADINAT DUBAI AL MELAHEYAH",
+          "cards": 192
+        },
+        {
+          "name": "AL MINA",
+          "cards": 20
+        }
+      ],
+      "missingNameCards": 19,
+      "nameConflict": true,
+      "selectedUniqueCards": 231,
+      "usageTokenCards": {
+        "Commercial": 147,
+        "Offices": 73,
+        "Warehouse": 34,
+        "Shopping Centre": 4,
+        "Factory": 4,
+        "Workshops": 20
+      }
+    },
+    {
+      "communityNo": 322,
+      "sourceNameVariants": [
+        {
+          "name": "AL HUDAIBA",
+          "cards": 73
+        }
+      ],
+      "missingNameCards": 37,
+      "nameConflict": false,
+      "selectedUniqueCards": 110,
+      "usageTokenCards": {
+        "Commercial": 74,
+        "Offices": 44,
+        "Warehouse": 5,
+        "Shopping Centre": 15,
+        "Factory": 1,
+        "Workshops": 6
+      }
+    },
+    {
+      "communityNo": 323,
+      "sourceNameVariants": [
+        {
+          "name": "AL JAFILIYA",
+          "cards": 123
+        }
+      ],
+      "missingNameCards": 51,
+      "nameConflict": false,
+      "selectedUniqueCards": 174,
+      "usageTokenCards": {
+        "Commercial": 121,
+        "Offices": 55,
+        "Warehouse": 28,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 324,
+      "sourceNameVariants": [
+        {
+          "name": "AL KIFAF",
+          "cards": 79
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 80,
+      "usageTokenCards": {
+        "Commercial": 70,
+        "Offices": 30,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 325,
+      "sourceNameVariants": [
+        {
+          "name": "ZAA`BEEL FIRST",
+          "cards": 28
+        },
+        {
+          "name": "ZA`ABEEL FIRST",
+          "cards": 3
+        }
+      ],
+      "missingNameCards": 6,
+      "nameConflict": true,
+      "selectedUniqueCards": 37,
+      "usageTokenCards": {
+        "Commercial": 32,
+        "Offices": 27,
+        "Warehouse": 3,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 326,
+      "sourceNameVariants": [
+        {
+          "name": "AL JADAF",
+          "cards": 546
+        }
+      ],
+      "missingNameCards": 8,
+      "nameConflict": false,
+      "selectedUniqueCards": 554,
+      "usageTokenCards": {
+        "Commercial": 478,
+        "Offices": 147,
+        "Warehouse": 2,
+        "Shopping Centre": 16,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 332,
+      "sourceNameVariants": [
+        {
+          "name": "JUMEIRA FIRST",
+          "cards": 988
+        }
+      ],
+      "missingNameCards": 87,
+      "nameConflict": false,
+      "selectedUniqueCards": 1075,
+      "usageTokenCards": {
+        "Commercial": 992,
+        "Offices": 159,
+        "Warehouse": 13,
+        "Shopping Centre": 51,
+        "Factory": 3,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 333,
+      "sourceNameVariants": [
+        {
+          "name": "AL BADA",
+          "cards": 714
+        },
+        {
+          "name": "AL BADA`A",
+          "cards": 103
+        },
+        {
+          "name": "AL BADA`",
+          "cards": 8
+        }
+      ],
+      "missingNameCards": 116,
+      "nameConflict": true,
+      "selectedUniqueCards": 941,
+      "usageTokenCards": {
+        "Commercial": 902,
+        "Offices": 109,
+        "Warehouse": 5,
+        "Shopping Centre": 31,
+        "Factory": 0,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 334,
+      "sourceNameVariants": [
+        {
+          "name": "AL SATWA",
+          "cards": 457
+        }
+      ],
+      "missingNameCards": 137,
+      "nameConflict": false,
+      "selectedUniqueCards": 594,
+      "usageTokenCards": {
+        "Commercial": 530,
+        "Offices": 83,
+        "Warehouse": 16,
+        "Shopping Centre": 8,
+        "Factory": 3,
+        "Workshops": 5
+      }
+    },
+    {
+      "communityNo": 335,
+      "sourceNameVariants": [
+        {
+          "name": "TRADE CENTER FIRST",
+          "cards": 220
+        }
+      ],
+      "missingNameCards": 65,
+      "nameConflict": false,
+      "selectedUniqueCards": 285,
+      "usageTokenCards": {
+        "Commercial": 202,
+        "Offices": 212,
+        "Warehouse": 2,
+        "Shopping Centre": 5,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 336,
+      "sourceNameVariants": [
+        {
+          "name": "TRADE CENTER SECOND",
+          "cards": 184
+        }
+      ],
+      "missingNameCards": 33,
+      "nameConflict": false,
+      "selectedUniqueCards": 217,
+      "usageTokenCards": {
+        "Commercial": 164,
+        "Offices": 126,
+        "Warehouse": 0,
+        "Shopping Centre": 8,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 337,
+      "sourceNameVariants": [
+        {
+          "name": "ZAA`BEEL SECOND",
+          "cards": 55
+        },
+        {
+          "name": "ZA`ABEEL SECOND",
+          "cards": 13
+        }
+      ],
+      "missingNameCards": 5,
+      "nameConflict": true,
+      "selectedUniqueCards": 73,
+      "usageTokenCards": {
+        "Commercial": 40,
+        "Offices": 45,
+        "Warehouse": 4,
+        "Shopping Centre": 6,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 342,
+      "sourceNameVariants": [
+        {
+          "name": "JUMEIRA SECOND",
+          "cards": 184
+        }
+      ],
+      "missingNameCards": 48,
+      "nameConflict": false,
+      "selectedUniqueCards": 232,
+      "usageTokenCards": {
+        "Commercial": 201,
+        "Offices": 40,
+        "Warehouse": 13,
+        "Shopping Centre": 10,
+        "Factory": 1,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 343,
+      "sourceNameVariants": [
+        {
+          "name": "AL WASL",
+          "cards": 743
+        }
+      ],
+      "missingNameCards": 78,
+      "nameConflict": false,
+      "selectedUniqueCards": 821,
+      "usageTokenCards": {
+        "Commercial": 663,
+        "Offices": 184,
+        "Warehouse": 30,
+        "Shopping Centre": 98,
+        "Factory": 2,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 345,
+      "sourceNameVariants": [
+        {
+          "name": "BURJ KHALIFA",
+          "cards": 474
+        },
+        {
+          "name": "SH.ZAYED ROAD",
+          "cards": 22
+        }
+      ],
+      "missingNameCards": 59,
+      "nameConflict": true,
+      "selectedUniqueCards": 555,
+      "usageTokenCards": {
+        "Commercial": 427,
+        "Offices": 270,
+        "Warehouse": 11,
+        "Shopping Centre": 48,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 346,
+      "sourceNameVariants": [
+        {
+          "name": "BUSINESS BAY",
+          "cards": 614
+        },
+        {
+          "name": "BURJ DUBAI",
+          "cards": 3
+        },
+        {
+          "name": "BURJ KHALIFA",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 618,
+      "usageTokenCards": {
+        "Commercial": 535,
+        "Offices": 270,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 3,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 347,
+      "sourceNameVariants": [
+        {
+          "name": "AL MERKADH",
+          "cards": 317
+        },
+        {
+          "name": "AL MERKAD",
+          "cards": 3
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 320,
+      "usageTokenCards": {
+        "Commercial": 288,
+        "Offices": 31,
+        "Warehouse": 3,
+        "Shopping Centre": 5,
+        "Factory": 2,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 352,
+      "sourceNameVariants": [
+        {
+          "name": "JUMEIRA THIRD",
+          "cards": 225
+        }
+      ],
+      "missingNameCards": 146,
+      "nameConflict": false,
+      "selectedUniqueCards": 371,
+      "usageTokenCards": {
+        "Commercial": 252,
+        "Offices": 68,
+        "Warehouse": 66,
+        "Shopping Centre": 42,
+        "Factory": 4,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 353,
+      "sourceNameVariants": [
+        {
+          "name": "AL SAFA FIRST",
+          "cards": 247
+        }
+      ],
+      "missingNameCards": 26,
+      "nameConflict": false,
+      "selectedUniqueCards": 273,
+      "usageTokenCards": {
+        "Commercial": 258,
+        "Offices": 38,
+        "Warehouse": 5,
+        "Shopping Centre": 1,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 354,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ FIRST",
+          "cards": 353
+        },
+        {
+          "name": "AL QUOZ FIRST",
+          "cards": 89
+        }
+      ],
+      "missingNameCards": 135,
+      "nameConflict": true,
+      "selectedUniqueCards": 577,
+      "usageTokenCards": {
+        "Commercial": 232,
+        "Offices": 130,
+        "Warehouse": 195,
+        "Shopping Centre": 11,
+        "Factory": 103,
+        "Workshops": 48
+      }
+    },
+    {
+      "communityNo": 355,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ SECOND",
+          "cards": 25
+        },
+        {
+          "name": "GHADEER AL TAIR",
+          "cards": 9
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": true,
+      "selectedUniqueCards": 35,
+      "usageTokenCards": {
+        "Commercial": 30,
+        "Offices": 1,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 5,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 356,
+      "sourceNameVariants": [
+        {
+          "name": "UMM SUQEIM FIRST",
+          "cards": 200
+        }
+      ],
+      "missingNameCards": 64,
+      "nameConflict": false,
+      "selectedUniqueCards": 264,
+      "usageTokenCards": {
+        "Commercial": 223,
+        "Offices": 52,
+        "Warehouse": 13,
+        "Shopping Centre": 9,
+        "Factory": 0,
+        "Workshops": 7
+      }
+    },
+    {
+      "communityNo": 357,
+      "sourceNameVariants": [
+        {
+          "name": "AL SAFA SECOND",
+          "cards": 130
+        }
+      ],
+      "missingNameCards": 39,
+      "nameConflict": false,
+      "selectedUniqueCards": 169,
+      "usageTokenCards": {
+        "Commercial": 142,
+        "Offices": 109,
+        "Warehouse": 5,
+        "Shopping Centre": 6,
+        "Factory": 1,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 358,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ THIRD",
+          "cards": 422
+        },
+        {
+          "name": "AL QUOZ THIRD",
+          "cards": 336
+        }
+      ],
+      "missingNameCards": 59,
+      "nameConflict": true,
+      "selectedUniqueCards": 817,
+      "usageTokenCards": {
+        "Commercial": 452,
+        "Offices": 389,
+        "Warehouse": 260,
+        "Shopping Centre": 13,
+        "Factory": 61,
+        "Workshops": 50
+      }
+    },
+    {
+      "communityNo": 359,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ FOURTH",
+          "cards": 75
+        },
+        {
+          "name": "AL QUOZ FOURTH",
+          "cards": 18
+        }
+      ],
+      "missingNameCards": 25,
+      "nameConflict": true,
+      "selectedUniqueCards": 118,
+      "usageTokenCards": {
+        "Commercial": 75,
+        "Offices": 34,
+        "Warehouse": 15,
+        "Shopping Centre": 8,
+        "Factory": 1,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 362,
+      "sourceNameVariants": [
+        {
+          "name": "UMM SUQEIM SECOND",
+          "cards": 298
+        },
+        {
+          "name": "AL QOUZ FOURTH",
+          "cards": 7
+        }
+      ],
+      "missingNameCards": 81,
+      "nameConflict": true,
+      "selectedUniqueCards": 386,
+      "usageTokenCards": {
+        "Commercial": 305,
+        "Offices": 122,
+        "Warehouse": 7,
+        "Shopping Centre": 26,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 363,
+      "sourceNameVariants": [
+        {
+          "name": "AL MANARA",
+          "cards": 159
+        }
+      ],
+      "missingNameCards": 36,
+      "nameConflict": false,
+      "selectedUniqueCards": 195,
+      "usageTokenCards": {
+        "Commercial": 151,
+        "Offices": 98,
+        "Warehouse": 6,
+        "Shopping Centre": 14,
+        "Factory": 3,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 364,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ IND.FIRST",
+          "cards": 1574
+        },
+        {
+          "name": "AL QUOZ IND. FIRST",
+          "cards": 560
+        },
+        {
+          "name": "AL QOUZE IND.FIRST",
+          "cards": 557
+        }
+      ],
+      "missingNameCards": 369,
+      "nameConflict": true,
+      "selectedUniqueCards": 3060,
+      "usageTokenCards": {
+        "Commercial": 277,
+        "Offices": 489,
+        "Warehouse": 1981,
+        "Shopping Centre": 9,
+        "Factory": 278,
+        "Workshops": 600
+      }
+    },
+    {
+      "communityNo": 365,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ IND.SECOND",
+          "cards": 793
+        },
+        {
+          "name": "AL QUOZ IND. SECOND",
+          "cards": 230
+        },
+        {
+          "name": "AL QOUZE IND.SECOND",
+          "cards": 185
+        }
+      ],
+      "missingNameCards": 304,
+      "nameConflict": true,
+      "selectedUniqueCards": 1512,
+      "usageTokenCards": {
+        "Commercial": 133,
+        "Offices": 208,
+        "Warehouse": 1019,
+        "Shopping Centre": 4,
+        "Factory": 125,
+        "Workshops": 168
+      }
+    },
+    {
+      "communityNo": 366,
+      "sourceNameVariants": [
+        {
+          "name": "UMM SUQEIM THIRD",
+          "cards": 105
+        }
+      ],
+      "missingNameCards": 33,
+      "nameConflict": false,
+      "selectedUniqueCards": 138,
+      "usageTokenCards": {
+        "Commercial": 102,
+        "Offices": 45,
+        "Warehouse": 1,
+        "Shopping Centre": 9,
+        "Factory": 9,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 367,
+      "sourceNameVariants": [
+        {
+          "name": "UMM AL SHEIF",
+          "cards": 175
+        }
+      ],
+      "missingNameCards": 17,
+      "nameConflict": false,
+      "selectedUniqueCards": 192,
+      "usageTokenCards": {
+        "Commercial": 162,
+        "Offices": 136,
+        "Warehouse": 3,
+        "Shopping Centre": 8,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 368,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ IND.THIRD",
+          "cards": 1561
+        },
+        {
+          "name": "AL QOUZE IND.THIRD",
+          "cards": 686
+        },
+        {
+          "name": "AL QUOZ IND. THIRD",
+          "cards": 432
+        }
+      ],
+      "missingNameCards": 495,
+      "nameConflict": true,
+      "selectedUniqueCards": 3174,
+      "usageTokenCards": {
+        "Commercial": 310,
+        "Offices": 395,
+        "Warehouse": 2087,
+        "Shopping Centre": 10,
+        "Factory": 291,
+        "Workshops": 565
+      }
+    },
+    {
+      "communityNo": 369,
+      "sourceNameVariants": [
+        {
+          "name": "AL QOUZ IND.FOURTH",
+          "cards": 1333
+        },
+        {
+          "name": "AL QUOZ IND. FOURTH",
+          "cards": 387
+        },
+        {
+          "name": "AL QOUZE IND.FOURTH",
+          "cards": 384
+        }
+      ],
+      "missingNameCards": 702,
+      "nameConflict": true,
+      "selectedUniqueCards": 2806,
+      "usageTokenCards": {
+        "Commercial": 182,
+        "Offices": 240,
+        "Warehouse": 2032,
+        "Shopping Centre": 1,
+        "Factory": 179,
+        "Workshops": 480
+      }
+    },
+    {
+      "communityNo": 372,
+      "sourceNameVariants": [
+        {
+          "name": "AL SAFOUH FIRST",
+          "cards": 135
+        }
+      ],
+      "missingNameCards": 2,
+      "nameConflict": false,
+      "selectedUniqueCards": 137,
+      "usageTokenCards": {
+        "Commercial": 24,
+        "Offices": 92,
+        "Warehouse": 4,
+        "Shopping Centre": 13,
+        "Factory": 0,
+        "Workshops": 49
+      }
+    },
+    {
+      "communityNo": 373,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA FIRST",
+          "cards": 1403
+        }
+      ],
+      "missingNameCards": 107,
+      "nameConflict": false,
+      "selectedUniqueCards": 1510,
+      "usageTokenCards": {
+        "Commercial": 1404,
+        "Offices": 489,
+        "Warehouse": 3,
+        "Shopping Centre": 34,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 375,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA THIRD",
+          "cards": 232
+        }
+      ],
+      "missingNameCards": 29,
+      "nameConflict": false,
+      "selectedUniqueCards": 261,
+      "usageTokenCards": {
+        "Commercial": 240,
+        "Offices": 32,
+        "Warehouse": 7,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 376,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA SECOND",
+          "cards": 345
+        }
+      ],
+      "missingNameCards": 27,
+      "nameConflict": false,
+      "selectedUniqueCards": 372,
+      "usageTokenCards": {
+        "Commercial": 319,
+        "Offices": 66,
+        "Warehouse": 11,
+        "Shopping Centre": 23,
+        "Factory": 1,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 381,
+      "sourceNameVariants": [
+        {
+          "name": "NAKHLAT JUMEIRA",
+          "cards": 2
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 2,
+      "usageTokenCards": {
+        "Commercial": 2,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 382,
+      "sourceNameVariants": [
+        {
+          "name": "AL SAFOUH SECOND",
+          "cards": 19
+        }
+      ],
+      "missingNameCards": 9,
+      "nameConflict": false,
+      "selectedUniqueCards": 28,
+      "usageTokenCards": {
+        "Commercial": 21,
+        "Offices": 9,
+        "Warehouse": 1,
+        "Shopping Centre": 1,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 383,
+      "sourceNameVariants": [],
+      "missingNameCards": 10,
+      "nameConflict": false,
+      "selectedUniqueCards": 10,
+      "usageTokenCards": {
+        "Commercial": 4,
+        "Offices": 7,
+        "Warehouse": 0,
+        "Shopping Centre": 1,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 384,
+      "sourceNameVariants": [
+        {
+          "name": "AL THANYAH SECOND",
+          "cards": 4
+        },
+        {
+          "name": "AL MEDHMAR",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 5,
+      "usageTokenCards": {
+        "Commercial": 5,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 388,
+      "sourceNameVariants": [
+        {
+          "name": "AL THANYAH THIRD",
+          "cards": 112
+        },
+        {
+          "name": "EMIRATES HILL SECOND",
+          "cards": 32
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": true,
+      "selectedUniqueCards": 145,
+      "usageTokenCards": {
+        "Commercial": 65,
+        "Offices": 96,
+        "Warehouse": 5,
+        "Shopping Centre": 9,
+        "Factory": 0,
+        "Workshops": 9
+      }
+    },
+    {
+      "communityNo": 392,
+      "sourceNameVariants": [
+        {
+          "name": "MARSA DUBAI",
+          "cards": 1042
+        }
+      ],
+      "missingNameCards": 106,
+      "nameConflict": false,
+      "selectedUniqueCards": 1148,
+      "usageTokenCards": {
+        "Commercial": 1065,
+        "Offices": 162,
+        "Warehouse": 16,
+        "Shopping Centre": 29,
+        "Factory": 4,
+        "Workshops": 16
+      }
+    },
+    {
+      "communityNo": 393,
+      "sourceNameVariants": [
+        {
+          "name": "AL THANYAH FIFTH",
+          "cards": 381
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 381,
+      "usageTokenCards": {
+        "Commercial": 343,
+        "Offices": 170,
+        "Warehouse": 1,
+        "Shopping Centre": 6,
+        "Factory": 4,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 394,
+      "sourceNameVariants": [
+        {
+          "name": "AL THANYAH  FOURTH",
+          "cards": 30
+        },
+        {
+          "name": "EMIRATES HILL THIRD",
+          "cards": 13
+        }
+      ],
+      "missingNameCards": 75,
+      "nameConflict": true,
+      "selectedUniqueCards": 118,
+      "usageTokenCards": {
+        "Commercial": 23,
+        "Offices": 84,
+        "Warehouse": 5,
+        "Shopping Centre": 8,
+        "Factory": 1,
+        "Workshops": 12
+      }
+    },
+    {
+      "communityNo": 411,
+      "sourceNameVariants": [
+        {
+          "name": "RAS AL KHOR",
+          "cards": 5
+        }
+      ],
+      "missingNameCards": 24,
+      "nameConflict": false,
+      "selectedUniqueCards": 29,
+      "usageTokenCards": {
+        "Commercial": 24,
+        "Offices": 10,
+        "Warehouse": 4,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 412,
+      "sourceNameVariants": [
+        {
+          "name": "AL KHEERAN",
+          "cards": 157
+        },
+        {
+          "name": "FESTIVAL CITY",
+          "cards": 45
+        },
+        {
+          "name": "AL KHAIRAN",
+          "cards": 19
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 221,
+      "usageTokenCards": {
+        "Commercial": 128,
+        "Offices": 125,
+        "Warehouse": 15,
+        "Shopping Centre": 32,
+        "Factory": 1,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 413,
+      "sourceNameVariants": [
+        {
+          "name": "RAS AL KHOR",
+          "cards": 50
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 50,
+      "usageTokenCards": {
+        "Commercial": 50,
+        "Offices": 13,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 414,
+      "sourceNameVariants": [
+        {
+          "name": "AL KHAIRAN FIRST",
+          "cards": 4
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 4,
+      "usageTokenCards": {
+        "Commercial": 4,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 415,
+      "sourceNameVariants": [
+        {
+          "name": "AL KHEERAN FIRST",
+          "cards": 96
+        },
+        {
+          "name": "AL KHEERAN SECOND",
+          "cards": 5
+        },
+        {
+          "name": "AL KHAIRAN SECOND",
+          "cards": 2
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 103,
+      "usageTokenCards": {
+        "Commercial": 79,
+        "Offices": 53,
+        "Warehouse": 0,
+        "Shopping Centre": 7,
+        "Factory": 1,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 416,
+      "sourceNameVariants": [
+        {
+          "name": "NADD AL HAMAR",
+          "cards": 691
+        }
+      ],
+      "missingNameCards": 58,
+      "nameConflict": false,
+      "selectedUniqueCards": 749,
+      "usageTokenCards": {
+        "Commercial": 413,
+        "Offices": 252,
+        "Warehouse": 260,
+        "Shopping Centre": 28,
+        "Factory": 21,
+        "Workshops": 45
+      }
+    },
+    {
+      "communityNo": 421,
+      "sourceNameVariants": [
+        {
+          "name": "AL WARQA`A FIRST",
+          "cards": 606
+        }
+      ],
+      "missingNameCards": 4,
+      "nameConflict": false,
+      "selectedUniqueCards": 610,
+      "usageTokenCards": {
+        "Commercial": 591,
+        "Offices": 28,
+        "Warehouse": 0,
+        "Shopping Centre": 7,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 422,
+      "sourceNameVariants": [
+        {
+          "name": "AL WARQA`A SECOND",
+          "cards": 38
+        }
+      ],
+      "missingNameCards": 12,
+      "nameConflict": false,
+      "selectedUniqueCards": 50,
+      "usageTokenCards": {
+        "Commercial": 24,
+        "Offices": 6,
+        "Warehouse": 5,
+        "Shopping Centre": 16,
+        "Factory": 0,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 423,
+      "sourceNameVariants": [
+        {
+          "name": "AL WARQA`A THIRD",
+          "cards": 60
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 60,
+      "usageTokenCards": {
+        "Commercial": 53,
+        "Offices": 4,
+        "Warehouse": 0,
+        "Shopping Centre": 6,
+        "Factory": 3,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 424,
+      "sourceNameVariants": [
+        {
+          "name": "AL WARQA`A FOURTH",
+          "cards": 44
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 45,
+      "usageTokenCards": {
+        "Commercial": 35,
+        "Offices": 9,
+        "Warehouse": 0,
+        "Shopping Centre": 6,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 425,
+      "sourceNameVariants": [
+        {
+          "name": "AL WARQA`A FIFTH",
+          "cards": 33
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 33,
+      "usageTokenCards": {
+        "Commercial": 6,
+        "Offices": 33,
+        "Warehouse": 4,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 431,
+      "sourceNameVariants": [
+        {
+          "name": "Al Athbah",
+          "cards": 4
+        },
+        {
+          "name": "WADI ALSHABAK",
+          "cards": 4
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 8,
+      "usageTokenCards": {
+        "Commercial": 8,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 2,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 500,
+      "sourceNameVariants": [],
+      "missingNameCards": 74,
+      "nameConflict": false,
+      "selectedUniqueCards": 74,
+      "usageTokenCards": {
+        "Commercial": 23,
+        "Offices": 17,
+        "Warehouse": 26,
+        "Shopping Centre": 0,
+        "Factory": 18,
+        "Workshops": 6
+      }
+    },
+    {
+      "communityNo": 511,
+      "sourceNameVariants": [
+        {
+          "name": "HESSYAN FIRST",
+          "cards": 63
+        },
+        {
+          "name": "DUBAI FRONT WATER",
+          "cards": 18
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 81,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 9,
+        "Warehouse": 26,
+        "Shopping Centre": 0,
+        "Factory": 56,
+        "Workshops": 10
+      }
+    },
+    {
+      "communityNo": 512,
+      "sourceNameVariants": [
+        {
+          "name": "HESSYAN SECOND",
+          "cards": 61
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 61,
+      "usageTokenCards": {
+        "Commercial": 4,
+        "Offices": 35,
+        "Warehouse": 19,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 16
+      }
+    },
+    {
+      "communityNo": 513,
+      "sourceNameVariants": [
+        {
+          "name": "SAIH SHUAIB 1",
+          "cards": 510
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 510,
+      "usageTokenCards": {
+        "Commercial": 404,
+        "Offices": 127,
+        "Warehouse": 5,
+        "Shopping Centre": 8,
+        "Factory": 9,
+        "Workshops": 19
+      }
+    },
+    {
+      "communityNo": 516,
+      "sourceNameVariants": [
+        {
+          "name": "JABAL ALI INDUSTRIAL THIRD",
+          "cards": 34
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 34,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 14,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 16,
+        "Workshops": 6
+      }
+    },
+    {
+      "communityNo": 518,
+      "sourceNameVariants": [
+        {
+          "name": "JABAL ALI INDUSTRIAL SECOND",
+          "cards": 2
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 2,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 2,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 521,
+      "sourceNameVariants": [
+        {
+          "name": "MADINAT AL MATAAR",
+          "cards": 1185
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 1185,
+      "usageTokenCards": {
+        "Commercial": 995,
+        "Offices": 754,
+        "Warehouse": 4,
+        "Shopping Centre": 131,
+        "Factory": 0,
+        "Workshops": 3
+      }
+    },
+    {
+      "communityNo": 531,
+      "sourceNameVariants": [
+        {
+          "name": "SAIH SHUAIB 2",
+          "cards": 761
+        },
+        {
+          "name": "DUBAI INDUSTRIAL CITY 1",
+          "cards": 43
+        },
+        {
+          "name": "SAIH ASHAEIB 2",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 8,
+      "nameConflict": true,
+      "selectedUniqueCards": 818,
+      "usageTokenCards": {
+        "Commercial": 87,
+        "Offices": 167,
+        "Warehouse": 368,
+        "Shopping Centre": 4,
+        "Factory": 231,
+        "Workshops": 98
+      }
+    },
+    {
+      "communityNo": 532,
+      "sourceNameVariants": [
+        {
+          "name": "SAIH SHUAIB 3",
+          "cards": 846
+        },
+        {
+          "name": "DUBAI INDUSTRIAL CITY 2",
+          "cards": 134
+        }
+      ],
+      "missingNameCards": 8,
+      "nameConflict": true,
+      "selectedUniqueCards": 988,
+      "usageTokenCards": {
+        "Commercial": 18,
+        "Offices": 214,
+        "Warehouse": 309,
+        "Shopping Centre": 0,
+        "Factory": 261,
+        "Workshops": 326
+      }
+    },
+    {
+      "communityNo": 533,
+      "sourceNameVariants": [
+        {
+          "name": "SAIH SHUAIB 4",
+          "cards": 1336
+        },
+        {
+          "name": "DUBAI INDUSTRIAL CITY 3",
+          "cards": 136
+        }
+      ],
+      "missingNameCards": 12,
+      "nameConflict": true,
+      "selectedUniqueCards": 1484,
+      "usageTokenCards": {
+        "Commercial": 8,
+        "Offices": 327,
+        "Warehouse": 652,
+        "Shopping Centre": 0,
+        "Factory": 427,
+        "Workshops": 363
+      }
+    },
+    {
+      "communityNo": 591,
+      "sourceNameVariants": [
+        {
+          "name": "JABAL ALI FIRST",
+          "cards": 309
+        },
+        {
+          "name": "JABAL ALI VILLAGE",
+          "cards": 12
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 321,
+      "usageTokenCards": {
+        "Commercial": 221,
+        "Offices": 92,
+        "Warehouse": 11,
+        "Shopping Centre": 0,
+        "Factory": 31,
+        "Workshops": 6
+      }
+    },
+    {
+      "communityNo": 592,
+      "sourceNameVariants": [
+        {
+          "name": "JABAL ALI SECOND",
+          "cards": 295
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 295,
+      "usageTokenCards": {
+        "Commercial": 4,
+        "Offices": 42,
+        "Warehouse": 88,
+        "Shopping Centre": 0,
+        "Factory": 144,
+        "Workshops": 70
+      }
+    },
+    {
+      "communityNo": 593,
+      "sourceNameVariants": [
+        {
+          "name": "JABAL ALI THIRD",
+          "cards": 18
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 18,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 10,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 6,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 594,
+      "sourceNameVariants": [
+        {
+          "name": "MENA JABAL ALI",
+          "cards": 90
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 90,
+      "usageTokenCards": {
+        "Commercial": 8,
+        "Offices": 42,
+        "Warehouse": 32,
+        "Shopping Centre": 0,
+        "Factory": 6,
+        "Workshops": 23
+      }
+    },
+    {
+      "communityNo": 597,
+      "sourceNameVariants": [
+        {
+          "name": "DUBAI INVESTMENT PARK SECOND",
+          "cards": 3094
+        }
+      ],
+      "missingNameCards": 2,
+      "nameConflict": false,
+      "selectedUniqueCards": 3096,
+      "usageTokenCards": {
+        "Commercial": 123,
+        "Offices": 506,
+        "Warehouse": 2029,
+        "Shopping Centre": 19,
+        "Factory": 617,
+        "Workshops": 436
+      }
+    },
+    {
+      "communityNo": 598,
+      "sourceNameVariants": [
+        {
+          "name": "DUBAI INVESTMENT PARK FIRST",
+          "cards": 2619
+        }
+      ],
+      "missingNameCards": 121,
+      "nameConflict": false,
+      "selectedUniqueCards": 2740,
+      "usageTokenCards": {
+        "Commercial": 670,
+        "Offices": 765,
+        "Warehouse": 1359,
+        "Shopping Centre": 54,
+        "Factory": 394,
+        "Workshops": 212
+      }
+    },
+    {
+      "communityNo": 599,
+      "sourceNameVariants": [
+        {
+          "name": "JABAL ALI INDUSTRIAL FIRST",
+          "cards": 3456
+        },
+        {
+          "name": "JEBEL ALI IND.",
+          "cards": 910
+        }
+      ],
+      "missingNameCards": 313,
+      "nameConflict": true,
+      "selectedUniqueCards": 4679,
+      "usageTokenCards": {
+        "Commercial": 336,
+        "Offices": 698,
+        "Warehouse": 2334,
+        "Shopping Centre": 43,
+        "Factory": 1118,
+        "Workshops": 866
+      }
+    },
+    {
+      "communityNo": 600,
+      "sourceNameVariants": [
+        {
+          "name": "RANCHES",
+          "cards": 123
+        },
+        {
+          "name": "NAD AL SHIBA",
+          "cards": 16
+        }
+      ],
+      "missingNameCards": 13,
+      "nameConflict": true,
+      "selectedUniqueCards": 152,
+      "usageTokenCards": {
+        "Commercial": 112,
+        "Offices": 108,
+        "Warehouse": 4,
+        "Shopping Centre": 8,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 611,
+      "sourceNameVariants": [
+        {
+          "name": "BU KADRA",
+          "cards": 255
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 256,
+      "usageTokenCards": {
+        "Commercial": 232,
+        "Offices": 101,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 612,
+      "sourceNameVariants": [
+        {
+          "name": "RAS AL KHOR IND. FIRST",
+          "cards": 1694
+        }
+      ],
+      "missingNameCards": 176,
+      "nameConflict": false,
+      "selectedUniqueCards": 1870,
+      "usageTokenCards": {
+        "Commercial": 305,
+        "Offices": 253,
+        "Warehouse": 1075,
+        "Shopping Centre": 6,
+        "Factory": 57,
+        "Workshops": 555
+      }
+    },
+    {
+      "communityNo": 613,
+      "sourceNameVariants": [
+        {
+          "name": "RAS AL KHOR IND. SECOND",
+          "cards": 2967
+        }
+      ],
+      "missingNameCards": 722,
+      "nameConflict": false,
+      "selectedUniqueCards": 3689,
+      "usageTokenCards": {
+        "Commercial": 326,
+        "Offices": 363,
+        "Warehouse": 2755,
+        "Shopping Centre": 3,
+        "Factory": 71,
+        "Workshops": 665
+      }
+    },
+    {
+      "communityNo": 614,
+      "sourceNameVariants": [
+        {
+          "name": "RAS AL KHOR IND. THIRD",
+          "cards": 492
+        },
+        {
+          "name": "Non registerd parcel",
+          "cards": 5
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 497,
+      "usageTokenCards": {
+        "Commercial": 305,
+        "Offices": 133,
+        "Warehouse": 147,
+        "Shopping Centre": 23,
+        "Factory": 5,
+        "Workshops": 7
+      }
+    },
+    {
+      "communityNo": 615,
+      "sourceNameVariants": [
+        {
+          "name": "NADD AL SHIBA SECOND",
+          "cards": 24
+        }
+      ],
+      "missingNameCards": 15,
+      "nameConflict": false,
+      "selectedUniqueCards": 39,
+      "usageTokenCards": {
+        "Commercial": 27,
+        "Offices": 18,
+        "Warehouse": 1,
+        "Shopping Centre": 6,
+        "Factory": 2,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 616,
+      "sourceNameVariants": [
+        {
+          "name": "NADD AL SHIBA THIRD",
+          "cards": 68
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 68,
+      "usageTokenCards": {
+        "Commercial": 52,
+        "Offices": 22,
+        "Warehouse": 0,
+        "Shopping Centre": 11,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 617,
+      "sourceNameVariants": [
+        {
+          "name": "NADD AL SHIBA FOURTH",
+          "cards": 17
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 17,
+      "usageTokenCards": {
+        "Commercial": 8,
+        "Offices": 7,
+        "Warehouse": 0,
+        "Shopping Centre": 2,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 618,
+      "sourceNameVariants": [
+        {
+          "name": "NADD AL SHIBA FIRST",
+          "cards": 568
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 568,
+      "usageTokenCards": {
+        "Commercial": 465,
+        "Offices": 165,
+        "Warehouse": 5,
+        "Shopping Centre": 8,
+        "Factory": 0,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 621,
+      "sourceNameVariants": [
+        {
+          "name": "WARSAN FIRST",
+          "cards": 25
+        }
+      ],
+      "missingNameCards": 263,
+      "nameConflict": false,
+      "selectedUniqueCards": 288,
+      "usageTokenCards": {
+        "Commercial": 25,
+        "Offices": 263,
+        "Warehouse": 263,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 622,
+      "sourceNameVariants": [
+        {
+          "name": "WARSAN SECOND",
+          "cards": 301
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 302,
+      "usageTokenCards": {
+        "Commercial": 33,
+        "Offices": 90,
+        "Warehouse": 50,
+        "Shopping Centre": 0,
+        "Factory": 124,
+        "Workshops": 49
+      }
+    },
+    {
+      "communityNo": 624,
+      "sourceNameVariants": [
+        {
+          "name": "WARSAN FOURTH",
+          "cards": 42
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 42,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 30,
+        "Warehouse": 8,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 13
+      }
+    },
+    {
+      "communityNo": 626,
+      "sourceNameVariants": [
+        {
+          "name": "NADD HESSA",
+          "cards": 4
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 4,
+      "usageTokenCards": {
+        "Commercial": 2,
+        "Offices": 2,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 630,
+      "sourceNameVariants": [],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 1,
+      "usageTokenCards": {
+        "Commercial": 1,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 631,
+      "sourceNameVariants": [
+        {
+          "name": "HADAEQ SHEIKH MOHAMMED BIN RASHID",
+          "cards": 197
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 197,
+      "usageTokenCards": {
+        "Commercial": 152,
+        "Offices": 66,
+        "Warehouse": 8,
+        "Shopping Centre": 9,
+        "Factory": 0,
+        "Workshops": 7
+      }
+    },
+    {
+      "communityNo": 643,
+      "sourceNameVariants": [
+        {
+          "name": "WADI AL SAFA 2",
+          "cards": 137
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 137,
+      "usageTokenCards": {
+        "Commercial": 134,
+        "Offices": 35,
+        "Warehouse": 0,
+        "Shopping Centre": 16,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 645,
+      "sourceNameVariants": [
+        {
+          "name": "WADI AL SAFA 3",
+          "cards": 405
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 405,
+      "usageTokenCards": {
+        "Commercial": 377,
+        "Offices": 69,
+        "Warehouse": 1,
+        "Shopping Centre": 8,
+        "Factory": 2,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 646,
+      "sourceNameVariants": [
+        {
+          "name": "WADI AL SAFA 4",
+          "cards": 585
+        },
+        {
+          "name": "Non registered parcel",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 591,
+      "usageTokenCards": {
+        "Commercial": 519,
+        "Offices": 92,
+        "Warehouse": 0,
+        "Shopping Centre": 32,
+        "Factory": 5,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 648,
+      "sourceNameVariants": [
+        {
+          "name": "WADI AL SAFA 5",
+          "cards": 160
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 160,
+      "usageTokenCards": {
+        "Commercial": 149,
+        "Offices": 14,
+        "Warehouse": 4,
+        "Shopping Centre": 4,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 664,
+      "sourceNameVariants": [
+        {
+          "name": "WADI AL SAFA 6",
+          "cards": 26
+        },
+        {
+          "name": "ARABIAN RANCHES",
+          "cards": 3
+        }
+      ],
+      "missingNameCards": 7,
+      "nameConflict": true,
+      "selectedUniqueCards": 36,
+      "usageTokenCards": {
+        "Commercial": 10,
+        "Offices": 4,
+        "Warehouse": 13,
+        "Shopping Centre": 1,
+        "Factory": 8,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 665,
+      "sourceNameVariants": [
+        {
+          "name": "WADI AL SAFA 7",
+          "cards": 39
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 39,
+      "usageTokenCards": {
+        "Commercial": 33,
+        "Offices": 18,
+        "Warehouse": 1,
+        "Shopping Centre": 4,
+        "Factory": 1,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 671,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA SOUTH FIRST",
+          "cards": 44
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 44,
+      "usageTokenCards": {
+        "Commercial": 13,
+        "Offices": 19,
+        "Warehouse": 0,
+        "Shopping Centre": 13,
+        "Factory": 0,
+        "Workshops": 6
+      }
+    },
+    {
+      "communityNo": 672,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA SOUTH SECOND",
+          "cards": 19
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 19,
+      "usageTokenCards": {
+        "Commercial": 15,
+        "Offices": 2,
+        "Warehouse": 0,
+        "Shopping Centre": 2,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 673,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA SOUTH THIRD",
+          "cards": 582
+        }
+      ],
+      "missingNameCards": 3,
+      "nameConflict": false,
+      "selectedUniqueCards": 585,
+      "usageTokenCards": {
+        "Commercial": 558,
+        "Offices": 110,
+        "Warehouse": 0,
+        "Shopping Centre": 12,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 674,
+      "sourceNameVariants": [
+        {
+          "name": "AL HEBIAH FIRST",
+          "cards": 175
+        },
+        {
+          "name": "MOTOR CITY",
+          "cards": 8
+        }
+      ],
+      "missingNameCards": 99,
+      "nameConflict": true,
+      "selectedUniqueCards": 282,
+      "usageTokenCards": {
+        "Commercial": 225,
+        "Offices": 114,
+        "Warehouse": 4,
+        "Shopping Centre": 6,
+        "Factory": 6,
+        "Workshops": 30
+      }
+    },
+    {
+      "communityNo": 675,
+      "sourceNameVariants": [
+        {
+          "name": "AL HEBIAH SECOND",
+          "cards": 13
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 13,
+      "usageTokenCards": {
+        "Commercial": 3,
+        "Offices": 6,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 5
+      }
+    },
+    {
+      "communityNo": 676,
+      "sourceNameVariants": [
+        {
+          "name": "AL HEBIAH THIRD",
+          "cards": 97
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 97,
+      "usageTokenCards": {
+        "Commercial": 63,
+        "Offices": 33,
+        "Warehouse": 4,
+        "Shopping Centre": 4,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 681,
+      "sourceNameVariants": [
+        {
+          "name": "AL BARSHA SOUTH FOURTH",
+          "cards": 4
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 4,
+      "usageTokenCards": {
+        "Commercial": 4,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 682,
+      "sourceNameVariants": [
+        {
+          "name": "AL HEBIAH FOURTH",
+          "cards": 210
+        },
+        {
+          "name": "682",
+          "cards": 4
+        }
+      ],
+      "missingNameCards": 61,
+      "nameConflict": true,
+      "selectedUniqueCards": 275,
+      "usageTokenCards": {
+        "Commercial": 112,
+        "Offices": 170,
+        "Warehouse": 5,
+        "Shopping Centre": 2,
+        "Factory": 9,
+        "Workshops": 14
+      }
+    },
+    {
+      "communityNo": 683,
+      "sourceNameVariants": [
+        {
+          "name": "AL HEBIAH FIFTH",
+          "cards": 15
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 15,
+      "usageTokenCards": {
+        "Commercial": 9,
+        "Offices": 6,
+        "Warehouse": 0,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 685,
+      "sourceNameVariants": [
+        {
+          "name": "ME`AISEM FIRST",
+          "cards": 3
+        },
+        {
+          "name": "685",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 4,
+      "usageTokenCards": {
+        "Commercial": 1,
+        "Offices": 3,
+        "Warehouse": 3,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 686,
+      "sourceNameVariants": [
+        {
+          "name": "ME`AISEM SECOND",
+          "cards": 2
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 2,
+      "usageTokenCards": {
+        "Commercial": 2,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 700,
+      "sourceNameVariants": [
+        {
+          "name": "700",
+          "cards": 32
+        }
+      ],
+      "missingNameCards": 11,
+      "nameConflict": false,
+      "selectedUniqueCards": 43,
+      "usageTokenCards": {
+        "Commercial": 43,
+        "Offices": 0,
+        "Warehouse": 32,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 711,
+      "sourceNameVariants": [
+        {
+          "name": "AL AWIR FIRST",
+          "cards": 98
+        }
+      ],
+      "missingNameCards": 11,
+      "nameConflict": false,
+      "selectedUniqueCards": 109,
+      "usageTokenCards": {
+        "Commercial": 64,
+        "Offices": 24,
+        "Warehouse": 22,
+        "Shopping Centre": 1,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 721,
+      "sourceNameVariants": [
+        {
+          "name": "AL AWIR SECOND",
+          "cards": 68
+        }
+      ],
+      "missingNameCards": 4,
+      "nameConflict": false,
+      "selectedUniqueCards": 72,
+      "usageTokenCards": {
+        "Commercial": 32,
+        "Offices": 15,
+        "Warehouse": 15,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 11
+      }
+    },
+    {
+      "communityNo": 731,
+      "sourceNameVariants": [
+        {
+          "name": "LEHBAB FIRST",
+          "cards": 83
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 83,
+      "usageTokenCards": {
+        "Commercial": 46,
+        "Offices": 3,
+        "Warehouse": 35,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 736,
+      "sourceNameVariants": [
+        {
+          "name": "NAZWAH",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 6,
+      "usageTokenCards": {
+        "Commercial": 6,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 800,
+      "sourceNameVariants": [
+        {
+          "name": "800",
+          "cards": 19
+        }
+      ],
+      "missingNameCards": 167,
+      "nameConflict": false,
+      "selectedUniqueCards": 186,
+      "usageTokenCards": {
+        "Commercial": 17,
+        "Offices": 74,
+        "Warehouse": 49,
+        "Shopping Centre": 0,
+        "Factory": 39,
+        "Workshops": 30
+      }
+    },
+    {
+      "communityNo": 811,
+      "sourceNameVariants": [
+        {
+          "name": "WARSAN THIRD",
+          "cards": 877
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 877,
+      "usageTokenCards": {
+        "Commercial": 98,
+        "Offices": 284,
+        "Warehouse": 370,
+        "Shopping Centre": 15,
+        "Factory": 121,
+        "Workshops": 144
+      }
+    },
+    {
+      "communityNo": 812,
+      "sourceNameVariants": [
+        {
+          "name": "AL ROWAIYAH FIRST",
+          "cards": 57
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 57,
+      "usageTokenCards": {
+        "Commercial": 11,
+        "Offices": 43,
+        "Warehouse": 0,
+        "Shopping Centre": 1,
+        "Factory": 0,
+        "Workshops": 2
+      }
+    },
+    {
+      "communityNo": 813,
+      "sourceNameVariants": [
+        {
+          "name": "AL ROWAIYAH SECOND",
+          "cards": 40
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 40,
+      "usageTokenCards": {
+        "Commercial": 12,
+        "Offices": 19,
+        "Warehouse": 6,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 814,
+      "sourceNameVariants": [
+        {
+          "name": "AL ROWAIYAH THIRD",
+          "cards": 1241
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 1241,
+      "usageTokenCards": {
+        "Commercial": 64,
+        "Offices": 852,
+        "Warehouse": 286,
+        "Shopping Centre": 2,
+        "Factory": 23,
+        "Workshops": 133
+      }
+    },
+    {
+      "communityNo": 821,
+      "sourceNameVariants": [
+        {
+          "name": "MEREIYEEL",
+          "cards": 19
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 19,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 4,
+        "Warehouse": 12,
+        "Shopping Centre": 0,
+        "Factory": 3,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 824,
+      "sourceNameVariants": [
+        {
+          "name": "UMM AL DAMAN",
+          "cards": 71
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 71,
+      "usageTokenCards": {
+        "Commercial": 10,
+        "Offices": 44,
+        "Warehouse": 12,
+        "Shopping Centre": 0,
+        "Factory": 10,
+        "Workshops": 29
+      }
+    },
+    {
+      "communityNo": 826,
+      "sourceNameVariants": [
+        {
+          "name": "LE HEMAIRA",
+          "cards": 9
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 9,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 9,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 831,
+      "sourceNameVariants": [
+        {
+          "name": "LEHBAB SECOND",
+          "cards": 59
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 59,
+      "usageTokenCards": {
+        "Commercial": 53,
+        "Offices": 0,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 5
+      }
+    },
+    {
+      "communityNo": 835,
+      "sourceNameVariants": [
+        {
+          "name": "UMM AL MO`MENEEN",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 6,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 5,
+        "Warehouse": 2,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 841,
+      "sourceNameVariants": [
+        {
+          "name": "MARGHAM",
+          "cards": 116
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 116,
+      "usageTokenCards": {
+        "Commercial": 54,
+        "Offices": 22,
+        "Warehouse": 32,
+        "Shopping Centre": 0,
+        "Factory": 13,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 845,
+      "sourceNameVariants": [
+        {
+          "name": "AL MAHA",
+          "cards": 46
+        }
+      ],
+      "missingNameCards": 1,
+      "nameConflict": false,
+      "selectedUniqueCards": 47,
+      "usageTokenCards": {
+        "Commercial": 15,
+        "Offices": 1,
+        "Warehouse": 31,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 847,
+      "sourceNameVariants": [
+        {
+          "name": "UMM ESELAY",
+          "cards": 11
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 11,
+      "usageTokenCards": {
+        "Commercial": 6,
+        "Offices": 7,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 851,
+      "sourceNameVariants": [
+        {
+          "name": "REMAH",
+          "cards": 2
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 2,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 2,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 857,
+      "sourceNameVariants": [
+        {
+          "name": "MARGAB",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 6,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 0,
+        "Warehouse": 6,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 861,
+      "sourceNameVariants": [
+        {
+          "name": "YARAAH",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 6,
+      "usageTokenCards": {
+        "Commercial": 6,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 888,
+      "sourceNameVariants": [
+        {
+          "name": "Non registered parcel",
+          "cards": 168
+        },
+        {
+          "name": "Non registerd parcel",
+          "cards": 110
+        },
+        {
+          "name": "HADAEQ SHEIKH MOHAMMED BIN RASHID",
+          "cards": 5
+        }
+      ],
+      "missingNameCards": 2,
+      "nameConflict": true,
+      "selectedUniqueCards": 285,
+      "usageTokenCards": {
+        "Commercial": 157,
+        "Offices": 102,
+        "Warehouse": 31,
+        "Shopping Centre": 5,
+        "Factory": 2,
+        "Workshops": 14
+      }
+    },
+    {
+      "communityNo": 891,
+      "sourceNameVariants": [
+        {
+          "name": "HATTA",
+          "cards": 328
+        }
+      ],
+      "missingNameCards": 5,
+      "nameConflict": false,
+      "selectedUniqueCards": 333,
+      "usageTokenCards": {
+        "Commercial": 148,
+        "Offices": 128,
+        "Warehouse": 52,
+        "Shopping Centre": 6,
+        "Factory": 5,
+        "Workshops": 24
+      }
+    },
+    {
+      "communityNo": 900,
+      "sourceNameVariants": [
+        {
+          "name": "AL RUWAIYA",
+          "cards": 11
+        }
+      ],
+      "missingNameCards": 27,
+      "nameConflict": false,
+      "selectedUniqueCards": 38,
+      "usageTokenCards": {
+        "Commercial": 21,
+        "Offices": 20,
+        "Warehouse": 3,
+        "Shopping Centre": 3,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 911,
+      "sourceNameVariants": [
+        {
+          "name": "UMM NAHAD FIRST",
+          "cards": 13
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 13,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 7,
+        "Warehouse": 0,
+        "Shopping Centre": 7,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 912,
+      "sourceNameVariants": [
+        {
+          "name": "UMM NAHAD SECOND",
+          "cards": 13
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 13,
+      "usageTokenCards": {
+        "Commercial": 3,
+        "Offices": 8,
+        "Warehouse": 4,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 913,
+      "sourceNameVariants": [
+        {
+          "name": "UMM NAHAD THIRD",
+          "cards": 15
+        },
+        {
+          "name": "MADINAT HIND 3",
+          "cards": 7
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 22,
+      "usageTokenCards": {
+        "Commercial": 19,
+        "Offices": 8,
+        "Warehouse": 1,
+        "Shopping Centre": 2,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 915,
+      "sourceNameVariants": [
+        {
+          "name": "AL YUFRAH 1",
+          "cards": 9
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 9,
+      "usageTokenCards": {
+        "Commercial": 7,
+        "Offices": 2,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 916,
+      "sourceNameVariants": [
+        {
+          "name": "AL YUFRAH 2",
+          "cards": 16
+        },
+        {
+          "name": "ALMARMUM 2",
+          "cards": 3
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 19,
+      "usageTokenCards": {
+        "Commercial": 18,
+        "Offices": 3,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 917,
+      "sourceNameVariants": [
+        {
+          "name": "AL MARMOOM",
+          "cards": 30
+        },
+        {
+          "name": "ALMARMUM 3",
+          "cards": 10
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 40,
+      "usageTokenCards": {
+        "Commercial": 12,
+        "Offices": 10,
+        "Warehouse": 16,
+        "Shopping Centre": 1,
+        "Factory": 10,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 921,
+      "sourceNameVariants": [
+        {
+          "name": "AL YALAYIS 1",
+          "cards": 15
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 15,
+      "usageTokenCards": {
+        "Commercial": 9,
+        "Offices": 1,
+        "Warehouse": 0,
+        "Shopping Centre": 11,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 922,
+      "sourceNameVariants": [
+        {
+          "name": "AL YALAYIS 2",
+          "cards": 110
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 110,
+      "usageTokenCards": {
+        "Commercial": 82,
+        "Offices": 13,
+        "Warehouse": 8,
+        "Shopping Centre": 0,
+        "Factory": 21,
+        "Workshops": 4
+      }
+    },
+    {
+      "communityNo": 923,
+      "sourceNameVariants": [
+        {
+          "name": "AL YALAYIS 3",
+          "cards": 5
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 5,
+      "usageTokenCards": {
+        "Commercial": 5,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 5
+      }
+    },
+    {
+      "communityNo": 931,
+      "sourceNameVariants": [
+        {
+          "name": "AL LESAILY",
+          "cards": 186
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 186,
+      "usageTokenCards": {
+        "Commercial": 153,
+        "Offices": 15,
+        "Warehouse": 26,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 941,
+      "sourceNameVariants": [
+        {
+          "name": "GRAYTEESAH",
+          "cards": 7
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 7,
+      "usageTokenCards": {
+        "Commercial": 7,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 945,
+      "sourceNameVariants": [
+        {
+          "name": "AL FAGAA",
+          "cards": 13
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 13,
+      "usageTokenCards": {
+        "Commercial": 9,
+        "Offices": 4,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 1
+      }
+    },
+    {
+      "communityNo": 961,
+      "sourceNameVariants": [
+        {
+          "name": "AL SELAL",
+          "cards": 4
+        },
+        {
+          "name": "MADINAT LATIFA",
+          "cards": 1
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": true,
+      "selectedUniqueCards": 5,
+      "usageTokenCards": {
+        "Commercial": 3,
+        "Offices": 1,
+        "Warehouse": 1,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 967,
+      "sourceNameVariants": [
+        {
+          "name": "GHADEER BARASHY",
+          "cards": 6
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 6,
+      "usageTokenCards": {
+        "Commercial": 4,
+        "Offices": 1,
+        "Warehouse": 1,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 0
+      }
+    },
+    {
+      "communityNo": 971,
+      "sourceNameVariants": [
+        {
+          "name": "SAIH AL DAHAL",
+          "cards": 119
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 119,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 51,
+        "Warehouse": 47,
+        "Shopping Centre": 0,
+        "Factory": 2,
+        "Workshops": 40
+      }
+    },
+    {
+      "communityNo": 987,
+      "sourceNameVariants": [
+        {
+          "name": "AL LAYAN 1",
+          "cards": 1543
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 1543,
+      "usageTokenCards": {
+        "Commercial": 24,
+        "Offices": 198,
+        "Warehouse": 1037,
+        "Shopping Centre": 3,
+        "Factory": 212,
+        "Workshops": 346
+      }
+    },
+    {
+      "communityNo": 988,
+      "sourceNameVariants": [
+        {
+          "name": "AL LAYAN 2",
+          "cards": 3
+        }
+      ],
+      "missingNameCards": 0,
+      "nameConflict": false,
+      "selectedUniqueCards": 3,
+      "usageTokenCards": {
+        "Commercial": 0,
+        "Offices": 0,
+        "Warehouse": 0,
+        "Shopping Centre": 0,
+        "Factory": 0,
+        "Workshops": 3
+      }
+    }
+  ],
+  "limits": "Source building cards are permit-system records, not verified standing buildings, unit counts, live available spaces, prices, transactions, or map points. Usage tokens overlap and must not be added. Community codes and all source name variants are retained without choosing a location when names conflict. Missing permit dates prevent an unbiased historical trend."
+}

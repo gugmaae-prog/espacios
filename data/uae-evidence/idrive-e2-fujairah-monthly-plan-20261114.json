@@ -1,0 +1,27 @@
+{
+  "planId": "fujairah-monthly-20261114-idrive-e2-replica",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "host": "s3.us-west-2.idrivee2.com",
+  "signingRegion": "us-east-1",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "sourceScope": "One versioned Fujairah monthly permit snapshot; selected numerical facts and source links only",
+  "separateFromExistingCloudflareBackupRun": true,
+  "objects": [
+    {
+      "sourceId": "fscfuj-construction-chapter-monthly-permits-2023-2025-20261114",
+      "role": "selected_monthly_permit_counts",
+      "localPath": "data/uae-evidence/fujairah/building-permits-monthly-20261114.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/fujairah/building-permits/20261114-monthly/17da9dba4a672373a9fbdad1e00c75dc32efa163138d0a413e5741c6f02202ac/building-permits-monthly-20261114.json.gz",
+      "bytes": 1172,
+      "sha256": "17da9dba4a672373a9fbdad1e00c75dc32efa163138d0a413e5741c6f02202ac",
+      "rawBytes": 6210,
+      "rawSha256": "5f4f25214e5fdcca0864aa064d1d533bd331b8eba1f3368c18f208ea5ef739bf",
+      "validationSha256": "11beab1eb2c7b51c506dc56d1039d3703854954a15a436cb7a1bbe8b31d8eb8a",
+      "contentType": "application/gzip"
+    }
+  ],
+  "objectCount": 1,
+  "totalBytes": 1172
+}

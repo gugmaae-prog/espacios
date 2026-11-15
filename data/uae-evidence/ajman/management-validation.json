@@ -1,0 +1,40 @@
+{
+  "sourceId": "ajman-dlrr-20260609-project-management",
+  "datasetUrl": "https://data.ajman.ae/explore/dataset/management-companies-for-real-estate-development-projects/",
+  "api": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/management-companies-for-real-estate-development-projects",
+  "publisher": "Department of Land and Real Estate Regulation",
+  "licence": "CC BY 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "portalTermsUrl": "https://data.ajman.ae/terms/terms-and-conditions.pdf",
+  "sourceModifiedAt": "2026-06-09T04:23:49.791000+00:00",
+  "retrievedAt": "2026-11-02T17:04:10.915Z",
+  "emirate": "Ajman",
+  "evidenceClass": "official_project_management_appointment",
+  "grain": "source project ID × reported year; annual management-company appointment, not developer identity or title ownership",
+  "rawSha256": "5e04bca1894ddc79932a36668c327eb95b822bf080bcec9438d7fd3e107bebc3",
+  "rawBytes": 159574,
+  "compressedSha256": "423f125283b57ef0e351a315a94ccacee7199c181bd309c2ab2dc6ee702fec24",
+  "compressedBytes": 5134,
+  "metadataSha256": "8909b9378133a173687b14102790197e90a2ab54b8c49eba973c61c86a14cd56",
+  "sourceMetadataSha256": "055bcec985917a02f7bc306814e2e1400bfef3ef302179db50facf0e0639b4c5",
+  "rows": 451,
+  "distinctSourceProjectIds": 153,
+  "linkedOfficialRegisterIds": 153,
+  "distinctOfficeIds": 13,
+  "yearRows": {
+    "2024": 149,
+    "2025": 149,
+    "2026": 153
+  },
+  "latestReportedYear": 2026,
+  "latestYearProjectIds": 153,
+  "changedCompanyProjectIds": [
+    197,
+    207,
+    415
+  ],
+  "registerNameMismatchRows": 3,
+  "canonicalProjectMatches": 0,
+  "coordinatesPresent": false,
+  "matchPolicy": "Exact Ajman source project IDs link to the official Ajman register; no automatic V48 identity joins or map coordinates. One register English-name field contains Arabic text."
+}

@@ -1,0 +1,46 @@
+{
+  "sourceId": "sharjah-rerd-reported-market-aggregates-20261109",
+  "emirate": "Sharjah",
+  "authority": "Sharjah Real Estate Registration Department",
+  "publication": "Sharjah 24",
+  "evidenceClass": "government_reported_cumulative_market_aggregate",
+  "grain": "emirate-year-to-date cumulative period",
+  "sourceMethod": "Numerical facts transcribed from two dated Sharjah 24 reports of department disclosures and cross-checked against Emirates News Agency reports. Article text and images are not redistributed.",
+  "observations": [
+    {
+      "periodId": "2026H1",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "publishedAt": "2026-07-15",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/07/15/AL014",
+      "corroboratingUrl": "https://www.wam.ae/en/article/c18fnby-sharjah-real-estate-transactions-reach-aed295",
+      "allRegistrationTransactions": 59460,
+      "saleTransactions": 16426,
+      "saleTransactionsByUse": {"residential": 13501, "industrial": 1969, "commercial": 937, "agricultural": 19},
+      "monetaryTransactionVolumeAedApprox": 29500000000,
+      "monetaryVolumePrecision": "approximately AED 0.1 billion",
+      "registeredNewProjects": 11,
+      "areaCountForSales": 202,
+      "tradedSaleAreaSqftApprox": 85000000
+    },
+    {
+      "periodId": "2026M09",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-09-30",
+      "publishedAt": "2026-10-13",
+      "sourceUrl": "https://sharjah24.ae/en/Articles/2026/10/13/AL021",
+      "corroboratingUrl": "https://www.wam.ae/en/article/c2q0o4j-sharjah-real-estate-transactions-hit-aed-468bn",
+      "allRegistrationTransactions": 91560,
+      "saleTransactions": 24749,
+      "saleTransactionsByUse": {"residential": 19910, "industrial": 3524, "commercial": 1295, "agricultural": 20},
+      "monetaryTransactionVolumeAedApprox": 46800000000,
+      "monetaryVolumePrecision": "approximately AED 0.1 billion",
+      "saleMonetaryVolumeAedApprox": 35000000000,
+      "saleMonetaryVolumePrecision": "approximately AED 1 billion",
+      "registeredNewProjects": 22,
+      "areaCountForSales": 216,
+      "tradedSaleAreaSqftApprox": 138000000
+    }
+  ],
+  "limits": "These are cumulative government-reported aggregates, not transaction records, listing availability, prices per square foot, a project register, or a complete Sharjah project denominator. H1 is contained within the nine-month period and must not be added to it. Reported monetary values and areas are rounded."
+}

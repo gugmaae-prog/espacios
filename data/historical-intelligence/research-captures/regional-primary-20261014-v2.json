@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "passId": "regional-primary-20261014-v2",
+  "reviewOnly": true,
+  "implementationCommit": "f9e488d13fa47c02ca9e7fff0386f3de41db0f9a",
+  "capturedAt": "2026-10-14T08:48:28Z",
+  "planPath": "data/historical-intelligence/research-candidates/regional-primary-20261014-v2.json",
+  "planSHA256": "2e6fc3581d73c2ec93c3e6c1d67bdf47e6743ae59e619d6bd8a2bf5b65f3dd9d",
+  "base": {
+    "integrationGate": "Reconcile PR98 before promoting any fact; do not rebuild V25 over newer evidence.",
+    "main": "0361b0409c3fe688baa6c06787f9341cf5c17cff",
+    "newerUnmergedHead": "6cb77c197d1ea6107c94f374f2bfa10c7248a043",
+    "queueHead": "7b1e39c800936f6d84c74255864d2f5f2d018e96",
+    "snapshotVersion": "20261008-enrichment-v25"
+  },
+  "queueSHA256": "cfc798a37365aee55fc1b5e3e9fdf15b685b4ee94b44e38c7497718d9dd5780b",
+  "artifact": {
+    "runId": 38537563345,
+    "artifactId": 11881062700,
+    "archiveSHA256": "b4f77eefd268072bd1dd2f89c00a2d0d55fcd64beac40d225b9bc86c6d6e11b7",
+    "originalReceiptSHA256": "160fe135e63b01c213f00b744c39065b597e75d70417f7bdae292812e2430319",
+    "expiresAt": "2026-11-13T08:54:05Z"
+  },
+  "httpRequests": 20,
+  "transportOutcomes": {
+    "captured_metadata_only": 11,
+    "inaccessible": 1,
+    "not_requested_rights_boundary": 1
+  },
+  "contentReview": {
+    "http200": 11,
+    "allExpectedNeedlesPresent": 9,
+    "articleTextNotConfirmed": 2,
+    "certificateFailure": 1,
+    "rightsGateNotRequested": 1,
+    "acceptedEvidenceSources": 0
+  },
+  "reviewDispositions": {
+    "identity_review": 5,
+    "scope_review": 2,
+    "quote_review": 4,
+    "rejected_subject": 1,
+    "rights_review": 1
+  },
+  "inventoryByEmirate": {
+    "Abu Dhabi": {"community": 22, "project": 347},
+    "Ajman": {"community": 6, "project": 10},
+    "Dubai": {"community": 147, "project": 1119},
+    "Fujairah": {"community": 2, "project": 1},
+    "Ras Al Khaimah": {"community": 15, "project": 89},
+    "Sharjah": {"community": 18, "project": 59},
+    "Umm Al Quwain": {"community": 5, "project": 20}
+  },
+  "sourceScreenedRecordsByEmirate": {"Abu Dhabi": 5, "Dubai": 2, "Umm Al Quwain": 4, "Fujairah": 2, "Ras Al Khaimah": 0, "Sharjah": 0, "Ajman": 0},
+  "canonicalRecordsChangedByEmirate": {"Abu Dhabi": 0, "Ajman": 0, "Dubai": 0, "Fujairah": 0, "Ras Al Khaimah": 0, "Sharjah": 0, "Umm Al Quwain": 0},
+  "canonicalEvidenceAdditions": {"lifecycleFacts": 0, "registeredTransactions": 0, "signedRents": 0, "askingPrices": 0, "valuations": 0, "developerAggregateSalesStatus": 0, "eventLinks": 0, "scenarioAssumptions": 0, "numericForecasts": 0},
+  "coverageBefore": {"present": 3148, "partial": 3437, "missing": 26895, "unestablished": 9300, "disputed": 0, "inaccessible": 0, "pre-applicability": 0},
+  "coverageLedgerDelta": {"present": 0, "partial": 0, "missing": 0, "unestablished": 0, "disputed": 0, "inaccessible": 0, "pre-applicability": 0},
+  "annualScenarios": {"firstYear": 2027, "lastYear": 2080, "slotsPerMetric": 54, "codeChanged": false, "numericPointsAdded": 0, "automaticPriceUplift": null},
+  "rawRetained": false,
+  "acceptedFacts": [],
+  "numericForecasts": [],
+  "checks": {
+    "localFocusedTests": {"passed": 16, "failed": 0},
+    "CI": {"runId": 38537563277, "conclusion": "success"},
+    "guardrails": {"runId": 38537563278, "conclusion": "success"},
+    "regionalWorkflow": {"runId": 38537563345, "conclusion": "success", "commands": ["python3 tests/regional-research-queue.test.py", "python3 tests/regional-source-review.test.py", "python3 scripts/build-regional-review-queue.py --verify-only", "npm run history:build", "npm test", "npm run check", "npm run build:smart", "npm run history:verify:storage"]}
+  },
+  "robotsReceipts": [
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:47:20Z","sha256":"790ae4924d16b8635b81e32597d300594a221e0e6765dcfc83c3e1713eef1d64","url":"https://ora-uae.com/robots.txt"},
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:47:28Z","sha256":"a899c09f2d2f4d8fa8c99143afe8bef80df2a0f32e4a189fb5e3fcfe96386fb4","url":"https://www.dubaiholding.com/robots.txt"},
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:47:32Z","sha256":"fe85a0d12308a6de4ac8c84bc40be157d409d28e2a6c2d1157269f4842b54a3c","url":"https://www.nakheel.com/robots.txt"},
+    {"httpStatus":404,"policy":"no_robots_file_404_or_410","rawRetained":false,"retrievedAt":"2026-10-14T08:47:38Z","sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://www.protocol.dubai.ae/robots.txt"},
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:47:46Z","sha256":"498e1d44041fb29162af97b6fd3cfb69b09b3745a5c7e06163cf356bad4f00e4","url":"https://reportagegroup.com/robots.txt"},
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:48:00Z","sha256":"995e025479ab0e4f0a74856c8fee19ecc9829bfbfdf6cfa630fc6abf29005dab","url":"https://www.wam.ae/robots.txt"},
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:48:06Z","sha256":"023983b823ca9802157562cd5cbd1c158d0e7460ff9c1f41cdc2556d2bd5c2de","url":"https://sobharealty.com/robots.txt"},
+    {"httpStatus":200,"policy":"parsed_robots_rules","rawRetained":false,"retrievedAt":"2026-10-14T08:48:26Z","sha256":"6d4dc25683acc5564210e282963f077f9b48d860943458dbedfaef9bd66a6c30","url":"https://www.amraresorts.com/robots.txt"}
+  ],
+  "sources": [
+    {"id":"ora-bayn-master-launch","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://ora-uae.com/news/ora-unveils-bayn-coastal-community","contentType":"text/html; charset=utf-8","responseBytes":541551,"sha256":"628a81886433045ed6d343640bcd2e4f60f2133b0273a16137e1456c98261633","retrievedAt":"2026-10-14T08:47:26Z","attemptedAt":"2026-10-14T08:47:19Z","firstAvailableAt":"2026-10-14T08:47:26Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"BAYN":true,"Ghantoot":true},"sourceMetadataRef":"regional-primary-20261014-v2:ora-bayn-master-launch","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://ora-uae.com/robots.txt"]},
+    {"id":"palm-central-2025-launch","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://www.dubaiholding.com/en/media-hub/press-releases/nakheel-unveils-palm-central-private-residences-redefining-connected-resort-living-on-palm-jebel-ali","contentType":"text/html; charset=utf-8","responseBytes":98340,"sha256":"07486766e1b9e25053ba4fd6280bb8a96f37699b7f975545fb7b4dad17f91c18","retrievedAt":"2026-10-14T08:47:30Z","attemptedAt":"2026-10-14T08:47:26Z","firstAvailableAt":"2026-10-14T08:47:30Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"212":true,"Palm Central":true},"sourceMetadataRef":"regional-primary-20261014-v2:palm-central-2025-launch","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://www.dubaiholding.com/robots.txt"]},
+    {"id":"palm-central-2026-phase","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali","contentType":"text/html; charset=utf-8","responseBytes":104015,"sha256":"37f37d3f76ccf5a8136047d030403897ee544e96f832399b592680015280ea25","retrievedAt":"2026-10-14T08:47:35Z","attemptedAt":"2026-10-14T08:47:30Z","firstAvailableAt":"2026-10-14T08:47:35Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"222":true,"Palm Central":true},"sourceMetadataRef":"regional-primary-20261014-v2:palm-central-2026-phase","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://www.nakheel.com/robots.txt"]},
+    {"id":"palm-jebel-ali-masterplan","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://www.protocol.dubai.ae/en/media-listing/news-events/mohammed-bin-rashid-approves-new-futuristic-masterplan-for-palm-jebel-ali/","contentType":"text/html; charset=utf-8","responseBytes":36969,"sha256":"45e90929266e3faf1f88d2215b2ea3085fdd488d7c5293c5234f444e40c4d447","retrievedAt":"2026-10-14T08:47:41Z","attemptedAt":"2026-10-14T08:47:35Z","firstAvailableAt":"2026-10-14T08:47:41Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"Palm Jebel Ali":true,"masterplan":true},"sourceMetadataRef":"regional-primary-20261014-v2:palm-jebel-ali-masterplan","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://www.protocol.dubai.ae/robots.txt"]},
+    {"id":"oceana-project","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://reportagegroup.com/projects/residential-apartments/oceana/","contentType":"text/html; charset=UTF-8","responseBytes":151590,"sha256":"9d5736f2edbefc61b840d0cceb996c784b8dc166c337584bad3e7cc7fc93d2c9","retrievedAt":"2026-10-14T08:47:53Z","attemptedAt":"2026-10-14T08:47:41Z","firstAvailableAt":"2026-10-14T08:47:53Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"605":true,"Fujairah":true,"Oceana":true},"sourceMetadataRef":"regional-primary-20261014-v2:oceana-project","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://reportagegroup.com/robots.txt"]},
+    {"id":"oceana-catalogue-quote","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://reportagegroup.com/projects/residential-apartments/","contentType":"text/html; charset=UTF-8","responseBytes":116961,"sha256":"0277449b03c79a5f576a9d12210e3828bbd328ebddbd4bbced79f7f49037cfe7","retrievedAt":"2026-10-14T08:47:57Z","attemptedAt":"2026-10-14T08:47:53Z","firstAvailableAt":"2026-10-14T08:47:57Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"530k":true,"Oceana":true},"sourceMetadataRef":"regional-primary-20261014-v2:oceana-catalogue-quote","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://reportagegroup.com/robots.txt"]},
+    {"id":"fujairah-address-contract-wrong-subject","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://www.wam.ae/en/article/hszr64s7-eagle-hills-awards-main-works-contract-for-address","contentType":"text/html; charset=utf-8","responseBytes":14325,"sha256":"7b81012302e5ff21b940be108411b43cdd9db9de2af99058386e18d6a02bef86","retrievedAt":"2026-10-14T08:48:04Z","attemptedAt":"2026-10-14T08:47:57Z","firstAvailableAt":"2026-10-14T08:48:04Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"Address":false,"Sharm":false},"sourceMetadataRef":"regional-primary-20261014-v2:fujairah-address-contract-wrong-subject","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":false,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://www.wam.ae/robots.txt"],"publicationReview":{"status":"disputed_header_versus_article_dateline","publishedAt":null,"firstHistoricalAvailability":null,"articleDateline":"2017-11-15","browserParsedHeaderDate":"2026-05-09","basis":"Browser-parsed page review only; direct HTTP article body not confirmed. Prior plan reportedPublishedAt is not certified publication.","forecastEligibility":"not_established"}},
+    {"id":"aquamarine-official-quote","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine","contentType":"text/html; charset=utf-8","responseBytes":384145,"sha256":"e372e91f3ef9bd7c76a1320956a5999b820eee2afbb95dda7fa2c0f669de392f","retrievedAt":"2026-10-14T08:48:15Z","attemptedAt":"2026-10-14T08:48:04Z","firstAvailableAt":"2026-10-14T08:48:15Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"1.53":true,"Aquamarine":true},"sourceMetadataRef":"regional-primary-20261014-v2:aquamarine-official-quote","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://sobharealty.com/robots.txt"]},
+    {"id":"aquamont-official-quote","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont","contentType":"text/html; charset=utf-8","responseBytes":390004,"sha256":"bc9a8227f24829774847ec51f601cbefbe1499cf8168e5ade5344a2591e7189f","retrievedAt":"2026-10-14T08:48:17Z","attemptedAt":"2026-10-14T08:48:15Z","firstAvailableAt":"2026-10-14T08:48:17Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"1.11":true,"Sobha Aquamont":true},"sourceMetadataRef":"regional-primary-20261014-v2:aquamont-official-quote","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://sobharealty.com/robots.txt"]},
+    {"id":"aya-official-quote","captureStatus":"inaccessible","httpStatus":null,"finalUrl":null,"contentType":null,"responseBytes":null,"sha256":null,"retrievedAt":null,"attemptedAt":"2026-10-14T08:48:17Z","firstAvailableAt":null,"firstAvailabilityBasis":"not_established","reason":"URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>","redirectChain":[],"needleChecks":{},"sourceMetadataRef":"regional-primary-20261014-v2:aya-official-quote","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":false,"articleAvailabilityBeforeCapture":null,"robotsRefs":[]},
+    {"id":"aya-groundbreaking","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://www.wam.ae/en/article/bjmyfzz-umm-qaiwain-marks-groundbreaking-aya-beachfront","contentType":"text/html; charset=utf-8","responseBytes":14325,"sha256":"18cc1b75f2fedb02f56e07ab2ad28bca52cfe8e68d4a6eea3ff6c2ef5af2a25c","retrievedAt":"2026-10-14T08:48:23Z","attemptedAt":"2026-10-14T08:48:20Z","firstAvailableAt":"2026-10-14T08:48:23Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"AYA":false,"groundbreaking":false},"sourceMetadataRef":"regional-primary-20261014-v2:aya-groundbreaking","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":false,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://www.wam.ae/robots.txt"],"publicationReview":{"status":"disputed_header_versus_article_dateline","publishedAt":null,"firstHistoricalAvailability":null,"articleDateline":"2025-05-12","browserParsedHeaderDate":"2026-07-30","basis":"Browser-parsed page review only; direct HTTP article body not confirmed. Prior plan reportedPublishedAt is not certified publication.","forecastEligibility":"not_established"}},
+    {"id":"amra-gated-catalogue","captureStatus":"not_requested_rights_boundary","httpStatus":null,"finalUrl":null,"contentType":null,"responseBytes":null,"sha256":null,"retrievedAt":null,"attemptedAt":"2026-10-14T08:48:23Z","firstAvailableAt":null,"firstAvailabilityBasis":"not_established","reason":"Catalogue uses a click-through acceptance gate; no acceptance, catalogue download or private access is authorized.","redirectChain":[],"needleChecks":{},"sourceMetadataRef":"regional-primary-20261014-v2:amra-gated-catalogue","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":false,"articleAvailabilityBeforeCapture":null,"robotsRefs":[]},
+    {"id":"amra-public-project","captureStatus":"captured_metadata_only","httpStatus":200,"finalUrl":"https://www.amraresorts.com/","contentType":"text/html; charset=utf-8","responseBytes":175623,"sha256":"808c06a0d5e6334fd0df5ce394afaea9c5eaf0f39106090cb065453f9bf602d0","retrievedAt":"2026-10-14T08:48:28Z","attemptedAt":"2026-10-14T08:48:23Z","firstAvailableAt":"2026-10-14T08:48:28Z","firstAvailabilityBasis":"this_capture_only_not_historical_first_publication","reason":null,"redirectChain":[],"needleChecks":{"AMRA":true},"sourceMetadataRef":"regional-primary-20261014-v2:amra-public-project","identityVerified":false,"evidenceAccepted":false,"rawRetained":false,"expectedTextNeedlesPresent":true,"articleAvailabilityBeforeCapture":null,"robotsRefs":["https://www.amraresorts.com/robots.txt"]}
+  ]
+}

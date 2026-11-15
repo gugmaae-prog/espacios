@@ -1,0 +1,191 @@
+{
+  "version": "20261008-enrichment-v37",
+  "asOf": "2026-10-08",
+  "basis": "Checklist presence means some supporting evidence, not every historical period. Developer cumulative accounting is not registered unit-price history.",
+  "counts": {
+    "project": {
+      "records": 1645,
+      "items": {
+        "actual_completion": {
+          "missing": 1633,
+          "partial": 9,
+          "present": 3
+        },
+        "advertised_prices": {
+          "missing": 392,
+          "present": 13,
+          "partial": 1240
+        },
+        "announcement_registration": {
+          "missing": 1039,
+          "present": 336,
+          "partial": 270
+        },
+        "annual_scenario_inputs": {
+          "missing": 1645
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 1645
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 1645
+        },
+        "construction": {
+          "missing": 1307,
+          "present": 336,
+          "partial": 2
+        },
+        "construction_targets": {
+          "missing": 1634,
+          "present": 11
+        },
+        "dated_current_valuation": {
+          "missing": 1645
+        },
+        "dated_event_context": {
+          "partial": 1645
+        },
+        "dated_valuation": {
+          "missing": 1645
+        },
+        "delivery_reports": {
+          "missing": 1631,
+          "present": 14
+        },
+        "handover_targets": {
+          "present": 1022,
+          "missing": 623
+        },
+        "occupancy": {
+          "missing": 1644,
+          "present": 1
+        },
+        "original_launch": {
+          "present": 50,
+          "missing": 1588,
+          "partial": 7
+        },
+        "phase_milestones": {
+          "missing": 1627,
+          "present": 18
+        },
+        "registered_sale_history": {
+          "missing": 1320,
+          "present": 323,
+          "partial": 2
+        },
+        "service_charge_components": {
+          "missing": 1617,
+          "partial": 28
+        },
+        "shared_financial_context": {
+          "present": 721,
+          "missing": 924
+        },
+        "signed_rent_history": {
+          "missing": 1555,
+          "present": 89,
+          "partial": 1
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 1645
+        },
+        "validated_price_forecast": {
+          "unestablished": 1645
+        },
+        "validated_rent_forecast": {
+          "unestablished": 1645
+        }
+      }
+    },
+    "community": {
+      "records": 215,
+      "items": {
+        "actual_completion": {
+          "missing": 215
+        },
+        "advertised_prices": {
+          "missing": 206,
+          "partial": 9
+        },
+        "announcement_registration": {
+          "present": 29,
+          "missing": 186
+        },
+        "annual_scenario_inputs": {
+          "missing": 215
+        },
+        "complete_registered_sale_history": {
+          "unestablished": 215
+        },
+        "complete_signed_rent_history": {
+          "unestablished": 215
+        },
+        "construction": {
+          "present": 7,
+          "missing": 202,
+          "partial": 6
+        },
+        "construction_targets": {
+          "missing": 207,
+          "present": 8
+        },
+        "dated_current_valuation": {
+          "missing": 215
+        },
+        "dated_event_context": {
+          "partial": 215
+        },
+        "dated_valuation": {
+          "missing": 215
+        },
+        "delivery_reports": {
+          "missing": 191,
+          "present": 24
+        },
+        "handover_targets": {
+          "present": 29,
+          "missing": 186
+        },
+        "occupancy": {
+          "missing": 215
+        },
+        "original_launch": {
+          "missing": 172,
+          "present": 42,
+          "partial": 1
+        },
+        "phase_milestones": {
+          "present": 49,
+          "missing": 166
+        },
+        "registered_sale_history": {
+          "missing": 165,
+          "present": 48,
+          "partial": 2
+        },
+        "service_charge_components": {
+          "missing": 215
+        },
+        "shared_financial_context": {
+          "present": 83,
+          "missing": 132
+        },
+        "signed_rent_history": {
+          "missing": 170,
+          "present": 43,
+          "partial": 2
+        },
+        "validated_net_return_forecast": {
+          "unestablished": 215
+        },
+        "validated_price_forecast": {
+          "unestablished": 215
+        },
+        "validated_rent_forecast": {
+          "unestablished": 215
+        }
+      }
+    }
+  }
+}

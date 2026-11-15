@@ -1,0 +1,22 @@
+{
+  "version": "20261103-psr-registry-hash-reconciliation-v1",
+  "databaseId": "3ad3a1ff-83cc-42fa-a106-d6f715e1e967",
+  "tenant": "psr",
+  "observedAt": "2026-11-03T00:41:02.169Z",
+  "sourceExportManifest": "data/recovery/psr-public-d1-export-20261102.manifest.json",
+  "sourceRawSha256": "0043711bfc99ec5a58cc29a149c3c35aae21158f4ca44d42321fa7bdb7d5d59e",
+  "rows": 1091,
+  "primaryD1RowsRead": 2182,
+  "primaryD1ServedByPrimary": true,
+  "recordedState": {
+    "revision": 2,
+    "projectCount": 1091,
+    "contentHash": "01ee8ae625988bb935d8ffcd2a61d76f30298bfd50e27e3b6454381847a61b81",
+    "updatedAt": "2026-09-27 08:49:40"
+  },
+  "recomputedContentHash": "b35bf93a3f08c3b57ffca56904a77d5029b1d61df3fa7fa62eebf113e57ee842",
+  "publicPagesRead": 11,
+  "publicRowsRead": 1091,
+  "publicRowsMatchReviewedExport": true,
+  "meaning": "The existing registry hash is stale. The recomputed hash matches the independent November 2 D1 table-export projection. Project content and public row ordering are unchanged."
+}

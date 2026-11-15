@@ -1,0 +1,13 @@
+{
+  "baselineVerified": true,
+  "sourceHashesVerified": true,
+  "sourceRowsScanned": 1798873,
+  "duplicateReconciliationRowsScanned": 1798873,
+  "reviewedProjectRecords": 246,
+  "uniqueRecordIds": 246,
+  "focusedTests": 3,
+  "acceptedObservations": 0,
+  "coverageCredit": 0,
+  "rawTransactionRowsPublished": false,
+  "signedDownloadURLsPublished": false
+}

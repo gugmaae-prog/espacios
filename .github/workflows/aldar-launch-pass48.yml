@@ -1,0 +1,62 @@
+name: Aldar historical launch capture (GitHub only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  capture:
+    if: github.repository == 'gugmaae-prog/espacios'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: In-memory public-document decoder
+        run: |
+          if ! command -v pdftotext; then sudo apt-get update && sudo apt-get install --yes --no-install-recommends poppler-utils; fi
+          pdftotext -v
+      - run: python3 tests/aldar-launch-capture.test.py
+      - run: python3 tests/aldar-download-capture.test.py
+      - uses: actions/download-artifact@v4
+        with:
+          name: aldar-launch-pass48-review
+          run-id: 38565194238
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/prior-aldar-review
+      - name: Preserve original HTML capture metadata
+        run: |
+          echo '39aafbf661d78fe148bb60be2f3d59fe9f8a5017f787d2519496e330e966f198  /tmp/prior-aldar-review/aldar-launch-capture.json' | sha256sum --check
+          cp /tmp/prior-aldar-review/aldar-launch-capture.json data/historical-intelligence/aldar-launches-20261014/html-capture.json
+      - name: Verify exact V47 catalogue and authority crosswalks
+        run: |
+          python3 scripts/capture-aldar-launches-pass48.py --verify-only \
+            --plan data/historical-intelligence/aldar-launches-20261014/source-plan.json \
+            --snapshot data/historical-intelligence-20261003.json.gz --output /tmp/aldar-launch-capture.json
+      - name: Read exact official downloads in memory; no evidence promotion
+        run: |
+          sha256sum data/historical-intelligence-20261003.json.gz data/historical-intelligence/publication-manifest.json > /tmp/aldar-preservation.sha256
+          python3 scripts/capture-aldar-downloads-pass48.py \
+            --plan data/historical-intelligence/aldar-launches-20261014/source-plan.json \
+            --downloads data/historical-intelligence/aldar-launches-20261014/official-downloads.json \
+            --snapshot data/historical-intelligence-20261003.json.gz --output /tmp/aldar-download-capture.json
+          sha256sum --check /tmp/aldar-preservation.sha256
+      - name: Preserve normalized receipts and pinned local-review inputs
+        run: |
+          mkdir -p /tmp/aldar-pass48-review
+          cp /tmp/aldar-download-capture.json /tmp/aldar-pass48-review/
+          cp data/historical-intelligence/aldar-launches-20261014/*.json /tmp/aldar-pass48-review/
+          git rev-parse HEAD > /tmp/aldar-pass48-review/COMMIT
+          tar -czf /tmp/aldar-pass48-review/v47-inputs.tar.gz data/historical-intelligence-20261003.json.gz data/historical-intelligence/publication-manifest.json data/historical-intelligence/runtime-index.json data/historical-intelligence/reviewed-regional-20261014 scripts tests package.json docs/HISTORICAL-INTELLIGENCE.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aldar-official-downloads-pass48-review
+          path: /tmp/aldar-pass48-review/
+          if-no-files-found: warn
+          retention-days: 30

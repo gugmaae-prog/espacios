@@ -1,0 +1,20 @@
+{
+  "sourceId": "rgestate-full-index-20261103",
+  "sourceRawSha256": "1a6ecad078a8664dc4b79f6bf3ee31d40e5c790888580629b98300ffe1a9af83",
+  "areaReferenceSha256": "4042f44954f032efc9bd18957b690380d31386d0ec36dc5db92033e3706a1d19",
+  "reviewedAreaReferences": 30,
+  "reviewedAreaRows": 767,
+  "unresolvedRows": 337,
+  "byEmirate": {
+    "Abu Dhabi": 0,
+    "Ajman": 0,
+    "Dubai": 767,
+    "Fujairah": 0,
+    "Ras Al Khaimah": 0,
+    "Sharjah": 0,
+    "Umm Al Quwain": 0
+  },
+  "method": "Exact publisher locationLabel alias matched to a previously reviewed OpenStreetMap area reference; the area reference has a separately reviewed emirate.",
+  "geographyStatus": "reviewed_osm_area_reference_not_unit_coordinate",
+  "limits": "Area references are approximate district or city locations. They do not verify a listing address, project identity, current availability, or registered transaction. Publisher emirate labels and reviewed area references remain separate."
+}

@@ -1,0 +1,37 @@
+{
+  "sourceId": "sharjah-rerd-reported-market-aggregates-20261109",
+  "rows": 2,
+  "sourcePublicationDates": [
+    "2026-07-15",
+    "2026-10-13"
+  ],
+  "sourceUrls": [
+    "https://sharjah24.ae/en/Articles/2026/07/15/AL014",
+    "https://sharjah24.ae/en/Articles/2026/10/13/AL021"
+  ],
+  "dataBytes": 2497,
+  "dataSha256": "07167d9922c6ae2227152a9179af635e03fdd985ca73a445e2c4eccc77616de0",
+  "capturePages": [
+    {
+      "period": "2026H1",
+      "url": "https://sharjah24.ae/en/Articles/2026/07/15/AL014",
+      "retrievedAt": "2026-11-09T14:39:19.399706+00:00",
+      "bytes": 94534,
+      "sha256": "be86aaf59a5b5dc4f5c892d1ffe7585ed4b24b6c77825e19d6613f13ca648525"
+    },
+    {
+      "period": "2026M09",
+      "url": "https://sharjah24.ae/en/Articles/2026/10/13/AL021",
+      "retrievedAt": "2026-11-09T14:39:20.840340+00:00",
+      "bytes": 90393,
+      "sha256": "0a2def0d606790d3ec751d6a42fea6f8c15caedff86a5e1b0e4f1be42fb950c1"
+    }
+  ],
+  "corroboration": [
+    "https://www.wam.ae/en/article/c18fnby-sharjah-real-estate-transactions-reach-aed295",
+    "https://www.wam.ae/en/article/c2q0o4j-sharjah-real-estate-transactions-hit-aed-468bn"
+  ],
+  "rightsScope": "Only numerical facts and source links are republished; article text, images, and logos are excluded. No bulk transaction-register reuse right is asserted.",
+  "verification": "Two source pages captured and numeric facts checked against their HTML; independently cross-checked against WAM reports. Sale-use subtotals reconcile exactly to each cumulative sale total.",
+  "limits": "These are cumulative government-reported aggregates, not transaction records, listing availability, prices per square foot, a project register, or a complete Sharjah project denominator. H1 is contained within the nine-month period and must not be added to it. Reported monetary values and areas are rounded."
+}

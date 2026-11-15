@@ -1,0 +1,19 @@
+{
+  "sourceId": "scad-abu-dhabi-census-2024-real-estate-stock",
+  "publisher": "Statistics Centre – Abu Dhabi",
+  "statisticalProduct": "Abu Dhabi Census 2024, Real Estate: Number of Units and Buildings by Region, Emirate of Abu Dhabi",
+  "sourceUrl": "https://census.scad.gov.ae/home/realestate?lang=en",
+  "termsUrl": "https://www.scad.gov.ae/web/guest/terms-of-use",
+  "policyUrl": "https://scad.gov.ae/documents/d/guest/scad-open-data-policy",
+  "sourceResponseSha256": "2a1f58d1818a0c0b2a227e3e274f7c38daa3864754e18e8888119d418f06569b",
+  "sourceResponseBytes": 104809,
+  "compressedSha256": "f545283f525ff5e487c61048fb065ec7fc37e109191b66392e5707ff81d66edb",
+  "compressedBytes": 18485,
+  "retrievedAt": "2026-11-02T18:25:47.028399+00:00",
+  "referencePeriods": [
+    2023,
+    2024
+  ],
+  "tableLabel": "Number of Units and Buildings by Region, Emirate of Abu Dhabi",
+  "referencePage": "web page, table Number of Units and Buildings by Region, Emirate of Abu Dhabi"
+}

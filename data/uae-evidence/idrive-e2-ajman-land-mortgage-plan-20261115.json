@@ -1,0 +1,31 @@
+{
+  "planId": "ajman-land-mortgage-idrive-e2-replica-20261115",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261115-ajman-land-mortgage/",
+  "sourceInventoryVersion": "20261115-uae-evidence-coverage-v51",
+  "previousReplicaAttestationId": "ajman-planning-idrive-e2-readback-20261115",
+  "publishedSourceIds": [
+    "ajman-dlrr-20260821-land-mortgage"
+  ],
+  "publishedSourceCount": 1,
+  "objectCount": 1,
+  "totalBytes": 15852,
+  "objects": [
+    {
+      "sourceId": "ajman-dlrr-20260821-land-mortgage",
+      "publishedSourceId": "ajman-dlrr-20260821-land-mortgage",
+      "role": "published_projection",
+      "localPath": "data/uae-evidence/ajman/lands-mortgage-20260821.json.gz",
+      "validationPath": "data/uae-evidence/ajman/lands-mortgage-validation.json",
+      "validationSha256": "6f98f0f14d8f1ffdaf0a9b91a6156c6dcdd5c765c74ed53f6b5839a0337e4048",
+      "idriveKey": "espacios-map/uae-evidence/published/20261115-ajman-land-mortgage/ajman/ajman-dlrr-20260821-land-mortgage/aa2f5d686700a13a5b24582c8c509ae12fbdedc22d03af1312c74db482880d7b/lands-mortgage-20260821.json.gz",
+      "bytes": 15852,
+      "sha256": "aa2f5d686700a13a5b24582c8c509ae12fbdedc22d03af1312c74db482880d7b",
+      "rawBytes": 369822,
+      "rawSha256": "094e429358acdbb17f967ab3714a32e8c575a72a9e4de08e13cd539a39315813",
+      "contentType": "application/gzip"
+    }
+  ]
+}

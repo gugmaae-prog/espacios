@@ -1,0 +1,615 @@
+{
+  "key": "research/published/2026-10-14/recovery-native-v48/full-item-inventory.json.gz",
+  "path": "data/recovery/full-item-inventory.json.gz",
+  "sha256": "68c4559c83f289f0f41be75b689561f20d74ec34ec38d5a50dc76021c6b1c435",
+  "bytes": 1420355,
+  "compression": "gzip",
+  "decodedBytes": 20409971,
+  "decodedSHA256": "fa9980503ebac04722eccc2b38bbf60b3a35cd9d45b63e917261e5c1cd347545",
+  "kind": "recovery_public_item_inventory_stream",
+  "records": 1860,
+  "sourceShards": [
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/771806e391ed8f57292e78e076110c9df07e7a452430464966eea28a85c34c3a.json.gz",
+      "sha256": "771806e391ed8f57292e78e076110c9df07e7a452430464966eea28a85c34c3a",
+      "bytes": 26324
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/9bc8ad89716254c6feaabd6a44c8c4c701c159a609b6e58befd3c2e02729d162.json.gz",
+      "sha256": "9bc8ad89716254c6feaabd6a44c8c4c701c159a609b6e58befd3c2e02729d162",
+      "bytes": 44216
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/bea3c15440ef0c9df9d70d75d714daed3c43dd2b3e0325d30cc88265b7288115.json.gz",
+      "sha256": "bea3c15440ef0c9df9d70d75d714daed3c43dd2b3e0325d30cc88265b7288115",
+      "bytes": 41497
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/1533c526036c25008b36959c91adacb624b01ccbc784633e4c039364c897c9b3.json.gz",
+      "sha256": "1533c526036c25008b36959c91adacb624b01ccbc784633e4c039364c897c9b3",
+      "bytes": 23465
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/eb2bb0216f6f393b6ff613d493c759fa1a38134ffa4fe6dd9b863858ab7f628f.json.gz",
+      "sha256": "eb2bb0216f6f393b6ff613d493c759fa1a38134ffa4fe6dd9b863858ab7f628f",
+      "bytes": 26236
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/5642830e8177db824d55d8daa513e84b00183ec3b4cb831faeb1155f038a52bc.json.gz",
+      "sha256": "5642830e8177db824d55d8daa513e84b00183ec3b4cb831faeb1155f038a52bc",
+      "bytes": 34061
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/7ff45a161c2b1fad83b8608b6b0072a7d8330cd44001b167abed014196b9bec0.json.gz",
+      "sha256": "7ff45a161c2b1fad83b8608b6b0072a7d8330cd44001b167abed014196b9bec0",
+      "bytes": 31998
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/1b9b3b7aa28479961b2b0edfa5f76ae01558bfc5c9493e1fe1ecfdf2284c9844.json.gz",
+      "sha256": "1b9b3b7aa28479961b2b0edfa5f76ae01558bfc5c9493e1fe1ecfdf2284c9844",
+      "bytes": 36058
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/37a98ebc13cbe9832432518b6a648468a2930ffa68df89c08cbe525d2c53fae9.json.gz",
+      "sha256": "37a98ebc13cbe9832432518b6a648468a2930ffa68df89c08cbe525d2c53fae9",
+      "bytes": 47976
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/c4aacebdfc36bb37d822943e1b172189694d1aceed9cd6e108d260111836804d.json.gz",
+      "sha256": "c4aacebdfc36bb37d822943e1b172189694d1aceed9cd6e108d260111836804d",
+      "bytes": 50645
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/157c6cce8791141e564832f0fe027501a0b293674db12e370edfd2879de4c71a.json.gz",
+      "sha256": "157c6cce8791141e564832f0fe027501a0b293674db12e370edfd2879de4c71a",
+      "bytes": 41389
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/6ffdcb8112afa1ce8b2f72929e6573c2c92547ebb4e54774b078c6ebf99b335d.json.gz",
+      "sha256": "6ffdcb8112afa1ce8b2f72929e6573c2c92547ebb4e54774b078c6ebf99b335d",
+      "bytes": 59319
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/64cd4272abfb181970041a2b1ca8cd0b3d143bc9a79e8c47cf56d91fa759942e.json.gz",
+      "sha256": "64cd4272abfb181970041a2b1ca8cd0b3d143bc9a79e8c47cf56d91fa759942e",
+      "bytes": 38162
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/85b571453004d1c1fa18831de56044c2b3620cf25de13001c2430c51a4b4a216.json.gz",
+      "sha256": "85b571453004d1c1fa18831de56044c2b3620cf25de13001c2430c51a4b4a216",
+      "bytes": 44705
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4b601a6a1afab06311bbd26920bfe31c62821e648bf2acd4bfa6f7fceee82816.json.gz",
+      "sha256": "4b601a6a1afab06311bbd26920bfe31c62821e648bf2acd4bfa6f7fceee82816",
+      "bytes": 38540
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e4eff09252bda6e2695998a8dbf90771f904beaa99dc45964a67ed74284045ba.json.gz",
+      "sha256": "e4eff09252bda6e2695998a8dbf90771f904beaa99dc45964a67ed74284045ba",
+      "bytes": 29211
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/63aa9d0a0a2185edc955fbc5af4bcfe679d5e375e1fb91c02704c5dcb8d68d94.json.gz",
+      "sha256": "63aa9d0a0a2185edc955fbc5af4bcfe679d5e375e1fb91c02704c5dcb8d68d94",
+      "bytes": 51322
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/6857d2270769bf47303188d034f40f41e5ef8b939c6dcc8d4d72ab7902939160.json.gz",
+      "sha256": "6857d2270769bf47303188d034f40f41e5ef8b939c6dcc8d4d72ab7902939160",
+      "bytes": 63270
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/b1d92a9f8eac13f4f56d9d1bc7e437a3499632f4ae30c6ec5570c7db28402998.json.gz",
+      "sha256": "b1d92a9f8eac13f4f56d9d1bc7e437a3499632f4ae30c6ec5570c7db28402998",
+      "bytes": 29323
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/6a0ddce0e53895b31f79b13f422960018e76c1683604967fdf73e6d9b00c5098.json.gz",
+      "sha256": "6a0ddce0e53895b31f79b13f422960018e76c1683604967fdf73e6d9b00c5098",
+      "bytes": 62968
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/5424dee9fe3ec9aeb7d4a8e4b60905b7e7a2c42718d8c070abf8fea4bbe18b92.json.gz",
+      "sha256": "5424dee9fe3ec9aeb7d4a8e4b60905b7e7a2c42718d8c070abf8fea4bbe18b92",
+      "bytes": 153743
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/455bdbdd7339ae416e55e0338c5fa3c74df25d18eae91148c117e09413a98300.json.gz",
+      "sha256": "455bdbdd7339ae416e55e0338c5fa3c74df25d18eae91148c117e09413a98300",
+      "bytes": 151675
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/1d9e4a7d397411c706256423a0e3b5c8d6af3676a732b7c20ce3d6d6351f5e42.json.gz",
+      "sha256": "1d9e4a7d397411c706256423a0e3b5c8d6af3676a732b7c20ce3d6d6351f5e42",
+      "bytes": 25930
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/0019383b72aadadcd7d6638622995c6f90b2cacc5d7f0f8a8ef508fc4496afdb.json.gz",
+      "sha256": "0019383b72aadadcd7d6638622995c6f90b2cacc5d7f0f8a8ef508fc4496afdb",
+      "bytes": 84429
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/92e596bb7a3374e14f2da87fef8bffe446df1c1024b5057cedd6cb1a694e149a.json.gz",
+      "sha256": "92e596bb7a3374e14f2da87fef8bffe446df1c1024b5057cedd6cb1a694e149a",
+      "bytes": 71507
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/011db102c48278de741b5ed9dfdafb32097815930a90f2ca38047349b2068e0a.json.gz",
+      "sha256": "011db102c48278de741b5ed9dfdafb32097815930a90f2ca38047349b2068e0a",
+      "bytes": 57407
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/efc118122eb9c92d27753ad0a59f07bcc4be634e8a9fc7238a36c208fa601500.json.gz",
+      "sha256": "efc118122eb9c92d27753ad0a59f07bcc4be634e8a9fc7238a36c208fa601500",
+      "bytes": 73574
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/627f8c59e0347e7c0aa9da8b8c5113a728110695ddd7d6d3f6ed589699959ebb.json.gz",
+      "sha256": "627f8c59e0347e7c0aa9da8b8c5113a728110695ddd7d6d3f6ed589699959ebb",
+      "bytes": 64650
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/836ab4d28a5514d4940dd1e9bb8b0596c0d510d72c4175811abb942d7f80fd2e.json.gz",
+      "sha256": "836ab4d28a5514d4940dd1e9bb8b0596c0d510d72c4175811abb942d7f80fd2e",
+      "bytes": 46361
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/c3018561268f7e535cb9dfee3920e074df68f23ec9d491faae0775000c1d7c4c.json.gz",
+      "sha256": "c3018561268f7e535cb9dfee3920e074df68f23ec9d491faae0775000c1d7c4c",
+      "bytes": 62146
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d44a4bd50cb8cae380099be5664896382054f0df59347631d459b441a7bb8bd9.json.gz",
+      "sha256": "d44a4bd50cb8cae380099be5664896382054f0df59347631d459b441a7bb8bd9",
+      "bytes": 51049
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e7f9a967e865f6bb2eef6e51795e790a2cae527ab86e43814dd1be12e2a9cd3b.json.gz",
+      "sha256": "e7f9a967e865f6bb2eef6e51795e790a2cae527ab86e43814dd1be12e2a9cd3b",
+      "bytes": 39831
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4b1e135396be9cd2c8367b22b4cbc09daef5e43b32d7c4e62da74ffa841e49dc.json.gz",
+      "sha256": "4b1e135396be9cd2c8367b22b4cbc09daef5e43b32d7c4e62da74ffa841e49dc",
+      "bytes": 67869
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/759c173c81efc902ae5e696a3968e2a2ff8e6c66de9f5116f36c038fe5e85616.json.gz",
+      "sha256": "759c173c81efc902ae5e696a3968e2a2ff8e6c66de9f5116f36c038fe5e85616",
+      "bytes": 77053
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d36f51765bbabda56dc9ab47251a4fb1796163ff2ab810cdc52eca2ed8f4a35e.json.gz",
+      "sha256": "d36f51765bbabda56dc9ab47251a4fb1796163ff2ab810cdc52eca2ed8f4a35e",
+      "bytes": 70937
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/eb8c7eaa4643fda8e413dc7cac80806c04248c102a05f0e71abc0918c2833535.json.gz",
+      "sha256": "eb8c7eaa4643fda8e413dc7cac80806c04248c102a05f0e71abc0918c2833535",
+      "bytes": 61897
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/7a289289d956debff7d8d5a687eff7ff4d1b823bf651311e8c99627c6ec5bdb5.json.gz",
+      "sha256": "7a289289d956debff7d8d5a687eff7ff4d1b823bf651311e8c99627c6ec5bdb5",
+      "bytes": 53179
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4c9ee10d30f2955967038153c67a23d3f2264b9761717d2ebcc9c5fd62dbd74a.json.gz",
+      "sha256": "4c9ee10d30f2955967038153c67a23d3f2264b9761717d2ebcc9c5fd62dbd74a",
+      "bytes": 53666
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/48bc6168625a027b186d0273573c18363fc5bb1fe2078dcb6a48f7153970bd05.json.gz",
+      "sha256": "48bc6168625a027b186d0273573c18363fc5bb1fe2078dcb6a48f7153970bd05",
+      "bytes": 86842
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/6f0314b6e4f5cccfdaacadc6104ac83d1852cbaf257e4d6dec02ed496a57a2f9.json.gz",
+      "sha256": "6f0314b6e4f5cccfdaacadc6104ac83d1852cbaf257e4d6dec02ed496a57a2f9",
+      "bytes": 95482
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/72f5958c7f190db0142bb37be630268257cb99bf4942d6f8c0e6b26d9f11d13e.json.gz",
+      "sha256": "72f5958c7f190db0142bb37be630268257cb99bf4942d6f8c0e6b26d9f11d13e",
+      "bytes": 115230
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/34cfd670da966a037a99d48b186f77be9baf3216e64bc0323e8c8a69378c2326.json.gz",
+      "sha256": "34cfd670da966a037a99d48b186f77be9baf3216e64bc0323e8c8a69378c2326",
+      "bytes": 97136
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/715af1d1a60d0b1f6938b3f2bbd039e85d5b99fd12aaa195dbae52b96000622c.json.gz",
+      "sha256": "715af1d1a60d0b1f6938b3f2bbd039e85d5b99fd12aaa195dbae52b96000622c",
+      "bytes": 91741
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/086dd3822c1e1b9d40dd280d4dea0afcd897aba6991debfe865f9a40c3e34aad.json.gz",
+      "sha256": "086dd3822c1e1b9d40dd280d4dea0afcd897aba6991debfe865f9a40c3e34aad",
+      "bytes": 77575
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/67b538b2dd74f6477044794e789c329bfd743900e26c9dbcf9b474cfa85dfafa.json.gz",
+      "sha256": "67b538b2dd74f6477044794e789c329bfd743900e26c9dbcf9b474cfa85dfafa",
+      "bytes": 81937
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/78f8ed1ac2e0f5ad781dd39f5b3bd9b4f1fc60fcc942e37281e93890575a5397.json.gz",
+      "sha256": "78f8ed1ac2e0f5ad781dd39f5b3bd9b4f1fc60fcc942e37281e93890575a5397",
+      "bytes": 83960
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/a1f71dcb197a9fd74a1f23cd09001b992f534dd522c0eae25407f47ea7f0a491.json.gz",
+      "sha256": "a1f71dcb197a9fd74a1f23cd09001b992f534dd522c0eae25407f47ea7f0a491",
+      "bytes": 52908
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e7b3b94b727f505c94b180e313650ce1b1c34b5c1494584930f6dbd715d163a0.json.gz",
+      "sha256": "e7b3b94b727f505c94b180e313650ce1b1c34b5c1494584930f6dbd715d163a0",
+      "bytes": 69905
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/02a3326e398598d24010e92ca440a1c83628d7d83c4ea8ff05a849ed337db9bd.json.gz",
+      "sha256": "02a3326e398598d24010e92ca440a1c83628d7d83c4ea8ff05a849ed337db9bd",
+      "bytes": 45975
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/43a347d57f9a655a018b29f4fc94feea9827a740b4f63c65b221a7cfdd6913fd.json.gz",
+      "sha256": "43a347d57f9a655a018b29f4fc94feea9827a740b4f63c65b221a7cfdd6913fd",
+      "bytes": 76564
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/91fb0c5bd23bf3f74140fcd110fafad32d4f4387821f7ba2850e53a553c04f9b.json.gz",
+      "sha256": "91fb0c5bd23bf3f74140fcd110fafad32d4f4387821f7ba2850e53a553c04f9b",
+      "bytes": 79468
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e3f317e3914ff0c4c120ea922def65392b04749ef6d1d5d972d4594d7e7c42d3.json.gz",
+      "sha256": "e3f317e3914ff0c4c120ea922def65392b04749ef6d1d5d972d4594d7e7c42d3",
+      "bytes": 47065
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/627c9ce2ed9b1792606eaa0bddce14d5d68a64de3eb0d5bf315b0bbd5fe70b45.json.gz",
+      "sha256": "627c9ce2ed9b1792606eaa0bddce14d5d68a64de3eb0d5bf315b0bbd5fe70b45",
+      "bytes": 81718
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/2a070c6b785b78b62dd61774a331e4ab19cdbd6ad9b5387c10230ebceefe3feb.json.gz",
+      "sha256": "2a070c6b785b78b62dd61774a331e4ab19cdbd6ad9b5387c10230ebceefe3feb",
+      "bytes": 63098
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/436126059d60f970200c82b62e0fbb158114b2003c44cb9243ff9e65858c21ec.json.gz",
+      "sha256": "436126059d60f970200c82b62e0fbb158114b2003c44cb9243ff9e65858c21ec",
+      "bytes": 130755
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/87fe3a3740c0ea7d7c6a7446d3b9e77ae92484fa696ceb97351156f29268940c.json.gz",
+      "sha256": "87fe3a3740c0ea7d7c6a7446d3b9e77ae92484fa696ceb97351156f29268940c",
+      "bytes": 66250
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/728d25e4cb0692943a1adfed14bf309921b01ebb4bd2802414da3c95fb5edda9.json.gz",
+      "sha256": "728d25e4cb0692943a1adfed14bf309921b01ebb4bd2802414da3c95fb5edda9",
+      "bytes": 25846
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/cfa3e00c753981209350a72f6ab6618760aa4ad20791e52de3f456ec89a9ef8d.json.gz",
+      "sha256": "cfa3e00c753981209350a72f6ab6618760aa4ad20791e52de3f456ec89a9ef8d",
+      "bytes": 73816
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/04827811857bab39e8bf2328c82b9c79d5102e28fdbdb1ce4a1506776a7b74dd.json.gz",
+      "sha256": "04827811857bab39e8bf2328c82b9c79d5102e28fdbdb1ce4a1506776a7b74dd",
+      "bytes": 52947
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/b535c1bac3cb959eee785c08588f38c494ab53577b24f481d9cf949682a78898.json.gz",
+      "sha256": "b535c1bac3cb959eee785c08588f38c494ab53577b24f481d9cf949682a78898",
+      "bytes": 33464
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/884111d869a5baa984e4da87178dc496590ad3adc852c88271be0d66c4adb2bf.json.gz",
+      "sha256": "884111d869a5baa984e4da87178dc496590ad3adc852c88271be0d66c4adb2bf",
+      "bytes": 72201
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/ed58cf49fb004f5bd497da53efe3ab16169f3cf61a4637e096fd2650174bf2ff.json.gz",
+      "sha256": "ed58cf49fb004f5bd497da53efe3ab16169f3cf61a4637e096fd2650174bf2ff",
+      "bytes": 26092
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/f4cf39728a62f77b091af56aa1486f5ead6c0682447a82a1854ac4c80108982e.json.gz",
+      "sha256": "f4cf39728a62f77b091af56aa1486f5ead6c0682447a82a1854ac4c80108982e",
+      "bytes": 21389
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/8e06d7b23608d78f5d0a0300f9fe769407d52692cbc943961a09d3354095f605.json.gz",
+      "sha256": "8e06d7b23608d78f5d0a0300f9fe769407d52692cbc943961a09d3354095f605",
+      "bytes": 73267
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4109e99d66c2ddace513d19085a3bfdf943cb4d0a48fc1c5ca55d61cc496465c.json.gz",
+      "sha256": "4109e99d66c2ddace513d19085a3bfdf943cb4d0a48fc1c5ca55d61cc496465c",
+      "bytes": 75603
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e01459d7db0ea45041b4e25348e2f3e14d3d7b37824bf2770e454eaaea4497e9.json.gz",
+      "sha256": "e01459d7db0ea45041b4e25348e2f3e14d3d7b37824bf2770e454eaaea4497e9",
+      "bytes": 54121
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/f86dfc0c0a90ff34e6f578d2417002a7d1af7ca767a5e8ba7ae1221270ab594a.json.gz",
+      "sha256": "f86dfc0c0a90ff34e6f578d2417002a7d1af7ca767a5e8ba7ae1221270ab594a",
+      "bytes": 41011
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/1847fa61272c2ce5debe330ff3e605b0edd151fe09ff507ebb889d39221cf291.json.gz",
+      "sha256": "1847fa61272c2ce5debe330ff3e605b0edd151fe09ff507ebb889d39221cf291",
+      "bytes": 8725
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/573decb74628755595d4050a2757de39fd3261375f64aef8e063b5886580fb6a.json.gz",
+      "sha256": "573decb74628755595d4050a2757de39fd3261375f64aef8e063b5886580fb6a",
+      "bytes": 50411
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/f4fd00626eabd444863f4c99ed09429d7fc5be6b3fe18839c16fe31f4f0f6b87.json.gz",
+      "sha256": "f4fd00626eabd444863f4c99ed09429d7fc5be6b3fe18839c16fe31f4f0f6b87",
+      "bytes": 13007
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/149c89b9fbdadc9c9edf84f59503933c2213b7eb3551e9715f4a5b7c600b53c1.json.gz",
+      "sha256": "149c89b9fbdadc9c9edf84f59503933c2213b7eb3551e9715f4a5b7c600b53c1",
+      "bytes": 22534
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/269679122d8541998f39c93524c07e8fa373e8149b7a8d7d9301dea284ef7c4a.json.gz",
+      "sha256": "269679122d8541998f39c93524c07e8fa373e8149b7a8d7d9301dea284ef7c4a",
+      "bytes": 10487
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d60bb3c0459c368f1cc01addfbe01edd7c96f8988c640be87b4a29841cbb0df2.json.gz",
+      "sha256": "d60bb3c0459c368f1cc01addfbe01edd7c96f8988c640be87b4a29841cbb0df2",
+      "bytes": 25718
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4e1b8acacb8df44ca508ebbfc9242d3573c4d38962eac9480580c02cb8359615.json.gz",
+      "sha256": "4e1b8acacb8df44ca508ebbfc9242d3573c4d38962eac9480580c02cb8359615",
+      "bytes": 22833
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/1210ede80417f52f6ae4e3bee45937c8d7cf3bfea8de8a6a914384fef689ed66.json.gz",
+      "sha256": "1210ede80417f52f6ae4e3bee45937c8d7cf3bfea8de8a6a914384fef689ed66",
+      "bytes": 65746
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/8247c09f6c5f3768f90eeb60fd9965d8c1eed12fc3fb370892325ce9a593298d.json.gz",
+      "sha256": "8247c09f6c5f3768f90eeb60fd9965d8c1eed12fc3fb370892325ce9a593298d",
+      "bytes": 15587
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/2ca0fa76912be801bcd4e2a49931be61403babd5217f01251fdca536d97961e1.json.gz",
+      "sha256": "2ca0fa76912be801bcd4e2a49931be61403babd5217f01251fdca536d97961e1",
+      "bytes": 9655
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/7eda06edf5f4fbe7d3ee483c9100cde59069051fbca2b5c22bc122ab4f9e2b30.json.gz",
+      "sha256": "7eda06edf5f4fbe7d3ee483c9100cde59069051fbca2b5c22bc122ab4f9e2b30",
+      "bytes": 33710
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/2bee7593b8c1270c02d7464e66f5db905b3fef3860a4c3f0a49e57a7de398ff2.json.gz",
+      "sha256": "2bee7593b8c1270c02d7464e66f5db905b3fef3860a4c3f0a49e57a7de398ff2",
+      "bytes": 42578
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/24a4f3a8b2a798d2e1b8c15404c9dc20ae1ba1dfe93432ea179a6968ea188523.json.gz",
+      "sha256": "24a4f3a8b2a798d2e1b8c15404c9dc20ae1ba1dfe93432ea179a6968ea188523",
+      "bytes": 10411
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4dc1def079c63caac61f00cc06d74e8f78f8379a4cd54eb2adc4cc2ba14f7166.json.gz",
+      "sha256": "4dc1def079c63caac61f00cc06d74e8f78f8379a4cd54eb2adc4cc2ba14f7166",
+      "bytes": 13906
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/93aff788f221f03fea13fcace8239a41a5aadef6dafdb8401ad4930b2b42973d.json.gz",
+      "sha256": "93aff788f221f03fea13fcace8239a41a5aadef6dafdb8401ad4930b2b42973d",
+      "bytes": 30827
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/441bd3bc1ff8c7f7e3faf2eb7c2c4d1ed6cc2a020a578b7e18d297e0d69bd155.json.gz",
+      "sha256": "441bd3bc1ff8c7f7e3faf2eb7c2c4d1ed6cc2a020a578b7e18d297e0d69bd155",
+      "bytes": 45192
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/61e3d9173f880bef3ca3add62317bba81d191407aa1dd1376361adc8f0ee67fc.json.gz",
+      "sha256": "61e3d9173f880bef3ca3add62317bba81d191407aa1dd1376361adc8f0ee67fc",
+      "bytes": 50031
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/8ab037dbf28e8ad1c60f1e7baa19525a444e23b1a858e99d3043014f80a257e6.json.gz",
+      "sha256": "8ab037dbf28e8ad1c60f1e7baa19525a444e23b1a858e99d3043014f80a257e6",
+      "bytes": 11092
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/a63183130190dccbe9f2ded961c0f50986fe6eaa718c5cdb1c6263a2a84c6d98.json.gz",
+      "sha256": "a63183130190dccbe9f2ded961c0f50986fe6eaa718c5cdb1c6263a2a84c6d98",
+      "bytes": 12336
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/0f84ddad18ac7e972ede1db1a5b1d4c3af75a4f457bfac429b97be152d4ec6b8.json.gz",
+      "sha256": "0f84ddad18ac7e972ede1db1a5b1d4c3af75a4f457bfac429b97be152d4ec6b8",
+      "bytes": 12466
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/eefeec41e8ba13c84cb95685238cfefc92ca9a594e68bb88aa0e18fff4d9c238.json.gz",
+      "sha256": "eefeec41e8ba13c84cb95685238cfefc92ca9a594e68bb88aa0e18fff4d9c238",
+      "bytes": 13329
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d1ea6eb01e8e10114571a3cb7b97a878c2ff74b4f6272844f66c9c15690ab60a.json.gz",
+      "sha256": "d1ea6eb01e8e10114571a3cb7b97a878c2ff74b4f6272844f66c9c15690ab60a",
+      "bytes": 16037
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/be12be0c2388b57d7577235ced9a3215bd259fdc1b2c79527e42778ffabcc880.json.gz",
+      "sha256": "be12be0c2388b57d7577235ced9a3215bd259fdc1b2c79527e42778ffabcc880",
+      "bytes": 13325
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d4b4992bd8e1e204badc3c7b7779b9dc8189acef6357a27acdf15028f1bb73a4.json.gz",
+      "sha256": "d4b4992bd8e1e204badc3c7b7779b9dc8189acef6357a27acdf15028f1bb73a4",
+      "bytes": 12759
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/3e1cb909abfde76d1b8c937120d8cdb20be812049c3957236831f47d2bc55b52.json.gz",
+      "sha256": "3e1cb909abfde76d1b8c937120d8cdb20be812049c3957236831f47d2bc55b52",
+      "bytes": 13466
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/a1dae6fe2a0c6160d28b55dcd79f0de9ccd2394816ad3854c1bcac6e377f252b.json.gz",
+      "sha256": "a1dae6fe2a0c6160d28b55dcd79f0de9ccd2394816ad3854c1bcac6e377f252b",
+      "bytes": 12443
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/727508174ec3f5f05805278f04aceb777194bba6a82c0c8d2c99532b02390697.json.gz",
+      "sha256": "727508174ec3f5f05805278f04aceb777194bba6a82c0c8d2c99532b02390697",
+      "bytes": 12462
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/30ffa18bfb5e84e39679427d4aa40d4c1e86d73d1e54f98cbf797c0226110ea4.json.gz",
+      "sha256": "30ffa18bfb5e84e39679427d4aa40d4c1e86d73d1e54f98cbf797c0226110ea4",
+      "bytes": 15034
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/ae567f50a337a62eccd66c8b886912f66757e6cfe29e38f5e1fcc09186f5f823.json.gz",
+      "sha256": "ae567f50a337a62eccd66c8b886912f66757e6cfe29e38f5e1fcc09186f5f823",
+      "bytes": 12736
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/8ff04bf79f1a64a6a2e6d2e0f9bb403824fa99a2c6240b61fc85cc251654e70a.json.gz",
+      "sha256": "8ff04bf79f1a64a6a2e6d2e0f9bb403824fa99a2c6240b61fc85cc251654e70a",
+      "bytes": 13940
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d76a318af08fe6acdb747db535b9c5616aea9447d60171577f73354179dd5d05.json.gz",
+      "sha256": "d76a318af08fe6acdb747db535b9c5616aea9447d60171577f73354179dd5d05",
+      "bytes": 11836
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/434d14fc415d9fb1ac1c12e297597572d115c8cf3cf6bfaf4ea5189bab37d1a3.json.gz",
+      "sha256": "434d14fc415d9fb1ac1c12e297597572d115c8cf3cf6bfaf4ea5189bab37d1a3",
+      "bytes": 11922
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/521cede824cf81ad33c0d1272b0ea6c582ffd8cadf10e82865eee7ff77568224.json.gz",
+      "sha256": "521cede824cf81ad33c0d1272b0ea6c582ffd8cadf10e82865eee7ff77568224",
+      "bytes": 11474
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/d7618660b31d4d73bce4586d7864b003198a9c7b2a1cbaf1a6a6c9d6d6d57825.json.gz",
+      "sha256": "d7618660b31d4d73bce4586d7864b003198a9c7b2a1cbaf1a6a6c9d6d6d57825",
+      "bytes": 11072
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/c39ee9321c7e8869b0cd26cdd35e2f172f659d9976d497b3d2383267d7ef115e.json.gz",
+      "sha256": "c39ee9321c7e8869b0cd26cdd35e2f172f659d9976d497b3d2383267d7ef115e",
+      "bytes": 12324
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e0179a3ee2b2bce3d0e1302380157a6e435a0367ceedb38a2abb5c0a1eac8c9c.json.gz",
+      "sha256": "e0179a3ee2b2bce3d0e1302380157a6e435a0367ceedb38a2abb5c0a1eac8c9c",
+      "bytes": 38103
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/a36b0f185bf518d2b695b605802f05f42066ce88f14bfc953e536fb6bd116458.json.gz",
+      "sha256": "a36b0f185bf518d2b695b605802f05f42066ce88f14bfc953e536fb6bd116458",
+      "bytes": 109770
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/c777a305f16b37528b01915ac310b261ed869ce4ca9e98b1820a8ccdc66834ee.json.gz",
+      "sha256": "c777a305f16b37528b01915ac310b261ed869ce4ca9e98b1820a8ccdc66834ee",
+      "bytes": 98765
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/8f6509a4e3d9d20c4e3ab65adc8ff01eee15394f3467d37435f1e8c1ff1dbb5e.json.gz",
+      "sha256": "8f6509a4e3d9d20c4e3ab65adc8ff01eee15394f3467d37435f1e8c1ff1dbb5e",
+      "bytes": 116637
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/ad996b955fa174e14e6e050791de85e952cbf1379635fa9c9e23252feb8d1548.json.gz",
+      "sha256": "ad996b955fa174e14e6e050791de85e952cbf1379635fa9c9e23252feb8d1548",
+      "bytes": 145959
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/5468871aba09601a27dc517d9f17be03cb0964e2941bcec5a84d72ac21a8d032.json.gz",
+      "sha256": "5468871aba09601a27dc517d9f17be03cb0964e2941bcec5a84d72ac21a8d032",
+      "bytes": 113372
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/cb07b055cb933c9e5052360457d7646f314009a220f6fb7ade9c3e77a1712107.json.gz",
+      "sha256": "cb07b055cb933c9e5052360457d7646f314009a220f6fb7ade9c3e77a1712107",
+      "bytes": 72642
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/6740c98d11ead21b00e8544b195fb5f1caef37669cf2b8484759f427c52a78df.json.gz",
+      "sha256": "6740c98d11ead21b00e8544b195fb5f1caef37669cf2b8484759f427c52a78df",
+      "bytes": 109141
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e34838c148a7b04ab95314bea9bbd64964766f163449b1040cfdf90ea34f66db.json.gz",
+      "sha256": "e34838c148a7b04ab95314bea9bbd64964766f163449b1040cfdf90ea34f66db",
+      "bytes": 137667
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/0a3693e92fa8404d23cfd5490791e47ce122e74da78297e8f01c9e5c75b93b67.json.gz",
+      "sha256": "0a3693e92fa8404d23cfd5490791e47ce122e74da78297e8f01c9e5c75b93b67",
+      "bytes": 117395
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/c1e50ee56600e6cceb83d364063da25403354687dfa409ece0e4f62fcf619b3d.json.gz",
+      "sha256": "c1e50ee56600e6cceb83d364063da25403354687dfa409ece0e4f62fcf619b3d",
+      "bytes": 19683
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/eff8e25961b21fd13c91fffe57ac53bbc542c3a3c97a32653367de54c50e66d1.json.gz",
+      "sha256": "eff8e25961b21fd13c91fffe57ac53bbc542c3a3c97a32653367de54c50e66d1",
+      "bytes": 140719
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/35707e57608579e4f095d8b9ec5c3aefc6af897ed1b0cbad0d49ff3419e1c62a.json.gz",
+      "sha256": "35707e57608579e4f095d8b9ec5c3aefc6af897ed1b0cbad0d49ff3419e1c62a",
+      "bytes": 39718
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/4121bd3ef500e91df2df8fa23ced6cccab2d57b006f496ad823aa315802d5323.json.gz",
+      "sha256": "4121bd3ef500e91df2df8fa23ced6cccab2d57b006f496ad823aa315802d5323",
+      "bytes": 87207
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/c53c655a8287a2baf0389fcd07b2db2fa5b2e21200f980872bb9ab1f402c73f8.json.gz",
+      "sha256": "c53c655a8287a2baf0389fcd07b2db2fa5b2e21200f980872bb9ab1f402c73f8",
+      "bytes": 58589
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/e1fb774fb1a62ef2d1c1a4ab9685821cb0eacbc038c426df69141d7fc74773b9.json.gz",
+      "sha256": "e1fb774fb1a62ef2d1c1a4ab9685821cb0eacbc038c426df69141d7fc74773b9",
+      "bytes": 130240
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/7196c8a26c665806106738737aafb40c5bec0afb740403bc7f78eaac551e6719.json.gz",
+      "sha256": "7196c8a26c665806106738737aafb40c5bec0afb740403bc7f78eaac551e6719",
+      "bytes": 127951
+    },
+    {
+      "key": "research/published/2026-10-14/historical-intelligence/objects/6e635d4240c12c367990815fd15c0ceecb9ddd16b9e0589662f7d69aff70cd83.json.gz",
+      "sha256": "6e635d4240c12c367990815fd15c0ceecb9ddd16b9e0589662f7d69aff70cd83",
+      "bytes": 41031
+    }
+  ],
+  "valuesRecalculated": false,
+  "format": "Exact existing public full-ledger response fields; no native points or licensed raw archives are added."
+}

@@ -1,0 +1,47 @@
+{
+  "retrievedAt": "2026-11-02T17:04:10.915Z",
+  "pages": [
+    {
+      "url": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/management-companies-for-real-estate-development-projects/records?limit=100&offset=0&order_by=project_id%2Cyear%2Coffice_id",
+      "offset": 0,
+      "total_count": 451,
+      "rows": 100,
+      "sha256": "0df4047282354f42b1e4fc75d99f17179266a6428c9f651ccbb6a183aeed47c2"
+    },
+    {
+      "url": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/management-companies-for-real-estate-development-projects/records?limit=100&offset=100&order_by=project_id%2Cyear%2Coffice_id",
+      "offset": 100,
+      "total_count": 451,
+      "rows": 100,
+      "sha256": "750dd94c8cd313c6f767bd56f4d59d1b6f107d9e286a5e50da1eacdb008bdf71"
+    },
+    {
+      "url": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/management-companies-for-real-estate-development-projects/records?limit=100&offset=200&order_by=project_id%2Cyear%2Coffice_id",
+      "offset": 200,
+      "total_count": 451,
+      "rows": 100,
+      "sha256": "eb208d015dca251f3b8d5a2583538228edfc72a35a7b9f555c6799b61b55f384"
+    },
+    {
+      "url": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/management-companies-for-real-estate-development-projects/records?limit=100&offset=300&order_by=project_id%2Cyear%2Coffice_id",
+      "offset": 300,
+      "total_count": 451,
+      "rows": 100,
+      "sha256": "900ec480c1985c6bda4cc4e6d8c67d8831f04eb879994ecd7da76bf3dd00fb9d"
+    },
+    {
+      "url": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/management-companies-for-real-estate-development-projects/records?limit=100&offset=400&order_by=project_id%2Cyear%2Coffice_id",
+      "offset": 400,
+      "total_count": 451,
+      "rows": 51,
+      "sha256": "dc9661cc449e6991731b9f35b986338ec18a9e7f811cd90b22f908a80aaeeb05"
+    }
+  ],
+  "rawSha256": "5e04bca1894ddc79932a36668c327eb95b822bf080bcec9438d7fd3e107bebc3",
+  "rawBytes": 159574,
+  "compressedSha256": "423f125283b57ef0e351a315a94ccacee7199c181bd309c2ab2dc6ee702fec24",
+  "compressedBytes": 5134,
+  "independentReadbackAt": "2026-11-02T17:08:20.938Z",
+  "independentReadbackSha256": "5e04bca1894ddc79932a36668c327eb95b822bf080bcec9438d7fd3e107bebc3",
+  "independentReadbackRows": 451
+}

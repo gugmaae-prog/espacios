@@ -1,0 +1,10 @@
+{
+  "key": "recovery/accepted-v48/native-history-index.json.gz",
+  "path": "data/recovery/v48-native-history-index.json.gz",
+  "sha256": "aa78846970d08ac74d169cb8ea920c32e85544d0f7bfdea42e51c2b659389c7e",
+  "bytes": 519563,
+  "compression": "gzip",
+  "decodedBytes": 5185191,
+  "kind": "recovery_native_history_metadata_index",
+  "sourceVersion": "20261014-enrichment-v48"
+}

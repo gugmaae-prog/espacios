@@ -1,0 +1,301 @@
+{
+  "reviewedAt": "2026-10-11T22:13:50.333453+00:00",
+  "baselineVersion": "20261009-enrichment-v40",
+  "sourceFiles": [
+    {
+      "dataset": "transactions",
+      "fileName": "transactions_2026-10-10_17-51-06_0001.csv.gz",
+      "bytes": 81232123,
+      "sha256": "5654ad5cd9be1b2fc366b2bb7c1554ca1330775013b16a0d91121dbe593789ee",
+      "retrievedAt": "2026-10-11T22:12:25.476787+00:00",
+      "status": 200,
+      "sourceURL": "https://data.dubai/en/l/470061",
+      "downloadURLRedacted": true
+    },
+    {
+      "dataset": "transactions",
+      "fileName": "transactions_2026-10-10_17-51-06_0002.csv.gz",
+      "bytes": 81209160,
+      "sha256": "d931806a9fa11c1c5c0700e936d84bbfd97e190d7650e0ffe5c2eb795602a071",
+      "retrievedAt": "2026-10-11T22:12:29.032710+00:00",
+      "status": 200,
+      "sourceURL": "https://data.dubai/en/l/470061",
+      "downloadURLRedacted": true
+    },
+    {
+      "dataset": "developers",
+      "fileName": "developers_2026-10-01_23-34-28_0001.csv.gz",
+      "bytes": 160670,
+      "sha256": "eef868a72c9453ef09c4ae664c555112d3e17e193b5fe1710eda84f9e80da6bd",
+      "retrievedAt": "2026-10-11T22:11:10.966260+00:00",
+      "status": 200,
+      "sourceURL": "https://data.dubai/en/l/462802",
+      "downloadURLRedacted": true
+    }
+  ],
+  "sourceRowsScanned": 1800588,
+  "duplicateReconciliationRowsScanned": 1800588,
+  "records": [
+    {
+      "recordId": "project:binghatti-wraith-al-jaddaf-dubai",
+      "name": "Binghatti Wraith",
+      "buildingName": "Binghatti Wraith",
+      "projectNumber": 4482,
+      "areaId": 334,
+      "sourceRows": 64,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 54,
+      "firstCandidateRegistration": "2026-08-12",
+      "lastCandidateRegistration": "2026-10-09",
+      "nativeMonthlyCandidateCounts": {
+        "2026-08": 8,
+        "2026-09": 36,
+        "2026-10": 10
+      },
+      "exclusions": {
+        "not_sale": 6,
+        "not_residential_flat": 4
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:divine-elements-takmeel-dubai-south",
+      "name": "DIVINE ELEMENTS",
+      "buildingName": "DIVINE ELEMENTS",
+      "projectNumber": 4142,
+      "areaId": 462,
+      "sourceRows": 50,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 49,
+      "firstCandidateRegistration": "2026-03-02",
+      "lastCandidateRegistration": "2026-09-09",
+      "nativeMonthlyCandidateCounts": {
+        "2026-03": 15,
+        "2026-04": 10,
+        "2026-05": 13,
+        "2026-06": 3,
+        "2026-07": 6,
+        "2026-08": 1,
+        "2026-09": 1
+      },
+      "exclusions": {
+        "not_residential_flat": 1
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:belmont-nshama-town-square-dubai",
+      "name": "OAKMONT",
+      "buildingName": "Belmont",
+      "projectNumber": 4337,
+      "areaId": 507,
+      "sourceRows": 42,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 42,
+      "firstCandidateRegistration": "2026-03-17",
+      "lastCandidateRegistration": "2026-06-16",
+      "nativeMonthlyCandidateCounts": {
+        "2026-03": 19,
+        "2026-04": 18,
+        "2026-05": 2,
+        "2026-06": 3
+      },
+      "exclusions": {},
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:avida-residences-iquna-properties-dubai-islands",
+      "name": "Avida Residences",
+      "buildingName": "Avida Residences",
+      "projectNumber": 4066,
+      "areaId": 432,
+      "sourceRows": 43,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 40,
+      "firstCandidateRegistration": "2025-10-30",
+      "lastCandidateRegistration": "2026-09-10",
+      "nativeMonthlyCandidateCounts": {
+        "2025-10": 6,
+        "2025-11": 9,
+        "2025-12": 12,
+        "2026-01": 3,
+        "2026-03": 1,
+        "2026-04": 4,
+        "2026-05": 2,
+        "2026-06": 1,
+        "2026-07": 1,
+        "2026-09": 1
+      },
+      "exclusions": {
+        "not_sale": 2,
+        "not_residential_flat": 1
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:inaura-hotels-residences-arada-downtown-dubai",
+      "name": "Inaura Hotels & Residences",
+      "buildingName": "Inaura Hotels & Residences",
+      "projectNumber": 4226,
+      "areaId": 390,
+      "sourceRows": 38,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 35,
+      "firstCandidateRegistration": "2026-03-30",
+      "lastCandidateRegistration": "2026-09-30",
+      "nativeMonthlyCandidateCounts": {
+        "2026-03": 1,
+        "2026-04": 4,
+        "2026-05": 9,
+        "2026-06": 3,
+        "2026-07": 4,
+        "2026-08": 3,
+        "2026-09": 11
+      },
+      "exclusions": {
+        "not_residential_flat": 2,
+        "not_sale": 1
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:eira-by-neoterra-dubai-production-city-uae",
+      "name": "EIRA",
+      "buildingName": "EIRA",
+      "projectNumber": 4437,
+      "areaId": 485,
+      "sourceRows": 31,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 30,
+      "firstCandidateRegistration": "2026-08-10",
+      "lastCandidateRegistration": "2026-10-02",
+      "nativeMonthlyCandidateCounts": {
+        "2026-08": 9,
+        "2026-09": 18,
+        "2026-10": 3
+      },
+      "exclusions": {
+        "not_residential_flat": 1
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:cresswell-plaza-merath-dubai-south",
+      "name": "Cresswell Plaza",
+      "buildingName": "Cresswell Plaza",
+      "projectNumber": 4359,
+      "areaId": 462,
+      "sourceRows": 24,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 24,
+      "firstCandidateRegistration": "2026-04-23",
+      "lastCandidateRegistration": "2026-10-08",
+      "nativeMonthlyCandidateCounts": {
+        "2026-04": 2,
+        "2026-06": 12,
+        "2026-07": 3,
+        "2026-08": 5,
+        "2026-09": 1,
+        "2026-10": 1
+      },
+      "exclusions": {},
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:helvetia-marine-dhg-properties-dubai-islands-dubai",
+      "name": "Helvetia Marine",
+      "buildingName": "Helvetia Marine",
+      "projectNumber": 4157,
+      "areaId": 432,
+      "sourceRows": 12,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 10,
+      "firstCandidateRegistration": "2026-01-08",
+      "lastCandidateRegistration": "2026-09-02",
+      "nativeMonthlyCandidateCounts": {
+        "2026-01": 2,
+        "2026-02": 1,
+        "2026-03": 1,
+        "2026-05": 1,
+        "2026-07": 1,
+        "2026-08": 3,
+        "2026-09": 1
+      },
+      "exclusions": {
+        "not_sale": 1,
+        "not_residential_flat": 1
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:raffles-the-palm-dubai-villas-on-palm-jumeirah-for-sale",
+      "name": "EMERALD PALACE KEMPINSKI HOTEL",
+      "buildingName": "Raffles The Palm Dubai",
+      "projectNumber": 1382,
+      "areaId": 410,
+      "sourceRows": 128,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 7,
+      "firstCandidateRegistration": "2024-07-02",
+      "lastCandidateRegistration": "2026-05-07",
+      "nativeMonthlyCandidateCounts": {
+        "2024-07": 1,
+        "2025-01": 1,
+        "2025-05": 1,
+        "2025-06": 1,
+        "2025-11": 1,
+        "2026-04": 1,
+        "2026-05": 1
+      },
+      "exclusions": {
+        "not_residential_flat": 95,
+        "not_sale": 26
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    },
+    {
+      "recordId": "project:soma-residences-origami-dubai-islands-dubai",
+      "name": "Soma Residences",
+      "buildingName": "Soma Residences",
+      "projectNumber": 4453,
+      "areaId": 432,
+      "sourceRows": 7,
+      "duplicateRows": 0,
+      "financiallyEligibleCandidates": 5,
+      "firstCandidateRegistration": "2026-08-17",
+      "lastCandidateRegistration": "2026-10-08",
+      "nativeMonthlyCandidateCounts": {
+        "2026-08": 1,
+        "2026-09": 2,
+        "2026-10": 2
+      },
+      "exclusions": {
+        "not_residential_flat": 2
+      },
+      "acceptedObservations": 0,
+      "coverageCredit": 0,
+      "status": "authority_component_and_existing_ownership_reconciliation_required"
+    }
+  ],
+  "acceptedObservations": 0,
+  "coverageCredit": 0,
+  "methodology": "Exact authority project number, area and project/building names identify candidate residential flat sales. Full-vintage duplicate revisions are quarantined. Financial eligibility does not establish catalogue/component ownership. Dates are source registration dates; earliest retained is not first-ever sale. Source vintage availability begins at capture, not transaction date."
+}

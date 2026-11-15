@@ -1,0 +1,63 @@
+{
+  "sourceId": "fscfuj-construction-chapter-monthly-permits-2023-2025-20261114",
+  "parentSourceId": "fscfuj-construction-chapter-selected-permits-2025-20261110",
+  "parentDataSha256": "0c932c4baf574d6df38daa75543f0d7227aae8073e38b88ab3eb39345a5462ac",
+  "sourcePdfs": [
+    {
+      "year": 2023,
+      "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1045/Chapter2ConstructionandBuilding.pdf",
+      "sha256": "7182e94f918f81e1c0b28795aac4d3890974efe836b4974b1facceffb35b6cb7",
+      "publicationPageNumbers": [
+        47,
+        48
+      ],
+      "pdfPageNumbers": [
+        4,
+        5
+      ]
+    },
+    {
+      "year": 2024,
+      "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1060/Chapter2ConstructionandBuilding.pdf",
+      "sha256": "fdb36502f4956eb5de20d9d851e79372ef9cd7ce6730b7737b5ce5e0c091ff78",
+      "publicationPageNumbers": [
+        47,
+        48
+      ],
+      "pdfPageNumbers": [
+        4,
+        5
+      ]
+    },
+    {
+      "year": 2025,
+      "url": "https://www.fscfuj.gov.ae/WebsiteFiles/Reports/1077/Chapter2ConstructionandBuilding.pdf",
+      "sha256": "e8a4ed335e435a6c0460c0dcb395a85fab64113b2dc080aca9414bd1863f4721",
+      "publicationPageNumbers": [
+        47,
+        48
+      ],
+      "pdfPageNumbers": [
+        4,
+        5
+      ]
+    }
+  ],
+  "rows": 72,
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "municipalities": [
+    "Fujairah",
+    "Dibba"
+  ],
+  "dataBytes": 6210,
+  "dataSha256": "5f4f25214e5fdcca0864aa064d1d533bd331b8eba1f3368c18f208ea5ef739bf",
+  "compressedBytes": 1172,
+  "compressedSha256": "17da9dba4a672373a9fbdad1e00c75dc32efa163138d0a413e5741c6f02202ac",
+  "rightsScope": "Only monthly total and combined new/renew permit counts plus source links; other source-table columns, chapter text, images and layout are excluded.",
+  "limits": "Issued permits are authorizations, not completed buildings, distinct projects, units, sales, rents, current availability, or project coordinates. New and renewed permits are combined. These monthly type counts reconcile to the separately published annual totals; building-use breakdowns do not exist at this monthly grain.",
+  "verification": "For each year and municipality, the selected monthly totals and combined new/renew counts reconcile to the previously verified annual source; both municipality totals reconcile to the emirate annual total. Other permit types are intentionally not republished."
+}

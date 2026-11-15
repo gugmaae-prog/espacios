@@ -1,0 +1,24 @@
+{
+  "attestationId": "ajman-planning-idrive-e2-readback-20261115",
+  "planId": "ajman-planning-idrive-e2-replica-20261115",
+  "planSha256": "db762954b2910493278aa21aad9b2257973ae26a929eebdeac640e6314c73509",
+  "privateJournalSha256": "82379fe9c282e32c93f5f6907cc06a13b00cf6fc42a4c727d8ea435eb0226e6c",
+  "previewVersion": "d5ab7c93-73d4-42ab-ac72-acc3fd091a63",
+  "bridgeSha256": "0d00423cae77735afc9538d831ecf501209f2aca4d04ec394580d2f0a0f72611",
+  "verifiedAt": "2026-11-14T21:43:56.249Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261115-ajman-planning/",
+  "objectCount": 2,
+  "totalBytes": 5522,
+  "publishedSourceIds": [
+    "ajman-mpd-20240709-site-plans-by-use",
+    "ajman-mpd-20260901-licence-types"
+  ],
+  "publishedSourceCount": 2,
+  "coverageInventoryVersion": "20261115-uae-evidence-coverage-v50",
+  "previousReplicaAttestationId": "federal-census-20261115-idrive-e2-readback",
+  "verification": "Both allowlisted objects passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact content type, byte length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

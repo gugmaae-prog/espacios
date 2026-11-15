@@ -1,0 +1,31 @@
+{
+  "sourceId": "ad-sdi-developer-projects-20261103",
+  "publisher": "Abu Dhabi Spatial Data Infrastructure, Department of Government Enablement",
+  "layerTitle": "Developer Projects",
+  "serviceLayerUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/207",
+  "termsUrl": "https://sdi.gov.abudhabi/sdi/opendata.html",
+  "sourceQuery": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/207/query?where=1%3D1&outFields=OBJECTID%2CPROJECT_NAME%2CDEVELOPER_NAME%2CSHARINGSTATUS_DM%2CCH_FID&returnGeometry=false&orderByFields=OBJECTID%20ASC&resultRecordCount=2000&f=json",
+  "retrievedAt": "2026-11-03T07:47:59.925324Z",
+  "sourcePublicationDate": null,
+  "classification": "official_open_geospatial_developer_project_feature_attributes",
+  "grain": "one_polygon_layer_feature_attribute_row",
+  "rows": 411,
+  "distinctNames": 410,
+  "distinctDevelopers": 108,
+  "nullDeveloperRows": 13,
+  "rawBytes": 70309,
+  "rawSha256": "347fa57d07e57cd359f63fffbed14cd5beda429475ba24db954950240d479f45",
+  "independentReadbackSha256": "347fa57d07e57cd359f63fffbed14cd5beda429475ba24db954950240d479f45",
+  "compressedBytes": 9151,
+  "compressedSha256": "9d31c1a0b4c0e0b742d8000a982fad75c1fe25e00d6ea6fe0a173a5bf88bbe51",
+  "capturedFields": [
+    "CH_FID",
+    "DEVELOPER_NAME",
+    "OBJECTID",
+    "PROJECT_NAME",
+    "SHARINGSTATUS_DM"
+  ],
+  "geometryCaptured": false,
+  "sourceIdentityCrosswalk": "none",
+  "attribution": "Source: Abu Dhabi Spatial Data Infrastructure Open Data, Department of Government Enablement. Developer Projects layer 207, queried 3 November 2026. The layer is distinct from ADREC registered projects and AD-SDI Urban Development Projects. Feature rows are not a complete real-estate project census or verified V48 map locations."
+}

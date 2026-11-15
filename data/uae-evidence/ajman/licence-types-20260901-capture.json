@@ -1,0 +1,14 @@
+{
+  "sourceId": "ajman-mpd-20260901-licence-types",
+  "datasetUrl": "https://data.ajman.ae/explore/dataset/building-licenses-by-license-type/",
+  "recordsUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/building-licenses-by-license-type/exports/json",
+  "retrievedAt": "2026-11-14T21:40:09.302Z",
+  "sourceResponseSha256": "4e29f729a4ad9e797c354054acd6e9105a063115379bc9828e6356f2a46434a2",
+  "independentReadbackSha256": "4e29f729a4ad9e797c354054acd6e9105a063115379bc9828e6356f2a46434a2",
+  "totalCount": 572,
+  "independentReadbackCount": 572,
+  "rawBytes": 147784,
+  "compressedSha256": "bd99d94cbab55fe7636bd2e5650915dc03a43b94bf20be6604e26fdd9ffea13f",
+  "compressedBytes": 4105,
+  "metadataSha256": "4b25a8b84a4f424b5c719602ef93325d9e3f67cf5f906874b461b901f50d037d"
+}

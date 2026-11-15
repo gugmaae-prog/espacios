@@ -1,0 +1,12 @@
+{
+  "capture": {
+    "url": "https://www.merathdevelopment.com/properties",
+    "retrievedAt": "2026-10-11T23:07:11.555Z",
+    "sha256": "f57aa8168c381461d825ef02d4b272f9aeab931a3149cf9f9ec9bc320542bbfd",
+    "bytes": 225411,
+    "status": 200
+  },
+  "rawCaptureRedistributed": false,
+  "authorityCaptureManifest": "data/historical-intelligence/dld-authority-pass41-20261012.json",
+  "legalEntityEquivalenceInferred": false
+}

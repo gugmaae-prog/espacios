@@ -1,0 +1,1017 @@
+{
+  "schemaVersion": 1,
+  "passId": "aldar-historical-launch-capture-20261014",
+  "baselineVersion": "20261014-enrichment-v47",
+  "baselineSHA256": "8be3cc4975d2c23dae8d2d5a370cb4ea1bb317061de12be72fc77ac072a86228",
+  "planSHA256": "50eddf193fbb4d7b2c235507b2c83551a3ba56aa8e1bffdd834546d578118e74",
+  "httpRequests": 6,
+  "sources": [
+    {
+      "id": "aldar-launch-454",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+      "publisher": "Aldar",
+      "sourceClass": "primary_developer_dated_launch_release",
+      "reportedPublishedAt": "2022-08-24",
+      "reportedPublicationPrecision": "day",
+      "reviewAgainstIds": [
+        "adrec:454"
+      ],
+      "expectedNeedles": [
+        "Yas Park Gate"
+      ],
+      "identityNeedles": [
+        "Yas Park Gate",
+        "Aldar",
+        "Yas Island"
+      ],
+      "expectedUnits": 508,
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Normalized factual/provenance fields only; no raw page or document redistribution rights inferred.",
+      "recordId": null,
+      "identityVerified": false,
+      "authorityIdentity": {
+        "recordId": "adrec:454",
+        "catalogueName": "NOYA 4 - YAS PARK GATE",
+        "type": "project",
+        "emirate": "Abu Dhabi",
+        "projectNumber": "2022/395105",
+        "nativeName": "NOYA 4 - YAS PARK GATE",
+        "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+        "authorityArea": "Yas Island",
+        "authorityUnitCount": 508,
+        "identitySourceIds": [
+          "v16-src-adrec-project-listing"
+        ]
+      },
+      "claims": [
+        {
+          "id": "launch",
+          "kind": "lifecycle",
+          "milestone": "launch",
+          "period": "2022-08-24",
+          "precision": "day",
+          "pattern": "announced\\s+the\\s+launch\\s+of\\s+Yas\\s+Park\\s+Gate",
+          "eventStatus": "reported"
+        },
+        {
+          "id": "townhouses-2-3br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 1740000,
+          "bedrooms": [
+            2,
+            3
+          ],
+          "segment": "townhouses; combined 2-3-bedroom starting-price band",
+          "pattern": "two-?\\s*and\\s*three-bedroom\\s+townhouses\\s+starting\\s+at\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "villas-4br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 3200000,
+          "bedrooms": [
+            4
+          ],
+          "segment": "four-bedroom villas",
+          "pattern": "four-bedroom\\s+villas\\s+starting\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "construction-target",
+          "kind": "lifecycle",
+          "milestone": "target_construction_start",
+          "period": "2023-Q1",
+          "precision": "quarter",
+          "pattern": "Construction\\s+of\\s+Yas\\s+Park\\s+Gate\\s+is\\s+due\\s+to\\s+begin\\s+in\\s+Q1\\s+2023",
+          "eventStatus": "planned"
+        },
+        {
+          "id": "handover-target",
+          "kind": "lifecycle",
+          "milestone": "target_handover",
+          "period": "2026-Q1",
+          "precision": "quarter",
+          "pattern": "handovers\\s+expected\\s+to\\s+commence\\s+in\\s+Q1\\s+2026",
+          "eventStatus": "planned"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-yas-park-gate",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c42296c95e222bb1ab5d8e5650b6cf325a9f72a510d1b513f78a37f8573ce978",
+      "retrievedAt": "2026-10-14T12:39:00Z",
+      "attemptedAt": "2026-10-14T12:38:56Z",
+      "firstAvailableAt": "2026-10-14T12:39:00Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T12:38:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Yas Park Gate": true
+      },
+      "responseBytes": 233872,
+      "lastModified": null,
+      "etag": "\"iknxfgez5o50ao\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2022-08-24",
+        "identityChecks": {
+          "Yas Park Gate": true,
+          "Aldar": true,
+          "Yas Island": false
+        },
+        "authorityUnitCountMatched": false,
+        "expectedUnits": 508,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2022-08-24",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "townhouses-2-3br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 1740000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 3200000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2023-Q1",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2026-Q1",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": false
+      },
+      "publishedAt": "2022-08-24",
+      "historicalForecastAvailability": null,
+      "acceptedFacts": []
+    },
+    {
+      "id": "aldar-launch-456",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+      "publisher": "Aldar",
+      "sourceClass": "primary_developer_dated_launch_release",
+      "reportedPublishedAt": "2022-11-21",
+      "reportedPublicationPrecision": "day",
+      "reviewAgainstIds": [
+        "adrec:456"
+      ],
+      "expectedNeedles": [
+        "Yas Park Views"
+      ],
+      "identityNeedles": [
+        "Yas Park Views",
+        "Aldar",
+        "Yas Island"
+      ],
+      "expectedUnits": 341,
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Normalized factual/provenance fields only; no raw page or document redistribution rights inferred.",
+      "recordId": null,
+      "identityVerified": false,
+      "authorityIdentity": {
+        "recordId": "adrec:456",
+        "catalogueName": "NOYA 5 - YAS PARK VIEWS ",
+        "type": "project",
+        "emirate": "Abu Dhabi",
+        "projectNumber": "2022/423328",
+        "nativeName": "NOYA 5 - YAS PARK VIEWS ",
+        "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+        "authorityArea": "Yas Island",
+        "authorityUnitCount": 341,
+        "identitySourceIds": [
+          "v16-src-adrec-project-listing"
+        ]
+      },
+      "claims": [
+        {
+          "id": "launch",
+          "kind": "lifecycle",
+          "milestone": "launch",
+          "period": "2022-11-21",
+          "precision": "day",
+          "pattern": "simultaneously\\s+launched\\s+the\\s+adjacent\\s+Yas\\s+Park\\s+Views",
+          "eventStatus": "reported"
+        },
+        {
+          "id": "villas-3br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 2840000,
+          "bedrooms": [
+            3
+          ],
+          "segment": "three-bedroom standalone villas",
+          "pattern": "three-bedroom\\s+villas\\s+starting\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "villas-4br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 3430000,
+          "bedrooms": [
+            4
+          ],
+          "segment": "four-bedroom standalone villas",
+          "pattern": "four-bedroom\\s+villas\\s+starting\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "villas-5br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 4100000,
+          "bedrooms": [
+            5
+          ],
+          "segment": "five-bedroom standalone villas",
+          "pattern": "five-bedroom\\s+layouts\\s+starting\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "construction-target",
+          "kind": "lifecycle",
+          "milestone": "target_construction_start",
+          "period": "2023-Q2",
+          "precision": "quarter",
+          "pattern": "Construction\\s+of\\s+Yas\\s+Park\\s+Views\\s+is\\s+due\\s+to\\s+begin\\s+in\\s+Q2\\s+2023",
+          "eventStatus": "planned"
+        },
+        {
+          "id": "handover-target",
+          "kind": "lifecycle",
+          "milestone": "target_handover",
+          "period": "2026-Q2",
+          "precision": "quarter",
+          "pattern": "handovers\\s+expected\\s+to\\s+commence\\s+in\\s+Q2\\s+2026",
+          "eventStatus": "planned"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-sells-out-yas-park-gate-and-launches-exclusive-standalone-villas-at-yas-park-views",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "401c2c03c919c5b65c9469e9efacf3b5636de4a128b5da0cb9b95c920cb1f93e",
+      "retrievedAt": "2026-10-14T12:39:03Z",
+      "attemptedAt": "2026-10-14T12:39:00Z",
+      "firstAvailableAt": "2026-10-14T12:39:03Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T12:38:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Yas Park Views": true
+      },
+      "responseBytes": 234778,
+      "lastModified": null,
+      "etag": "\"y3w7c1qj2e50ze\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2022-11-21",
+        "identityChecks": {
+          "Yas Park Views": true,
+          "Aldar": true,
+          "Yas Island": false
+        },
+        "authorityUnitCountMatched": false,
+        "expectedUnits": 341,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2022-11-21",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "villas-3br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 2840000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 3430000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-5br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 4100000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2023-Q2",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2026-Q2",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": false
+      },
+      "publishedAt": "2022-11-21",
+      "historicalForecastAvailability": null,
+      "acceptedFacts": []
+    },
+    {
+      "id": "aldar-launch-543",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+      "publisher": "Aldar",
+      "sourceClass": "primary_developer_dated_launch_release",
+      "reportedPublishedAt": "2024-03-13",
+      "reportedPublicationPrecision": "day",
+      "reviewAgainstIds": [
+        "adrec:543"
+      ],
+      "expectedNeedles": [
+        "Nouran Living"
+      ],
+      "identityNeedles": [
+        "Nouran Living",
+        "Aldar",
+        "Saadiyat Island"
+      ],
+      "expectedUnits": 372,
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Normalized factual/provenance fields only; no raw page or document redistribution rights inferred.",
+      "recordId": null,
+      "identityVerified": false,
+      "authorityIdentity": {
+        "recordId": "adrec:543",
+        "catalogueName": "Nouran Living ",
+        "type": "project",
+        "emirate": "Abu Dhabi",
+        "projectNumber": "20240000198137",
+        "nativeName": "Nouran Living ",
+        "authorityDeveloper": "ALDAR DEVELOPMENT  - L.L.C - O.P.C",
+        "authorityArea": "Al Saadiyat Island",
+        "authorityUnitCount": 372,
+        "identitySourceIds": [
+          "v16-src-adrec-project-listing"
+        ]
+      },
+      "claims": [
+        {
+          "id": "launch",
+          "kind": "lifecycle",
+          "milestone": "launch",
+          "period": "2024-03-13",
+          "precision": "day",
+          "pattern": "announced\\s+today\\s+the\\s+launch\\s+of\\s+Nouran\\s+Living",
+          "eventStatus": "reported"
+        },
+        {
+          "id": "apartments-starting",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 750000,
+          "bedrooms": null,
+          "segment": "studios and 1-3-bedroom apartments; starting band not assigned to an individual unit",
+          "pattern": "prices\\s+starting\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "construction-target",
+          "kind": "lifecycle",
+          "milestone": "target_construction_start",
+          "period": "2024-Q4",
+          "precision": "quarter",
+          "pattern": "construction\\s+of\\s+Nouran\\s+Living\\s+is\\s+scheduled\\s+to\\s+commence\\s+in\\s+Q4\\s+2024",
+          "eventStatus": "planned"
+        },
+        {
+          "id": "handover-target",
+          "kind": "lifecycle",
+          "milestone": "target_handover",
+          "period": "2027-Q4",
+          "precision": "quarter",
+          "pattern": "handovers\\s+expected\\s+in\\s+Q4\\s+2027",
+          "eventStatus": "planned"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-nouran-living-launch",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "29d30816e1ad80d47f1375099ffb5b18e65ebb128f9c8efdfb1574728a23baff",
+      "retrievedAt": "2026-10-14T12:39:07Z",
+      "attemptedAt": "2026-10-14T12:39:03Z",
+      "firstAvailableAt": "2026-10-14T12:39:07Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T12:38:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Nouran Living": true
+      },
+      "responseBytes": 234143,
+      "lastModified": null,
+      "etag": "\"owbw4e2rod50hz\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2024-03-13",
+        "identityChecks": {
+          "Nouran Living": true,
+          "Aldar": true,
+          "Saadiyat Island": true
+        },
+        "authorityUnitCountMatched": false,
+        "expectedUnits": 372,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2024-03-13",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "apartments-starting",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 750000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2024-Q4",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2027-Q4",
+            "precision": "quarter",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": false
+      },
+      "publishedAt": "2024-03-13",
+      "historicalForecastAvailability": null,
+      "acceptedFacts": []
+    },
+    {
+      "id": "aldar-launch-64",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+      "publisher": "Aldar",
+      "sourceClass": "primary_developer_dated_launch_release",
+      "reportedPublishedAt": "2021-05-25",
+      "reportedPublicationPrecision": "day",
+      "reviewAgainstIds": [
+        "adrec:64"
+      ],
+      "expectedNeedles": [
+        "Noya Luma"
+      ],
+      "identityNeedles": [
+        "Noya Luma",
+        "Aldar",
+        "Yas Island"
+      ],
+      "expectedUnits": 189,
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Normalized factual/provenance fields only; no raw page or document redistribution rights inferred.",
+      "recordId": null,
+      "identityVerified": false,
+      "authorityIdentity": {
+        "recordId": "adrec:64",
+        "catalogueName": "Noya Luma",
+        "type": "project",
+        "emirate": "Abu Dhabi",
+        "projectNumber": "2021/245801",
+        "nativeName": "Noya Luma",
+        "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+        "authorityArea": "Yas Island",
+        "authorityUnitCount": 189,
+        "identitySourceIds": [
+          "v16-src-adrec-project-listing"
+        ]
+      },
+      "claims": [
+        {
+          "id": "launch",
+          "kind": "lifecycle",
+          "milestone": "launch",
+          "period": "2021-05-25",
+          "precision": "day",
+          "pattern": "announced\\s+the\\s+launch\\s+of\\s+189\\s+standalone\\s+villas\\s+at\\s+Noya\\s+Luma",
+          "eventStatus": "reported"
+        },
+        {
+          "id": "villas-3br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 2410000,
+          "bedrooms": [
+            3
+          ],
+          "segment": "three-bedroom standalone villas",
+          "pattern": "three-bedroom\\s+villas\\s+start\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "villas-4br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 2770000,
+          "bedrooms": [
+            4
+          ],
+          "segment": "four-bedroom standalone villas; first value in respectively ordered pair",
+          "pattern": "four-\\s*and\\s*five-bedroom\\s+villas\\s+start\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "villas-5br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 3270000,
+          "bedrooms": [
+            5
+          ],
+          "segment": "five-bedroom standalone villas; second value in respectively ordered pair",
+          "pattern": "four-\\s*and\\s*five-bedroom\\s+villas\\s+start\\s+from\\s+AED\\s*2\\.77\\s+million\\s+and\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "construction-target",
+          "kind": "lifecycle",
+          "milestone": "target_construction_start",
+          "period": "2021-11",
+          "precision": "month",
+          "pattern": "Construction\\s+of\\s+Noya\\s+Luma.{0,70}?November\\s+2021",
+          "eventStatus": "planned"
+        },
+        {
+          "id": "handover-target",
+          "kind": "lifecycle",
+          "milestone": "target_handover",
+          "period": "2024-02",
+          "precision": "month",
+          "pattern": "handovers.{0,55}?February\\s+2024",
+          "eventStatus": "planned"
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-noya-luma-on-yas-island",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1344387616e94be66ced9ac990a88f30723ca1a706753cb90bdb7a836885b319",
+      "retrievedAt": "2026-10-14T12:39:10Z",
+      "attemptedAt": "2026-10-14T12:39:07Z",
+      "firstAvailableAt": "2026-10-14T12:39:10Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T12:38:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Noya Luma": true
+      },
+      "responseBytes": 232936,
+      "lastModified": null,
+      "etag": "\"jjqqnxxrk04zkg\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2021-05-25",
+        "identityChecks": {
+          "Noya Luma": true,
+          "Aldar": true,
+          "Yas Island": true
+        },
+        "authorityUnitCountMatched": false,
+        "expectedUnits": 189,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2021-05-25",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "villas-3br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 2410000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 2770000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-5br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 3270000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "construction-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2021-11",
+            "precision": "month",
+            "eventStatus": "planned"
+          },
+          {
+            "claimId": "handover-target",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2024-02",
+            "precision": "month",
+            "eventStatus": "planned"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": false
+      },
+      "publishedAt": "2021-05-25",
+      "historicalForecastAvailability": null,
+      "acceptedFacts": []
+    },
+    {
+      "id": "aldar-launch-65",
+      "url": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+      "publisher": "Aldar",
+      "sourceClass": "primary_developer_dated_launch_release",
+      "reportedPublishedAt": "2021-06-30",
+      "reportedPublicationPrecision": "day",
+      "reviewAgainstIds": [
+        "adrec:65"
+      ],
+      "expectedNeedles": [
+        "Saadiyat Reserve The Dunes"
+      ],
+      "identityNeedles": [
+        "Saadiyat Reserve The Dunes",
+        "Aldar",
+        "Saadiyat Island"
+      ],
+      "expectedUnits": 83,
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "licence": "Normalized factual/provenance fields only; no raw page or document redistribution rights inferred.",
+      "recordId": null,
+      "identityVerified": false,
+      "authorityIdentity": {
+        "recordId": "adrec:65",
+        "catalogueName": "Saadiyat Reserve - The Dunes",
+        "type": "project",
+        "emirate": "Abu Dhabi",
+        "projectNumber": "2021/296874",
+        "nativeName": "Saadiyat Reserve - The Dunes",
+        "authorityDeveloper": "ALDAR PROPERTIES - P J S C",
+        "authorityArea": "Al Saadiyat Island",
+        "authorityUnitCount": 83,
+        "identitySourceIds": [
+          "v16-src-adrec-project-listing"
+        ]
+      },
+      "claims": [
+        {
+          "id": "launch",
+          "kind": "lifecycle",
+          "milestone": "launch",
+          "period": "2021-06-30",
+          "precision": "day",
+          "pattern": "announced\\s+today\\s+the\\s+launch\\s+of\\s+the\\s+last\\s+phase\\s+of\\s+Saadiyat\\s+Reserve",
+          "eventStatus": "reported"
+        },
+        {
+          "id": "villas-4br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 6490000,
+          "bedrooms": [
+            4
+          ],
+          "segment": "four-bedroom villas; not earlier villa plots",
+          "pattern": "four-bedroom\\s+villas\\s*start\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        },
+        {
+          "id": "villas-5br",
+          "kind": "financial",
+          "metric": "price",
+          "amountAED": 7990000,
+          "bedrooms": [
+            5
+          ],
+          "segment": "five-bedroom villas; not earlier villa plots",
+          "pattern": "five-bedroom\\s+villas\\s*start\\s+from\\s+AED\\s*(?P<amount>[\\d,]+(?:\\.\\d+)?)\\s*(?P<scale>million)?",
+          "expectedCurrency": "AED",
+          "evidenceClass": "historical_developer_advertised_price"
+        }
+      ],
+      "withheldClaims": [
+        {
+          "milestone": "target_completion",
+          "status": "under_cross_language_review",
+          "englishTarget": "2024-Q1",
+          "otherLanguageCandidateTarget": "2023-Q1",
+          "reason": "Parsed linked bilingual release contains differing target years; screenshot retrieval failed. Do not promote a completion target or actual completion from this source.",
+          "canonicalCoverageCredit": 0
+        }
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.aldar.com/en/news-and-media/aldar-launches-saadiyat-reserve-the-dunes",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "3e66dca3562dd8446820d9171321df5a5fe3863216ce3c6da1300c93ca982a25",
+      "retrievedAt": "2026-10-14T12:39:13Z",
+      "attemptedAt": "2026-10-14T12:39:10Z",
+      "firstAvailableAt": "2026-10-14T12:39:13Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.aldar.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "073ede447703fd4500376451b99efe9b3889a1f4d52429d2f869e32d36eb3b56",
+          "retrievedAt": "2026-10-14T12:38:57Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Saadiyat Reserve The Dunes": true
+      },
+      "responseBytes": 233504,
+      "lastModified": null,
+      "etag": "\"13p1xzamvwl5004\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "publicationDateMatched": true,
+        "reportedPublishedAt": "2021-06-30",
+        "identityChecks": {
+          "Saadiyat Reserve The Dunes": true,
+          "Aldar": true,
+          "Saadiyat Island": false
+        },
+        "authorityUnitCountMatched": false,
+        "expectedUnits": 83,
+        "claimChecks": [
+          {
+            "claimId": "launch",
+            "kind": "lifecycle",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "period": "2021-06-30",
+            "precision": "day",
+            "eventStatus": "reported"
+          },
+          {
+            "claimId": "villas-4br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 6490000,
+            "unit": "AED"
+          },
+          {
+            "claimId": "villas-5br",
+            "kind": "financial",
+            "matchCount": 0,
+            "matched": false,
+            "matchSHA256": [],
+            "observedAmountsAED": [],
+            "expectedAmountAED": 7990000,
+            "unit": "AED"
+          }
+        ],
+        "rawTextRetained": false,
+        "methodology": "Exact pre-reviewed claim patterns; numbers and match digests only. No source text or snippets retained.",
+        "identityContentConfirmed": false
+      },
+      "publishedAt": "2021-06-30",
+      "historicalForecastAvailability": null,
+      "acceptedFacts": []
+    }
+  ],
+  "acceptedFacts": [],
+  "rawRetained": false,
+  "numericForecasts": []
+}

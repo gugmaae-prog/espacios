@@ -6,7 +6,28 @@ const APPROVED_PUBLISHER_URLS=new Set([
  'https://espacios-history-publisher-20261007-v18.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261008-v22.thekeifferjapeth.workers.dev',
  'https://espacios-history-publisher-20261008-v24.thekeifferjapeth.workers.dev',
- 'https://espacios-history-publisher-20261008-v25.thekeifferjapeth.workers.dev'
+ 'https://espacios-history-publisher-20261008-v25.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v26.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v27.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v28.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v29.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v30.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v31.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v32.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v33.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v34.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v35.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v36.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v37.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261008-v38.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261009-v39.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261009-v40.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261012-v41.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261012-v42.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261012-v43.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261012-v44.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261013-v45.thekeifferjapeth.workers.dev',
+ 'https://espacios-history-publisher-20261013-v46.thekeifferjapeth.workers.dev'
 ]);
 export const isApprovedPublisherURL=url=>APPROVED_PUBLISHER_URLS.has(url);
 

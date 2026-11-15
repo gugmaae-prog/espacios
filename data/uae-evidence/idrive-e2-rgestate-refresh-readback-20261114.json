@@ -1,0 +1,22 @@
+{
+  "attestationId": "rgestate-20261114-idrive-e2-readback",
+  "planId": "rgestate-20261114-idrive-e2-replica",
+  "planSha256": "aeee638df20491c7f7341ce6818e91578b8e24e574435918720d151de193e4ba",
+  "privateJournalSha256": "c0e4c16a130f255c2ba2a877ba2a52bafe5ebff50e8751793385660cdf082a83",
+  "previewVersion": "2406f02c-ea4c-47fb-bd3c-6dc799de8326",
+  "bridgeSha256": "bcc305353848826072c9cabcca6d02482654f0369a39fdd3cd98f99160442d6a",
+  "verifiedAt": "2026-11-14T12:21:06.380Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "objectCount": 3,
+  "totalBytes": 138020,
+  "sourceIds": [
+    "rgestate-full-index-20261114",
+    "rgestate-commercial-category-20261114",
+    "rgestate-commercial-title-candidates-20261114"
+  ],
+  "verification": "Each allowlisted gzip object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

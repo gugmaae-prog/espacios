@@ -1,0 +1,57 @@
+import fs from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {verifyAttestation as verifyPublishedReplica} from './idrive-published-upload/transfer.mjs';
+import {verifyAttestation as verifyAjmanPermissionReplica} from './idrive-ajman-permissions-upload/transfer.mjs';
+import {verifyAttestation as verifyCurrentReplica} from './idrive-current-evidence-upload/transfer.mjs';
+import {verifyAttestation as verifyRgestateRefresh} from './idrive-rgestate-refresh-upload/transfer.mjs';
+import {verifyAttestation as verifySharjahSupplement} from './idrive-sharjah-supplement-upload/transfer.mjs';
+import {verifyAttestation as verifyFujairahMonthly} from './idrive-fujairah-monthly-upload/transfer.mjs';
+import {verifyAttestation as verifyFcscCensus} from './idrive-federal-census-upload/transfer.mjs';
+import {verifyAttestation as verifyAjmanPlanning} from './idrive-ajman-planning-upload/transfer.mjs';
+import {verifyAttestation as verifyAjmanLandMortgage} from './idrive-ajman-land-mortgage-upload/transfer.mjs';
+import {verifyAttestation as verifyRakMunicipalCommercial} from './idrive-rak-municipal-commercial-upload/transfer.mjs';
+import {loadDubaiIdriveReplica} from './idrive-dubai-upload/verify-attestation.mjs';
+
+const ROOT=new URL('../',import.meta.url);
+const read=async name=>JSON.parse(await fs.readFile(new URL(name,ROOT),'utf8'));
+const DM_IDS=['dm-building-summary-information-20261026','dm-municipal-projects-and-building-links-20261026'];
+
+export async function loadUaeIdriveStorage(){
+ const [coverage,published,ajmanPermissions,current,dm,rgestateRefresh,sharjahSupplement,fujairahMonthly,fcscCensus,ajmanPlanning,ajmanLandMortgage,rakMunicipalCommercial]=await Promise.all([
+  read('data/uae-evidence/coverage-validation.json'),verifyPublishedReplica(),verifyAjmanPermissionReplica(),verifyCurrentReplica(),loadDubaiIdriveReplica(),verifyRgestateRefresh(),verifySharjahSupplement(),verifyFujairahMonthly(),verifyFcscCensus(),verifyAjmanPlanning(),verifyAjmanLandMortgage(),verifyRakMunicipalCommercial()
+ ]);
+ const publishedIds=new Set(published.sourceIds),ajmanPermissionIds=new Set(ajmanPermissions.sourceIds),ajmanPlanningIds=new Set(ajmanPlanning.sourceIds),ajmanLandMortgageIds=new Set(ajmanLandMortgage.sourceIds),rakMunicipalCommercialIds=new Set(rakMunicipalCommercial.sourceIds),currentIds=new Set(current.sourceIds),sharjahSupplementIds=new Set(sharjahSupplement.sourceIds),fujairahMonthlyIds=new Set(fujairahMonthly.sourceIds),dmIds=new Set(DM_IDS);
+ const sources=coverage.emirates.flatMap(emirate=>emirate.publishedSources.map(source=>{
+  const replica=rakMunicipalCommercialIds.has(source.id)?rakMunicipalCommercial:ajmanLandMortgageIds.has(source.id)?ajmanLandMortgage:ajmanPlanningIds.has(source.id)?ajmanPlanning:ajmanPermissionIds.has(source.id)?ajmanPermissions:publishedIds.has(source.id)?published:sharjahSupplementIds.has(source.id)?sharjahSupplement:fujairahMonthlyIds.has(source.id)?fujairahMonthly:currentIds.has(source.id)?current:dmIds.has(source.id)?{attestationId:dm.idriveReplicaAttestationId,verifiedAt:dm.idriveReplicaVerifiedAt}:null;
+  return {id:source.id,emirate:emirate.name,sourceRows:source.sourceRows,sourceVintage:source.sourceVintage,route:source.route,replica:replica?{attestationId:replica.attestationId,verifiedAt:replica.verifiedAt,role:'verified_private_replica_not_runtime_primary'}:null};
+ }));
+ for(const source of coverage.federalSources||[])sources.push({id:source.id,emirate:null,geographicScope:'all_seven_emirates',sourceRows:source.sourceRows,sourceVintage:source.sourceVintage,route:source.route,replica:fcscCensus.sourceIds.includes(source.id)?{attestationId:fcscCensus.attestationId,verifiedAt:fcscCensus.verifiedAt,role:'verified_private_replica_not_runtime_primary'}:null});
+ const ids=new Set(sources.map(source=>source.id));
+ if(sources.length!==46||ids.size!==46||coverage.version!=='20261115-uae-evidence-coverage-v52'||published.sourceInventoryVersion!=='20261114-uae-evidence-coverage-v42'||ajmanPermissions.sourceInventoryVersion!=='20261114-uae-evidence-coverage-v43'||ajmanPlanning.sourceInventoryVersion!=='20261115-uae-evidence-coverage-v50'||published.sourceIds.length!==34||ajmanPermissions.sourceIds.length!==2||ajmanPlanning.sourceIds.length!==2||dm.idriveReplicaObjectCount!==155||current.objectCount!==6||published.objectCount!==37||ajmanPermissions.objectCount!==2||ajmanPlanning.objectCount!==2||ajmanLandMortgage.objectCount!==1||rakMunicipalCommercial.objectCount!==1||rgestateRefresh.objectCount!==3||sharjahSupplement.objectCount!==1||fujairahMonthly.objectCount!==1||fcscCensus.objectCount!==1)throw Error('Published evidence storage inventory changed');
+ if(JSON.stringify(rgestateRefresh.sourceIds)!==JSON.stringify(['rgestate-full-index-20261114','rgestate-commercial-category-20261114','rgestate-commercial-title-candidates-20261114'])||coverage.publisherListingInventory.sourceId!==rgestateRefresh.sourceIds[0])throw Error('RGEstate replica source identity mismatch');
+ if(JSON.stringify(sharjahSupplement.sourceIds)!==JSON.stringify(['sharjah-rerd-reported-monthly-market-20261114-supplement']))throw Error('Sharjah supplement source identity mismatch');
+ if(JSON.stringify(fujairahMonthly.sourceIds)!==JSON.stringify(['fscfuj-construction-chapter-monthly-permits-2023-2025-20261114']))throw Error('Fujairah monthly source identity mismatch');
+ if(JSON.stringify(fcscCensus.sourceIds)!==JSON.stringify(['fcsc-emirates-in-figures-2009-historical-building-housing'])||coverage.federalSources?.length!==1)throw Error('Federal census source identity mismatch');
+ if(JSON.stringify(ajmanPlanning.sourceIds)!==JSON.stringify(['ajman-mpd-20240709-site-plans-by-use','ajman-mpd-20260901-licence-types']))throw Error('Ajman planning source identity mismatch');
+ if(JSON.stringify(ajmanLandMortgage.sourceIds)!==JSON.stringify(['ajman-dlrr-20260821-land-mortgage']))throw Error('Ajman mortgage source identity mismatch');
+ if(JSON.stringify(rakMunicipalCommercial.sourceIds)!==JSON.stringify(['rak-municipality-2025-commercial-sale-counts-20261115']))throw Error('RAK municipal commercial source identity mismatch');
+ if(published.sourceIds.some(id=>!ids.has(id))||ajmanPermissions.sourceIds.some(id=>!ids.has(id)||publishedIds.has(id)||currentIds.has(id)||dmIds.has(id))||ajmanPlanning.sourceIds.some(id=>!ids.has(id)||publishedIds.has(id)||ajmanPermissionIds.has(id)||currentIds.has(id)||dmIds.has(id))||sharjahSupplement.sourceIds.some(id=>!ids.has(id)||publishedIds.has(id)||currentIds.has(id))||fujairahMonthly.sourceIds.some(id=>!ids.has(id)||publishedIds.has(id)||currentIds.has(id)||sharjahSupplementIds.has(id))||ajmanLandMortgage.sourceIds.some(id=>!ids.has(id)||publishedIds.has(id)||ajmanPermissionIds.has(id)||ajmanPlanningIds.has(id)||currentIds.has(id)||dmIds.has(id))||rakMunicipalCommercial.sourceIds.some(id=>!ids.has(id)||publishedIds.has(id)||ajmanPermissionIds.has(id)||ajmanPlanningIds.has(id)||ajmanLandMortgageIds.has(id)||currentIds.has(id)||dmIds.has(id))||DM_IDS.some(id=>!ids.has(id))||current.sourceIds.filter(id=>ids.has(id)).length!==1)throw Error('Replica source identity mismatch');
+ const covered=sources.filter(source=>source.replica).length;
+ const byEmirate=coverage.emirates.map(emirate=>({name:emirate.name,publishedSourceSnapshots:emirate.publishedSources.length,verifiedReplicaSnapshots:sources.filter(source=>source.emirate===emirate.name&&source.replica).length}));
+ return {
+  inventoryVersion:coverage.version,
+  evidenceScope:'dated_published_evidence_projections_not_complete_uae_source_universe',
+  publishedSourceSnapshots:sources.length,
+  verifiedReplicaSnapshots:covered,
+  unreplicatedSourceIds:sources.filter(source=>!source.replica).map(source=>source.id),
+  byEmirate,
+  sources,
+  replicas:{published:{attestationId:published.attestationId,verifiedAt:published.verifiedAt,objectCount:published.objectCount,totalBytes:published.totalBytes},ajmanPermissions:{attestationId:ajmanPermissions.attestationId,verifiedAt:ajmanPermissions.verifiedAt,objectCount:ajmanPermissions.objectCount,totalBytes:ajmanPermissions.totalBytes},ajmanPlanning:{attestationId:ajmanPlanning.attestationId,verifiedAt:ajmanPlanning.verifiedAt,objectCount:ajmanPlanning.objectCount,totalBytes:ajmanPlanning.totalBytes},ajmanLandMortgage:{attestationId:ajmanLandMortgage.attestationId,verifiedAt:ajmanLandMortgage.verifiedAt,objectCount:ajmanLandMortgage.objectCount,totalBytes:ajmanLandMortgage.totalBytes},rakMunicipalCommercial:{attestationId:rakMunicipalCommercial.attestationId,verifiedAt:rakMunicipalCommercial.verifiedAt,objectCount:rakMunicipalCommercial.objectCount,totalBytes:rakMunicipalCommercial.totalBytes},current:{attestationId:current.attestationId,verifiedAt:current.verifiedAt,objectCount:current.objectCount,totalBytes:current.totalBytes},dubaiMunicipality:{attestationId:dm.idriveReplicaAttestationId,verifiedAt:dm.idriveReplicaVerifiedAt,objectCount:dm.idriveReplicaObjectCount,totalBytes:dm.idriveReplicaBytes},rgestateRefresh:{attestationId:rgestateRefresh.attestationId,verifiedAt:rgestateRefresh.verifiedAt,objectCount:rgestateRefresh.objectCount,totalBytes:rgestateRefresh.totalBytes},sharjahSupplement:{attestationId:sharjahSupplement.attestationId,verifiedAt:sharjahSupplement.verifiedAt,objectCount:sharjahSupplement.objectCount,totalBytes:sharjahSupplement.totalBytes},fujairahMonthly:{attestationId:fujairahMonthly.attestationId,verifiedAt:fujairahMonthly.verifiedAt,objectCount:fujairahMonthly.objectCount,totalBytes:fujairahMonthly.totalBytes},fcscCensus:{attestationId:fcscCensus.attestationId,verifiedAt:fcscCensus.verifiedAt,objectCount:fcscCensus.objectCount,totalBytes:fcscCensus.totalBytes}},
+  publisherListingInventory:{sourceId:rgestateRefresh.sourceIds[0],snapshotRows:coverage.publisherListingInventory.snapshotRows,replicaAttestationId:rgestateRefresh.attestationId,verifiedAt:rgestateRefresh.verifiedAt,availability:'publisher_listed_at_capture_unverified_now'},
+  limits:'The replica attestations prove exact signed readbacks at their stated times, not current whole-store health. These are published projections and selected facts, not complete authority archives, a complete UAE project census, verified unit coordinates, current listing availability, or a complete sale/rent history. The accepted V48 archive has a separate IDrive primary and immutable fallback.'
+ };
+}
+
+if(process.argv[1]===fileURLToPath(import.meta.url)){
+ loadUaeIdriveStorage().then(value=>console.log(JSON.stringify({inventoryVersion:value.inventoryVersion,publishedSourceSnapshots:value.publishedSourceSnapshots,verifiedReplicaSnapshots:value.verifiedReplicaSnapshots,unreplicatedSourceIds:value.unreplicatedSourceIds,replicaObjects:Object.values(value.replicas).reduce((sum,item)=>sum+item.objectCount,0),replicaBytes:Object.values(value.replicas).reduce((sum,item)=>sum+item.totalBytes,0)}))).catch(error=>{console.error(error.message);process.exitCode=1;});
+}

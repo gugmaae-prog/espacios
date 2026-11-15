@@ -1,0 +1,87 @@
+{
+  "planId": "uae-current-evidence-idrive-e2-replica-20261114",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "host": "s3.us-west-2.idrivee2.com",
+  "signingRegion": "us-east-1",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "sourceScope": "Five versioned Dubai and RGEstate gzip snapshots plus one selected Sharjah numerical-facts gzip; no listing photos or article bodies",
+  "separateFromExistingCloudflareBackupRun": true,
+  "objects": [
+    {
+      "sourceId": "continental-dld-mashrooi-project-status-20261114",
+      "role": "source_csv",
+      "localPath": "data/uae-evidence/dubai/dld-project-status-20261114.csv.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/project-status/20261114/745d27e69c3ad83d70b34a421d0947d0476a363cfc7188a8ef5846f7e590fb61/dld-project-status-20261114.csv.gz",
+      "bytes": 162108,
+      "sha256": "745d27e69c3ad83d70b34a421d0947d0476a363cfc7188a8ef5846f7e590fb61",
+      "rawBytes": 580303,
+      "rawSha256": "e27ecc33ef7bb065b499a5395188c448dff4c2943d593a0157cdbca7ffbcee03",
+      "validationSha256": "21cbae13b542fdf224255d0172af37d07cb59cc83338dd41b11c7b5d48d9044b",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "continental-dld-mashrooi-project-status-20261114",
+      "role": "normalized_snapshot",
+      "localPath": "data/uae-evidence/dubai/dld-project-status-20261114.normalized.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/project-status/20261114/2e8fbc35475488baeeec0bf1ab8e9ff12de8a5442836e886af7884fd60df3912/dld-project-status-20261114.normalized.json.gz",
+      "bytes": 211721,
+      "sha256": "2e8fbc35475488baeeec0bf1ab8e9ff12de8a5442836e886af7884fd60df3912",
+      "rawBytes": 1969238,
+      "rawSha256": "1b684f784bbaff51255b086365b5a1c6d413aa533b4c736a37bbe145c3d60fc1",
+      "validationSha256": "21cbae13b542fdf224255d0172af37d07cb59cc83338dd41b11c7b5d48d9044b",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "rgestate-full-index-20261111",
+      "role": "publisher_listing_index",
+      "localPath": "data/uae-evidence/rgestate/full-index-20261111.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/rgestate/listings/20261111/ebe34213f1445a74472972592dfff7aae2b9318686ac0d996992dd82cd1d507e/full-index-20261111.json.gz",
+      "bytes": 89276,
+      "sha256": "ebe34213f1445a74472972592dfff7aae2b9318686ac0d996992dd82cd1d507e",
+      "rawBytes": 877516,
+      "rawSha256": "312a6a65ab6e3fda6582e5e93d8e0333c58092f1f3e2b9e25f95bdb15e8ee606",
+      "validationSha256": "a7caf4914026edf1ecc770389bc8224e8b5fb0bd237ea7495371b5e97a65e771",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "rgestate-commercial-category-20261111",
+      "role": "publisher_commercial_category",
+      "localPath": "data/uae-evidence/rgestate/commercial-listings-20261111.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/rgestate/listings/20261111/d39c4a461329508e5572125e281ae058be1cdddcbb77c0b06a3b0d7117916278/commercial-listings-20261111.json.gz",
+      "bytes": 41353,
+      "sha256": "d39c4a461329508e5572125e281ae058be1cdddcbb77c0b06a3b0d7117916278",
+      "rawBytes": 399154,
+      "rawSha256": "26d676904d98892cd606b27842b600c009fa43b6430c6c02f114bdd0d67e0a03",
+      "validationSha256": "a8b2f54198fab38e2f97713dc716d9c0537e646a411a5aee46ff79e406accfa1",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "rgestate-commercial-title-candidates-20261111",
+      "role": "publisher_commercial_title_candidates",
+      "localPath": "data/uae-evidence/rgestate/commercial-title-candidates-20261111.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/rgestate/listings/20261111/c4005d979616fb5b10cfc0d2121ce3fc47c9983c2c63d6c8ac417fae14bb6767/commercial-title-candidates-20261111.json.gz",
+      "bytes": 7769,
+      "sha256": "c4005d979616fb5b10cfc0d2121ce3fc47c9983c2c63d6c8ac417fae14bb6767",
+      "rawBytes": 70461,
+      "rawSha256": "1f2214c7573a105ca7ebd78ea62f4d766c77262cde4c62d2da3cf9cc3d9540ef",
+      "validationSha256": "8bfa9b1ce5aa0734465df5a3a42384776b814e7025668855ead1c3712972fea1",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "sharjah-rerd-reported-monthly-market-20261114",
+      "role": "selected_monthly_numerical_facts",
+      "localPath": "data/uae-evidence/sharjah/monthly-market-20261114.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/sharjah/monthly-market/20261114/2fdf074be7ffdff279e103520960d147036cc51765e03d511301ae9bc3f327f7/monthly-market-20261114.json.gz",
+      "bytes": 1103,
+      "sha256": "2fdf074be7ffdff279e103520960d147036cc51765e03d511301ae9bc3f327f7",
+      "rawBytes": 3891,
+      "rawSha256": "e4dda5afe4b7de18eb41f57c1038b25848de23329efd89e740347d3793834597",
+      "validationSha256": "2a02203e9ba5c4c963a9de7fe3076575cd3c7be314ab0bebf66ba0a84b8410bd",
+      "contentType": "application/gzip"
+    }
+  ],
+  "objectCount": 6,
+  "totalBytes": 513330
+}

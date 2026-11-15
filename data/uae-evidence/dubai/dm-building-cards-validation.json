@@ -1,0 +1,14 @@
+{
+  "sourceId": "dm-building-summary-information-20261026",
+  "sourceSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798",
+  "sourceBytes": 211412452,
+  "manifestSha256": "934b2a485e3fc21f71eb60f828afdc1e85f8cb2a048e6e0f0fc68d3d2fc8208c",
+  "sourceRows": 536946,
+  "uniqueBuildingIds": 536946,
+  "fieldCount": 38,
+  "shards": 96,
+  "partitionBytes": 29429299,
+  "exactFieldReconciliation": "all_source_rows_and_all_38_fields_match_partition_readback",
+  "verifiedOn": "2026-11-14",
+  "sourceAccess": "local download from official Data.Dubai dataset page; original CSV is not committed"
+}

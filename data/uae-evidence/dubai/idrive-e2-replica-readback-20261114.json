@@ -1,0 +1,20 @@
+{
+  "attestationId": "dubai-municipality-idrive-e2-readback-20261114",
+  "planId": "dubai-municipality-idrive-e2-replica-20261114",
+  "planSha256": "21da661d7d5030ec7d16f02bc7c95cb2da093513391aed26a715e5d4f394eb86",
+  "privateJournalSha256": "9b8454d7d0580bb5054a73ff280068e963df527aefc32f2380f3e2ff021cfa5b",
+  "previewVersion": "8f01ed53-309b-4249-9675-90397e0f728c",
+  "bridgeSha256": "bcc305353848826072c9cabcca6d02482654f0369a39fdd3cd98f99160442d6a",
+  "verifiedAt": "2026-11-14T08:49:13.807Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/dubai/20261026/",
+  "objectCount": 155,
+  "totalBytes": 103603010,
+  "publishedProjectionObjects": 145,
+  "privateOriginalPartObjects": 10,
+  "originalSourceCount": 3,
+  "verification": "Each allowlisted object passed a conditional upload and a separate signed IDrive E2 GET with exact byte length and SHA-256. The ten readback-matching private source parts reassemble into three gzip streams whose decompressed bytes match the pinned original CSV lengths and SHA-256 hashes.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

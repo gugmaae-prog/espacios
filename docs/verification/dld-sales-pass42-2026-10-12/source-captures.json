@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "id": "primary42-divine",
+      "url": "https://www.takmeeldevelopment.com/divine-elements-page",
+      "retrievedAt": "2026-10-11T22:47:15.070Z",
+      "captureSHA256": "785bd7eabfa630ab33148543c68ffcf8c972e256840e30ae25236ec6eec5cda6",
+      "captureBytes": 187419,
+      "captureMethod": "Public HTML retrieval"
+    },
+    {
+      "id": "primary42-soma",
+      "url": "https://www.origamidevelopment.ae/soma-residences",
+      "retrievedAt": "2026-10-11T22:47:11.141Z",
+      "captureSHA256": "850a330e0c48d22e4fb62ce9f066d4c600772097687f3d378e89290e4ece0b44",
+      "captureBytes": 122911,
+      "captureMethod": "Public HTML retrieval"
+    },
+    {
+      "id": "primary42-inaura",
+      "url": "https://www.arada.com/en/inaura-downtown/",
+      "retrievedAt": "2026-10-11T22:47:10.873Z",
+      "captureSHA256": "1787a99c6ee352e15ec541110acf193334cd9a8a3b7268e159417c8234226094",
+      "captureBytes": 273621,
+      "captureMethod": "Public HTML retrieval"
+    },
+    {
+      "id": "primary42-inaura-announcement",
+      "url": "https://www.arada.com/en/latest-news/arada-introduces-inaura-a-dynamic-fitness-led-hospitality-and-branded-residences-concept-with-a-debut-location-in-downtown-dubai/",
+      "retrievedAt": "2026-10-11T22:47:10.889Z",
+      "captureSHA256": "ae15e4ef9986dc1a8ce52bddc438140226f5e87fbdd3df1af14e7ceff69d463c",
+      "captureBytes": 218317,
+      "captureMethod": "Public HTML retrieval"
+    },
+    {
+      "id": "primary42-eira-developer",
+      "url": "https://www.neoterra.ae/",
+      "retrievedAt": "2026-10-11T22:47:25.817Z",
+      "captureSHA256": "fe152a9f0272dc15311f12021e0d7cb24249bfeeca73e19305df4ded19e6e338",
+      "captureBytes": 15339,
+      "captureMethod": "Visible public browser DOM"
+    },
+    {
+      "id": "primary42-eira-project",
+      "url": "https://eiradubai.com/",
+      "retrievedAt": "2026-10-11T22:47:49.508Z",
+      "captureSHA256": "0b822e956a12b62e26dabc44e28e0fd0840ba9b7c807859b187a0f2454cc9e35",
+      "captureBytes": 11210,
+      "captureMethod": "Visible public browser DOM"
+    }
+  ],
+  "rawCapturesRedistributed": false
+}

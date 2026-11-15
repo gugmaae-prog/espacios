@@ -1,0 +1,46 @@
+{
+  "planId": "ajman-new-building-permissions-idrive-e2-replica-20261114",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261114-ajman-permissions/",
+  "sourceInventoryVersion": "20261114-uae-evidence-coverage-v43",
+  "previousReplicaAttestationId": "uae-published-evidence-idrive-e2-readback-20261114",
+  "publishedSourceIds": [
+    "ajman-mpd-20240709-new-building-area",
+    "ajman-mpd-20260901-new-building-licences"
+  ],
+  "publishedSourceCount": 2,
+  "objectCount": 2,
+  "totalBytes": 5358,
+  "objects": [
+    {
+      "sourceId": "ajman-mpd-20260901-new-building-licences",
+      "publishedSourceId": "ajman-mpd-20260901-new-building-licences",
+      "role": "published_projection",
+      "localPath": "data/uae-evidence/ajman/new-building-licences-20260901.json.gz",
+      "validationPath": "data/uae-evidence/ajman/new-building-licences-20260901-validation.json",
+      "validationSha256": "8881dc2938e1d464b9d5f9ce4d44d46fa518aabcd2e18d20d29d1b196479b0cd",
+      "idriveKey": "espacios-map/uae-evidence/published/20261114-ajman-permissions/ajman/ajman-mpd-20260901-new-building-licences/c37cb925ff5383cd4c4a7506c0f9609a70ec2728200c42e879f6e3233b1b3628/new-building-licences-20260901.json.gz",
+      "bytes": 2696,
+      "sha256": "c37cb925ff5383cd4c4a7506c0f9609a70ec2728200c42e879f6e3233b1b3628",
+      "rawBytes": 149973,
+      "rawSha256": "0ffefea58b2d8f97b11a71525935a14c35bc257d7c881a9bf8d18100819e8339",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "ajman-mpd-20240709-new-building-area",
+      "publishedSourceId": "ajman-mpd-20240709-new-building-area",
+      "role": "published_projection",
+      "localPath": "data/uae-evidence/ajman/new-building-area-20240709.json.gz",
+      "validationPath": "data/uae-evidence/ajman/new-building-area-20240709-validation.json",
+      "validationSha256": "45b47a8e1b58843bd51cb9ad22f1df77d44af1a293fdabb9fdddee9853e53250",
+      "idriveKey": "espacios-map/uae-evidence/published/20261114-ajman-permissions/ajman/ajman-mpd-20240709-new-building-area/1fe0a5c0e535b6bc95778824f7d635499a7412952d4f190bc93b1c113f1773d5/new-building-area-20240709.json.gz",
+      "bytes": 2662,
+      "sha256": "1fe0a5c0e535b6bc95778824f7d635499a7412952d4f190bc93b1c113f1773d5",
+      "rawBytes": 103044,
+      "rawSha256": "b89f0c43709e7cb8c9bdf031ec85b7683b2b20d25930b6517d441d01794d4fd8",
+      "contentType": "application/gzip"
+    }
+  ]
+}

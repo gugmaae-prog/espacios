@@ -1,0 +1,9 @@
+# Dubai Municipality IDrive E2 replica
+
+The 14 November 2026 copy set contains 96 building-card shards, 49 municipal-project shards, and 10 parts that reconstruct the three pinned original CSVs. The 155 objects total 103,603,010 stored bytes under `espacios-map/uae-evidence/dubai/20261026/` in `espacios-store-a`. The private signed readback checked every object independently by byte length and SHA-256. The [plan](../../data/uae-evidence/dubai/idrive-e2-replica-plan-20261114.json) and [attestation](../../data/uae-evidence/dubai/idrive-e2-replica-readback-20261114.json) contain no credentials or source rows. The source CSVs and transfer journal stay outside Git under `work/`.
+
+`prepare-dubai-idrive-replica.py` validates the original CSVs and published shards and creates the copy set. `stage.mjs` creates an inactive, short-lived upload-only version of `espacios-ai-router` with only the existing E2A secret bindings. `copy.mjs --upload` performs conditional writes and immediate readback; `copy.mjs --verify` performs a separate signed GET of every object. `attest.py` reconciles all receipts and reconstructs the original CSV identities. `verify-attestation.mjs` pins that result to the release build.
+
+The map API continues to **serve checksum-checked Worker assets**. IDrive is a verified replica of these two Dubai datasets, not their runtime primary. The accepted V48 archive has its separate IDrive primary and immutable fallback. This copy does not touch the existing ten-bucket Cloudflare backup run, R2, source records, production traffic, or Data Room access.
+
+Cloudflare rejected deletion of the inactive upload version with error `10339` (latest version cannot be deleted). Its bearer capability expires after four hours; the production `espacios-ai-router` deployment remained on version `ba0e47e8-5153-4ca5-8d13-46677e68861c` at 100% after the copy.

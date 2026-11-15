@@ -1,0 +1,1196 @@
+{
+  "schemaVersion": 1,
+  "passId": "rak-primary-lifecycle-pass32-20261008",
+  "asOf": "2026-10-08",
+  "priorVersion": "20261008-enrichment-v31",
+  "candidateVersion": "20261008-enrichment-v32",
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "Bayviews Residences Hayat Island",
+      "emirate": "Ras Al Khaimah",
+      "type": "project"
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "catalogueName": "Cape Hayat",
+      "emirate": "Ras Al Khaimah",
+      "type": "project"
+    },
+    {
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah",
+      "emirate": "Ras Al Khaimah",
+      "type": "project"
+    },
+    {
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "catalogueName": "Porto Playa",
+      "emirate": "Ras Al Khaimah",
+      "type": "project"
+    },
+    {
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "catalogueName": "Quattro Del Mar",
+      "emirate": "Ras Al Khaimah",
+      "type": "project"
+    }
+  ],
+  "sources": [
+    {
+      "id": "rak32-bayviews-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-beachfront-bayviews-residences-in-mina-al-arab/",
+      "title": "RAK Properties launches beachfront Bayviews residences in Mina Al Arab",
+      "publishedAt": "2023-05-28",
+      "retrievedAt": "2026-10-08T18:46:24.479Z",
+      "sha256": "dd459bc95964c5d2d20d6ecd141e7426304223be253223727f8d39ac2937ded0",
+      "bytes": 46882,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:24.479Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-cape-final-phase",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-the-last-phase-of-cape-hayat-mina-al-arab-during-a-sales-event-in-abu-dhabi/",
+      "title": "RAK Properties launches the last phase of Cape Hayat, Mina Al Arab, during a sales event in Abu Dhabi",
+      "publishedAt": "2023-10-18",
+      "retrievedAt": "2026-10-08T18:46:29.734Z",
+      "sha256": "f5dcf9cdcd21ff1ee47af9ff0e6beadea4ceda01b4adcfb79a316a1904652d42",
+      "bytes": 47059,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:29.734Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "preserveRevision": true,
+      "revisionOfSourceId": "community-source-0343d6726dc26c6e",
+      "canonicalSourceId": "community-source-0343d6726dc26c6e"
+    },
+    {
+      "id": "rak32-cape-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-cape-hayat-in-mina-al-arab/",
+      "title": "RAK Properties launches ‘Cape Hayat’ in Mina Al Arab",
+      "publishedAt": "2023-09-19",
+      "retrievedAt": "2026-10-08T18:46:28.198Z",
+      "sha256": "760b7e9ebf6a0a7f0e0c049306ddc061922e6ba00d292a5b8036bc49423bc799",
+      "bytes": 46448,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:28.198Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-construction-202407",
+      "url": "https://www.rakproperties.ae/news/rak-properties-announces-major-construction-updates/",
+      "title": "RAK Properties Announces Major Construction Updates",
+      "publishedAt": "2024-07-23",
+      "retrievedAt": "2026-10-08T18:46:26.263Z",
+      "sha256": "12082e3eec66bf87293616ebddbb6b7d5e7e7ca49d977e642592d83a5155826e",
+      "bytes": 46562,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:26.263Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-h1-2024",
+      "url": "https://www.rakproperties.ae/news/rak-properties-delivers-strong-financial-results-in-h1-2024-driven-by-robust-sales-and-strategic-growth/",
+      "title": "RAK Properties Delivers Strong Financial Results in H1 2024, Driven by Robust Sales and Strategic Growth",
+      "publishedAt": "2024-08-08",
+      "retrievedAt": "2026-10-08T18:46:38.083Z",
+      "sha256": "063d7feb90ec093e47dfdbd67be36420377dd9a9df5e943614862d2522e53ae4",
+      "bytes": 54348,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:38.083Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-h1-2026",
+      "url": "https://www.rakproperties.ae/news/rak-properties-demonstrates-operational-resilience-and-accelerated-handover-momentum-in-h1-2026-anchored-by-expanding-residential-deliveries-and-premium-hospitality-outperformance/",
+      "title": "RAK Properties Demonstrates Operational Resilience and Accelerated Handover Momentum In H1 2026, Anchored by Expanding Residential Deliveries and Premium Hospitality Outperformance",
+      "publishedAt": "2026-08-07",
+      "retrievedAt": "2026-10-08T18:54:00.256Z",
+      "sha256": "9c3a7d6ad0b81090105ad9e7563f116eaa5fd6fecbf80cd7e059c2cae8d23a85",
+      "bytes": 66741,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:54:00.256Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-marbella2-contract",
+      "url": "https://www.rakproperties.ae/news/rak-properties-awards-construction-contract-to-gulf-contracting-for-marbella-villas-phase-2/",
+      "title": "RAK Properties Awards Construction Contract to Gulf Contracting for Marbella Villas Phase 2",
+      "publishedAt": "2023-02-10",
+      "retrievedAt": "2026-10-08T18:46:31.385Z",
+      "sha256": "167dd51522437ecc92357180bb0ce73314a3a5b161d5ad761015dde6d02883b7",
+      "bytes": 45851,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:31.385Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-porto-groundbreaking",
+      "url": "https://www.rakproperties.ae/news/ellington-properties-and-rak-properties-break-ground-on-porto-playa-marking-a-major-milestone-in-ras-al-khaimah/",
+      "title": "Ellington Properties and RAK Properties Break Ground on Porto Playa, Marking a Major Milestone in Ras Al Khaimah",
+      "publishedAt": "2024-11-05",
+      "retrievedAt": "2026-10-08T18:46:33.091Z",
+      "sha256": "664c372072b3c27f20dd15c27c14cc19cb9a417362106e9d45f1f1c04c79d9bf",
+      "bytes": 47980,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:33.091Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false,
+      "declaredReleaseDate": "2024-10-31",
+      "dateDisagreement": "Body release date is 31 October 2024; archive page date is 5 November 2024. Both are retained; exact groundbreaking day is not inferred."
+    },
+    {
+      "id": "rak32-quattro-final-phase",
+      "url": "https://www.rakproperties.ae/news/rak-properties-launches-final-phase-of-its-waterfront-development-quattro-del-mar/",
+      "title": "RAK Properties Launches Final Phase of Its Waterfront Development Quattro Del Mar",
+      "publishedAt": "2024-10-31",
+      "retrievedAt": "2026-10-08T18:46:36.492Z",
+      "sha256": "2f3f74b065af87efb1c72f9f3a939938e1d3098370764adf738ace8d79b80fba",
+      "bytes": 47528,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:36.492Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-quattro-launch",
+      "url": "https://www.rakproperties.ae/news/rak-properties-elevates-island-living-with-the-unveiling-of-quattro-del-mar-in-mina-al-arab-ras-al-khaimah/",
+      "title": "RAK Properties Elevates Island Living with the Unveiling of Quattro Del Mar in Mina Al Arab, Ras Al Khaimah",
+      "publishedAt": "2024-01-09",
+      "retrievedAt": "2026-10-08T18:46:34.773Z",
+      "sha256": "643c1041b1424867d360c31c273ff0d4589591057a7e0dbcdd21a1795ecdb3c1",
+      "bytes": 48265,
+      "httpStatus": 200,
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_dated_release",
+      "firstAvailableAt": "2026-10-08T18:46:34.773Z",
+      "availabilityBasis": "Dated developer release captured now; the original historical bytes and first online availability were not independently archived, so model availability starts at this capture.",
+      "publicationDateStatus": "developer_archive_page_date",
+      "licence": "rights_pending: minimal reviewed factual observations and citations only; no article, image or raw HTML redistribution",
+      "rawBodyRetained": false,
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "rak32-quattro-factsheet",
+      "url": "https://quattrodelmar.rakproperties.ae/downloads/Quatro-Del-Mar-Fact-Sheet.pdf",
+      "retrievedAt": "2026-10-08T18:48:08.512Z",
+      "publishedAt": null,
+      "bytes": 16508382,
+      "sha256": "da8478e7541362adb39cba7ae4ed0dfa1f682c4449571ab6f48a65629eac443a",
+      "httpStatus": 200,
+      "rawRedistribution": false,
+      "title": "Quattro Del Mar factsheet, page 8",
+      "publisher": "RAK Properties",
+      "primaryEvidence": true,
+      "classification": "primary_developer_undated_factsheet",
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "publicationDateStatus": "unknown",
+      "availabilityBasis": "First verified download; PDF creation/modification metadata does not establish public availability or a price-validity date.",
+      "pdfMetadata": {
+        "created": "2023-12-21T12:15:18+04:00",
+        "modified": "2023-12-21T12:15:45+04:00",
+        "publicationDateInferred": false
+      },
+      "reviewedPage": 8,
+      "pageCount": 19,
+      "visualTableChecked": true,
+      "licence": "rights_pending: minimal factual price/type observations and citation only; PDF and artwork are not redistributed",
+      "rawBodyRedistributed": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "rak32-bayviews-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "announcement",
+      "date": {
+        "start": "2023-05-28",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identitySourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Bayviews Residences Hayat Island catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2023-05-28",
+      "firstAvailableAt": "2026-10-08T18:46:24.479Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces Bayviews launch on Hayat Island.",
+      "note": "",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated launch announcement; original first-ever transaction remains unknown"
+    },
+    {
+      "id": "rak32-bayviews-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2023-05-26",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identitySourceIds": [
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Bayviews Residences Hayat Island catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2023-05-28",
+      "firstAvailableAt": "2026-10-08T18:46:24.479Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer advertises public sales commencing 26 May 2023.",
+      "note": "Scheduled sales availability is not a registered sale or proof of the first transaction.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-bayviews-progress-202407",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-07-23",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-construction-202407"
+      ],
+      "identitySourceIds": [
+        "rak32-construction-202407"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Bayviews Residences Hayat Island catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-07-23",
+      "firstAvailableAt": "2026-10-08T18:46:26.263Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Bayviews enabling complete; substructure reported nearly 70%.",
+      "note": "Component progress is not overall project completion. Underlying inspection date is unstated.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated developer progress publication"
+    },
+    {
+      "id": "rak32-cape-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "launch",
+      "date": {
+        "start": "2023-09-19",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identitySourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Cape Hayat catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2023-09-19",
+      "firstAvailableAt": "2026-10-08T18:46:28.198Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces the four-tower Cape Hayat project.",
+      "note": "Launch release states 668 units; later developer reports state 678. The differing supply counts are retained as a source conflict, not silently resolved.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated developer launch announcement"
+    },
+    {
+      "id": "rak32-cape-sales-schedule",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "first_marketing",
+      "date": {
+        "start": "2023-09-22",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identitySourceIds": [
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Cape Hayat catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2023-09-19",
+      "firstAvailableAt": "2026-10-08T18:46:28.198Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer schedules Cape Hayat public sales for 22–23 September 2023.",
+      "note": "The schedule is not an observed sale; day shown is the announced starting day.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-cape-phase-announcement",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2023-10-18",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-cape-final-phase"
+      ],
+      "identitySourceIds": [
+        "rak32-cape-final-phase"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Cape Hayat catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": "2023-10-18",
+      "firstAvailableAt": "2026-10-08T18:46:29.734Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces a final Cape Hayat sales release planned for 19 October 2023.",
+      "note": "Publication and planned release dates remain distinct; no claim that the event occurred on the publication day.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-cape-construction-start",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "construction_start",
+      "date": {
+        "start": "2023",
+        "precision": "year"
+      },
+      "sourceIds": [
+        "rak32-h1-2024"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Cape Hayat catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-08-08",
+      "firstAvailableAt": "2026-10-08T18:46:38.083Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports Cape Hayat construction began at the end of 2023.",
+      "note": "Year precision preserves the source wording; no month or day is invented. This retrospective claim was captured in 2026.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "retrospective developer statement: end of 2023"
+    },
+    {
+      "id": "rak32-cape-progress-202407",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-07-23",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-construction-202407"
+      ],
+      "identitySourceIds": [
+        "rak32-construction-202407"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Cape Hayat catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-07-23",
+      "firstAvailableAt": "2026-10-08T18:46:26.263Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Cape Hayat enabling complete; substructure reported 65%.",
+      "note": "Component progress is not whole-project completion. Underlying inspection date is unstated.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated developer progress publication"
+    },
+    {
+      "id": "rak32-marbella2-contract",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "announcement",
+      "date": {
+        "start": "2023-02-10",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-marbella2-contract"
+      ],
+      "identitySourceIds": [
+        "rak32-marbella2-contract"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2023-02-10",
+      "firstAvailableAt": "2026-10-08T18:46:31.385Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces the main construction contract for Marbella Villas Phase 2.",
+      "note": "The 89-unit phase is matched to the Phase 2 catalogue record. A contract award is not actual construction commencement or original sales launch.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated developer contract award announcement"
+    },
+    {
+      "id": "rak32-marbella2-progress-202408",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2024-08-08",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2024"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-08-08",
+      "firstAvailableAt": "2026-10-08T18:46:38.083Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports the 89-unit Marbella Villas Phase 2 in the final construction stage.",
+      "note": "Progress report in H1 results; no actual handover, completion certificate, or occupancy date is asserted.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "report publication snapshot; exact inspection date unavailable"
+    },
+    {
+      "id": "rak32-porto-start-report",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2024-10-31",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-porto-groundbreaking"
+      ],
+      "identitySourceIds": [
+        "rak32-porto-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Porto Playa catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-11-05",
+      "firstAvailableAt": "2026-10-08T18:46:33.091Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer release reports Porto Playa construction has commenced.",
+      "note": "Body release date is 31 October; page publication date is 5 November. This is a dated commencement report, not an invented exact groundbreaking date.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "body release date; exact commencement date not stated"
+    },
+    {
+      "id": "rak32-porto-target-2026q4",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2026-Q4",
+        "precision": "quarter"
+      },
+      "sourceIds": [
+        "rak32-porto-groundbreaking"
+      ],
+      "identitySourceIds": [
+        "rak32-porto-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Porto Playa catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-11-05",
+      "firstAvailableAt": "2026-10-08T18:46:33.091Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports anticipated Porto Playa completion in Q4 2026.",
+      "note": "Target retained from the dated release; no completion or occupancy evidence.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-quattro-launch",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-01-09",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-quattro-launch"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Quattro Del Mar catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-01-09",
+      "firstAvailableAt": "2026-10-08T18:46:34.773Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces Quattro Del Mar on Hayat Island.",
+      "note": "The launch announcement establishes public development history, not a first registered sale.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated developer launch announcement"
+    },
+    {
+      "id": "rak32-quattro-final-phase",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "phase_launch",
+      "date": {
+        "start": "2024-10-31",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-quattro-final-phase"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-final-phase"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Quattro Del Mar catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": "2024-10-31",
+      "firstAvailableAt": "2026-10-08T18:46:36.492Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer announces release of the final Quattro Del Mar sales phase.",
+      "note": "Sales-release scope only; neither construction completion nor a full sale-price history.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-quattro-progress-202410",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2024-10-31",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-quattro-final-phase"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-final-phase"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Quattro Del Mar catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-10-31",
+      "firstAvailableAt": "2026-10-08T18:46:36.492Z",
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports construction progressing on Quattro Del Mar.",
+      "note": "No quantitative completion percentage or inspection date is given.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "dated developer progress publication"
+    },
+    {
+      "id": "rak32-quattro-target-2026",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2026",
+        "precision": "year"
+      },
+      "sourceIds": [
+        "rak32-quattro-final-phase"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-final-phase"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Quattro Del Mar catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2024-10-31",
+      "firstAvailableAt": "2026-10-08T18:46:36.492Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer states expected Quattro Del Mar completion by 2026.",
+      "note": "Year precision retained separately from the undated factsheet quarter and other schedules.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-quattro-factsheet-target",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2026-Q4",
+        "precision": "quarter"
+      },
+      "sourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Quattro Del Mar catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "verification": "reported",
+      "eventStatus": "planned",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Undated developer factsheet anticipates completion in Q4 2026.",
+      "note": "Captured 8 October 2026; original publication and validity are unknown. PDF metadata is not a publication date.",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak32-cape-progress-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Cape Hayat catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T18:54:00.256Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports 96.37% overall construction progress as of 30 June 2026.",
+      "note": "Dated developer-reported progress; not independently inspected, completed handover, occupancy, or a financial observation.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 96.37,
+      "dateBasis": "Explicit as-of date in the developer H1 2026 construction section; published 7 August 2026."
+    },
+    {
+      "id": "rak32-quattro-progress-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Quattro Del Mar catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T18:54:00.256Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports 47.04% overall construction progress as of 30 June 2026.",
+      "note": "Dated developer-reported progress; not independently inspected, completed handover, occupancy, or a financial observation.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 47.04,
+      "dateBasis": "Explicit as-of date in the developer H1 2026 construction section; published 7 August 2026."
+    },
+    {
+      "id": "rak32-bayviews-progress-202606",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Bayviews Residences Hayat Island catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T18:54:00.256Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports 98% overall construction progress as of 30 June 2026.",
+      "note": "Dated developer-reported progress; not independently inspected, completed handover, occupancy, or a financial observation.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 98,
+      "dateBasis": "Explicit as-of date in the developer H1 2026 construction section; published 7 August 2026."
+    },
+    {
+      "id": "rak32-bayviews-certificate-status",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "certificate_status_report",
+      "date": {
+        "start": "2026-06-30",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Bayviews Residences Hayat Island catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T18:54:00.256Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "Developer reports a Bay Views Building Completion Certificate secured, with Taking Ownership Certificate pending.",
+      "note": "Certificate itself and its issue date were not inspected. Developer reports handovers had not yet commenced at this status date. This is not stored as actual completion or occupancy.",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "As-of date of the construction section; certificate issue day unknown."
+    },
+    {
+      "id": "rak32-bayviews-progress-report-202608",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-08-07",
+        "precision": "day"
+      },
+      "sourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identitySourceIds": [
+        "rak32-h1-2026"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique existing Bayviews Residences Hayat Island catalogue record in Ras Al Khaimah; primary developer release identifies the same project, RAK Properties (with Ellington for Porto Playa), and Hayat Island/Mina Al Arab. Marbella evidence explicitly names Phase 2; no other phase or nearby project receives the fact.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": "2026-08-07",
+      "firstAvailableAt": "2026-10-08T18:54:00.256Z",
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_lifecycle_report",
+      "label": "The same H1 release also describes Bay Views at 99% in its second-half handover outlook.",
+      "note": "This later narrative supplies no inspection date; retained beside the explicitly June-dated 98% report without silently reconciling them. Transitioning into handovers does not establish a completed handover or occupancy.",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 99,
+      "dateBasis": "Publication-date report; underlying progress inspection date unspecified."
+    },
+    {
+      "id": "rak32-quattro-advertised-studio",
+      "status": "accepted",
+      "kind": "financial",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch",
+        "rak32-quattro-factsheet"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Developer factsheet names Quattro Del Mar, RAK Properties, Hayat Island and Mina Al Arab; same uniquely identified four-tower catalogue project as the dated primary launch release.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "evidenceClass": "primary_developer_undated_advertised_price",
+      "observation": {
+        "period": "2026-10-08",
+        "metric": "price",
+        "unit": "AED",
+        "value": 875000,
+        "segment": "Studio",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "observationDateBasis": "capture date only; publication and price-validity date unknown",
+        "sourcePage": 8,
+        "areaRangeSqFt": {
+          "min": 413.34,
+          "max": 413.34,
+          "includesBalconiesTerraces": true
+        },
+        "sourceQuoteBasis": "visually_checked_developer_factsheet_table",
+        "currentMarketValidity": "unverified",
+        "historicalLaunchPriceEstablished": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Starting quote for this named unit type, not a sale, valuation, period median, current available inventory quote or price per square foot. Original date remains unknown."
+      }
+    },
+    {
+      "id": "rak32-quattro-advertised-1br-suite",
+      "status": "accepted",
+      "kind": "financial",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch",
+        "rak32-quattro-factsheet"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Developer factsheet names Quattro Del Mar, RAK Properties, Hayat Island and Mina Al Arab; same uniquely identified four-tower catalogue project as the dated primary launch release.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "evidenceClass": "primary_developer_undated_advertised_price",
+      "observation": {
+        "period": "2026-10-08",
+        "metric": "price",
+        "unit": "AED",
+        "value": 1230000,
+        "segment": "1 BR Suite",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "observationDateBasis": "capture date only; publication and price-validity date unknown",
+        "sourcePage": 8,
+        "areaRangeSqFt": {
+          "min": 523.13,
+          "max": 665.22,
+          "includesBalconiesTerraces": true
+        },
+        "sourceQuoteBasis": "visually_checked_developer_factsheet_table",
+        "currentMarketValidity": "unverified",
+        "historicalLaunchPriceEstablished": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Starting quote for this named unit type, not a sale, valuation, period median, current available inventory quote or price per square foot. Original date remains unknown."
+      }
+    },
+    {
+      "id": "rak32-quattro-advertised-1br-premium",
+      "status": "accepted",
+      "kind": "financial",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch",
+        "rak32-quattro-factsheet"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Developer factsheet names Quattro Del Mar, RAK Properties, Hayat Island and Mina Al Arab; same uniquely identified four-tower catalogue project as the dated primary launch release.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "evidenceClass": "primary_developer_undated_advertised_price",
+      "observation": {
+        "period": "2026-10-08",
+        "metric": "price",
+        "unit": "AED",
+        "value": 1550000,
+        "segment": "1 BR Premium",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "observationDateBasis": "capture date only; publication and price-validity date unknown",
+        "sourcePage": 8,
+        "areaRangeSqFt": {
+          "min": 826.68,
+          "max": 1710.4,
+          "includesBalconiesTerraces": true
+        },
+        "sourceQuoteBasis": "visually_checked_developer_factsheet_table",
+        "currentMarketValidity": "unverified",
+        "historicalLaunchPriceEstablished": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Starting quote for this named unit type, not a sale, valuation, period median, current available inventory quote or price per square foot. Original date remains unknown."
+      }
+    },
+    {
+      "id": "rak32-quattro-advertised-2br",
+      "status": "accepted",
+      "kind": "financial",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch",
+        "rak32-quattro-factsheet"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Developer factsheet names Quattro Del Mar, RAK Properties, Hayat Island and Mina Al Arab; same uniquely identified four-tower catalogue project as the dated primary launch release.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "evidenceClass": "primary_developer_undated_advertised_price",
+      "observation": {
+        "period": "2026-10-08",
+        "metric": "price",
+        "unit": "AED",
+        "value": 2220000,
+        "segment": "2 BR",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "observationDateBasis": "capture date only; publication and price-validity date unknown",
+        "sourcePage": 8,
+        "areaRangeSqFt": {
+          "min": 1241.09,
+          "max": 3067.74,
+          "includesBalconiesTerraces": true
+        },
+        "sourceQuoteBasis": "visually_checked_developer_factsheet_table",
+        "currentMarketValidity": "unverified",
+        "historicalLaunchPriceEstablished": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Starting quote for this named unit type, not a sale, valuation, period median, current available inventory quote or price per square foot. Original date remains unknown."
+      }
+    },
+    {
+      "id": "rak32-quattro-advertised-3br",
+      "status": "accepted",
+      "kind": "financial",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceIds": [
+        "rak32-quattro-factsheet"
+      ],
+      "identitySourceIds": [
+        "rak32-quattro-launch",
+        "rak32-quattro-factsheet"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Developer factsheet names Quattro Del Mar, RAK Properties, Hayat Island and Mina Al Arab; same uniquely identified four-tower catalogue project as the dated primary launch release.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T18:48:08.512Z",
+      "evidenceClass": "primary_developer_undated_advertised_price",
+      "observation": {
+        "period": "2026-10-08",
+        "metric": "price",
+        "unit": "AED",
+        "value": 4000000,
+        "segment": "3 BR",
+        "observationKind": "developer_advertised_price",
+        "quoteQualifier": "advertised_starting_price",
+        "observationDateBasis": "capture date only; publication and price-validity date unknown",
+        "sourcePage": 8,
+        "areaRangeSqFt": {
+          "min": 1953.67,
+          "max": 3433.72,
+          "includesBalconiesTerraces": true
+        },
+        "sourceQuoteBasis": "visually_checked_developer_factsheet_table",
+        "currentMarketValidity": "unverified",
+        "historicalLaunchPriceEstablished": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Starting quote for this named unit type, not a sale, valuation, period median, current available inventory quote or price per square foot. Original date remains unknown."
+      }
+    }
+  ],
+  "seriesLinks": [],
+  "recordResearch": [],
+  "historyInputs": [],
+  "conflicts": [
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "field": "reported_overall_progress",
+      "sourceId": "rak32-h1-2026",
+      "claims": [
+        {
+          "asOf": "2026-06-30",
+          "value": 98
+        },
+        {
+          "asOf": null,
+          "reportDate": "2026-08-07",
+          "value": 99
+        }
+      ],
+      "resolution": "Both source statements retained with distinct date bases; no interpolation or assumed revision."
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "field": "reported_project_unit_count",
+      "claims": [
+        {
+          "sourceId": "rak32-cape-launch",
+          "value": 668
+        },
+        {
+          "sourceId": "rak32-h1-2024",
+          "value": 678
+        }
+      ],
+      "resolution": "Both native claims retained; no catalogue count replacement."
+    },
+    {
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "field": "release_publication_date",
+      "bodyReleaseDate": "2024-10-31",
+      "pagePublicationDate": "2024-11-05",
+      "sourceId": "rak32-porto-groundbreaking",
+      "resolution": "Distinct dates retained; no exact groundbreaking day inferred."
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "recordId": "project:gateway-residences-for-sale-mina-al-arab-ras-al-khaimah-uae-by-rak-properties",
+      "sourceId": "rak32-gateway-completion",
+      "url": "https://www.rakproperties.ae/news/rak-properties-completes-construction-of-gateway-residences/",
+      "publishedAt": "2020-04-13",
+      "sha256": "dba4707b516894e5ed319c04ffb464d893e13f555b8c0d930c87df805a925913",
+      "retrievedAt": "2026-10-08T18:46:39.540Z",
+      "status": "phase_identity_review_pending",
+      "reason": "Developer completion statement describes 144-unit Gateway Residences; catalogue identity still needs a phase/building discriminator against Gateway II. No milestone or completeness credit assigned."
+    }
+  ],
+  "methodology": "Reviewed primary developer releases and a visually checked factsheet; exact named record/developer/island/phase identity only. Page dates, declared release dates, planned dates, retrospective event precision, capture dates and PDF metadata remain separate. No registered sales, rents, valuations, occupancy, causal price adjustments or forecast outcomes are inferred.",
+  "collection": {
+    "passId": "rak-primary-lifecycle-pass32-20261008",
+    "projectRecords": 5,
+    "communityRecords": 0,
+    "acceptedLifecycleFacts": 22,
+    "acceptedAdvertisedPriceFacts": 5,
+    "registeredSaleOrRentObservationsAdded": 0,
+    "fullLifetimeHistoriesCertified": 0,
+    "approved2080Forecasts": 0,
+    "rawBodiesRedistributed": false
+  }
+}

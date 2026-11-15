@@ -1,0 +1,22 @@
+{
+  "sourceId": "rak-municipality-2025-commercial-sale-counts-20261115",
+  "sourceUrl": "https://mun.rak.ae/wp-content/uploads/التقرير-العقاري-لتصرفات-قطاع-الأراضي-والأملاك-لعام-2024-2025-in-English.pdf",
+  "sourceTable": "Table 3, 2025 column, selected property-use rows",
+  "sourceYear": 2025,
+  "rows": 4,
+  "sourceCapture": {
+    "retrievedAt": "2026-11-15",
+    "bytes": 1275610,
+    "sha256": "29299fd1d38968367527bca670d809bc55acebf0fc4c11605882dd63393c92eb",
+    "independentReadbackSha256": "29299fd1d38968367527bca670d809bc55acebf0fc4c11605882dd63393c92eb",
+    "independentReadbackObserved": true
+  },
+  "dataBytes": 1725,
+  "dataSha256": "7f35c7381207a9d9f7bd82d5b16b8c6e6f4a3e3164e267b9f0f79cfa977049c6",
+  "rightsScope": "Selected numerical facts and official source link only; no report prose, images, layout, complete table, or report PDF republished.",
+  "crosscheck": "The 2025 Commercial, Commercial Unit, Commercial Residential, and Industrial values agree with the 2026 RAK Statistics Centre yearbook at its AED-thousand precision. The Municipality report provides the exact AED and sale-count figures. These are selected use categories, not the whole annual market.",
+  "sourceConflict": "The Municipality 2024 Commercial Unit value is AED 22,190,885; the RAK Statistics Centre 2026 yearbook labels AED 35,209.02 thousand as 2024 Commercial Unit. The 2024 comparison is withheld from this projection until the authorities reconcile classifications or revisions. Neither value is silently replaced.",
+  "limits": "Selected 2025 emirate-level registration aggregates, not individual sale observations, prices per space, project locations, current asking listings, or available units. Commercial Residential mixes uses; Industrial is a separate category. The 2024 Commercial Unit value in this report conflicts with the RAK Statistics Centre yearbook, so 2024 rows are withheld pending clarification.",
+  "compressedBytes": 797,
+  "compressedSha256": "96c3559949f8e0b2b222129413f1de3d9121c85045d8cb0475d58f3638ec4b78"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "reviewed_not_published_as_additional_projects",
+  "checkedAt": "2026-11-14",
+  "candidate": {
+    "publisher": "Department of Land and Real Estate Regulation",
+    "datasetUrl": "https://data.ajman.ae/explore/dataset/completed-real-estate-projects/",
+    "exportUrl": "https://data.ajman.ae/api/explore/v2.1/catalog/datasets/completed-real-estate-projects/exports/json",
+    "licence": "CC BY 4.0",
+    "sourceModifiedAt": "2026-01-19T10:57:47.362000+00:00",
+    "exportSha256": "27769f7b8a28c9d4f58330226ee01fdb3188082fdc73bdd60723487dc1048205",
+    "exportBytes": 506946,
+    "independentDownloadsWithSameSha256": 2,
+    "rows": 496,
+    "distinctProjectIds": 191,
+    "snapshotDates": ["2023-12-31", "2024-12-31", "2025-12-31"]
+  },
+  "comparedWith": {
+    "sourceId": "ajman-dlrr-20260826-project-register",
+    "validationFile": "projects-validation.json",
+    "rawSha256": "d97f062b7f08998d7e75debcf8a42b055f132d1f8e1672b5eb61f92f774626e6"
+  },
+  "reconciliation": {
+    "key": "project_id plus update_date",
+    "matchedRows": 496,
+    "unmatchedRows": 0,
+    "matchedRegisterStatus": "Completed",
+    "matchedRegisterStatusRows": 496,
+    "sharedFieldValueDifferences": 0,
+    "normalization": "Compare project_id numerically and number_of_real_estate_units as decimal text; compare other shared fields as trimmed text.",
+    "candidateOnlyField": "sector_arabic0",
+    "candidateOnlyFieldMeaning": "Arabic sector label in this export; the existing register's sector_arabic field contains the corresponding English label. This is a potential language-quality supplement, not an additional project or completion observation."
+  },
+  "decision": "Do not increase UAE project or completion counts or republish these duplicate records as a new evidence source. Retain the separately sourced Arabic sector labels for a future reviewed language-field correction."
+}

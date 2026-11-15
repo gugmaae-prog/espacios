@@ -1,0 +1,55 @@
+{
+  "sourceId": "rak-municipality-2026-monthly-transaction-aggregates-20261110",
+  "rows": 9,
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "dataBytes": 5586,
+  "dataSha256": "187c378dbc026654b08087436fb4cc137bbdd0d55b61b7a0c7a325b767c9dcf9",
+  "sourcePageUrl": "https://mun.rak.ae/home/rak-municipality/organizational-structure/lands-properties-sector/",
+  "captureReports": [
+    {
+      "month": "2026-01",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D8%AD%D8%B5%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A-%D9%84%D8%B4%D9%87%D8%B1-%D9%8A%D9%86%D8%A7%D9%8A%D8%B1-2025-2026-in-English.pdf",
+      "retrievedAt": "2026-11-10",
+      "bytes": 704683,
+      "sha256": "10e9eeae309c09eceb73a3825c6e115d95d37c7507ec5eb1fdaef8ea904d5025",
+      "readback": "second independent GET matched bytes and SHA-256"
+    },
+    {
+      "month": "2026-07",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%A7%D9%84%D8%AA%D8%B5%D8%B1%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9-2026-%D9%8A%D9%88%D9%84%D9%8A%D9%88.pdf",
+      "retrievedAt": "2026-11-10",
+      "bytes": 352763,
+      "sha256": "f2fc35969517235da88b27bc10b8a9660bf2b015b37bdd0f569f499050b60442",
+      "readback": "second independent GET matched bytes and SHA-256"
+    },
+    {
+      "month": "2026-08",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%A7%D9%84%D8%AA%D8%B5%D8%B1%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9-2026-%D8%A7%D8%BA%D8%B3%D8%B7%D8%B3.pdf",
+      "retrievedAt": "2026-11-10",
+      "bytes": 357310,
+      "sha256": "fc217976e43b3beea344a242ad3f6f8e06a2a669a55fab7e2bc0b301e3fab186",
+      "readback": "second independent GET matched bytes and SHA-256"
+    },
+    {
+      "month": "2026-09",
+      "url": "https://mun.rak.ae/wp-content/uploads/%D8%A7%D9%84%D8%AA%D8%B5%D8%B1%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A91-2026-%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B1.pdf",
+      "retrievedAt": "2026-11-10",
+      "bytes": 353879,
+      "sha256": "abd306422fa31c4b4ce7caae3faefd26a6a5ebd02f7b03e0017b85311345a107",
+      "readback": "second independent GET matched bytes and SHA-256"
+    }
+  ],
+  "rightsScope": "Selected numerical facts and source links only; municipality report PDF content, imagery and layout are not republished. No transaction-register bulk reuse right asserted.",
+  "verification": "January exact AED values and counts checked against the official English PDF. January–September rounded values transcribed from September infographic and cross-checked against July/August overlapping charts. July–September counts checked against each month infographic. Four report PDFs fetched twice with matching checksums.",
+  "limits": "Emirate-wide, all-use monthly totals; no commercial-only split, unit-level transactions, project addresses, current listing availability, or prices per unit. February–September values are chart labels rounded to AED million; January exact figures come from the January PDF. Counts are unavailable for February–June and remain null. The nine months are incomplete 2026 coverage, not an annual total. Mortgage and waiver values must not be treated as sales."
+}

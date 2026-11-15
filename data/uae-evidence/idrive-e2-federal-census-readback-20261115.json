@@ -1,0 +1,20 @@
+{
+  "attestationId": "federal-census-20261115-idrive-e2-readback",
+  "planId": "federal-census-20261115-idrive-e2-replica",
+  "planSha256": "a699f016f2c1c5f00ed5f1f6cdc31ae7be20aabadf474a286602c22e2b29e36e",
+  "privateJournalSha256": "5c06ece63fec3d3fc748d7e8318770af47dce56f03ba4b77f239abe8eb7b2919",
+  "previewVersion": "2aa79f37-885b-47f8-b1d0-9a8181df062a",
+  "bridgeSha256": "f69ddfbfd86ab2b96686f2fa5c995526d449dc55a3ae42fd6f014c537b919ea4",
+  "verifiedAt": "2026-11-14T21:02:28.123Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "objectCount": 1,
+  "totalBytes": 6510,
+  "sourceIds": [
+    "fcsc-emirates-in-figures-2009-historical-building-housing"
+  ],
+  "verification": "The allowlisted Federal census JSON object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

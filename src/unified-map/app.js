@@ -2,7 +2,7 @@
 (() => {
  window.__ESPACIOS_UNIFIED_RELEASE__='20260930-unified-map-v2';
  const Q=s=>document.querySelector(s),root=document.documentElement;
- const U={installed:false,metric:'projects',options:[],selected:'',horizon:10,path:'reference',data:null,loading:false,key:'',request:0,renderToken:0,refreshTimer:0,busy:false,contextKey:'',preferFuture:false,result:null,hidden:new Map()};
+ const U={installed:false,metric:'projects',options:[],selected:'',horizon:10,path:'reference',data:null,loading:false,key:'',request:0,renderToken:0,refreshTimer:0,busy:false,contextKey:'',preferFuture:false,forecastEnabled:false,result:null,hidden:new Map()};
  const finite=n=>typeof n==='number'&&Number.isFinite(n),num=(n,d=0)=>finite(n)?n.toLocaleString('en',{maximumFractionDigits:d}):'—';
  const text=(el,value)=>{if(el&&el.textContent!==value)el.textContent=value;};
  const types=()=>msState.segment==='both'?['apartment','villa']:[msState.segment];
@@ -10,26 +10,31 @@
  const context=()=>({kind:U.metric,emirate:msState.emirate,area:msState.area,segment:msState.segment,basis:U.metric==='roi'?'asking':msState.basis,registration:bhState.registration,path:U.path});
  const rowPool=()=>((U.data?.[context().basis==='sales'?'sales':'asking'])||[]).filter(r=>r.emirate===msState.emirate&&types().includes(r.segment)&&(context().basis!=='sales'||r.registration===bhState.registration));
  const selectedRows=()=>rowPool().filter(r=>r.geography===msState.area);
- const nativeClass=period=>tlState.series.some(s=>s.points?.some(p=>p.period===period&&p.projection))?'released_projection':U.metric==='roi'?'gross_yield_benchmark':context().basis==='sales'?'registered_sale':'advertised_price_benchmark';
+ const nativeClass=period=>tlState.series.some(s=>s.points?.some(p=>p.period===period&&p.projection))?'released_projection':U.metric==='volume'?'eligible_registered_sales':U.metric==='roi'?'gross_yield_benchmark':context().basis==='sales'?'registered_sale':'advertised_price_benchmark';
  function refreshSoon(){if(!U.installed||U.busy)return;clearTimeout(U.refreshTimer);U.refreshTimer=setTimeout(refresh,30);}
  async function refresh(){
   if(U.metric==='projects'){U.options=[];U.loading=false;hide();sync();return;}
   const token=++U.request;U.loading=!!tlState.loading;U.contextKey=JSON.stringify(context());
   try{
-   try{U.data=await window.EspaciosEstimateUI.load();U.estimatesError='';}
-   catch(error){if(token!==U.request||U.metric==='projects')return;U.data=null;U.estimatesError='Future estimates are temporarily unavailable; source history is unchanged.';}
+   if(U.forecastEnabled){
+    try{U.data=await window.EspaciosEstimateUI.load();U.estimatesError='';}
+    catch(error){if(token!==U.request||U.metric==='projects')return;U.data=null;U.estimatesError='Future estimates are temporarily unavailable; source history is unchanged.';}
+   }else{U.data=null;U.estimatesError='';}
    if(token!==U.request||U.metric==='projects')return;
    if(tlState.loading){U.loading=true;window.EspaciosMobileUI.sync();return;}
    const sourcePeriods=new Set(tlState.series.flatMap(s=>(s.points||[]).map(p=>p.period)));
    const nativePeriods=(tlState.periods||[]).filter(p=>/^\d{4}/.test(p)&&sourcePeriods.has(p)).map(period=>({period,evidenceClass:nativeClass(period)}));
    // A selected area with no compatible estimate keeps its native evidence; a
    // neighbour's anchor is never used to manufacture an estimate for that area.
-   const estimates=msState.area?selectedRows():rowPool();
+   const estimates=U.forecastEnabled?(msState.area?selectedRows():rowPool()):[];
    const previous=current();U.options=UMCore.timelineOptions({nativePeriods,estimates,path:U.path,horizonYears:U.horizon});
    U.key=JSON.stringify([U.contextKey,U.horizon,U.path,U.options.map(o=>o.id)]);
    const same=U.options.find(o=>o.id===U.selected);
-   U.selected=(U.preferFuture?U.options.find(o=>o.kind==='scenario'):same)||U.options.find(o=>o.kind==='native'&&o.period===tlState.period)||U.options.at(-1);
+   const observed=U.options.filter(o=>o.kind==='native'&&o.evidenceClass!=='released_projection');
+   U.selected=(U.preferFuture?U.options.find(o=>o.kind==='scenario'):same)||observed.at(-1)||U.options.find(o=>o.kind==='native')||null;
    U.selected=U.selected?.id||'';U.preferFuture=false;U.loading=false;U.error='';
+   if(U.forecastEnabled&&!U.options.some(o=>o.kind==='scenario')&&!U.estimatesError)U.error='No compatible conditional estimate is available for this selection.';
+   if(!U.selected&&!U.error)U.error='No compatible dated evidence is available for this selection.';
    if(previous?.kind==='scenario'&&!future())hide();
    if(current()?.kind==='native'&&current().period!==tlState.period)tlChooseDate(current().period);
    prepare();render();window.EspaciosMobileUI.sync();
@@ -44,21 +49,39 @@
   clearTimeout(U.renderTimer);if(option.kind==='native'){U.pending=false;U.result=null;hide();tlChooseDate(option.period);}else{tlStop();U.result=null;U.pending=true;U.renderTimer=setTimeout(render,120);}
   window.EspaciosMobileUI.sync();
  }
- function setMetric(metric){
-  if(!['projects','price','roi'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.preferFuture=metric==='roi';hide();tlStop();window.EspaciosEstimateUI.close(false);
+ function setMetric(metric,{forecast=false}={}){
+  if(!['projects','price','roi','volume'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.forecastEnabled=forecast&&metric==='price';U.preferFuture=U.forecastEnabled;hide();tlStop();window.EspaciosEstimateUI.close(false);
   U.busy=true;msState.open=false;
   if(metric==='projects')psrSetAnalysis('uae-project-coverage');
-  else{if(metric==='roi')msState.basis='asking';msOpen(metric,false);}
+  else if(metric==='volume'){msState.emirate='Dubai';msState.basis='sales';psrSetAnalysis('history:dubai-sample-count');aeUaeSetView('heat',false);if(typeof map.getZoom==='function'&&map.getZoom()<8&&!state.selectedSpatial)map.easeTo({center:[55.26,25.10],zoom:9,pitch:0,duration:matchMedia('(prefers-reduced-motion:reduce)').matches?0:500});}
+  else{if(metric==='roi')msState.basis='asking';msOpen(metric,typeof map.getZoom==='function'&&map.getZoom()<8&&!state.selectedSpatial);}
   U.busy=false;refreshSoon();sync();
  }
- function setType(type){if(!['apartment','villa','townhouse','both'].includes(type))return;U.pending=false;U.result=null;U.busy=true;msSetSegment(type);msOpen(U.metric,false);U.busy=false;U.selected='';U.preferFuture=U.metric==='roi';refreshSoon();}
+ function enterForecast(){setMetric('price',{forecast:true});}
+ function setType(type){if(!['apartment','villa','townhouse','both'].includes(type))return;U.pending=false;U.result=null;U.busy=true;msSetSegment(type);if(U.metric==='volume')psrSetAnalysis('history:dubai-sample-count');else msOpen(U.metric,false);U.busy=false;U.selected='';U.preferFuture=U.forecastEnabled;refreshSoon();}
  function hide(){
-  U.renderToken++;for(const id of ['um-fill','um-outline'])if(map.getLayer(id))map.setLayoutProperty(id,'visibility','none');
+  U.renderToken++;for(const id of ['um-fill','um-outline','um-glow','um-core'])if(map.getLayer(id))map.setLayoutProperty(id,'visibility','none');
   for(const [id,value]of U.hidden)if(map.getLayer(id))map.setLayoutProperty(id,'visibility',value);U.hidden.clear();Q('#um-map-key')?.remove();delete root.dataset.unifiedFuture;
  }
  function geometry(row){const geos=(sgState.data?.features||[]).filter(g=>g.properties.level!=='emirate');
-  if(row.evidenceClass==='registered_sale'&&row.geometryIds?.length){if(row.geometryIds.length!==1)return null;return geos.find(g=>String(g.id)===String(row.geometryIds[0]))||null;}
+  if(row.evidenceClass==='registered_sale'&&row.geometryIds?.length){if(row.geometryIds.length!==1)return null;const original=geos.find(g=>String(g.id)===String(row.geometryIds[0]));if(original)return original;if(sgState.data?.meta?.fallback!=='dubai_municipality_222_communities')return null;}
+  if(row.evidenceClass==='registered_sale'&&sgState.data?.meta?.fallback==='dubai_municipality_222_communities'&&typeof bhFallbackGeometryIds==='function'){const ids=bhFallbackGeometryIds({name:row.geography});if(ids.length===1)return geos.find(g=>String(g.id)===String(ids[0]))||null;}
   const matches=geos.filter(g=>SG.key(g.properties.emirate,g.properties.name)===SG.key(row.emirate,row.geography));const rank=Math.min(...matches.map(g=>g.properties.rank||99)),best=matches.filter(g=>(g.properties.rank||99)===rank);return best.length===1?best[0]:null;
+ }
+ function visualAnchor(feature){
+  if(typeof SG.bbox!=='function'||typeof SG.contains!=='function')return null;
+  const geometry=feature.geometry;
+  const bounds=SG.bbox(geometry);if(!bounds)return null;
+  const [west,south,east,north]=bounds,center=[(west+east)/2,(south+north)/2];
+  if(SG.contains(center,geometry))return center;
+  let best=null,distance=Infinity;
+  for(let x=1;x<10;x++)for(let y=1;y<10;y++){const point=[west+(east-west)*x/10,south+(north-south)*y/10];if(!SG.contains(point,geometry))continue;const d=(point[0]-center[0])**2+(point[1]-center[1])**2;if(d<distance){best=point;distance=d;}}
+  return best;
+ }
+ function catalogueAnchor(row){
+  const matches=(arState.catalogue?.communities||[]).filter(item=>SG.key(item.emirate,item.name)===SG.key(row.emirate,row.geography)&&finite(item.coordinates?.lng)&&finite(item.coordinates?.lat));
+  const unique=[...new Map(matches.map(item=>[item.coordinates.lng.toFixed(5)+','+item.coordinates.lat.toFixed(5),[item.coordinates.lng,item.coordinates.lat]])).values()];
+  return unique.length===1?unique[0]:null;
  }
  function cohort(){const ref=selectedRows().find(r=>r.estimate?.classification==='conditional_scenario');if(!ref||msState.segment==='both')return[];return rowPool().filter(r=>r.estimate?.classification==='conditional_scenario'&&r.evidenceClass===ref.evidenceClass&&r.estimate.baseline.period===ref.estimate.baseline.period&&r.estimate.baseline.unit===ref.estimate.baseline.unit).map(row=>({row,estimate:UMCore.extendPriceScenario(row.estimate,U.horizon)}));}
  function mapValue(entry,year){
@@ -74,22 +97,27 @@
   if(!future()){if(U.metric==='projects')return;tlUpdate();sync();return;}
   clearTimeout(U.renderTimer);if(U.pending)prepare();
   const token=++U.renderToken,option=current();try{await sgLoad();if(token!==U.renderToken||!future()||current()!==option)return;
-   const basket=cohort(),features=[],year=option.records[0]?.year||1;
-   for(const item of basket){const shape=geometry(item.row),value=mapValue(item,year);if(shape&&finite(value))features.push({...shape,properties:{name:item.row.geography,value,period:option.period}});}
+   const basket=cohort(),features=[],records=[],year=option.records[0]?.year||1;
+   for(const item of basket){const shape=geometry(item.row),value=mapValue(item,year),anchor=shape?visualAnchor(shape):catalogueAnchor(item.row);if(!finite(value)||!anchor)continue;records.push({item,shape,value,anchor});}
    const values=basket.flatMap(item=>Array.from({length:U.horizon},(_,i)=>mapValue(item,i+1))).filter(finite),domain=tlK.domain(values);
-   for(const f of features)f.properties.color=tlK.color(f.properties.value,domain,false);
-   for(const layer of map.getStyle().layers||[])if(/^(ms-|tl-history|dg-|bh-|psr-analysis|roi-|ae-emerging|ae-uae-|sg-|se-|ue-benchmark-)/.test(layer.id)){
+   const spots=records.map(({item,shape,value,anchor},index)=>{const properties={name:item.row.geography,value,period:option.period,color:typeof hmColor==='function'?hmColor(value,domain,false):tlK['color'](value,domain,false),locationBasis:shape?'Mapped source-area geometry':'Approximate catalogue community centre; no source-area boundary'};if(shape)features.push({...shape,properties});return{type:'Feature',id:'um-'+index,geometry:{type:'Point',coordinates:anchor},properties};});
+   for(const layer of map.getStyle().layers||[])if(/^(ms-|tl-history|dg-|bh-|ph-|psr-analysis|roi-|ae-emerging|ae-uae-|sg-|se-|ue-benchmark-)/.test(layer.id)){
     if(!U.hidden.has(layer.id))U.hidden.set(layer.id,map.getLayoutProperty(layer.id,'visibility')||'visible');map.setLayoutProperty(layer.id,'visibility','none');
    }
+   sgSource('um-spots',{type:'FeatureCollection',features:spots});
    sgSource('um-polygons',{type:'FeatureCollection',features});
-   if(!map.getLayer('um-fill'))map.addLayer({id:'um-fill',type:'fill',source:'um-polygons',paint:{'fill-color':['get','color'],'fill-opacity':.56}});
-   if(!map.getLayer('um-outline'))map.addLayer({id:'um-outline',type:'line',source:'um-polygons',paint:{'line-color':'#8da9b4','line-width':1}});
-   for(const id of ['um-fill','um-outline'])map.setLayoutProperty(id,'visibility','visible');
+   if(!map.getLayer('um-fill'))map.addLayer({id:'um-fill',type:'fill',source:'um-polygons',paint:{'fill-color':['get','color'],'fill-opacity':spots.length?.12:.5}});
+   if(!map.getLayer('um-outline'))map.addLayer({id:'um-outline',type:'line',source:'um-polygons',paint:{'line-color':'#8da9b4','line-width':.7,'line-opacity':.45}});
+   if(!map.getLayer('um-glow'))map.addLayer({id:'um-glow',type:'circle',source:'um-spots',paint:{'circle-color':['get','color'],'circle-radius':['interpolate',['linear'],['zoom'],6,19,9,36,12,50],'circle-blur':.72,'circle-opacity':.58}});
+   if(!map.getLayer('um-core'))map.addLayer({id:'um-core',type:'circle',source:'um-spots',paint:{'circle-color':['get','color'],'circle-radius':['interpolate',['linear'],['zoom'],6,3,9,5,12,7],'circle-opacity':.78,'circle-stroke-color':root.dataset.espaciosTheme==='light'?'#f6f9fc':'#17283b','circle-stroke-width':1.2}});
+   if(!U.spotBound){U.spotBound=true;map.on('click','um-core',event=>{if(!future())return;const area=event.features?.[0]?.properties?.name;if(!area)return;msState.area=area;prepare();details();refreshSoon();});map.on('mouseenter','um-core',()=>{if(future())map.getCanvas().style.cursor='pointer';});map.on('mouseleave','um-core',()=>{map.getCanvas().style.cursor='';});}
+   if(typeof map.setPaintProperty==='function')map.setPaintProperty('um-fill','fill-opacity',spots.length?.12:.5);
+   for(const id of ['um-fill','um-outline','um-glow','um-core'])map.setLayoutProperty(id,'visibility','visible');
    let key=Q('#um-map-key');if(!key){key=document.createElement('aside');key.id='um-map-key';Q('#app').append(key);}
-   text(key,features.length?num(domain[0],U.metric==='roi'?1:0)+'–'+num(domain[1],U.metric==='roi'?1:0)+(U.metric==='roi'?'% net return':' AED/sqft')+' · '+features.length+' areas':'No comparable mapped estimate');
-   key.title='Conditional '+U.path+' path. Fixed colour range across the selected horizon and same-anchor cohort. Unshaded is unknown, not zero. Each other area uses its own published starting gross yield; costs use your disclosed assumptions.';
-   root.dataset.unifiedFuture='1';sync();
-  }catch(error){if(token!==U.renderToken)return;U.error='Estimate shading unavailable; source evidence is retained.';sync();}
+   text(key,spots.length?num(domain[0],U.metric==='roi'?1:0)+'–'+num(domain[1],U.metric==='roi'?1:0)+(U.metric==='roi'?'% net return':' AED/sqft')+' · '+spots.length+' areas':'No comparable mapped estimate');
+   key.title='Conditional '+U.path+' path. Soft glows mark the centres of supported source areas; colour follows the estimate scale. Unshaded is unknown, not zero. Each other area uses its own published starting gross yield; costs use your disclosed assumptions.';
+   root.dataset.unifiedFuture='1';U.renderException=null;sync();
+  }catch(error){if(token!==U.renderToken)return;U.renderException=String(error?.message||error);U.error='Estimate shading unavailable; source evidence is retained.';sync();}
  }
  function readout(){
   if(U.metric==='projects')return[Q('#ae-density-count')?.textContent||'UAE project catalogue',cxCatalogue()?'All dates · future and undated records included':'Reported handovers · '+tlState.period+' · density, not price growth'];
@@ -97,8 +125,10 @@
   if(U.error)return[U.error,'History and original source records remain available.'];
   const area=msState.area||'Select an area',option=current();
   if(!future()){
+   const projectCount=window.__ESPACIOS_PROJECT_HEAT__?.visibleProjects||0,projectNote=projectCount?' · '+num(projectCount)+' verified project observations shown separately, not added to area samples.':'';
+   if(U.metric==='volume'){const known=tlState.frame.filter(r=>finite(r.value)),selected=known.find(r=>r.name===msState.area);return[selected?selected.name+' · '+num(selected.value)+' eligible sales':num(known.length)+' source areas with eligible sales','Quality-screened registered-sale sample · '+bhState.registration+' · '+(option?.period||tlState.period)+'. Colour is local sample count, not all transactions.'+projectNote];}
    const rows=tlState.frame.filter(r=>r.name===msState.area&&r.period===option?.period&&finite(r.value));
-   return[area+(rows.length?' · '+rows.map(r=>(msState.segment==='both'?(r.segment||'Combined')+' ':'')+num(r.value,U.metric==='roi'?2:0)+(U.metric==='roi'?'% gross yield':' AED/sqft')).join(' / '):' · No published value for this selection'),(U.metric==='roi'?'Historical gross rental yield · not realized profit':option?.evidenceClass==='released_projection'?'Released research projection · not a recorded sale':context().basis==='sales'?'Registered-sale median · '+msState.segment+' · '+bhState.registration:'Published asking benchmark · '+msState.segment)+(U.estimatesError?' · '+U.estimatesError:'')];
+   return[area+(rows.length?' · '+rows.map(r=>(msState.segment==='both'?(r.segment||'Combined')+' ':'')+num(r.value,U.metric==='roi'?2:0)+(U.metric==='roi'?'% gross yield':' AED/sqft')).join(' / '):' · No published value for this selection'),(U.metric==='roi'?'Historical gross rental yield · not realized profit':option?.evidenceClass==='released_projection'?'Released research projection · not a recorded sale':context().basis==='sales'?'Registered-sale median · '+msState.segment+' · '+bhState.registration:'Published asking benchmark · '+msState.segment)+(U.estimatesError?' · '+U.estimatesError:'')+(U.metric==='price'&&context().basis==='sales'?projectNote:'')];
   }
   const calc=U.result?.calculation;
   if(U.result?.error)return[area+' · Enter investment assumptions',U.result.error];
@@ -110,11 +140,14 @@
  }
  function sync(){if(!U.installed)return;
   Q('#um-property').hidden=U.metric==='projects';Q('#mm-points').hidden=U.metric!=='projects';Q('#mm-play').hidden=true;
+  const region=Q('#um-region');region.hidden=U.metric==='projects'||U.metric==='volume';region.value=msState.emirate;region.setAttribute('aria-label',U.metric==='roi'?'Gross rental yield region':U.forecastEnabled?'Conditional price estimate region':'Price evidence region');region.title=msState.emirate==='Dubai'&&U.metric==='price'&&msState.basis==='sales'?'Dubai registered sales':'Published asking price and gross rental yield benchmarks';
   Q('#mm-metrics').querySelectorAll('[data-mm-metric]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mmMetric===U.metric)));
   Q('#um-property').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.umType===msState.segment)));
   for(const option of Q('#ms-area').options)if(option.value)text(option,option.value);
-  const option=current(),label=U.metric==='projects'?'Project density':future()?U.metric==='roi'?'Net return · estimate':'Conditional estimate':U.metric==='roi'?'Yield history · not profit':option?.evidenceClass==='released_projection'?'Research projection':'Recorded source period';
+  const option=current(),label=U.metric==='projects'?'Project density':U.metric==='volume'?'Eligible registered sales':future()?U.metric==='roi'?'Net return · estimate':'Conditional estimate':U.metric==='roi'?'Yield history · not profit':option?.evidenceClass==='released_projection'?'Research projection':'Recorded source period';
+  if(option)text(Q('#dr-handle'),option.period+(option.kind==='scenario'?' · Estimate':option.evidenceClass==='released_projection'?' · Projection':''));
   text(Q('#um-evidence'),label);Q('#um-evidence').title=label;
+  const status=Q('#um-status');if(status){const message=U.metric==='projects'?'':U.loading||tlState.loading?'Loading matching evidence…':U.error||U.estimatesError||'';text(status,message);status.hidden=!message;}
   const [headline,note]=readout();text(Q('#um-value'),headline);text(Q('#um-note'),note);Q('#um-details').hidden=U.metric==='projects';text(Q('#um-details'),future()&&U.metric==='roi'?'Assumptions':'Details');
   Q('#mm-legend').hidden=U.metric==='projects'||future();Q('#um-horizon-label').hidden=U.metric==='projects';Q('#um-path-label').hidden=U.metric==='projects';
   if(U.metric!=='projects'&&U.options.length){const i=Math.max(0,U.options.findIndex(o=>o.id===U.selected)),slider=Q('#tl-slider');slider.max=String(U.options.length-1);slider.value=String(i);slider.disabled=U.loading||U.options.length<2;
@@ -122,16 +155,19 @@
    const marks=[...new Set([0,Math.floor((U.options.length-1)/2),U.options.length-1])];const labels=marks.map(at=>U.options[at].period);
    if([...Q('#dr-dates').children].map(x=>x.textContent).join('|')!==labels.join('|'))Q('#dr-dates').replaceChildren(...labels.map(label=>{const span=document.createElement('span');span.textContent=label;return span;}));
   }
-  window.__ESPACIOS_UNIFIED_MAP__={metric:U.metric,period:option?.period||tlState.period,evidenceClass:option?.evidenceClass||'catalogue',horizonYears:U.horizon,area:msState.area,segment:msState.segment,nativeCount:U.options.filter(o=>o.kind==='native').length,futureCount:U.options.filter(o=>o.kind==='scenario').length,loading:U.loading};
+  window.__ESPACIOS_UNIFIED_MAP__={metric:U.metric,period:option?.period||tlState.period,evidenceClass:option?.evidenceClass||'catalogue',horizonYears:U.horizon,area:msState.area,segment:msState.segment,nativeCount:U.options.filter(o=>o.kind==='native').length,futureCount:U.options.filter(o=>o.kind==='scenario').length,loading:U.loading,renderError:U.renderException||null};
  }
- function details(){if(future()){prepare();window.EspaciosEstimateUI.details();window.EspaciosMobileUI.activate(Q('#se-panel'));}else{msState.open=true;msInfo();window.EspaciosMobileUI.activate(Q('#ms-inspect'));}}
+ function details(){if(future()){prepare();window.EspaciosEstimateUI.details();window.EspaciosMobileUI.activate(Q('#se-panel'));}else if(U.metric==='volume'){Q('#tl-settings')?.click();Q('#tl-evidence')?.scrollIntoView?.({block:'nearest'});}else{msState.open=true;msInfo();window.EspaciosMobileUI.activate(Q('#ms-inspect'));}}
  function install(){if(!window.EspaciosMobileUI||!Q('#mm-date'))return false;
   U.installed=true;root.dataset.unifiedMap='1';U.metric=aeUaeCoverageActive()?'projects':msState.kind==='roi'?'roi':'price';
   const dock=Q('#tl-dock'),property=document.createElement('div');property.id='um-property';property.setAttribute('role','group');property.setAttribute('aria-label','Property type');
   for(const [type,label]of [['apartment','Apartments'],['villa','Villas'],['townhouse','Townhouses'],['both','Both · A + V']]){const b=document.createElement('button');b.type='button';b.dataset.umType=type;b.textContent=label;b.onclick=()=>setType(type);property.append(b);}Q('#mm-metrics').after(property);text(Q('[data-mm-metric="projects"]'),'Density');
   const actions=document.createElement('div');actions.id='um-actions';actions.append(Q('#mm-settings'),Q('#tl-minimize'));dock.querySelector('.tl-head').append(actions);
   const evidence=document.createElement('small');evidence.id='um-evidence';Q('#su-date').append(evidence);
-  const output=document.createElement('div');output.id='um-readout';output.innerHTML='<div><strong id="um-value"></strong><small id="um-note"></small></div><button id="um-details" type="button">Details</button>';dock.append(output);Q('#um-details').onclick=details;
+  const output=document.createElement('div');output.id='um-readout';output.innerHTML='<div><strong id="um-value"></strong><small id="um-note"></small></div><select id="um-region" aria-label="Evidence region"><option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Ajman</option><option>Ras Al Khaimah</option></select><button id="um-details" type="button">Details</button>';dock.append(output);Q('#um-details').onclick=details;
+  Q('#um-region').onchange=event=>{msState.emirate=event.target.value;msState.area='';msState.basis=msState.emirate==='Dubai'&&U.metric==='price'?'sales':'asking';U.busy=true;msOpen(U.metric,true);U.busy=false;U.selected='';U.preferFuture=U.forecastEnabled;refreshSoon();sync();};
+  Q('#minimal-metrics')?.append(Q('#um-region'));
+  const status=document.createElement('div');status.id='um-status';status.setAttribute('role','status');status.hidden=true;Q('#app').append(status);
   const horizon=document.createElement('label');horizon.id='um-horizon-label';horizon.textContent='Future scenario horizon';horizon.insertAdjacentHTML('beforeend','<select id="um-horizon"><option value="10">10 years from source anchor</option><option value="20">20 years · long-term assumptions</option><option value="30">30 years · long-term assumptions</option></select><small>Native history is retained. Longer paths continue disclosed damping; they are not validated forecasts.</small>');Q('#su-settings').querySelector('.su-dialog-head').after(horizon);
   Q('#um-horizon').onchange=e=>{U.horizon=+e.target.value;refreshSoon();};
   const path=document.createElement('label');path.id='um-path-label';path.innerHTML='Future path<select id="um-path"><option value="lower">Lower</option><option value="reference">Reference</option><option value="higher">Higher</option></select>';horizon.after(path);Q('#um-path').value=U.path;Q('#um-path').onchange=e=>{U.path=e.target.value;refreshSoon();};
@@ -150,7 +186,7 @@
   document.addEventListener('click',event=>{const button=event.target.closest?.('[data-ms-period],[data-pp-date]');if(!button||U.metric==='projects')return;const period=button.dataset.msPeriod||button.dataset.ppDate,option=U.options.find(o=>o.kind==='native'&&o.period===period);if(option){event.preventDefault();event.stopImmediatePropagation();choose(option.id);}},true);
   Q('#se-assumptions').addEventListener('input',()=>{if(future()){prepare();render();window.EspaciosMobileUI.sync();}});
   document.addEventListener('espacios:search-selection',event=>{if(U.metric==='projects')return;const d=event.detail;if(d.kind==='community'){msState.area=d.area||d.name;if(d.emirate)msState.emirate=d.emirate;if(msState.emirate!=='Dubai')msState.basis='asking';U.busy=true;msOpen(U.metric,false);U.busy=false;msState.area=d.area||d.name;}refreshSoon();});
-  window.EspaciosUnifiedMap=Object.freeze({setMetric,choose,render,sync,timeline:()=>U.metric==='projects'?null:{periods:U.options.map(o=>o.id),labels:Object.fromEntries(U.options.map(o=>[o.id,o.period+(o.kind==='scenario'?' · Estimate':o.evidenceClass==='released_projection'?' · Projection':'')])),selected:U.selected,loading:U.loading,key:U.key,metric:U.metric},pick(event){if(!future())return false;if(event.originalEvent?.detail>1)return true;const hit=map.getLayer('um-fill')&&map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['um-fill']})[0];if(hit)queueMicrotask(()=>{msState.area=hit.properties.name;prepare();details();refreshSoon();});return true;}});
+  window.EspaciosUnifiedMap=Object.freeze({setMetric,enterForecast,choose,render,sync,timeline:()=>U.metric==='projects'?null:{periods:U.options.map(o=>o.id),labels:Object.fromEntries(U.options.map(o=>[o.id,o.period+(o.kind==='scenario'?' · Estimate':o.evidenceClass==='released_projection'?' · Projection':'')])),selected:U.selected,loading:U.loading,key:U.key,metric:U.metric},pick(event){if(!future())return false;if(event.originalEvent?.detail>1)return true;const hit=map.getLayer('um-fill')&&map.queryRenderedFeatures([event.point.x,event.point.y],{layers:['um-fill']})[0];if(hit)queueMicrotask(()=>{msState.area=hit.properties.name;prepare();details();refreshSoon();});return true;}});
   refreshSoon();window.EspaciosMobileUI.sync();return true;
  }
  const timer=setInterval(()=>{if(install())clearInterval(timer);},150);

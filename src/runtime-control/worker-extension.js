@@ -36,6 +36,18 @@ worker_default.fetch=async function(request,env,ctx){
     }});
   }
   const response=await MAP_CONTROL_PREVIOUS_FETCH.call(this,request,env,ctx);
+  if(u.hostname==='espacios.me'&&['GET','HEAD'].includes(request.method)&&['/map/map-core.json','/map/map-data.json'].includes(path)&&!response.ok){
+    try{return await aeEmergencyMapResponse(request);}catch(error){
+      console.error(JSON.stringify({event:'map_emergency_snapshot_failed',path,error:String(error?.message||error)}));
+      return response;
+    }
+  }
+  if(u.hostname==='espacios.me'&&['GET','HEAD'].includes(request.method)&&path==='/map/api/uae-heatmap'&&!response.ok){
+    try{return await aeEmergencyHeatmapResponse(request,env,ctx);}catch(error){
+      console.error(JSON.stringify({event:'map_emergency_heatmap_failed',path,error:String(error?.message||error)}));
+      return response;
+    }
+  }
   if(path==='/map/api/system'&&request.method==='GET'&&response.ok){
     let payload;
     try{payload=await response.json();}catch{return response;}

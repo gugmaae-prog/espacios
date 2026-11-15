@@ -1,0 +1,13 @@
+{
+  "origin": "https://espacios.me/map",
+  "headers": [
+    "HTTP/2 103 ",
+    "link: </map/app-v2.css?v=20261013-map-mobile-disclosures-v5>; as=style; rel=preload",
+    "HTTP/2 200 ",
+    "content-type: text/html; charset=utf-8",
+    "cache-control: no-store, max-age=0",
+    "link: </map/vendor/maplibre-gl.mjs?v=6.8.0>; rel=modulepreload; as=script, </map/app-v2.js?v=20261013-map-mobile-disclosures-v5>; rel=modulepreload; as=script, </map/app-v2.css?v=20261013-map-mobile-disclosures-v5>; rel=preload; as=style",
+    "x-ae-navigation: 20261013-map-mobile-disclosures-v5",
+    "x-espacios-mobile: 20261013-map-mobile-disclosures-v5"
+  ]
+}

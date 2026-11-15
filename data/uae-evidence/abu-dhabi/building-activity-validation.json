@@ -1,0 +1,87 @@
+{
+  "sourceId": "scad-abu-dhabi-quarterly-building-activity-20261110",
+  "rows": 5,
+  "dataBytes": 12706,
+  "dataSha256": "7d53e9ef5b77ee2da7d33b00372c6667b405bb19038c1d48e7774b04df80ca98",
+  "sourcePageUrl": "https://www.scad.gov.ae/industry-construction?ThemeID=3294937&tab=Publications",
+  "captureReports": [
+    {
+      "period": "2025Q1",
+      "publicationPageUrl": "https://www.scad.gov.ae/w/building-completion-statistics-quarterly-first-quarter-2025",
+      "workbookUrl": "https://www.scad.gov.ae/documents/20122/0/Building+Completion+Statistics%2C+First+quarter+-+2025.xlsx/81ead27b-3ca0-2b70-4086-4c48da0f60af?t=1751285631905",
+      "retrievedAt": "2026-11-10",
+      "bytes": 179896,
+      "sha256": "5064e540d0094374fd5942019030e1c633cee07f9b9222aedf0b1d0e19d380b5",
+      "readback": "second independent GET matched bytes and SHA-256",
+      "tables": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4 cross-check"
+      ]
+    },
+    {
+      "period": "2025Q2",
+      "publicationPageUrl": "https://www.scad.gov.ae/w/building-completion-statistics-quarterly-second-quarter-2025",
+      "workbookUrl": "https://www.scad.gov.ae/documents/20122/2323339/publication_63789_18_3_5_2025_EN.xlsx/193157f3-7181-38e0-87d7-be9e46f6849b?t=1759228508579",
+      "retrievedAt": "2026-11-10",
+      "bytes": 180466,
+      "sha256": "5dd02aa933caffdd841f3ed875252e695a0071af54c77d3a6ee65dba3b376b28",
+      "readback": "second independent GET matched bytes and SHA-256",
+      "tables": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4 cross-check"
+      ]
+    },
+    {
+      "period": "2025Q3",
+      "publicationPageUrl": "https://www.scad.gov.ae/w/building-completion-statistics-quarterly-third-quarter-2025",
+      "workbookUrl": "https://www.scad.gov.ae/documents/20122/2323339/publication_63876_18_3_6_2025_EN.xlsx/054948c0-aed6-5f8e-8c40-dee58bb23048?t=1767156428459",
+      "retrievedAt": "2026-11-10",
+      "bytes": 404686,
+      "sha256": "7fca27e7bcdb1e323c04550cdefbb7dc7083f9af3ace3513fdd5226326b17cd4",
+      "readback": "second independent GET matched bytes and SHA-256",
+      "tables": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4 cross-check"
+      ]
+    },
+    {
+      "period": "2025Q4",
+      "publicationPageUrl": "https://www.scad.gov.ae/w/building-completion-statistics-quarterly-fourth-quarter-2025",
+      "workbookUrl": "https://www.scad.gov.ae/documents/20122/3308225/publication_63961_18_3_20_2025_EN.xlsx/4e5de3d5-eb2f-caac-5a2a-07e93caa89ad?t=1774956693654",
+      "retrievedAt": "2026-11-10",
+      "bytes": 179797,
+      "sha256": "d4b1faf00397ba416d37f074da15f8e7c8bcfa07650ac6ebe2ebe27af24ddcd2",
+      "readback": "second independent GET matched bytes and SHA-256",
+      "tables": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4 cross-check"
+      ]
+    },
+    {
+      "period": "2026Q2",
+      "publicationPageUrl": "https://www.scad.gov.ae/w/building-completion-statistics-quarterly-second-quarter-2026",
+      "workbookUrl": "https://www.scad.gov.ae/documents/20122/3369624/publication_64093_18_3_5_2026_EN.xlsx/e2462bc4-1828-fdda-e555-a645b37cb999?t=1790787978629",
+      "retrievedAt": "2026-11-10",
+      "bytes": 180386,
+      "sha256": "e32ec929607267b4c2516fd6cbc01f14b4fdadf43b2319e58507298bc3af7089",
+      "readback": "second independent GET matched bytes and SHA-256",
+      "tables": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4 cross-check"
+      ]
+    }
+  ],
+  "rightsScope": "Selected numerical facts and official source links with SCAD attribution under its published open-data policy; original workbooks are not republished.",
+  "verification": "Each of five official workbooks was fetched twice with matching bytes and SHA-256. The source Table 1 and Table 2 permit totals match, every regional breakdown sums to its emirate total, each component sums to its own total, and Table 3 completion totals match Table 4.",
+  "limits": "Preliminary quarterly counts from selected SCAD publications. Permit type and usage are alternative breakdowns of the same permits and must not be added together. Completion counts include all uses; the source does not split completions by commercial use. Q1 2026 is not in this verified set. Counts are not completed commercial units, registered sales, prices, project identities, or current availability."
+}

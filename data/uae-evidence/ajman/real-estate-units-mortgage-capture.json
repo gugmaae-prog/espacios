@@ -1,0 +1,13 @@
+{
+  "retrievedAt": "2026-11-03T00:18:36.314Z",
+  "rawBytes": 386928,
+  "rawSha256": "7dcd98113f6507abc9fb566237f3f39c728b1755007b6830f7989c13618a961d",
+  "independentReadbackAt": "2026-11-03T00:18:37.007Z",
+  "independentReadbackBytes": 386928,
+  "independentReadbackSha256": "7dcd98113f6507abc9fb566237f3f39c728b1755007b6830f7989c13618a961d",
+  "metadataSha256": "43c1776dab7421dbe395cf088208846b47855affe0681ddb9d018cd0081a56f1",
+  "sourceHosts": [
+    "https://data.ajman.ae",
+    "https://ajmandata.opendatasoft.com"
+  ]
+}

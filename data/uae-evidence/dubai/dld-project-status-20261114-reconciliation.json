@@ -1,0 +1,37 @@
+{
+  "previousSourceId": "continental-dld-mashrooi-project-status-20261101",
+  "currentSourceId": "continental-dld-mashrooi-project-status-20261114",
+  "previousRawSha256": "3a1df52f5116bd8b14babe4cb44fa5fcdb31097e6c6e2fc366f6327f96a2be2f",
+  "currentRawSha256": "e27ecc33ef7bb065b499a5395188c448dff4c2943d593a0157cdbca7ffbcee03",
+  "previousRows": 3871,
+  "currentRows": 3882,
+  "addedProjectNumbers": [
+    "4309",
+    "4501",
+    "4509",
+    "4512",
+    "4513",
+    "4538",
+    "4559",
+    "4570",
+    "4578",
+    "4609",
+    "4614"
+  ],
+  "removedProjectNumbers": [],
+  "changedExistingRows": 684,
+  "changedFieldRows": {
+    "completion_date": 145,
+    "completion_percent": 135,
+    "developer_name": 1,
+    "handover_date": 1,
+    "land_number": 535,
+    "previous_date": 145,
+    "previous_percent": 141,
+    "total_area_sqm": 18,
+    "total_units": 8
+  },
+  "retainedReviewedIdentityLinks": 83,
+  "reviewedIdentityFieldChanges": [],
+  "notes": "The 535 land_number display changes are source presentation differences in truncated multi-land lists; they are retained as source values and not used for project identity. Changed inspection percentages and dates remain dated source evidence, not proof of actual delivery or a V48 map status revision."
+}

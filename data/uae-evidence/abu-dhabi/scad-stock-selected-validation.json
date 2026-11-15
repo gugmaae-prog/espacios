@@ -1,0 +1,13 @@
+{
+  "sourceId": "scad-abu-dhabi-census-2024-real-estate-stock",
+  "projectionDate": "2026-11-14",
+  "sourceUrl": "https://census.scad.gov.ae/home/realestate?lang=en",
+  "sourceResponseSha256": "2a1f58d1818a0c0b2a227e3e274f7c38daa3864754e18e8888119d418f06569b",
+  "sourceRetrievedAt": "2026-11-02T18:25:47.028399+00:00",
+  "rightsScope": "Selected numerical facts with SCAD attribution under the official open-data policy; source web pages and graphics are not copied.",
+  "policyUrl": "https://scad.gov.ae/documents/d/guest/scad-open-data-policy",
+  "dataBytes": 1899,
+  "dataSha256": "7af5824f3cdc9a275fa8dc0ef0ca3ea5047cf630691d583b599ee194a1c6de5a",
+  "rows": 8,
+  "limits": "Rounded census stock totals for 2023 and 2024; not projects, sales, prices, current listings or all-UAE data."
+}

@@ -1,0 +1,51 @@
+{
+  "planId": "rgestate-20261114-idrive-e2-replica",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "host": "s3.us-west-2.idrivee2.com",
+  "signingRegion": "us-east-1",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "sourceScope": "Three versioned RGEstate factual listing snapshots; no listing photos",
+  "separateFromExistingCloudflareBackupRun": true,
+  "objects": [
+    {
+      "sourceId": "rgestate-full-index-20261114",
+      "role": "publisher_listing_index",
+      "localPath": "data/uae-evidence/rgestate/full-index-20261114.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/rgestate/listings/20261114/f5efe6899757c73e522ecab4de5a2edf41404579fa122a0a292d8bae07c6fade/full-index-20261114.json.gz",
+      "bytes": 89000,
+      "sha256": "f5efe6899757c73e522ecab4de5a2edf41404579fa122a0a292d8bae07c6fade",
+      "rawBytes": 874024,
+      "rawSha256": "79e6845a3285513033aba314e6234a6f0a03a1aa22ba1d0f2d9194b6a1af8ca2",
+      "validationSha256": "ddca1762e34aa20d1da5bdb07254f65f52b18f219b02a7a4617ccd273c4be1c5",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "rgestate-commercial-category-20261114",
+      "role": "publisher_commercial_category",
+      "localPath": "data/uae-evidence/rgestate/commercial-listings-20261114.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/rgestate/listings/20261114/6028cb167d5163268cedeea2e795fe7615146079dc6eeecf254dca4f29947183/commercial-listings-20261114.json.gz",
+      "bytes": 41251,
+      "sha256": "6028cb167d5163268cedeea2e795fe7615146079dc6eeecf254dca4f29947183",
+      "rawBytes": 398136,
+      "rawSha256": "b658b0615a545938cda7344506e476b4ccba318b6ebba331c9df824c8d340ba8",
+      "validationSha256": "94fbbe957c64c8c29f76dd68171213a3c4e7f83ce5a4efbdb0e009e4784a7ddd",
+      "contentType": "application/gzip"
+    },
+    {
+      "sourceId": "rgestate-commercial-title-candidates-20261114",
+      "role": "publisher_commercial_title_candidates",
+      "localPath": "data/uae-evidence/rgestate/commercial-title-candidates-20261114.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/rgestate/listings/20261114/c4005d979616fb5b10cfc0d2121ce3fc47c9983c2c63d6c8ac417fae14bb6767/commercial-title-candidates-20261114.json.gz",
+      "bytes": 7769,
+      "sha256": "c4005d979616fb5b10cfc0d2121ce3fc47c9983c2c63d6c8ac417fae14bb6767",
+      "rawBytes": 70461,
+      "rawSha256": "1f2214c7573a105ca7ebd78ea62f4d766c77262cde4c62d2da3cf9cc3d9540ef",
+      "validationSha256": "c6859addaabf0ee1aa5b2fffa69cffe53d0e604ae47d9a01bb2b4ac7b9dea49d",
+      "contentType": "application/gzip"
+    }
+  ],
+  "objectCount": 3,
+  "totalBytes": 138020
+}

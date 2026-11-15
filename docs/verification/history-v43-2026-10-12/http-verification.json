@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-11T23:42:30.587Z",
+  "token": "20261012-map-evidence-v47",
+  "checks": [
+    {
+      "path": "/map",
+      "status": 200,
+      "bytes": 260270
+    },
+    {
+      "path": "/map/app-v2.js?v=20261012-map-evidence-v47",
+      "status": 200,
+      "bytes": 845370
+    },
+    {
+      "path": "/map/app-v2.css?v=20261012-map-evidence-v47",
+      "status": 200,
+      "bytes": 113352
+    },
+    {
+      "path": "/map/map-core.json?review=20261012-map-evidence-v47",
+      "status": 200,
+      "bytes": 1279319,
+      "projects": 1645,
+      "communities": 215,
+      "cataloguePreserved": true
+    },
+    {
+      "path": "/map/data-room",
+      "status": 404,
+      "bytes": 41
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,66 @@
+{
+  "sourceId": "rgestate-full-index-20261111",
+  "publisher": "RGEstate",
+  "sourceUrl": "https://www.rgestate.com/properties",
+  "observedAt": "2026-11-10T21:36:36.127783+00:00",
+  "captures": [
+    {
+      "pass": "first",
+      "retrievedAt": "2026-11-10T21:35:19.382683+00:00",
+      "pages": 80,
+      "pageManifestSha256": "bf90cf60861dd6560986a63c46fadd96b63ca69b849d20ce5d1d04d4137832a5"
+    },
+    {
+      "pass": "second",
+      "retrievedAt": "2026-11-10T21:36:36.127783+00:00",
+      "pages": 80,
+      "pageManifestSha256": "d05ae38a24f0165c2f5c4209f104368e4eac3f16bcfad8e219ad807446cf9157"
+    }
+  ],
+  "evidenceClass": "brokerage_advertised_listing_facts",
+  "rights": "Owner confirmed reuse of factual details and links for all RGEstate listings, including third-party advertisers; photos excluded.",
+  "rows": 1666,
+  "pathClassCounts": {
+    "rent": 725,
+    "sale": 821,
+    "off-plan": 15,
+    "business-sale": 105
+  },
+  "comparison": {
+    "previousSourceId": "rgestate-full-index-20261110",
+    "previousObservedAt": "2026-11-10T11:04:45.697616+00:00",
+    "previousRawSha256": "3a2890886d3dbaf0f36d9fae96baef28b8b3f0b89bbb314128796a47e204cdbd",
+    "continuingIds": 1666,
+    "addedIds": [],
+    "absentFromCurrentIndexIds": [
+      "45954",
+      "49328"
+    ],
+    "changedAskingPrices": [
+      {
+        "sourceListingId": "42310",
+        "previousPriceLabel": "AED 20,000,000",
+        "currentPriceLabel": "AED 26,250,000"
+      }
+    ],
+    "changedTitles": [
+      {
+        "sourceListingId": "42310",
+        "previousTitle": "87,000 Sqft Commercial Land with Warehouse & Office for Sale in Al Quoz Near First Al Khail Street",
+        "currentTitle": "87,500 Sqft Commercial Land with Warehouse & Office for Sale in Al Quoz Near First Al Khail Street"
+      }
+    ],
+    "limits": "A missing publisher index ID does not establish a sale, withdrawal, or current unavailability. Price changes are advertised asks, not transactions."
+  },
+  "commercialCategoryRows": 861,
+  "notInCommercialCategoryRows": 805,
+  "missingAreaRows": 595,
+  "missingLocationRows": 23,
+  "unknownPriceRows": 143,
+  "rawBytes": 877516,
+  "rawSha256": "312a6a65ab6e3fda6582e5e93d8e0333c58092f1f3e2b9e25f95bdb15e8ee606",
+  "compressedBytes": 89276,
+  "compressedSha256": "ebe34213f1445a74472972592dfff7aae2b9318686ac0d996992dd82cd1d507e",
+  "verification": "Two independent 1666-row full-index reads matched facts; each captured HTML page checksum passed; all 861 commercial-category rows match the full index.",
+  "limits": "Publisher-listed at capture only. Current availability, category for rows outside the verified commercial pages, asking-price accuracy, coordinates, and exact project identity are unverified. Business-sale asks can include operating businesses and are not property prices. Off-plan path entries have no verified sale/rent classification. Not registered transactions or a complete UAE inventory."
+}

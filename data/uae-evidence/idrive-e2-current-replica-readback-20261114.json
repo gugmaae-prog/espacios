@@ -1,0 +1,24 @@
+{
+  "attestationId": "uae-current-evidence-idrive-e2-readback-20261114",
+  "planId": "uae-current-evidence-idrive-e2-replica-20261114",
+  "planSha256": "e9029050acf60768daf7f32cfbf5a260e6e59c55aad31607c2456fd98e5161b0",
+  "privateJournalSha256": "858e606a3f4583692d698dc292b5b584feb95b345c407686fafed74e4ce5ff1c",
+  "previewVersion": "137fa1b3-1a86-4698-94f0-890c32dcad4e",
+  "bridgeSha256": "bcc305353848826072c9cabcca6d02482654f0369a39fdd3cd98f99160442d6a",
+  "verifiedAt": "2026-11-14T10:12:07.019Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "objectCount": 6,
+  "totalBytes": 513330,
+  "sourceIds": [
+    "continental-dld-mashrooi-project-status-20261114",
+    "rgestate-full-index-20261111",
+    "rgestate-commercial-category-20261111",
+    "rgestate-commercial-title-candidates-20261111",
+    "sharjah-rerd-reported-monthly-market-20261114"
+  ],
+  "verification": "Each allowlisted gzip object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

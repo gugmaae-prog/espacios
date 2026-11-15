@@ -1,0 +1,22 @@
+{
+  "sourceId": "rak-rera-sanad-offplan-list-candidate-20261114",
+  "sourceUrl": "https://sanad.mun.rak.ae/docs/en/rera-updated-developers-list",
+  "captureDate": "2026-11-14",
+  "sourceHtmlSha256": "2cdf539fbbc528f8f7f90a68414159779bde5a91cd96b0bc82dbd1aee223748e",
+  "sourceRows": 81,
+  "sourceDate": null,
+  "sourceDateBasis": "The reviewed page does not establish a list publication or observation date.",
+  "acceptedV48RakMappedFeatures": 89,
+  "acceptedHeatmapSha256": "98fda6fa1147350e93ef936153d30651dfd055d0d5bc5b31c4f7e5547ab1c42d",
+  "exactNormalizedNameCandidateRows": 34,
+  "oneToOneNameCandidateRows": 34,
+  "ambiguousNameCandidateRows": 0,
+  "sourceRowsWithoutExactNameCandidate": 47,
+  "identityLinksApproved": 0,
+  "publisher": "Ras Al Khaimah Municipality Real Estate Regulatory Administration",
+  "copyrightUrl": "https://mun.rak.ae/home/open-data/website/copyrights/",
+  "termsUrl": "https://mun.rak.ae/terms-conditions/",
+  "publicationStatus": "internal_candidate_only",
+  "rightsStatus": "No redistribution permission established for this all-rights-reserved list.",
+  "limits": "Row numbers are page order, not verified stable project IDs. Name equality is a review candidate only; developer, aliases, phases, dates and identity need separate checks. The list has no verified coordinates or live availability. No source rows, names or developer values are redistributed by this audit."
+}

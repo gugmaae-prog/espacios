@@ -1,0 +1,35 @@
+{
+  "sourceId": "ad-sdi-building-use-20261109",
+  "sourceLayerUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/353",
+  "queryUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/353/query?where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22OBJECTID%22%2C%22outStatisticFieldName%22%3A%22feature_count%22%7D%5D&groupByFieldsForStatistics=MUNICIPALITYNAME%2CPRIMARYUSAGETYPE&returnGeometry=false&f=json",
+  "termsUrl": "https://sdi.gov.abudhabi/sdi/opendata.html",
+  "publisher": "Abu Dhabi Spatial Data Infrastructure",
+  "attribution": "Source: AD-SDI Data Catalog / Department of Government Enablement, Government of Abu Dhabi",
+  "retrievedAt": "2026-11-09T18:10:24.723744+00:00",
+  "emirate": "Abu Dhabi",
+  "evidenceClass": "official_building_polygon_use_aggregate",
+  "grain": "municipality code × exact primary-use label; count of published building polygon features",
+  "layerFeatureCount": 392495,
+  "groupRows": 266,
+  "municipalityCodes": [
+    "AAM",
+    "ADM",
+    "WRM"
+  ],
+  "byMunicipality": {
+    "AAM": 173118,
+    "ADM": 146332,
+    "WRM": 73045
+  },
+  "distinctUseLabels": 204,
+  "unknownUseFeatures": 249177,
+  "knownUseFeatures": 143318,
+  "rawCaptureASha256": "72613743df84aa58a1b0325a0f58966a6043f6d46d79756173f8300c0d4b56b1",
+  "rawCaptureBSha256": "5a7b586f5e8e208d0a17abe10fe3caf7439dbb230115ab1d5067901e26c88ec6",
+  "canonicalSha256": "b226cb6da45ae7ac2e19f54a31499c35a7e27bf2682654c54017c779d9215572",
+  "canonicalBytes": 19315,
+  "compressedSha256": "9deef713c37c27c909bed7a762207bff5dc43db47bf651f31f3034b7b67d6393",
+  "compressedBytes": 2249,
+  "metadataSha256": "3cadd3b8c284527ec6075ac19b2c9699fd8647a7dad0b3299e688be78b2bc6ed",
+  "limits": "Counts are published polygon features, not verified distinct buildings, units, projects, sale or rent transactions, prices, or currently available spaces. 249,177 of 392,495 features have null or UNDEFINED primary use; source use labels are retained verbatim. The service does not state a source observation date or guarantee completeness. Municipality codes are retained from the source; polygons and building-level identities are not included in this aggregate."
+}

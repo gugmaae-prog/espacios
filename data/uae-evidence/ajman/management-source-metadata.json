@@ -1,0 +1,45 @@
+{
+  "dataset_id": "management-companies-for-real-estate-development-projects",
+  "sourceMetadataSha256": "055bcec985917a02f7bc306814e2e1400bfef3ef302179db50facf0e0639b4c5",
+  "metas": {
+    "default": {
+      "title": "Management companies for Real Estate Development Projects",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "modified": "2026-06-09T04:23:49.791000+00:00",
+      "publisher": "Department of Land and Real Estate Regulation",
+      "update_frequency": "ANNUAL",
+      "records_count": 451
+    }
+  },
+  "fields": [
+    {
+      "name": "project_id",
+      "type": "double"
+    },
+    {
+      "name": "project_name_english",
+      "type": "text"
+    },
+    {
+      "name": "project_name_arabic",
+      "type": "text"
+    },
+    {
+      "name": "management_company_name_in_arabic",
+      "type": "text"
+    },
+    {
+      "name": "management_company_name_in_english",
+      "type": "text"
+    },
+    {
+      "name": "office_id",
+      "type": "double"
+    },
+    {
+      "name": "year",
+      "type": "int"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-13T08:09:20.053Z",
+  "origin": "https://espacios.me/map",
+  "record": "Avida Residences",
+  "facts": 41,
+  "sparsePriceMonths": 10,
+  "missingPriceMonths": 2,
+  "desktop": {
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "panelWidth": 366
+  },
+  "mapControl": {
+    "background": "rgb(248, 250, 252)",
+    "color": "rgb(32, 48, 68)"
+  },
+  "annualEndpoint": 2080,
+  "annualSlots": 54,
+  "numericalScenario": "unavailable with explicit missing-input explanation",
+  "passed": true
+}

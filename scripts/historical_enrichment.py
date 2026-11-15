@@ -1,5 +1,5 @@
 """Merge reviewed, source-backed enrichment; raw scraped pages stay outside the repo."""
-import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip
+import json, pathlib, csv, io, hashlib, collections, datetime, re, gzip, math
 from copy import deepcopy
 from historical_gap_ledger import refresh_research_coverage, period_start
 
@@ -16,6 +16,25 @@ def load_enrichment(base, sidecars=()):
    raise ValueError('Unsupported enrichment sidecar schema or missing pass identity')
   if any(item.get('passId')==supplement['passId'] for item in packet.get('collection',{}).get('passes',[])):
    raise ValueError('Duplicate enrichment pass identity')
+  # This reviewed pass keeps register snapshots and lifecycle milestones in
+  # separate collections so their evidence classes remain explicit. Normalize
+  # them into the canonical enrichment facts consumed by the reproducible build.
+  if supplement.get('passId')=='dld-derived-project-register-20260901':
+   for fact in supplement.get('facts',[]):
+    fact.setdefault('kind','register');fact.setdefault('status','accepted')
+   for item in supplement.get('lifecycleMilestones',[]):
+    milestone=item['milestone']
+    supplement.setdefault('facts',[]).append({
+     'id':milestone['id'],'kind':'lifecycle','status':'accepted','recordId':item['recordId'],
+     'sourceIds':milestone.get('sourceIds',[]),'firstAvailableAt':milestone.get('firstAvailableAt'),
+     'publishedAt':milestone.get('publishedAt'),'identityBasis':milestone['identityBasis'],
+     'identitySourceIds':milestone.get('identitySourceIds',[]),'identityVerified':milestone.get('identityVerified',False),'milestone':milestone['kind'],
+     'date':milestone['date'],'verification':milestone.get('status','reported'),
+     'scope':milestone.get('scope','subject'),'eventStatus':milestone.get('eventStatus','reported'),
+     'primaryEvidence':milestone.get('primaryEvidence',False),'label':milestone['label'],
+     'note':milestone.get('note'),'evidenceClass':milestone.get('evidenceClass'),
+     'dateBasis':milestone.get('dateBasis'),'progressPercent':milestone.get('progressPercent'),'registerSnapshotMilestone':True,
+    })
   for key in ['sources','facts','seriesLinks','historyInputs','licensedArchives','additionalDatasets','recordResearch','sourceCandidates']:
    packet.setdefault(key,[]).extend(supplement.get(key,[]))
   packet.setdefault('collection',{}).setdefault('passes',[]).append(supplement.get('collection',{}))
@@ -110,7 +129,11 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    if (milestone in ['completion','occupancy'] or fact.get('eventStatus')=='actual') and period_start(date['start'])>asof:raise ValueError('Future actual lifecycle event')
    verification=fact.get('verification','reported')
    if verification=='verified' and not fact.get('primaryEvidence'):raise ValueError('Verified lifecycle requires primary evidence')
-   record['lifecycle'].append({**common,'kind':milestone,'date':date,'status':verification,'scope':fact.get('scope','published_reference'),'eventStatus':fact.get('eventStatus','planned' if milestone.startswith('target_') else 'reported'),'primaryEvidence':fact.get('primaryEvidence',False),'label':fact['label'],'note':fact.get('note'),'evidenceClass':fact.get('evidenceClass','source_reported_milestone')})
+   lifecycle_row={**common,'kind':milestone,'date':date,'status':verification,'scope':fact.get('scope','published_reference'),'eventStatus':fact.get('eventStatus','planned' if milestone.startswith('target_') else 'reported'),'primaryEvidence':fact.get('primaryEvidence',False),'label':fact['label'],'note':fact.get('note'),'evidenceClass':fact.get('evidenceClass','source_reported_milestone')}
+   if fact.get('registerSnapshotMilestone') or fact.get('preserveAdditionalLifecycleFields'):
+    for optional in ['dateBasis','progressPercent','identityVerified','sourcePage','phaseLabel','relatedMilestoneIds','dateReconciliation']:
+     if optional in fact:lifecycle_row[optional]=fact[optional]
+   record['lifecycle'].append(lifecycle_row)
    counters['lifecycleFacts']+=1
   elif kind=='financial':
    scope=fact.get('scope');obs=fact['observation'];value=obs.get('value')
@@ -118,7 +141,50 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    period=str(obs.get('period','')); match=re.fullmatch(r'(\d{4})-?Q([1-4])',period,re.I)
    start=f'{match[1]}-{(int(match[2])-1)*3+1:02d}-01' if match else period+'-01-01' if len(period)==4 else period+'-01' if len(period)==7 else period
    if start[:10]>asof:raise ValueError('Financial observation after snapshot')
-   if not isinstance(value,(int,float)) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
+   if not isinstance(value,(int,float)) or isinstance(value,bool) or not math.isfinite(value) or value<=0 or not obs.get('unit') or not obs.get('period'):raise ValueError('Invalid financial fact')
+   if fact.get('evidenceClass')=='registered_sale_transaction_primary_dld':
+    if scope!='subject' or fact.get('primaryEvidence') is not True or fact.get('identityVerified') is not True or not proofids:
+     raise ValueError('DLD individual sale requires verified primary subject identity')
+    if isinstance(obs.get('sampleCount'),bool) or (obs.get('observationKind'),obs.get('transactionKind'),obs.get('metric'),obs.get('unit'),obs.get('sampleCount'))!=('transaction','sale','price','AED/sqft',1):
+     raise ValueError('DLD individual sale cannot be an aggregate, rent or asking quote')
+    if (obs.get('usage'),obs.get('propertyType'),obs.get('propertySubtype'))!=('Residential','Unit','Flat') or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',period):
+     raise ValueError('DLD individual sale requires an exact residential-flat registration day')
+    datetime.date.fromisoformat(period)
+    if not re.fullmatch(r'dld-sha256:[0-9a-f]{64}',str(obs.get('transactionId',''))) or obs.get('sourceObservationId')!=obs['transactionId']:
+     raise ValueError('DLD individual sale requires a stable normalized transaction key')
+    price,area=obs.get('priceAED'),obs.get('areaSqm')
+    if any(not isinstance(v,(int,float)) or isinstance(v,bool) or not math.isfinite(v) or v<=0 for v in [price,area]) or not math.isclose(value,price/area/10.763910416709722,rel_tol=1e-10):
+     raise ValueError('DLD individual sale price and area must reconcile')
+    if obs.get('currentSnapshotEligible') is not False or obs.get('includeInCurrentSnapshot') is not False:
+     raise ValueError('Historical DLD sale cannot become a current valuation')
+    if any(o.get('transactionId')==obs['transactionId'] or o.get('sourceObservationId')==obs['sourceObservationId'] for r in records for o in r.get('observations',[])):
+     raise ValueError('DLD individual transaction already belongs to a record')
+   if obs.get('observationKind')=='developer_reported_aggregate_sales' or 'developerSalesSnapshot' in obs:
+    report=obs.get('developerSalesSnapshot')
+    finite=lambda n:isinstance(n,(int,float)) and not isinstance(n,bool) and math.isfinite(n)
+    if not isinstance(report,dict):raise ValueError('Developer sales require the native table population')
+    if obs.get('observationKind')!='developer_reported_aggregate_sales' or obs.get('metric')!='volume' or report.get('asOf')!=period or report.get('unitsSold')!=value:
+     raise ValueError('Developer sales must remain dated volume observations')
+    if not all(isinstance(report.get(k),int) and not isinstance(report[k],bool) and report[k]>=0 for k in ['unitsLaunched','unitsSold']) or report['unitsSold']>report['unitsLaunched']:
+     raise ValueError('Invalid developer unit populations')
+    if not all(finite(report.get(k)) and report[k]>=0 for k in ['netSalesAEDMillion','revenueBacklogAEDMillion']) or report.get('currency')!='AED' or report.get('nativeMonetaryScale')!=1000000:
+     raise ValueError('Developer accounting money must retain its native AED million scale')
+    progress=report.get('reportedConstructionComplete');sold=report.get('reportedSoldPercent')
+    if not (finite(sold) and 0<=sold<=100) or not (progress=='NIL' or finite(progress) and 0<=progress<=100):
+     raise ValueError('Invalid developer reported percentages; NIL must stay literal')
+    if not all(report.get(k) for k in ['sourceProjectLabel','populationBasis','periodBasis']) or any(report.get(k) is not False for k in ['pricePerUnitDerived','registeredTransactionsEstablished']):
+     raise ValueError('Developer sales cannot establish unit prices or registered transactions')
+    if obs.get('currentSnapshotEligible') is not False or obs.get('includeInCurrentSnapshot') is not False:
+     raise ValueError('Developer cumulative accounting is not a current property valuation')
+   if 'quotedPriceRange' in obs:
+    quoted=obs['quotedPriceRange']
+    numeric=lambda n:isinstance(n,(int,float)) and not isinstance(n,bool) and math.isfinite(n) and n>0
+    if not isinstance(quoted,dict) or not all(numeric(quoted.get(k)) for k in ['low','high']) or quoted['high']<quoted['low']:
+     raise ValueError('Invalid advertised price range endpoints')
+    if obs.get('observationKind')!='asking_quote' or obs.get('metric')!='price' or quoted.get('unit')!=obs.get('unit') or value!=quoted['low'] or not quoted.get('basis') or not obs.get('segment'):
+     raise ValueError('Advertised price range requires a native cohort, basis, unit and matching lower endpoint')
+    if obs.get('currentSnapshotEligible') is not False or obs.get('includeInCurrentSnapshot') is not False:
+     raise ValueError('A cohort range cannot become a single current price')
    if scope=='subject' and not (fact.get('identityVerified') is True and proofids):raise ValueError('Unproven subject financial fact')
    evidence_class=fact.get('evidenceClass')
    mirrored='tenant_mirror' in sources[sourceids[0]].get('classification','')

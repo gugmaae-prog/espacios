@@ -1,0 +1,20 @@
+{
+  "attestationId": "sharjah-supplement-20261114-idrive-e2-readback",
+  "planId": "sharjah-supplement-20261114-idrive-e2-replica",
+  "planSha256": "cbc5dc197952dc2b9524472ed214805414c675a3201d7ce85208ec5403097f2d",
+  "privateJournalSha256": "2287df0a58489ba8d924a476b7bcdf5007db28ce8f79376dea714f107153719d",
+  "previewVersion": "8c43d0b0-397d-43c1-8432-015c59f33bb1",
+  "bridgeSha256": "bcc305353848826072c9cabcca6d02482654f0369a39fdd3cd98f99160442d6a",
+  "verifiedAt": "2026-11-14T12:46:52.097Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "objectCount": 1,
+  "totalBytes": 1324,
+  "sourceIds": [
+    "sharjah-rerd-reported-monthly-market-20261114-supplement"
+  ],
+  "verification": "The allowlisted gzip object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

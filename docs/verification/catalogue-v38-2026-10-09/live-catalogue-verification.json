@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-08T21:09:31.269Z",
+  "url": "https://espacios.me/map/map-core.json?review=20261009-map-catalogue-v38",
+  "status": 200,
+  "projects": 1645,
+  "communities": 215,
+  "onlyDeveloperAndAuditChanged": true,
+  "otherProjectsUnchanged": 1644,
+  "changes": [
+    {
+      "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+      "from": "nura",
+      "to": "RAK Properties",
+      "review": {
+        "id": "nura-developer-20261009",
+        "recordId": "project:nura-rak-properties-mina-ras-al-khaimah-uae",
+        "catalogueName": "Nura by RAK Properties",
+        "emirate": "Ras Al Khaimah",
+        "field": "developer",
+        "fromValue": "nura",
+        "toValue": "RAK Properties",
+        "verification": "verified",
+        "primaryEvidence": true,
+        "firstAvailableAt": "2026-10-08T19:42:40.810Z",
+        "reviewedOn": "2026-10-09",
+        "sourceRefs": [
+          {
+            "id": "rak33-nura-launch",
+            "sha256": "5a98d9ac37f5b35b63bac7c0c10c5fe01e18e7f73a32a9136acd6df6bb612b5c",
+            "url": "https://www.rakproperties.ae/news/downtown-minas-cityscape-continues-to-evolve-with-the-launch-of-nura-rak-properties-newest-contemporary-luxury-development-on-raha-island/"
+          }
+        ],
+        "reason": "The retained exact project title and slug identify Nura. RAK Properties' dated primary launch release identifies itself as developer. The archived catalogue mistakenly uses the project name as its developer. This corrects display metadata only; no company registration number, phase, coordinates, price, rent, or completion is inferred.",
+        "priorValue": "nura"
+      }
+    }
+  ]
+}

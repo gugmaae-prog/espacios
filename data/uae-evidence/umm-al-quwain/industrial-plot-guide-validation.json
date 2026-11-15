@@ -1,0 +1,19 @@
+{
+  "sourceId": "uaq-industrial-city-investor-guide-2021-selected-plot-rates-20261110",
+  "rows": 4,
+  "sourceUrl": "https://ia.uaq.ae/wp-content/uploads/2021/10/industrial-authority-UAQ-INVESTOR-GUIDE.pdf",
+  "dataBytes": 1422,
+  "dataSha256": "1a80324b9d0fba499e652c0781db4ae5f9fd005c11a427ab16c8307d4b44bd27",
+  "capturePdf": {
+    "url": "https://ia.uaq.ae/wp-content/uploads/2021/10/industrial-authority-UAQ-INVESTOR-GUIDE.pdf",
+    "retrievedAt": "2026-11-10",
+    "bytes": 7766255,
+    "sha256": "1c6002a99f0150240fdcb098a0a68df2ed2c4f38c078c1a1f7cfb24620bea763",
+    "pages": 16,
+    "tablePage": 8,
+    "pdfModifiedAt": "2021-10-16"
+  },
+  "rightsScope": "Only four selected numerical guide facts and a source link are reproduced. PDF text, images, layout, and bulk source content are excluded; no current offer or bulk register reuse right is asserted.",
+  "verification": "The official authority site's linked PDF was independently downloaded and its page-8 English table was checked against the four plot-type, size and AED/sqm pairs. The page-3 description states a 20-year land-lease term; the table does not state the rate charging period.",
+  "limits": "The 2021 rate guide is archival context. It does not verify current availability, current rate, signed rent, transaction price, unit inventory, or exact plot coordinates. Do not annualize or multiply the rate by the 20-year lease term."
+}

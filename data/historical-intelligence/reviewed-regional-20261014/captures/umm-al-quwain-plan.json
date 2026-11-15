@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "mode": "capture_only",
+  "passId": "primary-umm-al-quwain-20261014-v47",
+  "baselineVersion": "20261013-enrichment-v46",
+  "baselineSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "baselineCommit": "6cb77c197d1ea6107c94f374f2bfa10c7248a043",
+  "domains": [
+    "sobharealty.com"
+  ],
+  "limits": {
+    "sourcePages": 20,
+    "httpRequests": 40,
+    "concurrency": 1,
+    "redirectsPerUrl": 2,
+    "bytesPerResponse": 2000000,
+    "timeoutSeconds": 15,
+    "minimumDelaySeconds": 2
+  },
+  "sources": [
+    {
+      "id": "sobha-aquamarine",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/aquamarine",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:apartments-and-duplexes-in-aquamarine-beach-residences-on-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Aquamarine",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Aquamarine",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-pearlside",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pearlside",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:pearlside-marina-residences-siniya-island-uaq"
+      ],
+      "expectedNeedles": [
+        "Pearlside",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Pearlside",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-canalside",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/canalside",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:canalside-by-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Canalside",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Canalside",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-starline",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/starline",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:starline-beach-residence-siniya-island-uaq-uae"
+      ],
+      "expectedNeedles": [
+        "Starline",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Starline",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-pierside",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pierside",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:apartments-pierside-marina-residences-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Pierside",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Pierside",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-bayside",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/bayside",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain"
+      ],
+      "expectedNeedles": [
+        "Bayside",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Bayside",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-coastline",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coastline",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:coastline-beach-residences-sobha-realty-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Coastline",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Coastline",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-florine",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/florine",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:florine-beach-residences-sobha-realty-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Florine",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Florine",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-coraline",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/coraline",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:apartments-and-duplexes-in-coraline-beach-residences-on-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Coraline",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Coraline",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-delphine",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/delphine",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:apartments-delphine-beach-residences-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Delphine",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Delphine",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-selene",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-residences/selene",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:selene-beach-residences-by-sobha-realty"
+      ],
+      "expectedNeedles": [
+        "Selene",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Selene",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-palm-grove-villas",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/palm-grove-villas",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:palm-groove-villas-by-sobha-realty-on-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Palm Grove",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Palm Grove",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-coral-villas",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/beach-villas/coral-villas",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:coral-beach-villas-by-sobha-realty-on-sobha-siniya-island"
+      ],
+      "expectedNeedles": [
+        "Coral",
+        "Siniya"
+      ],
+      "identityNeedles": [
+        "Coral",
+        "Siniya"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    },
+    {
+      "id": "sobha-aquamont",
+      "url": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "publisher": "Sobha Realty",
+      "reviewAgainstIds": [
+        "project:sobha-aquamont-apartments-umm-al-quwain"
+      ],
+      "expectedNeedles": [
+        "Aquamont",
+        "Umm"
+      ],
+      "identityNeedles": [
+        "Aquamont",
+        "Umm"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false
+    }
+  ]
+}

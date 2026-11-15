@@ -1,0 +1,31 @@
+{
+  "planId": "rak-municipal-commercial-idrive-e2-replica-20261115",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261115-rak-municipal-commercial/",
+  "sourceInventoryVersion": "20261115-uae-evidence-coverage-v52",
+  "previousReplicaAttestationId": "ajman-land-mortgage-idrive-e2-readback-20261115",
+  "publishedSourceIds": [
+    "rak-municipality-2025-commercial-sale-counts-20261115"
+  ],
+  "publishedSourceCount": 1,
+  "objectCount": 1,
+  "totalBytes": 797,
+  "objects": [
+    {
+      "sourceId": "rak-municipality-2025-commercial-sale-counts-20261115",
+      "publishedSourceId": "rak-municipality-2025-commercial-sale-counts-20261115",
+      "role": "published_projection",
+      "localPath": "data/uae-evidence/ras-al-khaimah/municipal-commercial-sales-2025-20261115.json.gz",
+      "validationPath": "data/uae-evidence/ras-al-khaimah/municipal-commercial-sales-2025-validation.json",
+      "validationSha256": "f7d3742ae969f59e50ed80b431661ee8d0306cbe7275ef3b62ed50813f78f330",
+      "idriveKey": "espacios-map/uae-evidence/published/20261115-rak-municipal-commercial/ras-al-khaimah/rak-municipality-2025-commercial-sale-counts-20261115/96c3559949f8e0b2b222129413f1de3d9121c85045d8cb0475d58f3638ec4b78/municipal-commercial-sales-2025-20261115.json.gz",
+      "bytes": 797,
+      "sha256": "96c3559949f8e0b2b222129413f1de3d9121c85045d8cb0475d58f3638ec4b78",
+      "rawBytes": 1725,
+      "rawSha256": "7f35c7381207a9d9f7bd82d5b16b8c6e6f4a3e3164e267b9f0f79cfa977049c6",
+      "contentType": "application/gzip"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "attestationId": "fujairah-monthly-20261114-idrive-e2-readback",
+  "planId": "fujairah-monthly-20261114-idrive-e2-replica",
+  "planSha256": "6458910c2fb469e7f4f3036f35b6cbe70e4e85a0bf5d5be78617d2ba11d0da80",
+  "privateJournalSha256": "f11f47b281bc743f64b2b4d0af88954f8471cc8c58cfc1c27aaa0a720180b94c",
+  "previewVersion": "5fe4f9c0-58d1-4d52-8871-33d4f7903fa8",
+  "bridgeSha256": "bcc305353848826072c9cabcca6d02482654f0369a39fdd3cd98f99160442d6a",
+  "verifiedAt": "2026-11-14T17:08:20.847Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/",
+  "objectCount": 1,
+  "totalBytes": 1172,
+  "sourceIds": [
+    "fscfuj-construction-chapter-monthly-permits-2023-2025-20261114"
+  ],
+  "verification": "The allowlisted Fujairah gzip object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

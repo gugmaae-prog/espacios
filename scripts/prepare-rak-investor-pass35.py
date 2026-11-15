@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Compile visually reviewed primary investor-report facts; never derive unit prices."""
+import json,hashlib
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+SCRATCH=ROOT/'.local-data/rak-identity-pass35'
+BASE=ROOT/'data/historical-intelligence'
+
+def main():
+ snapshot=json.loads((ROOT/'data/historical-intelligence-20261003.json').read_bytes())
+ assert snapshot['version']=='20261008-enrichment-v34'
+ records={r['id']:r for r in snapshot['records']}
+ c=json.loads((SCRATCH/'investor-q2-2024-capture.json').read_text())
+ assert c['sha256']=='e313cbb6063a73ec795e4d91a82033215089aa36c96082099932da9f03034191'
+ assert hashlib.sha256((SCRATCH/'investor-q2-2024.pdf').read_bytes()).hexdigest()==c['sha256']
+ source={**c,'title':'RAK Properties Investor Relations Q2 2024, pages 10 and 26','publisher':'RAK Properties','publishedAt':None,'primaryEvidence':True,'classification':'primary_developer_investor_report','firstAvailableAt':c['retrievedAt'],'publicationDateStatus':'unknown; Q2 2024 is reporting period, not a verified publication day','reportingPeriod':'2024-Q2','availabilityBasis':'First verified capture; document period and upload-directory date do not establish historical online availability.','reviewedPages':[10,26],'visualTableChecked':True,'pageCount':49,'licence':'rights_pending: minimal attributed facts only; PDF, page images and article bodies are not redistributed','rawBodyRedistributed':False}
+ assert not any(s.get('url')==source['url'] for s in snapshot['sources'])
+ # Native table columns: launched units, sold units, net sales AED million,
+ # revenue backlog AED million, reported sold percent, reported complete percent.
+ rows=[
+ ('bayviews','project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah','Bayviews',344,344,421,323,100,23,'rak32-bayviews-launch'),
+ ('marbella2','project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah','Marbella Extension',89,84,220,18,94,92,'rak32-marbella2-contract'),
+ ('cape','project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak','Cape Hayat',678,586,799,680,86,15,'rak32-cape-launch'),
+ ('quattro','project:quattro-del-mar-by-rak-properties-on-hayat-island','Quattro Del Mar',631,366,484,484,58,None,'rak32-quattro-launch'),
+ ('edge','project:edge-rak-properties-raha-island-mina-ras-al-khaimah','The Edge',237,70,77,77,30,None,'rak33-edge-launch'),
+ ('porto','project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island','Porto Playa',141,138,357,357,98,None,'rak32-porto-groundbreaking')]
+ facts=[];checks=[];native=[];sources={s['id']:s for s in snapshot['sources']}
+ def common(rid,code,basis,proof):
+  return {'id':'rak35-'+code,'recordId':rid,'status':'accepted','sourceIds':[source['id']],'identitySourceIds':proof,'identityVerified':True,'identityBasis':basis,'scope':'subject','primaryEvidence':True,'publishedAt':None,'firstAvailableAt':max([source['firstAvailableAt']]+[sources[p]['firstAvailableAt'] for p in proof if p!=source['id']])}
+ def lifecycle(rid,code,basis,proof,kind,start,precision,label,note,scope='subject',verification='reported',**extra):
+  facts.append({**common(rid,code,basis,proof),'kind':'lifecycle','milestone':kind,'date':{'start':start,'precision':precision},'scope':scope,'verification':verification,'eventStatus':'reported','evidenceClass':'primary_developer_retrospective_report','label':label,'note':note,'dateBasis':'Page 26: as of 30 June 2024' if start=='2024-06-30' else 'Year-labelled retrospective timeline on page 10','preserveAdditionalLifecycleFields':True,**extra})
+ for key,rid,name,launched,sold,sales,backlog,soldpct,progress,priorproof in rows:
+  r=records[rid];assert r['type']=='project' and r['emirate']=='Ras Al Khaimah' and not r['historySeries'] and priorproof in sources
+  proof=[source['id'],priorproof];basis=f"Exact existing {r['name']} record and prior primary identity source match the named RAK Properties project in Mina Al Arab."
+  basis+=' Marbella Extension is explicitly the 89-home Phase 2, not the original 205-home Marbella phase.' if key=='marbella2' else ''
+  basis+=' Porto Playa retains the source footnote: 50% share as per JV equity accounting. No value or unit count is doubled or relabelled whole-project.' if key=='porto' else ''
+  basis+=' Units launched (631) are not the whole-project inventory or a new phase identity.' if key=='quattro' else ''
+  report={'sourceProjectLabel':name,'asOf':'2024-06-30','reportingPeriod':'2024-Q2','sourcePage':26,'unitsLaunched':launched,'unitsSold':sold,'netSalesAEDMillion':sales,'revenueBacklogAEDMillion':backlog,'reportedSoldPercent':soldpct,'reportedConstructionComplete':progress if progress is not None else 'NIL','currency':'AED','nativeMonetaryScale':1000000,'populationBasis':'50% share as per JV equity accounting; native reported values, not whole-project totals' if key=='porto' else 'Developer table project population; launched and sold cohorts, not a registered-transaction extract','periodBasis':'Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June','pricePerUnitDerived':False,'registeredTransactionsEstablished':False}
+  note='Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.'
+  facts.append({**common(rid,key+'-reported-sales',basis,proof),'kind':'financial','evidenceClass':'primary_developer_reported_aggregate_sales','observation':{'metric':'volume','value':sold,'unit':'developer-reported units sold'+(' (50% JV reporting basis)' if key=='porto' else ''),'period':'2024-06-30','frequency':'daily','observationKind':'developer_reported_aggregate_sales','observationDateBasis':report['periodBasis'],'currentSnapshotEligible':False,'includeInCurrentSnapshot':False,'note':note,'developerSalesSnapshot':report}})
+  label=f"Developer reports {progress}% construction completion as of 30 June 2024." if progress is not None else 'Developer table reports construction completion as NIL at 30 June 2024.'
+  lifecycle(rid,key+'-progress',basis,proof,'construction_progress','2024-06-30','day',label,'Developer report, not an inspection or completion certificate. '+('NIL is retained literally; no numeric value or construction commencement is inferred. ' if progress is None else '')+('The row retains a 50% JV reporting basis; no doubled whole-project percentage. ' if key=='porto' else '')+'Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.',**({'progressPercent':progress} if progress is not None else {}))
+  checks.append({'recordId':rid,'catalogueName':r['name'],'type':r['type'],'emirate':r['emirate'],'identityVerified':True,'sourceIds':proof,'basis':basis});native.append({'recordId':rid,**report})
+ mina='community:Ras Al Khaimah:mina-al-arab';r=records[mina]
+ basis='Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.'
+ lifecycle(mina,'mina-development-preparation',basis,[source['id']],'development_preparation','2006','year','Developer retrospectively reports Mina Al Arab was prepared for development in 2006.','Preparation is not original launch, completed construction, occupancy, the first transaction or proof that earlier land prices did not exist.',verification='verified')
+ for code,year,label in [('granada','2010','Granada Villas'),('malibu','2011','Malibu villa community'),('apartments','2012','808 apartments'),('bermuda','2017','Bermuda Villas community'),('flamingo','2017','Flamingo Villas community'),('gateway','2020','Gateway residences')]:
+  lifecycle(mina,'mina-'+code+'-delivery',basis,[source['id']],'phase_handover',year,'year',f'Developer retrospectively reports delivery of {label} within Mina Al Arab in {year}.','Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.',scope='subject_phase')
+ checks.append({'recordId':mina,'catalogueName':r['name'],'type':r['type'],'emirate':r['emirate'],'identityVerified':True,'sourceIds':[source['id']],'basis':basis})
+ flamingo='project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae';r=records[flamingo]
+ basis='Exact Flamingo Villas Mina record identifies RAK Properties and Mina in Ras Al Khaimah. The primary timeline explicitly names Flamingo Villas community delivery; the separate Dubai Flamingo Residence record is excluded.'
+ lifecycle(flamingo,'flamingo-delivery',basis,[source['id']],'delivery','2017','year','Developer retrospectively reports Flamingo Villas community delivered in 2017.','Reported delivery of the named project; no legal completion certificate, actual occupancy date, rental commencement or individual handover date is established.')
+ checks.append({'recordId':flamingo,'catalogueName':r['name'],'type':r['type'],'emirate':r['emirate'],'identityVerified':True,'sourceIds':[source['id']],'basis':basis})
+ packet={'version':1,'passId':'rak-investor-pass35-20261008','asOf':snapshot['asOf'],'priorVersion':snapshot['version'],'candidateVersion':'20261008-enrichment-v35','sources':[source],'facts':facts,'seriesLinks':[],'recordIdentityChecks':checks,'nativeSalesSnapshots':native,'conflicts':[{'field':'table_launch_year','resolution':'Report launch-year column is not ingested as first-ever launch. Gateway II table says 2023 while prior dated releases describe 2022 launch; all Gateway rows remain unassigned.'},{'field':'units_launched_and_phases','resolution':'Launched counts are retained as table populations, not canonical total inventory. Generic Granada and Bay/Gateway identities remain unresolved.'}],'excludedCandidates':[{'recordId':'project:gateway-residences-for-sale-mina-al-arab-ras-al-khaimah-uae-by-rak-properties','reason':'Brochure and developer timeline distinguish phases but catalogue lacks a discriminating identity; Gateway II financials and original Gateway delivery are not attached to the project.'},{'recordId':'project:south-bay-residences-by-rak-properties-on-hayat-island-mina-al-arab-ras-al-khaimah','reason':'South-labelled brochure filename has generic Bay content; no verified South-to-Phase-II mapping. Both Bay financial rows remain unassigned.'},{'recordId':'project:granada-villas-mina-by-rak-properties-ras-al-khaimah-uae','reason':'Generic name remains ambiguous between original villas and 80-home Granada Extension. No 2010 delivery or extension financials assigned to this project.'}],'collection':{'projectRecords':7,'communityRecords':1,'acceptedLifecycleFacts':14,'acceptedDeveloperSalesSnapshots':6,'registeredSaleOrRentObservationsAdded':0,'unitPricesDerived':0,'newSources':1,'approved2080Forecasts':0,'rawBodiesRedistributed':False},'methodology':'Visual row/column review of pages 10 and 26. Cumulative developer sales and backlog are separate from registered transactions and property prices. No per-unit divisions, phase fan-out, inferred publication date, future-model availability or NIL-to-zero conversion.'}
+ assert len(facts)==20 and len(checks)==8
+ (BASE/'rak-properties-investor-pass35-20261008.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n');print(json.dumps(packet['collection']))
+if __name__=='__main__':main()

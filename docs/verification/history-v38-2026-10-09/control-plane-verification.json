@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-09T01:08:09.152893+00:00",
+  "passed": true,
+  "runtimeFrontend": "20261009-map-evidence-v42",
+  "runtimeWorker": "9ddd509f-2f75-4dc9-a5cd-c25fd512fe70",
+  "history": "20261008-enrichment-v38",
+  "registryId": "d8d18dc0-6980-4a16-b0c7-7ddcdabf2c43",
+  "runtimeRowsUpdated": 1,
+  "registryRowsInserted": 1,
+  "researchComplete": false,
+  "registryFrontend": "20261009-map-evidence-v42",
+  "registryHistory": "20261008-enrichment-v38",
+  "registryVerified": true
+}

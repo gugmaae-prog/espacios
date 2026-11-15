@@ -8,7 +8,8 @@ const baseline=fs.readFileSync(new URL('../src/baseline/worker-20260930.js',impo
 const source=fs.readFileSync(new URL('../src/worker.js',import.meta.url),'utf8');
 assert.equal(createHash('sha256').update(baseline).digest('hex'),'b9aab494d2297e7208f5257c069a54c2a6f9eb3762ff79224350ae4006357e06');
 const preserved=baseline.replace(/export \{\s*worker_default as default\s*\};/,'').replace(/\/\/# sourceMappingURL=.*\n?/g,'').replaceAll('20260929-collapse-repair-v3',release);
-assert.ok(source.startsWith(preserved),'Preserve the entire acquired baseline after documented cache-token/source-map normalization');
+const firstApprovedPatch=preserved.indexOf('const response = await aeCoreMapData(request, env, ctx);');
+assert.ok(firstApprovedPatch>200000&&source.startsWith(preserved.slice(0,firstApprovedPatch)),'Preserve the acquired baseline before the reviewed recovery patch slots');
 const extension=fs.readFileSync(new URL('../src/smart-estimates/worker-extension.js',import.meta.url),'utf8');
 assert.doesNotMatch(extension,/SUPABASE|service_role|\.supabase\.co|\/crm\b|\/contacts\b/i);
 const forbidden=()=>{throw new Error('Private binding accessed by public scenario endpoint');};

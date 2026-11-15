@@ -1,0 +1,40 @@
+{
+  "sourceId": "ad-sdi-urban-development-projects-20261102",
+  "publisher": "Abu Dhabi Spatial Data Infrastructure, Department of Government Enablement",
+  "layerTitle": "Urban Development Projects",
+  "serviceLayerUrl": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/828",
+  "termsUrl": "https://sdi.gov.abudhabi/sdi/opendata.html",
+  "sourceQuery": "https://arcgis.sdi.abudhabi.ae/agspublish/rest/services/OpenData/ADSDI_OpenData/MapServer/828/query?where=1%3D1&outFields=OBJECTID%2CPROJECTID%2CPROJECT_NAME%2CCOMPANYNAME%2CCOMPANYROLES%2CCH_FID&returnGeometry=false&resultRecordCount=2000&orderByFields=OBJECTID&f=json",
+  "retrievedAt": "2026-11-02T19:14:52Z",
+  "sourcePublicationDate": null,
+  "classification": "official_open_geospatial_urban_development_feature_attributes",
+  "grain": "one_polygon_layer_feature_attribute_row",
+  "rows": 374,
+  "distinctSourceProjectIds": 372,
+  "distinctNames": 371,
+  "repeatedSourceProjectIds": [
+    "1997.0"
+  ],
+  "rawBytes": 65413,
+  "rawSha256": "68bb6355c7847fba5f32bbe38f965b883f2e02ff60a56517d54d67c3ef5caa94",
+  "independentReadbackSha256": "68bb6355c7847fba5f32bbe38f965b883f2e02ff60a56517d54d67c3ef5caa94",
+  "compressedBytes": 8602,
+  "compressedSha256": "4efc142637e9b5aef7f3343fcd472ed852650b08bfedf6815159156456a24a46",
+  "capturedFields": [
+    "OBJECTID",
+    "PROJECTID",
+    "PROJECT_NAME",
+    "COMPANYNAME",
+    "COMPANYROLES",
+    "CH_FID"
+  ],
+  "excludedFields": [
+    "PROJECTLEAD",
+    "SHAPE",
+    "SHAPE.STArea()",
+    "SHAPE.STLength()"
+  ],
+  "geometryCaptured": false,
+  "sourceIdentityCrosswalk": "none",
+  "attribution": "Source: Abu Dhabi Spatial Data Infrastructure Open Data, Department of Government Enablement. Urban Development Projects layer 828, queried 2 November 2026. Names and IDs are source feature attributes; no current status, property sales, verified site coordinates, or complete real-estate project census is implied."
+}

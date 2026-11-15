@@ -1,0 +1,1630 @@
+{
+  "planId": "dubai-municipality-idrive-e2-replica-20261114",
+  "status": "prepared_not_uploaded",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "host": "s3.us-west-2.idrivee2.com",
+  "signingRegion": "us-east-1",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/dubai/20261026/",
+  "separateFromExistingCloudflareBackupRun": true,
+  "sourceManifests": {
+    "buildingCardsSha256": "934b2a485e3fc21f71eb60f828afdc1e85f8cb2a048e6e0f0fc68d3d2fc8208c",
+    "municipalProjectsSha256": "082ead61ec8e5aab43f26bd301f04c610290cfe39ae2c2b561887bedf1fcece3"
+  },
+  "objects": [
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0000.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/9aa5c1af1bbf0ee72be974a6a484fb04f046c65d6eafd3956fa7ab9b96eaceb0.json.gz",
+      "bytes": 329860,
+      "sha256": "9aa5c1af1bbf0ee72be974a6a484fb04f046c65d6eafd3956fa7ab9b96eaceb0",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0000.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0001.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/b6a704d310f11eff0c6a96c69e1633e655ba33337f207636aa6543579fc7e5fb.json.gz",
+      "bytes": 381834,
+      "sha256": "b6a704d310f11eff0c6a96c69e1633e655ba33337f207636aa6543579fc7e5fb",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0001.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0002.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/4fa0337eaf1be19d3f54a1bee1844761cc64afcb24612c2eb616de3e32fde738.json.gz",
+      "bytes": 338074,
+      "sha256": "4fa0337eaf1be19d3f54a1bee1844761cc64afcb24612c2eb616de3e32fde738",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0002.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0003.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/6b74fa37563885ff4ef25a4386be3d5e1c6865735d6e48048bb5ed7219e693b7.json.gz",
+      "bytes": 349483,
+      "sha256": "6b74fa37563885ff4ef25a4386be3d5e1c6865735d6e48048bb5ed7219e693b7",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0003.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0004.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/922d39d02b207967d80584c0c1e320dd10d5eae733de930d7d9de44ec0769060.json.gz",
+      "bytes": 360145,
+      "sha256": "922d39d02b207967d80584c0c1e320dd10d5eae733de930d7d9de44ec0769060",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0004.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0005.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/86a807ac5be74fdda6b3fb2e1e2f3283a5300db634ed8278ed4f3a00a6c637af.json.gz",
+      "bytes": 378131,
+      "sha256": "86a807ac5be74fdda6b3fb2e1e2f3283a5300db634ed8278ed4f3a00a6c637af",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0005.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0006.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/3c628a00016228f03c9bd57ae3225b66a4da3e90749b17abb24bf60816cc6b4a.json.gz",
+      "bytes": 359700,
+      "sha256": "3c628a00016228f03c9bd57ae3225b66a4da3e90749b17abb24bf60816cc6b4a",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0006.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0007.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1ae086951bfbd56b0ac12b18387530b688347454951f511633e81ef54c754d7f.json.gz",
+      "bytes": 386250,
+      "sha256": "1ae086951bfbd56b0ac12b18387530b688347454951f511633e81ef54c754d7f",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0007.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0008.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/2197a51f7fcd8d0cbe373baeb80cbb5576f55a98018a471fbb88f3d6e225cf82.json.gz",
+      "bytes": 326580,
+      "sha256": "2197a51f7fcd8d0cbe373baeb80cbb5576f55a98018a471fbb88f3d6e225cf82",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0008.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0009.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/0715fdd2a289c5df9fce2f8c05ea176c82725d61550256a703d4ade41ff30b2e.json.gz",
+      "bytes": 324874,
+      "sha256": "0715fdd2a289c5df9fce2f8c05ea176c82725d61550256a703d4ade41ff30b2e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0009.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0010.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/af14e06763a8b2d4087917857dec11953cadfcef84dbad5cfacedb0d610d630c.json.gz",
+      "bytes": 362073,
+      "sha256": "af14e06763a8b2d4087917857dec11953cadfcef84dbad5cfacedb0d610d630c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0010.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0011.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/69a9903bb0c69e554f83189bf2ecf5c395534dd8c74518720b8eb1d49601cf71.json.gz",
+      "bytes": 299958,
+      "sha256": "69a9903bb0c69e554f83189bf2ecf5c395534dd8c74518720b8eb1d49601cf71",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0011.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0012.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1a3abd027f9ecce8af016fc09502585aaad7ce8bff43442aef6ff156909038d3.json.gz",
+      "bytes": 349407,
+      "sha256": "1a3abd027f9ecce8af016fc09502585aaad7ce8bff43442aef6ff156909038d3",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0012.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0013.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/464b018959923cdcd35319d5ae87a3fd99c019b13bdd52849f93a656812f8db0.json.gz",
+      "bytes": 342420,
+      "sha256": "464b018959923cdcd35319d5ae87a3fd99c019b13bdd52849f93a656812f8db0",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0013.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0014.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/7e6617d2f0b4a40dcc1045847f259f15df084c4c94ede475fdb67eede4619145.json.gz",
+      "bytes": 379760,
+      "sha256": "7e6617d2f0b4a40dcc1045847f259f15df084c4c94ede475fdb67eede4619145",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0014.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0015.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/299092621d6b1aed9a1dd9c81d79e9e2a17525256a5b68694bb41496f5a8d80a.json.gz",
+      "bytes": 375454,
+      "sha256": "299092621d6b1aed9a1dd9c81d79e9e2a17525256a5b68694bb41496f5a8d80a",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0015.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0016.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/fb7edaae6305cc3b944505673743fdfdf9bf658d9b399ae15d407b4ac59ef1a9.json.gz",
+      "bytes": 384289,
+      "sha256": "fb7edaae6305cc3b944505673743fdfdf9bf658d9b399ae15d407b4ac59ef1a9",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0016.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0017.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/10ee05f73182cba45f42e929045170e88fc02131fdcd0cd430409eb65ccc4b0d.json.gz",
+      "bytes": 400005,
+      "sha256": "10ee05f73182cba45f42e929045170e88fc02131fdcd0cd430409eb65ccc4b0d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0017.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0018.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/ea214d577c00d7be8b8b290c2f14c13d4a41c7fe116ca0d8cb6068daaa21071e.json.gz",
+      "bytes": 393129,
+      "sha256": "ea214d577c00d7be8b8b290c2f14c13d4a41c7fe116ca0d8cb6068daaa21071e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0018.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0019.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/0d4e988809960e35ee9181ee482781bb2a0898ce382cfdb333eada89ed9d37c1.json.gz",
+      "bytes": 316348,
+      "sha256": "0d4e988809960e35ee9181ee482781bb2a0898ce382cfdb333eada89ed9d37c1",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0019.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0020.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/af1b8f9f6674558f88ab0b8eb48f4fffc7fb1fd7e572ed078ce2af40ebbff1ec.json.gz",
+      "bytes": 382565,
+      "sha256": "af1b8f9f6674558f88ab0b8eb48f4fffc7fb1fd7e572ed078ce2af40ebbff1ec",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0020.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0021.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/693d2cee0bdfba5a85bade2e91277191e336460a5b0e10b5826cdd30e002ce15.json.gz",
+      "bytes": 370018,
+      "sha256": "693d2cee0bdfba5a85bade2e91277191e336460a5b0e10b5826cdd30e002ce15",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0021.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0022.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/806bba838941127c45e4fc6b178138ce225d84400e610c2b2012d582291d4275.json.gz",
+      "bytes": 320161,
+      "sha256": "806bba838941127c45e4fc6b178138ce225d84400e610c2b2012d582291d4275",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0022.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0023.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/9dcb182a8ea3b86adb5697d093a09454cbf02df90d8e370a6b84eed1724e7ead.json.gz",
+      "bytes": 309420,
+      "sha256": "9dcb182a8ea3b86adb5697d093a09454cbf02df90d8e370a6b84eed1724e7ead",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0023.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0024.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/28f75316944b6d3b78ad3b4630b8c1cf2cea4ea3636f61cf3f3b4dd3bd665963.json.gz",
+      "bytes": 366388,
+      "sha256": "28f75316944b6d3b78ad3b4630b8c1cf2cea4ea3636f61cf3f3b4dd3bd665963",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0024.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0025.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/af95fb1c8ced977eed27c7829a9f823afe6177ac2a2c162c17398d6a1fd1f92f.json.gz",
+      "bytes": 162031,
+      "sha256": "af95fb1c8ced977eed27c7829a9f823afe6177ac2a2c162c17398d6a1fd1f92f",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0025.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0026.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/08cb658c5cedd72f3ee73fce9c81f566e2a5dd79486bb5c4c1cbca35a5fd3d04.json.gz",
+      "bytes": 369981,
+      "sha256": "08cb658c5cedd72f3ee73fce9c81f566e2a5dd79486bb5c4c1cbca35a5fd3d04",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0026.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0027.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/495e87bbe37f43e9a14e3a5fc2f144aafb969171ae404073ff0e0fc4849b2419.json.gz",
+      "bytes": 334260,
+      "sha256": "495e87bbe37f43e9a14e3a5fc2f144aafb969171ae404073ff0e0fc4849b2419",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0027.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0028.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/f56c681dc8a4093c3f3c88fa52bbb2167bcd0e1f7de57f646fb92498c3972708.json.gz",
+      "bytes": 412354,
+      "sha256": "f56c681dc8a4093c3f3c88fa52bbb2167bcd0e1f7de57f646fb92498c3972708",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0028.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0029.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/92dce9f2d6a0da1de1945b605a111316f530760df7a4f9cd31ec4c381922c757.json.gz",
+      "bytes": 434239,
+      "sha256": "92dce9f2d6a0da1de1945b605a111316f530760df7a4f9cd31ec4c381922c757",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0029.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0030.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/ef6f7a8949c5e9a528efa5c1ebdab3e71b7bb7fa91f9c17b3ced9ae6453bef29.json.gz",
+      "bytes": 415271,
+      "sha256": "ef6f7a8949c5e9a528efa5c1ebdab3e71b7bb7fa91f9c17b3ced9ae6453bef29",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0030.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0031.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/6592c4cd139e655a6645281bf207e0561a875169d3e1658957457002b92b5095.json.gz",
+      "bytes": 367395,
+      "sha256": "6592c4cd139e655a6645281bf207e0561a875169d3e1658957457002b92b5095",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0031.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0032.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/975c994b3f43a276ad6eef17902adf53d4ce7f4f6d3d7b13d823ce0c2d74e97f.json.gz",
+      "bytes": 326905,
+      "sha256": "975c994b3f43a276ad6eef17902adf53d4ce7f4f6d3d7b13d823ce0c2d74e97f",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0032.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0033.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/ba18a1230d2009005adca71228b79f4c2f29702f4121b3e2ef5c61a9bd2c45e8.json.gz",
+      "bytes": 373375,
+      "sha256": "ba18a1230d2009005adca71228b79f4c2f29702f4121b3e2ef5c61a9bd2c45e8",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0033.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0034.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/7d6eecd456e8d1999f7ae1adb5dcf987c86d671e7b75ef6f9244a9e73e1207a0.json.gz",
+      "bytes": 392141,
+      "sha256": "7d6eecd456e8d1999f7ae1adb5dcf987c86d671e7b75ef6f9244a9e73e1207a0",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0034.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0035.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/387f10034c11929bd257082d4c8ac5d01a1e702c0848ebef1ea1584593928b74.json.gz",
+      "bytes": 410889,
+      "sha256": "387f10034c11929bd257082d4c8ac5d01a1e702c0848ebef1ea1584593928b74",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0035.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0036.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1df06b51513d466b3998bc2bc215fb0cb139afd24ccffdd82c74334a1859120c.json.gz",
+      "bytes": 406520,
+      "sha256": "1df06b51513d466b3998bc2bc215fb0cb139afd24ccffdd82c74334a1859120c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0036.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0037.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/44948b4266f86cfae3a90d579cef02a46b09bc165ee46373647acf17e083e811.json.gz",
+      "bytes": 321290,
+      "sha256": "44948b4266f86cfae3a90d579cef02a46b09bc165ee46373647acf17e083e811",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0037.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0038.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/30a8fb9b713ad7a362663d5f7c339788c5dc1d1d6f97dcfa9d036cd66564826e.json.gz",
+      "bytes": 298103,
+      "sha256": "30a8fb9b713ad7a362663d5f7c339788c5dc1d1d6f97dcfa9d036cd66564826e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0038.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0039.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/357ae97936e9beabdad9a709dc8f3002fddb85be5da805edf51b9ca9df4ef5b9.json.gz",
+      "bytes": 136315,
+      "sha256": "357ae97936e9beabdad9a709dc8f3002fddb85be5da805edf51b9ca9df4ef5b9",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0039.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0040.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1c78c9afc67e9bb477194e6e4de88c2d6add24704de03ff4902abbe00506ebeb.json.gz",
+      "bytes": 236613,
+      "sha256": "1c78c9afc67e9bb477194e6e4de88c2d6add24704de03ff4902abbe00506ebeb",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0040.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0041.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/251200205e83f1e3debbd43ef6d58bab42c9d51e159030fde527e2c10a12f17c.json.gz",
+      "bytes": 300296,
+      "sha256": "251200205e83f1e3debbd43ef6d58bab42c9d51e159030fde527e2c10a12f17c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0041.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0042.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/918f6d1428c6809b211833d603564117fb9cccd9270fb8cdbb1480017d557dca.json.gz",
+      "bytes": 280270,
+      "sha256": "918f6d1428c6809b211833d603564117fb9cccd9270fb8cdbb1480017d557dca",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0042.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0043.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/64cc8b31e59463f646941a3ffaff24ec1381b13a617514512cdf1730c8b38b4c.json.gz",
+      "bytes": 238968,
+      "sha256": "64cc8b31e59463f646941a3ffaff24ec1381b13a617514512cdf1730c8b38b4c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0043.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0044.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/d678a149997f8298c8f45b878e01bea06e33148de991a5e4d2df5bd2d8d0d9ed.json.gz",
+      "bytes": 309215,
+      "sha256": "d678a149997f8298c8f45b878e01bea06e33148de991a5e4d2df5bd2d8d0d9ed",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0044.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0045.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/4cf40f797b806b9151d347d92db795f65811c8982e0b9c0d4a90eefe64fbcfc3.json.gz",
+      "bytes": 216062,
+      "sha256": "4cf40f797b806b9151d347d92db795f65811c8982e0b9c0d4a90eefe64fbcfc3",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0045.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0046.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/6c21ff3a296feb2eca86e439afd7b1d087d21d0d84fc89be0f5f5700bd762ee5.json.gz",
+      "bytes": 86665,
+      "sha256": "6c21ff3a296feb2eca86e439afd7b1d087d21d0d84fc89be0f5f5700bd762ee5",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0046.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0047.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/7904905358045e0fc26d8f6e5d39d2ca616803ac2cfbd445bd88597416687356.json.gz",
+      "bytes": 2695,
+      "sha256": "7904905358045e0fc26d8f6e5d39d2ca616803ac2cfbd445bd88597416687356",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0047.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0048.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/956498bb96300c155bcb04992a462a2250bb032b351949165e4f90a977a71e11.json.gz",
+      "bytes": 6151,
+      "sha256": "956498bb96300c155bcb04992a462a2250bb032b351949165e4f90a977a71e11",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0048.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0050.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/f6ba8c483df390295665afb79b556917a0ed8740e74f0b9b887d321f61d99b03.json.gz",
+      "bytes": 129465,
+      "sha256": "f6ba8c483df390295665afb79b556917a0ed8740e74f0b9b887d321f61d99b03",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0050.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0051.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1e850cdf148ba87ca283046e34cb5842238f6e8e0011a4e28a32cb729b7b3801.json.gz",
+      "bytes": 218113,
+      "sha256": "1e850cdf148ba87ca283046e34cb5842238f6e8e0011a4e28a32cb729b7b3801",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0051.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0052.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/738f2f3a228f86856d7dee2c0cccb6be592ffb971b1fc72c0541c9b97aadc965.json.gz",
+      "bytes": 131667,
+      "sha256": "738f2f3a228f86856d7dee2c0cccb6be592ffb971b1fc72c0541c9b97aadc965",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0052.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0053.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/c87ba1ad70a0802b57310758365d70900734710ef60d6ce0ba44d8913bff596e.json.gz",
+      "bytes": 107553,
+      "sha256": "c87ba1ad70a0802b57310758365d70900734710ef60d6ce0ba44d8913bff596e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0053.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0054.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/622d7c22554cc6024f0e70e88ec358684a7d5448fd24055cb21f4a07046cae6f.json.gz",
+      "bytes": 3783,
+      "sha256": "622d7c22554cc6024f0e70e88ec358684a7d5448fd24055cb21f4a07046cae6f",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0054.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0055.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/5f195515eea4e0c5f665999a4b3415fa55da280606cc3acc110a7f9d5f14629d.json.gz",
+      "bytes": 10169,
+      "sha256": "5f195515eea4e0c5f665999a4b3415fa55da280606cc3acc110a7f9d5f14629d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0055.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0056.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/e2e82428318680191d00d9cf65eedb49e09a7366d2121a889321cee98d163afc.json.gz",
+      "bytes": 31336,
+      "sha256": "e2e82428318680191d00d9cf65eedb49e09a7366d2121a889321cee98d163afc",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0056.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0057.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/c88f9fbfa186acfef00842f86c5552b3f14903fbc5d5a0d9dd85485bb94dd624.json.gz",
+      "bytes": 289092,
+      "sha256": "c88f9fbfa186acfef00842f86c5552b3f14903fbc5d5a0d9dd85485bb94dd624",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0057.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0058.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1ca5f517c614864c093653d57c78a48f7eb61a2c0537d470ec86f11f984f55fa.json.gz",
+      "bytes": 425682,
+      "sha256": "1ca5f517c614864c093653d57c78a48f7eb61a2c0537d470ec86f11f984f55fa",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0058.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0059.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/ae3802da526bd23125f7afba7c3e13d0e05521860225c08bf2cfcb5ce7085379.json.gz",
+      "bytes": 297224,
+      "sha256": "ae3802da526bd23125f7afba7c3e13d0e05521860225c08bf2cfcb5ce7085379",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0059.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0060.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/a8e4bb2c007406dc69c348eea02b3eb7b31786a2464c619f9e9ee6d28240f41c.json.gz",
+      "bytes": 345447,
+      "sha256": "a8e4bb2c007406dc69c348eea02b3eb7b31786a2464c619f9e9ee6d28240f41c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0060.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0061.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/41df2863df57c99edbdbe3f315bd0d2d349d358a24ba95edae5003a555c7823a.json.gz",
+      "bytes": 326844,
+      "sha256": "41df2863df57c99edbdbe3f315bd0d2d349d358a24ba95edae5003a555c7823a",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0061.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0062.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/9d5754304e96105ea25bd783458ad1e0841a02f97f25810dd996434ab3b74873.json.gz",
+      "bytes": 445719,
+      "sha256": "9d5754304e96105ea25bd783458ad1e0841a02f97f25810dd996434ab3b74873",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0062.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0063.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/992538facc9d9cf41e92a42332e7871270a27d0be775f316449165d0303eca66.json.gz",
+      "bytes": 118577,
+      "sha256": "992538facc9d9cf41e92a42332e7871270a27d0be775f316449165d0303eca66",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0063.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0064.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/8b45152adee0470490095989f63d30cbab1bbd9254f825045a6269e2ab4ce9d4.json.gz",
+      "bytes": 171831,
+      "sha256": "8b45152adee0470490095989f63d30cbab1bbd9254f825045a6269e2ab4ce9d4",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0064.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0065.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/88226ff49f8a7007f91c9d215bc46b645b1ccfb6e510c52046d35ad4b40a2dd2.json.gz",
+      "bytes": 192677,
+      "sha256": "88226ff49f8a7007f91c9d215bc46b645b1ccfb6e510c52046d35ad4b40a2dd2",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0065.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0066.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/811f4e2cb1ca771c2d2c4cd16c61c31a53b30c221f565416c7a2ae41972c849c.json.gz",
+      "bytes": 122824,
+      "sha256": "811f4e2cb1ca771c2d2c4cd16c61c31a53b30c221f565416c7a2ae41972c849c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0066.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0067.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1860fded27c4bad52f4dd5673a526e3d59d974e47714549cfebf09dd327edd8d.json.gz",
+      "bytes": 100731,
+      "sha256": "1860fded27c4bad52f4dd5673a526e3d59d974e47714549cfebf09dd327edd8d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0067.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0068.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1190b9970481dd7b33853330903042fe1c8965d74213630db3e743d05e00be81.json.gz",
+      "bytes": 271353,
+      "sha256": "1190b9970481dd7b33853330903042fe1c8965d74213630db3e743d05e00be81",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0068.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0069.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/a4156d78fa072db99fd0ddc16050d03d4bc5e01a0a3fd45aa22e648a9720442d.json.gz",
+      "bytes": 263678,
+      "sha256": "a4156d78fa072db99fd0ddc16050d03d4bc5e01a0a3fd45aa22e648a9720442d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0069.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0070.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/b6ab2a046b4b7aadb1526f0ad09ece32e2efa9170d91c65b9d4aeeb748397c53.json.gz",
+      "bytes": 221652,
+      "sha256": "b6ab2a046b4b7aadb1526f0ad09ece32e2efa9170d91c65b9d4aeeb748397c53",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0070.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0071.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/19c146c49baac65ca4efd3497e9445e3e6f1eed4e034e82368a09238e59e7e01.json.gz",
+      "bytes": 408635,
+      "sha256": "19c146c49baac65ca4efd3497e9445e3e6f1eed4e034e82368a09238e59e7e01",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0071.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0072.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/87d51396da86e9bdf5f4f0fe852c210ca51d46367e8bba61d4abb791a57f6b72.json.gz",
+      "bytes": 405160,
+      "sha256": "87d51396da86e9bdf5f4f0fe852c210ca51d46367e8bba61d4abb791a57f6b72",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0072.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0073.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/b9022df10cca45186d3371d5d88501220e51452e240e1834e25e114a0813e8e6.json.gz",
+      "bytes": 483970,
+      "sha256": "b9022df10cca45186d3371d5d88501220e51452e240e1834e25e114a0813e8e6",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0073.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0074.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/951bb610ef69ab929e94552211cd06d0418fd6ef03f9bb698cd7c36c7a10750f.json.gz",
+      "bytes": 400173,
+      "sha256": "951bb610ef69ab929e94552211cd06d0418fd6ef03f9bb698cd7c36c7a10750f",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0074.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0075.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/b639bf0e4674a627814d336b4754e5c0d44f86c3097b4f4efd0b6f1e72243eaa.json.gz",
+      "bytes": 446456,
+      "sha256": "b639bf0e4674a627814d336b4754e5c0d44f86c3097b4f4efd0b6f1e72243eaa",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0075.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0076.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/1e53005128658a068de8afd4449db658730380f36cc08b55873ff40bcf364eeb.json.gz",
+      "bytes": 464755,
+      "sha256": "1e53005128658a068de8afd4449db658730380f36cc08b55873ff40bcf364eeb",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0076.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0077.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/59a76d00332802351a2d3711a0ce30e6936dbb3123b1e9d0588196798bcd25fc.json.gz",
+      "bytes": 447569,
+      "sha256": "59a76d00332802351a2d3711a0ce30e6936dbb3123b1e9d0588196798bcd25fc",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0077.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0078.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/660bccd45f881827ec999121db7305f12e1478e4e0037a773a45e3df93cc8521.json.gz",
+      "bytes": 447881,
+      "sha256": "660bccd45f881827ec999121db7305f12e1478e4e0037a773a45e3df93cc8521",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0078.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0079.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/2e4392bcbc90a1ecdf68dcbf3f2245638d7c206ac33c209dfb4baf436345cf8d.json.gz",
+      "bytes": 453691,
+      "sha256": "2e4392bcbc90a1ecdf68dcbf3f2245638d7c206ac33c209dfb4baf436345cf8d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0079.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0080.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/6e53015239ba289c19aadb371f7fb1ee80a15a4d06052a46d8daf991d6e4d016.json.gz",
+      "bytes": 128744,
+      "sha256": "6e53015239ba289c19aadb371f7fb1ee80a15a4d06052a46d8daf991d6e4d016",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0080.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0081.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/542c2d2845cbbc4beb7b020b22478bb2526b8859cca348d80f9181ccd1529a7d.json.gz",
+      "bytes": 10653,
+      "sha256": "542c2d2845cbbc4beb7b020b22478bb2526b8859cca348d80f9181ccd1529a7d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0081.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0082.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/7ef3a4563d652f8728c0ad9ddb9d9883d01176cde47994c81b3ed0f8a31d9231.json.gz",
+      "bytes": 191299,
+      "sha256": "7ef3a4563d652f8728c0ad9ddb9d9883d01176cde47994c81b3ed0f8a31d9231",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0082.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0083.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/fd6bd2f5b68b9dffdba153d118ee192476855898e2b7f0af2a59a138aa987f1b.json.gz",
+      "bytes": 28968,
+      "sha256": "fd6bd2f5b68b9dffdba153d118ee192476855898e2b7f0af2a59a138aa987f1b",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0083.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0084.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/36bb3aa51aa704692475960206859b86e6622a77ec77b7728d69cdc436f6b620.json.gz",
+      "bytes": 278588,
+      "sha256": "36bb3aa51aa704692475960206859b86e6622a77ec77b7728d69cdc436f6b620",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0084.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0085.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/2d8653f735c8c27caf714d436effb1220463b479423246bb311499d6218d1bd8.json.gz",
+      "bytes": 429610,
+      "sha256": "2d8653f735c8c27caf714d436effb1220463b479423246bb311499d6218d1bd8",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0085.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0086.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/187104dc780ac2bec75aff47271434fc31c8eb1be3243c3acef8c57c1e40324e.json.gz",
+      "bytes": 464435,
+      "sha256": "187104dc780ac2bec75aff47271434fc31c8eb1be3243c3acef8c57c1e40324e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0086.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0087.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/8281f62e85ab4a3d720e33f089770b1a345520111083a2ab60fe0f17d167c28c.json.gz",
+      "bytes": 481003,
+      "sha256": "8281f62e85ab4a3d720e33f089770b1a345520111083a2ab60fe0f17d167c28c",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0087.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0088.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/925f20c2568ca630e901c2fffff60d5a19ae81056dc7f1bf315851d0d05047d3.json.gz",
+      "bytes": 413313,
+      "sha256": "925f20c2568ca630e901c2fffff60d5a19ae81056dc7f1bf315851d0d05047d3",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0088.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0089.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/c3323aaeac508eb24d31bdd15451d9675b9ed2ad05903c3134480230a0fa2ca3.json.gz",
+      "bytes": 425601,
+      "sha256": "c3323aaeac508eb24d31bdd15451d9675b9ed2ad05903c3134480230a0fa2ca3",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0089.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0090.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/353e68e8e2e995982de2ed85f5fc56e892b9616ab378d686ddb1a8511356edca.json.gz",
+      "bytes": 425164,
+      "sha256": "353e68e8e2e995982de2ed85f5fc56e892b9616ab378d686ddb1a8511356edca",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0090.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0091.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/bd3afcf69997c6b1f75d67e7cab7fe35042c31c40ddcfefb06dca043790f5b3d.json.gz",
+      "bytes": 327116,
+      "sha256": "bd3afcf69997c6b1f75d67e7cab7fe35042c31c40ddcfefb06dca043790f5b3d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0091.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0092.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/d01b12503a41768eb500a0c599174a1575400ba354e0083beb7a974c1025fd04.json.gz",
+      "bytes": 269490,
+      "sha256": "d01b12503a41768eb500a0c599174a1575400ba354e0083beb7a974c1025fd04",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0092.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0093.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/682f8aa06fef63ff6df158197922a707e68e68914e5568278a821fe86e88e4a1.json.gz",
+      "bytes": 455210,
+      "sha256": "682f8aa06fef63ff6df158197922a707e68e68914e5568278a821fe86e88e4a1",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0093.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0094.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/d7a4f7eab12cadae96bba615dd7463e07bc198dac2ba5c7d4ffc85e0ac0396de.json.gz",
+      "bytes": 507719,
+      "sha256": "d7a4f7eab12cadae96bba615dd7463e07bc198dac2ba5c7d4ffc85e0ac0396de",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0094.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0095.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/71691dfb65b5041c107219602d323fd6adce68cbd5d22966659b656c51b49415.json.gz",
+      "bytes": 443682,
+      "sha256": "71691dfb65b5041c107219602d323fd6adce68cbd5d22966659b656c51b49415",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0095.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-building-cards-20261026/bucket-0096.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/building-cards/published/d64abb11c93a7f368f7d44b49fe229929a42b2cf9a599e4e1880b745b486a32f.json.gz",
+      "bytes": 240667,
+      "sha256": "d64abb11c93a7f368f7d44b49fe229929a42b2cf9a599e4e1880b745b486a32f",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0096.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0000.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/335087bbaf9ff523faef704ef82a46b038d19befe7bed90313d8198cdb54e8b5.json.gz",
+      "bytes": 188198,
+      "sha256": "335087bbaf9ff523faef704ef82a46b038d19befe7bed90313d8198cdb54e8b5",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0000.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0001.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/2e7cb95196a38380800b2ec4674deaa2ab152f88132fafc09490f16e48085104.json.gz",
+      "bytes": 189514,
+      "sha256": "2e7cb95196a38380800b2ec4674deaa2ab152f88132fafc09490f16e48085104",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0001.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0002.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/6237cac381a50c44ed8fdcee19a34a73e6ce271a83470db7c89b20da93cb5b23.json.gz",
+      "bytes": 195058,
+      "sha256": "6237cac381a50c44ed8fdcee19a34a73e6ce271a83470db7c89b20da93cb5b23",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0002.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0003.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/c099a940796f599f61e7d815be0b0d6600434ebf1ea1e4b898d58216a58582fd.json.gz",
+      "bytes": 198951,
+      "sha256": "c099a940796f599f61e7d815be0b0d6600434ebf1ea1e4b898d58216a58582fd",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0003.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0004.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/05f4d27ba988deb647c0405e2e214e936252a3b9909f8979ea7ae75bbc6c19e1.json.gz",
+      "bytes": 197524,
+      "sha256": "05f4d27ba988deb647c0405e2e214e936252a3b9909f8979ea7ae75bbc6c19e1",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0004.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0005.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/66b22d657e4b1838d8b9f732ea54910ade8abd473fa15593adffa34ed8597c83.json.gz",
+      "bytes": 188805,
+      "sha256": "66b22d657e4b1838d8b9f732ea54910ade8abd473fa15593adffa34ed8597c83",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0005.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0006.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/2aa91505054a5a31c530ea476260a5a04da4ce8db13c4ab9aa2e4780d779fd11.json.gz",
+      "bytes": 171376,
+      "sha256": "2aa91505054a5a31c530ea476260a5a04da4ce8db13c4ab9aa2e4780d779fd11",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0006.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0007.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/d0b1e12be7b611e13d8828a82565449aaccd922be50a112211e07a690ab709f7.json.gz",
+      "bytes": 188379,
+      "sha256": "d0b1e12be7b611e13d8828a82565449aaccd922be50a112211e07a690ab709f7",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0007.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0008.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/3ef3915abec4a921ddeed405e646a7653ee562651b8d8ae1f1f4acbb99e0b70e.json.gz",
+      "bytes": 175666,
+      "sha256": "3ef3915abec4a921ddeed405e646a7653ee562651b8d8ae1f1f4acbb99e0b70e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0008.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0009.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/275b8acef536b3a429bbcf0ee2924fc55f3a656878ac81fb084d927438ee7264.json.gz",
+      "bytes": 179064,
+      "sha256": "275b8acef536b3a429bbcf0ee2924fc55f3a656878ac81fb084d927438ee7264",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0009.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0010.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/915fe6b7005c4c8b08a6b419145db29a4ac48bb95658937befa26dc362d41355.json.gz",
+      "bytes": 177716,
+      "sha256": "915fe6b7005c4c8b08a6b419145db29a4ac48bb95658937befa26dc362d41355",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0010.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0011.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/fd4f1cc93ae57855818adc9ba5302337dcb342e21fb09969632cf9d5bf5a2e44.json.gz",
+      "bytes": 186511,
+      "sha256": "fd4f1cc93ae57855818adc9ba5302337dcb342e21fb09969632cf9d5bf5a2e44",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0011.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0012.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/f21e9b6076015a3bbb8980f1edec09a4bd19c9ba876a4100be8f4ff783daee27.json.gz",
+      "bytes": 244286,
+      "sha256": "f21e9b6076015a3bbb8980f1edec09a4bd19c9ba876a4100be8f4ff783daee27",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0012.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0013.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/69f66c85ade7d19533038669a35d5d3f7298eda9dd09b52315b95514daade8f0.json.gz",
+      "bytes": 235577,
+      "sha256": "69f66c85ade7d19533038669a35d5d3f7298eda9dd09b52315b95514daade8f0",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0013.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0014.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/25e39d08d5db005dbdc4ab1c9ce15c41dfd79f6cd4016abccba93bc8d84f4ba7.json.gz",
+      "bytes": 232899,
+      "sha256": "25e39d08d5db005dbdc4ab1c9ce15c41dfd79f6cd4016abccba93bc8d84f4ba7",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0014.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0015.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/82ea915c38f8453c82cf89ac3f642dfbfc738ad23bb55c1c0e4d3f5fd0626ea6.json.gz",
+      "bytes": 216016,
+      "sha256": "82ea915c38f8453c82cf89ac3f642dfbfc738ad23bb55c1c0e4d3f5fd0626ea6",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0015.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0016.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/da79e1b4f7770b4fce3fa3532a5d7673c376f9fad32b957c6e03625ceeddf12a.json.gz",
+      "bytes": 205226,
+      "sha256": "da79e1b4f7770b4fce3fa3532a5d7673c376f9fad32b957c6e03625ceeddf12a",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0016.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0017.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/0f68f3d7021678618a73e6341dfc348a1fcfc8358174b8111fbc310cf2380936.json.gz",
+      "bytes": 207083,
+      "sha256": "0f68f3d7021678618a73e6341dfc348a1fcfc8358174b8111fbc310cf2380936",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0017.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0018.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/be85f12995e3dbfec7664e7587f23f5aaa5291f7815104168f8e73b92383d53a.json.gz",
+      "bytes": 207363,
+      "sha256": "be85f12995e3dbfec7664e7587f23f5aaa5291f7815104168f8e73b92383d53a",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0018.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0019.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/d775853808430f270ae1688256aa0ac4b4ee30438b7375de1b4e3ed9a73ac217.json.gz",
+      "bytes": 238557,
+      "sha256": "d775853808430f270ae1688256aa0ac4b4ee30438b7375de1b4e3ed9a73ac217",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0019.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0020.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/717d5946d7bc1af80a85a38e7d368f962a5c82a6f47e933bba0923e133d8ec30.json.gz",
+      "bytes": 228886,
+      "sha256": "717d5946d7bc1af80a85a38e7d368f962a5c82a6f47e933bba0923e133d8ec30",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0020.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0021.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/6fe7f97f93e6b71228b1e4dd1b58e8605660d52984e012ad83e3375e0d311ebd.json.gz",
+      "bytes": 223670,
+      "sha256": "6fe7f97f93e6b71228b1e4dd1b58e8605660d52984e012ad83e3375e0d311ebd",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0021.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0022.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/0addb2e0c22a642e7ab9e2b257ec32ca5ee8af6d0718ee2934121cb20b58abaa.json.gz",
+      "bytes": 204220,
+      "sha256": "0addb2e0c22a642e7ab9e2b257ec32ca5ee8af6d0718ee2934121cb20b58abaa",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0022.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0023.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/436279df48a816e50b037d606e8544cf69fc001fa497d6605747470a1c53f739.json.gz",
+      "bytes": 230199,
+      "sha256": "436279df48a816e50b037d606e8544cf69fc001fa497d6605747470a1c53f739",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0023.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0024.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/dc860f73c70fce53e0158859b7f13b6c5d5ccab68705cda3852e14445b687fa1.json.gz",
+      "bytes": 229992,
+      "sha256": "dc860f73c70fce53e0158859b7f13b6c5d5ccab68705cda3852e14445b687fa1",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0024.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0025.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/33d84c6dacbe7e12765de222801bac5b4edeb3a1bdea1873f5a7127a43db598e.json.gz",
+      "bytes": 249517,
+      "sha256": "33d84c6dacbe7e12765de222801bac5b4edeb3a1bdea1873f5a7127a43db598e",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0025.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0026.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/1c57b87d5ecfc85d317e65c45dd279df1488c2483058432f05b7134fd75706b1.json.gz",
+      "bytes": 250441,
+      "sha256": "1c57b87d5ecfc85d317e65c45dd279df1488c2483058432f05b7134fd75706b1",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0026.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0027.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/9909ae227f71a3d0b071ccf51cdac7c19ba5b6d6e7e337870ff548cbf729c061.json.gz",
+      "bytes": 256122,
+      "sha256": "9909ae227f71a3d0b071ccf51cdac7c19ba5b6d6e7e337870ff548cbf729c061",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0027.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0028.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/5f5844141462b0ae03fa8380a7b7b6b936341581e92d1bfa01c84589d7656d10.json.gz",
+      "bytes": 222260,
+      "sha256": "5f5844141462b0ae03fa8380a7b7b6b936341581e92d1bfa01c84589d7656d10",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0028.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0029.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/697d4ad1cdf552c8e1870ee352e25dae768b6a7689121bef2004080c281fe086.json.gz",
+      "bytes": 227959,
+      "sha256": "697d4ad1cdf552c8e1870ee352e25dae768b6a7689121bef2004080c281fe086",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0029.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0030.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/a26dcb04ddd5fad167fe4a11d1857e69f1f98182375aec71b157ec1e26a86c94.json.gz",
+      "bytes": 229996,
+      "sha256": "a26dcb04ddd5fad167fe4a11d1857e69f1f98182375aec71b157ec1e26a86c94",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0030.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0031.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/58300bc4b31b96a35b2e9abf369abfbcc23b2382e55545e9f68765fb45cf9deb.json.gz",
+      "bytes": 211239,
+      "sha256": "58300bc4b31b96a35b2e9abf369abfbcc23b2382e55545e9f68765fb45cf9deb",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0031.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0032.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/c6e2ead4bb0a4df4b6b5b5e72b6e632bb80eaf58ad852530cc1261f3d6fde628.json.gz",
+      "bytes": 193677,
+      "sha256": "c6e2ead4bb0a4df4b6b5b5e72b6e632bb80eaf58ad852530cc1261f3d6fde628",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0032.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0033.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/aaa5a66efc826ec75f896e1b69014f6f0ebf8e3f9f4cf8056ceffc65e9267006.json.gz",
+      "bytes": 197182,
+      "sha256": "aaa5a66efc826ec75f896e1b69014f6f0ebf8e3f9f4cf8056ceffc65e9267006",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0033.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0034.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/339bbd89d2794cc00774f6ced9dc0d1a6c69ab449b621c5e8a8a2c4ab6facd02.json.gz",
+      "bytes": 194971,
+      "sha256": "339bbd89d2794cc00774f6ced9dc0d1a6c69ab449b621c5e8a8a2c4ab6facd02",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0034.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0035.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/a74e80c8153677f00163fe82696137118d851b0dd10ef18e7dfa6fe4e29394bb.json.gz",
+      "bytes": 204708,
+      "sha256": "a74e80c8153677f00163fe82696137118d851b0dd10ef18e7dfa6fe4e29394bb",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0035.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0036.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/bd11034ba1791152fb1b828b93e7b6aef63f0817234cfa6797eda03382b966c8.json.gz",
+      "bytes": 198974,
+      "sha256": "bd11034ba1791152fb1b828b93e7b6aef63f0817234cfa6797eda03382b966c8",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0036.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0037.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/15ed719ac8803b60ba6ebc64cf2d5d66967121da9c218ae19fb3678cc9f32962.json.gz",
+      "bytes": 199477,
+      "sha256": "15ed719ac8803b60ba6ebc64cf2d5d66967121da9c218ae19fb3678cc9f32962",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0037.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0038.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/1cb4cb57ee016d4e172c64df2d8fa7ed513f562c3c41b9d2f7dcd99e8d06e3ee.json.gz",
+      "bytes": 194527,
+      "sha256": "1cb4cb57ee016d4e172c64df2d8fa7ed513f562c3c41b9d2f7dcd99e8d06e3ee",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0038.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0039.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/7e0227d75227d900506000402dfc9aeca5d09979b2fc60fd09a39246ac4b1833.json.gz",
+      "bytes": 197115,
+      "sha256": "7e0227d75227d900506000402dfc9aeca5d09979b2fc60fd09a39246ac4b1833",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0039.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0040.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/58db55e0442fa1bc9b78380297703878580e851bf4edce64e1c4f12feaa7122d.json.gz",
+      "bytes": 211052,
+      "sha256": "58db55e0442fa1bc9b78380297703878580e851bf4edce64e1c4f12feaa7122d",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0040.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0041.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/8b45b3bcae734b099e38123cc9ebb54b8494674064c74de420992ec407a8e476.json.gz",
+      "bytes": 196704,
+      "sha256": "8b45b3bcae734b099e38123cc9ebb54b8494674064c74de420992ec407a8e476",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0041.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0042.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/8c7012d7c9bd946e430677e1b530341f2c78474166bdac93bf587503d3d20fdf.json.gz",
+      "bytes": 197012,
+      "sha256": "8c7012d7c9bd946e430677e1b530341f2c78474166bdac93bf587503d3d20fdf",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0042.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0043.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/9bb1694fb182028035268b878e37c853debdfcc5ff3ed05bd4765d7cc98acd10.json.gz",
+      "bytes": 186746,
+      "sha256": "9bb1694fb182028035268b878e37c853debdfcc5ff3ed05bd4765d7cc98acd10",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0043.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0044.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/98d8d6007ac5468fc55702f016b3e6b9cb2c5954cbdca03398b08675da9973c3.json.gz",
+      "bytes": 192455,
+      "sha256": "98d8d6007ac5468fc55702f016b3e6b9cb2c5954cbdca03398b08675da9973c3",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0044.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0045.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/fd6835ad18d1202d61e4ee1024b8524a5de825055a4dd7a05d45cf08a30194c6.json.gz",
+      "bytes": 184588,
+      "sha256": "fd6835ad18d1202d61e4ee1024b8524a5de825055a4dd7a05d45cf08a30194c6",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0045.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0046.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/eafffee309f33d509e1a5ea89b26cf7b77db7360aec1984204a237b30d4a3f31.json.gz",
+      "bytes": 183248,
+      "sha256": "eafffee309f33d509e1a5ea89b26cf7b77db7360aec1984204a237b30d4a3f31",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0046.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0047.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/b3c637f254c7aed9cbe5b370b3bc1d5242ea5a05fdfb8b192a30a22a0cf933c3.json.gz",
+      "bytes": 165949,
+      "sha256": "b3c637f254c7aed9cbe5b370b3bc1d5242ea5a05fdfb8b192a30a22a0cf933c3",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0047.json.gz"
+    },
+    {
+      "kind": "published_projection",
+      "sourceId": "dm-municipal-projects-and-building-links-20261026",
+      "localPath": "data/uae-evidence/dubai/dm-municipal-projects-20261026/bucket-0048.json.gz",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/municipal-projects/published/1d0c4b1d40c7d8a8d8f9254b832ca52112d11f81e5acf9216d8428dbf23a26ad.json.gz",
+      "bytes": 58798,
+      "sha256": "1d0c4b1d40c7d8a8d8f9254b832ca52112d11f81e5acf9216d8428dbf23a26ad",
+      "contentType": "application/gzip",
+      "shardFile": "bucket-0048.json.gz"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/building_summary_information_2026-10-26_15-45-26_0001.csv.gz.part-0000.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0000.bin",
+      "bytes": 8388608,
+      "sha256": "0807424ea6588b64c042762ffa42976922e84f8b2757cc4b370f444019497e75",
+      "contentType": "application/gzip",
+      "partIndex": 0,
+      "packedSha256": "437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e",
+      "originalSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/building_summary_information_2026-10-26_15-45-26_0001.csv.gz.part-0001.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0001.bin",
+      "bytes": 8388608,
+      "sha256": "4cb3e58aef101085939e8bc752d7762db7c7b60c39787ec179407fb2848bf6fd",
+      "contentType": "application/gzip",
+      "partIndex": 1,
+      "packedSha256": "437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e",
+      "originalSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/building_summary_information_2026-10-26_15-45-26_0001.csv.gz.part-0002.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0002.bin",
+      "bytes": 8388608,
+      "sha256": "fb265e7c0bd829df111c759828fabf9014c969488db14a0e832b09f24df94695",
+      "contentType": "application/gzip",
+      "partIndex": 2,
+      "packedSha256": "437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e",
+      "originalSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/building_summary_information_2026-10-26_15-45-26_0001.csv.gz.part-0003.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0003.bin",
+      "bytes": 8388608,
+      "sha256": "e2fa9aea2f6196d762f55d8f51bb76910e95466e058613417e4eb0efd04ada1b",
+      "contentType": "application/gzip",
+      "partIndex": 3,
+      "packedSha256": "437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e",
+      "originalSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-building-summary-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/building_summary_information_2026-10-26_15-45-26_0001.csv.gz.part-0004.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0004.bin",
+      "bytes": 1183960,
+      "sha256": "7b97b758a2b2d92b3fb62b4b0cf8b7f620ce49aaf5895a81409117aff4384da3",
+      "contentType": "application/gzip",
+      "partIndex": 4,
+      "packedSha256": "437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e",
+      "originalSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-project-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/project_information_2026-10-26_15-45-24_0001.csv.gz.part-0000.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0000.bin",
+      "bytes": 8388608,
+      "sha256": "39e3f0f2a564e5643ec8666763430fbd1fa20f62ce214778b9a503cef83e6287",
+      "contentType": "application/gzip",
+      "partIndex": 0,
+      "packedSha256": "6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a",
+      "originalSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-project-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/project_information_2026-10-26_15-45-24_0001.csv.gz.part-0001.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0001.bin",
+      "bytes": 8388608,
+      "sha256": "797a5e7fd9d05ed70b9a06267f8d152e376c9fce8b9b61428f2c231ab269ee9e",
+      "contentType": "application/gzip",
+      "partIndex": 1,
+      "packedSha256": "6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a",
+      "originalSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-project-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/project_information_2026-10-26_15-45-24_0001.csv.gz.part-0002.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0002.bin",
+      "bytes": 8388608,
+      "sha256": "3ef81215a19f54883ff5e9947a02d7706fbfe47105910ec4a6c59f64bbfd0668",
+      "contentType": "application/gzip",
+      "partIndex": 2,
+      "packedSha256": "6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a",
+      "originalSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-project-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/project_information_2026-10-26_15-45-24_0001.csv.gz.part-0003.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0003.bin",
+      "bytes": 1729803,
+      "sha256": "b16a97a2fa3cfbed4f63915454f091c5200f43f6f808b2c23bdd1c94074ba25e",
+      "contentType": "application/gzip",
+      "partIndex": 3,
+      "packedSha256": "6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a",
+      "originalSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e"
+    },
+    {
+      "kind": "private_original_part",
+      "sourceId": "dm-project-building-information-20261026",
+      "localPath": "work/idrive-replica/dubai-20261026/project_building_information_2026-10-26_15-44-55_0001.csv.gz.part-0000.bin",
+      "idriveKey": "espacios-map/uae-evidence/dubai/20261026/originals/e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2/7bab15f6e1813070218aaebbb48387ccba91dcb5392946476d2dd33af8127d4e/part-0000.bin",
+      "bytes": 2594239,
+      "sha256": "7bab15f6e1813070218aaebbb48387ccba91dcb5392946476d2dd33af8127d4e",
+      "contentType": "application/gzip",
+      "partIndex": 0,
+      "packedSha256": "7bab15f6e1813070218aaebbb48387ccba91dcb5392946476d2dd33af8127d4e",
+      "originalSha256": "e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2"
+    }
+  ],
+  "objectCount": 155,
+  "totalBytes": 103603010,
+  "publishedProjectionObjects": 145,
+  "privateOriginalPartObjects": 10,
+  "originalAssemblies": [
+    {
+      "sourceId": "dm-building-summary-information-20261026",
+      "originalBytes": 211412452,
+      "originalSha256": "69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798",
+      "packedBytes": 34738392,
+      "packedSha256": "437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e",
+      "partKeysInOrder": [
+        "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0000.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0001.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0002.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0003.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798/437c3b90dd431ca00cd51a75bd17043cb18854674f8147b2a1618745982bed8e/part-0004.bin"
+      ]
+    },
+    {
+      "sourceId": "dm-project-information-20261026",
+      "originalBytes": 141875868,
+      "originalSha256": "1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e",
+      "packedBytes": 26895627,
+      "packedSha256": "6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a",
+      "partKeysInOrder": [
+        "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0000.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0001.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0002.bin",
+        "espacios-map/uae-evidence/dubai/20261026/originals/1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e/6815d2051d1c317369f091ee7d2969d8b3a72517aa95ef70bc83e93a0b42984a/part-0003.bin"
+      ]
+    },
+    {
+      "sourceId": "dm-project-building-information-20261026",
+      "originalBytes": 20811938,
+      "originalSha256": "e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2",
+      "packedBytes": 2594239,
+      "packedSha256": "7bab15f6e1813070218aaebbb48387ccba91dcb5392946476d2dd33af8127d4e",
+      "partKeysInOrder": [
+        "espacios-map/uae-evidence/dubai/20261026/originals/e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2/7bab15f6e1813070218aaebbb48387ccba91dcb5392946476d2dd33af8127d4e/part-0000.bin"
+      ]
+    }
+  ],
+  "verificationRequired": "For every object: private signed GET, exact byte length and SHA-256; concatenate original parts in order, match packed SHA-256, then decompress and match the pinned original byte length and SHA-256. No IDrive claim or runtime cutover before all readbacks pass."
+}

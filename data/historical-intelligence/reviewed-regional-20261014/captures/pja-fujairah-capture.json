@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "passId": "primary-pja-fujairah-20261014-v47",
+  "baselineSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+  "baselineVersion": "20261013-enrichment-v46",
+  "planSHA256": "bae5d8f1500d05bfabc5227e3b0b8824b47890edb0b9998c5cec7111b4bb8715",
+  "httpRequests": 8,
+  "sources": [
+    {
+      "id": "pja-masterplan",
+      "url": "https://www.protocol.dubai.ae/en/media-listing/news-events/mohammed-bin-rashid-approves-new-futuristic-masterplan-for-palm-jebel-ali/",
+      "publisher": "Dubai Protocol Department",
+      "reviewAgainstIds": [
+        "community:Dubai:palm-jebel-ali"
+      ],
+      "expectedNeedles": [
+        "Palm Jebel Ali",
+        "masterplan"
+      ],
+      "identityNeedles": [
+        "Palm Jebel Ali",
+        "masterplan"
+      ],
+      "reportedPublishedAt": "2023-05-31",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.protocol.dubai.ae/en/media-listing/news-events/mohammed-bin-rashid-approves-new-futuristic-masterplan-for-palm-jebel-ali/",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "45e90929266e3faf1f88d2215b2ea3085fdd488d7c5293c5234f444e40c4d447",
+      "retrievedAt": "2026-10-14T09:44:45Z",
+      "attemptedAt": "2026-10-14T09:44:40Z",
+      "firstAvailableAt": "2026-10-14T09:44:45Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.protocol.dubai.ae/robots.txt",
+          "httpStatus": 404,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "retrievedAt": "2026-10-14T09:44:41Z",
+          "rawRetained": false,
+          "policy": "no_robots_file_404_or_410"
+        }
+      ],
+      "needleChecks": {
+        "Palm Jebel Ali": true,
+        "masterplan": true
+      },
+      "responseBytes": 36969,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Mohammed bin Rashid approves new futuristic masterplan for Palm Jebel Ali",
+        "identityChecks": {
+          "Palm Jebel Ali": true,
+          "masterplan": true
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "palm-central-next-phase",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "publisher": "Nakheel",
+      "reviewAgainstIds": [
+        "project:palm-central-private-residences-palm-jebel-ali-dubai"
+      ],
+      "expectedNeedles": [
+        "Palm Central",
+        "222"
+      ],
+      "identityNeedles": [
+        "Palm Central",
+        "222"
+      ],
+      "reportedPublishedAt": "2026-06-24",
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "37f37d3f76ccf5a8136047d030403897ee544e96f832399b592680015280ea25",
+      "retrievedAt": "2026-10-14T09:44:49Z",
+      "attemptedAt": "2026-10-14T09:44:45Z",
+      "firstAvailableAt": "2026-10-14T09:44:49Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "day",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://www.nakheel.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "fe85a0d12308a6de4ac8c84bc40be157d409d28e2a6c2d1157269f4842b54a3c",
+          "retrievedAt": "2026-10-14T09:44:47Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Palm Central": true,
+        "222": true
+      },
+      "responseBytes": 104015,
+      "lastModified": "Thu, 08 Oct 2026 12:59:02 GMT",
+      "etag": "W/\"e2479426-504d-42e0-9ae2-8b7e8f29472a\"",
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Nakheel releases next phase of Palm Central Private Residences amid accelerating demand for beachfront living on Palm Jebel Ali",
+        "identityChecks": {
+          "Palm Central": true,
+          "222": true
+        },
+        "numericMentions": [],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [
+            "800"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "reportage-directory",
+      "url": "https://reportagegroup.com/projects/residential-apartments/",
+      "publisher": "Reportage Group",
+      "reviewAgainstIds": [
+        "project:oceana-by-reportage-fujairah-uae",
+        "project:marlin-ii-reportage-al-reem-island-abu-dhabi"
+      ],
+      "expectedNeedles": [
+        "Oceana",
+        "Fujairah",
+        "530k",
+        "Marlin",
+        "1.6M"
+      ],
+      "identityNeedles": [
+        "Oceana",
+        "Fujairah",
+        "530k",
+        "Marlin",
+        "1.6M"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://reportagegroup.com/projects/residential-apartments/",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "f285aec6006ff9125ee47fd096ab631147ccd077eb1c0334a4348f49e0491f6c",
+      "retrievedAt": "2026-10-14T09:44:56Z",
+      "attemptedAt": "2026-10-14T09:44:49Z",
+      "firstAvailableAt": "2026-10-14T09:44:56Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://reportagegroup.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "498e1d44041fb29162af97b6fd3cfb69b09b3745a5c7e06163cf356bad4f00e4",
+          "retrievedAt": "2026-10-14T09:44:52Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Oceana": true,
+        "Fujairah": true,
+        "530k": true,
+        "Marlin": true,
+        "1.6M": false
+      },
+      "responseBytes": 116961,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Residential Apartments Archives - Reportage",
+        "identityChecks": {
+          "Oceana": true,
+          "Fujairah": true,
+          "530k": true,
+          "Marlin": true,
+          "1.6M": false
+        },
+        "numericMentions": [
+          {
+            "amount": "1",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 2195,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "500",
+            "scale": "k",
+            "currency": "AED",
+            "characterOffset": 2257,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "700",
+            "scale": "K",
+            "currency": "AED",
+            "characterOffset": 2316,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "530",
+            "scale": "k",
+            "currency": "AED",
+            "characterOffset": 2384,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "4.38",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 2437,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "500",
+            "scale": "k",
+            "currency": "AED",
+            "characterOffset": 2497,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "500",
+            "scale": "k",
+            "currency": "AED",
+            "characterOffset": 2555,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "1.6",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 2609,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "1.9",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 2667,
+            "qualifier": "starting_or_from_advertisement"
+          }
+        ],
+        "cards": [
+          {
+            "sourceName": "Oceana",
+            "amount": "530",
+            "scale": "k",
+            "currency": "AED"
+          },
+          {
+            "sourceName": "Marlin 2",
+            "amount": "1.6",
+            "scale": "M",
+            "currency": "AED"
+          }
+        ],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [
+            "1",
+            "500",
+            "700",
+            "530",
+            "4.38",
+            "500",
+            "500",
+            "1.6",
+            "1.9"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "oceana-project",
+      "url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "publisher": "Reportage Group",
+      "reviewAgainstIds": [
+        "project:oceana-by-reportage-fujairah-uae"
+      ],
+      "expectedNeedles": [
+        "Oceana",
+        "Fujairah",
+        "605"
+      ],
+      "identityNeedles": [
+        "Oceana",
+        "Fujairah",
+        "605"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "730897fa3a23524affc224bb3b8a2fa00fccdeddf6ca5916b2006ff77f721d83",
+      "retrievedAt": "2026-10-14T09:44:59Z",
+      "attemptedAt": "2026-10-14T09:44:56Z",
+      "firstAvailableAt": "2026-10-14T09:44:59Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://reportagegroup.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "498e1d44041fb29162af97b6fd3cfb69b09b3745a5c7e06163cf356bad4f00e4",
+          "retrievedAt": "2026-10-14T09:44:52Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Oceana": true,
+        "Fujairah": true,
+        "605": true
+      },
+      "responseBytes": 151589,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Oceana - Reportage",
+        "identityChecks": {
+          "Oceana": true,
+          "Fujairah": true,
+          "605": true
+        },
+        "numericMentions": [
+          {
+            "amount": "530",
+            "scale": "k",
+            "currency": "AED",
+            "characterOffset": 1194,
+            "qualifier": "starting_or_from_advertisement"
+          }
+        ],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [
+            "530"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    },
+    {
+      "id": "marlin-2-project",
+      "url": "https://reportagegroup.com/projects/residential-apartments/marlin-2/",
+      "publisher": "Reportage Group",
+      "reviewAgainstIds": [
+        "project:marlin-ii-reportage-al-reem-island-abu-dhabi"
+      ],
+      "expectedNeedles": [
+        "Marlin",
+        "Abu Dhabi",
+        "164"
+      ],
+      "identityNeedles": [
+        "Marlin",
+        "Abu Dhabi",
+        "164"
+      ],
+      "reportedPublishedAt": null,
+      "reviewedPhrases": [],
+      "extractMode": "html",
+      "rawRetentionAllowed": false,
+      "reuseStatus": "normalized_metadata_only",
+      "recordId": null,
+      "identityVerified": false,
+      "httpStatus": 200,
+      "finalUrl": "https://reportagegroup.com/projects/residential-apartments/marlin-2/",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "dd38464eed6a548b447b3891388e70d5df23ef79bdc8d8929dfa4fdd354fbcd5",
+      "retrievedAt": "2026-10-14T09:45:04Z",
+      "attemptedAt": "2026-10-14T09:44:59Z",
+      "firstAvailableAt": "2026-10-14T09:45:04Z",
+      "firstAvailabilityBasis": "this_capture_only_not_historical_first_publication",
+      "publicationDatePrecision": "unknown",
+      "datasetVersionId": null,
+      "observationStart": null,
+      "observationEnd": null,
+      "frequency": null,
+      "unit": null,
+      "currency": null,
+      "segment": null,
+      "methodology": "Bounded metadata review; no accepted observation extracted.",
+      "captureMethod": "bounded_https_get_robots_checked_no_raw_retention",
+      "rawRetained": false,
+      "evidenceAccepted": false,
+      "coverageCredit": 0,
+      "redirectChain": [],
+      "robotsReceipts": [
+        {
+          "url": "https://reportagegroup.com/robots.txt",
+          "httpStatus": 200,
+          "sha256": "498e1d44041fb29162af97b6fd3cfb69b09b3745a5c7e06163cf356bad4f00e4",
+          "retrievedAt": "2026-10-14T09:44:52Z",
+          "rawRetained": false,
+          "policy": "parsed_robots_rules"
+        }
+      ],
+      "needleChecks": {
+        "Marlin": true,
+        "Abu Dhabi": true,
+        "164": true
+      },
+      "responseBytes": 114086,
+      "lastModified": null,
+      "etag": null,
+      "captureStatus": "captured_metadata_only",
+      "normalizedReview": {
+        "title": "Marlin 2 - Reportage",
+        "identityChecks": {
+          "Marlin": true,
+          "Abu Dhabi": true,
+          "164": true
+        },
+        "numericMentions": [
+          {
+            "amount": "1.6",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 1205,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "1.65",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 1732,
+            "qualifier": "starting_or_from_advertisement"
+          },
+          {
+            "amount": "1.6",
+            "scale": "M",
+            "currency": "AED",
+            "characterOffset": 2169,
+            "qualifier": "starting_or_from_advertisement"
+          }
+        ],
+        "cards": [],
+        "reviewedPhraseChecks": {},
+        "unitFields": {
+          "advertisedAED": [
+            "1.6",
+            "1.65",
+            "1.6"
+          ],
+          "advertisedAreaSqft": []
+        }
+      }
+    }
+  ],
+  "acceptedFacts": [],
+  "rawRetained": false
+}
