@@ -1,5 +1,5 @@
 {
-  "version": "20261103-value-drivers-v7",
+  "version": "20261115-value-drivers-v8",
   "asOf": "2026-11-03",
   "owner": "Espacios",
   "classification": "catalysts_and_conditional_outlook",
@@ -715,6 +715,31 @@
       "mechanism": "The integrated resort, associated tourism infrastructure and regulated gaming offer can expand destination demand, hospitality employment and international visitation in the Al Marjan corridor.",
       "risk": "The resort also induces new hotel/residential supply and infrastructure load. Opening timing and actual visitation must be measured; no surrounding-property appreciation percentage is assigned.",
       "palmRelationship": "none",
+      "classification": "catalyst_evidence",
+      "priceUpliftPct": null,
+      "geometry": null,
+      "geometryBasis": "No surveyed project geometry acquired. Area links are analytical context, not distance or catchment claims."
+    },
+    {
+      "id": "pja-destination",
+      "name": "Palm Jebel Ali destination and waterfront releases",
+      "emirates": [
+        "Dubai"
+      ],
+      "ownership": "Government-linked developer",
+      "status": "Masterplan approved; phases under construction",
+      "timing": "2023 masterplan and dated 2026 villa releases; island amenities and occupancy follow separate delivery schedules",
+      "sourceIds": [
+        "pja-masterplan",
+        "pja-frond-f-release",
+        "kf-luxury"
+      ],
+      "areas": [
+        "Palm Jebel Ali"
+      ],
+      "mechanism": "The island itself is a destination proposition: beachfront homes, planned retail and public realm can attract buyers and support activity as phases open. The H1 2026 luxury-sales cohort is a demand signal, not a repeat-sale index.",
+      "risk": "Launch attention may already be reflected in entry prices. Phased supply, construction, handover and actual occupancy can delay or offset the benefit.",
+      "palmRelationship": "direct",
       "classification": "catalyst_evidence",
       "priceUpliftPct": null,
       "geometry": null,
@@ -4977,6 +5002,7 @@
       "pja-gulfnews-2005-real-estate-report"
     ],
     "driverIds": [
+      "pja-destination",
       "pja-utilities",
       "pja-villas",
       "dwc-expansion",
@@ -6809,6 +6835,37 @@
       "forecastStatus": "insufficient_anchor_evidence",
       "limitation": "Earlier derived apartment research snapshot, retained for provenance. The newer accepted V48 DLD unit cohort is shown separately. Neither is villa price evidence."
     },
+    "spilloverCandidates": [
+      {
+        "area": "Jebel Ali",
+        "emirate": "Dubai",
+        "pathway": "Potential visitor, service and employment activity linked to the island",
+        "exposure": "candidate_only",
+        "gap": "Verify actual access, business links, local supply and same-segment price/rent changes."
+      },
+      {
+        "area": "Downtown Jebel Ali",
+        "emirate": "Dubai",
+        "pathway": "Possible service and commuter demand along the Jebel Ali corridor",
+        "exposure": "candidate_only",
+        "gap": "Verify travel-time exposure and distinguish island demand from other corridor developments."
+      },
+      {
+        "area": "Dubai South",
+        "emirate": "Dubai",
+        "pathway": "Possible regional jobs and visitor interaction with the southern Dubai corridor",
+        "exposure": "candidate_only",
+        "gap": "Airport and exhibition projects overlap; isolate any Palm contribution before attributing change."
+      },
+      {
+        "area": "Expo City Dubai",
+        "emirate": "Dubai",
+        "pathway": "Possible destination and event visitor interaction",
+        "exposure": "candidate_only",
+        "gap": "Exhibition-led demand is a separate driver; no Palm-specific uplift is measured."
+      }
+    ],
+    "spilloverLimitation": "These are named areas to test, not a measured catchment or a guaranteed benefit. No percentage is assigned without route, timing and comparable transaction evidence.",
     "historicalQuotes": {
       "classification": "published_reference_asking_quotes_not_registered_sales",
       "sourceId": "pja-gulfnews-2005-real-estate-report",
@@ -6903,7 +6960,7 @@
     },
     {
       "emirate": "Dubai",
-      "reviewedCatalysts": 7,
+      "reviewedCatalysts": 8,
       "localValidatedPriceForecast": false,
       "limitation": "Research subset; existing initiative catalogue retained. Catalyst coverage does not imply price/rent/yield coverage."
     },
@@ -6937,5 +6994,46 @@
       "localValidatedPriceForecast": false,
       "limitation": "Research subset; existing initiative catalogue retained. Catalyst coverage does not imply price/rent/yield coverage."
     }
-  ]
+  ],
+  "impactMethodology": {
+    "version": "20261115-development-impact-v1",
+    "updatedAt": "2026-11-15",
+    "classification": "development_exposure_and_user_scenario",
+    "factors": [
+      {
+        "id": "destination",
+        "label": "Destination demand",
+        "question": "Is the development itself attracting verified buyers or visitors?",
+        "evidence": "Dated releases, registered activity and actual visitation; keep each population separate."
+      },
+      {
+        "id": "amenity",
+        "label": "Cultural and daily amenities",
+        "question": "Which museums, parks, retail and services are open and usable?",
+        "evidence": "Opening and operating dates, access and observed use; an announcement alone is weaker."
+      },
+      {
+        "id": "access",
+        "label": "Access and employment",
+        "question": "Can the area actually reach the new jobs and amenities?",
+        "evidence": "Verified routes, travel times, station or road status; no radius-only catchment."
+      },
+      {
+        "id": "delivery",
+        "label": "Delivery and timing",
+        "question": "When can residents occupy and use the development?",
+        "evidence": "Separate approvals, contracts, construction inspections, handover and occupancy."
+      },
+      {
+        "id": "offsets",
+        "label": "Offsets and already-priced demand",
+        "question": "How much new competing supply, cost or delay could absorb demand?",
+        "evidence": "Comparable same-segment listings, delivered stock, liquidity and observed prices."
+      }
+    ],
+    "comparison": "Estimate an effect only with same-segment registered sales or signed rents before and after delivery, matched comparison areas, checked pre-trends, and controls for broader market moves and overlapping developments.",
+    "scenario": "User-entered baseline annual change plus a signed development assumption minus a supply or already-priced offset, applied only from the entered activation year. Both paths begin at index 100; the difference is a conditional scenario, not measured uplift.",
+    "forecastStatus": "No calibrated causal uplift or project-specific forecast is published. Observed history, asking benchmarks and scenarios remain separate.",
+    "mapPolicy": "The observed price and yield heat layers are never rewritten by catalyst assumptions. A development-exposure view may show candidates, status and evidence gaps, not a predicted return."
+  }
 }

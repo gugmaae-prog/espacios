@@ -3,6 +3,16 @@ export function sensitivity(ratePct,years){
  const index=100*(1+ratePct/100)**years;
  return {classification:'user_assumption_sensitivity',index,capitalChangePct:index-100,ratePct,years};
 }
+export function developmentScenario({baselineAnnualPct,driverAnnualPct,offsetAnnualPct,years,activationYear}){
+ const rates=[baselineAnnualPct,driverAnnualPct,offsetAnnualPct];
+ if(rates.some(v=>!Number.isFinite(v))||!Number.isInteger(years)||years<1||years>30||!Number.isInteger(activationYear)||activationYear<1||activationYear>30||offsetAnnualPct<0)return null;
+ const activeRate=baselineAnnualPct+driverAnnualPct-offsetAnnualPct;
+ if(baselineAnnualPct<=-100||baselineAnnualPct>100||activeRate<=-100||activeRate>100)return null;
+ const activeYears=Math.max(0,years-activationYear+1),beforeYears=years-activeYears;
+ const baselineIndex=100*(1+baselineAnnualPct/100)**years;
+ const scenarioIndex=100*(1+baselineAnnualPct/100)**beforeYears*(1+activeRate/100)**activeYears;
+ return {classification:'user_assumption_development_scenario',baselineIndex,scenarioIndex,differenceFromBaseline:scenarioIndex-baselineIndex,activeYears,activationYear,annualDriverAssumptionPct:driverAnnualPct,annualOffsetAssumptionPct:offsetAnnualPct,calibrated:false};
+}
 export function villaCapitalScenario({purchasePriceAED,annualGrowthPct,years,entryCostPct,exitCostPct,annualHoldingCostAED}){
  if(!Number.isFinite(purchasePriceAED)||purchasePriceAED<=0||!Number.isFinite(entryCostPct)||entryCostPct<0||entryCostPct>100||!Number.isFinite(exitCostPct)||exitCostPct<0||exitCostPct>100||!Number.isFinite(annualHoldingCostAED)||annualHoldingCostAED<0)return null;
  const path=sensitivity(annualGrowthPct,years);

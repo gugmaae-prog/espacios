@@ -1,13 +1,13 @@
 /* One evidence drawer for official catalysts, Palm Jebel Ali and published outlooks. */
 (() => {
- const Q=s=>document.querySelector(s),V={data:null,promise:null,tab:'government',emirate:'all',status:'all',markers:true,communities:[],rates:[-5,0,5],villa:{purchasePriceAED:NaN,entryCostPct:0,exitCostPct:0,annualHoldingCostAED:0},focus:null};
+ const Q=s=>document.querySelector(s),V={data:null,promise:null,tab:'government',emirate:'all',status:'all',markers:true,communities:[],rates:[-5,0,5],villa:{purchasePriceAED:NaN,entryCostPct:0,exitCostPct:0,annualHoldingCostAED:0},development:{area:'Palm Jebel Ali',baselineAnnualPct:NaN,driverAnnualPct:NaN,offsetAnnualPct:NaN,activationYear:1,years:5},focus:null};
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=v=>Number.isFinite(v)?v.toLocaleString('en',{maximumFractionDigits:1}):'—';
  function links(ids){return ids.map(id=>V.data.sources.find(s=>s.id===id)).filter(Boolean).map(s=>'<a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.publisher)+' · '+esc(s.published||'checked '+s.retrieved)+'</a>').join('');}
  async function load(){
   if(V.data)return V.data;if(V.promise)return V.promise;
   V.promise=fetch('/map/api/value-drivers',{signal:AbortSignal.timeout(12000)}).then(r=>{if(!r.ok)throw Error('Research unavailable');return r.json();}).then(d=>{
-   if(d.version!=='20261103-value-drivers-v7'||!Array.isArray(d.drivers)||!d.palmJebelAli?.history||!d.palmJebelAli?.latestDldRefresh)throw Error('Research version mismatch');V.data=d;return d;
+   if(d.version!=='20261115-value-drivers-v8'||!Array.isArray(d.drivers)||!d.palmJebelAli?.history||!d.palmJebelAli?.latestDldRefresh||!d.impactMethodology)throw Error('Research version mismatch');V.data=d;return d;
   }).finally(()=>{V.promise=null;});return V.promise;
  }
  function close(){Q('#vd-panel').classList.add('hidden');Q('[data-value="government"]')?.setAttribute('aria-expanded','false');Q('#vd-launch')?.focus({preventScroll:true});}
@@ -36,12 +36,29 @@
   const progress=p.constructionProgress;
   return '<h4>Frond construction inspections</h4><p class="vd-note">'+esc(progress.methodology)+'</p><div class="vd-progress-grid">'+progress.observations.map(row=>'<div><strong>Frond '+esc(row.frond)+'</strong><span>'+row.progressPct.toFixed(2)+'%</span></div>').join('')+'</div><p class="vd-note">18 June 2026 · RERA inspection reported by Nakheel. These percentages do not indicate handover or property-price growth.</p><div class="vd-sources">'+links([progress.sourceId])+'</div>';
  }
+ function impactMethodHTML(){
+  const m=V.data.impactMethodology,p=V.data.palmJebelAli;
+  return '<details class="vd-method" open><summary>How developments enter the outlook</summary><p class="vd-note">'+esc(m.forecastStatus)+'</p><ul>'+m.factors.map(f=>'<li><strong>'+esc(f.label)+'</strong>: '+esc(f.question)+' '+esc(f.evidence)+'</li>').join('')+'</ul><p>'+esc(m.comparison)+'</p></details><h4>Potential Palm Jebel Ali spillover</h4><p class="vd-note">'+esc(p.spilloverLimitation)+'</p>'+p.spilloverCandidates.map(c=>'<article class="vd-card"><h4>'+esc(c.area)+'</h4><p>'+esc(c.pathway)+'</p><p class="vd-note">Evidence needed: '+esc(c.gap)+'</p></article>').join('');
+ }
+ function developmentInputsHTML(){
+  const x=V.development,areas=['Palm Jebel Ali',...V.data.palmJebelAli.spilloverCandidates.map(c=>c.area)];
+  const numberField=(key,label,extra='')=>'<label>'+label+'<input type="number" inputmode="decimal" data-vd-development="'+key+'" '+extra+' value="'+(Number.isFinite(x[key])?x[key]:'')+'" placeholder="Enter assumption"></label>';
+  return '<section class="vd-method"><h4>Development-adjusted scenario · your assumptions</h4><p class="vd-note">Choose the island or a candidate surrounding area. Enter a baseline and a signed development effect, then an offset for extra supply or benefits already in the price. The effect starts only in the year you choose. No source assigns these percentages.</p><div class="vd-development-fields"><label>Area<select data-vd-development="area">'+areas.map(area=>'<option '+(area===x.area?'selected':'')+'>'+esc(area)+'</option>').join('')+'</select></label>'+numberField('baselineAnnualPct','Baseline change · % per year','min="-99" max="100" step="0.5"')+numberField('driverAnnualPct','Development effect · percentage points per year','min="-100" max="100" step="0.5"')+numberField('offsetAnnualPct','Supply / priced-in offset · points per year','min="0" max="100" step="0.5"')+numberField('activationYear','Effect begins in year','min="1" max="30" step="1"')+numberField('years','Compare after years','min="1" max="30" step="1"')+'</div><p id="vd-development-results" role="status" aria-live="polite"></p><p class="vd-note">'+esc(V.data.impactMethodology.scenario)+'</p></section>';
+ }
+ function renderDevelopmentScenario(){
+  const target=Q('#vd-development-results');if(!target)return;
+  const result=VDCore.developmentScenario(V.development);
+  if(!result){target.textContent='Enter all three annual assumptions and a valid start year to compare index paths. No effect is prefilled.';return;}
+  const candidate=V.data.palmJebelAli.spilloverCandidates.find(c=>c.area===V.development.area);
+  target.innerHTML='<strong>'+esc(V.development.area)+'</strong> · baseline index '+fmt(result.baselineIndex)+' · conditional index '+fmt(result.scenarioIndex)+' · difference '+(result.differenceFromBaseline>=0?'+':'')+fmt(result.differenceFromBaseline)+' points after '+result.activeYears+' active year'+(result.activeYears===1?'':'s')+'.'+(candidate?'<br><small>Nearby-area exposure is a candidate only; verify access and comparable sales before interpreting this difference.</small>':'<br><small>Island effect is an entered hypothesis, not observed appreciation.</small>');
+ }
  function render(){
   Q('#vd-tabs').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tab===V.tab)));
   const body=Q('#vd-body');
   if(V.tab==='government'){
    const rows=VDCore.visibleDrivers(V.data,V.emirate,V.status);
    body.innerHTML='<button type="button" id="vd-palm-thesis">Palm Jebel Ali · investment outlook</button><p class="vd-note">'+rows.length+' reviewed catalysts · checked '+esc(V.data.asOf)+'. Potential value drivers; no automatic price uplift.</p><div class="vd-filters"><label>Emirate<select id="vd-emirate"><option value="all">All emirates</option>'+V.data.coverage.map(c=>'<option>'+esc(c.emirate)+'</option>').join('')+'</select></label><label>Status<select id="vd-status"><option value="all">All stages</option>'+[...new Set(V.data.drivers.map(d=>d.status))].map(s=>'<option>'+esc(s)+'</option>').join('')+'</select></label></div><label class="vd-map-switch"><input type="checkbox" id="vd-markers" '+(V.markers?'checked':'')+'> Show community context markers</label><p id="vd-marker-note" class="vd-note"></p><div id="vd-cards">'+(rows.length?rows.map(driverCard).join(''):'<p>No reviewed catalyst matches these filters. The original initiative catalogue is retained.</p>')+'</div>';
+   body.insertAdjacentHTML('beforeend','<details class="vd-method"><summary>How developments affect the outlook</summary><p>'+esc(V.data.impactMethodology.forecastStatus)+'</p><p>'+esc(V.data.impactMethodology.mapPolicy)+'</p></details>');
    Q('#vd-palm-thesis').onclick=()=>{V.tab='palm';render();};
    for(const [id,key]of [['vd-emirate','emirate'],['vd-status','status']]){Q('#'+id).value=V[key];Q('#'+id).onchange=e=>{V[key]=e.target.value;render();renderMarkers();};}
    Q('#vd-markers').onchange=e=>{V.markers=e.target.checked;renderMarkers();};
@@ -52,15 +69,18 @@
   }else if(V.tab==='palm'){
    const p=V.data.palmJebelAli,h=p.localPriceEvidence;
    body.innerHTML='<h3>Palm Jebel Ali</h3><p class="vd-thesis">'+esc(p.assessment)+'</p><p class="vd-note">6 indexed project records · 5 active records under the exact Palm Jebel Ali area label; one archived phase uses a compound Dubai label.</p><button type="button" data-vd-area="Palm Jebel Ali" data-vd-emirate="Dubai">Explore Palm Jebel Ali</button>'+palmHistoryHTML(p)+progressHTML(p)+'<p>'+esc(p.nearTerm)+'</p><p>'+esc(p.longTerm)+'</p><h4>Why the thesis has support</h4><ul>'+p.upside.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><p>Knight Frank reports <strong>40 sales above US$10m in H1 2026</strong>. This is demand evidence, not an appreciation rate.</p><h4>What could weaken it</h4><ul>'+p.risks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><h4>Delivery milestones</h4>'+p.deliveryMilestones.map(m=>'<article class="vd-card"><small>'+esc(m.date)+' · '+esc(m.classification)+'</small><p><strong>'+esc(m.label)+'</strong></p><p>'+esc(m.limitation)+'</p><div class="vd-sources">'+links([m.sourceId])+'</div></article>').join('')+'<h4>Delivery & regional catalysts</h4>'+p.driverIds.map(id=>driverCard(V.data.drivers.find(d=>d.id===id))).join('')+'<div class="vd-sources">'+links(p.sourceIds)+'</div><button type="button" id="vd-see-outlook">Compare forecasts & scenarios</button>';
+   body.insertAdjacentHTML('beforeend',impactMethodHTML());
    Q('#vd-see-outlook').onclick=()=>{V.tab='outlook';render();};
   }else{
    const f=V.data.publishedOutlooks[0],later=V.data.publishedOutlooks[1];
    body.innerHTML='<h3>Published forecasts & scenarios</h3><h4>Palm Jebel Ali unit scenario</h4><p>Edit annual growth assumptions below to see a conditional path from the latest eligible registered unit quarter. This is an area unit cohort, not a villa price or a forecast.</p><p class="vd-note">The separate index starts at 100 for assets without a comparable price anchor. Neither table includes rent, financing, fees or inflation.</p><div id="vd-rates">'+V.rates.map((r,i)=>'<label>'+['Downside input','Flat input','Upside input'][i]+'<input type="number" min="-99" max="100" step="0.5" value="'+r+'" data-vd-rate="'+i+'">% / year</label>').join('')+'</div><div id="vd-sensitivity" aria-live="polite"></div><p>Government-project benefits are qualitative evidence; they never add an arbitrary percentage to these inputs or the map’s existing scenarios.</p><button id="vd-history" type="button">Open map price history & scenario settings</button><h4>Dubai-wide published outlook</h4><article class="vd-card"><small>Third-party forecast · '+esc(f.period)+' · '+esc(f.geography)+'</small><p>Knight Frank’s February outlook: <strong>prime +3%; mainstream +1%</strong> for 2026.</p><p>'+esc(f.status)+'. '+esc(f.limitation)+'</p><div class="vd-sources">'+links([f.sourceId])+'</div><h4>Later July commentary</h4><p>'+esc(later.summary)+'</p><div class="vd-sources">'+links([later.sourceId])+'</div></article>';
    [...body.querySelectorAll('h4')].find(h=>h.textContent==='Dubai-wide published outlook').insertAdjacentHTML('beforebegin','<h4>Villa capital scenario · your price</h4><p class="vd-note">No verified registered villa price is available for Palm Jebel Ali. Enter your own purchase price and costs; the growth rates above remain assumptions.</p><div class="vd-villa-fields"><label>Purchase price · AED<input type="number" min="1" step="10000" inputmode="decimal" data-vd-villa="purchasePriceAED" placeholder="Enter your price"></label><label>Entry costs · %<input type="number" min="0" max="100" step="0.1" value="0" data-vd-villa="entryCostPct"></label><label>Exit costs · %<input type="number" min="0" max="100" step="0.1" value="0" data-vd-villa="exitCostPct"></label><label>Annual holding costs · AED<input type="number" min="0" step="1000" value="0" data-vd-villa="annualHoldingCostAED"></label></div><div id="vd-villa-results" aria-live="polite"></div><p class="vd-note">'+esc(V.data.palmJebelAli.villaScenarioPolicy.limitation)+'</p>');
+   body.insertAdjacentHTML('beforeend',developmentInputsHTML());
+   body.querySelector('.vd-development-fields').oninput=e=>{const key=e.target.dataset.vdDevelopment;if(!key)return;V.development[key]=key==='area'?e.target.value:e.target.value===''?NaN:Number(e.target.value);renderDevelopmentScenario();};
    Q('#vd-rates').oninput=e=>{const i=e.target.dataset.vdRate;if(i===undefined)return;V.rates[+i]=e.target.value===''?NaN:Number(e.target.value);renderSensitivity();renderVillaScenario();};
    body.querySelector('.vd-villa-fields').oninput=e=>{const key=e.target.dataset.vdVilla;if(!key)return;V.villa[key]=e.target.value===''?NaN:Number(e.target.value);renderVillaScenario();};
    Q('#vd-history').onclick=()=>{close();window.EspaciosUnifiedMap?.setMetric('price');Q('#mm-settings')?.click();};renderSensitivity();
-   renderVillaScenario();
+   renderVillaScenario();renderDevelopmentScenario();
   }
   body.querySelectorAll('[data-vd-area]').forEach(b=>b.onclick=()=>{const c=V.communities.find(c=>c.name===b.dataset.vdArea&&c.emirate===b.dataset.vdEmirate);if(c){window.EspaciosSearchFocus?.focusRecord(c);}else{Q('#vd-location-status').textContent='No exact catalogue location for this area. Evidence remains available in the list.';}});
   if(V.focus){Q('#vd-card-'+V.focus)?.scrollIntoView({block:'nearest'});V.focus=null;}

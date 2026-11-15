@@ -1,11 +1,21 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {createHash} from 'node:crypto';
-import {sensitivity,villaCapitalScenario,isPalmJebelAli,contextFeatures,visibleDrivers} from '../src/value-drivers/core.mjs';
+import {sensitivity,developmentScenario,villaCapitalScenario,isPalmJebelAli,contextFeatures,visibleDrivers} from '../src/value-drivers/core.mjs';
 import worker from '../src/worker.js';
 const data=JSON.parse(await fs.readFile(new URL('../data/value-drivers-20261003.json',import.meta.url)));
 test('sensitivity permits losses and flat outcomes without claiming a forecast',()=>{
  assert.equal(sensitivity(0,10).index,100);assert.ok(sensitivity(-5,10).index<100);assert.ok(sensitivity(5,10).index>100);
  for(const [r,y]of [[NaN,5],[-100,5],[5,0],[5,31],['5',10],[101,10]])assert.equal(sensitivity(r,y),null);
  assert.equal(sensitivity(5,5).classification,'user_assumption_sensitivity');
+});
+test('development assumptions activate only when entered and preserve the baseline',()=>{
+ const input={baselineAnnualPct:2,driverAnnualPct:3,offsetAnnualPct:1,years:5,activationYear:3};
+ const scenario=developmentScenario(input);
+ assert.equal(scenario.classification,'user_assumption_development_scenario');
+ assert.equal(scenario.activeYears,3);
+ assert.ok(scenario.scenarioIndex>scenario.baselineIndex);
+ assert.equal(developmentScenario({...input,activationYear:6}).differenceFromBaseline,0);
+ assert.ok(developmentScenario({...input,driverAnnualPct:-3}).scenarioIndex<scenario.baselineIndex);
+ for(const bad of [{driverAnnualPct:NaN},{offsetAnnualPct:-1},{activationYear:0},{years:31},{baselineAnnualPct:-100}])assert.equal(developmentScenario({...input,...bad}),null);
 });
 test('villa scenario uses only user price and costs and permits a capital loss',()=>{
  const inputs={purchasePriceAED:10000000,entryCostPct:4,exitCostPct:2,annualHoldingCostAED:100000,annualGrowthPct:0,years:5};
@@ -23,13 +33,18 @@ test('Palm aliases require explicit geography and do not match a different islan
  assert.equal(isPalmJebelAli({emirate:'Abu Dhabi',name:'Palm Jebel Ali'}),false);
 });
 test('research preserves sparse source evidence and never creates local uplift percentages',()=>{
- assert.equal(data.drivers.length,16);assert.equal(data.sources.length,36);assert.equal(data.coverage.length,7);
+ assert.equal(data.drivers.length,17);assert.equal(data.sources.length,36);assert.equal(data.coverage.length,7);
  assert.ok(data.drivers.some(d=>d.id==='guggenheim-abu-dhabi'));assert.ok(data.drivers.some(d=>d.id==='disney-yas'));assert.ok(data.drivers.some(d=>d.id==='wynn-al-marjan'));
  assert.equal(new Set(data.drivers.map(d=>d.id)).size,data.drivers.length);
  for(const d of data.drivers){assert.equal(d.priceUpliftPct,null);assert.equal(d.geometry,null);assert.ok(d.risk);for(const id of d.sourceIds)assert.ok(data.sources.some(s=>s.id===id));}
  for(const s of data.sources){assert.match(s.url,/^https:\/\//);if(s.published)assert.ok(s.published<=data.asOf);assert.ok(s.retrieved<=data.asOf);}
  const h=data.palmJebelAli.localPriceEvidence;assert.equal(h.segment,'apartment');assert.equal(h.points.at(-1).eligibleSales,1);assert.equal(h.points.at(-1).displayEligible,false);
  assert.equal(data.policy.validatedPalmForecast,false);assert.equal(data.policy.automaticForecastAdjustment,false);
+ assert.equal(data.impactMethodology.version,'20261115-development-impact-v1');
+ assert.equal(data.impactMethodology.factors.length,5);
+ assert.equal(data.palmJebelAli.spilloverCandidates.length,4);
+ assert.ok(data.drivers.some(d=>d.id==='pja-destination'&&d.palmRelationship==='direct'));
+ assert.ok(data.palmJebelAli.spilloverCandidates.every(c=>c.exposure==='candidate_only'));
  assert.equal(data.sensitivity.confidenceInterval,null);assert.equal(data.drivers.find(d=>d.id==='metro-blue').palmRelationship,'not_direct');
 });
 test('Palm quarterly cohorts reconcile to accepted V48 without inventing villa prices',async()=>{
