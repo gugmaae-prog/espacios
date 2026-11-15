@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261115-map-frontend-v40';
+  const RELEASE='20261115-map-frontend-v42';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
@@ -108,19 +108,21 @@
     if(!['map','satellite','3d','heatmap'].includes(mode))return;
     UI.mode=mode;
     if(mode==='satellite'){
-      analysisOff();pointView();turn3d(false);satelliteVisible(true);
+      turn3d(false);setMetric('projects');pointView();satelliteVisible(true);
     }else{
       satelliteVisible(false);
       if(mode==='3d'){
-        analysisOff();pointView();turn3d(true);
+        setMetric('projects');pointView();turn3d(true);
       }else if(mode==='heatmap'){
         turn3d(false);
-        const metric=window.EspaciosUnifiedMap?.timeline?.()?.metric||'projects';
-        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'uae-project-coverage';
-        try{psrSetAnalysis(analysis);}catch{}
-        try{if(aeUaeCoverageActive())aeUaeSetView('heat');}catch{}
+        if(UI.metric==='projects'){
+          try{psrSetAnalysis('uae-project-coverage');aeUaeSetView('heat');}catch{}
+        }else{
+          const current=window.__ESPACIOS_UNIFIED_MAP__;
+          if(UI.metric==='forecast'?current?.evidenceClass!=='conditional_scenario':current?.metric!==UI.metric)setMetric(UI.metric);
+        }
       }else{
-        analysisOff();pointView();turn3d(false);
+        turn3d(false);setMetric('projects');pointView();
       }
     }
     syncModes();
@@ -132,23 +134,18 @@
   }
   function setMetric(metric){
     UI.metric=metric;root.dataset.minimalMetric=metric;
+    if(metric!=='projects'){
+      UI.mode='heatmap';satelliteVisible(false);turn3d(false);syncModes();
+    }
     if(metric==='projects'){
       window.EspaciosUnifiedMap?.setMetric('projects');
-      pointView();
+      if(UI.mode==='heatmap')aeUaeSetView('heat');else pointView();
     }else if(metric==='price'||metric==='roi'){
       window.EspaciosUnifiedMap?.setMetric(metric);
+    }else if(metric==='volume'){
+      window.EspaciosUnifiedMap?.setMetric('volume');
     }else if(metric==='forecast'){
       window.EspaciosUnifiedMap?.enterForecast();
-    }else if(metric==='volume'){
-      const rail=Q('.rail-btn[data-panel="analyze"]');
-      if(rail&&!rail.classList.contains('active'))rail.click();
-      setTimeout(()=>{
-        const select=Q('#market-history-metric');
-        if(select){
-          select.value='transaction_value_aed';
-          select.dispatchEvent(new Event('change',{bubbles:true}));
-        }
-      },80);
     }
     syncMetricButtons();
     syncProjectStatus();
@@ -298,7 +295,7 @@
       ['projects','Projects','neutral'],
       ['price','Price / sqft','accent'],
       ['roi','ROI','neutral'],
-      ['volume','Transaction Volume','blue'],
+      ['volume','Sales activity','blue'],
       ['forecast','Forecast','green']
     ];
     for(const [value,label,tone] of items){

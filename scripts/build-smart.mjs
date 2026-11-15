@@ -103,6 +103,20 @@ ${historyLoadAnchor}`);
 const historyBoundaryNote="+' Independent source snapshot; not a valuation. '";
 if(paletteBrowser.split(historyBoundaryNote).length!==2)throw Error('Expected one Dubai history boundary note');
 paletteBrowser=paletteBrowser.replace(historyBoundaryNote,"+(sgState.data?.meta?.fallback?' Degraded Dubai Municipality boundary fallback; '+mapped.length+' exact or reviewed area joins. Other emirates and unmatched areas are unshaded.':'')+' Independent source snapshot; not a valuation. '");
+// Reuse the project's soft glow for observed registered-sale values and sample
+// activity. The cache key includes the metric so switching cannot show stale
+// price colours for a sale count (or the reverse).
+const heatReplacements=[
+ ["const bhPrice=()=>state.analysisMetric==='history:dubai-sale-psf';","const bhPrice=()=>state.analysisMetric==='history:dubai-sale-psf';const bhActivity=()=>state.analysisMetric==='history:dubai-sample-count';"],
+ ["if(!bhActive()||!bhPrice())return bhOldDraw(frame);","if(!bhActive()||!(bhPrice()||bhActivity()))return bhOldDraw(frame);"],
+ ["if(d.token!==bhState.token||!bhActive()||!bhPrice())return;","if(d.token!==bhState.token||!bhActive()||!(bhPrice()||bhActivity()))return;"],
+ ["if(!bhActive()||!bhPrice()||d.period!==tlState.period)return;","if(!bhActive()||!(bhPrice()||bhActivity())||d.period!==tlState.period)return;"],
+ ["const key=[tlState.period,tlState.baseline,tlState.view,arState.segment,","const key=[state.analysisMetric,tlState.period,tlState.baseline,tlState.view,arState.segment,"],
+ ["const rgb=tlK.color(d.values[i],tlState.domain,tlState.view==='change').match(/\\d+/g).map(Number);","const rgb=hmColor(d.values[i],tlState.domain,tlState.view==='change').match(/\\d+/g).map(Number);"],
+ ["if(!bhActive()||!bhPrice())return bhOldTooltip(e);","if(!bhActive()||!(bhPrice()||bhActivity()))return bhOldTooltip(e);"],
+ ["(tlState.view==='change'?'median change':'median')+': '+esc(tlText(r.value))","(bhPrice()?(tlState.view==='change'?'median change':'median'):(tlState.view==='change'?'sample change':'eligible sale sample count'))+': '+esc(tlText(r.value))"]
+];
+for(const [before,after] of heatReplacements){const count=paletteBrowser.split(before).length-1;if(count!==1)throw Error('Expected one history heat rendering anchor: '+before.slice(0,55)+'; found '+count);paletteBrowser=paletteBrowser.replace(before,after);}
 const guardedBrowser=paletteBrowser.replace(legacyCollapseSync,guardedCollapseSync);
 source+='\n// Idempotent legacy collapse icons; evidence and all other embedded assets unchanged.\nGZ.js = '+JSON.stringify(gzipSync(guardedBrowser,{level:9}).toString('base64'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(app)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/smart-estimates/style.css'))+';\n';
@@ -114,6 +128,12 @@ const unifiedApp='\nconst UMCore=(()=>{\n'+unifiedCore.replace(/^export /gm,'')+
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(unifiedApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/unified-map/style.css'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(await read('src/minimal-map/app.js'))+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/minimal-map/style.css'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(await read('src/spatial-recovery/app.js'))+';\n';
+// The market benchmark fills and split-type hatch use the same palette as
+// their glow and legend. Keep underlying numeric domains unchanged.
+const oldMarketColor='tlK.color(value,domain,false)';
+const marketColorCount=source.split(oldMarketColor).length-1;
+if(marketColorCount!==2)throw Error('Expected two benchmark heat palette anchors; found '+marketColorCount);
+source=source.replaceAll(oldMarketColor,'hmColor(value,domain,false)');
 const valueCore=await read('src/value-drivers/core.mjs');
 const valueApp='\nconst VDCore=(()=>{\n'+valueCore.replace(/^export /gm,'')+'\nreturn {sensitivity,developmentScenario,villaCapitalScenario,isPalmJebelAli,visibleDrivers,contextFeatures};})();\n'+await read('src/value-drivers/app.js');
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(valueApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/value-drivers/style.css'))+';\n';

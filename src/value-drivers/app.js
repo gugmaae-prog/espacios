@@ -108,7 +108,7 @@
  }
  function evidence(){
   const u=window.__ESPACIOS_UNIFIED_MAP__,el=Q('#vd-evidence-label');if(!u||!el)return;
-  const label=(u.evidenceClass==='conditional_scenario'?'Conditional scenario · assumptions':u.evidenceClass==='registered_sale'?'Registered-sale research':u.evidenceClass==='released_projection'?'Research projection':u.evidenceClass==='gross_yield_benchmark'?'Gross yield benchmark':u.evidenceClass==='advertised_price_benchmark'?'Asking-price benchmark':'Project catalogue')+(u.area?' · '+u.area:'');
+  const label=(u.evidenceClass==='conditional_scenario'?'Conditional scenario · assumptions':u.evidenceClass==='eligible_registered_sales'?'Eligible registered-sale sample':u.evidenceClass==='registered_sale'?'Registered-sale research':u.evidenceClass==='released_projection'?'Research projection':u.evidenceClass==='gross_yield_benchmark'?'Gross yield benchmark':u.evidenceClass==='advertised_price_benchmark'?'Asking-price benchmark':'Project catalogue')+(u.area?' · '+u.area:'');
   if(el.textContent!==label)el.textContent=label;
  }
  function install(){

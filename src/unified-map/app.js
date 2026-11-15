@@ -10,7 +10,7 @@
  const context=()=>({kind:U.metric,emirate:msState.emirate,area:msState.area,segment:msState.segment,basis:U.metric==='roi'?'asking':msState.basis,registration:bhState.registration,path:U.path});
  const rowPool=()=>((U.data?.[context().basis==='sales'?'sales':'asking'])||[]).filter(r=>r.emirate===msState.emirate&&types().includes(r.segment)&&(context().basis!=='sales'||r.registration===bhState.registration));
  const selectedRows=()=>rowPool().filter(r=>r.geography===msState.area);
- const nativeClass=period=>tlState.series.some(s=>s.points?.some(p=>p.period===period&&p.projection))?'released_projection':U.metric==='roi'?'gross_yield_benchmark':context().basis==='sales'?'registered_sale':'advertised_price_benchmark';
+ const nativeClass=period=>tlState.series.some(s=>s.points?.some(p=>p.period===period&&p.projection))?'released_projection':U.metric==='volume'?'eligible_registered_sales':U.metric==='roi'?'gross_yield_benchmark':context().basis==='sales'?'registered_sale':'advertised_price_benchmark';
  function refreshSoon(){if(!U.installed||U.busy)return;clearTimeout(U.refreshTimer);U.refreshTimer=setTimeout(refresh,30);}
  async function refresh(){
   if(U.metric==='projects'){U.options=[];U.loading=false;hide();sync();return;}
@@ -50,21 +50,31 @@
   window.EspaciosMobileUI.sync();
  }
  function setMetric(metric,{forecast=false}={}){
-  if(!['projects','price','roi'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.forecastEnabled=forecast&&metric==='price';U.preferFuture=U.forecastEnabled;hide();tlStop();window.EspaciosEstimateUI.close(false);
+  if(!['projects','price','roi','volume'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.forecastEnabled=forecast&&metric==='price';U.preferFuture=U.forecastEnabled;hide();tlStop();window.EspaciosEstimateUI.close(false);
   U.busy=true;msState.open=false;
   if(metric==='projects')psrSetAnalysis('uae-project-coverage');
+  else if(metric==='volume'){msState.emirate='Dubai';msState.basis='sales';psrSetAnalysis('history:dubai-sample-count');aeUaeSetView('heat',false);if(typeof map.getZoom==='function'&&map.getZoom()<8&&!state.selectedSpatial)map.easeTo({center:[55.26,25.10],zoom:9,pitch:0,duration:matchMedia('(prefers-reduced-motion:reduce)').matches?0:500});}
   else{if(metric==='roi')msState.basis='asking';msOpen(metric,typeof map.getZoom==='function'&&map.getZoom()<8&&!state.selectedSpatial);}
   U.busy=false;refreshSoon();sync();
  }
  function enterForecast(){setMetric('price',{forecast:true});}
- function setType(type){if(!['apartment','villa','townhouse','both'].includes(type))return;U.pending=false;U.result=null;U.busy=true;msSetSegment(type);msOpen(U.metric,false);U.busy=false;U.selected='';U.preferFuture=U.forecastEnabled;refreshSoon();}
+ function setType(type){if(!['apartment','villa','townhouse','both'].includes(type))return;U.pending=false;U.result=null;U.busy=true;msSetSegment(type);if(U.metric==='volume')psrSetAnalysis('history:dubai-sample-count');else msOpen(U.metric,false);U.busy=false;U.selected='';U.preferFuture=U.forecastEnabled;refreshSoon();}
  function hide(){
-  U.renderToken++;for(const id of ['um-fill','um-outline'])if(map.getLayer(id))map.setLayoutProperty(id,'visibility','none');
+  U.renderToken++;for(const id of ['um-fill','um-outline','um-glow','um-core'])if(map.getLayer(id))map.setLayoutProperty(id,'visibility','none');
   for(const [id,value]of U.hidden)if(map.getLayer(id))map.setLayoutProperty(id,'visibility',value);U.hidden.clear();Q('#um-map-key')?.remove();delete root.dataset.unifiedFuture;
  }
  function geometry(row){const geos=(sgState.data?.features||[]).filter(g=>g.properties.level!=='emirate');
-  if(row.evidenceClass==='registered_sale'&&row.geometryIds?.length){if(row.geometryIds.length!==1)return null;return geos.find(g=>String(g.id)===String(row.geometryIds[0]))||null;}
+  if(row.evidenceClass==='registered_sale'&&row.geometryIds?.length){if(row.geometryIds.length!==1)return null;const original=geos.find(g=>String(g.id)===String(row.geometryIds[0]));if(original)return original;if(sgState.data?.meta?.fallback!=='dubai_municipality_222_communities')return null;}
+  if(row.evidenceClass==='registered_sale'&&sgState.data?.meta?.fallback==='dubai_municipality_222_communities'&&typeof bhFallbackGeometryIds==='function'){const ids=bhFallbackGeometryIds({name:row.geography});if(ids.length===1)return geos.find(g=>String(g.id)===String(ids[0]))||null;}
   const matches=geos.filter(g=>SG.key(g.properties.emirate,g.properties.name)===SG.key(row.emirate,row.geography));const rank=Math.min(...matches.map(g=>g.properties.rank||99)),best=matches.filter(g=>(g.properties.rank||99)===rank);return best.length===1?best[0]:null;
+ }
+ function visualAnchor(geometry){
+  if(typeof SG.bbox!=='function'||typeof SG.contains!=='function')return null;
+  const [west,south,east,north]=SG.bbox(geometry),center=[(west+east)/2,(south+north)/2];
+  if(SG.contains(center,geometry))return center;
+  let best=null,distance=Infinity;
+  for(let x=1;x<10;x++)for(let y=1;y<10;y++){const point=[west+(east-west)*x/10,south+(north-south)*y/10];if(!SG.contains(point,geometry))continue;const d=(point[0]-center[0])**2+(point[1]-center[1])**2;if(d<distance){best=point;distance=d;}}
+  return best;
  }
  function cohort(){const ref=selectedRows().find(r=>r.estimate?.classification==='conditional_scenario');if(!ref||msState.segment==='both')return[];return rowPool().filter(r=>r.estimate?.classification==='conditional_scenario'&&r.evidenceClass===ref.evidenceClass&&r.estimate.baseline.period===ref.estimate.baseline.period&&r.estimate.baseline.unit===ref.estimate.baseline.unit).map(row=>({row,estimate:UMCore.extendPriceScenario(row.estimate,U.horizon)}));}
  function mapValue(entry,year){
@@ -83,17 +93,22 @@
    const basket=cohort(),features=[],year=option.records[0]?.year||1;
    for(const item of basket){const shape=geometry(item.row),value=mapValue(item,year);if(shape&&finite(value))features.push({...shape,properties:{name:item.row.geography,value,period:option.period}});}
    const values=basket.flatMap(item=>Array.from({length:U.horizon},(_,i)=>mapValue(item,i+1))).filter(finite),domain=tlK.domain(values);
-   for(const f of features)f.properties.color=tlK.color(f.properties.value,domain,false);
+   for(const f of features)f.properties.color=typeof hmColor==='function'?hmColor(f.properties.value,domain,false):tlK.color(f.properties.value,domain,false);
    for(const layer of map.getStyle().layers||[])if(/^(ms-|tl-history|dg-|bh-|psr-analysis|roi-|ae-emerging|ae-uae-|sg-|se-|ue-benchmark-)/.test(layer.id)){
     if(!U.hidden.has(layer.id))U.hidden.set(layer.id,map.getLayoutProperty(layer.id,'visibility')||'visible');map.setLayoutProperty(layer.id,'visibility','none');
    }
+   const spots=features.map(f=>{const point=visualAnchor(f.geometry);return point?{type:'Feature',id:f.id,geometry:{type:'Point',coordinates:point},properties:f.properties}:null;}).filter(Boolean);
+   sgSource('um-spots',{type:'FeatureCollection',features:spots});
    sgSource('um-polygons',{type:'FeatureCollection',features});
-   if(!map.getLayer('um-fill'))map.addLayer({id:'um-fill',type:'fill',source:'um-polygons',paint:{'fill-color':['get','color'],'fill-opacity':.56}});
-   if(!map.getLayer('um-outline'))map.addLayer({id:'um-outline',type:'line',source:'um-polygons',paint:{'line-color':'#8da9b4','line-width':1}});
-   for(const id of ['um-fill','um-outline'])map.setLayoutProperty(id,'visibility','visible');
+   if(!map.getLayer('um-fill'))map.addLayer({id:'um-fill',type:'fill',source:'um-polygons',paint:{'fill-color':['get','color'],'fill-opacity':spots.length?.12:.5}});
+   if(!map.getLayer('um-outline'))map.addLayer({id:'um-outline',type:'line',source:'um-polygons',paint:{'line-color':'#8da9b4','line-width':.7,'line-opacity':.45}});
+   if(!map.getLayer('um-glow'))map.addLayer({id:'um-glow',type:'circle',source:'um-spots',paint:{'circle-color':['get','color'],'circle-radius':['interpolate',['linear'],['zoom'],6,19,9,36,12,50],'circle-blur':.72,'circle-opacity':.58}});
+   if(!map.getLayer('um-core'))map.addLayer({id:'um-core',type:'circle',source:'um-spots',paint:{'circle-color':['get','color'],'circle-radius':['interpolate',['linear'],['zoom'],6,3,9,5,12,7],'circle-opacity':.78,'circle-stroke-color':root.dataset.espaciosTheme==='light'?'#f6f9fc':'#17283b','circle-stroke-width':1.2}});
+   if(typeof map.setPaintProperty==='function')map.setPaintProperty('um-fill','fill-opacity',spots.length?.12:.5);
+   for(const id of ['um-fill','um-outline','um-glow','um-core'])map.setLayoutProperty(id,'visibility','visible');
    let key=Q('#um-map-key');if(!key){key=document.createElement('aside');key.id='um-map-key';Q('#app').append(key);}
    text(key,features.length?num(domain[0],U.metric==='roi'?1:0)+'–'+num(domain[1],U.metric==='roi'?1:0)+(U.metric==='roi'?'% net return':' AED/sqft')+' · '+features.length+' areas':'No comparable mapped estimate');
-   key.title='Conditional '+U.path+' path. Fixed colour range across the selected horizon and same-anchor cohort. Unshaded is unknown, not zero. Each other area uses its own published starting gross yield; costs use your disclosed assumptions.';
+   key.title='Conditional '+U.path+' path. Soft glows mark the centres of supported source areas; colour follows the estimate scale. Unshaded is unknown, not zero. Each other area uses its own published starting gross yield; costs use your disclosed assumptions.';
    root.dataset.unifiedFuture='1';sync();
   }catch(error){if(token!==U.renderToken)return;U.error='Estimate shading unavailable; source evidence is retained.';sync();}
  }
@@ -103,6 +118,7 @@
   if(U.error)return[U.error,'History and original source records remain available.'];
   const area=msState.area||'Select an area',option=current();
   if(!future()){
+   if(U.metric==='volume'){const known=tlState.frame.filter(r=>finite(r.value)),selected=known.find(r=>r.name===msState.area);return[selected?selected.name+' · '+num(selected.value)+' eligible sales':num(known.length)+' source areas with eligible sales','Quality-screened registered-sale sample · '+bhState.registration+' · '+(option?.period||tlState.period)+'. Colour is local sample count, not all transactions.'];}
    const rows=tlState.frame.filter(r=>r.name===msState.area&&r.period===option?.period&&finite(r.value));
    return[area+(rows.length?' · '+rows.map(r=>(msState.segment==='both'?(r.segment||'Combined')+' ':'')+num(r.value,U.metric==='roi'?2:0)+(U.metric==='roi'?'% gross yield':' AED/sqft')).join(' / '):' · No published value for this selection'),(U.metric==='roi'?'Historical gross rental yield · not realized profit':option?.evidenceClass==='released_projection'?'Released research projection · not a recorded sale':context().basis==='sales'?'Registered-sale median · '+msState.segment+' · '+bhState.registration:'Published asking benchmark · '+msState.segment)+(U.estimatesError?' · '+U.estimatesError:'')];
   }
@@ -119,7 +135,7 @@
   Q('#mm-metrics').querySelectorAll('[data-mm-metric]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mmMetric===U.metric)));
   Q('#um-property').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.umType===msState.segment)));
   for(const option of Q('#ms-area').options)if(option.value)text(option,option.value);
-  const option=current(),label=U.metric==='projects'?'Project density':future()?U.metric==='roi'?'Net return · estimate':'Conditional estimate':U.metric==='roi'?'Yield history · not profit':option?.evidenceClass==='released_projection'?'Research projection':'Recorded source period';
+  const option=current(),label=U.metric==='projects'?'Project density':U.metric==='volume'?'Eligible registered sales':future()?U.metric==='roi'?'Net return · estimate':'Conditional estimate':U.metric==='roi'?'Yield history · not profit':option?.evidenceClass==='released_projection'?'Research projection':'Recorded source period';
   if(option)text(Q('#dr-handle'),option.period+(option.kind==='scenario'?' · Estimate':option.evidenceClass==='released_projection'?' · Projection':''));
   text(Q('#um-evidence'),label);Q('#um-evidence').title=label;
   const status=Q('#um-status');if(status){const message=U.metric==='projects'?'':U.loading||tlState.loading?'Loading matching evidence…':U.error||U.estimatesError||'';text(status,message);status.hidden=!message;}
@@ -132,7 +148,7 @@
   }
   window.__ESPACIOS_UNIFIED_MAP__={metric:U.metric,period:option?.period||tlState.period,evidenceClass:option?.evidenceClass||'catalogue',horizonYears:U.horizon,area:msState.area,segment:msState.segment,nativeCount:U.options.filter(o=>o.kind==='native').length,futureCount:U.options.filter(o=>o.kind==='scenario').length,loading:U.loading};
  }
- function details(){if(future()){prepare();window.EspaciosEstimateUI.details();window.EspaciosMobileUI.activate(Q('#se-panel'));}else{msState.open=true;msInfo();window.EspaciosMobileUI.activate(Q('#ms-inspect'));}}
+ function details(){if(future()){prepare();window.EspaciosEstimateUI.details();window.EspaciosMobileUI.activate(Q('#se-panel'));}else if(U.metric==='volume'){Q('#tl-settings')?.click();Q('#tl-evidence')?.scrollIntoView?.({block:'nearest'});}else{msState.open=true;msInfo();window.EspaciosMobileUI.activate(Q('#ms-inspect'));}}
  function install(){if(!window.EspaciosMobileUI||!Q('#mm-date'))return false;
   U.installed=true;root.dataset.unifiedMap='1';U.metric=aeUaeCoverageActive()?'projects':msState.kind==='roi'?'roi':'price';
   const dock=Q('#tl-dock'),property=document.createElement('div');property.id='um-property';property.setAttribute('role','group');property.setAttribute('aria-label','Property type');

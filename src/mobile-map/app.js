@@ -40,9 +40,9 @@
     const points=Q('#mm-points');points.hidden=false;points.setAttribute('aria-pressed',String(aeUaeCoverageActive()&&aeUaeState.view==='points'));points.textContent=aeUaeCoverageActive()?(aeUaeState.view==='points'?'Heatmap':'Points'):'Estimates';
     points.setAttribute('aria-label',aeUaeCoverageActive()?'Toggle heatmap and project points':'Open Smart Estimates for the selected metric');
     const min=Q('#tl-minimize'),collapsed=Q('#tl-dock').classList.contains('is-minimized');min.textContent=collapsed?'⌃':'⌄';min.setAttribute('aria-label',collapsed?'Expand timeline':'Minimize timeline');
-    const status=Q('#mm-status');const text=tlState.loading||bhState.loadingRaster?'Loading matching evidence…':all?'All dates · future and undated projects included':aeUaeCoverageActive()?'Dated handovers · '+(tgState.coverage==='annual'?'selected year':'through '+tlState.period)+' · not price growth':Q('#ms-status')?.textContent||Q('#tl-title')?.textContent||'';
+    const status=Q('#mm-status');const text=tlState.loading||bhState.loadingRaster?'Loading matching evidence…':all?'All dates · future and undated projects included':aeUaeCoverageActive()?'Dated handovers · '+(tgState.coverage==='annual'?'selected year':'through '+tlState.period)+' · not price growth':adapter?.metric==='volume'?'Eligible registered-sale sample · Dubai · '+(adapter.labels[adapter.selected]||tlState.period)+' · not all transactions':adapter?.metric==='price'&&adapter.labels[adapter.selected]?.includes('Estimate')?'Conditional price scenario · '+adapter.labels[adapter.selected]:Q('#ms-status')?.textContent||Q('#tl-title')?.textContent||'';
     if(status.textContent!==text)status.textContent=text;status.title=text;
-    const legend=Q('#mm-legend');legend.hidden=aeUaeCoverageActive();legend.querySelector('summary').textContent=msActive()&&msState.kind==='roi'?'Yield scale':'Price scale';const legacyLegend=legend.querySelector('.ae-legend-side');if(legacyLegend)legacyLegend.hidden=msActive();
+    const legend=Q('#mm-legend');legend.hidden=aeUaeCoverageActive()||!!adapter?.labels[adapter.selected]?.includes('Estimate');legend.querySelector('summary').textContent=adapter?.metric==='volume'?'Sales activity scale':msActive()&&msState.kind==='roi'?'Yield scale':'Price scale';const legacyLegend=legend.querySelector('.ae-legend-side');if(legacyLegend)legacyLegend.hidden=msActive();
     if(M.active&&visible(M.active))updateBar(M.active);
     root.dataset.mobileMap='1';window.EspaciosUnifiedMap?.sync();scheduleGeometry();
   }
@@ -234,7 +234,7 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobile.matches&&M.active&&!dialog.open){closePanel(M.active);scheduleGeometry();}});
     document.addEventListener('click',captureNavigationIntent,true);
     document.addEventListener('click',activateLegacyDetails);
-    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261115-map-frontend-v40',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
+    window.EspaciosMobileUI=Object.freeze({sync:schedule,activate,closePanel,refreshGeometry});responsive();sync();window.__ESPACIOS_MOBILE_MAP__={release:'20261115-map-frontend-v42',nativePeriodsPreserved:true,allCatalogueRecordsPreserved:true};return true;
   }
   const timer=setInterval(()=>{if(install())clearInterval(timer);},150);
 })();
