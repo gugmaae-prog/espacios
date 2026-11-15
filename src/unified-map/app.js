@@ -53,7 +53,7 @@
   if(!['projects','price','roi'].includes(metric))return;U.request++;U.renderToken++;U.pending=false;U.result=null;U.options=[];U.selected='';U.metric=metric;U.error='';U.forecastEnabled=forecast&&metric==='price';U.preferFuture=U.forecastEnabled;hide();tlStop();window.EspaciosEstimateUI.close(false);
   U.busy=true;msState.open=false;
   if(metric==='projects')psrSetAnalysis('uae-project-coverage');
-  else{if(metric==='roi')msState.basis='asking';msOpen(metric,false);}
+  else{if(metric==='roi')msState.basis='asking';msOpen(metric,typeof map.getZoom==='function'&&map.getZoom()<8&&!state.selectedSpatial);}
   U.busy=false;refreshSoon();sync();
  }
  function enterForecast(){setMetric('price',{forecast:true});}

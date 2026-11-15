@@ -82,6 +82,27 @@ paletteBrowser=paletteBrowser.replace(unsafeHistoryDiagnostic,'bhState.manifest?
 const unsafeHistoryGeometry='sgState.data.features.map(f=>[String(f.id),f])';
 if(paletteBrowser.split(unsafeHistoryGeometry).length!==2)throw Error('Expected one history geometry map access');
 paletteBrowser=paletteBrowser.replace(unsafeHistoryGeometry,'(sgState.data?.features||[]).map(f=>[String(f.id),f])');
+const originalBoundaryCheck='d.features?.length!==3126';
+if(paletteBrowser.split(originalBoundaryCheck).length!==2)throw Error('Expected one published boundary validation');
+paletteBrowser=paletteBrowser.replace(originalBoundaryCheck,"!(d.features?.length===3126||(d.meta?.fallback==='dubai_municipality_222_communities'&&d.features?.length===229&&d.meta?.counts?.emirate===7&&d.meta?.counts?.district===222))");
+const historyGeometry='geometryIds:s.geometryIds,geometryMatch:s.geometryMatch';
+if(paletteBrowser.split(historyGeometry).length!==2)throw Error('Expected one Dubai history geometry join');
+paletteBrowser=paletteBrowser.replace(historyGeometry,'geometryIds:bhFallbackGeometryIds(s),geometryMatch:s.geometryMatch');
+const historyLoadAnchor='const bhOldLoad=tlLoadHistory;';
+if(paletteBrowser.split(historyLoadAnchor).length!==2)throw Error('Expected one Dubai history loader');
+paletteBrowser=paletteBrowser.replace(historyLoadAnchor,`function bhFallbackGeometryIds(series){
+ if(series.geometryIds?.length)return series.geometryIds;
+ if(sgState.data?.meta?.fallback!=='dubai_municipality_222_communities')return [];
+ // Only reviewed orthographic variants and the published Palm Jumeirah name join.
+ const names={'Al Warsan First':'Warsan First','Al Barshaa South Third':'Al Barsha South Third','Palm Jumeirah':'Nakhlat Jumeira','Al Khairan First':'Al Kheeran First'};
+ const wanted=SG.key('Dubai',names[series.name]||series.name);
+ const matches=sgState.data.features.filter(feature=>feature.properties.level==='district'&&feature.properties.surfaceKey===wanted);
+ return matches.length===1?[matches[0].id]:[];
+}
+${historyLoadAnchor}`);
+const historyBoundaryNote="+' Independent source snapshot; not a valuation. '";
+if(paletteBrowser.split(historyBoundaryNote).length!==2)throw Error('Expected one Dubai history boundary note');
+paletteBrowser=paletteBrowser.replace(historyBoundaryNote,"+(sgState.data?.meta?.fallback?' Degraded Dubai Municipality boundary fallback; '+mapped.length+' exact or reviewed area joins. Other emirates and unmatched areas are unshaded.':'')+' Independent source snapshot; not a valuation. '");
 const guardedBrowser=paletteBrowser.replace(legacyCollapseSync,guardedCollapseSync);
 source+='\n// Idempotent legacy collapse icons; evidence and all other embedded assets unchanged.\nGZ.js = '+JSON.stringify(gzipSync(guardedBrowser,{level:9}).toString('base64'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(app)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/smart-estimates/style.css'))+';\n';
@@ -92,6 +113,7 @@ const unifiedCore=await read('src/unified-map/core.mjs');
 const unifiedApp='\nconst UMCore=(()=>{\n'+unifiedCore.replace(/^export /gm,'')+'\nreturn {periodEnd,sortNativePeriods,extendPriceScenario,timelineOptions,profitability};})();\n'+await read('src/mobile-map/search-focus.js')+'\n'+await read('src/unified-map/app.js');
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(unifiedApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/unified-map/style.css'))+';\n';
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(await read('src/minimal-map/app.js'))+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/minimal-map/style.css'))+';\n';
+source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(await read('src/spatial-recovery/app.js'))+';\n';
 const valueCore=await read('src/value-drivers/core.mjs');
 const valueApp='\nconst VDCore=(()=>{\n'+valueCore.replace(/^export /gm,'')+'\nreturn {sensitivity,developmentScenario,villaCapitalScenario,isPalmJebelAli,visibleDrivers,contextFeatures};})();\n'+await read('src/value-drivers/app.js');
 source+='\nAE_UAE_RELEASE_APP_JS += '+JSON.stringify(valueApp)+';\nAE_UAE_RELEASE_CSS += '+JSON.stringify(await read('src/value-drivers/style.css'))+';\n';
@@ -431,6 +453,11 @@ for(const file of stackModules)stackSource+='\n'+(await read('src/stack-audit/'+
 stackSource+='\n'+(await read('src/map-recovery/legacy-history-compat.mjs')).replace(/^export /gm,'')+'\n';
 stackSource+='\n'+await read('src/stack-audit/worker-extension.js')+'\n';
 stackSource+='\n'+await read('src/stack-audit/idrive-cutover.js')+'\n';
+const spatialFallbackRaw=await fs.readFile(new URL('data/spatial/dubai-heatmap-boundary-fallback-20261115.geojson',root));
+const spatialFallback=JSON.parse(spatialFallbackRaw);
+if(spatialFallback.type!=='FeatureCollection'||spatialFallback.features.length!==229||spatialFallback.meta?.fallback!=='dubai_municipality_222_communities'||spatialFallback.features.filter(f=>f.properties.level==='emirate').length!==7||spatialFallback.features.filter(f=>f.properties.level==='district').length!==222)throw Error('Dubai boundary fallback changed');
+stackSource+='\nvar MAP_DUBAI_BOUNDARY_FALLBACK='+JSON.stringify({sha256:digest(spatialFallbackRaw),base64:gzipSync(spatialFallbackRaw,{level:9}).toString('base64')})+';\n';
+stackSource+='\n'+await read('src/spatial-recovery/worker-extension.js')+'\n';
 source=source.replace('\nexport {worker_default as default};\n',()=>stackSource+'\nexport {worker_default as default};\n');
 await fs.writeFile(new URL('src/worker.js',root),source);
 const context=vm.createContext({console,Headers,Request,Response,URL,URLSearchParams,atob,btoa,TextEncoder,TextDecoder,DecompressionStream,CompressionStream,ReadableStream,Blob,crypto:globalThis.crypto,fetch});vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,''),context);
