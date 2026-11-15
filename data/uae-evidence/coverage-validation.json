@@ -1,5 +1,5 @@
 {
-  "version": "20261115-uae-evidence-coverage-v51",
+  "version": "20261115-uae-evidence-coverage-v52",
   "basis": "Accepted V48 map snapshot plus separately published dated source snapshots, a historical federal census table, and a distinct publisher asking-listing inventory. This is not a live source-health result or a complete UAE census.",
   "acceptedSnapshot": {
     "version": "20261014-enrichment-v48",
@@ -829,6 +829,21 @@
           "sourceSha256": "1e79294be7cef2ad119a930ab03cc45ff9143e9c4c13d213be4ae9887b61f45f"
         },
         {
+          "id": "rak-municipality-2025-commercial-sale-counts-20261115",
+          "route": "/map/api/uae-evidence/ras-al-khaimah/municipal-commercial-sales-2025",
+          "sourceRows": 4,
+          "grain": "emirate-calendar-year exact property-use registered sale count and AED value; selected categories only",
+          "sourceVintage": "2025 calendar year",
+          "sourceUrl": "https://mun.rak.ae/wp-content/uploads/التقرير-العقاري-لتصرفات-قطاع-الأراضي-والأملاك-لعام-2024-2025-in-English.pdf",
+          "rights": "Selected numerical facts and official source link only; no report prose, images, layout, complete table, or report PDF republished.",
+          "liveRouteHealth": "not_asserted_by_inventory",
+          "sourceCaptureSha256": "29299fd1d38968367527bca670d809bc55acebf0fc4c11605882dd63393c92eb",
+          "notTransactionLevel": true,
+          "notAvailableUnits": true,
+          "priorYearConflict": true,
+          "sourceSha256": "7f35c7381207a9d9f7bd82d5b16b8c6e6f4a3e3164e267b9f0f79cfa977049c6"
+        },
+        {
           "id": "raksc-yearbook-2026-selected-building-permits-20261110",
           "route": "/map/api/uae-evidence/ras-al-khaimah/building-permits",
           "sourceRows": 9,
@@ -867,8 +882,8 @@
         "availabilityStatus": "publisher_listed_at_capture_unverified_now"
       },
       "gaps": [
-        "Selected annual and January–September 2026 monthly market aggregates and permit counts are published. A municipality-hosted 2026 list names 81 off-plan projects, but the municipality copyright notice prohibits unauthorized reproduction. It has no established backend reuse right or verified V48 identity crosswalk.",
-        "No unit-level sale records or current commercial availability are established. Monthly figures are all-use and must not be treated as commercial-only."
+        "Selected annual and January–September 2026 monthly market aggregates, 2025 commercial-use sale counts and permit counts are published. A municipality-hosted 2026 list names 81 off-plan projects, but the municipality copyright notice prohibits unauthorized reproduction. It has no established backend reuse right or verified V48 identity crosswalk.",
+        "No unit-level sale records or current commercial availability are established. Monthly figures are all-use and must not be treated as commercial-only. The 2024 municipal commercial-unit value conflicts with the later Statistics Centre yearbook and is not included in the 2025 count projection."
       ],
       "authoritativeAllProjectDenominator": null
     },
@@ -1079,6 +1094,7 @@
     "dubaiFlatSales": "854e57f187797deb555adbc3062c6d7699d401eb944907bcd76c387963a055de",
     "dubaiEjariRents": "af601747fca57fe56a348c5002f8bf401674a3989ca4e67365bd37f5b0966ab3",
     "rakCommercialHistory": "ddd6fc8fe9015a43b039fff566f995ea7ee8269a42e5ecb21cb6ad7ad720c39e",
+    "rakMunicipalCommercial": "f7d3742ae969f59e50ed80b431661ee8d0306cbe7275ef3b62ed50813f78f330",
     "rakMonthly": "5ac1ec85c377bdb7e1737270d1ed2454afebf970091cb881b5150225e07e1566",
     "scadActivity": "a720e21b3f896a1367c12defe5fbe4ba6a19b67bc2f0ed1aaed41c1563040160",
     "sharjahMonthly": "7352a7cd9a740758c00e0901643c55b5d783e5c5e15f0d14e2328f585f1afbec",

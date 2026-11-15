@@ -1,0 +1,23 @@
+{
+  "attestationId": "rak-municipal-commercial-idrive-e2-readback-20261115",
+  "planId": "rak-municipal-commercial-idrive-e2-replica-20261115",
+  "planSha256": "9f1f524103ebb42696c1b6f98b75e20f93d5f0dde908fc998877b4c54b182e14",
+  "privateJournalSha256": "0505464088eae7200cf5bfd7e08b85ac627fff5e0b1cff351e01285c74d60589",
+  "previewVersion": "eb8f772e-498e-4d77-a07e-8d972276b15b",
+  "bridgeSha256": "0d00423cae77735afc9538d831ecf501209f2aca4d04ec394580d2f0a0f72611",
+  "verifiedAt": "2026-11-14T22:53:21.965Z",
+  "bucket": "espacios-store-a",
+  "prefix": "espacios-map/uae-evidence/published/20261115-rak-municipal-commercial/",
+  "objectCount": 1,
+  "totalBytes": 797,
+  "publishedSourceIds": [
+    "rak-municipality-2025-commercial-sale-counts-20261115"
+  ],
+  "publishedSourceCount": 1,
+  "coverageInventoryVersion": "20261115-uae-evidence-coverage-v52",
+  "previousReplicaAttestationId": "ajman-land-mortgage-idrive-e2-readback-20261115",
+  "verification": "The allowlisted object passed conditional upload with immediate checksum readback, then a separate signed IDrive E2 GET with exact content type, byte length and SHA-256.",
+  "allObjectsVerified": true,
+  "runtimePrimaryChanged": false,
+  "productionTrafficChangedByCopy": false
+}

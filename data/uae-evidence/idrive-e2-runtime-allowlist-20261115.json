@@ -1,13 +1,13 @@
 {
-  "version": "20261115-idrive-e2-runtime-allowlist-v4",
+  "version": "20261115-idrive-e2-runtime-allowlist-v5",
   "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
   "bucket": "espacios-store-a",
   "prefix": "espacios-map/uae-evidence/",
   "scope": "Exact checksum-pinned private reads of published source objects only; no private originals or arbitrary keys",
-  "publishedObjectCount": 199,
+  "publishedObjectCount": 200,
   "excludedPrivateOriginalParts": 10,
-  "coveredInventoryVersion": "20261115-uae-evidence-coverage-v51",
-  "coveredInventorySourceCount": 45,
+  "coveredInventoryVersion": "20261115-uae-evidence-coverage-v52",
+  "coveredInventorySourceCount": 46,
   "attestations": [
     {
       "planId": "dubai-municipality-idrive-e2-replica-20261114",
@@ -35,6 +35,13 @@
       "planSha256": "82680cdbc0a74d5424f203b179bb3737e7daa415a1580c4236c7774f3cde7a50",
       "attestationId": "ajman-land-mortgage-idrive-e2-readback-20261115",
       "verifiedAt": "2026-11-14T22:12:31.233Z",
+      "objectCount": 1
+    },
+    {
+      "planId": "rak-municipal-commercial-idrive-e2-replica-20261115",
+      "planSha256": "9f1f524103ebb42696c1b6f98b75e20f93d5f0dde908fc998877b4c54b182e14",
+      "attestationId": "rak-municipal-commercial-idrive-e2-readback-20261115",
+      "verifiedAt": "2026-11-14T22:53:21.965Z",
       "objectCount": 1
     },
     {
@@ -1608,6 +1615,14 @@
       "sha256": "bd99d94cbab55fe7636bd2e5650915dc03a43b94bf20be6604e26fdd9ffea13f",
       "contentType": "application/gzip",
       "attestationId": "ajman-planning-idrive-e2-readback-20261115"
+    },
+    {
+      "key": "espacios-map/uae-evidence/published/20261115-rak-municipal-commercial/ras-al-khaimah/rak-municipality-2025-commercial-sale-counts-20261115/96c3559949f8e0b2b222129413f1de3d9121c85045d8cb0475d58f3638ec4b78/municipal-commercial-sales-2025-20261115.json.gz",
+      "sourceId": "rak-municipality-2025-commercial-sale-counts-20261115",
+      "bytes": 797,
+      "sha256": "96c3559949f8e0b2b222129413f1de3d9121c85045d8cb0475d58f3638ec4b78",
+      "contentType": "application/gzip",
+      "attestationId": "rak-municipal-commercial-idrive-e2-readback-20261115"
     },
     {
       "key": "espacios-map/uae-evidence/rgestate/listings/20261111/c4005d979616fb5b10cfc0d2121ce3fc47c9983c2c63d6c8ac417fae14bb6767/commercial-title-candidates-20261111.json.gz",

@@ -1,0 +1,42 @@
+{
+  "sourceId": "rak-municipality-2025-commercial-sale-counts-20261115",
+  "emirate": "Ras Al Khaimah",
+  "authority": "Ras Al Khaimah Municipality, Lands and Properties Sector",
+  "publication": "Real Estate Report on Lands and Properties Sector Transactions 2024–2025, Table 3",
+  "sourceUrl": "https://mun.rak.ae/wp-content/uploads/التقرير-العقاري-لتصرفات-قطاع-الأراضي-والأملاك-لعام-2024-2025-in-English.pdf",
+  "evidenceClass": "official_annual_registered_sale_aggregate_by_property_use",
+  "grain": "emirate-calendar-year exact publisher property-use category",
+  "year": 2025,
+  "unit": "AED",
+  "observations": [
+    {
+      "propertyUse": "Commercial",
+      "salesValueAed": 10720000,
+      "saleCount": 21,
+      "commercialOnly": true,
+      "unitSales": false
+    },
+    {
+      "propertyUse": "Commercial Unit",
+      "salesValueAed": 31787851,
+      "saleCount": 41,
+      "commercialOnly": true,
+      "unitSales": true
+    },
+    {
+      "propertyUse": "Commercial Residential",
+      "salesValueAed": 603003371,
+      "saleCount": 194,
+      "commercialOnly": false,
+      "unitSales": false
+    },
+    {
+      "propertyUse": "Industrial",
+      "salesValueAed": 6360000,
+      "saleCount": 4,
+      "commercialOnly": false,
+      "unitSales": false
+    }
+  ],
+  "limits": "Selected 2025 emirate-level registration aggregates, not individual sale observations, prices per space, project locations, current asking listings, or available units. Commercial Residential mixes uses; Industrial is a separate category. The 2024 Commercial Unit value in this report conflicts with the RAK Statistics Centre yearbook, so 2024 rows are withheld pending clarification."
+}
