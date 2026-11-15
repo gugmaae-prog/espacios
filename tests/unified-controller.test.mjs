@@ -70,7 +70,8 @@ function harness(records = [row()]) {
       addLayer(layer) {layers.set(layer.id, {visibility: 'visible'});},
     },
     sgState: {data: {features: [{id: 'exact-boundary', properties: {name: 'Exact area', emirate: 'Dubai', rank: 1}, geometry: {type: 'Polygon', coordinates: []}}]}},
-    SG: {key: (emirate, name) => emirate + '|' + name},
+    arState: {catalogue: {communities: [{name: 'Yas Island', emirate: 'Abu Dhabi', coordinates: {lng: 54.6, lat: 24.48}}]}},
+    SG: {key: (emirate, name) => emirate + '|' + name, bbox: geometry => {assert.equal(geometry.type, 'Polygon'); return [55, 25, 56, 26];}, contains: (point, geometry) => {assert.equal(geometry.type, 'Polygon'); return true;}},
     sgLoad: async () => {}, sgSource: (id, data) => calls.sources.push({id, data}),
     tlStop: () => calls.stop++, tlUpdate: () => calls.nativeRender++,
     tlChooseDate: period => {calls.nativeChoose.push(period); sandbox.tlState.period = period;},
@@ -229,10 +230,24 @@ test('future rendering hides historical fallback pins and restores their origina
   await h.api.render();
   assert.equal(h.api.U.error, ''); assert.equal(h.layers.get('ue-benchmark-point').visibility, 'none');
   assert.equal(h.layers.get('ue-benchmark-label').visibility, 'none');
-  assert.equal(h.calls.sources.at(-1).data.features[0].properties.period, '2027Q2');
+  assert.equal(h.calls.sources.find(call => call.id === 'um-spots').data.features[0].properties.period, '2027Q2');
   h.api.choose(h.api.U.options.find(option => option.kind === 'native').id);
   assert.equal(h.layers.get('ue-benchmark-point').visibility, 'visible');
   assert.equal(h.layers.get('ue-benchmark-label').visibility, 'none');
+});
+
+test('Abu Dhabi asking scenario can use one labelled catalogue centre without a source boundary', async () => {
+  const candidate=row('apartment','2026H1',{evidenceClass:'advertised_price_benchmark',emirate:'Abu Dhabi',geography:'Yas Island',geometryIds:[]});
+  const h=harness([candidate]);h.sandbox.msState.emirate='Abu Dhabi';h.sandbox.msState.area='Yas Island';h.sandbox.msState.basis='asking';
+  await enterForecast(h);
+  assert(h.api.U.options.some(option=>option.kind==='scenario'));
+  h.api.choose(h.api.U.options.find(option=>option.kind==='scenario').id);await h.api.render();
+  assert.equal(h.api.U.error,'');
+  const spots=h.calls.sources.find(call=>call.id==='um-spots').data.features;
+  assert.equal(spots.length,1);
+  assert.equal(spots[0].properties.locationBasis,'Approximate catalogue community centre; no source-area boundary');
+  assert.deepEqual(plain(spots[0].geometry.coordinates),[54.6,24.48]);
+  assert.equal(h.calls.sources.find(call=>call.id==='um-polygons').data.features.length,0);
 });
 
 test('changing future date/path keeps a manually edited rent within its selected investment', () => {

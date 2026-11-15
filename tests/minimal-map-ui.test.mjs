@@ -10,8 +10,7 @@ const builder=await fs.readFile(new URL('../scripts/build-smart.mjs',import.meta
 const baseApp=await fs.readFile(new URL('../src/assets/app-v2.js',import.meta.url),'utf8');
 
 test('minimal composition exposes the approved controls without changing evidence ownership',()=>{
-  for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Transaction Volume','Forecast'])assert.ok(app.includes(label),label);
-  assert.match(app,/transaction_value_aed/);
+  for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Sales activity','Forecast'])assert.ok(app.includes(label),label);
   assert.match(app,/EspaciosUnifiedMap\?\.setMetric/);
   assert.doesNotMatch(app,/DATA_ROOM_PUBLIC|SUPABASE|service_role|MARKET_R2|env\.DB/);
   assert.match(app,/\['price','Price \/ sqft','accent'\]/);

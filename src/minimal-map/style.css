@@ -308,6 +308,9 @@ html[data-minimal-map="1"] body #app #minimal-metrics button{
   display:inline-flex;align-items:center;gap:7px;min-width:0!important;height:36px!important;padding:0 13px!important;
   box-shadow:0 2px 12px #0000000a;
 }
+html[data-minimal-map="1"] body #app #minimal-metrics #um-region{min-width:118px;max-width:158px;min-height:36px;padding:5px 9px;border:1px solid var(--su-line);border-radius:10px;background:var(--su-panel);color:var(--su-ink);font:500 11px/1.2 Inter,system-ui,sans-serif;box-shadow:0 2px 12px #0000000a;cursor:pointer;}
+html[data-minimal-map="1"] body #app #minimal-metrics #um-region[hidden]{display:none!important;}
+html[data-minimal-map="1"] body #app #minimal-metrics #um-region:focus-visible{outline:2px solid var(--minimal-accent);outline-offset:3px;}
 html[data-minimal-map="1"] body #app #minimal-metrics button i{width:10px;height:10px;border-radius:50%;background:var(--minimal-neutral);}
 html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="accent"] i{background:var(--minimal-accent);}
 html[data-minimal-map="1"] body #app #minimal-metrics button[data-tone="blue"] i{background:var(--minimal-blue);}
@@ -596,6 +599,8 @@ html[data-minimal-map="1"] body #app :is(#minimal-map-modes,.ae-mobile-map-modes
   }
   html[data-minimal-map="1"] body #app :is(#minimal-project-status,#um-status){left:10px;bottom:calc(var(--mm-nav-height,64px) + max(8px,env(safe-area-inset-bottom)) + 150px);max-width:calc(100vw - 20px);font-size:10px;}
   html[data-minimal-map="1"][data-unified-map] body #app #minimal-metrics button{min-height:44px!important;height:auto!important;white-space:normal!important;font-size:11px!important;}
+  html[data-minimal-map="1"][data-unified-map] body #app #minimal-metrics #um-region{width:100%;max-width:none;min-width:0;min-height:44px;font-size:12px;}
+  html[data-minimal-map="1"][data-unified-map][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #minimal-metrics #um-region{height:44px!important;min-height:44px!important;}
   html[data-minimal-map="1"][data-unified-map][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock.is-minimized :is(#minimal-metrics,#vd-evidence,#hi-event-overlay){display:none!important;}
   html[data-minimal-map="1"][data-unified-map] body #app #mm-legend{bottom:calc(var(--mm-bottom,190px) + 2px)!important;}
   html[data-minimal-map="1"][data-unified-map] body #app .mm-sheet-bar :is(.mm-sheet-toggle,.mm-sheet-label){color:var(--su-ink)!important;opacity:1!important;}

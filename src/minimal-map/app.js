@@ -1,6 +1,6 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261115-map-frontend-v42';
+  const RELEASE='20261115-map-frontend-v43';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
   const UI={installed:false,mode:'map',metric:'projects',satelliteReady:false,openingFitDone:false,userMoved:false};
@@ -302,6 +302,7 @@
       const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='projects'));b.onclick=()=>setMetric(value);metric.append(b);
     }
     Q('#tl-dock').prepend(metric);
+    const evidenceRegion=Q('#um-region');if(evidenceRegion)metric.append(evidenceRegion);
     const projectStatus=document.createElement('div');projectStatus.id='minimal-project-status';projectStatus.setAttribute('role','status');Q('#app').append(projectStatus);
     const densityCount=Q('#ae-density-count');if(densityCount)new MutationObserver(syncProjectStatus).observe(densityCount,{childList:true,characterData:true,subtree:true});
 

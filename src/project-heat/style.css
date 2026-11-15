@@ -1,0 +1,10 @@
+#ph-detail{position:absolute;z-index:32;top:196px;left:28px;width:min(340px,calc(100vw - 56px));padding:14px 16px;border:1px solid var(--ar-line,#7491a3);border-radius:18px;background:var(--ar-panel,#142437);color:var(--ar-ink,#f1f7fa);box-shadow:0 14px 40px rgba(8,25,45,.2);line-height:1.4}
+#ph-detail[hidden]{display:none!important}
+#ph-detail>div{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+#ph-detail strong{font-size:15px}
+#ph-detail button{border:1px solid var(--ar-line,#7491a3);border-radius:9px;padding:4px 8px;background:transparent;color:inherit;font:inherit;cursor:pointer}
+#ph-detail button:focus-visible,#ph-detail a:focus-visible{outline:2px solid #53beab;outline-offset:2px}
+#ph-detail p{margin:10px 0 6px;font-weight:700}
+#ph-detail small{display:block;color:var(--ar-muted,#abc0cd);font-size:11px}
+#ph-detail a{display:inline-block;margin-top:10px;color:inherit;text-underline-offset:3px}
+@media(max-width:760px){#ph-detail{top:120px;left:10px;width:min(330px,calc(100vw - 20px));padding:12px 14px}}

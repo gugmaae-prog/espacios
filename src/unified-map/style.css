@@ -240,6 +240,7 @@ html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] 
 }
 html[data-unified-map="1"] #um-readout {
   display: flex;
+  flex-wrap: wrap;
   grid-column: 1 / -1;
   grid-row: auto;
   order: 4;
@@ -254,6 +255,8 @@ html[data-unified-map="1"] #um-readout {
   font: 500 12px/1.4 Inter, system-ui, sans-serif;
 }
 html[data-unified-map="1"] #um-readout > :not(button) { min-width: 0; flex: 1 1 auto; overflow-wrap: anywhere; }
+html[data-unified-map="1"] #um-readout #um-region { flex: 0 1 145px; min-width: 112px; max-width: 160px; min-height: 36px; padding: 5px 8px; border: 1px solid var(--su-line); border-radius: 9px; background: var(--su-panel); color: var(--su-ink); font: inherit; cursor: pointer; }
+html[data-unified-map="1"] #um-readout #um-region[hidden] { display: none !important; }
 html[data-unified-map="1"] #um-readout :is(small, .um-basis, .um-note) { display: block; color: var(--su-muted); font-size: 10px; font-weight: 400; }
 html[data-unified-map="1"] #um-readout :is(strong, b) { font-weight: 650; font-variant-numeric: tabular-nums; }
 html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-details {
@@ -384,6 +387,7 @@ html[data-unified-map="1"] #ae-system-access:focus-visible { outline: 2px solid 
   html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #mm-date { width: 100% !important; max-width: none !important; font-size: 16px !important; padding: 14px 20px 0 8px !important; }
   html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock :is(#mm-metrics, #um-property) button { padding-inline: 5px !important; font-size: 11px !important; }
   html[data-unified-map="1"] #um-readout { gap: 7px; font-size: 11px; }
+  html[data-unified-map="1"] #um-readout #um-region { flex-basis: 112px; max-width: 140px; }
   html[data-unified-map="1"][data-mobile-map][data-su-ui][data-tl][data-uae-heat] body #app #tl-dock #um-details { padding-inline: 8px !important; }
   html[data-unified-map="1"] #su-settings { width: calc(100vw - 20px); padding: 16px; }
   html[data-unified-map="1"] #su-settings .tl-grid { grid-template-columns: minmax(0, 1fr); }
