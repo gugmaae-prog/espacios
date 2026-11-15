@@ -15,7 +15,7 @@ async function dmReadShard(assets,shard,columns){
  return payload.rows;
 }
 
-export async function mapDubaiBuildingCards(request,manifest,assets){
+export async function mapDubaiBuildingCards(request,manifest,assets,commercialSummary){
  const url=new URL(request.url),path=url.pathname.replace(/\/+$/,'');
  if(path!==DM_BUILDING_CARDS_PATH&&!path.startsWith(DM_BUILDING_CARDS_PATH+'/'))return null;
  const headers={'content-type':'application/json; charset=utf-8','cache-control':'public,max-age=60,s-maxage=300','x-content-type-options':'nosniff','x-espacios-evidence-source':manifest.sourceId};
@@ -23,6 +23,18 @@ export async function mapDubaiBuildingCards(request,manifest,assets){
  if(!['GET','HEAD'].includes(request.method))return new Response(JSON.stringify({error:'Read-only endpoint'}),{status:405,headers:{...headers,'cache-control':'no-store',allow:'GET, HEAD'}});
  const source={id:manifest.sourceId,publisher:manifest.publisher,sourceUrl:manifest.sourceUrl,publisherOpenDataUrl:manifest.publisherOpenDataUrl,captureDate:manifest.captureDate,sourceUpdatedLabel:manifest.sourceUpdatedLabel,sourceSha256:manifest.sourceSha256,sourceRows:manifest.sourceRows,evidenceClass:manifest.evidenceClass,grain:manifest.grain,license:manifest.license,rightsNotes:manifest.rightsNotes,storage:manifest.storage,idriveReplicaVerified:manifest.idriveReplicaVerified,idriveReplicaAttestationId:manifest.idriveReplicaAttestationId||null,idriveReplicaVerifiedAt:manifest.idriveReplicaVerifiedAt||null};
  const scope={emirate:'Dubai',columns:manifest.sourceFields,quality:manifest.quality,limits:manifest.limits,coordinatesPresent:false,availableUnits:false,registeredTransactions:false,completedBuildingsOnly:false};
+ const commercialPath=DM_BUILDING_CARDS_PATH+'/commercial-use';
+ if(path===commercialPath||(path===DM_BUILDING_CARDS_PATH&&url.searchParams.get('view')==='commercial-use')){
+  if(!commercialSummary||commercialSummary.sourceId!==manifest.sourceId||commercialSummary.sourceSha256!==manifest.sourceSha256||commercialSummary.sourceRows!==manifest.sourceRows)return reply({error:'Verified commercial-use summary unavailable.',sourceId:manifest.sourceId},503);
+  const detailed=path===commercialPath,allowed=detailed?['communityNo']:['view'];
+  if([...url.searchParams.keys()].some(key=>!allowed.includes(key)))return reply({error:'Unsupported commercial-use filter.'},400);
+  const rawCommunityNo=url.searchParams.get('communityNo');
+  if(detailed&&rawCommunityNo!==null&&!/^\d{1,4}$/.test(rawCommunityNo))return reply({error:'communityNo must be a source community code.'},400);
+  const {communities,...totals}=commercialSummary;
+  const communityRows=detailed?(rawCommunityNo===null?communities:communities.filter(item=>item.communityNo===Number(rawCommunityNo))):undefined;
+  if(detailed&&rawCommunityNo!==null&&!communityRows.length)return reply({error:'Community code absent from this selected-use snapshot.',sourceId:manifest.sourceId},404);
+  return reply({source,scope:{emirate:'Dubai',evidenceClass:commercialSummary.evidenceClass,grain:commercialSummary.grain,limits:commercialSummary.limits,sourceBuildingCards:manifest.sourceRows,unitLocationsPresent:false,currentAvailability:false,permitDateTrendReliable:false,usageTokensOverlap:true},summary:totals,...(detailed?{communityRows,totalCommunityCodes:communities.length}:{communityRoute:commercialPath})});
+ }
  if(path===DM_BUILDING_CARDS_PATH&&url.searchParams.get('view')==='summary')return reply({source,scope,buckets:manifest.shards.map(({bucket,rows})=>({bucket,rows})),totalRows:manifest.sourceRows});
  if(path===DM_BUILDING_CARDS_PATH){
   if(url.searchParams.has('view')||url.searchParams.has('q')||url.searchParams.has('community'))return reply({error:'Unsupported filter. Use the stable cursor to page through the source records.'},400);

@@ -164,6 +164,8 @@ test('commercial routes reject bad input and tampered bytes',async()=>{
  assert.match(html,/sharjah\/market-aggregates/);
  assert.match(html,/ras-al-khaimah\/monthly-market\?month=2026-09/);
  assert.match(html,/umm-al-quwain\/industrial-plot-guide\?plotType=commercial/);
+ assert.match(html,/dubai\/building-cards\?view=commercial-use/);
+ assert.match(html,/These are not verified standing buildings, available units, or a historical permit trend/);
  assert.match(html,/The source table does not state the rate period/);
  assert.match(html,/This is not commercial-only activity or available space/);
  assert.match(html,/Includes H1; periods must not be added/);

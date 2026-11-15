@@ -8,6 +8,7 @@ import {loadDubaiIdriveReplica} from '../scripts/idrive-dubai-upload/verify-atte
 globalThis.crypto??=webcrypto;
 const root=new URL('../',import.meta.url);
 const manifest=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/dm-building-cards-20261026/manifest.json',root)));
+const commercialSummary=JSON.parse(await fs.readFile(new URL('data/uae-evidence/dubai/dm-commercial-use-card-summary-20261115.json',root)));
 const base='https://espacios.me/map/api/uae-evidence/dubai/building-cards';
 const assets={fetch:async request=>{
  const hash=new URL(request.url).pathname.split('/').at(-1).replace(/\.bin$/,'');
@@ -15,7 +16,7 @@ const assets={fetch:async request=>{
  if(!shard)return new Response('Missing',{status:404});
  return new Response(await fs.readFile(new URL('data/uae-evidence/dubai/dm-building-cards-20261026/'+shard.file,root)),{headers:{'content-type':'application/octet-stream'}});
 }};
-const call=async (suffix='',method='GET',store=assets)=>mapDubaiBuildingCards(new Request(base+suffix,{method}),manifest,store);
+const call=async (suffix='',method='GET',store=assets)=>mapDubaiBuildingCards(new Request(base+suffix,{method}),manifest,store,commercialSummary);
 
 test('full source partitions preserve all building IDs and fields',async()=>{
  assert.equal(manifest.sourceRows,536946);
@@ -61,6 +62,33 @@ test('verified IDrive copy is labelled as a replica while Worker assets still se
  assert.equal(body.source.idriveReplicaVerified,true);
  assert.equal(body.source.idriveReplicaAttestationId,'dubai-municipality-idrive-e2-readback-20261114');
  assert.equal(body.totalRows,536946);
+});
+
+test('commercial-use projection preserves overlapping card counts and uncertain community names',async()=>{
+ const response=await call('?view=commercial-use');
+ assert.equal(response.status,200);
+ const overview=await response.json();
+ assert.equal(overview.source.id,manifest.sourceId);
+ assert.equal(overview.scope.currentAvailability,false);
+ assert.equal(overview.scope.usageTokensOverlap,true);
+ assert.equal(overview.summary.sourceRows,536946);
+ assert.equal(overview.summary.selectedUniqueCards,93146);
+ assert.equal(overview.summary.selectedCardsPermitDateMissingOrInvalid,64439);
+ assert.equal(overview.summary.cardsWithMultipleSelectedTokens,16572);
+ assert.ok(overview.summary.usageTokenCards.reduce((sum,item)=>sum+item.cards,0)>93146);
+ assert.equal(overview.summary.usageTokenCards.find(item=>item.token==='Warehouse').cards,29437);
+ assert.equal(overview.summary.usageTokenCards.find(item=>item.token==='Offices').permitDateMissingOrInvalid,16224);
+ const detailed=await (await call('/commercial-use')).json();
+ assert.equal(detailed.totalCommunityCodes,216);
+ assert.equal(detailed.communityRows.reduce((sum,item)=>sum+item.selectedUniqueCards,0),93146);
+ assert.equal(detailed.communityRows.filter(item=>item.nameConflict).length,48);
+ const alQuoz=await (await call('/commercial-use?communityNo=369')).json();
+ assert.equal(alQuoz.communityRows.length,1);
+ assert.equal(alQuoz.communityRows[0].communityNo,369);
+ assert.equal(alQuoz.communityRows[0].nameConflict,true);
+ assert.equal((await call('/commercial-use?communityNo=unknown')).status,400);
+ assert.equal((await call('/commercial-use?communityNo=9999')).status,404);
+ assert.equal((await call('/commercial-use','POST')).status,405);
 });
 
 test('invalid filters and broken storage fail without invented records',async()=>{

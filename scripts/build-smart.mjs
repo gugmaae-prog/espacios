@@ -235,7 +235,8 @@ const dubaiStockReport=JSON.parse(await read('data/uae-evidence/dubai/commercial
 const dubaiStockData=JSON.parse(dubaiStockBytes);
 if(dubaiStockBytes.length!==dubaiStockReport.dataBytes||digest(dubaiStockBytes)!==dubaiStockReport.dataSha256||dubaiStockData.sourceId!==dubaiStockReport.sourceId||dubaiStockReport.sourceRows!==966||dubaiStockReport.ambiguousKeyRowsWithheld!==403||dubaiStockData.observations.length!==30||dubaiStockData.observations.find(row=>row.year===2019&&row.buildingType==='commercial_building'&&row.area==='all')?.buildingCount!==10405)throw Error('Dubai historical building stock changed');
 stackSource+='\nvar UAE_DUBAI_BUILDING_STOCK_REPORT='+JSON.stringify(dubaiStockReport)+';\nvar UAE_DUBAI_BUILDING_STOCK_DATA='+JSON.stringify(dubaiStockData)+';\n';
-const dmBuildingManifest=JSON.parse(await read('data/uae-evidence/dubai/dm-building-cards-20261026/manifest.json'));
+const dmBuildingManifestBytes=await fs.readFile(new URL('data/uae-evidence/dubai/dm-building-cards-20261026/manifest.json',root));
+const dmBuildingManifest=JSON.parse(dmBuildingManifestBytes);
 if(dmBuildingManifest.sourceId!=='dm-building-summary-information-20261026'||dmBuildingManifest.sourceSha256!=='69a7d6a7b86c76afa45cd88d084e904941a50112d30595090b10ec696be10798'||dmBuildingManifest.sourceRows!==536946||dmBuildingManifest.uniqueBuildingIds!==536946||dmBuildingManifest.sourceFields.length!==38||dmBuildingManifest.storage!=='checksum_verified_immutable_worker_assets'||dmBuildingManifest.idriveReplicaVerified!==false)throw Error('Dubai Municipality building-card manifest changed');
 if(dmBuildingManifest.shards.length!==96||new Set(dmBuildingManifest.shards.map(row=>row.bucket)).size!==dmBuildingManifest.shards.length||dmBuildingManifest.shards.reduce((sum,row)=>sum+row.rows,0)!==536946)throw Error('Dubai Municipality building-card partitions changed');
 for(const shard of dmBuildingManifest.shards){
@@ -246,6 +247,11 @@ for(const shard of dmBuildingManifest.shards){
 }
 const dmIdriveReplica=await loadDubaiIdriveReplica();
 stackSource+='\nvar UAE_DUBAI_BUILDING_CARDS_MANIFEST='+JSON.stringify({...dmBuildingManifest,...dmIdriveReplica})+';\n';
+const dmCommercialSummaryBytes=await fs.readFile(new URL('data/uae-evidence/dubai/dm-commercial-use-card-summary-20261115.json',root));
+const dmCommercialSummary=JSON.parse(dmCommercialSummaryBytes);
+const dmCommercialReceipt=JSON.parse(await read('data/uae-evidence/dubai/dm-commercial-use-card-summary-validation.json'));
+if(dmCommercialReceipt.sourceManifestSha256!==digest(dmBuildingManifestBytes)||dmCommercialReceipt.sourceSha256!==dmBuildingManifest.sourceSha256||dmCommercialReceipt.summaryBytes!==dmCommercialSummaryBytes.length||dmCommercialReceipt.summarySha256!==digest(dmCommercialSummaryBytes)||dmCommercialSummary.sourceId!==dmBuildingManifest.sourceId||dmCommercialSummary.sourceSha256!==dmBuildingManifest.sourceSha256||dmCommercialSummary.sourceRows!==536946||dmCommercialSummary.selectedUniqueCards!==93146||dmCommercialSummary.communityCodeCount!==216||dmCommercialSummary.usageTokenCards.length!==6||dmCommercialSummary.communities.length!==216||dmCommercialSummary.usageTokenCards.some(row=>row.cards!==dmCommercialSummary.communities.reduce((sum,community)=>sum+community.usageTokenCards[row.token],0)))throw Error('Dubai Municipality commercial-use card summary changed');
+stackSource+='\nvar UAE_DUBAI_BUILDING_COMMERCIAL_SUMMARY='+JSON.stringify(dmCommercialSummary)+';\n';
 const dmProjectsManifest=JSON.parse(await read('data/uae-evidence/dubai/dm-municipal-projects-20261026/manifest.json'));
 if(dmProjectsManifest.sourceId!=='dm-municipal-projects-and-building-links-20261026'||dmProjectsManifest.projectRows!==481358||dmProjectsManifest.linkRows!==208946||dmProjectsManifest.shards.length!==49||dmProjectsManifest.sources[0].sha256!=='1ad25211a9f92c280837530da7526e8847532196f3b20eac29e7bd8e3222750e'||dmProjectsManifest.sources[1].sha256!=='e62dbdf728fcaf7195e87ff03c038347e90a89f3ba44299cd9ec17d4544831d2'||dmProjectsManifest.idriveReplicaVerified!==false)throw Error('Dubai municipal-project manifest changed');
 for(const shard of dmProjectsManifest.shards){

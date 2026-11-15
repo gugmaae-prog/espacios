@@ -14,4 +14,12 @@ python3 scripts/verify-dm-building-cards.py --source /path/to/building_summary_i
 python3 scripts/build-recovery-assets.py
 ```
 
-The read-only API is `/map/api/uae-evidence/dubai/building-cards`. `?view=summary` returns source/coverage metadata; `?limit=100&cursor=...` pages every row; appending an exact `building_id` retrieves one card. Each response labels the evidence class and storage. The immutable Worker asset copy is the current serving source. An IDrive replica is not claimed until separately uploaded and checksum-read back.
+The read-only API is `/map/api/uae-evidence/dubai/building-cards`. `?view=summary` returns source/coverage metadata; `?limit=100&cursor=...` pages every row; appending an exact `building_id` retrieves one card. Each response labels the evidence class and storage. The immutable Worker asset copy is the serving source. The [dated IDrive E2 attestation](idrive-e2-replica-readback-20261114.json) verifies a separate private replica of the source shards.
+
+## Commercial-use card projection
+
+`scripts/build-dm-commercial-use-summary.py` scans every checksum-verified shard and produces [the source-linked projection](dm-commercial-use-card-summary-20261115.json) and its [validation receipt](dm-commercial-use-card-summary-validation.json). It counts exact English usage tokens from each unique `building_id`. The six selected tokens appear on 93,146 distinct cards: Commercial 43,553; Offices 22,186; Warehouse 29,437; Shopping Centre 2,091; Factory 5,780; and Workshops 8,578. These per-token counts overlap; 16,572 cards carry more than one selected token. Their sum is not a building or unit total.
+
+The projection preserves the source status distribution, the presence or absence of a valid permit date, and counts by 216 source community codes. Forty-eight codes have multiple nonblank English name variants; the API retains those variants and does not select a geographic point. A valid permit date is absent on 64,439 of the 93,146 selected cards, so the projection makes no year-by-year supply trend. A card is a permit-system record, not a verified standing building, an available commercial unit, a rent, a sale, or a map coordinate.
+
+`?view=commercial-use` returns the six emirate-wide token counts. `/commercial-use` returns the community-code breakdown; `/commercial-use?communityNo=369` narrows to one exact source code. This is a derived view of the same dated Municipality snapshot, not a new independent source or a current property inventory.
