@@ -1,0 +1,28 @@
+{
+  "status": "published_and_verified",
+  "historyVersion": "20261014-enrichment-v48",
+  "frontendRelease": "20261013-map-heatmap-coverage-v2",
+  "worker": {
+    "name": "psr-portfolio-map-v2",
+    "version": "f3dc3db9-4796-4856-9b01-e2198319eae6",
+    "deployment": "c29153a2-7e59-46e2-9854-b6f5b952a168",
+    "trafficPercent": 100
+  },
+  "immutableArchiveRootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "canonicalSnapshotSHA256": "bbb7c8037a11221e94843d6be0882d073a9fea7550aa0748435c9a806e89ecc7",
+  "publication": {
+    "objectsWritten": 2491,
+    "objectsReused": 50,
+    "indexStatements": 42821
+  },
+  "validation": {
+    "candidateAPI": "passed",
+    "candidateCanonicalShellBrowser": "passed",
+    "canonicalAPI": "passed",
+    "canonicalBrowser": "passed",
+    "supabaseControlPlane": "reconciled",
+    "dataRoom": "restricted"
+  },
+  "sourceSyncState": "local_commits_pending_github_push",
+  "researchComplete": false
+}

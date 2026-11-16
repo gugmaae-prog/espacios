@@ -5,15 +5,12 @@ import {gunzipSync} from 'node:zlib';
 
 const read = (path) => JSON.parse(fs.readFileSync(path));
 const unpack = (path) => JSON.parse(gunzipSync(fs.readFileSync(path)));
-const snapshot = read('data/historical-intelligence-20261003.json');
-const publication = read('data/historical-intelligence/publication-manifest.json');
 const packet = read('data/historical-intelligence/dld-lifecycle-pass47-20261013.json');
 const before = unpack('data/historical-intelligence/objects/9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672.json.gz');
-const current = unpack(`data/historical-intelligence/objects/${publication.rootIndex.sha256}.json.gz`);
+const snapshot = unpack('data/historical-intelligence/objects/66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240.json.gz');
 
-test('V47 appends only bounded exact-ID authority lifecycle/status evidence to five projects', () => {
+test('V47 archive appends only bounded exact-ID authority lifecycle/status evidence to five projects', () => {
   assert.equal(snapshot.version, '20261013-enrichment-v47');
-  assert.equal(publication.version, snapshot.version);
   assert.equal(packet.publicationStatus, 'prepared_not_integrated');
   assert.equal(packet.financialObservationsAdded, 0);
   assert.equal(packet.facts.length, 15);
@@ -22,7 +19,6 @@ test('V47 appends only bounded exact-ID authority lifecycle/status evidence to f
   assert.equal(snapshot.manifest.historicalSeriesCount, 16872);
   assert.equal(snapshot.sources.length, before.sources.length + 1);
   assert.deepEqual(snapshot.sources.slice(0, before.sources.length), before.sources);
-  assert.deepEqual(current.sources, snapshot.sources);
 
   const previous = new Map(before.records.map((record) => [record.id, record]));
   const changed = new Set(packet.facts.map((fact) => fact.recordId));

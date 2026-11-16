@@ -81,7 +81,7 @@ def retain_published_quotes(records, retained, packet, asof):
   elif current not in vintages:vintages.append(deepcopy(current))
   if vintages:record['priorCurrentSnapshots']=vintages
 
-def apply_enrichment(packet,records,series,sources,source,aliases,asof):
+def apply_enrichment(packet,records,series,sources,source,aliases,asof,coverage_context=None):
  if not packet:return {}
  if packet.get('asOf','')>asof:raise ValueError('Enrichment not yet available as of snapshot')
  known={r['id']:r for r in records}
@@ -95,6 +95,8 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
   if identifier not in sources:raise ValueError('Enrichment orphan source '+str(identifier))
   return identifier
  counters=collections.Counter(); seen=set();subject_owner={}
+ lifecycle_coverage_keys=collections.defaultdict(set)
+ lifecycle_fact_ids=collections.defaultdict(set)
  for link in packet.get('seriesLinks',[]):
   record=known.get(link['recordId']); full=series.get(link['seriesId'])
   if not record or not full:raise ValueError('Enrichment orphan record/series')
@@ -134,6 +136,19 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
     for optional in ['dateBasis','progressPercent','identityVerified','sourcePage','phaseLabel','relatedMilestoneIds','dateReconciliation']:
      if optional in fact:lifecycle_row[optional]=fact[optional]
    record['lifecycle'].append(lifecycle_row)
+   coverage_key={
+    'launch':'original_launch','completion':'actual_completion','occupancy':'occupancy',
+    'construction_start':'construction','construction_progress':'construction','construction_confirmation':'construction',
+    'phase_construction_start':'construction','phase_construction_progress':'construction',
+    'target_construction_start':'construction_targets','planned_construction_start':'construction_targets',
+    'target_handover':'handover_targets','target_completion':'handover_targets',
+    'delivery':'delivery_reports','phase_handover':'delivery_reports',
+    'announcement':'announcement_registration','registration':'announcement_registration','first_marketing':'announcement_registration',
+    'first_sale':'announcement_registration','masterplan_announcement':'announcement_registration','phase_announcement':'announcement_registration',
+    'land_acquisition':'announcement_registration','escrow_opening':'announcement_registration','establishment':'announcement_registration','opening':'announcement_registration',
+   }.get(milestone)
+   if coverage_key:lifecycle_coverage_keys[record['id']].add(coverage_key)
+   lifecycle_fact_ids[record['id']].add(ident)
    counters['lifecycleFacts']+=1
   elif kind=='financial':
    scope=fact.get('scope');obs=fact['observation'];value=obs.get('value')
@@ -237,32 +252,62 @@ def apply_enrichment(packet,records,series,sources,source,aliases,asof):
    history=research.setdefault('sourceCollectionHistory',[])
    if previous not in history:history.append(previous)
   research['sourceCollection']=safe
+ preserve_financial_coverage = packet.get('preserveExistingFinancialCoverage') is True
+ coverage_context = coverage_context or {}
  for record in records:
   status=record['researchStatus'];status.setdefault('originalAuditGaps',list(status.get('gaps',[])))
   whole=lambda x,kind:x['kind']==kind and x['status']=='verified' and x.get('scope')=='subject' and x.get('primaryEvidence') is True and x.get('eventStatus')!='planned' and period_start(x['date']['start'])<=asof
   launch=any(whole(x,'launch') for x in record['lifecycle']);complete=any(whole(x,'completion') for x in record['lifecycle'])
-  subjects=[s for s in record['historySeries'] if s.get('scope')=='subject' and s.get('identityVerified') is True]
-  status['originalAuditSourceScope']=status.get('sourceScope')
-  direct_transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed']
-  status['sourceScope']='Verified registered subject cohorts or transactions and separately scoped context; full financial history unestablished' if subjects or direct_transactions else 'Shared/published context and advertised evidence only; no verified direct subject financial history'
   summary=record['coverageSummary']
-  for metric,field in [('price','directSalePeriods'),('rent','directRentPeriods')]:
-   if field in summary:summary['originalAudit'+field[0].upper()+field[1:]]=summary[field]
-   periods={str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I)}
-   transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' and o.get('period') and isinstance(o.get('value'),(float,int)) and o.get('value')>0]
-   transaction_series=[s for s in subjects if s.get('metric')==metric and s.get('observationKind')=='transaction' and s.get('transactionKind')=='sale']
-   transaction_points=[p for s in transaction_series for p in series[s['id']]['points'] if len(p)>1 and isinstance(p[1],(float,int)) and p[1]>0]
-   transaction_periods={str(p[0]) for p in transaction_points if p[0]}
-   transaction_periods.update(str(o['period']) for o in transactions)
-   periods.update(str(o['period']) for o in transactions)
-   periods.update(str(p[0]) for p in transaction_points if p[0])
-   summary[field]=len(periods)
-   summary['directSaleTransactionCount' if metric=='price' else 'directRentTransactionCount']=len(transactions)+len(transaction_points)
-   if metric=='price':summary['directSaleTransactionDateCount']=len(transaction_periods)
-  summary['directPeriodCountBasis']='Distinct retained native period labels plus exact transaction dates across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or a completeness claim'
+  if not preserve_financial_coverage:
+   subjects=[s for s in record['historySeries'] if s.get('scope')=='subject' and s.get('identityVerified') is True]
+   status['originalAuditSourceScope']=status.get('sourceScope')
+   direct_transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed']
+   status['sourceScope']='Verified registered subject cohorts or transactions and separately scoped context; full financial history unestablished' if subjects or direct_transactions else 'Shared/published context and advertised evidence only; no verified direct subject financial history'
+   for metric,field in [('price','directSalePeriods'),('rent','directRentPeriods')]:
+    if field in summary:summary['originalAudit'+field[0].upper()+field[1:]]=summary[field]
+    periods={str(p[0]) for s in subjects if s.get('metric')==metric for p in series[s['id']]['points'] if isinstance(p[1],(float,int)) and p[1]>0 and not re.search(r'conflict|quarantin',str(p[3] if len(p)>3 else ''),re.I)}
+    transactions=[o for o in record.get('observations',[]) if o.get('scope')=='subject' and o.get('identityVerified') is True and o.get('metric')==metric and o.get('observationKind')=='transaction' and o.get('transactionKind')=='sale' and o.get('status')=='source_observed' and o.get('period') and isinstance(o.get('value'),(float,int)) and o.get('value')>0]
+    transaction_series=[s for s in subjects if s.get('metric')==metric and s.get('observationKind')=='transaction' and s.get('transactionKind')=='sale']
+    transaction_points=[p for s in transaction_series for p in series[s['id']]['points'] if len(p)>1 and isinstance(p[1],(float,int)) and p[1]>0]
+    transaction_periods={str(p[0]) for p in transaction_points if p[0]}
+    transaction_periods.update(str(o['period']) for o in transactions)
+    periods.update(str(o['period']) for o in transactions)
+    periods.update(str(p[0]) for p in transaction_points if p[0])
+    summary[field]=len(periods)
+    summary['directSaleTransactionCount' if metric=='price' else 'directRentTransactionCount']=len(transactions)+len(transaction_points)
+    if metric=='price':summary['directSaleTransactionDateCount']=len(transaction_periods)
+   summary['directPeriodCountBasis']='Distinct retained native period labels plus exact transaction dates across verified subject cohorts; overlapping frequencies and sparse/incomplete periods are included, not monthly coverage or a completeness claim'
   if launch:status['launchDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='verified_launch_date']
   if complete:status['completionDateStatus']='verified';status['gaps']=[x for x in status['gaps'] if x!='actual_completion_date']
   if launch or complete or record.get('registerEvidence') or record['observations']:status['status']='partially_sourced; complete financial coverage not established'
-  record['coverageSummary']['newFinancialEvidencePoints']=len(record['observations']);record['coverageSummary']['lifecycleEvidencePoints']=len(record['lifecycle'])
-  refresh_research_coverage(record,series,sources,asof)
+  if not preserve_financial_coverage:
+   record['coverageSummary']['newFinancialEvidencePoints']=len(record['observations'])
+  record['coverageSummary']['lifecycleEvidencePoints']=len(record['lifecycle'])
+  context=coverage_context.get(record['id'],{})
+  if preserve_financial_coverage:
+   prior_status=deepcopy(status)
+   refresh_research_coverage(record,series,sources,asof,context.get('sharedContext'),context.get('eventLinks'))
+   refreshed=deepcopy(status)
+   status.clear();status.update(prior_status)
+   changed_keys=lifecycle_coverage_keys.get(record['id'],set())
+   items=deepcopy(prior_status.get('itemCoverage',{}))
+   for key in changed_keys:
+    items[key]=refreshed['itemCoverage'][key]
+   status['itemCoverage']=items
+   status['itemCoverageAsOf']=asof
+   status['itemCoverageDefinition']=refreshed.get('itemCoverageDefinition',prior_status.get('itemCoverageDefinition'))
+   gap_for={'original_launch':'verified_launch_date','actual_completion':'actual_completion_date','registered_sale_history':'direct_registered_sale_history','signed_rent_history':'direct_signed_rent_history','dated_current_valuation':'dated_current_valuation'}
+   gaps=list(prior_status.get('gaps',[]))
+   for key in changed_keys:
+    if items[key]['status']=='present' and key in gap_for:gaps=[gap for gap in gaps if gap!=gap_for[key]]
+   status['gaps']=gaps
+   if 'original_launch' in changed_keys and items['original_launch']['status']=='present':status['launchDateStatus']='verified'
+   if 'actual_completion' in changed_keys and items['actual_completion']['status']=='present':status['completionDateStatus']='verified'
+   candidate=refreshed.get('earliestHistoryEvidence')
+   prior=prior_status.get('earliestHistoryEvidence')
+   if candidate and any(item in lifecycle_fact_ids.get(record['id'],set()) for item in candidate.get('evidenceIds',[])) and (not prior or period_start(candidate['date']['start'])<period_start(prior['date']['start'])):
+    status['earliestHistoryEvidence']=candidate
+  else:
+   refresh_research_coverage(record,series,sources,asof,context.get('sharedContext'),context.get('eventLinks'))
  return {'asOf':packet['asOf'],'counts':dict(counters),'collection':packet.get('collection',{}),'methodology':packet.get('methodology'),'supplementalPasses':packet.get('supplementalPasses',[]),'rawBodiesRedistributed':False,'additionalDatasets':packet.get('additionalDatasets',[]),'sourceCandidateRecords':len({x['recordId'] for x in packet.get('sourceCandidates',[]) if x.get('recordId')}),'incompleteFinancialCoverageRemainsExplicit':True}

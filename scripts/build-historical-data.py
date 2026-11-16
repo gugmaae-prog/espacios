@@ -72,12 +72,17 @@ def gzip_object(value,kind):return immutable(gzip.compress(encoded(value),mtime=
 def build_runtime_index(snapshot,publication):
  """Append bounded runtime objects without changing the canonical evidence snapshot."""
  if snapshot['version']!=publication['version'] or snapshot['asOf']!=publication['asOf']:raise ValueError('Runtime source version differs from publication')
+ def runtime_gzip_object(value,kind):
+  blob=gzip.compress(encoded(value),mtime=0);digest=sha(blob);rel=f'objects/{digest}.json.gz';path=BASE/rel
+  if path.exists() and path.read_bytes()!=blob:raise ValueError('Immutable runtime object collision: '+rel)
+  if not path.exists():path.write_bytes(blob)
+  return {'key':f"research/published/{snapshot['asOf']}/historical-intelligence/{rel}",'path':str(path.relative_to(ROOT)),'sha256':digest,'bytes':len(blob),'kind':kind,'compression':'gzip'}
  objects=[x for x in publication['objects'] if x['kind'] not in ['runtime_history_partition','runtime_record_shard','runtime_index']]
  runtime_objects=[];pointers={};maximum_native=512*1024
  def native_chunk(items):
   if not items:return
   value={'version':snapshot['version'],'asOf':snapshot['asOf'],'classification':'runtime_native_history_partition','series':items}
-  obj=gzip_object(value,'runtime_history_partition');obj['decodedBytes']=len(encoded(value));runtime_objects.append(obj)
+  obj=runtime_gzip_object(value,'runtime_history_partition');obj['decodedBytes']=len(encoded(value));runtime_objects.append(obj)
   for item in items:pointers[item['id']]={k:obj[k] for k in ['key','sha256','bytes','compression','decodedBytes']}
  for obj in objects:
   if obj['kind']!='history_partition':continue
@@ -96,7 +101,7 @@ def build_runtime_index(snapshot,publication):
  def record_chunk(items):
   if not items:return
   value={'version':snapshot['version'],'asOf':snapshot['asOf'],'classification':'runtime_record_evidence_shard','records':items}
-  obj=gzip_object(value,'runtime_record_shard');obj['decodedBytes']=len(encoded(value));runtime_objects.append(obj)
+  obj=runtime_gzip_object(value,'runtime_record_shard');obj['decodedBytes']=len(encoded(value));runtime_objects.append(obj)
   pointer={k:obj[k] for k in ['key','sha256','bytes','compression','decodedBytes']}
   for item in items:
    native=next(row for row in inventory if row['id']==item['id']);native['recordPartition']=pointer;native['runtimeRecordSHA256']=sha(encoded(item))
@@ -122,7 +127,7 @@ def build_runtime_index(snapshot,publication):
  compact_manifest['runtime']={'classification':'bounded_manifest_backed_runtime','recordCount':len(inventory),'recordShardCount':sum(x['kind']=='runtime_record_shard' for x in runtime_objects),'recordShardMaximumDecodedBytes':max(x['decodedBytes'] for x in runtime_objects if x['kind']=='runtime_record_shard'),'nativePartitionMaximumDecodedBytes':max([x.get('decodedBytes',0) for x in runtime_objects if x['kind']=='runtime_history_partition']+[maximum_native]),'canonicalSnapshotSHA256':sha((ROOT/'data/historical-intelligence-20261003.json').read_bytes()),'canonicalArchiveSHA256':publication['rootIndex']['sha256'],'historyRetrieval':'Selected record evidence plus native immutable partitions; full archive retained separately'}
  runtime={**snapshot,'records':inventory,'manifest':compact_manifest}
  dump_json(BASE/'runtime-index.json',runtime)
- obj=gzip_object(runtime,'runtime_index');obj['decodedBytes']=len(encoded(runtime));runtime_objects.append(obj)
+ obj=runtime_gzip_object(runtime,'runtime_index');obj['decodedBytes']=len(encoded(runtime));runtime_objects.append(obj)
  publication['runtimeIndex']=obj;publication['objects']=objects+runtime_objects;publication['runtime']=compact_manifest['runtime'];dump_json(BASE/'publication-manifest.json',publication)
  return runtime
 def canonical_url(url):

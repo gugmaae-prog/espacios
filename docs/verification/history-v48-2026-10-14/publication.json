@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "historyVersion": "20261014-enrichment-v48",
+  "rootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "objectsWritten": 2491,
+  "objectsReused": 50,
+  "indexStatements": 42821,
+  "snapshotCounts": {
+    "hi_snapshots": 1,
+    "hi_records": 1860,
+    "hi_sources": 3371,
+    "hi_events": 105,
+    "hi_exposures": 7382,
+    "hi_series": 16872,
+    "hi_record_series": 13230
+  },
+  "indexCountsVerified": true,
+  "publicationState": "complete",
+  "note": "Immutable R2 objects and D1 rows were published by the scoped V48 bridge; raw source bodies were not redistributed."
+}

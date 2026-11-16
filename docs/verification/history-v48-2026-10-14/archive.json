@@ -1,0 +1,17 @@
+{
+  "status": "verified",
+  "historyVersion": "20261014-enrichment-v48",
+  "immutableArchiveRootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "canonicalSnapshotSHA256": "bbb7c8037a11221e94843d6be0882d073a9fea7550aa0748435c9a806e89ecc7",
+  "recordCount": 1860,
+  "projectCount": 1645,
+  "communityCount": 215,
+  "sources": 3371,
+  "events": 105,
+  "exposures": 7382,
+  "historicalRows": 633891,
+  "series": 16872,
+  "preservedPartitionPairs": 1091,
+  "preservedDecodedBytes": 1476518068,
+  "runtimeRecordShards": 120
+}

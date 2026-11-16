@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "passId": "emaar-primary-lifecycle-pass48-20261014",
+  "priorVersion": "20261013-enrichment-v47",
+  "priorSHA256": "f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f",
+  "candidateVersion": "20261014-enrichment-v48",
+  "asOf": "2026-10-14",
+  "preserveExistingFinancialCoverage": true,
+  "sources": [
+    {
+      "url": "https://www.emaar.com/en/press-release-listing/emaar-properties-unveils-expo-living-a-landmark-community-development-through-joint-venture-with-dubai-world-trade-centre",
+      "finalUrl": "https://www.emaar.com/en/press-release-listing/emaar-properties-unveils-expo-living-a-landmark-community-development-through-joint-venture-with-dubai-world-trade-centre",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-10-13T20:35:34Z",
+      "bytes": 362917,
+      "sha256": "aa52b9c15efe9b3f1cb762cc58fa493c46b3f1d07b27c00cccb5458d725b2499",
+      "rawBodyRedistributed": false,
+      "captureMethod": "Direct public HTTPS GET of official Emaar page; TLS validated; no authentication, API endpoint, rate-limit bypass, or raw-body redistribution.",
+      "id": "emaar48-expo-living-terra-heights",
+      "publisher": "Emaar Properties PJSC",
+      "title": "Emaar announces Expo Living and says Terra Heights is open for launch",
+      "publishedAt": "2024-11-14",
+      "publicationDatePrecision": "day",
+      "publicationDateBasis": "Official source dateline: Dubai, UAE – 14 November 2024. The current page was first locally retained at the capture timestamp.",
+      "firstAvailableAt": "2026-10-13T20:35:34Z",
+      "availabilityBasis": "First locally retained lawful capture; the displayed historical date is retained separately and is not treated as an archived contemporaneous capture.",
+      "primaryEvidence": true,
+      "classification": "primary_developer_press_release",
+      "licence": "Minimal attributed factual extraction from a public primary source; raw HTML, imagery, and article text are not redistributed."
+    },
+    {
+      "url": "https://www.emaar.com/en/blog/palace-residences-at-dubai-hills-estate-marks-aed-2-3-billion-in-sales-in-just-two-days",
+      "finalUrl": "https://www.emaar.com/en/blog/palace-residences-at-dubai-hills-estate-marks-aed-2-3-billion-in-sales-in-just-two-days",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-10-13T20:35:35Z",
+      "bytes": 377843,
+      "sha256": "3d91895569fd3a9a46d6afff27410b2c9c37254c2601b11aa6031b10b38f0d3c",
+      "rawBodyRedistributed": false,
+      "captureMethod": "Direct public HTTPS GET of official Emaar page; TLS validated; no authentication, API endpoint, rate-limit bypass, or raw-body redistribution.",
+      "id": "emaar48-palace-residences-sales-report",
+      "publisher": "Emaar Properties PJSC",
+      "title": "Emaar reports Palace Residences Dubai Hills Estate sales status",
+      "publishedAt": "2024-05-17",
+      "publicationDatePrecision": "day",
+      "publicationDateBasis": "Displayed official page date: May 17, 2024. The current page was first locally retained at the capture timestamp.",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "availabilityBasis": "First locally retained lawful capture; the displayed historical date is retained separately and is not treated as an archived contemporaneous capture.",
+      "primaryEvidence": true,
+      "classification": "primary_developer_report",
+      "licence": "Minimal attributed factual extraction from a public primary source; raw HTML, imagery, and article text are not redistributed."
+    },
+    {
+      "url": "https://www.emaar.com/en/press-release-listing/emaars-h1-2024-rally-celebrating-achievements-and-future-prospects",
+      "finalUrl": "https://www.emaar.com/en/press-release-listing/emaars-h1-2024-rally-celebrating-achievements-and-future-prospects",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "retrievedAt": "2026-10-13T20:35:35Z",
+      "bytes": 358092,
+      "sha256": "767b8bf51a312c3f53c03d837874bd14e510d5d528034ef49e6817a79cfcab8a",
+      "rawBodyRedistributed": false,
+      "captureMethod": "Direct public HTTPS GET of official Emaar page; TLS validated; no authentication, API endpoint, rate-limit bypass, or raw-body redistribution.",
+      "id": "emaar48-h1-2024-rally",
+      "publisher": "Emaar Properties PJSC",
+      "title": "Emaar H1 2024 report with project-specific sales-status statements",
+      "publishedAt": "2024-07-10",
+      "publicationDatePrecision": "day",
+      "publicationDateBasis": "Official source dateline: Dubai, UAE, July 10, 2024. The current page was first locally retained at the capture timestamp.",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "availabilityBasis": "First locally retained lawful capture; the displayed historical date is retained separately and is not treated as an archived contemporaneous capture.",
+      "primaryEvidence": true,
+      "classification": "primary_developer_press_release",
+      "licence": "Minimal attributed factual extraction from a public primary source; raw HTML, imagery, and article text are not redistributed."
+    }
+  ],
+  "facts": [
+    {
+      "id": "emaar48-terra-heights-launch",
+      "recordId": "project:apartments-in-terra-heights-in-emaar-expo-living-expo-city-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "emaar48-expo-living-terra-heights"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-1a59b6a1f1d8b2f715abfdb9",
+        "emaar48-expo-living-terra-heights"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique Terra Heights catalogue record, exact Expo City location, exact named first residential phase in Emaar's press release, and existing identity-verified DLD project register number 3381. The release does not establish legal-developer equivalence beyond the retained authority register.",
+      "primaryEvidence": true,
+      "publishedAt": "2024-11-14",
+      "firstAvailableAt": "2026-10-13T20:35:34Z",
+      "scope": "subject",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-11-14",
+        "precision": "day"
+      },
+      "label": "Emaar states that Terra Heights, Expo Living's first residential phase, is open for launch.",
+      "note": "The official release establishes a dated launch availability statement for this named phase. It does not establish a first sale, registered transaction price, construction start, completion, handover, occupancy, rent, valuation, or future value.",
+      "eventStatus": "reported",
+      "verification": "verified",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Official source dateline: Dubai, UAE – 14 November 2024. The current page was first locally retained at the capture timestamp."
+    },
+    {
+      "id": "emaar48-palace-launch-window",
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "emaar48-palace-residences-sales-report"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b4fdbab739d2a2e78b404ad5",
+        "emaar48-palace-residences-sales-report"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique Palace Residences Dubai Hills Estate catalogue record, exact named Dubai Hills project in Emaar's report, and existing identity-verified DLD project register number 2884. Other Palace-branded projects remain separate.",
+      "primaryEvidence": true,
+      "publishedAt": "2024-05-17",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "scope": "subject",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-05-15",
+        "end": "2024-05-17",
+        "precision": "range"
+      },
+      "label": "Emaar's 17 May report says Palace Residences Dubai Hills Estate achieved AED 2.3 billion in sales within two days of launch.",
+      "note": "The date is a conservative bounded interval derived from the dated report's 'within two days of its launch' wording, not an asserted exact launch day. It is a developer-reported sales statement, not registered-sale, unit-price, valuation, or completion evidence.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Displayed official page date: May 17, 2024. The current page was first locally retained at the capture timestamp."
+    },
+    {
+      "id": "emaar48-palace-sales-status",
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "emaar48-palace-residences-sales-report"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b4fdbab739d2a2e78b404ad5",
+        "emaar48-palace-residences-sales-report"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique Palace Residences Dubai Hills Estate catalogue record, exact named Dubai Hills project in Emaar's report, and existing identity-verified DLD project register number 2884. Other Palace-branded projects remain separate.",
+      "primaryEvidence": true,
+      "publishedAt": "2024-05-17",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "scope": "subject",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2024-05-17",
+        "precision": "day"
+      },
+      "label": "Emaar reports AED 2.3 billion in Palace Residences Dubai Hills Estate sales within two days of launch.",
+      "note": "Developer-reported aggregate marketing/sales status only. It does not establish individual transactions, unit prices, settled revenue, a price series, or a current valuation.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Displayed official page date: May 17, 2024. The current page was first locally retained at the capture timestamp."
+    },
+    {
+      "id": "emaar48-palace-h1-sales-status",
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "emaar48-h1-2024-rally"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b4fdbab739d2a2e78b404ad5",
+        "emaar48-h1-2024-rally"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique Palace Residences Dubai Hills Estate catalogue record, exact named Dubai Hills project in Emaar's report, and existing identity-verified DLD project register number 2884. Other Palace-branded projects remain separate.",
+      "primaryEvidence": true,
+      "publishedAt": "2024-07-10",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "scope": "subject",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2024-07-10",
+        "precision": "day"
+      },
+      "label": "Emaar reports Palace Residences Dubai Hills Estate sold 2,500 units in seven days.",
+      "note": "Developer-reported aggregate status in an H1 performance release. It is retained separately from the May report and does not establish registered transactions, individual unit prices, a complete sales history, or a valuation.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Official source dateline: Dubai, UAE, July 10, 2024. The current page was first locally retained at the capture timestamp."
+    },
+    {
+      "id": "emaar48-zabeel-h1-sales-status",
+      "recordId": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "emaar48-h1-2024-rally"
+      ],
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-2e09ab3682f322ca684ddbbc",
+        "emaar48-h1-2024-rally"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique Address Residences Zabeel catalogue record, exact named project in Emaar's H1 report, and existing identity-verified DLD project register number 2957. The statement is not mapped to individual towers, units, or registered transactions.",
+      "primaryEvidence": true,
+      "publishedAt": "2024-07-10",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "scope": "subject",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2024-07-10",
+        "precision": "day"
+      },
+      "label": "Emaar reports Address Residences Zabeel sold 2,500 units in seven days.",
+      "note": "Developer-reported aggregate status in an H1 performance release. It does not identify individual towers or units and does not establish registered transactions, individual prices, a complete sales history, or a valuation.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_source_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Official source dateline: Dubai, UAE, July 10, 2024. The current page was first locally retained at the capture timestamp."
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:apartments-in-terra-heights-in-emaar-expo-living-expo-city-dubai",
+      "catalogueName": "Terra Heights",
+      "type": "project",
+      "emirate": "Dubai",
+      "communityId": "community:Dubai:expo-city-dubai",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-1a59b6a1f1d8b2f715abfdb9"
+      ],
+      "identityBasis": "Unique Terra Heights catalogue record, exact Expo City location, exact named first residential phase in Emaar's press release, and existing identity-verified DLD project register number 3381. The release does not establish legal-developer equivalence beyond the retained authority register."
+    },
+    {
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "catalogueName": "Palace Residences Dubai Hills Estate",
+      "type": "project",
+      "emirate": "Dubai",
+      "communityId": "community:Dubai:dubai-hills-estate",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b4fdbab739d2a2e78b404ad5"
+      ],
+      "identityBasis": "Unique Palace Residences Dubai Hills Estate catalogue record, exact named Dubai Hills project in Emaar's report, and existing identity-verified DLD project register number 2884. Other Palace-branded projects remain separate."
+    },
+    {
+      "recordId": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+      "catalogueName": "Address Residences Zabeel",
+      "type": "project",
+      "emirate": "Dubai",
+      "communityId": "community:Dubai:zabeel",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-2e09ab3682f322ca684ddbbc"
+      ],
+      "identityBasis": "Unique Address Residences Zabeel catalogue record, exact named project in Emaar's H1 report, and existing identity-verified DLD project register number 2957. The statement is not mapped to individual towers, units, or registered transactions."
+    }
+  ],
+  "recordResearch": [],
+  "collection": {
+    "asOf": "2026-10-14",
+    "acceptedLifecycleFacts": 5,
+    "verifiedLaunchFacts": 1,
+    "reportedLaunchWindows": 1,
+    "developerSalesStatusReports": 3,
+    "newFinancialObservations": 0,
+    "newSources": 3,
+    "rawBodiesRedistributed": false
+  },
+  "methodology": "Three official Emaar pages were fetched directly by public HTTPS GET and checksum-pinned. Exact named project, location, and existing DLD register identity gates precede admission. The Terra Heights launch statement is primary and exact-day dated; the Palace launch interval remains a reported bounded interval. Aggregate sales-status reports remain lifecycle/context evidence, never registered individual sales, prices, rents, valuations, completion, occupancy, or forecasts. Displayed historical page dates are separate from first locally retained availability, so no source is treated as available in a backtest before this capture.",
+  "excludedCandidates": [
+    {
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "reason": "AED 2.3 billion and 2,500-unit source claims are retained as developer-reported aggregate status only; no individual transaction or price-series fan-out."
+    },
+    {
+      "recordId": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+      "reason": "The 2,500-unit report is not mapped to individual towers, units, transactions, prices, or a complete sales history."
+    }
+  ]
+}
