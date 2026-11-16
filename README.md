@@ -19,9 +19,28 @@
 >
 > See the [data sourcing workflow](docs/DATA_SOURCING_WORKFLOW.md) for the source, identity, gap, scenario and release rules used by the intelligence map.
 
-## Current production — V47 verified lifecycle history and V2 Map, 13 October 2026 (Dubai)
+## Latest source candidate — V49 public-primary lifecycle evidence, 16 November 2026
 
-The current production release is **V47** (`20261013-enrichment-v47`), with immutable archive root `66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240` and canonical snapshot-file SHA-256 `f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f`. It adds **15 dated, non-financial DLD lifecycle facts** across five exactly reconciled projects: five registrations, five dated inspection/progress reports, and five retrieval-date authority-status snapshots. Two malformed literal completion fields were quarantined. No registered sale, signed rent, asking price, valuation, actual completion, handover, occupancy, price uplift, or approved 2080 forecast was added.
+**Local candidate status only — not yet published to R2/D1, assigned production traffic, or described as live.** V49 (`20261116-enrichment-v49`) is an append-only candidate over the immutable V48 root. It adds **five non-financial lifecycle/status facts** and **three public-primary source records** to two exactly matched records:
+
+- **The Beach Collection on Palm Jebel Ali** — Nakheel's 11 November 2024 Beach Collection release and its source-specific planned end-of-2027 first-residences target. The competing retained Q4 2029 catalogue target remains visible; neither schedule is relabelled as actual completion, handover or occupancy.
+- **AYA, Umm Al Quwain** — Deyaar's FY2025 report that enabling works had commenced, its H2 2027 planned completion target, and a developer aggregate sales-status table. The aggregate table is not an individual sale, price, valuation, rent observation or forecast.
+
+V49 preserves all **1,860 records** — **1,645 projects** and **215 communities** — plus **633,891 native historical rows**, **16,872 series**, **105 events**, and **7,382 event exposures**. It has **3,374 source records** and immutable archive root `ad181fc0413731a3d3d8b720e442ab92934ce43bdf97551131b2e4a916ed8aae`. The local requirement ledger is **3,354 present, 3,404 partial, 26,722 missing, and 9,300 unestablished**: **39,426 of 42,780 requirements (92.1599%) remain unresolved**. This is requirement accounting, not a percentage of lifetime prices or rents that may be filled in.
+
+V49 adds **zero** registered sales, signed rents, valuations, current asking-price observations, actual completion/handover/occupancy facts, approved 2027–2080 forecast values, or causal appreciation coefficients. The [V49 packet](data/historical-intelligence/public-primary-lifecycle-pass49-20261116.json) and [reconciliation receipt](data/historical-intelligence/public-primary-pass49-reconciliation.json) retain its source, date and evidence-class limits. `npm run history:verify:v49-preservation` proves the retained V48/V49 native series differ only in their release envelopes; the full release gate must also pass before publication.
+
+**Next publication gate:** verify the candidate against immutable R2/D1, the isolated Worker API, the canonical shell through a version override, 100% traffic, normal canonical APIs, responsive browser acceptance and the public-safe release registry. Until all of those checks pass, V49 is not a production claim.
+
+## Latest independently verified production receipt — V48, 14 October 2026
+
+V48 (`20261014-enrichment-v48`) was activated and independently verified on 14 October 2026. It recorded five non-financial Emaar lifecycle/status facts across three exact DLD-matched Dubai projects, while preserving the fixed inventory, **633,891** native historical rows and **16,872** series. Its immutable root is `ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0`. See the [V48 release receipt](docs/verification/history-v48-2026-10-14/README.md).
+
+That dated receipt does not identify the Worker currently serving traffic; live status must be rechecked before any production statement. The wider research goal remains incomplete.
+
+## V47 verified lifecycle history and V2 Map — historical production record, 13 October 2026 (Dubai)
+
+The V47 release was **V47** (`20261013-enrichment-v47`), with immutable archive root `66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240` and canonical snapshot-file SHA-256 `f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f`. It added **15 dated, non-financial DLD lifecycle facts** across five exactly reconciled projects: five registrations, five dated inspection/progress reports, and five retrieval-date authority-status snapshots. Two malformed literal completion fields were quarantined. No registered sale, signed rent, asking price, valuation, actual completion, handover, occupancy, price uplift, or approved 2080 forecast was added.
 
 All **1,860 records** — **1,645 projects** and **215 communities** — remain preserved with **633,891 native historical rows**, **16,872 series**, **3,368 source records**, **105 events**, and **7,382 event exposures**. The V47 requirement ledger is **3,351 present, 3,403 partial, 26,726 missing, and 9,300 unestablished**: **39,429 of 42,780 requirements remain unresolved (92.1669%)**. This is a research-requirement ledger, not a percentage of lifetime property prices. Annual conditional-scenario slots remain visible through 2080, while unsupported anchors and inputs remain unavailable.
 
@@ -29,7 +48,7 @@ The paired Map release `20261013-map-heatmap-coverage-v2` preserves financial sc
 
 Cloudflare Worker `17ddb204-54ae-4450-82f0-131dfbf95981` serves 100% of production traffic in deployment `032d910b-a736-4cf4-a071-3e1d2d8bd3f4`. Immutable R2/D1 publication wrote 2,491 objects, reused 50, and verified 42,818 index statements. Candidate and canonical V47 API checks, canonical desktop and 390px browser acceptance, runtime asset markers, restricted Data Room behavior, and Supabase runtime/registry readback passed. The Data Room remains restricted (`DATA_ROOM_PUBLIC=false`). See the [V47 release receipt](docs/verification/history-v47-2026-10-13/README.md) and the [data sourcing workflow](docs/DATA_SOURCING_WORKFLOW.md).
 
-The worker release is deployed; its source branch has local commits pending GitHub synchronization, and the public release registry records that state rather than claiming a remote commit or CI result. The broader research goal remains incomplete.
+At that V47 release, the source branch still had local commits pending GitHub synchronization, and the public release registry recorded that state rather than claiming a remote commit or CI result. This historical note does not replace the V48 receipt or V49 candidate state above.
 
 **Next best actions:** resolve remaining same-name/component identity queues; source exact subject sales, signed rents, actual completion/occupancy, dated valuations and earlier history; complete the community-to-authority-area crosswalk; and collect dated annual supply, delivery, migration, rates, inflation, vacancy and cost inputs for defensible conditional paths through 2080. There is no automatic daily source-refresh feed: a daily source check, daily observation and daily publication are separate states.
 

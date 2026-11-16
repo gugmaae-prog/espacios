@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Prove V48 preserves V47 native history while adding only Emaar lifecycle evidence."""
+"""Prove the immutable V48 release preserves V47 native history.
+
+V48 is intentionally tested as a historical release artifact so later snapshots
+can advance without erasing the evidence that was actually published in V48.
+"""
 import copy
 import gzip
 import hashlib
@@ -13,8 +17,6 @@ V48_ROOT = "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0"
 V47 = "20261013-enrichment-v47"
 V48 = "20261014-enrichment-v48"
 PACKET = ROOT / "data" / "historical-intelligence" / "emaar-primary-lifecycle-pass48-20261014.json"
-SNAPSHOT = ROOT / "data" / "historical-intelligence-20261003.json"
-PUBLICATION = ROOT / "data" / "historical-intelligence" / "publication-manifest.json"
 
 TERRA = "project:apartments-in-terra-heights-in-emaar-expo-living-expo-city-dubai"
 PALACE = "project:palace-residences-dubai-hills-estate-emaar-properties"
@@ -47,13 +49,9 @@ def check(condition, message):
 
 def main():
     before, current = unpack(V47_ROOT), unpack(V48_ROOT)
-    snapshot = json.loads(SNAPSHOT.read_text())
-    publication = json.loads(PUBLICATION.read_text())
     packet = json.loads(PACKET.read_text())
-    check(before["version"] == V47 and current["version"] == snapshot["version"] == publication["version"] == V48, "Unexpected immutable roots or live candidate version.")
-    check(before["asOf"] == "2026-10-13" and current["asOf"] == snapshot["asOf"] == publication["asOf"] == "2026-10-14", "Unexpected snapshot cutoff.")
-    check(publication["rootIndex"]["sha256"] == V48_ROOT, "Manifest does not point at the V48 root.")
-    check(digest(SNAPSHOT.read_bytes()) == publication["runtime"]["canonicalSnapshotSHA256"], "Runtime canonical snapshot checksum differs.")
+    check(before["version"] == V47 and current["version"] == V48, "Unexpected immutable roots.")
+    check(before["asOf"] == "2026-10-13" and current["asOf"] == "2026-10-14", "Unexpected V48 snapshot cutoff.")
     check(packet["priorVersion"] == V47 and packet["candidateVersion"] == V48 and packet["priorSHA256"] == "f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f", "Packet lineage differs.")
     check({fact["recordId"] for fact in packet["facts"]} == CHANGED and len(packet["facts"]) == 5 and len(packet["sources"]) == 3, "Unexpected V48 evidence scope.")
     check(packet["collection"]["newFinancialObservations"] == 0, "V48 packet claims financial observations.")
@@ -113,31 +111,6 @@ def main():
 
     check(before["manifest"]["historicalObservationRows"] == current["manifest"]["historicalObservationRows"] == 633891, "Historical row count changed.")
     check(before["manifest"]["historicalSeriesCount"] == current["manifest"]["historicalSeriesCount"] == 16872, "Historical series count changed.")
-    check(publication["counts"] == {"records": 1860, "projects": 1645, "communities": 215, "historicalRows": 633891, "collectedHistoricalRows": 634107, "originalCollectionRows": 122268, "supplementHistoricalRows": 18539, "rightsPendingRows": 216, "series": 16872, "events": 105, "exposures": 7382, "sources": 3371}, "V48 publication counts differ.")
-    runtime = json.loads(gzip.decompress((ROOT / publication["runtimeIndex"]["path"]).read_bytes()))
-    check(runtime["version"] == V48 and runtime["asOf"] == "2026-10-14", "Runtime index envelope differs.")
-    check(runtime["manifest"]["runtime"]["canonicalArchiveSHA256"] == V48_ROOT, "Runtime index points to wrong archive.")
-    check(len(runtime["records"]) == 1860, "Runtime index record count differs.")
-    runtime_objects = [obj for obj in publication["objects"] if obj["kind"].startswith("runtime_")]
-    check(runtime_objects and all(obj["key"].startswith("research/published/2026-10-14/") for obj in runtime_objects), "Runtime objects use a stale publication namespace.")
-    shards = [obj for obj in runtime_objects if obj["kind"] == "runtime_record_shard"]
-    check(len(shards) == 120, "Unexpected runtime record-shard count.")
-    runtime_records = {}
-    for shard in shards:
-        payload = json.loads(gzip.decompress((ROOT / shard["path"]).read_bytes()))
-        check(payload.get("version") == V48 and payload.get("asOf") == "2026-10-14", f"Runtime shard has a stale envelope: {shard['sha256']}")
-        for record in payload["records"]:
-            check(record["id"] not in runtime_records, f"Duplicate runtime record: {record['id']}")
-            runtime_records[record["id"]] = record
-    check(set(runtime_records) == set(new_records), "Runtime shards omit or add record identities.")
-    for record_id in CHANGED:
-        actual = {item["id"] for item in runtime_records[record_id]["lifecycle"] if item["id"].startswith("emaar48-")}
-        expected = {fact["id"] for fact in packet["facts"] if fact["recordId"] == record_id}
-        check(actual == expected, f"Runtime shard does not hydrate V48 lifecycle facts for {record_id}")
-    check(all(digest((ROOT / obj["path"]).read_bytes()) == obj["sha256"] and (ROOT / obj["path"]).stat().st_size == obj["bytes"] for obj in [*publication["objects"], publication["d1Index"]]), "Immutable object checksum/size mismatch.")
-    index_sql = gzip.decompress((ROOT / publication["d1Index"]["path"]).read_bytes()).decode()
-    check(f"INSERT OR IGNORE INTO hi_snapshots(snapshot_version,as_of,record_count,manifest_json,root_sha256) VALUES('{V48}'" in index_sql, "D1 snapshot header is not V48.")
-    check(V48_ROOT in index_sql, "D1 index does not reference V48 immutable root.")
 
     print(json.dumps({
         "passed": True,
@@ -151,7 +124,6 @@ def main():
         "partitionPairs": len(partition_pairs),
         "decodedBytes": decoded,
         "payloadVersionOnly": True,
-        "runtimeRecordShards": len(shards),
         "ledger": {status: sum(item["status"] == status for record in new_records.values() for item in record["researchStatus"]["itemCoverage"].values()) for status in ["present", "partial", "missing", "unestablished"]},
     }))
 

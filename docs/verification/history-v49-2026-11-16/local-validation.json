@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "passed_locally_prepublication",
+  "releaseStatus": "candidate_not_published_or_deployed_by_this_receipt",
+  "version": "20261116-enrichment-v49",
+  "asOf": "2026-11-16",
+  "immutableArchiveRootSHA256": "ad181fc0413731a3d3d8b720e442ab92934ce43bdf97551131b2e4a916ed8aae",
+  "canonicalSnapshotSHA256": "67810ba711305f779d7d39ecf5ea19f719d824d17c99fab5fa8a70e7b83cba4d",
+  "counts": {
+    "records": 1860,
+    "projects": 1645,
+    "communities": 215,
+    "sources": 3374,
+    "events": 105,
+    "exposures": 7382,
+    "historicalRows": 633891,
+    "series": 16872
+  },
+  "ledger": {
+    "present": 3354,
+    "partial": 3404,
+    "missing": 26722,
+    "unestablished": 9300,
+    "items": 42780,
+    "unresolved": 39426,
+    "unresolvedPercent": 92.1599,
+    "annualEndpoint": 2080
+  },
+  "newEvidence": {
+    "sources": 3,
+    "lifecycleFacts": 5,
+    "financialObservations": 0,
+    "approvedForecasts": 0,
+    "changedRecords": [
+      "project:apartments-aya-deyaar-umm-al-quwain",
+      "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali"
+    ]
+  },
+  "completedChecks": [
+    "npm test",
+    "npm run history:verify:v48-preservation",
+    "npm run history:verify:v49-preservation",
+    "npm run build:smart",
+    "npm run check",
+    "git diff --check"
+  ],
+  "notCertified": [
+    "Remote R2/D1 publication",
+    "Candidate Worker deployment or API readback",
+    "Canonical traffic activation or browser acceptance",
+    "Supabase control-plane reconciliation",
+    "GitHub synchronization or CI",
+    "Complete historical financial coverage, causal price effects, or observed future values through 2080"
+  ]
+}
