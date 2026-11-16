@@ -1,0 +1,13 @@
+{
+  "status": "activated_and_verified",
+  "sourceCommit": "48c0bfcb6c052cbc6159d2c217ab3dfb4124f457",
+  "workerVersion": "7ecf54bb-7ec7-444f-ba91-865fe3e08c9e",
+  "previewURL": "https://7ecf54bb-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "productionBaseline": "2fd155e0-e352-4e80-93ad-267b4e3cf2b0",
+  "ciRun": 38218183096,
+  "guardrailsRun": 38218183077,
+  "guardrails": "success",
+  "ci": "success",
+  "publication": "complete",
+  "deployment": "ac648cfa-3db3-4240-b0d7-151259e63e07"
+}

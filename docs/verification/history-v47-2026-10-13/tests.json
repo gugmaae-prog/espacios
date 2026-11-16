@@ -1,0 +1,58 @@
+{
+  "status": "published_and_verified_v47",
+  "completed": [
+    {
+      "command": "python3 tests/dld-authority-pass47.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "python3 tests/dld-lifecycle-pass47.py",
+      "checks": 4,
+      "passed": true
+    },
+    {
+      "command": "node --test --test-concurrency=2 tests/historical-v47-authority-lifecycle.test.mjs",
+      "tests": 2,
+      "passed": true
+    },
+    {
+      "command": "npm run history:verify:v47-preservation",
+      "passed": true
+    },
+    {
+      "command": "npm test",
+      "passed": true,
+      "scope": "full local regression suite"
+    },
+    {
+      "command": "node scripts/verify-v47-history-release.mjs --origin candidate",
+      "passed": true,
+      "scope": "candidate API, full ledger, selected identities, Data Room restriction"
+    },
+    {
+      "command": "node scripts/verify-v47-history-release.mjs --origin https://espacios.me",
+      "passed": true,
+      "scope": "canonical API, full ledger, selected identities, Data Room restriction"
+    },
+    {
+      "command": "node scripts/history-browser-acceptance.mjs",
+      "passed": true,
+      "scope": "canonical desktop and 390x844 mobile Map acceptance"
+    },
+    {
+      "command": "Supabase runtime/registry readback",
+      "passed": true,
+      "scope": "public-safe V47 control-plane metadata"
+    }
+  ],
+  "pending": [
+    "GitHub source synchronization and its separate CI status"
+  ],
+  "notCertified": [
+    "Complete historical financial coverage for every project and community",
+    "Unverified actual completion, handover or occupancy outcomes",
+    "Causal price effects from contextual events",
+    "Observed future values through 2080"
+  ]
+}

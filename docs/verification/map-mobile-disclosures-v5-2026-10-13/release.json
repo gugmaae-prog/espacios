@@ -1,0 +1,43 @@
+{
+  "status": "published_and_verified_frontend_only_release",
+  "releaseDate": "2026-10-13",
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "9f4b75e8-802d-49a6-84a8-79b679709145",
+  "deployment": "54a7542c-a49c-4230-9edc-4210a8cc4893",
+  "trafficPercent": 100,
+  "sourceCommit": "f1b54bbaf29ff88e1d26ae39e34ceef073c8b05e",
+  "frontendRelease": "20261013-map-mobile-disclosures-v5",
+  "candidateTag": "map-mobile-disclosures-20261013-v5",
+  "history": {
+    "version": "20261013-enrichment-v46",
+    "immutableArchiveRootSHA256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+    "canonicalSnapshotFileSHA256": "9e32d607d01b6e9e0a6d4ce2da5f689f7df6bb8ecb50d5adb0283d1f8ea005b8",
+    "records": 1860,
+    "projects": 1645,
+    "communities": 215,
+    "nativeHistoricalRows": 633891,
+    "series": 16872,
+    "sources": 3367,
+    "events": 105,
+    "exposures": 7382,
+    "researchComplete": false
+  },
+  "validation": {
+    "candidateApi": "passed",
+    "canonicalApi": "passed",
+    "canonicalBrowserDesktop": "passed",
+    "canonicalBrowser390x844": "passed",
+    "runtimeMarkersAndAssetUrls": "passed",
+    "mapToolsHitTest": "passed",
+    "supabaseControlPlane": "reconciled",
+    "dataRoomPublic": false,
+    "sourceCI": "https://github.com/gugmaae-prog/espacios/actions/runs/38399288446",
+    "repositoryGuardrails": "https://github.com/gugmaae-prog/espacios/actions/runs/38399288385"
+  },
+  "scope": {
+    "frontendOnly": true,
+    "newFinancialObservations": 0,
+    "preservesV46Evidence": true,
+    "claimsResearchComplete": false
+  }
+}

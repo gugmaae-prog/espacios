@@ -1,0 +1,20 @@
+{
+  "origin": "https://7fa645e8-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "version": "20261013-enrichment-v45",
+  "checkedAt": "2026-10-13T09:19:07.800Z",
+  "readOnly": true,
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 26725,
+      "unestablished": 9300,
+      "partial": 3430,
+      "present": 3325
+    },
+    "annualEndpoint": 2080
+  },
+  "events": { "events": 105, "sources": 3365, "exposures": 7382 },
+  "increment": { "series": 0, "nativePoints": 0, "factRecords": 8 },
+  "passed": true
+}

@@ -1,0 +1,23 @@
+{
+  "environment": "production",
+  "workerName": "psr-portfolio-map-v2",
+  "accountId": "b1b843ec85bc39a3a4d370ba4f84f17a",
+  "snapshotVersion": "20261014-enrichment-v48",
+  "rootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "publisherURL": "https://espacios-history-publisher-20261014-v48.thekeifferjapeth.workers.dev",
+  "authorization": {
+    "kind": "explicit_user_request",
+    "scope": "publish_historical_snapshot_and_deploy_map",
+    "evidence": "User authorized publication of verified additions in this conversation."
+  },
+  "r2": {
+    "binding": "MARKET_R2",
+    "bucketName": "psr-market-intelligence"
+  },
+  "d1": {
+    "binding": "DB",
+    "databaseId": "a5165cff-70a5-4685-af87-5ffdcf08652a",
+    "databaseName": "cba-property-db"
+  },
+  "status": "example_only_deploy_and_verify_the_v48_scoped_bridge_before_using"
+}

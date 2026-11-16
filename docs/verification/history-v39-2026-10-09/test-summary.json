@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-09T01:25:49.686302+00:00",
+  "command": "npm run verify",
+  "passed": true,
+  "javascriptTests": 379,
+  "pythonIdentityTests": 4,
+  "productionDryRun": true,
+  "immutableObjectsVerified": 2542,
+  "rootSHA256": "b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760",
+  "financialRowsPreserved": 633891,
+  "newLifecycleFacts": 7,
+  "newFinancialObservations": 0,
+  "envelopeRegressionAdded": true
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "origin": "https://espacios.me",
+  "checkedAt": "2026-10-14T03:14:08.351Z",
+  "readOnly": true,
+  "expected": {
+    "version": "20261014-enrichment-v48",
+    "rootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+    "counts": {
+      "records": 1860,
+      "projects": 1645,
+      "communities": 215,
+      "sources": 3371,
+      "events": 105,
+      "exposures": 7382,
+      "historicalRows": 633891,
+      "series": 16872
+    }
+  },
+  "localContract": {
+    "passed": true,
+    "ledger": {
+      "missing": 26724,
+      "partial": 3404,
+      "present": 3352,
+      "unestablished": 9300
+    },
+    "v48": {
+      "facts": 5,
+      "sources": 3,
+      "financialObservationsAdded": 0,
+      "rawBodiesRedistributed": false
+    },
+    "retainedV47": {
+      "facts": 15,
+      "sourceId": "dld47-public-project-status-20261013"
+    }
+  },
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 26724,
+      "partial": 3404,
+      "present": 3352,
+      "unestablished": 9300
+    },
+    "annualSlots": {
+      "checkedRecords": 1860,
+      "first": 2027,
+      "last": 2080
+    },
+    "manifestRootVerified": true
+  },
+  "globalEvents": {
+    "events": 105,
+    "sources": 3371,
+    "exposures": 7382,
+    "manifestRootVerified": true
+  },
+  "primarySources": {
+    "sourceIds": [
+      "emaar48-expo-living-terra-heights",
+      "emaar48-palace-residences-sales-report",
+      "emaar48-h1-2024-rally"
+    ],
+    "sourcesAdded": 3,
+    "rawBodiesRedistributed": false
+  },
+  "retainedAuthoritySource": {
+    "id": "dld47-public-project-status-20261013",
+    "publisher": "Dubai Land Department",
+    "retainedFacts": 15
+  },
+  "selectedRecordHistory": {
+    "records": 3,
+    "identities": [
+      {
+        "recordId": "project:apartments-in-terra-heights-in-emaar-expo-living-expo-city-dubai",
+        "name": "Terra Heights",
+        "authorityProjectNumber": "3381",
+        "factIds": [
+          "emaar48-terra-heights-launch"
+        ]
+      },
+      {
+        "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+        "name": "Palace Residences Dubai Hills Estate",
+        "authorityProjectNumber": "2884",
+        "factIds": [
+          "emaar48-palace-h1-sales-status",
+          "emaar48-palace-launch-window",
+          "emaar48-palace-sales-status"
+        ]
+      },
+      {
+        "recordId": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+        "name": "Address Residences Zabeel",
+        "authorityProjectNumber": "2957",
+        "factIds": [
+          "emaar48-zabeel-h1-sales-status"
+        ]
+      }
+    ],
+    "lifecycleFacts": 5,
+    "primarySources": [
+      "emaar48-expo-living-terra-heights",
+      "emaar48-palace-residences-sales-report",
+      "emaar48-h1-2024-rally"
+    ],
+    "retainedV47Facts": 15,
+    "financialObservationsAdded": 0,
+    "inferredActualCompletionHandoverOrOccupancy": 0,
+    "annualTargetYears": {
+      "first": 2027,
+      "last": 2080,
+      "slots": 54
+    }
+  },
+  "system": {
+    "dataRoomAccess": "restricted",
+    "dataRoomGate": "DATA_ROOM_PUBLIC",
+    "dataRoomRouteStatus": 404,
+    "secretsExposed": false
+  },
+  "version": "20261014-enrichment-v48",
+  "rootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "canonicalSnapshotSHA256": "bbb7c8037a11221e94843d6be0882d073a9fea7550aa0748435c9a806e89ecc7",
+  "counts": {
+    "records": 1860,
+    "projects": 1645,
+    "communities": 215,
+    "sources": 3371,
+    "events": 105,
+    "exposures": 7382,
+    "historicalRows": 633891,
+    "series": 16872
+  },
+  "passed": true
+}

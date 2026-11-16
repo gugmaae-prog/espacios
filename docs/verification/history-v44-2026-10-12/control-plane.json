@@ -1,0 +1,10 @@
+{
+  "registryId": "89f874c4-6366-4d83-a6fa-d30c3ce674df",
+  "runtime": "production",
+  "expectedFrontend": "20261012-map-evidence-v48",
+  "expectedWorker": "7ecf54bb-7ec7-444f-ba91-865fe3e08c9e",
+  "researchComplete": false,
+  "sourceSyncState": "pending_merge",
+  "helperDeleted": true,
+  "privateAuthFilesRemoved": true
+}

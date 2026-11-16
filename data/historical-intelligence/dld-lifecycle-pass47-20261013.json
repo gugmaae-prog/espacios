@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "passId": "dld-lifecycle-pass47-20261013",
+  "priorVersion": "20261013-enrichment-v46",
+  "priorRootSHA256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+  "asOf": "2026-10-13",
+  "publicationStatus": "prepared_not_integrated",
+  "sources": [
+    {
+      "captureProvenance": {
+        "capturedPacketBytes": 6099,
+        "capturedPacketSHA256": "47653de5aba54b9d391b24ab104449996005a8964b3eeabc64236ba5cd097f7d",
+        "method": "Visible public browser DOM after exact project-number search, then Full Fact Sheet and Inspection Details tabs; no login, API bypass, download, or raw-media redistribution.",
+        "normalizedPayloadSHA256": "e1474113fdc56c1e7f5484a144b73accc9c731134ce902cc64d435a6fc3b47e0",
+        "sourcePageLastUpdatedRaw": "07 October 2026 - 09:10 AM",
+        "timestampQualification": "single bounded public-browser research batch; source publication time is unknown"
+      },
+      "classification": "authority_project_status_browser_snapshot",
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "id": "dld47-public-project-status-20261013",
+      "licence": "Minimal attributed authority facts; raw browser capture, media and contacts are not redistributed",
+      "normalizedPacketPath": "data/historical-intelligence/dld-authority-pass47-20261013.json",
+      "preserveRevision": true,
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "publisher": "Dubai Land Department",
+      "rawCaptureRedistributed": false,
+      "retrievedAt": "2026-10-13T15:32:17Z",
+      "revisionOfSourceId": "dld46-public-project-status-20261013",
+      "title": "DLD public Project Status Enquiry: bounded five-project exact-ID lifecycle review",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/",
+      "normalizedPacketSHA256": "5a88c276772db154e85aeae06a1773d4fb58660cac61878d8582b08529f1bb8a"
+    }
+  ],
+  "facts": [
+    {
+      "id": "dld47-2166-registration",
+      "recordId": "project:sobha-hartland-one-park-avenue",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2019-06-11",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Exact unique English project name and project number joined to DLD project/developer IDs; developer_brand_prefix_in_registered_legal_name; exact_official_area_or_master_project_name. Phase spelling retained. Registry expected dates are filed targets, not proof of launch/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority-reported project registration",
+      "note": "Registration is not first announcement, marketing, sale or construction commencement.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown."
+    },
+    {
+      "id": "dld47-2166-2022-09-16",
+      "recordId": "project:sobha-hartland-one-park-avenue",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2022-09-16",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Exact unique English project name and project number joined to DLD project/developer IDs; developer_brand_prefix_in_registered_legal_name; exact_official_area_or_master_project_name. Phase spelling retained. Registry expected dates are filed targets, not proof of launch/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority inspection reports 100% on its dated report",
+      "note": "This is a dated authority inspection, not present progress at retrieval. It does not establish construction commencement, actual completion, handover or occupancy.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 100.0
+    },
+    {
+      "id": "dld47-2166-2026-10-13",
+      "recordId": "project:sobha-hartland-one-park-avenue",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "authority_status_snapshot",
+      "date": {
+        "start": "2026-10-13",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Exact unique English project name and project number joined to DLD project/developer IDs; developer_brand_prefix_in_registered_legal_name; exact_official_area_or_master_project_name. Phase spelling retained. Registry expected dates are filed targets, not proof of launch/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority status snapshot at retrieval: Finished (100% displayed)",
+      "note": "Current DLD status/progress is retained as a retrieval-date snapshot. It does not establish a historical completion, handover, occupancy, rent, price, valuation or forecast.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 100.0
+    },
+    {
+      "id": "dld47-3744-registration",
+      "recordId": "project:montiva-by-vida-dubai-creek-harbour",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2025-05-16",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-2c174e12f21dbea8e10790d0"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority-reported project registration",
+      "note": "Registration is not first announcement, marketing, sale or construction commencement.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown."
+    },
+    {
+      "id": "dld47-3744-2026-04-22",
+      "recordId": "project:montiva-by-vida-dubai-creek-harbour",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-04-22",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-2c174e12f21dbea8e10790d0"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority inspection reports 5.85% on its dated report",
+      "note": "This is a dated authority inspection, not present progress at retrieval. It does not establish construction commencement, actual completion, handover or occupancy.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 5.85
+    },
+    {
+      "id": "dld47-3744-2026-10-13",
+      "recordId": "project:montiva-by-vida-dubai-creek-harbour",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "authority_status_snapshot",
+      "date": {
+        "start": "2026-10-13",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-2c174e12f21dbea8e10790d0"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority status snapshot at retrieval: Active (5.85% displayed)",
+      "note": "Current DLD status/progress is retained as a retrieval-date snapshot. It does not establish a historical completion, handover, occupancy, rent, price, valuation or forecast.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 5.85
+    },
+    {
+      "id": "dld47-3609-registration",
+      "recordId": "project:apartments-albero-green-gate-dubai-creek-harbour",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2025-03-24",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-036a4df3ea105e174f78d6a9"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority-reported project registration",
+      "note": "Registration is not first announcement, marketing, sale or construction commencement.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown."
+    },
+    {
+      "id": "dld47-3609-2026-07-02",
+      "recordId": "project:apartments-albero-green-gate-dubai-creek-harbour",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-07-02",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-036a4df3ea105e174f78d6a9"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority inspection reports 11% on its dated report",
+      "note": "This is a dated authority inspection, not present progress at retrieval. It does not establish construction commencement, actual completion, handover or occupancy.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 11.0
+    },
+    {
+      "id": "dld47-3609-2026-10-13",
+      "recordId": "project:apartments-albero-green-gate-dubai-creek-harbour",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "authority_status_snapshot",
+      "date": {
+        "start": "2026-10-13",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-036a4df3ea105e174f78d6a9"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority status snapshot at retrieval: Active (11% displayed)",
+      "note": "Current DLD status/progress is retained as a retrieval-date snapshot. It does not establish a historical completion, handover, occupancy, rent, price, valuation or forecast.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 11.0
+    },
+    {
+      "id": "dld47-2728-registration",
+      "recordId": "project:parkside-views-by-emaar-properties",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2023-07-28",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-rents-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-5c58e9f941cd9b1e514c0e25"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority-reported project registration",
+      "note": "Registration is not first announcement, marketing, sale or construction commencement.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown."
+    },
+    {
+      "id": "dld47-2728-2026-05-05",
+      "recordId": "project:parkside-views-by-emaar-properties",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-05-05",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-rents-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-5c58e9f941cd9b1e514c0e25"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority inspection reports 100% on its dated report",
+      "note": "This is a dated authority inspection, not present progress at retrieval. It does not establish construction commencement, actual completion, handover or occupancy.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 100.0
+    },
+    {
+      "id": "dld47-2728-2026-10-13",
+      "recordId": "project:parkside-views-by-emaar-properties",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "authority_status_snapshot",
+      "date": {
+        "start": "2026-10-13",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-rents-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-5c58e9f941cd9b1e514c0e25"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority status snapshot at retrieval: Finished (100% displayed)",
+      "note": "Current DLD status/progress is retained as a retrieval-date snapshot. It does not establish a historical completion, handover, occupancy, rent, price, valuation or forecast.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 100.0
+    },
+    {
+      "id": "dld47-3104-registration",
+      "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "registration",
+      "date": {
+        "start": "2024-05-28",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b70d5373e5b4d6f7ad2b6371"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority-reported project registration",
+      "note": "Registration is not first announcement, marketing, sale or construction commencement.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown."
+    },
+    {
+      "id": "dld47-3104-2026-06-03",
+      "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2026-06-03",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b70d5373e5b4d6f7ad2b6371"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority inspection reports 35.42% on its dated report",
+      "note": "This is a dated authority inspection, not present progress at retrieval. It does not establish construction commencement, actual completion, handover or occupancy.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 35.42
+    },
+    {
+      "id": "dld47-3104-2026-10-13",
+      "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai",
+      "status": "accepted",
+      "kind": "lifecycle",
+      "milestone": "authority_status_snapshot",
+      "date": {
+        "start": "2026-10-13",
+        "precision": "day"
+      },
+      "sourceId": "dld47-public-project-status-20261013",
+      "identityBasis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "identitySourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b70d5373e5b4d6f7ad2b6371"
+      ],
+      "firstAvailableAt": "2026-10-13T15:32:17Z",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "verification": "reported",
+      "scope": "subject",
+      "identityVerified": true,
+      "eventStatus": "reported",
+      "label": "Authority status snapshot at retrieval: Active (35.42% displayed)",
+      "note": "Current DLD status/progress is retained as a retrieval-date snapshot. It does not establish a historical completion, handover, occupancy, rent, price, valuation or forecast.",
+      "evidenceClass": "primary_authority_dated_project_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Public DLD Project Status Enquiry capture retained with checksum; source publication time is unknown.",
+      "progressPercent": 35.42
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "authorityAreaId": 412,
+      "authorityDeveloperName": "Sobha L.L.C",
+      "authorityDeveloperNumber": 966,
+      "authorityProjectId": "256512783",
+      "authorityProjectNumber": 2166,
+      "basis": "Exact unique English project name and project number joined to DLD project/developer IDs; developer_brand_prefix_in_registered_legal_name; exact_official_area_or_master_project_name. Phase spelling retained. Registry expected dates are filed targets, not proof of launch/occupancy.",
+      "catalogueName": "Sobha Hartland One Park Avenue",
+      "recordId": "project:sobha-hartland-one-park-avenue",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003"
+      ],
+      "statusSourceId": "dld47-public-project-status-20261013"
+    },
+    {
+      "authorityAreaId": 447,
+      "authorityDeveloperName": "Dubai Creek Harbour L.L.C",
+      "authorityDeveloperNumber": 1224,
+      "authorityProjectId": "755616583",
+      "authorityProjectNumber": 3744,
+      "basis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "catalogueName": "Montiva",
+      "recordId": "project:montiva-by-vida-dubai-creek-harbour",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-2c174e12f21dbea8e10790d0"
+      ],
+      "statusSourceId": "dld47-public-project-status-20261013"
+    },
+    {
+      "authorityAreaId": 447,
+      "authorityDeveloperName": "Dubai Creek Harbour L.L.C",
+      "authorityDeveloperNumber": 1224,
+      "authorityProjectId": "733159836",
+      "authorityProjectNumber": 3609,
+      "basis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "catalogueName": "Albero",
+      "recordId": "project:apartments-albero-green-gate-dubai-creek-harbour",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-036a4df3ea105e174f78d6a9"
+      ],
+      "statusSourceId": "dld47-public-project-status-20261013"
+    },
+    {
+      "authorityAreaId": 482,
+      "authorityDeveloperName": "Dubai Hills Estate L.L.C",
+      "authorityDeveloperNumber": 984,
+      "authorityProjectId": "523735283",
+      "authorityProjectNumber": 2728,
+      "basis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "catalogueName": "Parkside Views",
+      "recordId": "project:parkside-views-by-emaar-properties",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-rents-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-5c58e9f941cd9b1e514c0e25"
+      ],
+      "statusSourceId": "dld47-public-project-status-20261013"
+    },
+    {
+      "authorityAreaId": 447,
+      "authorityDeveloperName": "Dubai Creek Harbour L.L.C",
+      "authorityDeveloperNumber": 1224,
+      "authorityProjectId": "616626353",
+      "authorityProjectNumber": 3104,
+      "basis": "Unique exact unchanged native English project/phase name and project number independently joined to official project/developer IDs; Specific unchanged native project name independently advertised by first-party Emaar; registered legal developer remains separately authoritative, no blanket parent/subsidiary inference; Specific unchanged native project name independently advertised by first-party Emaar in its marketed location; native project ID/cadastral area retained without boundary-equivalence inference. Phase spelling retained. Filed dates are reported targets, not proven completion/occupancy.",
+      "catalogueName": "ARLO",
+      "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai",
+      "sourceIds": [
+        "dld-official-projects-20260706",
+        "dld-official-developers-20261001",
+        "dld-official-areas-20261002",
+        "dld-official-transactions-20261003",
+        "dld-official-buildings-20261003",
+        "primary3-b70d5373e5b4d6f7ad2b6371"
+      ],
+      "statusSourceId": "dld47-public-project-status-20261013"
+    }
+  ],
+  "sourceCaptures": [
+    {
+      "bytes": 6099,
+      "canonicalPayloadSHA256": "e1474113fdc56c1e7f5484a144b73accc9c731134ce902cc64d435a6fc3b47e0",
+      "captureMethod": "Visible public browser DOM after exact project-number search, then Full Fact Sheet and Inspection Details tabs; no login, API bypass, download, or raw-media redistribution.",
+      "captureSHA256": "47653de5aba54b9d391b24ab104449996005a8964b3eeabc64236ba5cd097f7d",
+      "id": "dld-status-five-project-visible-capture-20261013",
+      "publisher": "Dubai Land Department",
+      "rawCaptureRedistributed": false,
+      "retrievedAt": "2026-10-13T15:32:17Z",
+      "sourceId": "dld47-public-project-status-20261013",
+      "timestampQualification": "single bounded public-browser research batch; source publication time is unknown",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-project-status-landing/real-estate-project-status#/"
+    }
+  ],
+  "inputPackets": [
+    {
+      "path": "data/historical-intelligence/dld-authority-pass47-20261013.json",
+      "sha256": "5a88c276772db154e85aeae06a1773d4fb58660cac61878d8582b08529f1bb8a",
+      "bytes": 16095
+    }
+  ],
+  "reconciledExistingLifecycle": [
+    {
+      "recordId": "project:sobha-hartland-one-park-avenue",
+      "filedStart": "2019-08-15",
+      "scheduledCompletion": "2023-04-15",
+      "reconciliation": "Already-retained DLD register lifecycle fields matched; no duplicate fact emitted."
+    },
+    {
+      "recordId": "project:montiva-by-vida-dubai-creek-harbour",
+      "filedStart": "2025-10-30",
+      "scheduledCompletion": "2029-09-30",
+      "reconciliation": "Already-retained DLD register lifecycle fields matched; no duplicate fact emitted."
+    },
+    {
+      "recordId": "project:apartments-albero-green-gate-dubai-creek-harbour",
+      "filedStart": "2025-06-22",
+      "scheduledCompletion": "2029-09-30",
+      "reconciliation": "Already-retained DLD register lifecycle fields matched; no duplicate fact emitted."
+    },
+    {
+      "recordId": "project:parkside-views-by-emaar-properties",
+      "filedStart": "2023-11-21",
+      "scheduledCompletion": null,
+      "reconciliation": "Already-retained DLD register lifecycle fields matched; no duplicate fact emitted."
+    },
+    {
+      "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai",
+      "filedStart": "2024-10-31",
+      "scheduledCompletion": null,
+      "reconciliation": "Already-retained DLD register lifecycle fields matched; no duplicate fact emitted."
+    }
+  ],
+  "quarantinedFields": [
+    {
+      "field": "scheduledCompletion",
+      "raw": "01/01/1",
+      "reason": "DLD UI literal is not a valid ISO calendar date; quarantined rather than repaired.",
+      "recordId": "project:parkside-views-by-emaar-properties"
+    },
+    {
+      "field": "scheduledCompletion",
+      "raw": "01/01/1",
+      "reason": "DLD UI literal is not a valid ISO calendar date; quarantined rather than repaired.",
+      "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai"
+    }
+  ],
+  "financialObservationsAdded": 0,
+  "limitations": [
+    "No actual completion, handover or occupancy is inferred.",
+    "DLD status/progress snapshots do not create price, rent, valuation or forecast evidence.",
+    "Filed start and valid scheduled completion fields already retained from the exact DLD project register are reconciled rather than duplicated.",
+    "Invalid DLD UI completion literals remain quarantined rather than repaired.",
+    "No financial observations or conditional scenario values are created."
+  ]
+}

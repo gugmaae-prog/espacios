@@ -6,6 +6,12 @@ import path from 'node:path';
 
 const CHROME=process.env.HI_CHROME_BIN||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const BASE=process.env.AE_MAP_URL||'http://127.0.0.1:8798/map';
+// A staged Worker version is reachable through the canonical Map shell only
+// when Cloudflare's documented version-override header accompanies the shell
+// request and its service-binding subrequests. This is opt-in and is useful
+// exclusively for a zero-traffic smoke test.
+const VERSION_OVERRIDE=process.env.AE_MAP_VERSION_OVERRIDE?.trim()||'';
+const EXTRA_HEADERS=VERSION_OVERRIDE?{'Cloudflare-Workers-Version-Overrides':VERSION_OVERRIDE}:{};
 const HEADLESS=process.env.AE_CHROME_HEADLESS!=='0';
 const OUT=path.resolve(process.env.HI_BROWSER_OUTPUT||'../../outputs/historical-acceptance');
 await mkdir(OUT,{recursive:true});
@@ -66,15 +72,29 @@ async function capture(cdp,name){
   const target=path.join(OUT,`${name}.png`);await writeFile(target,Buffer.from(shot.data,'base64'));return target;
 }
 
+async function trustedClick(cdp,selector){
+  const box=await evaluate(cdp,`(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el)return null;const r=el.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,hit=document.elementFromPoint(x,y);return {x,y,width:r.width,height:r.height,inViewport:x>=0&&x<=innerWidth&&y>=0&&y<=innerHeight,hitTarget:hit===el||hit?.closest?.(${JSON.stringify(selector)})===el};})()`);
+  assert.ok(box,`Missing ${selector}.`);
+  assert.ok(box.width>0&&box.height>0&&box.inViewport,`${selector} is not a visible click target.`);
+  assert.ok(box.hitTarget,`${selector} is covered at its click target.`);
+  await cdp.call('Input.dispatchMouseEvent',{type:'mousePressed',x:box.x,y:box.y,button:'left',buttons:1,clickCount:1});
+  await cdp.call('Input.dispatchMouseEvent',{type:'mouseReleased',x:box.x,y:box.y,button:'left',buttons:0,clickCount:1});
+}
+
 async function runCase(port,{name,width,height,mobile}){
  const cdp=await newPage(port),exceptions=[],networkFailures=[];
  cdp.on('Runtime.exceptionThrown',p=>exceptions.push(p.exceptionDetails?.exception?.description||p.exceptionDetails?.text));
  cdp.on('Network.responseReceived',p=>{if(p.response.status>=400)networkFailures.push({url:p.response.url,status:p.response.status});});
  await cdp.call('Page.enable');await cdp.call('Runtime.enable');await cdp.call('Network.enable');
+ if(VERSION_OVERRIDE)await cdp.call('Network.setExtraHTTPHeaders',{headers:EXTRA_HEADERS});
  await cdp.call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile});
  if(mobile)await cdp.call('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
  await cdp.call('Page.navigate',{url:BASE});
  try{await waitFor(cdp,'window.EspaciosHistoricalUI && window.__PSR_STATE__?.communities?.length===215',{timeout:60000,label:name+' historicalUI ready'});}catch(error){console.log(JSON.stringify({name,exceptions,networkFailures}));await capture(cdp,name+'-initialization-failure');throw error;}
+ const release=await evaluate(cdp,"({minimal:window.__ESPACIOS_MINIMAL_MAP_RELEASE__,mobile:window.__ESPACIOS_MOBILE_MAP__?.release,script:document.querySelector('script[src*=\\\"app-v2.js\\\"]')?.src,style:document.querySelector('link[href*=\\\"app-v2.css\\\"]')?.href})");
+ const expectedRelease='20261013-map-heatmap-coverage-v2';
+ assert.deepEqual({minimal:release.minimal,mobile:release.mobile},{minimal:expectedRelease,mobile:expectedRelease},name+' delivered heatmap release markers');
+ assert.ok(release.script?.includes(expectedRelease)&&release.style?.includes(expectedRelease),name+' delivered immutable heatmap release asset URLs');
  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali'); true");
  await waitFor(cdp,"window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#hi-body').textContent.includes('Financial coverage')",{label:name+' PJA coverage'});
  const index=await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),options:document.querySelector('#hi-record-select').options.length,sources:[...document.querySelectorAll('#hi-body a')].every(a=>a.href.startsWith('https://')),chart:document.querySelector('.hi-chart figcaption')?.textContent})");
@@ -116,18 +136,47 @@ async function runCase(port,{name,width,height,mobile}){
   assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' background inspector refresh preserves history');
   await evaluate(cdp,"document.querySelector('#timeline-panel').classList.remove('hidden');new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
   assert.equal(await evaluate(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')"),false,name+' delayed workspace restore preserves history');
-  await evaluate(cdp,"document.querySelector('.rail-btn[data-panel=\"timeline\"]').click();true");
-  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#timeline-panel').classList.contains('hidden')",{label:name+' explicit rail navigation owns mobile sheet'});
+  await trustedClick(cdp,'.rail-btn[data-panel="timeline"]');
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#timeline-panel').classList.contains('hidden')&&document.documentElement.dataset.umExplore==='1'",{label:name+' direct Explore navigation owns mobile sheet'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after direct Explore navigation'});
+  await trustedClick(cdp,'#minimal-tools-toggle');
+  await waitFor(cdp,"document.documentElement.dataset.minimalTools==='1'",{label:name+' Map tools disclosure'});
+  await trustedClick(cdp,'#minimal-kind-controls button[data-value="places"]');
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#places-panel').classList.contains('hidden')",{label:name+' explicit Map tools navigation owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after rail navigation'});
+  const densityEvidence=await evaluate(cdp,"(()=>({hidden:document.querySelector('#um-details').hidden,text:document.querySelector('#vd-evidence-details')?.textContent,disabled:document.querySelector('#vd-evidence-details')?.disabled}))()");
+  assert.equal(densityEvidence.hidden,true,name+' density does not expose an incompatible market Details control');
+  assert.equal(densityEvidence.text,'Record history',name+' density evidence names its supported destination');
+  assert.equal(densityEvidence.disabled,false,name+' selected density record history remains actionable');
+  await evaluate(cdp,"window.EspaciosHistoricalUI.close();true");
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')",{label:name+' close density history before reopening it from the evidence action'});
+  await evaluate(cdp,"document.dispatchEvent(new CustomEvent('espacios:search-selection',{detail:{id:'project:arancia-yards-beyond-city-of-arabia-dubai',kind:'project',name:'Arancia Yards',emirate:'Dubai'}}));true");
+  if(await evaluate(cdp,"document.querySelector('#tl-dock').classList.contains('is-minimized')")){
+    await trustedClick(cdp,'#minimal-timeline-toggle');
+    await waitFor(cdp,"!document.querySelector('#tl-dock').classList.contains('is-minimized')",{label:name+' expand timeline before using visible density record history'});
+  }
+  await trustedClick(cdp,'#vd-evidence-details');
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&window.EspaciosHistoricalUI.getState().recordId==='project:arancia-yards-beyond-city-of-arabia-dubai'&&!window.EspaciosHistoricalUI.getState().loading&&document.querySelector('#ms-inspect').hidden",{label:name+' density Record history resolves the newer selected record'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&window.EspaciosHistoricalUI.getState().recordId==='community:Dubai:palm-jebel-ali'&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history returns to Palm Jebel Ali before native Details'});
+  await evaluate(cdp,"window.EspaciosUnifiedMap.setMetric('price');true");
+  await waitFor(cdp,"window.__ESPACIOS_UNIFIED_MAP__?.metric==='price'&&!window.__ESPACIOS_UNIFIED_MAP__.loading&&!document.querySelector('#um-details').hidden",{timeout:60000,label:name+' native price Details becomes available'});
+  await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
+  await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens before native Details'});
   await evaluate(cdp,"document.querySelector('#um-details').click();true");
-  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' explicit Details owns mobile sheet'});
+  await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' explicit native Details owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reclaims explicitly selected sheet'});
   await evaluate(cdp,"(()=>{const button=document.createElement('button');button.setAttribute('data-ms-details','');document.querySelector('#app').append(button);button.click();button.remove();return true})()");
   await waitFor(cdp,"document.querySelector('#hi-panel').classList.contains('hidden')&&!document.querySelector('#ms-inspect').hidden",{label:name+' legacy explicit Details owns mobile sheet'});
   await evaluate(cdp,"window.EspaciosHistoricalUI.open('community:Dubai:palm-jebel-ali');true");
   await waitFor(cdp,"!document.querySelector('#hi-panel').classList.contains('hidden')&&!window.EspaciosHistoricalUI.getState().loading",{label:name+' history reopens after legacy Details'});
+  if(await evaluate(cdp,"document.querySelector('#tl-dock').classList.contains('is-minimized')")){
+    await trustedClick(cdp,'#minimal-timeline-toggle');
+    await waitFor(cdp,"!document.querySelector('#tl-dock').classList.contains('is-minimized')",{label:name+' expand timeline before verifying event touch targets'});
+  }
  }
  try {await waitFor(cdp,`(()=>{const p=document.querySelector('#hi-panel').getBoundingClientRect(),b=document.querySelector('#hi-body').getBoundingClientRect(),d=document.querySelector('#tl-dock').getBoundingClientRect();return Math.min(b.bottom,p.bottom-12)-Math.max(b.top,p.top)>=119&&(window.EspaciosHistoricalUI.getState().layout==='expanded'||p.bottom<=d.top+1)})()`,{label:name+' visible history body and stable dock geometry'});} catch(error) {
   console.log(JSON.stringify(await evaluate(cdp,"({state:window.EspaciosHistoricalUI.getState(),panel:document.querySelector('#hi-panel').getBoundingClientRect().toJSON(),body:document.querySelector('#hi-body').getBoundingClientRect().toJSON(),dock:document.querySelector('#tl-dock').getBoundingClientRect().toJSON()})")));

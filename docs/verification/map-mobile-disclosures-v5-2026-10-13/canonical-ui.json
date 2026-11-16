@@ -1,0 +1,36 @@
+{
+  "assertions": [
+    "Both runtime markers equal 20261013-map-mobile-disclosures-v5.",
+    "Versioned app JS and CSS URLs include 20261013-map-mobile-disclosures-v5.",
+    "Desktop and 390x844 mobile history flows completed with no horizontal overflow.",
+    "The 2027-2080 conditional-scenario endpoint remains visible."
+  ],
+  "cases": [
+    {
+      "historyRecordCount": 1860,
+      "horizontalOverflow": 0,
+      "layout": "desktop",
+      "name": "desktop",
+      "scenarioEndpoint": "2080",
+      "scenarioRows": 54,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    {
+      "historyRecordCount": 1860,
+      "horizontalOverflow": 0,
+      "layout": "expanded",
+      "name": "mobile",
+      "scenarioEndpoint": "2080",
+      "scenarioRows": 54,
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    }
+  ],
+  "origin": "https://espacios.me/map",
+  "passed": true
+}

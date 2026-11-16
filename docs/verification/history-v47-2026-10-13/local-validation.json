@@ -1,0 +1,50 @@
+{
+  "status": "published_candidate_and_canonical_verified_v47",
+  "checkedOn": "2026-10-13",
+  "version": "20261013-enrichment-v47",
+  "frontendRelease": "20261013-map-heatmap-coverage-v2",
+  "immutableArchiveRootSHA256": "66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240",
+  "canonicalSnapshotSHA256": "f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f",
+  "records": 1860,
+  "projects": 1645,
+  "communities": 215,
+  "sources": 3368,
+  "events": 105,
+  "exposures": 7382,
+  "historicalRowsPreserved": 633891,
+  "seriesPreserved": 16872,
+  "newSources": 1,
+  "newLifecycleFacts": 15,
+  "newAuthorityStatusSnapshots": 5,
+  "newRegisteredSales": 0,
+  "newRegisteredRents": 0,
+  "newForecasts": 0,
+  "ledger": {
+    "present": 3351,
+    "partial": 3403,
+    "missing": 26726,
+    "unestablished": 9300,
+    "items": 42780,
+    "unresolved": 39429,
+    "unresolvedPercent": 92.1669,
+    "annualEndpoint": 2080
+  },
+  "remoteWrites": "completed_by_scoped_production_publisher",
+  "releaseClaims": {
+    "r2D1Publication": true,
+    "candidateAPI": true,
+    "workerUpload": true,
+    "trafficActivation": true,
+    "canonicalAPI": true,
+    "canonicalUI": true,
+    "supabaseControlPlane": true
+  },
+  "productionDeployment": {
+    "workerVersion": "17ddb204-54ae-4450-82f0-131dfbf95981",
+    "deployment": "032d910b-a736-4cf4-a071-3e1d2d8bd3f4",
+    "trafficPercent": 100,
+    "frontendRelease": "20261013-map-heatmap-coverage-v2",
+    "sourceSyncState": "local_commits_pending_github_push"
+  },
+  "researchComplete": false
+}

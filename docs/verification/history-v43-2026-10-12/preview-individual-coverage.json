@@ -1,0 +1,22 @@
+{
+  "origin": "https://2fd155e0-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "checkedAt": "2026-10-11T23:41:10.859Z",
+  "rows": [
+    {
+      "recordId": "project:cresswell-plaza-merath-dubai-south",
+      "individualTransactions": 24,
+      "sparseSaleMonths": [
+        "2026-04",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "earlierSubjectApplicabilityUnestablished": 204,
+      "aggregateMonths": 0,
+      "firstRegistration": "2026-04-23",
+      "lastRegistration": "2026-10-08"
+    }
+  ],
+  "passed": true
+}

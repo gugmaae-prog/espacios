@@ -1,0 +1,1015 @@
+{
+  "version": 1,
+  "passId": "rak-investor-pass35-20261008",
+  "asOf": "2026-10-08",
+  "priorVersion": "20261008-enrichment-v34",
+  "candidateVersion": "20261008-enrichment-v35",
+  "sources": [
+    {
+      "id": "rak35-investor-q2-2024",
+      "url": "https://www.rakproperties.ae/wp-content/uploads/2024/08/RAKP-Investor-Relations-2024_new.pdf",
+      "finalUrl": "https://www.rakproperties.ae/wp-content/uploads/2024/08/RAKP-Investor-Relations-2024_new.pdf",
+      "retrievedAt": "2026-10-08T21:15:43.695Z",
+      "sha256": "e313cbb6063a73ec795e4d91a82033215089aa36c96082099932da9f03034191",
+      "bytes": 5765681,
+      "httpStatus": 200,
+      "title": "RAK Properties Investor Relations Q2 2024, pages 10 and 26",
+      "publisher": "RAK Properties",
+      "publishedAt": null,
+      "primaryEvidence": true,
+      "classification": "primary_developer_investor_report",
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "publicationDateStatus": "unknown; Q2 2024 is reporting period, not a verified publication day",
+      "reportingPeriod": "2024-Q2",
+      "availabilityBasis": "First verified capture; document period and upload-directory date do not establish historical online availability.",
+      "reviewedPages": [
+        10,
+        26
+      ],
+      "visualTableChecked": true,
+      "pageCount": 49,
+      "licence": "rights_pending: minimal attributed facts only; PDF, page images and article bodies are not redistributed",
+      "rawBodyRedistributed": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "rak35-bayviews-reported-sales",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Bayviews Residences Hayat Island record and prior primary identity source match the named RAK Properties project in Mina Al Arab.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "financial",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 344,
+        "unit": "developer-reported units sold",
+        "period": "2024-06-30",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "observationDateBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Bayviews",
+          "asOf": "2024-06-30",
+          "reportingPeriod": "2024-Q2",
+          "sourcePage": 26,
+          "unitsLaunched": 344,
+          "unitsSold": 344,
+          "netSalesAEDMillion": 421,
+          "revenueBacklogAEDMillion": 323,
+          "reportedSoldPercent": 100,
+          "reportedConstructionComplete": 23,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak35-bayviews-progress",
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-bayviews-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Bayviews Residences Hayat Island record and prior primary identity source match the named RAK Properties project in Mina Al Arab.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-06-30",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer reports 23% construction completion as of 30 June 2024.",
+      "note": "Developer report, not an inspection or completion certificate. Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.",
+      "dateBasis": "Page 26: as of 30 June 2024",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 23
+    },
+    {
+      "id": "rak35-marbella2-reported-sales",
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-marbella2-contract"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Marbella Extension is explicitly the 89-home Phase 2, not the original 205-home Marbella phase.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "financial",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 84,
+        "unit": "developer-reported units sold",
+        "period": "2024-06-30",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "observationDateBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Marbella Extension",
+          "asOf": "2024-06-30",
+          "reportingPeriod": "2024-Q2",
+          "sourcePage": 26,
+          "unitsLaunched": 89,
+          "unitsSold": 84,
+          "netSalesAEDMillion": 220,
+          "revenueBacklogAEDMillion": 18,
+          "reportedSoldPercent": 94,
+          "reportedConstructionComplete": 92,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak35-marbella2-progress",
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-marbella2-contract"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Marbella Extension is explicitly the 89-home Phase 2, not the original 205-home Marbella phase.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-06-30",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer reports 92% construction completion as of 30 June 2024.",
+      "note": "Developer report, not an inspection or completion certificate. Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.",
+      "dateBasis": "Page 26: as of 30 June 2024",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 92
+    },
+    {
+      "id": "rak35-cape-reported-sales",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Cape Hayat record and prior primary identity source match the named RAK Properties project in Mina Al Arab.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "financial",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 586,
+        "unit": "developer-reported units sold",
+        "period": "2024-06-30",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "observationDateBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Cape Hayat",
+          "asOf": "2024-06-30",
+          "reportingPeriod": "2024-Q2",
+          "sourcePage": 26,
+          "unitsLaunched": 678,
+          "unitsSold": 586,
+          "netSalesAEDMillion": 799,
+          "revenueBacklogAEDMillion": 680,
+          "reportedSoldPercent": 86,
+          "reportedConstructionComplete": 15,
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak35-cape-progress",
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-cape-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Cape Hayat record and prior primary identity source match the named RAK Properties project in Mina Al Arab.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-06-30",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer reports 15% construction completion as of 30 June 2024.",
+      "note": "Developer report, not an inspection or completion certificate. Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.",
+      "dateBasis": "Page 26: as of 30 June 2024",
+      "preserveAdditionalLifecycleFields": true,
+      "progressPercent": 15
+    },
+    {
+      "id": "rak35-quattro-reported-sales",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Quattro Del Mar record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Units launched (631) are not the whole-project inventory or a new phase identity.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "financial",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 366,
+        "unit": "developer-reported units sold",
+        "period": "2024-06-30",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "observationDateBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Quattro Del Mar",
+          "asOf": "2024-06-30",
+          "reportingPeriod": "2024-Q2",
+          "sourcePage": 26,
+          "unitsLaunched": 631,
+          "unitsSold": 366,
+          "netSalesAEDMillion": 484,
+          "revenueBacklogAEDMillion": 484,
+          "reportedSoldPercent": 58,
+          "reportedConstructionComplete": "NIL",
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak35-quattro-progress",
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-quattro-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Quattro Del Mar record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Units launched (631) are not the whole-project inventory or a new phase identity.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-06-30",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer table reports construction completion as NIL at 30 June 2024.",
+      "note": "Developer report, not an inspection or completion certificate. NIL is retained literally; no numeric value or construction commencement is inferred. Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.",
+      "dateBasis": "Page 26: as of 30 June 2024",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-edge-reported-sales",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing EDGE record and prior primary identity source match the named RAK Properties project in Mina Al Arab.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "financial",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 70,
+        "unit": "developer-reported units sold",
+        "period": "2024-06-30",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "observationDateBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "The Edge",
+          "asOf": "2024-06-30",
+          "reportingPeriod": "2024-Q2",
+          "sourcePage": 26,
+          "unitsLaunched": 237,
+          "unitsSold": 70,
+          "netSalesAEDMillion": 77,
+          "revenueBacklogAEDMillion": 77,
+          "reportedSoldPercent": 30,
+          "reportedConstructionComplete": "NIL",
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+          "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak35-edge-progress",
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak33-edge-launch"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing EDGE record and prior primary identity source match the named RAK Properties project in Mina Al Arab.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-06-30",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer table reports construction completion as NIL at 30 June 2024.",
+      "note": "Developer report, not an inspection or completion certificate. NIL is retained literally; no numeric value or construction commencement is inferred. Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.",
+      "dateBasis": "Page 26: as of 30 June 2024",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-porto-reported-sales",
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-porto-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Porto Playa record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Porto Playa retains the source footnote: 50% share as per JV equity accounting. No value or unit count is doubled or relabelled whole-project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "financial",
+      "evidenceClass": "primary_developer_reported_aggregate_sales",
+      "observation": {
+        "metric": "volume",
+        "value": 138,
+        "unit": "developer-reported units sold (50% JV reporting basis)",
+        "period": "2024-06-30",
+        "frequency": "daily",
+        "observationKind": "developer_reported_aggregate_sales",
+        "observationDateBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+        "currentSnapshotEligible": false,
+        "includeInCurrentSnapshot": false,
+        "note": "Developer-reported cumulative project sales; not registered transactions, unit prices, valuations, cash collections or current observations. Revenue backlog remains the developer accounting measure. No average price is derived.",
+        "developerSalesSnapshot": {
+          "sourceProjectLabel": "Porto Playa",
+          "asOf": "2024-06-30",
+          "reportingPeriod": "2024-Q2",
+          "sourcePage": 26,
+          "unitsLaunched": 141,
+          "unitsSold": 138,
+          "netSalesAEDMillion": 357,
+          "revenueBacklogAEDMillion": 357,
+          "reportedSoldPercent": 98,
+          "reportedConstructionComplete": "NIL",
+          "currency": "AED",
+          "nativeMonetaryScale": 1000000,
+          "populationBasis": "50% share as per JV equity accounting; native reported values, not whole-project totals",
+          "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+          "pricePerUnitDerived": false,
+          "registeredTransactionsEstablished": false
+        }
+      }
+    },
+    {
+      "id": "rak35-porto-progress",
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-porto-groundbreaking"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact existing Porto Playa record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Porto Playa retains the source footnote: 50% share as per JV equity accounting. No value or unit count is doubled or relabelled whole-project.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "construction_progress",
+      "date": {
+        "start": "2024-06-30",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer table reports construction completion as NIL at 30 June 2024.",
+      "note": "Developer report, not an inspection or completion certificate. NIL is retained literally; no numeric value or construction commencement is inferred. The row retains a 50% JV reporting basis; no doubled whole-project percentage. Same-publisher monthly profiles and later corporate reports are separate vintages, not independent corroboration.",
+      "dateBasis": "Page 26: as of 30 June 2024",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-development-preparation",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "development_preparation",
+      "date": {
+        "start": "2006",
+        "precision": "year"
+      },
+      "verification": "verified",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports Mina Al Arab was prepared for development in 2006.",
+      "note": "Preparation is not original launch, completed construction, occupancy, the first transaction or proof that earlier land prices did not exist.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-granada-delivery",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2010",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports delivery of Granada Villas within Mina Al Arab in 2010.",
+      "note": "Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-malibu-delivery",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2011",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports delivery of Malibu villa community within Mina Al Arab in 2011.",
+      "note": "Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-apartments-delivery",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2012",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports delivery of 808 apartments within Mina Al Arab in 2012.",
+      "note": "Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-bermuda-delivery",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports delivery of Bermuda Villas community within Mina Al Arab in 2017.",
+      "note": "Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-flamingo-delivery",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports delivery of Flamingo Villas community within Mina Al Arab in 2017.",
+      "note": "Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-mina-gateway-delivery",
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out.",
+      "scope": "subject_phase",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "phase_handover",
+      "date": {
+        "start": "2020",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports delivery of Gateway residences within Mina Al Arab in 2020.",
+      "note": "Named community component only; not completion or occupancy of the whole master development. No financial values or precise delivery days inferred.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    },
+    {
+      "id": "rak35-flamingo-delivery",
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "status": "accepted",
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identitySourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact Flamingo Villas Mina record identifies RAK Properties and Mina in Ras Al Khaimah. The primary timeline explicitly names Flamingo Villas community delivery; the separate Dubai Flamingo Residence record is excluded.",
+      "scope": "subject",
+      "primaryEvidence": true,
+      "publishedAt": null,
+      "firstAvailableAt": "2026-10-08T21:15:43.695Z",
+      "kind": "lifecycle",
+      "milestone": "delivery",
+      "date": {
+        "start": "2017",
+        "precision": "year"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "evidenceClass": "primary_developer_retrospective_report",
+      "label": "Developer retrospectively reports Flamingo Villas community delivered in 2017.",
+      "note": "Reported delivery of the named project; no legal completion certificate, actual occupancy date, rental commencement or individual handover date is established.",
+      "dateBasis": "Year-labelled retrospective timeline on page 10",
+      "preserveAdditionalLifecycleFields": true
+    }
+  ],
+  "seriesLinks": [],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "Bayviews Residences Hayat Island",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-bayviews-launch"
+      ],
+      "basis": "Exact existing Bayviews Residences Hayat Island record and prior primary identity source match the named RAK Properties project in Mina Al Arab."
+    },
+    {
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "catalogueName": "RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-marbella2-contract"
+      ],
+      "basis": "Exact existing RAK Properties Marbella Villas 2 on Hayat Island, Ras Al Khaimah record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Marbella Extension is explicitly the 89-home Phase 2, not the original 205-home Marbella phase."
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "catalogueName": "Cape Hayat",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-cape-launch"
+      ],
+      "basis": "Exact existing Cape Hayat record and prior primary identity source match the named RAK Properties project in Mina Al Arab."
+    },
+    {
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "catalogueName": "Quattro Del Mar",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-quattro-launch"
+      ],
+      "basis": "Exact existing Quattro Del Mar record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Units launched (631) are not the whole-project inventory or a new phase identity."
+    },
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "catalogueName": "EDGE",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024",
+        "rak33-edge-launch"
+      ],
+      "basis": "Exact existing EDGE record and prior primary identity source match the named RAK Properties project in Mina Al Arab."
+    },
+    {
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "catalogueName": "Porto Playa",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024",
+        "rak32-porto-groundbreaking"
+      ],
+      "basis": "Exact existing Porto Playa record and prior primary identity source match the named RAK Properties project in Mina Al Arab. Porto Playa retains the source footnote: 50% share as per JV equity accounting. No value or unit count is doubled or relabelled whole-project."
+    },
+    {
+      "recordId": "community:Ras Al Khaimah:mina-al-arab",
+      "catalogueName": "Mina Al Arab",
+      "type": "community",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "basis": "Exact Mina Al Arab community record in Ras Al Khaimah matches the explicitly named developer master-development timeline. Other catalogue aliases are preserved without automatic fan-out."
+    },
+    {
+      "recordId": "project:rak-properties-flamingo-villas-in-mina-for-sale-ras-al-khaimah-uae",
+      "catalogueName": "Flamingo Villas Mina",
+      "type": "project",
+      "emirate": "Ras Al Khaimah",
+      "identityVerified": true,
+      "sourceIds": [
+        "rak35-investor-q2-2024"
+      ],
+      "basis": "Exact Flamingo Villas Mina record identifies RAK Properties and Mina in Ras Al Khaimah. The primary timeline explicitly names Flamingo Villas community delivery; the separate Dubai Flamingo Residence record is excluded."
+    }
+  ],
+  "nativeSalesSnapshots": [
+    {
+      "recordId": "project:bayviews-by-rak-properties-on-hayat-island-mina-ras-al-khaimah",
+      "sourceProjectLabel": "Bayviews",
+      "asOf": "2024-06-30",
+      "reportingPeriod": "2024-Q2",
+      "sourcePage": 26,
+      "unitsLaunched": 344,
+      "unitsSold": 344,
+      "netSalesAEDMillion": 421,
+      "revenueBacklogAEDMillion": 323,
+      "reportedSoldPercent": 100,
+      "reportedConstructionComplete": 23,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:rak-properties-marbella-villas-2-on-hayat-island-mina-ras-al-khaimah",
+      "sourceProjectLabel": "Marbella Extension",
+      "asOf": "2024-06-30",
+      "reportingPeriod": "2024-Q2",
+      "sourcePage": 26,
+      "unitsLaunched": 89,
+      "unitsSold": 84,
+      "netSalesAEDMillion": 220,
+      "revenueBacklogAEDMillion": 18,
+      "reportedSoldPercent": 94,
+      "reportedConstructionComplete": 92,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:cape-hayat-by-rak-properties-on-hayat-island-mina-rak",
+      "sourceProjectLabel": "Cape Hayat",
+      "asOf": "2024-06-30",
+      "reportingPeriod": "2024-Q2",
+      "sourcePage": 26,
+      "unitsLaunched": 678,
+      "unitsSold": 586,
+      "netSalesAEDMillion": 799,
+      "revenueBacklogAEDMillion": 680,
+      "reportedSoldPercent": 86,
+      "reportedConstructionComplete": 15,
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:quattro-del-mar-by-rak-properties-on-hayat-island",
+      "sourceProjectLabel": "Quattro Del Mar",
+      "asOf": "2024-06-30",
+      "reportingPeriod": "2024-Q2",
+      "sourcePage": 26,
+      "unitsLaunched": 631,
+      "unitsSold": 366,
+      "netSalesAEDMillion": 484,
+      "revenueBacklogAEDMillion": 484,
+      "reportedSoldPercent": 58,
+      "reportedConstructionComplete": "NIL",
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:edge-rak-properties-raha-island-mina-ras-al-khaimah",
+      "sourceProjectLabel": "The Edge",
+      "asOf": "2024-06-30",
+      "reportingPeriod": "2024-Q2",
+      "sourcePage": 26,
+      "unitsLaunched": 237,
+      "unitsSold": 70,
+      "netSalesAEDMillion": 77,
+      "revenueBacklogAEDMillion": 77,
+      "reportedSoldPercent": 30,
+      "reportedConstructionComplete": "NIL",
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "Developer table project population; launched and sold cohorts, not a registered-transaction extract",
+      "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    },
+    {
+      "recordId": "project:porto-playa-by-ellington-properties-and-rak-properties-on-hayat-island",
+      "sourceProjectLabel": "Porto Playa",
+      "asOf": "2024-06-30",
+      "reportingPeriod": "2024-Q2",
+      "sourcePage": 26,
+      "unitsLaunched": 141,
+      "unitsSold": 138,
+      "netSalesAEDMillion": 357,
+      "revenueBacklogAEDMillion": 357,
+      "reportedSoldPercent": 98,
+      "reportedConstructionComplete": "NIL",
+      "currency": "AED",
+      "nativeMonetaryScale": 1000000,
+      "populationBasis": "50% share as per JV equity accounting; native reported values, not whole-project totals",
+      "periodBasis": "Cumulative project snapshot as of the stated date; not sales occurring only in Q2 or June",
+      "pricePerUnitDerived": false,
+      "registeredTransactionsEstablished": false
+    }
+  ],
+  "conflicts": [
+    {
+      "field": "table_launch_year",
+      "resolution": "Report launch-year column is not ingested as first-ever launch. Gateway II table says 2023 while prior dated releases describe 2022 launch; all Gateway rows remain unassigned."
+    },
+    {
+      "field": "units_launched_and_phases",
+      "resolution": "Launched counts are retained as table populations, not canonical total inventory. Generic Granada and Bay/Gateway identities remain unresolved."
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "recordId": "project:gateway-residences-for-sale-mina-al-arab-ras-al-khaimah-uae-by-rak-properties",
+      "reason": "Brochure and developer timeline distinguish phases but catalogue lacks a discriminating identity; Gateway II financials and original Gateway delivery are not attached to the project."
+    },
+    {
+      "recordId": "project:south-bay-residences-by-rak-properties-on-hayat-island-mina-al-arab-ras-al-khaimah",
+      "reason": "South-labelled brochure filename has generic Bay content; no verified South-to-Phase-II mapping. Both Bay financial rows remain unassigned."
+    },
+    {
+      "recordId": "project:granada-villas-mina-by-rak-properties-ras-al-khaimah-uae",
+      "reason": "Generic name remains ambiguous between original villas and 80-home Granada Extension. No 2010 delivery or extension financials assigned to this project."
+    }
+  ],
+  "collection": {
+    "projectRecords": 7,
+    "communityRecords": 1,
+    "acceptedLifecycleFacts": 14,
+    "acceptedDeveloperSalesSnapshots": 6,
+    "registeredSaleOrRentObservationsAdded": 0,
+    "unitPricesDerived": 0,
+    "newSources": 1,
+    "approved2080Forecasts": 0,
+    "rawBodiesRedistributed": false
+  },
+  "methodology": "Visual row/column review of pages 10 and 26. Cumulative developer sales and backlog are separate from registered transactions and property prices. No per-unit divisions, phase fan-out, inferred publication date, future-model availability or NIL-to-zero conversion."
+}

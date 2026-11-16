@@ -1,9 +1,9 @@
 /* Minimalist map composition from approved October UI mockup. Visual/control layer only. */
 (() => {
-  const RELEASE='20261008-map-palette-v29';
+  const RELEASE='20261013-map-heatmap-coverage-v2';
   window.__ESPACIOS_MINIMAL_MAP_RELEASE__=RELEASE;
   const Q=s=>document.querySelector(s), root=document.documentElement;
-  const UI={installed:false,mode:'map',metric:'price',satelliteReady:false};
+  const UI={installed:false,mode:'heatmap',metric:'projects',satelliteReady:false};
   const selectionLight='#5f6d85',selectionDark='#aab7bd',legacySelection='#69d8ff';
   const hotspotColors=['#4f817c','#718991','#9ba8ac'];
   const selectionColor=()=>root.dataset.espaciosTheme==='dark'?selectionDark:selectionLight;
@@ -45,7 +45,7 @@
   const active=(group,value)=>group.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.value===value)));
   const turn3d=on=>{const b=Q('#toggle-3d');if(!b)return;if(Boolean(state.is3d)!==Boolean(on))b.click();};
   const pointView=()=>{try{if(typeof aeUaeSetView==='function'&&aeUaeCoverageActive())aeUaeSetView('points');}catch{}};
-  const analysisOff=()=>{try{if(typeof psrSetAnalysis==='function')psrSetAnalysis('off');}catch{}};
+  const analyticalDisplay=show=>window.EspaciosUnifiedMap?.setMapDisplay(show);
 
   function satelliteBefore(){
     const layers=map.getStyle()?.layers||[];
@@ -76,19 +76,16 @@
     if(!['map','satellite','3d','heatmap'].includes(mode))return;
     UI.mode=mode;
     if(mode==='satellite'){
-      analysisOff();pointView();turn3d(false);satelliteVisible(true);
+      analyticalDisplay(false);pointView();turn3d(false);satelliteVisible(true);
     }else{
       satelliteVisible(false);
       if(mode==='3d'){
-        analysisOff();pointView();turn3d(true);
+        analyticalDisplay(false);pointView();turn3d(true);
       }else if(mode==='heatmap'){
         turn3d(false);
-        const metric=window.EspaciosUnifiedMap?.timeline?.()?.metric||'projects';
-        const analysis=metric==='price'?'price-psf':metric==='roi'?'roi-apartment':'projects';
-        try{psrSetAnalysis(analysis);}catch{}
-        try{if(aeUaeCoverageActive())aeUaeSetView('heat');}catch{}
+        analyticalDisplay(true);
       }else{
-        analysisOff();pointView();turn3d(false);
+        analyticalDisplay(false);pointView();turn3d(false);
       }
     }
     syncModes();
@@ -98,12 +95,36 @@
     const group=Q('#minimal-metrics');if(!group)return;
     active(group,UI.metric);
   }
+  function syncMapContext(context=window.EspaciosUnifiedMap?.context?.()){
+    if(!context)return;
+    UI.metric=context.metric==='price'&&context.evidenceClass==='conditional_scenario'?'forecast':context.metric;
+    syncMetricButtons();
+    if(context.mapDisplay&&UI.mode!=='heatmap'){UI.mode='heatmap';syncModes();}
+    const scope=Q('#minimal-map-scope-text');
+    const type={apartment:'Apartments',villa:'Villas',townhouse:'Townhouses',both:'Apartments + villas'}[context.segment]||context.segment;
+    const density=context.metric==='projects',all=density&&context.coverage==='catalogue';
+    const label=density?'UAE · Project density · '+(all?'All dates':context.coverage==='annual'?'Handovers in '+context.period:'Handovers through '+context.period)
+      :[context.emirate,context.evidenceClass==='conditional_scenario'?'Conditional scenario':context.metric==='roi'?'Gross yield':context.basis==='sales'?'Registered sales':'Asking prices',type,context.basis==='sales'?context.registration:''].filter(Boolean).join(' · ');
+    if(scope){scope.textContent=label;scope.title=label+(density?' · Counts of mapped projects, not prices or investment returns.':' · Unshaded areas have no matching evidence for this selection.');}
+    const reset=Q('#minimal-all-projects');if(reset)reset.hidden=all;
+    window.EspaciosMobileUI?.refreshGeometry?.();
+  }
+  function showAllProjects(){
+    window.EspaciosUnifiedMap?.setMetric('projects');
+    const coverage=Q('#tg-coverage-select');
+    if(coverage){coverage.value='catalogue';coverage.dispatchEvent(new Event('change',{bubbles:true}));}
+    setMode('heatmap');syncMapContext();
+  }
   function setMetric(metric){
     UI.metric=metric;
-    if(metric==='price'||metric==='roi'){
+    if(metric==='projects'){
+      showAllProjects();
+    }else if(metric==='price'||metric==='roi'){
       window.EspaciosUnifiedMap?.setMetric(metric);
+      setMode('heatmap');
     }else if(metric==='forecast'){
       window.EspaciosUnifiedMap?.setMetric('price');
+      setMode('heatmap');
       setTimeout(()=>{
         const timeline=window.EspaciosUnifiedMap?.timeline?.();
         const next=timeline?.periods?.find(id=>/Estimate/i.test(timeline.labels?.[id]||''));
@@ -134,6 +155,62 @@
   function openPanel(name){
     const button=Q('.rail-btn[data-panel="'+name+'"]');
     if(button)button.click();
+  }
+
+  // Measure the finished controls, including later-added research buttons.
+  // Panels must clear wrapped categories as well as the search and mode row.
+  function installPanelGeometry(){
+    let frame=0;
+    const measure=()=>{
+      frame=0;
+      const controls=[Q('.topbar'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes')];
+      const bottom=Math.max(0,...controls.filter(Boolean).map(el=>el.getBoundingClientRect().bottom));
+      const value=Math.ceil(bottom+12)+'px';
+      if(root.style.getPropertyValue('--minimal-panel-top')!==value)root.style.setProperty('--minimal-panel-top',value);
+    };
+    const schedule=()=>{if(!frame)frame=requestAnimationFrame(measure);};
+    const observer=new ResizeObserver(schedule);
+    for(const el of [Q('.topbar'),Q('.search-wrap'),Q('#minimal-kind-controls'),Q('#minimal-map-modes')].filter(Boolean))observer.observe(el);
+    addEventListener('resize',schedule);
+    schedule();
+  }
+
+  function installMobileDisclosures(){
+    const phone=matchMedia('(max-width:760px), (max-width:1024px) and (max-height:560px) and (pointer:coarse)');
+    const tools=Q('#minimal-tools-toggle'),dock=Q('#tl-dock'),track=Q('#dr-track');
+    tools.setAttribute('aria-controls','minimal-kind-controls minimal-map-modes');
+    const setTools=open=>{
+      const returnFocus=!open&&phone.matches&&[Q('#minimal-kind-controls'),Q('#minimal-map-modes')].some(group=>group?.contains(document.activeElement));
+      root.dataset.minimalTools=open?'1':'0';
+      // History & events is appended at the far end of this horizontal menu.
+      // Reveal the menu before resetting it: a scroll assignment while its
+      // display is none can be discarded by the browser.
+      if(open&&phone.matches){const categories=Q('#minimal-kind-controls');if(categories)categories.scrollLeft=0;}
+      tools.setAttribute('aria-expanded',String(open));
+      tools.setAttribute('aria-label',open?'Minimize map tools':'Map tools');
+      if(returnFocus)tools.focus({preventScroll:true});
+      window.EspaciosMobileUI?.refreshGeometry?.();
+    };
+    tools.onclick=()=>setTools(root.dataset.minimalTools!=='1');
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&phone.matches&&root.dataset.minimalTools==='1'){
+        setTools(false);tools.focus({preventScroll:true});
+      }
+    });
+    for(const group of [Q('#minimal-kind-controls'),Q('#minimal-map-modes')]){
+      group.addEventListener('click',event=>{if(phone.matches&&event.target.closest('button'))setTools(false);});
+    }
+    const toggle=document.createElement('button');
+    toggle.id='minimal-timeline-toggle';toggle.type='button';toggle.setAttribute('aria-controls','tl-dock');
+    toggle.onclick=()=>Q('#tl-minimize')?.click();track.append(toggle);
+    const sync=()=>{
+      const compact=dock.classList.contains('is-minimized');
+      toggle.textContent=compact?'Expand':'Minimize';
+      toggle.setAttribute('aria-expanded',String(!compact));
+      toggle.setAttribute('aria-label',compact?'Expand timeline controls':'Minimize timeline controls');
+    };
+    new MutationObserver(sync).observe(dock,{attributes:true,attributeFilter:['class']});
+    sync();setTools(false);
   }
 
   function install(){
@@ -179,15 +256,20 @@
 
     const metric=document.createElement('div');metric.id='minimal-metrics';metric.setAttribute('role','group');metric.setAttribute('aria-label','Data point');
     const items=[
+      ['projects','Density','neutral'],
       ['price','Price / sqft','accent'],
       ['roi','ROI','neutral'],
       ['volume','Transaction Volume','blue'],
       ['forecast','Forecast','green']
     ];
     for(const [value,label,tone] of items){
-      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value==='price'));b.onclick=()=>setMetric(value);metric.append(b);
+      const b=document.createElement('button');b.type='button';b.dataset.value=value;b.dataset.tone=tone;b.innerHTML='<i></i><span>'+label+'</span>';b.setAttribute('aria-pressed',String(value===UI.metric));b.onclick=()=>setMetric(value);metric.append(b);
     }
     Q('#tl-dock').prepend(metric);
+    const scope=document.createElement('div');scope.id='minimal-map-scope';
+    const scopeText=document.createElement('span');scopeText.id='minimal-map-scope-text';scope.append(scopeText);
+    const allProjects=document.createElement('button');allProjects.id='minimal-all-projects';allProjects.type='button';allProjects.textContent='All projects';allProjects.setAttribute('aria-label','Show all mapped projects as density');allProjects.onclick=showAllProjects;scope.append(allProjects);metric.after(scope);
+    document.addEventListener('espacios:map-context',event=>syncMapContext(event.detail));
 
     const property=Q('#um-property'),settings=Q('#su-settings');
     if(property&&settings&&!Q('#minimal-property-settings')){
@@ -206,7 +288,9 @@
     const readout=Q('#um-readout');if(readout)readout.hidden=true;
     const status=Q('#mm-status');if(status)status.hidden=true;
 
-    setMode('map');setMetric('price');
+    installMobileDisclosures();
+    installPanelGeometry();
+    showAllProjects();
     return true;
   }
 

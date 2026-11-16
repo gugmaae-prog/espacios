@@ -1,0 +1,72 @@
+{
+  "status": "passed_interim_v46_production_release",
+  "origin": "https://espacios.me",
+  "checkedAt": "2026-10-13T11:26:06.569Z",
+  "readOnly": true,
+  "version": "20261013-enrichment-v46",
+  "rootSHA256": "9912e0a2c673160168f5f223ec67c482e230db5bca51a532d4fe0d2e64eea672",
+  "counts": {
+    "records": 1860,
+    "projects": 1645,
+    "communities": 215,
+    "sources": 3367,
+    "events": 105,
+    "exposures": 7382,
+    "historicalRows": 633891,
+    "series": 16872
+  },
+  "ledger": {
+    "items": 42780,
+    "statuses": {
+      "missing": 26725,
+      "unestablished": 9300,
+      "partial": 3413,
+      "present": 3342
+    },
+    "manifestRootVerified": true
+  },
+  "globalEvents": {
+    "events": 105,
+    "sources": 3367,
+    "exposures": 7382,
+    "manifestRootVerified": true
+  },
+  "selectedRecordHistory": {
+    "records": 9,
+    "facts": 39,
+    "authoritySources": 2,
+    "financialObservationsAdded": 0,
+    "actualCompletionOrOccupancyInferred": 0
+  },
+  "eventStudy": {
+    "recordId": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+    "eventId": "gfc-2008",
+    "status": "insufficient_evidence",
+    "causalAttribution": false,
+    "note": "The verifier requires explicit insufficiency where 12-month windows are unavailable; it does not fabricate an event effect."
+  },
+  "system": {
+    "dataRoomAccess": "restricted",
+    "dataRoomGate": "DATA_ROOM_PUBLIC",
+    "dataRoomRouteStatus": 404,
+    "secretsExposed": false
+  },
+  "browserAcceptance": {
+    "status": "passed",
+    "route": "https://espacios.me/map",
+    "layouts": [
+      "desktop",
+      "mobile"
+    ],
+    "verified": [
+      "history and event panels",
+      "source links and evidence labels",
+      "unavailable evidence and conditional-scenario labels",
+      "annual scenario endpoint at 2080",
+      "responsive geometry without horizontal overflow",
+      "no browser exceptions"
+    ],
+    "note": "This browser result applies to the interim V46 deployment; a later mobile-interface release requires a new canonical UI receipt."
+  },
+  "passed": true
+}

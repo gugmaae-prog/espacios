@@ -1,0 +1,73 @@
+{
+  "version": "20261008-enrichment-v36",
+  "asOf": "2026-10-08",
+  "basis": "Checklist presence means some supporting evidence, not every historical period. Context and quoted ranges are not registered transactions.",
+  "counts": {
+    "project": {
+      "records": 1645,
+      "items": {
+        "registered_sale_history": {
+          "missing": 1320,
+          "present": 323,
+          "partial": 2
+        },
+        "signed_rent_history": {
+          "missing": 1555,
+          "present": 89,
+          "partial": 1
+        },
+        "advertised_prices": {
+          "missing": 392,
+          "present": 13,
+          "partial": 1240
+        },
+        "actual_completion": {
+          "missing": 1633,
+          "partial": 9,
+          "present": 3
+        },
+        "occupancy": {
+          "missing": 1644,
+          "present": 1
+        },
+        "dated_current_valuation": {
+          "missing": 1645
+        },
+        "annual_scenario_inputs": {
+          "missing": 1645
+        }
+      }
+    },
+    "community": {
+      "records": 215,
+      "items": {
+        "registered_sale_history": {
+          "missing": 165,
+          "present": 48,
+          "partial": 2
+        },
+        "signed_rent_history": {
+          "missing": 170,
+          "present": 43,
+          "partial": 2
+        },
+        "advertised_prices": {
+          "missing": 206,
+          "partial": 9
+        },
+        "actual_completion": {
+          "missing": 215
+        },
+        "occupancy": {
+          "missing": 215
+        },
+        "dated_current_valuation": {
+          "missing": 215
+        },
+        "annual_scenario_inputs": {
+          "missing": 215
+        }
+      }
+    }
+  }
+}

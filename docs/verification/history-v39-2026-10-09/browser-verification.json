@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-09T01:50:41.933Z",
+  "url": "https://espacios.me/map",
+  "frontend": "20261009-map-evidence-v43",
+  "history": "20261009-enrichment-v39",
+  "desktop": {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "lifecycleMilestones": 9,
+    "newReports": 7,
+    "yearPrecisionVerified": true,
+    "sourceLinksVerified": true,
+    "parentScopeAndDisputedStatusVerified": true
+  },
+  "mobile": {
+    "disputed": true,
+    "panelWidth": 366,
+    "scrollWidth": 390,
+    "width": 390,
+    "yearPrecision": true
+  },
+  "palette": {
+    "background": "rgb(248, 250, 252)",
+    "border": "color(srgb 0.771608 0.81302 0.859608)",
+    "color": "rgb(32, 48, 68)"
+  },
+  "viewportReset": true
+}

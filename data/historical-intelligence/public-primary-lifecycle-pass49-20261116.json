@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "passId": "public-primary-lifecycle-pass49-20261116",
+  "priorVersion": "20261014-enrichment-v48",
+  "priorSHA256": "bbb7c8037a11221e94843d6be0882d073a9fea7550aa0748435c9a806e89ecc7",
+  "candidateVersion": "20261116-enrichment-v49",
+  "asOf": "2026-11-16",
+  "preserveExistingFinancialCoverage": true,
+  "sources": [
+    {
+      "id": "nakheel49-beach-collection-release-20241111",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2024/11/11/nakheel-reveals-latest-release-of-exclusive-waterfront-villas-on-palm-jebel-ali",
+      "publisher": "Nakheel PJSC",
+      "title": "Nakheel reveals latest release of exclusive waterfront villas on Palm Jebel Ali",
+      "classification": "primary_developer_lifecycle_source",
+      "publishedAt": "2024-11-11",
+      "publicationDatePrecision": "day",
+      "publicationDateStatus": "known",
+      "publicationDateBasis": "Official page dateline: Dubai, UAE; 11 November 2024.",
+      "firstAvailableAt": "2026-11-16T08:46:33.699110Z",
+      "availabilityBasis": "First locally retained lawful capture. The historical page date remains separate from source availability in this collection.",
+      "retrievedAt": "2026-11-16T08:46:33.699110Z",
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "bytes": 105053,
+      "sha256": "d32efd35f94b81938ab27a93d5b9656015a85fd5fa7191236a46b5b5d7636f9f",
+      "primaryEvidence": true,
+      "licence": "Minimal attributed factual extraction from a public primary page; raw HTML, imagery and article text are not redistributed.",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "deyaar49-aya-primary-page",
+      "url": "https://www.deyaar.ae/en/properties/aya-beachfront-residences/",
+      "publisher": "Deyaar Development",
+      "title": "AYA - DEYAAR",
+      "classification": "primary_developer_project_identity_source",
+      "publishedAt": null,
+      "publicationDatePrecision": "unknown",
+      "publicationDateStatus": "research_pending",
+      "publicationDateBasis": "No explicit original publication date was retained; the retrieval date is not a launch or publication date.",
+      "firstAvailableAt": "2026-11-16T08:52:24.454389Z",
+      "availabilityBasis": "First locally retained lawful capture of the public page.",
+      "retrievedAt": "2026-11-16T08:52:24.454389Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": null,
+      "sha256": "4dce11ab02f3ce660d31c3b2e9f98f9390f14e86e353a892c0b0cfc537592e5f",
+      "primaryEvidence": true,
+      "licence": "Minimal attributed factual extraction from a public primary page; raw HTML, imagery and article text are not redistributed.",
+      "rawBodyRedistributed": false
+    },
+    {
+      "id": "deyaar49-fy2025-investor-presentation",
+      "url": "https://www.deyaar.ae/wp-content/uploads/2026/02/Deyaar-IR-Presentation-FY-2025-.pdf",
+      "publisher": "Deyaar Development",
+      "title": "Deyaar Investor Presentation FY 2025",
+      "classification": "primary_developer_investor_presentation",
+      "publishedAt": null,
+      "publicationDatePrecision": "unknown",
+      "publicationDateStatus": "research_pending",
+      "publicationDateBasis": "The document identifies itself as FY 2025; PDF metadata and URL path are not treated as verified original publication timing.",
+      "reportedPeriod": "FY2025",
+      "firstAvailableAt": "2026-11-16T08:52:24.454389Z",
+      "availabilityBasis": "First locally retained lawful capture of the public PDF; source availability before that capture was not independently archived.",
+      "retrievedAt": "2026-11-16T08:52:24.454389Z",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "sha256": "4461fed6292e6077660182bac13142473d1f91138ba6c0fc225592a1d1fd65d9",
+      "sourcePagesReferenced": [23],
+      "primaryEvidence": true,
+      "licence": "Minimal attributed factual extraction from a public investor presentation; raw PDF pages, imagery and full text are not redistributed.",
+      "rawBodyRedistributed": false
+    }
+  ],
+  "recordIdentityChecks": [
+    {
+      "recordId": "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "catalogueName": "The Beach Collection on Palm Jebel Ali",
+      "type": "project",
+      "emirate": "Dubai",
+      "communityId": "community:Dubai:palm-jebel-ali",
+      "identitySourceIds": [
+        "nakheel49-beach-collection-release-20241111"
+      ],
+      "identityBasis": "The catalogue has one unique Dubai project with this named Beach Collection and the linked Palm Jebel Ali community. Nakheel's dated primary page explicitly names The Beach Collection at Palm Jebel Ali. The source establishes a developer marketing-collection identity only; no DLD/RERA project or unit identity is inferred."
+    },
+    {
+      "recordId": "project:apartments-aya-deyaar-umm-al-quwain",
+      "catalogueName": "AYA",
+      "type": "project",
+      "emirate": "Umm Al Quwain",
+      "communityId": "community:Umm Al Quwain:umm-al-quwain",
+      "identitySourceIds": [
+        "deyaar49-aya-primary-page",
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identityBasis": "The catalogue has one Umm Al Quwain project named AYA. Deyaar's primary project page identifies AYA Beachfront Residences in Umm Al Quwain, and its FY2025 investor presentation separately labels the project AYA Umm Al Quwain. This is an exact developer/name/emirate cross-check; it does not establish an authority project number, individual unit, sale or lease identity."
+    }
+  ],
+  "facts": [
+    {
+      "id": "pja49-beach-collection-release-20241111",
+      "recordId": "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "nakheel49-beach-collection-release-20241111"
+      ],
+      "identitySourceIds": [
+        "nakheel49-beach-collection-release-20241111"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact named Beach Collection, developer and Palm Jebel Ali location cross-checked against the unique linked catalogue project. Marketing-collection identity does not establish individual villas, DLD/RERA IDs or transactions.",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "milestone": "phase_announcement",
+      "date": {
+        "start": "2024-11-11",
+        "precision": "day"
+      },
+      "label": "Nakheel announced a latest Beach Collection release at Palm Jebel Ali, describing ten villa styles.",
+      "note": "This is a dated developer product-release statement. It is not a registered sale, asking price, valuation, actual completion, handover, occupancy fact or appreciation claim.",
+      "eventStatus": "actual",
+      "verification": "verified",
+      "evidenceClass": "primary_developer_dated_lifecycle_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Official page dateline, 11 November 2024."
+    },
+    {
+      "id": "pja49-beach-first-residences-target-20241111",
+      "recordId": "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "nakheel49-beach-collection-release-20241111"
+      ],
+      "identitySourceIds": [
+        "nakheel49-beach-collection-release-20241111"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Exact named Beach Collection, developer and Palm Jebel Ali location cross-checked against the unique linked catalogue project. The source's forward schedule remains a developer-reported target.",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2027-07-01",
+        "end": "2027-12-31",
+        "precision": "range"
+      },
+      "label": "Nakheel's November 2024 release anticipated first residences completing by the end of 2027.",
+      "note": "A planned first-residences completion target. It remains alongside the retained late-2026 community-context target and Q4 2029 catalogue target; it does not establish actual completion, handover, occupancy, rent or an uplift coefficient.",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_developer_planned_target",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "The source says 'by the end of 2027'; the stored interval is H2 2027, not an exact date."
+    },
+    {
+      "id": "aya49-fy2025-construction-status",
+      "recordId": "project:apartments-aya-deyaar-umm-al-quwain",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identitySourceIds": [
+        "deyaar49-aya-primary-page",
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique AYA catalogue record in Umm Al Quwain cross-checked to Deyaar's primary project page and the AYA Umm Al Quwain row in the developer's FY2025 presentation.",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "milestone": "construction_confirmation",
+      "date": {
+        "start": "2025",
+        "precision": "year"
+      },
+      "label": "Deyaar's FY2025 investor presentation reports that enabling works had commenced on the AYA Umm Al Quwain site.",
+      "note": "The FY2025 report establishes a reported project-status statement, not the date enabling works began, construction percentage, actual completion, handover, occupancy, sale price or rent.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_developer_fy2025_status_report",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Report period is FY2025; original publication timing remains unknown and is stored separately from the report-period label."
+    },
+    {
+      "id": "aya49-fy2025-target-completion",
+      "recordId": "project:apartments-aya-deyaar-umm-al-quwain",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identitySourceIds": [
+        "deyaar49-aya-primary-page",
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique AYA catalogue record in Umm Al Quwain cross-checked to Deyaar's primary project page and the AYA Umm Al Quwain row in the developer's FY2025 presentation.",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "milestone": "target_completion",
+      "date": {
+        "start": "2027-07-01",
+        "end": "2027-12-31",
+        "precision": "range"
+      },
+      "label": "Deyaar's FY2025 investor presentation lists H2 2027 as AYA Umm Al Quwain's expected project completion.",
+      "note": "This is a developer-reported planned target. It does not establish actual completion, handover, occupancy, signed rent or property value, and it coexists with the retained Q4 2027 catalogue target.",
+      "eventStatus": "planned",
+      "verification": "reported",
+      "evidenceClass": "primary_developer_fy2025_planned_target",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Source table states H2 2027; interval stored as 1 July through 31 December 2027."
+    },
+    {
+      "id": "aya49-fy2025-sales-status",
+      "recordId": "project:apartments-aya-deyaar-umm-al-quwain",
+      "kind": "lifecycle",
+      "status": "accepted",
+      "sourceIds": [
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identitySourceIds": [
+        "deyaar49-aya-primary-page",
+        "deyaar49-fy2025-investor-presentation"
+      ],
+      "identityVerified": true,
+      "identityBasis": "Unique AYA catalogue record in Umm Al Quwain cross-checked to Deyaar's primary project page and the AYA Umm Al Quwain row in the developer's FY2025 presentation.",
+      "primaryEvidence": true,
+      "scope": "subject",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2025",
+        "precision": "year"
+      },
+      "label": "Deyaar's FY2025 table reports AYA Umm Al Quwain with 442 units, AED 840.2 million total sales value and 35% units sold to date.",
+      "note": "This is a developer-reported aggregate project-status table, not individual registered transactions, a unit price, an appraisal, an asking-price series, completed revenue, rent or a forecast. No percentage is converted into a unit count and no average price is derived.",
+      "eventStatus": "reported",
+      "verification": "reported",
+      "evidenceClass": "primary_developer_aggregate_sales_status",
+      "preserveAdditionalLifecycleFields": true,
+      "dateBasis": "Report period is FY2025. The table labels these as total sales value and units sold till date; publication timing remains independently unresolved."
+    }
+  ],
+  "collection": {
+    "passId": "public-primary-lifecycle-pass49-20261116",
+    "asOf": "2026-11-16",
+    "acceptedLifecycleFacts": 5,
+    "newFinancialObservations": 0,
+    "newSources": 3,
+    "rawBodiesRedistributed": false
+  },
+  "methodology": "This pass uses only exact named developer sources: a dated Nakheel Beach Collection release, Deyaar's exact AYA project page, and Deyaar's public FY2025 investor presentation page 23. Identity requires a unique catalogue name and emirate plus the primary source's explicit named project/emirate statement. The two Palm Jebel Ali targets are retained as competing planned schedules; none is relabelled actual. The AYA sales row remains developer aggregate lifecycle/context, not a financial observation. No raw source body is stored or redistributed, no direct transactions/rents/valuations are added, and no annual 2027-2080 forecast value is added.",
+  "excludedCandidates": [
+    {
+      "source": "Nakheel 16 October 2024 contracts release",
+      "reason": "Semantic duplicate of retained Government of Dubai Media Office lifecycle facts including the 723/539 Beach/184 Coral split and late-2026 target; source is retained in the local research intake but no duplicate lifecycle fact is added."
+    },
+    {
+      "source": "Nakheel 16 June 2025 infrastructure release",
+      "reason": "Semantic duplicate of retained Palm Jebel Ali community infrastructure context and Q4 2026 planned target; no duplicate event or exposure is added."
+    },
+    {
+      "source": "Deyaar / Sobha / Reportage PDF and HTML intake candidates outside the accepted AYA facts",
+      "reason": "Undated profile/marketing attributes, inaccessible pages and unchecked current-status displays remain in the local research queue rather than being misclassified as dated historical lifecycle or financial evidence."
+    }
+  ],
+  "limitations": [
+    "No accepted fact establishes a registered sale, asking price, valuation, signed rent, actual completion, handover, occupancy or price appreciation.",
+    "No accepted source establishes complete financial history or a validated forecast through 2080.",
+    "A source published or first retained after a historical event is not treated as information that was necessarily available to a contemporaneous investor or backtest."
+  ]
+}

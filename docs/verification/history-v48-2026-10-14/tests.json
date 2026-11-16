@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "status": "passed_before_publication",
+  "releaseStatus": "candidate_not_published_or_deployed_by_this_receipt",
+  "version": "20261014-enrichment-v48",
+  "asOf": "2026-10-14",
+  "immutableArchiveRootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "canonicalSnapshotSHA256": "bbb7c8037a11221e94843d6be0882d073a9fea7550aa0748435c9a806e89ecc7",
+  "counts": {
+    "records": 1860,
+    "projects": 1645,
+    "communities": 215,
+    "sources": 3371,
+    "events": 105,
+    "exposures": 7382,
+    "historicalRows": 633891,
+    "series": 16872
+  },
+  "ledger": {
+    "missing": 26724,
+    "partial": 3404,
+    "present": 3352,
+    "unestablished": 9300,
+    "items": 42780,
+    "unresolved": 39428,
+    "unresolvedPercent": 92.1646,
+    "annualEndpoint": 2080
+  },
+  "newEvidence": {
+    "sources": 3,
+    "lifecycleFacts": 5,
+    "financialObservations": 0,
+    "approvedForecasts": 0,
+    "changedRecords": [
+      "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+      "project:apartments-in-terra-heights-in-emaar-expo-living-expo-city-dubai",
+      "project:palace-residences-dubai-hills-estate-emaar-properties"
+    ]
+  },
+  "completedChecks": [
+    {
+      "command": "node scripts/verify-v48-history-release.mjs --local-only --output /tmp/espacios-v48-local-contract.json",
+      "result": "passed",
+      "scope": "Local snapshot, runtime/publication root, exact ledger, V48 fact/source identities and V47 retention."
+    },
+    {
+      "command": "python3 tests/historical-v48-primary-lifecycle-preservation.py",
+      "result": "passed",
+      "scope": "All retained V47/V48 partition payloads, record evidence and V48 runtime shard namespace."
+    },
+    {
+      "command": "node --test tests/historical-migration.test.mjs",
+      "result": "passed",
+      "tests": 2,
+      "scope": "Immutable snapshot/index candidate structure."
+    },
+    {
+      "command": "npm run check",
+      "result": "passed",
+      "scope": "JavaScript syntax checks."
+    },
+    {
+      "command": "validateProductionTarget(wrangler.production.jsonc, production-target.example.json, publication-manifest.json)",
+      "result": "passed",
+      "scope": "Exact V48 version/root, production map account, R2/D1 bindings, and restricted Data Room configuration."
+    },
+    {
+      "command": "node --test --test-concurrency=2 tests/historical-production-publisher.test.mjs",
+      "result": "passed",
+      "tests": 13,
+      "scope": "Release bridge allowlist and immutable publication guardrails, including the V48 bridge endpoint."
+    }
+  ],
+  "notCertified": [
+    "Remote R2/D1 publication",
+    "Candidate Worker deployment and API readback",
+    "Canonical traffic activation or browser acceptance",
+    "Supabase control-plane reconciliation",
+    "GitHub synchronization or CI",
+    "Complete historical financial coverage, causal price effects, or observed future values through 2080"
+  ]
+}

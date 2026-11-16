@@ -36,3 +36,6 @@ __pycache__/
 # New immutable publication outputs are built from reviewed inputs and stored in R2.
 # Previously tracked archive vintages remain in Git for preservation checks.
 data/historical-intelligence/objects/
+
+# Lossless local expansion of the compressed canonical snapshot.
+/data/historical-intelligence-20261003.json

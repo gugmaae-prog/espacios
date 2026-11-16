@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "origin": "https://espacios.me/map",
+  "checkedAt": "2026-10-14T03:14:08.351Z",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "layout": "desktop",
+      "horizontalOverflow": 0,
+      "historyRecordCount": 1860,
+      "sourceLinksValid": true,
+      "browserExceptions": 0
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "layout": "expanded",
+      "horizontalOverflow": 0,
+      "historyRecordCount": 1860,
+      "sourceLinksValid": true,
+      "browserExceptions": 0
+    }
+  ],
+  "assertions": {
+    "recordCount": 1860,
+    "coverageItems": 23,
+    "sourceLinksForPalmJebelAli": 60,
+    "eventCards": 86,
+    "annualScenarioRows": 54,
+    "annualScenarioEndYear": 2080,
+    "scenarioClassification": "user_assumption_scenario when input is supplied",
+    "validatedForecast": false,
+    "browserExceptions": 0,
+    "dataRoomAccess": "restricted"
+  }
+}

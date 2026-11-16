@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "command": "python3 tests/historical-v48-primary-lifecycle-preservation.py",
+  "baselineVersion": "20261013-enrichment-v47",
+  "candidateVersion": "20261014-enrichment-v48",
+  "immutableArchiveRootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "records": 1860,
+  "sources": 3371,
+  "newLifecycleFacts": 5,
+  "financialObservationsAdded": 0,
+  "series": 16872,
+  "partitionPairs": 1091,
+  "decodedBytes": 1476518068,
+  "payloadVersionOnly": true,
+  "runtimeRecordShards": 120,
+  "ledger": {
+    "missing": 26724,
+    "partial": 3404,
+    "present": 3352,
+    "unestablished": 9300
+  },
+  "scope": "V47-to-V48 retained native-series preservation, verified before V48 publication."
+}

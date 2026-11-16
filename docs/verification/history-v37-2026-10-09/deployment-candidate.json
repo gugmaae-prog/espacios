@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-08T23:26:26.801806+00:00",
+  "worker": "psr-portfolio-map-v2",
+  "candidateVersion": "d9cf3e2c-19d6-47d2-a2f8-9dfd79dc6b23",
+  "frontendRelease": "20261009-map-evidence-v41",
+  "historyRelease": "20261008-enrichment-v37",
+  "previewURL": "https://d9cf3e2c-psr-portfolio-map-v2.thekeifferjapeth.workers.dev",
+  "sourceCommit": "ab5c63cf198084b137ae469744243fa589be8765",
+  "productionTrafficSwitched": false,
+  "previousActiveVersion": "ce235bd1-ed12-4e40-a336-1f3cb11fd11d"
+}

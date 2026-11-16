@@ -1,0 +1,21 @@
+{
+  "sourceCommit": "ab5c63cf198084b137ae469744243fa589be8765",
+  "checkedAt": "2026-10-08T23:25:08.054Z",
+  "workflowRuns": [
+    {
+      "id": 37858927914,
+      "name": "Repository guardrails",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/gugmaae-prog/espacios/actions/runs/37858927914"
+    },
+    {
+      "id": 37858927656,
+      "name": "CI",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/gugmaae-prog/espacios/actions/runs/37858927656"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "origin": "https://espacios.me",
+  "checkedAt": "2026-10-13T20:16:32.211Z",
+  "readOnly": true,
+  "expected": {
+    "version": "20261013-enrichment-v47",
+    "rootSHA256": "66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240",
+    "counts": {
+      "records": 1860,
+      "projects": 1645,
+      "communities": 215,
+      "sources": 3368,
+      "events": 105,
+      "exposures": 7382,
+      "historicalRows": 633891,
+      "series": 16872
+    }
+  },
+  "ledger": {
+    "records": 1860,
+    "items": 42780,
+    "statuses": {
+      "missing": 26726,
+      "partial": 3403,
+      "present": 3351,
+      "unestablished": 9300
+    },
+    "annualSlots": {
+      "checkedRecords": 1860,
+      "first": 2027,
+      "last": 2080
+    },
+    "manifestRootVerified": true
+  },
+  "globalEvents": {
+    "events": 105,
+    "sources": 3368,
+    "exposures": 7382,
+    "manifestRootVerified": true
+  },
+  "authoritySource": {
+    "id": "dld47-public-project-status-20261013",
+    "publisher": "Dubai Land Department",
+    "retrievedAt": "2026-10-13T15:32:17Z",
+    "sourcesAdded": 1
+  },
+  "selectedRecordHistory": {
+    "records": 5,
+    "identities": [
+      {
+        "recordId": "project:sobha-hartland-one-park-avenue",
+        "name": "Sobha Hartland One Park Avenue",
+        "authorityProjectNumber": "2166",
+        "factIds": [
+          "dld47-2166-2022-09-16",
+          "dld47-2166-2026-10-13",
+          "dld47-2166-registration"
+        ]
+      },
+      {
+        "recordId": "project:montiva-by-vida-dubai-creek-harbour",
+        "name": "Montiva",
+        "authorityProjectNumber": "3744",
+        "factIds": [
+          "dld47-3744-2026-04-22",
+          "dld47-3744-2026-10-13",
+          "dld47-3744-registration"
+        ]
+      },
+      {
+        "recordId": "project:apartments-albero-green-gate-dubai-creek-harbour",
+        "name": "Albero",
+        "authorityProjectNumber": "3609",
+        "factIds": [
+          "dld47-3609-2026-07-02",
+          "dld47-3609-2026-10-13",
+          "dld47-3609-registration"
+        ]
+      },
+      {
+        "recordId": "project:parkside-views-by-emaar-properties",
+        "name": "Parkside Views",
+        "authorityProjectNumber": "2728",
+        "factIds": [
+          "dld47-2728-2026-05-05",
+          "dld47-2728-2026-10-13",
+          "dld47-2728-registration"
+        ]
+      },
+      {
+        "recordId": "project:arlo-emaar-properties-dubai-creek-harbour-dubai",
+        "name": "ARLO",
+        "authorityProjectNumber": "3104",
+        "factIds": [
+          "dld47-3104-2026-06-03",
+          "dld47-3104-2026-10-13",
+          "dld47-3104-registration"
+        ]
+      }
+    ],
+    "lifecycleFacts": 15,
+    "authoritySources": [
+      "dld47-public-project-status-20261013"
+    ],
+    "financialObservationsAdded": 0,
+    "inferredActualCompletionHandoverOrOccupancy": 0,
+    "annualTargetYears": {
+      "first": 2027,
+      "last": 2080,
+      "slots": 54
+    }
+  },
+  "system": {
+    "dataRoomAccess": "restricted",
+    "dataRoomGate": "DATA_ROOM_PUBLIC",
+    "dataRoomRouteStatus": 404,
+    "secretsExposed": false
+  },
+  "version": "20261013-enrichment-v47",
+  "rootSHA256": "66755b6af985b16b56ea331353769914dfd9cff92678c0fd8e9f0f1e6ddb1240",
+  "canonicalSnapshotSHA256": "f188684e8f54d9c90a3f378f0cf1bc25d3efeaf51eea1983b5f0d6ae6422108f",
+  "counts": {
+    "records": 1860,
+    "projects": 1645,
+    "communities": 215,
+    "sources": 3368,
+    "events": 105,
+    "exposures": 7382,
+    "historicalRows": 633891,
+    "series": 16872
+  },
+  "passed": true
+}

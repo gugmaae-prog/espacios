@@ -1,0 +1,13 @@
+{
+  "worker": "psr-portfolio-map-v2",
+  "version": "5dc7a9ab-8a87-4001-8020-23ee5c30351f",
+  "deployment": "ccaa3c61-1dac-42e7-a1be-b4e478e1b745",
+  "percentage": 100,
+  "activatedAt": "2026-10-11T23:14:00.705449Z",
+  "frontend": "20261012-map-evidence-v46",
+  "history": "20261012-enrichment-v42",
+  "sourceCommit": "a16e19dd23161470ff5ee9def21c83ff1eddfc92",
+  "route": "espacios.me/map* -> espacios-map-shell -> MAP production -> psr-portfolio-map-v2",
+  "temporaryPublisherDeleted": true,
+  "temporaryAuthenticationRemoved": true
+}

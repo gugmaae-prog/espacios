@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-09T01:52:45.704726+00:00",
+  "connected": true,
+  "frontend": "20261009-map-evidence-v43",
+  "worker": "25b61d3b-7a65-4a61-aabc-4172e9632f23",
+  "history": "20261009-enrichment-v39",
+  "rootSHA256": "b1e9735a5a602a8dd214955271f7d9b95feb5671281232bb304e63194c31f760",
+  "sourceSHA": "4d3efc8f4a242769f437d357d41e20e18f947f60",
+  "releaseId": "15b176a7-a57d-4d2c-a032-ea800af14024",
+  "sourceSyncState": "pending_merge",
+  "researchComplete": false
+}

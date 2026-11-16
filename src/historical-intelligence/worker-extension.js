@@ -191,13 +191,16 @@ async function hiJSON(request,data,status=200){
 }
 worker_default.fetch=async function(request,env,ctx){
  const u=new URL(request.url),path=u.pathname.replace(/\/+$/,'');
- if(u.hostname==='espacios.me'&&['GET','HEAD'].includes(request.method)&&['/map/map-core.json','/map/map-data.json','/map/api/projects-all','/map/api/projects-batch'].includes(path)&&typeof HI_MAP_CORRECTIONS!=='undefined'&&HI_MAP_CORRECTIONS.length){
+ const communityCorrections=typeof HI_MAP_CORRECTIONS==='undefined'?[]:HI_MAP_CORRECTIONS,catalogueRevisions=typeof HI_CATALOGUE_REVISIONS==='undefined'?[]:HI_CATALOGUE_REVISIONS;
+ if(u.hostname==='espacios.me'&&['GET','HEAD'].includes(request.method)&&['/map/map-core.json','/map/map-data.json','/map/api/projects-all','/map/api/projects-batch'].includes(path)&&(communityCorrections.length||catalogueRevisions.length)){
   const upstreamHeaders=new Headers(request.headers);upstreamHeaders.delete('if-none-match');upstreamHeaders.delete('if-modified-since');
   const response=await HI_PREVIOUS_FETCH.call(this,new Request(request.url,{method:'GET',headers:upstreamHeaders}),env,ctx);
   if(!response.ok||!(response.headers.get('content-type')||'').includes('application/json'))return response;
   let payload;try{payload=await response.clone().json();}catch{return response;}
-  const text=JSON.stringify(HI_CORE.applyCommunityCorrections(payload,HI_MAP_CORRECTIONS)),headers=new Headers(response.headers);
+  const reviewed=HI_CORE.applyCatalogueRevisions(HI_CORE.applyCommunityCorrections(payload,communityCorrections),catalogueRevisions);
+  const text=JSON.stringify(reviewed),headers=new Headers(response.headers);
   headers.delete('content-length');headers.delete('content-encoding');headers.set('x-espacios-community-review',HI_DATA.version);
+  if(catalogueRevisions.length)headers.set('x-espacios-catalogue-review',catalogueRevisions.map(r=>r.id).join(','));
   const etag='"community-reviewed-'+await hiDigest(new TextEncoder().encode(text))+'"';headers.set('etag',etag);
   if((request.headers.get('if-none-match')||'').split(',').map(s=>s.trim().replace(/^W\//,'')).includes(etag))return new Response(null,{status:304,headers});
   return new Response(request.method==='HEAD'?null:text,{status:response.status,headers});

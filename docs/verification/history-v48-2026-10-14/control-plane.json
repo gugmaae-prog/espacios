@@ -1,0 +1,26 @@
+{
+  "status": "reconciled",
+  "runtime": "production",
+  "expectedFrontend": "20261013-map-heatmap-coverage-v2",
+  "expectedWorker": "f3dc3db9-4796-4856-9b01-e2198319eae6",
+  "expectedDeployment": "c29153a2-7e59-46e2-9854-b6f5b952a168",
+  "history": "20261014-enrichment-v48",
+  "rootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "registryId": "e501f5b8-22c6-4c57-bbd9-f230fbbaf3ca",
+  "researchComplete": false,
+  "sourceSyncState": "local_commits_pending_github_push",
+  "dataRoomPublic": false,
+  "publicReadback": {
+    "route": "https://espacios.me/map/api/control-plane",
+    "status": 200,
+    "cacheControl": "no-store",
+    "robots": "noindex, nofollow"
+  },
+  "systemReadback": {
+    "route": "https://espacios.me/map/api/system",
+    "status": 200,
+    "dataRoomAccess": "restricted",
+    "dataRoomRouteStatus": 404
+  },
+  "note": "The registry and runtime config contain public-safe release identifiers and coverage counts only; no raw source material, credentials, or browser-capture content is stored."
+}

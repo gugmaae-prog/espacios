@@ -1,0 +1,42 @@
+{
+  "status": "passed_locally_and_published_with_v46",
+  "packet": "data/historical-intelligence/dld-lifecycle-pass46-20261013.json",
+  "commands": [
+    {
+      "command": "python3 tests/dld-authority-pass46.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "python3 tests/dld-lifecycle-pass46.py",
+      "checks": 3,
+      "passed": true
+    },
+    {
+      "command": "node --test --test-concurrency=2 tests/historical-v46-authority-lifecycle.test.mjs",
+      "tests": 2,
+      "passed": true
+    }
+  ],
+  "releaseVerification": {
+    "immutableR2D1Publication": "complete",
+    "candidateAPI": {
+      "status": "passed",
+      "checkedAt": "2026-10-13T11:24:10.677Z"
+    },
+    "canonicalAPI": {
+      "status": "passed",
+      "checkedAt": "2026-10-13T11:26:06.569Z"
+    },
+    "productionTraffic": {
+      "status": "active_interim_v46",
+      "trafficPercent": 100
+    },
+    "note": "These release checks validate publication and availability of the accepted DLD facts. They do not change their non-financial evidence classification."
+  },
+  "notCertified": [
+    "Actual completion, handover or occupancy inferred from DLD schedule or inspection fields",
+    "Financial observations, appreciation coefficients or forecasts inferred from this lifecycle packet",
+    "Any later combined mobile-interface deployment"
+  ]
+}

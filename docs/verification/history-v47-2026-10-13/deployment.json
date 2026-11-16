@@ -1,0 +1,18 @@
+{
+  "status": "active",
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "17ddb204-54ae-4450-82f0-131dfbf95981",
+  "frontendRelease": "20261013-map-heatmap-coverage-v2",
+  "deploymentId": "032d910b-a736-4cf4-a071-3e1d2d8bd3f4",
+  "trafficPercent": 100,
+  "activatedAt": "2026-10-13T20:14:39.098184Z",
+  "candidate": {
+    "workerVersion": "17ddb204-54ae-4450-82f0-131dfbf95981",
+    "tag": "history-v47-20261013-v2",
+    "trafficPercentBeforeActivation": 0,
+    "candidateAPIStatus": "passed",
+    "canonicalOverrideBrowserStatus": "passed"
+  },
+  "previousProductionWorkerVersion": "9f4b75e8-802d-49a6-84a8-79b679709145",
+  "message": "Activate V47 verified DLD lifecycle evidence and corrected mobile history routing"
+}

@@ -94,6 +94,7 @@ test('unique frontend release identifies matching HTML, JS and CSS without relab
       const html=await response.text();
       assert.ok(html.includes('app-v2.js?v='+frontendRelease));assert.ok(html.includes('app-v2.css?v='+frontendRelease));
       assert.ok(!html.includes('20261008-map-palette-v23'),'HTML must not retain the previous immutable cache key');
+      assert.ok(!html.includes('20261008-map-palette-v33'),'HTML must not retain the previous palette cache key');
       assert.match(response.headers.get('link')||new Headers().get('link')||'',new RegExp('app-v2\\.js\\?v='+frontendRelease));
       assert.equal(response.headers.get('x-ae-navigation'),frontendRelease);
     }
@@ -102,6 +103,7 @@ test('unique frontend release identifies matching HTML, JS and CSS without relab
       const javascript=await response.text();
       assert.ok(javascript.includes("release:'"+frontendRelease+"'"));
       assert.ok(!javascript.includes('20261008-map-palette-v23'),'JavaScript must not retain the previous immutable cache key');
+      assert.ok(!javascript.includes('20261008-map-palette-v33'),'JavaScript must not retain the previous palette cache key');
     }
   }
   const api=await worker.fetch(new Request('https://espacios.me/map/api/smart-estimates'),{MARKET_R2:{get:async()=>({body:'{}',httpEtag:'"retained-snapshot"'})}},ctx);

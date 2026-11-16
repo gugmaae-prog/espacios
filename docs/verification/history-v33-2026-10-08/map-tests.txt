@@ -1,0 +1,346 @@
+TAP version 13
+# Subtest: minimal composition exposes the approved controls without changing evidence ownership
+ok 1 - minimal composition exposes the approved controls without changing evidence ownership
+  ---
+  duration_ms: 1.411625
+  type: 'test'
+  ...
+# Subtest: bundled map focus and fallback colors use the shared neutral Espacios theme
+ok 2 - bundled map focus and fallback colors use the shared neutral Espacios theme
+  ---
+  duration_ms: 9.676292
+  type: 'test'
+  ...
+# Subtest: selection and watchlist colors use Espacios slate and teal, not legacy gold
+ok 3 - selection and watchlist colors use Espacios slate and teal, not legacy gold
+  ---
+  duration_ms: 1.178958
+  type: 'test'
+  ...
+# Subtest: active map controls share the soft Espacios palette in light and dark themes
+ok 4 - active map controls share the soft Espacios palette in light and dark themes
+  ---
+  duration_ms: 1.097709
+  type: 'test'
+  ...
+# Subtest: mobile map modes normalize selected signals to the theme surface
+ok 5 - mobile map modes normalize selected signals to the theme surface
+  ---
+  duration_ms: 0.658
+  type: 'test'
+  ...
+# Subtest: mobile map mode selection overrides inherited styles with a low-contrast Espacios slate tint
+ok 6 - mobile map mode selection overrides inherited styles with a low-contrast Espacios slate tint
+  ---
+  duration_ms: 0.348875
+  type: 'test'
+  ...
+# Subtest: selection palette safely updates only declared MapLibre paint properties in both themes
+ok 7 - selection palette safely updates only declared MapLibre paint properties in both themes
+  ---
+  duration_ms: 3.463334
+  type: 'test'
+  ...
+# Subtest: timeline is unframed, full width and contains no play control
+ok 8 - timeline is unframed, full width and contains no play control
+  ---
+  duration_ms: 0.333917
+  type: 'test'
+  ...
+# Subtest: build emits the minimalist release after unified map source
+ok 9 - build emits the minimalist release after unified map source
+  ---
+  duration_ms: 1.449458
+  type: 'test'
+  ...
+# Subtest: all mobile map selection variants use the shared Espacios slate surface
+ok 10 - all mobile map selection variants use the shared Espacios slate surface
+  ---
+  duration_ms: 0.947834
+  type: 'test'
+  ...
+# Subtest: emitted browser bundle guards the exact legacy collapse-repair renderer
+ok 11 - emitted browser bundle guards the exact legacy collapse-repair renderer
+  ---
+  duration_ms: 0.9225
+  type: 'test'
+  ...
+# Subtest: repairing unchanged cards produces no repeated DOM mutations
+ok 12 - repairing unchanged cards produces no repeated DOM mutations
+  ---
+  duration_ms: 1.279083
+  type: 'test'
+  ...
+# Subtest: unified search and timeline controllers ship after their existing data and mobile dependencies
+ok 13 - unified search and timeline controllers ship after their existing data and mobile dependencies
+  ---
+  duration_ms: 6.549084
+  type: 'test'
+  ...
+# Subtest: UI consolidation leaves the acquired baseline and published evidence snapshots byte-identical
+ok 14 - UI consolidation leaves the acquired baseline and published evidence snapshots byte-identical
+  ---
+  duration_ms: 9.797959
+  type: 'test'
+  ...
+# Subtest: unique frontend release identifies matching HTML, JS and CSS without relabeling evidence APIs
+ok 15 - unique frontend release identifies matching HTML, JS and CSS without relabeling evidence APIs
+  ---
+  duration_ms: 33.144042
+  type: 'test'
+  ...
+# Subtest: benchmark: native screen point is converted to a bounded MapLibre array query
+ok 16 - benchmark: native screen point is converted to a bounded MapLibre array query
+  ---
+  duration_ms: 7.738125
+  type: 'test'
+  ...
+# Subtest: scenario: native screen point is converted to a bounded MapLibre array query
+ok 17 - scenario: native screen point is converted to a bounded MapLibre array query
+  ---
+  duration_ms: 1.372084
+  type: 'test'
+  ...
+# Subtest: unified: native screen point is converted to a bounded MapLibre array query
+ok 18 - unified: native screen point is converted to a bounded MapLibre array query
+  ---
+  duration_ms: 1.093917
+  type: 'test'
+  ...
+# Subtest: projects: first semantic click selects once and blocks legacy territory selection
+ok 19 - projects: first semantic click selects once and blocks legacy territory selection
+  ---
+  duration_ms: 1.232375
+  type: 'test'
+  ...
+# Subtest: projects: second click keeps semantic ownership without selecting twice
+ok 20 - projects: second click keeps semantic ownership without selecting twice
+  ---
+  duration_ms: 0.740042
+  type: 'test'
+  ...
+# Subtest: projects: unmatched native clicks continue to MapLibre
+ok 21 - projects: unmatched native clicks continue to MapLibre
+  ---
+  duration_ms: 0.474875
+  type: 'test'
+  ...
+# Subtest: benchmark: first semantic click selects once and blocks legacy territory selection
+ok 22 - benchmark: first semantic click selects once and blocks legacy territory selection
+  ---
+  duration_ms: 0.525584
+  type: 'test'
+  ...
+# Subtest: benchmark: second click keeps semantic ownership without selecting twice
+ok 23 - benchmark: second click keeps semantic ownership without selecting twice
+  ---
+  duration_ms: 0.493792
+  type: 'test'
+  ...
+# Subtest: benchmark: unmatched native clicks continue to MapLibre
+ok 24 - benchmark: unmatched native clicks continue to MapLibre
+  ---
+  duration_ms: 0.936417
+  type: 'test'
+  ...
+# Subtest: registered: first semantic click selects once and blocks legacy territory selection
+ok 25 - registered: first semantic click selects once and blocks legacy territory selection
+  ---
+  duration_ms: 1.773791
+  type: 'test'
+  ...
+# Subtest: registered: second click keeps semantic ownership without selecting twice
+ok 26 - registered: second click keeps semantic ownership without selecting twice
+  ---
+  duration_ms: 0.87725
+  type: 'test'
+  ...
+# Subtest: registered: unmatched native clicks continue to MapLibre
+ok 27 - registered: unmatched native clicks continue to MapLibre
+  ---
+  duration_ms: 1.040917
+  type: 'test'
+  ...
+# Subtest: scenario: first semantic click selects once and blocks legacy territory selection
+ok 28 - scenario: first semantic click selects once and blocks legacy territory selection
+  ---
+  duration_ms: 0.374625
+  type: 'test'
+  ...
+# Subtest: scenario: second click keeps semantic ownership without selecting twice
+ok 29 - scenario: second click keeps semantic ownership without selecting twice
+  ---
+  duration_ms: 0.352041
+  type: 'test'
+  ...
+# Subtest: scenario: unmatched native clicks continue to MapLibre
+ok 30 - scenario: unmatched native clicks continue to MapLibre
+  ---
+  duration_ms: 0.325458
+  type: 'test'
+  ...
+# Subtest: canvas capture does not consume clicks on other map controls
+ok 31 - canvas capture does not consume clicks on other map controls
+  ---
+  duration_ms: 0.479084
+  type: 'test'
+  ...
+# Subtest: actual pointer movement marks a drag and prevents semantic selection
+ok 32 - actual pointer movement marks a drag and prevents semantic selection
+  ---
+  duration_ms: 1.406625
+  type: 'test'
+  ...
+# Subtest: pointer hover without a pressed button does not become a drag
+ok 33 - pointer hover without a pressed button does not become a drag
+  ---
+  duration_ms: 0.978583
+  type: 'test'
+  ...
+# Subtest: unified conditional map owns the first matching tap once, before all native history handlers
+ok 34 - unified conditional map owns the first matching tap once, before all native history handlers
+  ---
+  duration_ms: 0.617667
+  type: 'test'
+  ...
+# Subtest: unified future double-click retains semantic ownership without duplicate selection or intercepting dblclick zoom
+ok 35 - unified future double-click retains semantic ownership without duplicate selection or intercepting dblclick zoom
+  ---
+  duration_ms: 0.783709
+  type: 'test'
+  ...
+# Subtest: unmapped future location cannot silently open an underlying current-history value
+ok 36 - unmapped future location cannot silently open an underlying current-history value
+  ---
+  duration_ms: 0.825792
+  type: 'test'
+  ...
+# Subtest: unified adapter keeps native and conditional option identities instead of passing scenario ids to legacy history
+ok 37 - unified adapter keeps native and conditional option identities instead of passing scenario ids to legacy history
+  ---
+  duration_ms: 1.211125
+  type: 'test'
+  ...
+# Subtest: real timeline pointer callbacks drag the unified range to its final conditional year and release cleanly
+ok 38 - real timeline pointer callbacks drag the unified range to its final conditional year and release cleanly
+  ---
+  duration_ms: 1.608708
+  type: 'test'
+  ...
+# Subtest: a unified context change cancels an active drag before applying a stale option
+ok 39 - a unified context change cancels an active drag before applying a stale option
+  ---
+  duration_ms: 0.552333
+  type: 'test'
+  ...
+# Subtest: keyboard and native range-input alternatives reach both unified endpoints
+ok 40 - keyboard and native range-input alternatives reach both unified endpoints
+  ---
+  duration_ms: 0.489917
+  type: 'test'
+  ...
+# Subtest: a background market inspector refresh cannot close the active history drawer
+ok 41 - a background market inspector refresh cannot close the active history drawer
+  ---
+  duration_ms: 2.141625
+  type: 'test'
+  ...
+# Subtest: an explicit new panel request and explicit close retain mobile sheet ownership
+ok 42 - an explicit new panel request and explicit close retain mobile sheet ownership
+  ---
+  duration_ms: 0.856041
+  type: 'test'
+  ...
+# Subtest: workspace restores preserve history while explicit rail navigation and responsive sheet setup retain ownership
+ok 43 - workspace restores preserve history while explicit rail navigation and responsive sheet setup retain ownership
+  ---
+  duration_ms: 0.684333
+  type: 'test'
+  ...
+# Subtest: legacy delegated area-details links are explicit requests rather than background refreshes
+ok 44 - legacy delegated area-details links are explicit requests rather than background refreshes
+  ---
+  duration_ms: 0.718834
+  type: 'test'
+  ...
+# Subtest: pointer coordinates reach both exact timeline endpoints with thumb insets
+ok 45 - pointer coordinates reach both exact timeline endpoints with thumb insets
+  ---
+  duration_ms: 1.616667
+  type: 'test'
+  ...
+# Subtest: period selection retains irregular native periods and never synthesizes a date
+ok 46 - period selection retains irregular native periods and never synthesizes a date
+  ---
+  duration_ms: 0.629291
+  type: 'test'
+  ...
+# Subtest: empty and single-period domains are safe and out-of-range input clamps
+ok 47 - empty and single-period domains are safe and out-of-range input clamps
+  ---
+  duration_ms: 0.263125
+  type: 'test'
+  ...
+# Subtest: project picker includes touch-radius edge, excludes outside and sorts nearest first
+ok 48 - project picker includes touch-radius edge, excludes outside and sorts nearest first
+  ---
+  duration_ms: 1.656292
+  type: 'test'
+  ...
+# Subtest: duplicate tiles of the same id collapse to their closest feature without collapsing distinct records
+ok 49 - duplicate tiles of the same id collapse to their closest feature without collapsing distinct records
+  ---
+  duration_ms: 14.366292
+  type: 'test'
+  ...
+# Subtest: shared approximate coordinates keep every distinct catalogue record selectable
+ok 50 - shared approximate coordinates keep every distinct catalogue record selectable
+  ---
+  duration_ms: 0.195625
+  type: 'test'
+  ...
+# Subtest: feature ids are supported without mutating source geometry or properties
+ok 51 - feature ids are supported without mutating source geometry or properties
+  ---
+  duration_ms: 0.214958
+  type: 'test'
+  ...
+# Subtest: malformed geometry cannot enter projection or interrupt valid project selection
+ok 52 - malformed geometry cannot enter projection or interrupt valid project selection
+  ---
+  duration_ms: 0.204125
+  type: 'test'
+  ...
+# Subtest: an individual projection error cannot abort all remaining selectable records
+ok 53 - an individual projection error cannot abort all remaining selectable records
+  ---
+  duration_ms: 0.472875
+  type: 'test'
+  ...
+# Subtest: padding reserves measured header and timeline while leaving map space
+ok 54 - padding reserves measured header and timeline while leaving map space
+  ---
+  duration_ms: 0.512833
+  type: 'test'
+  ...
+# Subtest: opening an inspector increases bottom padding and closing returns it to timeline bounds
+ok 55 - opening an inspector increases bottom padding and closing returns it to timeline bounds
+  ---
+  duration_ms: 0.172416
+  type: 'test'
+  ...
+# Subtest: landscape padding is bounded even when an expanded sheet nearly fills the viewport
+ok 56 - landscape padding is bounded even when an expanded sheet nearly fills the viewport
+  ---
+  duration_ms: 0.156333
+  type: 'test'
+  ...
+1..56
+# tests 56
+# suites 0
+# pass 56
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 215.124458

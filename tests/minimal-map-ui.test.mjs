@@ -8,6 +8,7 @@ const css=await fs.readFile(new URL('../src/minimal-map/style.css',import.meta.u
 const worker=await fs.readFile(new URL('../src/worker.js',import.meta.url),'utf8');
 const builder=await fs.readFile(new URL('../scripts/build-smart.mjs',import.meta.url),'utf8');
 const baseApp=await fs.readFile(new URL('../src/assets/app-v2.js',import.meta.url),'utf8');
+const browserAcceptance=await fs.readFile(new URL('../scripts/history-browser-acceptance.mjs',import.meta.url),'utf8');
 
 test('minimal composition exposes the approved controls without changing evidence ownership',()=>{
   for(const label of ['Map','Satellite','3D','Heatmap','Price / sqft','ROI','Transaction Volume','Forecast'])assert.ok(app.includes(label),label);
@@ -86,13 +87,22 @@ test('active map controls share the soft Espacios palette in light and dark them
   assert.match(css,/data-espacios-theme="light"[\s\S]*?\.category-list button:not\(\.active\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel\) 90%,transparent\)!important/);
   assert.match(css,/data-espacios-theme="dark"[\s\S]*?--minimal-blue:#a7bbcf/);
   assert.match(css,/V28: the old shell can repaint the mobile Map mode[\s\S]*?#minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?\.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 4%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?box-shadow:none!important/);
+  assert.match(css,/V34: bring the Map-mode pill closer to the shared Espacios surface/);
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn:is\(\.active,[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 98%,var\(--minimal-accent,#657d98\) 2%\)!important;[\s\S]*?background-image:none!important;[\s\S]*?box-shadow:none!important/);
+  assert.match(css,/html\[data-minimal-map="1"\] body #app :is\(#minimal-map-modes,\.ae-mobile-map-modes\)[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,transparent\)!important/);
 });
 
-test('mobile map modes avoid the premium dark pill and keep a low-contrast selected state',()=>{
-  assert.match(css,/V29: keep the mobile map mode control visually attached/);
-  assert.match(css,/#minimal-map-modes,[\s\S]*?\.ae-mobile-map-modes[\s\S]*?button\[aria-pressed="true"\],[\s\S]*?\.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 78%,transparent\)!important/);
+test('mobile map modes normalize selected signals to the theme surface',()=>{
+  assert.match(css,/V30: normalize every selected-state signal/);
+  assert.match(css,/#minimal-map-modes,[\s\S]*?\.ae-mobile-map-modes[\s\S]*?button\[aria-pressed="true"\],[\s\S]*?\.rail-btn\.active[\s\S]*?\.rail-btn\[aria-current="true"\][\s\S]*?\.rail-btn\[aria-selected="true"\][\s\S]*?background:var\(--su-panel,#f4f6f7\)!important/);
   assert.match(css,/html body #app \.ae-mobile-map-modes \.rail-btn\{[\s\S]*?background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,transparent\)!important[\s\S]*?box-shadow:0 1px 5px #172b3a0a!important/);
-  assert.doesNotMatch(css,/V29[\s\S]*?#0b1821|V29[\s\S]*?#c9a45d/i);
+  assert.doesNotMatch(css,/V30[\s\S]*?#0b1821|V30[\s\S]*?#c9a45d/i);
+});
+
+test('mobile map mode selection overrides inherited styles with a low-contrast Espacios slate tint',()=>{
+  assert.match(css,/V32: keep mobile mode selection inside the Espacios slate palette/);
+  assert.match(css,/html\[data-minimal-map="1"\] body #app #minimal-map-modes button\[aria-pressed="true"\],[\s\S]*?html\[data-minimal-map="1"\] body #app \.ae-mobile-map-modes \.rail-btn\.active[\s\S]*?background:color-mix\(in srgb,var\(--minimal-accent,#657d98\) 6%,var\(--su-panel,#f4f6f7\)\)!important;[\s\S]*?color:var\(--su-ink,#27323b\)!important;[\s\S]*?box-shadow:none!important/);
+  assert.doesNotMatch(css,/V32[\s\S]*?(?:#0b1821|#c9a45d|#c77955)/i);
 });
 
 test('selection palette safely updates only declared MapLibre paint properties in both themes',()=>{
@@ -140,7 +150,68 @@ test('timeline is unframed, full width and contains no play control',()=>{
 });
 
 test('build emits the minimalist release after unified map source',()=>{
-  assert.ok(worker.includes('20261008-map-palette-v29'));
+  assert.ok(worker.includes('20261013-map-heatmap-coverage-v2'));
   assert.ok(worker.includes('Minimalist map composition from approved October UI mockup'));
   assert.ok(worker.indexOf('20260930-unified-map-v2')<worker.indexOf('Minimalist map composition from approved October UI mockup'));
+});
+
+test('browser acceptance requires the heatmap coverage release in both runtime markers and immutable assets',()=>{
+  assert.match(browserAcceptance,/const expectedRelease='20261013-map-heatmap-coverage-v2';/);
+  assert.match(browserAcceptance,/AE_MAP_VERSION_OVERRIDE/);
+  assert.match(browserAcceptance,/Cloudflare-Workers-Version-Overrides/);
+  assert.match(browserAcceptance,/\{minimal:release\.minimal,mobile:release\.mobile\},\{minimal:expectedRelease,mobile:expectedRelease\}/);
+  assert.match(browserAcceptance,/release\.script\?\.includes\(expectedRelease\)&&release\.style\?\.includes\(expectedRelease\)/);
+  assert.doesNotMatch(browserAcceptance,/const expectedRelease='20261013-map-mobile-disclosures-v5';/);
+});
+
+test('opened phone map tools remain above the historical research drawer',()=>{
+  assert.match(css,/data-minimal-tools="1"\] body #app :is\(#minimal-kind-controls,#minimal-map-modes\)\{z-index:142!important;\}/);
+});
+
+test('reopening phone map tools reveals then resets the horizontally scrolled category menu',()=>{
+  const visible=app.indexOf("root.dataset.minimalTools=open?'1':'0';");
+  const reset=app.indexOf("if(open&&phone.matches){const categories=Q('#minimal-kind-controls');if(categories)categories.scrollLeft=0;}");
+  assert.ok(visible>=0&&reset>visible,'the category menu becomes visible before its scroll position resets');
+});
+
+test('all mobile map selection variants use the shared Espacios slate surface',()=>{
+  assert.match(css,/\.ae-mobile-map-modes \.rail-btn:is\(\.active,\[aria-pressed="true"\]/);
+  assert.match(css,/\.layer-rail \.rail-btn:is\(\.active,\[aria-pressed="true"\]/);
+  assert.match(css,/background:color-mix\(in srgb,var\(--su-panel,#f4f6f7\) 94%,var\(--minimal-accent,#657d98\) 6%\)!important/);
+  assert.match(css,/text-shadow:none!important/);
+});
+
+function coverageControls(){
+  const calls=[],nodes=new Map(),selection={metric:'price',period:'2026-08',basis:'sales',registration:'Off-Plan',segment:'apartment',emirate:'Dubai',coverage:null,mapDisplay:true,evidenceClass:'registered_sale'};
+  for(const id of ['#minimal-map-scope-text','#minimal-all-projects','#tg-coverage-select'])nodes.set(id,{hidden:false,value:'cumulative',dispatchEvent(){calls.push(['coverage',this.value]);selection.coverage=this.value;}});
+  const U={setMetric(metric){calls.push(['metric',metric]);selection.metric=metric;},setMapDisplay(show){calls.push(['display',show]);selection.mapDisplay=show;},context:()=>selection};
+  const sandbox={window:{EspaciosUnifiedMap:U},Q:id=>nodes.get(id),UI:{mode:'heatmap',metric:'price'},active(){},turn3d:on=>calls.push(['3d',on]),pointView:()=>calls.push(['points']),analyticalDisplay:show=>U.setMapDisplay(show),satelliteVisible:show=>calls.push(['satellite',show]),Event:class{constructor(type){this.type=type;}}};
+  vm.runInNewContext(app.slice(app.indexOf('  function syncModes(){'),app.indexOf('  function setMetric(metric){'))+'\nthis.controls={setMode,syncMapContext,showAllProjects};',sandbox);
+  return {calls,nodes,selection,UI:sandbox.UI,...sandbox.controls};
+}
+
+test('Map and Heatmap preserve the selected financial period and basket',()=>{
+  const h=coverageControls();h.setMode('map');h.setMode('heatmap');
+  assert.deepEqual(h.calls.filter(c=>c[0]==='display'),[['display',false],['display',true]]);
+  assert.equal(h.calls.some(c=>c[0]==='metric'),false);
+  assert.equal(h.selection.period,'2026-08');assert.equal(h.selection.registration,'Off-Plan');
+  assert.doesNotMatch(app,/psrSetAnalysis/);
+});
+
+test('All projects explicitly restores all-dates density',()=>{
+  const h=coverageControls();h.showAllProjects();
+  assert.deepEqual(h.calls.filter(c=>['metric','coverage','display'].includes(c[0])),[['metric','projects'],['coverage','catalogue'],['display',true]]);
+  assert.equal(h.nodes.get('#minimal-map-scope-text').textContent,'UAE · Project density · All dates');
+  assert.equal(h.nodes.get('#minimal-all-projects').hidden,true);
+});
+
+test('persistent scope distinguishes dated density, registered sales, and Abu Dhabi asking evidence',()=>{
+  const h=coverageControls();h.syncMapContext();
+  assert.equal(h.nodes.get('#minimal-map-scope-text').textContent,'Dubai · Registered sales · Apartments · Off-Plan');
+  assert.equal(h.nodes.get('#minimal-all-projects').hidden,false);
+  h.syncMapContext({...h.selection,emirate:'Abu Dhabi',basis:'asking',evidenceClass:'advertised_price_benchmark'});
+  assert.equal(h.nodes.get('#minimal-map-scope-text').textContent,'Abu Dhabi · Asking prices · Apartments');
+  h.syncMapContext({...h.selection,metric:'projects',coverage:'cumulative',period:'2026'});
+  assert.equal(h.nodes.get('#minimal-map-scope-text').textContent,'UAE · Project density · Handovers through 2026');
+  assert.equal(h.nodes.get('#minimal-all-projects').hidden,false);
 });

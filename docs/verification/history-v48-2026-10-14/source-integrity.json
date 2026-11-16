@@ -1,0 +1,142 @@
+{
+  "status": "captured_verified_locally_pending_publication",
+  "packet": "data/historical-intelligence/emaar-primary-lifecycle-pass48-20261014.json",
+  "packetSHA256": "705714067dd9ba1c897c5d31ea6ffc84d07568fcd24c3f1ca8f92d9b283a6400",
+  "reconciliation": "data/historical-intelligence/emaar-primary-pass48-reconciliation.json",
+  "reconciliationRootSHA256": "ca1133d5169abc0bc2aec24eb193719018e47a3e9d06c773a951b9cc9a7424a0",
+  "sources": [
+    {
+      "id": "emaar48-expo-living-terra-heights",
+      "publisher": "Emaar Properties PJSC",
+      "title": "Emaar announces Expo Living and says Terra Heights is open for launch",
+      "url": "https://www.emaar.com/en/press-release-listing/emaar-properties-unveils-expo-living-a-landmark-community-development-through-joint-venture-with-dubai-world-trade-centre",
+      "publishedAt": "2024-11-14",
+      "publicationDatePrecision": "day",
+      "firstAvailableAt": "2026-10-13T20:35:34Z",
+      "retrievedAt": "2026-10-13T20:35:34Z",
+      "sha256": "aa52b9c15efe9b3f1cb762cc58fa493c46b3f1d07b27c00cccb5458d725b2499",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "rawBodyRedistributed": false,
+      "licence": "Minimal attributed factual extraction from a public primary source; raw HTML, imagery, and article text are not redistributed."
+    },
+    {
+      "id": "emaar48-palace-residences-sales-report",
+      "publisher": "Emaar Properties PJSC",
+      "title": "Emaar reports Palace Residences Dubai Hills Estate sales status",
+      "url": "https://www.emaar.com/en/blog/palace-residences-at-dubai-hills-estate-marks-aed-2-3-billion-in-sales-in-just-two-days",
+      "publishedAt": "2024-05-17",
+      "publicationDatePrecision": "day",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "retrievedAt": "2026-10-13T20:35:35Z",
+      "sha256": "3d91895569fd3a9a46d6afff27410b2c9c37254c2601b11aa6031b10b38f0d3c",
+      "classification": "primary_developer_report",
+      "primaryEvidence": true,
+      "rawBodyRedistributed": false,
+      "licence": "Minimal attributed factual extraction from a public primary source; raw HTML, imagery, and article text are not redistributed."
+    },
+    {
+      "id": "emaar48-h1-2024-rally",
+      "publisher": "Emaar Properties PJSC",
+      "title": "Emaar H1 2024 report with project-specific sales-status statements",
+      "url": "https://www.emaar.com/en/press-release-listing/emaars-h1-2024-rally-celebrating-achievements-and-future-prospects",
+      "publishedAt": "2024-07-10",
+      "publicationDatePrecision": "day",
+      "firstAvailableAt": "2026-10-13T20:35:35Z",
+      "retrievedAt": "2026-10-13T20:35:35Z",
+      "sha256": "767b8bf51a312c3f53c03d837874bd14e510d5d528034ef49e6817a79cfcab8a",
+      "classification": "primary_developer_press_release",
+      "primaryEvidence": true,
+      "rawBodyRedistributed": false,
+      "licence": "Minimal attributed factual extraction from a public primary source; raw HTML, imagery, and article text are not redistributed."
+    }
+  ],
+  "facts": [
+    {
+      "id": "emaar48-terra-heights-launch",
+      "recordId": "project:apartments-in-terra-heights-in-emaar-expo-living-expo-city-dubai",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-11-14",
+        "precision": "day"
+      },
+      "verification": "verified",
+      "eventStatus": "reported",
+      "sourceIds": [
+        "emaar48-expo-living-terra-heights"
+      ],
+      "identityVerified": true,
+      "evidenceClass": "primary_source_dated_lifecycle_report"
+    },
+    {
+      "id": "emaar48-palace-launch-window",
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "milestone": "launch",
+      "date": {
+        "start": "2024-05-15",
+        "end": "2024-05-17",
+        "precision": "range"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "sourceIds": [
+        "emaar48-palace-residences-sales-report"
+      ],
+      "identityVerified": true,
+      "evidenceClass": "primary_source_dated_lifecycle_report"
+    },
+    {
+      "id": "emaar48-palace-sales-status",
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2024-05-17",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "sourceIds": [
+        "emaar48-palace-residences-sales-report"
+      ],
+      "identityVerified": true,
+      "evidenceClass": "primary_source_dated_lifecycle_report"
+    },
+    {
+      "id": "emaar48-palace-h1-sales-status",
+      "recordId": "project:palace-residences-dubai-hills-estate-emaar-properties",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2024-07-10",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "sourceIds": [
+        "emaar48-h1-2024-rally"
+      ],
+      "identityVerified": true,
+      "evidenceClass": "primary_source_dated_lifecycle_report"
+    },
+    {
+      "id": "emaar48-zabeel-h1-sales-status",
+      "recordId": "project:address-residences-zabeel-by-emaar-properties-in-zaabeel-dubai",
+      "milestone": "developer_sales_status_report",
+      "date": {
+        "start": "2024-07-10",
+        "precision": "day"
+      },
+      "verification": "reported",
+      "eventStatus": "reported",
+      "sourceIds": [
+        "emaar48-h1-2024-rally"
+      ],
+      "identityVerified": true,
+      "evidenceClass": "primary_source_dated_lifecycle_report"
+    }
+  ],
+  "financialObservationsAdded": 0,
+  "approved2080Forecasts": 0,
+  "rawBodiesRedistributed": false,
+  "temporalQualification": "Displayed historical publication dates, first locally retained availability, and retrieval timestamps remain separate. The current captures must not be used as if available to a historical model before their retained availability date.",
+  "classification": "Five lifecycle/context facts from three public Emaar pages. Developer aggregate sales-status reports remain separate from individual registered transactions, price series, rents, valuations, completion, occupancy, and forecasts."
+}

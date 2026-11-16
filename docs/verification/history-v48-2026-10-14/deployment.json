@@ -1,0 +1,18 @@
+{
+  "status": "active",
+  "worker": "psr-portfolio-map-v2",
+  "workerVersion": "f3dc3db9-4796-4856-9b01-e2198319eae6",
+  "frontendRelease": "20261013-map-heatmap-coverage-v2",
+  "deploymentId": "c29153a2-7e59-46e2-9854-b6f5b952a168",
+  "trafficPercent": 100,
+  "activatedAt": "2026-10-14T03:13:58.482396Z",
+  "candidate": {
+    "workerVersion": "f3dc3db9-4796-4856-9b01-e2198319eae6",
+    "tag": "history-v48-20261014",
+    "trafficPercentBeforeActivation": 0,
+    "candidateAPIStatus": "passed",
+    "canonicalOverrideBrowserStatus": "passed"
+  },
+  "previousProductionWorkerVersion": "17ddb204-54ae-4450-82f0-131dfbf95981",
+  "message": "Activate V48 verified Emaar lifecycle evidence after immutable archive and candidate acceptance"
+}
