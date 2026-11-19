@@ -484,6 +484,16 @@ if(spatialFallback.type!=='FeatureCollection'||spatialFallback.features.length!=
 stackSource+='\nvar MAP_DUBAI_BOUNDARY_FALLBACK='+JSON.stringify({sha256:digest(spatialFallbackRaw),base64:gzipSync(spatialFallbackRaw,{level:9}).toString('base64')})+';\n';
 stackSource+='\n'+await read('src/spatial-recovery/worker-extension.js')+'\n';
 source=source.replace('\nexport {worker_default as default};\n',()=>stackSource+'\nexport {worker_default as default};\n');
+// Retain the reviewed 19 November source observations in every generated Worker.
+const reviewedEvidenceRaw20261119=await fs.readFile(new URL('data/verified-evidence/20261119-primary-batch1.rows.json',root));
+const reviewedEvidenceManifest20261119=JSON.parse(await read('data/verified-evidence/20261119-primary-batch1.manifest.json'));
+if(digest(reviewedEvidenceRaw20261119)!==reviewedEvidenceManifest20261119.rowsSha256)throw Error('Reviewed primary-evidence rows changed');
+const reviewedEvidenceRows20261119=JSON.parse(reviewedEvidenceRaw20261119);
+if(reviewedEvidenceRows20261119.length!==47||new Set(reviewedEvidenceRows20261119.map(row=>row.id)).size!==47||new Set(reviewedEvidenceRows20261119.map(row=>row.entity_id)).size!==12)throw Error('Reviewed primary-evidence identities changed');
+const reviewedEvidenceHook20261119="return psrJson({ estimates: est.results || [], comparables: comp.results || [], history: hist.results || [] }, 200, \"private, max-age=60\");";
+if(source.split(reviewedEvidenceHook20261119).length!==2)throw Error('Valuation evidence success hook must occur exactly once');
+source=source.replace(reviewedEvidenceHook20261119,"return psrJson({ estimates: est.results || [], comparables: comp.results || [], history: aeMergeReviewedEvidenceHistory20261119(entity, hist.results || [], AE_REVIEWED_EVIDENCE_ROWS_20261119) }, 200, \"private, max-age=60\");");
+source+='\nvar AE_REVIEWED_EVIDENCE_ROWS_20261119='+JSON.stringify(reviewedEvidenceRows20261119)+';\n'+(await read('src/verified-evidence/history-overlay.mjs')).replace(/^export /gm,'')+'\n';
 await fs.writeFile(new URL('src/worker.js',root),source);
 const context=vm.createContext({console,Headers,Request,Response,URL,URLSearchParams,atob,btoa,TextEncoder,TextDecoder,DecompressionStream,CompressionStream,ReadableStream,Blob,crypto:globalThis.crypto,fetch});vm.runInContext(source.replace(/export \{\s*worker_default as default\s*\};/,''),context);
 const browser=await(await vm.runInContext('aePatchedAppJs()',context)).text();new vm.Script(browser.replace(/^import .*;$/gm,''));

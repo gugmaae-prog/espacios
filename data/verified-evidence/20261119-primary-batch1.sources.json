@@ -1,0 +1,4028 @@
+{
+  "schemaVersion": "candidate-evidence-v1",
+  "batchId": "espacios-map-enrichment-20261119-primary-batch1",
+  "createdAt": "2026-11-19T10:22:27Z",
+  "classification": "additive_primary_source_observations",
+  "baseCatalogue": {
+    "path": "https://espacios.me/map/map-core.json?v=20261115-map-frontend-v43",
+    "sha256": "cbc59177c21a33ae3d9f2022f7f0ebfe2f26f6638282d818bde8747a45379459",
+    "projects": 1645
+  },
+  "policy": {
+    "preserveAllExistingRecords": true,
+    "preserveExistingFieldValues": true,
+    "appendEvidenceOnly": true,
+    "newCoordinates": false,
+    "financialForecasts": false,
+    "roi": false,
+    "officialDeveloperAskingPricesAreNotClosedSales": true,
+    "publicationDatesAreNotRetrievalDates": true,
+    "phaseTotalsMustNotBeSummedWithoutReconciliation": true,
+    "allUserVisibleClaimsRequireSourceAndScope": true,
+    "sourceQuotes": "Short supporting excerpts only; source-linked fact values are paraphrased structured observations."
+  },
+  "counts": {
+    "records": 12,
+    "sources": 14,
+    "facts": 44,
+    "askingPriceObservations": 2,
+    "legacyScheduleDiscrepancies": 2,
+    "reviewFlags": 3
+  },
+  "sources": [
+    {
+      "id": "nakheel-pja-frond-f-20260820",
+      "publisher": "Nakheel",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/four-studios--one-shoreline--inside-the-latest-release-from-palm-jebel-ali-s-beach---coral-collections",
+      "title": "Beach and Coral collections: Frond F release",
+      "publicationDate": "2026-08-20",
+      "retrievalRef": "turn305711797view0",
+      "excerpts": [
+        {
+          "id": "beach-beds",
+          "text": "five- and six-bedroom villas"
+        },
+        {
+          "id": "beach-size",
+          "text": "7,500 to 8,500 sq ft"
+        },
+        {
+          "id": "coral-beds",
+          "text": "six- and seven-bedroom villas"
+        },
+        {
+          "id": "coral-size",
+          "text": "11,500 to 12,500 sq ft"
+        }
+      ],
+      "scope": "Frond F release announced on 20 August 2026; not every release within either collection.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "explicit source dateline",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 18,
+      "organisation": "Nakheel",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn305711797view0",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "nakheel-palmcentral-20260624",
+      "publisher": "Nakheel",
+      "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "title": "Palm Central Private Residences: June 2026 phase",
+      "publicationDate": "2026-06-24",
+      "retrievalRef": "turn499246582view1",
+      "excerpts": [
+        {
+          "id": "phase-units",
+          "text": "222 residences across three low- to mid-rise buildings"
+        },
+        {
+          "id": "phase-types",
+          "text": "one- to four-bedroom apartments and four- to five-bedroom townhouses"
+        }
+      ],
+      "scope": "The phase released on 24 June 2026, following an initial October 2025 release; not a project-wide cumulative inventory.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "explicit source dateline",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 17,
+      "organisation": "Nakheel",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn499246582view1",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "sobha-aquamont-project",
+      "publisher": "Sobha Realty",
+      "url": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "title": "Sobha Aquamont",
+      "publicationDate": null,
+      "retrievalRef": "turn445815404view0",
+      "excerpts": [
+        {
+          "id": "bedrooms",
+          "text": "1, 2, and 3-bedroom apartments"
+        },
+        {
+          "id": "duplex",
+          "text": "select 3-bedroom duplex residences"
+        },
+        {
+          "id": "starting-price",
+          "text": "AED 1.11 M*"
+        },
+        {
+          "id": "price-condition",
+          "text": "Subject to inventory availability*"
+        },
+        {
+          "id": "amenities",
+          "text": "beaches, landscaped parks, waterfront promenades, marina facilities"
+        }
+      ],
+      "scope": "Developer marketing page as observed; asking-from price is conditional and not a closed-sale price.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 23,
+      "organisation": "Sobha Realty",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn445815404view0",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "sobha-aquamont-listing",
+      "publisher": "Sobha Realty",
+      "url": "https://sobharealty.com/sobha-communities/uaq-downtown/apartments",
+      "title": "Downtown Umm Al Quwain apartment listings",
+      "publicationDate": null,
+      "retrievalRef": "turn445815404view1",
+      "excerpts": [
+        {
+          "id": "handover",
+          "text": "Handover - June 2028"
+        }
+      ],
+      "scope": "Sobha Aquamont listing; developer schedule, not verified completion.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 4,
+      "organisation": "Sobha Realty",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn445815404view1",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "deyaar-aya-launch-20250224",
+      "publisher": "Deyaar Development PJSC via Dubai Financial Market",
+      "url": "https://feeds.dfm.ae/documents/2025/Feb/24/36d23f29-b3c6-42dc-836c-ef6c91d534f9/Deyaar%20Press%20Release.pdf",
+      "title": "Deyaar launch announcement for AYA Beachfront Residences",
+      "publicationDate": "2025-02-24",
+      "retrievalRef": "turn249925610view3",
+      "excerpts": [
+        {
+          "id": "phase-units",
+          "text": "Phase 1 offers 442 residential units"
+        },
+        {
+          "id": "bedrooms",
+          "text": "1- to 5-bedroom residences"
+        },
+        {
+          "id": "handover",
+          "text": "scheduled for completion in Q4 of 2027."
+        },
+        {
+          "id": "special-types",
+          "text": "penthouses, sky villas, and duplexes"
+        }
+      ],
+      "scope": "Phase 1 announced 24 February 2025. Schedule is the dated launch estimate; no assertion of current sale availability.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "explicit source dateline",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 22,
+      "organisation": "Deyaar Development PJSC via Dubai Financial Market",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn249925610view3",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "sobha-bayside-project",
+      "publisher": "Sobha Realty",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/bayside",
+      "title": "Bayside Marina Residences",
+      "publicationDate": null,
+      "retrievalRef": "turn499246582view3",
+      "excerpts": [
+        {
+          "id": "tower-count",
+          "text": "Spanning across three iconic towers"
+        },
+        {
+          "id": "bedrooms",
+          "text": "1 to 3-bedroom apartments"
+        },
+        {
+          "id": "price-banner",
+          "text": "AED 1.51 M*"
+        },
+        {
+          "id": "price-faq",
+          "text": "starting prices from around AED 1.23M"
+        },
+        {
+          "id": "marina",
+          "text": "marina access"
+        },
+        {
+          "id": "beach",
+          "text": "private beach privileges"
+        }
+      ],
+      "scope": "Official project page has conflicting advertised starting-price statements; numeric canonical asking price is withheld.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 23,
+      "organisation": "Sobha Realty",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn499246582view3",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "sobha-marina-listing",
+      "publisher": "Sobha Realty",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/siniya-marina-residences",
+      "title": "Siniya Marina Residences project listings",
+      "publicationDate": null,
+      "retrievalRef": "turn249925610view5",
+      "excerpts": [
+        {
+          "id": "bayside-handover",
+          "text": "Handover - Sept 2029"
+        },
+        {
+          "id": "pierside-handover",
+          "text": "Handover - Mar 2029"
+        },
+        {
+          "id": "pierside-beds-list",
+          "text": "1 and 2 Bedroom Apartments"
+        }
+      ],
+      "scope": "Each excerpt belongs to its named project card; these are developer schedules, not completed handovers.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 13,
+      "organisation": "Sobha Realty",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn249925610view5",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "sobha-pierside-project",
+      "publisher": "Sobha Realty",
+      "url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pierside",
+      "title": "Pierside Marina Residences",
+      "publicationDate": null,
+      "retrievalRef": "turn499246582view4",
+      "excerpts": [
+        {
+          "id": "bedrooms",
+          "text": "1 to 3-bedroom apartments"
+        },
+        {
+          "id": "starting-price",
+          "text": "AED 1.52 M*"
+        },
+        {
+          "id": "price-condition",
+          "text": "Subject to inventory availability*"
+        },
+        {
+          "id": "pool",
+          "text": "infinity pools"
+        },
+        {
+          "id": "fitness",
+          "text": "fitness and wellness facilities"
+        },
+        {
+          "id": "marina",
+          "text": "private marina access"
+        }
+      ],
+      "scope": "Dedicated page markets 1–3 bedrooms, while the marina listing card lists 1–2. Preserve both observations without asserting a complete bedroom inventory.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 20,
+      "organisation": "Sobha Realty",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn499246582view4",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "reportage-oceana-project",
+      "publisher": "Reportage Group",
+      "url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "title": "Oceana",
+      "publicationDate": null,
+      "retrievalRef": "turn445815404view2",
+      "excerpts": [
+        {
+          "id": "apartments",
+          "text": "605\n\nTotal Apartment Units"
+        },
+        {
+          "id": "floors",
+          "text": "19\n\nResidential Floors"
+        },
+        {
+          "id": "plot-area",
+          "text": "5,476\n\nPlot Area sq.m."
+        },
+        {
+          "id": "pool",
+          "text": "Large Swimming Pool"
+        },
+        {
+          "id": "gym",
+          "text": "Gymnasium"
+        },
+        {
+          "id": "kids-pool",
+          "text": "Large Kids Swimming Pool"
+        },
+        {
+          "id": "bbq",
+          "text": "BBQ Area"
+        }
+      ],
+      "scope": "Developer project specification. No dated construction-progress or asking-price claim accepted from this page.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 21,
+      "organisation": "Reportage Group",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn445815404view2",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "modon-muheira-project",
+      "publisher": "Modon",
+      "url": "https://www.modon.com/real-estate/muheira",
+      "title": "Muheira",
+      "publicationDate": null,
+      "retrievalRef": "turn249925610view0",
+      "excerpts": [
+        {
+          "id": "towers",
+          "text": "two thoughtfully designed residential towers located on Reem Island"
+        },
+        {
+          "id": "bedrooms",
+          "text": "1-, 2-, and 3-bedroom apartments"
+        },
+        {
+          "id": "handover",
+          "text": "Handover: Q2 2029"
+        },
+        {
+          "id": "payment",
+          "text": "Payment plan: 50/50"
+        },
+        {
+          "id": "one-bed-area",
+          "text": "74 - 86 sqm"
+        }
+      ],
+      "scope": "Current developer marketing factsheet; prices are labelled averages, so no asking-from price is extracted.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 24,
+      "organisation": "Modon",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn249925610view0",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "modon-hudayriyat-golf-project",
+      "publisher": "Modon",
+      "url": "https://www.modon.com/real-estate/hudayriyat-golf-estates",
+      "title": "Hudayriyat Golf Estates",
+      "publicationDate": null,
+      "retrievalRef": "turn249925610view1",
+      "excerpts": [
+        {
+          "id": "types",
+          "text": "Mansions, Villas, and Townhomes"
+        },
+        {
+          "id": "handover-quarter",
+          "text": "Handover: Q3 2030"
+        },
+        {
+          "id": "handover-month",
+          "text": "ready for handover by August 2030."
+        },
+        {
+          "id": "payment",
+          "text": "Payment plan: 40/60"
+        },
+        {
+          "id": "townhome-3br",
+          "text": "3-bedroom Townhomes"
+        },
+        {
+          "id": "townhome-3br-area",
+          "text": "Size: 204 sqm"
+        }
+      ],
+      "scope": "Developer factsheet and FAQ; Q3 2030 and August 2030 are consistent scheduled dates, not completed-delivery evidence.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 21,
+      "organisation": "Modon",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn249925610view1",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "aldar-beachhouse-fahid-project",
+      "publisher": "Aldar",
+      "url": "https://www.aldar.com/properties/en/Fahid-Island/fahidbeachhouse",
+      "title": "The Beach House Fahid",
+      "publicationDate": null,
+      "retrievalRef": "turn445815404view3",
+      "excerpts": [
+        {
+          "id": "towers",
+          "text": "11 elegant residential towers"
+        },
+        {
+          "id": "bedrooms",
+          "text": "studio to 3-bedroom + Maid apartments"
+        },
+        {
+          "id": "pools",
+          "text": "Two resort-style swimming pools"
+        },
+        {
+          "id": "gyms",
+          "text": "Two state-of-the-art fitness centres"
+        },
+        {
+          "id": "coworking",
+          "text": "Co-working lounges"
+        }
+      ],
+      "scope": "Marketing project matched by exact distinctive project name to existing authority record adrec:615; this does not amend authority registration fields.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 20,
+      "organisation": "Aldar",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn445815404view3",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "aldar-ghadeer-launch-20260515",
+      "publisher": "Aldar",
+      "url": "https://vazeno.files.cmp.optimizely.com/download/assets/260515%2BAldar%2BAl%2BGhadeer%2BGardens%2BPress%2BRelease%2BFINAL.pdf/b4b647d6502411f1ac568e258122a782",
+      "discoveryUrl": "https://www.aldar.com/en/news-and-media/aldar-unveils-al-ghadeer-gardens-bringing-modern-family-living-to-the-key-growth-corridor-between-abu-dhabi-and-dubai",
+      "title": "Al Ghadeer Gardens launch press release",
+      "publicationDate": "2026-05-15",
+      "retrievalRef": "turn566473274view3",
+      "excerpts": [
+        {
+          "id": "launch-units",
+          "text": "Collection of 437 villas and townhouses"
+        },
+        {
+          "id": "bedrooms",
+          "text": "two-\n, three-, and four-bedroom homes"
+        },
+        {
+          "id": "school-year",
+          "text": "2030 academic year"
+        },
+        {
+          "id": "school-capacity",
+          "text": "capacity for more than 2,800 students"
+        }
+      ],
+      "scope": "Launch cohort described in the dated press release. Current campaign page separately reports 352 without resolving phase scope.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "explicit source dateline",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 21,
+      "organisation": "Aldar",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn566473274view3",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    },
+    {
+      "id": "aldar-ghadeer-campaign",
+      "publisher": "Aldar",
+      "url": "https://www.aldar.com/properties/en/alghadeer",
+      "title": "Al Ghadeer Gardens campaign page",
+      "publicationDate": null,
+      "retrievalRef": "turn499246582view2",
+      "excerpts": [
+        {
+          "id": "units",
+          "text": "Total No. of units\n\n352"
+        },
+        {
+          "id": "types",
+          "text": "Villas and townhouses"
+        }
+      ],
+      "scope": "Undated campaign page. Unit count differs from the 437-home launch announcement; no combined or replacement total accepted.",
+      "sourceType": "primary_official",
+      "retrievedAt": "2026-11-19",
+      "publicationDateBasis": "not stated",
+      "accessMethod": "web page opened and relevant text read",
+      "quotedWordCount": 8,
+      "organisation": "Aldar",
+      "retrieved_at": "2026-11-19",
+      "official": true,
+      "evidence_reference": "turn499246582view2",
+      "retrievalDatePrecision": "day",
+      "reviewedAt": "2026-11-19T10:22:27Z"
+    }
+  ],
+  "records": [
+    {
+      "recordId": "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "name": "The Beach Collection on Palm Jebel Ali",
+      "matchBasis": "Exact collection, developer and master development; evidence limited to a named release.",
+      "scope": "Frond F release dated 2026-08-20",
+      "facts": [
+        {
+          "field": "releaseBedroomOptions",
+          "value": [
+            5,
+            6
+          ],
+          "sourceIds": [
+            "nakheel-pja-frond-f-20260820"
+          ],
+          "excerptIds": [
+            "nakheel-pja-frond-f-20260820#beach-beds"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-08-20",
+          "additiveOnly": true,
+          "id": "enrich-20261119-001"
+        },
+        {
+          "field": "releaseVillaAreaSqft",
+          "value": {
+            "min": 7500,
+            "max": 8500
+          },
+          "sourceIds": [
+            "nakheel-pja-frond-f-20260820"
+          ],
+          "excerptIds": [
+            "nakheel-pja-frond-f-20260820#beach-size"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-08-20",
+          "additiveOnly": true,
+          "unit": "sqft",
+          "qualifiers": [
+            "Area label in press release; not normalised into plot or internal-net area."
+          ],
+          "id": "enrich-20261119-002"
+        }
+      ],
+      "withheld": [
+        "Project-wide unit total",
+        "Current available stock",
+        "Current asking price",
+        "New handover date",
+        "New coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:the-coral-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "name": "The Coral Collection on Palm Jebel Ali",
+      "matchBasis": "Exact collection, developer and master development; evidence limited to a named release.",
+      "scope": "Frond F release dated 2026-08-20",
+      "facts": [
+        {
+          "field": "releaseBedroomOptions",
+          "value": [
+            6,
+            7
+          ],
+          "sourceIds": [
+            "nakheel-pja-frond-f-20260820"
+          ],
+          "excerptIds": [
+            "nakheel-pja-frond-f-20260820#coral-beds"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-08-20",
+          "additiveOnly": true,
+          "id": "enrich-20261119-003"
+        },
+        {
+          "field": "releaseVillaAreaSqft",
+          "value": {
+            "min": 11500,
+            "max": 12500
+          },
+          "sourceIds": [
+            "nakheel-pja-frond-f-20260820"
+          ],
+          "excerptIds": [
+            "nakheel-pja-frond-f-20260820#coral-size"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-08-20",
+          "additiveOnly": true,
+          "unit": "sqft",
+          "qualifiers": [
+            "Area label in press release; not normalised into plot or internal-net area."
+          ],
+          "id": "enrich-20261119-004"
+        }
+      ],
+      "withheld": [
+        "Project-wide unit total",
+        "Current available stock",
+        "Current asking price",
+        "New handover date",
+        "New coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:palm-central-private-residences-palm-jebel-ali-dubai",
+      "name": "Palm Central Private Residences",
+      "matchBasis": "Exact marketed name, Nakheel and Palm Jebel Ali.",
+      "scope": "Phase released 2026-06-24",
+      "facts": [
+        {
+          "field": "announcedPhaseResidences",
+          "value": 222,
+          "sourceIds": [
+            "nakheel-palmcentral-20260624"
+          ],
+          "excerptIds": [
+            "nakheel-palmcentral-20260624#phase-units"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-06-24",
+          "additiveOnly": true,
+          "unit": "residences",
+          "aggregation": "phase_only_not_project_total",
+          "qualifiers": [
+            "Do not add to earlier phases without a non-overlap reconciliation."
+          ],
+          "id": "enrich-20261119-005"
+        },
+        {
+          "field": "phaseBuildingCount",
+          "value": 3,
+          "sourceIds": [
+            "nakheel-palmcentral-20260624"
+          ],
+          "excerptIds": [
+            "nakheel-palmcentral-20260624#phase-units"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-06-24",
+          "additiveOnly": true,
+          "unit": "buildings",
+          "id": "enrich-20261119-006"
+        },
+        {
+          "field": "phaseResidenceMix",
+          "value": {
+            "apartmentsBedrooms": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "townhouseBedrooms": [
+              4,
+              5
+            ]
+          },
+          "sourceIds": [
+            "nakheel-palmcentral-20260624"
+          ],
+          "excerptIds": [
+            "nakheel-palmcentral-20260624#phase-types"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-06-24",
+          "additiveOnly": true,
+          "id": "enrich-20261119-007"
+        }
+      ],
+      "withheld": [
+        "Project-wide cumulative units",
+        "Price",
+        "Handover",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "name": "Sobha Aquamont",
+      "matchBasis": "Exact project name, developer and Downtown Umm Al Quwain.",
+      "scope": "Developer page observed 2026-11-19",
+      "facts": [
+        {
+          "field": "advertisedStartingPriceAed",
+          "value": 1110000,
+          "sourceIds": [
+            "sobha-aquamont-project"
+          ],
+          "excerptIds": [
+            "sobha-aquamont-project#starting-price",
+            "sobha-aquamont-project#price-condition"
+          ],
+          "classification": "developer_asking_from_price",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "AED",
+          "qualifiers": [
+            "Subject to inventory availability; not a valuation or completed transaction.",
+            "Do not infer exact unit inventory or price per sqft."
+          ],
+          "id": "enrich-20261119-008"
+        },
+        {
+          "field": "marketedResidenceMix",
+          "value": {
+            "apartmentsBedrooms": [
+              1,
+              2,
+              3
+            ],
+            "duplexBedrooms": [
+              3
+            ]
+          },
+          "sourceIds": [
+            "sobha-aquamont-project"
+          ],
+          "excerptIds": [
+            "sobha-aquamont-project#bedrooms",
+            "sobha-aquamont-project#duplex"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-009"
+        },
+        {
+          "field": "scheduledHandover",
+          "value": {
+            "month": "2028-06",
+            "precision": "month",
+            "display": "June 2028"
+          },
+          "sourceIds": [
+            "sobha-aquamont-listing"
+          ],
+          "excerptIds": [
+            "sobha-aquamont-listing#handover"
+          ],
+          "classification": "developer_schedule",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "conflictsWithLegacy": {
+            "field": "handover",
+            "value": "Q3 2027",
+            "action": "retain existing value and append schedule discrepancy; do not claim a verified delay"
+          },
+          "id": "enrich-20261119-010"
+        },
+        {
+          "field": "marketedCommunityAmenities",
+          "value": [
+            "beaches",
+            "landscaped parks",
+            "waterfront promenades",
+            "marina facilities"
+          ],
+          "sourceIds": [
+            "sobha-aquamont-project"
+          ],
+          "excerptIds": [
+            "sobha-aquamont-project#amenities"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Developer description of the surrounding master-planned setting; completion and operation not independently verified."
+          ],
+          "id": "enrich-20261119-011"
+        }
+      ],
+      "withheld": [
+        "Completed-delivery status",
+        "Coordinates",
+        "ROI",
+        "Verified closed-sale price"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:apartments-aya-deyaar-umm-al-quwain",
+      "name": "AYA",
+      "matchBasis": "AYA Beachfront Residences name, Deyaar, Umm Al Quwain; launch evidence describes Phase 1.",
+      "scope": "Phase 1 launch announcement 2025-02-24",
+      "facts": [
+        {
+          "field": "announcedPhaseResidences",
+          "value": 442,
+          "sourceIds": [
+            "deyaar-aya-launch-20250224"
+          ],
+          "excerptIds": [
+            "deyaar-aya-launch-20250224#phase-units"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2025-02-24",
+          "additiveOnly": true,
+          "unit": "residences",
+          "aggregation": "phase_only_not_current_inventory",
+          "id": "enrich-20261119-012"
+        },
+        {
+          "field": "announcedBedroomRange",
+          "value": {
+            "min": 1,
+            "max": 5
+          },
+          "sourceIds": [
+            "deyaar-aya-launch-20250224"
+          ],
+          "excerptIds": [
+            "deyaar-aya-launch-20250224#bedrooms"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2025-02-24",
+          "additiveOnly": true,
+          "id": "enrich-20261119-013"
+        },
+        {
+          "field": "scheduledHandover",
+          "value": {
+            "quarter": "2027-Q4",
+            "precision": "quarter",
+            "display": "Q4 2027"
+          },
+          "sourceIds": [
+            "deyaar-aya-launch-20250224"
+          ],
+          "excerptIds": [
+            "deyaar-aya-launch-20250224#handover"
+          ],
+          "classification": "developer_schedule",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2025-02-24",
+          "additiveOnly": true,
+          "qualifiers": [
+            "Dated launch estimate from February 2025; not a fresh construction certification."
+          ],
+          "id": "enrich-20261119-014"
+        },
+        {
+          "field": "announcedSpecialResidenceTypes",
+          "value": [
+            "penthouse",
+            "sky villa",
+            "duplex"
+          ],
+          "sourceIds": [
+            "deyaar-aya-launch-20250224"
+          ],
+          "excerptIds": [
+            "deyaar-aya-launch-20250224#special-types"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2025-02-24",
+          "additiveOnly": true,
+          "qualifiers": [
+            "Announced at launch; not current unit availability."
+          ],
+          "id": "enrich-20261119-015"
+        }
+      ],
+      "withheld": [
+        "Current sold/available inventory",
+        "Price",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain",
+      "name": "Bayside Marina Residences",
+      "matchBasis": "Exact project name, Sobha, Siniya Island.",
+      "scope": "Developer marketing project",
+      "facts": [
+        {
+          "field": "marketedBedroomOptions",
+          "value": [
+            1,
+            2,
+            3
+          ],
+          "sourceIds": [
+            "sobha-bayside-project"
+          ],
+          "excerptIds": [
+            "sobha-bayside-project#bedrooms"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-016"
+        },
+        {
+          "field": "marketedTowerCount",
+          "value": 3,
+          "sourceIds": [
+            "sobha-bayside-project"
+          ],
+          "excerptIds": [
+            "sobha-bayside-project#tower-count"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "towers",
+          "id": "enrich-20261119-017"
+        },
+        {
+          "field": "scheduledHandover",
+          "value": {
+            "month": "2029-09",
+            "precision": "month",
+            "display": "September 2029"
+          },
+          "sourceIds": [
+            "sobha-marina-listing"
+          ],
+          "excerptIds": [
+            "sobha-marina-listing#bayside-handover"
+          ],
+          "classification": "developer_schedule",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-018"
+        },
+        {
+          "field": "marketedAccessAmenities",
+          "value": [
+            "marina access",
+            "private beach privileges"
+          ],
+          "sourceIds": [
+            "sobha-bayside-project"
+          ],
+          "excerptIds": [
+            "sobha-bayside-project#marina",
+            "sobha-bayside-project#beach"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Developer marketing; legal access terms and current operation not independently verified."
+          ],
+          "id": "enrich-20261119-019"
+        }
+      ],
+      "reviewFlags": [
+        {
+          "field": "advertisedStartingPriceAed",
+          "status": "withheld_conflicting_official_page",
+          "observedValues": [
+            1510000,
+            1230000
+          ],
+          "sourceIds": [
+            "sobha-bayside-project"
+          ],
+          "excerptIds": [
+            "sobha-bayside-project#price-banner",
+            "sobha-bayside-project#price-faq"
+          ],
+          "reason": "Dedicated page banner and FAQ disagree; do not silently choose a canonical asking price."
+        }
+      ],
+      "withheld": [
+        "Numeric asking price",
+        "Verified stock",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:apartments-pierside-marina-residences-sobha-siniya-island",
+      "name": "Pierside Marina Residences",
+      "matchBasis": "Exact project name, Sobha, Siniya Island.",
+      "scope": "Developer marketing project",
+      "facts": [
+        {
+          "field": "advertisedStartingPriceAed",
+          "value": 1520000,
+          "sourceIds": [
+            "sobha-pierside-project"
+          ],
+          "excerptIds": [
+            "sobha-pierside-project#starting-price",
+            "sobha-pierside-project#price-condition"
+          ],
+          "classification": "developer_asking_from_price",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "AED",
+          "qualifiers": [
+            "Subject to inventory availability; not a valuation or completed transaction."
+          ],
+          "id": "enrich-20261119-020"
+        },
+        {
+          "field": "scheduledHandover",
+          "value": {
+            "month": "2029-03",
+            "precision": "month",
+            "display": "March 2029"
+          },
+          "sourceIds": [
+            "sobha-marina-listing"
+          ],
+          "excerptIds": [
+            "sobha-marina-listing#pierside-handover"
+          ],
+          "classification": "developer_schedule",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-021"
+        },
+        {
+          "field": "propertyCategory",
+          "value": "apartments",
+          "sourceIds": [
+            "sobha-pierside-project"
+          ],
+          "excerptIds": [
+            "sobha-pierside-project#bedrooms"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-022"
+        },
+        {
+          "field": "marketedAmenities",
+          "value": [
+            "infinity pools",
+            "fitness and wellness facilities",
+            "private marina access"
+          ],
+          "sourceIds": [
+            "sobha-pierside-project"
+          ],
+          "excerptIds": [
+            "sobha-pierside-project#pool",
+            "sobha-pierside-project#fitness",
+            "sobha-pierside-project#marina"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Developer marketing; legal access terms and current operation not independently verified."
+          ],
+          "id": "enrich-20261119-023"
+        }
+      ],
+      "reviewFlags": [
+        {
+          "field": "marketedBedroomOptions",
+          "status": "withheld_scope_difference",
+          "observedValues": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "sourceIds": [
+            "sobha-pierside-project",
+            "sobha-marina-listing"
+          ],
+          "excerptIds": [
+            "sobha-pierside-project#bedrooms",
+            "sobha-marina-listing#pierside-beds-list"
+          ],
+          "reason": "Dedicated project page offers 1–3 bedrooms; current listing card lists 1–2. Could be inventory/phase scope; not reconciled."
+        }
+      ],
+      "withheld": [
+        "Canonical full bedroom inventory",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:oceana-by-reportage-fujairah-uae",
+      "name": "Oceana",
+      "matchBasis": "Exact marketed name, Reportage and Fujairah.",
+      "scope": "Developer project specification",
+      "facts": [
+        {
+          "field": "announcedApartmentUnits",
+          "value": 605,
+          "sourceIds": [
+            "reportage-oceana-project"
+          ],
+          "excerptIds": [
+            "reportage-oceana-project#apartments"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "apartments",
+          "qualifiers": [
+            "Developer specification total; not current sale availability."
+          ],
+          "id": "enrich-20261119-024"
+        },
+        {
+          "field": "residentialFloors",
+          "value": 19,
+          "sourceIds": [
+            "reportage-oceana-project"
+          ],
+          "excerptIds": [
+            "reportage-oceana-project#floors"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "floors",
+          "id": "enrich-20261119-025"
+        },
+        {
+          "field": "plotAreaSqm",
+          "value": 5476,
+          "sourceIds": [
+            "reportage-oceana-project"
+          ],
+          "excerptIds": [
+            "reportage-oceana-project#plot-area"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "sqm",
+          "id": "enrich-20261119-026"
+        },
+        {
+          "field": "marketedAmenities",
+          "value": [
+            "swimming pool",
+            "gymnasium",
+            "children's swimming pool",
+            "barbecue area"
+          ],
+          "sourceIds": [
+            "reportage-oceana-project"
+          ],
+          "excerptIds": [
+            "reportage-oceana-project#pool",
+            "reportage-oceana-project#gym",
+            "reportage-oceana-project#kids-pool",
+            "reportage-oceana-project#bbq"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Advertised project amenities; current operation/completion not verified."
+          ],
+          "id": "enrich-20261119-027"
+        }
+      ],
+      "withheld": [
+        "New price",
+        "New handover",
+        "Undated 0% construction widget",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:apartments-muheira-maysan-abu-dhabi",
+      "name": "Muheira",
+      "matchBasis": "Exact marketed name, Modon and Reem Island; retains existing Maysan area wording.",
+      "scope": "Developer marketed project",
+      "facts": [
+        {
+          "field": "marketedTowerCount",
+          "value": 2,
+          "sourceIds": [
+            "modon-muheira-project"
+          ],
+          "excerptIds": [
+            "modon-muheira-project#towers"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "towers",
+          "id": "enrich-20261119-028"
+        },
+        {
+          "field": "marketedBedroomOptions",
+          "value": [
+            1,
+            2,
+            3
+          ],
+          "sourceIds": [
+            "modon-muheira-project"
+          ],
+          "excerptIds": [
+            "modon-muheira-project#bedrooms"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-029"
+        },
+        {
+          "field": "scheduledHandover",
+          "value": {
+            "quarter": "2029-Q2",
+            "precision": "quarter",
+            "display": "Q2 2029"
+          },
+          "sourceIds": [
+            "modon-muheira-project"
+          ],
+          "excerptIds": [
+            "modon-muheira-project#handover"
+          ],
+          "classification": "developer_schedule",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-030"
+        },
+        {
+          "field": "advertisedPaymentPlan",
+          "value": "50/50",
+          "sourceIds": [
+            "modon-muheira-project"
+          ],
+          "excerptIds": [
+            "modon-muheira-project#payment"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Factsheet marketing split; detailed payment milestones and contract terms not established."
+          ],
+          "id": "enrich-20261119-031"
+        },
+        {
+          "field": "oneBedroomAdvertisedAreaSqm",
+          "value": {
+            "min": 74,
+            "max": 86
+          },
+          "sourceIds": [
+            "modon-muheira-project"
+          ],
+          "excerptIds": [
+            "modon-muheira-project#one-bed-area"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "sqm",
+          "qualifiers": [
+            "Factsheet size for one-bedroom apartment layouts; net/gross measurement basis not specified."
+          ],
+          "id": "enrich-20261119-032"
+        }
+      ],
+      "withheld": [
+        "Starting price: source labels values as averages, not from-prices",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:hudayriyat-golf-estates-modon-abu-dhabi",
+      "name": "Hudayriyat Golf Estates",
+      "matchBasis": "Exact marketed project, Modon and Hudayriyat Island. No automatic mapping of whole-project facts to each ADREC child record.",
+      "scope": "Developer marketed project; preserve authority phase records separately",
+      "facts": [
+        {
+          "field": "marketedPropertyTypes",
+          "value": [
+            "mansion",
+            "villa",
+            "townhouse"
+          ],
+          "sourceIds": [
+            "modon-hudayriyat-golf-project"
+          ],
+          "excerptIds": [
+            "modon-hudayriyat-golf-project#types"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "id": "enrich-20261119-033"
+        },
+        {
+          "field": "scheduledHandover",
+          "value": {
+            "quarter": "2030-Q3",
+            "month": "2030-08",
+            "precision": "month_with_consistent_quarter",
+            "display": "August 2030 (Q3 2030)"
+          },
+          "sourceIds": [
+            "modon-hudayriyat-golf-project"
+          ],
+          "excerptIds": [
+            "modon-hudayriyat-golf-project#handover-quarter",
+            "modon-hudayriyat-golf-project#handover-month"
+          ],
+          "classification": "developer_schedule",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "conflictsWithLegacy": {
+            "field": "handover",
+            "value": "Q2 2030",
+            "action": "retain existing value and append schedule discrepancy; no claim of verified delay"
+          },
+          "id": "enrich-20261119-034"
+        },
+        {
+          "field": "advertisedPaymentPlan",
+          "value": "40/60",
+          "sourceIds": [
+            "modon-hudayriyat-golf-project"
+          ],
+          "excerptIds": [
+            "modon-hudayriyat-golf-project#payment"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Factsheet marketing split; detailed payment milestones and contract terms not established."
+          ],
+          "id": "enrich-20261119-035"
+        },
+        {
+          "field": "threeBedroomTownhouseAdvertisedAreaSqm",
+          "value": 204,
+          "sourceIds": [
+            "modon-hudayriyat-golf-project"
+          ],
+          "excerptIds": [
+            "modon-hudayriyat-golf-project#townhome-3br",
+            "modon-hudayriyat-golf-project#townhome-3br-area"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "sqm",
+          "qualifiers": [
+            "Developer factsheet size; net/gross measurement basis not specified."
+          ],
+          "id": "enrich-20261119-036"
+        }
+      ],
+      "withheld": [
+        "Asking-from price: listed values are averages",
+        "Registered phase-specific totals",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "adrec:615",
+      "name": "The Beach House Fahid",
+      "matchBasis": "Exact distinctive project name, Aldar and Fahid Island; developer evidence supplements, but does not replace, authority record.",
+      "scope": "Marketed development linked to existing authority identity",
+      "facts": [
+        {
+          "field": "marketedTowerCount",
+          "value": 11,
+          "sourceIds": [
+            "aldar-beachhouse-fahid-project"
+          ],
+          "excerptIds": [
+            "aldar-beachhouse-fahid-project#towers"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "unit": "towers",
+          "id": "enrich-20261119-037"
+        },
+        {
+          "field": "marketedResidenceMix",
+          "value": {
+            "category": "apartments",
+            "bedrooms": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "maidRoomWording": "studio to 3-bedroom + Maid"
+          },
+          "sourceIds": [
+            "aldar-beachhouse-fahid-project"
+          ],
+          "excerptIds": [
+            "aldar-beachhouse-fahid-project#bedrooms"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Studio encoded as 0 bedrooms; source does not establish a maid room in every individual layout."
+          ],
+          "id": "enrich-20261119-038"
+        },
+        {
+          "field": "marketedAmenities",
+          "value": {
+            "swimmingPools": 2,
+            "fitnessCentres": 2,
+            "coworkingLounges": true
+          },
+          "sourceIds": [
+            "aldar-beachhouse-fahid-project"
+          ],
+          "excerptIds": [
+            "aldar-beachhouse-fahid-project#pools",
+            "aldar-beachhouse-fahid-project#gyms",
+            "aldar-beachhouse-fahid-project#coworking"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": null,
+          "additiveOnly": true,
+          "qualifiers": [
+            "Marketing provision; completed or operational facilities not independently verified."
+          ],
+          "id": "enrich-20261119-039"
+        }
+      ],
+      "withheld": [
+        "Authority completion percentage",
+        "Unit totals from unread dynamic authority page",
+        "Coordinates",
+        "Handover",
+        "Price"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    },
+    {
+      "recordId": "project:al-ghadeer-gardens-aldar-abu-dhabi",
+      "name": "Al Ghadeer Gardens",
+      "matchBasis": "Exact marketed name, Aldar and Al Ghadeer; later named phases remain separate.",
+      "scope": "Original launch cohort as announced 2026-05-15",
+      "facts": [
+        {
+          "field": "announcedLaunchResidences",
+          "value": 437,
+          "sourceIds": [
+            "aldar-ghadeer-launch-20260515"
+          ],
+          "excerptIds": [
+            "aldar-ghadeer-launch-20260515#launch-units"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-05-15",
+          "additiveOnly": true,
+          "unit": "residences",
+          "aggregation": "dated_launch_cohort_only",
+          "qualifiers": [
+            "Not a canonical cumulative total. An undated campaign page separately reports 352; phase relationship unresolved."
+          ],
+          "id": "enrich-20261119-040"
+        },
+        {
+          "field": "announcedPropertyTypes",
+          "value": [
+            "villa",
+            "townhouse"
+          ],
+          "sourceIds": [
+            "aldar-ghadeer-launch-20260515"
+          ],
+          "excerptIds": [
+            "aldar-ghadeer-launch-20260515#launch-units"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-05-15",
+          "additiveOnly": true,
+          "id": "enrich-20261119-041"
+        },
+        {
+          "field": "announcedBedroomOptions",
+          "value": [
+            2,
+            3,
+            4
+          ],
+          "sourceIds": [
+            "aldar-ghadeer-launch-20260515"
+          ],
+          "excerptIds": [
+            "aldar-ghadeer-launch-20260515#bedrooms"
+          ],
+          "classification": "developer_reported",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-05-15",
+          "additiveOnly": true,
+          "qualifiers": [
+            "Original announced launch cohort."
+          ],
+          "id": "enrich-20261119-042"
+        },
+        {
+          "field": "announcedNeighbourhoodSchoolOpening",
+          "value": {
+            "school": "Al Ghadeer British School",
+            "academicYear": 2030
+          },
+          "sourceIds": [
+            "aldar-ghadeer-launch-20260515"
+          ],
+          "excerptIds": [
+            "aldar-ghadeer-launch-20260515#school-year"
+          ],
+          "classification": "announced_future_amenity",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-05-15",
+          "additiveOnly": true,
+          "qualifiers": [
+            "Announced opening plan, not current operation or residential handover timing."
+          ],
+          "id": "enrich-20261119-043"
+        },
+        {
+          "field": "announcedNeighbourhoodSchoolCapacity",
+          "value": {
+            "comparator": "greater_than",
+            "value": 2800
+          },
+          "sourceIds": [
+            "aldar-ghadeer-launch-20260515"
+          ],
+          "excerptIds": [
+            "aldar-ghadeer-launch-20260515#school-capacity"
+          ],
+          "classification": "announced_future_amenity",
+          "observedAt": "2026-11-19T10:22:27Z",
+          "publicationDate": "2026-05-15",
+          "additiveOnly": true,
+          "unit": "students",
+          "qualifiers": [
+            "Announced capacity; not current enrolment."
+          ],
+          "id": "enrich-20261119-044"
+        }
+      ],
+      "reviewFlags": [
+        {
+          "field": "projectUnitTotal",
+          "status": "withheld_phase_scope_conflict",
+          "observedValues": [
+            437,
+            352
+          ],
+          "sourceIds": [
+            "aldar-ghadeer-launch-20260515",
+            "aldar-ghadeer-campaign"
+          ],
+          "excerptIds": [
+            "aldar-ghadeer-launch-20260515#launch-units",
+            "aldar-ghadeer-campaign#units"
+          ],
+          "reason": "Dated launch announcement and undated campaign page publish different totals without a resolved phase mapping."
+        }
+      ],
+      "withheld": [
+        "Unqualified project-wide unit total",
+        "Canonical asking-from price",
+        "New handover",
+        "Coordinates"
+      ],
+      "reviewStatus": "ready_for_additive_evidence",
+      "preserveExistingFields": true
+    }
+  ],
+  "batch_id": "espacios-map-enrichment-20261119-primary-batch1",
+  "observed_at": "2026-11-19T10:22:27Z",
+  "facts": [
+    {
+      "candidate_id": "enrich-20261119-001",
+      "entity_id": "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "field_key": "releaseBedroomOptions",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          5,
+          6
+        ],
+        "scope": "Frond F release dated 2026-08-20",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-08-20",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "nakheel-pja-frond-f-20260820"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-pja-frond-f-20260820",
+            "excerpt_id": "beach-beds"
+          }
+        ],
+        "match_basis": "Exact collection, developer and master development; evidence limited to a named release.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/four-studios--one-shoreline--inside-the-latest-release-from-palm-jebel-ali-s-beach---coral-collections",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-002",
+      "entity_id": "project:the-beach-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "field_key": "releaseVillaAreaSqft",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "min": 7500,
+          "max": 8500
+        },
+        "scope": "Frond F release dated 2026-08-20",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-08-20",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "sqft",
+        "qualifiers": [
+          "Area label in press release; not normalised into plot or internal-net area."
+        ],
+        "source_ids": [
+          "nakheel-pja-frond-f-20260820"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-pja-frond-f-20260820",
+            "excerpt_id": "beach-size"
+          }
+        ],
+        "match_basis": "Exact collection, developer and master development; evidence limited to a named release.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/four-studios--one-shoreline--inside-the-latest-release-from-palm-jebel-ali-s-beach---coral-collections",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-003",
+      "entity_id": "project:the-coral-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "field_key": "releaseBedroomOptions",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          6,
+          7
+        ],
+        "scope": "Frond F release dated 2026-08-20",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-08-20",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "nakheel-pja-frond-f-20260820"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-pja-frond-f-20260820",
+            "excerpt_id": "coral-beds"
+          }
+        ],
+        "match_basis": "Exact collection, developer and master development; evidence limited to a named release.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/four-studios--one-shoreline--inside-the-latest-release-from-palm-jebel-ali-s-beach---coral-collections",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-004",
+      "entity_id": "project:the-coral-collection-by-nakheel-properties-on-palm-jebel-ali",
+      "field_key": "releaseVillaAreaSqft",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "min": 11500,
+          "max": 12500
+        },
+        "scope": "Frond F release dated 2026-08-20",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-08-20",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "sqft",
+        "qualifiers": [
+          "Area label in press release; not normalised into plot or internal-net area."
+        ],
+        "source_ids": [
+          "nakheel-pja-frond-f-20260820"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-pja-frond-f-20260820",
+            "excerpt_id": "coral-size"
+          }
+        ],
+        "match_basis": "Exact collection, developer and master development; evidence limited to a named release.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/20/four-studios--one-shoreline--inside-the-latest-release-from-palm-jebel-ali-s-beach---coral-collections",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-005",
+      "entity_id": "project:palm-central-private-residences-palm-jebel-ali-dubai",
+      "field_key": "announcedPhaseResidences",
+      "previous_value": null,
+      "new_value": {
+        "value": 222,
+        "scope": "Phase released 2026-06-24",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-06-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "residences",
+        "qualifiers": [
+          "Do not add to earlier phases without a non-overlap reconciliation."
+        ],
+        "source_ids": [
+          "nakheel-palmcentral-20260624"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-palmcentral-20260624",
+            "excerpt_id": "phase-units"
+          }
+        ],
+        "match_basis": "Exact marketed name, Nakheel and Palm Jebel Ali.",
+        "aggregation": "phase_only_not_project_total",
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-006",
+      "entity_id": "project:palm-central-private-residences-palm-jebel-ali-dubai",
+      "field_key": "phaseBuildingCount",
+      "previous_value": null,
+      "new_value": {
+        "value": 3,
+        "scope": "Phase released 2026-06-24",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-06-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "buildings",
+        "qualifiers": [],
+        "source_ids": [
+          "nakheel-palmcentral-20260624"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-palmcentral-20260624",
+            "excerpt_id": "phase-units"
+          }
+        ],
+        "match_basis": "Exact marketed name, Nakheel and Palm Jebel Ali.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-007",
+      "entity_id": "project:palm-central-private-residences-palm-jebel-ali-dubai",
+      "field_key": "phaseResidenceMix",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "apartmentsBedrooms": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "townhouseBedrooms": [
+            4,
+            5
+          ]
+        },
+        "scope": "Phase released 2026-06-24",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-06-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "nakheel-palmcentral-20260624"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "nakheel-palmcentral-20260624",
+            "excerpt_id": "phase-types"
+          }
+        ],
+        "match_basis": "Exact marketed name, Nakheel and Palm Jebel Ali.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Nakheel",
+      "source_url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-008",
+      "entity_id": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "field_key": "advertisedStartingPriceAed",
+      "previous_value": null,
+      "new_value": {
+        "value": 1110000,
+        "scope": "Developer page observed 2026-11-19",
+        "claim_type": "developer_asking_from_price",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "AED",
+        "qualifiers": [
+          "Subject to inventory availability; not a valuation or completed transaction.",
+          "Do not infer exact unit inventory or price per sqft."
+        ],
+        "source_ids": [
+          "sobha-aquamont-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-aquamont-project",
+            "excerpt_id": "starting-price"
+          },
+          {
+            "source_id": "sobha-aquamont-project",
+            "excerpt_id": "price-condition"
+          }
+        ],
+        "match_basis": "Exact project name, developer and Downtown Umm Al Quwain.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-009",
+      "entity_id": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "field_key": "marketedResidenceMix",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "apartmentsBedrooms": [
+            1,
+            2,
+            3
+          ],
+          "duplexBedrooms": [
+            3
+          ]
+        },
+        "scope": "Developer page observed 2026-11-19",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-aquamont-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-aquamont-project",
+            "excerpt_id": "bedrooms"
+          },
+          {
+            "source_id": "sobha-aquamont-project",
+            "excerpt_id": "duplex"
+          }
+        ],
+        "match_basis": "Exact project name, developer and Downtown Umm Al Quwain.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-010",
+      "entity_id": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "field_key": "scheduledHandover",
+      "previous_value": "Q3 2027",
+      "new_value": {
+        "value": {
+          "month": "2028-06",
+          "precision": "month",
+          "display": "June 2028"
+        },
+        "scope": "Developer page observed 2026-11-19",
+        "claim_type": "developer_schedule",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-aquamont-listing"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-aquamont-listing",
+            "excerpt_id": "handover"
+          }
+        ],
+        "match_basis": "Exact project name, developer and Downtown Umm Al Quwain.",
+        "aggregation": null,
+        "legacy_conflict": {
+          "field": "handover",
+          "value": "Q3 2027",
+          "action": "retain existing value and append schedule discrepancy; do not claim a verified delay"
+        },
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/sobha-communities/uaq-downtown/apartments",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-011",
+      "entity_id": "project:sobha-aquamont-apartments-umm-al-quwain",
+      "field_key": "marketedCommunityAmenities",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "beaches",
+          "landscaped parks",
+          "waterfront promenades",
+          "marina facilities"
+        ],
+        "scope": "Developer page observed 2026-11-19",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Developer description of the surrounding master-planned setting; completion and operation not independently verified."
+        ],
+        "source_ids": [
+          "sobha-aquamont-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-aquamont-project",
+            "excerpt_id": "amenities"
+          }
+        ],
+        "match_basis": "Exact project name, developer and Downtown Umm Al Quwain.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/downtown-uaq/sobha-aquamont",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-012",
+      "entity_id": "project:apartments-aya-deyaar-umm-al-quwain",
+      "field_key": "announcedPhaseResidences",
+      "previous_value": null,
+      "new_value": {
+        "value": 442,
+        "scope": "Phase 1 launch announcement 2025-02-24",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2025-02-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "residences",
+        "qualifiers": [],
+        "source_ids": [
+          "deyaar-aya-launch-20250224"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "deyaar-aya-launch-20250224",
+            "excerpt_id": "phase-units"
+          }
+        ],
+        "match_basis": "AYA Beachfront Residences name, Deyaar, Umm Al Quwain; launch evidence describes Phase 1.",
+        "aggregation": "phase_only_not_current_inventory",
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Deyaar Development PJSC via Dubai Financial Market",
+      "source_url": "https://feeds.dfm.ae/documents/2025/Feb/24/36d23f29-b3c6-42dc-836c-ef6c91d534f9/Deyaar%20Press%20Release.pdf",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-013",
+      "entity_id": "project:apartments-aya-deyaar-umm-al-quwain",
+      "field_key": "announcedBedroomRange",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "min": 1,
+          "max": 5
+        },
+        "scope": "Phase 1 launch announcement 2025-02-24",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2025-02-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "deyaar-aya-launch-20250224"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "deyaar-aya-launch-20250224",
+            "excerpt_id": "bedrooms"
+          }
+        ],
+        "match_basis": "AYA Beachfront Residences name, Deyaar, Umm Al Quwain; launch evidence describes Phase 1.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Deyaar Development PJSC via Dubai Financial Market",
+      "source_url": "https://feeds.dfm.ae/documents/2025/Feb/24/36d23f29-b3c6-42dc-836c-ef6c91d534f9/Deyaar%20Press%20Release.pdf",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-014",
+      "entity_id": "project:apartments-aya-deyaar-umm-al-quwain",
+      "field_key": "scheduledHandover",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "quarter": "2027-Q4",
+          "precision": "quarter",
+          "display": "Q4 2027"
+        },
+        "scope": "Phase 1 launch announcement 2025-02-24",
+        "claim_type": "developer_schedule",
+        "source_publication_date": "2025-02-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Dated launch estimate from February 2025; not a fresh construction certification."
+        ],
+        "source_ids": [
+          "deyaar-aya-launch-20250224"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "deyaar-aya-launch-20250224",
+            "excerpt_id": "handover"
+          }
+        ],
+        "match_basis": "AYA Beachfront Residences name, Deyaar, Umm Al Quwain; launch evidence describes Phase 1.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Deyaar Development PJSC via Dubai Financial Market",
+      "source_url": "https://feeds.dfm.ae/documents/2025/Feb/24/36d23f29-b3c6-42dc-836c-ef6c91d534f9/Deyaar%20Press%20Release.pdf",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-015",
+      "entity_id": "project:apartments-aya-deyaar-umm-al-quwain",
+      "field_key": "announcedSpecialResidenceTypes",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "penthouse",
+          "sky villa",
+          "duplex"
+        ],
+        "scope": "Phase 1 launch announcement 2025-02-24",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2025-02-24",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Announced at launch; not current unit availability."
+        ],
+        "source_ids": [
+          "deyaar-aya-launch-20250224"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "deyaar-aya-launch-20250224",
+            "excerpt_id": "special-types"
+          }
+        ],
+        "match_basis": "AYA Beachfront Residences name, Deyaar, Umm Al Quwain; launch evidence describes Phase 1.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Deyaar Development PJSC via Dubai Financial Market",
+      "source_url": "https://feeds.dfm.ae/documents/2025/Feb/24/36d23f29-b3c6-42dc-836c-ef6c91d534f9/Deyaar%20Press%20Release.pdf",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-016",
+      "entity_id": "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain",
+      "field_key": "marketedBedroomOptions",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          1,
+          2,
+          3
+        ],
+        "scope": "Developer marketing project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-bayside-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-bayside-project",
+            "excerpt_id": "bedrooms"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "advertisedStartingPriceAed",
+            "status": "withheld_conflicting_official_page",
+            "observedValues": [
+              1510000,
+              1230000
+            ],
+            "sourceIds": [
+              "sobha-bayside-project"
+            ],
+            "excerptIds": [
+              "sobha-bayside-project#price-banner",
+              "sobha-bayside-project#price-faq"
+            ],
+            "reason": "Dedicated page banner and FAQ disagree; do not silently choose a canonical asking price."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/bayside",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-017",
+      "entity_id": "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain",
+      "field_key": "marketedTowerCount",
+      "previous_value": null,
+      "new_value": {
+        "value": 3,
+        "scope": "Developer marketing project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "towers",
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-bayside-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-bayside-project",
+            "excerpt_id": "tower-count"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "advertisedStartingPriceAed",
+            "status": "withheld_conflicting_official_page",
+            "observedValues": [
+              1510000,
+              1230000
+            ],
+            "sourceIds": [
+              "sobha-bayside-project"
+            ],
+            "excerptIds": [
+              "sobha-bayside-project#price-banner",
+              "sobha-bayside-project#price-faq"
+            ],
+            "reason": "Dedicated page banner and FAQ disagree; do not silently choose a canonical asking price."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/bayside",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-018",
+      "entity_id": "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain",
+      "field_key": "scheduledHandover",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "month": "2029-09",
+          "precision": "month",
+          "display": "September 2029"
+        },
+        "scope": "Developer marketing project",
+        "claim_type": "developer_schedule",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-marina-listing"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-marina-listing",
+            "excerpt_id": "bayside-handover"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "advertisedStartingPriceAed",
+            "status": "withheld_conflicting_official_page",
+            "observedValues": [
+              1510000,
+              1230000
+            ],
+            "sourceIds": [
+              "sobha-bayside-project"
+            ],
+            "excerptIds": [
+              "sobha-bayside-project#price-banner",
+              "sobha-bayside-project#price-faq"
+            ],
+            "reason": "Dedicated page banner and FAQ disagree; do not silently choose a canonical asking price."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/siniya-marina-residences",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-019",
+      "entity_id": "project:apartments-bayside-marina-residences-sobha-siniya-island-umm-al-quwain",
+      "field_key": "marketedAccessAmenities",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "marina access",
+          "private beach privileges"
+        ],
+        "scope": "Developer marketing project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Developer marketing; legal access terms and current operation not independently verified."
+        ],
+        "source_ids": [
+          "sobha-bayside-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-bayside-project",
+            "excerpt_id": "marina"
+          },
+          {
+            "source_id": "sobha-bayside-project",
+            "excerpt_id": "beach"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "advertisedStartingPriceAed",
+            "status": "withheld_conflicting_official_page",
+            "observedValues": [
+              1510000,
+              1230000
+            ],
+            "sourceIds": [
+              "sobha-bayside-project"
+            ],
+            "excerptIds": [
+              "sobha-bayside-project#price-banner",
+              "sobha-bayside-project#price-faq"
+            ],
+            "reason": "Dedicated page banner and FAQ disagree; do not silently choose a canonical asking price."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/bayside",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-020",
+      "entity_id": "project:apartments-pierside-marina-residences-sobha-siniya-island",
+      "field_key": "advertisedStartingPriceAed",
+      "previous_value": null,
+      "new_value": {
+        "value": 1520000,
+        "scope": "Developer marketing project",
+        "claim_type": "developer_asking_from_price",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "AED",
+        "qualifiers": [
+          "Subject to inventory availability; not a valuation or completed transaction."
+        ],
+        "source_ids": [
+          "sobha-pierside-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-pierside-project",
+            "excerpt_id": "starting-price"
+          },
+          {
+            "source_id": "sobha-pierside-project",
+            "excerpt_id": "price-condition"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "marketedBedroomOptions",
+            "status": "withheld_scope_difference",
+            "observedValues": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sourceIds": [
+              "sobha-pierside-project",
+              "sobha-marina-listing"
+            ],
+            "excerptIds": [
+              "sobha-pierside-project#bedrooms",
+              "sobha-marina-listing#pierside-beds-list"
+            ],
+            "reason": "Dedicated project page offers 1–3 bedrooms; current listing card lists 1–2. Could be inventory/phase scope; not reconciled."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pierside",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-021",
+      "entity_id": "project:apartments-pierside-marina-residences-sobha-siniya-island",
+      "field_key": "scheduledHandover",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "month": "2029-03",
+          "precision": "month",
+          "display": "March 2029"
+        },
+        "scope": "Developer marketing project",
+        "claim_type": "developer_schedule",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-marina-listing"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-marina-listing",
+            "excerpt_id": "pierside-handover"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "marketedBedroomOptions",
+            "status": "withheld_scope_difference",
+            "observedValues": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sourceIds": [
+              "sobha-pierside-project",
+              "sobha-marina-listing"
+            ],
+            "excerptIds": [
+              "sobha-pierside-project#bedrooms",
+              "sobha-marina-listing#pierside-beds-list"
+            ],
+            "reason": "Dedicated project page offers 1–3 bedrooms; current listing card lists 1–2. Could be inventory/phase scope; not reconciled."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/siniya-marina-residences",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-022",
+      "entity_id": "project:apartments-pierside-marina-residences-sobha-siniya-island",
+      "field_key": "propertyCategory",
+      "previous_value": null,
+      "new_value": {
+        "value": "apartments",
+        "scope": "Developer marketing project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "sobha-pierside-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-pierside-project",
+            "excerpt_id": "bedrooms"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "marketedBedroomOptions",
+            "status": "withheld_scope_difference",
+            "observedValues": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sourceIds": [
+              "sobha-pierside-project",
+              "sobha-marina-listing"
+            ],
+            "excerptIds": [
+              "sobha-pierside-project#bedrooms",
+              "sobha-marina-listing#pierside-beds-list"
+            ],
+            "reason": "Dedicated project page offers 1–3 bedrooms; current listing card lists 1–2. Could be inventory/phase scope; not reconciled."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pierside",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-023",
+      "entity_id": "project:apartments-pierside-marina-residences-sobha-siniya-island",
+      "field_key": "marketedAmenities",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "infinity pools",
+          "fitness and wellness facilities",
+          "private marina access"
+        ],
+        "scope": "Developer marketing project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Developer marketing; legal access terms and current operation not independently verified."
+        ],
+        "source_ids": [
+          "sobha-pierside-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "sobha-pierside-project",
+            "excerpt_id": "pool"
+          },
+          {
+            "source_id": "sobha-pierside-project",
+            "excerpt_id": "fitness"
+          },
+          {
+            "source_id": "sobha-pierside-project",
+            "excerpt_id": "marina"
+          }
+        ],
+        "match_basis": "Exact project name, Sobha, Siniya Island.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "marketedBedroomOptions",
+            "status": "withheld_scope_difference",
+            "observedValues": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sourceIds": [
+              "sobha-pierside-project",
+              "sobha-marina-listing"
+            ],
+            "excerptIds": [
+              "sobha-pierside-project#bedrooms",
+              "sobha-marina-listing#pierside-beds-list"
+            ],
+            "reason": "Dedicated project page offers 1–3 bedrooms; current listing card lists 1–2. Could be inventory/phase scope; not reconciled."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Sobha Realty",
+      "source_url": "https://sobharealty.com/properties-in-uaq/sobha-siniya-island/marina-residences/pierside",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-024",
+      "entity_id": "project:oceana-by-reportage-fujairah-uae",
+      "field_key": "announcedApartmentUnits",
+      "previous_value": null,
+      "new_value": {
+        "value": 605,
+        "scope": "Developer project specification",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "apartments",
+        "qualifiers": [
+          "Developer specification total; not current sale availability."
+        ],
+        "source_ids": [
+          "reportage-oceana-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "apartments"
+          }
+        ],
+        "match_basis": "Exact marketed name, Reportage and Fujairah.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Reportage Group",
+      "source_url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-025",
+      "entity_id": "project:oceana-by-reportage-fujairah-uae",
+      "field_key": "residentialFloors",
+      "previous_value": null,
+      "new_value": {
+        "value": 19,
+        "scope": "Developer project specification",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "floors",
+        "qualifiers": [],
+        "source_ids": [
+          "reportage-oceana-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "floors"
+          }
+        ],
+        "match_basis": "Exact marketed name, Reportage and Fujairah.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Reportage Group",
+      "source_url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-026",
+      "entity_id": "project:oceana-by-reportage-fujairah-uae",
+      "field_key": "plotAreaSqm",
+      "previous_value": null,
+      "new_value": {
+        "value": 5476,
+        "scope": "Developer project specification",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "sqm",
+        "qualifiers": [],
+        "source_ids": [
+          "reportage-oceana-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "plot-area"
+          }
+        ],
+        "match_basis": "Exact marketed name, Reportage and Fujairah.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Reportage Group",
+      "source_url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-027",
+      "entity_id": "project:oceana-by-reportage-fujairah-uae",
+      "field_key": "marketedAmenities",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "swimming pool",
+          "gymnasium",
+          "children's swimming pool",
+          "barbecue area"
+        ],
+        "scope": "Developer project specification",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Advertised project amenities; current operation/completion not verified."
+        ],
+        "source_ids": [
+          "reportage-oceana-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "pool"
+          },
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "gym"
+          },
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "kids-pool"
+          },
+          {
+            "source_id": "reportage-oceana-project",
+            "excerpt_id": "bbq"
+          }
+        ],
+        "match_basis": "Exact marketed name, Reportage and Fujairah.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Reportage Group",
+      "source_url": "https://reportagegroup.com/projects/residential-apartments/oceana/",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-028",
+      "entity_id": "project:apartments-muheira-maysan-abu-dhabi",
+      "field_key": "marketedTowerCount",
+      "previous_value": null,
+      "new_value": {
+        "value": 2,
+        "scope": "Developer marketed project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "towers",
+        "qualifiers": [],
+        "source_ids": [
+          "modon-muheira-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-muheira-project",
+            "excerpt_id": "towers"
+          }
+        ],
+        "match_basis": "Exact marketed name, Modon and Reem Island; retains existing Maysan area wording.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/muheira",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-029",
+      "entity_id": "project:apartments-muheira-maysan-abu-dhabi",
+      "field_key": "marketedBedroomOptions",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          1,
+          2,
+          3
+        ],
+        "scope": "Developer marketed project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "modon-muheira-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-muheira-project",
+            "excerpt_id": "bedrooms"
+          }
+        ],
+        "match_basis": "Exact marketed name, Modon and Reem Island; retains existing Maysan area wording.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/muheira",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-030",
+      "entity_id": "project:apartments-muheira-maysan-abu-dhabi",
+      "field_key": "scheduledHandover",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "quarter": "2029-Q2",
+          "precision": "quarter",
+          "display": "Q2 2029"
+        },
+        "scope": "Developer marketed project",
+        "claim_type": "developer_schedule",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "modon-muheira-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-muheira-project",
+            "excerpt_id": "handover"
+          }
+        ],
+        "match_basis": "Exact marketed name, Modon and Reem Island; retains existing Maysan area wording.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/muheira",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-031",
+      "entity_id": "project:apartments-muheira-maysan-abu-dhabi",
+      "field_key": "advertisedPaymentPlan",
+      "previous_value": null,
+      "new_value": {
+        "value": "50/50",
+        "scope": "Developer marketed project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Factsheet marketing split; detailed payment milestones and contract terms not established."
+        ],
+        "source_ids": [
+          "modon-muheira-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-muheira-project",
+            "excerpt_id": "payment"
+          }
+        ],
+        "match_basis": "Exact marketed name, Modon and Reem Island; retains existing Maysan area wording.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/muheira",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-032",
+      "entity_id": "project:apartments-muheira-maysan-abu-dhabi",
+      "field_key": "oneBedroomAdvertisedAreaSqm",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "min": 74,
+          "max": 86
+        },
+        "scope": "Developer marketed project",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "sqm",
+        "qualifiers": [
+          "Factsheet size for one-bedroom apartment layouts; net/gross measurement basis not specified."
+        ],
+        "source_ids": [
+          "modon-muheira-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-muheira-project",
+            "excerpt_id": "one-bed-area"
+          }
+        ],
+        "match_basis": "Exact marketed name, Modon and Reem Island; retains existing Maysan area wording.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/muheira",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-033",
+      "entity_id": "project:hudayriyat-golf-estates-modon-abu-dhabi",
+      "field_key": "marketedPropertyTypes",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "mansion",
+          "villa",
+          "townhouse"
+        ],
+        "scope": "Developer marketed project; preserve authority phase records separately",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "modon-hudayriyat-golf-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-hudayriyat-golf-project",
+            "excerpt_id": "types"
+          }
+        ],
+        "match_basis": "Exact marketed project, Modon and Hudayriyat Island. No automatic mapping of whole-project facts to each ADREC child record.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/hudayriyat-golf-estates",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-034",
+      "entity_id": "project:hudayriyat-golf-estates-modon-abu-dhabi",
+      "field_key": "scheduledHandover",
+      "previous_value": "Q2 2030",
+      "new_value": {
+        "value": {
+          "quarter": "2030-Q3",
+          "month": "2030-08",
+          "precision": "month_with_consistent_quarter",
+          "display": "August 2030 (Q3 2030)"
+        },
+        "scope": "Developer marketed project; preserve authority phase records separately",
+        "claim_type": "developer_schedule",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "modon-hudayriyat-golf-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-hudayriyat-golf-project",
+            "excerpt_id": "handover-quarter"
+          },
+          {
+            "source_id": "modon-hudayriyat-golf-project",
+            "excerpt_id": "handover-month"
+          }
+        ],
+        "match_basis": "Exact marketed project, Modon and Hudayriyat Island. No automatic mapping of whole-project facts to each ADREC child record.",
+        "aggregation": null,
+        "legacy_conflict": {
+          "field": "handover",
+          "value": "Q2 2030",
+          "action": "retain existing value and append schedule discrepancy; no claim of verified delay"
+        },
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/hudayriyat-golf-estates",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-035",
+      "entity_id": "project:hudayriyat-golf-estates-modon-abu-dhabi",
+      "field_key": "advertisedPaymentPlan",
+      "previous_value": null,
+      "new_value": {
+        "value": "40/60",
+        "scope": "Developer marketed project; preserve authority phase records separately",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Factsheet marketing split; detailed payment milestones and contract terms not established."
+        ],
+        "source_ids": [
+          "modon-hudayriyat-golf-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-hudayriyat-golf-project",
+            "excerpt_id": "payment"
+          }
+        ],
+        "match_basis": "Exact marketed project, Modon and Hudayriyat Island. No automatic mapping of whole-project facts to each ADREC child record.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/hudayriyat-golf-estates",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-036",
+      "entity_id": "project:hudayriyat-golf-estates-modon-abu-dhabi",
+      "field_key": "threeBedroomTownhouseAdvertisedAreaSqm",
+      "previous_value": null,
+      "new_value": {
+        "value": 204,
+        "scope": "Developer marketed project; preserve authority phase records separately",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "sqm",
+        "qualifiers": [
+          "Developer factsheet size; net/gross measurement basis not specified."
+        ],
+        "source_ids": [
+          "modon-hudayriyat-golf-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "modon-hudayriyat-golf-project",
+            "excerpt_id": "townhome-3br"
+          },
+          {
+            "source_id": "modon-hudayriyat-golf-project",
+            "excerpt_id": "townhome-3br-area"
+          }
+        ],
+        "match_basis": "Exact marketed project, Modon and Hudayriyat Island. No automatic mapping of whole-project facts to each ADREC child record.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Modon",
+      "source_url": "https://www.modon.com/real-estate/hudayriyat-golf-estates",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-037",
+      "entity_id": "adrec:615",
+      "field_key": "marketedTowerCount",
+      "previous_value": null,
+      "new_value": {
+        "value": 11,
+        "scope": "Marketed development linked to existing authority identity",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "towers",
+        "qualifiers": [],
+        "source_ids": [
+          "aldar-beachhouse-fahid-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-beachhouse-fahid-project",
+            "excerpt_id": "towers"
+          }
+        ],
+        "match_basis": "Exact distinctive project name, Aldar and Fahid Island; developer evidence supplements, but does not replace, authority record.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://www.aldar.com/properties/en/Fahid-Island/fahidbeachhouse",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-038",
+      "entity_id": "adrec:615",
+      "field_key": "marketedResidenceMix",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "category": "apartments",
+          "bedrooms": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maidRoomWording": "studio to 3-bedroom + Maid"
+        },
+        "scope": "Marketed development linked to existing authority identity",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Studio encoded as 0 bedrooms; source does not establish a maid room in every individual layout."
+        ],
+        "source_ids": [
+          "aldar-beachhouse-fahid-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-beachhouse-fahid-project",
+            "excerpt_id": "bedrooms"
+          }
+        ],
+        "match_basis": "Exact distinctive project name, Aldar and Fahid Island; developer evidence supplements, but does not replace, authority record.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://www.aldar.com/properties/en/Fahid-Island/fahidbeachhouse",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-039",
+      "entity_id": "adrec:615",
+      "field_key": "marketedAmenities",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "swimmingPools": 2,
+          "fitnessCentres": 2,
+          "coworkingLounges": true
+        },
+        "scope": "Marketed development linked to existing authority identity",
+        "claim_type": "developer_reported",
+        "source_publication_date": null,
+        "source_publication_date_basis": "not stated",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Marketing provision; completed or operational facilities not independently verified."
+        ],
+        "source_ids": [
+          "aldar-beachhouse-fahid-project"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-beachhouse-fahid-project",
+            "excerpt_id": "pools"
+          },
+          {
+            "source_id": "aldar-beachhouse-fahid-project",
+            "excerpt_id": "gyms"
+          },
+          {
+            "source_id": "aldar-beachhouse-fahid-project",
+            "excerpt_id": "coworking"
+          }
+        ],
+        "match_basis": "Exact distinctive project name, Aldar and Fahid Island; developer evidence supplements, but does not replace, authority record.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://www.aldar.com/properties/en/Fahid-Island/fahidbeachhouse",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-040",
+      "entity_id": "project:al-ghadeer-gardens-aldar-abu-dhabi",
+      "field_key": "announcedLaunchResidences",
+      "previous_value": null,
+      "new_value": {
+        "value": 437,
+        "scope": "Original launch cohort as announced 2026-05-15",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-05-15",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "residences",
+        "qualifiers": [
+          "Not a canonical cumulative total. An undated campaign page separately reports 352; phase relationship unresolved."
+        ],
+        "source_ids": [
+          "aldar-ghadeer-launch-20260515"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-ghadeer-launch-20260515",
+            "excerpt_id": "launch-units"
+          }
+        ],
+        "match_basis": "Exact marketed name, Aldar and Al Ghadeer; later named phases remain separate.",
+        "aggregation": "dated_launch_cohort_only",
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "projectUnitTotal",
+            "status": "withheld_phase_scope_conflict",
+            "observedValues": [
+              437,
+              352
+            ],
+            "sourceIds": [
+              "aldar-ghadeer-launch-20260515",
+              "aldar-ghadeer-campaign"
+            ],
+            "excerptIds": [
+              "aldar-ghadeer-launch-20260515#launch-units",
+              "aldar-ghadeer-campaign#units"
+            ],
+            "reason": "Dated launch announcement and undated campaign page publish different totals without a resolved phase mapping."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://vazeno.files.cmp.optimizely.com/download/assets/260515%2BAldar%2BAl%2BGhadeer%2BGardens%2BPress%2BRelease%2BFINAL.pdf/b4b647d6502411f1ac568e258122a782",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-041",
+      "entity_id": "project:al-ghadeer-gardens-aldar-abu-dhabi",
+      "field_key": "announcedPropertyTypes",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          "villa",
+          "townhouse"
+        ],
+        "scope": "Original launch cohort as announced 2026-05-15",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-05-15",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [],
+        "source_ids": [
+          "aldar-ghadeer-launch-20260515"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-ghadeer-launch-20260515",
+            "excerpt_id": "launch-units"
+          }
+        ],
+        "match_basis": "Exact marketed name, Aldar and Al Ghadeer; later named phases remain separate.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "projectUnitTotal",
+            "status": "withheld_phase_scope_conflict",
+            "observedValues": [
+              437,
+              352
+            ],
+            "sourceIds": [
+              "aldar-ghadeer-launch-20260515",
+              "aldar-ghadeer-campaign"
+            ],
+            "excerptIds": [
+              "aldar-ghadeer-launch-20260515#launch-units",
+              "aldar-ghadeer-campaign#units"
+            ],
+            "reason": "Dated launch announcement and undated campaign page publish different totals without a resolved phase mapping."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://vazeno.files.cmp.optimizely.com/download/assets/260515%2BAldar%2BAl%2BGhadeer%2BGardens%2BPress%2BRelease%2BFINAL.pdf/b4b647d6502411f1ac568e258122a782",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-042",
+      "entity_id": "project:al-ghadeer-gardens-aldar-abu-dhabi",
+      "field_key": "announcedBedroomOptions",
+      "previous_value": null,
+      "new_value": {
+        "value": [
+          2,
+          3,
+          4
+        ],
+        "scope": "Original launch cohort as announced 2026-05-15",
+        "claim_type": "developer_reported",
+        "source_publication_date": "2026-05-15",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Original announced launch cohort."
+        ],
+        "source_ids": [
+          "aldar-ghadeer-launch-20260515"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-ghadeer-launch-20260515",
+            "excerpt_id": "bedrooms"
+          }
+        ],
+        "match_basis": "Exact marketed name, Aldar and Al Ghadeer; later named phases remain separate.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "projectUnitTotal",
+            "status": "withheld_phase_scope_conflict",
+            "observedValues": [
+              437,
+              352
+            ],
+            "sourceIds": [
+              "aldar-ghadeer-launch-20260515",
+              "aldar-ghadeer-campaign"
+            ],
+            "excerptIds": [
+              "aldar-ghadeer-launch-20260515#launch-units",
+              "aldar-ghadeer-campaign#units"
+            ],
+            "reason": "Dated launch announcement and undated campaign page publish different totals without a resolved phase mapping."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://vazeno.files.cmp.optimizely.com/download/assets/260515%2BAldar%2BAl%2BGhadeer%2BGardens%2BPress%2BRelease%2BFINAL.pdf/b4b647d6502411f1ac568e258122a782",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-043",
+      "entity_id": "project:al-ghadeer-gardens-aldar-abu-dhabi",
+      "field_key": "announcedNeighbourhoodSchoolOpening",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "school": "Al Ghadeer British School",
+          "academicYear": 2030
+        },
+        "scope": "Original launch cohort as announced 2026-05-15",
+        "claim_type": "announced_future_amenity",
+        "source_publication_date": "2026-05-15",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": null,
+        "qualifiers": [
+          "Announced opening plan, not current operation or residential handover timing."
+        ],
+        "source_ids": [
+          "aldar-ghadeer-launch-20260515"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-ghadeer-launch-20260515",
+            "excerpt_id": "school-year"
+          }
+        ],
+        "match_basis": "Exact marketed name, Aldar and Al Ghadeer; later named phases remain separate.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "projectUnitTotal",
+            "status": "withheld_phase_scope_conflict",
+            "observedValues": [
+              437,
+              352
+            ],
+            "sourceIds": [
+              "aldar-ghadeer-launch-20260515",
+              "aldar-ghadeer-campaign"
+            ],
+            "excerptIds": [
+              "aldar-ghadeer-launch-20260515#launch-units",
+              "aldar-ghadeer-campaign#units"
+            ],
+            "reason": "Dated launch announcement and undated campaign page publish different totals without a resolved phase mapping."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://vazeno.files.cmp.optimizely.com/download/assets/260515%2BAldar%2BAl%2BGhadeer%2BGardens%2BPress%2BRelease%2BFINAL.pdf/b4b647d6502411f1ac568e258122a782",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    },
+    {
+      "candidate_id": "enrich-20261119-044",
+      "entity_id": "project:al-ghadeer-gardens-aldar-abu-dhabi",
+      "field_key": "announcedNeighbourhoodSchoolCapacity",
+      "previous_value": null,
+      "new_value": {
+        "value": {
+          "comparator": "greater_than",
+          "value": 2800
+        },
+        "scope": "Original launch cohort as announced 2026-05-15",
+        "claim_type": "announced_future_amenity",
+        "source_publication_date": "2026-05-15",
+        "source_publication_date_basis": "explicit source dateline",
+        "source_observed_at": "2026-11-19T10:22:27Z",
+        "unit": "students",
+        "qualifiers": [
+          "Announced capacity; not current enrolment."
+        ],
+        "source_ids": [
+          "aldar-ghadeer-launch-20260515"
+        ],
+        "supporting_excerpt_refs": [
+          {
+            "source_id": "aldar-ghadeer-launch-20260515",
+            "excerpt_id": "school-capacity"
+          }
+        ],
+        "match_basis": "Exact marketed name, Aldar and Al Ghadeer; later named phases remain separate.",
+        "aggregation": null,
+        "legacy_conflict": null,
+        "unresolved_record_review_flags": [
+          {
+            "field": "projectUnitTotal",
+            "status": "withheld_phase_scope_conflict",
+            "observedValues": [
+              437,
+              352
+            ],
+            "sourceIds": [
+              "aldar-ghadeer-launch-20260515",
+              "aldar-ghadeer-campaign"
+            ],
+            "excerptIds": [
+              "aldar-ghadeer-launch-20260515#launch-units",
+              "aldar-ghadeer-campaign#units"
+            ],
+            "reason": "Dated launch announcement and undated campaign page publish different totals without a resolved phase mapping."
+          }
+        ],
+        "canonical_overwrite": false,
+        "source_retrieval_date": "2026-11-19",
+        "source_retrieval_precision": "day",
+        "source_observed_at_semantics": "review_observation_not_publication_or_event_time"
+      },
+      "effective_at": null,
+      "observed_at": "2026-11-19T10:22:27Z",
+      "source_organisation": "Aldar",
+      "source_url": "https://vazeno.files.cmp.optimizely.com/download/assets/260515%2BAldar%2BAl%2BGhadeer%2BGardens%2BPress%2BRelease%2BFINAL.pdf/b4b647d6502411f1ac568e258122a782",
+      "confidence": null,
+      "verification_status": "verified_primary_source",
+      "is_derived": 0,
+      "calculation_version": null
+    }
+  ],
+  "timestampSemantics": {
+    "sourceRetrieval": "All sources were retrieved on 2026-11-19. Per-request clock times were not separately instrumented; date-only retrieval values deliberately avoid false precision.",
+    "researchClockCheckpoint": "2026-11-19T10:18:04Z",
+    "reviewObservedAt": "2026-11-19T10:22:27Z",
+    "observationMeaning": "Facts were reviewed against already-read primary-source content at this recorded clock time. This is not source publication time or the date a planned event occurred.",
+    "effectiveAt": "Null for all rows; future schedule values remain in structured new_value and are not actual completion dates."
+  }
+}
